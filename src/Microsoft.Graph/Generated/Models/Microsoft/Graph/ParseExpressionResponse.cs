@@ -24,14 +24,22 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static ParseExpressionResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ParseExpressionResponse();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"error", (o,n) => { (o as ParseExpressionResponse).Error = n.GetObjectValue<PublicError>(); } },
+                {"error", (o,n) => { (o as ParseExpressionResponse).Error = n.GetObjectValue<PublicError>(PublicError.CreateFromDiscriminatorValue); } },
                 {"evaluationResult", (o,n) => { (o as ParseExpressionResponse).EvaluationResult = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"evaluationSucceeded", (o,n) => { (o as ParseExpressionResponse).EvaluationSucceeded = n.GetBoolValue(); } },
-                {"parsedExpression", (o,n) => { (o as ParseExpressionResponse).ParsedExpression = n.GetObjectValue<AttributeMappingSource>(); } },
+                {"parsedExpression", (o,n) => { (o as ParseExpressionResponse).ParsedExpression = n.GetObjectValue<AttributeMappingSource>(AttributeMappingSource.CreateFromDiscriminatorValue); } },
                 {"parsingSucceeded", (o,n) => { (o as ParseExpressionResponse).ParsingSucceeded = n.GetBoolValue(); } },
             };
         }

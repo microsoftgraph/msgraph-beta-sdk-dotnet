@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ReusableSettings {
         /// </summary>
         public async Task<ReusableSettingsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ReusableSettingsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ReusableSettingsResponse>(requestInfo, ReusableSettingsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of all reusable settings
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ReusableSettings {
         public async Task<DeviceManagementConfigurationSettingDefinition> PostAsync(DeviceManagementConfigurationSettingDefinition body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementConfigurationSettingDefinition>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementConfigurationSettingDefinition>(requestInfo, DeviceManagementConfigurationSettingDefinition.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>List of all reusable settings</summary>
         public class GetQueryParameters : QueryParametersBase {

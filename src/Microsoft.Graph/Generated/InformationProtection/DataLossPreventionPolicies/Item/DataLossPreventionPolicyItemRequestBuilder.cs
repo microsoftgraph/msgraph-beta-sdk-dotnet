@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.InformationProtection.DataLossPreventionPolicies.Ite
         /// </summary>
         public async Task<DataLossPreventionPolicy> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DataLossPreventionPolicy>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DataLossPreventionPolicy>(requestInfo, DataLossPreventionPolicy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property dataLossPreventionPolicies in informationProtection

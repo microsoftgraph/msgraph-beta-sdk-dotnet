@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Policies.PermissionGrantPolicies.Item.Excludes {
         /// </summary>
         public async Task<ExcludesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ExcludesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ExcludesResponse>(requestInfo, ExcludesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Policies.PermissionGrantPolicies.Item.Excludes {
         public async Task<PermissionGrantConditionSet> PostAsync(PermissionGrantConditionSet body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<PermissionGrantConditionSet>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PermissionGrantConditionSet>(requestInfo, PermissionGrantConditionSet.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.</summary>
         public class GetQueryParameters : QueryParametersBase {

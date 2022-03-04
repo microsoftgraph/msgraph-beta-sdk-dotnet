@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Policies.TokenIssuancePolicies {
         /// </summary>
         public async Task<TokenIssuancePoliciesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TokenIssuancePoliciesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TokenIssuancePoliciesResponse>(requestInfo, TokenIssuancePoliciesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The policy that specifies the characteristics of SAML tokens issued by Azure AD.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Policies.TokenIssuancePolicies {
         public async Task<TokenIssuancePolicy> PostAsync(TokenIssuancePolicy body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<TokenIssuancePolicy>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TokenIssuancePolicy>(requestInfo, TokenIssuancePolicy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The policy that specifies the characteristics of SAML tokens issued by Azure AD.</summary>
         public class GetQueryParameters : QueryParametersBase {

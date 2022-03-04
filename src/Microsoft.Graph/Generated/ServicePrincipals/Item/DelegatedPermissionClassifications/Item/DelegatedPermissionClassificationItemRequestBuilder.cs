@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.DelegatedPermissionClassifica
         /// </summary>
         public async Task<DelegatedPermissionClassification> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DelegatedPermissionClassification>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DelegatedPermissionClassification>(requestInfo, DelegatedPermissionClassification.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.

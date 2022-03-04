@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies {
         /// </summary>
         public async Task<WdacSupplementalPoliciesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<WdacSupplementalPoliciesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WdacSupplementalPoliciesResponse>(requestInfo, WdacSupplementalPoliciesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The collection of Windows Defender Application Control Supplemental Policies.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies {
         public async Task<WindowsDefenderApplicationControlSupplementalPolicy> PostAsync(WindowsDefenderApplicationControlSupplementalPolicy body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<WindowsDefenderApplicationControlSupplementalPolicy>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsDefenderApplicationControlSupplementalPolicy>(requestInfo, WindowsDefenderApplicationControlSupplementalPolicy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The collection of Windows Defender Application Control Supplemental Policies.</summary>
         public class GetQueryParameters : QueryParametersBase {

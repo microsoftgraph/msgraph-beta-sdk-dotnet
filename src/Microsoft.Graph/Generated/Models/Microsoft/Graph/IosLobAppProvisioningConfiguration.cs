@@ -32,22 +32,30 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Version of the device configuration.</summary>
         public int? Version { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new IosLobAppProvisioningConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new IosLobAppProvisioningConfiguration();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as IosLobAppProvisioningConfiguration).Assignments = n.GetCollectionOfObjectValues<IosLobAppProvisioningConfigurationAssignment>().ToList(); } },
+                {"assignments", (o,n) => { (o as IosLobAppProvisioningConfiguration).Assignments = n.GetCollectionOfObjectValues<IosLobAppProvisioningConfigurationAssignment>(IosLobAppProvisioningConfigurationAssignment.CreateFromDiscriminatorValue).ToList(); } },
                 {"createdDateTime", (o,n) => { (o as IosLobAppProvisioningConfiguration).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", (o,n) => { (o as IosLobAppProvisioningConfiguration).Description = n.GetStringValue(); } },
-                {"deviceStatuses", (o,n) => { (o as IosLobAppProvisioningConfiguration).DeviceStatuses = n.GetCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationDeviceStatus>().ToList(); } },
+                {"deviceStatuses", (o,n) => { (o as IosLobAppProvisioningConfiguration).DeviceStatuses = n.GetCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationDeviceStatus>(ManagedDeviceMobileAppConfigurationDeviceStatus.CreateFromDiscriminatorValue).ToList(); } },
                 {"displayName", (o,n) => { (o as IosLobAppProvisioningConfiguration).DisplayName = n.GetStringValue(); } },
                 {"expirationDateTime", (o,n) => { (o as IosLobAppProvisioningConfiguration).ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"groupAssignments", (o,n) => { (o as IosLobAppProvisioningConfiguration).GroupAssignments = n.GetCollectionOfObjectValues<MobileAppProvisioningConfigGroupAssignment>().ToList(); } },
+                {"groupAssignments", (o,n) => { (o as IosLobAppProvisioningConfiguration).GroupAssignments = n.GetCollectionOfObjectValues<MobileAppProvisioningConfigGroupAssignment>(MobileAppProvisioningConfigGroupAssignment.CreateFromDiscriminatorValue).ToList(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as IosLobAppProvisioningConfiguration).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"payload", (o,n) => { (o as IosLobAppProvisioningConfiguration).Payload = n.GetByteArrayValue(); } },
                 {"payloadFileName", (o,n) => { (o as IosLobAppProvisioningConfiguration).PayloadFileName = n.GetStringValue(); } },
                 {"roleScopeTagIds", (o,n) => { (o as IosLobAppProvisioningConfiguration).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"userStatuses", (o,n) => { (o as IosLobAppProvisioningConfiguration).UserStatuses = n.GetCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationUserStatus>().ToList(); } },
+                {"userStatuses", (o,n) => { (o as IosLobAppProvisioningConfiguration).UserStatuses = n.GetCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationUserStatus>(ManagedDeviceMobileAppConfigurationUserStatus.CreateFromDiscriminatorValue).ToList(); } },
                 {"version", (o,n) => { (o as IosLobAppProvisioningConfiguration).Version = n.GetIntValue(); } },
             };
         }

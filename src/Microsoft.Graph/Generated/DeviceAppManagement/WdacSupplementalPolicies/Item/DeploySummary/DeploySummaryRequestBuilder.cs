@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item.De
         /// </summary>
         public async Task<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>(requestInfo, WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// WindowsDefenderApplicationControl supplemental policy deployment summary.

@@ -28,12 +28,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>DateTime in UTC when PartnerDevices will be removed</summary>
         public DateTimeOffset? WhenPartnerDevicesWillBeRemovedDateTime { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DeviceManagementPartner CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DeviceManagementPartner();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"displayName", (o,n) => { (o as DeviceManagementPartner).DisplayName = n.GetStringValue(); } },
-                {"groupsRequiringPartnerEnrollment", (o,n) => { (o as DeviceManagementPartner).GroupsRequiringPartnerEnrollment = n.GetCollectionOfObjectValues<DeviceManagementPartnerAssignment>().ToList(); } },
+                {"groupsRequiringPartnerEnrollment", (o,n) => { (o as DeviceManagementPartner).GroupsRequiringPartnerEnrollment = n.GetCollectionOfObjectValues<DeviceManagementPartnerAssignment>(DeviceManagementPartnerAssignment.CreateFromDiscriminatorValue).ToList(); } },
                 {"isConfigured", (o,n) => { (o as DeviceManagementPartner).IsConfigured = n.GetBoolValue(); } },
                 {"lastHeartbeatDateTime", (o,n) => { (o as DeviceManagementPartner).LastHeartbeatDateTime = n.GetDateTimeOffsetValue(); } },
                 {"partnerAppType", (o,n) => { (o as DeviceManagementPartner).PartnerAppType = n.GetEnumValue<DeviceManagementPartnerAppType>(); } },

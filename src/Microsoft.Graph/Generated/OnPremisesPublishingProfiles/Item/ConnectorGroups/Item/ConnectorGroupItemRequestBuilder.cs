@@ -126,7 +126,7 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.ConnectorGroups.It
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectorGroup> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectorGroup>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectorGroup>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectorGroup.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.

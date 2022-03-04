@@ -24,11 +24,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Number of unknown devices</summary>
         public int? UnknownDeviceCount { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new AdvancedThreatProtectionOnboardingStateSummary CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AdvancedThreatProtectionOnboardingStateSummary();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"advancedThreatProtectionOnboardingDeviceSettingStates", (o,n) => { (o as AdvancedThreatProtectionOnboardingStateSummary).AdvancedThreatProtectionOnboardingDeviceSettingStates = n.GetCollectionOfObjectValues<AdvancedThreatProtectionOnboardingDeviceSettingState>().ToList(); } },
+                {"advancedThreatProtectionOnboardingDeviceSettingStates", (o,n) => { (o as AdvancedThreatProtectionOnboardingStateSummary).AdvancedThreatProtectionOnboardingDeviceSettingStates = n.GetCollectionOfObjectValues<AdvancedThreatProtectionOnboardingDeviceSettingState>(AdvancedThreatProtectionOnboardingDeviceSettingState.CreateFromDiscriminatorValue).ToList(); } },
                 {"compliantDeviceCount", (o,n) => { (o as AdvancedThreatProtectionOnboardingStateSummary).CompliantDeviceCount = n.GetIntValue(); } },
                 {"conflictDeviceCount", (o,n) => { (o as AdvancedThreatProtectionOnboardingStateSummary).ConflictDeviceCount = n.GetIntValue(); } },
                 {"errorDeviceCount", (o,n) => { (o as AdvancedThreatProtectionOnboardingStateSummary).ErrorDeviceCount = n.GetIntValue(); } },

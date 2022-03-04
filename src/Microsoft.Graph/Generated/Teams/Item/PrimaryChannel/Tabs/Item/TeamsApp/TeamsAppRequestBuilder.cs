@@ -78,7 +78,7 @@ namespace MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Tabs.Item.TeamsApp {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.TeamsApp> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.TeamsApp>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.TeamsApp>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.TeamsApp.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The application that is linked to the tab. This cannot be changed after tab creation.</summary>
         public class GetQueryParameters : QueryParametersBase {

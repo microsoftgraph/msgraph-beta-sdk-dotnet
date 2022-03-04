@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Me.Profile.Positions {
         /// </summary>
         public async Task<PositionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PositionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PositionsResponse>(requestInfo, PositionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents detailed information about work positions associated with a user's profile.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Me.Profile.Positions {
         public async Task<WorkPosition> PostAsync(WorkPosition body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<WorkPosition>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WorkPosition>(requestInfo, WorkPosition.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Represents detailed information about work positions associated with a user's profile.</summary>
         public class GetQueryParameters : QueryParametersBase {

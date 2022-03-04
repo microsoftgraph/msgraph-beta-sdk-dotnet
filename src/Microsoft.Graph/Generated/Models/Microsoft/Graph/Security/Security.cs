@@ -5,13 +5,21 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Security {
     public class Security : Entity, IParsable {
-        public InformationProtection InformationProtection { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Security.InformationProtection InformationProtection { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new Security CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Security();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"informationProtection", (o,n) => { (o as Security).InformationProtection = n.GetObjectValue<InformationProtection>(); } },
+                {"informationProtection", (o,n) => { (o as Security).InformationProtection = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Security.InformationProtection>(MicrosoftGraphSdk.Models.Microsoft.Graph.Security.InformationProtection.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -21,7 +29,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Security {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<InformationProtection>("informationProtection", InformationProtection);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Security.InformationProtection>("informationProtection", InformationProtection);
         }
     }
 }

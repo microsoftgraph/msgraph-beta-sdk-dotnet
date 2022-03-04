@@ -18,13 +18,21 @@ namespace MicrosoftGraphSdk.Chats.Item.MarkChatUnreadForUser {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static MarkChatUnreadForUserRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new MarkChatUnreadForUserRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"lastMessageReadDateTime", (o,n) => { (o as MarkChatUnreadForUserRequestBody).LastMessageReadDateTime = n.GetDateTimeOffsetValue(); } },
                 {"tenantId", (o,n) => { (o as MarkChatUnreadForUserRequestBody).TenantId = n.GetStringValue(); } },
-                {"user", (o,n) => { (o as MarkChatUnreadForUserRequestBody).User = n.GetObjectValue<TeamworkUserIdentity>(); } },
+                {"user", (o,n) => { (o as MarkChatUnreadForUserRequestBody).User = n.GetObjectValue<TeamworkUserIdentity>(TeamworkUserIdentity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

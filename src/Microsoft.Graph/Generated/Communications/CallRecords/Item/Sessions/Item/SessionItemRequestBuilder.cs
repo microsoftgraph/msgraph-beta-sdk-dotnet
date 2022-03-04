@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.Communications.CallRecords.Item.Sessions.Item {
         /// </summary>
         public async Task<Session> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Session>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Session>(requestInfo, Session.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.

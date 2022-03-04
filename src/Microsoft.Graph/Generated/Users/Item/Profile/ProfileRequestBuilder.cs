@@ -194,7 +194,7 @@ namespace MicrosoftGraphSdk.Users.Item.Profile {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Profile> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Profile>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Profile>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Profile.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents properties that are descriptive of a user in a tenant.

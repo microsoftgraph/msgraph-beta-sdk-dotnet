@@ -24,13 +24,13 @@ namespace MicrosoftGraphSdk.RoleManagement.Directory.RoleScheduleInstancesWithDi
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="roleDefinitionId">Usage: roleDefinitionId={roleDefinitionId}</param>
         /// </summary>
-        public RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string directoryScopeId = default, string appScopeId = default, string principalId = default, string roleDefinitionId = default) {
+        public RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string appScopeId = default, string directoryScopeId = default, string principalId = default, string roleDefinitionId = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/roleManagement/directory/microsoft.graph.roleScheduleInstances(directoryScopeId='{directoryScopeId}',appScopeId='{appScopeId}',principalId='{principalId}',roleDefinitionId='{roleDefinitionId}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("directoryScopeId", directoryScopeId);
             urlTplParams.Add("appScopeId", appScopeId);
+            urlTplParams.Add("directoryScopeId", directoryScopeId);
             urlTplParams.Add("principalId", principalId);
             urlTplParams.Add("roleDefinitionId", roleDefinitionId);
             PathParameters = urlTplParams;
@@ -74,7 +74,7 @@ namespace MicrosoftGraphSdk.RoleManagement.Directory.RoleScheduleInstancesWithDi
         /// </summary>
         public async Task<IEnumerable<RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId>(requestInfo, RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

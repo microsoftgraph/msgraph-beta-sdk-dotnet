@@ -126,7 +126,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Tables.Item.Worksheet.PivotT
         /// </summary>
         public async Task<WorkbookPivotTable> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<WorkbookPivotTable>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WorkbookPivotTable>(requestInfo, WorkbookPivotTable.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Collection of PivotTables that are part of the worksheet.

@@ -20,13 +20,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static TimeCardEntry CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TimeCardEntry();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"breaks", (o,n) => { (o as TimeCardEntry).Breaks = n.GetCollectionOfObjectValues<TimeCardBreak>().ToList(); } },
-                {"clockInEvent", (o,n) => { (o as TimeCardEntry).ClockInEvent = n.GetObjectValue<TimeCardEvent>(); } },
-                {"clockOutEvent", (o,n) => { (o as TimeCardEntry).ClockOutEvent = n.GetObjectValue<TimeCardEvent>(); } },
+                {"breaks", (o,n) => { (o as TimeCardEntry).Breaks = n.GetCollectionOfObjectValues<TimeCardBreak>(TimeCardBreak.CreateFromDiscriminatorValue).ToList(); } },
+                {"clockInEvent", (o,n) => { (o as TimeCardEntry).ClockInEvent = n.GetObjectValue<TimeCardEvent>(TimeCardEvent.CreateFromDiscriminatorValue); } },
+                {"clockOutEvent", (o,n) => { (o as TimeCardEntry).ClockOutEvent = n.GetObjectValue<TimeCardEvent>(TimeCardEvent.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.CancelMediaProcessing {
         public async Task<CancelMediaProcessingResponse> PostAsync(CancelMediaProcessingRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<CancelMediaProcessingResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CancelMediaProcessingResponse>(requestInfo, CancelMediaProcessingResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes cancelMediaProcessingOperation</summary>
         public class CancelMediaProcessingResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type cancelMediaProcessingOperation</summary>
-            public CancelMediaProcessingOperation CancelMediaProcessingOperation { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.CancelMediaProcessingOperation CancelMediaProcessingOperation { get; set; }
             /// <summary>
             /// Instantiates a new cancelMediaProcessingResponse and sets the default values.
             /// </summary>
             public CancelMediaProcessingResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static CancelMediaProcessingResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new CancelMediaProcessingResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"cancelMediaProcessingOperation", (o,n) => { (o as CancelMediaProcessingResponse).CancelMediaProcessingOperation = n.GetObjectValue<CancelMediaProcessingOperation>(); } },
+                    {"cancelMediaProcessingOperation", (o,n) => { (o as CancelMediaProcessingResponse).CancelMediaProcessingOperation = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.CancelMediaProcessingOperation>(MicrosoftGraphSdk.Models.Microsoft.Graph.CancelMediaProcessingOperation.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.CancelMediaProcessing {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<CancelMediaProcessingOperation>("cancelMediaProcessingOperation", CancelMediaProcessingOperation);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.CancelMediaProcessingOperation>("cancelMediaProcessingOperation", CancelMediaProcessingOperation);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

@@ -40,14 +40,22 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Setting definition version</summary>
         public string Version { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new GroupPolicyDefinition CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new GroupPolicyDefinition();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"category", (o,n) => { (o as GroupPolicyDefinition).Category = n.GetObjectValue<GroupPolicyCategory>(); } },
+                {"category", (o,n) => { (o as GroupPolicyDefinition).Category = n.GetObjectValue<GroupPolicyCategory>(GroupPolicyCategory.CreateFromDiscriminatorValue); } },
                 {"categoryPath", (o,n) => { (o as GroupPolicyDefinition).CategoryPath = n.GetStringValue(); } },
                 {"classType", (o,n) => { (o as GroupPolicyDefinition).ClassType = n.GetEnumValue<GroupPolicyDefinitionClassType>(); } },
-                {"definitionFile", (o,n) => { (o as GroupPolicyDefinition).DefinitionFile = n.GetObjectValue<GroupPolicyDefinitionFile>(); } },
+                {"definitionFile", (o,n) => { (o as GroupPolicyDefinition).DefinitionFile = n.GetObjectValue<GroupPolicyDefinitionFile>(GroupPolicyDefinitionFile.CreateFromDiscriminatorValue); } },
                 {"displayName", (o,n) => { (o as GroupPolicyDefinition).DisplayName = n.GetStringValue(); } },
                 {"explainText", (o,n) => { (o as GroupPolicyDefinition).ExplainText = n.GetStringValue(); } },
                 {"groupPolicyCategoryId", (o,n) => { (o as GroupPolicyDefinition).GroupPolicyCategoryId = n.GetStringValue(); } },
@@ -55,10 +63,10 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"lastModifiedDateTime", (o,n) => { (o as GroupPolicyDefinition).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"minDeviceCspVersion", (o,n) => { (o as GroupPolicyDefinition).MinDeviceCspVersion = n.GetStringValue(); } },
                 {"minUserCspVersion", (o,n) => { (o as GroupPolicyDefinition).MinUserCspVersion = n.GetStringValue(); } },
-                {"nextVersionDefinition", (o,n) => { (o as GroupPolicyDefinition).NextVersionDefinition = n.GetObjectValue<GroupPolicyDefinition>(); } },
+                {"nextVersionDefinition", (o,n) => { (o as GroupPolicyDefinition).NextVersionDefinition = n.GetObjectValue<GroupPolicyDefinition>(GroupPolicyDefinition.CreateFromDiscriminatorValue); } },
                 {"policyType", (o,n) => { (o as GroupPolicyDefinition).PolicyType = n.GetEnumValue<GroupPolicyType>(); } },
-                {"presentations", (o,n) => { (o as GroupPolicyDefinition).Presentations = n.GetCollectionOfObjectValues<GroupPolicyPresentation>().ToList(); } },
-                {"previousVersionDefinition", (o,n) => { (o as GroupPolicyDefinition).PreviousVersionDefinition = n.GetObjectValue<GroupPolicyDefinition>(); } },
+                {"presentations", (o,n) => { (o as GroupPolicyDefinition).Presentations = n.GetCollectionOfObjectValues<GroupPolicyPresentation>(GroupPolicyPresentation.CreateFromDiscriminatorValue).ToList(); } },
+                {"previousVersionDefinition", (o,n) => { (o as GroupPolicyDefinition).PreviousVersionDefinition = n.GetObjectValue<GroupPolicyDefinition>(GroupPolicyDefinition.CreateFromDiscriminatorValue); } },
                 {"supportedOn", (o,n) => { (o as GroupPolicyDefinition).SupportedOn = n.GetStringValue(); } },
                 {"version", (o,n) => { (o as GroupPolicyDefinition).Version = n.GetStringValue(); } },
             };

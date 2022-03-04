@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AndroidDeviceOwnerEnrollmentProfile
         /// </summary>
         public async Task<AndroidDeviceOwnerEnrollmentProfilesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AndroidDeviceOwnerEnrollmentProfilesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AndroidDeviceOwnerEnrollmentProfilesResponse>(requestInfo, AndroidDeviceOwnerEnrollmentProfilesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Android device owner enrollment profile entities.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AndroidDeviceOwnerEnrollmentProfile
         public async Task<AndroidDeviceOwnerEnrollmentProfile> PostAsync(AndroidDeviceOwnerEnrollmentProfile body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AndroidDeviceOwnerEnrollmentProfile>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AndroidDeviceOwnerEnrollmentProfile>(requestInfo, AndroidDeviceOwnerEnrollmentProfile.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Android device owner enrollment profile entities.</summary>
         public class GetQueryParameters : QueryParametersBase {

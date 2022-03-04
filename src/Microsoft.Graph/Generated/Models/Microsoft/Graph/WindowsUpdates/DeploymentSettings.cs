@@ -20,13 +20,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static DeploymentSettings CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DeploymentSettings();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"monitoring", (o,n) => { (o as DeploymentSettings).Monitoring = n.GetObjectValue<MonitoringSettings>(); } },
-                {"rollout", (o,n) => { (o as DeploymentSettings).Rollout = n.GetObjectValue<RolloutSettings>(); } },
-                {"safeguard", (o,n) => { (o as DeploymentSettings).Safeguard = n.GetObjectValue<SafeguardSettings>(); } },
+                {"monitoring", (o,n) => { (o as DeploymentSettings).Monitoring = n.GetObjectValue<MonitoringSettings>(MonitoringSettings.CreateFromDiscriminatorValue); } },
+                {"rollout", (o,n) => { (o as DeploymentSettings).Rollout = n.GetObjectValue<RolloutSettings>(RolloutSettings.CreateFromDiscriminatorValue); } },
+                {"safeguard", (o,n) => { (o as DeploymentSettings).Safeguard = n.GetObjectValue<SafeguardSettings>(SafeguardSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -7,13 +7,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class CurrentLabel : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        public ApplicationMode? ApplicationMode { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ApplicationMode? ApplicationMode { get; set; }
         public string Id { get; set; }
         /// <summary>
         /// Instantiates a new currentLabel and sets the default values.
         /// </summary>
         public CurrentLabel() {
             AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static CurrentLabel CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new CurrentLabel();
         }
         /// <summary>
         /// The deserialization information for the current model

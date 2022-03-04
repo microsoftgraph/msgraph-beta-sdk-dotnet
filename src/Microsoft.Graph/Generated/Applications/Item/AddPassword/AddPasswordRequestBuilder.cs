@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.Applications.Item.AddPassword {
         public async Task<PasswordCredential> PostAsync(PasswordCredentialRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<PasswordCredential>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PasswordCredential>(requestInfo, PasswordCredential.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

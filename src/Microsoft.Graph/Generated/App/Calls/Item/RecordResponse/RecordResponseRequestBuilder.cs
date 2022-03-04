@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.App.Calls.Item.RecordResponse {
         public async Task<RecordResponseResponse> PostAsync(RecordResponseRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<RecordResponseResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RecordResponseResponse>(requestInfo, RecordResponseResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes recordOperation</summary>
         public class RecordResponseResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type recordOperation</summary>
-            public RecordOperation RecordOperation { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.RecordOperation RecordOperation { get; set; }
             /// <summary>
             /// Instantiates a new recordResponseResponse and sets the default values.
             /// </summary>
             public RecordResponseResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static RecordResponseResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new RecordResponseResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"recordOperation", (o,n) => { (o as RecordResponseResponse).RecordOperation = n.GetObjectValue<RecordOperation>(); } },
+                    {"recordOperation", (o,n) => { (o as RecordResponseResponse).RecordOperation = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.RecordOperation>(MicrosoftGraphSdk.Models.Microsoft.Graph.RecordOperation.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.App.Calls.Item.RecordResponse {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<RecordOperation>("recordOperation", RecordOperation);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.RecordOperation>("recordOperation", RecordOperation);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

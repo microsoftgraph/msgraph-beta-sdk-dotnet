@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Chats.Item.LastMessagePreview {
         /// </summary>
         public async Task<ChatMessageInfo> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ChatMessageInfo>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ChatMessageInfo>(requestInfo, ChatMessageInfo.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.

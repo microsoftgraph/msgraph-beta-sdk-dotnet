@@ -10,12 +10,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The language to apply the override.Returned by default. Not nullable.</summary>
         public string LanguageTag { get; set; }
         /// <summary>The translation override behavior for the language, if any.Returned by default. Not nullable.</summary>
-        public TranslationBehavior? TranslationBehavior { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.TranslationBehavior? TranslationBehavior { get; set; }
         /// <summary>
         /// Instantiates a new translationLanguageOverride and sets the default values.
         /// </summary>
         public TranslationLanguageOverride() {
             AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static TranslationLanguageOverride CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TranslationLanguageOverride();
         }
         /// <summary>
         /// The deserialization information for the current model

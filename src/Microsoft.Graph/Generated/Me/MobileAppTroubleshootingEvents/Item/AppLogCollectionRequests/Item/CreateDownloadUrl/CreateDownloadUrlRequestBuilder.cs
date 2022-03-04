@@ -67,26 +67,30 @@ namespace MicrosoftGraphSdk.Me.MobileAppTroubleshootingEvents.Item.AppLogCollect
         /// </summary>
         public async Task<CreateDownloadUrlResponse> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreatePostRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<CreateDownloadUrlResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CreateDownloadUrlResponse>(requestInfo, CreateDownloadUrlResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes appLogCollectionDownloadDetails</summary>
         public class CreateDownloadUrlResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type appLogCollectionDownloadDetails</summary>
-            public AppLogCollectionDownloadDetails AppLogCollectionDownloadDetails { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.AppLogCollectionDownloadDetails AppLogCollectionDownloadDetails { get; set; }
             /// <summary>
             /// Instantiates a new createDownloadUrlResponse and sets the default values.
             /// </summary>
             public CreateDownloadUrlResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static CreateDownloadUrlResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new CreateDownloadUrlResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"appLogCollectionDownloadDetails", (o,n) => { (o as CreateDownloadUrlResponse).AppLogCollectionDownloadDetails = n.GetObjectValue<AppLogCollectionDownloadDetails>(); } },
+                    {"appLogCollectionDownloadDetails", (o,n) => { (o as CreateDownloadUrlResponse).AppLogCollectionDownloadDetails = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AppLogCollectionDownloadDetails>(MicrosoftGraphSdk.Models.Microsoft.Graph.AppLogCollectionDownloadDetails.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -95,7 +99,7 @@ namespace MicrosoftGraphSdk.Me.MobileAppTroubleshootingEvents.Item.AppLogCollect
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<AppLogCollectionDownloadDetails>("appLogCollectionDownloadDetails", AppLogCollectionDownloadDetails);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AppLogCollectionDownloadDetails>("appLogCollectionDownloadDetails", AppLogCollectionDownloadDetails);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Directory.Recommendations {
         /// </summary>
         public async Task<RecommendationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RecommendationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RecommendationsResponse>(requestInfo, RecommendationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to recommendations for directory
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Directory.Recommendations {
         public async Task<Recommendation> PostAsync(Recommendation body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<Recommendation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Recommendation>(requestInfo, Recommendation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get recommendations from directory</summary>
         public class GetQueryParameters : QueryParametersBase {

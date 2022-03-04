@@ -9,15 +9,23 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Friendly name the user has assigned to this address.</summary>
         public string DisplayName { get; set; }
         /// <summary>The geocoordinates of the address.</summary>
-        public GeoCoordinates GeoCoordinates { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.GeoCoordinates GeoCoordinates { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new ItemAddress CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ItemAddress();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"detail", (o,n) => { (o as ItemAddress).Detail = n.GetObjectValue<PhysicalAddress>(); } },
+                {"detail", (o,n) => { (o as ItemAddress).Detail = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
                 {"displayName", (o,n) => { (o as ItemAddress).DisplayName = n.GetStringValue(); } },
-                {"geoCoordinates", (o,n) => { (o as ItemAddress).GeoCoordinates = n.GetObjectValue<GeoCoordinates>(); } },
+                {"geoCoordinates", (o,n) => { (o as ItemAddress).GeoCoordinates = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.GeoCoordinates>(MicrosoftGraphSdk.Models.Microsoft.Graph.GeoCoordinates.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -29,7 +37,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             base.Serialize(writer);
             writer.WriteObjectValue<PhysicalAddress>("detail", Detail);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<GeoCoordinates>("geoCoordinates", GeoCoordinates);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.GeoCoordinates>("geoCoordinates", GeoCoordinates);
         }
     }
 }

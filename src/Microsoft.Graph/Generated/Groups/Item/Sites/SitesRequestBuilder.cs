@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Sites {
         /// </summary>
         public async Task<SitesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SitesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SitesResponse>(requestInfo, SitesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of SharePoint sites in this group. Access the default site with /sites/root.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Sites {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Site> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Site body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Site>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Site>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Site.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The list of SharePoint sites in this group. Access the default site with /sites/root.</summary>
         public class GetQueryParameters : QueryParametersBase {

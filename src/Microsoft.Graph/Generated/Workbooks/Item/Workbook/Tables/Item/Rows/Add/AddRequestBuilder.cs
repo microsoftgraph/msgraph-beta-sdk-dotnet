@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Tables.Item.Rows.Add {
         public async Task<AddResponse> PostAsync(AddRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AddResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AddResponse>(requestInfo, AddResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes workbookTableRow</summary>
         public class AddResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type workbookTableRow</summary>
-            public WorkbookTableRow WorkbookTableRow { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookTableRow WorkbookTableRow { get; set; }
             /// <summary>
             /// Instantiates a new addResponse and sets the default values.
             /// </summary>
             public AddResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static AddResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new AddResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"workbookTableRow", (o,n) => { (o as AddResponse).WorkbookTableRow = n.GetObjectValue<WorkbookTableRow>(); } },
+                    {"workbookTableRow", (o,n) => { (o as AddResponse).WorkbookTableRow = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookTableRow>(MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookTableRow.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Tables.Item.Rows.Add {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<WorkbookTableRow>("workbookTableRow", WorkbookTableRow);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookTableRow>("workbookTableRow", WorkbookTableRow);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.App.Calls.Item.PlayPrompt {
         public async Task<PlayPromptResponse> PostAsync(PlayPromptRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<PlayPromptResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PlayPromptResponse>(requestInfo, PlayPromptResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes playPromptOperation</summary>
         public class PlayPromptResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type playPromptOperation</summary>
-            public PlayPromptOperation PlayPromptOperation { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.PlayPromptOperation PlayPromptOperation { get; set; }
             /// <summary>
             /// Instantiates a new playPromptResponse and sets the default values.
             /// </summary>
             public PlayPromptResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static PlayPromptResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new PlayPromptResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"playPromptOperation", (o,n) => { (o as PlayPromptResponse).PlayPromptOperation = n.GetObjectValue<PlayPromptOperation>(); } },
+                    {"playPromptOperation", (o,n) => { (o as PlayPromptResponse).PlayPromptOperation = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PlayPromptOperation>(MicrosoftGraphSdk.Models.Microsoft.Graph.PlayPromptOperation.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.App.Calls.Item.PlayPrompt {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<PlayPromptOperation>("playPromptOperation", PlayPromptOperation);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PlayPromptOperation>("playPromptOperation", PlayPromptOperation);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

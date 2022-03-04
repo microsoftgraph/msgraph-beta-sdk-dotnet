@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Copy {
         public async Task<CopyResponse> PostAsync(CopyRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<CopyResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CopyResponse>(requestInfo, CopyResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes driveItem</summary>
         public class CopyResponse : IParsable {
@@ -86,12 +86,16 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Copy {
             public CopyResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static CopyResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new CopyResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"driveItem", (o,n) => { (o as CopyResponse).DriveItem = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>(); } },
+                    {"driveItem", (o,n) => { (o as CopyResponse).DriveItem = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>(MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>

@@ -126,7 +126,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Tags.Item {
         /// </summary>
         public async Task<Tag> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Tag>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Tag>(requestInfo, Tag.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Returns a list of tag objects associated to this case.

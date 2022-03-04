@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Reports.UserCredentialUsageDetails {
         /// </summary>
         public async Task<UserCredentialUsageDetailsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UserCredentialUsageDetailsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserCredentialUsageDetailsResponse>(requestInfo, UserCredentialUsageDetailsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents the self-service password reset (SSPR) usage for a given tenant.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Reports.UserCredentialUsageDetails {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.UserCredentialUsageDetails> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.UserCredentialUsageDetails body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.UserCredentialUsageDetails>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.UserCredentialUsageDetails>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.UserCredentialUsageDetails.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Represents the self-service password reset (SSPR) usage for a given tenant.</summary>
         public class GetQueryParameters : QueryParametersBase {

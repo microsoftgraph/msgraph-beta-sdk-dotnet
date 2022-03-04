@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ConfigurationCategories {
         /// </summary>
         public async Task<ConfigurationCategoriesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ConfigurationCategoriesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ConfigurationCategoriesResponse>(requestInfo, ConfigurationCategoriesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of all Configuration Categories
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ConfigurationCategories {
         public async Task<DeviceManagementConfigurationCategory> PostAsync(DeviceManagementConfigurationCategory body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementConfigurationCategory>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementConfigurationCategory>(requestInfo, DeviceManagementConfigurationCategory.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>List of all Configuration Categories</summary>
         public class GetQueryParameters : QueryParametersBase {

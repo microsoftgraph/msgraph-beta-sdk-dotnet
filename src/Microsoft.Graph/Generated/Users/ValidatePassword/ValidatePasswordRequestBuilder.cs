@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.Users.ValidatePassword {
         public async Task<ValidatePasswordResponse> PostAsync(ValidatePasswordRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ValidatePasswordResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ValidatePasswordResponse>(requestInfo, ValidatePasswordResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes passwordValidationInformation</summary>
         public class ValidatePasswordResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type passwordValidationInformation</summary>
-            public PasswordValidationInformation PasswordValidationInformation { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.PasswordValidationInformation PasswordValidationInformation { get; set; }
             /// <summary>
             /// Instantiates a new validatePasswordResponse and sets the default values.
             /// </summary>
             public ValidatePasswordResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static ValidatePasswordResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new ValidatePasswordResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"passwordValidationInformation", (o,n) => { (o as ValidatePasswordResponse).PasswordValidationInformation = n.GetObjectValue<PasswordValidationInformation>(); } },
+                    {"passwordValidationInformation", (o,n) => { (o as ValidatePasswordResponse).PasswordValidationInformation = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PasswordValidationInformation>(MicrosoftGraphSdk.Models.Microsoft.Graph.PasswordValidationInformation.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.Users.ValidatePassword {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<PasswordValidationInformation>("passwordValidationInformation", PasswordValidationInformation);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PasswordValidationInformation>("passwordValidationInformation", PasswordValidationInformation);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Agreements.Item.Acceptances {
         /// </summary>
         public async Task<AcceptancesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AcceptancesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AcceptancesResponse>(requestInfo, AcceptancesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Read-only. Information about acceptances of this agreement.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Agreements.Item.Acceptances {
         public async Task<AgreementAcceptance> PostAsync(AgreementAcceptance body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AgreementAcceptance>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AgreementAcceptance>(requestInfo, AgreementAcceptance.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Read-only. Information about acceptances of this agreement.</summary>
         public class GetQueryParameters : QueryParametersBase {

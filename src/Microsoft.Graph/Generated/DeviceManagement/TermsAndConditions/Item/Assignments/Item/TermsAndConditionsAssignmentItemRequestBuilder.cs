@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.TermsAndConditions.Item.Assignments
         /// </summary>
         public async Task<TermsAndConditionsAssignment> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TermsAndConditionsAssignment>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TermsAndConditionsAssignment>(requestInfo, TermsAndConditionsAssignment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of assignments for this T&C policy.

@@ -27,13 +27,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static WorkloadActionDeploymentStatus CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new WorkloadActionDeploymentStatus();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"actionId", (o,n) => { (o as WorkloadActionDeploymentStatus).ActionId = n.GetStringValue(); } },
                 {"deployedPolicyId", (o,n) => { (o as WorkloadActionDeploymentStatus).DeployedPolicyId = n.GetStringValue(); } },
-                {"error", (o,n) => { (o as WorkloadActionDeploymentStatus).Error = n.GetObjectValue<GenericError>(); } },
+                {"error", (o,n) => { (o as WorkloadActionDeploymentStatus).Error = n.GetObjectValue<GenericError>(GenericError.CreateFromDiscriminatorValue); } },
                 {"excludeGroups", (o,n) => { (o as WorkloadActionDeploymentStatus).ExcludeGroups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"includeAllUsers", (o,n) => { (o as WorkloadActionDeploymentStatus).IncludeAllUsers = n.GetBoolValue(); } },
                 {"includeGroups", (o,n) => { (o as WorkloadActionDeploymentStatus).IncludeGroups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },

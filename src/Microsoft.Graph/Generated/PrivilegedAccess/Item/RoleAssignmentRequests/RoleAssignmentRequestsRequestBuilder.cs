@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.PrivilegedAccess.Item.RoleAssignmentRequests {
         /// </summary>
         public async Task<RoleAssignmentRequestsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RoleAssignmentRequestsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RoleAssignmentRequestsResponse>(requestInfo, RoleAssignmentRequestsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A collection of role assignment requests for the provider.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.PrivilegedAccess.Item.RoleAssignmentRequests {
         public async Task<GovernanceRoleAssignmentRequest> PostAsync(GovernanceRoleAssignmentRequest body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<GovernanceRoleAssignmentRequest>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GovernanceRoleAssignmentRequest>(requestInfo, GovernanceRoleAssignmentRequest.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>A collection of role assignment requests for the provider.</summary>
         public class GetQueryParameters : QueryParametersBase {

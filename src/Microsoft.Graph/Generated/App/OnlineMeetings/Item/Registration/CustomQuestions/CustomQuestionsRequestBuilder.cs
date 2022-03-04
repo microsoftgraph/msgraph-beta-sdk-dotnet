@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.App.OnlineMeetings.Item.Registration.CustomQuestions
         /// </summary>
         public async Task<CustomQuestionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CustomQuestionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CustomQuestionsResponse>(requestInfo, CustomQuestionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Custom registration questions.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.App.OnlineMeetings.Item.Registration.CustomQuestions
         public async Task<MeetingRegistrationQuestion> PostAsync(MeetingRegistrationQuestion body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MeetingRegistrationQuestion>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MeetingRegistrationQuestion>(requestInfo, MeetingRegistrationQuestion.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Custom registration questions.</summary>
         public class GetQueryParameters : QueryParametersBase {

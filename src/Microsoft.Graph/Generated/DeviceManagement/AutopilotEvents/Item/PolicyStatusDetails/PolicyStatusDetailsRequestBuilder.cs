@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AutopilotEvents.Item.PolicyStatusDe
         /// </summary>
         public async Task<PolicyStatusDetailsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PolicyStatusDetailsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PolicyStatusDetailsResponse>(requestInfo, PolicyStatusDetailsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Policy and application status details for this device.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AutopilotEvents.Item.PolicyStatusDe
         public async Task<DeviceManagementAutopilotPolicyStatusDetail> PostAsync(DeviceManagementAutopilotPolicyStatusDetail body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementAutopilotPolicyStatusDetail>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementAutopilotPolicyStatusDetail>(requestInfo, DeviceManagementAutopilotPolicyStatusDetail.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Policy and application status details for this device.</summary>
         public class GetQueryParameters : QueryParametersBase {

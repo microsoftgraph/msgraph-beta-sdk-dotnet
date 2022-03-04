@@ -10,6 +10,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The tenant identifier for the partner Azure AD organization. Read-only.</summary>
         public string TenantId { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new CrossTenantAccessPolicyConfigurationPartner CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new CrossTenantAccessPolicyConfigurationPartner();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {

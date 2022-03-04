@@ -17,12 +17,20 @@ namespace MicrosoftGraphSdk.App.Calls.Item.Transfer {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static TransferRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TransferRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"transferee", (o,n) => { (o as TransferRequestBody).Transferee = n.GetObjectValue<ParticipantInfo>(); } },
-                {"transferTarget", (o,n) => { (o as TransferRequestBody).TransferTarget = n.GetObjectValue<InvitationParticipantInfo>(); } },
+                {"transferee", (o,n) => { (o as TransferRequestBody).Transferee = n.GetObjectValue<ParticipantInfo>(ParticipantInfo.CreateFromDiscriminatorValue); } },
+                {"transferTarget", (o,n) => { (o as TransferRequestBody).TransferTarget = n.GetObjectValue<InvitationParticipantInfo>(InvitationParticipantInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -8,12 +8,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public bool? IsDefault { get; set; }
         public List<UnifiedRolePermission> RolePermissions { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DefaultUserRoleOverride CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DefaultUserRoleOverride();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"isDefault", (o,n) => { (o as DefaultUserRoleOverride).IsDefault = n.GetBoolValue(); } },
-                {"rolePermissions", (o,n) => { (o as DefaultUserRoleOverride).RolePermissions = n.GetCollectionOfObjectValues<UnifiedRolePermission>().ToList(); } },
+                {"rolePermissions", (o,n) => { (o as DefaultUserRoleOverride).RolePermissions = n.GetCollectionOfObjectValues<UnifiedRolePermission>(UnifiedRolePermission.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

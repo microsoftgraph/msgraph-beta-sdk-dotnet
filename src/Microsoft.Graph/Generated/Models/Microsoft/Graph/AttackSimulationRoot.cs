@@ -9,12 +9,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Represent attack simulation and training campaign of a tenant.</summary>
         public List<Simulation> Simulations { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new AttackSimulationRoot CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AttackSimulationRoot();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"simulationAutomations", (o,n) => { (o as AttackSimulationRoot).SimulationAutomations = n.GetCollectionOfObjectValues<SimulationAutomation>().ToList(); } },
-                {"simulations", (o,n) => { (o as AttackSimulationRoot).Simulations = n.GetCollectionOfObjectValues<Simulation>().ToList(); } },
+                {"simulationAutomations", (o,n) => { (o as AttackSimulationRoot).SimulationAutomations = n.GetCollectionOfObjectValues<SimulationAutomation>(SimulationAutomation.CreateFromDiscriminatorValue).ToList(); } },
+                {"simulations", (o,n) => { (o as AttackSimulationRoot).Simulations = n.GetCollectionOfObjectValues<Simulation>(Simulation.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

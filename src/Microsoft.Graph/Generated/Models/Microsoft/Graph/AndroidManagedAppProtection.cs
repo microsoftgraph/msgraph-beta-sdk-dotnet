@@ -76,6 +76,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Maximum number of days Company Portal update can be deferred on the device or the company data on the app will be wiped</summary>
         public int? WipeAfterCompanyPortalUpdateDeferralInDays { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new AndroidManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AndroidManagedAppProtection();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -87,8 +95,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"appActionIfAndroidSafetyNetAppsVerificationFailed", (o,n) => { (o as AndroidManagedAppProtection).AppActionIfAndroidSafetyNetAppsVerificationFailed = n.GetEnumValue<ManagedAppRemediationAction>(); } },
                 {"appActionIfAndroidSafetyNetDeviceAttestationFailed", (o,n) => { (o as AndroidManagedAppProtection).AppActionIfAndroidSafetyNetDeviceAttestationFailed = n.GetEnumValue<ManagedAppRemediationAction>(); } },
                 {"appActionIfDeviceLockNotSet", (o,n) => { (o as AndroidManagedAppProtection).AppActionIfDeviceLockNotSet = n.GetEnumValue<ManagedAppRemediationAction>(); } },
-                {"approvedKeyboards", (o,n) => { (o as AndroidManagedAppProtection).ApprovedKeyboards = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
-                {"apps", (o,n) => { (o as AndroidManagedAppProtection).Apps = n.GetCollectionOfObjectValues<ManagedMobileApp>().ToList(); } },
+                {"approvedKeyboards", (o,n) => { (o as AndroidManagedAppProtection).ApprovedKeyboards = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"apps", (o,n) => { (o as AndroidManagedAppProtection).Apps = n.GetCollectionOfObjectValues<ManagedMobileApp>(ManagedMobileApp.CreateFromDiscriminatorValue).ToList(); } },
                 {"biometricAuthenticationBlocked", (o,n) => { (o as AndroidManagedAppProtection).BiometricAuthenticationBlocked = n.GetBoolValue(); } },
                 {"blockAfterCompanyPortalUpdateDeferralInDays", (o,n) => { (o as AndroidManagedAppProtection).BlockAfterCompanyPortalUpdateDeferralInDays = n.GetIntValue(); } },
                 {"connectToVpnOnLaunch", (o,n) => { (o as AndroidManagedAppProtection).ConnectToVpnOnLaunch = n.GetBoolValue(); } },
@@ -97,11 +105,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"customDialerAppDisplayName", (o,n) => { (o as AndroidManagedAppProtection).CustomDialerAppDisplayName = n.GetStringValue(); } },
                 {"customDialerAppPackageId", (o,n) => { (o as AndroidManagedAppProtection).CustomDialerAppPackageId = n.GetStringValue(); } },
                 {"deployedAppCount", (o,n) => { (o as AndroidManagedAppProtection).DeployedAppCount = n.GetIntValue(); } },
-                {"deploymentSummary", (o,n) => { (o as AndroidManagedAppProtection).DeploymentSummary = n.GetObjectValue<ManagedAppPolicyDeploymentSummary>(); } },
+                {"deploymentSummary", (o,n) => { (o as AndroidManagedAppProtection).DeploymentSummary = n.GetObjectValue<ManagedAppPolicyDeploymentSummary>(ManagedAppPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
                 {"deviceLockRequired", (o,n) => { (o as AndroidManagedAppProtection).DeviceLockRequired = n.GetBoolValue(); } },
                 {"disableAppEncryptionIfDeviceEncryptionIsEnabled", (o,n) => { (o as AndroidManagedAppProtection).DisableAppEncryptionIfDeviceEncryptionIsEnabled = n.GetBoolValue(); } },
                 {"encryptAppData", (o,n) => { (o as AndroidManagedAppProtection).EncryptAppData = n.GetBoolValue(); } },
-                {"exemptedAppPackages", (o,n) => { (o as AndroidManagedAppProtection).ExemptedAppPackages = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
+                {"exemptedAppPackages", (o,n) => { (o as AndroidManagedAppProtection).ExemptedAppPackages = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
                 {"keyboardsRestricted", (o,n) => { (o as AndroidManagedAppProtection).KeyboardsRestricted = n.GetBoolValue(); } },
                 {"minimumRequiredCompanyPortalVersion", (o,n) => { (o as AndroidManagedAppProtection).MinimumRequiredCompanyPortalVersion = n.GetStringValue(); } },
                 {"minimumRequiredPatchVersion", (o,n) => { (o as AndroidManagedAppProtection).MinimumRequiredPatchVersion = n.GetStringValue(); } },

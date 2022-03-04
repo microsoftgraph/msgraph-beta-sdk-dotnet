@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.LicenseDetails {
         /// </summary>
         public async Task<LicenseDetailsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<LicenseDetailsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<LicenseDetailsResponse>(requestInfo, LicenseDetailsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to licenseDetails for servicePrincipals
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.LicenseDetails {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.LicenseDetails> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.LicenseDetails body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.LicenseDetails>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.LicenseDetails>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.LicenseDetails.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get licenseDetails from servicePrincipals</summary>
         public class GetQueryParameters : QueryParametersBase {

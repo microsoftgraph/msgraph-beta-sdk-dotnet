@@ -19,14 +19,22 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.Vlookup {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static VlookupRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new VlookupRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"colIndexNum", (o,n) => { (o as VlookupRequestBody).ColIndexNum = n.GetObjectValue<Json>(); } },
-                {"lookupValue", (o,n) => { (o as VlookupRequestBody).LookupValue = n.GetObjectValue<Json>(); } },
-                {"rangeLookup", (o,n) => { (o as VlookupRequestBody).RangeLookup = n.GetObjectValue<Json>(); } },
-                {"tableArray", (o,n) => { (o as VlookupRequestBody).TableArray = n.GetObjectValue<Json>(); } },
+                {"colIndexNum", (o,n) => { (o as VlookupRequestBody).ColIndexNum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"lookupValue", (o,n) => { (o as VlookupRequestBody).LookupValue = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"rangeLookup", (o,n) => { (o as VlookupRequestBody).RangeLookup = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"tableArray", (o,n) => { (o as VlookupRequestBody).TableArray = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

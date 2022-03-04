@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.RoleManagement.CloudPC.ResourceNamespaces {
         /// </summary>
         public async Task<ResourceNamespacesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ResourceNamespacesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ResourceNamespacesResponse>(requestInfo, ResourceNamespacesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to resourceNamespaces for roleManagement
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.RoleManagement.CloudPC.ResourceNamespaces {
         public async Task<UnifiedRbacResourceNamespace> PostAsync(UnifiedRbacResourceNamespace body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UnifiedRbacResourceNamespace>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UnifiedRbacResourceNamespace>(requestInfo, UnifiedRbacResourceNamespace.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get resourceNamespaces from roleManagement</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -17,13 +17,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static UserFlowApiConnectorConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new UserFlowApiConnectorConfiguration();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"postAttributeCollection", (o,n) => { (o as UserFlowApiConnectorConfiguration).PostAttributeCollection = n.GetObjectValue<IdentityApiConnector>(); } },
-                {"postFederationSignup", (o,n) => { (o as UserFlowApiConnectorConfiguration).PostFederationSignup = n.GetObjectValue<IdentityApiConnector>(); } },
-                {"preTokenIssuance", (o,n) => { (o as UserFlowApiConnectorConfiguration).PreTokenIssuance = n.GetObjectValue<IdentityApiConnector>(); } },
+                {"postAttributeCollection", (o,n) => { (o as UserFlowApiConnectorConfiguration).PostAttributeCollection = n.GetObjectValue<IdentityApiConnector>(IdentityApiConnector.CreateFromDiscriminatorValue); } },
+                {"postFederationSignup", (o,n) => { (o as UserFlowApiConnectorConfiguration).PostFederationSignup = n.GetObjectValue<IdentityApiConnector>(IdentityApiConnector.CreateFromDiscriminatorValue); } },
+                {"preTokenIssuance", (o,n) => { (o as UserFlowApiConnectorConfiguration).PreTokenIssuance = n.GetObjectValue<IdentityApiConnector>(IdentityApiConnector.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

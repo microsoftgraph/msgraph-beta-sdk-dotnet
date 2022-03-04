@@ -14,9 +14,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Encryption policy setting state. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.</summary>
         public ComplianceStatus? EncryptionPolicySettingState { get; set; }
         /// <summary>Encryption readiness state. Possible values are: notReady, ready.</summary>
-        public EncryptionReadinessState? EncryptionReadinessState { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.EncryptionReadinessState? EncryptionReadinessState { get; set; }
         /// <summary>Device encryption state. Possible values are: notEncrypted, encrypted.</summary>
-        public EncryptionState? EncryptionState { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.EncryptionState? EncryptionState { get; set; }
         /// <summary>FileVault State. Possible values are: success, driveEncryptedByUser, userDeferredEncryption, escrowNotEnabled.</summary>
         public FileVaultState? FileVaultStates { get; set; }
         /// <summary>Operating system version of the device</summary>
@@ -27,6 +27,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string TpmSpecificationVersion { get; set; }
         /// <summary>User name</summary>
         public string UserPrincipalName { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new ManagedDeviceEncryptionState CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ManagedDeviceEncryptionState();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -40,7 +48,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"encryptionState", (o,n) => { (o as ManagedDeviceEncryptionState).EncryptionState = n.GetEnumValue<EncryptionState>(); } },
                 {"fileVaultStates", (o,n) => { (o as ManagedDeviceEncryptionState).FileVaultStates = n.GetEnumValue<FileVaultState>(); } },
                 {"osVersion", (o,n) => { (o as ManagedDeviceEncryptionState).OsVersion = n.GetStringValue(); } },
-                {"policyDetails", (o,n) => { (o as ManagedDeviceEncryptionState).PolicyDetails = n.GetCollectionOfObjectValues<EncryptionReportPolicyDetails>().ToList(); } },
+                {"policyDetails", (o,n) => { (o as ManagedDeviceEncryptionState).PolicyDetails = n.GetCollectionOfObjectValues<EncryptionReportPolicyDetails>(EncryptionReportPolicyDetails.CreateFromDiscriminatorValue).ToList(); } },
                 {"tpmSpecificationVersion", (o,n) => { (o as ManagedDeviceEncryptionState).TpmSpecificationVersion = n.GetStringValue(); } },
                 {"userPrincipalName", (o,n) => { (o as ManagedDeviceEncryptionState).UserPrincipalName = n.GetStringValue(); } },
             };

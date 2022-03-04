@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Policies.ServicePrincipalCreationPolicies.Item.Exclu
         /// </summary>
         public async Task<ExcludesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ExcludesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ExcludesResponse>(requestInfo, ExcludesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to excludes for policies
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Policies.ServicePrincipalCreationPolicies.Item.Exclu
         public async Task<ServicePrincipalCreationConditionSet> PostAsync(ServicePrincipalCreationConditionSet body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ServicePrincipalCreationConditionSet>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ServicePrincipalCreationConditionSet>(requestInfo, ServicePrincipalCreationConditionSet.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get excludes from policies</summary>
         public class GetQueryParameters : QueryParametersBase {

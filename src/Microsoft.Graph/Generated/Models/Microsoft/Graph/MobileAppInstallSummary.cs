@@ -26,6 +26,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Number of Users that have 1 or more device that have been notified to install this app and have 0 devices with failures.</summary>
         public int? PendingInstallUserCount { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new MobileAppInstallSummary CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new MobileAppInstallSummary();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {

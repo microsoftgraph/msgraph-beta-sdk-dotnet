@@ -130,7 +130,7 @@ namespace MicrosoftGraphSdk.ApprovalWorkflowProviders.Item {
         /// </summary>
         public async Task<ApprovalWorkflowProvider> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ApprovalWorkflowProvider>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ApprovalWorkflowProvider>(requestInfo, ApprovalWorkflowProvider.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update entity in approvalWorkflowProviders

@@ -18,6 +18,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
         /// <summary>Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.</summary>
         public List<UserSource> UserSources { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new Custodian CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Custodian();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -25,9 +33,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
                 {"acknowledgedDateTime", (o,n) => { (o as Custodian).AcknowledgedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"applyHoldToSources", (o,n) => { (o as Custodian).ApplyHoldToSources = n.GetBoolValue(); } },
                 {"email", (o,n) => { (o as Custodian).Email = n.GetStringValue(); } },
-                {"siteSources", (o,n) => { (o as Custodian).SiteSources = n.GetCollectionOfObjectValues<SiteSource>().ToList(); } },
-                {"unifiedGroupSources", (o,n) => { (o as Custodian).UnifiedGroupSources = n.GetCollectionOfObjectValues<UnifiedGroupSource>().ToList(); } },
-                {"userSources", (o,n) => { (o as Custodian).UserSources = n.GetCollectionOfObjectValues<UserSource>().ToList(); } },
+                {"siteSources", (o,n) => { (o as Custodian).SiteSources = n.GetCollectionOfObjectValues<SiteSource>(SiteSource.CreateFromDiscriminatorValue).ToList(); } },
+                {"unifiedGroupSources", (o,n) => { (o as Custodian).UnifiedGroupSources = n.GetCollectionOfObjectValues<UnifiedGroupSource>(UnifiedGroupSource.CreateFromDiscriminatorValue).ToList(); } },
+                {"userSources", (o,n) => { (o as Custodian).UserSources = n.GetCollectionOfObjectValues<UserSource>(UserSource.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

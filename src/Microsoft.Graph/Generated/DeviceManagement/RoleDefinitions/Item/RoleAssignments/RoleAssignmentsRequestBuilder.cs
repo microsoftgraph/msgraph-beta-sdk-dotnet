@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.RoleDefinitions.Item.RoleAssignment
         /// </summary>
         public async Task<RoleAssignmentsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RoleAssignmentsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RoleAssignmentsResponse>(requestInfo, RoleAssignmentsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of Role assignments for this role definition.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.RoleDefinitions.Item.RoleAssignment
         public async Task<RoleAssignment> PostAsync(RoleAssignment body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<RoleAssignment>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RoleAssignment>(requestInfo, RoleAssignment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>List of Role assignments for this role definition.</summary>
         public class GetQueryParameters : QueryParametersBase {

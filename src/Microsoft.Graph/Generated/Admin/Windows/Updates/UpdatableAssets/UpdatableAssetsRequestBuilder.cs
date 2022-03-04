@@ -115,7 +115,7 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets {
         /// </summary>
         public async Task<UpdatableAssetsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UpdatableAssetsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UpdatableAssetsResponse>(requestInfo, UpdatableAssetsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Assets registered with the deployment service that can receive updates. Read-only.
@@ -128,7 +128,7 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets {
         public async Task<UpdatableAsset> PostAsync(UpdatableAsset body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UpdatableAsset>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UpdatableAsset>(requestInfo, UpdatableAsset.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Assets registered with the deployment service that can receive updates. Read-only.</summary>
         public class GetQueryParameters : QueryParametersBase {

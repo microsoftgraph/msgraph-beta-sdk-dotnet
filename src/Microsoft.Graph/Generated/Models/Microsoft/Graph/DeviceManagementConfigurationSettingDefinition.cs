@@ -42,12 +42,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Setting visibility scope to UX. Possible values are: none, settingsCatalog, template.</summary>
         public DeviceManagementConfigurationSettingVisibility? Visibility { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DeviceManagementConfigurationSettingDefinition CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DeviceManagementConfigurationSettingDefinition();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"accessTypes", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).AccessTypes = n.GetEnumValue<DeviceManagementConfigurationSettingAccessTypes>(); } },
-                {"applicability", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).Applicability = n.GetObjectValue<DeviceManagementConfigurationSettingApplicability>(); } },
+                {"applicability", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).Applicability = n.GetObjectValue<DeviceManagementConfigurationSettingApplicability>(DeviceManagementConfigurationSettingApplicability.CreateFromDiscriminatorValue); } },
                 {"baseUri", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).BaseUri = n.GetStringValue(); } },
                 {"categoryId", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).CategoryId = n.GetStringValue(); } },
                 {"description", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).Description = n.GetStringValue(); } },
@@ -56,9 +64,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"infoUrls", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).InfoUrls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"keywords", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).Keywords = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"name", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).Name = n.GetStringValue(); } },
-                {"occurrence", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).Occurrence = n.GetObjectValue<DeviceManagementConfigurationSettingOccurrence>(); } },
+                {"occurrence", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).Occurrence = n.GetObjectValue<DeviceManagementConfigurationSettingOccurrence>(DeviceManagementConfigurationSettingOccurrence.CreateFromDiscriminatorValue); } },
                 {"offsetUri", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).OffsetUri = n.GetStringValue(); } },
-                {"referredSettingInformationList", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).ReferredSettingInformationList = n.GetCollectionOfObjectValues<DeviceManagementConfigurationReferredSettingInformation>().ToList(); } },
+                {"referredSettingInformationList", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).ReferredSettingInformationList = n.GetCollectionOfObjectValues<DeviceManagementConfigurationReferredSettingInformation>(DeviceManagementConfigurationReferredSettingInformation.CreateFromDiscriminatorValue).ToList(); } },
                 {"rootDefinitionId", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).RootDefinitionId = n.GetStringValue(); } },
                 {"settingUsage", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).SettingUsage = n.GetEnumValue<DeviceManagementConfigurationSettingUsage>(); } },
                 {"uxBehavior", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).UxBehavior = n.GetEnumValue<DeviceManagementConfigurationControlType>(); } },

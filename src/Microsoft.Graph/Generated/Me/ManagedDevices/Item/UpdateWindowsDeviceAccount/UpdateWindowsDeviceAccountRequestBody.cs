@@ -8,7 +8,7 @@ namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.UpdateWindowsDeviceAccount {
     public class UpdateWindowsDeviceAccountRequestBody : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        public UpdateWindowsDeviceAccountActionParameter UpdateWindowsDeviceAccountActionParameter { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.UpdateWindowsDeviceAccountActionParameter UpdateWindowsDeviceAccountActionParameter { get; set; }
         /// <summary>
         /// Instantiates a new updateWindowsDeviceAccountRequestBody and sets the default values.
         /// </summary>
@@ -16,11 +16,19 @@ namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.UpdateWindowsDeviceAccount {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static UpdateWindowsDeviceAccountRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new UpdateWindowsDeviceAccountRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"updateWindowsDeviceAccountActionParameter", (o,n) => { (o as UpdateWindowsDeviceAccountRequestBody).UpdateWindowsDeviceAccountActionParameter = n.GetObjectValue<UpdateWindowsDeviceAccountActionParameter>(); } },
+                {"updateWindowsDeviceAccountActionParameter", (o,n) => { (o as UpdateWindowsDeviceAccountRequestBody).UpdateWindowsDeviceAccountActionParameter = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.UpdateWindowsDeviceAccountActionParameter>(MicrosoftGraphSdk.Models.Microsoft.Graph.UpdateWindowsDeviceAccountActionParameter.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -29,7 +37,7 @@ namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.UpdateWindowsDeviceAccount {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UpdateWindowsDeviceAccountActionParameter>("updateWindowsDeviceAccountActionParameter", UpdateWindowsDeviceAccountActionParameter);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.UpdateWindowsDeviceAccountActionParameter>("updateWindowsDeviceAccountActionParameter", UpdateWindowsDeviceAccountActionParameter);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -71,7 +71,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeploymentProfiles.
         public async Task<IEnumerable<HasPayloadLinks>> PostAsync(HasPayloadLinksRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendCollectionAsync<HasPayloadLinks>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<HasPayloadLinks>(requestInfo, HasPayloadLinks.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

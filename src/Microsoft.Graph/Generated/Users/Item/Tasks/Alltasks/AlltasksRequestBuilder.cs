@@ -106,7 +106,7 @@ namespace MicrosoftGraphSdk.Users.Item.Tasks.Alltasks {
         /// </summary>
         public async Task<AlltasksResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AlltasksResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AlltasksResponse>(requestInfo, AlltasksResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// All tasks in the users mailbox.
@@ -119,7 +119,7 @@ namespace MicrosoftGraphSdk.Users.Item.Tasks.Alltasks {
         public async Task<BaseTask> PostAsync(BaseTask body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<BaseTask>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<BaseTask>(requestInfo, BaseTask.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>All tasks in the users mailbox.</summary>
         public class GetQueryParameters : QueryParametersBase {

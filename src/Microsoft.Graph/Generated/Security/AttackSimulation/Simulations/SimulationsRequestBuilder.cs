@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Security.AttackSimulation.Simulations {
         /// </summary>
         public async Task<SimulationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SimulationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SimulationsResponse>(requestInfo, SimulationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represent attack simulation and training campaign of a tenant.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Security.AttackSimulation.Simulations {
         public async Task<Simulation> PostAsync(Simulation body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<Simulation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Simulation>(requestInfo, Simulation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Represent attack simulation and training campaign of a tenant.</summary>
         public class GetQueryParameters : QueryParametersBase {

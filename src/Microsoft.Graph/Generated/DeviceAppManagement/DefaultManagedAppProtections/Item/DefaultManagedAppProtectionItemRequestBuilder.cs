@@ -126,7 +126,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.DefaultManagedAppProtections.Ite
         /// </summary>
         public async Task<DefaultManagedAppProtection> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DefaultManagedAppProtection>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DefaultManagedAppProtection>(requestInfo, DefaultManagedAppProtection.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Default managed app policies.

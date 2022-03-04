@@ -69,26 +69,30 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.SessionInfoResourceWithKey {
         /// </summary>
         public async Task<SessionInfoResourceWithKeyResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<SessionInfoResourceWithKeyResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SessionInfoResourceWithKeyResponse>(requestInfo, SessionInfoResourceWithKeyResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes workbookSessionInfo</summary>
         public class SessionInfoResourceWithKeyResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type workbookSessionInfo</summary>
-            public WorkbookSessionInfo WorkbookSessionInfo { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookSessionInfo WorkbookSessionInfo { get; set; }
             /// <summary>
             /// Instantiates a new sessionInfoResourceWithKeyResponse and sets the default values.
             /// </summary>
             public SessionInfoResourceWithKeyResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static SessionInfoResourceWithKeyResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new SessionInfoResourceWithKeyResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"workbookSessionInfo", (o,n) => { (o as SessionInfoResourceWithKeyResponse).WorkbookSessionInfo = n.GetObjectValue<WorkbookSessionInfo>(); } },
+                    {"workbookSessionInfo", (o,n) => { (o as SessionInfoResourceWithKeyResponse).WorkbookSessionInfo = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookSessionInfo>(MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookSessionInfo.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -97,7 +101,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.SessionInfoResourceWithKey {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<WorkbookSessionInfo>("workbookSessionInfo", WorkbookSessionInfo);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookSessionInfo>("workbookSessionInfo", WorkbookSessionInfo);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

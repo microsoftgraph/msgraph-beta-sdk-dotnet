@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Directory.ImpactedResources {
         /// </summary>
         public async Task<ImpactedResourcesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ImpactedResourcesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ImpactedResourcesResponse>(requestInfo, ImpactedResourcesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to impactedResources for directory
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Directory.ImpactedResources {
         public async Task<RecommendationResource> PostAsync(RecommendationResource body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<RecommendationResource>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RecommendationResource>(requestInfo, RecommendationResource.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get impactedResources from directory</summary>
         public class GetQueryParameters : QueryParametersBase {

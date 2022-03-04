@@ -13,13 +13,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string TenantId { get; set; }
         public string Type { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new JobResponseBase CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new JobResponseBase();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"creationDateTime", (o,n) => { (o as JobResponseBase).CreationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"endDateTime", (o,n) => { (o as JobResponseBase).EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"error", (o,n) => { (o as JobResponseBase).Error = n.GetObjectValue<ClassificationError>(); } },
+                {"error", (o,n) => { (o as JobResponseBase).Error = n.GetObjectValue<ClassificationError>(ClassificationError.CreateFromDiscriminatorValue); } },
                 {"startDateTime", (o,n) => { (o as JobResponseBase).StartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"status", (o,n) => { (o as JobResponseBase).Status = n.GetStringValue(); } },
                 {"tenantId", (o,n) => { (o as JobResponseBase).TenantId = n.GetStringValue(); } },

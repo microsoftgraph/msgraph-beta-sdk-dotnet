@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelHealthThresholds.Ite
         /// </summary>
         public async Task<MicrosoftTunnelHealthThreshold> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftTunnelHealthThreshold>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftTunnelHealthThreshold>(requestInfo, MicrosoftTunnelHealthThreshold.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Collection of MicrosoftTunnelHealthThreshold settings associated with account.

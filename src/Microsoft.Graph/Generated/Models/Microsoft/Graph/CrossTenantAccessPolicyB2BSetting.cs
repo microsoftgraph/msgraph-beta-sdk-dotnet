@@ -18,12 +18,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static CrossTenantAccessPolicyB2BSetting CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new CrossTenantAccessPolicyB2BSetting();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"applications", (o,n) => { (o as CrossTenantAccessPolicyB2BSetting).Applications = n.GetObjectValue<CrossTenantAccessPolicyTargetConfiguration>(); } },
-                {"usersAndGroups", (o,n) => { (o as CrossTenantAccessPolicyB2BSetting).UsersAndGroups = n.GetObjectValue<CrossTenantAccessPolicyTargetConfiguration>(); } },
+                {"applications", (o,n) => { (o as CrossTenantAccessPolicyB2BSetting).Applications = n.GetObjectValue<CrossTenantAccessPolicyTargetConfiguration>(CrossTenantAccessPolicyTargetConfiguration.CreateFromDiscriminatorValue); } },
+                {"usersAndGroups", (o,n) => { (o as CrossTenantAccessPolicyB2BSetting).UsersAndGroups = n.GetObjectValue<CrossTenantAccessPolicyTargetConfiguration>(CrossTenantAccessPolicyTargetConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

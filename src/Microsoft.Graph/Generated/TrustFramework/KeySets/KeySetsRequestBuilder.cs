@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.TrustFramework.KeySets {
         /// </summary>
         public async Task<KeySetsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<KeySetsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<KeySetsResponse>(requestInfo, KeySetsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to keySets for trustFramework
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.TrustFramework.KeySets {
         public async Task<TrustFrameworkKeySet> PostAsync(TrustFrameworkKeySet body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<TrustFrameworkKeySet>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TrustFrameworkKeySet>(requestInfo, TrustFrameworkKeySet.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get keySets from trustFramework</summary>
         public class GetQueryParameters : QueryParametersBase {

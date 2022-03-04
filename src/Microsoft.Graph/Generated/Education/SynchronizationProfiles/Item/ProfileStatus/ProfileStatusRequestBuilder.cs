@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Education.SynchronizationProfiles.Item.ProfileStatus
         /// </summary>
         public async Task<EducationSynchronizationProfileStatus> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<EducationSynchronizationProfileStatus>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<EducationSynchronizationProfileStatus>(requestInfo, EducationSynchronizationProfileStatus.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The synchronization status.

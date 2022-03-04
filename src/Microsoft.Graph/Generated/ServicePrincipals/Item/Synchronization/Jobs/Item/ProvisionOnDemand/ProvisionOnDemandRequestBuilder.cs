@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.Item.Pro
         public async Task<StringKeyStringValuePair> PostAsync(StringKeyStringValuePairRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<StringKeyStringValuePair>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<StringKeyStringValuePair>(requestInfo, StringKeyStringValuePair.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

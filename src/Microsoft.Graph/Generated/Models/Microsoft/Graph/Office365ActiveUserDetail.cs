@@ -55,6 +55,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The last date when the user was assigned a Yammer license.</summary>
         public Date? YammerLicenseAssignDate { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new Office365ActiveUserDetail CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Office365ActiveUserDetail();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {

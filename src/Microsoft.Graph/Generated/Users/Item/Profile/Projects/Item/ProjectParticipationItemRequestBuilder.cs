@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Users.Item.Profile.Projects.Item {
         /// </summary>
         public async Task<ProjectParticipation> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ProjectParticipation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ProjectParticipation>(requestInfo, ProjectParticipation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents detailed information about projects associated with a user.

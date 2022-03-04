@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.PayloadResponse {
         /// </summary>
         public async Task<PayloadResponseResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PayloadResponseResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PayloadResponseResponse>(requestInfo, PayloadResponseResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Add new entity to payloadResponse
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.PayloadResponse {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.PayloadResponse> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.PayloadResponse body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.PayloadResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.PayloadResponse>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.PayloadResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from payloadResponse</summary>
         public class GetQueryParameters : QueryParametersBase {

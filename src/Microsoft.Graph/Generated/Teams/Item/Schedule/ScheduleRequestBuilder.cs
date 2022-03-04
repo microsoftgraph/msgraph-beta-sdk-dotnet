@@ -162,7 +162,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Schedule> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Schedule>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Schedule>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Schedule.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The schedule of shifts for this team.

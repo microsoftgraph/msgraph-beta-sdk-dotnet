@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Communications.CallRecords.Item.Sessions.Item.Segmen
         /// </summary>
         public async Task<SegmentsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SegmentsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SegmentsResponse>(requestInfo, SegmentsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of segments involved in the session. Read-only. Nullable.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Communications.CallRecords.Item.Sessions.Item.Segmen
         public async Task<Segment> PostAsync(Segment body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<Segment>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Segment>(requestInfo, Segment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The list of segments involved in the session. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

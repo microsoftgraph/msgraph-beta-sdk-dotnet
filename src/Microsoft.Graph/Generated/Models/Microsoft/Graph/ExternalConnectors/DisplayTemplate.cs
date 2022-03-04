@@ -21,14 +21,22 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static DisplayTemplate CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DisplayTemplate();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"id", (o,n) => { (o as DisplayTemplate).Id = n.GetStringValue(); } },
-                {"layout", (o,n) => { (o as DisplayTemplate).Layout = n.GetObjectValue<Json>(); } },
+                {"layout", (o,n) => { (o as DisplayTemplate).Layout = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
                 {"priority", (o,n) => { (o as DisplayTemplate).Priority = n.GetIntValue(); } },
-                {"rules", (o,n) => { (o as DisplayTemplate).Rules = n.GetCollectionOfObjectValues<PropertyRule>().ToList(); } },
+                {"rules", (o,n) => { (o as DisplayTemplate).Rules = n.GetCollectionOfObjectValues<PropertyRule>(PropertyRule.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

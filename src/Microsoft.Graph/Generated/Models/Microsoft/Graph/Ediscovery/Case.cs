@@ -39,27 +39,35 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
         /// <summary>Returns a list of tag objects associated to this case.</summary>
         public List<Tag> Tags { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new Case CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Case();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"closedBy", (o,n) => { (o as Case).ClosedBy = n.GetObjectValue<IdentitySet>(); } },
+                {"closedBy", (o,n) => { (o as Case).ClosedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"closedDateTime", (o,n) => { (o as Case).ClosedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"createdDateTime", (o,n) => { (o as Case).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"custodians", (o,n) => { (o as Case).Custodians = n.GetCollectionOfObjectValues<Custodian>().ToList(); } },
+                {"custodians", (o,n) => { (o as Case).Custodians = n.GetCollectionOfObjectValues<Custodian>(Custodian.CreateFromDiscriminatorValue).ToList(); } },
                 {"description", (o,n) => { (o as Case).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as Case).DisplayName = n.GetStringValue(); } },
                 {"externalId", (o,n) => { (o as Case).ExternalId = n.GetStringValue(); } },
-                {"lastModifiedBy", (o,n) => { (o as Case).LastModifiedBy = n.GetObjectValue<IdentitySet>(); } },
+                {"lastModifiedBy", (o,n) => { (o as Case).LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"lastModifiedDateTime", (o,n) => { (o as Case).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"legalHolds", (o,n) => { (o as Case).LegalHolds = n.GetCollectionOfObjectValues<LegalHold>().ToList(); } },
-                {"noncustodialDataSources", (o,n) => { (o as Case).NoncustodialDataSources = n.GetCollectionOfObjectValues<NoncustodialDataSource>().ToList(); } },
-                {"operations", (o,n) => { (o as Case).Operations = n.GetCollectionOfObjectValues<CaseOperation>().ToList(); } },
-                {"reviewSets", (o,n) => { (o as Case).ReviewSets = n.GetCollectionOfObjectValues<ReviewSet>().ToList(); } },
-                {"settings", (o,n) => { (o as Case).Settings = n.GetObjectValue<CaseSettings>(); } },
-                {"sourceCollections", (o,n) => { (o as Case).SourceCollections = n.GetCollectionOfObjectValues<SourceCollection>().ToList(); } },
+                {"legalHolds", (o,n) => { (o as Case).LegalHolds = n.GetCollectionOfObjectValues<LegalHold>(LegalHold.CreateFromDiscriminatorValue).ToList(); } },
+                {"noncustodialDataSources", (o,n) => { (o as Case).NoncustodialDataSources = n.GetCollectionOfObjectValues<NoncustodialDataSource>(NoncustodialDataSource.CreateFromDiscriminatorValue).ToList(); } },
+                {"operations", (o,n) => { (o as Case).Operations = n.GetCollectionOfObjectValues<CaseOperation>(CaseOperation.CreateFromDiscriminatorValue).ToList(); } },
+                {"reviewSets", (o,n) => { (o as Case).ReviewSets = n.GetCollectionOfObjectValues<ReviewSet>(ReviewSet.CreateFromDiscriminatorValue).ToList(); } },
+                {"settings", (o,n) => { (o as Case).Settings = n.GetObjectValue<CaseSettings>(CaseSettings.CreateFromDiscriminatorValue); } },
+                {"sourceCollections", (o,n) => { (o as Case).SourceCollections = n.GetCollectionOfObjectValues<SourceCollection>(SourceCollection.CreateFromDiscriminatorValue).ToList(); } },
                 {"status", (o,n) => { (o as Case).Status = n.GetEnumValue<CaseStatus>(); } },
-                {"tags", (o,n) => { (o as Case).Tags = n.GetCollectionOfObjectValues<Tag>().ToList(); } },
+                {"tags", (o,n) => { (o as Case).Tags = n.GetCollectionOfObjectValues<Tag>(Tag.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

@@ -28,6 +28,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Resources being modified.</summary>
         public List<AuditResource> Resources { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new AuditEvent CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AuditEvent();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -37,12 +45,12 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"activityOperationType", (o,n) => { (o as AuditEvent).ActivityOperationType = n.GetStringValue(); } },
                 {"activityResult", (o,n) => { (o as AuditEvent).ActivityResult = n.GetStringValue(); } },
                 {"activityType", (o,n) => { (o as AuditEvent).ActivityType = n.GetStringValue(); } },
-                {"actor", (o,n) => { (o as AuditEvent).Actor = n.GetObjectValue<AuditActor>(); } },
+                {"actor", (o,n) => { (o as AuditEvent).Actor = n.GetObjectValue<AuditActor>(AuditActor.CreateFromDiscriminatorValue); } },
                 {"category", (o,n) => { (o as AuditEvent).Category = n.GetStringValue(); } },
                 {"componentName", (o,n) => { (o as AuditEvent).ComponentName = n.GetStringValue(); } },
                 {"correlationId", (o,n) => { (o as AuditEvent).CorrelationId = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as AuditEvent).DisplayName = n.GetStringValue(); } },
-                {"resources", (o,n) => { (o as AuditEvent).Resources = n.GetCollectionOfObjectValues<AuditResource>().ToList(); } },
+                {"resources", (o,n) => { (o as AuditEvent).Resources = n.GetCollectionOfObjectValues<AuditResource>(AuditResource.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ComanagementEligibleDevices {
         /// </summary>
         public async Task<ComanagementEligibleDevicesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ComanagementEligibleDevicesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ComanagementEligibleDevicesResponse>(requestInfo, ComanagementEligibleDevicesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of co-management eligible devices report
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ComanagementEligibleDevices {
         public async Task<ComanagementEligibleDevice> PostAsync(ComanagementEligibleDevice body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ComanagementEligibleDevice>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ComanagementEligibleDevice>(requestInfo, ComanagementEligibleDevice.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The list of co-management eligible devices report</summary>
         public class GetQueryParameters : QueryParametersBase {

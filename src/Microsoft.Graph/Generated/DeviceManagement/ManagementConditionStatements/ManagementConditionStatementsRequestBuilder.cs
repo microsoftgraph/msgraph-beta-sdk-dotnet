@@ -100,7 +100,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ManagementConditionStatements {
         /// </summary>
         public async Task<ManagementConditionStatementsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ManagementConditionStatementsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagementConditionStatementsResponse>(requestInfo, ManagementConditionStatementsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Builds and executes requests for operations under \deviceManagement\managementConditionStatements\microsoft.graph.getManagementConditionStatementsForPlatform(platform={platform})
@@ -121,7 +121,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ManagementConditionStatements {
         public async Task<ManagementConditionStatement> PostAsync(ManagementConditionStatement body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ManagementConditionStatement>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagementConditionStatement>(requestInfo, ManagementConditionStatement.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The management condition statements associated with device management of the company.</summary>
         public class GetQueryParameters : QueryParametersBase {

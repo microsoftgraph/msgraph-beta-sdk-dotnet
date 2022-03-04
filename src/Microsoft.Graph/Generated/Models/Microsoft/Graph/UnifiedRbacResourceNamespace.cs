@@ -10,12 +10,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Operations that an authorized principal are allowed to perform.</summary>
         public List<UnifiedRbacResourceAction> ResourceActions { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new UnifiedRbacResourceNamespace CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new UnifiedRbacResourceNamespace();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"name", (o,n) => { (o as UnifiedRbacResourceNamespace).Name = n.GetStringValue(); } },
-                {"resourceActions", (o,n) => { (o as UnifiedRbacResourceNamespace).ResourceActions = n.GetCollectionOfObjectValues<UnifiedRbacResourceAction>().ToList(); } },
+                {"resourceActions", (o,n) => { (o as UnifiedRbacResourceNamespace).ResourceActions = n.GetCollectionOfObjectValues<UnifiedRbacResourceAction>(UnifiedRbacResourceAction.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

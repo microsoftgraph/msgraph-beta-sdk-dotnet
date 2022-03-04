@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Print.Services.Item.Endpoints.Item {
         /// </summary>
         public async Task<PrintServiceEndpoint> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PrintServiceEndpoint>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PrintServiceEndpoint>(requestInfo, PrintServiceEndpoint.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Endpoints that can be used to access the service. Read-only. Nullable.

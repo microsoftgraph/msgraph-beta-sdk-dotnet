@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.Categories {
         /// </summary>
         public async Task<CategoriesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CategoriesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CategoriesResponse>(requestInfo, CategoriesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Collection of setting categories within the intent
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.Categories {
         public async Task<DeviceManagementIntentSettingCategory> PostAsync(DeviceManagementIntentSettingCategory body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementIntentSettingCategory>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementIntentSettingCategory>(requestInfo, DeviceManagementIntentSettingCategory.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Collection of setting categories within the intent</summary>
         public class GetQueryParameters : QueryParametersBase {

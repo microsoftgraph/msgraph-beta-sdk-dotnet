@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Domains.Item.SharedEmailDomainInvitations {
         /// </summary>
         public async Task<SharedEmailDomainInvitationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SharedEmailDomainInvitationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SharedEmailDomainInvitationsResponse>(requestInfo, SharedEmailDomainInvitationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to sharedEmailDomainInvitations for domains
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Domains.Item.SharedEmailDomainInvitations {
         public async Task<SharedEmailDomainInvitation> PostAsync(SharedEmailDomainInvitation body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<SharedEmailDomainInvitation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SharedEmailDomainInvitation>(requestInfo, SharedEmailDomainInvitation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get sharedEmailDomainInvitations from domains</summary>
         public class GetQueryParameters : QueryParametersBase {

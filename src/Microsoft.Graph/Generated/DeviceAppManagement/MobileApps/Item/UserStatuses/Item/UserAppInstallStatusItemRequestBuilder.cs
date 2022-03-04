@@ -126,7 +126,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses.Ite
         /// </summary>
         public async Task<UserAppInstallStatus> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UserAppInstallStatus>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserAppInstallStatus>(requestInfo, UserAppInstallStatus.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of installation states for this mobile app.

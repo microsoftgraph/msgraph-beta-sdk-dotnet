@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Users.Item.MailFolders.Item.Messages.Item.Attachment
         /// </summary>
         public async Task<Attachment> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Attachment>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Attachment>(requestInfo, Attachment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The fileAttachment and itemAttachment attachments for the message.

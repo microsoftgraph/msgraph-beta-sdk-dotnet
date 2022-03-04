@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.TroubleshootingEvents {
         /// </summary>
         public async Task<TroubleshootingEventsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TroubleshootingEventsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TroubleshootingEventsResponse>(requestInfo, TroubleshootingEventsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of troubleshooting events for the tenant.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.TroubleshootingEvents {
         public async Task<DeviceManagementTroubleshootingEvent> PostAsync(DeviceManagementTroubleshootingEvent body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementTroubleshootingEvent>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementTroubleshootingEvent>(requestInfo, DeviceManagementTroubleshootingEvent.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The list of troubleshooting events for the tenant.</summary>
         public class GetQueryParameters : QueryParametersBase {

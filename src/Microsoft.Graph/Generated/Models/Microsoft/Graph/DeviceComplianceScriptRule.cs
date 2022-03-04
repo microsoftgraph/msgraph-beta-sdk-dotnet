@@ -8,15 +8,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Data type specified in the rule. Possible values are: none, boolean, int64, double, string, dateTime, version, base64, xml, booleanArray, int64Array, doubleArray, stringArray, dateTimeArray, versionArray.</summary>
-        public DataType? DataType { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.DataType? DataType { get; set; }
         /// <summary>Data type specified in the rule. Possible values are: none, boolean, int64, double, string, dateTime, version, base64, xml, booleanArray, int64Array, doubleArray, stringArray, dateTimeArray, versionArray.</summary>
-        public DeviceComplianceScriptRuleDataType? DeviceComplianceScriptRuleDataType { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceComplianceScriptRuleDataType? DeviceComplianceScriptRuleDataType { get; set; }
         /// <summary>Operator specified in the rule. Possible values are: none, and, or, isEquals, notEquals, greaterThan, lessThan, between, notBetween, greaterEquals, lessEquals, dayTimeBetween, beginsWith, notBeginsWith, endsWith, notEndsWith, contains, notContains, allOf, oneOf, noneOf, setEquals, orderedSetEquals, subsetOf, excludesAll.</summary>
-        public DeviceComplianceScriptRulOperator? DeviceComplianceScriptRulOperator { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceComplianceScriptRulOperator? DeviceComplianceScriptRulOperator { get; set; }
         /// <summary>Operand specified in the rule.</summary>
         public string Operand { get; set; }
         /// <summary>Operator specified in the rule. Possible values are: none, and, or, isEquals, notEquals, greaterThan, lessThan, between, notBetween, greaterEquals, lessEquals, dayTimeBetween, beginsWith, notBeginsWith, endsWith, notEndsWith, contains, notContains, allOf, oneOf, noneOf, setEquals, orderedSetEquals, subsetOf, excludesAll.</summary>
-        public Operator? Operator { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Operator? Operator { get; set; }
         /// <summary>Setting name specified in the rule.</summary>
         public string SettingName { get; set; }
         /// <summary>
@@ -24,6 +24,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public DeviceComplianceScriptRule() {
             AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static DeviceComplianceScriptRule CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DeviceComplianceScriptRule();
         }
         /// <summary>
         /// The deserialization information for the current model

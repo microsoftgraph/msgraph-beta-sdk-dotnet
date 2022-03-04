@@ -16,19 +16,27 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<SimulationAutomationRun> Runs { get; set; }
         public SimulationAutomationStatus? Status { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new SimulationAutomation CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new SimulationAutomation();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdBy", (o,n) => { (o as SimulationAutomation).CreatedBy = n.GetObjectValue<EmailIdentity>(); } },
+                {"createdBy", (o,n) => { (o as SimulationAutomation).CreatedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", (o,n) => { (o as SimulationAutomation).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", (o,n) => { (o as SimulationAutomation).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as SimulationAutomation).DisplayName = n.GetStringValue(); } },
-                {"lastModifiedBy", (o,n) => { (o as SimulationAutomation).LastModifiedBy = n.GetObjectValue<EmailIdentity>(); } },
+                {"lastModifiedBy", (o,n) => { (o as SimulationAutomation).LastModifiedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
                 {"lastModifiedDateTime", (o,n) => { (o as SimulationAutomation).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastRunDateTime", (o,n) => { (o as SimulationAutomation).LastRunDateTime = n.GetDateTimeOffsetValue(); } },
                 {"nextRunDateTime", (o,n) => { (o as SimulationAutomation).NextRunDateTime = n.GetDateTimeOffsetValue(); } },
-                {"runs", (o,n) => { (o as SimulationAutomation).Runs = n.GetCollectionOfObjectValues<SimulationAutomationRun>().ToList(); } },
+                {"runs", (o,n) => { (o as SimulationAutomation).Runs = n.GetCollectionOfObjectValues<SimulationAutomationRun>(SimulationAutomationRun.CreateFromDiscriminatorValue).ToList(); } },
                 {"status", (o,n) => { (o as SimulationAutomation).Status = n.GetEnumValue<SimulationAutomationStatus>(); } },
             };
         }

@@ -101,7 +101,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AuditEvents {
         /// </summary>
         public async Task<AuditEventsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AuditEventsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AuditEventsResponse>(requestInfo, AuditEventsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Builds and executes requests for operations under \deviceManagement\auditEvents\microsoft.graph.getAuditActivityTypes(category='{category}')
@@ -128,7 +128,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AuditEvents {
         public async Task<AuditEvent> PostAsync(AuditEvent body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AuditEvent>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AuditEvent>(requestInfo, AuditEvent.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The Audit Events</summary>
         public class GetQueryParameters : QueryParametersBase {

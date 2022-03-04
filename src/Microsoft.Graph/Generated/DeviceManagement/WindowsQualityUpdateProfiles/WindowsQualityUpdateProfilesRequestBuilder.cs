@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsQualityUpdateProfiles {
         /// </summary>
         public async Task<WindowsQualityUpdateProfilesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<WindowsQualityUpdateProfilesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsQualityUpdateProfilesResponse>(requestInfo, WindowsQualityUpdateProfilesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A collection of windows quality update profiles
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsQualityUpdateProfiles {
         public async Task<WindowsQualityUpdateProfile> PostAsync(WindowsQualityUpdateProfile body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<WindowsQualityUpdateProfile>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsQualityUpdateProfile>(requestInfo, WindowsQualityUpdateProfile.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>A collection of windows quality update profiles</summary>
         public class GetQueryParameters : QueryParametersBase {

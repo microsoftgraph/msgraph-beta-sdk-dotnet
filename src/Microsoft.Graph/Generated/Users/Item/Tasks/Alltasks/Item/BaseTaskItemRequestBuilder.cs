@@ -138,7 +138,7 @@ namespace MicrosoftGraphSdk.Users.Item.Tasks.Alltasks.Item {
         /// </summary>
         public async Task<BaseTask> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<BaseTask>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<BaseTask>(requestInfo, BaseTask.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// All tasks in the users mailbox.

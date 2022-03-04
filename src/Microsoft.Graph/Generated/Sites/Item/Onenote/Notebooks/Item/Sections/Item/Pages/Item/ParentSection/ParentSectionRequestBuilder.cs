@@ -86,7 +86,7 @@ namespace MicrosoftGraphSdk.Sites.Item.Onenote.Notebooks.Item.Sections.Item.Page
         /// </summary>
         public async Task<OnenoteSection> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<OnenoteSection>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OnenoteSection>(requestInfo, OnenoteSection.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The section that contains the page. Read-only.</summary>
         public class GetQueryParameters : QueryParametersBase {

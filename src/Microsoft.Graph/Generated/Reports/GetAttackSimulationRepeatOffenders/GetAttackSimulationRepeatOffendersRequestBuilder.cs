@@ -66,7 +66,7 @@ namespace MicrosoftGraphSdk.Reports.GetAttackSimulationRepeatOffenders {
         /// </summary>
         public async Task<IEnumerable<GetAttackSimulationRepeatOffenders>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<GetAttackSimulationRepeatOffenders>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetAttackSimulationRepeatOffenders>(requestInfo, GetAttackSimulationRepeatOffenders.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

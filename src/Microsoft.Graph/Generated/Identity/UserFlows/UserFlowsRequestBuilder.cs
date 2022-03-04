@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Identity.UserFlows {
         /// </summary>
         public async Task<UserFlowsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UserFlowsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserFlowsResponse>(requestInfo, UserFlowsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to userFlows for identity
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Identity.UserFlows {
         public async Task<IdentityUserFlow> PostAsync(IdentityUserFlow body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<IdentityUserFlow>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<IdentityUserFlow>(requestInfo, IdentityUserFlow.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get userFlows from identity</summary>
         public class GetQueryParameters : QueryParametersBase {

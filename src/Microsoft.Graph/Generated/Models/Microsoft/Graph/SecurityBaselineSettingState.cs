@@ -22,17 +22,25 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The compliance state of the security baseline setting</summary>
         public SecurityBaselineComplianceState? State { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new SecurityBaselineSettingState CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new SecurityBaselineSettingState();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"contributingPolicies", (o,n) => { (o as SecurityBaselineSettingState).ContributingPolicies = n.GetCollectionOfObjectValues<SecurityBaselineContributingPolicy>().ToList(); } },
+                {"contributingPolicies", (o,n) => { (o as SecurityBaselineSettingState).ContributingPolicies = n.GetCollectionOfObjectValues<SecurityBaselineContributingPolicy>(SecurityBaselineContributingPolicy.CreateFromDiscriminatorValue).ToList(); } },
                 {"errorCode", (o,n) => { (o as SecurityBaselineSettingState).ErrorCode = n.GetStringValue(); } },
                 {"settingCategoryId", (o,n) => { (o as SecurityBaselineSettingState).SettingCategoryId = n.GetStringValue(); } },
                 {"settingCategoryName", (o,n) => { (o as SecurityBaselineSettingState).SettingCategoryName = n.GetStringValue(); } },
                 {"settingId", (o,n) => { (o as SecurityBaselineSettingState).SettingId = n.GetStringValue(); } },
                 {"settingName", (o,n) => { (o as SecurityBaselineSettingState).SettingName = n.GetStringValue(); } },
-                {"sourcePolicies", (o,n) => { (o as SecurityBaselineSettingState).SourcePolicies = n.GetCollectionOfObjectValues<SettingSource>().ToList(); } },
+                {"sourcePolicies", (o,n) => { (o as SecurityBaselineSettingState).SourcePolicies = n.GetCollectionOfObjectValues<SettingSource>(SettingSource.CreateFromDiscriminatorValue).ToList(); } },
                 {"state", (o,n) => { (o as SecurityBaselineSettingState).State = n.GetEnumValue<SecurityBaselineComplianceState>(); } },
             };
         }

@@ -67,7 +67,7 @@ namespace MicrosoftGraphSdk.Me.Calendar.Events.Item.ExceptionOccurrences.Delta {
         /// </summary>
         public async Task<IEnumerable<Event>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<Event>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<Event>(requestInfo, Event.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.Users.Item.GetMailTips {
         public async Task<IEnumerable<MailTips>> PostAsync(GetMailTipsRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendCollectionAsync<MailTips>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<MailTips>(requestInfo, MailTips.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

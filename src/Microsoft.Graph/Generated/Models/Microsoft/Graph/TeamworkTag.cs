@@ -18,6 +18,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>ID of the team in which the tag is defined.</summary>
         public string TeamId { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new TeamworkTag CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TeamworkTag();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -25,7 +33,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"description", (o,n) => { (o as TeamworkTag).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as TeamworkTag).DisplayName = n.GetStringValue(); } },
                 {"memberCount", (o,n) => { (o as TeamworkTag).MemberCount = n.GetIntValue(); } },
-                {"members", (o,n) => { (o as TeamworkTag).Members = n.GetCollectionOfObjectValues<TeamworkTagMember>().ToList(); } },
+                {"members", (o,n) => { (o as TeamworkTag).Members = n.GetCollectionOfObjectValues<TeamworkTagMember>(TeamworkTagMember.CreateFromDiscriminatorValue).ToList(); } },
                 {"tagType", (o,n) => { (o as TeamworkTag).TagType = n.GetEnumValue<TeamworkTagType>(); } },
                 {"teamId", (o,n) => { (o as TeamworkTag).TeamId = n.GetStringValue(); } },
             };

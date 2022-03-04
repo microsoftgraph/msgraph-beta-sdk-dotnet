@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Chats.Item.Operations {
         /// </summary>
         public async Task<OperationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<OperationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OperationsResponse>(requestInfo, OperationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A collection of all the Teams async operations that ran or are running on the chat. Nullable.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Chats.Item.Operations {
         public async Task<TeamsAsyncOperation> PostAsync(TeamsAsyncOperation body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<TeamsAsyncOperation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TeamsAsyncOperation>(requestInfo, TeamsAsyncOperation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>A collection of all the Teams async operations that ran or are running on the chat. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

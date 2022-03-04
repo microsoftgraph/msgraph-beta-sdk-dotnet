@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Policies.ServicePrincipalCreationPolicies {
         /// </summary>
         public async Task<ServicePrincipalCreationPoliciesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ServicePrincipalCreationPoliciesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ServicePrincipalCreationPoliciesResponse>(requestInfo, ServicePrincipalCreationPoliciesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to servicePrincipalCreationPolicies for policies
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Policies.ServicePrincipalCreationPolicies {
         public async Task<ServicePrincipalCreationPolicy> PostAsync(ServicePrincipalCreationPolicy body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ServicePrincipalCreationPolicy>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ServicePrincipalCreationPolicy>(requestInfo, ServicePrincipalCreationPolicy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get servicePrincipalCreationPolicies from policies</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -66,7 +66,7 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Templates.Ite
         /// </summary>
         public async Task<IEnumerable<FilterOperators>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<FilterOperators>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<FilterOperators>(requestInfo, FilterOperators.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

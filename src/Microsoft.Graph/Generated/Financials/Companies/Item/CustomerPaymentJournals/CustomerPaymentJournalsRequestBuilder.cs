@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.CustomerPaymentJournals {
         /// </summary>
         public async Task<CustomerPaymentJournalsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CustomerPaymentJournalsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CustomerPaymentJournalsResponse>(requestInfo, CustomerPaymentJournalsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to customerPaymentJournals for financials
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.CustomerPaymentJournals {
         public async Task<CustomerPaymentJournal> PostAsync(CustomerPaymentJournal body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<CustomerPaymentJournal>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CustomerPaymentJournal>(requestInfo, CustomerPaymentJournal.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get customerPaymentJournals from financials</summary>
         public class GetQueryParameters : QueryParametersBase {

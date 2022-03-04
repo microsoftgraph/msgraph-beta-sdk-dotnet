@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.TermsOfUse.AgreementAcceptances {
         /// </summary>
         public async Task<AgreementAcceptancesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AgreementAcceptancesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AgreementAcceptancesResponse>(requestInfo, AgreementAcceptancesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents the current status of a user's response to a company's customizable terms of use agreement.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.TermsOfUse.AgreementAcceptances {
         public async Task<AgreementAcceptance> PostAsync(AgreementAcceptance body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AgreementAcceptance>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AgreementAcceptance>(requestInfo, AgreementAcceptance.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Represents the current status of a user's response to a company's customizable terms of use agreement.</summary>
         public class GetQueryParameters : QueryParametersBase {

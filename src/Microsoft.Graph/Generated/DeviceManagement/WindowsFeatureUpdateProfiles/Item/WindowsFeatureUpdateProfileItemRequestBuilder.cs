@@ -126,7 +126,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsFeatureUpdateProfiles.Item {
         /// </summary>
         public async Task<WindowsFeatureUpdateProfile> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<WindowsFeatureUpdateProfile>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsFeatureUpdateProfile>(requestInfo, WindowsFeatureUpdateProfile.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A collection of windows feature update profiles

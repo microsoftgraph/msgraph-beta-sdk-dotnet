@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeploymentProfiles.
         /// </summary>
         public async Task<AssignedDevicesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AssignedDevicesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AssignedDevicesResponse>(requestInfo, AssignedDevicesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of assigned devices for the profile.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeploymentProfiles.
         public async Task<WindowsAutopilotDeviceIdentity> PostAsync(WindowsAutopilotDeviceIdentity body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<WindowsAutopilotDeviceIdentity>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsAutopilotDeviceIdentity>(requestInfo, WindowsAutopilotDeviceIdentity.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The list of assigned devices for the profile.</summary>
         public class GetQueryParameters : QueryParametersBase {

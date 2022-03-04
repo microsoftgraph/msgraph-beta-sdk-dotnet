@@ -18,11 +18,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>List of violated restricted apps</summary>
         public List<ManagedDeviceReportedApp> RestrictedApps { get; set; }
         /// <summary>Restricted apps state. Possible values are: prohibitedApps, notApprovedApps.</summary>
-        public RestrictedAppsState? RestrictedAppsState { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.RestrictedAppsState? RestrictedAppsState { get; set; }
         /// <summary>User unique identifier, must be Guid</summary>
         public string UserId { get; set; }
         /// <summary>User name</summary>
         public string UserName { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new RestrictedAppsViolation CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new RestrictedAppsViolation();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -33,7 +41,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"deviceName", (o,n) => { (o as RestrictedAppsViolation).DeviceName = n.GetStringValue(); } },
                 {"managedDeviceId", (o,n) => { (o as RestrictedAppsViolation).ManagedDeviceId = n.GetStringValue(); } },
                 {"platformType", (o,n) => { (o as RestrictedAppsViolation).PlatformType = n.GetEnumValue<PolicyPlatformType>(); } },
-                {"restrictedApps", (o,n) => { (o as RestrictedAppsViolation).RestrictedApps = n.GetCollectionOfObjectValues<ManagedDeviceReportedApp>().ToList(); } },
+                {"restrictedApps", (o,n) => { (o as RestrictedAppsViolation).RestrictedApps = n.GetCollectionOfObjectValues<ManagedDeviceReportedApp>(ManagedDeviceReportedApp.CreateFromDiscriminatorValue).ToList(); } },
                 {"restrictedAppsState", (o,n) => { (o as RestrictedAppsViolation).RestrictedAppsState = n.GetEnumValue<RestrictedAppsState>(); } },
                 {"userId", (o,n) => { (o as RestrictedAppsViolation).UserId = n.GetStringValue(); } },
                 {"userName", (o,n) => { (o as RestrictedAppsViolation).UserName = n.GetStringValue(); } },

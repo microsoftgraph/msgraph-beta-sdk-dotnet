@@ -107,7 +107,7 @@ namespace MicrosoftGraphSdk.RiskyUsers {
         /// </summary>
         public async Task<RiskyUsersResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RiskyUsersResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RiskyUsersResponse>(requestInfo, RiskyUsersResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Add new entity to riskyUsers
@@ -120,7 +120,7 @@ namespace MicrosoftGraphSdk.RiskyUsers {
         public async Task<RiskyUser> PostAsync(RiskyUser body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<RiskyUser>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RiskyUser>(requestInfo, RiskyUser.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from riskyUsers</summary>
         public class GetQueryParameters : QueryParametersBase {

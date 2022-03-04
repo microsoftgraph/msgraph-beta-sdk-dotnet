@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.DeviceCompliancePolicyStates 
         /// </summary>
         public async Task<DeviceCompliancePolicyStatesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceCompliancePolicyStatesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceCompliancePolicyStatesResponse>(requestInfo, DeviceCompliancePolicyStatesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Device compliance policy states for this device.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.DeviceCompliancePolicyStates 
         public async Task<DeviceCompliancePolicyState> PostAsync(DeviceCompliancePolicyState body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DeviceCompliancePolicyState>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceCompliancePolicyState>(requestInfo, DeviceCompliancePolicyState.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Device compliance policy states for this device.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -103,7 +103,7 @@ namespace MicrosoftGraphSdk.InformationProtection.DataLossPreventionPolicies {
         /// </summary>
         public async Task<DataLossPreventionPoliciesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DataLossPreventionPoliciesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DataLossPreventionPoliciesResponse>(requestInfo, DataLossPreventionPoliciesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to dataLossPreventionPolicies for informationProtection
@@ -116,7 +116,7 @@ namespace MicrosoftGraphSdk.InformationProtection.DataLossPreventionPolicies {
         public async Task<DataLossPreventionPolicy> PostAsync(DataLossPreventionPolicy body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DataLossPreventionPolicy>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DataLossPreventionPolicy>(requestInfo, DataLossPreventionPolicy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get dataLossPreventionPolicies from informationProtection</summary>
         public class GetQueryParameters : QueryParametersBase {

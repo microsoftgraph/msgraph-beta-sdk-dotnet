@@ -40,6 +40,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static ManagedDeviceMobileAppConfigurationSettingState CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ManagedDeviceMobileAppConfigurationSettingState();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -51,7 +59,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"setting", (o,n) => { (o as ManagedDeviceMobileAppConfigurationSettingState).Setting = n.GetStringValue(); } },
                 {"settingInstanceId", (o,n) => { (o as ManagedDeviceMobileAppConfigurationSettingState).SettingInstanceId = n.GetStringValue(); } },
                 {"settingName", (o,n) => { (o as ManagedDeviceMobileAppConfigurationSettingState).SettingName = n.GetStringValue(); } },
-                {"sources", (o,n) => { (o as ManagedDeviceMobileAppConfigurationSettingState).Sources = n.GetCollectionOfObjectValues<SettingSource>().ToList(); } },
+                {"sources", (o,n) => { (o as ManagedDeviceMobileAppConfigurationSettingState).Sources = n.GetCollectionOfObjectValues<SettingSource>(SettingSource.CreateFromDiscriminatorValue).ToList(); } },
                 {"state", (o,n) => { (o as ManagedDeviceMobileAppConfigurationSettingState).State = n.GetEnumValue<ComplianceStatus>(); } },
                 {"userEmail", (o,n) => { (o as ManagedDeviceMobileAppConfigurationSettingState).UserEmail = n.GetStringValue(); } },
                 {"userId", (o,n) => { (o as ManagedDeviceMobileAppConfigurationSettingState).UserId = n.GetStringValue(); } },

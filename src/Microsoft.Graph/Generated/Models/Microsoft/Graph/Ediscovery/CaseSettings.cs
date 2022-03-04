@@ -12,13 +12,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
         /// <summary>The Topic Modeling (Themes) settings for the case.</summary>
         public TopicModelingSettings TopicModeling { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new CaseSettings CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new CaseSettings();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"ocr", (o,n) => { (o as CaseSettings).Ocr = n.GetObjectValue<OcrSettings>(); } },
-                {"redundancyDetection", (o,n) => { (o as CaseSettings).RedundancyDetection = n.GetObjectValue<RedundancyDetectionSettings>(); } },
-                {"topicModeling", (o,n) => { (o as CaseSettings).TopicModeling = n.GetObjectValue<TopicModelingSettings>(); } },
+                {"ocr", (o,n) => { (o as CaseSettings).Ocr = n.GetObjectValue<OcrSettings>(OcrSettings.CreateFromDiscriminatorValue); } },
+                {"redundancyDetection", (o,n) => { (o as CaseSettings).RedundancyDetection = n.GetObjectValue<RedundancyDetectionSettings>(RedundancyDetectionSettings.CreateFromDiscriminatorValue); } },
+                {"topicModeling", (o,n) => { (o as CaseSettings).TopicModeling = n.GetObjectValue<TopicModelingSettings>(TopicModelingSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

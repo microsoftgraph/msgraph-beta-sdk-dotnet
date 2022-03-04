@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Planner.Buckets.Item.Tasks.Item.Details {
         /// </summary>
         public async Task<PlannerTaskDetails> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PlannerTaskDetails>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PlannerTaskDetails>(requestInfo, PlannerTaskDetails.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Read-only. Nullable. Additional details about the task.

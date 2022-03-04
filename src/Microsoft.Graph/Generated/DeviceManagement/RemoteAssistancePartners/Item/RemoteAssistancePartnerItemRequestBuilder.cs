@@ -126,7 +126,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.RemoteAssistancePartners.Item {
         /// </summary>
         public async Task<RemoteAssistancePartner> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RemoteAssistancePartner>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RemoteAssistancePartner>(requestInfo, RemoteAssistancePartner.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The remote assist partners.

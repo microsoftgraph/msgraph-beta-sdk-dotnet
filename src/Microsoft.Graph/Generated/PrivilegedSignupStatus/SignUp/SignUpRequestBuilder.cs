@@ -67,7 +67,7 @@ namespace MicrosoftGraphSdk.PrivilegedSignupStatus.SignUp {
         /// </summary>
         public async Task<SignUpResponse> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreatePostRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<SignUpResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SignUpResponse>(requestInfo, SignUpResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes privilegedSignupStatus</summary>
         public class SignUpResponse : IParsable {
@@ -81,12 +81,16 @@ namespace MicrosoftGraphSdk.PrivilegedSignupStatus.SignUp {
             public SignUpResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static SignUpResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new SignUpResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"privilegedSignupStatus", (o,n) => { (o as SignUpResponse).PrivilegedSignupStatus = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus>(); } },
+                    {"privilegedSignupStatus", (o,n) => { (o as SignUpResponse).PrivilegedSignupStatus = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus>(MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>

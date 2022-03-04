@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.Customers {
         /// </summary>
         public async Task<CustomersResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CustomersResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CustomersResponse>(requestInfo, CustomersResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to customers for financials
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.Customers {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Customer> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Customer body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Customer>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Customer>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Customer.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get customers from financials</summary>
         public class GetQueryParameters : QueryParametersBase {

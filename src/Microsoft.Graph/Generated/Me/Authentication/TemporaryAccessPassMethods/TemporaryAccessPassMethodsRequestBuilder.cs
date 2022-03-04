@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Me.Authentication.TemporaryAccessPassMethods {
         /// </summary>
         public async Task<TemporaryAccessPassMethodsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TemporaryAccessPassMethodsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TemporaryAccessPassMethodsResponse>(requestInfo, TemporaryAccessPassMethodsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to temporaryAccessPassMethods for me
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Me.Authentication.TemporaryAccessPassMethods {
         public async Task<TemporaryAccessPassAuthenticationMethod> PostAsync(TemporaryAccessPassAuthenticationMethod body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<TemporaryAccessPassAuthenticationMethod>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TemporaryAccessPassAuthenticationMethod>(requestInfo, TemporaryAccessPassAuthenticationMethod.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get temporaryAccessPassMethods from me</summary>
         public class GetQueryParameters : QueryParametersBase {

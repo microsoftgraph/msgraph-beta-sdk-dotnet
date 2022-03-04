@@ -12,14 +12,22 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Indicates whether connectors are allowed to post messages.</summary>
         public bool? AllowNewMessageFromConnectors { get; set; }
         /// <summary>Indicates who is allowed to reply to the teams channel. Possible values are: everyone, authorAndModerators, unknownFutureValue.</summary>
-        public ReplyRestriction? ReplyRestriction { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ReplyRestriction? ReplyRestriction { get; set; }
         /// <summary>Indicates who is allowed to post messages to teams channel. Possible values are: everyone, everyoneExceptGuests, moderators, unknownFutureValue.</summary>
-        public UserNewMessageRestriction? UserNewMessageRestriction { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.UserNewMessageRestriction? UserNewMessageRestriction { get; set; }
         /// <summary>
         /// Instantiates a new channelModerationSettings and sets the default values.
         /// </summary>
         public ChannelModerationSettings() {
             AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static ChannelModerationSettings CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ChannelModerationSettings();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -20,13 +20,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static ManagementIntentInfo CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ManagementIntentInfo();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"managementIntentDisplayName", (o,n) => { (o as ManagementIntentInfo).ManagementIntentDisplayName = n.GetStringValue(); } },
                 {"managementIntentId", (o,n) => { (o as ManagementIntentInfo).ManagementIntentId = n.GetStringValue(); } },
-                {"managementTemplates", (o,n) => { (o as ManagementIntentInfo).ManagementTemplates = n.GetCollectionOfObjectValues<ManagementTemplateDetailedInfo>().ToList(); } },
+                {"managementTemplates", (o,n) => { (o as ManagementIntentInfo).ManagementTemplates = n.GetCollectionOfObjectValues<ManagementTemplateDetailedInfo>(ManagementTemplateDetailedInfo.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

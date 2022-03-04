@@ -67,26 +67,30 @@ namespace MicrosoftGraphSdk.Applications.Item.Restore {
         /// </summary>
         public async Task<RestoreResponse> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreatePostRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<RestoreResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RestoreResponse>(requestInfo, RestoreResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes directoryObject</summary>
         public class RestoreResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type directoryObject</summary>
-            public DirectoryObject DirectoryObject { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.DirectoryObject DirectoryObject { get; set; }
             /// <summary>
             /// Instantiates a new restoreResponse and sets the default values.
             /// </summary>
             public RestoreResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static RestoreResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new RestoreResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"directoryObject", (o,n) => { (o as RestoreResponse).DirectoryObject = n.GetObjectValue<DirectoryObject>(); } },
+                    {"directoryObject", (o,n) => { (o as RestoreResponse).DirectoryObject = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DirectoryObject>(MicrosoftGraphSdk.Models.Microsoft.Graph.DirectoryObject.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -95,7 +99,7 @@ namespace MicrosoftGraphSdk.Applications.Item.Restore {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<DirectoryObject>("directoryObject", DirectoryObject);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DirectoryObject>("directoryObject", DirectoryObject);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

@@ -77,7 +77,7 @@ namespace MicrosoftGraphSdk.Groups.Item.RejectedSenders {
         /// </summary>
         public async Task<RejectedSendersResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RejectedSendersResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RejectedSendersResponse>(requestInfo, RejectedSendersResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable</summary>
         public class GetQueryParameters : QueryParametersBase {

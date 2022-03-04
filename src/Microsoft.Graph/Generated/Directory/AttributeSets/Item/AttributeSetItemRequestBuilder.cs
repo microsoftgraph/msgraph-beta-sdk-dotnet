@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Directory.AttributeSets.Item {
         /// </summary>
         public async Task<AttributeSet> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AttributeSet>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AttributeSet>(requestInfo, AttributeSet.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Group of related custom security attribute definitions.

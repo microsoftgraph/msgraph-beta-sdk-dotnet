@@ -17,12 +17,20 @@ namespace MicrosoftGraphSdk.Chats.Item.MarkChatReadForUser {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static MarkChatReadForUserRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new MarkChatReadForUserRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"tenantId", (o,n) => { (o as MarkChatReadForUserRequestBody).TenantId = n.GetStringValue(); } },
-                {"user", (o,n) => { (o as MarkChatReadForUserRequestBody).User = n.GetObjectValue<TeamworkUserIdentity>(); } },
+                {"user", (o,n) => { (o as MarkChatReadForUserRequestBody).User = n.GetObjectValue<TeamworkUserIdentity>(TeamworkUserIdentity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

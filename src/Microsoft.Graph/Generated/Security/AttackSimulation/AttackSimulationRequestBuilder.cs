@@ -126,7 +126,7 @@ namespace MicrosoftGraphSdk.Security.AttackSimulation {
         /// </summary>
         public async Task<AttackSimulationRoot> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AttackSimulationRoot>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AttackSimulationRoot>(requestInfo, AttackSimulationRoot.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Provides tenants capability to launch a simulated and realistic phishing attack and learn from it.

@@ -30,19 +30,27 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static Print CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Print();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"connectors", (o,n) => { (o as Print).Connectors = n.GetCollectionOfObjectValues<PrintConnector>().ToList(); } },
-                {"operations", (o,n) => { (o as Print).Operations = n.GetCollectionOfObjectValues<PrintOperation>().ToList(); } },
-                {"printers", (o,n) => { (o as Print).Printers = n.GetCollectionOfObjectValues<Printer>().ToList(); } },
-                {"printerShares", (o,n) => { (o as Print).PrinterShares = n.GetCollectionOfObjectValues<PrinterShare>().ToList(); } },
-                {"reports", (o,n) => { (o as Print).Reports = n.GetObjectValue<ReportRoot>(); } },
-                {"services", (o,n) => { (o as Print).Services = n.GetCollectionOfObjectValues<PrintService>().ToList(); } },
-                {"settings", (o,n) => { (o as Print).Settings = n.GetObjectValue<PrintSettings>(); } },
-                {"shares", (o,n) => { (o as Print).Shares = n.GetCollectionOfObjectValues<PrinterShare>().ToList(); } },
-                {"taskDefinitions", (o,n) => { (o as Print).TaskDefinitions = n.GetCollectionOfObjectValues<PrintTaskDefinition>().ToList(); } },
+                {"connectors", (o,n) => { (o as Print).Connectors = n.GetCollectionOfObjectValues<PrintConnector>(PrintConnector.CreateFromDiscriminatorValue).ToList(); } },
+                {"operations", (o,n) => { (o as Print).Operations = n.GetCollectionOfObjectValues<PrintOperation>(PrintOperation.CreateFromDiscriminatorValue).ToList(); } },
+                {"printers", (o,n) => { (o as Print).Printers = n.GetCollectionOfObjectValues<Printer>(Printer.CreateFromDiscriminatorValue).ToList(); } },
+                {"printerShares", (o,n) => { (o as Print).PrinterShares = n.GetCollectionOfObjectValues<PrinterShare>(PrinterShare.CreateFromDiscriminatorValue).ToList(); } },
+                {"reports", (o,n) => { (o as Print).Reports = n.GetObjectValue<ReportRoot>(ReportRoot.CreateFromDiscriminatorValue); } },
+                {"services", (o,n) => { (o as Print).Services = n.GetCollectionOfObjectValues<PrintService>(PrintService.CreateFromDiscriminatorValue).ToList(); } },
+                {"settings", (o,n) => { (o as Print).Settings = n.GetObjectValue<PrintSettings>(PrintSettings.CreateFromDiscriminatorValue); } },
+                {"shares", (o,n) => { (o as Print).Shares = n.GetCollectionOfObjectValues<PrinterShare>(PrinterShare.CreateFromDiscriminatorValue).ToList(); } },
+                {"taskDefinitions", (o,n) => { (o as Print).TaskDefinitions = n.GetCollectionOfObjectValues<PrintTaskDefinition>(PrintTaskDefinition.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

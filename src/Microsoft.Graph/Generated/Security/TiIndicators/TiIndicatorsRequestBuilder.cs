@@ -115,7 +115,7 @@ namespace MicrosoftGraphSdk.Security.TiIndicators {
         /// </summary>
         public async Task<TiIndicatorsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TiIndicatorsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TiIndicatorsResponse>(requestInfo, TiIndicatorsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to tiIndicators for security
@@ -128,7 +128,7 @@ namespace MicrosoftGraphSdk.Security.TiIndicators {
         public async Task<TiIndicator> PostAsync(TiIndicator body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<TiIndicator>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TiIndicator>(requestInfo, TiIndicator.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get tiIndicators from security</summary>
         public class GetQueryParameters : QueryParametersBase {

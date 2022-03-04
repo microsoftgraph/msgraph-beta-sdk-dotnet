@@ -10,7 +10,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown</summary>
         public string Availability { get; set; }
         /// <summary>The out of office settings for a user.</summary>
-        public OutOfOfficeSettings OutOfOfficeSettings { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.OutOfOfficeSettings OutOfOfficeSettings { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new Presence CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Presence();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -18,7 +26,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"activity", (o,n) => { (o as Presence).Activity = n.GetStringValue(); } },
                 {"availability", (o,n) => { (o as Presence).Availability = n.GetStringValue(); } },
-                {"outOfOfficeSettings", (o,n) => { (o as Presence).OutOfOfficeSettings = n.GetObjectValue<OutOfOfficeSettings>(); } },
+                {"outOfOfficeSettings", (o,n) => { (o as Presence).OutOfOfficeSettings = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.OutOfOfficeSettings>(MicrosoftGraphSdk.Models.Microsoft.Graph.OutOfOfficeSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -30,7 +38,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             base.Serialize(writer);
             writer.WriteStringValue("activity", Activity);
             writer.WriteStringValue("availability", Availability);
-            writer.WriteObjectValue<OutOfOfficeSettings>("outOfOfficeSettings", OutOfOfficeSettings);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.OutOfOfficeSettings>("outOfOfficeSettings", OutOfOfficeSettings);
         }
     }
 }

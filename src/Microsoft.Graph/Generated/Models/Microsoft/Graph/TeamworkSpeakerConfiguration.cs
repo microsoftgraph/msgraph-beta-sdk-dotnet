@@ -21,15 +21,23 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static TeamworkSpeakerConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TeamworkSpeakerConfiguration();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"defaultCommunicationSpeaker", (o,n) => { (o as TeamworkSpeakerConfiguration).DefaultCommunicationSpeaker = n.GetObjectValue<TeamworkPeripheral>(); } },
-                {"defaultSpeaker", (o,n) => { (o as TeamworkSpeakerConfiguration).DefaultSpeaker = n.GetObjectValue<TeamworkPeripheral>(); } },
+                {"defaultCommunicationSpeaker", (o,n) => { (o as TeamworkSpeakerConfiguration).DefaultCommunicationSpeaker = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
+                {"defaultSpeaker", (o,n) => { (o as TeamworkSpeakerConfiguration).DefaultSpeaker = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
                 {"isCommunicationSpeakerOptional", (o,n) => { (o as TeamworkSpeakerConfiguration).IsCommunicationSpeakerOptional = n.GetBoolValue(); } },
                 {"isSpeakerOptional", (o,n) => { (o as TeamworkSpeakerConfiguration).IsSpeakerOptional = n.GetBoolValue(); } },
-                {"speakers", (o,n) => { (o as TeamworkSpeakerConfiguration).Speakers = n.GetCollectionOfObjectValues<TeamworkPeripheral>().ToList(); } },
+                {"speakers", (o,n) => { (o as TeamworkSpeakerConfiguration).Speakers = n.GetCollectionOfObjectValues<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

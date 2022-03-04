@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Templates.Item.Sch
         /// </summary>
         public async Task<DirectoriesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DirectoriesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DirectoriesResponse>(requestInfo, DirectoriesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Contains the collection of directories and all of their objects.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Templates.Item.Sch
         public async Task<DirectoryDefinition> PostAsync(DirectoryDefinition body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DirectoryDefinition>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DirectoryDefinition>(requestInfo, DirectoryDefinition.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Contains the collection of directories and all of their objects.</summary>
         public class GetQueryParameters : QueryParametersBase {

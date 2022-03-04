@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.Relationships.It
         /// </summary>
         public async Task<MobileAppRelationship> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MobileAppRelationship>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MobileAppRelationship>(requestInfo, MobileAppRelationship.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of relationships for this mobile app.

@@ -126,7 +126,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantTags.Item {
         /// </summary>
         public async Task<TenantTag> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TenantTag>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TenantTag>(requestInfo, TenantTag.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The collection of tenant tags across managed tenants.

@@ -20,11 +20,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static MeetingParticipantInfo CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new MeetingParticipantInfo();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"identity", (o,n) => { (o as MeetingParticipantInfo).Identity = n.GetObjectValue<IdentitySet>(); } },
+                {"identity", (o,n) => { (o as MeetingParticipantInfo).Identity = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"role", (o,n) => { (o as MeetingParticipantInfo).Role = n.GetEnumValue<OnlineMeetingRole>(); } },
                 {"upn", (o,n) => { (o as MeetingParticipantInfo).Upn = n.GetStringValue(); } },
             };

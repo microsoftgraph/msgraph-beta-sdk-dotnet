@@ -17,12 +17,20 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.Effect {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static EffectRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new EffectRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"nominalRate", (o,n) => { (o as EffectRequestBody).NominalRate = n.GetObjectValue<Json>(); } },
-                {"npery", (o,n) => { (o as EffectRequestBody).Npery = n.GetObjectValue<Json>(); } },
+                {"nominalRate", (o,n) => { (o as EffectRequestBody).NominalRate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"npery", (o,n) => { (o as EffectRequestBody).Npery = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -90,14 +90,22 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Represents the usage rights a device has been granted.</summary>
         public List<UsageRight> UsageRights { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new Device CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Device();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"accountEnabled", (o,n) => { (o as Device).AccountEnabled = n.GetBoolValue(); } },
-                {"alternativeSecurityIds", (o,n) => { (o as Device).AlternativeSecurityIds = n.GetCollectionOfObjectValues<AlternativeSecurityId>().ToList(); } },
+                {"alternativeSecurityIds", (o,n) => { (o as Device).AlternativeSecurityIds = n.GetCollectionOfObjectValues<AlternativeSecurityId>(AlternativeSecurityId.CreateFromDiscriminatorValue).ToList(); } },
                 {"approximateLastSignInDateTime", (o,n) => { (o as Device).ApproximateLastSignInDateTime = n.GetDateTimeOffsetValue(); } },
-                {"commands", (o,n) => { (o as Device).Commands = n.GetCollectionOfObjectValues<Command>().ToList(); } },
+                {"commands", (o,n) => { (o as Device).Commands = n.GetCollectionOfObjectValues<Command>(Command.CreateFromDiscriminatorValue).ToList(); } },
                 {"complianceExpirationDateTime", (o,n) => { (o as Device).ComplianceExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"deviceCategory", (o,n) => { (o as Device).DeviceCategory = n.GetStringValue(); } },
                 {"deviceId", (o,n) => { (o as Device).DeviceId = n.GetStringValue(); } },
@@ -108,8 +116,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"domainName", (o,n) => { (o as Device).DomainName = n.GetStringValue(); } },
                 {"enrollmentProfileName", (o,n) => { (o as Device).EnrollmentProfileName = n.GetStringValue(); } },
                 {"enrollmentType", (o,n) => { (o as Device).EnrollmentType = n.GetStringValue(); } },
-                {"extensionAttributes", (o,n) => { (o as Device).ExtensionAttributes = n.GetObjectValue<OnPremisesExtensionAttributes>(); } },
-                {"extensions", (o,n) => { (o as Device).Extensions = n.GetCollectionOfObjectValues<Extension>().ToList(); } },
+                {"extensionAttributes", (o,n) => { (o as Device).ExtensionAttributes = n.GetObjectValue<OnPremisesExtensionAttributes>(OnPremisesExtensionAttributes.CreateFromDiscriminatorValue); } },
+                {"extensions", (o,n) => { (o as Device).Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue).ToList(); } },
                 {"hostnames", (o,n) => { (o as Device).Hostnames = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"isCompliant", (o,n) => { (o as Device).IsCompliant = n.GetBoolValue(); } },
                 {"isManaged", (o,n) => { (o as Device).IsManaged = n.GetBoolValue(); } },
@@ -118,7 +126,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"managementType", (o,n) => { (o as Device).ManagementType = n.GetStringValue(); } },
                 {"manufacturer", (o,n) => { (o as Device).Manufacturer = n.GetStringValue(); } },
                 {"mdmAppId", (o,n) => { (o as Device).MdmAppId = n.GetStringValue(); } },
-                {"memberOf", (o,n) => { (o as Device).MemberOf = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
+                {"memberOf", (o,n) => { (o as Device).MemberOf = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
                 {"model", (o,n) => { (o as Device).Model = n.GetStringValue(); } },
                 {"name", (o,n) => { (o as Device).Name = n.GetStringValue(); } },
                 {"onPremisesLastSyncDateTime", (o,n) => { (o as Device).OnPremisesLastSyncDateTime = n.GetDateTimeOffsetValue(); } },
@@ -128,14 +136,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"physicalIds", (o,n) => { (o as Device).PhysicalIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"platform", (o,n) => { (o as Device).Platform = n.GetStringValue(); } },
                 {"profileType", (o,n) => { (o as Device).ProfileType = n.GetStringValue(); } },
-                {"registeredOwners", (o,n) => { (o as Device).RegisteredOwners = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
-                {"registeredUsers", (o,n) => { (o as Device).RegisteredUsers = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
+                {"registeredOwners", (o,n) => { (o as Device).RegisteredOwners = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
+                {"registeredUsers", (o,n) => { (o as Device).RegisteredUsers = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
                 {"registrationDateTime", (o,n) => { (o as Device).RegistrationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"status", (o,n) => { (o as Device).Status = n.GetStringValue(); } },
                 {"systemLabels", (o,n) => { (o as Device).SystemLabels = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"transitiveMemberOf", (o,n) => { (o as Device).TransitiveMemberOf = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
+                {"transitiveMemberOf", (o,n) => { (o as Device).TransitiveMemberOf = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
                 {"trustType", (o,n) => { (o as Device).TrustType = n.GetStringValue(); } },
-                {"usageRights", (o,n) => { (o as Device).UsageRights = n.GetCollectionOfObjectValues<UsageRight>().ToList(); } },
+                {"usageRights", (o,n) => { (o as Device).UsageRights = n.GetCollectionOfObjectValues<UsageRight>(UsageRight.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

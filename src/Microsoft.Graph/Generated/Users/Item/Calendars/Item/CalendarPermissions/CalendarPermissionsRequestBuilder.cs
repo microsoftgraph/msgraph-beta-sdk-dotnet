@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Users.Item.Calendars.Item.CalendarPermissions {
         /// </summary>
         public async Task<CalendarPermissionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CalendarPermissionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CalendarPermissionsResponse>(requestInfo, CalendarPermissionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The permissions of the users with whom the calendar is shared.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Users.Item.Calendars.Item.CalendarPermissions {
         public async Task<CalendarPermission> PostAsync(CalendarPermission body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<CalendarPermission>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CalendarPermission>(requestInfo, CalendarPermission.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The permissions of the users with whom the calendar is shared.</summary>
         public class GetQueryParameters : QueryParametersBase {

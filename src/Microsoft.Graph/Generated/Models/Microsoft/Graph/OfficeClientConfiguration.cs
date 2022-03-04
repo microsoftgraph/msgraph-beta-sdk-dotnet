@@ -22,17 +22,25 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Preference settings JSON string in binary format, these values can be overridden by the user.</summary>
         public byte[] UserPreferencePayload { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new OfficeClientConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new OfficeClientConfiguration();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as OfficeClientConfiguration).Assignments = n.GetCollectionOfObjectValues<OfficeClientConfigurationAssignment>().ToList(); } },
-                {"checkinStatuses", (o,n) => { (o as OfficeClientConfiguration).CheckinStatuses = n.GetCollectionOfObjectValues<OfficeClientCheckinStatus>().ToList(); } },
+                {"assignments", (o,n) => { (o as OfficeClientConfiguration).Assignments = n.GetCollectionOfObjectValues<OfficeClientConfigurationAssignment>(OfficeClientConfigurationAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"checkinStatuses", (o,n) => { (o as OfficeClientConfiguration).CheckinStatuses = n.GetCollectionOfObjectValues<OfficeClientCheckinStatus>(OfficeClientCheckinStatus.CreateFromDiscriminatorValue).ToList(); } },
                 {"description", (o,n) => { (o as OfficeClientConfiguration).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as OfficeClientConfiguration).DisplayName = n.GetStringValue(); } },
                 {"policyPayload", (o,n) => { (o as OfficeClientConfiguration).PolicyPayload = n.GetByteArrayValue(); } },
                 {"priority", (o,n) => { (o as OfficeClientConfiguration).Priority = n.GetIntValue(); } },
-                {"userCheckinSummary", (o,n) => { (o as OfficeClientConfiguration).UserCheckinSummary = n.GetObjectValue<OfficeUserCheckinSummary>(); } },
+                {"userCheckinSummary", (o,n) => { (o as OfficeClientConfiguration).UserCheckinSummary = n.GetObjectValue<OfficeUserCheckinSummary>(OfficeUserCheckinSummary.CreateFromDiscriminatorValue); } },
                 {"userPreferencePayload", (o,n) => { (o as OfficeClientConfiguration).UserPreferencePayload = n.GetByteArrayValue(); } },
             };
         }

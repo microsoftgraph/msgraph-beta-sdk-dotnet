@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.CreateInstance {
         public async Task<CreateInstanceResponse> PostAsync(CreateInstanceRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<CreateInstanceResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CreateInstanceResponse>(requestInfo, CreateInstanceResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes deviceManagementIntent</summary>
         public class CreateInstanceResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type deviceManagementIntent</summary>
-            public DeviceManagementIntent DeviceManagementIntent { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceManagementIntent DeviceManagementIntent { get; set; }
             /// <summary>
             /// Instantiates a new createInstanceResponse and sets the default values.
             /// </summary>
             public CreateInstanceResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static CreateInstanceResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new CreateInstanceResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"deviceManagementIntent", (o,n) => { (o as CreateInstanceResponse).DeviceManagementIntent = n.GetObjectValue<DeviceManagementIntent>(); } },
+                    {"deviceManagementIntent", (o,n) => { (o as CreateInstanceResponse).DeviceManagementIntent = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceManagementIntent>(MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceManagementIntent.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.CreateInstance {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<DeviceManagementIntent>("deviceManagementIntent", DeviceManagementIntent);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceManagementIntent>("deviceManagementIntent", DeviceManagementIntent);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

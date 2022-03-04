@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ComplianceManagementPartners.Item {
         /// </summary>
         public async Task<ComplianceManagementPartner> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ComplianceManagementPartner>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ComplianceManagementPartner>(requestInfo, ComplianceManagementPartner.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of Compliance Management Partners configured by the tenant.

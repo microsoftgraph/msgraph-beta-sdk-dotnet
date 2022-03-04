@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.Me.FindMeetingTimes {
         public async Task<FindMeetingTimesResponse> PostAsync(FindMeetingTimesRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<FindMeetingTimesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<FindMeetingTimesResponse>(requestInfo, FindMeetingTimesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes meetingTimeSuggestionsResult</summary>
         public class FindMeetingTimesResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type meetingTimeSuggestionsResult</summary>
-            public MeetingTimeSuggestionsResult MeetingTimeSuggestionsResult { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.MeetingTimeSuggestionsResult MeetingTimeSuggestionsResult { get; set; }
             /// <summary>
             /// Instantiates a new findMeetingTimesResponse and sets the default values.
             /// </summary>
             public FindMeetingTimesResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static FindMeetingTimesResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new FindMeetingTimesResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"meetingTimeSuggestionsResult", (o,n) => { (o as FindMeetingTimesResponse).MeetingTimeSuggestionsResult = n.GetObjectValue<MeetingTimeSuggestionsResult>(); } },
+                    {"meetingTimeSuggestionsResult", (o,n) => { (o as FindMeetingTimesResponse).MeetingTimeSuggestionsResult = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.MeetingTimeSuggestionsResult>(MicrosoftGraphSdk.Models.Microsoft.Graph.MeetingTimeSuggestionsResult.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.Me.FindMeetingTimes {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MeetingTimeSuggestionsResult>("meetingTimeSuggestionsResult", MeetingTimeSuggestionsResult);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.MeetingTimeSuggestionsResult>("meetingTimeSuggestionsResult", MeetingTimeSuggestionsResult);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

@@ -108,7 +108,7 @@ namespace MicrosoftGraphSdk.Me.Approvals {
         /// </summary>
         public async Task<ApprovalsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ApprovalsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ApprovalsResponse>(requestInfo, ApprovalsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to approvals for me
@@ -121,7 +121,7 @@ namespace MicrosoftGraphSdk.Me.Approvals {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Approval> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Approval body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Approval>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Approval>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Approval.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get approvals from me</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -16,11 +16,19 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.GroupAssi
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static AssignedAccessMultiModeProfilesRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AssignedAccessMultiModeProfilesRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"assignedAccessMultiModeProfiles", (o,n) => { (o as AssignedAccessMultiModeProfilesRequestBody).AssignedAccessMultiModeProfiles = n.GetCollectionOfObjectValues<WindowsAssignedAccessProfile>().ToList(); } },
+                {"assignedAccessMultiModeProfiles", (o,n) => { (o as AssignedAccessMultiModeProfilesRequestBody).AssignedAccessMultiModeProfiles = n.GetCollectionOfObjectValues<WindowsAssignedAccessProfile>(WindowsAssignedAccessProfile.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

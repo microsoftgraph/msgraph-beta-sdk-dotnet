@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantsDetailedIn
         /// </summary>
         public async Task<TenantDetailedInformation> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TenantDetailedInformation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TenantDetailedInformation>(requestInfo, TenantDetailedInformation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The collection tenant level detailed information across managed tenants.

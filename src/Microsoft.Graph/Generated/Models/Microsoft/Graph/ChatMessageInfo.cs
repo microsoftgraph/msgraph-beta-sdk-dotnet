@@ -18,14 +18,22 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The type of chat message. The possible values are: message, unknownFutureValue, systemEventMessage.</summary>
         public ChatMessageType? MessageType { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new ChatMessageInfo CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ChatMessageInfo();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"body", (o,n) => { (o as ChatMessageInfo).Body = n.GetObjectValue<ItemBody>(); } },
+                {"body", (o,n) => { (o as ChatMessageInfo).Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", (o,n) => { (o as ChatMessageInfo).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"eventDetail", (o,n) => { (o as ChatMessageInfo).EventDetail = n.GetObjectValue<EventMessageDetail>(); } },
-                {"from", (o,n) => { (o as ChatMessageInfo).From = n.GetObjectValue<ChatMessageFromIdentitySet>(); } },
+                {"eventDetail", (o,n) => { (o as ChatMessageInfo).EventDetail = n.GetObjectValue<EventMessageDetail>(EventMessageDetail.CreateFromDiscriminatorValue); } },
+                {"from", (o,n) => { (o as ChatMessageInfo).From = n.GetObjectValue<ChatMessageFromIdentitySet>(ChatMessageFromIdentitySet.CreateFromDiscriminatorValue); } },
                 {"isDeleted", (o,n) => { (o as ChatMessageInfo).IsDeleted = n.GetBoolValue(); } },
                 {"messageType", (o,n) => { (o as ChatMessageInfo).MessageType = n.GetEnumValue<ChatMessageType>(); } },
             };

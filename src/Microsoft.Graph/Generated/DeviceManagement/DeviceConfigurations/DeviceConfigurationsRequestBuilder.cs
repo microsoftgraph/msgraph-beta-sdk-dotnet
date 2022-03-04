@@ -108,7 +108,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations {
         /// </summary>
         public async Task<DeviceConfigurationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceConfigurationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceConfigurationsResponse>(requestInfo, DeviceConfigurationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Builds and executes requests for operations under \deviceManagement\deviceConfigurations\microsoft.graph.getIosAvailableUpdateVersions()
@@ -127,7 +127,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceConfiguration> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceConfiguration body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceConfiguration>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceConfiguration>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceConfiguration.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The device configurations.</summary>
         public class GetQueryParameters : QueryParametersBase {

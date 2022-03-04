@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.Me.MailFolders.Item.Messages.Item.CreateForward {
         public async Task<CreateForwardResponse> PostAsync(CreateForwardRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<CreateForwardResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CreateForwardResponse>(requestInfo, CreateForwardResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes message</summary>
         public class CreateForwardResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type message</summary>
-            public Message Message { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.Message Message { get; set; }
             /// <summary>
             /// Instantiates a new createForwardResponse and sets the default values.
             /// </summary>
             public CreateForwardResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static CreateForwardResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new CreateForwardResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"message", (o,n) => { (o as CreateForwardResponse).Message = n.GetObjectValue<Message>(); } },
+                    {"message", (o,n) => { (o as CreateForwardResponse).Message = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Message>(MicrosoftGraphSdk.Models.Microsoft.Graph.Message.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.Me.MailFolders.Item.Messages.Item.CreateForward {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<Message>("message", Message);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Message>("message", Message);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackages.Item.AccessPackageAssignmentPolicies.Item.CustomExtensionHandlers.Ref;
+using MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackages.Item.AccessPackageAssignmentPolicies.Item.CustomExtensionHandlers.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,13 +13,16 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
     public class CustomExtensionHandlersRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        public RefRequestBuilder Ref { get =>
-            new RefRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>Gets an item from the MicrosoftGraphSdk.identityGovernance.entitlementManagement.accessPackages.item.accessPackageAssignmentPolicies.item.customExtensionHandlers.item collection</summary>
+        public CustomExtensionHandlerItemRequestBuilder this[string position] { get {
+            var urlTplParams = new Dictionary<string, object>(PathParameters);
+            urlTplParams.Add("customExtensionHandler_id", position);
+            return new CustomExtensionHandlerItemRequestBuilder(urlTplParams, RequestAdapter);
+        } }
         /// <summary>
         /// Instantiates a new CustomExtensionHandlersRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -69,6 +73,24 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
         }
         /// <summary>
         /// The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
+        /// <param name="body"></param>
+        /// <param name="h">Request headers</param>
+        /// <param name="o">Request options</param>
+        /// </summary>
+        public RequestInformation CreatePostRequestInformation(CustomExtensionHandler body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation {
+                HttpMethod = Method.POST,
+                UrlTemplate = UrlTemplate,
+                PathParameters = PathParameters,
+            };
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            h?.Invoke(requestInfo.Headers);
+            requestInfo.AddRequestOptions(o?.ToArray());
+            return requestInfo;
+        }
+        /// <summary>
+        /// The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -77,7 +99,20 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
         /// </summary>
         public async Task<CustomExtensionHandlersResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CustomExtensionHandlersResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CustomExtensionHandlersResponse>(requestInfo, CustomExtensionHandlersResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+        }
+        /// <summary>
+        /// The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
+        /// <param name="body"></param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="h">Request headers</param>
+        /// <param name="o">Request options</param>
+        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
+        /// </summary>
+        public async Task<CustomExtensionHandler> PostAsync(CustomExtensionHandler body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = CreatePostRequestInformation(body, h, o);
+            return await RequestAdapter.SendAsync<CustomExtensionHandler>(requestInfo, CustomExtensionHandler.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.</summary>
         public class GetQueryParameters : QueryParametersBase {

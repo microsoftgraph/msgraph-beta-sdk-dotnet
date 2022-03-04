@@ -69,7 +69,7 @@ namespace MicrosoftGraphSdk.Reports.GetOffice365ActiveUserCountsWithPeriod {
         /// </summary>
         public async Task<IEnumerable<Office365ActiveUserCounts>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<Office365ActiveUserCounts>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<Office365ActiveUserCounts>(requestInfo, Office365ActiveUserCounts.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

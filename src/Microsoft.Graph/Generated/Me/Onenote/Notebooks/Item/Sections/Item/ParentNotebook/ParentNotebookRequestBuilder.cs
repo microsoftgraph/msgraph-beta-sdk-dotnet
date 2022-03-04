@@ -82,7 +82,7 @@ namespace MicrosoftGraphSdk.Me.Onenote.Notebooks.Item.Sections.Item.ParentNotebo
         /// </summary>
         public async Task<Notebook> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Notebook>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Notebook>(requestInfo, Notebook.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The notebook that contains the section.  Read-only.</summary>
         public class GetQueryParameters : QueryParametersBase {

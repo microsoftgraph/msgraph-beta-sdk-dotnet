@@ -12,12 +12,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The version of the schema, updated automatically with every schema change.</summary>
         public string Version { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new SynchronizationSchema CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new SynchronizationSchema();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"directories", (o,n) => { (o as SynchronizationSchema).Directories = n.GetCollectionOfObjectValues<DirectoryDefinition>().ToList(); } },
-                {"synchronizationRules", (o,n) => { (o as SynchronizationSchema).SynchronizationRules = n.GetCollectionOfObjectValues<SynchronizationRule>().ToList(); } },
+                {"directories", (o,n) => { (o as SynchronizationSchema).Directories = n.GetCollectionOfObjectValues<DirectoryDefinition>(DirectoryDefinition.CreateFromDiscriminatorValue).ToList(); } },
+                {"synchronizationRules", (o,n) => { (o as SynchronizationSchema).SynchronizationRules = n.GetCollectionOfObjectValues<SynchronizationRule>(SynchronizationRule.CreateFromDiscriminatorValue).ToList(); } },
                 {"version", (o,n) => { (o as SynchronizationSchema).Version = n.GetStringValue(); } },
             };
         }

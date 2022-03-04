@@ -69,26 +69,30 @@ namespace MicrosoftGraphSdk.DeviceManagement.ConfigManagerCollections.GetPolicyS
         /// </summary>
         public async Task<GetPolicySummaryWithPolicyIdResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<GetPolicySummaryWithPolicyIdResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetPolicySummaryWithPolicyIdResponse>(requestInfo, GetPolicySummaryWithPolicyIdResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes configManagerPolicySummary</summary>
         public class GetPolicySummaryWithPolicyIdResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type configManagerPolicySummary</summary>
-            public ConfigManagerPolicySummary ConfigManagerPolicySummary { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.ConfigManagerPolicySummary ConfigManagerPolicySummary { get; set; }
             /// <summary>
             /// Instantiates a new getPolicySummaryWithPolicyIdResponse and sets the default values.
             /// </summary>
             public GetPolicySummaryWithPolicyIdResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static GetPolicySummaryWithPolicyIdResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new GetPolicySummaryWithPolicyIdResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"configManagerPolicySummary", (o,n) => { (o as GetPolicySummaryWithPolicyIdResponse).ConfigManagerPolicySummary = n.GetObjectValue<ConfigManagerPolicySummary>(); } },
+                    {"configManagerPolicySummary", (o,n) => { (o as GetPolicySummaryWithPolicyIdResponse).ConfigManagerPolicySummary = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ConfigManagerPolicySummary>(MicrosoftGraphSdk.Models.Microsoft.Graph.ConfigManagerPolicySummary.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -97,7 +101,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ConfigManagerCollections.GetPolicyS
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<ConfigManagerPolicySummary>("configManagerPolicySummary", ConfigManagerPolicySummary);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ConfigManagerPolicySummary>("configManagerPolicySummary", ConfigManagerPolicySummary);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

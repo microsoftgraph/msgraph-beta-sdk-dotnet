@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.MacOSSoftwareUpdateAccountSummaries
         /// </summary>
         public async Task<MacOSSoftwareUpdateAccountSummariesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MacOSSoftwareUpdateAccountSummariesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MacOSSoftwareUpdateAccountSummariesResponse>(requestInfo, MacOSSoftwareUpdateAccountSummariesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The MacOS software update account summaries for this account.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.MacOSSoftwareUpdateAccountSummaries
         public async Task<MacOSSoftwareUpdateAccountSummary> PostAsync(MacOSSoftwareUpdateAccountSummary body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MacOSSoftwareUpdateAccountSummary>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MacOSSoftwareUpdateAccountSummary>(requestInfo, MacOSSoftwareUpdateAccountSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The MacOS software update account summaries for this account.</summary>
         public class GetQueryParameters : QueryParametersBase {

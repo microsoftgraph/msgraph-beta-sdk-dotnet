@@ -18,13 +18,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static TeamworkCameraConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TeamworkCameraConfiguration();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"cameras", (o,n) => { (o as TeamworkCameraConfiguration).Cameras = n.GetCollectionOfObjectValues<TeamworkPeripheral>().ToList(); } },
-                {"contentCameraConfiguration", (o,n) => { (o as TeamworkCameraConfiguration).ContentCameraConfiguration = n.GetObjectValue<TeamworkContentCameraConfiguration>(); } },
-                {"defaultContentCamera", (o,n) => { (o as TeamworkCameraConfiguration).DefaultContentCamera = n.GetObjectValue<TeamworkPeripheral>(); } },
+                {"cameras", (o,n) => { (o as TeamworkCameraConfiguration).Cameras = n.GetCollectionOfObjectValues<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue).ToList(); } },
+                {"contentCameraConfiguration", (o,n) => { (o as TeamworkCameraConfiguration).ContentCameraConfiguration = n.GetObjectValue<TeamworkContentCameraConfiguration>(TeamworkContentCameraConfiguration.CreateFromDiscriminatorValue); } },
+                {"defaultContentCamera", (o,n) => { (o as TeamworkCameraConfiguration).DefaultContentCamera = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

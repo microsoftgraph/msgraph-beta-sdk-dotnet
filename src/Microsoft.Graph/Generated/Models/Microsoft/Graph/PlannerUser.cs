@@ -21,18 +21,26 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Read-only. Nullable. Returns the plannerPlans shared with the user.</summary>
         public List<PlannerTask> Tasks { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new PlannerUser CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new PlannerUser();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"all", (o,n) => { (o as PlannerUser).All = n.GetCollectionOfObjectValues<PlannerDelta>().ToList(); } },
-                {"favoritePlanReferences", (o,n) => { (o as PlannerUser).FavoritePlanReferences = n.GetObjectValue<PlannerFavoritePlanReferenceCollection>(); } },
-                {"favoritePlans", (o,n) => { (o as PlannerUser).FavoritePlans = n.GetCollectionOfObjectValues<PlannerPlan>().ToList(); } },
-                {"plans", (o,n) => { (o as PlannerUser).Plans = n.GetCollectionOfObjectValues<PlannerPlan>().ToList(); } },
-                {"recentPlanReferences", (o,n) => { (o as PlannerUser).RecentPlanReferences = n.GetObjectValue<PlannerRecentPlanReferenceCollection>(); } },
-                {"recentPlans", (o,n) => { (o as PlannerUser).RecentPlans = n.GetCollectionOfObjectValues<PlannerPlan>().ToList(); } },
-                {"rosterPlans", (o,n) => { (o as PlannerUser).RosterPlans = n.GetCollectionOfObjectValues<PlannerPlan>().ToList(); } },
-                {"tasks", (o,n) => { (o as PlannerUser).Tasks = n.GetCollectionOfObjectValues<PlannerTask>().ToList(); } },
+                {"all", (o,n) => { (o as PlannerUser).All = n.GetCollectionOfObjectValues<PlannerDelta>(PlannerDelta.CreateFromDiscriminatorValue).ToList(); } },
+                {"favoritePlanReferences", (o,n) => { (o as PlannerUser).FavoritePlanReferences = n.GetObjectValue<PlannerFavoritePlanReferenceCollection>(PlannerFavoritePlanReferenceCollection.CreateFromDiscriminatorValue); } },
+                {"favoritePlans", (o,n) => { (o as PlannerUser).FavoritePlans = n.GetCollectionOfObjectValues<PlannerPlan>(PlannerPlan.CreateFromDiscriminatorValue).ToList(); } },
+                {"plans", (o,n) => { (o as PlannerUser).Plans = n.GetCollectionOfObjectValues<PlannerPlan>(PlannerPlan.CreateFromDiscriminatorValue).ToList(); } },
+                {"recentPlanReferences", (o,n) => { (o as PlannerUser).RecentPlanReferences = n.GetObjectValue<PlannerRecentPlanReferenceCollection>(PlannerRecentPlanReferenceCollection.CreateFromDiscriminatorValue); } },
+                {"recentPlans", (o,n) => { (o as PlannerUser).RecentPlans = n.GetCollectionOfObjectValues<PlannerPlan>(PlannerPlan.CreateFromDiscriminatorValue).ToList(); } },
+                {"rosterPlans", (o,n) => { (o as PlannerUser).RosterPlans = n.GetCollectionOfObjectValues<PlannerPlan>(PlannerPlan.CreateFromDiscriminatorValue).ToList(); } },
+                {"tasks", (o,n) => { (o as PlannerUser).Tasks = n.GetCollectionOfObjectValues<PlannerTask>(PlannerTask.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

@@ -67,26 +67,30 @@ namespace MicrosoftGraphSdk.Education.Me.Assignments.Item.Publish {
         /// </summary>
         public async Task<PublishResponse> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreatePostRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<PublishResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PublishResponse>(requestInfo, PublishResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes educationAssignment</summary>
         public class PublishResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type educationAssignment</summary>
-            public EducationAssignment EducationAssignment { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.EducationAssignment EducationAssignment { get; set; }
             /// <summary>
             /// Instantiates a new publishResponse and sets the default values.
             /// </summary>
             public PublishResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static PublishResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new PublishResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"educationAssignment", (o,n) => { (o as PublishResponse).EducationAssignment = n.GetObjectValue<EducationAssignment>(); } },
+                    {"educationAssignment", (o,n) => { (o as PublishResponse).EducationAssignment = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.EducationAssignment>(MicrosoftGraphSdk.Models.Microsoft.Graph.EducationAssignment.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -95,7 +99,7 @@ namespace MicrosoftGraphSdk.Education.Me.Assignments.Item.Publish {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<EducationAssignment>("educationAssignment", EducationAssignment);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.EducationAssignment>("educationAssignment", EducationAssignment);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

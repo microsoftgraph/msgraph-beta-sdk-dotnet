@@ -21,16 +21,24 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.CumIPmt {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static CumIPmtRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new CumIPmtRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"endPeriod", (o,n) => { (o as CumIPmtRequestBody).EndPeriod = n.GetObjectValue<Json>(); } },
-                {"nper", (o,n) => { (o as CumIPmtRequestBody).Nper = n.GetObjectValue<Json>(); } },
-                {"pv", (o,n) => { (o as CumIPmtRequestBody).Pv = n.GetObjectValue<Json>(); } },
-                {"rate", (o,n) => { (o as CumIPmtRequestBody).Rate = n.GetObjectValue<Json>(); } },
-                {"startPeriod", (o,n) => { (o as CumIPmtRequestBody).StartPeriod = n.GetObjectValue<Json>(); } },
-                {"type", (o,n) => { (o as CumIPmtRequestBody).Type = n.GetObjectValue<Json>(); } },
+                {"endPeriod", (o,n) => { (o as CumIPmtRequestBody).EndPeriod = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"nper", (o,n) => { (o as CumIPmtRequestBody).Nper = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"pv", (o,n) => { (o as CumIPmtRequestBody).Pv = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"rate", (o,n) => { (o as CumIPmtRequestBody).Rate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"startPeriod", (o,n) => { (o as CumIPmtRequestBody).StartPeriod = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"type", (o,n) => { (o as CumIPmtRequestBody).Type = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

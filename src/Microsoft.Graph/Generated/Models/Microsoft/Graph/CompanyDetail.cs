@@ -26,11 +26,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static CompanyDetail CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new CompanyDetail();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"address", (o,n) => { (o as CompanyDetail).Address = n.GetObjectValue<PhysicalAddress>(); } },
+                {"address", (o,n) => { (o as CompanyDetail).Address = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
                 {"department", (o,n) => { (o as CompanyDetail).Department = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as CompanyDetail).DisplayName = n.GetStringValue(); } },
                 {"officeLocation", (o,n) => { (o as CompanyDetail).OfficeLocation = n.GetStringValue(); } },

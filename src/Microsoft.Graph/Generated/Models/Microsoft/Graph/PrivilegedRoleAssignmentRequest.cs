@@ -30,6 +30,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The id of the user.</summary>
         public string UserId { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new PrivilegedRoleAssignmentRequest CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new PrivilegedRoleAssignmentRequest();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -39,8 +47,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"reason", (o,n) => { (o as PrivilegedRoleAssignmentRequest).Reason = n.GetStringValue(); } },
                 {"requestedDateTime", (o,n) => { (o as PrivilegedRoleAssignmentRequest).RequestedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"roleId", (o,n) => { (o as PrivilegedRoleAssignmentRequest).RoleId = n.GetStringValue(); } },
-                {"roleInfo", (o,n) => { (o as PrivilegedRoleAssignmentRequest).RoleInfo = n.GetObjectValue<PrivilegedRole>(); } },
-                {"schedule", (o,n) => { (o as PrivilegedRoleAssignmentRequest).Schedule = n.GetObjectValue<GovernanceSchedule>(); } },
+                {"roleInfo", (o,n) => { (o as PrivilegedRoleAssignmentRequest).RoleInfo = n.GetObjectValue<PrivilegedRole>(PrivilegedRole.CreateFromDiscriminatorValue); } },
+                {"schedule", (o,n) => { (o as PrivilegedRoleAssignmentRequest).Schedule = n.GetObjectValue<GovernanceSchedule>(GovernanceSchedule.CreateFromDiscriminatorValue); } },
                 {"status", (o,n) => { (o as PrivilegedRoleAssignmentRequest).Status = n.GetStringValue(); } },
                 {"ticketNumber", (o,n) => { (o as PrivilegedRoleAssignmentRequest).TicketNumber = n.GetStringValue(); } },
                 {"ticketSystem", (o,n) => { (o as PrivilegedRoleAssignmentRequest).TicketSystem = n.GetStringValue(); } },

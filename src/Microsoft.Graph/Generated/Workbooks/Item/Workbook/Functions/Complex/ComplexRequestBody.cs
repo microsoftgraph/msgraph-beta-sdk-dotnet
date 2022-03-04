@@ -18,13 +18,21 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.Complex {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static ComplexRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ComplexRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"iNum", (o,n) => { (o as ComplexRequestBody).INum = n.GetObjectValue<Json>(); } },
-                {"realNum", (o,n) => { (o as ComplexRequestBody).RealNum = n.GetObjectValue<Json>(); } },
-                {"suffix", (o,n) => { (o as ComplexRequestBody).Suffix = n.GetObjectValue<Json>(); } },
+                {"iNum", (o,n) => { (o as ComplexRequestBody).INum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"realNum", (o,n) => { (o as ComplexRequestBody).RealNum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"suffix", (o,n) => { (o as ComplexRequestBody).Suffix = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

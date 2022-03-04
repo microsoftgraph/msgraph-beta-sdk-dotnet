@@ -32,6 +32,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static UserSimulationDetails CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new UserSimulationDetails();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -42,9 +50,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"inProgressTrainingsCount", (o,n) => { (o as UserSimulationDetails).InProgressTrainingsCount = n.GetIntValue(); } },
                 {"isCompromised", (o,n) => { (o as UserSimulationDetails).IsCompromised = n.GetBoolValue(); } },
                 {"reportedPhishDateTime", (o,n) => { (o as UserSimulationDetails).ReportedPhishDateTime = n.GetDateTimeOffsetValue(); } },
-                {"simulationEvents", (o,n) => { (o as UserSimulationDetails).SimulationEvents = n.GetCollectionOfObjectValues<UserSimulationEventInfo>().ToList(); } },
-                {"simulationUser", (o,n) => { (o as UserSimulationDetails).SimulationUser = n.GetObjectValue<AttackSimulationUser>(); } },
-                {"trainingEvents", (o,n) => { (o as UserSimulationDetails).TrainingEvents = n.GetCollectionOfObjectValues<UserTrainingEventInfo>().ToList(); } },
+                {"simulationEvents", (o,n) => { (o as UserSimulationDetails).SimulationEvents = n.GetCollectionOfObjectValues<UserSimulationEventInfo>(UserSimulationEventInfo.CreateFromDiscriminatorValue).ToList(); } },
+                {"simulationUser", (o,n) => { (o as UserSimulationDetails).SimulationUser = n.GetObjectValue<AttackSimulationUser>(AttackSimulationUser.CreateFromDiscriminatorValue); } },
+                {"trainingEvents", (o,n) => { (o as UserSimulationDetails).TrainingEvents = n.GetCollectionOfObjectValues<UserTrainingEventInfo>(UserTrainingEventInfo.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

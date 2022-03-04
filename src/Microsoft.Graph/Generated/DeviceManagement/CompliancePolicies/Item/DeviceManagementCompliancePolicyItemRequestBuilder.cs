@@ -138,7 +138,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.CompliancePolicies.Item {
         /// </summary>
         public async Task<DeviceManagementCompliancePolicy> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementCompliancePolicy>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementCompliancePolicy>(requestInfo, DeviceManagementCompliancePolicy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of all compliance policies

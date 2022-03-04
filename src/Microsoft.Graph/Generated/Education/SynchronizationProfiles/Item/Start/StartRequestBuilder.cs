@@ -66,7 +66,7 @@ namespace MicrosoftGraphSdk.Education.SynchronizationProfiles.Item.Start {
         /// </summary>
         public async Task<IEnumerable<Start>> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreatePostRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<Start>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<Start>(requestInfo, Start.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

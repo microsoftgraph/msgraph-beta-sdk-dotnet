@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Security.HostSecurityProfiles {
         /// </summary>
         public async Task<HostSecurityProfilesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<HostSecurityProfilesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<HostSecurityProfilesResponse>(requestInfo, HostSecurityProfilesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to hostSecurityProfiles for security
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Security.HostSecurityProfiles {
         public async Task<HostSecurityProfile> PostAsync(HostSecurityProfile body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<HostSecurityProfile>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<HostSecurityProfile>(requestInfo, HostSecurityProfile.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get hostSecurityProfiles from security</summary>
         public class GetQueryParameters : QueryParametersBase {

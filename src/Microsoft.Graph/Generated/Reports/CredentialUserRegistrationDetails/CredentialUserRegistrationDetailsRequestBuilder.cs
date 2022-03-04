@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Reports.CredentialUserRegistrationDetails {
         /// </summary>
         public async Task<CredentialUserRegistrationDetailsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CredentialUserRegistrationDetailsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CredentialUserRegistrationDetailsResponse>(requestInfo, CredentialUserRegistrationDetailsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Reports.CredentialUserRegistrationDetails {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.CredentialUserRegistrationDetails> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.CredentialUserRegistrationDetails body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.CredentialUserRegistrationDetails>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.CredentialUserRegistrationDetails>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.CredentialUserRegistrationDetails.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.</summary>
         public class GetQueryParameters : QueryParametersBase {

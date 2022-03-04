@@ -67,26 +67,30 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.Tenants.Item.Offb
         /// </summary>
         public async Task<OffboardTenantResponse> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreatePostRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<OffboardTenantResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OffboardTenantResponse>(requestInfo, OffboardTenantResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes tenant</summary>
         public class OffboardTenantResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type tenant</summary>
-            public Tenant Tenant { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants.Tenant Tenant { get; set; }
             /// <summary>
             /// Instantiates a new offboardTenantResponse and sets the default values.
             /// </summary>
             public OffboardTenantResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static OffboardTenantResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new OffboardTenantResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"tenant", (o,n) => { (o as OffboardTenantResponse).Tenant = n.GetObjectValue<Tenant>(); } },
+                    {"tenant", (o,n) => { (o as OffboardTenantResponse).Tenant = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants.Tenant>(MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants.Tenant.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -95,7 +99,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.Tenants.Item.Offb
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<Tenant>("tenant", Tenant);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants.Tenant>("tenant", Tenant);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

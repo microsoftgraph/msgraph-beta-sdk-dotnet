@@ -67,26 +67,30 @@ namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.GetState {
         /// </summary>
         public async Task<GetStateResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<GetStateResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetStateResponse>(requestInfo, GetStateResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes assignmentFilterState</summary>
         public class GetStateResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type assignmentFilterState</summary>
-            public AssignmentFilterState AssignmentFilterState { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.AssignmentFilterState AssignmentFilterState { get; set; }
             /// <summary>
             /// Instantiates a new getStateResponse and sets the default values.
             /// </summary>
             public GetStateResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static GetStateResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new GetStateResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"assignmentFilterState", (o,n) => { (o as GetStateResponse).AssignmentFilterState = n.GetObjectValue<AssignmentFilterState>(); } },
+                    {"assignmentFilterState", (o,n) => { (o as GetStateResponse).AssignmentFilterState = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AssignmentFilterState>(MicrosoftGraphSdk.Models.Microsoft.Graph.AssignmentFilterState.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -95,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.GetState {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<AssignmentFilterState>("assignmentFilterState", AssignmentFilterState);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AssignmentFilterState>("assignmentFilterState", AssignmentFilterState);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

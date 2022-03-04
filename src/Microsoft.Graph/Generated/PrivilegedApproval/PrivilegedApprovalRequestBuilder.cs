@@ -100,7 +100,7 @@ namespace MicrosoftGraphSdk.PrivilegedApproval {
         /// </summary>
         public async Task<PrivilegedApprovalResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PrivilegedApprovalResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PrivilegedApprovalResponse>(requestInfo, PrivilegedApprovalResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Builds and executes requests for operations under \privilegedApproval\microsoft.graph.myRequests()
@@ -119,7 +119,7 @@ namespace MicrosoftGraphSdk.PrivilegedApproval {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedApproval> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedApproval body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedApproval>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedApproval>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedApproval.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from privilegedApproval</summary>
         public class GetQueryParameters : QueryParametersBase {

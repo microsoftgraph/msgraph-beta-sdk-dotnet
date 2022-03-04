@@ -8,7 +8,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The custom authentication strength enforced in a Conditional Access policy.</summary>
-        public AuthenticationStrength AuthenticationStrength { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.AuthenticationStrength AuthenticationStrength { get; set; }
         /// <summary>Refers to the conditional access policy conditions that are not satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client,ipAddressSeenByAzureAD,ipAddressSeenByResourceProvider,unknownFutureValue,servicePrincipals,servicePrincipalRisk. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals,servicePrincipalRisk.</summary>
         public ConditionalAccessConditions? ConditionsNotSatisfied { get; set; }
         /// <summary>Refers to the conditional access policy conditions that are satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client,ipAddressSeenByAzureAD,ipAddressSeenByResourceProvider,unknownFutureValue,servicePrincipals,servicePrincipalRisk. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals,servicePrincipalRisk.</summary>
@@ -34,19 +34,27 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static AppliedConditionalAccessPolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AppliedConditionalAccessPolicy();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"authenticationStrength", (o,n) => { (o as AppliedConditionalAccessPolicy).AuthenticationStrength = n.GetObjectValue<AuthenticationStrength>(); } },
+                {"authenticationStrength", (o,n) => { (o as AppliedConditionalAccessPolicy).AuthenticationStrength = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AuthenticationStrength>(MicrosoftGraphSdk.Models.Microsoft.Graph.AuthenticationStrength.CreateFromDiscriminatorValue); } },
                 {"conditionsNotSatisfied", (o,n) => { (o as AppliedConditionalAccessPolicy).ConditionsNotSatisfied = n.GetEnumValue<ConditionalAccessConditions>(); } },
                 {"conditionsSatisfied", (o,n) => { (o as AppliedConditionalAccessPolicy).ConditionsSatisfied = n.GetEnumValue<ConditionalAccessConditions>(); } },
                 {"displayName", (o,n) => { (o as AppliedConditionalAccessPolicy).DisplayName = n.GetStringValue(); } },
                 {"enforcedGrantControls", (o,n) => { (o as AppliedConditionalAccessPolicy).EnforcedGrantControls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"enforcedSessionControls", (o,n) => { (o as AppliedConditionalAccessPolicy).EnforcedSessionControls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"excludeRulesSatisfied", (o,n) => { (o as AppliedConditionalAccessPolicy).ExcludeRulesSatisfied = n.GetCollectionOfObjectValues<ConditionalAccessRuleSatisfied>().ToList(); } },
+                {"excludeRulesSatisfied", (o,n) => { (o as AppliedConditionalAccessPolicy).ExcludeRulesSatisfied = n.GetCollectionOfObjectValues<ConditionalAccessRuleSatisfied>(ConditionalAccessRuleSatisfied.CreateFromDiscriminatorValue).ToList(); } },
                 {"id", (o,n) => { (o as AppliedConditionalAccessPolicy).Id = n.GetStringValue(); } },
-                {"includeRulesSatisfied", (o,n) => { (o as AppliedConditionalAccessPolicy).IncludeRulesSatisfied = n.GetCollectionOfObjectValues<ConditionalAccessRuleSatisfied>().ToList(); } },
+                {"includeRulesSatisfied", (o,n) => { (o as AppliedConditionalAccessPolicy).IncludeRulesSatisfied = n.GetCollectionOfObjectValues<ConditionalAccessRuleSatisfied>(ConditionalAccessRuleSatisfied.CreateFromDiscriminatorValue).ToList(); } },
                 {"result", (o,n) => { (o as AppliedConditionalAccessPolicy).Result = n.GetEnumValue<AppliedConditionalAccessPolicyResult>(); } },
             };
         }
@@ -56,7 +64,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<AuthenticationStrength>("authenticationStrength", AuthenticationStrength);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AuthenticationStrength>("authenticationStrength", AuthenticationStrength);
             writer.WriteEnumValue<ConditionalAccessConditions>("conditionsNotSatisfied", ConditionsNotSatisfied);
             writer.WriteEnumValue<ConditionalAccessConditions>("conditionsSatisfied", ConditionsSatisfied);
             writer.WriteStringValue("displayName", DisplayName);

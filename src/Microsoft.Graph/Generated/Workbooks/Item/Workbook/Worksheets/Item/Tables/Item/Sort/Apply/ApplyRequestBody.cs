@@ -18,11 +18,19 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static ApplyRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ApplyRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"fields", (o,n) => { (o as ApplyRequestBody).Fields = n.GetCollectionOfObjectValues<WorkbookSortField>().ToList(); } },
+                {"fields", (o,n) => { (o as ApplyRequestBody).Fields = n.GetCollectionOfObjectValues<WorkbookSortField>(WorkbookSortField.CreateFromDiscriminatorValue).ToList(); } },
                 {"matchCase", (o,n) => { (o as ApplyRequestBody).MatchCase = n.GetBoolValue(); } },
                 {"method", (o,n) => { (o as ApplyRequestBody).Method = n.GetStringValue(); } },
             };

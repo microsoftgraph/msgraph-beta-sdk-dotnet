@@ -19,14 +19,22 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.Gamma_Dist {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static Gamma_DistRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Gamma_DistRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"alpha", (o,n) => { (o as Gamma_DistRequestBody).Alpha = n.GetObjectValue<Json>(); } },
-                {"beta", (o,n) => { (o as Gamma_DistRequestBody).Beta = n.GetObjectValue<Json>(); } },
-                {"cumulative", (o,n) => { (o as Gamma_DistRequestBody).Cumulative = n.GetObjectValue<Json>(); } },
-                {"x", (o,n) => { (o as Gamma_DistRequestBody).X = n.GetObjectValue<Json>(); } },
+                {"alpha", (o,n) => { (o as Gamma_DistRequestBody).Alpha = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"beta", (o,n) => { (o as Gamma_DistRequestBody).Beta = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"cumulative", (o,n) => { (o as Gamma_DistRequestBody).Cumulative = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"x", (o,n) => { (o as Gamma_DistRequestBody).X = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

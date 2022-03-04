@@ -24,17 +24,25 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The type of the scope where the policy is created. One of Directory, DirectoryRole, Group.</summary>
         public string ScopeType { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new UnifiedRoleManagementPolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new UnifiedRoleManagementPolicy();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"description", (o,n) => { (o as UnifiedRoleManagementPolicy).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as UnifiedRoleManagementPolicy).DisplayName = n.GetStringValue(); } },
-                {"effectiveRules", (o,n) => { (o as UnifiedRoleManagementPolicy).EffectiveRules = n.GetCollectionOfObjectValues<UnifiedRoleManagementPolicyRule>().ToList(); } },
+                {"effectiveRules", (o,n) => { (o as UnifiedRoleManagementPolicy).EffectiveRules = n.GetCollectionOfObjectValues<UnifiedRoleManagementPolicyRule>(UnifiedRoleManagementPolicyRule.CreateFromDiscriminatorValue).ToList(); } },
                 {"isOrganizationDefault", (o,n) => { (o as UnifiedRoleManagementPolicy).IsOrganizationDefault = n.GetBoolValue(); } },
-                {"lastModifiedBy", (o,n) => { (o as UnifiedRoleManagementPolicy).LastModifiedBy = n.GetObjectValue<Identity>(); } },
+                {"lastModifiedBy", (o,n) => { (o as UnifiedRoleManagementPolicy).LastModifiedBy = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
                 {"lastModifiedDateTime", (o,n) => { (o as UnifiedRoleManagementPolicy).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"rules", (o,n) => { (o as UnifiedRoleManagementPolicy).Rules = n.GetCollectionOfObjectValues<UnifiedRoleManagementPolicyRule>().ToList(); } },
+                {"rules", (o,n) => { (o as UnifiedRoleManagementPolicy).Rules = n.GetCollectionOfObjectValues<UnifiedRoleManagementPolicyRule>(UnifiedRoleManagementPolicyRule.CreateFromDiscriminatorValue).ToList(); } },
                 {"scopeId", (o,n) => { (o as UnifiedRoleManagementPolicy).ScopeId = n.GetStringValue(); } },
                 {"scopeType", (o,n) => { (o as UnifiedRoleManagementPolicy).ScopeType = n.GetStringValue(); } },
             };

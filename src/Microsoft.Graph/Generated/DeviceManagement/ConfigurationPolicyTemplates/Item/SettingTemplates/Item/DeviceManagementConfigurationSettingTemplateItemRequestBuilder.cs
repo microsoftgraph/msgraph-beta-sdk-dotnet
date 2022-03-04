@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ConfigurationPolicyTemplates.Item.S
         /// </summary>
         public async Task<DeviceManagementConfigurationSettingTemplate> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementConfigurationSettingTemplate>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementConfigurationSettingTemplate>(requestInfo, DeviceManagementConfigurationSettingTemplate.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Setting templates

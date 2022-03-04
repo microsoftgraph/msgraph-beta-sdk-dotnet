@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Agreements.Item.File.Localizations {
         /// </summary>
         public async Task<LocalizationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<LocalizationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<LocalizationsResponse>(requestInfo, LocalizationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The localized version of the terms of use agreement files attached to the agreement.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Agreements.Item.File.Localizations {
         public async Task<AgreementFileLocalization> PostAsync(AgreementFileLocalization body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AgreementFileLocalization>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AgreementFileLocalization>(requestInfo, AgreementFileLocalization.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The localized version of the terms of use agreement files attached to the agreement.</summary>
         public class GetQueryParameters : QueryParametersBase {

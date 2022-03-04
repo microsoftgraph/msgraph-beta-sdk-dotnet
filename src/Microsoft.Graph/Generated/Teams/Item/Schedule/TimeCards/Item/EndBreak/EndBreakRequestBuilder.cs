@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.TimeCards.Item.EndBreak {
         public async Task<EndBreakResponse> PostAsync(EndBreakRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<EndBreakResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<EndBreakResponse>(requestInfo, EndBreakResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes timeCard</summary>
         public class EndBreakResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type timeCard</summary>
-            public TimeCard TimeCard { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.TimeCard TimeCard { get; set; }
             /// <summary>
             /// Instantiates a new endBreakResponse and sets the default values.
             /// </summary>
             public EndBreakResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static EndBreakResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new EndBreakResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"timeCard", (o,n) => { (o as EndBreakResponse).TimeCard = n.GetObjectValue<TimeCard>(); } },
+                    {"timeCard", (o,n) => { (o as EndBreakResponse).TimeCard = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.TimeCard>(MicrosoftGraphSdk.Models.Microsoft.Graph.TimeCard.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.TimeCards.Item.EndBreak {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<TimeCard>("timeCard", TimeCard);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.TimeCard>("timeCard", TimeCard);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

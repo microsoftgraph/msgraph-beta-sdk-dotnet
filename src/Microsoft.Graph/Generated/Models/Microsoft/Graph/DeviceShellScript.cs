@@ -38,26 +38,34 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>List of run states for this script across all users.</summary>
         public List<DeviceManagementScriptUserState> UserRunStates { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DeviceShellScript CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DeviceShellScript();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as DeviceShellScript).Assignments = n.GetCollectionOfObjectValues<DeviceManagementScriptAssignment>().ToList(); } },
+                {"assignments", (o,n) => { (o as DeviceShellScript).Assignments = n.GetCollectionOfObjectValues<DeviceManagementScriptAssignment>(DeviceManagementScriptAssignment.CreateFromDiscriminatorValue).ToList(); } },
                 {"blockExecutionNotifications", (o,n) => { (o as DeviceShellScript).BlockExecutionNotifications = n.GetBoolValue(); } },
                 {"createdDateTime", (o,n) => { (o as DeviceShellScript).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", (o,n) => { (o as DeviceShellScript).Description = n.GetStringValue(); } },
-                {"deviceRunStates", (o,n) => { (o as DeviceShellScript).DeviceRunStates = n.GetCollectionOfObjectValues<DeviceManagementScriptDeviceState>().ToList(); } },
+                {"deviceRunStates", (o,n) => { (o as DeviceShellScript).DeviceRunStates = n.GetCollectionOfObjectValues<DeviceManagementScriptDeviceState>(DeviceManagementScriptDeviceState.CreateFromDiscriminatorValue).ToList(); } },
                 {"displayName", (o,n) => { (o as DeviceShellScript).DisplayName = n.GetStringValue(); } },
                 {"executionFrequency", (o,n) => { (o as DeviceShellScript).ExecutionFrequency = n.GetTimeSpanValue(); } },
                 {"fileName", (o,n) => { (o as DeviceShellScript).FileName = n.GetStringValue(); } },
-                {"groupAssignments", (o,n) => { (o as DeviceShellScript).GroupAssignments = n.GetCollectionOfObjectValues<DeviceManagementScriptGroupAssignment>().ToList(); } },
+                {"groupAssignments", (o,n) => { (o as DeviceShellScript).GroupAssignments = n.GetCollectionOfObjectValues<DeviceManagementScriptGroupAssignment>(DeviceManagementScriptGroupAssignment.CreateFromDiscriminatorValue).ToList(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as DeviceShellScript).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"retryCount", (o,n) => { (o as DeviceShellScript).RetryCount = n.GetIntValue(); } },
                 {"roleScopeTagIds", (o,n) => { (o as DeviceShellScript).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"runAsAccount", (o,n) => { (o as DeviceShellScript).RunAsAccount = n.GetEnumValue<RunAsAccountType>(); } },
-                {"runSummary", (o,n) => { (o as DeviceShellScript).RunSummary = n.GetObjectValue<DeviceManagementScriptRunSummary>(); } },
+                {"runSummary", (o,n) => { (o as DeviceShellScript).RunSummary = n.GetObjectValue<DeviceManagementScriptRunSummary>(DeviceManagementScriptRunSummary.CreateFromDiscriminatorValue); } },
                 {"scriptContent", (o,n) => { (o as DeviceShellScript).ScriptContent = n.GetByteArrayValue(); } },
-                {"userRunStates", (o,n) => { (o as DeviceShellScript).UserRunStates = n.GetCollectionOfObjectValues<DeviceManagementScriptUserState>().ToList(); } },
+                {"userRunStates", (o,n) => { (o as DeviceShellScript).UserRunStates = n.GetCollectionOfObjectValues<DeviceManagementScriptUserState>(DeviceManagementScriptUserState.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

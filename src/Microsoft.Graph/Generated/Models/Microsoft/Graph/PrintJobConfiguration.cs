@@ -51,6 +51,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static PrintJobConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new PrintJobConfiguration();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -64,13 +72,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"finishings", (o,n) => { (o as PrintJobConfiguration).Finishings = n.GetCollectionOfEnumValues<PrintFinishing>().ToList(); } },
                 {"fitPdfToPage", (o,n) => { (o as PrintJobConfiguration).FitPdfToPage = n.GetBoolValue(); } },
                 {"inputBin", (o,n) => { (o as PrintJobConfiguration).InputBin = n.GetStringValue(); } },
-                {"margin", (o,n) => { (o as PrintJobConfiguration).Margin = n.GetObjectValue<PrintMargin>(); } },
+                {"margin", (o,n) => { (o as PrintJobConfiguration).Margin = n.GetObjectValue<PrintMargin>(PrintMargin.CreateFromDiscriminatorValue); } },
                 {"mediaSize", (o,n) => { (o as PrintJobConfiguration).MediaSize = n.GetStringValue(); } },
                 {"mediaType", (o,n) => { (o as PrintJobConfiguration).MediaType = n.GetStringValue(); } },
                 {"multipageLayout", (o,n) => { (o as PrintJobConfiguration).MultipageLayout = n.GetEnumValue<PrintMultipageLayout>(); } },
                 {"orientation", (o,n) => { (o as PrintJobConfiguration).Orientation = n.GetEnumValue<PrintOrientation>(); } },
                 {"outputBin", (o,n) => { (o as PrintJobConfiguration).OutputBin = n.GetStringValue(); } },
-                {"pageRanges", (o,n) => { (o as PrintJobConfiguration).PageRanges = n.GetCollectionOfObjectValues<IntegerRange>().ToList(); } },
+                {"pageRanges", (o,n) => { (o as PrintJobConfiguration).PageRanges = n.GetCollectionOfObjectValues<IntegerRange>(IntegerRange.CreateFromDiscriminatorValue).ToList(); } },
                 {"pagesPerSheet", (o,n) => { (o as PrintJobConfiguration).PagesPerSheet = n.GetIntValue(); } },
                 {"quality", (o,n) => { (o as PrintJobConfiguration).Quality = n.GetEnumValue<PrintQuality>(); } },
                 {"scaling", (o,n) => { (o as PrintJobConfiguration).Scaling = n.GetEnumValue<PrintScaling>(); } },

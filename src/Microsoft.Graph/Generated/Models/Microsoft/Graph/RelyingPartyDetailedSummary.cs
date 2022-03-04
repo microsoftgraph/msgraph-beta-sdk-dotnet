@@ -8,7 +8,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Number of failed sign in on Active Directory Federation Service in the period specified.</summary>
         public long? FailedSignInCount { get; set; }
         /// <summary>Indication of whether the application can be moved to Azure AD or require more investigation. Possible values are: ready, needsReview, additionalStepsRequired, unknownFutureValue.</summary>
-        public MigrationStatus? MigrationStatus { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.MigrationStatus? MigrationStatus { get; set; }
         /// <summary>Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD.</summary>
         public List<KeyValuePair> MigrationValidationDetails { get; set; }
         /// <summary>This identifier is used to identify the relying party to this Federation Service. It is used when issuing claims to the relying party.</summary>
@@ -28,13 +28,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Number of unique users that have signed into the application.</summary>
         public long? UniqueUserCount { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new RelyingPartyDetailedSummary CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new RelyingPartyDetailedSummary();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"failedSignInCount", (o,n) => { (o as RelyingPartyDetailedSummary).FailedSignInCount = n.GetLongValue(); } },
                 {"migrationStatus", (o,n) => { (o as RelyingPartyDetailedSummary).MigrationStatus = n.GetEnumValue<MigrationStatus>(); } },
-                {"migrationValidationDetails", (o,n) => { (o as RelyingPartyDetailedSummary).MigrationValidationDetails = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
+                {"migrationValidationDetails", (o,n) => { (o as RelyingPartyDetailedSummary).MigrationValidationDetails = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
                 {"relyingPartyId", (o,n) => { (o as RelyingPartyDetailedSummary).RelyingPartyId = n.GetStringValue(); } },
                 {"relyingPartyName", (o,n) => { (o as RelyingPartyDetailedSummary).RelyingPartyName = n.GetStringValue(); } },
                 {"replyUrls", (o,n) => { (o as RelyingPartyDetailedSummary).ReplyUrls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },

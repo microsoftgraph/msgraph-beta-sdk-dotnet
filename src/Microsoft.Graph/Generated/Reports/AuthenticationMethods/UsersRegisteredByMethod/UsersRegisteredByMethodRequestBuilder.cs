@@ -67,7 +67,7 @@ namespace MicrosoftGraphSdk.Reports.AuthenticationMethods.UsersRegisteredByMetho
         /// </summary>
         public async Task<UserRegistrationMethodSummary> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<UserRegistrationMethodSummary>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserRegistrationMethodSummary>(requestInfo, UserRegistrationMethodSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

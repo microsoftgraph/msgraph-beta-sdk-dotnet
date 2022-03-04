@@ -7,7 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PrivilegedApproval : Entity, IParsable {
         public TimeSpan? ApprovalDuration { get; set; }
         /// <summary>Possible values are: pending, approved, denied, aborted, canceled.</summary>
-        public ApprovalState? ApprovalState { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ApprovalState? ApprovalState { get; set; }
         public string ApprovalType { get; set; }
         public string ApproverReason { get; set; }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
@@ -22,6 +22,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? StartDateTime { get; set; }
         public string UserId { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new PrivilegedApproval CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new PrivilegedApproval();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -31,10 +39,10 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"approvalType", (o,n) => { (o as PrivilegedApproval).ApprovalType = n.GetStringValue(); } },
                 {"approverReason", (o,n) => { (o as PrivilegedApproval).ApproverReason = n.GetStringValue(); } },
                 {"endDateTime", (o,n) => { (o as PrivilegedApproval).EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"request", (o,n) => { (o as PrivilegedApproval).Request = n.GetObjectValue<PrivilegedRoleAssignmentRequest>(); } },
+                {"request", (o,n) => { (o as PrivilegedApproval).Request = n.GetObjectValue<PrivilegedRoleAssignmentRequest>(PrivilegedRoleAssignmentRequest.CreateFromDiscriminatorValue); } },
                 {"requestorReason", (o,n) => { (o as PrivilegedApproval).RequestorReason = n.GetStringValue(); } },
                 {"roleId", (o,n) => { (o as PrivilegedApproval).RoleId = n.GetStringValue(); } },
-                {"roleInfo", (o,n) => { (o as PrivilegedApproval).RoleInfo = n.GetObjectValue<PrivilegedRole>(); } },
+                {"roleInfo", (o,n) => { (o as PrivilegedApproval).RoleInfo = n.GetObjectValue<PrivilegedRole>(PrivilegedRole.CreateFromDiscriminatorValue); } },
                 {"startDateTime", (o,n) => { (o as PrivilegedApproval).StartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"userId", (o,n) => { (o as PrivilegedApproval).UserId = n.GetStringValue(); } },
             };

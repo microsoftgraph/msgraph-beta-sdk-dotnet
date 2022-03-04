@@ -22,6 +22,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Terms of Use URL of the mobility management application.</summary>
         public string TermsOfUseUrl { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new MobilityManagementPolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new MobilityManagementPolicy();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -31,7 +39,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"description", (o,n) => { (o as MobilityManagementPolicy).Description = n.GetStringValue(); } },
                 {"discoveryUrl", (o,n) => { (o as MobilityManagementPolicy).DiscoveryUrl = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as MobilityManagementPolicy).DisplayName = n.GetStringValue(); } },
-                {"includedGroups", (o,n) => { (o as MobilityManagementPolicy).IncludedGroups = n.GetCollectionOfObjectValues<Group>().ToList(); } },
+                {"includedGroups", (o,n) => { (o as MobilityManagementPolicy).IncludedGroups = n.GetCollectionOfObjectValues<Group>(Group.CreateFromDiscriminatorValue).ToList(); } },
                 {"isValid", (o,n) => { (o as MobilityManagementPolicy).IsValid = n.GetBoolValue(); } },
                 {"termsOfUseUrl", (o,n) => { (o as MobilityManagementPolicy).TermsOfUseUrl = n.GetStringValue(); } },
             };

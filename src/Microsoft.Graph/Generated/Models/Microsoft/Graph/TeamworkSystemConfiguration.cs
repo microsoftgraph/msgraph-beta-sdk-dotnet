@@ -38,11 +38,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static TeamworkSystemConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TeamworkSystemConfiguration();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"dateTimeConfiguration", (o,n) => { (o as TeamworkSystemConfiguration).DateTimeConfiguration = n.GetObjectValue<TeamworkDateTimeConfiguration>(); } },
+                {"dateTimeConfiguration", (o,n) => { (o as TeamworkSystemConfiguration).DateTimeConfiguration = n.GetObjectValue<TeamworkDateTimeConfiguration>(TeamworkDateTimeConfiguration.CreateFromDiscriminatorValue); } },
                 {"defaultPassword", (o,n) => { (o as TeamworkSystemConfiguration).DefaultPassword = n.GetStringValue(); } },
                 {"deviceLockTimeout", (o,n) => { (o as TeamworkSystemConfiguration).DeviceLockTimeout = n.GetTimeSpanValue(); } },
                 {"isDeviceLockEnabled", (o,n) => { (o as TeamworkSystemConfiguration).IsDeviceLockEnabled = n.GetBoolValue(); } },
@@ -53,7 +61,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"language", (o,n) => { (o as TeamworkSystemConfiguration).Language = n.GetStringValue(); } },
                 {"lockPin", (o,n) => { (o as TeamworkSystemConfiguration).LockPin = n.GetStringValue(); } },
                 {"loggingLevel", (o,n) => { (o as TeamworkSystemConfiguration).LoggingLevel = n.GetStringValue(); } },
-                {"networkConfiguration", (o,n) => { (o as TeamworkSystemConfiguration).NetworkConfiguration = n.GetObjectValue<TeamworkNetworkConfiguration>(); } },
+                {"networkConfiguration", (o,n) => { (o as TeamworkSystemConfiguration).NetworkConfiguration = n.GetObjectValue<TeamworkNetworkConfiguration>(TeamworkNetworkConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

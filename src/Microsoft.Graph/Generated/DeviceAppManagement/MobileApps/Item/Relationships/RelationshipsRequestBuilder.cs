@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.Relationships {
         /// </summary>
         public async Task<RelationshipsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RelationshipsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RelationshipsResponse>(requestInfo, RelationshipsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of relationships for this mobile app.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.Relationships {
         public async Task<MobileAppRelationship> PostAsync(MobileAppRelationship body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MobileAppRelationship>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MobileAppRelationship>(requestInfo, MobileAppRelationship.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>List of relationships for this mobile app.</summary>
         public class GetQueryParameters : QueryParametersBase {

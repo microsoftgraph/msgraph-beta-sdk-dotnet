@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Directory.CustomSecurityAttributeDefinitions {
         /// </summary>
         public async Task<CustomSecurityAttributeDefinitionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CustomSecurityAttributeDefinitionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CustomSecurityAttributeDefinitionsResponse>(requestInfo, CustomSecurityAttributeDefinitionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Schema of a custom security attributes (key-value pairs).
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Directory.CustomSecurityAttributeDefinitions {
         public async Task<CustomSecurityAttributeDefinition> PostAsync(CustomSecurityAttributeDefinition body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<CustomSecurityAttributeDefinition>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CustomSecurityAttributeDefinition>(requestInfo, CustomSecurityAttributeDefinition.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Schema of a custom security attributes (key-value pairs).</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -22,6 +22,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Unique name for the management condition. Used in management condition expressions.</summary>
         public string UniqueName { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new ManagementCondition CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ManagementCondition();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -31,7 +39,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"description", (o,n) => { (o as ManagementCondition).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as ManagementCondition).DisplayName = n.GetStringValue(); } },
                 {"eTag", (o,n) => { (o as ManagementCondition).ETag = n.GetStringValue(); } },
-                {"managementConditionStatements", (o,n) => { (o as ManagementCondition).ManagementConditionStatements = n.GetCollectionOfObjectValues<ManagementConditionStatement>().ToList(); } },
+                {"managementConditionStatements", (o,n) => { (o as ManagementCondition).ManagementConditionStatements = n.GetCollectionOfObjectValues<ManagementConditionStatement>(ManagementConditionStatement.CreateFromDiscriminatorValue).ToList(); } },
                 {"modifiedDateTime", (o,n) => { (o as ManagementCondition).ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"uniqueName", (o,n) => { (o as ManagementCondition).UniqueName = n.GetStringValue(); } },
             };

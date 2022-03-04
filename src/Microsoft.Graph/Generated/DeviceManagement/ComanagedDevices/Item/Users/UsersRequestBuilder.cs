@@ -77,7 +77,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.Users {
         /// </summary>
         public async Task<UsersResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UsersResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UsersResponse>(requestInfo, UsersResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The primary users associated with the managed device.</summary>
         public class GetQueryParameters : QueryParametersBase {

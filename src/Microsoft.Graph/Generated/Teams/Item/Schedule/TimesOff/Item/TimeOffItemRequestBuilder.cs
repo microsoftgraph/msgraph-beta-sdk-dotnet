@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.TimesOff.Item {
         /// </summary>
         public async Task<TimeOff> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TimeOff>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TimeOff>(requestInfo, TimeOff.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The instances of times off in the schedule.

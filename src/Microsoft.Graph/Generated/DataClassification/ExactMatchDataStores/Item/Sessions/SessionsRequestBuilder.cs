@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DataClassification.ExactMatchDataStores.Item.Session
         /// </summary>
         public async Task<SessionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SessionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SessionsResponse>(requestInfo, SessionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to sessions for dataClassification
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DataClassification.ExactMatchDataStores.Item.Session
         public async Task<ExactMatchSession> PostAsync(ExactMatchSession body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ExactMatchSession>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ExactMatchSession>(requestInfo, ExactMatchSession.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get sessions from dataClassification</summary>
         public class GetQueryParameters : QueryParametersBase {

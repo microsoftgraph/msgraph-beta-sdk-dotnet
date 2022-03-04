@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.ApplicationTemplates.Item.Instantiate {
         public async Task<InstantiateResponse> PostAsync(InstantiateRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<InstantiateResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<InstantiateResponse>(requestInfo, InstantiateResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes applicationServicePrincipal</summary>
         public class InstantiateResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type applicationServicePrincipal</summary>
-            public ApplicationServicePrincipal ApplicationServicePrincipal { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.ApplicationServicePrincipal ApplicationServicePrincipal { get; set; }
             /// <summary>
             /// Instantiates a new instantiateResponse and sets the default values.
             /// </summary>
             public InstantiateResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static InstantiateResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new InstantiateResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"applicationServicePrincipal", (o,n) => { (o as InstantiateResponse).ApplicationServicePrincipal = n.GetObjectValue<ApplicationServicePrincipal>(); } },
+                    {"applicationServicePrincipal", (o,n) => { (o as InstantiateResponse).ApplicationServicePrincipal = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ApplicationServicePrincipal>(MicrosoftGraphSdk.Models.Microsoft.Graph.ApplicationServicePrincipal.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.ApplicationTemplates.Item.Instantiate {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<ApplicationServicePrincipal>("applicationServicePrincipal", ApplicationServicePrincipal);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ApplicationServicePrincipal>("applicationServicePrincipal", ApplicationServicePrincipal);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

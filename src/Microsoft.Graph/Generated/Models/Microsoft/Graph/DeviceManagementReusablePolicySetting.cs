@@ -24,6 +24,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>version number for reusable setting. Valid values 0 to 2147483647. This property is read-only.</summary>
         public int? Version { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DeviceManagementReusablePolicySetting CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DeviceManagementReusablePolicySetting();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -32,10 +40,10 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"description", (o,n) => { (o as DeviceManagementReusablePolicySetting).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as DeviceManagementReusablePolicySetting).DisplayName = n.GetStringValue(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as DeviceManagementReusablePolicySetting).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"referencingConfigurationPolicies", (o,n) => { (o as DeviceManagementReusablePolicySetting).ReferencingConfigurationPolicies = n.GetCollectionOfObjectValues<DeviceManagementConfigurationPolicy>().ToList(); } },
+                {"referencingConfigurationPolicies", (o,n) => { (o as DeviceManagementReusablePolicySetting).ReferencingConfigurationPolicies = n.GetCollectionOfObjectValues<DeviceManagementConfigurationPolicy>(DeviceManagementConfigurationPolicy.CreateFromDiscriminatorValue).ToList(); } },
                 {"referencingConfigurationPolicyCount", (o,n) => { (o as DeviceManagementReusablePolicySetting).ReferencingConfigurationPolicyCount = n.GetIntValue(); } },
                 {"settingDefinitionId", (o,n) => { (o as DeviceManagementReusablePolicySetting).SettingDefinitionId = n.GetStringValue(); } },
-                {"settingInstance", (o,n) => { (o as DeviceManagementReusablePolicySetting).SettingInstance = n.GetObjectValue<DeviceManagementConfigurationSettingInstance>(); } },
+                {"settingInstance", (o,n) => { (o as DeviceManagementReusablePolicySetting).SettingInstance = n.GetObjectValue<DeviceManagementConfigurationSettingInstance>(DeviceManagementConfigurationSettingInstance.CreateFromDiscriminatorValue); } },
                 {"version", (o,n) => { (o as DeviceManagementReusablePolicySetting).Version = n.GetIntValue(); } },
             };
         }

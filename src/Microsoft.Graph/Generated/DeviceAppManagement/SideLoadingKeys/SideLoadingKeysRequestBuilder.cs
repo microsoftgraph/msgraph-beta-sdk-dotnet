@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.SideLoadingKeys {
         /// </summary>
         public async Task<SideLoadingKeysResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SideLoadingKeysResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SideLoadingKeysResponse>(requestInfo, SideLoadingKeysResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.SideLoadingKeys {
         public async Task<SideLoadingKey> PostAsync(SideLoadingKey body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<SideLoadingKey>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SideLoadingKey>(requestInfo, SideLoadingKey.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.</summary>
         public class GetQueryParameters : QueryParametersBase {

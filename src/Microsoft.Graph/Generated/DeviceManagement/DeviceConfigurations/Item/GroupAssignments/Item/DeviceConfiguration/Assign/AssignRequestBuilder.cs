@@ -71,7 +71,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.GroupAssi
         public async Task<IEnumerable<Assign>> PostAsync(AssignRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendCollectionAsync<Assign>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<Assign>(requestInfo, Assign.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

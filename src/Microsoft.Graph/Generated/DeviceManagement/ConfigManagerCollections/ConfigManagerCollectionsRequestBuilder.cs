@@ -100,7 +100,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ConfigManagerCollections {
         /// </summary>
         public async Task<ConfigManagerCollectionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ConfigManagerCollectionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ConfigManagerCollectionsResponse>(requestInfo, ConfigManagerCollectionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Builds and executes requests for operations under \deviceManagement\configManagerCollections\microsoft.graph.getPolicySummary(policyId='{policyId}')
@@ -121,7 +121,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ConfigManagerCollections {
         public async Task<ConfigManagerCollection> PostAsync(ConfigManagerCollection body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ConfigManagerCollection>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ConfigManagerCollection>(requestInfo, ConfigManagerCollection.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>A list of ConfigManagerCollection</summary>
         public class GetQueryParameters : QueryParametersBase {

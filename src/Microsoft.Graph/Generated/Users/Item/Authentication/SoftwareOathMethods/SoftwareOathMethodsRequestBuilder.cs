@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.SoftwareOathMethods {
         /// </summary>
         public async Task<SoftwareOathMethodsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SoftwareOathMethodsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SoftwareOathMethodsResponse>(requestInfo, SoftwareOathMethodsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to softwareOathMethods for users
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.SoftwareOathMethods {
         public async Task<SoftwareOathAuthenticationMethod> PostAsync(SoftwareOathAuthenticationMethod body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<SoftwareOathAuthenticationMethod>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SoftwareOathAuthenticationMethod>(requestInfo, SoftwareOathAuthenticationMethod.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get softwareOathMethods from users</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Privacy.SubjectRightsRequests {
         /// </summary>
         public async Task<SubjectRightsRequestsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SubjectRightsRequestsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SubjectRightsRequestsResponse>(requestInfo, SubjectRightsRequestsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to subjectRightsRequests for privacy
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Privacy.SubjectRightsRequests {
         public async Task<SubjectRightsRequest> PostAsync(SubjectRightsRequest body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<SubjectRightsRequest>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SubjectRightsRequest>(requestInfo, SubjectRightsRequest.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get subjectRightsRequests from privacy</summary>
         public class GetQueryParameters : QueryParametersBase {

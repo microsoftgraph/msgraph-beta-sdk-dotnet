@@ -27,6 +27,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         /// <summary>The collection of workload actions associated with the management template. Optional. Read-only.</summary>
         public List<WorkloadAction> WorkloadActions { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new ManagementTemplate CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ManagementTemplate();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -36,17 +44,17 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
                 {"createdDateTime", (o,n) => { (o as ManagementTemplate).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", (o,n) => { (o as ManagementTemplate).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as ManagementTemplate).DisplayName = n.GetStringValue(); } },
-                {"informationLinks", (o,n) => { (o as ManagementTemplate).InformationLinks = n.GetCollectionOfObjectValues<ActionUrl>().ToList(); } },
+                {"informationLinks", (o,n) => { (o as ManagementTemplate).InformationLinks = n.GetCollectionOfObjectValues<ActionUrl>(ActionUrl.CreateFromDiscriminatorValue).ToList(); } },
                 {"lastActionByUserId", (o,n) => { (o as ManagementTemplate).LastActionByUserId = n.GetStringValue(); } },
                 {"lastActionDateTime", (o,n) => { (o as ManagementTemplate).LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managementTemplateCollections", (o,n) => { (o as ManagementTemplate).ManagementTemplateCollections = n.GetCollectionOfObjectValues<ManagementTemplateCollection>().ToList(); } },
-                {"managementTemplateSteps", (o,n) => { (o as ManagementTemplate).ManagementTemplateSteps = n.GetCollectionOfObjectValues<ManagementTemplateStep>().ToList(); } },
-                {"parameters", (o,n) => { (o as ManagementTemplate).Parameters = n.GetCollectionOfObjectValues<TemplateParameter>().ToList(); } },
+                {"managementTemplateCollections", (o,n) => { (o as ManagementTemplate).ManagementTemplateCollections = n.GetCollectionOfObjectValues<ManagementTemplateCollection>(ManagementTemplateCollection.CreateFromDiscriminatorValue).ToList(); } },
+                {"managementTemplateSteps", (o,n) => { (o as ManagementTemplate).ManagementTemplateSteps = n.GetCollectionOfObjectValues<ManagementTemplateStep>(ManagementTemplateStep.CreateFromDiscriminatorValue).ToList(); } },
+                {"parameters", (o,n) => { (o as ManagementTemplate).Parameters = n.GetCollectionOfObjectValues<TemplateParameter>(TemplateParameter.CreateFromDiscriminatorValue).ToList(); } },
                 {"priority", (o,n) => { (o as ManagementTemplate).Priority = n.GetIntValue(); } },
                 {"provider", (o,n) => { (o as ManagementTemplate).Provider = n.GetEnumValue<ManagementProvider>(); } },
                 {"userImpact", (o,n) => { (o as ManagementTemplate).UserImpact = n.GetStringValue(); } },
                 {"version", (o,n) => { (o as ManagementTemplate).Version = n.GetIntValue(); } },
-                {"workloadActions", (o,n) => { (o as ManagementTemplate).WorkloadActions = n.GetCollectionOfObjectValues<WorkloadAction>().ToList(); } },
+                {"workloadActions", (o,n) => { (o as ManagementTemplate).WorkloadActions = n.GetCollectionOfObjectValues<WorkloadAction>(WorkloadAction.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

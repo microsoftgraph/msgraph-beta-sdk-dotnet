@@ -26,11 +26,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Specifies the logical name that refers to the namespace within the ADMX file.</summary>
         public string TargetPrefix { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new GroupPolicyDefinitionFile CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new GroupPolicyDefinitionFile();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"definitions", (o,n) => { (o as GroupPolicyDefinitionFile).Definitions = n.GetCollectionOfObjectValues<GroupPolicyDefinition>().ToList(); } },
+                {"definitions", (o,n) => { (o as GroupPolicyDefinitionFile).Definitions = n.GetCollectionOfObjectValues<GroupPolicyDefinition>(GroupPolicyDefinition.CreateFromDiscriminatorValue).ToList(); } },
                 {"description", (o,n) => { (o as GroupPolicyDefinitionFile).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as GroupPolicyDefinitionFile).DisplayName = n.GetStringValue(); } },
                 {"fileName", (o,n) => { (o as GroupPolicyDefinitionFile).FileName = n.GetStringValue(); } },

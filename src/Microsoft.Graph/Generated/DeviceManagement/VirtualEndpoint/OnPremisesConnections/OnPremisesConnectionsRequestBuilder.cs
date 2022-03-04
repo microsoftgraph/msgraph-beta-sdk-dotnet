@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.OnPremisesConnectio
         /// </summary>
         public async Task<OnPremisesConnectionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<OnPremisesConnectionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OnPremisesConnectionsResponse>(requestInfo, OnPremisesConnectionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.OnPremisesConnectio
         public async Task<CloudPcOnPremisesConnection> PostAsync(CloudPcOnPremisesConnection body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<CloudPcOnPremisesConnection>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudPcOnPremisesConnection>(requestInfo, CloudPcOnPremisesConnection.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.</summary>
         public class GetQueryParameters : QueryParametersBase {

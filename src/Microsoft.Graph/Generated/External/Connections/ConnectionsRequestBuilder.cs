@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.External.Connections {
         /// </summary>
         public async Task<ConnectionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ConnectionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ConnectionsResponse>(requestInfo, ConnectionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to connections for external
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.External.Connections {
         public async Task<ExternalConnection> PostAsync(ExternalConnection body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ExternalConnection>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ExternalConnection>(requestInfo, ExternalConnection.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get connections from external</summary>
         public class GetQueryParameters : QueryParametersBase {

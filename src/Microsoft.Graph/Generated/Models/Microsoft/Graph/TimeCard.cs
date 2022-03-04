@@ -12,7 +12,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The clock-out event of the timeCard.</summary>
         public TimeCardEvent ClockOutEvent { get; set; }
         /// <summary>Indicate if this timeCard entry is confirmed. Possible values are none, user, manager, unknownFutureValue.</summary>
-        public ConfirmedBy? ConfirmedBy { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ConfirmedBy? ConfirmedBy { get; set; }
         /// <summary>Notes about the timeCard.</summary>
         public ItemBody Notes { get; set; }
         /// <summary>The original timeCardEntry of the timeCard, before user edits.</summary>
@@ -22,16 +22,24 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>User ID to which  the timeCard belongs.</summary>
         public string UserId { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new TimeCard CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TimeCard();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"breaks", (o,n) => { (o as TimeCard).Breaks = n.GetCollectionOfObjectValues<TimeCardBreak>().ToList(); } },
-                {"clockInEvent", (o,n) => { (o as TimeCard).ClockInEvent = n.GetObjectValue<TimeCardEvent>(); } },
-                {"clockOutEvent", (o,n) => { (o as TimeCard).ClockOutEvent = n.GetObjectValue<TimeCardEvent>(); } },
+                {"breaks", (o,n) => { (o as TimeCard).Breaks = n.GetCollectionOfObjectValues<TimeCardBreak>(TimeCardBreak.CreateFromDiscriminatorValue).ToList(); } },
+                {"clockInEvent", (o,n) => { (o as TimeCard).ClockInEvent = n.GetObjectValue<TimeCardEvent>(TimeCardEvent.CreateFromDiscriminatorValue); } },
+                {"clockOutEvent", (o,n) => { (o as TimeCard).ClockOutEvent = n.GetObjectValue<TimeCardEvent>(TimeCardEvent.CreateFromDiscriminatorValue); } },
                 {"confirmedBy", (o,n) => { (o as TimeCard).ConfirmedBy = n.GetEnumValue<ConfirmedBy>(); } },
-                {"notes", (o,n) => { (o as TimeCard).Notes = n.GetObjectValue<ItemBody>(); } },
-                {"originalEntry", (o,n) => { (o as TimeCard).OriginalEntry = n.GetObjectValue<TimeCardEntry>(); } },
+                {"notes", (o,n) => { (o as TimeCard).Notes = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                {"originalEntry", (o,n) => { (o as TimeCard).OriginalEntry = n.GetObjectValue<TimeCardEntry>(TimeCardEntry.CreateFromDiscriminatorValue); } },
                 {"state", (o,n) => { (o as TimeCard).State = n.GetEnumValue<TimeCardState>(); } },
                 {"userId", (o,n) => { (o as TimeCard).UserId = n.GetStringValue(); } },
             };

@@ -20,13 +20,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static OfficeConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new OfficeConfiguration();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"clientConfigurations", (o,n) => { (o as OfficeConfiguration).ClientConfigurations = n.GetCollectionOfObjectValues<OfficeClientConfiguration>().ToList(); } },
-                {"tenantCheckinStatuses", (o,n) => { (o as OfficeConfiguration).TenantCheckinStatuses = n.GetCollectionOfObjectValues<OfficeClientCheckinStatus>().ToList(); } },
-                {"tenantUserCheckinSummary", (o,n) => { (o as OfficeConfiguration).TenantUserCheckinSummary = n.GetObjectValue<OfficeUserCheckinSummary>(); } },
+                {"clientConfigurations", (o,n) => { (o as OfficeConfiguration).ClientConfigurations = n.GetCollectionOfObjectValues<OfficeClientConfiguration>(OfficeClientConfiguration.CreateFromDiscriminatorValue).ToList(); } },
+                {"tenantCheckinStatuses", (o,n) => { (o as OfficeConfiguration).TenantCheckinStatuses = n.GetCollectionOfObjectValues<OfficeClientCheckinStatus>(OfficeClientCheckinStatus.CreateFromDiscriminatorValue).ToList(); } },
+                {"tenantUserCheckinSummary", (o,n) => { (o as OfficeConfiguration).TenantUserCheckinSummary = n.GetObjectValue<OfficeUserCheckinSummary>(OfficeUserCheckinSummary.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -25,17 +25,17 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<AssignedLicense> AssignedLicenses { get; set; }
         /// <summary>The plans that are assigned to the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq and not).</summary>
         public List<AssignedPlan> AssignedPlans { get; set; }
-        public Authentication Authentication { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Authentication Authentication { get; set; }
         /// <summary>The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.</summary>
         public DateTimeOffset? Birthday { get; set; }
         /// <summary>The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).</summary>
         public List<string> BusinessPhones { get; set; }
         /// <summary>The user's primary calendar. Read-only.</summary>
-        public Calendar Calendar { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar Calendar { get; set; }
         /// <summary>The user's calendar groups. Read-only. Nullable.</summary>
         public List<CalendarGroup> CalendarGroups { get; set; }
         /// <summary>The user's calendars. Read-only. Nullable.</summary>
-        public List<Calendar> Calendars { get; set; }
+        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar> Calendars { get; set; }
         /// <summary>The calendar view for the calendar. Read-only. Nullable.</summary>
         public List<Event> CalendarView { get; set; }
         public List<Chat> Chats { get; set; }
@@ -74,15 +74,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderBy, and $search.</summary>
         public string DisplayName { get; set; }
         /// <summary>The user's OneDrive. Read-only.</summary>
-        public Drive Drive { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Drive Drive { get; set; }
         /// <summary>A collection of drives available for this user. Read-only.</summary>
-        public List<Drive> Drives { get; set; }
+        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive> Drives { get; set; }
         /// <summary>The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).</summary>
         public DateTimeOffset? EmployeeHireDate { get; set; }
         /// <summary>The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).</summary>
         public string EmployeeId { get; set; }
         /// <summary>Represents organization data (e.g. division and costCenter) associated with a user. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).</summary>
-        public EmployeeOrgData EmployeeOrgData { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.EmployeeOrgData EmployeeOrgData { get; set; }
         /// <summary>Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith).</summary>
         public string EmployeeType { get; set; }
         /// <summary>The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.</summary>
@@ -105,10 +105,10 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).</summary>
         public List<string> ImAddresses { get; set; }
         /// <summary>Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.</summary>
-        public InferenceClassification InferenceClassification { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.InferenceClassification InferenceClassification { get; set; }
         /// <summary>Identifies the info segments assigned to the user.  Supports $filter (eq, not, ge, le, startsWith).</summary>
         public List<string> InfoCatalogs { get; set; }
-        public InformationProtection InformationProtection { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.InformationProtection InformationProtection { get; set; }
         /// <summary>Read-only. Nullable.</summary>
         public ItemInsights Insights { get; set; }
         /// <summary>A list for the user to describe their interests. Returned only on $select.</summary>
@@ -128,11 +128,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>State of license assignments for this user. Read-only. Returned only on $select.</summary>
         public List<LicenseAssignmentState> LicenseAssignmentStates { get; set; }
         /// <summary>A collection of this user's license details. Read-only.</summary>
-        public List<LicenseDetails> LicenseDetails { get; set; }
+        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.LicenseDetails> LicenseDetails { get; set; }
         /// <summary>The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com.Changes to this property will also update the user's proxyAddresses collection to include the value as an SMTP address. For Azure AD B2C accounts, this property can be updated up to only ten times with unique SMTP addresses. This property cannot contain accent characters.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).</summary>
         public string Mail { get; set; }
         /// <summary>Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale and time zone. Returned only on $select.</summary>
-        public MailboxSettings MailboxSettings { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.MailboxSettings MailboxSettings { get; set; }
         /// <summary>The user's mail folders. Read-only. Nullable.</summary>
         public List<MailFolder> MailFolders { get; set; }
         /// <summary>The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
@@ -160,14 +160,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
         public string OfficeLocation { get; set; }
         /// <summary>Read-only.</summary>
-        public Onenote Onenote { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Onenote Onenote { get; set; }
         public List<OnlineMeeting> OnlineMeetings { get; set; }
         /// <summary>Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.</summary>
         public string OnPremisesDistinguishedName { get; set; }
         /// <summary>Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.</summary>
         public string OnPremisesDomainName { get; set; }
         /// <summary>Contains extensionAttributes1-15 for the user. The individual extension attributes are neither selectable nor filterable. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. These extension attributes are also known as Exchange custom attributes 1-15.</summary>
-        public OnPremisesExtensionAttributes OnPremisesExtensionAttributes { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.OnPremisesExtensionAttributes OnPremisesExtensionAttributes { get; set; }
         /// <summary>This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user's userPrincipalName (UPN) property. NOTE: The $ and _ characters cannot be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in)..</summary>
         public string OnPremisesImmutableId { get; set; }
         /// <summary>Indicates the last time at which the object was synced with the on-premises directory; for example: 2013-02-16T03:04:54Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in).</summary>
@@ -193,7 +193,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).</summary>
         public string PasswordPolicies { get; set; }
         /// <summary>Specifies the password profile for the user. The profile contains the user’s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. NOTE: For Azure B2C tenants, the forceChangePasswordNextSignIn property should be set to false and instead use custom policies and user flows to force password reset at first logon. See Force password reset at first logon.Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).</summary>
-        public PasswordProfile PasswordProfile { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.PasswordProfile PasswordProfile { get; set; }
         /// <summary>A list for the user to enumerate their past projects. Returned only on $select.</summary>
         public List<string> PastProjects { get; set; }
         /// <summary>Navigation property to get list of access reviews pending approval by reviewer.</summary>
@@ -214,9 +214,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string PreferredLanguage { get; set; }
         /// <summary>The preferred name for the user. Returned only on $select.</summary>
         public string PreferredName { get; set; }
-        public Presence Presence { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Presence Presence { get; set; }
         /// <summary>Represents properties that are descriptive of a user in a tenant.</summary>
-        public Profile Profile { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Profile Profile { get; set; }
         /// <summary>The plans that are provisioned for the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le).</summary>
         public List<ProvisionedPlan> ProvisionedPlans { get; set; }
         /// <summary>For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).</summary>
@@ -237,7 +237,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Returned only on $select. Supports $filter (eq, ne, not, in).</summary>
         public bool? ShowInAddressList { get; set; }
         /// <summary>Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but, not with any other filterable properties. Note: Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.Note: There's a known issue with retrieving this property.</summary>
-        public SignInActivity SignInActivity { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.SignInActivity SignInActivity { get; set; }
         /// <summary>Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.</summary>
         public DateTimeOffset? SignInSessionsValidFromDateTime { get; set; }
         /// <summary>A list for the user to enumerate their skills. Returned only on $select.</summary>
@@ -248,11 +248,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string StreetAddress { get; set; }
         /// <summary>The user's surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
         public string Surname { get; set; }
-        public Tasks Tasks { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Tasks Tasks { get; set; }
         /// <summary>A container for Microsoft Teams features available for the user. Read-only. Nullable.</summary>
         public UserTeamwork Teamwork { get; set; }
         /// <summary>Represents the To Do services available to a user.</summary>
-        public Todo Todo { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Todo Todo { get; set; }
         public List<DirectoryObject> TransitiveMemberOf { get; set; }
         /// <summary>The transitive reports for a user. Read-only.</summary>
         public List<DirectoryObject> TransitiveReports { get; set; }
@@ -266,148 +266,156 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Zero or more WIP device registrations that belong to the user.</summary>
         public List<WindowsInformationProtectionDeviceRegistration> WindowsInformationProtectionDeviceRegistrations { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new User CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new User();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"aboutMe", (o,n) => { (o as User).AboutMe = n.GetStringValue(); } },
                 {"accountEnabled", (o,n) => { (o as User).AccountEnabled = n.GetBoolValue(); } },
-                {"activities", (o,n) => { (o as User).Activities = n.GetCollectionOfObjectValues<UserActivity>().ToList(); } },
+                {"activities", (o,n) => { (o as User).Activities = n.GetCollectionOfObjectValues<UserActivity>(UserActivity.CreateFromDiscriminatorValue).ToList(); } },
                 {"ageGroup", (o,n) => { (o as User).AgeGroup = n.GetStringValue(); } },
-                {"agreementAcceptances", (o,n) => { (o as User).AgreementAcceptances = n.GetCollectionOfObjectValues<AgreementAcceptance>().ToList(); } },
-                {"analytics", (o,n) => { (o as User).Analytics = n.GetObjectValue<UserAnalytics>(); } },
-                {"appConsentRequestsForApproval", (o,n) => { (o as User).AppConsentRequestsForApproval = n.GetCollectionOfObjectValues<AppConsentRequest>().ToList(); } },
-                {"appRoleAssignments", (o,n) => { (o as User).AppRoleAssignments = n.GetCollectionOfObjectValues<AppRoleAssignment>().ToList(); } },
-                {"approvals", (o,n) => { (o as User).Approvals = n.GetCollectionOfObjectValues<Approval>().ToList(); } },
-                {"assignedLicenses", (o,n) => { (o as User).AssignedLicenses = n.GetCollectionOfObjectValues<AssignedLicense>().ToList(); } },
-                {"assignedPlans", (o,n) => { (o as User).AssignedPlans = n.GetCollectionOfObjectValues<AssignedPlan>().ToList(); } },
-                {"authentication", (o,n) => { (o as User).Authentication = n.GetObjectValue<Authentication>(); } },
+                {"agreementAcceptances", (o,n) => { (o as User).AgreementAcceptances = n.GetCollectionOfObjectValues<AgreementAcceptance>(AgreementAcceptance.CreateFromDiscriminatorValue).ToList(); } },
+                {"analytics", (o,n) => { (o as User).Analytics = n.GetObjectValue<UserAnalytics>(UserAnalytics.CreateFromDiscriminatorValue); } },
+                {"appConsentRequestsForApproval", (o,n) => { (o as User).AppConsentRequestsForApproval = n.GetCollectionOfObjectValues<AppConsentRequest>(AppConsentRequest.CreateFromDiscriminatorValue).ToList(); } },
+                {"appRoleAssignments", (o,n) => { (o as User).AppRoleAssignments = n.GetCollectionOfObjectValues<AppRoleAssignment>(AppRoleAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"approvals", (o,n) => { (o as User).Approvals = n.GetCollectionOfObjectValues<Approval>(Approval.CreateFromDiscriminatorValue).ToList(); } },
+                {"assignedLicenses", (o,n) => { (o as User).AssignedLicenses = n.GetCollectionOfObjectValues<AssignedLicense>(AssignedLicense.CreateFromDiscriminatorValue).ToList(); } },
+                {"assignedPlans", (o,n) => { (o as User).AssignedPlans = n.GetCollectionOfObjectValues<AssignedPlan>(AssignedPlan.CreateFromDiscriminatorValue).ToList(); } },
+                {"authentication", (o,n) => { (o as User).Authentication = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Authentication>(MicrosoftGraphSdk.Models.Microsoft.Graph.Authentication.CreateFromDiscriminatorValue); } },
                 {"birthday", (o,n) => { (o as User).Birthday = n.GetDateTimeOffsetValue(); } },
                 {"businessPhones", (o,n) => { (o as User).BusinessPhones = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"calendar", (o,n) => { (o as User).Calendar = n.GetObjectValue<Calendar>(); } },
-                {"calendarGroups", (o,n) => { (o as User).CalendarGroups = n.GetCollectionOfObjectValues<CalendarGroup>().ToList(); } },
-                {"calendars", (o,n) => { (o as User).Calendars = n.GetCollectionOfObjectValues<Calendar>().ToList(); } },
-                {"calendarView", (o,n) => { (o as User).CalendarView = n.GetCollectionOfObjectValues<Event>().ToList(); } },
-                {"chats", (o,n) => { (o as User).Chats = n.GetCollectionOfObjectValues<Chat>().ToList(); } },
+                {"calendar", (o,n) => { (o as User).Calendar = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar>(MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar.CreateFromDiscriminatorValue); } },
+                {"calendarGroups", (o,n) => { (o as User).CalendarGroups = n.GetCollectionOfObjectValues<CalendarGroup>(CalendarGroup.CreateFromDiscriminatorValue).ToList(); } },
+                {"calendars", (o,n) => { (o as User).Calendars = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar>(MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar.CreateFromDiscriminatorValue).ToList(); } },
+                {"calendarView", (o,n) => { (o as User).CalendarView = n.GetCollectionOfObjectValues<Event>(Event.CreateFromDiscriminatorValue).ToList(); } },
+                {"chats", (o,n) => { (o as User).Chats = n.GetCollectionOfObjectValues<Chat>(Chat.CreateFromDiscriminatorValue).ToList(); } },
                 {"city", (o,n) => { (o as User).City = n.GetStringValue(); } },
                 {"companyName", (o,n) => { (o as User).CompanyName = n.GetStringValue(); } },
                 {"consentProvidedForMinor", (o,n) => { (o as User).ConsentProvidedForMinor = n.GetStringValue(); } },
-                {"contactFolders", (o,n) => { (o as User).ContactFolders = n.GetCollectionOfObjectValues<ContactFolder>().ToList(); } },
-                {"contacts", (o,n) => { (o as User).Contacts = n.GetCollectionOfObjectValues<Contact>().ToList(); } },
+                {"contactFolders", (o,n) => { (o as User).ContactFolders = n.GetCollectionOfObjectValues<ContactFolder>(ContactFolder.CreateFromDiscriminatorValue).ToList(); } },
+                {"contacts", (o,n) => { (o as User).Contacts = n.GetCollectionOfObjectValues<Contact>(Contact.CreateFromDiscriminatorValue).ToList(); } },
                 {"country", (o,n) => { (o as User).Country = n.GetStringValue(); } },
                 {"createdDateTime", (o,n) => { (o as User).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"createdObjects", (o,n) => { (o as User).CreatedObjects = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
+                {"createdObjects", (o,n) => { (o as User).CreatedObjects = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
                 {"creationType", (o,n) => { (o as User).CreationType = n.GetStringValue(); } },
-                {"customSecurityAttributes", (o,n) => { (o as User).CustomSecurityAttributes = n.GetObjectValue<CustomSecurityAttributeValue>(); } },
+                {"customSecurityAttributes", (o,n) => { (o as User).CustomSecurityAttributes = n.GetObjectValue<CustomSecurityAttributeValue>(CustomSecurityAttributeValue.CreateFromDiscriminatorValue); } },
                 {"department", (o,n) => { (o as User).Department = n.GetStringValue(); } },
-                {"deviceEnrollmentConfigurations", (o,n) => { (o as User).DeviceEnrollmentConfigurations = n.GetCollectionOfObjectValues<DeviceEnrollmentConfiguration>().ToList(); } },
+                {"deviceEnrollmentConfigurations", (o,n) => { (o as User).DeviceEnrollmentConfigurations = n.GetCollectionOfObjectValues<DeviceEnrollmentConfiguration>(DeviceEnrollmentConfiguration.CreateFromDiscriminatorValue).ToList(); } },
                 {"deviceEnrollmentLimit", (o,n) => { (o as User).DeviceEnrollmentLimit = n.GetIntValue(); } },
-                {"deviceKeys", (o,n) => { (o as User).DeviceKeys = n.GetCollectionOfObjectValues<DeviceKey>().ToList(); } },
-                {"deviceManagementTroubleshootingEvents", (o,n) => { (o as User).DeviceManagementTroubleshootingEvents = n.GetCollectionOfObjectValues<DeviceManagementTroubleshootingEvent>().ToList(); } },
-                {"devices", (o,n) => { (o as User).Devices = n.GetCollectionOfObjectValues<Device>().ToList(); } },
-                {"directReports", (o,n) => { (o as User).DirectReports = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
+                {"deviceKeys", (o,n) => { (o as User).DeviceKeys = n.GetCollectionOfObjectValues<DeviceKey>(DeviceKey.CreateFromDiscriminatorValue).ToList(); } },
+                {"deviceManagementTroubleshootingEvents", (o,n) => { (o as User).DeviceManagementTroubleshootingEvents = n.GetCollectionOfObjectValues<DeviceManagementTroubleshootingEvent>(DeviceManagementTroubleshootingEvent.CreateFromDiscriminatorValue).ToList(); } },
+                {"devices", (o,n) => { (o as User).Devices = n.GetCollectionOfObjectValues<Device>(Device.CreateFromDiscriminatorValue).ToList(); } },
+                {"directReports", (o,n) => { (o as User).DirectReports = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
                 {"displayName", (o,n) => { (o as User).DisplayName = n.GetStringValue(); } },
-                {"drive", (o,n) => { (o as User).Drive = n.GetObjectValue<Drive>(); } },
-                {"drives", (o,n) => { (o as User).Drives = n.GetCollectionOfObjectValues<Drive>().ToList(); } },
+                {"drive", (o,n) => { (o as User).Drive = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive>(MicrosoftGraphSdk.Models.Microsoft.Graph.Drive.CreateFromDiscriminatorValue); } },
+                {"drives", (o,n) => { (o as User).Drives = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive>(MicrosoftGraphSdk.Models.Microsoft.Graph.Drive.CreateFromDiscriminatorValue).ToList(); } },
                 {"employeeHireDate", (o,n) => { (o as User).EmployeeHireDate = n.GetDateTimeOffsetValue(); } },
                 {"employeeId", (o,n) => { (o as User).EmployeeId = n.GetStringValue(); } },
-                {"employeeOrgData", (o,n) => { (o as User).EmployeeOrgData = n.GetObjectValue<EmployeeOrgData>(); } },
+                {"employeeOrgData", (o,n) => { (o as User).EmployeeOrgData = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.EmployeeOrgData>(MicrosoftGraphSdk.Models.Microsoft.Graph.EmployeeOrgData.CreateFromDiscriminatorValue); } },
                 {"employeeType", (o,n) => { (o as User).EmployeeType = n.GetStringValue(); } },
-                {"events", (o,n) => { (o as User).Events = n.GetCollectionOfObjectValues<Event>().ToList(); } },
-                {"extensions", (o,n) => { (o as User).Extensions = n.GetCollectionOfObjectValues<Extension>().ToList(); } },
+                {"events", (o,n) => { (o as User).Events = n.GetCollectionOfObjectValues<Event>(Event.CreateFromDiscriminatorValue).ToList(); } },
+                {"extensions", (o,n) => { (o as User).Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue).ToList(); } },
                 {"externalUserState", (o,n) => { (o as User).ExternalUserState = n.GetStringValue(); } },
                 {"externalUserStateChangeDateTime", (o,n) => { (o as User).ExternalUserStateChangeDateTime = n.GetStringValue(); } },
                 {"faxNumber", (o,n) => { (o as User).FaxNumber = n.GetStringValue(); } },
-                {"followedSites", (o,n) => { (o as User).FollowedSites = n.GetCollectionOfObjectValues<Site>().ToList(); } },
+                {"followedSites", (o,n) => { (o as User).FollowedSites = n.GetCollectionOfObjectValues<Site>(Site.CreateFromDiscriminatorValue).ToList(); } },
                 {"givenName", (o,n) => { (o as User).GivenName = n.GetStringValue(); } },
                 {"hireDate", (o,n) => { (o as User).HireDate = n.GetDateTimeOffsetValue(); } },
-                {"identities", (o,n) => { (o as User).Identities = n.GetCollectionOfObjectValues<ObjectIdentity>().ToList(); } },
+                {"identities", (o,n) => { (o as User).Identities = n.GetCollectionOfObjectValues<ObjectIdentity>(ObjectIdentity.CreateFromDiscriminatorValue).ToList(); } },
                 {"imAddresses", (o,n) => { (o as User).ImAddresses = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"inferenceClassification", (o,n) => { (o as User).InferenceClassification = n.GetObjectValue<InferenceClassification>(); } },
+                {"inferenceClassification", (o,n) => { (o as User).InferenceClassification = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.InferenceClassification>(MicrosoftGraphSdk.Models.Microsoft.Graph.InferenceClassification.CreateFromDiscriminatorValue); } },
                 {"infoCatalogs", (o,n) => { (o as User).InfoCatalogs = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"informationProtection", (o,n) => { (o as User).InformationProtection = n.GetObjectValue<InformationProtection>(); } },
-                {"insights", (o,n) => { (o as User).Insights = n.GetObjectValue<ItemInsights>(); } },
+                {"informationProtection", (o,n) => { (o as User).InformationProtection = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.InformationProtection>(MicrosoftGraphSdk.Models.Microsoft.Graph.InformationProtection.CreateFromDiscriminatorValue); } },
+                {"insights", (o,n) => { (o as User).Insights = n.GetObjectValue<ItemInsights>(ItemInsights.CreateFromDiscriminatorValue); } },
                 {"interests", (o,n) => { (o as User).Interests = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"isResourceAccount", (o,n) => { (o as User).IsResourceAccount = n.GetBoolValue(); } },
                 {"jobTitle", (o,n) => { (o as User).JobTitle = n.GetStringValue(); } },
-                {"joinedGroups", (o,n) => { (o as User).JoinedGroups = n.GetCollectionOfObjectValues<Group>().ToList(); } },
-                {"joinedTeams", (o,n) => { (o as User).JoinedTeams = n.GetCollectionOfObjectValues<Team>().ToList(); } },
+                {"joinedGroups", (o,n) => { (o as User).JoinedGroups = n.GetCollectionOfObjectValues<Group>(Group.CreateFromDiscriminatorValue).ToList(); } },
+                {"joinedTeams", (o,n) => { (o as User).JoinedTeams = n.GetCollectionOfObjectValues<Team>(Team.CreateFromDiscriminatorValue).ToList(); } },
                 {"lastPasswordChangeDateTime", (o,n) => { (o as User).LastPasswordChangeDateTime = n.GetDateTimeOffsetValue(); } },
                 {"legalAgeGroupClassification", (o,n) => { (o as User).LegalAgeGroupClassification = n.GetStringValue(); } },
-                {"licenseAssignmentStates", (o,n) => { (o as User).LicenseAssignmentStates = n.GetCollectionOfObjectValues<LicenseAssignmentState>().ToList(); } },
-                {"licenseDetails", (o,n) => { (o as User).LicenseDetails = n.GetCollectionOfObjectValues<LicenseDetails>().ToList(); } },
+                {"licenseAssignmentStates", (o,n) => { (o as User).LicenseAssignmentStates = n.GetCollectionOfObjectValues<LicenseAssignmentState>(LicenseAssignmentState.CreateFromDiscriminatorValue).ToList(); } },
+                {"licenseDetails", (o,n) => { (o as User).LicenseDetails = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.LicenseDetails>(MicrosoftGraphSdk.Models.Microsoft.Graph.LicenseDetails.CreateFromDiscriminatorValue).ToList(); } },
                 {"mail", (o,n) => { (o as User).Mail = n.GetStringValue(); } },
-                {"mailboxSettings", (o,n) => { (o as User).MailboxSettings = n.GetObjectValue<MailboxSettings>(); } },
-                {"mailFolders", (o,n) => { (o as User).MailFolders = n.GetCollectionOfObjectValues<MailFolder>().ToList(); } },
+                {"mailboxSettings", (o,n) => { (o as User).MailboxSettings = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.MailboxSettings>(MicrosoftGraphSdk.Models.Microsoft.Graph.MailboxSettings.CreateFromDiscriminatorValue); } },
+                {"mailFolders", (o,n) => { (o as User).MailFolders = n.GetCollectionOfObjectValues<MailFolder>(MailFolder.CreateFromDiscriminatorValue).ToList(); } },
                 {"mailNickname", (o,n) => { (o as User).MailNickname = n.GetStringValue(); } },
-                {"managedAppRegistrations", (o,n) => { (o as User).ManagedAppRegistrations = n.GetCollectionOfObjectValues<ManagedAppRegistration>().ToList(); } },
-                {"managedDevices", (o,n) => { (o as User).ManagedDevices = n.GetCollectionOfObjectValues<ManagedDevice>().ToList(); } },
-                {"manager", (o,n) => { (o as User).Manager = n.GetObjectValue<DirectoryObject>(); } },
-                {"memberOf", (o,n) => { (o as User).MemberOf = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
-                {"messages", (o,n) => { (o as User).Messages = n.GetCollectionOfObjectValues<Message>().ToList(); } },
-                {"mobileAppIntentAndStates", (o,n) => { (o as User).MobileAppIntentAndStates = n.GetCollectionOfObjectValues<MobileAppIntentAndState>().ToList(); } },
-                {"mobileAppTroubleshootingEvents", (o,n) => { (o as User).MobileAppTroubleshootingEvents = n.GetCollectionOfObjectValues<MobileAppTroubleshootingEvent>().ToList(); } },
+                {"managedAppRegistrations", (o,n) => { (o as User).ManagedAppRegistrations = n.GetCollectionOfObjectValues<ManagedAppRegistration>(ManagedAppRegistration.CreateFromDiscriminatorValue).ToList(); } },
+                {"managedDevices", (o,n) => { (o as User).ManagedDevices = n.GetCollectionOfObjectValues<ManagedDevice>(ManagedDevice.CreateFromDiscriminatorValue).ToList(); } },
+                {"manager", (o,n) => { (o as User).Manager = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
+                {"memberOf", (o,n) => { (o as User).MemberOf = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
+                {"messages", (o,n) => { (o as User).Messages = n.GetCollectionOfObjectValues<Message>(Message.CreateFromDiscriminatorValue).ToList(); } },
+                {"mobileAppIntentAndStates", (o,n) => { (o as User).MobileAppIntentAndStates = n.GetCollectionOfObjectValues<MobileAppIntentAndState>(MobileAppIntentAndState.CreateFromDiscriminatorValue).ToList(); } },
+                {"mobileAppTroubleshootingEvents", (o,n) => { (o as User).MobileAppTroubleshootingEvents = n.GetCollectionOfObjectValues<MobileAppTroubleshootingEvent>(MobileAppTroubleshootingEvent.CreateFromDiscriminatorValue).ToList(); } },
                 {"mobilePhone", (o,n) => { (o as User).MobilePhone = n.GetStringValue(); } },
                 {"mySite", (o,n) => { (o as User).MySite = n.GetStringValue(); } },
-                {"notifications", (o,n) => { (o as User).Notifications = n.GetCollectionOfObjectValues<Notification>().ToList(); } },
-                {"oauth2PermissionGrants", (o,n) => { (o as User).Oauth2PermissionGrants = n.GetCollectionOfObjectValues<OAuth2PermissionGrant>().ToList(); } },
+                {"notifications", (o,n) => { (o as User).Notifications = n.GetCollectionOfObjectValues<Notification>(Notification.CreateFromDiscriminatorValue).ToList(); } },
+                {"oauth2PermissionGrants", (o,n) => { (o as User).Oauth2PermissionGrants = n.GetCollectionOfObjectValues<OAuth2PermissionGrant>(OAuth2PermissionGrant.CreateFromDiscriminatorValue).ToList(); } },
                 {"officeLocation", (o,n) => { (o as User).OfficeLocation = n.GetStringValue(); } },
-                {"onenote", (o,n) => { (o as User).Onenote = n.GetObjectValue<Onenote>(); } },
-                {"onlineMeetings", (o,n) => { (o as User).OnlineMeetings = n.GetCollectionOfObjectValues<OnlineMeeting>().ToList(); } },
+                {"onenote", (o,n) => { (o as User).Onenote = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Onenote>(MicrosoftGraphSdk.Models.Microsoft.Graph.Onenote.CreateFromDiscriminatorValue); } },
+                {"onlineMeetings", (o,n) => { (o as User).OnlineMeetings = n.GetCollectionOfObjectValues<OnlineMeeting>(OnlineMeeting.CreateFromDiscriminatorValue).ToList(); } },
                 {"onPremisesDistinguishedName", (o,n) => { (o as User).OnPremisesDistinguishedName = n.GetStringValue(); } },
                 {"onPremisesDomainName", (o,n) => { (o as User).OnPremisesDomainName = n.GetStringValue(); } },
-                {"onPremisesExtensionAttributes", (o,n) => { (o as User).OnPremisesExtensionAttributes = n.GetObjectValue<OnPremisesExtensionAttributes>(); } },
+                {"onPremisesExtensionAttributes", (o,n) => { (o as User).OnPremisesExtensionAttributes = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.OnPremisesExtensionAttributes>(MicrosoftGraphSdk.Models.Microsoft.Graph.OnPremisesExtensionAttributes.CreateFromDiscriminatorValue); } },
                 {"onPremisesImmutableId", (o,n) => { (o as User).OnPremisesImmutableId = n.GetStringValue(); } },
                 {"onPremisesLastSyncDateTime", (o,n) => { (o as User).OnPremisesLastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"onPremisesProvisioningErrors", (o,n) => { (o as User).OnPremisesProvisioningErrors = n.GetCollectionOfObjectValues<OnPremisesProvisioningError>().ToList(); } },
+                {"onPremisesProvisioningErrors", (o,n) => { (o as User).OnPremisesProvisioningErrors = n.GetCollectionOfObjectValues<OnPremisesProvisioningError>(OnPremisesProvisioningError.CreateFromDiscriminatorValue).ToList(); } },
                 {"onPremisesSamAccountName", (o,n) => { (o as User).OnPremisesSamAccountName = n.GetStringValue(); } },
                 {"onPremisesSecurityIdentifier", (o,n) => { (o as User).OnPremisesSecurityIdentifier = n.GetStringValue(); } },
                 {"onPremisesSyncEnabled", (o,n) => { (o as User).OnPremisesSyncEnabled = n.GetBoolValue(); } },
                 {"onPremisesUserPrincipalName", (o,n) => { (o as User).OnPremisesUserPrincipalName = n.GetStringValue(); } },
                 {"otherMails", (o,n) => { (o as User).OtherMails = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"outlook", (o,n) => { (o as User).Outlook = n.GetObjectValue<OutlookUser>(); } },
-                {"ownedDevices", (o,n) => { (o as User).OwnedDevices = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
-                {"ownedObjects", (o,n) => { (o as User).OwnedObjects = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
+                {"outlook", (o,n) => { (o as User).Outlook = n.GetObjectValue<OutlookUser>(OutlookUser.CreateFromDiscriminatorValue); } },
+                {"ownedDevices", (o,n) => { (o as User).OwnedDevices = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
+                {"ownedObjects", (o,n) => { (o as User).OwnedObjects = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
                 {"passwordPolicies", (o,n) => { (o as User).PasswordPolicies = n.GetStringValue(); } },
-                {"passwordProfile", (o,n) => { (o as User).PasswordProfile = n.GetObjectValue<PasswordProfile>(); } },
+                {"passwordProfile", (o,n) => { (o as User).PasswordProfile = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PasswordProfile>(MicrosoftGraphSdk.Models.Microsoft.Graph.PasswordProfile.CreateFromDiscriminatorValue); } },
                 {"pastProjects", (o,n) => { (o as User).PastProjects = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"pendingAccessReviewInstances", (o,n) => { (o as User).PendingAccessReviewInstances = n.GetCollectionOfObjectValues<AccessReviewInstance>().ToList(); } },
-                {"people", (o,n) => { (o as User).People = n.GetCollectionOfObjectValues<Person>().ToList(); } },
-                {"photo", (o,n) => { (o as User).Photo = n.GetObjectValue<ProfilePhoto>(); } },
-                {"photos", (o,n) => { (o as User).Photos = n.GetCollectionOfObjectValues<ProfilePhoto>().ToList(); } },
-                {"planner", (o,n) => { (o as User).Planner = n.GetObjectValue<PlannerUser>(); } },
+                {"pendingAccessReviewInstances", (o,n) => { (o as User).PendingAccessReviewInstances = n.GetCollectionOfObjectValues<AccessReviewInstance>(AccessReviewInstance.CreateFromDiscriminatorValue).ToList(); } },
+                {"people", (o,n) => { (o as User).People = n.GetCollectionOfObjectValues<Person>(Person.CreateFromDiscriminatorValue).ToList(); } },
+                {"photo", (o,n) => { (o as User).Photo = n.GetObjectValue<ProfilePhoto>(ProfilePhoto.CreateFromDiscriminatorValue); } },
+                {"photos", (o,n) => { (o as User).Photos = n.GetCollectionOfObjectValues<ProfilePhoto>(ProfilePhoto.CreateFromDiscriminatorValue).ToList(); } },
+                {"planner", (o,n) => { (o as User).Planner = n.GetObjectValue<PlannerUser>(PlannerUser.CreateFromDiscriminatorValue); } },
                 {"postalCode", (o,n) => { (o as User).PostalCode = n.GetStringValue(); } },
                 {"preferredDataLocation", (o,n) => { (o as User).PreferredDataLocation = n.GetStringValue(); } },
                 {"preferredLanguage", (o,n) => { (o as User).PreferredLanguage = n.GetStringValue(); } },
                 {"preferredName", (o,n) => { (o as User).PreferredName = n.GetStringValue(); } },
-                {"presence", (o,n) => { (o as User).Presence = n.GetObjectValue<Presence>(); } },
-                {"profile", (o,n) => { (o as User).Profile = n.GetObjectValue<Profile>(); } },
-                {"provisionedPlans", (o,n) => { (o as User).ProvisionedPlans = n.GetCollectionOfObjectValues<ProvisionedPlan>().ToList(); } },
+                {"presence", (o,n) => { (o as User).Presence = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Presence>(MicrosoftGraphSdk.Models.Microsoft.Graph.Presence.CreateFromDiscriminatorValue); } },
+                {"profile", (o,n) => { (o as User).Profile = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Profile>(MicrosoftGraphSdk.Models.Microsoft.Graph.Profile.CreateFromDiscriminatorValue); } },
+                {"provisionedPlans", (o,n) => { (o as User).ProvisionedPlans = n.GetCollectionOfObjectValues<ProvisionedPlan>(ProvisionedPlan.CreateFromDiscriminatorValue).ToList(); } },
                 {"proxyAddresses", (o,n) => { (o as User).ProxyAddresses = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"refreshTokensValidFromDateTime", (o,n) => { (o as User).RefreshTokensValidFromDateTime = n.GetDateTimeOffsetValue(); } },
-                {"registeredDevices", (o,n) => { (o as User).RegisteredDevices = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
+                {"registeredDevices", (o,n) => { (o as User).RegisteredDevices = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
                 {"responsibilities", (o,n) => { (o as User).Responsibilities = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"schools", (o,n) => { (o as User).Schools = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"scopedRoleMemberOf", (o,n) => { (o as User).ScopedRoleMemberOf = n.GetCollectionOfObjectValues<ScopedRoleMembership>().ToList(); } },
-                {"security", (o,n) => { (o as User).Security = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Security.Security>(); } },
-                {"settings", (o,n) => { (o as User).Settings = n.GetObjectValue<UserSettings>(); } },
+                {"scopedRoleMemberOf", (o,n) => { (o as User).ScopedRoleMemberOf = n.GetCollectionOfObjectValues<ScopedRoleMembership>(ScopedRoleMembership.CreateFromDiscriminatorValue).ToList(); } },
+                {"security", (o,n) => { (o as User).Security = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Security.Security>(MicrosoftGraphSdk.Models.Microsoft.Graph.Security.Security.CreateFromDiscriminatorValue); } },
+                {"settings", (o,n) => { (o as User).Settings = n.GetObjectValue<UserSettings>(UserSettings.CreateFromDiscriminatorValue); } },
                 {"showInAddressList", (o,n) => { (o as User).ShowInAddressList = n.GetBoolValue(); } },
-                {"signInActivity", (o,n) => { (o as User).SignInActivity = n.GetObjectValue<SignInActivity>(); } },
+                {"signInActivity", (o,n) => { (o as User).SignInActivity = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.SignInActivity>(MicrosoftGraphSdk.Models.Microsoft.Graph.SignInActivity.CreateFromDiscriminatorValue); } },
                 {"signInSessionsValidFromDateTime", (o,n) => { (o as User).SignInSessionsValidFromDateTime = n.GetDateTimeOffsetValue(); } },
                 {"skills", (o,n) => { (o as User).Skills = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"state", (o,n) => { (o as User).State = n.GetStringValue(); } },
                 {"streetAddress", (o,n) => { (o as User).StreetAddress = n.GetStringValue(); } },
                 {"surname", (o,n) => { (o as User).Surname = n.GetStringValue(); } },
-                {"tasks", (o,n) => { (o as User).Tasks = n.GetObjectValue<Tasks>(); } },
-                {"teamwork", (o,n) => { (o as User).Teamwork = n.GetObjectValue<UserTeamwork>(); } },
-                {"todo", (o,n) => { (o as User).Todo = n.GetObjectValue<Todo>(); } },
-                {"transitiveMemberOf", (o,n) => { (o as User).TransitiveMemberOf = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
-                {"transitiveReports", (o,n) => { (o as User).TransitiveReports = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
+                {"tasks", (o,n) => { (o as User).Tasks = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Tasks>(MicrosoftGraphSdk.Models.Microsoft.Graph.Tasks.CreateFromDiscriminatorValue); } },
+                {"teamwork", (o,n) => { (o as User).Teamwork = n.GetObjectValue<UserTeamwork>(UserTeamwork.CreateFromDiscriminatorValue); } },
+                {"todo", (o,n) => { (o as User).Todo = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Todo>(MicrosoftGraphSdk.Models.Microsoft.Graph.Todo.CreateFromDiscriminatorValue); } },
+                {"transitiveMemberOf", (o,n) => { (o as User).TransitiveMemberOf = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
+                {"transitiveReports", (o,n) => { (o as User).TransitiveReports = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
                 {"usageLocation", (o,n) => { (o as User).UsageLocation = n.GetStringValue(); } },
-                {"usageRights", (o,n) => { (o as User).UsageRights = n.GetCollectionOfObjectValues<UsageRight>().ToList(); } },
+                {"usageRights", (o,n) => { (o as User).UsageRights = n.GetCollectionOfObjectValues<UsageRight>(UsageRight.CreateFromDiscriminatorValue).ToList(); } },
                 {"userPrincipalName", (o,n) => { (o as User).UserPrincipalName = n.GetStringValue(); } },
                 {"userType", (o,n) => { (o as User).UserType = n.GetStringValue(); } },
-                {"windowsInformationProtectionDeviceRegistrations", (o,n) => { (o as User).WindowsInformationProtectionDeviceRegistrations = n.GetCollectionOfObjectValues<WindowsInformationProtectionDeviceRegistration>().ToList(); } },
+                {"windowsInformationProtectionDeviceRegistrations", (o,n) => { (o as User).WindowsInformationProtectionDeviceRegistrations = n.GetCollectionOfObjectValues<WindowsInformationProtectionDeviceRegistration>(WindowsInformationProtectionDeviceRegistration.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>
@@ -428,12 +436,12 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<Approval>("approvals", Approvals);
             writer.WriteCollectionOfObjectValues<AssignedLicense>("assignedLicenses", AssignedLicenses);
             writer.WriteCollectionOfObjectValues<AssignedPlan>("assignedPlans", AssignedPlans);
-            writer.WriteObjectValue<Authentication>("authentication", Authentication);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Authentication>("authentication", Authentication);
             writer.WriteDateTimeOffsetValue("birthday", Birthday);
             writer.WriteCollectionOfPrimitiveValues<string>("businessPhones", BusinessPhones);
-            writer.WriteObjectValue<Calendar>("calendar", Calendar);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar>("calendar", Calendar);
             writer.WriteCollectionOfObjectValues<CalendarGroup>("calendarGroups", CalendarGroups);
-            writer.WriteCollectionOfObjectValues<Calendar>("calendars", Calendars);
+            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar>("calendars", Calendars);
             writer.WriteCollectionOfObjectValues<Event>("calendarView", CalendarView);
             writer.WriteCollectionOfObjectValues<Chat>("chats", Chats);
             writer.WriteStringValue("city", City);
@@ -454,11 +462,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<Device>("devices", Devices);
             writer.WriteCollectionOfObjectValues<DirectoryObject>("directReports", DirectReports);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<Drive>("drive", Drive);
-            writer.WriteCollectionOfObjectValues<Drive>("drives", Drives);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive>("drive", Drive);
+            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive>("drives", Drives);
             writer.WriteDateTimeOffsetValue("employeeHireDate", EmployeeHireDate);
             writer.WriteStringValue("employeeId", EmployeeId);
-            writer.WriteObjectValue<EmployeeOrgData>("employeeOrgData", EmployeeOrgData);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.EmployeeOrgData>("employeeOrgData", EmployeeOrgData);
             writer.WriteStringValue("employeeType", EmployeeType);
             writer.WriteCollectionOfObjectValues<Event>("events", Events);
             writer.WriteCollectionOfObjectValues<Extension>("extensions", Extensions);
@@ -470,9 +478,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteDateTimeOffsetValue("hireDate", HireDate);
             writer.WriteCollectionOfObjectValues<ObjectIdentity>("identities", Identities);
             writer.WriteCollectionOfPrimitiveValues<string>("imAddresses", ImAddresses);
-            writer.WriteObjectValue<InferenceClassification>("inferenceClassification", InferenceClassification);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.InferenceClassification>("inferenceClassification", InferenceClassification);
             writer.WriteCollectionOfPrimitiveValues<string>("infoCatalogs", InfoCatalogs);
-            writer.WriteObjectValue<InformationProtection>("informationProtection", InformationProtection);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.InformationProtection>("informationProtection", InformationProtection);
             writer.WriteObjectValue<ItemInsights>("insights", Insights);
             writer.WriteCollectionOfPrimitiveValues<string>("interests", Interests);
             writer.WriteBoolValue("isResourceAccount", IsResourceAccount);
@@ -482,9 +490,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteDateTimeOffsetValue("lastPasswordChangeDateTime", LastPasswordChangeDateTime);
             writer.WriteStringValue("legalAgeGroupClassification", LegalAgeGroupClassification);
             writer.WriteCollectionOfObjectValues<LicenseAssignmentState>("licenseAssignmentStates", LicenseAssignmentStates);
-            writer.WriteCollectionOfObjectValues<LicenseDetails>("licenseDetails", LicenseDetails);
+            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.LicenseDetails>("licenseDetails", LicenseDetails);
             writer.WriteStringValue("mail", Mail);
-            writer.WriteObjectValue<MailboxSettings>("mailboxSettings", MailboxSettings);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.MailboxSettings>("mailboxSettings", MailboxSettings);
             writer.WriteCollectionOfObjectValues<MailFolder>("mailFolders", MailFolders);
             writer.WriteStringValue("mailNickname", MailNickname);
             writer.WriteCollectionOfObjectValues<ManagedAppRegistration>("managedAppRegistrations", ManagedAppRegistrations);
@@ -499,11 +507,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<Notification>("notifications", Notifications);
             writer.WriteCollectionOfObjectValues<OAuth2PermissionGrant>("oauth2PermissionGrants", Oauth2PermissionGrants);
             writer.WriteStringValue("officeLocation", OfficeLocation);
-            writer.WriteObjectValue<Onenote>("onenote", Onenote);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Onenote>("onenote", Onenote);
             writer.WriteCollectionOfObjectValues<OnlineMeeting>("onlineMeetings", OnlineMeetings);
             writer.WriteStringValue("onPremisesDistinguishedName", OnPremisesDistinguishedName);
             writer.WriteStringValue("onPremisesDomainName", OnPremisesDomainName);
-            writer.WriteObjectValue<OnPremisesExtensionAttributes>("onPremisesExtensionAttributes", OnPremisesExtensionAttributes);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.OnPremisesExtensionAttributes>("onPremisesExtensionAttributes", OnPremisesExtensionAttributes);
             writer.WriteStringValue("onPremisesImmutableId", OnPremisesImmutableId);
             writer.WriteDateTimeOffsetValue("onPremisesLastSyncDateTime", OnPremisesLastSyncDateTime);
             writer.WriteCollectionOfObjectValues<OnPremisesProvisioningError>("onPremisesProvisioningErrors", OnPremisesProvisioningErrors);
@@ -516,7 +524,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<DirectoryObject>("ownedDevices", OwnedDevices);
             writer.WriteCollectionOfObjectValues<DirectoryObject>("ownedObjects", OwnedObjects);
             writer.WriteStringValue("passwordPolicies", PasswordPolicies);
-            writer.WriteObjectValue<PasswordProfile>("passwordProfile", PasswordProfile);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PasswordProfile>("passwordProfile", PasswordProfile);
             writer.WriteCollectionOfPrimitiveValues<string>("pastProjects", PastProjects);
             writer.WriteCollectionOfObjectValues<AccessReviewInstance>("pendingAccessReviewInstances", PendingAccessReviewInstances);
             writer.WriteCollectionOfObjectValues<Person>("people", People);
@@ -527,8 +535,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("preferredDataLocation", PreferredDataLocation);
             writer.WriteStringValue("preferredLanguage", PreferredLanguage);
             writer.WriteStringValue("preferredName", PreferredName);
-            writer.WriteObjectValue<Presence>("presence", Presence);
-            writer.WriteObjectValue<Profile>("profile", Profile);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Presence>("presence", Presence);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Profile>("profile", Profile);
             writer.WriteCollectionOfObjectValues<ProvisionedPlan>("provisionedPlans", ProvisionedPlans);
             writer.WriteCollectionOfPrimitiveValues<string>("proxyAddresses", ProxyAddresses);
             writer.WriteDateTimeOffsetValue("refreshTokensValidFromDateTime", RefreshTokensValidFromDateTime);
@@ -539,15 +547,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Security.Security>("security", Security);
             writer.WriteObjectValue<UserSettings>("settings", Settings);
             writer.WriteBoolValue("showInAddressList", ShowInAddressList);
-            writer.WriteObjectValue<SignInActivity>("signInActivity", SignInActivity);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.SignInActivity>("signInActivity", SignInActivity);
             writer.WriteDateTimeOffsetValue("signInSessionsValidFromDateTime", SignInSessionsValidFromDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("skills", Skills);
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("streetAddress", StreetAddress);
             writer.WriteStringValue("surname", Surname);
-            writer.WriteObjectValue<Tasks>("tasks", Tasks);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Tasks>("tasks", Tasks);
             writer.WriteObjectValue<UserTeamwork>("teamwork", Teamwork);
-            writer.WriteObjectValue<Todo>("todo", Todo);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Todo>("todo", Todo);
             writer.WriteCollectionOfObjectValues<DirectoryObject>("transitiveMemberOf", TransitiveMemberOf);
             writer.WriteCollectionOfObjectValues<DirectoryObject>("transitiveReports", TransitiveReports);
             writer.WriteStringValue("usageLocation", UsageLocation);

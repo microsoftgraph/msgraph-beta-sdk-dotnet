@@ -24,12 +24,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static ApprovalSettings CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ApprovalSettings();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"approvalMode", (o,n) => { (o as ApprovalSettings).ApprovalMode = n.GetStringValue(); } },
-                {"approvalStages", (o,n) => { (o as ApprovalSettings).ApprovalStages = n.GetCollectionOfObjectValues<ApprovalStage>().ToList(); } },
+                {"approvalStages", (o,n) => { (o as ApprovalSettings).ApprovalStages = n.GetCollectionOfObjectValues<ApprovalStage>(ApprovalStage.CreateFromDiscriminatorValue).ToList(); } },
                 {"isApprovalRequired", (o,n) => { (o as ApprovalSettings).IsApprovalRequired = n.GetBoolValue(); } },
                 {"isApprovalRequiredForExtension", (o,n) => { (o as ApprovalSettings).IsApprovalRequiredForExtension = n.GetBoolValue(); } },
                 {"isRequestorJustificationRequired", (o,n) => { (o as ApprovalSettings).IsRequestorJustificationRequired = n.GetBoolValue(); } },

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.CompanyInformation {
         /// </summary>
         public async Task<CompanyInformationResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CompanyInformationResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CompanyInformationResponse>(requestInfo, CompanyInformationResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to companyInformation for financials
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.CompanyInformation {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.CompanyInformation> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.CompanyInformation body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.CompanyInformation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.CompanyInformation>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.CompanyInformation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get companyInformation from financials</summary>
         public class GetQueryParameters : QueryParametersBase {

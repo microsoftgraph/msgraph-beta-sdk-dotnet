@@ -26,16 +26,24 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static ApprovalStage CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ApprovalStage();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"approvalStageTimeOutInDays", (o,n) => { (o as ApprovalStage).ApprovalStageTimeOutInDays = n.GetIntValue(); } },
-                {"escalationApprovers", (o,n) => { (o as ApprovalStage).EscalationApprovers = n.GetCollectionOfObjectValues<UserSet>().ToList(); } },
+                {"escalationApprovers", (o,n) => { (o as ApprovalStage).EscalationApprovers = n.GetCollectionOfObjectValues<UserSet>(UserSet.CreateFromDiscriminatorValue).ToList(); } },
                 {"escalationTimeInMinutes", (o,n) => { (o as ApprovalStage).EscalationTimeInMinutes = n.GetIntValue(); } },
                 {"isApproverJustificationRequired", (o,n) => { (o as ApprovalStage).IsApproverJustificationRequired = n.GetBoolValue(); } },
                 {"isEscalationEnabled", (o,n) => { (o as ApprovalStage).IsEscalationEnabled = n.GetBoolValue(); } },
-                {"primaryApprovers", (o,n) => { (o as ApprovalStage).PrimaryApprovers = n.GetCollectionOfObjectValues<UserSet>().ToList(); } },
+                {"primaryApprovers", (o,n) => { (o as ApprovalStage).PrimaryApprovers = n.GetCollectionOfObjectValues<UserSet>(UserSet.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

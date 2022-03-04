@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.CredentialUserReg
         /// </summary>
         public async Task<CredentialUserRegistrationsSummary> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CredentialUserRegistrationsSummary>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CredentialUserRegistrationsSummary>(requestInfo, CredentialUserRegistrationsSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.

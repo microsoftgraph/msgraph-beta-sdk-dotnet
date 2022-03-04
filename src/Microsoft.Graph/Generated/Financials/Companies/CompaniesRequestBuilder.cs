@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Financials.Companies {
         /// </summary>
         public async Task<CompaniesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CompaniesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CompaniesResponse>(requestInfo, CompaniesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to companies for financials
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Financials.Companies {
         public async Task<Company> PostAsync(Company body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<Company>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Company>(requestInfo, Company.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get companies from financials</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Reports.ApplicationSignInDetailedSummary.Item {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ApplicationSignInDetailedSummary> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ApplicationSignInDetailedSummary>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ApplicationSignInDetailedSummary>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ApplicationSignInDetailedSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents a detailed summary of an application sign-in.

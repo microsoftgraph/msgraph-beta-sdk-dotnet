@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Policies.IdentitySecurityDefaultsEnforcementPolicy {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.IdentitySecurityDefaultsEnforcementPolicy> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.IdentitySecurityDefaultsEnforcementPolicy>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.IdentitySecurityDefaultsEnforcementPolicy>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.IdentitySecurityDefaultsEnforcementPolicy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The policy that represents the security defaults that protect against common attacks.

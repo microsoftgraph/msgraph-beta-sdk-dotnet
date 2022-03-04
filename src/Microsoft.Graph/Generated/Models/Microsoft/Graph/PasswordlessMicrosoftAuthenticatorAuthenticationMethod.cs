@@ -8,9 +8,17 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>The timestamp when this method was registered to the user.</summary>
         public DateTimeOffset? CreationDateTime { get; set; }
-        public Device Device { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Device Device { get; set; }
         /// <summary>The display name of the mobile device as given by the user.</summary>
         public string DisplayName { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new PasswordlessMicrosoftAuthenticatorAuthenticationMethod CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new PasswordlessMicrosoftAuthenticatorAuthenticationMethod();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -18,7 +26,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"createdDateTime", (o,n) => { (o as PasswordlessMicrosoftAuthenticatorAuthenticationMethod).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"creationDateTime", (o,n) => { (o as PasswordlessMicrosoftAuthenticatorAuthenticationMethod).CreationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"device", (o,n) => { (o as PasswordlessMicrosoftAuthenticatorAuthenticationMethod).Device = n.GetObjectValue<Device>(); } },
+                {"device", (o,n) => { (o as PasswordlessMicrosoftAuthenticatorAuthenticationMethod).Device = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Device>(MicrosoftGraphSdk.Models.Microsoft.Graph.Device.CreateFromDiscriminatorValue); } },
                 {"displayName", (o,n) => { (o as PasswordlessMicrosoftAuthenticatorAuthenticationMethod).DisplayName = n.GetStringValue(); } },
             };
         }
@@ -31,7 +39,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteDateTimeOffsetValue("creationDateTime", CreationDateTime);
-            writer.WriteObjectValue<Device>("device", Device);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Device>("device", Device);
             writer.WriteStringValue("displayName", DisplayName);
         }
     }

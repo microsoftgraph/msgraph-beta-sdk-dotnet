@@ -130,7 +130,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item {
         /// </summary>
         public async Task<PolicySet> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PolicySet>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PolicySet>(requestInfo, PolicySet.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The PolicySet of Policies and Applications

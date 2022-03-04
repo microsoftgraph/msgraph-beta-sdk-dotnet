@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.IdentityProtection.RiskDetections.Item {
         /// </summary>
         public async Task<RiskDetection> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RiskDetection>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RiskDetection>(requestInfo, RiskDetection.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Risk detection in Azure AD Identity Protection and the associated information about the detection.

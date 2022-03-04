@@ -18,12 +18,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static SimulationReport CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new SimulationReport();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"overview", (o,n) => { (o as SimulationReport).Overview = n.GetObjectValue<SimulationReportOverview>(); } },
-                {"simulationUsers", (o,n) => { (o as SimulationReport).SimulationUsers = n.GetCollectionOfObjectValues<UserSimulationDetails>().ToList(); } },
+                {"overview", (o,n) => { (o as SimulationReport).Overview = n.GetObjectValue<SimulationReportOverview>(SimulationReportOverview.CreateFromDiscriminatorValue); } },
+                {"simulationUsers", (o,n) => { (o as SimulationReport).SimulationUsers = n.GetCollectionOfObjectValues<UserSimulationDetails>(UserSimulationDetails.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

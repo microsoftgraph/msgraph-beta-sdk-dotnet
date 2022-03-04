@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyMigrationReports.Item.Un
         /// </summary>
         public async Task<UnsupportedGroupPolicyExtension> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UnsupportedGroupPolicyExtension>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UnsupportedGroupPolicyExtension>(requestInfo, UnsupportedGroupPolicyExtension.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A list of unsupported group policy extensions inside the Group Policy Object.

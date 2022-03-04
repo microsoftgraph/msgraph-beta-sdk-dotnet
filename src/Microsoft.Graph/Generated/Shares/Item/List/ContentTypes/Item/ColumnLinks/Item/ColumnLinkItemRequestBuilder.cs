@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Shares.Item.List.ContentTypes.Item.ColumnLinks.Item 
         /// </summary>
         public async Task<ColumnLink> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ColumnLink>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ColumnLink>(requestInfo, ColumnLink.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The collection of columns that are required by this content type.

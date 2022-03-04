@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.AccessReviews.Item.Instances {
         /// </summary>
         public async Task<InstancesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<InstancesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<InstancesResponse>(requestInfo, InstancesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The collection of access reviews instances past, present and future, if this object is a recurring access review.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.AccessReviews.Item.Instances {
         public async Task<AccessReview> PostAsync(AccessReview body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AccessReview>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AccessReview>(requestInfo, AccessReview.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The collection of access reviews instances past, present and future, if this object is a recurring access review.</summary>
         public class GetQueryParameters : QueryParametersBase {

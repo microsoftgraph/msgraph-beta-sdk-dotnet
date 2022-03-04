@@ -50,34 +50,42 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         /// <summary>The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.</summary>
         public List<WindowsProtectionState> WindowsProtectionStates { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new ManagedTenant CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ManagedTenant();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"aggregatedPolicyCompliances", (o,n) => { (o as ManagedTenant).AggregatedPolicyCompliances = n.GetCollectionOfObjectValues<AggregatedPolicyCompliance>().ToList(); } },
-                {"auditEvents", (o,n) => { (o as ManagedTenant).AuditEvents = n.GetCollectionOfObjectValues<AuditEvent>().ToList(); } },
-                {"cloudPcConnections", (o,n) => { (o as ManagedTenant).CloudPcConnections = n.GetCollectionOfObjectValues<CloudPcConnection>().ToList(); } },
-                {"cloudPcDevices", (o,n) => { (o as ManagedTenant).CloudPcDevices = n.GetCollectionOfObjectValues<CloudPcDevice>().ToList(); } },
-                {"cloudPcsOverview", (o,n) => { (o as ManagedTenant).CloudPcsOverview = n.GetCollectionOfObjectValues<CloudPcOverview>().ToList(); } },
-                {"conditionalAccessPolicyCoverages", (o,n) => { (o as ManagedTenant).ConditionalAccessPolicyCoverages = n.GetCollectionOfObjectValues<ConditionalAccessPolicyCoverage>().ToList(); } },
-                {"credentialUserRegistrationsSummaries", (o,n) => { (o as ManagedTenant).CredentialUserRegistrationsSummaries = n.GetCollectionOfObjectValues<CredentialUserRegistrationsSummary>().ToList(); } },
-                {"deviceCompliancePolicySettingStateSummaries", (o,n) => { (o as ManagedTenant).DeviceCompliancePolicySettingStateSummaries = n.GetCollectionOfObjectValues<DeviceCompliancePolicySettingStateSummary>().ToList(); } },
-                {"managedDeviceCompliances", (o,n) => { (o as ManagedTenant).ManagedDeviceCompliances = n.GetCollectionOfObjectValues<ManagedDeviceCompliance>().ToList(); } },
-                {"managedDeviceComplianceTrends", (o,n) => { (o as ManagedTenant).ManagedDeviceComplianceTrends = n.GetCollectionOfObjectValues<ManagedDeviceComplianceTrend>().ToList(); } },
-                {"managementActions", (o,n) => { (o as ManagedTenant).ManagementActions = n.GetCollectionOfObjectValues<ManagementAction>().ToList(); } },
-                {"managementActionTenantDeploymentStatuses", (o,n) => { (o as ManagedTenant).ManagementActionTenantDeploymentStatuses = n.GetCollectionOfObjectValues<ManagementActionTenantDeploymentStatus>().ToList(); } },
-                {"managementIntents", (o,n) => { (o as ManagedTenant).ManagementIntents = n.GetCollectionOfObjectValues<ManagementIntent>().ToList(); } },
-                {"managementTemplateCollections", (o,n) => { (o as ManagedTenant).ManagementTemplateCollections = n.GetCollectionOfObjectValues<ManagementTemplateCollection>().ToList(); } },
-                {"managementTemplates", (o,n) => { (o as ManagedTenant).ManagementTemplates = n.GetCollectionOfObjectValues<ManagementTemplate>().ToList(); } },
-                {"managementTemplateSteps", (o,n) => { (o as ManagedTenant).ManagementTemplateSteps = n.GetCollectionOfObjectValues<ManagementTemplateStep>().ToList(); } },
-                {"managementTemplateStepVersions", (o,n) => { (o as ManagedTenant).ManagementTemplateStepVersions = n.GetCollectionOfObjectValues<ManagementTemplateStepVersion>().ToList(); } },
-                {"tenantGroups", (o,n) => { (o as ManagedTenant).TenantGroups = n.GetCollectionOfObjectValues<TenantGroup>().ToList(); } },
-                {"tenants", (o,n) => { (o as ManagedTenant).Tenants = n.GetCollectionOfObjectValues<Tenant>().ToList(); } },
-                {"tenantsCustomizedInformation", (o,n) => { (o as ManagedTenant).TenantsCustomizedInformation = n.GetCollectionOfObjectValues<TenantCustomizedInformation>().ToList(); } },
-                {"tenantsDetailedInformation", (o,n) => { (o as ManagedTenant).TenantsDetailedInformation = n.GetCollectionOfObjectValues<TenantDetailedInformation>().ToList(); } },
-                {"tenantTags", (o,n) => { (o as ManagedTenant).TenantTags = n.GetCollectionOfObjectValues<TenantTag>().ToList(); } },
-                {"windowsDeviceMalwareStates", (o,n) => { (o as ManagedTenant).WindowsDeviceMalwareStates = n.GetCollectionOfObjectValues<WindowsDeviceMalwareState>().ToList(); } },
-                {"windowsProtectionStates", (o,n) => { (o as ManagedTenant).WindowsProtectionStates = n.GetCollectionOfObjectValues<WindowsProtectionState>().ToList(); } },
+                {"aggregatedPolicyCompliances", (o,n) => { (o as ManagedTenant).AggregatedPolicyCompliances = n.GetCollectionOfObjectValues<AggregatedPolicyCompliance>(AggregatedPolicyCompliance.CreateFromDiscriminatorValue).ToList(); } },
+                {"auditEvents", (o,n) => { (o as ManagedTenant).AuditEvents = n.GetCollectionOfObjectValues<AuditEvent>(AuditEvent.CreateFromDiscriminatorValue).ToList(); } },
+                {"cloudPcConnections", (o,n) => { (o as ManagedTenant).CloudPcConnections = n.GetCollectionOfObjectValues<CloudPcConnection>(CloudPcConnection.CreateFromDiscriminatorValue).ToList(); } },
+                {"cloudPcDevices", (o,n) => { (o as ManagedTenant).CloudPcDevices = n.GetCollectionOfObjectValues<CloudPcDevice>(CloudPcDevice.CreateFromDiscriminatorValue).ToList(); } },
+                {"cloudPcsOverview", (o,n) => { (o as ManagedTenant).CloudPcsOverview = n.GetCollectionOfObjectValues<CloudPcOverview>(CloudPcOverview.CreateFromDiscriminatorValue).ToList(); } },
+                {"conditionalAccessPolicyCoverages", (o,n) => { (o as ManagedTenant).ConditionalAccessPolicyCoverages = n.GetCollectionOfObjectValues<ConditionalAccessPolicyCoverage>(ConditionalAccessPolicyCoverage.CreateFromDiscriminatorValue).ToList(); } },
+                {"credentialUserRegistrationsSummaries", (o,n) => { (o as ManagedTenant).CredentialUserRegistrationsSummaries = n.GetCollectionOfObjectValues<CredentialUserRegistrationsSummary>(CredentialUserRegistrationsSummary.CreateFromDiscriminatorValue).ToList(); } },
+                {"deviceCompliancePolicySettingStateSummaries", (o,n) => { (o as ManagedTenant).DeviceCompliancePolicySettingStateSummaries = n.GetCollectionOfObjectValues<DeviceCompliancePolicySettingStateSummary>(DeviceCompliancePolicySettingStateSummary.CreateFromDiscriminatorValue).ToList(); } },
+                {"managedDeviceCompliances", (o,n) => { (o as ManagedTenant).ManagedDeviceCompliances = n.GetCollectionOfObjectValues<ManagedDeviceCompliance>(ManagedDeviceCompliance.CreateFromDiscriminatorValue).ToList(); } },
+                {"managedDeviceComplianceTrends", (o,n) => { (o as ManagedTenant).ManagedDeviceComplianceTrends = n.GetCollectionOfObjectValues<ManagedDeviceComplianceTrend>(ManagedDeviceComplianceTrend.CreateFromDiscriminatorValue).ToList(); } },
+                {"managementActions", (o,n) => { (o as ManagedTenant).ManagementActions = n.GetCollectionOfObjectValues<ManagementAction>(ManagementAction.CreateFromDiscriminatorValue).ToList(); } },
+                {"managementActionTenantDeploymentStatuses", (o,n) => { (o as ManagedTenant).ManagementActionTenantDeploymentStatuses = n.GetCollectionOfObjectValues<ManagementActionTenantDeploymentStatus>(ManagementActionTenantDeploymentStatus.CreateFromDiscriminatorValue).ToList(); } },
+                {"managementIntents", (o,n) => { (o as ManagedTenant).ManagementIntents = n.GetCollectionOfObjectValues<ManagementIntent>(ManagementIntent.CreateFromDiscriminatorValue).ToList(); } },
+                {"managementTemplateCollections", (o,n) => { (o as ManagedTenant).ManagementTemplateCollections = n.GetCollectionOfObjectValues<ManagementTemplateCollection>(ManagementTemplateCollection.CreateFromDiscriminatorValue).ToList(); } },
+                {"managementTemplates", (o,n) => { (o as ManagedTenant).ManagementTemplates = n.GetCollectionOfObjectValues<ManagementTemplate>(ManagementTemplate.CreateFromDiscriminatorValue).ToList(); } },
+                {"managementTemplateSteps", (o,n) => { (o as ManagedTenant).ManagementTemplateSteps = n.GetCollectionOfObjectValues<ManagementTemplateStep>(ManagementTemplateStep.CreateFromDiscriminatorValue).ToList(); } },
+                {"managementTemplateStepVersions", (o,n) => { (o as ManagedTenant).ManagementTemplateStepVersions = n.GetCollectionOfObjectValues<ManagementTemplateStepVersion>(ManagementTemplateStepVersion.CreateFromDiscriminatorValue).ToList(); } },
+                {"tenantGroups", (o,n) => { (o as ManagedTenant).TenantGroups = n.GetCollectionOfObjectValues<TenantGroup>(TenantGroup.CreateFromDiscriminatorValue).ToList(); } },
+                {"tenants", (o,n) => { (o as ManagedTenant).Tenants = n.GetCollectionOfObjectValues<Tenant>(Tenant.CreateFromDiscriminatorValue).ToList(); } },
+                {"tenantsCustomizedInformation", (o,n) => { (o as ManagedTenant).TenantsCustomizedInformation = n.GetCollectionOfObjectValues<TenantCustomizedInformation>(TenantCustomizedInformation.CreateFromDiscriminatorValue).ToList(); } },
+                {"tenantsDetailedInformation", (o,n) => { (o as ManagedTenant).TenantsDetailedInformation = n.GetCollectionOfObjectValues<TenantDetailedInformation>(TenantDetailedInformation.CreateFromDiscriminatorValue).ToList(); } },
+                {"tenantTags", (o,n) => { (o as ManagedTenant).TenantTags = n.GetCollectionOfObjectValues<TenantTag>(TenantTag.CreateFromDiscriminatorValue).ToList(); } },
+                {"windowsDeviceMalwareStates", (o,n) => { (o as ManagedTenant).WindowsDeviceMalwareStates = n.GetCollectionOfObjectValues<WindowsDeviceMalwareState>(WindowsDeviceMalwareState.CreateFromDiscriminatorValue).ToList(); } },
+                {"windowsProtectionStates", (o,n) => { (o as ManagedTenant).WindowsProtectionStates = n.GetCollectionOfObjectValues<WindowsProtectionState>(WindowsProtectionState.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

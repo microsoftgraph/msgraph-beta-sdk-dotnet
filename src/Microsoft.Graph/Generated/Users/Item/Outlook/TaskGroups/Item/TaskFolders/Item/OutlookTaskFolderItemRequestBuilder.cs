@@ -130,7 +130,7 @@ namespace MicrosoftGraphSdk.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item 
         /// </summary>
         public async Task<OutlookTaskFolder> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<OutlookTaskFolder>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OutlookTaskFolder>(requestInfo, OutlookTaskFolder.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The collection of task folders in the task group. Read-only. Nullable.

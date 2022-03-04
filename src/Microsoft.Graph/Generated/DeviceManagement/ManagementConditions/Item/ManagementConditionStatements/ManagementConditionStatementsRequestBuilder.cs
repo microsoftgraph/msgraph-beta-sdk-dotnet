@@ -78,7 +78,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ManagementConditions.Item.Managemen
         /// </summary>
         public async Task<ManagementConditionStatementsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ManagementConditionStatementsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagementConditionStatementsResponse>(requestInfo, ManagementConditionStatementsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Builds and executes requests for operations under \deviceManagement\managementConditions\{managementCondition-id}\managementConditionStatements\microsoft.graph.getManagementConditionStatementsForPlatform(platform={platform})

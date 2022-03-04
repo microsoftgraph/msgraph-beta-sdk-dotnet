@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.SecurityBaselin
         /// </summary>
         public async Task<SecurityBaselineSettingState> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SecurityBaselineSettingState>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SecurityBaselineSettingState>(requestInfo, SecurityBaselineSettingState.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The security baseline state for different settings for a device

@@ -24,6 +24,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static BucketAggregationDefinition CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new BucketAggregationDefinition();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -31,7 +39,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"isDescending", (o,n) => { (o as BucketAggregationDefinition).IsDescending = n.GetBoolValue(); } },
                 {"minimumCount", (o,n) => { (o as BucketAggregationDefinition).MinimumCount = n.GetIntValue(); } },
                 {"prefixFilter", (o,n) => { (o as BucketAggregationDefinition).PrefixFilter = n.GetStringValue(); } },
-                {"ranges", (o,n) => { (o as BucketAggregationDefinition).Ranges = n.GetCollectionOfObjectValues<BucketAggregationRange>().ToList(); } },
+                {"ranges", (o,n) => { (o as BucketAggregationDefinition).Ranges = n.GetCollectionOfObjectValues<BucketAggregationRange>(BucketAggregationRange.CreateFromDiscriminatorValue).ToList(); } },
                 {"sortBy", (o,n) => { (o as BucketAggregationDefinition).SortBy = n.GetEnumValue<BucketAggregationSortProperty>(); } },
             };
         }

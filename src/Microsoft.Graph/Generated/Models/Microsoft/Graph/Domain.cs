@@ -36,14 +36,22 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable</summary>
         public List<DomainDnsRecord> VerificationDnsRecords { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new Domain CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Domain();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"authenticationType", (o,n) => { (o as Domain).AuthenticationType = n.GetStringValue(); } },
                 {"availabilityStatus", (o,n) => { (o as Domain).AvailabilityStatus = n.GetStringValue(); } },
-                {"domainNameReferences", (o,n) => { (o as Domain).DomainNameReferences = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
-                {"federationConfiguration", (o,n) => { (o as Domain).FederationConfiguration = n.GetCollectionOfObjectValues<InternalDomainFederation>().ToList(); } },
+                {"domainNameReferences", (o,n) => { (o as Domain).DomainNameReferences = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
+                {"federationConfiguration", (o,n) => { (o as Domain).FederationConfiguration = n.GetCollectionOfObjectValues<InternalDomainFederation>(InternalDomainFederation.CreateFromDiscriminatorValue).ToList(); } },
                 {"isAdminManaged", (o,n) => { (o as Domain).IsAdminManaged = n.GetBoolValue(); } },
                 {"isDefault", (o,n) => { (o as Domain).IsDefault = n.GetBoolValue(); } },
                 {"isInitial", (o,n) => { (o as Domain).IsInitial = n.GetBoolValue(); } },
@@ -51,11 +59,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"isVerified", (o,n) => { (o as Domain).IsVerified = n.GetBoolValue(); } },
                 {"passwordNotificationWindowInDays", (o,n) => { (o as Domain).PasswordNotificationWindowInDays = n.GetIntValue(); } },
                 {"passwordValidityPeriodInDays", (o,n) => { (o as Domain).PasswordValidityPeriodInDays = n.GetIntValue(); } },
-                {"serviceConfigurationRecords", (o,n) => { (o as Domain).ServiceConfigurationRecords = n.GetCollectionOfObjectValues<DomainDnsRecord>().ToList(); } },
-                {"sharedEmailDomainInvitations", (o,n) => { (o as Domain).SharedEmailDomainInvitations = n.GetCollectionOfObjectValues<SharedEmailDomainInvitation>().ToList(); } },
-                {"state", (o,n) => { (o as Domain).State = n.GetObjectValue<DomainState>(); } },
+                {"serviceConfigurationRecords", (o,n) => { (o as Domain).ServiceConfigurationRecords = n.GetCollectionOfObjectValues<DomainDnsRecord>(DomainDnsRecord.CreateFromDiscriminatorValue).ToList(); } },
+                {"sharedEmailDomainInvitations", (o,n) => { (o as Domain).SharedEmailDomainInvitations = n.GetCollectionOfObjectValues<SharedEmailDomainInvitation>(SharedEmailDomainInvitation.CreateFromDiscriminatorValue).ToList(); } },
+                {"state", (o,n) => { (o as Domain).State = n.GetObjectValue<DomainState>(DomainState.CreateFromDiscriminatorValue); } },
                 {"supportedServices", (o,n) => { (o as Domain).SupportedServices = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"verificationDnsRecords", (o,n) => { (o as Domain).VerificationDnsRecords = n.GetCollectionOfObjectValues<DomainDnsRecord>().ToList(); } },
+                {"verificationDnsRecords", (o,n) => { (o as Domain).VerificationDnsRecords = n.GetCollectionOfObjectValues<DomainDnsRecord>(DomainDnsRecord.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

@@ -8,7 +8,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.</summary>
         public string ActionName { get; set; }
         /// <summary>State of the action. Possible values are: None, pending, canceled, active, done, failed, notSupported. Read-only.</summary>
-        public ActionState? ActionState { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ActionState? ActionState { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the Cloud PC device on which the remote action is performed. Read-only.</summary>
@@ -28,6 +28,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static CloudPcRemoteActionResult CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new CloudPcRemoteActionResult();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -38,7 +46,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"lastUpdatedDateTime", (o,n) => { (o as CloudPcRemoteActionResult).LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"managedDeviceId", (o,n) => { (o as CloudPcRemoteActionResult).ManagedDeviceId = n.GetStringValue(); } },
                 {"startDateTime", (o,n) => { (o as CloudPcRemoteActionResult).StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"statusDetails", (o,n) => { (o as CloudPcRemoteActionResult).StatusDetails = n.GetObjectValue<CloudPcStatusDetails>(); } },
+                {"statusDetails", (o,n) => { (o as CloudPcRemoteActionResult).StatusDetails = n.GetObjectValue<CloudPcStatusDetails>(CloudPcStatusDetails.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

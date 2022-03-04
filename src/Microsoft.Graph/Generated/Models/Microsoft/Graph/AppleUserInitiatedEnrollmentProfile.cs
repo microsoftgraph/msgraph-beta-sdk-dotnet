@@ -24,12 +24,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Priority, 0 is highest</summary>
         public int? Priority { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new AppleUserInitiatedEnrollmentProfile CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AppleUserInitiatedEnrollmentProfile();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as AppleUserInitiatedEnrollmentProfile).Assignments = n.GetCollectionOfObjectValues<AppleEnrollmentProfileAssignment>().ToList(); } },
-                {"availableEnrollmentTypeOptions", (o,n) => { (o as AppleUserInitiatedEnrollmentProfile).AvailableEnrollmentTypeOptions = n.GetCollectionOfObjectValues<AppleOwnerTypeEnrollmentType>().ToList(); } },
+                {"assignments", (o,n) => { (o as AppleUserInitiatedEnrollmentProfile).Assignments = n.GetCollectionOfObjectValues<AppleEnrollmentProfileAssignment>(AppleEnrollmentProfileAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"availableEnrollmentTypeOptions", (o,n) => { (o as AppleUserInitiatedEnrollmentProfile).AvailableEnrollmentTypeOptions = n.GetCollectionOfObjectValues<AppleOwnerTypeEnrollmentType>(AppleOwnerTypeEnrollmentType.CreateFromDiscriminatorValue).ToList(); } },
                 {"createdDateTime", (o,n) => { (o as AppleUserInitiatedEnrollmentProfile).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"defaultEnrollmentType", (o,n) => { (o as AppleUserInitiatedEnrollmentProfile).DefaultEnrollmentType = n.GetEnumValue<AppleUserInitiatedEnrollmentType>(); } },
                 {"description", (o,n) => { (o as AppleUserInitiatedEnrollmentProfile).Description = n.GetStringValue(); } },

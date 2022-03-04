@@ -77,7 +77,7 @@ namespace MicrosoftGraphSdk.Contacts.Item.TransitiveReports {
         /// </summary>
         public async Task<TransitiveReportsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TransitiveReportsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TransitiveReportsResponse>(requestInfo, TransitiveReportsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The transitive reports for a contact. Read-only.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -30,18 +30,26 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static Reminder CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Reminder();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"changeKey", (o,n) => { (o as Reminder).ChangeKey = n.GetStringValue(); } },
-                {"eventEndTime", (o,n) => { (o as Reminder).EventEndTime = n.GetObjectValue<DateTimeTimeZone>(); } },
+                {"eventEndTime", (o,n) => { (o as Reminder).EventEndTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 {"eventId", (o,n) => { (o as Reminder).EventId = n.GetStringValue(); } },
-                {"eventLocation", (o,n) => { (o as Reminder).EventLocation = n.GetObjectValue<Location>(); } },
-                {"eventStartTime", (o,n) => { (o as Reminder).EventStartTime = n.GetObjectValue<DateTimeTimeZone>(); } },
+                {"eventLocation", (o,n) => { (o as Reminder).EventLocation = n.GetObjectValue<Location>(Location.CreateFromDiscriminatorValue); } },
+                {"eventStartTime", (o,n) => { (o as Reminder).EventStartTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 {"eventSubject", (o,n) => { (o as Reminder).EventSubject = n.GetStringValue(); } },
                 {"eventWebLink", (o,n) => { (o as Reminder).EventWebLink = n.GetStringValue(); } },
-                {"reminderFireTime", (o,n) => { (o as Reminder).ReminderFireTime = n.GetObjectValue<DateTimeTimeZone>(); } },
+                {"reminderFireTime", (o,n) => { (o as Reminder).ReminderFireTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

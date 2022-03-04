@@ -16,11 +16,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string UserPrincipalName { get; set; }
         public SecurityVendorInformation VendorInformation { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new UserSecurityProfile CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new UserSecurityProfile();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accounts", (o,n) => { (o as UserSecurityProfile).Accounts = n.GetCollectionOfObjectValues<UserAccount>().ToList(); } },
+                {"accounts", (o,n) => { (o as UserSecurityProfile).Accounts = n.GetCollectionOfObjectValues<UserAccount>(UserAccount.CreateFromDiscriminatorValue).ToList(); } },
                 {"azureSubscriptionId", (o,n) => { (o as UserSecurityProfile).AzureSubscriptionId = n.GetStringValue(); } },
                 {"azureTenantId", (o,n) => { (o as UserSecurityProfile).AzureTenantId = n.GetStringValue(); } },
                 {"createdDateTime", (o,n) => { (o as UserSecurityProfile).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -29,7 +37,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"riskScore", (o,n) => { (o as UserSecurityProfile).RiskScore = n.GetStringValue(); } },
                 {"tags", (o,n) => { (o as UserSecurityProfile).Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"userPrincipalName", (o,n) => { (o as UserSecurityProfile).UserPrincipalName = n.GetStringValue(); } },
-                {"vendorInformation", (o,n) => { (o as UserSecurityProfile).VendorInformation = n.GetObjectValue<SecurityVendorInformation>(); } },
+                {"vendorInformation", (o,n) => { (o as UserSecurityProfile).VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

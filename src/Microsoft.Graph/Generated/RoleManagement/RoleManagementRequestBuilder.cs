@@ -108,7 +108,7 @@ namespace MicrosoftGraphSdk.RoleManagement {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.RoleManagement> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.RoleManagement>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.RoleManagement>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.RoleManagement.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update roleManagement

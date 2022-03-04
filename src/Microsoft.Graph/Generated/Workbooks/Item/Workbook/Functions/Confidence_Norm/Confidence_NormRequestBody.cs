@@ -18,13 +18,21 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.Confidence_Norm {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static Confidence_NormRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Confidence_NormRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"alpha", (o,n) => { (o as Confidence_NormRequestBody).Alpha = n.GetObjectValue<Json>(); } },
-                {"size", (o,n) => { (o as Confidence_NormRequestBody).Size = n.GetObjectValue<Json>(); } },
-                {"standardDev", (o,n) => { (o as Confidence_NormRequestBody).StandardDev = n.GetObjectValue<Json>(); } },
+                {"alpha", (o,n) => { (o as Confidence_NormRequestBody).Alpha = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"size", (o,n) => { (o as Confidence_NormRequestBody).Size = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"standardDev", (o,n) => { (o as Confidence_NormRequestBody).StandardDev = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -6,7 +6,7 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AssignmentReviewSettings : IParsable {
         /// <summary>The default decision to apply if the request is not reviewed within the period specified in durationInDays. The possible values are: acceptAccessRecommendation, keepAccess, removeAccess, and unknownFutureValue.</summary>
-        public AccessReviewTimeoutBehavior? AccessReviewTimeoutBehavior { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessReviewTimeoutBehavior? AccessReviewTimeoutBehavior { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of days within which reviewers should provide input.</summary>
@@ -32,6 +32,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static AssignmentReviewSettings CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AssignmentReviewSettings();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -42,7 +50,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"isApprovalJustificationRequired", (o,n) => { (o as AssignmentReviewSettings).IsApprovalJustificationRequired = n.GetBoolValue(); } },
                 {"isEnabled", (o,n) => { (o as AssignmentReviewSettings).IsEnabled = n.GetBoolValue(); } },
                 {"recurrenceType", (o,n) => { (o as AssignmentReviewSettings).RecurrenceType = n.GetStringValue(); } },
-                {"reviewers", (o,n) => { (o as AssignmentReviewSettings).Reviewers = n.GetCollectionOfObjectValues<UserSet>().ToList(); } },
+                {"reviewers", (o,n) => { (o as AssignmentReviewSettings).Reviewers = n.GetCollectionOfObjectValues<UserSet>(UserSet.CreateFromDiscriminatorValue).ToList(); } },
                 {"reviewerType", (o,n) => { (o as AssignmentReviewSettings).ReviewerType = n.GetStringValue(); } },
                 {"startDateTime", (o,n) => { (o as AssignmentReviewSettings).StartDateTime = n.GetDateTimeOffsetValue(); } },
             };

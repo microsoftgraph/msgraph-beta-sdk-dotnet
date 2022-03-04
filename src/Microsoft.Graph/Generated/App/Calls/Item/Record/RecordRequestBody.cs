@@ -24,6 +24,14 @@ namespace MicrosoftGraphSdk.App.Calls.Item.Record {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static RecordRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new RecordRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -34,7 +42,7 @@ namespace MicrosoftGraphSdk.App.Calls.Item.Record {
                 {"maxRecordDurationInSeconds", (o,n) => { (o as RecordRequestBody).MaxRecordDurationInSeconds = n.GetIntValue(); } },
                 {"maxSilenceTimeoutInSeconds", (o,n) => { (o as RecordRequestBody).MaxSilenceTimeoutInSeconds = n.GetIntValue(); } },
                 {"playBeep", (o,n) => { (o as RecordRequestBody).PlayBeep = n.GetBoolValue(); } },
-                {"prompts", (o,n) => { (o as RecordRequestBody).Prompts = n.GetCollectionOfObjectValues<Prompt>().ToList(); } },
+                {"prompts", (o,n) => { (o as RecordRequestBody).Prompts = n.GetCollectionOfObjectValues<Prompt>(Prompt.CreateFromDiscriminatorValue).ToList(); } },
                 {"stopTones", (o,n) => { (o as RecordRequestBody).StopTones = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"streamWhileRecording", (o,n) => { (o as RecordRequestBody).StreamWhileRecording = n.GetBoolValue(); } },
             };

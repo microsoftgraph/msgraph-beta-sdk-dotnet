@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.NdesConnectors {
         /// </summary>
         public async Task<NdesConnectorsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<NdesConnectorsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<NdesConnectorsResponse>(requestInfo, NdesConnectorsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The collection of Ndes connectors for this account.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.NdesConnectors {
         public async Task<NdesConnector> PostAsync(NdesConnector body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<NdesConnector>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<NdesConnector>(requestInfo, NdesConnector.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The collection of Ndes connectors for this account.</summary>
         public class GetQueryParameters : QueryParametersBase {

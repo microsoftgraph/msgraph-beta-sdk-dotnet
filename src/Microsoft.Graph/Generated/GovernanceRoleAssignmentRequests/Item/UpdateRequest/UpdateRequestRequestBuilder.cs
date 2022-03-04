@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.GovernanceRoleAssignmentRequests.Item.UpdateRequest 
         public async Task<UpdateRequestResponse> PostAsync(UpdateRequestRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UpdateRequestResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UpdateRequestResponse>(requestInfo, UpdateRequestResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes governanceRoleAssignmentRequest</summary>
         public class UpdateRequestResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type governanceRoleAssignmentRequest</summary>
-            public GovernanceRoleAssignmentRequest GovernanceRoleAssignmentRequest { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.GovernanceRoleAssignmentRequest GovernanceRoleAssignmentRequest { get; set; }
             /// <summary>
             /// Instantiates a new updateRequestResponse and sets the default values.
             /// </summary>
             public UpdateRequestResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static UpdateRequestResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new UpdateRequestResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"governanceRoleAssignmentRequest", (o,n) => { (o as UpdateRequestResponse).GovernanceRoleAssignmentRequest = n.GetObjectValue<GovernanceRoleAssignmentRequest>(); } },
+                    {"governanceRoleAssignmentRequest", (o,n) => { (o as UpdateRequestResponse).GovernanceRoleAssignmentRequest = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.GovernanceRoleAssignmentRequest>(MicrosoftGraphSdk.Models.Microsoft.Graph.GovernanceRoleAssignmentRequest.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.GovernanceRoleAssignmentRequests.Item.UpdateRequest 
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<GovernanceRoleAssignmentRequest>("governanceRoleAssignmentRequest", GovernanceRoleAssignmentRequest);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.GovernanceRoleAssignmentRequest>("governanceRoleAssignmentRequest", GovernanceRoleAssignmentRequest);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

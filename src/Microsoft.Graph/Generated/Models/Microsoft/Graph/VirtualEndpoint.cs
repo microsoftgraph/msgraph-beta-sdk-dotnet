@@ -28,21 +28,29 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Cloud PC user settings.</summary>
         public List<CloudPcUserSetting> UserSettings { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new VirtualEndpoint CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new VirtualEndpoint();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"auditEvents", (o,n) => { (o as VirtualEndpoint).AuditEvents = n.GetCollectionOfObjectValues<CloudPcAuditEvent>().ToList(); } },
-                {"cloudPCs", (o,n) => { (o as VirtualEndpoint).CloudPCs = n.GetCollectionOfObjectValues<CloudPC>().ToList(); } },
-                {"deviceImages", (o,n) => { (o as VirtualEndpoint).DeviceImages = n.GetCollectionOfObjectValues<CloudPcDeviceImage>().ToList(); } },
-                {"galleryImages", (o,n) => { (o as VirtualEndpoint).GalleryImages = n.GetCollectionOfObjectValues<CloudPcGalleryImage>().ToList(); } },
-                {"onPremisesConnections", (o,n) => { (o as VirtualEndpoint).OnPremisesConnections = n.GetCollectionOfObjectValues<CloudPcOnPremisesConnection>().ToList(); } },
-                {"organizationSettings", (o,n) => { (o as VirtualEndpoint).OrganizationSettings = n.GetObjectValue<CloudPcOrganizationSettings>(); } },
-                {"provisioningPolicies", (o,n) => { (o as VirtualEndpoint).ProvisioningPolicies = n.GetCollectionOfObjectValues<CloudPcProvisioningPolicy>().ToList(); } },
-                {"servicePlans", (o,n) => { (o as VirtualEndpoint).ServicePlans = n.GetCollectionOfObjectValues<CloudPcServicePlan>().ToList(); } },
-                {"snapshots", (o,n) => { (o as VirtualEndpoint).Snapshots = n.GetCollectionOfObjectValues<CloudPcSnapshot>().ToList(); } },
-                {"supportedRegions", (o,n) => { (o as VirtualEndpoint).SupportedRegions = n.GetCollectionOfObjectValues<CloudPcSupportedRegion>().ToList(); } },
-                {"userSettings", (o,n) => { (o as VirtualEndpoint).UserSettings = n.GetCollectionOfObjectValues<CloudPcUserSetting>().ToList(); } },
+                {"auditEvents", (o,n) => { (o as VirtualEndpoint).AuditEvents = n.GetCollectionOfObjectValues<CloudPcAuditEvent>(CloudPcAuditEvent.CreateFromDiscriminatorValue).ToList(); } },
+                {"cloudPCs", (o,n) => { (o as VirtualEndpoint).CloudPCs = n.GetCollectionOfObjectValues<CloudPC>(CloudPC.CreateFromDiscriminatorValue).ToList(); } },
+                {"deviceImages", (o,n) => { (o as VirtualEndpoint).DeviceImages = n.GetCollectionOfObjectValues<CloudPcDeviceImage>(CloudPcDeviceImage.CreateFromDiscriminatorValue).ToList(); } },
+                {"galleryImages", (o,n) => { (o as VirtualEndpoint).GalleryImages = n.GetCollectionOfObjectValues<CloudPcGalleryImage>(CloudPcGalleryImage.CreateFromDiscriminatorValue).ToList(); } },
+                {"onPremisesConnections", (o,n) => { (o as VirtualEndpoint).OnPremisesConnections = n.GetCollectionOfObjectValues<CloudPcOnPremisesConnection>(CloudPcOnPremisesConnection.CreateFromDiscriminatorValue).ToList(); } },
+                {"organizationSettings", (o,n) => { (o as VirtualEndpoint).OrganizationSettings = n.GetObjectValue<CloudPcOrganizationSettings>(CloudPcOrganizationSettings.CreateFromDiscriminatorValue); } },
+                {"provisioningPolicies", (o,n) => { (o as VirtualEndpoint).ProvisioningPolicies = n.GetCollectionOfObjectValues<CloudPcProvisioningPolicy>(CloudPcProvisioningPolicy.CreateFromDiscriminatorValue).ToList(); } },
+                {"servicePlans", (o,n) => { (o as VirtualEndpoint).ServicePlans = n.GetCollectionOfObjectValues<CloudPcServicePlan>(CloudPcServicePlan.CreateFromDiscriminatorValue).ToList(); } },
+                {"snapshots", (o,n) => { (o as VirtualEndpoint).Snapshots = n.GetCollectionOfObjectValues<CloudPcSnapshot>(CloudPcSnapshot.CreateFromDiscriminatorValue).ToList(); } },
+                {"supportedRegions", (o,n) => { (o as VirtualEndpoint).SupportedRegions = n.GetCollectionOfObjectValues<CloudPcSupportedRegion>(CloudPcSupportedRegion.CreateFromDiscriminatorValue).ToList(); } },
+                {"userSettings", (o,n) => { (o as VirtualEndpoint).UserSettings = n.GetCollectionOfObjectValues<CloudPcUserSetting>(CloudPcUserSetting.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

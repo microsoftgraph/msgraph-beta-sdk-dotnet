@@ -66,7 +66,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.DeviceImages.GetSou
         /// </summary>
         public async Task<IEnumerable<GetSourceImages>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<GetSourceImages>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetSourceImages>(requestInfo, GetSourceImages.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.WindowsProtecti
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsProtectionState> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsProtectionState>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsProtectionState>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsProtectionState.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The device protection status. This property is read-only.

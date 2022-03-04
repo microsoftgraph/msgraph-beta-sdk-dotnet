@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.RoleManagement.CloudPC.ResourceNamespaces.Item.Resou
         /// </summary>
         public async Task<UnifiedRbacResourceScope> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UnifiedRbacResourceScope>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UnifiedRbacResourceScope>(requestInfo, UnifiedRbacResourceScope.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property resourceScope in roleManagement

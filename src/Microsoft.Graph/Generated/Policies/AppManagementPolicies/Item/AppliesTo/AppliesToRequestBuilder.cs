@@ -77,7 +77,7 @@ namespace MicrosoftGraphSdk.Policies.AppManagementPolicies.Item.AppliesTo {
         /// </summary>
         public async Task<AppliesToResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AppliesToResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AppliesToResponse>(requestInfo, AppliesToResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Collection of application and service principals to which a policy is applied.</summary>
         public class GetQueryParameters : QueryParametersBase {

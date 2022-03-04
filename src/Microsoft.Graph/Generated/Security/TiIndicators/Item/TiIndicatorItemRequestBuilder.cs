@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Security.TiIndicators.Item {
         /// </summary>
         public async Task<TiIndicator> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TiIndicator>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TiIndicator>(requestInfo, TiIndicator.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property tiIndicators in security

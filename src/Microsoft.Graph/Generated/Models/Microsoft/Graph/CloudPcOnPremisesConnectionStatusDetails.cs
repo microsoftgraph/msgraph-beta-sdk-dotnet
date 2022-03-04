@@ -20,12 +20,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static CloudPcOnPremisesConnectionStatusDetails CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new CloudPcOnPremisesConnectionStatusDetails();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"endDateTime", (o,n) => { (o as CloudPcOnPremisesConnectionStatusDetails).EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"healthChecks", (o,n) => { (o as CloudPcOnPremisesConnectionStatusDetails).HealthChecks = n.GetCollectionOfObjectValues<CloudPcOnPremisesConnectionHealthCheck>().ToList(); } },
+                {"healthChecks", (o,n) => { (o as CloudPcOnPremisesConnectionStatusDetails).HealthChecks = n.GetCollectionOfObjectValues<CloudPcOnPremisesConnectionHealthCheck>(CloudPcOnPremisesConnectionHealthCheck.CreateFromDiscriminatorValue).ToList(); } },
                 {"startDateTime", (o,n) => { (o as CloudPcOnPremisesConnectionStatusDetails).StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }

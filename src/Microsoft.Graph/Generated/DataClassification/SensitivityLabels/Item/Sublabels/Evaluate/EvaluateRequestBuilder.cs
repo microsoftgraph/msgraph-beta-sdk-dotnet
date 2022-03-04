@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.DataClassification.SensitivityLabels.Item.Sublabels.
         public async Task<EvaluateResponse> PostAsync(EvaluateRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<EvaluateResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<EvaluateResponse>(requestInfo, EvaluateResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes evaluateLabelJobResponse</summary>
         public class EvaluateResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type evaluateLabelJobResponse</summary>
-            public EvaluateLabelJobResponse EvaluateLabelJobResponse { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.EvaluateLabelJobResponse EvaluateLabelJobResponse { get; set; }
             /// <summary>
             /// Instantiates a new evaluateResponse and sets the default values.
             /// </summary>
             public EvaluateResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static EvaluateResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new EvaluateResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"evaluateLabelJobResponse", (o,n) => { (o as EvaluateResponse).EvaluateLabelJobResponse = n.GetObjectValue<EvaluateLabelJobResponse>(); } },
+                    {"evaluateLabelJobResponse", (o,n) => { (o as EvaluateResponse).EvaluateLabelJobResponse = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.EvaluateLabelJobResponse>(MicrosoftGraphSdk.Models.Microsoft.Graph.EvaluateLabelJobResponse.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.DataClassification.SensitivityLabels.Item.Sublabels.
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<EvaluateLabelJobResponse>("evaluateLabelJobResponse", EvaluateLabelJobResponse);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.EvaluateLabelJobResponse>("evaluateLabelJobResponse", EvaluateLabelJobResponse);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

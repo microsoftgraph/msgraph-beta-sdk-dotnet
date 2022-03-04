@@ -77,7 +77,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ReusablePolicySettings.Item.Referen
         /// </summary>
         public async Task<SettingDefinitionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SettingDefinitionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SettingDefinitionsResponse>(requestInfo, SettingDefinitionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>List of related Setting Definitions. This property is read-only.</summary>
         public class GetQueryParameters : QueryParametersBase {

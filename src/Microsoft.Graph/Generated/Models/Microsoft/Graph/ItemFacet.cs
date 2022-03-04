@@ -6,7 +6,7 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ItemFacet : Entity, IParsable {
         /// <summary>The audiences that are able to see the values contained within the associated entity. Possible values are: me, family, contacts, groupMembers, organization, federatedOrganizations, everyone, unknownFutureValue.</summary>
-        public AllowedAudiences? AllowedAudiences { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.AllowedAudiences? AllowedAudiences { get; set; }
         public IdentitySet CreatedBy { get; set; }
         /// <summary>Provides the dateTimeOffset for when the entity was created.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
@@ -19,18 +19,26 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Where the values within an entity originated if synced from another service.</summary>
         public PersonDataSources Source { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new ItemFacet CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ItemFacet();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"allowedAudiences", (o,n) => { (o as ItemFacet).AllowedAudiences = n.GetEnumValue<AllowedAudiences>(); } },
-                {"createdBy", (o,n) => { (o as ItemFacet).CreatedBy = n.GetObjectValue<IdentitySet>(); } },
+                {"createdBy", (o,n) => { (o as ItemFacet).CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", (o,n) => { (o as ItemFacet).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"inference", (o,n) => { (o as ItemFacet).Inference = n.GetObjectValue<InferenceData>(); } },
+                {"inference", (o,n) => { (o as ItemFacet).Inference = n.GetObjectValue<InferenceData>(InferenceData.CreateFromDiscriminatorValue); } },
                 {"isSearchable", (o,n) => { (o as ItemFacet).IsSearchable = n.GetBoolValue(); } },
-                {"lastModifiedBy", (o,n) => { (o as ItemFacet).LastModifiedBy = n.GetObjectValue<IdentitySet>(); } },
+                {"lastModifiedBy", (o,n) => { (o as ItemFacet).LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"lastModifiedDateTime", (o,n) => { (o as ItemFacet).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"source", (o,n) => { (o as ItemFacet).Source = n.GetObjectValue<PersonDataSources>(); } },
+                {"source", (o,n) => { (o as ItemFacet).Source = n.GetObjectValue<PersonDataSources>(PersonDataSources.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

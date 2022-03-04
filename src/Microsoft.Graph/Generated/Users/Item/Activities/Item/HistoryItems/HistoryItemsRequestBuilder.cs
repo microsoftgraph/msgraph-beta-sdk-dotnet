@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Users.Item.Activities.Item.HistoryItems {
         /// </summary>
         public async Task<HistoryItemsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<HistoryItemsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<HistoryItemsResponse>(requestInfo, HistoryItemsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Users.Item.Activities.Item.HistoryItems {
         public async Task<ActivityHistoryItem> PostAsync(ActivityHistoryItem body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ActivityHistoryItem>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ActivityHistoryItem>(requestInfo, ActivityHistoryItem.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -16,11 +16,19 @@ namespace MicrosoftGraphSdk.Shares.Item.Permission.RevokeGrants {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static RevokeGrantsRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new RevokeGrantsRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"grantees", (o,n) => { (o as RevokeGrantsRequestBody).Grantees = n.GetCollectionOfObjectValues<DriveRecipient>().ToList(); } },
+                {"grantees", (o,n) => { (o as RevokeGrantsRequestBody).Grantees = n.GetCollectionOfObjectValues<DriveRecipient>(DriveRecipient.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

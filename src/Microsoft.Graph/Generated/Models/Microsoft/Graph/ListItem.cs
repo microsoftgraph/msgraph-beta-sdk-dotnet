@@ -11,28 +11,36 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public ItemAnalytics Analytics { get; set; }
         /// <summary>The content type of this list item</summary>
         public ContentTypeInfo ContentType { get; set; }
-        public Deleted Deleted { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Deleted Deleted { get; set; }
         /// <summary>For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]</summary>
-        public DriveItem DriveItem { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem DriveItem { get; set; }
         /// <summary>The values of the columns set on this list item.</summary>
         public FieldValueSet Fields { get; set; }
         /// <summary>Returns identifiers useful for SharePoint REST compatibility. Read-only.</summary>
-        public SharepointIds SharepointIds { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.SharepointIds SharepointIds { get; set; }
         /// <summary>The list of previous versions of the list item.</summary>
         public List<ListItemVersion> Versions { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new ListItem CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ListItem();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activities", (o,n) => { (o as ListItem).Activities = n.GetCollectionOfObjectValues<ItemActivityOLD>().ToList(); } },
-                {"analytics", (o,n) => { (o as ListItem).Analytics = n.GetObjectValue<ItemAnalytics>(); } },
-                {"contentType", (o,n) => { (o as ListItem).ContentType = n.GetObjectValue<ContentTypeInfo>(); } },
-                {"deleted", (o,n) => { (o as ListItem).Deleted = n.GetObjectValue<Deleted>(); } },
-                {"driveItem", (o,n) => { (o as ListItem).DriveItem = n.GetObjectValue<DriveItem>(); } },
-                {"fields", (o,n) => { (o as ListItem).Fields = n.GetObjectValue<FieldValueSet>(); } },
-                {"sharepointIds", (o,n) => { (o as ListItem).SharepointIds = n.GetObjectValue<SharepointIds>(); } },
-                {"versions", (o,n) => { (o as ListItem).Versions = n.GetCollectionOfObjectValues<ListItemVersion>().ToList(); } },
+                {"activities", (o,n) => { (o as ListItem).Activities = n.GetCollectionOfObjectValues<ItemActivityOLD>(ItemActivityOLD.CreateFromDiscriminatorValue).ToList(); } },
+                {"analytics", (o,n) => { (o as ListItem).Analytics = n.GetObjectValue<ItemAnalytics>(ItemAnalytics.CreateFromDiscriminatorValue); } },
+                {"contentType", (o,n) => { (o as ListItem).ContentType = n.GetObjectValue<ContentTypeInfo>(ContentTypeInfo.CreateFromDiscriminatorValue); } },
+                {"deleted", (o,n) => { (o as ListItem).Deleted = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Deleted>(MicrosoftGraphSdk.Models.Microsoft.Graph.Deleted.CreateFromDiscriminatorValue); } },
+                {"driveItem", (o,n) => { (o as ListItem).DriveItem = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>(MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem.CreateFromDiscriminatorValue); } },
+                {"fields", (o,n) => { (o as ListItem).Fields = n.GetObjectValue<FieldValueSet>(FieldValueSet.CreateFromDiscriminatorValue); } },
+                {"sharepointIds", (o,n) => { (o as ListItem).SharepointIds = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.SharepointIds>(MicrosoftGraphSdk.Models.Microsoft.Graph.SharepointIds.CreateFromDiscriminatorValue); } },
+                {"versions", (o,n) => { (o as ListItem).Versions = n.GetCollectionOfObjectValues<ListItemVersion>(ListItemVersion.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>
@@ -45,10 +53,10 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<ItemActivityOLD>("activities", Activities);
             writer.WriteObjectValue<ItemAnalytics>("analytics", Analytics);
             writer.WriteObjectValue<ContentTypeInfo>("contentType", ContentType);
-            writer.WriteObjectValue<Deleted>("deleted", Deleted);
-            writer.WriteObjectValue<DriveItem>("driveItem", DriveItem);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Deleted>("deleted", Deleted);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>("driveItem", DriveItem);
             writer.WriteObjectValue<FieldValueSet>("fields", Fields);
-            writer.WriteObjectValue<SharepointIds>("sharepointIds", SharepointIds);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.SharepointIds>("sharepointIds", SharepointIds);
             writer.WriteCollectionOfObjectValues<ListItemVersion>("versions", Versions);
         }
     }

@@ -8,14 +8,22 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Unique identifier of a group that the T&C policy is assigned to.</summary>
         public string TargetGroupId { get; set; }
         /// <summary>Navigation link to the terms and conditions that are assigned.</summary>
-        public TermsAndConditions TermsAndConditions { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.TermsAndConditions TermsAndConditions { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new TermsAndConditionsGroupAssignment CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TermsAndConditionsGroupAssignment();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"targetGroupId", (o,n) => { (o as TermsAndConditionsGroupAssignment).TargetGroupId = n.GetStringValue(); } },
-                {"termsAndConditions", (o,n) => { (o as TermsAndConditionsGroupAssignment).TermsAndConditions = n.GetObjectValue<TermsAndConditions>(); } },
+                {"termsAndConditions", (o,n) => { (o as TermsAndConditionsGroupAssignment).TermsAndConditions = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.TermsAndConditions>(MicrosoftGraphSdk.Models.Microsoft.Graph.TermsAndConditions.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -26,7 +34,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("targetGroupId", TargetGroupId);
-            writer.WriteObjectValue<TermsAndConditions>("termsAndConditions", TermsAndConditions);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.TermsAndConditions>("termsAndConditions", TermsAndConditions);
         }
     }
 }

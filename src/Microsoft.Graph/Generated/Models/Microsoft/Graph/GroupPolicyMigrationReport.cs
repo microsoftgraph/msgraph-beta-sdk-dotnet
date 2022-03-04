@@ -34,6 +34,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>A list of unsupported group policy extensions inside the Group Policy Object.</summary>
         public List<UnsupportedGroupPolicyExtension> UnsupportedGroupPolicyExtensions { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new GroupPolicyMigrationReport CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new GroupPolicyMigrationReport();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -43,7 +51,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"groupPolicyCreatedDateTime", (o,n) => { (o as GroupPolicyMigrationReport).GroupPolicyCreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"groupPolicyLastModifiedDateTime", (o,n) => { (o as GroupPolicyMigrationReport).GroupPolicyLastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"groupPolicyObjectId", (o,n) => { (o as GroupPolicyMigrationReport).GroupPolicyObjectId = n.GetStringValue(); } },
-                {"groupPolicySettingMappings", (o,n) => { (o as GroupPolicyMigrationReport).GroupPolicySettingMappings = n.GetCollectionOfObjectValues<GroupPolicySettingMapping>().ToList(); } },
+                {"groupPolicySettingMappings", (o,n) => { (o as GroupPolicyMigrationReport).GroupPolicySettingMappings = n.GetCollectionOfObjectValues<GroupPolicySettingMapping>(GroupPolicySettingMapping.CreateFromDiscriminatorValue).ToList(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as GroupPolicyMigrationReport).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"migrationReadiness", (o,n) => { (o as GroupPolicyMigrationReport).MigrationReadiness = n.GetEnumValue<GroupPolicyMigrationReadiness>(); } },
                 {"ouDistinguishedName", (o,n) => { (o as GroupPolicyMigrationReport).OuDistinguishedName = n.GetStringValue(); } },
@@ -51,7 +59,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"supportedSettingsPercent", (o,n) => { (o as GroupPolicyMigrationReport).SupportedSettingsPercent = n.GetIntValue(); } },
                 {"targetedInActiveDirectory", (o,n) => { (o as GroupPolicyMigrationReport).TargetedInActiveDirectory = n.GetBoolValue(); } },
                 {"totalSettingsCount", (o,n) => { (o as GroupPolicyMigrationReport).TotalSettingsCount = n.GetIntValue(); } },
-                {"unsupportedGroupPolicyExtensions", (o,n) => { (o as GroupPolicyMigrationReport).UnsupportedGroupPolicyExtensions = n.GetCollectionOfObjectValues<UnsupportedGroupPolicyExtension>().ToList(); } },
+                {"unsupportedGroupPolicyExtensions", (o,n) => { (o as GroupPolicyMigrationReport).UnsupportedGroupPolicyExtensions = n.GetCollectionOfObjectValues<UnsupportedGroupPolicyExtension>(UnsupportedGroupPolicyExtension.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

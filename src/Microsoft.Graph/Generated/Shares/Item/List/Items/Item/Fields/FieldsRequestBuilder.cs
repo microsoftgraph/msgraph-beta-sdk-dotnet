@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Shares.Item.List.Items.Item.Fields {
         /// </summary>
         public async Task<FieldValueSet> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<FieldValueSet>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<FieldValueSet>(requestInfo, FieldValueSet.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The values of the columns set on this list item.

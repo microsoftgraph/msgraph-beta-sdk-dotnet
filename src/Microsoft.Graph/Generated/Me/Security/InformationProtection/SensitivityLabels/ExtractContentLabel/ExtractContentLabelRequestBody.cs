@@ -8,7 +8,7 @@ namespace MicrosoftGraphSdk.Me.Security.InformationProtection.SensitivityLabels.
     public class ExtractContentLabelRequestBody : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        public ContentInfo ContentInfo { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Security.ContentInfo ContentInfo { get; set; }
         /// <summary>
         /// Instantiates a new extractContentLabelRequestBody and sets the default values.
         /// </summary>
@@ -16,11 +16,19 @@ namespace MicrosoftGraphSdk.Me.Security.InformationProtection.SensitivityLabels.
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static ExtractContentLabelRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ExtractContentLabelRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"contentInfo", (o,n) => { (o as ExtractContentLabelRequestBody).ContentInfo = n.GetObjectValue<ContentInfo>(); } },
+                {"contentInfo", (o,n) => { (o as ExtractContentLabelRequestBody).ContentInfo = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Security.ContentInfo>(MicrosoftGraphSdk.Models.Microsoft.Graph.Security.ContentInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -29,7 +37,7 @@ namespace MicrosoftGraphSdk.Me.Security.InformationProtection.SensitivityLabels.
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<ContentInfo>("contentInfo", ContentInfo);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Security.ContentInfo>("contentInfo", ContentInfo);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

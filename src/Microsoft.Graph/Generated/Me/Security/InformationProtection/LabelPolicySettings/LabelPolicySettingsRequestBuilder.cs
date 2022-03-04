@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Me.Security.InformationProtection.LabelPolicySetting
         /// </summary>
         public async Task<InformationProtectionPolicySetting> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<InformationProtectionPolicySetting>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<InformationProtectionPolicySetting>(requestInfo, InformationProtectionPolicySetting.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property labelPolicySettings in me

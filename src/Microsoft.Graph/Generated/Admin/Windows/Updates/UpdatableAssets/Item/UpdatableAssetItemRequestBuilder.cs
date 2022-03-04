@@ -134,7 +134,7 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets.Item {
         /// </summary>
         public async Task<UpdatableAsset> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UpdatableAsset>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UpdatableAsset>(requestInfo, UpdatableAsset.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Assets registered with the deployment service that can receive updates. Read-only.

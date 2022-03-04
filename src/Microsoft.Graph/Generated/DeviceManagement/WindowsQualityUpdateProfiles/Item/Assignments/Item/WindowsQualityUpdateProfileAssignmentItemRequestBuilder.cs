@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsQualityUpdateProfiles.Item.A
         /// </summary>
         public async Task<WindowsQualityUpdateProfileAssignment> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<WindowsQualityUpdateProfileAssignment>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsQualityUpdateProfileAssignment>(requestInfo, WindowsQualityUpdateProfileAssignment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of group assignments of the profile.

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Search.Qnas {
         /// </summary>
         public async Task<QnasResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<QnasResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<QnasResponse>(requestInfo, QnasResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Search.Qnas {
         public async Task<Qna> PostAsync(Qna body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<Qna>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Qna>(requestInfo, Qna.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.</summary>
         public class GetQueryParameters : QueryParametersBase {

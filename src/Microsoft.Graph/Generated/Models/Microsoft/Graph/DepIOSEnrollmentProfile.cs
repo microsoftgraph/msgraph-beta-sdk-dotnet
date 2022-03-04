@@ -28,7 +28,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Indicates if iMessage and FaceTime screen is disabled</summary>
         public bool? IMessageAndFaceTimeScreenDisabled { get; set; }
         /// <summary>Indicates the iTunes pairing mode. Possible values are: disallow, allow, requiresCertificate.</summary>
-        public ITunesPairingMode? ITunesPairingMode { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ITunesPairingMode? ITunesPairingMode { get; set; }
         /// <summary>Management certificates for Apple Configurator</summary>
         public List<ManagementCertificateWithThumbprint> ManagementCertificates { get; set; }
         /// <summary>Indicates if onboarding setup screen is disabled</summary>
@@ -64,6 +64,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Indicates if zoom setup pane is disabled</summary>
         public bool? ZoomDisabled { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DepIOSEnrollmentProfile CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DepIOSEnrollmentProfile();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -80,7 +88,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"homeButtonScreenDisabled", (o,n) => { (o as DepIOSEnrollmentProfile).HomeButtonScreenDisabled = n.GetBoolValue(); } },
                 {"iMessageAndFaceTimeScreenDisabled", (o,n) => { (o as DepIOSEnrollmentProfile).IMessageAndFaceTimeScreenDisabled = n.GetBoolValue(); } },
                 {"iTunesPairingMode", (o,n) => { (o as DepIOSEnrollmentProfile).ITunesPairingMode = n.GetEnumValue<ITunesPairingMode>(); } },
-                {"managementCertificates", (o,n) => { (o as DepIOSEnrollmentProfile).ManagementCertificates = n.GetCollectionOfObjectValues<ManagementCertificateWithThumbprint>().ToList(); } },
+                {"managementCertificates", (o,n) => { (o as DepIOSEnrollmentProfile).ManagementCertificates = n.GetCollectionOfObjectValues<ManagementCertificateWithThumbprint>(ManagementCertificateWithThumbprint.CreateFromDiscriminatorValue).ToList(); } },
                 {"onBoardingScreenDisabled", (o,n) => { (o as DepIOSEnrollmentProfile).OnBoardingScreenDisabled = n.GetBoolValue(); } },
                 {"passCodeDisabled", (o,n) => { (o as DepIOSEnrollmentProfile).PassCodeDisabled = n.GetBoolValue(); } },
                 {"passcodeLockGracePeriodInSeconds", (o,n) => { (o as DepIOSEnrollmentProfile).PasscodeLockGracePeriodInSeconds = n.GetIntValue(); } },

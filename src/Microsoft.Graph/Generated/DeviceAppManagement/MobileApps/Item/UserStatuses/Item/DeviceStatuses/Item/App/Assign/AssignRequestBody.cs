@@ -16,11 +16,19 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses.Ite
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static AssignRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AssignRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"mobileAppAssignments", (o,n) => { (o as AssignRequestBody).MobileAppAssignments = n.GetCollectionOfObjectValues<MobileAppAssignment>().ToList(); } },
+                {"mobileAppAssignments", (o,n) => { (o as AssignRequestBody).MobileAppAssignments = n.GetCollectionOfObjectValues<MobileAppAssignment>(MobileAppAssignment.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

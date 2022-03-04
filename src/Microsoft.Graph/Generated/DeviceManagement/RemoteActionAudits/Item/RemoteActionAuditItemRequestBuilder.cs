@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.RemoteActionAudits.Item {
         /// </summary>
         public async Task<RemoteActionAudit> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RemoteActionAudit>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RemoteActionAudit>(requestInfo, RemoteActionAudit.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of device remote action audits with the tenant.

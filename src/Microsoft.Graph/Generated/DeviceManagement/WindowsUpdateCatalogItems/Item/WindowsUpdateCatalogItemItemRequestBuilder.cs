@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsUpdateCatalogItems.Item {
         /// </summary>
         public async Task<WindowsUpdateCatalogItem> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<WindowsUpdateCatalogItem>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsUpdateCatalogItem>(requestInfo, WindowsUpdateCatalogItem.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A collection of windows update catalog items (fetaure updates item , quality updates item)

@@ -104,7 +104,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.VppTokens {
         /// </summary>
         public async Task<VppTokensResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<VppTokensResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<VppTokensResponse>(requestInfo, VppTokensResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Builds and executes requests for operations under \deviceAppManagement\vppTokens\microsoft.graph.getLicensesForApp(bundleId='{bundleId}')
@@ -125,7 +125,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.VppTokens {
         public async Task<VppToken> PostAsync(VppToken body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<VppToken>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<VppToken>(requestInfo, VppToken.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>List of Vpp tokens for this organization.</summary>
         public class GetQueryParameters : QueryParametersBase {

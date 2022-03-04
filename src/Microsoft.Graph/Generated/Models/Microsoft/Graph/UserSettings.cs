@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UserSettings : Entity, IParsable {
-        public ContactMergeSuggestions ContactMergeSuggestions { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ContactMergeSuggestions ContactMergeSuggestions { get; set; }
         /// <summary>Reflects the Office Delve organization level setting. When set to true, the organization doesn't have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.</summary>
         public bool? ContributionToContentDiscoveryAsOrganizationDisabled { get; set; }
         /// <summary>When set to true, documents in the user's Office Delve are disabled. Users can control this setting in Office Delve.</summary>
@@ -13,20 +13,28 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.</summary>
         public UserInsightsSettings ItemInsights { get; set; }
         /// <summary>The user's preferences for languages, regional locale and date/time formatting.</summary>
-        public RegionalAndLanguageSettings RegionalAndLanguageSettings { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.RegionalAndLanguageSettings RegionalAndLanguageSettings { get; set; }
         /// <summary>The shift preferences for the user.</summary>
-        public ShiftPreferences ShiftPreferences { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ShiftPreferences ShiftPreferences { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new UserSettings CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new UserSettings();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"contactMergeSuggestions", (o,n) => { (o as UserSettings).ContactMergeSuggestions = n.GetObjectValue<ContactMergeSuggestions>(); } },
+                {"contactMergeSuggestions", (o,n) => { (o as UserSettings).ContactMergeSuggestions = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ContactMergeSuggestions>(MicrosoftGraphSdk.Models.Microsoft.Graph.ContactMergeSuggestions.CreateFromDiscriminatorValue); } },
                 {"contributionToContentDiscoveryAsOrganizationDisabled", (o,n) => { (o as UserSettings).ContributionToContentDiscoveryAsOrganizationDisabled = n.GetBoolValue(); } },
                 {"contributionToContentDiscoveryDisabled", (o,n) => { (o as UserSettings).ContributionToContentDiscoveryDisabled = n.GetBoolValue(); } },
-                {"itemInsights", (o,n) => { (o as UserSettings).ItemInsights = n.GetObjectValue<UserInsightsSettings>(); } },
-                {"regionalAndLanguageSettings", (o,n) => { (o as UserSettings).RegionalAndLanguageSettings = n.GetObjectValue<RegionalAndLanguageSettings>(); } },
-                {"shiftPreferences", (o,n) => { (o as UserSettings).ShiftPreferences = n.GetObjectValue<ShiftPreferences>(); } },
+                {"itemInsights", (o,n) => { (o as UserSettings).ItemInsights = n.GetObjectValue<UserInsightsSettings>(UserInsightsSettings.CreateFromDiscriminatorValue); } },
+                {"regionalAndLanguageSettings", (o,n) => { (o as UserSettings).RegionalAndLanguageSettings = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.RegionalAndLanguageSettings>(MicrosoftGraphSdk.Models.Microsoft.Graph.RegionalAndLanguageSettings.CreateFromDiscriminatorValue); } },
+                {"shiftPreferences", (o,n) => { (o as UserSettings).ShiftPreferences = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ShiftPreferences>(MicrosoftGraphSdk.Models.Microsoft.Graph.ShiftPreferences.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -36,12 +44,12 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<ContactMergeSuggestions>("contactMergeSuggestions", ContactMergeSuggestions);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ContactMergeSuggestions>("contactMergeSuggestions", ContactMergeSuggestions);
             writer.WriteBoolValue("contributionToContentDiscoveryAsOrganizationDisabled", ContributionToContentDiscoveryAsOrganizationDisabled);
             writer.WriteBoolValue("contributionToContentDiscoveryDisabled", ContributionToContentDiscoveryDisabled);
             writer.WriteObjectValue<UserInsightsSettings>("itemInsights", ItemInsights);
-            writer.WriteObjectValue<RegionalAndLanguageSettings>("regionalAndLanguageSettings", RegionalAndLanguageSettings);
-            writer.WriteObjectValue<ShiftPreferences>("shiftPreferences", ShiftPreferences);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.RegionalAndLanguageSettings>("regionalAndLanguageSettings", RegionalAndLanguageSettings);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ShiftPreferences>("shiftPreferences", ShiftPreferences);
         }
     }
 }

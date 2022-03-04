@@ -115,7 +115,7 @@ namespace MicrosoftGraphSdk.Security.InformationProtection.SensitivityLabels {
         /// </summary>
         public async Task<SensitivityLabelsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SensitivityLabelsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SensitivityLabelsResponse>(requestInfo, SensitivityLabelsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to sensitivityLabels for security
@@ -128,7 +128,7 @@ namespace MicrosoftGraphSdk.Security.InformationProtection.SensitivityLabels {
         public async Task<SensitivityLabel> PostAsync(SensitivityLabel body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<SensitivityLabel>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SensitivityLabel>(requestInfo, SensitivityLabel.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get sensitivityLabels from security</summary>
         public class GetQueryParameters : QueryParametersBase {

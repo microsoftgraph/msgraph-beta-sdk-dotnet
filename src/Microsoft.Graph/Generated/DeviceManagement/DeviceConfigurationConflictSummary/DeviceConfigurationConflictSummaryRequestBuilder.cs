@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurationConflictSummary 
         /// </summary>
         public async Task<DeviceConfigurationConflictSummaryResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceConfigurationConflictSummaryResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceConfigurationConflictSummaryResponse>(requestInfo, DeviceConfigurationConflictSummaryResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Summary of policies in conflict state for this account.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurationConflictSummary 
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceConfigurationConflictSummary> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceConfigurationConflictSummary body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceConfigurationConflictSummary>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceConfigurationConflictSummary>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceConfigurationConflictSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Summary of policies in conflict state for this account.</summary>
         public class GetQueryParameters : QueryParametersBase {

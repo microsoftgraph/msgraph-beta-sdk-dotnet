@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Drives.Item.List.ContentTypes.Item.Columns {
         /// </summary>
         public async Task<ColumnsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ColumnsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ColumnsResponse>(requestInfo, ColumnsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The collection of column definitions for this contentType.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Drives.Item.List.ContentTypes.Item.Columns {
         public async Task<ColumnDefinition> PostAsync(ColumnDefinition body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ColumnDefinition>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ColumnDefinition>(requestInfo, ColumnDefinition.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The collection of column definitions for this contentType.</summary>
         public class GetQueryParameters : QueryParametersBase {

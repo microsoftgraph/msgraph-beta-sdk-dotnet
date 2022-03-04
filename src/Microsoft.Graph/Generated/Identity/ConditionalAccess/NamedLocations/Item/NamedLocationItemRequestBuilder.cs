@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Identity.ConditionalAccess.NamedLocations.Item {
         /// </summary>
         public async Task<NamedLocation> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<NamedLocation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<NamedLocation>(requestInfo, NamedLocation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Read-only. Nullable. Returns a collection of the specified named locations.

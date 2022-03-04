@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.WindowsHelloForBusinessMet
         /// </summary>
         public async Task<WindowsHelloForBusinessMethodsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<WindowsHelloForBusinessMethodsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsHelloForBusinessMethodsResponse>(requestInfo, WindowsHelloForBusinessMethodsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to windowsHelloForBusinessMethods for users
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.WindowsHelloForBusinessMet
         public async Task<WindowsHelloForBusinessAuthenticationMethod> PostAsync(WindowsHelloForBusinessAuthenticationMethod body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<WindowsHelloForBusinessAuthenticationMethod>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsHelloForBusinessAuthenticationMethod>(requestInfo, WindowsHelloForBusinessAuthenticationMethod.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get windowsHelloForBusinessMethods from users</summary>
         public class GetQueryParameters : QueryParametersBase {

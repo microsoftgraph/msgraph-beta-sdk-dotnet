@@ -14,7 +14,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Time at which the process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>Complex type containing file hashes (cryptographic and location-sensitive).</summary>
-        public FileHash FileHash { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.FileHash FileHash { get; set; }
         /// <summary>The integrity level of the process. Possible values are: unknown, untrusted, low, medium, high, system.</summary>
         public ProcessIntegrityLevel? IntegrityLevel { get; set; }
         /// <summary>True if the process is elevated.</summary>
@@ -38,6 +38,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static Process CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Process();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -45,7 +53,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"accountName", (o,n) => { (o as Process).AccountName = n.GetStringValue(); } },
                 {"commandLine", (o,n) => { (o as Process).CommandLine = n.GetStringValue(); } },
                 {"createdDateTime", (o,n) => { (o as Process).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"fileHash", (o,n) => { (o as Process).FileHash = n.GetObjectValue<FileHash>(); } },
+                {"fileHash", (o,n) => { (o as Process).FileHash = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.FileHash>(MicrosoftGraphSdk.Models.Microsoft.Graph.FileHash.CreateFromDiscriminatorValue); } },
                 {"integrityLevel", (o,n) => { (o as Process).IntegrityLevel = n.GetEnumValue<ProcessIntegrityLevel>(); } },
                 {"isElevated", (o,n) => { (o as Process).IsElevated = n.GetBoolValue(); } },
                 {"name", (o,n) => { (o as Process).Name = n.GetStringValue(); } },
@@ -65,7 +73,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("accountName", AccountName);
             writer.WriteStringValue("commandLine", CommandLine);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<FileHash>("fileHash", FileHash);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.FileHash>("fileHash", FileHash);
             writer.WriteEnumValue<ProcessIntegrityLevel>("integrityLevel", IntegrityLevel);
             writer.WriteBoolValue("isElevated", IsElevated);
             writer.WriteStringValue("name", Name);

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Policies.CrossTenantAccessPolicy.Partners {
         /// </summary>
         public async Task<PartnersResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PartnersResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PartnersResponse>(requestInfo, PartnersResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Defines partner-specific configurations for external Azure Active Directory organizations.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Policies.CrossTenantAccessPolicy.Partners {
         public async Task<CrossTenantAccessPolicyConfigurationPartner> PostAsync(CrossTenantAccessPolicyConfigurationPartner body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<CrossTenantAccessPolicyConfigurationPartner>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CrossTenantAccessPolicyConfigurationPartner>(requestInfo, CrossTenantAccessPolicyConfigurationPartner.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Defines partner-specific configurations for external Azure Active Directory organizations.</summary>
         public class GetQueryParameters : QueryParametersBase {

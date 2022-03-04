@@ -66,7 +66,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.UserRu
         /// </summary>
         public async Task<IEnumerable<GetNonCompliantSettings>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<GetNonCompliantSettings>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetNonCompliantSettings>(requestInfo, GetNonCompliantSettings.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

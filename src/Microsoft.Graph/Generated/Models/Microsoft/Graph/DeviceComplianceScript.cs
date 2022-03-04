@@ -34,15 +34,23 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Version of the device compliance script</summary>
         public string Version { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DeviceComplianceScript CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DeviceComplianceScript();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as DeviceComplianceScript).Assignments = n.GetCollectionOfObjectValues<DeviceHealthScriptAssignment>().ToList(); } },
+                {"assignments", (o,n) => { (o as DeviceComplianceScript).Assignments = n.GetCollectionOfObjectValues<DeviceHealthScriptAssignment>(DeviceHealthScriptAssignment.CreateFromDiscriminatorValue).ToList(); } },
                 {"createdDateTime", (o,n) => { (o as DeviceComplianceScript).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", (o,n) => { (o as DeviceComplianceScript).Description = n.GetStringValue(); } },
                 {"detectionScriptContent", (o,n) => { (o as DeviceComplianceScript).DetectionScriptContent = n.GetByteArrayValue(); } },
-                {"deviceRunStates", (o,n) => { (o as DeviceComplianceScript).DeviceRunStates = n.GetCollectionOfObjectValues<DeviceComplianceScriptDeviceState>().ToList(); } },
+                {"deviceRunStates", (o,n) => { (o as DeviceComplianceScript).DeviceRunStates = n.GetCollectionOfObjectValues<DeviceComplianceScriptDeviceState>(DeviceComplianceScriptDeviceState.CreateFromDiscriminatorValue).ToList(); } },
                 {"displayName", (o,n) => { (o as DeviceComplianceScript).DisplayName = n.GetStringValue(); } },
                 {"enforceSignatureCheck", (o,n) => { (o as DeviceComplianceScript).EnforceSignatureCheck = n.GetBoolValue(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as DeviceComplianceScript).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -50,7 +58,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"roleScopeTagIds", (o,n) => { (o as DeviceComplianceScript).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"runAs32Bit", (o,n) => { (o as DeviceComplianceScript).RunAs32Bit = n.GetBoolValue(); } },
                 {"runAsAccount", (o,n) => { (o as DeviceComplianceScript).RunAsAccount = n.GetEnumValue<RunAsAccountType>(); } },
-                {"runSummary", (o,n) => { (o as DeviceComplianceScript).RunSummary = n.GetObjectValue<DeviceComplianceScriptRunSummary>(); } },
+                {"runSummary", (o,n) => { (o as DeviceComplianceScript).RunSummary = n.GetObjectValue<DeviceComplianceScriptRunSummary>(DeviceComplianceScriptRunSummary.CreateFromDiscriminatorValue); } },
                 {"version", (o,n) => { (o as DeviceComplianceScript).Version = n.GetStringValue(); } },
             };
         }

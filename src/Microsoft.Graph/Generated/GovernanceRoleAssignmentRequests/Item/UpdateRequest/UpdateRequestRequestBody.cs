@@ -19,6 +19,14 @@ namespace MicrosoftGraphSdk.GovernanceRoleAssignmentRequests.Item.UpdateRequest 
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static UpdateRequestRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new UpdateRequestRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -26,7 +34,7 @@ namespace MicrosoftGraphSdk.GovernanceRoleAssignmentRequests.Item.UpdateRequest 
                 {"assignmentState", (o,n) => { (o as UpdateRequestRequestBody).AssignmentState = n.GetStringValue(); } },
                 {"decision", (o,n) => { (o as UpdateRequestRequestBody).Decision = n.GetStringValue(); } },
                 {"reason", (o,n) => { (o as UpdateRequestRequestBody).Reason = n.GetStringValue(); } },
-                {"schedule", (o,n) => { (o as UpdateRequestRequestBody).Schedule = n.GetObjectValue<GovernanceSchedule>(); } },
+                {"schedule", (o,n) => { (o as UpdateRequestRequestBody).Schedule = n.GetObjectValue<GovernanceSchedule>(GovernanceSchedule.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

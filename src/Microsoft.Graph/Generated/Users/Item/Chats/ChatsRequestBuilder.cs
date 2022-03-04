@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Users.Item.Chats {
         /// </summary>
         public async Task<ChatsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ChatsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ChatsResponse>(requestInfo, ChatsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to chats for users
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Users.Item.Chats {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Chat> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Chat body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Chat>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Chat>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Chat.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get chats from users</summary>
         public class GetQueryParameters : QueryParametersBase {

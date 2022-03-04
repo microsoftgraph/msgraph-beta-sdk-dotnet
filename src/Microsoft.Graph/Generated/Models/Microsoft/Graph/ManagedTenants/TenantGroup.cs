@@ -16,14 +16,22 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         /// <summary>The collection of managed tenant identifiers include in the tenant group. Optional. Read-only.</summary>
         public List<string> TenantIds { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new TenantGroup CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TenantGroup();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"allTenantsIncluded", (o,n) => { (o as TenantGroup).AllTenantsIncluded = n.GetBoolValue(); } },
                 {"displayName", (o,n) => { (o as TenantGroup).DisplayName = n.GetStringValue(); } },
-                {"managementActions", (o,n) => { (o as TenantGroup).ManagementActions = n.GetCollectionOfObjectValues<ManagementActionInfo>().ToList(); } },
-                {"managementIntents", (o,n) => { (o as TenantGroup).ManagementIntents = n.GetCollectionOfObjectValues<ManagementIntentInfo>().ToList(); } },
+                {"managementActions", (o,n) => { (o as TenantGroup).ManagementActions = n.GetCollectionOfObjectValues<ManagementActionInfo>(ManagementActionInfo.CreateFromDiscriminatorValue).ToList(); } },
+                {"managementIntents", (o,n) => { (o as TenantGroup).ManagementIntents = n.GetCollectionOfObjectValues<ManagementIntentInfo>(ManagementIntentInfo.CreateFromDiscriminatorValue).ToList(); } },
                 {"tenantIds", (o,n) => { (o as TenantGroup).TenantIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }

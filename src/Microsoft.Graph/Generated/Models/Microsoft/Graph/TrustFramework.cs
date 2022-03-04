@@ -16,12 +16,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static TrustFramework CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TrustFramework();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"keySets", (o,n) => { (o as TrustFramework).KeySets = n.GetCollectionOfObjectValues<TrustFrameworkKeySet>().ToList(); } },
-                {"policies", (o,n) => { (o as TrustFramework).Policies = n.GetCollectionOfObjectValues<TrustFrameworkPolicy>().ToList(); } },
+                {"keySets", (o,n) => { (o as TrustFramework).KeySets = n.GetCollectionOfObjectValues<TrustFrameworkKeySet>(TrustFrameworkKeySet.CreateFromDiscriminatorValue).ToList(); } },
+                {"policies", (o,n) => { (o as TrustFramework).Policies = n.GetCollectionOfObjectValues<TrustFrameworkPolicy>(TrustFrameworkPolicy.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

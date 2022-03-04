@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.DelegatedAdminRelationships.Item
         /// </summary>
         public async Task<AccessAssignmentsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AccessAssignmentsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AccessAssignmentsResponse>(requestInfo, AccessAssignmentsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to accessAssignments for tenantRelationships
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.DelegatedAdminRelationships.Item
         public async Task<DelegatedAdminAccessAssignment> PostAsync(DelegatedAdminAccessAssignment body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DelegatedAdminAccessAssignment>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DelegatedAdminAccessAssignment>(requestInfo, DelegatedAdminAccessAssignment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get accessAssignments from tenantRelationships</summary>
         public class GetQueryParameters : QueryParametersBase {

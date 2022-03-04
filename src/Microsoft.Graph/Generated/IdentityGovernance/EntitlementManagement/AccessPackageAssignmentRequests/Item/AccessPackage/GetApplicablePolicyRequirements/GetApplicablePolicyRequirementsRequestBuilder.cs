@@ -66,7 +66,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
         /// </summary>
         public async Task<IEnumerable<GetApplicablePolicyRequirements>> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreatePostRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<GetApplicablePolicyRequirements>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetApplicablePolicyRequirements>(requestInfo, GetApplicablePolicyRequirements.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

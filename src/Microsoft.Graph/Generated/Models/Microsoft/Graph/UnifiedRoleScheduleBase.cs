@@ -6,7 +6,7 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UnifiedRoleScheduleBase : Entity, IParsable {
         /// <summary>Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.</summary>
-        public AppScope AppScope { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.AppScope AppScope { get; set; }
         /// <summary>Identifier of the app-specific scope when the assignment scope is app-specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units or all users.</summary>
         public string AppScopeId { get; set; }
         /// <summary>Time that the schedule was created.</summary>
@@ -30,20 +30,28 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Status for the roleAssignmentSchedule. It can include state related messages like Provisioned, Revoked, Pending Provisioning, and Pending Approval. Supports $filter (eq).</summary>
         public string Status { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new UnifiedRoleScheduleBase CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new UnifiedRoleScheduleBase();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appScope", (o,n) => { (o as UnifiedRoleScheduleBase).AppScope = n.GetObjectValue<AppScope>(); } },
+                {"appScope", (o,n) => { (o as UnifiedRoleScheduleBase).AppScope = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AppScope>(MicrosoftGraphSdk.Models.Microsoft.Graph.AppScope.CreateFromDiscriminatorValue); } },
                 {"appScopeId", (o,n) => { (o as UnifiedRoleScheduleBase).AppScopeId = n.GetStringValue(); } },
                 {"createdDateTime", (o,n) => { (o as UnifiedRoleScheduleBase).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"createdUsing", (o,n) => { (o as UnifiedRoleScheduleBase).CreatedUsing = n.GetStringValue(); } },
-                {"directoryScope", (o,n) => { (o as UnifiedRoleScheduleBase).DirectoryScope = n.GetObjectValue<DirectoryObject>(); } },
+                {"directoryScope", (o,n) => { (o as UnifiedRoleScheduleBase).DirectoryScope = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
                 {"directoryScopeId", (o,n) => { (o as UnifiedRoleScheduleBase).DirectoryScopeId = n.GetStringValue(); } },
                 {"modifiedDateTime", (o,n) => { (o as UnifiedRoleScheduleBase).ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"principal", (o,n) => { (o as UnifiedRoleScheduleBase).Principal = n.GetObjectValue<DirectoryObject>(); } },
+                {"principal", (o,n) => { (o as UnifiedRoleScheduleBase).Principal = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
                 {"principalId", (o,n) => { (o as UnifiedRoleScheduleBase).PrincipalId = n.GetStringValue(); } },
-                {"roleDefinition", (o,n) => { (o as UnifiedRoleScheduleBase).RoleDefinition = n.GetObjectValue<UnifiedRoleDefinition>(); } },
+                {"roleDefinition", (o,n) => { (o as UnifiedRoleScheduleBase).RoleDefinition = n.GetObjectValue<UnifiedRoleDefinition>(UnifiedRoleDefinition.CreateFromDiscriminatorValue); } },
                 {"roleDefinitionId", (o,n) => { (o as UnifiedRoleScheduleBase).RoleDefinitionId = n.GetStringValue(); } },
                 {"status", (o,n) => { (o as UnifiedRoleScheduleBase).Status = n.GetStringValue(); } },
             };
@@ -55,7 +63,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<AppScope>("appScope", AppScope);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AppScope>("appScope", AppScope);
             writer.WriteStringValue("appScopeId", AppScopeId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("createdUsing", CreatedUsing);

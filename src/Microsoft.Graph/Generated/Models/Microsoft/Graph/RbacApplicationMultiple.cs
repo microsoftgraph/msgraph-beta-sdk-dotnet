@@ -9,13 +9,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<UnifiedRoleAssignmentMultiple> RoleAssignments { get; set; }
         public List<UnifiedRoleDefinition> RoleDefinitions { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new RbacApplicationMultiple CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new RbacApplicationMultiple();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"resourceNamespaces", (o,n) => { (o as RbacApplicationMultiple).ResourceNamespaces = n.GetCollectionOfObjectValues<UnifiedRbacResourceNamespace>().ToList(); } },
-                {"roleAssignments", (o,n) => { (o as RbacApplicationMultiple).RoleAssignments = n.GetCollectionOfObjectValues<UnifiedRoleAssignmentMultiple>().ToList(); } },
-                {"roleDefinitions", (o,n) => { (o as RbacApplicationMultiple).RoleDefinitions = n.GetCollectionOfObjectValues<UnifiedRoleDefinition>().ToList(); } },
+                {"resourceNamespaces", (o,n) => { (o as RbacApplicationMultiple).ResourceNamespaces = n.GetCollectionOfObjectValues<UnifiedRbacResourceNamespace>(UnifiedRbacResourceNamespace.CreateFromDiscriminatorValue).ToList(); } },
+                {"roleAssignments", (o,n) => { (o as RbacApplicationMultiple).RoleAssignments = n.GetCollectionOfObjectValues<UnifiedRoleAssignmentMultiple>(UnifiedRoleAssignmentMultiple.CreateFromDiscriminatorValue).ToList(); } },
+                {"roleDefinitions", (o,n) => { (o as RbacApplicationMultiple).RoleDefinitions = n.GetCollectionOfObjectValues<UnifiedRoleDefinition>(UnifiedRoleDefinition.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

@@ -106,7 +106,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Tags {
         /// </summary>
         public async Task<TagsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TagsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TagsResponse>(requestInfo, TagsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Returns a list of tag objects associated to this case.
@@ -119,7 +119,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Tags {
         public async Task<Tag> PostAsync(Tag body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<Tag>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Tag>(requestInfo, Tag.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Returns a list of tag objects associated to this case.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.InstallSummary {
         /// </summary>
         public async Task<MobileAppInstallSummary> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MobileAppInstallSummary>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MobileAppInstallSummary>(requestInfo, MobileAppInstallSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Mobile App Install Summary.

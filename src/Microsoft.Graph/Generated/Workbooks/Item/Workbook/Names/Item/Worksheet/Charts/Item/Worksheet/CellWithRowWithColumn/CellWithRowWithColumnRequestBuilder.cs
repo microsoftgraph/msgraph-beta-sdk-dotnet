@@ -23,13 +23,13 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="row">Usage: row={row}</param>
         /// </summary>
-        public CellWithRowWithColumnRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, int? row = default, int? column = default) {
+        public CellWithRowWithColumnRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, int? column = default, int? row = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/workbooks/{driveItem_id}/workbook/names/{workbookNamedItem_id}/worksheet/charts/{workbookChart_id}/worksheet/microsoft.graph.cell(row={row},column={column})";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("row", row);
             urlTplParams.Add("column", column);
+            urlTplParams.Add("row", row);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -71,26 +71,30 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.
         /// </summary>
         public async Task<CellWithRowWithColumnResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<CellWithRowWithColumnResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CellWithRowWithColumnResponse>(requestInfo, CellWithRowWithColumnResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes workbookRange</summary>
         public class CellWithRowWithColumnResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type workbookRange</summary>
-            public WorkbookRange WorkbookRange { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookRange WorkbookRange { get; set; }
             /// <summary>
             /// Instantiates a new cellWithRowWithColumnResponse and sets the default values.
             /// </summary>
             public CellWithRowWithColumnResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static CellWithRowWithColumnResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new CellWithRowWithColumnResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"workbookRange", (o,n) => { (o as CellWithRowWithColumnResponse).WorkbookRange = n.GetObjectValue<WorkbookRange>(); } },
+                    {"workbookRange", (o,n) => { (o as CellWithRowWithColumnResponse).WorkbookRange = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookRange>(MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookRange.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -99,7 +103,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<WorkbookRange>("workbookRange", WorkbookRange);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookRange>("workbookRange", WorkbookRange);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

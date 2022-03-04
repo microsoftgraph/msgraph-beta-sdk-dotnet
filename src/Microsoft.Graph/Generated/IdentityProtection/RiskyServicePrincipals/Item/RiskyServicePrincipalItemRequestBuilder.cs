@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.IdentityProtection.RiskyServicePrincipals.Item {
         /// </summary>
         public async Task<RiskyServicePrincipal> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RiskyServicePrincipal>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RiskyServicePrincipal>(requestInfo, RiskyServicePrincipal.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Azure AD service principals that are at risk.

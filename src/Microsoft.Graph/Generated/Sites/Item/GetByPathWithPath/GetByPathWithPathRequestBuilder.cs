@@ -69,7 +69,7 @@ namespace MicrosoftGraphSdk.Sites.Item.GetByPathWithPath {
         /// </summary>
         public async Task<GetByPathWithPathResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<GetByPathWithPathResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetByPathWithPathResponse>(requestInfo, GetByPathWithPathResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes site</summary>
         public class GetByPathWithPathResponse : IParsable {
@@ -83,12 +83,16 @@ namespace MicrosoftGraphSdk.Sites.Item.GetByPathWithPath {
             public GetByPathWithPathResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static GetByPathWithPathResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new GetByPathWithPathResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"site", (o,n) => { (o as GetByPathWithPathResponse).Site = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Site>(); } },
+                    {"site", (o,n) => { (o as GetByPathWithPathResponse).Site = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Site>(MicrosoftGraphSdk.Models.Microsoft.Graph.Site.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>

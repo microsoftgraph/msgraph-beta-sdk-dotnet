@@ -130,7 +130,7 @@ namespace MicrosoftGraphSdk.TermStore.Sets.Item.Relations.Item {
         /// </summary>
         public async Task<Relation> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Relation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Relation>(requestInfo, Relation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Indicates which terms have been pinned or reused directly under the set.

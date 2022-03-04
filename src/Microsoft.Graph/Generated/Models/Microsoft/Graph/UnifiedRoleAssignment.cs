@@ -6,7 +6,7 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UnifiedRoleAssignment : Entity, IParsable {
         /// <summary>Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.</summary>
-        public AppScope AppScope { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.AppScope AppScope { get; set; }
         /// <summary>Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or directoryScopeId is required. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, in).</summary>
         public string AppScopeId { get; set; }
         public string Condition { get; set; }
@@ -26,20 +26,28 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Identifier of the role definition the assignment is for. Read only. Supports $filter (eq, in).</summary>
         public string RoleDefinitionId { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new UnifiedRoleAssignment CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new UnifiedRoleAssignment();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appScope", (o,n) => { (o as UnifiedRoleAssignment).AppScope = n.GetObjectValue<AppScope>(); } },
+                {"appScope", (o,n) => { (o as UnifiedRoleAssignment).AppScope = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AppScope>(MicrosoftGraphSdk.Models.Microsoft.Graph.AppScope.CreateFromDiscriminatorValue); } },
                 {"appScopeId", (o,n) => { (o as UnifiedRoleAssignment).AppScopeId = n.GetStringValue(); } },
                 {"condition", (o,n) => { (o as UnifiedRoleAssignment).Condition = n.GetStringValue(); } },
-                {"directoryScope", (o,n) => { (o as UnifiedRoleAssignment).DirectoryScope = n.GetObjectValue<DirectoryObject>(); } },
+                {"directoryScope", (o,n) => { (o as UnifiedRoleAssignment).DirectoryScope = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
                 {"directoryScopeId", (o,n) => { (o as UnifiedRoleAssignment).DirectoryScopeId = n.GetStringValue(); } },
-                {"principal", (o,n) => { (o as UnifiedRoleAssignment).Principal = n.GetObjectValue<DirectoryObject>(); } },
+                {"principal", (o,n) => { (o as UnifiedRoleAssignment).Principal = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
                 {"principalId", (o,n) => { (o as UnifiedRoleAssignment).PrincipalId = n.GetStringValue(); } },
                 {"principalOrganizationId", (o,n) => { (o as UnifiedRoleAssignment).PrincipalOrganizationId = n.GetStringValue(); } },
                 {"resourceScope", (o,n) => { (o as UnifiedRoleAssignment).ResourceScope = n.GetStringValue(); } },
-                {"roleDefinition", (o,n) => { (o as UnifiedRoleAssignment).RoleDefinition = n.GetObjectValue<UnifiedRoleDefinition>(); } },
+                {"roleDefinition", (o,n) => { (o as UnifiedRoleAssignment).RoleDefinition = n.GetObjectValue<UnifiedRoleDefinition>(UnifiedRoleDefinition.CreateFromDiscriminatorValue); } },
                 {"roleDefinitionId", (o,n) => { (o as UnifiedRoleAssignment).RoleDefinitionId = n.GetStringValue(); } },
             };
         }
@@ -50,7 +58,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<AppScope>("appScope", AppScope);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AppScope>("appScope", AppScope);
             writer.WriteStringValue("appScopeId", AppScopeId);
             writer.WriteStringValue("condition", Condition);
             writer.WriteObjectValue<DirectoryObject>("directoryScope", DirectoryScope);

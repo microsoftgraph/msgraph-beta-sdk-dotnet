@@ -26,16 +26,24 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static DocumentSet CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DocumentSet();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"allowedContentTypes", (o,n) => { (o as DocumentSet).AllowedContentTypes = n.GetCollectionOfObjectValues<ContentTypeInfo>().ToList(); } },
-                {"defaultContents", (o,n) => { (o as DocumentSet).DefaultContents = n.GetCollectionOfObjectValues<DocumentSetContent>().ToList(); } },
+                {"allowedContentTypes", (o,n) => { (o as DocumentSet).AllowedContentTypes = n.GetCollectionOfObjectValues<ContentTypeInfo>(ContentTypeInfo.CreateFromDiscriminatorValue).ToList(); } },
+                {"defaultContents", (o,n) => { (o as DocumentSet).DefaultContents = n.GetCollectionOfObjectValues<DocumentSetContent>(DocumentSetContent.CreateFromDiscriminatorValue).ToList(); } },
                 {"propagateWelcomePageChanges", (o,n) => { (o as DocumentSet).PropagateWelcomePageChanges = n.GetBoolValue(); } },
-                {"sharedColumns", (o,n) => { (o as DocumentSet).SharedColumns = n.GetCollectionOfObjectValues<ColumnDefinition>().ToList(); } },
+                {"sharedColumns", (o,n) => { (o as DocumentSet).SharedColumns = n.GetCollectionOfObjectValues<ColumnDefinition>(ColumnDefinition.CreateFromDiscriminatorValue).ToList(); } },
                 {"shouldPrefixNameToFile", (o,n) => { (o as DocumentSet).ShouldPrefixNameToFile = n.GetBoolValue(); } },
-                {"welcomePageColumns", (o,n) => { (o as DocumentSet).WelcomePageColumns = n.GetCollectionOfObjectValues<ColumnDefinition>().ToList(); } },
+                {"welcomePageColumns", (o,n) => { (o as DocumentSet).WelcomePageColumns = n.GetCollectionOfObjectValues<ColumnDefinition>(ColumnDefinition.CreateFromDiscriminatorValue).ToList(); } },
                 {"welcomePageUrl", (o,n) => { (o as DocumentSet).WelcomePageUrl = n.GetStringValue(); } },
             };
         }

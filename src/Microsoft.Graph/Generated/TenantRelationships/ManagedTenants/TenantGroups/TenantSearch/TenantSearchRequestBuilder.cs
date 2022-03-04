@@ -71,7 +71,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantGroups.Tena
         public async Task<IEnumerable<TenantSearch>> PostAsync(TenantSearchRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendCollectionAsync<TenantSearch>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<TenantSearch>(requestInfo, TenantSearch.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

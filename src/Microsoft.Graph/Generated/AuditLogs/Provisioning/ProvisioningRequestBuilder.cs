@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.AuditLogs.Provisioning {
         /// </summary>
         public async Task<ProvisioningResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ProvisioningResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ProvisioningResponse>(requestInfo, ProvisioningResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to provisioning for auditLogs
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.AuditLogs.Provisioning {
         public async Task<ProvisioningObjectSummary> PostAsync(ProvisioningObjectSummary body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ProvisioningObjectSummary>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ProvisioningObjectSummary>(requestInfo, ProvisioningObjectSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get provisioning from auditLogs</summary>
         public class GetQueryParameters : QueryParametersBase {

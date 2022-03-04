@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.SubscribedSkus {
         /// </summary>
         public async Task<SubscribedSkusResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SubscribedSkusResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SubscribedSkusResponse>(requestInfo, SubscribedSkusResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Add new entity to subscribedSkus
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.SubscribedSkus {
         public async Task<SubscribedSku> PostAsync(SubscribedSku body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<SubscribedSku>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SubscribedSku>(requestInfo, SubscribedSku.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from subscribedSkus</summary>
         public class GetQueryParameters : QueryParametersBase {

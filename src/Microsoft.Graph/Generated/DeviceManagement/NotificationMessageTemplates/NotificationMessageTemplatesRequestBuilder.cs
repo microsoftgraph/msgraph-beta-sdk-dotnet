@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.NotificationMessageTemplates {
         /// </summary>
         public async Task<NotificationMessageTemplatesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<NotificationMessageTemplatesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<NotificationMessageTemplatesResponse>(requestInfo, NotificationMessageTemplatesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The Notification Message Templates.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.NotificationMessageTemplates {
         public async Task<NotificationMessageTemplate> PostAsync(NotificationMessageTemplate body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<NotificationMessageTemplate>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<NotificationMessageTemplate>(requestInfo, NotificationMessageTemplate.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The Notification Message Templates.</summary>
         public class GetQueryParameters : QueryParametersBase {

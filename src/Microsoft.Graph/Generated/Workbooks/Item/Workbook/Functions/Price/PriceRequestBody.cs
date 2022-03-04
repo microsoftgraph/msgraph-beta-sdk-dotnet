@@ -22,17 +22,25 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.Price {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static PriceRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new PriceRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"basis", (o,n) => { (o as PriceRequestBody).Basis = n.GetObjectValue<Json>(); } },
-                {"frequency", (o,n) => { (o as PriceRequestBody).Frequency = n.GetObjectValue<Json>(); } },
-                {"maturity", (o,n) => { (o as PriceRequestBody).Maturity = n.GetObjectValue<Json>(); } },
-                {"rate", (o,n) => { (o as PriceRequestBody).Rate = n.GetObjectValue<Json>(); } },
-                {"redemption", (o,n) => { (o as PriceRequestBody).Redemption = n.GetObjectValue<Json>(); } },
-                {"settlement", (o,n) => { (o as PriceRequestBody).Settlement = n.GetObjectValue<Json>(); } },
-                {"yld", (o,n) => { (o as PriceRequestBody).Yld = n.GetObjectValue<Json>(); } },
+                {"basis", (o,n) => { (o as PriceRequestBody).Basis = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"frequency", (o,n) => { (o as PriceRequestBody).Frequency = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"maturity", (o,n) => { (o as PriceRequestBody).Maturity = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"rate", (o,n) => { (o as PriceRequestBody).Rate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"redemption", (o,n) => { (o as PriceRequestBody).Redemption = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"settlement", (o,n) => { (o as PriceRequestBody).Settlement = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"yld", (o,n) => { (o as PriceRequestBody).Yld = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

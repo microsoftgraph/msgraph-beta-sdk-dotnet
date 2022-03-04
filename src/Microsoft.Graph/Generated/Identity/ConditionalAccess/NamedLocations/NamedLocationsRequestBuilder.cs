@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Identity.ConditionalAccess.NamedLocations {
         /// </summary>
         public async Task<NamedLocationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<NamedLocationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<NamedLocationsResponse>(requestInfo, NamedLocationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Read-only. Nullable. Returns a collection of the specified named locations.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Identity.ConditionalAccess.NamedLocations {
         public async Task<NamedLocation> PostAsync(NamedLocation body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<NamedLocation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<NamedLocation>(requestInfo, NamedLocation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Read-only. Nullable. Returns a collection of the specified named locations.</summary>
         public class GetQueryParameters : QueryParametersBase {

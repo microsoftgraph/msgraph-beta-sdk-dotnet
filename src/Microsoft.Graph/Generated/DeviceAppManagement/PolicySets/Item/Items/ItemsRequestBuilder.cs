@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item.Items {
         /// </summary>
         public async Task<ItemsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ItemsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ItemsResponse>(requestInfo, ItemsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Items of the PolicySet with maximum count 100.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item.Items {
         public async Task<PolicySetItem> PostAsync(PolicySetItem body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<PolicySetItem>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PolicySetItem>(requestInfo, PolicySetItem.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Items of the PolicySet with maximum count 100.</summary>
         public class GetQueryParameters : QueryParametersBase {

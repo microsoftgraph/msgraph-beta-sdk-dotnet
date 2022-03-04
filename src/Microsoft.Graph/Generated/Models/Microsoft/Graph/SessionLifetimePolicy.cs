@@ -10,12 +10,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The human-readable details of the conditional access session management policy applied to the sign-in.</summary>
         public string Detail { get; set; }
         /// <summary>If a conditional access session management policy required the user to authenticate in this sign-in event, this field describes the policy type that required authentication. The possible values are: rememberMultifactorAuthenticationOnTrustedDevices, tenantTokenLifetimePolicy, audienceTokenLifetimePolicy, signInFrequencyPeriodicReauthentication, ngcMfa, signInFrequencyEveryTime, unknownFutureValue.</summary>
-        public ExpirationRequirement? ExpirationRequirement { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ExpirationRequirement? ExpirationRequirement { get; set; }
         /// <summary>
         /// Instantiates a new sessionLifetimePolicy and sets the default values.
         /// </summary>
         public SessionLifetimePolicy() {
             AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static SessionLifetimePolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new SessionLifetimePolicy();
         }
         /// <summary>
         /// The deserialization information for the current model

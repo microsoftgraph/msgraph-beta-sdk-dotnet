@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.ProgramControls {
         /// </summary>
         public async Task<ProgramControlsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ProgramControlsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ProgramControlsResponse>(requestInfo, ProgramControlsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Add new entity to programControls
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.ProgramControls {
         public async Task<ProgramControl> PostAsync(ProgramControl body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ProgramControl>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ProgramControl>(requestInfo, ProgramControl.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from programControls</summary>
         public class GetQueryParameters : QueryParametersBase {

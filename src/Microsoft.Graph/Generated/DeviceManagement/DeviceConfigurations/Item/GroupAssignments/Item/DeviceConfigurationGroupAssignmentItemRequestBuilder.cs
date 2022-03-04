@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.GroupAssi
         /// </summary>
         public async Task<DeviceConfigurationGroupAssignment> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceConfigurationGroupAssignment>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceConfigurationGroupAssignment>(requestInfo, DeviceConfigurationGroupAssignment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of group assignments for the device configuration profile.

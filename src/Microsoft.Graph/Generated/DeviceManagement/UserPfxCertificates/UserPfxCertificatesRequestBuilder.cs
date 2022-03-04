@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserPfxCertificates {
         /// </summary>
         public async Task<UserPfxCertificatesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UserPfxCertificatesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserPfxCertificatesResponse>(requestInfo, UserPfxCertificatesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Collection of PFX certificates associated with a user.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserPfxCertificates {
         public async Task<UserPFXCertificate> PostAsync(UserPFXCertificate body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UserPFXCertificate>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserPFXCertificate>(requestInfo, UserPFXCertificate.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Collection of PFX certificates associated with a user.</summary>
         public class GetQueryParameters : QueryParametersBase {

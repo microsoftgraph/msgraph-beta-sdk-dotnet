@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.TelecomExpenseManagementPartners.It
         /// </summary>
         public async Task<TelecomExpenseManagementPartner> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TelecomExpenseManagementPartner>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TelecomExpenseManagementPartner>(requestInfo, TelecomExpenseManagementPartner.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The telecom expense management partners.

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Me.ScopedRoleMemberOf {
         /// </summary>
         public async Task<ScopedRoleMemberOfResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ScopedRoleMemberOfResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ScopedRoleMemberOfResponse>(requestInfo, ScopedRoleMemberOfResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The scoped-role administrative unit memberships for this user. Read-only. Nullable.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Me.ScopedRoleMemberOf {
         public async Task<ScopedRoleMembership> PostAsync(ScopedRoleMembership body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ScopedRoleMembership>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ScopedRoleMembership>(requestInfo, ScopedRoleMembership.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The scoped-role administrative unit memberships for this user. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

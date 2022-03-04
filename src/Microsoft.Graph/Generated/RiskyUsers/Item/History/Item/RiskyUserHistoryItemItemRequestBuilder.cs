@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.RiskyUsers.Item.History.Item {
         /// </summary>
         public async Task<RiskyUserHistoryItem> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RiskyUserHistoryItem>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RiskyUserHistoryItem>(requestInfo, RiskyUserHistoryItem.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The activity related to user risk level change

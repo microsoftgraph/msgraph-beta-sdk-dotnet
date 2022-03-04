@@ -17,12 +17,20 @@ namespace MicrosoftGraphSdk.Security.UserSecurityProfiles {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static UserSecurityProfilesResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new UserSecurityProfilesResponse();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"@odata.nextLink", (o,n) => { (o as UserSecurityProfilesResponse).NextLink = n.GetStringValue(); } },
-                {"value", (o,n) => { (o as UserSecurityProfilesResponse).Value = n.GetCollectionOfObjectValues<UserSecurityProfile>().ToList(); } },
+                {"value", (o,n) => { (o as UserSecurityProfilesResponse).Value = n.GetCollectionOfObjectValues<UserSecurityProfile>(UserSecurityProfile.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

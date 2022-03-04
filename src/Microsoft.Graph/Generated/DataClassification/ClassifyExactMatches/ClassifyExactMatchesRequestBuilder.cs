@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.DataClassification.ClassifyExactMatches {
         public async Task<ClassifyExactMatchesResponse> PostAsync(ClassifyExactMatchesRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ClassifyExactMatchesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ClassifyExactMatchesResponse>(requestInfo, ClassifyExactMatchesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes exactMatchClassificationResult</summary>
         public class ClassifyExactMatchesResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type exactMatchClassificationResult</summary>
-            public ExactMatchClassificationResult ExactMatchClassificationResult { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.ExactMatchClassificationResult ExactMatchClassificationResult { get; set; }
             /// <summary>
             /// Instantiates a new classifyExactMatchesResponse and sets the default values.
             /// </summary>
             public ClassifyExactMatchesResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static ClassifyExactMatchesResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new ClassifyExactMatchesResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"exactMatchClassificationResult", (o,n) => { (o as ClassifyExactMatchesResponse).ExactMatchClassificationResult = n.GetObjectValue<ExactMatchClassificationResult>(); } },
+                    {"exactMatchClassificationResult", (o,n) => { (o as ClassifyExactMatchesResponse).ExactMatchClassificationResult = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ExactMatchClassificationResult>(MicrosoftGraphSdk.Models.Microsoft.Graph.ExactMatchClassificationResult.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.DataClassification.ClassifyExactMatches {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<ExactMatchClassificationResult>("exactMatchClassificationResult", ExactMatchClassificationResult);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ExactMatchClassificationResult>("exactMatchClassificationResult", ExactMatchClassificationResult);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

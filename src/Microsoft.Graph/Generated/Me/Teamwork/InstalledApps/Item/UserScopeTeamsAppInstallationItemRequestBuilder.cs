@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.Me.Teamwork.InstalledApps.Item {
         /// </summary>
         public async Task<UserScopeTeamsAppInstallation> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UserScopeTeamsAppInstallation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserScopeTeamsAppInstallation>(requestInfo, UserScopeTeamsAppInstallation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The apps installed in the personal scope of this user.

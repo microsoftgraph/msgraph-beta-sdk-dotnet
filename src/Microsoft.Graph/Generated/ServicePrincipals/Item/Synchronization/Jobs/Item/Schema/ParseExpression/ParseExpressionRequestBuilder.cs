@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.Item.Sch
         public async Task<ParseExpressionResponse> PostAsync(ParseExpressionRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ParseExpressionResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ParseExpressionResponse>(requestInfo, ParseExpressionResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes parseExpressionResponse</summary>
         public class ParseExpressionResponse : IParsable {
@@ -86,12 +86,16 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.Item.Sch
             public ParseExpressionResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static ParseExpressionResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new ParseExpressionResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"parseExpressionResponse", (o,n) => { (o as ParseExpressionResponse).ParseExpressionResponse_prop = n.GetObjectValue<ParseExpressionResponse>(); } },
+                    {"parseExpressionResponse", (o,n) => { (o as ParseExpressionResponse).ParseExpressionResponse_prop = n.GetObjectValue<ParseExpressionResponse>(ParseExpressionResponse.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>

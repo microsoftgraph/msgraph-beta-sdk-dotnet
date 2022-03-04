@@ -24,6 +24,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Search {
         /// <summary>Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.</summary>
         public List<AnswerVariant> TargetedVariations { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new Qna CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Qna();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -32,11 +40,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Search {
                 {"availabilityStartDateTime", (o,n) => { (o as Qna).AvailabilityStartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"groupIds", (o,n) => { (o as Qna).GroupIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"isSuggested", (o,n) => { (o as Qna).IsSuggested = n.GetBoolValue(); } },
-                {"keywords", (o,n) => { (o as Qna).Keywords = n.GetObjectValue<AnswerKeyword>(); } },
+                {"keywords", (o,n) => { (o as Qna).Keywords = n.GetObjectValue<AnswerKeyword>(AnswerKeyword.CreateFromDiscriminatorValue); } },
                 {"languageTags", (o,n) => { (o as Qna).LanguageTags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"platforms", (o,n) => { (o as Qna).Platforms = n.GetCollectionOfEnumValues<DevicePlatformType>().ToList(); } },
                 {"state", (o,n) => { (o as Qna).State = n.GetEnumValue<AnswerState>(); } },
-                {"targetedVariations", (o,n) => { (o as Qna).TargetedVariations = n.GetCollectionOfObjectValues<AnswerVariant>().ToList(); } },
+                {"targetedVariations", (o,n) => { (o as Qna).TargetedVariations = n.GetCollectionOfObjectValues<AnswerVariant>(AnswerVariant.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

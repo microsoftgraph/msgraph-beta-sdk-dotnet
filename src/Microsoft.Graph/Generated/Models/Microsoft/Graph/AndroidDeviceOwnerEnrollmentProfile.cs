@@ -44,6 +44,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>String that contains the wi-fi login ssid</summary>
         public string WifiSsid { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new AndroidDeviceOwnerEnrollmentProfile CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AndroidDeviceOwnerEnrollmentProfile();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -58,7 +66,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"enrollmentTokenUsageCount", (o,n) => { (o as AndroidDeviceOwnerEnrollmentProfile).EnrollmentTokenUsageCount = n.GetIntValue(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as AndroidDeviceOwnerEnrollmentProfile).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"qrCodeContent", (o,n) => { (o as AndroidDeviceOwnerEnrollmentProfile).QrCodeContent = n.GetStringValue(); } },
-                {"qrCodeImage", (o,n) => { (o as AndroidDeviceOwnerEnrollmentProfile).QrCodeImage = n.GetObjectValue<MimeContent>(); } },
+                {"qrCodeImage", (o,n) => { (o as AndroidDeviceOwnerEnrollmentProfile).QrCodeImage = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
                 {"roleScopeTagIds", (o,n) => { (o as AndroidDeviceOwnerEnrollmentProfile).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"tokenCreationDateTime", (o,n) => { (o as AndroidDeviceOwnerEnrollmentProfile).TokenCreationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"tokenExpirationDateTime", (o,n) => { (o as AndroidDeviceOwnerEnrollmentProfile).TokenExpirationDateTime = n.GetDateTimeOffsetValue(); } },

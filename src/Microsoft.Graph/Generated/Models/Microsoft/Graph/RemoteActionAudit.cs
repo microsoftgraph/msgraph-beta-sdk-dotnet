@@ -8,7 +8,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The action name. Possible values are: unknown, factoryReset, removeCompanyData, resetPasscode, remoteLock, enableLostMode, disableLostMode, locateDevice, rebootNow, recoverPasscode, cleanWindowsDevice, logoutSharedAppleDeviceActiveUser, quickScan, fullScan, windowsDefenderUpdateSignatures, factoryResetKeepEnrollmentData, updateDeviceAccount, automaticRedeployment, shutDown, rotateBitLockerKeys, rotateFileVaultKey, getFileVaultKey, setDeviceName, activateDeviceEsim.</summary>
         public RemoteAction? Action { get; set; }
         /// <summary>Action state. Possible values are: none, pending, canceled, active, done, failed, notSupported.</summary>
-        public ActionState? ActionState { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ActionState? ActionState { get; set; }
         /// <summary>Intune device name.</summary>
         public string DeviceDisplayName { get; set; }
         /// <summary>IMEI of the device.</summary>
@@ -23,6 +23,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? RequestDateTime { get; set; }
         /// <summary>[deprecated] Please use InitiatedByUserPrincipalName instead.</summary>
         public string UserName { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new RemoteActionAudit CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new RemoteActionAudit();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>

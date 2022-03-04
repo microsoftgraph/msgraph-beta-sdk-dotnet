@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DataClassification.ExactMatchUploadAgents {
         /// </summary>
         public async Task<ExactMatchUploadAgentsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ExactMatchUploadAgentsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ExactMatchUploadAgentsResponse>(requestInfo, ExactMatchUploadAgentsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to exactMatchUploadAgents for dataClassification
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DataClassification.ExactMatchUploadAgents {
         public async Task<ExactMatchUploadAgent> PostAsync(ExactMatchUploadAgent body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ExactMatchUploadAgent>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ExactMatchUploadAgent>(requestInfo, ExactMatchUploadAgent.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get exactMatchUploadAgents from dataClassification</summary>
         public class GetQueryParameters : QueryParametersBase {

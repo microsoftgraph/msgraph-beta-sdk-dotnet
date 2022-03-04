@@ -14,6 +14,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The assignment target for the device configuration.</summary>
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DeviceConfigurationAssignment CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DeviceConfigurationAssignment();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -21,7 +29,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"intent", (o,n) => { (o as DeviceConfigurationAssignment).Intent = n.GetEnumValue<DeviceConfigAssignmentIntent>(); } },
                 {"source", (o,n) => { (o as DeviceConfigurationAssignment).Source = n.GetEnumValue<DeviceAndAppManagementAssignmentSource>(); } },
                 {"sourceId", (o,n) => { (o as DeviceConfigurationAssignment).SourceId = n.GetStringValue(); } },
-                {"target", (o,n) => { (o as DeviceConfigurationAssignment).Target = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(); } },
+                {"target", (o,n) => { (o as DeviceConfigurationAssignment).Target = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.MessageTraces.Item.Recipients {
         /// </summary>
         public async Task<RecipientsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RecipientsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RecipientsResponse>(requestInfo, RecipientsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to recipients for messageTraces
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.MessageTraces.Item.Recipients {
         public async Task<MessageRecipient> PostAsync(MessageRecipient body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MessageRecipient>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MessageRecipient>(requestInfo, MessageRecipient.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get recipients from messageTraces</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -19,17 +19,25 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string Number { get; set; }
         public string PersonalEmail { get; set; }
         public string PhoneNumber { get; set; }
-        public List<Picture> Picture { get; set; }
+        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Picture> Picture { get; set; }
         public string StatisticsGroupCode { get; set; }
         public string Status { get; set; }
         public string Surname { get; set; }
         public Date? TerminationDate { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new Employee CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Employee();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"address", (o,n) => { (o as Employee).Address = n.GetObjectValue<PostalAddressType>(); } },
+                {"address", (o,n) => { (o as Employee).Address = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
                 {"birthDate", (o,n) => { (o as Employee).BirthDate = n.GetDateValue(); } },
                 {"displayName", (o,n) => { (o as Employee).DisplayName = n.GetStringValue(); } },
                 {"email", (o,n) => { (o as Employee).Email = n.GetStringValue(); } },
@@ -42,7 +50,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"number", (o,n) => { (o as Employee).Number = n.GetStringValue(); } },
                 {"personalEmail", (o,n) => { (o as Employee).PersonalEmail = n.GetStringValue(); } },
                 {"phoneNumber", (o,n) => { (o as Employee).PhoneNumber = n.GetStringValue(); } },
-                {"picture", (o,n) => { (o as Employee).Picture = n.GetCollectionOfObjectValues<Picture>().ToList(); } },
+                {"picture", (o,n) => { (o as Employee).Picture = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Picture>(MicrosoftGraphSdk.Models.Microsoft.Graph.Picture.CreateFromDiscriminatorValue).ToList(); } },
                 {"statisticsGroupCode", (o,n) => { (o as Employee).StatisticsGroupCode = n.GetStringValue(); } },
                 {"status", (o,n) => { (o as Employee).Status = n.GetStringValue(); } },
                 {"surname", (o,n) => { (o as Employee).Surname = n.GetStringValue(); } },
@@ -69,7 +77,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("number", Number);
             writer.WriteStringValue("personalEmail", PersonalEmail);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
-            writer.WriteCollectionOfObjectValues<Picture>("picture", Picture);
+            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Picture>("picture", Picture);
             writer.WriteStringValue("statisticsGroupCode", StatisticsGroupCode);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("surname", Surname);

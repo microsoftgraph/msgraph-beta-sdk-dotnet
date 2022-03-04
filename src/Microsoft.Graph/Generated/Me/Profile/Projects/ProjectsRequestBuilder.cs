@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Me.Profile.Projects {
         /// </summary>
         public async Task<ProjectsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ProjectsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ProjectsResponse>(requestInfo, ProjectsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents detailed information about projects associated with a user.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Me.Profile.Projects {
         public async Task<ProjectParticipation> PostAsync(ProjectParticipation body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ProjectParticipation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ProjectParticipation>(requestInfo, ProjectParticipation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Represents detailed information about projects associated with a user.</summary>
         public class GetQueryParameters : QueryParametersBase {

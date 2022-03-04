@@ -19,14 +19,22 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Upda
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static UpdateAudienceRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new UpdateAudienceRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"addExclusions", (o,n) => { (o as UpdateAudienceRequestBody).AddExclusions = n.GetCollectionOfObjectValues<UpdatableAsset>().ToList(); } },
-                {"addMembers", (o,n) => { (o as UpdateAudienceRequestBody).AddMembers = n.GetCollectionOfObjectValues<UpdatableAsset>().ToList(); } },
-                {"removeExclusions", (o,n) => { (o as UpdateAudienceRequestBody).RemoveExclusions = n.GetCollectionOfObjectValues<UpdatableAsset>().ToList(); } },
-                {"removeMembers", (o,n) => { (o as UpdateAudienceRequestBody).RemoveMembers = n.GetCollectionOfObjectValues<UpdatableAsset>().ToList(); } },
+                {"addExclusions", (o,n) => { (o as UpdateAudienceRequestBody).AddExclusions = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue).ToList(); } },
+                {"addMembers", (o,n) => { (o as UpdateAudienceRequestBody).AddMembers = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue).ToList(); } },
+                {"removeExclusions", (o,n) => { (o as UpdateAudienceRequestBody).RemoveExclusions = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue).ToList(); } },
+                {"removeMembers", (o,n) => { (o as UpdateAudienceRequestBody).RemoveMembers = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

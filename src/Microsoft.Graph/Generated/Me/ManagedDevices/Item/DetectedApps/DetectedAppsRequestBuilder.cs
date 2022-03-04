@@ -77,7 +77,7 @@ namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.DetectedApps {
         /// </summary>
         public async Task<DetectedAppsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DetectedAppsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DetectedAppsResponse>(requestInfo, DetectedAppsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>All applications currently installed on the device</summary>
         public class GetQueryParameters : QueryParametersBase {

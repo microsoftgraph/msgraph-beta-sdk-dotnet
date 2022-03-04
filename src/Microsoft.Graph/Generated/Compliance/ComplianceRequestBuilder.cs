@@ -96,7 +96,7 @@ namespace MicrosoftGraphSdk.Compliance {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Compliance> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Compliance>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Compliance>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Compliance.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update compliance

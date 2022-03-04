@@ -36,25 +36,33 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>List of run states for this script across all users.</summary>
         public List<DeviceManagementScriptUserState> UserRunStates { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DeviceCustomAttributeShellScript CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DeviceCustomAttributeShellScript();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as DeviceCustomAttributeShellScript).Assignments = n.GetCollectionOfObjectValues<DeviceManagementScriptAssignment>().ToList(); } },
+                {"assignments", (o,n) => { (o as DeviceCustomAttributeShellScript).Assignments = n.GetCollectionOfObjectValues<DeviceManagementScriptAssignment>(DeviceManagementScriptAssignment.CreateFromDiscriminatorValue).ToList(); } },
                 {"createdDateTime", (o,n) => { (o as DeviceCustomAttributeShellScript).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"customAttributeName", (o,n) => { (o as DeviceCustomAttributeShellScript).CustomAttributeName = n.GetStringValue(); } },
                 {"customAttributeType", (o,n) => { (o as DeviceCustomAttributeShellScript).CustomAttributeType = n.GetEnumValue<DeviceCustomAttributeValueType>(); } },
                 {"description", (o,n) => { (o as DeviceCustomAttributeShellScript).Description = n.GetStringValue(); } },
-                {"deviceRunStates", (o,n) => { (o as DeviceCustomAttributeShellScript).DeviceRunStates = n.GetCollectionOfObjectValues<DeviceManagementScriptDeviceState>().ToList(); } },
+                {"deviceRunStates", (o,n) => { (o as DeviceCustomAttributeShellScript).DeviceRunStates = n.GetCollectionOfObjectValues<DeviceManagementScriptDeviceState>(DeviceManagementScriptDeviceState.CreateFromDiscriminatorValue).ToList(); } },
                 {"displayName", (o,n) => { (o as DeviceCustomAttributeShellScript).DisplayName = n.GetStringValue(); } },
                 {"fileName", (o,n) => { (o as DeviceCustomAttributeShellScript).FileName = n.GetStringValue(); } },
-                {"groupAssignments", (o,n) => { (o as DeviceCustomAttributeShellScript).GroupAssignments = n.GetCollectionOfObjectValues<DeviceManagementScriptGroupAssignment>().ToList(); } },
+                {"groupAssignments", (o,n) => { (o as DeviceCustomAttributeShellScript).GroupAssignments = n.GetCollectionOfObjectValues<DeviceManagementScriptGroupAssignment>(DeviceManagementScriptGroupAssignment.CreateFromDiscriminatorValue).ToList(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as DeviceCustomAttributeShellScript).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"roleScopeTagIds", (o,n) => { (o as DeviceCustomAttributeShellScript).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"runAsAccount", (o,n) => { (o as DeviceCustomAttributeShellScript).RunAsAccount = n.GetEnumValue<RunAsAccountType>(); } },
-                {"runSummary", (o,n) => { (o as DeviceCustomAttributeShellScript).RunSummary = n.GetObjectValue<DeviceManagementScriptRunSummary>(); } },
+                {"runSummary", (o,n) => { (o as DeviceCustomAttributeShellScript).RunSummary = n.GetObjectValue<DeviceManagementScriptRunSummary>(DeviceManagementScriptRunSummary.CreateFromDiscriminatorValue); } },
                 {"scriptContent", (o,n) => { (o as DeviceCustomAttributeShellScript).ScriptContent = n.GetByteArrayValue(); } },
-                {"userRunStates", (o,n) => { (o as DeviceCustomAttributeShellScript).UserRunStates = n.GetCollectionOfObjectValues<DeviceManagementScriptUserState>().ToList(); } },
+                {"userRunStates", (o,n) => { (o as DeviceCustomAttributeShellScript).UserRunStates = n.GetCollectionOfObjectValues<DeviceManagementScriptUserState>(DeviceManagementScriptUserState.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

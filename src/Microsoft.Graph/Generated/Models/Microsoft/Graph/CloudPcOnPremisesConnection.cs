@@ -34,6 +34,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The ID of the target virtual network. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}'.</summary>
         public string VirtualNetworkId { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new CloudPcOnPremisesConnection CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new CloudPcOnPremisesConnection();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -43,7 +51,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"adDomainUsername", (o,n) => { (o as CloudPcOnPremisesConnection).AdDomainUsername = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as CloudPcOnPremisesConnection).DisplayName = n.GetStringValue(); } },
                 {"healthCheckStatus", (o,n) => { (o as CloudPcOnPremisesConnection).HealthCheckStatus = n.GetEnumValue<CloudPcOnPremisesConnectionStatus>(); } },
-                {"healthCheckStatusDetails", (o,n) => { (o as CloudPcOnPremisesConnection).HealthCheckStatusDetails = n.GetObjectValue<CloudPcOnPremisesConnectionStatusDetails>(); } },
+                {"healthCheckStatusDetails", (o,n) => { (o as CloudPcOnPremisesConnection).HealthCheckStatusDetails = n.GetObjectValue<CloudPcOnPremisesConnectionStatusDetails>(CloudPcOnPremisesConnectionStatusDetails.CreateFromDiscriminatorValue); } },
                 {"inUse", (o,n) => { (o as CloudPcOnPremisesConnection).InUse = n.GetBoolValue(); } },
                 {"organizationalUnit", (o,n) => { (o as CloudPcOnPremisesConnection).OrganizationalUnit = n.GetStringValue(); } },
                 {"resourceGroupId", (o,n) => { (o as CloudPcOnPremisesConnection).ResourceGroupId = n.GetStringValue(); } },

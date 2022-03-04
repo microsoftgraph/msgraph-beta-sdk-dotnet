@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Directory.CustomSecurityAttributeDefinitions.Item.Al
         /// </summary>
         public async Task<AllowedValuesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AllowedValuesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AllowedValuesResponse>(requestInfo, AllowedValuesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Directory.CustomSecurityAttributeDefinitions.Item.Al
         public async Task<AllowedValue> PostAsync(AllowedValue body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AllowedValue>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AllowedValue>(requestInfo, AllowedValue.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.</summary>
         public class GetQueryParameters : QueryParametersBase {

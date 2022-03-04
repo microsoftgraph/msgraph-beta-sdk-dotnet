@@ -68,7 +68,7 @@ namespace MicrosoftGraphSdk.Me.AppConsentRequestsForApproval.Item.UserConsentReq
         /// </summary>
         public async Task<IEnumerable<FilterByCurrentUserWithOn>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<FilterByCurrentUserWithOn>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<FilterByCurrentUserWithOn>(requestInfo, FilterByCurrentUserWithOn.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

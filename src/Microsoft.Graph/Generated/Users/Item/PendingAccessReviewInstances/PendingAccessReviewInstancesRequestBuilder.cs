@@ -108,7 +108,7 @@ namespace MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances {
         /// </summary>
         public async Task<PendingAccessReviewInstancesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PendingAccessReviewInstancesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PendingAccessReviewInstancesResponse>(requestInfo, PendingAccessReviewInstancesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Navigation property to get list of access reviews pending approval by reviewer.
@@ -121,7 +121,7 @@ namespace MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances {
         public async Task<AccessReviewInstance> PostAsync(AccessReviewInstance body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AccessReviewInstance>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AccessReviewInstance>(requestInfo, AccessReviewInstance.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Navigation property to get list of access reviews pending approval by reviewer.</summary>
         public class GetQueryParameters : QueryParametersBase {

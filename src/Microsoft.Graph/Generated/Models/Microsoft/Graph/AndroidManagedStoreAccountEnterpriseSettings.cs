@@ -30,13 +30,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Specifies which AAD groups can enroll devices in Android for Work device management if enrollmentTarget is set to 'Targeted'</summary>
         public List<string> TargetGroupIds { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new AndroidManagedStoreAccountEnterpriseSettings CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AndroidManagedStoreAccountEnterpriseSettings();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"androidDeviceOwnerFullyManagedEnrollmentEnabled", (o,n) => { (o as AndroidManagedStoreAccountEnterpriseSettings).AndroidDeviceOwnerFullyManagedEnrollmentEnabled = n.GetBoolValue(); } },
                 {"bindStatus", (o,n) => { (o as AndroidManagedStoreAccountEnterpriseSettings).BindStatus = n.GetEnumValue<AndroidManagedStoreAccountBindStatus>(); } },
-                {"companyCodes", (o,n) => { (o as AndroidManagedStoreAccountEnterpriseSettings).CompanyCodes = n.GetCollectionOfObjectValues<AndroidEnrollmentCompanyCode>().ToList(); } },
+                {"companyCodes", (o,n) => { (o as AndroidManagedStoreAccountEnterpriseSettings).CompanyCodes = n.GetCollectionOfObjectValues<AndroidEnrollmentCompanyCode>(AndroidEnrollmentCompanyCode.CreateFromDiscriminatorValue).ToList(); } },
                 {"deviceOwnerManagementEnabled", (o,n) => { (o as AndroidManagedStoreAccountEnterpriseSettings).DeviceOwnerManagementEnabled = n.GetBoolValue(); } },
                 {"enrollmentTarget", (o,n) => { (o as AndroidManagedStoreAccountEnterpriseSettings).EnrollmentTarget = n.GetEnumValue<AndroidManagedStoreAccountEnrollmentTarget>(); } },
                 {"lastAppSyncDateTime", (o,n) => { (o as AndroidManagedStoreAccountEnterpriseSettings).LastAppSyncDateTime = n.GetDateTimeOffsetValue(); } },

@@ -71,7 +71,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Invite {
         public async Task<IEnumerable<Invite>> PostAsync(InviteRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendCollectionAsync<Invite>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<Invite>(requestInfo, Invite.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

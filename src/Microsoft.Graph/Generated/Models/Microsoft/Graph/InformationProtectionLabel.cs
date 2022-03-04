@@ -20,6 +20,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The tooltip that should be displayed for the label in a UI.</summary>
         public string Tooltip { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new InformationProtectionLabel CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new InformationProtectionLabel();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -28,7 +36,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"description", (o,n) => { (o as InformationProtectionLabel).Description = n.GetStringValue(); } },
                 {"isActive", (o,n) => { (o as InformationProtectionLabel).IsActive = n.GetBoolValue(); } },
                 {"name", (o,n) => { (o as InformationProtectionLabel).Name = n.GetStringValue(); } },
-                {"parent", (o,n) => { (o as InformationProtectionLabel).Parent = n.GetObjectValue<ParentLabelDetails>(); } },
+                {"parent", (o,n) => { (o as InformationProtectionLabel).Parent = n.GetObjectValue<ParentLabelDetails>(ParentLabelDetails.CreateFromDiscriminatorValue); } },
                 {"sensitivity", (o,n) => { (o as InformationProtectionLabel).Sensitivity = n.GetIntValue(); } },
                 {"tooltip", (o,n) => { (o as InformationProtectionLabel).Tooltip = n.GetStringValue(); } },
             };

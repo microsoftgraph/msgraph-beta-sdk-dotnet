@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.AppCatalogs.TeamsApps {
         /// </summary>
         public async Task<TeamsAppsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TeamsAppsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TeamsAppsResponse>(requestInfo, TeamsAppsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to teamsApps for appCatalogs
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.AppCatalogs.TeamsApps {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.TeamsApp> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.TeamsApp body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.TeamsApp>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.TeamsApp>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.TeamsApp.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get teamsApps from appCatalogs</summary>
         public class GetQueryParameters : QueryParametersBase {

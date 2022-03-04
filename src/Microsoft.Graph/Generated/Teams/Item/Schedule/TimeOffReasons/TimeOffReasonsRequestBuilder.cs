@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.TimeOffReasons {
         /// </summary>
         public async Task<TimeOffReasonsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TimeOffReasonsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TimeOffReasonsResponse>(requestInfo, TimeOffReasonsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The set of reasons for a time off in the schedule.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.TimeOffReasons {
         public async Task<TimeOffReason> PostAsync(TimeOffReason body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<TimeOffReason>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TimeOffReason>(requestInfo, TimeOffReason.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The set of reasons for a time off in the schedule.</summary>
         public class GetQueryParameters : QueryParametersBase {

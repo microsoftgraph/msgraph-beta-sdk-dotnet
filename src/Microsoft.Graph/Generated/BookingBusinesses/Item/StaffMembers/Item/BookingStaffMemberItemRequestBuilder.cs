@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.BookingBusinesses.Item.StaffMembers.Item {
         /// </summary>
         public async Task<BookingStaffMember> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<BookingStaffMember>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<BookingStaffMember>(requestInfo, BookingStaffMember.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// All the staff members that provide services in this business. Read-only. Nullable.

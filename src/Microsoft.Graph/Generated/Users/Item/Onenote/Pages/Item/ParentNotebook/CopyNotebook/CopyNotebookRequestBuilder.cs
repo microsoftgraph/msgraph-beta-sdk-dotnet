@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.Users.Item.Onenote.Pages.Item.ParentNotebook.CopyNot
         public async Task<CopyNotebookResponse> PostAsync(CopyNotebookRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<CopyNotebookResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CopyNotebookResponse>(requestInfo, CopyNotebookResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes onenoteOperation</summary>
         public class CopyNotebookResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type onenoteOperation</summary>
-            public OnenoteOperation OnenoteOperation { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.OnenoteOperation OnenoteOperation { get; set; }
             /// <summary>
             /// Instantiates a new copyNotebookResponse and sets the default values.
             /// </summary>
             public CopyNotebookResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static CopyNotebookResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new CopyNotebookResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"onenoteOperation", (o,n) => { (o as CopyNotebookResponse).OnenoteOperation = n.GetObjectValue<OnenoteOperation>(); } },
+                    {"onenoteOperation", (o,n) => { (o as CopyNotebookResponse).OnenoteOperation = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.OnenoteOperation>(MicrosoftGraphSdk.Models.Microsoft.Graph.OnenoteOperation.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.Users.Item.Onenote.Pages.Item.ParentNotebook.CopyNot
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<OnenoteOperation>("onenoteOperation", OnenoteOperation);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.OnenoteOperation>("onenoteOperation", OnenoteOperation);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

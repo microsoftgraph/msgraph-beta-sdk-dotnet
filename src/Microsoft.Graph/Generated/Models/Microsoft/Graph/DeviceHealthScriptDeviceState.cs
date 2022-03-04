@@ -16,7 +16,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The last time that Intune Managment Extension synced with Intune</summary>
         public DateTimeOffset? LastSyncDateTime { get; set; }
         /// <summary>The managed device on which the device health script executed</summary>
-        public ManagedDevice ManagedDevice { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice ManagedDevice { get; set; }
         /// <summary>Error from the detection script after remediation</summary>
         public string PostRemediationDetectionScriptError { get; set; }
         /// <summary>Detection script output after remediation</summary>
@@ -28,7 +28,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Error output of the remediation script</summary>
         public string RemediationScriptError { get; set; }
         /// <summary>Remediation state from the lastest device health script execution. Possible values are: unknown, skipped, success, remediationFailed, scriptError.</summary>
-        public RemediationState? RemediationState { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.RemediationState? RemediationState { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DeviceHealthScriptDeviceState CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DeviceHealthScriptDeviceState();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -39,7 +47,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"expectedStateUpdateDateTime", (o,n) => { (o as DeviceHealthScriptDeviceState).ExpectedStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastStateUpdateDateTime", (o,n) => { (o as DeviceHealthScriptDeviceState).LastStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastSyncDateTime", (o,n) => { (o as DeviceHealthScriptDeviceState).LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managedDevice", (o,n) => { (o as DeviceHealthScriptDeviceState).ManagedDevice = n.GetObjectValue<ManagedDevice>(); } },
+                {"managedDevice", (o,n) => { (o as DeviceHealthScriptDeviceState).ManagedDevice = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice>(MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice.CreateFromDiscriminatorValue); } },
                 {"postRemediationDetectionScriptError", (o,n) => { (o as DeviceHealthScriptDeviceState).PostRemediationDetectionScriptError = n.GetStringValue(); } },
                 {"postRemediationDetectionScriptOutput", (o,n) => { (o as DeviceHealthScriptDeviceState).PostRemediationDetectionScriptOutput = n.GetStringValue(); } },
                 {"preRemediationDetectionScriptError", (o,n) => { (o as DeviceHealthScriptDeviceState).PreRemediationDetectionScriptError = n.GetStringValue(); } },
@@ -60,7 +68,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteDateTimeOffsetValue("expectedStateUpdateDateTime", ExpectedStateUpdateDateTime);
             writer.WriteDateTimeOffsetValue("lastStateUpdateDateTime", LastStateUpdateDateTime);
             writer.WriteDateTimeOffsetValue("lastSyncDateTime", LastSyncDateTime);
-            writer.WriteObjectValue<ManagedDevice>("managedDevice", ManagedDevice);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice>("managedDevice", ManagedDevice);
             writer.WriteStringValue("postRemediationDetectionScriptError", PostRemediationDetectionScriptError);
             writer.WriteStringValue("postRemediationDetectionScriptOutput", PostRemediationDetectionScriptOutput);
             writer.WriteStringValue("preRemediationDetectionScriptError", PreRemediationDetectionScriptError);

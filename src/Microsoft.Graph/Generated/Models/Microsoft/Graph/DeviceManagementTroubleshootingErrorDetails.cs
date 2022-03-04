@@ -24,6 +24,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static DeviceManagementTroubleshootingErrorDetails CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DeviceManagementTroubleshootingErrorDetails();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -32,7 +40,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"failure", (o,n) => { (o as DeviceManagementTroubleshootingErrorDetails).Failure = n.GetStringValue(); } },
                 {"failureDetails", (o,n) => { (o as DeviceManagementTroubleshootingErrorDetails).FailureDetails = n.GetStringValue(); } },
                 {"remediation", (o,n) => { (o as DeviceManagementTroubleshootingErrorDetails).Remediation = n.GetStringValue(); } },
-                {"resources", (o,n) => { (o as DeviceManagementTroubleshootingErrorDetails).Resources = n.GetCollectionOfObjectValues<DeviceManagementTroubleshootingErrorResource>().ToList(); } },
+                {"resources", (o,n) => { (o as DeviceManagementTroubleshootingErrorDetails).Resources = n.GetCollectionOfObjectValues<DeviceManagementTroubleshootingErrorResource>(DeviceManagementTroubleshootingErrorResource.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

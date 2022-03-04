@@ -34,6 +34,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static PrinterDocumentConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new PrinterDocumentConfiguration();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -48,13 +56,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"finishings", (o,n) => { (o as PrinterDocumentConfiguration).Finishings = n.GetCollectionOfEnumValues<PrintFinishing>().ToList(); } },
                 {"fitPdfToPage", (o,n) => { (o as PrinterDocumentConfiguration).FitPdfToPage = n.GetBoolValue(); } },
                 {"inputBin", (o,n) => { (o as PrinterDocumentConfiguration).InputBin = n.GetStringValue(); } },
-                {"margin", (o,n) => { (o as PrinterDocumentConfiguration).Margin = n.GetObjectValue<PrintMargin>(); } },
+                {"margin", (o,n) => { (o as PrinterDocumentConfiguration).Margin = n.GetObjectValue<PrintMargin>(PrintMargin.CreateFromDiscriminatorValue); } },
                 {"mediaSize", (o,n) => { (o as PrinterDocumentConfiguration).MediaSize = n.GetStringValue(); } },
                 {"mediaType", (o,n) => { (o as PrinterDocumentConfiguration).MediaType = n.GetStringValue(); } },
                 {"multipageLayout", (o,n) => { (o as PrinterDocumentConfiguration).MultipageLayout = n.GetEnumValue<PrintMultipageLayout>(); } },
                 {"orientation", (o,n) => { (o as PrinterDocumentConfiguration).Orientation = n.GetEnumValue<PrintOrientation>(); } },
                 {"outputBin", (o,n) => { (o as PrinterDocumentConfiguration).OutputBin = n.GetStringValue(); } },
-                {"pageRanges", (o,n) => { (o as PrinterDocumentConfiguration).PageRanges = n.GetCollectionOfObjectValues<IntegerRange>().ToList(); } },
+                {"pageRanges", (o,n) => { (o as PrinterDocumentConfiguration).PageRanges = n.GetCollectionOfObjectValues<IntegerRange>(IntegerRange.CreateFromDiscriminatorValue).ToList(); } },
                 {"pagesPerSheet", (o,n) => { (o as PrinterDocumentConfiguration).PagesPerSheet = n.GetIntValue(); } },
                 {"quality", (o,n) => { (o as PrinterDocumentConfiguration).Quality = n.GetEnumValue<PrintQuality>(); } },
                 {"scaling", (o,n) => { (o as PrinterDocumentConfiguration).Scaling = n.GetEnumValue<PrintScaling>(); } },

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Drive.List.ContentTypes.Item.ColumnLinks {
         /// </summary>
         public async Task<ColumnLinksResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ColumnLinksResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ColumnLinksResponse>(requestInfo, ColumnLinksResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The collection of columns that are required by this content type.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Drive.List.ContentTypes.Item.ColumnLinks {
         public async Task<ColumnLink> PostAsync(ColumnLink body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ColumnLink>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ColumnLink>(requestInfo, ColumnLink.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The collection of columns that are required by this content type.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -22,12 +22,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static SearchHitsContainer CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new SearchHitsContainer();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"aggregations", (o,n) => { (o as SearchHitsContainer).Aggregations = n.GetCollectionOfObjectValues<SearchAggregation>().ToList(); } },
-                {"hits", (o,n) => { (o as SearchHitsContainer).Hits = n.GetCollectionOfObjectValues<SearchHit>().ToList(); } },
+                {"aggregations", (o,n) => { (o as SearchHitsContainer).Aggregations = n.GetCollectionOfObjectValues<SearchAggregation>(SearchAggregation.CreateFromDiscriminatorValue).ToList(); } },
+                {"hits", (o,n) => { (o as SearchHitsContainer).Hits = n.GetCollectionOfObjectValues<SearchHit>(SearchHit.CreateFromDiscriminatorValue).ToList(); } },
                 {"moreResultsAvailable", (o,n) => { (o as SearchHitsContainer).MoreResultsAvailable = n.GetBoolValue(); } },
                 {"total", (o,n) => { (o as SearchHitsContainer).Total = n.GetIntValue(); } },
             };

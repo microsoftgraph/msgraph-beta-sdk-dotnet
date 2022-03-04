@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Teamwork.Devices.Item.Operations.Item {
         /// </summary>
         public async Task<TeamworkDeviceOperation> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TeamworkDeviceOperation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TeamworkDeviceOperation>(requestInfo, TeamworkDeviceOperation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The async operations on the device.

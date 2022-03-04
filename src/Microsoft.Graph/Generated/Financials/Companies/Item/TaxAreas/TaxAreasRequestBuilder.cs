@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.TaxAreas {
         /// </summary>
         public async Task<TaxAreasResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TaxAreasResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TaxAreasResponse>(requestInfo, TaxAreasResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to taxAreas for financials
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.TaxAreas {
         public async Task<TaxArea> PostAsync(TaxArea body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<TaxArea>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TaxArea>(requestInfo, TaxArea.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get taxAreas from financials</summary>
         public class GetQueryParameters : QueryParametersBase {

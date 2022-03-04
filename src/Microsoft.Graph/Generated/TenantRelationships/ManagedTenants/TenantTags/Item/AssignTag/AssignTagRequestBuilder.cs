@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantTags.Item.A
         public async Task<AssignTagResponse> PostAsync(AssignTagRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AssignTagResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AssignTagResponse>(requestInfo, AssignTagResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes tenantTag</summary>
         public class AssignTagResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type tenantTag</summary>
-            public TenantTag TenantTag { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants.TenantTag TenantTag { get; set; }
             /// <summary>
             /// Instantiates a new assignTagResponse and sets the default values.
             /// </summary>
             public AssignTagResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static AssignTagResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new AssignTagResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"tenantTag", (o,n) => { (o as AssignTagResponse).TenantTag = n.GetObjectValue<TenantTag>(); } },
+                    {"tenantTag", (o,n) => { (o as AssignTagResponse).TenantTag = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants.TenantTag>(MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants.TenantTag.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantTags.Item.A
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<TenantTag>("tenantTag", TenantTag);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants.TenantTag>("tenantTag", TenantTag);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

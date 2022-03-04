@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Me.Planner.Plans.Item.Buckets {
         /// </summary>
         public async Task<BucketsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<BucketsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<BucketsResponse>(requestInfo, BucketsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Read-only. Nullable. Collection of buckets in the plan.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Me.Planner.Plans.Item.Buckets {
         public async Task<PlannerBucket> PostAsync(PlannerBucket body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<PlannerBucket>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PlannerBucket>(requestInfo, PlannerBucket.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Read-only. Nullable. Collection of buckets in the plan.</summary>
         public class GetQueryParameters : QueryParametersBase {

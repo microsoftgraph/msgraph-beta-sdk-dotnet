@@ -10,12 +10,20 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Memb
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<string> Ids { get; set; }
         public string MemberEntityType { get; set; }
-        public UpdateCategory? UpdateCategory { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates.UpdateCategory? UpdateCategory { get; set; }
         /// <summary>
         /// Instantiates a new unenrollAssetsByIdRequestBody and sets the default values.
         /// </summary>
         public UnenrollAssetsByIdRequestBody() {
             AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static UnenrollAssetsByIdRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new UnenrollAssetsByIdRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

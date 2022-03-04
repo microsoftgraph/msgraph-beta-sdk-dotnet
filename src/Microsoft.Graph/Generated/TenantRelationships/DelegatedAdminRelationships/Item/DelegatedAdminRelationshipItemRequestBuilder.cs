@@ -130,7 +130,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.DelegatedAdminRelationships.Item
         /// </summary>
         public async Task<DelegatedAdminRelationship> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DelegatedAdminRelationship>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DelegatedAdminRelationship>(requestInfo, DelegatedAdminRelationship.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property delegatedAdminRelationships in tenantRelationships

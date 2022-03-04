@@ -42,13 +42,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static UserExperienceAnalyticsWorkFromAnywhereDevicesSummary CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new UserExperienceAnalyticsWorkFromAnywhereDevicesSummary();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"autopilotDevicesSummary", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).AutopilotDevicesSummary = n.GetObjectValue<UserExperienceAnalyticsAutopilotDevicesSummary>(); } },
-                {"cloudIdentityDevicesSummary", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).CloudIdentityDevicesSummary = n.GetObjectValue<UserExperienceAnalyticsCloudIdentityDevicesSummary>(); } },
-                {"cloudManagementDevicesSummary", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).CloudManagementDevicesSummary = n.GetObjectValue<UserExperienceAnalyticsCloudManagementDevicesSummary>(); } },
+                {"autopilotDevicesSummary", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).AutopilotDevicesSummary = n.GetObjectValue<UserExperienceAnalyticsAutopilotDevicesSummary>(UserExperienceAnalyticsAutopilotDevicesSummary.CreateFromDiscriminatorValue); } },
+                {"cloudIdentityDevicesSummary", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).CloudIdentityDevicesSummary = n.GetObjectValue<UserExperienceAnalyticsCloudIdentityDevicesSummary>(UserExperienceAnalyticsCloudIdentityDevicesSummary.CreateFromDiscriminatorValue); } },
+                {"cloudManagementDevicesSummary", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).CloudManagementDevicesSummary = n.GetObjectValue<UserExperienceAnalyticsCloudManagementDevicesSummary>(UserExperienceAnalyticsCloudManagementDevicesSummary.CreateFromDiscriminatorValue); } },
                 {"coManagedDevices", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).CoManagedDevices = n.GetIntValue(); } },
                 {"devicesNotAutopilotRegistered", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).DevicesNotAutopilotRegistered = n.GetIntValue(); } },
                 {"devicesWithoutAutopilotProfileAssigned", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).DevicesWithoutAutopilotProfileAssigned = n.GetIntValue(); } },
@@ -58,7 +66,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"totalDevices", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).TotalDevices = n.GetIntValue(); } },
                 {"unsupportedOSversionDevices", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).UnsupportedOSversionDevices = n.GetIntValue(); } },
                 {"windows10Devices", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).Windows10Devices = n.GetIntValue(); } },
-                {"windows10DevicesSummary", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).Windows10DevicesSummary = n.GetObjectValue<UserExperienceAnalyticsWindows10DevicesSummary>(); } },
+                {"windows10DevicesSummary", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).Windows10DevicesSummary = n.GetObjectValue<UserExperienceAnalyticsWindows10DevicesSummary>(UserExperienceAnalyticsWindows10DevicesSummary.CreateFromDiscriminatorValue); } },
                 {"windows10DevicesWithoutTenantAttach", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).Windows10DevicesWithoutTenantAttach = n.GetIntValue(); } },
             };
         }

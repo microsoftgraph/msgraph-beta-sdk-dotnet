@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.App.Calls.Item.Unmute {
         public async Task<UnmuteResponse> PostAsync(UnmuteRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UnmuteResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UnmuteResponse>(requestInfo, UnmuteResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes unmuteParticipantOperation</summary>
         public class UnmuteResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type unmuteParticipantOperation</summary>
-            public UnmuteParticipantOperation UnmuteParticipantOperation { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.UnmuteParticipantOperation UnmuteParticipantOperation { get; set; }
             /// <summary>
             /// Instantiates a new unmuteResponse and sets the default values.
             /// </summary>
             public UnmuteResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static UnmuteResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new UnmuteResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"unmuteParticipantOperation", (o,n) => { (o as UnmuteResponse).UnmuteParticipantOperation = n.GetObjectValue<UnmuteParticipantOperation>(); } },
+                    {"unmuteParticipantOperation", (o,n) => { (o as UnmuteResponse).UnmuteParticipantOperation = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.UnmuteParticipantOperation>(MicrosoftGraphSdk.Models.Microsoft.Graph.UnmuteParticipantOperation.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.App.Calls.Item.Unmute {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<UnmuteParticipantOperation>("unmuteParticipantOperation", UnmuteParticipantOperation);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.UnmuteParticipantOperation>("unmuteParticipantOperation", UnmuteParticipantOperation);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

@@ -140,7 +140,7 @@ namespace MicrosoftGraphSdk.DataClassification {
         /// </summary>
         public async Task<DataClassificationService> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DataClassificationService>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DataClassificationService>(requestInfo, DataClassificationService.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update dataClassification

@@ -68,7 +68,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsDevicePerfor
         /// </summary>
         public async Task<IEnumerable<SummarizeDevicePerformanceDevicesWithSummarizeBy>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<SummarizeDevicePerformanceDevicesWithSummarizeBy>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<SummarizeDevicePerformanceDevicesWithSummarizeBy>(requestInfo, SummarizeDevicePerformanceDevicesWithSummarizeBy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

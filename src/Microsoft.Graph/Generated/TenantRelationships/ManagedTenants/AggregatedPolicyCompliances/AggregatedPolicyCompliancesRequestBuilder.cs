@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.AggregatedPolicyC
         /// </summary>
         public async Task<AggregatedPolicyCompliancesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AggregatedPolicyCompliancesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AggregatedPolicyCompliancesResponse>(requestInfo, AggregatedPolicyCompliancesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Aggregate view of device compliance policies across managed tenants.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.AggregatedPolicyC
         public async Task<AggregatedPolicyCompliance> PostAsync(AggregatedPolicyCompliance body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AggregatedPolicyCompliance>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AggregatedPolicyCompliance>(requestInfo, AggregatedPolicyCompliance.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Aggregate view of device compliance policies across managed tenants.</summary>
         public class GetQueryParameters : QueryParametersBase {

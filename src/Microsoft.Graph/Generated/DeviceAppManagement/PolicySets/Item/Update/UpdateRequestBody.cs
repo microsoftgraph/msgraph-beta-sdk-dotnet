@@ -19,14 +19,22 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item.Update {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static UpdateRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new UpdateRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"addedPolicySetItems", (o,n) => { (o as UpdateRequestBody).AddedPolicySetItems = n.GetCollectionOfObjectValues<PolicySetItem>().ToList(); } },
-                {"assignments", (o,n) => { (o as UpdateRequestBody).Assignments = n.GetCollectionOfObjectValues<PolicySetAssignment>().ToList(); } },
+                {"addedPolicySetItems", (o,n) => { (o as UpdateRequestBody).AddedPolicySetItems = n.GetCollectionOfObjectValues<PolicySetItem>(PolicySetItem.CreateFromDiscriminatorValue).ToList(); } },
+                {"assignments", (o,n) => { (o as UpdateRequestBody).Assignments = n.GetCollectionOfObjectValues<PolicySetAssignment>(PolicySetAssignment.CreateFromDiscriminatorValue).ToList(); } },
                 {"deletedPolicySetItems", (o,n) => { (o as UpdateRequestBody).DeletedPolicySetItems = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"updatedPolicySetItems", (o,n) => { (o as UpdateRequestBody).UpdatedPolicySetItems = n.GetCollectionOfObjectValues<PolicySetItem>().ToList(); } },
+                {"updatedPolicySetItems", (o,n) => { (o as UpdateRequestBody).UpdatedPolicySetItems = n.GetCollectionOfObjectValues<PolicySetItem>(PolicySetItem.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.DeviceStateSummary {
         /// </summary>
         public async Task<DeviceManagementIntentDeviceStateSummary> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementIntentDeviceStateSummary>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementIntentDeviceStateSummary>(requestInfo, DeviceManagementIntentDeviceStateSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A summary of device states and counts of devices that belong to corresponding state for all devices that the intent is applied to

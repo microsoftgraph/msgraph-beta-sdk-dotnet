@@ -107,7 +107,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSou
         /// </summary>
         public async Task<NoncustodialDataSourcesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<NoncustodialDataSourcesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<NoncustodialDataSourcesResponse>(requestInfo, NoncustodialDataSourcesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Returns a list of case noncustodialDataSource objects for this case.  Nullable.
@@ -120,7 +120,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSou
         public async Task<NoncustodialDataSource> PostAsync(NoncustodialDataSource body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<NoncustodialDataSource>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<NoncustodialDataSource>(requestInfo, NoncustodialDataSource.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Returns a list of case noncustodialDataSource objects for this case.  Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

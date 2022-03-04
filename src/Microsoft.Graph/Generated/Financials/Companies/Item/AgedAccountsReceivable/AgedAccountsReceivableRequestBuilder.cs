@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.AgedAccountsReceivable {
         /// </summary>
         public async Task<AgedAccountsReceivableResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AgedAccountsReceivableResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AgedAccountsReceivableResponse>(requestInfo, AgedAccountsReceivableResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to agedAccountsReceivable for financials
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.AgedAccountsReceivable {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.AgedAccountsReceivable> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.AgedAccountsReceivable body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AgedAccountsReceivable>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AgedAccountsReceivable>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.AgedAccountsReceivable.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get agedAccountsReceivable from financials</summary>
         public class GetQueryParameters : QueryParametersBase {

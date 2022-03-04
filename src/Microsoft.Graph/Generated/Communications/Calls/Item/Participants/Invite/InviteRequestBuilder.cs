@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.Participants.Invite {
         public async Task<InviteResponse> PostAsync(InviteRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<InviteResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<InviteResponse>(requestInfo, InviteResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes inviteParticipantsOperation</summary>
         public class InviteResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type inviteParticipantsOperation</summary>
-            public InviteParticipantsOperation InviteParticipantsOperation { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.InviteParticipantsOperation InviteParticipantsOperation { get; set; }
             /// <summary>
             /// Instantiates a new inviteResponse and sets the default values.
             /// </summary>
             public InviteResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static InviteResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new InviteResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"inviteParticipantsOperation", (o,n) => { (o as InviteResponse).InviteParticipantsOperation = n.GetObjectValue<InviteParticipantsOperation>(); } },
+                    {"inviteParticipantsOperation", (o,n) => { (o as InviteResponse).InviteParticipantsOperation = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.InviteParticipantsOperation>(MicrosoftGraphSdk.Models.Microsoft.Graph.InviteParticipantsOperation.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.Participants.Invite {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<InviteParticipantsOperation>("inviteParticipantsOperation", InviteParticipantsOperation);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.InviteParticipantsOperation>("inviteParticipantsOperation", InviteParticipantsOperation);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

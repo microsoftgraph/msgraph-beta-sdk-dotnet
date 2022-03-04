@@ -7,7 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AccessPackageSubject : Entity, IParsable {
         public string AltSecId { get; set; }
         /// <summary>The connected organization of the subject. Read-only. Nullable.</summary>
-        public ConnectedOrganization ConnectedOrganization { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectedOrganization ConnectedOrganization { get; set; }
         /// <summary>The identifier of the connected organization of the subject.</summary>
         public string ConnectedOrganizationId { get; set; }
         /// <summary>The display name of the subject.</summary>
@@ -23,12 +23,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The resource type of the subject.</summary>
         public string Type { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new AccessPackageSubject CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AccessPackageSubject();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"altSecId", (o,n) => { (o as AccessPackageSubject).AltSecId = n.GetStringValue(); } },
-                {"connectedOrganization", (o,n) => { (o as AccessPackageSubject).ConnectedOrganization = n.GetObjectValue<ConnectedOrganization>(); } },
+                {"connectedOrganization", (o,n) => { (o as AccessPackageSubject).ConnectedOrganization = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectedOrganization>(MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectedOrganization.CreateFromDiscriminatorValue); } },
                 {"connectedOrganizationId", (o,n) => { (o as AccessPackageSubject).ConnectedOrganizationId = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as AccessPackageSubject).DisplayName = n.GetStringValue(); } },
                 {"email", (o,n) => { (o as AccessPackageSubject).Email = n.GetStringValue(); } },
@@ -46,7 +54,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("altSecId", AltSecId);
-            writer.WriteObjectValue<ConnectedOrganization>("connectedOrganization", ConnectedOrganization);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectedOrganization>("connectedOrganization", ConnectedOrganization);
             writer.WriteStringValue("connectedOrganizationId", ConnectedOrganizationId);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("email", Email);

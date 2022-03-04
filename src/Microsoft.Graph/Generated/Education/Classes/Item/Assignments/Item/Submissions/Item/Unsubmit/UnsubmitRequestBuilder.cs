@@ -67,26 +67,30 @@ namespace MicrosoftGraphSdk.Education.Classes.Item.Assignments.Item.Submissions.
         /// </summary>
         public async Task<UnsubmitResponse> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreatePostRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<UnsubmitResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UnsubmitResponse>(requestInfo, UnsubmitResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes educationSubmission</summary>
         public class UnsubmitResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type educationSubmission</summary>
-            public EducationSubmission EducationSubmission { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.EducationSubmission EducationSubmission { get; set; }
             /// <summary>
             /// Instantiates a new unsubmitResponse and sets the default values.
             /// </summary>
             public UnsubmitResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static UnsubmitResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new UnsubmitResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"educationSubmission", (o,n) => { (o as UnsubmitResponse).EducationSubmission = n.GetObjectValue<EducationSubmission>(); } },
+                    {"educationSubmission", (o,n) => { (o as UnsubmitResponse).EducationSubmission = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.EducationSubmission>(MicrosoftGraphSdk.Models.Microsoft.Graph.EducationSubmission.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -95,7 +99,7 @@ namespace MicrosoftGraphSdk.Education.Classes.Item.Assignments.Item.Submissions.
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<EducationSubmission>("educationSubmission", EducationSubmission);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.EducationSubmission>("educationSubmission", EducationSubmission);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.InformationProtection.ThreatAssessmentRequests {
         /// </summary>
         public async Task<ThreatAssessmentRequestsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ThreatAssessmentRequestsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ThreatAssessmentRequestsResponse>(requestInfo, ThreatAssessmentRequestsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to threatAssessmentRequests for informationProtection
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.InformationProtection.ThreatAssessmentRequests {
         public async Task<ThreatAssessmentRequest> PostAsync(ThreatAssessmentRequest body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ThreatAssessmentRequest>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ThreatAssessmentRequest>(requestInfo, ThreatAssessmentRequest.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get threatAssessmentRequests from informationProtection</summary>
         public class GetQueryParameters : QueryParametersBase {

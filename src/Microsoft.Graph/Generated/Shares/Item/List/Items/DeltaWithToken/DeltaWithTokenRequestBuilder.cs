@@ -68,7 +68,7 @@ namespace MicrosoftGraphSdk.Shares.Item.List.Items.DeltaWithToken {
         /// </summary>
         public async Task<IEnumerable<DeltaWithToken>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<DeltaWithToken>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<DeltaWithToken>(requestInfo, DeltaWithToken.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

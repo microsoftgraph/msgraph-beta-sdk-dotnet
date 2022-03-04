@@ -17,12 +17,20 @@ namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.DeviceComplianc
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static DeviceCompliancePolicyStatesResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DeviceCompliancePolicyStatesResponse();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"@odata.nextLink", (o,n) => { (o as DeviceCompliancePolicyStatesResponse).NextLink = n.GetStringValue(); } },
-                {"value", (o,n) => { (o as DeviceCompliancePolicyStatesResponse).Value = n.GetCollectionOfObjectValues<DeviceCompliancePolicyState>().ToList(); } },
+                {"value", (o,n) => { (o as DeviceCompliancePolicyStatesResponse).Value = n.GetCollectionOfObjectValues<DeviceCompliancePolicyState>(DeviceCompliancePolicyState.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

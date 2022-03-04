@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ManagementConditions.Item {
         /// </summary>
         public async Task<ManagementCondition> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ManagementCondition>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagementCondition>(requestInfo, ManagementCondition.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The management conditions associated with device management of the company.

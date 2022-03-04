@@ -68,7 +68,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GetEffectivePermissionsWithScope {
         /// </summary>
         public async Task<IEnumerable<GetEffectivePermissionsWithScope>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<GetEffectivePermissionsWithScope>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetEffectivePermissionsWithScope>(requestInfo, GetEffectivePermissionsWithScope.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

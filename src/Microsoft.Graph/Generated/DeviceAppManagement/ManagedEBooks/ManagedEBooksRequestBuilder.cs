@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedEBooks {
         /// </summary>
         public async Task<ManagedEBooksResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ManagedEBooksResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagedEBooksResponse>(requestInfo, ManagedEBooksResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The Managed eBook.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedEBooks {
         public async Task<ManagedEBook> PostAsync(ManagedEBook body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ManagedEBook>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagedEBook>(requestInfo, ManagedEBook.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The Managed eBook.</summary>
         public class GetQueryParameters : QueryParametersBase {

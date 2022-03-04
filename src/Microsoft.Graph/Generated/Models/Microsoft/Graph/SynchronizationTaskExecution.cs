@@ -42,6 +42,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static SynchronizationTaskExecution CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new SynchronizationTaskExecution();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -56,7 +64,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"countImported", (o,n) => { (o as SynchronizationTaskExecution).CountImported = n.GetLongValue(); } },
                 {"countImportedDeltas", (o,n) => { (o as SynchronizationTaskExecution).CountImportedDeltas = n.GetLongValue(); } },
                 {"countImportedReferenceDeltas", (o,n) => { (o as SynchronizationTaskExecution).CountImportedReferenceDeltas = n.GetLongValue(); } },
-                {"error", (o,n) => { (o as SynchronizationTaskExecution).Error = n.GetObjectValue<SynchronizationError>(); } },
+                {"error", (o,n) => { (o as SynchronizationTaskExecution).Error = n.GetObjectValue<SynchronizationError>(SynchronizationError.CreateFromDiscriminatorValue); } },
                 {"state", (o,n) => { (o as SynchronizationTaskExecution).State = n.GetEnumValue<SynchronizationTaskExecutionResult>(); } },
                 {"timeBegan", (o,n) => { (o as SynchronizationTaskExecution).TimeBegan = n.GetDateTimeOffsetValue(); } },
                 {"timeEnded", (o,n) => { (o as SynchronizationTaskExecution).TimeEnded = n.GetDateTimeOffsetValue(); } },

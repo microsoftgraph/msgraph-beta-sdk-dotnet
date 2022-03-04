@@ -33,19 +33,27 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? ModifiedDateTime { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new AccessPackageCatalog CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AccessPackageCatalog();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessPackageResourceRoles", (o,n) => { (o as AccessPackageCatalog).AccessPackageResourceRoles = n.GetCollectionOfObjectValues<AccessPackageResourceRole>().ToList(); } },
-                {"accessPackageResources", (o,n) => { (o as AccessPackageCatalog).AccessPackageResources = n.GetCollectionOfObjectValues<AccessPackageResource>().ToList(); } },
-                {"accessPackageResourceScopes", (o,n) => { (o as AccessPackageCatalog).AccessPackageResourceScopes = n.GetCollectionOfObjectValues<AccessPackageResourceScope>().ToList(); } },
-                {"accessPackages", (o,n) => { (o as AccessPackageCatalog).AccessPackages = n.GetCollectionOfObjectValues<AccessPackage>().ToList(); } },
+                {"accessPackageResourceRoles", (o,n) => { (o as AccessPackageCatalog).AccessPackageResourceRoles = n.GetCollectionOfObjectValues<AccessPackageResourceRole>(AccessPackageResourceRole.CreateFromDiscriminatorValue).ToList(); } },
+                {"accessPackageResources", (o,n) => { (o as AccessPackageCatalog).AccessPackageResources = n.GetCollectionOfObjectValues<AccessPackageResource>(AccessPackageResource.CreateFromDiscriminatorValue).ToList(); } },
+                {"accessPackageResourceScopes", (o,n) => { (o as AccessPackageCatalog).AccessPackageResourceScopes = n.GetCollectionOfObjectValues<AccessPackageResourceScope>(AccessPackageResourceScope.CreateFromDiscriminatorValue).ToList(); } },
+                {"accessPackages", (o,n) => { (o as AccessPackageCatalog).AccessPackages = n.GetCollectionOfObjectValues<AccessPackage>(AccessPackage.CreateFromDiscriminatorValue).ToList(); } },
                 {"catalogStatus", (o,n) => { (o as AccessPackageCatalog).CatalogStatus = n.GetStringValue(); } },
                 {"catalogType", (o,n) => { (o as AccessPackageCatalog).CatalogType = n.GetStringValue(); } },
                 {"createdBy", (o,n) => { (o as AccessPackageCatalog).CreatedBy = n.GetStringValue(); } },
                 {"createdDateTime", (o,n) => { (o as AccessPackageCatalog).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"customAccessPackageWorkflowExtensions", (o,n) => { (o as AccessPackageCatalog).CustomAccessPackageWorkflowExtensions = n.GetCollectionOfObjectValues<CustomAccessPackageWorkflowExtension>().ToList(); } },
+                {"customAccessPackageWorkflowExtensions", (o,n) => { (o as AccessPackageCatalog).CustomAccessPackageWorkflowExtensions = n.GetCollectionOfObjectValues<CustomAccessPackageWorkflowExtension>(CustomAccessPackageWorkflowExtension.CreateFromDiscriminatorValue).ToList(); } },
                 {"description", (o,n) => { (o as AccessPackageCatalog).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as AccessPackageCatalog).DisplayName = n.GetStringValue(); } },
                 {"isExternallyVisible", (o,n) => { (o as AccessPackageCatalog).IsExternallyVisible = n.GetBoolValue(); } },

@@ -7,7 +7,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SalesCreditMemoLine : Entity, IParsable {
-        public Account Account { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Account Account { get; set; }
         public string AccountId { get; set; }
         public decimal? AmountExcludingTax { get; set; }
         public decimal? AmountIncludingTax { get; set; }
@@ -32,11 +32,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string UnitOfMeasureId { get; set; }
         public decimal? UnitPrice { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new SalesCreditMemoLine CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new SalesCreditMemoLine();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"account", (o,n) => { (o as SalesCreditMemoLine).Account = n.GetObjectValue<Account>(); } },
+                {"account", (o,n) => { (o as SalesCreditMemoLine).Account = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Account>(MicrosoftGraphSdk.Models.Microsoft.Graph.Account.CreateFromDiscriminatorValue); } },
                 {"accountId", (o,n) => { (o as SalesCreditMemoLine).AccountId = n.GetStringValue(); } },
                 {"amountExcludingTax", (o,n) => { (o as SalesCreditMemoLine).AmountExcludingTax = n.GetDecimalValue(); } },
                 {"amountIncludingTax", (o,n) => { (o as SalesCreditMemoLine).AmountIncludingTax = n.GetDecimalValue(); } },
@@ -46,7 +54,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"discountPercent", (o,n) => { (o as SalesCreditMemoLine).DiscountPercent = n.GetDecimalValue(); } },
                 {"documentId", (o,n) => { (o as SalesCreditMemoLine).DocumentId = n.GetStringValue(); } },
                 {"invoiceDiscountAllocation", (o,n) => { (o as SalesCreditMemoLine).InvoiceDiscountAllocation = n.GetDecimalValue(); } },
-                {"item", (o,n) => { (o as SalesCreditMemoLine).Item = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Item.Item>(); } },
+                {"item", (o,n) => { (o as SalesCreditMemoLine).Item = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Item.Item>(MicrosoftGraphSdk.Models.Microsoft.Graph.Item.Item.CreateFromDiscriminatorValue); } },
                 {"itemId", (o,n) => { (o as SalesCreditMemoLine).ItemId = n.GetStringValue(); } },
                 {"lineType", (o,n) => { (o as SalesCreditMemoLine).LineType = n.GetStringValue(); } },
                 {"netAmount", (o,n) => { (o as SalesCreditMemoLine).NetAmount = n.GetDecimalValue(); } },
@@ -69,7 +77,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<Account>("account", Account);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Account>("account", Account);
             writer.WriteStringValue("accountId", AccountId);
             writer.WriteDecimalValue("amountExcludingTax", AmountExcludingTax);
             writer.WriteDecimalValue("amountIncludingTax", AmountIncludingTax);

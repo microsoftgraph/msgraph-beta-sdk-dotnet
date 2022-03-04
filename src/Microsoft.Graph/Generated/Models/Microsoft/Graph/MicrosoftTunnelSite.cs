@@ -13,7 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The MicrosoftTunnelSite's Internal Network Access Probe URL</summary>
         public string InternalNetworkProbeUrl { get; set; }
         /// <summary>The MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite</summary>
-        public MicrosoftTunnelConfiguration MicrosoftTunnelConfiguration { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.MicrosoftTunnelConfiguration MicrosoftTunnelConfiguration { get; set; }
         /// <summary>A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite</summary>
         public List<MicrosoftTunnelServer> MicrosoftTunnelServers { get; set; }
         /// <summary>The MicrosoftTunnelSite's public domain name or IP address</summary>
@@ -31,6 +31,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The site's timezone represented as a minute offset from UTC</summary>
         public int? UpgradeWindowUtcOffsetInMinutes { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new MicrosoftTunnelSite CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new MicrosoftTunnelSite();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -38,8 +46,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"description", (o,n) => { (o as MicrosoftTunnelSite).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as MicrosoftTunnelSite).DisplayName = n.GetStringValue(); } },
                 {"internalNetworkProbeUrl", (o,n) => { (o as MicrosoftTunnelSite).InternalNetworkProbeUrl = n.GetStringValue(); } },
-                {"microsoftTunnelConfiguration", (o,n) => { (o as MicrosoftTunnelSite).MicrosoftTunnelConfiguration = n.GetObjectValue<MicrosoftTunnelConfiguration>(); } },
-                {"microsoftTunnelServers", (o,n) => { (o as MicrosoftTunnelSite).MicrosoftTunnelServers = n.GetCollectionOfObjectValues<MicrosoftTunnelServer>().ToList(); } },
+                {"microsoftTunnelConfiguration", (o,n) => { (o as MicrosoftTunnelSite).MicrosoftTunnelConfiguration = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.MicrosoftTunnelConfiguration>(MicrosoftGraphSdk.Models.Microsoft.Graph.MicrosoftTunnelConfiguration.CreateFromDiscriminatorValue); } },
+                {"microsoftTunnelServers", (o,n) => { (o as MicrosoftTunnelSite).MicrosoftTunnelServers = n.GetCollectionOfObjectValues<MicrosoftTunnelServer>(MicrosoftTunnelServer.CreateFromDiscriminatorValue).ToList(); } },
                 {"publicAddress", (o,n) => { (o as MicrosoftTunnelSite).PublicAddress = n.GetStringValue(); } },
                 {"roleScopeTagIds", (o,n) => { (o as MicrosoftTunnelSite).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"upgradeAutomatically", (o,n) => { (o as MicrosoftTunnelSite).UpgradeAutomatically = n.GetBoolValue(); } },
@@ -59,7 +67,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("internalNetworkProbeUrl", InternalNetworkProbeUrl);
-            writer.WriteObjectValue<MicrosoftTunnelConfiguration>("microsoftTunnelConfiguration", MicrosoftTunnelConfiguration);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.MicrosoftTunnelConfiguration>("microsoftTunnelConfiguration", MicrosoftTunnelConfiguration);
             writer.WriteCollectionOfObjectValues<MicrosoftTunnelServer>("microsoftTunnelServers", MicrosoftTunnelServers);
             writer.WriteStringValue("publicAddress", PublicAddress);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);

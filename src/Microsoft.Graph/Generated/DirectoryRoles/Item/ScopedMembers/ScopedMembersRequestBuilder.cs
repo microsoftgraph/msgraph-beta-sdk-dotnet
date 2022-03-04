@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DirectoryRoles.Item.ScopedMembers {
         /// </summary>
         public async Task<ScopedMembersResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ScopedMembersResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ScopedMembersResponse>(requestInfo, ScopedMembersResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Members of this directory role that are scoped to administrative units. Read-only. Nullable.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DirectoryRoles.Item.ScopedMembers {
         public async Task<ScopedRoleMembership> PostAsync(ScopedRoleMembership body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ScopedRoleMembership>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ScopedRoleMembership>(requestInfo, ScopedRoleMembership.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Members of this directory role that are scoped to administrative units. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

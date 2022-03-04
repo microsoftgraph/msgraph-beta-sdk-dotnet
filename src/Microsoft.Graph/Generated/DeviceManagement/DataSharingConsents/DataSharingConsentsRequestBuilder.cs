@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DataSharingConsents {
         /// </summary>
         public async Task<DataSharingConsentsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DataSharingConsentsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DataSharingConsentsResponse>(requestInfo, DataSharingConsentsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Data sharing consents.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DataSharingConsents {
         public async Task<DataSharingConsent> PostAsync(DataSharingConsent body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DataSharingConsent>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DataSharingConsent>(requestInfo, DataSharingConsent.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Data sharing consents.</summary>
         public class GetQueryParameters : QueryParametersBase {

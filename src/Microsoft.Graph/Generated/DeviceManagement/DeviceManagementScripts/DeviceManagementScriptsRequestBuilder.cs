@@ -103,7 +103,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts {
         /// </summary>
         public async Task<DeviceManagementScriptsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementScriptsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementScriptsResponse>(requestInfo, DeviceManagementScriptsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of device management scripts associated with the tenant.
@@ -116,7 +116,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts {
         public async Task<DeviceManagementScript> PostAsync(DeviceManagementScript body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementScript>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementScript>(requestInfo, DeviceManagementScript.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The list of device management scripts associated with the tenant.</summary>
         public class GetQueryParameters : QueryParametersBase {

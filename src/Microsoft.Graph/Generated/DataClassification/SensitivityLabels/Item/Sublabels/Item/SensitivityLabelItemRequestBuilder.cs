@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DataClassification.SensitivityLabels.Item.Sublabels.
         /// </summary>
         public async Task<SensitivityLabel> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SensitivityLabel>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SensitivityLabel>(requestInfo, SensitivityLabel.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property sublabels in dataClassification

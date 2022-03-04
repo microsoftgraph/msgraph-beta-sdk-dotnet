@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelConfigurations.Item 
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.MicrosoftTunnelConfiguration> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.MicrosoftTunnelConfiguration>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.MicrosoftTunnelConfiguration>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.MicrosoftTunnelConfiguration.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Collection of MicrosoftTunnelConfiguration settings associated with account.

@@ -67,7 +67,7 @@ namespace MicrosoftGraphSdk.Me.ReprocessLicenseAssignment {
         /// </summary>
         public async Task<ReprocessLicenseAssignmentResponse> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreatePostRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<ReprocessLicenseAssignmentResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ReprocessLicenseAssignmentResponse>(requestInfo, ReprocessLicenseAssignmentResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes user</summary>
         public class ReprocessLicenseAssignmentResponse : IParsable {
@@ -81,12 +81,16 @@ namespace MicrosoftGraphSdk.Me.ReprocessLicenseAssignment {
             public ReprocessLicenseAssignmentResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static ReprocessLicenseAssignmentResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new ReprocessLicenseAssignmentResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"user", (o,n) => { (o as ReprocessLicenseAssignmentResponse).User = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.User>(); } },
+                    {"user", (o,n) => { (o as ReprocessLicenseAssignmentResponse).User = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.User>(MicrosoftGraphSdk.Models.Microsoft.Graph.User.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>

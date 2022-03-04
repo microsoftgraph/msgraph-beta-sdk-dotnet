@@ -31,23 +31,31 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
         /// <summary>Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.</summary>
         public List<UserSource> UserSources { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new LegalHold CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new LegalHold();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"contentQuery", (o,n) => { (o as LegalHold).ContentQuery = n.GetStringValue(); } },
-                {"createdBy", (o,n) => { (o as LegalHold).CreatedBy = n.GetObjectValue<IdentitySet>(); } },
+                {"createdBy", (o,n) => { (o as LegalHold).CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", (o,n) => { (o as LegalHold).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", (o,n) => { (o as LegalHold).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as LegalHold).DisplayName = n.GetStringValue(); } },
                 {"errors", (o,n) => { (o as LegalHold).Errors = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"isEnabled", (o,n) => { (o as LegalHold).IsEnabled = n.GetBoolValue(); } },
-                {"lastModifiedBy", (o,n) => { (o as LegalHold).LastModifiedBy = n.GetObjectValue<IdentitySet>(); } },
+                {"lastModifiedBy", (o,n) => { (o as LegalHold).LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"lastModifiedDateTime", (o,n) => { (o as LegalHold).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"siteSources", (o,n) => { (o as LegalHold).SiteSources = n.GetCollectionOfObjectValues<SiteSource>().ToList(); } },
+                {"siteSources", (o,n) => { (o as LegalHold).SiteSources = n.GetCollectionOfObjectValues<SiteSource>(SiteSource.CreateFromDiscriminatorValue).ToList(); } },
                 {"status", (o,n) => { (o as LegalHold).Status = n.GetEnumValue<LegalHoldStatus>(); } },
-                {"unifiedGroupSources", (o,n) => { (o as LegalHold).UnifiedGroupSources = n.GetCollectionOfObjectValues<UnifiedGroupSource>().ToList(); } },
-                {"userSources", (o,n) => { (o as LegalHold).UserSources = n.GetCollectionOfObjectValues<UserSource>().ToList(); } },
+                {"unifiedGroupSources", (o,n) => { (o as LegalHold).UnifiedGroupSources = n.GetCollectionOfObjectValues<UnifiedGroupSource>(UnifiedGroupSource.CreateFromDiscriminatorValue).ToList(); } },
+                {"userSources", (o,n) => { (o as LegalHold).UserSources = n.GetCollectionOfObjectValues<UserSource>(UserSource.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

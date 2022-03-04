@@ -18,13 +18,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static AttributeMappingSource CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AttributeMappingSource();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"expression", (o,n) => { (o as AttributeMappingSource).Expression = n.GetStringValue(); } },
                 {"name", (o,n) => { (o as AttributeMappingSource).Name = n.GetStringValue(); } },
-                {"parameters", (o,n) => { (o as AttributeMappingSource).Parameters = n.GetCollectionOfObjectValues<StringKeyAttributeMappingSourceValuePair>().ToList(); } },
+                {"parameters", (o,n) => { (o as AttributeMappingSource).Parameters = n.GetCollectionOfObjectValues<StringKeyAttributeMappingSourceValuePair>(StringKeyAttributeMappingSourceValuePair.CreateFromDiscriminatorValue).ToList(); } },
                 {"type", (o,n) => { (o as AttributeMappingSource).Type = n.GetEnumValue<AttributeMappingSourceType>(); } },
             };
         }

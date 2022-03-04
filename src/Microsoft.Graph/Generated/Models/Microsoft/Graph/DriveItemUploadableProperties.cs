@@ -12,7 +12,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Provides an expected file size to perform a quota check prior to upload. Only on OneDrive Personal.</summary>
         public long? FileSize { get; set; }
         /// <summary>File system information on client. Read-write.</summary>
-        public FileSystemInfo FileSystemInfo { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.FileSystemInfo FileSystemInfo { get; set; }
         /// <summary>The name of the item (filename and extension). Read-write.</summary>
         public string Name { get; set; }
         /// <summary>
@@ -22,13 +22,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static DriveItemUploadableProperties CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DriveItemUploadableProperties();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"description", (o,n) => { (o as DriveItemUploadableProperties).Description = n.GetStringValue(); } },
                 {"fileSize", (o,n) => { (o as DriveItemUploadableProperties).FileSize = n.GetLongValue(); } },
-                {"fileSystemInfo", (o,n) => { (o as DriveItemUploadableProperties).FileSystemInfo = n.GetObjectValue<FileSystemInfo>(); } },
+                {"fileSystemInfo", (o,n) => { (o as DriveItemUploadableProperties).FileSystemInfo = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.FileSystemInfo>(MicrosoftGraphSdk.Models.Microsoft.Graph.FileSystemInfo.CreateFromDiscriminatorValue); } },
                 {"name", (o,n) => { (o as DriveItemUploadableProperties).Name = n.GetStringValue(); } },
             };
         }
@@ -40,7 +48,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteLongValue("fileSize", FileSize);
-            writer.WriteObjectValue<FileSystemInfo>("fileSystemInfo", FileSystemInfo);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.FileSystemInfo>("fileSystemInfo", FileSystemInfo);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }

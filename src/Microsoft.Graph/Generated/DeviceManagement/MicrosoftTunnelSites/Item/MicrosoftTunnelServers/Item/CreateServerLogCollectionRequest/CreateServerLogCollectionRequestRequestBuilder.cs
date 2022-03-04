@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelSites.Item.Microsoft
         public async Task<CreateServerLogCollectionRequestResponse> PostAsync(CreateServerLogCollectionRequestRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<CreateServerLogCollectionRequestResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CreateServerLogCollectionRequestResponse>(requestInfo, CreateServerLogCollectionRequestResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes microsoftTunnelServerLogCollectionResponse</summary>
         public class CreateServerLogCollectionRequestResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type microsoftTunnelServerLogCollectionResponse</summary>
-            public MicrosoftTunnelServerLogCollectionResponse MicrosoftTunnelServerLogCollectionResponse { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.MicrosoftTunnelServerLogCollectionResponse MicrosoftTunnelServerLogCollectionResponse { get; set; }
             /// <summary>
             /// Instantiates a new createServerLogCollectionRequestResponse and sets the default values.
             /// </summary>
             public CreateServerLogCollectionRequestResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static CreateServerLogCollectionRequestResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new CreateServerLogCollectionRequestResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"microsoftTunnelServerLogCollectionResponse", (o,n) => { (o as CreateServerLogCollectionRequestResponse).MicrosoftTunnelServerLogCollectionResponse = n.GetObjectValue<MicrosoftTunnelServerLogCollectionResponse>(); } },
+                    {"microsoftTunnelServerLogCollectionResponse", (o,n) => { (o as CreateServerLogCollectionRequestResponse).MicrosoftTunnelServerLogCollectionResponse = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.MicrosoftTunnelServerLogCollectionResponse>(MicrosoftGraphSdk.Models.Microsoft.Graph.MicrosoftTunnelServerLogCollectionResponse.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelSites.Item.Microsoft
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftTunnelServerLogCollectionResponse>("microsoftTunnelServerLogCollectionResponse", MicrosoftTunnelServerLogCollectionResponse);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.MicrosoftTunnelServerLogCollectionResponse>("microsoftTunnelServerLogCollectionResponse", MicrosoftTunnelServerLogCollectionResponse);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

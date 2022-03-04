@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Reports.AuthenticationMethods.UserRegistrationDetail
         /// </summary>
         public async Task<UserRegistrationDetailsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UserRegistrationDetailsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserRegistrationDetailsResponse>(requestInfo, UserRegistrationDetailsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Reports.AuthenticationMethods.UserRegistrationDetail
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.UserRegistrationDetails> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.UserRegistrationDetails body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.UserRegistrationDetails>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.UserRegistrationDetails>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.UserRegistrationDetails.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).</summary>
         public class GetQueryParameters : QueryParametersBase {

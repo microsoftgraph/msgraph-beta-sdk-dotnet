@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelHealthThresholds {
         /// </summary>
         public async Task<MicrosoftTunnelHealthThresholdsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftTunnelHealthThresholdsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftTunnelHealthThresholdsResponse>(requestInfo, MicrosoftTunnelHealthThresholdsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Collection of MicrosoftTunnelHealthThreshold settings associated with account.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelHealthThresholds {
         public async Task<MicrosoftTunnelHealthThreshold> PostAsync(MicrosoftTunnelHealthThreshold body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftTunnelHealthThreshold>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftTunnelHealthThreshold>(requestInfo, MicrosoftTunnelHealthThreshold.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Collection of MicrosoftTunnelHealthThreshold settings associated with account.</summary>
         public class GetQueryParameters : QueryParametersBase {

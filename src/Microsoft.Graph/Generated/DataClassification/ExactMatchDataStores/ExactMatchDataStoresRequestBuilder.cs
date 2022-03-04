@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DataClassification.ExactMatchDataStores {
         /// </summary>
         public async Task<ExactMatchDataStoresResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ExactMatchDataStoresResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ExactMatchDataStoresResponse>(requestInfo, ExactMatchDataStoresResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to exactMatchDataStores for dataClassification
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DataClassification.ExactMatchDataStores {
         public async Task<ExactMatchDataStore> PostAsync(ExactMatchDataStore body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ExactMatchDataStore>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ExactMatchDataStore>(requestInfo, ExactMatchDataStore.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get exactMatchDataStores from dataClassification</summary>
         public class GetQueryParameters : QueryParametersBase {

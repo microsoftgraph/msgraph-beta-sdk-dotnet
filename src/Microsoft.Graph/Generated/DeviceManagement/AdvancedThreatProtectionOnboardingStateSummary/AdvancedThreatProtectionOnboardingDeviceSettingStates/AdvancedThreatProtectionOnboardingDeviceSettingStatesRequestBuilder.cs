@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AdvancedThreatProtectionOnboardingS
         /// </summary>
         public async Task<AdvancedThreatProtectionOnboardingDeviceSettingStatesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AdvancedThreatProtectionOnboardingDeviceSettingStatesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AdvancedThreatProtectionOnboardingDeviceSettingStatesResponse>(requestInfo, AdvancedThreatProtectionOnboardingDeviceSettingStatesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Not yet documented
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AdvancedThreatProtectionOnboardingS
         public async Task<AdvancedThreatProtectionOnboardingDeviceSettingState> PostAsync(AdvancedThreatProtectionOnboardingDeviceSettingState body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AdvancedThreatProtectionOnboardingDeviceSettingState>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AdvancedThreatProtectionOnboardingDeviceSettingState>(requestInfo, AdvancedThreatProtectionOnboardingDeviceSettingState.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Not yet documented</summary>
         public class GetQueryParameters : QueryParametersBase {

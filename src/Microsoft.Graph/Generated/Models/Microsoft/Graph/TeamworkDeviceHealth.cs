@@ -23,19 +23,27 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Software updates available for the device.</summary>
         public TeamworkSoftwareUpdateHealth SoftwareUpdateHealth { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new TeamworkDeviceHealth CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TeamworkDeviceHealth();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"connection", (o,n) => { (o as TeamworkDeviceHealth).Connection = n.GetObjectValue<TeamworkConnection>(); } },
-                {"createdBy", (o,n) => { (o as TeamworkDeviceHealth).CreatedBy = n.GetObjectValue<IdentitySet>(); } },
+                {"connection", (o,n) => { (o as TeamworkDeviceHealth).Connection = n.GetObjectValue<TeamworkConnection>(TeamworkConnection.CreateFromDiscriminatorValue); } },
+                {"createdBy", (o,n) => { (o as TeamworkDeviceHealth).CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", (o,n) => { (o as TeamworkDeviceHealth).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"hardwareHealth", (o,n) => { (o as TeamworkDeviceHealth).HardwareHealth = n.GetObjectValue<TeamworkHardwareHealth>(); } },
-                {"lastModifiedBy", (o,n) => { (o as TeamworkDeviceHealth).LastModifiedBy = n.GetObjectValue<IdentitySet>(); } },
+                {"hardwareHealth", (o,n) => { (o as TeamworkDeviceHealth).HardwareHealth = n.GetObjectValue<TeamworkHardwareHealth>(TeamworkHardwareHealth.CreateFromDiscriminatorValue); } },
+                {"lastModifiedBy", (o,n) => { (o as TeamworkDeviceHealth).LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"lastModifiedDateTime", (o,n) => { (o as TeamworkDeviceHealth).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"loginStatus", (o,n) => { (o as TeamworkDeviceHealth).LoginStatus = n.GetObjectValue<TeamworkLoginStatus>(); } },
-                {"peripheralsHealth", (o,n) => { (o as TeamworkDeviceHealth).PeripheralsHealth = n.GetObjectValue<TeamworkPeripheralsHealth>(); } },
-                {"softwareUpdateHealth", (o,n) => { (o as TeamworkDeviceHealth).SoftwareUpdateHealth = n.GetObjectValue<TeamworkSoftwareUpdateHealth>(); } },
+                {"loginStatus", (o,n) => { (o as TeamworkDeviceHealth).LoginStatus = n.GetObjectValue<TeamworkLoginStatus>(TeamworkLoginStatus.CreateFromDiscriminatorValue); } },
+                {"peripheralsHealth", (o,n) => { (o as TeamworkDeviceHealth).PeripheralsHealth = n.GetObjectValue<TeamworkPeripheralsHealth>(TeamworkPeripheralsHealth.CreateFromDiscriminatorValue); } },
+                {"softwareUpdateHealth", (o,n) => { (o as TeamworkDeviceHealth).SoftwareUpdateHealth = n.GetObjectValue<TeamworkSoftwareUpdateHealth>(TeamworkSoftwareUpdateHealth.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

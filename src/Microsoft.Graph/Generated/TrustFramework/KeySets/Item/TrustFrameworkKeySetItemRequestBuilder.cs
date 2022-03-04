@@ -141,7 +141,7 @@ namespace MicrosoftGraphSdk.TrustFramework.KeySets.Item {
         /// </summary>
         public async Task<TrustFrameworkKeySet> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TrustFrameworkKeySet>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TrustFrameworkKeySet>(requestInfo, TrustFrameworkKeySet.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property keySets in trustFramework

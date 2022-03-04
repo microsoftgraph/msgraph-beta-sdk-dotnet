@@ -17,6 +17,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         /// <summary>The collection of workload actions associated with the management action. Required. Read-only.</summary>
         public List<WorkloadAction> WorkloadActions { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new ManagementAction CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ManagementAction();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -26,7 +34,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
                 {"displayName", (o,n) => { (o as ManagementAction).DisplayName = n.GetStringValue(); } },
                 {"referenceTemplateId", (o,n) => { (o as ManagementAction).ReferenceTemplateId = n.GetStringValue(); } },
                 {"referenceTemplateVersion", (o,n) => { (o as ManagementAction).ReferenceTemplateVersion = n.GetIntValue(); } },
-                {"workloadActions", (o,n) => { (o as ManagementAction).WorkloadActions = n.GetCollectionOfObjectValues<WorkloadAction>().ToList(); } },
+                {"workloadActions", (o,n) => { (o as ManagementAction).WorkloadActions = n.GetCollectionOfObjectValues<WorkloadAction>(WorkloadAction.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

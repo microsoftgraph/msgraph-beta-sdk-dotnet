@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Education.Classes.Item.AssignmentDefaults {
         /// </summary>
         public async Task<EducationAssignmentDefaults> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<EducationAssignmentDefaults>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<EducationAssignmentDefaults>(requestInfo, EducationAssignmentDefaults.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property assignmentDefaults in education

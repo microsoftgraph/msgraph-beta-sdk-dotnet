@@ -20,12 +20,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static LocationConstraint CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new LocationConstraint();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"isRequired", (o,n) => { (o as LocationConstraint).IsRequired = n.GetBoolValue(); } },
-                {"locations", (o,n) => { (o as LocationConstraint).Locations = n.GetCollectionOfObjectValues<LocationConstraintItem>().ToList(); } },
+                {"locations", (o,n) => { (o as LocationConstraint).Locations = n.GetCollectionOfObjectValues<LocationConstraintItem>(LocationConstraintItem.CreateFromDiscriminatorValue).ToList(); } },
                 {"suggestLocation", (o,n) => { (o as LocationConstraint).SuggestLocation = n.GetBoolValue(); } },
             };
         }

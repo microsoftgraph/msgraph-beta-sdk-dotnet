@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedEBooks.Item.InstallSummar
         /// </summary>
         public async Task<EBookInstallSummary> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<EBookInstallSummary>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<EBookInstallSummary>(requestInfo, EBookInstallSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Mobile App Install Summary.

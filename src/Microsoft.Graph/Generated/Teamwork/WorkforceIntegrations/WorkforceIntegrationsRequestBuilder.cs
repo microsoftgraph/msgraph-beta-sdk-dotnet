@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Teamwork.WorkforceIntegrations {
         /// </summary>
         public async Task<WorkforceIntegrationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<WorkforceIntegrationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WorkforceIntegrationsResponse>(requestInfo, WorkforceIntegrationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A workforce integration with shifts.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Teamwork.WorkforceIntegrations {
         public async Task<WorkforceIntegration> PostAsync(WorkforceIntegration body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<WorkforceIntegration>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WorkforceIntegration>(requestInfo, WorkforceIntegration.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>A workforce integration with shifts.</summary>
         public class GetQueryParameters : QueryParametersBase {

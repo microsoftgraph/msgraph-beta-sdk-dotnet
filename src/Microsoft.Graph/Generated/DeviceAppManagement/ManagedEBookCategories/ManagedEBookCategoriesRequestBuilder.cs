@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedEBookCategories {
         /// </summary>
         public async Task<ManagedEBookCategoriesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ManagedEBookCategoriesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagedEBookCategoriesResponse>(requestInfo, ManagedEBookCategoriesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The mobile eBook categories.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedEBookCategories {
         public async Task<ManagedEBookCategory> PostAsync(ManagedEBookCategory body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ManagedEBookCategory>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagedEBookCategory>(requestInfo, ManagedEBookCategory.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The mobile eBook categories.</summary>
         public class GetQueryParameters : QueryParametersBase {

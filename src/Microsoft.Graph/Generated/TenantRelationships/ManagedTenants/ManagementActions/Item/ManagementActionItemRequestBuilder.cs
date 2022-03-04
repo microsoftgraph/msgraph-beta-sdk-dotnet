@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementActions
         /// </summary>
         public async Task<ManagementAction> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ManagementAction>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagementAction>(requestInfo, ManagementAction.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The collection of baseline management actions across managed tenants.

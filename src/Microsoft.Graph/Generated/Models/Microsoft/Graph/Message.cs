@@ -27,7 +27,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public Recipient From { get; set; }
         /// <summary>Indicates whether the message has attachments. This property doesn't include inline attachments, so if a message contains only inline attachments, this property is false. To verify the existence of inline attachments, parse the body property to look for a src attribute, such as <IMG src='cid:image001.jpg@01D26CD8.6C05F070'>.</summary>
         public bool? HasAttachments { get; set; }
-        public Importance? Importance { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Importance? Importance { get; set; }
         public InferenceClassificationType? InferenceClassification { get; set; }
         public List<InternetMessageHeader> InternetMessageHeaders { get; set; }
         public string InternetMessageId { get; set; }
@@ -37,7 +37,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public bool? IsReadReceiptRequested { get; set; }
         /// <summary>A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.</summary>
         public List<Mention> Mentions { get; set; }
-        public MentionsPreview MentionsPreview { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.MentionsPreview MentionsPreview { get; set; }
         /// <summary>The collection of multi-value extended properties defined for the message. Nullable.</summary>
         public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties { get; set; }
         public string ParentFolderId { get; set; }
@@ -54,41 +54,49 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public bool? UnsubscribeEnabled { get; set; }
         public string WebLink { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new Message CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Message();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"attachments", (o,n) => { (o as Message).Attachments = n.GetCollectionOfObjectValues<Attachment>().ToList(); } },
-                {"bccRecipients", (o,n) => { (o as Message).BccRecipients = n.GetCollectionOfObjectValues<Recipient>().ToList(); } },
-                {"body", (o,n) => { (o as Message).Body = n.GetObjectValue<ItemBody>(); } },
+                {"attachments", (o,n) => { (o as Message).Attachments = n.GetCollectionOfObjectValues<Attachment>(Attachment.CreateFromDiscriminatorValue).ToList(); } },
+                {"bccRecipients", (o,n) => { (o as Message).BccRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue).ToList(); } },
+                {"body", (o,n) => { (o as Message).Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
                 {"bodyPreview", (o,n) => { (o as Message).BodyPreview = n.GetStringValue(); } },
-                {"ccRecipients", (o,n) => { (o as Message).CcRecipients = n.GetCollectionOfObjectValues<Recipient>().ToList(); } },
+                {"ccRecipients", (o,n) => { (o as Message).CcRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue).ToList(); } },
                 {"conversationId", (o,n) => { (o as Message).ConversationId = n.GetStringValue(); } },
                 {"conversationIndex", (o,n) => { (o as Message).ConversationIndex = n.GetByteArrayValue(); } },
-                {"extensions", (o,n) => { (o as Message).Extensions = n.GetCollectionOfObjectValues<Extension>().ToList(); } },
-                {"flag", (o,n) => { (o as Message).Flag = n.GetObjectValue<FollowupFlag>(); } },
-                {"from", (o,n) => { (o as Message).From = n.GetObjectValue<Recipient>(); } },
+                {"extensions", (o,n) => { (o as Message).Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue).ToList(); } },
+                {"flag", (o,n) => { (o as Message).Flag = n.GetObjectValue<FollowupFlag>(FollowupFlag.CreateFromDiscriminatorValue); } },
+                {"from", (o,n) => { (o as Message).From = n.GetObjectValue<Recipient>(Recipient.CreateFromDiscriminatorValue); } },
                 {"hasAttachments", (o,n) => { (o as Message).HasAttachments = n.GetBoolValue(); } },
                 {"importance", (o,n) => { (o as Message).Importance = n.GetEnumValue<Importance>(); } },
                 {"inferenceClassification", (o,n) => { (o as Message).InferenceClassification = n.GetEnumValue<InferenceClassificationType>(); } },
-                {"internetMessageHeaders", (o,n) => { (o as Message).InternetMessageHeaders = n.GetCollectionOfObjectValues<InternetMessageHeader>().ToList(); } },
+                {"internetMessageHeaders", (o,n) => { (o as Message).InternetMessageHeaders = n.GetCollectionOfObjectValues<InternetMessageHeader>(InternetMessageHeader.CreateFromDiscriminatorValue).ToList(); } },
                 {"internetMessageId", (o,n) => { (o as Message).InternetMessageId = n.GetStringValue(); } },
                 {"isDeliveryReceiptRequested", (o,n) => { (o as Message).IsDeliveryReceiptRequested = n.GetBoolValue(); } },
                 {"isDraft", (o,n) => { (o as Message).IsDraft = n.GetBoolValue(); } },
                 {"isRead", (o,n) => { (o as Message).IsRead = n.GetBoolValue(); } },
                 {"isReadReceiptRequested", (o,n) => { (o as Message).IsReadReceiptRequested = n.GetBoolValue(); } },
-                {"mentions", (o,n) => { (o as Message).Mentions = n.GetCollectionOfObjectValues<Mention>().ToList(); } },
-                {"mentionsPreview", (o,n) => { (o as Message).MentionsPreview = n.GetObjectValue<MentionsPreview>(); } },
-                {"multiValueExtendedProperties", (o,n) => { (o as Message).MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>().ToList(); } },
+                {"mentions", (o,n) => { (o as Message).Mentions = n.GetCollectionOfObjectValues<Mention>(Mention.CreateFromDiscriminatorValue).ToList(); } },
+                {"mentionsPreview", (o,n) => { (o as Message).MentionsPreview = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.MentionsPreview>(MicrosoftGraphSdk.Models.Microsoft.Graph.MentionsPreview.CreateFromDiscriminatorValue); } },
+                {"multiValueExtendedProperties", (o,n) => { (o as Message).MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue).ToList(); } },
                 {"parentFolderId", (o,n) => { (o as Message).ParentFolderId = n.GetStringValue(); } },
                 {"receivedDateTime", (o,n) => { (o as Message).ReceivedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"replyTo", (o,n) => { (o as Message).ReplyTo = n.GetCollectionOfObjectValues<Recipient>().ToList(); } },
-                {"sender", (o,n) => { (o as Message).Sender = n.GetObjectValue<Recipient>(); } },
+                {"replyTo", (o,n) => { (o as Message).ReplyTo = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue).ToList(); } },
+                {"sender", (o,n) => { (o as Message).Sender = n.GetObjectValue<Recipient>(Recipient.CreateFromDiscriminatorValue); } },
                 {"sentDateTime", (o,n) => { (o as Message).SentDateTime = n.GetDateTimeOffsetValue(); } },
-                {"singleValueExtendedProperties", (o,n) => { (o as Message).SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>().ToList(); } },
+                {"singleValueExtendedProperties", (o,n) => { (o as Message).SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue).ToList(); } },
                 {"subject", (o,n) => { (o as Message).Subject = n.GetStringValue(); } },
-                {"toRecipients", (o,n) => { (o as Message).ToRecipients = n.GetCollectionOfObjectValues<Recipient>().ToList(); } },
-                {"uniqueBody", (o,n) => { (o as Message).UniqueBody = n.GetObjectValue<ItemBody>(); } },
+                {"toRecipients", (o,n) => { (o as Message).ToRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue).ToList(); } },
+                {"uniqueBody", (o,n) => { (o as Message).UniqueBody = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
                 {"unsubscribeData", (o,n) => { (o as Message).UnsubscribeData = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"unsubscribeEnabled", (o,n) => { (o as Message).UnsubscribeEnabled = n.GetBoolValue(); } },
                 {"webLink", (o,n) => { (o as Message).WebLink = n.GetStringValue(); } },
@@ -121,7 +129,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteBoolValue("isRead", IsRead);
             writer.WriteBoolValue("isReadReceiptRequested", IsReadReceiptRequested);
             writer.WriteCollectionOfObjectValues<Mention>("mentions", Mentions);
-            writer.WriteObjectValue<MentionsPreview>("mentionsPreview", MentionsPreview);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.MentionsPreview>("mentionsPreview", MentionsPreview);
             writer.WriteCollectionOfObjectValues<MultiValueLegacyExtendedProperty>("multiValueExtendedProperties", MultiValueExtendedProperties);
             writer.WriteStringValue("parentFolderId", ParentFolderId);
             writer.WriteDateTimeOffsetValue("receivedDateTime", ReceivedDateTime);

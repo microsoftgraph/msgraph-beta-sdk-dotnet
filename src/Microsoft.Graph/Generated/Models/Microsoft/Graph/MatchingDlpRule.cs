@@ -13,7 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string PolicyName { get; set; }
         public int? Priority { get; set; }
         public string RuleId { get; set; }
-        public RuleMode? RuleMode { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.RuleMode? RuleMode { get; set; }
         public string RuleName { get; set; }
         /// <summary>
         /// Instantiates a new matchingDlpRule and sets the default values.
@@ -22,11 +22,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static MatchingDlpRule CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new MatchingDlpRule();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"actions", (o,n) => { (o as MatchingDlpRule).Actions = n.GetCollectionOfObjectValues<DlpActionInfo>().ToList(); } },
+                {"actions", (o,n) => { (o as MatchingDlpRule).Actions = n.GetCollectionOfObjectValues<DlpActionInfo>(DlpActionInfo.CreateFromDiscriminatorValue).ToList(); } },
                 {"isMostRestrictive", (o,n) => { (o as MatchingDlpRule).IsMostRestrictive = n.GetBoolValue(); } },
                 {"policyId", (o,n) => { (o as MatchingDlpRule).PolicyId = n.GetStringValue(); } },
                 {"policyName", (o,n) => { (o as MatchingDlpRule).PolicyName = n.GetStringValue(); } },

@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Me.Settings.RegionalAndLanguageSettings {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.RegionalAndLanguageSettings> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.RegionalAndLanguageSettings>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.RegionalAndLanguageSettings>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.RegionalAndLanguageSettings.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The user's preferences for languages, regional locale and date/time formatting.

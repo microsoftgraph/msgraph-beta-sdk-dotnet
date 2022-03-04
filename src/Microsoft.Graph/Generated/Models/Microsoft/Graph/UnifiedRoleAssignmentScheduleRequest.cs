@@ -10,7 +10,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.</summary>
         public UnifiedRoleEligibilitySchedule ActivatedUsing { get; set; }
         /// <summary>Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.</summary>
-        public AppScope AppScope { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.AppScope AppScope { get; set; }
         /// <summary>Identifier of the app-specific scope when the assignment scope is app-specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units.</summary>
         public string AppScopeId { get; set; }
         /// <summary>Property referencing the directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only.</summary>
@@ -36,28 +36,36 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Identifier of the schedule object attached to the assignment.</summary>
         public string TargetScheduleId { get; set; }
         /// <summary>The ticketInfo object attached to the role assignment request which includes details of the ticket number and ticket system.</summary>
-        public TicketInfo TicketInfo { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.TicketInfo TicketInfo { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new UnifiedRoleAssignmentScheduleRequest CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new UnifiedRoleAssignmentScheduleRequest();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"action", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).Action = n.GetStringValue(); } },
-                {"activatedUsing", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).ActivatedUsing = n.GetObjectValue<UnifiedRoleEligibilitySchedule>(); } },
-                {"appScope", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).AppScope = n.GetObjectValue<AppScope>(); } },
+                {"activatedUsing", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).ActivatedUsing = n.GetObjectValue<UnifiedRoleEligibilitySchedule>(UnifiedRoleEligibilitySchedule.CreateFromDiscriminatorValue); } },
+                {"appScope", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).AppScope = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AppScope>(MicrosoftGraphSdk.Models.Microsoft.Graph.AppScope.CreateFromDiscriminatorValue); } },
                 {"appScopeId", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).AppScopeId = n.GetStringValue(); } },
-                {"directoryScope", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).DirectoryScope = n.GetObjectValue<DirectoryObject>(); } },
+                {"directoryScope", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).DirectoryScope = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
                 {"directoryScopeId", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).DirectoryScopeId = n.GetStringValue(); } },
                 {"isValidationOnly", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).IsValidationOnly = n.GetBoolValue(); } },
                 {"justification", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).Justification = n.GetStringValue(); } },
-                {"principal", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).Principal = n.GetObjectValue<DirectoryObject>(); } },
+                {"principal", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).Principal = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
                 {"principalId", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).PrincipalId = n.GetStringValue(); } },
-                {"roleDefinition", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).RoleDefinition = n.GetObjectValue<UnifiedRoleDefinition>(); } },
+                {"roleDefinition", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).RoleDefinition = n.GetObjectValue<UnifiedRoleDefinition>(UnifiedRoleDefinition.CreateFromDiscriminatorValue); } },
                 {"roleDefinitionId", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).RoleDefinitionId = n.GetStringValue(); } },
-                {"scheduleInfo", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).ScheduleInfo = n.GetObjectValue<RequestSchedule>(); } },
-                {"targetSchedule", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).TargetSchedule = n.GetObjectValue<UnifiedRoleAssignmentSchedule>(); } },
+                {"scheduleInfo", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).ScheduleInfo = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
+                {"targetSchedule", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).TargetSchedule = n.GetObjectValue<UnifiedRoleAssignmentSchedule>(UnifiedRoleAssignmentSchedule.CreateFromDiscriminatorValue); } },
                 {"targetScheduleId", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).TargetScheduleId = n.GetStringValue(); } },
-                {"ticketInfo", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).TicketInfo = n.GetObjectValue<TicketInfo>(); } },
+                {"ticketInfo", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).TicketInfo = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.TicketInfo>(MicrosoftGraphSdk.Models.Microsoft.Graph.TicketInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -69,7 +77,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             base.Serialize(writer);
             writer.WriteStringValue("action", Action);
             writer.WriteObjectValue<UnifiedRoleEligibilitySchedule>("activatedUsing", ActivatedUsing);
-            writer.WriteObjectValue<AppScope>("appScope", AppScope);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AppScope>("appScope", AppScope);
             writer.WriteStringValue("appScopeId", AppScopeId);
             writer.WriteObjectValue<DirectoryObject>("directoryScope", DirectoryScope);
             writer.WriteStringValue("directoryScopeId", DirectoryScopeId);
@@ -82,7 +90,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteObjectValue<RequestSchedule>("scheduleInfo", ScheduleInfo);
             writer.WriteObjectValue<UnifiedRoleAssignmentSchedule>("targetSchedule", TargetSchedule);
             writer.WriteStringValue("targetScheduleId", TargetScheduleId);
-            writer.WriteObjectValue<TicketInfo>("ticketInfo", TicketInfo);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.TicketInfo>("ticketInfo", TicketInfo);
         }
     }
 }

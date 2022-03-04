@@ -22,6 +22,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The time the management condition statement was last modified. Updated service side.</summary>
         public DateTimeOffset? ModifiedDateTime { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new ManagementConditionStatement CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ManagementConditionStatement();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -31,8 +39,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"description", (o,n) => { (o as ManagementConditionStatement).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as ManagementConditionStatement).DisplayName = n.GetStringValue(); } },
                 {"eTag", (o,n) => { (o as ManagementConditionStatement).ETag = n.GetStringValue(); } },
-                {"expression", (o,n) => { (o as ManagementConditionStatement).Expression = n.GetObjectValue<ManagementConditionExpression>(); } },
-                {"managementConditions", (o,n) => { (o as ManagementConditionStatement).ManagementConditions = n.GetCollectionOfObjectValues<ManagementCondition>().ToList(); } },
+                {"expression", (o,n) => { (o as ManagementConditionStatement).Expression = n.GetObjectValue<ManagementConditionExpression>(ManagementConditionExpression.CreateFromDiscriminatorValue); } },
+                {"managementConditions", (o,n) => { (o as ManagementConditionStatement).ManagementConditions = n.GetCollectionOfObjectValues<ManagementCondition>(ManagementCondition.CreateFromDiscriminatorValue).ToList(); } },
                 {"modifiedDateTime", (o,n) => { (o as ManagementConditionStatement).ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }

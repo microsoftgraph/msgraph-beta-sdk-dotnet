@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Users.Item.OnlineMeetings.Item.AttendanceReports {
         /// </summary>
         public async Task<AttendanceReportsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AttendanceReportsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AttendanceReportsResponse>(requestInfo, AttendanceReportsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The attendance reports of an online meeting. Read-only.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Users.Item.OnlineMeetings.Item.AttendanceReports {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.MeetingAttendanceReport> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.MeetingAttendanceReport body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.MeetingAttendanceReport>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.MeetingAttendanceReport>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.MeetingAttendanceReport.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The attendance reports of an online meeting. Read-only.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -33,6 +33,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Complex Type containing details about the Security product/service vendor, provider, and sub-provider (for example, vendor=Microsoft; provider=Windows Defender ATP; sub-provider=AppLocker).</summary>
         public SecurityVendorInformation VendorInformation { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new SecurityAction CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new SecurityAction();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -43,14 +51,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"clientContext", (o,n) => { (o as SecurityAction).ClientContext = n.GetStringValue(); } },
                 {"completedDateTime", (o,n) => { (o as SecurityAction).CompletedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"createdDateTime", (o,n) => { (o as SecurityAction).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"errorInfo", (o,n) => { (o as SecurityAction).ErrorInfo = n.GetObjectValue<ResultInfo>(); } },
+                {"errorInfo", (o,n) => { (o as SecurityAction).ErrorInfo = n.GetObjectValue<ResultInfo>(ResultInfo.CreateFromDiscriminatorValue); } },
                 {"lastActionDateTime", (o,n) => { (o as SecurityAction).LastActionDateTime = n.GetDateTimeOffsetValue(); } },
                 {"name", (o,n) => { (o as SecurityAction).Name = n.GetStringValue(); } },
-                {"parameters", (o,n) => { (o as SecurityAction).Parameters = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
-                {"states", (o,n) => { (o as SecurityAction).States = n.GetCollectionOfObjectValues<SecurityActionState>().ToList(); } },
+                {"parameters", (o,n) => { (o as SecurityAction).Parameters = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"states", (o,n) => { (o as SecurityAction).States = n.GetCollectionOfObjectValues<SecurityActionState>(SecurityActionState.CreateFromDiscriminatorValue).ToList(); } },
                 {"status", (o,n) => { (o as SecurityAction).Status = n.GetEnumValue<OperationStatus>(); } },
                 {"user", (o,n) => { (o as SecurityAction).User = n.GetStringValue(); } },
-                {"vendorInformation", (o,n) => { (o as SecurityAction).VendorInformation = n.GetObjectValue<SecurityVendorInformation>(); } },
+                {"vendorInformation", (o,n) => { (o as SecurityAction).VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

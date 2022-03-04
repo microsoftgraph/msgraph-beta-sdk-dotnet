@@ -17,12 +17,20 @@ namespace MicrosoftGraphSdk.Search.Acronyms {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static AcronymsResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AcronymsResponse();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"@odata.nextLink", (o,n) => { (o as AcronymsResponse).NextLink = n.GetStringValue(); } },
-                {"value", (o,n) => { (o as AcronymsResponse).Value = n.GetCollectionOfObjectValues<Acronym>().ToList(); } },
+                {"value", (o,n) => { (o as AcronymsResponse).Value = n.GetCollectionOfObjectValues<Acronym>(Acronym.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.IdentityProtection.RiskyServicePrincipals.Item.Histo
         /// </summary>
         public async Task<HistoryResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<HistoryResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<HistoryResponse>(requestInfo, HistoryResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to history for identityProtection
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.IdentityProtection.RiskyServicePrincipals.Item.Histo
         public async Task<RiskyServicePrincipalHistoryItem> PostAsync(RiskyServicePrincipalHistoryItem body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<RiskyServicePrincipalHistoryItem>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RiskyServicePrincipalHistoryItem>(requestInfo, RiskyServicePrincipalHistoryItem.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get history from identityProtection</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -12,7 +12,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The MicrosoftTunnelConfiguration's description</summary>
         public string Description { get; set; }
         /// <summary>When DisableUdpConnections is set, the clients and VPN server will not use DTLS connections to tansfer data.</summary>
-        public bool? DisableUDPConnections { get; set; }
+        public bool? DisableUdpConnections { get; set; }
         /// <summary>The MicrosoftTunnelConfiguration's display name</summary>
         public string DisplayName { get; set; }
         /// <summary>The DNS servers that will be used by the clients</summary>
@@ -32,14 +32,22 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The domains that will be resolved using the provided dns servers</summary>
         public List<string> SplitDNS { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new MicrosoftTunnelConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new MicrosoftTunnelConfiguration();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"advancedSettings", (o,n) => { (o as MicrosoftTunnelConfiguration).AdvancedSettings = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
+                {"advancedSettings", (o,n) => { (o as MicrosoftTunnelConfiguration).AdvancedSettings = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
                 {"defaultDomainSuffix", (o,n) => { (o as MicrosoftTunnelConfiguration).DefaultDomainSuffix = n.GetStringValue(); } },
                 {"description", (o,n) => { (o as MicrosoftTunnelConfiguration).Description = n.GetStringValue(); } },
-                {"disableUDPConnections", (o,n) => { (o as MicrosoftTunnelConfiguration).DisableUDPConnections = n.GetBoolValue(); } },
+                {"disableUdpConnections", (o,n) => { (o as MicrosoftTunnelConfiguration).DisableUdpConnections = n.GetBoolValue(); } },
                 {"displayName", (o,n) => { (o as MicrosoftTunnelConfiguration).DisplayName = n.GetStringValue(); } },
                 {"dnsServers", (o,n) => { (o as MicrosoftTunnelConfiguration).DnsServers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"lastUpdateDateTime", (o,n) => { (o as MicrosoftTunnelConfiguration).LastUpdateDateTime = n.GetDateTimeOffsetValue(); } },
@@ -61,7 +69,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<KeyValuePair>("advancedSettings", AdvancedSettings);
             writer.WriteStringValue("defaultDomainSuffix", DefaultDomainSuffix);
             writer.WriteStringValue("description", Description);
-            writer.WriteBoolValue("disableUDPConnections", DisableUDPConnections);
+            writer.WriteBoolValue("disableUdpConnections", DisableUdpConnections);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfPrimitiveValues<string>("dnsServers", DnsServers);
             writer.WriteDateTimeOffsetValue("lastUpdateDateTime", LastUpdateDateTime);

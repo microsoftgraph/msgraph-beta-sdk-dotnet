@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ConfigurationPolicyTemplates {
         /// </summary>
         public async Task<ConfigurationPolicyTemplatesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ConfigurationPolicyTemplatesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ConfigurationPolicyTemplatesResponse>(requestInfo, ConfigurationPolicyTemplatesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of all templates
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ConfigurationPolicyTemplates {
         public async Task<DeviceManagementConfigurationPolicyTemplate> PostAsync(DeviceManagementConfigurationPolicyTemplate body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementConfigurationPolicyTemplate>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementConfigurationPolicyTemplate>(requestInfo, DeviceManagementConfigurationPolicyTemplate.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>List of all templates</summary>
         public class GetQueryParameters : QueryParametersBase {

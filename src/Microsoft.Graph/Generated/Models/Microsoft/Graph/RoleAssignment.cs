@@ -12,11 +12,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>List of ids of role scope member security groups.  These are IDs from Azure Active Directory.</summary>
         public List<string> ResourceScopes { get; set; }
         /// <summary>Role definition this assignment is part of.</summary>
-        public RoleDefinition RoleDefinition { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.RoleDefinition RoleDefinition { get; set; }
         /// <summary>List of ids of role scope member security groups.  These are IDs from Azure Active Directory.</summary>
         public List<string> ScopeMembers { get; set; }
         /// <summary>Specifies the type of scope for a Role Assignment. Default type 'ResourceScope' allows assignment of ResourceScopes. For 'AllDevices', 'AllLicensedUsers', and 'AllDevicesAndLicensedUsers', the ResourceScopes property should be left empty. Possible values are: resourceScope, allDevices, allLicensedUsers, allDevicesAndLicensedUsers.</summary>
         public RoleAssignmentScopeType? ScopeType { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new RoleAssignment CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new RoleAssignment();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -25,7 +33,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"description", (o,n) => { (o as RoleAssignment).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as RoleAssignment).DisplayName = n.GetStringValue(); } },
                 {"resourceScopes", (o,n) => { (o as RoleAssignment).ResourceScopes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"roleDefinition", (o,n) => { (o as RoleAssignment).RoleDefinition = n.GetObjectValue<RoleDefinition>(); } },
+                {"roleDefinition", (o,n) => { (o as RoleAssignment).RoleDefinition = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.RoleDefinition>(MicrosoftGraphSdk.Models.Microsoft.Graph.RoleDefinition.CreateFromDiscriminatorValue); } },
                 {"scopeMembers", (o,n) => { (o as RoleAssignment).ScopeMembers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"scopeType", (o,n) => { (o as RoleAssignment).ScopeType = n.GetEnumValue<RoleAssignmentScopeType>(); } },
             };
@@ -40,7 +48,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfPrimitiveValues<string>("resourceScopes", ResourceScopes);
-            writer.WriteObjectValue<RoleDefinition>("roleDefinition", RoleDefinition);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.RoleDefinition>("roleDefinition", RoleDefinition);
             writer.WriteCollectionOfPrimitiveValues<string>("scopeMembers", ScopeMembers);
             writer.WriteEnumValue<RoleAssignmentScopeType>("scopeType", ScopeType);
         }

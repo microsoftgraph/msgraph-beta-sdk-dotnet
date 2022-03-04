@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Identity.B2cUserFlows.Item.Languages {
         /// </summary>
         public async Task<LanguagesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<LanguagesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<LanguagesResponse>(requestInfo, LanguagesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The languages supported for customization within the user flow. Language customization is not enabled by default in B2C user flows.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Identity.B2cUserFlows.Item.Languages {
         public async Task<UserFlowLanguageConfiguration> PostAsync(UserFlowLanguageConfiguration body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UserFlowLanguageConfiguration>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserFlowLanguageConfiguration>(requestInfo, UserFlowLanguageConfiguration.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The languages supported for customization within the user flow. Language customization is not enabled by default in B2C user flows.</summary>
         public class GetQueryParameters : QueryParametersBase {

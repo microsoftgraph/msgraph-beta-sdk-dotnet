@@ -70,12 +70,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Logo image displayed in Company Portal apps which have a theme color background behind the logo</summary>
         public MimeContent ThemeColorLogo { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new IntuneBrandingProfile CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new IntuneBrandingProfile();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as IntuneBrandingProfile).Assignments = n.GetCollectionOfObjectValues<IntuneBrandingProfileAssignment>().ToList(); } },
-                {"companyPortalBlockedActions", (o,n) => { (o as IntuneBrandingProfile).CompanyPortalBlockedActions = n.GetCollectionOfObjectValues<CompanyPortalBlockedAction>().ToList(); } },
+                {"assignments", (o,n) => { (o as IntuneBrandingProfile).Assignments = n.GetCollectionOfObjectValues<IntuneBrandingProfileAssignment>(IntuneBrandingProfileAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"companyPortalBlockedActions", (o,n) => { (o as IntuneBrandingProfile).CompanyPortalBlockedActions = n.GetCollectionOfObjectValues<CompanyPortalBlockedAction>(CompanyPortalBlockedAction.CreateFromDiscriminatorValue).ToList(); } },
                 {"contactITEmailAddress", (o,n) => { (o as IntuneBrandingProfile).ContactITEmailAddress = n.GetStringValue(); } },
                 {"contactITName", (o,n) => { (o as IntuneBrandingProfile).ContactITName = n.GetStringValue(); } },
                 {"contactITNotes", (o,n) => { (o as IntuneBrandingProfile).ContactITNotes = n.GetStringValue(); } },
@@ -90,9 +98,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"isDefaultProfile", (o,n) => { (o as IntuneBrandingProfile).IsDefaultProfile = n.GetBoolValue(); } },
                 {"isFactoryResetDisabled", (o,n) => { (o as IntuneBrandingProfile).IsFactoryResetDisabled = n.GetBoolValue(); } },
                 {"isRemoveDeviceDisabled", (o,n) => { (o as IntuneBrandingProfile).IsRemoveDeviceDisabled = n.GetBoolValue(); } },
-                {"landingPageCustomizedImage", (o,n) => { (o as IntuneBrandingProfile).LandingPageCustomizedImage = n.GetObjectValue<MimeContent>(); } },
+                {"landingPageCustomizedImage", (o,n) => { (o as IntuneBrandingProfile).LandingPageCustomizedImage = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
                 {"lastModifiedDateTime", (o,n) => { (o as IntuneBrandingProfile).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lightBackgroundLogo", (o,n) => { (o as IntuneBrandingProfile).LightBackgroundLogo = n.GetObjectValue<MimeContent>(); } },
+                {"lightBackgroundLogo", (o,n) => { (o as IntuneBrandingProfile).LightBackgroundLogo = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
                 {"onlineSupportSiteName", (o,n) => { (o as IntuneBrandingProfile).OnlineSupportSiteName = n.GetStringValue(); } },
                 {"onlineSupportSiteUrl", (o,n) => { (o as IntuneBrandingProfile).OnlineSupportSiteUrl = n.GetStringValue(); } },
                 {"privacyUrl", (o,n) => { (o as IntuneBrandingProfile).PrivacyUrl = n.GetStringValue(); } },
@@ -104,8 +112,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"showDisplayNameNextToLogo", (o,n) => { (o as IntuneBrandingProfile).ShowDisplayNameNextToLogo = n.GetBoolValue(); } },
                 {"showLogo", (o,n) => { (o as IntuneBrandingProfile).ShowLogo = n.GetBoolValue(); } },
                 {"showOfficeWebApps", (o,n) => { (o as IntuneBrandingProfile).ShowOfficeWebApps = n.GetBoolValue(); } },
-                {"themeColor", (o,n) => { (o as IntuneBrandingProfile).ThemeColor = n.GetObjectValue<RgbColor>(); } },
-                {"themeColorLogo", (o,n) => { (o as IntuneBrandingProfile).ThemeColorLogo = n.GetObjectValue<MimeContent>(); } },
+                {"themeColor", (o,n) => { (o as IntuneBrandingProfile).ThemeColor = n.GetObjectValue<RgbColor>(RgbColor.CreateFromDiscriminatorValue); } },
+                {"themeColorLogo", (o,n) => { (o as IntuneBrandingProfile).ThemeColorLogo = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

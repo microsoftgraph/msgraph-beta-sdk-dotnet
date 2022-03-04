@@ -20,7 +20,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>true if an attribute can have multiple values. Default is false.</summary>
         public bool? Multivalued { get; set; }
         /// <summary>An attribute's mutability. Possible values are:  ReadWrite, ReadOnly, Immutable, WriteOnly. Default is ReadWrite.</summary>
-        public Mutability? Mutability { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Mutability? Mutability { get; set; }
         /// <summary>Name of the attribute. Must be unique within the object definition. Not nullable.</summary>
         public string Name { get; set; }
         /// <summary>For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).</summary>
@@ -36,20 +36,28 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static AttributeDefinition CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AttributeDefinition();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"anchor", (o,n) => { (o as AttributeDefinition).Anchor = n.GetBoolValue(); } },
-                {"apiExpressions", (o,n) => { (o as AttributeDefinition).ApiExpressions = n.GetCollectionOfObjectValues<StringKeyStringValuePair>().ToList(); } },
+                {"apiExpressions", (o,n) => { (o as AttributeDefinition).ApiExpressions = n.GetCollectionOfObjectValues<StringKeyStringValuePair>(StringKeyStringValuePair.CreateFromDiscriminatorValue).ToList(); } },
                 {"caseExact", (o,n) => { (o as AttributeDefinition).CaseExact = n.GetBoolValue(); } },
                 {"defaultValue", (o,n) => { (o as AttributeDefinition).DefaultValue = n.GetStringValue(); } },
                 {"flowNullValues", (o,n) => { (o as AttributeDefinition).FlowNullValues = n.GetBoolValue(); } },
-                {"metadata", (o,n) => { (o as AttributeDefinition).Metadata = n.GetCollectionOfObjectValues<MetadataEntry>().ToList(); } },
+                {"metadata", (o,n) => { (o as AttributeDefinition).Metadata = n.GetCollectionOfObjectValues<MetadataEntry>(MetadataEntry.CreateFromDiscriminatorValue).ToList(); } },
                 {"multivalued", (o,n) => { (o as AttributeDefinition).Multivalued = n.GetBoolValue(); } },
                 {"mutability", (o,n) => { (o as AttributeDefinition).Mutability = n.GetEnumValue<Mutability>(); } },
                 {"name", (o,n) => { (o as AttributeDefinition).Name = n.GetStringValue(); } },
-                {"referencedObjects", (o,n) => { (o as AttributeDefinition).ReferencedObjects = n.GetCollectionOfObjectValues<ReferencedObject>().ToList(); } },
+                {"referencedObjects", (o,n) => { (o as AttributeDefinition).ReferencedObjects = n.GetCollectionOfObjectValues<ReferencedObject>(ReferencedObject.CreateFromDiscriminatorValue).ToList(); } },
                 {"required", (o,n) => { (o as AttributeDefinition).Required = n.GetBoolValue(); } },
                 {"type", (o,n) => { (o as AttributeDefinition).Type = n.GetEnumValue<AttributeType>(); } },
             };

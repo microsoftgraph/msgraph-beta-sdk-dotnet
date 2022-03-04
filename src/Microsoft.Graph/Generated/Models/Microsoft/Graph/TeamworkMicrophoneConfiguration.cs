@@ -18,13 +18,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static TeamworkMicrophoneConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TeamworkMicrophoneConfiguration();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"defaultMicrophone", (o,n) => { (o as TeamworkMicrophoneConfiguration).DefaultMicrophone = n.GetObjectValue<TeamworkPeripheral>(); } },
+                {"defaultMicrophone", (o,n) => { (o as TeamworkMicrophoneConfiguration).DefaultMicrophone = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
                 {"isMicrophoneOptional", (o,n) => { (o as TeamworkMicrophoneConfiguration).IsMicrophoneOptional = n.GetBoolValue(); } },
-                {"microphones", (o,n) => { (o as TeamworkMicrophoneConfiguration).Microphones = n.GetCollectionOfObjectValues<TeamworkPeripheral>().ToList(); } },
+                {"microphones", (o,n) => { (o as TeamworkMicrophoneConfiguration).Microphones = n.GetCollectionOfObjectValues<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

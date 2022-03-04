@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Item.Attachments 
         /// </summary>
         public async Task<AttachmentsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AttachmentsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AttachmentsResponse>(requestInfo, AttachmentsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A collection of serviceAnnouncementAttachments.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Item.Attachments 
         public async Task<ServiceAnnouncementAttachment> PostAsync(ServiceAnnouncementAttachment body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ServiceAnnouncementAttachment>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ServiceAnnouncementAttachment>(requestInfo, ServiceAnnouncementAttachment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>A collection of serviceAnnouncementAttachments.</summary>
         public class GetQueryParameters : QueryParametersBase {

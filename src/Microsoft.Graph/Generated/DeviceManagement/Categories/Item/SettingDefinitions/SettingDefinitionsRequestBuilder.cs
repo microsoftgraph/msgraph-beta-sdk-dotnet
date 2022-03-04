@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Categories.Item.SettingDefinitions 
         /// </summary>
         public async Task<SettingDefinitionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SettingDefinitionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SettingDefinitionsResponse>(requestInfo, SettingDefinitionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The setting definitions this category contains
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Categories.Item.SettingDefinitions 
         public async Task<DeviceManagementSettingDefinition> PostAsync(DeviceManagementSettingDefinition body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementSettingDefinition>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementSettingDefinition>(requestInfo, DeviceManagementSettingDefinition.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The setting definitions this category contains</summary>
         public class GetQueryParameters : QueryParametersBase {

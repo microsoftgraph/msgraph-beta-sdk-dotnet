@@ -18,14 +18,22 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The uploaded time of the uploaded ADMX file.</summary>
         public DateTimeOffset? UploadDateTime { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new GroupPolicyUploadedDefinitionFile CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new GroupPolicyUploadedDefinitionFile();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"content", (o,n) => { (o as GroupPolicyUploadedDefinitionFile).Content = n.GetByteArrayValue(); } },
                 {"defaultLanguageCode", (o,n) => { (o as GroupPolicyUploadedDefinitionFile).DefaultLanguageCode = n.GetStringValue(); } },
-                {"groupPolicyOperations", (o,n) => { (o as GroupPolicyUploadedDefinitionFile).GroupPolicyOperations = n.GetCollectionOfObjectValues<GroupPolicyOperation>().ToList(); } },
-                {"groupPolicyUploadedLanguageFiles", (o,n) => { (o as GroupPolicyUploadedDefinitionFile).GroupPolicyUploadedLanguageFiles = n.GetCollectionOfObjectValues<GroupPolicyUploadedLanguageFile>().ToList(); } },
+                {"groupPolicyOperations", (o,n) => { (o as GroupPolicyUploadedDefinitionFile).GroupPolicyOperations = n.GetCollectionOfObjectValues<GroupPolicyOperation>(GroupPolicyOperation.CreateFromDiscriminatorValue).ToList(); } },
+                {"groupPolicyUploadedLanguageFiles", (o,n) => { (o as GroupPolicyUploadedDefinitionFile).GroupPolicyUploadedLanguageFiles = n.GetCollectionOfObjectValues<GroupPolicyUploadedLanguageFile>(GroupPolicyUploadedLanguageFile.CreateFromDiscriminatorValue).ToList(); } },
                 {"status", (o,n) => { (o as GroupPolicyUploadedDefinitionFile).Status = n.GetEnumValue<GroupPolicyUploadedDefinitionFileStatus>(); } },
                 {"uploadDateTime", (o,n) => { (o as GroupPolicyUploadedDefinitionFile).UploadDateTime = n.GetDateTimeOffsetValue(); } },
             };

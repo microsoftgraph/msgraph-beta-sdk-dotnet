@@ -17,12 +17,20 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.Bitor {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static BitorRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new BitorRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"number1", (o,n) => { (o as BitorRequestBody).Number1 = n.GetObjectValue<Json>(); } },
-                {"number2", (o,n) => { (o as BitorRequestBody).Number2 = n.GetObjectValue<Json>(); } },
+                {"number1", (o,n) => { (o as BitorRequestBody).Number1 = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"number2", (o,n) => { (o as BitorRequestBody).Number2 = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

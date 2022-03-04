@@ -67,7 +67,7 @@ namespace MicrosoftGraphSdk.Users.Item.FindRoomLists {
         /// </summary>
         public async Task<IEnumerable<EmailAddress>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<EmailAddress>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<EmailAddress>(requestInfo, EmailAddress.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

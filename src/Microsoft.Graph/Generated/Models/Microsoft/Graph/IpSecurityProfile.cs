@@ -13,11 +13,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public int? CountHosts { get; set; }
         public DateTimeOffset? FirstSeenDateTime { get; set; }
         public List<IpCategory> IpCategories { get; set; }
-        public List<IpReferenceData> IpReferenceData { get; set; }
+        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.IpReferenceData> IpReferenceData { get; set; }
         public DateTimeOffset? LastSeenDateTime { get; set; }
         public string RiskScore { get; set; }
         public List<string> Tags { get; set; }
         public SecurityVendorInformation VendorInformation { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new IpSecurityProfile CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new IpSecurityProfile();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -30,12 +38,12 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"countHits", (o,n) => { (o as IpSecurityProfile).CountHits = n.GetIntValue(); } },
                 {"countHosts", (o,n) => { (o as IpSecurityProfile).CountHosts = n.GetIntValue(); } },
                 {"firstSeenDateTime", (o,n) => { (o as IpSecurityProfile).FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"ipCategories", (o,n) => { (o as IpSecurityProfile).IpCategories = n.GetCollectionOfObjectValues<IpCategory>().ToList(); } },
-                {"ipReferenceData", (o,n) => { (o as IpSecurityProfile).IpReferenceData = n.GetCollectionOfObjectValues<IpReferenceData>().ToList(); } },
+                {"ipCategories", (o,n) => { (o as IpSecurityProfile).IpCategories = n.GetCollectionOfObjectValues<IpCategory>(IpCategory.CreateFromDiscriminatorValue).ToList(); } },
+                {"ipReferenceData", (o,n) => { (o as IpSecurityProfile).IpReferenceData = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.IpReferenceData>(MicrosoftGraphSdk.Models.Microsoft.Graph.IpReferenceData.CreateFromDiscriminatorValue).ToList(); } },
                 {"lastSeenDateTime", (o,n) => { (o as IpSecurityProfile).LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 {"riskScore", (o,n) => { (o as IpSecurityProfile).RiskScore = n.GetStringValue(); } },
                 {"tags", (o,n) => { (o as IpSecurityProfile).Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"vendorInformation", (o,n) => { (o as IpSecurityProfile).VendorInformation = n.GetObjectValue<SecurityVendorInformation>(); } },
+                {"vendorInformation", (o,n) => { (o as IpSecurityProfile).VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -53,7 +61,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteIntValue("countHosts", CountHosts);
             writer.WriteDateTimeOffsetValue("firstSeenDateTime", FirstSeenDateTime);
             writer.WriteCollectionOfObjectValues<IpCategory>("ipCategories", IpCategories);
-            writer.WriteCollectionOfObjectValues<IpReferenceData>("ipReferenceData", IpReferenceData);
+            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.IpReferenceData>("ipReferenceData", IpReferenceData);
             writer.WriteDateTimeOffsetValue("lastSeenDateTime", LastSeenDateTime);
             writer.WriteStringValue("riskScore", RiskScore);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);

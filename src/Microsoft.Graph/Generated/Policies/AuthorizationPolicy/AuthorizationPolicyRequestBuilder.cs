@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Policies.AuthorizationPolicy {
         /// </summary>
         public async Task<AuthorizationPolicyResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AuthorizationPolicyResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AuthorizationPolicyResponse>(requestInfo, AuthorizationPolicyResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The policy that controls Azure AD authorization settings.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Policies.AuthorizationPolicy {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.AuthorizationPolicy> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.AuthorizationPolicy body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AuthorizationPolicy>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AuthorizationPolicy>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.AuthorizationPolicy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The policy that controls Azure AD authorization settings.</summary>
         public class GetQueryParameters : QueryParametersBase {

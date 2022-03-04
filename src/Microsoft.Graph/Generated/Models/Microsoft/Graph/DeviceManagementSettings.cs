@@ -19,6 +19,10 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public int? DeviceInactivityBeforeRetirementInDay { get; set; }
         /// <summary>Determines whether the autopilot diagnostic feature is enabled or not.</summary>
         public bool? EnableAutopilotDiagnostics { get; set; }
+        /// <summary>Determines whether the device group membership report feature is enabled or not.</summary>
+        public bool? EnableDeviceGroupMembershipReport { get; set; }
+        /// <summary>Determines whether the enhanced troubleshooting UX is enabled or not.</summary>
+        public bool? EnableEnhancedTroubleshootingExperience { get; set; }
         /// <summary>Determines whether the log collection feature should be available for use.</summary>
         public bool? EnableLogCollection { get; set; }
         /// <summary>Is feature enabled or not for enhanced jailbreak detection.</summary>
@@ -36,6 +40,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static DeviceManagementSettings CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DeviceManagementSettings();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -46,6 +58,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"deviceComplianceCheckinThresholdDays", (o,n) => { (o as DeviceManagementSettings).DeviceComplianceCheckinThresholdDays = n.GetIntValue(); } },
                 {"deviceInactivityBeforeRetirementInDay", (o,n) => { (o as DeviceManagementSettings).DeviceInactivityBeforeRetirementInDay = n.GetIntValue(); } },
                 {"enableAutopilotDiagnostics", (o,n) => { (o as DeviceManagementSettings).EnableAutopilotDiagnostics = n.GetBoolValue(); } },
+                {"enableDeviceGroupMembershipReport", (o,n) => { (o as DeviceManagementSettings).EnableDeviceGroupMembershipReport = n.GetBoolValue(); } },
+                {"enableEnhancedTroubleshootingExperience", (o,n) => { (o as DeviceManagementSettings).EnableEnhancedTroubleshootingExperience = n.GetBoolValue(); } },
                 {"enableLogCollection", (o,n) => { (o as DeviceManagementSettings).EnableLogCollection = n.GetBoolValue(); } },
                 {"enhancedJailBreak", (o,n) => { (o as DeviceManagementSettings).EnhancedJailBreak = n.GetBoolValue(); } },
                 {"ignoreDevicesForUnsupportedSettingsEnabled", (o,n) => { (o as DeviceManagementSettings).IgnoreDevicesForUnsupportedSettingsEnabled = n.GetBoolValue(); } },
@@ -65,6 +79,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteIntValue("deviceComplianceCheckinThresholdDays", DeviceComplianceCheckinThresholdDays);
             writer.WriteIntValue("deviceInactivityBeforeRetirementInDay", DeviceInactivityBeforeRetirementInDay);
             writer.WriteBoolValue("enableAutopilotDiagnostics", EnableAutopilotDiagnostics);
+            writer.WriteBoolValue("enableDeviceGroupMembershipReport", EnableDeviceGroupMembershipReport);
+            writer.WriteBoolValue("enableEnhancedTroubleshootingExperience", EnableEnhancedTroubleshootingExperience);
             writer.WriteBoolValue("enableLogCollection", EnableLogCollection);
             writer.WriteBoolValue("enhancedJailBreak", EnhancedJailBreak);
             writer.WriteBoolValue("ignoreDevicesForUnsupportedSettingsEnabled", IgnoreDevicesForUnsupportedSettingsEnabled);

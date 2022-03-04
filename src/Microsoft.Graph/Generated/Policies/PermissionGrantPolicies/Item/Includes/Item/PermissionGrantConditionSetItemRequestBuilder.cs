@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Policies.PermissionGrantPolicies.Item.Includes.Item 
         /// </summary>
         public async Task<PermissionGrantConditionSet> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PermissionGrantConditionSet>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PermissionGrantConditionSet>(requestInfo, PermissionGrantConditionSet.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Condition sets which are included in this permission grant policy. Automatically expanded on GET.

@@ -14,7 +14,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>DisplayName of the PolicySet.</summary>
         public string DisplayName { get; set; }
         /// <summary>Error code if any occured. Possible values are: noError, unauthorized, notFound, deleted.</summary>
-        public ErrorCode? ErrorCode { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ErrorCode? ErrorCode { get; set; }
         /// <summary>Tags of the guided deployment</summary>
         public List<string> GuidedDeploymentTags { get; set; }
         /// <summary>Items of the PolicySet with maximum count 100.</summary>
@@ -26,17 +26,25 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Validation/assignment status of the PolicySet. Possible values are: unknown, validating, partialSuccess, success, error, notAssigned.</summary>
         public PolicySetStatus? Status { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new PolicySet CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new PolicySet();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as PolicySet).Assignments = n.GetCollectionOfObjectValues<PolicySetAssignment>().ToList(); } },
+                {"assignments", (o,n) => { (o as PolicySet).Assignments = n.GetCollectionOfObjectValues<PolicySetAssignment>(PolicySetAssignment.CreateFromDiscriminatorValue).ToList(); } },
                 {"createdDateTime", (o,n) => { (o as PolicySet).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", (o,n) => { (o as PolicySet).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as PolicySet).DisplayName = n.GetStringValue(); } },
                 {"errorCode", (o,n) => { (o as PolicySet).ErrorCode = n.GetEnumValue<ErrorCode>(); } },
                 {"guidedDeploymentTags", (o,n) => { (o as PolicySet).GuidedDeploymentTags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"items", (o,n) => { (o as PolicySet).Items = n.GetCollectionOfObjectValues<PolicySetItem>().ToList(); } },
+                {"items", (o,n) => { (o as PolicySet).Items = n.GetCollectionOfObjectValues<PolicySetItem>(PolicySetItem.CreateFromDiscriminatorValue).ToList(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as PolicySet).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"roleScopeTags", (o,n) => { (o as PolicySet).RoleScopeTags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"status", (o,n) => { (o as PolicySet).Status = n.GetEnumValue<PolicySetStatus>(); } },

@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Me.MobileAppIntentAndStates.Item {
         /// </summary>
         public async Task<MobileAppIntentAndState> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MobileAppIntentAndState>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MobileAppIntentAndState>(requestInfo, MobileAppIntentAndState.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of troubleshooting events for this user.

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Directory.SharedEmailDomains {
         /// </summary>
         public async Task<SharedEmailDomainsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SharedEmailDomainsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SharedEmailDomainsResponse>(requestInfo, SharedEmailDomainsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to sharedEmailDomains for directory
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Directory.SharedEmailDomains {
         public async Task<SharedEmailDomain> PostAsync(SharedEmailDomain body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<SharedEmailDomain>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SharedEmailDomain>(requestInfo, SharedEmailDomain.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get sharedEmailDomains from directory</summary>
         public class GetQueryParameters : QueryParametersBase {

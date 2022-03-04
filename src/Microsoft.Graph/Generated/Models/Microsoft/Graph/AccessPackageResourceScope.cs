@@ -6,7 +6,7 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AccessPackageResourceScope : Entity, IParsable {
         /// <summary>Read-only. Nullable.</summary>
-        public AccessPackageResource AccessPackageResource { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageResource AccessPackageResource { get; set; }
         /// <summary>The description of the scope.</summary>
         public string Description { get; set; }
         /// <summary>The display name of the scope.</summary>
@@ -22,11 +22,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>A resource locator for the scope.</summary>
         public string Url { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new AccessPackageResourceScope CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AccessPackageResourceScope();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessPackageResource", (o,n) => { (o as AccessPackageResourceScope).AccessPackageResource = n.GetObjectValue<AccessPackageResource>(); } },
+                {"accessPackageResource", (o,n) => { (o as AccessPackageResourceScope).AccessPackageResource = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageResource>(MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageResource.CreateFromDiscriminatorValue); } },
                 {"description", (o,n) => { (o as AccessPackageResourceScope).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as AccessPackageResourceScope).DisplayName = n.GetStringValue(); } },
                 {"isRootScope", (o,n) => { (o as AccessPackageResourceScope).IsRootScope = n.GetBoolValue(); } },
@@ -43,7 +51,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<AccessPackageResource>("accessPackageResource", AccessPackageResource);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageResource>("accessPackageResource", AccessPackageResource);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("isRootScope", IsRootScope);

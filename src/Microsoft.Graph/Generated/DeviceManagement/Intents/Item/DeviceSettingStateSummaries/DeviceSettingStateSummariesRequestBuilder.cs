@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.DeviceSettingStateSumm
         /// </summary>
         public async Task<DeviceSettingStateSummariesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceSettingStateSummariesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceSettingStateSummariesResponse>(requestInfo, DeviceSettingStateSummariesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.DeviceSettingStateSumm
         public async Task<DeviceManagementIntentDeviceSettingStateSummary> PostAsync(DeviceManagementIntentDeviceSettingStateSummary body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementIntentDeviceSettingStateSummary>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementIntentDeviceSettingStateSummary>(requestInfo, DeviceManagementIntentDeviceSettingStateSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent</summary>
         public class GetQueryParameters : QueryParametersBase {

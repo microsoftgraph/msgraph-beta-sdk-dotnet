@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.Sites.Item.Pages.Item {
         /// </summary>
         public async Task<SitePage> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SitePage>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SitePage>(requestInfo, SitePage.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The collection of pages in the SitePages list in this site.

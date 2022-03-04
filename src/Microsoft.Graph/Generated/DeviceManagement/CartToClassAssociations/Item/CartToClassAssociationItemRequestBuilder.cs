@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.CartToClassAssociations.Item {
         /// </summary>
         public async Task<CartToClassAssociation> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CartToClassAssociation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CartToClassAssociation>(requestInfo, CartToClassAssociation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The Cart To Class Associations.

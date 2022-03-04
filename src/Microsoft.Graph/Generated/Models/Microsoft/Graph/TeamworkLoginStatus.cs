@@ -20,13 +20,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static TeamworkLoginStatus CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TeamworkLoginStatus();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"exchangeConnection", (o,n) => { (o as TeamworkLoginStatus).ExchangeConnection = n.GetObjectValue<TeamworkConnection>(); } },
-                {"skypeConnection", (o,n) => { (o as TeamworkLoginStatus).SkypeConnection = n.GetObjectValue<TeamworkConnection>(); } },
-                {"teamsConnection", (o,n) => { (o as TeamworkLoginStatus).TeamsConnection = n.GetObjectValue<TeamworkConnection>(); } },
+                {"exchangeConnection", (o,n) => { (o as TeamworkLoginStatus).ExchangeConnection = n.GetObjectValue<TeamworkConnection>(TeamworkConnection.CreateFromDiscriminatorValue); } },
+                {"skypeConnection", (o,n) => { (o as TeamworkLoginStatus).SkypeConnection = n.GetObjectValue<TeamworkConnection>(TeamworkConnection.CreateFromDiscriminatorValue); } },
+                {"teamsConnection", (o,n) => { (o as TeamworkLoginStatus).TeamsConnection = n.GetObjectValue<TeamworkConnection>(TeamworkConnection.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

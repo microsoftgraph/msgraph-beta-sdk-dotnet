@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelSites {
         /// </summary>
         public async Task<MicrosoftTunnelSitesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftTunnelSitesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftTunnelSitesResponse>(requestInfo, MicrosoftTunnelSitesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Collection of MicrosoftTunnelSite settings associated with account.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelSites {
         public async Task<MicrosoftTunnelSite> PostAsync(MicrosoftTunnelSite body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftTunnelSite>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftTunnelSite>(requestInfo, MicrosoftTunnelSite.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Collection of MicrosoftTunnelSite settings associated with account.</summary>
         public class GetQueryParameters : QueryParametersBase {

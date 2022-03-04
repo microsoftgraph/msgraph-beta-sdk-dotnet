@@ -12,13 +12,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The metric values for the user experience analytics operating system regression.</summary>
         public List<UserExperienceAnalyticsMetric> OperatingSystemRegression { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new UserExperienceAnalyticsRegressionSummary CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new UserExperienceAnalyticsRegressionSummary();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"manufacturerRegression", (o,n) => { (o as UserExperienceAnalyticsRegressionSummary).ManufacturerRegression = n.GetCollectionOfObjectValues<UserExperienceAnalyticsMetric>().ToList(); } },
-                {"modelRegression", (o,n) => { (o as UserExperienceAnalyticsRegressionSummary).ModelRegression = n.GetCollectionOfObjectValues<UserExperienceAnalyticsMetric>().ToList(); } },
-                {"operatingSystemRegression", (o,n) => { (o as UserExperienceAnalyticsRegressionSummary).OperatingSystemRegression = n.GetCollectionOfObjectValues<UserExperienceAnalyticsMetric>().ToList(); } },
+                {"manufacturerRegression", (o,n) => { (o as UserExperienceAnalyticsRegressionSummary).ManufacturerRegression = n.GetCollectionOfObjectValues<UserExperienceAnalyticsMetric>(UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue).ToList(); } },
+                {"modelRegression", (o,n) => { (o as UserExperienceAnalyticsRegressionSummary).ModelRegression = n.GetCollectionOfObjectValues<UserExperienceAnalyticsMetric>(UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue).ToList(); } },
+                {"operatingSystemRegression", (o,n) => { (o as UserExperienceAnalyticsRegressionSummary).OperatingSystemRegression = n.GetCollectionOfObjectValues<UserExperienceAnalyticsMetric>(UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.InformationProtection.SensitivityPolicySettings {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.SensitivityPolicySettings> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.SensitivityPolicySettings>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.SensitivityPolicySettings>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.SensitivityPolicySettings.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property sensitivityPolicySettings in informationProtection

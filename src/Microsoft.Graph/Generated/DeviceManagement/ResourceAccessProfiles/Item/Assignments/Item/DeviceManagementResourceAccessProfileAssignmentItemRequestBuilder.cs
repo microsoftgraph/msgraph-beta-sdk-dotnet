@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ResourceAccessProfiles.Item.Assignm
         /// </summary>
         public async Task<DeviceManagementResourceAccessProfileAssignment> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementResourceAccessProfileAssignment>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementResourceAccessProfileAssignment>(requestInfo, DeviceManagementResourceAccessProfileAssignment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of assignments for the device configuration profile.

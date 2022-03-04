@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.CloudPCConnectivityIssues {
         /// </summary>
         public async Task<CloudPCConnectivityIssuesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CloudPCConnectivityIssuesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudPCConnectivityIssuesResponse>(requestInfo, CloudPCConnectivityIssuesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of CloudPC Connectivity Issue.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.CloudPCConnectivityIssues {
         public async Task<CloudPCConnectivityIssue> PostAsync(CloudPCConnectivityIssue body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<CloudPCConnectivityIssue>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudPCConnectivityIssue>(requestInfo, CloudPCConnectivityIssue.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The list of CloudPC Connectivity Issue.</summary>
         public class GetQueryParameters : QueryParametersBase {

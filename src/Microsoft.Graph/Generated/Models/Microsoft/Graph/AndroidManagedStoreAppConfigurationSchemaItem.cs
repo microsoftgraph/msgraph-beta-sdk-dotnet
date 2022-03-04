@@ -36,6 +36,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static AndroidManagedStoreAppConfigurationSchemaItem CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AndroidManagedStoreAppConfigurationSchemaItem();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -50,7 +58,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"index", (o,n) => { (o as AndroidManagedStoreAppConfigurationSchemaItem).Index = n.GetIntValue(); } },
                 {"parentIndex", (o,n) => { (o as AndroidManagedStoreAppConfigurationSchemaItem).ParentIndex = n.GetIntValue(); } },
                 {"schemaItemKey", (o,n) => { (o as AndroidManagedStoreAppConfigurationSchemaItem).SchemaItemKey = n.GetStringValue(); } },
-                {"selections", (o,n) => { (o as AndroidManagedStoreAppConfigurationSchemaItem).Selections = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
+                {"selections", (o,n) => { (o as AndroidManagedStoreAppConfigurationSchemaItem).Selections = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

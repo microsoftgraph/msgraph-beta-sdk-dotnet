@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplat
         public async Task<ChangeDeploymentStatusResponse> PostAsync(ChangeDeploymentStatusRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ChangeDeploymentStatusResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ChangeDeploymentStatusResponse>(requestInfo, ChangeDeploymentStatusResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes managementTemplateStepDeployment</summary>
         public class ChangeDeploymentStatusResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type managementTemplateStepDeployment</summary>
-            public ManagementTemplateStepDeployment ManagementTemplateStepDeployment { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants.ManagementTemplateStepDeployment ManagementTemplateStepDeployment { get; set; }
             /// <summary>
             /// Instantiates a new changeDeploymentStatusResponse and sets the default values.
             /// </summary>
             public ChangeDeploymentStatusResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static ChangeDeploymentStatusResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new ChangeDeploymentStatusResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"managementTemplateStepDeployment", (o,n) => { (o as ChangeDeploymentStatusResponse).ManagementTemplateStepDeployment = n.GetObjectValue<ManagementTemplateStepDeployment>(); } },
+                    {"managementTemplateStepDeployment", (o,n) => { (o as ChangeDeploymentStatusResponse).ManagementTemplateStepDeployment = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants.ManagementTemplateStepDeployment>(MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants.ManagementTemplateStepDeployment.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplat
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<ManagementTemplateStepDeployment>("managementTemplateStepDeployment", ManagementTemplateStepDeployment);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants.ManagementTemplateStepDeployment>("managementTemplateStepDeployment", ManagementTemplateStepDeployment);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

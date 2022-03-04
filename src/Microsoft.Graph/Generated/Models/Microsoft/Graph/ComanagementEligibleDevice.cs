@@ -10,13 +10,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>DeviceName</summary>
         public string DeviceName { get; set; }
         /// <summary>DeviceType. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.</summary>
-        public DeviceType? DeviceType { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceType? DeviceType { get; set; }
         /// <summary>EntitySource</summary>
         public int? EntitySource { get; set; }
         /// <summary>ManagementAgents. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController, microsoft365ManagedMdm, msSense, intuneAosp.</summary>
         public ManagementAgentType? ManagementAgents { get; set; }
         /// <summary>ManagementState. Possible values are: managed, retirePending, retireFailed, wipePending, wipeFailed, unhealthy, deletePending, retireIssued, wipeIssued, wipeCanceled, retireCanceled, discovered.</summary>
-        public ManagementState? ManagementState { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ManagementState? ManagementState { get; set; }
         /// <summary>Manufacturer</summary>
         public string Manufacturer { get; set; }
         /// <summary>MDMStatus</summary>
@@ -28,7 +28,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>OSVersion</summary>
         public string OsVersion { get; set; }
         /// <summary>OwnerType. Possible values are: unknown, company, personal.</summary>
-        public OwnerType? OwnerType { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.OwnerType? OwnerType { get; set; }
         /// <summary>ReferenceId</summary>
         public string ReferenceId { get; set; }
         /// <summary>SerialNumber</summary>
@@ -43,6 +43,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string UserId { get; set; }
         /// <summary>UserName</summary>
         public string UserName { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new ComanagementEligibleDevice CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ComanagementEligibleDevice();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>

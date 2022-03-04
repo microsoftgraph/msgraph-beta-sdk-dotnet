@@ -32,11 +32,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Template reference information</summary>
         public DeviceManagementConfigurationPolicyTemplateReference TemplateReference { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DeviceManagementConfigurationPolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DeviceManagementConfigurationPolicy();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as DeviceManagementConfigurationPolicy).Assignments = n.GetCollectionOfObjectValues<DeviceManagementConfigurationPolicyAssignment>().ToList(); } },
+                {"assignments", (o,n) => { (o as DeviceManagementConfigurationPolicy).Assignments = n.GetCollectionOfObjectValues<DeviceManagementConfigurationPolicyAssignment>(DeviceManagementConfigurationPolicyAssignment.CreateFromDiscriminatorValue).ToList(); } },
                 {"createdDateTime", (o,n) => { (o as DeviceManagementConfigurationPolicy).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"creationSource", (o,n) => { (o as DeviceManagementConfigurationPolicy).CreationSource = n.GetStringValue(); } },
                 {"description", (o,n) => { (o as DeviceManagementConfigurationPolicy).Description = n.GetStringValue(); } },
@@ -46,9 +54,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"platforms", (o,n) => { (o as DeviceManagementConfigurationPolicy).Platforms = n.GetEnumValue<DeviceManagementConfigurationPlatforms>(); } },
                 {"roleScopeTagIds", (o,n) => { (o as DeviceManagementConfigurationPolicy).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"settingCount", (o,n) => { (o as DeviceManagementConfigurationPolicy).SettingCount = n.GetIntValue(); } },
-                {"settings", (o,n) => { (o as DeviceManagementConfigurationPolicy).Settings = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSetting>().ToList(); } },
+                {"settings", (o,n) => { (o as DeviceManagementConfigurationPolicy).Settings = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSetting>(DeviceManagementConfigurationSetting.CreateFromDiscriminatorValue).ToList(); } },
                 {"technologies", (o,n) => { (o as DeviceManagementConfigurationPolicy).Technologies = n.GetEnumValue<DeviceManagementConfigurationTechnologies>(); } },
-                {"templateReference", (o,n) => { (o as DeviceManagementConfigurationPolicy).TemplateReference = n.GetObjectValue<DeviceManagementConfigurationPolicyTemplateReference>(); } },
+                {"templateReference", (o,n) => { (o as DeviceManagementConfigurationPolicy).TemplateReference = n.GetObjectValue<DeviceManagementConfigurationPolicyTemplateReference>(DeviceManagementConfigurationPolicyTemplateReference.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

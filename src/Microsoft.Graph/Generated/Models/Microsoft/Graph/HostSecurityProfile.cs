@@ -24,6 +24,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<string> Tags { get; set; }
         public SecurityVendorInformation VendorInformation { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new HostSecurityProfile CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new HostSecurityProfile();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -36,16 +44,16 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"isAzureAdRegistered", (o,n) => { (o as HostSecurityProfile).IsAzureAdRegistered = n.GetBoolValue(); } },
                 {"isHybridAzureDomainJoined", (o,n) => { (o as HostSecurityProfile).IsHybridAzureDomainJoined = n.GetBoolValue(); } },
                 {"lastSeenDateTime", (o,n) => { (o as HostSecurityProfile).LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"logonUsers", (o,n) => { (o as HostSecurityProfile).LogonUsers = n.GetCollectionOfObjectValues<LogonUser>().ToList(); } },
+                {"logonUsers", (o,n) => { (o as HostSecurityProfile).LogonUsers = n.GetCollectionOfObjectValues<LogonUser>(LogonUser.CreateFromDiscriminatorValue).ToList(); } },
                 {"netBiosName", (o,n) => { (o as HostSecurityProfile).NetBiosName = n.GetStringValue(); } },
-                {"networkInterfaces", (o,n) => { (o as HostSecurityProfile).NetworkInterfaces = n.GetCollectionOfObjectValues<NetworkInterface>().ToList(); } },
+                {"networkInterfaces", (o,n) => { (o as HostSecurityProfile).NetworkInterfaces = n.GetCollectionOfObjectValues<NetworkInterface>(NetworkInterface.CreateFromDiscriminatorValue).ToList(); } },
                 {"os", (o,n) => { (o as HostSecurityProfile).Os = n.GetStringValue(); } },
                 {"osVersion", (o,n) => { (o as HostSecurityProfile).OsVersion = n.GetStringValue(); } },
                 {"parentHost", (o,n) => { (o as HostSecurityProfile).ParentHost = n.GetStringValue(); } },
                 {"relatedHostIds", (o,n) => { (o as HostSecurityProfile).RelatedHostIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"riskScore", (o,n) => { (o as HostSecurityProfile).RiskScore = n.GetStringValue(); } },
                 {"tags", (o,n) => { (o as HostSecurityProfile).Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"vendorInformation", (o,n) => { (o as HostSecurityProfile).VendorInformation = n.GetObjectValue<SecurityVendorInformation>(); } },
+                {"vendorInformation", (o,n) => { (o as HostSecurityProfile).VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

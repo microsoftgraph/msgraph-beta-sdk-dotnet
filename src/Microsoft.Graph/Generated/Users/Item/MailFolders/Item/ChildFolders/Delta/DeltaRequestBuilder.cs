@@ -67,7 +67,7 @@ namespace MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Delta {
         /// </summary>
         public async Task<IEnumerable<MailFolder>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<MailFolder>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<MailFolder>(requestInfo, MailFolder.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Users.Item.MailFolders.Item.UserConfigurations {
         /// </summary>
         public async Task<UserConfigurationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UserConfigurationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserConfigurationsResponse>(requestInfo, UserConfigurationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to userConfigurations for users
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Users.Item.MailFolders.Item.UserConfigurations {
         public async Task<UserConfiguration> PostAsync(UserConfiguration body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UserConfiguration>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserConfiguration>(requestInfo, UserConfiguration.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get userConfigurations from users</summary>
         public class GetQueryParameters : QueryParametersBase {

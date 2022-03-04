@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Policies.AdminConsentRequestPolicy {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.AdminConsentRequestPolicy> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AdminConsentRequestPolicy>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AdminConsentRequestPolicy>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.AdminConsentRequestPolicy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The policy by which consent requests are created and managed for the entire tenant.

@@ -18,13 +18,21 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyConfigurations.Item.Upda
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static UpdateDefinitionValuesRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new UpdateDefinitionValuesRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"added", (o,n) => { (o as UpdateDefinitionValuesRequestBody).Added = n.GetCollectionOfObjectValues<GroupPolicyDefinitionValue>().ToList(); } },
+                {"added", (o,n) => { (o as UpdateDefinitionValuesRequestBody).Added = n.GetCollectionOfObjectValues<GroupPolicyDefinitionValue>(GroupPolicyDefinitionValue.CreateFromDiscriminatorValue).ToList(); } },
                 {"deletedIds", (o,n) => { (o as UpdateDefinitionValuesRequestBody).DeletedIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"updated", (o,n) => { (o as UpdateDefinitionValuesRequestBody).Updated = n.GetCollectionOfObjectValues<GroupPolicyDefinitionValue>().ToList(); } },
+                {"updated", (o,n) => { (o as UpdateDefinitionValuesRequestBody).Updated = n.GetCollectionOfObjectValues<GroupPolicyDefinitionValue>(GroupPolicyDefinitionValue.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

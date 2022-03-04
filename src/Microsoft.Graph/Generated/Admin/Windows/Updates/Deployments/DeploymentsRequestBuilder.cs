@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments {
         /// </summary>
         public async Task<DeploymentsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeploymentsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeploymentsResponse>(requestInfo, DeploymentsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Deployments created using the deployment service. Read-only.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments {
         public async Task<Deployment> PostAsync(Deployment body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<Deployment>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Deployment>(requestInfo, Deployment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Deployments created using the deployment service. Read-only.</summary>
         public class GetQueryParameters : QueryParametersBase {

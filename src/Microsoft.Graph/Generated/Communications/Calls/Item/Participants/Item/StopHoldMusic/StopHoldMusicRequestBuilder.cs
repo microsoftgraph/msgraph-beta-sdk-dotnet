@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.Participants.Item.StopHold
         public async Task<StopHoldMusicResponse> PostAsync(StopHoldMusicRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<StopHoldMusicResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<StopHoldMusicResponse>(requestInfo, StopHoldMusicResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes stopHoldMusicOperation</summary>
         public class StopHoldMusicResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type stopHoldMusicOperation</summary>
-            public StopHoldMusicOperation StopHoldMusicOperation { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.StopHoldMusicOperation StopHoldMusicOperation { get; set; }
             /// <summary>
             /// Instantiates a new stopHoldMusicResponse and sets the default values.
             /// </summary>
             public StopHoldMusicResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static StopHoldMusicResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new StopHoldMusicResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"stopHoldMusicOperation", (o,n) => { (o as StopHoldMusicResponse).StopHoldMusicOperation = n.GetObjectValue<StopHoldMusicOperation>(); } },
+                    {"stopHoldMusicOperation", (o,n) => { (o as StopHoldMusicResponse).StopHoldMusicOperation = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.StopHoldMusicOperation>(MicrosoftGraphSdk.Models.Microsoft.Graph.StopHoldMusicOperation.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.Participants.Item.StopHold
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<StopHoldMusicOperation>("stopHoldMusicOperation", StopHoldMusicOperation);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.StopHoldMusicOperation>("stopHoldMusicOperation", StopHoldMusicOperation);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

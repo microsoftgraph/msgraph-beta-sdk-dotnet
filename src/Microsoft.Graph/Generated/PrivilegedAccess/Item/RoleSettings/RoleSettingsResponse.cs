@@ -17,12 +17,20 @@ namespace MicrosoftGraphSdk.PrivilegedAccess.Item.RoleSettings {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static RoleSettingsResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new RoleSettingsResponse();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"@odata.nextLink", (o,n) => { (o as RoleSettingsResponse).NextLink = n.GetStringValue(); } },
-                {"value", (o,n) => { (o as RoleSettingsResponse).Value = n.GetCollectionOfObjectValues<GovernanceRoleSetting>().ToList(); } },
+                {"value", (o,n) => { (o as RoleSettingsResponse).Value = n.GetCollectionOfObjectValues<GovernanceRoleSetting>(GovernanceRoleSetting.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

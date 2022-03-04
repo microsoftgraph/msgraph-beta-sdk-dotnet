@@ -111,7 +111,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Tables.Item.Rows {
         /// </summary>
         public async Task<RowsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RowsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RowsResponse>(requestInfo, RowsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\rows\microsoft.graph.itemAt(index={index})
@@ -132,7 +132,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Tables.Item.Rows {
         public async Task<WorkbookTableRow> PostAsync(WorkbookTableRow body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<WorkbookTableRow>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WorkbookTableRow>(requestInfo, WorkbookTableRow.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Represents a collection of all the rows in the table. Read-only.</summary>
         public class GetQueryParameters : QueryParametersBase {

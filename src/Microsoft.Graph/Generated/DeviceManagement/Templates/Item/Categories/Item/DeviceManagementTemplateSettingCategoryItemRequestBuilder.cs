@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.Categories.Item {
         /// </summary>
         public async Task<DeviceManagementTemplateSettingCategory> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementTemplateSettingCategory>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementTemplateSettingCategory>(requestInfo, DeviceManagementTemplateSettingCategory.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Collection of setting categories within the template

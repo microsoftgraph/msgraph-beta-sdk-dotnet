@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.AppConsent {
         /// </summary>
         public async Task<AppConsentApprovalRoute> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AppConsentApprovalRoute>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AppConsentApprovalRoute>(requestInfo, AppConsentApprovalRoute.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property appConsent in identityGovernance

@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Teamwork.Devices.Item.Activity {
         /// </summary>
         public async Task<TeamworkDeviceActivity> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TeamworkDeviceActivity>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TeamworkDeviceActivity>(requestInfo, TeamworkDeviceActivity.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The activity properties that change based on the device usage.

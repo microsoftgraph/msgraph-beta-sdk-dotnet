@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Policies.DefaultAppManagementPolicy {
         /// </summary>
         public async Task<TenantAppManagementPolicy> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TenantAppManagementPolicy>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TenantAppManagementPolicy>(requestInfo, TenantAppManagementPolicy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The tenant-wide policy that enforces app management restrictions for all applications and service principals.

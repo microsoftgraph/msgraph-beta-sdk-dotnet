@@ -6,8 +6,8 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AccessPackageAssignmentPolicy : Entity, IParsable {
         /// <summary>The access package with this policy. Read-only. Nullable. Supports $expand.</summary>
-        public AccessPackage AccessPackage { get; set; }
-        public AccessPackageCatalog AccessPackageCatalog { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackage AccessPackage { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageCatalog AccessPackageCatalog { get; set; }
         /// <summary>Identifier of the access package.</summary>
         public string AccessPackageId { get; set; }
         /// <summary>Who must review, and how often, the assignments to the access package from this policy. This property is null if reviews are not required.</summary>
@@ -37,29 +37,37 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Who must approve requests for access package in this policy.</summary>
         public ApprovalSettings RequestApprovalSettings { get; set; }
         /// <summary>Who can request this access package from this policy.</summary>
-        public RequestorSettings RequestorSettings { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.RequestorSettings RequestorSettings { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new AccessPackageAssignmentPolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AccessPackageAssignmentPolicy();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessPackage", (o,n) => { (o as AccessPackageAssignmentPolicy).AccessPackage = n.GetObjectValue<AccessPackage>(); } },
-                {"accessPackageCatalog", (o,n) => { (o as AccessPackageAssignmentPolicy).AccessPackageCatalog = n.GetObjectValue<AccessPackageCatalog>(); } },
+                {"accessPackage", (o,n) => { (o as AccessPackageAssignmentPolicy).AccessPackage = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackage>(MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackage.CreateFromDiscriminatorValue); } },
+                {"accessPackageCatalog", (o,n) => { (o as AccessPackageAssignmentPolicy).AccessPackageCatalog = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageCatalog>(MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageCatalog.CreateFromDiscriminatorValue); } },
                 {"accessPackageId", (o,n) => { (o as AccessPackageAssignmentPolicy).AccessPackageId = n.GetStringValue(); } },
-                {"accessReviewSettings", (o,n) => { (o as AccessPackageAssignmentPolicy).AccessReviewSettings = n.GetObjectValue<AssignmentReviewSettings>(); } },
+                {"accessReviewSettings", (o,n) => { (o as AccessPackageAssignmentPolicy).AccessReviewSettings = n.GetObjectValue<AssignmentReviewSettings>(AssignmentReviewSettings.CreateFromDiscriminatorValue); } },
                 {"canExtend", (o,n) => { (o as AccessPackageAssignmentPolicy).CanExtend = n.GetBoolValue(); } },
                 {"createdBy", (o,n) => { (o as AccessPackageAssignmentPolicy).CreatedBy = n.GetStringValue(); } },
                 {"createdDateTime", (o,n) => { (o as AccessPackageAssignmentPolicy).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"customExtensionHandlers", (o,n) => { (o as AccessPackageAssignmentPolicy).CustomExtensionHandlers = n.GetCollectionOfObjectValues<CustomExtensionHandler>().ToList(); } },
+                {"customExtensionHandlers", (o,n) => { (o as AccessPackageAssignmentPolicy).CustomExtensionHandlers = n.GetCollectionOfObjectValues<CustomExtensionHandler>(CustomExtensionHandler.CreateFromDiscriminatorValue).ToList(); } },
                 {"description", (o,n) => { (o as AccessPackageAssignmentPolicy).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as AccessPackageAssignmentPolicy).DisplayName = n.GetStringValue(); } },
                 {"durationInDays", (o,n) => { (o as AccessPackageAssignmentPolicy).DurationInDays = n.GetIntValue(); } },
                 {"expirationDateTime", (o,n) => { (o as AccessPackageAssignmentPolicy).ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"modifiedBy", (o,n) => { (o as AccessPackageAssignmentPolicy).ModifiedBy = n.GetStringValue(); } },
                 {"modifiedDateTime", (o,n) => { (o as AccessPackageAssignmentPolicy).ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"questions", (o,n) => { (o as AccessPackageAssignmentPolicy).Questions = n.GetCollectionOfObjectValues<AccessPackageQuestion>().ToList(); } },
-                {"requestApprovalSettings", (o,n) => { (o as AccessPackageAssignmentPolicy).RequestApprovalSettings = n.GetObjectValue<ApprovalSettings>(); } },
-                {"requestorSettings", (o,n) => { (o as AccessPackageAssignmentPolicy).RequestorSettings = n.GetObjectValue<RequestorSettings>(); } },
+                {"questions", (o,n) => { (o as AccessPackageAssignmentPolicy).Questions = n.GetCollectionOfObjectValues<AccessPackageQuestion>(AccessPackageQuestion.CreateFromDiscriminatorValue).ToList(); } },
+                {"requestApprovalSettings", (o,n) => { (o as AccessPackageAssignmentPolicy).RequestApprovalSettings = n.GetObjectValue<ApprovalSettings>(ApprovalSettings.CreateFromDiscriminatorValue); } },
+                {"requestorSettings", (o,n) => { (o as AccessPackageAssignmentPolicy).RequestorSettings = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.RequestorSettings>(MicrosoftGraphSdk.Models.Microsoft.Graph.RequestorSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -69,8 +77,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<AccessPackage>("accessPackage", AccessPackage);
-            writer.WriteObjectValue<AccessPackageCatalog>("accessPackageCatalog", AccessPackageCatalog);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackage>("accessPackage", AccessPackage);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageCatalog>("accessPackageCatalog", AccessPackageCatalog);
             writer.WriteStringValue("accessPackageId", AccessPackageId);
             writer.WriteObjectValue<AssignmentReviewSettings>("accessReviewSettings", AccessReviewSettings);
             writer.WriteBoolValue("canExtend", CanExtend);
@@ -85,7 +93,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteDateTimeOffsetValue("modifiedDateTime", ModifiedDateTime);
             writer.WriteCollectionOfObjectValues<AccessPackageQuestion>("questions", Questions);
             writer.WriteObjectValue<ApprovalSettings>("requestApprovalSettings", RequestApprovalSettings);
-            writer.WriteObjectValue<RequestorSettings>("requestorSettings", RequestorSettings);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.RequestorSettings>("requestorSettings", RequestorSettings);
         }
     }
 }

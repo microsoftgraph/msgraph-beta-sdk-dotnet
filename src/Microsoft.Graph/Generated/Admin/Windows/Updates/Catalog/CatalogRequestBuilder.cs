@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.Catalog {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates.Catalog> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates.Catalog>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates.Catalog>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates.Catalog.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Catalog of content that can be approved for deployment by the deployment service. Read-only.

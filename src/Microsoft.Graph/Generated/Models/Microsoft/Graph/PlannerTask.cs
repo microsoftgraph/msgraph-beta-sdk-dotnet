@@ -58,25 +58,33 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Title of the task.</summary>
         public string Title { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new PlannerTask CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new PlannerTask();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"activeChecklistItemCount", (o,n) => { (o as PlannerTask).ActiveChecklistItemCount = n.GetIntValue(); } },
-                {"appliedCategories", (o,n) => { (o as PlannerTask).AppliedCategories = n.GetObjectValue<PlannerAppliedCategories>(); } },
-                {"assignedToTaskBoardFormat", (o,n) => { (o as PlannerTask).AssignedToTaskBoardFormat = n.GetObjectValue<PlannerAssignedToTaskBoardTaskFormat>(); } },
+                {"appliedCategories", (o,n) => { (o as PlannerTask).AppliedCategories = n.GetObjectValue<PlannerAppliedCategories>(PlannerAppliedCategories.CreateFromDiscriminatorValue); } },
+                {"assignedToTaskBoardFormat", (o,n) => { (o as PlannerTask).AssignedToTaskBoardFormat = n.GetObjectValue<PlannerAssignedToTaskBoardTaskFormat>(PlannerAssignedToTaskBoardTaskFormat.CreateFromDiscriminatorValue); } },
                 {"assigneePriority", (o,n) => { (o as PlannerTask).AssigneePriority = n.GetStringValue(); } },
-                {"assignments", (o,n) => { (o as PlannerTask).Assignments = n.GetObjectValue<PlannerAssignments>(); } },
+                {"assignments", (o,n) => { (o as PlannerTask).Assignments = n.GetObjectValue<PlannerAssignments>(PlannerAssignments.CreateFromDiscriminatorValue); } },
                 {"bucketId", (o,n) => { (o as PlannerTask).BucketId = n.GetStringValue(); } },
-                {"bucketTaskBoardFormat", (o,n) => { (o as PlannerTask).BucketTaskBoardFormat = n.GetObjectValue<PlannerBucketTaskBoardTaskFormat>(); } },
+                {"bucketTaskBoardFormat", (o,n) => { (o as PlannerTask).BucketTaskBoardFormat = n.GetObjectValue<PlannerBucketTaskBoardTaskFormat>(PlannerBucketTaskBoardTaskFormat.CreateFromDiscriminatorValue); } },
                 {"checklistItemCount", (o,n) => { (o as PlannerTask).ChecklistItemCount = n.GetIntValue(); } },
-                {"completedBy", (o,n) => { (o as PlannerTask).CompletedBy = n.GetObjectValue<IdentitySet>(); } },
+                {"completedBy", (o,n) => { (o as PlannerTask).CompletedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"completedDateTime", (o,n) => { (o as PlannerTask).CompletedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"conversationThreadId", (o,n) => { (o as PlannerTask).ConversationThreadId = n.GetStringValue(); } },
-                {"createdBy", (o,n) => { (o as PlannerTask).CreatedBy = n.GetObjectValue<IdentitySet>(); } },
+                {"createdBy", (o,n) => { (o as PlannerTask).CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", (o,n) => { (o as PlannerTask).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"creationSource", (o,n) => { (o as PlannerTask).CreationSource = n.GetObjectValue<PlannerTaskCreation>(); } },
-                {"details", (o,n) => { (o as PlannerTask).Details = n.GetObjectValue<PlannerTaskDetails>(); } },
+                {"creationSource", (o,n) => { (o as PlannerTask).CreationSource = n.GetObjectValue<PlannerTaskCreation>(PlannerTaskCreation.CreateFromDiscriminatorValue); } },
+                {"details", (o,n) => { (o as PlannerTask).Details = n.GetObjectValue<PlannerTaskDetails>(PlannerTaskDetails.CreateFromDiscriminatorValue); } },
                 {"dueDateTime", (o,n) => { (o as PlannerTask).DueDateTime = n.GetDateTimeOffsetValue(); } },
                 {"hasDescription", (o,n) => { (o as PlannerTask).HasDescription = n.GetBoolValue(); } },
                 {"orderHint", (o,n) => { (o as PlannerTask).OrderHint = n.GetStringValue(); } },
@@ -84,7 +92,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"planId", (o,n) => { (o as PlannerTask).PlanId = n.GetStringValue(); } },
                 {"previewType", (o,n) => { (o as PlannerTask).PreviewType = n.GetEnumValue<PlannerPreviewType>(); } },
                 {"priority", (o,n) => { (o as PlannerTask).Priority = n.GetIntValue(); } },
-                {"progressTaskBoardFormat", (o,n) => { (o as PlannerTask).ProgressTaskBoardFormat = n.GetObjectValue<PlannerProgressTaskBoardTaskFormat>(); } },
+                {"progressTaskBoardFormat", (o,n) => { (o as PlannerTask).ProgressTaskBoardFormat = n.GetObjectValue<PlannerProgressTaskBoardTaskFormat>(PlannerProgressTaskBoardTaskFormat.CreateFromDiscriminatorValue); } },
                 {"referenceCount", (o,n) => { (o as PlannerTask).ReferenceCount = n.GetIntValue(); } },
                 {"startDateTime", (o,n) => { (o as PlannerTask).StartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"title", (o,n) => { (o as PlannerTask).Title = n.GetStringValue(); } },

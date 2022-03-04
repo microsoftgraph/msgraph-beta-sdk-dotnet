@@ -17,6 +17,9 @@ using MicrosoftGraphSdk.Reports.GetAzureADApplicationSignInSummaryWithPeriod;
 using MicrosoftGraphSdk.Reports.GetAzureADFeatureUsageWithPeriod;
 using MicrosoftGraphSdk.Reports.GetAzureADLicenseUsageWithPeriod;
 using MicrosoftGraphSdk.Reports.GetAzureADUserFeatureUsage;
+using MicrosoftGraphSdk.Reports.GetBrowserDistributionUserCountsWithPeriod;
+using MicrosoftGraphSdk.Reports.GetBrowserUserCountsWithPeriod;
+using MicrosoftGraphSdk.Reports.GetBrowserUserDetailWithPeriod;
 using MicrosoftGraphSdk.Reports.GetCredentialUsageSummaryWithPeriod;
 using MicrosoftGraphSdk.Reports.GetCredentialUserRegistrationCount;
 using MicrosoftGraphSdk.Reports.GetEmailActivityCountsWithPeriod;
@@ -95,10 +98,15 @@ using MicrosoftGraphSdk.Reports.GetTeamsDeviceUsageTotalUserCountsWithPeriod;
 using MicrosoftGraphSdk.Reports.GetTeamsDeviceUsageUserCountsWithPeriod;
 using MicrosoftGraphSdk.Reports.GetTeamsDeviceUsageUserDetailWithDate;
 using MicrosoftGraphSdk.Reports.GetTeamsDeviceUsageUserDetailWithPeriod;
+using MicrosoftGraphSdk.Reports.GetTeamsTeamActivityCountsWithPeriod;
+using MicrosoftGraphSdk.Reports.GetTeamsTeamActivityDetailWithDate;
+using MicrosoftGraphSdk.Reports.GetTeamsTeamActivityDetailWithPeriod;
+using MicrosoftGraphSdk.Reports.GetTeamsTeamActivityDistributionCountsWithPeriod;
 using MicrosoftGraphSdk.Reports.GetTeamsUserActivityCountsWithPeriod;
 using MicrosoftGraphSdk.Reports.GetTeamsUserActivityDistributionTotalUserCountsWithPeriod;
 using MicrosoftGraphSdk.Reports.GetTeamsUserActivityDistributionUserCountsWithPeriod;
 using MicrosoftGraphSdk.Reports.GetTeamsUserActivityTotalCountsWithPeriod;
+using MicrosoftGraphSdk.Reports.GetTeamsUserActivityTotalDistributionCountsWithPeriod;
 using MicrosoftGraphSdk.Reports.GetTeamsUserActivityTotalUserCountsWithPeriod;
 using MicrosoftGraphSdk.Reports.GetTeamsUserActivityUserCountsWithPeriod;
 using MicrosoftGraphSdk.Reports.GetTeamsUserActivityUserDetailWithDate;
@@ -268,7 +276,7 @@ namespace MicrosoftGraphSdk.Reports {
         /// </summary>
         public async Task<ReportRoot> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ReportRoot>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ReportRoot>(requestInfo, ReportRoot.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Builds and executes requests for operations under \reports\microsoft.graph.getAttackSimulationRepeatOffenders()
@@ -317,6 +325,30 @@ namespace MicrosoftGraphSdk.Reports {
         /// </summary>
         public GetAzureADUserFeatureUsageRequestBuilder GetAzureADUserFeatureUsage() {
             return new GetAzureADUserFeatureUsageRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>
+        /// Builds and executes requests for operations under \reports\microsoft.graph.getBrowserDistributionUserCounts(period='{period}')
+        /// <param name="period">Usage: period={period}</param>
+        /// </summary>
+        public GetBrowserDistributionUserCountsWithPeriodRequestBuilder GetBrowserDistributionUserCountsWithPeriod(string period) {
+            if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
+            return new GetBrowserDistributionUserCountsWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
+        }
+        /// <summary>
+        /// Builds and executes requests for operations under \reports\microsoft.graph.getBrowserUserCounts(period='{period}')
+        /// <param name="period">Usage: period={period}</param>
+        /// </summary>
+        public GetBrowserUserCountsWithPeriodRequestBuilder GetBrowserUserCountsWithPeriod(string period) {
+            if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
+            return new GetBrowserUserCountsWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
+        }
+        /// <summary>
+        /// Builds and executes requests for operations under \reports\microsoft.graph.getBrowserUserDetail(period='{period}')
+        /// <param name="period">Usage: period={period}</param>
+        /// </summary>
+        public GetBrowserUserDetailWithPeriodRequestBuilder GetBrowserUserDetailWithPeriod(string period) {
+            if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
+            return new GetBrowserUserDetailWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
         }
         /// <summary>
         /// Builds and executes requests for operations under \reports\microsoft.graph.getCredentialUsageSummary(period='{period}')
@@ -410,11 +442,11 @@ namespace MicrosoftGraphSdk.Reports {
         /// <param name="groupId">Usage: groupId={groupId}</param>
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         /// </summary>
-        public GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime(string groupId, DateTimeOffset? startDateTime, DateTimeOffset? endDateTime) {
+        public GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, string groupId, DateTimeOffset? startDateTime) {
             _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
             if(string.IsNullOrEmpty(groupId)) throw new ArgumentNullException(nameof(groupId));
             _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
-            return new GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, groupId, startDateTime, endDateTime);
+            return new GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, groupId, startDateTime);
         }
         /// <summary>
         /// Builds and executes requests for operations under \reports\microsoft.graph.getM365AppPlatformUserCounts(period='{period}')
@@ -656,11 +688,11 @@ namespace MicrosoftGraphSdk.Reports {
         /// <param name="printerId">Usage: printerId={printerId}</param>
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         /// </summary>
-        public GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilder GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime(string printerId, DateTimeOffset? startDateTime, DateTimeOffset? endDateTime) {
+        public GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilder GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime(string printerId, DateTimeOffset? endDateTime, DateTimeOffset? startDateTime) {
             _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
             if(string.IsNullOrEmpty(printerId)) throw new ArgumentNullException(nameof(printerId));
             _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
-            return new GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, printerId, startDateTime, endDateTime);
+            return new GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, printerId, endDateTime, startDateTime);
         }
         /// <summary>
         /// Builds and executes requests for operations under \reports\microsoft.graph.getRelyingPartyDetailedSummary(period='{period}')
@@ -943,6 +975,38 @@ namespace MicrosoftGraphSdk.Reports {
             return new GetTeamsDeviceUsageUserDetailWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
         }
         /// <summary>
+        /// Builds and executes requests for operations under \reports\microsoft.graph.getTeamsTeamActivityCounts(period='{period}')
+        /// <param name="period">Usage: period={period}</param>
+        /// </summary>
+        public GetTeamsTeamActivityCountsWithPeriodRequestBuilder GetTeamsTeamActivityCountsWithPeriod(string period) {
+            if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
+            return new GetTeamsTeamActivityCountsWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
+        }
+        /// <summary>
+        /// Builds and executes requests for operations under \reports\microsoft.graph.getTeamsTeamActivityDetail(date={date})
+        /// <param name="date">Usage: date={date}</param>
+        /// </summary>
+        public GetTeamsTeamActivityDetailWithDateRequestBuilder GetTeamsTeamActivityDetailWithDate(Date? date) {
+            _ = date ?? throw new ArgumentNullException(nameof(date));
+            return new GetTeamsTeamActivityDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
+        }
+        /// <summary>
+        /// Builds and executes requests for operations under \reports\microsoft.graph.getTeamsTeamActivityDetail(period='{period}')
+        /// <param name="period">Usage: period={period}</param>
+        /// </summary>
+        public GetTeamsTeamActivityDetailWithPeriodRequestBuilder GetTeamsTeamActivityDetailWithPeriod(string period) {
+            if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
+            return new GetTeamsTeamActivityDetailWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
+        }
+        /// <summary>
+        /// Builds and executes requests for operations under \reports\microsoft.graph.getTeamsTeamActivityDistributionCounts(period='{period}')
+        /// <param name="period">Usage: period={period}</param>
+        /// </summary>
+        public GetTeamsTeamActivityDistributionCountsWithPeriodRequestBuilder GetTeamsTeamActivityDistributionCountsWithPeriod(string period) {
+            if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
+            return new GetTeamsTeamActivityDistributionCountsWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
+        }
+        /// <summary>
         /// Builds and executes requests for operations under \reports\microsoft.graph.getTeamsUserActivityCounts(period='{period}')
         /// <param name="period">Usage: period={period}</param>
         /// </summary>
@@ -973,6 +1037,14 @@ namespace MicrosoftGraphSdk.Reports {
         public GetTeamsUserActivityTotalCountsWithPeriodRequestBuilder GetTeamsUserActivityTotalCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
             return new GetTeamsUserActivityTotalCountsWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
+        }
+        /// <summary>
+        /// Builds and executes requests for operations under \reports\microsoft.graph.getTeamsUserActivityTotalDistributionCounts(period='{period}')
+        /// <param name="period">Usage: period={period}</param>
+        /// </summary>
+        public GetTeamsUserActivityTotalDistributionCountsWithPeriodRequestBuilder GetTeamsUserActivityTotalDistributionCountsWithPeriod(string period) {
+            if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
+            return new GetTeamsUserActivityTotalDistributionCountsWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
         }
         /// <summary>
         /// Builds and executes requests for operations under \reports\microsoft.graph.getTeamsUserActivityTotalUserCounts(period='{period}')
@@ -1020,11 +1092,11 @@ namespace MicrosoftGraphSdk.Reports {
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         /// <param name="userId">Usage: userId={userId}</param>
         /// </summary>
-        public GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime(string userId, DateTimeOffset? startDateTime, DateTimeOffset? endDateTime) {
+        public GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime, string userId) {
             _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
             _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
             if(string.IsNullOrEmpty(userId)) throw new ArgumentNullException(nameof(userId));
-            return new GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, userId, startDateTime, endDateTime);
+            return new GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime, userId);
         }
         /// <summary>
         /// Builds and executes requests for operations under \reports\microsoft.graph.getYammerActivityCounts(period='{period}')
@@ -1129,12 +1201,12 @@ namespace MicrosoftGraphSdk.Reports {
         /// <param name="skipToken">Usage: skipToken={skipToken}</param>
         /// <param name="top">Usage: top={top}</param>
         /// </summary>
-        public ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipToken(int? skip, int? top, string filter, string skipToken) {
+        public ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipToken(string skipToken, int? top, int? skip, string filter) {
             if(string.IsNullOrEmpty(filter)) throw new ArgumentNullException(nameof(filter));
             _ = skip ?? throw new ArgumentNullException(nameof(skip));
             if(string.IsNullOrEmpty(skipToken)) throw new ArgumentNullException(nameof(skipToken));
             _ = top ?? throw new ArgumentNullException(nameof(top));
-            return new ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder(PathParameters, RequestAdapter, skip, top, filter, skipToken);
+            return new ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder(PathParameters, RequestAdapter, skipToken, top, skip, filter);
         }
         /// <summary>
         /// Builds and executes requests for operations under \reports\microsoft.graph.managedDeviceEnrollmentAbandonmentSummary(skip={skip},top={top},filter='{filter}',skipToken='{skipToken}')
@@ -1143,12 +1215,12 @@ namespace MicrosoftGraphSdk.Reports {
         /// <param name="skipToken">Usage: skipToken={skipToken}</param>
         /// <param name="top">Usage: top={top}</param>
         /// </summary>
-        public ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipTokenRequestBuilder ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipToken(int? skip, int? top, string filter, string skipToken) {
+        public ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipTokenRequestBuilder ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipToken(string skipToken, int? top, int? skip, string filter) {
             if(string.IsNullOrEmpty(filter)) throw new ArgumentNullException(nameof(filter));
             _ = skip ?? throw new ArgumentNullException(nameof(skip));
             if(string.IsNullOrEmpty(skipToken)) throw new ArgumentNullException(nameof(skipToken));
             _ = top ?? throw new ArgumentNullException(nameof(top));
-            return new ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipTokenRequestBuilder(PathParameters, RequestAdapter, skip, top, filter, skipToken);
+            return new ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipTokenRequestBuilder(PathParameters, RequestAdapter, skipToken, top, skip, filter);
         }
         /// <summary>
         /// Builds and executes requests for operations under \reports\microsoft.graph.managedDeviceEnrollmentFailureDetails()
@@ -1163,12 +1235,12 @@ namespace MicrosoftGraphSdk.Reports {
         /// <param name="skipToken">Usage: skipToken={skipToken}</param>
         /// <param name="top">Usage: top={top}</param>
         /// </summary>
-        public ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipToken(int? skip, int? top, string filter, string skipToken) {
+        public ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipToken(string skipToken, int? top, int? skip, string filter) {
             if(string.IsNullOrEmpty(filter)) throw new ArgumentNullException(nameof(filter));
             _ = skip ?? throw new ArgumentNullException(nameof(skip));
             if(string.IsNullOrEmpty(skipToken)) throw new ArgumentNullException(nameof(skipToken));
             _ = top ?? throw new ArgumentNullException(nameof(top));
-            return new ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder(PathParameters, RequestAdapter, skip, top, filter, skipToken);
+            return new ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder(PathParameters, RequestAdapter, skipToken, top, skip, filter);
         }
         /// <summary>
         /// Builds and executes requests for operations under \reports\microsoft.graph.managedDeviceEnrollmentFailureTrends()

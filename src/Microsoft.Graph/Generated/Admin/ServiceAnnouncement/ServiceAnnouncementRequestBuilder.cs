@@ -130,7 +130,7 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ServiceAnnouncement> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ServiceAnnouncement>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ServiceAnnouncement>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ServiceAnnouncement.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A container for service communications resources. Read-only.

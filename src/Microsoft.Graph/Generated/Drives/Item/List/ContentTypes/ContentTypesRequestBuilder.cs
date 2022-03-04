@@ -108,7 +108,7 @@ namespace MicrosoftGraphSdk.Drives.Item.List.ContentTypes {
         /// </summary>
         public async Task<ContentTypesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ContentTypesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ContentTypesResponse>(requestInfo, ContentTypesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Builds and executes requests for operations under \drives\{drive-id}\list\contentTypes\microsoft.graph.getCompatibleHubContentTypes()
@@ -127,7 +127,7 @@ namespace MicrosoftGraphSdk.Drives.Item.List.ContentTypes {
         public async Task<ContentType> PostAsync(ContentType body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ContentType>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ContentType>(requestInfo, ContentType.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The collection of content types present in this list.</summary>
         public class GetQueryParameters : QueryParametersBase {

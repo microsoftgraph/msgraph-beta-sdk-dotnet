@@ -6,9 +6,9 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AccessPackageAssignment : Entity, IParsable {
         /// <summary>Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.</summary>
-        public AccessPackage AccessPackage { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackage AccessPackage { get; set; }
         /// <summary>Read-only. Nullable. Supports $filter (eq) on the id property</summary>
-        public AccessPackageAssignmentPolicy AccessPackageAssignmentPolicy { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageAssignmentPolicy AccessPackageAssignmentPolicy { get; set; }
         public List<AccessPackageAssignmentRequest> AccessPackageAssignmentRequests { get; set; }
         /// <summary>The resource roles delivered to the target user for this assignment. Read-only. Nullable.</summary>
         public List<AccessPackageAssignmentResourceRole> AccessPackageAssignmentResourceRoles { get; set; }
@@ -33,14 +33,22 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The ID of the subject with the assignment. Read-only.</summary>
         public string TargetId { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new AccessPackageAssignment CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AccessPackageAssignment();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessPackage", (o,n) => { (o as AccessPackageAssignment).AccessPackage = n.GetObjectValue<AccessPackage>(); } },
-                {"accessPackageAssignmentPolicy", (o,n) => { (o as AccessPackageAssignment).AccessPackageAssignmentPolicy = n.GetObjectValue<AccessPackageAssignmentPolicy>(); } },
-                {"accessPackageAssignmentRequests", (o,n) => { (o as AccessPackageAssignment).AccessPackageAssignmentRequests = n.GetCollectionOfObjectValues<AccessPackageAssignmentRequest>().ToList(); } },
-                {"accessPackageAssignmentResourceRoles", (o,n) => { (o as AccessPackageAssignment).AccessPackageAssignmentResourceRoles = n.GetCollectionOfObjectValues<AccessPackageAssignmentResourceRole>().ToList(); } },
+                {"accessPackage", (o,n) => { (o as AccessPackageAssignment).AccessPackage = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackage>(MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackage.CreateFromDiscriminatorValue); } },
+                {"accessPackageAssignmentPolicy", (o,n) => { (o as AccessPackageAssignment).AccessPackageAssignmentPolicy = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageAssignmentPolicy>(MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageAssignmentPolicy.CreateFromDiscriminatorValue); } },
+                {"accessPackageAssignmentRequests", (o,n) => { (o as AccessPackageAssignment).AccessPackageAssignmentRequests = n.GetCollectionOfObjectValues<AccessPackageAssignmentRequest>(AccessPackageAssignmentRequest.CreateFromDiscriminatorValue).ToList(); } },
+                {"accessPackageAssignmentResourceRoles", (o,n) => { (o as AccessPackageAssignment).AccessPackageAssignmentResourceRoles = n.GetCollectionOfObjectValues<AccessPackageAssignmentResourceRole>(AccessPackageAssignmentResourceRole.CreateFromDiscriminatorValue).ToList(); } },
                 {"accessPackageId", (o,n) => { (o as AccessPackageAssignment).AccessPackageId = n.GetStringValue(); } },
                 {"assignmentPolicyId", (o,n) => { (o as AccessPackageAssignment).AssignmentPolicyId = n.GetStringValue(); } },
                 {"assignmentState", (o,n) => { (o as AccessPackageAssignment).AssignmentState = n.GetStringValue(); } },
@@ -48,8 +56,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"catalogId", (o,n) => { (o as AccessPackageAssignment).CatalogId = n.GetStringValue(); } },
                 {"expiredDateTime", (o,n) => { (o as AccessPackageAssignment).ExpiredDateTime = n.GetDateTimeOffsetValue(); } },
                 {"isExtended", (o,n) => { (o as AccessPackageAssignment).IsExtended = n.GetBoolValue(); } },
-                {"schedule", (o,n) => { (o as AccessPackageAssignment).Schedule = n.GetObjectValue<RequestSchedule>(); } },
-                {"target", (o,n) => { (o as AccessPackageAssignment).Target = n.GetObjectValue<AccessPackageSubject>(); } },
+                {"schedule", (o,n) => { (o as AccessPackageAssignment).Schedule = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
+                {"target", (o,n) => { (o as AccessPackageAssignment).Target = n.GetObjectValue<AccessPackageSubject>(AccessPackageSubject.CreateFromDiscriminatorValue); } },
                 {"targetId", (o,n) => { (o as AccessPackageAssignment).TargetId = n.GetStringValue(); } },
             };
         }
@@ -60,8 +68,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<AccessPackage>("accessPackage", AccessPackage);
-            writer.WriteObjectValue<AccessPackageAssignmentPolicy>("accessPackageAssignmentPolicy", AccessPackageAssignmentPolicy);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackage>("accessPackage", AccessPackage);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageAssignmentPolicy>("accessPackageAssignmentPolicy", AccessPackageAssignmentPolicy);
             writer.WriteCollectionOfObjectValues<AccessPackageAssignmentRequest>("accessPackageAssignmentRequests", AccessPackageAssignmentRequests);
             writer.WriteCollectionOfObjectValues<AccessPackageAssignmentResourceRole>("accessPackageAssignmentResourceRoles", AccessPackageAssignmentResourceRoles);
             writer.WriteStringValue("accessPackageId", AccessPackageId);

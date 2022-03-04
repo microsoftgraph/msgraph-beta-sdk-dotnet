@@ -23,6 +23,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string Type { get; set; }
         public SecurityVendorInformation VendorInformation { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new CloudAppSecurityProfile CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new CloudAppSecurityProfile();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -43,7 +51,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"riskScore", (o,n) => { (o as CloudAppSecurityProfile).RiskScore = n.GetStringValue(); } },
                 {"tags", (o,n) => { (o as CloudAppSecurityProfile).Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"type", (o,n) => { (o as CloudAppSecurityProfile).Type = n.GetStringValue(); } },
-                {"vendorInformation", (o,n) => { (o as CloudAppSecurityProfile).VendorInformation = n.GetObjectValue<SecurityVendorInformation>(); } },
+                {"vendorInformation", (o,n) => { (o as CloudAppSecurityProfile).VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -20,13 +20,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static DeviceComplianceScriptValidationResult CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DeviceComplianceScriptValidationResult();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"ruleErrors", (o,n) => { (o as DeviceComplianceScriptValidationResult).RuleErrors = n.GetCollectionOfObjectValues<DeviceComplianceScriptRuleError>().ToList(); } },
-                {"rules", (o,n) => { (o as DeviceComplianceScriptValidationResult).Rules = n.GetCollectionOfObjectValues<DeviceComplianceScriptRule>().ToList(); } },
-                {"scriptErrors", (o,n) => { (o as DeviceComplianceScriptValidationResult).ScriptErrors = n.GetCollectionOfObjectValues<DeviceComplianceScriptError>().ToList(); } },
+                {"ruleErrors", (o,n) => { (o as DeviceComplianceScriptValidationResult).RuleErrors = n.GetCollectionOfObjectValues<DeviceComplianceScriptRuleError>(DeviceComplianceScriptRuleError.CreateFromDiscriminatorValue).ToList(); } },
+                {"rules", (o,n) => { (o as DeviceComplianceScriptValidationResult).Rules = n.GetCollectionOfObjectValues<DeviceComplianceScriptRule>(DeviceComplianceScriptRule.CreateFromDiscriminatorValue).ToList(); } },
+                {"scriptErrors", (o,n) => { (o as DeviceComplianceScriptValidationResult).ScriptErrors = n.GetCollectionOfObjectValues<DeviceComplianceScriptError>(DeviceComplianceScriptError.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

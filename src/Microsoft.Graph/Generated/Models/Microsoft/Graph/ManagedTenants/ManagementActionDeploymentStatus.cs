@@ -23,6 +23,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static ManagementActionDeploymentStatus CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ManagementActionDeploymentStatus();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -31,7 +39,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
                 {"managementTemplateId", (o,n) => { (o as ManagementActionDeploymentStatus).ManagementTemplateId = n.GetStringValue(); } },
                 {"managementTemplateVersion", (o,n) => { (o as ManagementActionDeploymentStatus).ManagementTemplateVersion = n.GetIntValue(); } },
                 {"status", (o,n) => { (o as ManagementActionDeploymentStatus).Status = n.GetEnumValue<ManagementActionStatus>(); } },
-                {"workloadActionDeploymentStatuses", (o,n) => { (o as ManagementActionDeploymentStatus).WorkloadActionDeploymentStatuses = n.GetCollectionOfObjectValues<WorkloadActionDeploymentStatus>().ToList(); } },
+                {"workloadActionDeploymentStatuses", (o,n) => { (o as ManagementActionDeploymentStatus).WorkloadActionDeploymentStatuses = n.GetCollectionOfObjectValues<WorkloadActionDeploymentStatus>(WorkloadActionDeploymentStatus.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

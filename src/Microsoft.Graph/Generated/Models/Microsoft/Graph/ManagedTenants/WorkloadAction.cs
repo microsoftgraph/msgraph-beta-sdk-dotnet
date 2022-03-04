@@ -27,6 +27,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static WorkloadAction CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new WorkloadAction();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -37,7 +45,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
                 {"displayName", (o,n) => { (o as WorkloadAction).DisplayName = n.GetStringValue(); } },
                 {"licenses", (o,n) => { (o as WorkloadAction).Licenses = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"service", (o,n) => { (o as WorkloadAction).Service = n.GetStringValue(); } },
-                {"settings", (o,n) => { (o as WorkloadAction).Settings = n.GetCollectionOfObjectValues<Setting>().ToList(); } },
+                {"settings", (o,n) => { (o as WorkloadAction).Settings = n.GetCollectionOfObjectValues<Setting>(Setting.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

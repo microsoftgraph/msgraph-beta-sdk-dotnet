@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Security.UserSecurityProfiles {
         /// </summary>
         public async Task<UserSecurityProfilesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UserSecurityProfilesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserSecurityProfilesResponse>(requestInfo, UserSecurityProfilesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to userSecurityProfiles for security
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Security.UserSecurityProfiles {
         public async Task<UserSecurityProfile> PostAsync(UserSecurityProfile body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UserSecurityProfile>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserSecurityProfile>(requestInfo, UserSecurityProfile.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get userSecurityProfiles from security</summary>
         public class GetQueryParameters : QueryParametersBase {

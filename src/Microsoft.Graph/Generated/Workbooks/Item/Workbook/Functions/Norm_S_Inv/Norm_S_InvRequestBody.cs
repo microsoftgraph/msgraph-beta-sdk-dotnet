@@ -16,11 +16,19 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.Norm_S_Inv {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static Norm_S_InvRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Norm_S_InvRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"probability", (o,n) => { (o as Norm_S_InvRequestBody).Probability = n.GetObjectValue<Json>(); } },
+                {"probability", (o,n) => { (o as Norm_S_InvRequestBody).Probability = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

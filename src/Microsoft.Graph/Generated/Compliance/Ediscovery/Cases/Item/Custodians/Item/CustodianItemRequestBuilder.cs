@@ -150,7 +150,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Custodians.Item {
         /// </summary>
         public async Task<Custodian> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Custodian>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Custodian>(requestInfo, Custodian.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Returns a list of case custodian objects for this case.  Nullable.

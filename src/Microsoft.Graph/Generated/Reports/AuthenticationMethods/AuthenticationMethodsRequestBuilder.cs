@@ -126,7 +126,7 @@ namespace MicrosoftGraphSdk.Reports.AuthenticationMethods {
         /// </summary>
         public async Task<AuthenticationMethodsRoot> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AuthenticationMethodsRoot>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AuthenticationMethodsRoot>(requestInfo, AuthenticationMethodsRoot.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Container for navigation properties for Azure AD authentication methods resources.
@@ -152,10 +152,10 @@ namespace MicrosoftGraphSdk.Reports.AuthenticationMethods {
         /// <param name="includedUserRoles">Usage: includedUserRoles={includedUserRoles}</param>
         /// <param name="includedUserTypes">Usage: includedUserTypes={includedUserTypes}</param>
         /// </summary>
-        public UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRoles(string includedUserTypes, string includedUserRoles) {
+        public UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRoles(string includedUserRoles, string includedUserTypes) {
             if(string.IsNullOrEmpty(includedUserRoles)) throw new ArgumentNullException(nameof(includedUserRoles));
             if(string.IsNullOrEmpty(includedUserTypes)) throw new ArgumentNullException(nameof(includedUserTypes));
-            return new UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder(PathParameters, RequestAdapter, includedUserTypes, includedUserRoles);
+            return new UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder(PathParameters, RequestAdapter, includedUserRoles, includedUserTypes);
         }
         /// <summary>
         /// Builds and executes requests for operations under \reports\authenticationMethods\microsoft.graph.usersRegisteredByMethod()
@@ -168,10 +168,10 @@ namespace MicrosoftGraphSdk.Reports.AuthenticationMethods {
         /// <param name="includedUserRoles">Usage: includedUserRoles={includedUserRoles}</param>
         /// <param name="includedUserTypes">Usage: includedUserTypes={includedUserTypes}</param>
         /// </summary>
-        public UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRoles(string includedUserTypes, string includedUserRoles) {
+        public UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRoles(string includedUserRoles, string includedUserTypes) {
             if(string.IsNullOrEmpty(includedUserRoles)) throw new ArgumentNullException(nameof(includedUserRoles));
             if(string.IsNullOrEmpty(includedUserTypes)) throw new ArgumentNullException(nameof(includedUserTypes));
-            return new UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder(PathParameters, RequestAdapter, includedUserTypes, includedUserRoles);
+            return new UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder(PathParameters, RequestAdapter, includedUserRoles, includedUserTypes);
         }
         /// <summary>Container for navigation properties for Azure AD authentication methods resources.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -29,6 +29,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static ParentLabelDetails CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ParentLabelDetails();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -38,7 +46,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"id", (o,n) => { (o as ParentLabelDetails).Id = n.GetStringValue(); } },
                 {"isActive", (o,n) => { (o as ParentLabelDetails).IsActive = n.GetBoolValue(); } },
                 {"name", (o,n) => { (o as ParentLabelDetails).Name = n.GetStringValue(); } },
-                {"parent", (o,n) => { (o as ParentLabelDetails).Parent = n.GetObjectValue<ParentLabelDetails>(); } },
+                {"parent", (o,n) => { (o as ParentLabelDetails).Parent = n.GetObjectValue<ParentLabelDetails>(ParentLabelDetails.CreateFromDiscriminatorValue); } },
                 {"sensitivity", (o,n) => { (o as ParentLabelDetails).Sensitivity = n.GetIntValue(); } },
                 {"tooltip", (o,n) => { (o as ParentLabelDetails).Tooltip = n.GetStringValue(); } },
             };

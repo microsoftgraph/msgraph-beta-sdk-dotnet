@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.RemoteAssistancePartners {
         /// </summary>
         public async Task<RemoteAssistancePartnersResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RemoteAssistancePartnersResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RemoteAssistancePartnersResponse>(requestInfo, RemoteAssistancePartnersResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The remote assist partners.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.RemoteAssistancePartners {
         public async Task<RemoteAssistancePartner> PostAsync(RemoteAssistancePartner body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<RemoteAssistancePartner>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RemoteAssistancePartner>(requestInfo, RemoteAssistancePartner.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The remote assist partners.</summary>
         public class GetQueryParameters : QueryParametersBase {

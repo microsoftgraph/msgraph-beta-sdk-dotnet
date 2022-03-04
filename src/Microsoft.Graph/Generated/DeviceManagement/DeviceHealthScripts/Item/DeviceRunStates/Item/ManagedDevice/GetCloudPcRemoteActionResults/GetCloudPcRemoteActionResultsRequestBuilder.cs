@@ -66,7 +66,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.Item.DeviceRunS
         /// </summary>
         public async Task<IEnumerable<GetCloudPcRemoteActionResults>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<GetCloudPcRemoteActionResults>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetCloudPcRemoteActionResults>(requestInfo, GetCloudPcRemoteActionResults.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

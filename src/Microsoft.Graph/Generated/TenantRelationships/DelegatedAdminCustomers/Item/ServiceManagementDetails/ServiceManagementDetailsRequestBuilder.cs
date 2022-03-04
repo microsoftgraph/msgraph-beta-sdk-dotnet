@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.DelegatedAdminCustomers.Item.Ser
         /// </summary>
         public async Task<ServiceManagementDetailsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ServiceManagementDetailsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ServiceManagementDetailsResponse>(requestInfo, ServiceManagementDetailsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to serviceManagementDetails for tenantRelationships
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.DelegatedAdminCustomers.Item.Ser
         public async Task<DelegatedAdminServiceManagementDetail> PostAsync(DelegatedAdminServiceManagementDetail body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DelegatedAdminServiceManagementDetail>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DelegatedAdminServiceManagementDetail>(requestInfo, DelegatedAdminServiceManagementDetail.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get serviceManagementDetails from tenantRelationships</summary>
         public class GetQueryParameters : QueryParametersBase {

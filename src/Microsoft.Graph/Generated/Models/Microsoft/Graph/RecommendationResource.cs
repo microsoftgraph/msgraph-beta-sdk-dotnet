@@ -16,12 +16,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string ResourceType { get; set; }
         public RecommendationStatus? Status { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new RecommendationResource CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new RecommendationResource();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"addedDateTime", (o,n) => { (o as RecommendationResource).AddedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"additionalDetails", (o,n) => { (o as RecommendationResource).AdditionalDetails = n.GetCollectionOfObjectValues<KeyValue>().ToList(); } },
+                {"additionalDetails", (o,n) => { (o as RecommendationResource).AdditionalDetails = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue).ToList(); } },
                 {"apiUrl", (o,n) => { (o as RecommendationResource).ApiUrl = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as RecommendationResource).DisplayName = n.GetStringValue(); } },
                 {"owner", (o,n) => { (o as RecommendationResource).Owner = n.GetStringValue(); } },

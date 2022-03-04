@@ -67,26 +67,30 @@ namespace MicrosoftGraphSdk.Me.ExportDeviceAndAppManagementData {
         /// </summary>
         public async Task<ExportDeviceAndAppManagementDataResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<ExportDeviceAndAppManagementDataResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ExportDeviceAndAppManagementDataResponse>(requestInfo, ExportDeviceAndAppManagementDataResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes deviceAndAppManagementData</summary>
         public class ExportDeviceAndAppManagementDataResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type deviceAndAppManagementData</summary>
-            public DeviceAndAppManagementData DeviceAndAppManagementData { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceAndAppManagementData DeviceAndAppManagementData { get; set; }
             /// <summary>
             /// Instantiates a new exportDeviceAndAppManagementDataResponse and sets the default values.
             /// </summary>
             public ExportDeviceAndAppManagementDataResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static ExportDeviceAndAppManagementDataResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new ExportDeviceAndAppManagementDataResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"deviceAndAppManagementData", (o,n) => { (o as ExportDeviceAndAppManagementDataResponse).DeviceAndAppManagementData = n.GetObjectValue<DeviceAndAppManagementData>(); } },
+                    {"deviceAndAppManagementData", (o,n) => { (o as ExportDeviceAndAppManagementDataResponse).DeviceAndAppManagementData = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceAndAppManagementData>(MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceAndAppManagementData.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -95,7 +99,7 @@ namespace MicrosoftGraphSdk.Me.ExportDeviceAndAppManagementData {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<DeviceAndAppManagementData>("deviceAndAppManagementData", DeviceAndAppManagementData);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceAndAppManagementData>("deviceAndAppManagementData", DeviceAndAppManagementData);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

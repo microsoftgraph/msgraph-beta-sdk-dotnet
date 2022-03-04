@@ -68,7 +68,7 @@ namespace MicrosoftGraphSdk.Drives.Item.SearchWithQ {
         /// </summary>
         public async Task<IEnumerable<SearchWithQ>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<SearchWithQ>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<SearchWithQ>(requestInfo, SearchWithQ.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

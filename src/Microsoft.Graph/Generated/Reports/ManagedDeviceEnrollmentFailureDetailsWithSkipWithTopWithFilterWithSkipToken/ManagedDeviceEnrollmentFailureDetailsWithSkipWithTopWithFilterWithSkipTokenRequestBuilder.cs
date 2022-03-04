@@ -25,15 +25,15 @@ namespace MicrosoftGraphSdk.Reports.ManagedDeviceEnrollmentFailureDetailsWithSki
         /// <param name="skipToken">Usage: skipToken={skipToken}</param>
         /// <param name="top">Usage: top={top}</param>
         /// </summary>
-        public ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, int? skip = default, int? top = default, string filter = default, string skipToken = default) {
+        public ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string skipToken = default, int? top = default, int? skip = default, string filter = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/reports/microsoft.graph.managedDeviceEnrollmentFailureDetails(skip={skip},top={top},filter='{filter}',skipToken='{skipToken}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("skip", skip);
-            urlTplParams.Add("top", top);
-            urlTplParams.Add("filter", filter);
             urlTplParams.Add("skipToken", skipToken);
+            urlTplParams.Add("top", top);
+            urlTplParams.Add("skip", skip);
+            urlTplParams.Add("filter", filter);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -75,26 +75,30 @@ namespace MicrosoftGraphSdk.Reports.ManagedDeviceEnrollmentFailureDetailsWithSki
         /// </summary>
         public async Task<ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenResponse>(requestInfo, ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes report</summary>
         public class ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type report</summary>
-            public Report Report { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.Report Report { get; set; }
             /// <summary>
             /// Instantiates a new managedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenResponse and sets the default values.
             /// </summary>
             public ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"report", (o,n) => { (o as ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenResponse).Report = n.GetObjectValue<Report>(); } },
+                    {"report", (o,n) => { (o as ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenResponse).Report = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Report>(MicrosoftGraphSdk.Models.Microsoft.Graph.Report.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -103,7 +107,7 @@ namespace MicrosoftGraphSdk.Reports.ManagedDeviceEnrollmentFailureDetailsWithSki
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<Report>("report", Report);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Report>("report", Report);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

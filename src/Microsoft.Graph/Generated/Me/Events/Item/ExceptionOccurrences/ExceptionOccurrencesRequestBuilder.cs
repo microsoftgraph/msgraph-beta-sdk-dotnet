@@ -106,7 +106,7 @@ namespace MicrosoftGraphSdk.Me.Events.Item.ExceptionOccurrences {
         /// </summary>
         public async Task<ExceptionOccurrencesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ExceptionOccurrencesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ExceptionOccurrencesResponse>(requestInfo, ExceptionOccurrencesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to exceptionOccurrences for me
@@ -119,7 +119,7 @@ namespace MicrosoftGraphSdk.Me.Events.Item.ExceptionOccurrences {
         public async Task<Event> PostAsync(Event body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<Event>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Event>(requestInfo, Event.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get exceptionOccurrences from me</summary>
         public class GetQueryParameters : QueryParametersBase {

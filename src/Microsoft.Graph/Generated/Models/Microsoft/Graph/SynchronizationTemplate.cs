@@ -20,6 +20,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Default synchronization schema for the jobs based on this template.</summary>
         public SynchronizationSchema Schema { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new SynchronizationTemplate CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new SynchronizationTemplate();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -29,8 +37,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"description", (o,n) => { (o as SynchronizationTemplate).Description = n.GetStringValue(); } },
                 {"discoverable", (o,n) => { (o as SynchronizationTemplate).Discoverable = n.GetBoolValue(); } },
                 {"factoryTag", (o,n) => { (o as SynchronizationTemplate).FactoryTag = n.GetStringValue(); } },
-                {"metadata", (o,n) => { (o as SynchronizationTemplate).Metadata = n.GetCollectionOfObjectValues<MetadataEntry>().ToList(); } },
-                {"schema", (o,n) => { (o as SynchronizationTemplate).Schema = n.GetObjectValue<SynchronizationSchema>(); } },
+                {"metadata", (o,n) => { (o as SynchronizationTemplate).Metadata = n.GetCollectionOfObjectValues<MetadataEntry>(MetadataEntry.CreateFromDiscriminatorValue).ToList(); } },
+                {"schema", (o,n) => { (o as SynchronizationTemplate).Schema = n.GetObjectValue<SynchronizationSchema>(SynchronizationSchema.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

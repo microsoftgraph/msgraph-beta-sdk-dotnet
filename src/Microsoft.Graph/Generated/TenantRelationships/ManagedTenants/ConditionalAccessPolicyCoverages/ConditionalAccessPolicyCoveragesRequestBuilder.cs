@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ConditionalAccess
         /// </summary>
         public async Task<ConditionalAccessPolicyCoveragesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ConditionalAccessPolicyCoveragesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ConditionalAccessPolicyCoveragesResponse>(requestInfo, ConditionalAccessPolicyCoveragesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Aggregate view of conditional access policy coverage across managed tenants.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ConditionalAccess
         public async Task<ConditionalAccessPolicyCoverage> PostAsync(ConditionalAccessPolicyCoverage body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ConditionalAccessPolicyCoverage>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ConditionalAccessPolicyCoverage>(requestInfo, ConditionalAccessPolicyCoverage.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Aggregate view of conditional access policy coverage across managed tenants.</summary>
         public class GetQueryParameters : QueryParametersBase {

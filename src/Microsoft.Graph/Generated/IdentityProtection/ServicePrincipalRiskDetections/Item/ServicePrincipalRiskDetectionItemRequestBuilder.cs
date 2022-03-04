@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.IdentityProtection.ServicePrincipalRiskDetections.It
         /// </summary>
         public async Task<ServicePrincipalRiskDetection> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ServicePrincipalRiskDetection>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ServicePrincipalRiskDetection>(requestInfo, ServicePrincipalRiskDetection.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents information about detected at-risk service principals in an Azure AD tenant.

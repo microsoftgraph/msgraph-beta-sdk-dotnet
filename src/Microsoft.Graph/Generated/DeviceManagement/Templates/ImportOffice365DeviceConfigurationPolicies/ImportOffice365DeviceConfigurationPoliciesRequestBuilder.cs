@@ -66,7 +66,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Templates.ImportOffice365DeviceConf
         /// </summary>
         public async Task<IEnumerable<ImportOffice365DeviceConfigurationPolicies>> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreatePostRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<ImportOffice365DeviceConfigurationPolicies>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<ImportOffice365DeviceConfigurationPolicies>(requestInfo, ImportOffice365DeviceConfigurationPolicies.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

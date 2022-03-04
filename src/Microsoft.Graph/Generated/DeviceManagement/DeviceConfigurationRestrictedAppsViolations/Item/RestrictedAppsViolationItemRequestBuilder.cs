@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurationRestrictedAppsVi
         /// </summary>
         public async Task<RestrictedAppsViolation> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RestrictedAppsViolation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RestrictedAppsViolation>(requestInfo, RestrictedAppsViolation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Restricted apps violations for this account.

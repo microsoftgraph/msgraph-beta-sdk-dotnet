@@ -77,7 +77,7 @@ namespace MicrosoftGraphSdk.Users.Item.JoinedTeams {
         /// </summary>
         public async Task<JoinedTeamsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<JoinedTeamsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<JoinedTeamsResponse>(requestInfo, JoinedTeamsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The Microsoft Teams teams that the user is a member of. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

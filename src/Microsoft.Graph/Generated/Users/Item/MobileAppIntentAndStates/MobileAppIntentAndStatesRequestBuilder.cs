@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Users.Item.MobileAppIntentAndStates {
         /// </summary>
         public async Task<MobileAppIntentAndStatesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MobileAppIntentAndStatesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MobileAppIntentAndStatesResponse>(requestInfo, MobileAppIntentAndStatesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of troubleshooting events for this user.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Users.Item.MobileAppIntentAndStates {
         public async Task<MobileAppIntentAndState> PostAsync(MobileAppIntentAndState body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MobileAppIntentAndState>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MobileAppIntentAndState>(requestInfo, MobileAppIntentAndState.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The list of troubleshooting events for this user.</summary>
         public class GetQueryParameters : QueryParametersBase {

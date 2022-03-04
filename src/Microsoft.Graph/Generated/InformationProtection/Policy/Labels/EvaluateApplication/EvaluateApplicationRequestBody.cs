@@ -8,8 +8,8 @@ namespace MicrosoftGraphSdk.InformationProtection.Policy.Labels.EvaluateApplicat
     public class EvaluateApplicationRequestBody : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        public ContentInfo ContentInfo { get; set; }
-        public LabelingOptions LabelingOptions { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ContentInfo ContentInfo { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.LabelingOptions LabelingOptions { get; set; }
         /// <summary>
         /// Instantiates a new evaluateApplicationRequestBody and sets the default values.
         /// </summary>
@@ -17,12 +17,20 @@ namespace MicrosoftGraphSdk.InformationProtection.Policy.Labels.EvaluateApplicat
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static EvaluateApplicationRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new EvaluateApplicationRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"contentInfo", (o,n) => { (o as EvaluateApplicationRequestBody).ContentInfo = n.GetObjectValue<ContentInfo>(); } },
-                {"labelingOptions", (o,n) => { (o as EvaluateApplicationRequestBody).LabelingOptions = n.GetObjectValue<LabelingOptions>(); } },
+                {"contentInfo", (o,n) => { (o as EvaluateApplicationRequestBody).ContentInfo = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ContentInfo>(MicrosoftGraphSdk.Models.Microsoft.Graph.ContentInfo.CreateFromDiscriminatorValue); } },
+                {"labelingOptions", (o,n) => { (o as EvaluateApplicationRequestBody).LabelingOptions = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.LabelingOptions>(MicrosoftGraphSdk.Models.Microsoft.Graph.LabelingOptions.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -31,8 +39,8 @@ namespace MicrosoftGraphSdk.InformationProtection.Policy.Labels.EvaluateApplicat
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<ContentInfo>("contentInfo", ContentInfo);
-            writer.WriteObjectValue<LabelingOptions>("labelingOptions", LabelingOptions);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ContentInfo>("contentInfo", ContentInfo);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.LabelingOptions>("labelingOptions", LabelingOptions);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

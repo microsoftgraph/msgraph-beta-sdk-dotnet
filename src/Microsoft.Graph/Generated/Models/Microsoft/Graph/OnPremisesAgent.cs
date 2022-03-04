@@ -15,11 +15,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public AgentStatus? Status { get; set; }
         public List<OnPremisesPublishingType?> SupportedPublishingTypes { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new OnPremisesAgent CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new OnPremisesAgent();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"agentGroups", (o,n) => { (o as OnPremisesAgent).AgentGroups = n.GetCollectionOfObjectValues<OnPremisesAgentGroup>().ToList(); } },
+                {"agentGroups", (o,n) => { (o as OnPremisesAgent).AgentGroups = n.GetCollectionOfObjectValues<OnPremisesAgentGroup>(OnPremisesAgentGroup.CreateFromDiscriminatorValue).ToList(); } },
                 {"externalIp", (o,n) => { (o as OnPremisesAgent).ExternalIp = n.GetStringValue(); } },
                 {"machineName", (o,n) => { (o as OnPremisesAgent).MachineName = n.GetStringValue(); } },
                 {"status", (o,n) => { (o as OnPremisesAgent).Status = n.GetEnumValue<AgentStatus>(); } },

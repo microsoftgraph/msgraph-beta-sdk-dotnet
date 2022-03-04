@@ -103,7 +103,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ImportedWindowsAutopilotDeviceIdent
         /// </summary>
         public async Task<ImportedWindowsAutopilotDeviceIdentitiesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ImportedWindowsAutopilotDeviceIdentitiesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ImportedWindowsAutopilotDeviceIdentitiesResponse>(requestInfo, ImportedWindowsAutopilotDeviceIdentitiesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Collection of imported Windows autopilot devices.
@@ -116,7 +116,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ImportedWindowsAutopilotDeviceIdent
         public async Task<ImportedWindowsAutopilotDeviceIdentity> PostAsync(ImportedWindowsAutopilotDeviceIdentity body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ImportedWindowsAutopilotDeviceIdentity>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ImportedWindowsAutopilotDeviceIdentity>(requestInfo, ImportedWindowsAutopilotDeviceIdentity.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Collection of imported Windows autopilot devices.</summary>
         public class GetQueryParameters : QueryParametersBase {

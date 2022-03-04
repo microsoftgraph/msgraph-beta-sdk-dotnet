@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Search.Qnas.Item {
         /// </summary>
         public async Task<Qna> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Qna>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Qna>(requestInfo, Qna.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.

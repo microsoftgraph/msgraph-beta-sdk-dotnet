@@ -16,14 +16,22 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Notification text that will be sent to users quarantined by this policy. This is UTF8 encoded byte array HTML.</summary>
         public byte[] NotificationContent { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DeviceManagementExchangeOnPremisesPolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DeviceManagementExchangeOnPremisesPolicy();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessRules", (o,n) => { (o as DeviceManagementExchangeOnPremisesPolicy).AccessRules = n.GetCollectionOfObjectValues<DeviceManagementExchangeAccessRule>().ToList(); } },
-                {"conditionalAccessSettings", (o,n) => { (o as DeviceManagementExchangeOnPremisesPolicy).ConditionalAccessSettings = n.GetObjectValue<OnPremisesConditionalAccessSettings>(); } },
+                {"accessRules", (o,n) => { (o as DeviceManagementExchangeOnPremisesPolicy).AccessRules = n.GetCollectionOfObjectValues<DeviceManagementExchangeAccessRule>(DeviceManagementExchangeAccessRule.CreateFromDiscriminatorValue).ToList(); } },
+                {"conditionalAccessSettings", (o,n) => { (o as DeviceManagementExchangeOnPremisesPolicy).ConditionalAccessSettings = n.GetObjectValue<OnPremisesConditionalAccessSettings>(OnPremisesConditionalAccessSettings.CreateFromDiscriminatorValue); } },
                 {"defaultAccessLevel", (o,n) => { (o as DeviceManagementExchangeOnPremisesPolicy).DefaultAccessLevel = n.GetEnumValue<DeviceManagementExchangeAccessLevel>(); } },
-                {"knownDeviceClasses", (o,n) => { (o as DeviceManagementExchangeOnPremisesPolicy).KnownDeviceClasses = n.GetCollectionOfObjectValues<DeviceManagementExchangeDeviceClass>().ToList(); } },
+                {"knownDeviceClasses", (o,n) => { (o as DeviceManagementExchangeOnPremisesPolicy).KnownDeviceClasses = n.GetCollectionOfObjectValues<DeviceManagementExchangeDeviceClass>(DeviceManagementExchangeDeviceClass.CreateFromDiscriminatorValue).ToList(); } },
                 {"notificationContent", (o,n) => { (o as DeviceManagementExchangeOnPremisesPolicy).NotificationContent = n.GetByteArrayValue(); } },
             };
         }

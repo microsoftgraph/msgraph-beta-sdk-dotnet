@@ -77,7 +77,7 @@ namespace MicrosoftGraphSdk.Groups.Item.AcceptedSenders {
         /// </summary>
         public async Task<AcceptedSendersResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AcceptedSendersResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AcceptedSendersResponse>(requestInfo, AcceptedSendersResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.</summary>
         public class GetQueryParameters : QueryParametersBase {

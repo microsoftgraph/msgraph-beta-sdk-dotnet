@@ -77,7 +77,7 @@ namespace MicrosoftGraphSdk.Users.Item.Oauth2PermissionGrants {
         /// </summary>
         public async Task<Oauth2PermissionGrantsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Oauth2PermissionGrantsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Oauth2PermissionGrantsResponse>(requestInfo, Oauth2PermissionGrantsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get oauth2PermissionGrants from users</summary>
         public class GetQueryParameters : QueryParametersBase {

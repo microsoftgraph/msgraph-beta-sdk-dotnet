@@ -10,9 +10,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The description of the device</summary>
         public string Description { get; set; }
         /// <summary>Apple device discovery source. Possible values are: unknown, adminImport, deviceEnrollmentProgram.</summary>
-        public DiscoverySource? DiscoverySource { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.DiscoverySource? DiscoverySource { get; set; }
         /// <summary>The state of the device in Intune. Possible values are: unknown, enrolled, pendingReset, failed, notContacted, blocked.</summary>
-        public EnrollmentState? EnrollmentState { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.EnrollmentState? EnrollmentState { get; set; }
         /// <summary>Indicates if the device is deleted from Apple Business Manager</summary>
         public bool? IsDeleted { get; set; }
         /// <summary>Indicates if the Apple device is supervised. More information is at: https://support.apple.com/en-us/HT202837</summary>
@@ -20,13 +20,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Last Contacted Date Time of the device</summary>
         public DateTimeOffset? LastContactedDateTime { get; set; }
         /// <summary>The platform of the Device. Possible values are: unknown, ios, android, windows, windowsMobile, macOS.</summary>
-        public Platform? Platform { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Platform? Platform { get; set; }
         /// <summary>The time enrollment profile was assigned to the device</summary>
         public DateTimeOffset? RequestedEnrollmentProfileAssignmentDateTime { get; set; }
         /// <summary>Enrollment profile Id admin intends to apply to the device during next enrollment</summary>
         public string RequestedEnrollmentProfileId { get; set; }
         /// <summary>Device serial number</summary>
         public string SerialNumber { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new ImportedAppleDeviceIdentity CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ImportedAppleDeviceIdentity();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>

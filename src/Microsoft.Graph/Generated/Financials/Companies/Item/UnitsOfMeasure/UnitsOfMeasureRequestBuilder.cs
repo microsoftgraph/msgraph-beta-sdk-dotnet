@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.UnitsOfMeasure {
         /// </summary>
         public async Task<UnitsOfMeasureResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UnitsOfMeasureResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UnitsOfMeasureResponse>(requestInfo, UnitsOfMeasureResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to unitsOfMeasure for financials
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.UnitsOfMeasure {
         public async Task<UnitOfMeasure> PostAsync(UnitOfMeasure body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UnitOfMeasure>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UnitOfMeasure>(requestInfo, UnitOfMeasure.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get unitsOfMeasure from financials</summary>
         public class GetQueryParameters : QueryParametersBase {

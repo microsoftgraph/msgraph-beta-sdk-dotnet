@@ -78,7 +78,7 @@ namespace MicrosoftGraphSdk.GovernanceRoleSettings.Item.Resource {
         /// </summary>
         public async Task<GovernanceResource> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<GovernanceResource>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GovernanceResource>(requestInfo, GovernanceResource.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Read-only. The associated resource for this role setting.</summary>
         public class GetQueryParameters : QueryParametersBase {

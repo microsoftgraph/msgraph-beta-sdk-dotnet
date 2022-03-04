@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.AddCopy {
         public async Task<AddCopyResponse> PostAsync(AddCopyRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AddCopyResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AddCopyResponse>(requestInfo, AddCopyResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes contentType</summary>
         public class AddCopyResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type contentType</summary>
-            public ContentType ContentType { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.ContentType ContentType { get; set; }
             /// <summary>
             /// Instantiates a new addCopyResponse and sets the default values.
             /// </summary>
             public AddCopyResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static AddCopyResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new AddCopyResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"contentType", (o,n) => { (o as AddCopyResponse).ContentType = n.GetObjectValue<ContentType>(); } },
+                    {"contentType", (o,n) => { (o as AddCopyResponse).ContentType = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ContentType>(MicrosoftGraphSdk.Models.Microsoft.Graph.ContentType.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.AddCopy {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<ContentType>("contentType", ContentType);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ContentType>("contentType", ContentType);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

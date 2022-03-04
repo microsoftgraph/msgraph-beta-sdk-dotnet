@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Users.Item.Teamwork.InstalledApps {
         /// </summary>
         public async Task<InstalledAppsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<InstalledAppsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<InstalledAppsResponse>(requestInfo, InstalledAppsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The apps installed in the personal scope of this user.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Users.Item.Teamwork.InstalledApps {
         public async Task<UserScopeTeamsAppInstallation> PostAsync(UserScopeTeamsAppInstallation body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UserScopeTeamsAppInstallation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserScopeTeamsAppInstallation>(requestInfo, UserScopeTeamsAppInstallation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The apps installed in the personal scope of this user.</summary>
         public class GetQueryParameters : QueryParametersBase {

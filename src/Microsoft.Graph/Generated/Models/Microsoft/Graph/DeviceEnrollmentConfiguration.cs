@@ -11,6 +11,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>The description of the device enrollment configuration</summary>
         public string Description { get; set; }
+        /// <summary>Support for Enrollment Configuration Type</summary>
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceEnrollmentConfigurationType? DeviceEnrollmentConfigurationType { get; set; }
         /// <summary>The display name of the device enrollment configuration</summary>
         public string DisplayName { get; set; }
         /// <summary>Last modified date time in UTC of the device enrollment configuration</summary>
@@ -22,13 +24,22 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The version of the device enrollment configuration</summary>
         public int? Version { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DeviceEnrollmentConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DeviceEnrollmentConfiguration();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as DeviceEnrollmentConfiguration).Assignments = n.GetCollectionOfObjectValues<EnrollmentConfigurationAssignment>().ToList(); } },
+                {"assignments", (o,n) => { (o as DeviceEnrollmentConfiguration).Assignments = n.GetCollectionOfObjectValues<EnrollmentConfigurationAssignment>(EnrollmentConfigurationAssignment.CreateFromDiscriminatorValue).ToList(); } },
                 {"createdDateTime", (o,n) => { (o as DeviceEnrollmentConfiguration).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", (o,n) => { (o as DeviceEnrollmentConfiguration).Description = n.GetStringValue(); } },
+                {"deviceEnrollmentConfigurationType", (o,n) => { (o as DeviceEnrollmentConfiguration).DeviceEnrollmentConfigurationType = n.GetEnumValue<DeviceEnrollmentConfigurationType>(); } },
                 {"displayName", (o,n) => { (o as DeviceEnrollmentConfiguration).DisplayName = n.GetStringValue(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as DeviceEnrollmentConfiguration).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"priority", (o,n) => { (o as DeviceEnrollmentConfiguration).Priority = n.GetIntValue(); } },
@@ -46,6 +57,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<EnrollmentConfigurationAssignment>("assignments", Assignments);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
+            writer.WriteEnumValue<DeviceEnrollmentConfigurationType>("deviceEnrollmentConfigurationType", DeviceEnrollmentConfigurationType);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteIntValue("priority", Priority);

@@ -22,14 +22,22 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static AutomaticRepliesMailTips CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AutomaticRepliesMailTips();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"message", (o,n) => { (o as AutomaticRepliesMailTips).Message = n.GetStringValue(); } },
-                {"messageLanguage", (o,n) => { (o as AutomaticRepliesMailTips).MessageLanguage = n.GetObjectValue<LocaleInfo>(); } },
-                {"scheduledEndTime", (o,n) => { (o as AutomaticRepliesMailTips).ScheduledEndTime = n.GetObjectValue<DateTimeTimeZone>(); } },
-                {"scheduledStartTime", (o,n) => { (o as AutomaticRepliesMailTips).ScheduledStartTime = n.GetObjectValue<DateTimeTimeZone>(); } },
+                {"messageLanguage", (o,n) => { (o as AutomaticRepliesMailTips).MessageLanguage = n.GetObjectValue<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue); } },
+                {"scheduledEndTime", (o,n) => { (o as AutomaticRepliesMailTips).ScheduledEndTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                {"scheduledStartTime", (o,n) => { (o as AutomaticRepliesMailTips).ScheduledStartTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

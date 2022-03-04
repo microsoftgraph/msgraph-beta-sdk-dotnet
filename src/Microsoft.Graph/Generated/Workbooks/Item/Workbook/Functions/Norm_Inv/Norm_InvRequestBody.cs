@@ -18,13 +18,21 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.Norm_Inv {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static Norm_InvRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Norm_InvRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"mean", (o,n) => { (o as Norm_InvRequestBody).Mean = n.GetObjectValue<Json>(); } },
-                {"probability", (o,n) => { (o as Norm_InvRequestBody).Probability = n.GetObjectValue<Json>(); } },
-                {"standardDev", (o,n) => { (o as Norm_InvRequestBody).StandardDev = n.GetObjectValue<Json>(); } },
+                {"mean", (o,n) => { (o as Norm_InvRequestBody).Mean = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"probability", (o,n) => { (o as Norm_InvRequestBody).Probability = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"standardDev", (o,n) => { (o as Norm_InvRequestBody).StandardDev = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

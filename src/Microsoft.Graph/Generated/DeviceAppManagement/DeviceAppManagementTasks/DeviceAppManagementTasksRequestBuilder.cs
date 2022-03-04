@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.DeviceAppManagementTasks {
         /// </summary>
         public async Task<DeviceAppManagementTasksResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceAppManagementTasksResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceAppManagementTasksResponse>(requestInfo, DeviceAppManagementTasksResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Device app management tasks.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.DeviceAppManagementTasks {
         public async Task<DeviceAppManagementTask> PostAsync(DeviceAppManagementTask body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DeviceAppManagementTask>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceAppManagementTask>(requestInfo, DeviceAppManagementTask.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Device app management tasks.</summary>
         public class GetQueryParameters : QueryParametersBase {

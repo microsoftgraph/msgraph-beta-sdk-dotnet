@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.GeneralLedgerEntries {
         /// </summary>
         public async Task<GeneralLedgerEntriesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<GeneralLedgerEntriesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GeneralLedgerEntriesResponse>(requestInfo, GeneralLedgerEntriesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to generalLedgerEntries for financials
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.GeneralLedgerEntries {
         public async Task<GeneralLedgerEntry> PostAsync(GeneralLedgerEntry body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<GeneralLedgerEntry>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GeneralLedgerEntry>(requestInfo, GeneralLedgerEntry.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get generalLedgerEntries from financials</summary>
         public class GetQueryParameters : QueryParametersBase {

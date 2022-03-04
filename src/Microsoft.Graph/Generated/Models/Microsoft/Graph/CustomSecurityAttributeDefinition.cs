@@ -24,11 +24,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Indicates whether only predefined values can be assigned to the custom security attribute. If set to false, free-form values are allowed. Can later be changed from true to false, but cannot be changed from false to true. If type is set to Boolean, usePreDefinedValuesOnly cannot be set to true.</summary>
         public bool? UsePreDefinedValuesOnly { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new CustomSecurityAttributeDefinition CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new CustomSecurityAttributeDefinition();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"allowedValues", (o,n) => { (o as CustomSecurityAttributeDefinition).AllowedValues = n.GetCollectionOfObjectValues<AllowedValue>().ToList(); } },
+                {"allowedValues", (o,n) => { (o as CustomSecurityAttributeDefinition).AllowedValues = n.GetCollectionOfObjectValues<AllowedValue>(AllowedValue.CreateFromDiscriminatorValue).ToList(); } },
                 {"attributeSet", (o,n) => { (o as CustomSecurityAttributeDefinition).AttributeSet = n.GetStringValue(); } },
                 {"description", (o,n) => { (o as CustomSecurityAttributeDefinition).Description = n.GetStringValue(); } },
                 {"isCollection", (o,n) => { (o as CustomSecurityAttributeDefinition).IsCollection = n.GetBoolValue(); } },

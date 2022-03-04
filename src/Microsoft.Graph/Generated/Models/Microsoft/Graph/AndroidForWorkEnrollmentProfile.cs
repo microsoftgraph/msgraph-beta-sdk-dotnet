@@ -26,6 +26,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Value of the most recently created token for this enrollment profile.</summary>
         public string TokenValue { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new AndroidForWorkEnrollmentProfile CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AndroidForWorkEnrollmentProfile();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -37,7 +45,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"enrolledDeviceCount", (o,n) => { (o as AndroidForWorkEnrollmentProfile).EnrolledDeviceCount = n.GetIntValue(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as AndroidForWorkEnrollmentProfile).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"qrCodeContent", (o,n) => { (o as AndroidForWorkEnrollmentProfile).QrCodeContent = n.GetStringValue(); } },
-                {"qrCodeImage", (o,n) => { (o as AndroidForWorkEnrollmentProfile).QrCodeImage = n.GetObjectValue<MimeContent>(); } },
+                {"qrCodeImage", (o,n) => { (o as AndroidForWorkEnrollmentProfile).QrCodeImage = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
                 {"tokenExpirationDateTime", (o,n) => { (o as AndroidForWorkEnrollmentProfile).TokenExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"tokenValue", (o,n) => { (o as AndroidForWorkEnrollmentProfile).TokenValue = n.GetStringValue(); } },
             };

@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.Me.Messages.Item.Copy {
         public async Task<CopyResponse> PostAsync(CopyRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<CopyResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CopyResponse>(requestInfo, CopyResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes message</summary>
         public class CopyResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type message</summary>
-            public Message Message { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.Message Message { get; set; }
             /// <summary>
             /// Instantiates a new copyResponse and sets the default values.
             /// </summary>
             public CopyResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static CopyResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new CopyResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"message", (o,n) => { (o as CopyResponse).Message = n.GetObjectValue<Message>(); } },
+                    {"message", (o,n) => { (o as CopyResponse).Message = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Message>(MicrosoftGraphSdk.Models.Microsoft.Graph.Message.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.Me.Messages.Item.Copy {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<Message>("message", Message);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Message>("message", Message);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

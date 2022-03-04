@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.CompliancePolicies.Item.ScheduledAc
         /// </summary>
         public async Task<ScheduledActionsForRuleResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ScheduledActionsForRuleResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ScheduledActionsForRuleResponse>(requestInfo, ScheduledActionsForRuleResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of scheduled action for this rule
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.CompliancePolicies.Item.ScheduledAc
         public async Task<DeviceManagementComplianceScheduledActionForRule> PostAsync(DeviceManagementComplianceScheduledActionForRule body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementComplianceScheduledActionForRule>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementComplianceScheduledActionForRule>(requestInfo, DeviceManagementComplianceScheduledActionForRule.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The list of scheduled action for this rule</summary>
         public class GetQueryParameters : QueryParametersBase {
