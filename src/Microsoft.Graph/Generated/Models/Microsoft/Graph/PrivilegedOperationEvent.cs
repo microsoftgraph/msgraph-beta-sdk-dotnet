@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the collection of privilegedOperationEvent entities.</summary>
     public class PrivilegedOperationEvent : Entity, IParsable {
         /// <summary>Detailed human readable information for the event.</summary>
         public string AdditionalInformation { get; set; }

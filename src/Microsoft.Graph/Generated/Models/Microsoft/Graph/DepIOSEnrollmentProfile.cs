@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DepIOSEnrollmentProfile : DepEnrollmentBaseProfile, IParsable {
         /// <summary>Indicates if Apperance screen is disabled</summary>
         public bool? AppearanceScreenDisabled { get; set; }
@@ -53,7 +54,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public int? TemporarySessionTimeoutInSeconds { get; set; }
         /// <summary>Indicates if Weclome screen is disabled</summary>
         public bool? UpdateCompleteScreenDisabled { get; set; }
-        /// <summary>Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See Shared iOS and iPadOS devices.</summary>
+        /// <summary>Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See Shared iOS and iPadOS devices</summary>
         public bool? UserlessSharedAadModeEnabled { get; set; }
         /// <summary>Indicates timeout of temporary session</summary>
         public int? UserSessionTimeoutInSeconds { get; set; }

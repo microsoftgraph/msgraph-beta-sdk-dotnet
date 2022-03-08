@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.DataSharingConsents.Item.ConsentToDataSharing {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\dataSharingConsents\{dataSharingConsent-id}\microsoft.graph.consentToDataSharing</summary>
+    /// <summary>Provides operations to call the consentToDataSharing method.</summary>
     public class ConsentToDataSharingRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DataSharingConsents.Item.ConsentToD
             return await RequestAdapter.SendAsync<ConsentToDataSharingResponse>(requestInfo, ConsentToDataSharingResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes dataSharingConsent</summary>
-        public class ConsentToDataSharingResponse : IParsable {
+        public class ConsentToDataSharingResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type dataSharingConsent</summary>

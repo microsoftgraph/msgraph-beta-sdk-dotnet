@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to call the filterOperators method.</summary>
     public class FilterOperatorSchema : Entity, IParsable {
         /// <summary>Arity of the operator. Possible values are: Binary, Unary. The default is Binary.</summary>
         public ScopeOperatorType? Arity { get; set; }

@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Agreements.Item.File.Localizations;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,7 +10,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Agreements.Item.File {
-    /// <summary>Builds and executes requests for operations under \agreements\{agreement-id}\file</summary>
+    /// <summary>Provides operations to manage the file property of the microsoft.graph.agreement entity.</summary>
     public class FileRequestBuilder {
         public LocalizationsRequestBuilder Localizations { get =>
             new LocalizationsRequestBuilder(PathParameters, RequestAdapter);
@@ -48,7 +49,7 @@ namespace MicrosoftGraphSdk.Agreements.Item.File {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Default PDF linked to this agreement.
+        /// Delete navigation property file for agreements
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -84,7 +85,7 @@ namespace MicrosoftGraphSdk.Agreements.Item.File {
             return requestInfo;
         }
         /// <summary>
-        /// Default PDF linked to this agreement.
+        /// Update the navigation property file in agreements
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -102,7 +103,7 @@ namespace MicrosoftGraphSdk.Agreements.Item.File {
             return requestInfo;
         }
         /// <summary>
-        /// Default PDF linked to this agreement.
+        /// Delete navigation property file for agreements
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -110,7 +111,11 @@ namespace MicrosoftGraphSdk.Agreements.Item.File {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Default PDF linked to this agreement.
@@ -122,10 +127,14 @@ namespace MicrosoftGraphSdk.Agreements.Item.File {
         /// </summary>
         public async Task<AgreementFile> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AgreementFile>(requestInfo, AgreementFile.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<AgreementFile>(requestInfo, AgreementFile.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Default PDF linked to this agreement.
+        /// Update the navigation property file in agreements
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -135,7 +144,11 @@ namespace MicrosoftGraphSdk.Agreements.Item.File {
         public async Task PatchAsync(AgreementFile body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Default PDF linked to this agreement.</summary>
         public class GetQueryParameters : QueryParametersBase {

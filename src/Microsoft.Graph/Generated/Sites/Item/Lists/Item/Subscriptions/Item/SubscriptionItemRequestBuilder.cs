@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,7 +9,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.Subscriptions.Item {
-    /// <summary>Builds and executes requests for operations under \sites\{site-id}\lists\{list-id}\subscriptions\{subscription-id}</summary>
+    /// <summary>Provides operations to manage the subscriptions property of the microsoft.graph.list entity.</summary>
     public class SubscriptionItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -44,7 +45,7 @@ namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.Subscriptions.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The set of subscriptions on the list.
+        /// Delete navigation property subscriptions for sites
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -80,7 +81,7 @@ namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.Subscriptions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The set of subscriptions on the list.
+        /// Update the navigation property subscriptions in sites
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -98,7 +99,7 @@ namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.Subscriptions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The set of subscriptions on the list.
+        /// Delete navigation property subscriptions for sites
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -106,7 +107,11 @@ namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.Subscriptions.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// The set of subscriptions on the list.
@@ -118,10 +123,14 @@ namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.Subscriptions.Item {
         /// </summary>
         public async Task<Subscription> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Subscription>(requestInfo, Subscription.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<Subscription>(requestInfo, Subscription.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The set of subscriptions on the list.
+        /// Update the navigation property subscriptions in sites
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -131,7 +140,11 @@ namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.Subscriptions.Item {
         public async Task PatchAsync(Subscription body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The set of subscriptions on the list.</summary>
         public class GetQueryParameters : QueryParametersBase {

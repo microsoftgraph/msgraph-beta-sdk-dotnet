@@ -1,6 +1,19 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraphSdk.Groups.Item.Team.Channels;
+using MicrosoftGraphSdk.Groups.Item.Team.Group;
+using MicrosoftGraphSdk.Groups.Item.Team.InstalledApps;
+using MicrosoftGraphSdk.Groups.Item.Team.Members;
+using MicrosoftGraphSdk.Groups.Item.Team.Operations;
+using MicrosoftGraphSdk.Groups.Item.Team.Owners;
+using MicrosoftGraphSdk.Groups.Item.Team.PermissionGrants;
+using MicrosoftGraphSdk.Groups.Item.Team.Photo;
+using MicrosoftGraphSdk.Groups.Item.Team.PrimaryChannel;
+using MicrosoftGraphSdk.Groups.Item.Team.Schedule;
+using MicrosoftGraphSdk.Groups.Item.Team.Tags;
+using MicrosoftGraphSdk.Groups.Item.Team.Template;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,12 +21,48 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Groups.Item.Team {
-    /// <summary>Builds and executes requests for operations under \groups\{group-id}\team</summary>
+    /// <summary>Provides operations to manage the team property of the microsoft.graph.group entity.</summary>
     public class TeamRequestBuilder {
+        public ChannelsRequestBuilder Channels { get =>
+            new ChannelsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public GroupRequestBuilder Group { get =>
+            new GroupRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public InstalledAppsRequestBuilder InstalledApps { get =>
+            new InstalledAppsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public MembersRequestBuilder Members { get =>
+            new MembersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public OperationsRequestBuilder Operations { get =>
+            new OperationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public OwnersRequestBuilder Owners { get =>
+            new OwnersRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        public PermissionGrantsRequestBuilder PermissionGrants { get =>
+            new PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public PhotoRequestBuilder Photo { get =>
+            new PhotoRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public PrimaryChannelRequestBuilder PrimaryChannel { get =>
+            new PrimaryChannelRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        public ScheduleRequestBuilder Schedule { get =>
+            new ScheduleRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public TagsRequestBuilder Tags { get =>
+            new TagsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public TemplateRequestBuilder Template { get =>
+            new TemplateRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -106,7 +155,11 @@ namespace MicrosoftGraphSdk.Groups.Item.Team {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Get team from groups
@@ -118,7 +171,11 @@ namespace MicrosoftGraphSdk.Groups.Item.Team {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Team> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Team>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Team.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Team>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Team.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property team in groups
@@ -131,7 +188,11 @@ namespace MicrosoftGraphSdk.Groups.Item.Team {
         public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Team body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Get team from groups</summary>
         public class GetQueryParameters : QueryParametersBase {

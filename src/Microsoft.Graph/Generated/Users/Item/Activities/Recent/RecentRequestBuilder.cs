@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.Activities.Recent {
-    /// <summary>Builds and executes requests for operations under \users\{user-id}\activities\microsoft.graph.recent()</summary>
+    /// <summary>Provides operations to call the recent method.</summary>
     public class RecentRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -64,9 +64,9 @@ namespace MicrosoftGraphSdk.Users.Item.Activities.Recent {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<Recent>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<RecentResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<Recent>(requestInfo, Recent.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RecentResponse>(requestInfo, RecentResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

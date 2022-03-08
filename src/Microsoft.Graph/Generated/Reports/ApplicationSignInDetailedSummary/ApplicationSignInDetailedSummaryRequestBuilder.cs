@@ -1,6 +1,8 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
+using MicrosoftGraphSdk.Reports.ApplicationSignInDetailedSummary.Count;
 using MicrosoftGraphSdk.Reports.ApplicationSignInDetailedSummary.Item;
 using System;
 using System.Collections.Generic;
@@ -9,8 +11,11 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Reports.ApplicationSignInDetailedSummary {
-    /// <summary>Builds and executes requests for operations under \reports\applicationSignInDetailedSummary</summary>
+    /// <summary>Provides operations to manage the applicationSignInDetailedSummary property of the microsoft.graph.reportRoot entity.</summary>
     public class ApplicationSignInDetailedSummaryRequestBuilder {
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -72,7 +77,7 @@ namespace MicrosoftGraphSdk.Reports.ApplicationSignInDetailedSummary {
             return requestInfo;
         }
         /// <summary>
-        /// Represents a detailed summary of an application sign-in.
+        /// Create new navigation property to applicationSignInDetailedSummary for reports
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -97,12 +102,16 @@ namespace MicrosoftGraphSdk.Reports.ApplicationSignInDetailedSummary {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ApplicationSignInDetailedSummaryResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<ApplicationSignInDetailedSummaryCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ApplicationSignInDetailedSummaryResponse>(requestInfo, ApplicationSignInDetailedSummaryResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<ApplicationSignInDetailedSummaryCollectionResponse>(requestInfo, ApplicationSignInDetailedSummaryCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Represents a detailed summary of an application sign-in.
+        /// Create new navigation property to applicationSignInDetailedSummary for reports
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -112,7 +121,11 @@ namespace MicrosoftGraphSdk.Reports.ApplicationSignInDetailedSummary {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ApplicationSignInDetailedSummary> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.ApplicationSignInDetailedSummary body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ApplicationSignInDetailedSummary>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ApplicationSignInDetailedSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ApplicationSignInDetailedSummary>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ApplicationSignInDetailedSummary.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Represents a detailed summary of an application sign-in.</summary>
         public class GetQueryParameters : QueryParametersBase {

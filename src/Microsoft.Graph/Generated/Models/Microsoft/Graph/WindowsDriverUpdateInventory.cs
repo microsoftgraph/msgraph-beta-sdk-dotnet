@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class WindowsDriverUpdateInventory : Entity, IParsable {
         /// <summary>The number of devices for which this driver is applicable.</summary>
         public int? ApplicableDeviceCount { get; set; }

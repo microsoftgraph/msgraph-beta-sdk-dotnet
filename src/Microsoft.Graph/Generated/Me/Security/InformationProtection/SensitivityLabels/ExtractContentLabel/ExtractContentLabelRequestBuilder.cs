@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Me.Security.InformationProtection.SensitivityLabels.ExtractContentLabel {
-    /// <summary>Builds and executes requests for operations under \me\security\informationProtection\sensitivityLabels\microsoft.graph.security.extractContentLabel</summary>
+    /// <summary>Provides operations to call the extractContentLabel method.</summary>
     public class ExtractContentLabelRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Me.Security.InformationProtection.SensitivityLabels.
             return await RequestAdapter.SendAsync<ExtractContentLabelResponse>(requestInfo, ExtractContentLabelResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes contentLabel</summary>
-        public class ExtractContentLabelResponse : IParsable {
+        public class ExtractContentLabelResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type contentLabel</summary>

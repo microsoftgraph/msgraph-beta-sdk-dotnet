@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the dataClassificationService singleton.</summary>
     public class SensitivityLabel : Entity, IParsable {
         public SensitivityLabelTarget? ApplicableTo { get; set; }
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ApplicationMode? ApplicationMode { get; set; }

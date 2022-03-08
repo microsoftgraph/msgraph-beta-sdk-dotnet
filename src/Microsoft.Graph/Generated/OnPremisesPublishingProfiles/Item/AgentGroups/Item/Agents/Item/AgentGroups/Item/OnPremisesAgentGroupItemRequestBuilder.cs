@@ -1,6 +1,8 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
+using MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.AgentGroups.Item.Agents.Item.AgentGroups.Item.PublishedResources;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,10 +10,13 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.AgentGroups.Item.Agents.Item.AgentGroups.Item {
-    /// <summary>Builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\agentGroups\{onPremisesAgentGroup-id}\agents\{onPremisesAgent-id}\agentGroups\{onPremisesAgentGroup-id1}</summary>
+    /// <summary>Provides operations to manage the agentGroups property of the microsoft.graph.onPremisesAgent entity.</summary>
     public class OnPremisesAgentGroupItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        public PublishedResourcesRequestBuilder PublishedResources { get =>
+            new PublishedResourcesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
@@ -44,7 +49,7 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.AgentGroups.Item.A
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
+        /// Delete navigation property agentGroups for onPremisesPublishingProfiles
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -80,7 +85,7 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.AgentGroups.Item.A
             return requestInfo;
         }
         /// <summary>
-        /// List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
+        /// Update the navigation property agentGroups in onPremisesPublishingProfiles
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -98,7 +103,7 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.AgentGroups.Item.A
             return requestInfo;
         }
         /// <summary>
-        /// List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
+        /// Delete navigation property agentGroups for onPremisesPublishingProfiles
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -106,7 +111,11 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.AgentGroups.Item.A
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
@@ -118,10 +127,14 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.AgentGroups.Item.A
         /// </summary>
         public async Task<OnPremisesAgentGroup> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<OnPremisesAgentGroup>(requestInfo, OnPremisesAgentGroup.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<OnPremisesAgentGroup>(requestInfo, OnPremisesAgentGroup.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
+        /// Update the navigation property agentGroups in onPremisesPublishingProfiles
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -131,7 +144,11 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.AgentGroups.Item.A
         public async Task PatchAsync(OnPremisesAgentGroup body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

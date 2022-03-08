@@ -3,6 +3,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.OnPremisesConnections.Item.RunHealthChecks;
 using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.OnPremisesConnections.Item.UpdateAdDomainPassword;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,7 +11,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.OnPremisesConnections.Item {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\virtualEndpoint\onPremisesConnections\{cloudPcOnPremisesConnection-id}</summary>
+    /// <summary>Provides operations to manage the onPremisesConnections property of the microsoft.graph.virtualEndpoint entity.</summary>
     public class CloudPcOnPremisesConnectionItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -52,7 +53,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.OnPremisesConnectio
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
+        /// Delete navigation property onPremisesConnections for deviceManagement
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -88,7 +89,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.OnPremisesConnectio
             return requestInfo;
         }
         /// <summary>
-        /// A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
+        /// Update the navigation property onPremisesConnections in deviceManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -106,7 +107,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.OnPremisesConnectio
             return requestInfo;
         }
         /// <summary>
-        /// A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
+        /// Delete navigation property onPremisesConnections for deviceManagement
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -114,7 +115,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.OnPremisesConnectio
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
@@ -126,10 +131,14 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.OnPremisesConnectio
         /// </summary>
         public async Task<CloudPcOnPremisesConnection> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CloudPcOnPremisesConnection>(requestInfo, CloudPcOnPremisesConnection.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<CloudPcOnPremisesConnection>(requestInfo, CloudPcOnPremisesConnection.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
+        /// Update the navigation property onPremisesConnections in deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -139,7 +148,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.OnPremisesConnectio
         public async Task PatchAsync(CloudPcOnPremisesConnection body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.</summary>
         public class GetQueryParameters : QueryParametersBase {

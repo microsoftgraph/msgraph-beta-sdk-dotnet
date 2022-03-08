@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.GetComanagementEligibleDevicesSummary {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\microsoft.graph.getComanagementEligibleDevicesSummary()</summary>
+    /// <summary>Provides operations to call the getComanagementEligibleDevicesSummary method.</summary>
     public class GetComanagementEligibleDevicesSummaryRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GetComanagementEligibleDevicesSumma
             return await RequestAdapter.SendAsync<GetComanagementEligibleDevicesSummaryResponse>(requestInfo, GetComanagementEligibleDevicesSummaryResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes comanagementEligibleDevicesSummary</summary>
-        public class GetComanagementEligibleDevicesSummaryResponse : IParsable {
+        public class GetComanagementEligibleDevicesSummaryResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type comanagementEligibleDevicesSummary</summary>

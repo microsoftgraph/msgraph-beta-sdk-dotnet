@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.DeviceStatuses.Item.App;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,7 +10,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.DeviceStatuses.Item {
-    /// <summary>Builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\userStatuses\{userAppInstallStatus-id}\deviceStatuses\{mobileAppInstallStatus-id}</summary>
+    /// <summary>Provides operations to manage the deviceStatuses property of the microsoft.graph.userAppInstallStatus entity.</summary>
     public class MobileAppInstallStatusItemRequestBuilder {
         public AppRequestBuilder App { get =>
             new AppRequestBuilder(PathParameters, RequestAdapter);
@@ -48,7 +49,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses.Ite
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The install state of the app on devices.
+        /// Delete navigation property deviceStatuses for deviceAppManagement
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -84,7 +85,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses.Ite
             return requestInfo;
         }
         /// <summary>
-        /// The install state of the app on devices.
+        /// Update the navigation property deviceStatuses in deviceAppManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -102,7 +103,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses.Ite
             return requestInfo;
         }
         /// <summary>
-        /// The install state of the app on devices.
+        /// Delete navigation property deviceStatuses for deviceAppManagement
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -110,7 +111,11 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses.Ite
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// The install state of the app on devices.
@@ -122,10 +127,14 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses.Ite
         /// </summary>
         public async Task<MobileAppInstallStatus> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MobileAppInstallStatus>(requestInfo, MobileAppInstallStatus.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MobileAppInstallStatus>(requestInfo, MobileAppInstallStatus.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The install state of the app on devices.
+        /// Update the navigation property deviceStatuses in deviceAppManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -135,7 +144,11 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses.Ite
         public async Task PatchAsync(MobileAppInstallStatus body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The install state of the app on devices.</summary>
         public class GetQueryParameters : QueryParametersBase {

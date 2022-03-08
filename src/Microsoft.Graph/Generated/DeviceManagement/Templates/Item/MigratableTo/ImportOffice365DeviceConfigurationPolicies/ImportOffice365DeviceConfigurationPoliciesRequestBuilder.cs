@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.ImportOffice365DeviceConfigurationPolicies {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\templates\{deviceManagementTemplate-id}\migratableTo\microsoft.graph.importOffice365DeviceConfigurationPolicies</summary>
+    /// <summary>Provides operations to call the importOffice365DeviceConfigurationPolicies method.</summary>
     public class ImportOffice365DeviceConfigurationPoliciesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -64,9 +64,9 @@ namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.ImportO
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<ImportOffice365DeviceConfigurationPolicies>> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<ImportOffice365DeviceConfigurationPoliciesResponse> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreatePostRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<ImportOffice365DeviceConfigurationPolicies>(requestInfo, ImportOffice365DeviceConfigurationPolicies.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ImportOffice365DeviceConfigurationPoliciesResponse>(requestInfo, ImportOffice365DeviceConfigurationPoliciesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

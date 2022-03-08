@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,7 +9,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.ManagedDeviceMobileAppConfigurationStates.Item {
-    /// <summary>Builds and executes requests for operations under \me\managedDevices\{managedDevice-id}\managedDeviceMobileAppConfigurationStates\{managedDeviceMobileAppConfigurationState-id}</summary>
+    /// <summary>Provides operations to manage the managedDeviceMobileAppConfigurationStates property of the microsoft.graph.managedDevice entity.</summary>
     public class ManagedDeviceMobileAppConfigurationStateItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -44,7 +45,7 @@ namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.ManagedDeviceMobileAppConfigu
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Managed device mobile app configuration states for this device.
+        /// Delete navigation property managedDeviceMobileAppConfigurationStates for me
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -80,7 +81,7 @@ namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.ManagedDeviceMobileAppConfigu
             return requestInfo;
         }
         /// <summary>
-        /// Managed device mobile app configuration states for this device.
+        /// Update the navigation property managedDeviceMobileAppConfigurationStates in me
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -98,7 +99,7 @@ namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.ManagedDeviceMobileAppConfigu
             return requestInfo;
         }
         /// <summary>
-        /// Managed device mobile app configuration states for this device.
+        /// Delete navigation property managedDeviceMobileAppConfigurationStates for me
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -106,7 +107,11 @@ namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.ManagedDeviceMobileAppConfigu
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Managed device mobile app configuration states for this device.
@@ -118,10 +123,14 @@ namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.ManagedDeviceMobileAppConfigu
         /// </summary>
         public async Task<ManagedDeviceMobileAppConfigurationState> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ManagedDeviceMobileAppConfigurationState>(requestInfo, ManagedDeviceMobileAppConfigurationState.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<ManagedDeviceMobileAppConfigurationState>(requestInfo, ManagedDeviceMobileAppConfigurationState.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Managed device mobile app configuration states for this device.
+        /// Update the navigation property managedDeviceMobileAppConfigurationStates in me
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -131,7 +140,11 @@ namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.ManagedDeviceMobileAppConfigu
         public async Task PatchAsync(ManagedDeviceMobileAppConfigurationState body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Managed device mobile app configuration states for this device.</summary>
         public class GetQueryParameters : QueryParametersBase {

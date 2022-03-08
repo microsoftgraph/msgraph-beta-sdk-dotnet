@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Reports.GetSkypeForBusinessParticipantActivityCountsWithPeriod {
-    /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.getSkypeForBusinessParticipantActivityCounts(period='{period}')</summary>
+    /// <summary>Provides operations to call the getSkypeForBusinessParticipantActivityCounts method.</summary>
     public class GetSkypeForBusinessParticipantActivityCountsWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -18,7 +18,7 @@ namespace MicrosoftGraphSdk.Reports.GetSkypeForBusinessParticipantActivityCounts
         /// <summary>
         /// Instantiates a new GetSkypeForBusinessParticipantActivityCountsWithPeriodRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
-        /// <param name="period">Usage: period={period}</param>
+        /// <param name="period">Usage: period='{period}'</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// </summary>
         public GetSkypeForBusinessParticipantActivityCountsWithPeriodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string period = default) {
@@ -66,9 +66,9 @@ namespace MicrosoftGraphSdk.Reports.GetSkypeForBusinessParticipantActivityCounts
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<Stream> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<GetSkypeForBusinessParticipantActivityCountsWithPeriodResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetSkypeForBusinessParticipantActivityCountsWithPeriodResponse>(requestInfo, GetSkypeForBusinessParticipantActivityCountsWithPeriodResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

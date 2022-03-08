@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Directory.Recommendations.Item.Dismiss {
-    /// <summary>Builds and executes requests for operations under \directory\recommendations\{recommendation-id}\microsoft.graph.dismiss</summary>
+    /// <summary>Provides operations to call the dismiss method.</summary>
     public class DismissRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Directory.Recommendations.Item.Dismiss {
             return await RequestAdapter.SendAsync<DismissResponse>(requestInfo, DismissResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes recommendation</summary>
-        public class DismissResponse : IParsable {
+        public class DismissResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type recommendation</summary>

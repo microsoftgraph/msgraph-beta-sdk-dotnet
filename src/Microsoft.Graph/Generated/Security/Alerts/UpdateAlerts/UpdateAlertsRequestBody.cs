@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Security.Alerts.UpdateAlerts {
-    public class UpdateAlertsRequestBody : IParsable {
+    /// <summary>Provides operations to call the updateAlerts method.</summary>
+    public class UpdateAlertsRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<Alert> Value { get; set; }

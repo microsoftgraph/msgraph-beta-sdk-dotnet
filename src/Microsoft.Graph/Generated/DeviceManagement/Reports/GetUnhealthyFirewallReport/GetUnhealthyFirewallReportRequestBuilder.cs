@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetUnhealthyFirewallReport {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getUnhealthyFirewallReport</summary>
+    /// <summary>Provides operations to call the getUnhealthyFirewallReport method.</summary>
     public class GetUnhealthyFirewallReportRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -68,10 +68,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetUnhealthyFirewallReport 
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<Stream> PostAsync(GetUnhealthyFirewallReportRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<GetUnhealthyFirewallReportResponse> PostAsync(GetUnhealthyFirewallReportRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetUnhealthyFirewallReportResponse>(requestInfo, GetUnhealthyFirewallReportResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

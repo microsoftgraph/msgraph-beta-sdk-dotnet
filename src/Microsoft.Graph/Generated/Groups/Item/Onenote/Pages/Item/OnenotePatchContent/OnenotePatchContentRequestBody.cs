@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Groups.Item.Onenote.Pages.Item.OnenotePatchContent {
-    public class OnenotePatchContentRequestBody : IParsable {
+    /// <summary>Provides operations to call the onenotePatchContent method.</summary>
+    public class OnenotePatchContentRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<OnenotePatchContentCommand> Commands { get; set; }

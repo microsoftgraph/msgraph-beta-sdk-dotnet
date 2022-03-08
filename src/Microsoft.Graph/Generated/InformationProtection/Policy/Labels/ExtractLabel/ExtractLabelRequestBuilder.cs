@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.InformationProtection.Policy.Labels.ExtractLabel {
-    /// <summary>Builds and executes requests for operations under \informationProtection\policy\labels\microsoft.graph.extractLabel</summary>
+    /// <summary>Provides operations to call the extractLabel method.</summary>
     public class ExtractLabelRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.InformationProtection.Policy.Labels.ExtractLabel {
             return await RequestAdapter.SendAsync<ExtractLabelResponse>(requestInfo, ExtractLabelResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes informationProtectionContentLabel</summary>
-        public class ExtractLabelResponse : IParsable {
+        public class ExtractLabelResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type informationProtectionContentLabel</summary>

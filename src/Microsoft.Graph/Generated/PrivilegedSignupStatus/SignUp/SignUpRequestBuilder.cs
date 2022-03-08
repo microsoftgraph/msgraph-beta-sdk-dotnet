@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.PrivilegedSignupStatus.SignUp {
-    /// <summary>Builds and executes requests for operations under \privilegedSignupStatus\microsoft.graph.signUp</summary>
+    /// <summary>Provides operations to call the signUp method.</summary>
     public class SignUpRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.PrivilegedSignupStatus.SignUp {
             return await RequestAdapter.SendAsync<SignUpResponse>(requestInfo, SignUpResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes privilegedSignupStatus</summary>
-        public class SignUpResponse : IParsable {
+        public class SignUpResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type privilegedSignupStatus</summary>

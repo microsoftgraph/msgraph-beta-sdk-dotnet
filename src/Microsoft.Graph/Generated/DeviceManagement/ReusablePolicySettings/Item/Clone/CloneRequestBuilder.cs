@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.ReusablePolicySettings.Item.Clone {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\reusablePolicySettings\{deviceManagementReusablePolicySetting-id}\microsoft.graph.clone</summary>
+    /// <summary>Provides operations to call the clone method.</summary>
     public class CloneRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ReusablePolicySettings.Item.Clone {
             return await RequestAdapter.SendAsync<CloneResponse>(requestInfo, CloneResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes deviceManagementReusablePolicySetting</summary>
-        public class CloneResponse : IParsable {
+        public class CloneResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type deviceManagementReusablePolicySetting</summary>

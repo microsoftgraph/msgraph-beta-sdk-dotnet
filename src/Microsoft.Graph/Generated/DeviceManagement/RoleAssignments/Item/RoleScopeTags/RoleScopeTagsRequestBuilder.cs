@@ -1,8 +1,9 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.RoleAssignments.Item.RoleScopeTags.GetRoleScopeTagsById;
-using MicrosoftGraphSdk.DeviceManagement.RoleAssignments.Item.RoleScopeTags.HasCustomRoleScopeTag;
-using MicrosoftGraphSdk.DeviceManagement.RoleAssignments.Item.RoleScopeTags.Ref;
+using MicrosoftGraphSdk.DeviceManagement.RoleAssignments.Item.RoleScopeTags.Count;
+using MicrosoftGraphSdk.DeviceManagement.RoleAssignments.Item.RoleScopeTags.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,20 +11,23 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.RoleAssignments.Item.RoleScopeTags {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\roleAssignments\{deviceAndAppManagementRoleAssignment-id}\roleScopeTags</summary>
+    /// <summary>Provides operations to manage the roleScopeTags property of the microsoft.graph.deviceAndAppManagementRoleAssignment entity.</summary>
     public class RoleScopeTagsRequestBuilder {
-        public GetRoleScopeTagsByIdRequestBuilder GetRoleScopeTagsById { get =>
-            new GetRoleScopeTagsByIdRequestBuilder(PathParameters, RequestAdapter);
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        public RefRequestBuilder Ref { get =>
-            new RefRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.roleAssignments.item.roleScopeTags.item collection</summary>
+        public RoleScopeTagItemRequestBuilder this[string position] { get {
+            var urlTplParams = new Dictionary<string, object>(PathParameters);
+            urlTplParams.Add("roleScopeTag_id", position);
+            return new RoleScopeTagItemRequestBuilder(urlTplParams, RequestAdapter);
+        } }
         /// <summary>
         /// Instantiates a new RoleScopeTagsRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -80,15 +84,13 @@ namespace MicrosoftGraphSdk.DeviceManagement.RoleAssignments.Item.RoleScopeTags 
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<RoleScopeTagsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<RoleScopeTagCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RoleScopeTagsResponse>(requestInfo, RoleScopeTagsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>
-        /// Builds and executes requests for operations under \deviceManagement\roleAssignments\{deviceAndAppManagementRoleAssignment-id}\roleScopeTags\microsoft.graph.hasCustomRoleScopeTag()
-        /// </summary>
-        public HasCustomRoleScopeTagRequestBuilder HasCustomRoleScopeTag() {
-            return new HasCustomRoleScopeTagRequestBuilder(PathParameters, RequestAdapter);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<RoleScopeTagCollectionResponse>(requestInfo, RoleScopeTagCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The set of Role Scope Tags defined on the Role Assignment.</summary>
         public class GetQueryParameters : QueryParametersBase {

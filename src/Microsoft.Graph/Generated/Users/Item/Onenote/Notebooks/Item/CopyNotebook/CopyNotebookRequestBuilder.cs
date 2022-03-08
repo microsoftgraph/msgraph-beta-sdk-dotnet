@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.Onenote.Notebooks.Item.CopyNotebook {
-    /// <summary>Builds and executes requests for operations under \users\{user-id}\onenote\notebooks\{notebook-id}\microsoft.graph.copyNotebook</summary>
+    /// <summary>Provides operations to call the copyNotebook method.</summary>
     public class CopyNotebookRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Users.Item.Onenote.Notebooks.Item.CopyNotebook {
             return await RequestAdapter.SendAsync<CopyNotebookResponse>(requestInfo, CopyNotebookResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes onenoteOperation</summary>
-        public class CopyNotebookResponse : IParsable {
+        public class CopyNotebookResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type onenoteOperation</summary>

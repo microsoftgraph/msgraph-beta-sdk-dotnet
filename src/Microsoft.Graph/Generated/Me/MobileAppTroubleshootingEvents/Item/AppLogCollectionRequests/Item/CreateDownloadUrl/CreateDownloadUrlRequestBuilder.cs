@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Me.MobileAppTroubleshootingEvents.Item.AppLogCollectionRequests.Item.CreateDownloadUrl {
-    /// <summary>Builds and executes requests for operations under \me\mobileAppTroubleshootingEvents\{mobileAppTroubleshootingEvent-id}\appLogCollectionRequests\{appLogCollectionRequest-id}\microsoft.graph.createDownloadUrl</summary>
+    /// <summary>Provides operations to call the createDownloadUrl method.</summary>
     public class CreateDownloadUrlRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.Me.MobileAppTroubleshootingEvents.Item.AppLogCollect
             return await RequestAdapter.SendAsync<CreateDownloadUrlResponse>(requestInfo, CreateDownloadUrlResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes appLogCollectionDownloadDetails</summary>
-        public class CreateDownloadUrlResponse : IParsable {
+        public class CreateDownloadUrlResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type appLogCollectionDownloadDetails</summary>

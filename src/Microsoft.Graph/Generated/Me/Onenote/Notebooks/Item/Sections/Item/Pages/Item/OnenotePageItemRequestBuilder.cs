@@ -7,6 +7,7 @@ using MicrosoftGraphSdk.Me.Onenote.Notebooks.Item.Sections.Item.Pages.Item.Paren
 using MicrosoftGraphSdk.Me.Onenote.Notebooks.Item.Sections.Item.Pages.Item.ParentSection;
 using MicrosoftGraphSdk.Me.Onenote.Notebooks.Item.Sections.Item.Pages.Item.Preview;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,7 +15,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Me.Onenote.Notebooks.Item.Sections.Item.Pages.Item {
-    /// <summary>Builds and executes requests for operations under \me\onenote\notebooks\{notebook-id}\sections\{onenoteSection-id}\pages\{onenotePage-id}</summary>
+    /// <summary>Provides operations to manage the pages property of the microsoft.graph.onenoteSection entity.</summary>
     public class OnenotePageItemRequestBuilder {
         public ContentRequestBuilder Content { get =>
             new ContentRequestBuilder(PathParameters, RequestAdapter);
@@ -65,7 +66,7 @@ namespace MicrosoftGraphSdk.Me.Onenote.Notebooks.Item.Sections.Item.Pages.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The collection of pages in the section.  Read-only. Nullable.
+        /// Delete navigation property pages for me
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -101,7 +102,7 @@ namespace MicrosoftGraphSdk.Me.Onenote.Notebooks.Item.Sections.Item.Pages.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of pages in the section.  Read-only. Nullable.
+        /// Update the navigation property pages in me
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -119,7 +120,7 @@ namespace MicrosoftGraphSdk.Me.Onenote.Notebooks.Item.Sections.Item.Pages.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of pages in the section.  Read-only. Nullable.
+        /// Delete navigation property pages for me
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -127,7 +128,11 @@ namespace MicrosoftGraphSdk.Me.Onenote.Notebooks.Item.Sections.Item.Pages.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// The collection of pages in the section.  Read-only. Nullable.
@@ -139,10 +144,14 @@ namespace MicrosoftGraphSdk.Me.Onenote.Notebooks.Item.Sections.Item.Pages.Item {
         /// </summary>
         public async Task<OnenotePage> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<OnenotePage>(requestInfo, OnenotePage.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<OnenotePage>(requestInfo, OnenotePage.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The collection of pages in the section.  Read-only. Nullable.
+        /// Update the navigation property pages in me
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -152,10 +161,14 @@ namespace MicrosoftGraphSdk.Me.Onenote.Notebooks.Item.Sections.Item.Pages.Item {
         public async Task PatchAsync(OnenotePage body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \me\onenote\notebooks\{notebook-id}\sections\{onenoteSection-id}\pages\{onenotePage-id}\microsoft.graph.preview()
+        /// Provides operations to call the preview method.
         /// </summary>
         public PreviewRequestBuilder Preview() {
             return new PreviewRequestBuilder(PathParameters, RequestAdapter);

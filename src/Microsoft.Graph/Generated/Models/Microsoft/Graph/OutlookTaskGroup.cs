@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class OutlookTaskGroup : Entity, IParsable {
         /// <summary>The version of the task group.</summary>
         public string ChangeKey { get; set; }

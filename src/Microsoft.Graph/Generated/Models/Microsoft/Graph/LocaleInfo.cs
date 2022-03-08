@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class LocaleInfo : IParsable {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    public class LocaleInfo : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A name representing the user's locale in natural language, for example, 'English (United States)'.</summary>

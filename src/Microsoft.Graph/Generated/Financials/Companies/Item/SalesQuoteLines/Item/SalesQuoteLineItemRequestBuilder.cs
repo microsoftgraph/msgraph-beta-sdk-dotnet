@@ -3,6 +3,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Financials.Companies.Item.SalesQuoteLines.Item.Account;
 using MicrosoftGraphSdk.Financials.Companies.Item.SalesQuoteLines.Item.Item;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,7 +11,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesQuoteLines.Item {
-    /// <summary>Builds and executes requests for operations under \financials\companies\{company-id}\salesQuoteLines\{salesQuoteLine-id}</summary>
+    /// <summary>Provides operations to manage the salesQuoteLines property of the microsoft.graph.company entity.</summary>
     public class SalesQuoteLineItemRequestBuilder {
         public AccountRequestBuilder Account { get =>
             new AccountRequestBuilder(PathParameters, RequestAdapter);
@@ -114,7 +115,11 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesQuoteLines.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Get salesQuoteLines from financials
@@ -126,7 +131,11 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesQuoteLines.Item {
         /// </summary>
         public async Task<SalesQuoteLine> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SalesQuoteLine>(requestInfo, SalesQuoteLine.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<SalesQuoteLine>(requestInfo, SalesQuoteLine.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property salesQuoteLines in financials
@@ -139,7 +148,11 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesQuoteLines.Item {
         public async Task PatchAsync(SalesQuoteLine body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Get salesQuoteLines from financials</summary>
         public class GetQueryParameters : QueryParametersBase {

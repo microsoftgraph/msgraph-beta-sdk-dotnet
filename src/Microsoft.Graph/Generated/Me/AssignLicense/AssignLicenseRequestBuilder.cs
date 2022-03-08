@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Me.AssignLicense {
-    /// <summary>Builds and executes requests for operations under \me\microsoft.graph.assignLicense</summary>
+    /// <summary>Provides operations to call the assignLicense method.</summary>
     public class AssignLicenseRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Me.AssignLicense {
             return await RequestAdapter.SendAsync<AssignLicenseResponse>(requestInfo, AssignLicenseResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes user</summary>
-        public class AssignLicenseResponse : IParsable {
+        public class AssignLicenseResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type user</summary>

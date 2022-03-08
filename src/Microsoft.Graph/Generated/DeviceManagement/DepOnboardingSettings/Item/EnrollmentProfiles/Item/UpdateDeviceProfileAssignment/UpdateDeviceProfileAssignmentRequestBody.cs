@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles.Item.UpdateDeviceProfileAssignment {
-    public class UpdateDeviceProfileAssignmentRequestBody : IParsable {
+    /// <summary>Provides operations to call the updateDeviceProfileAssignment method.</summary>
+    public class UpdateDeviceProfileAssignmentRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<string> DeviceIds { get; set; }

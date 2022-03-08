@@ -4,6 +4,7 @@ using MicrosoftGraphSdk.DeviceManagement.EmbeddedSIMActivationCodePools.Item.Ass
 using MicrosoftGraphSdk.DeviceManagement.EmbeddedSIMActivationCodePools.Item.Assignments;
 using MicrosoftGraphSdk.DeviceManagement.EmbeddedSIMActivationCodePools.Item.DeviceStates;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +12,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.EmbeddedSIMActivationCodePools.Item {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\embeddedSIMActivationCodePools\{embeddedSIMActivationCodePool-id}</summary>
+    /// <summary>Provides operations to manage the embeddedSIMActivationCodePools property of the microsoft.graph.deviceManagement entity.</summary>
     public class EmbeddedSIMActivationCodePoolItemRequestBuilder {
         public AssignRequestBuilder Assign { get =>
             new AssignRequestBuilder(PathParameters, RequestAdapter);
@@ -56,7 +57,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.EmbeddedSIMActivationCodePools.Item
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The embedded SIM activation code pools created by this account.
+        /// Delete navigation property embeddedSIMActivationCodePools for deviceManagement
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -92,7 +93,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.EmbeddedSIMActivationCodePools.Item
             return requestInfo;
         }
         /// <summary>
-        /// The embedded SIM activation code pools created by this account.
+        /// Update the navigation property embeddedSIMActivationCodePools in deviceManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -110,7 +111,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.EmbeddedSIMActivationCodePools.Item
             return requestInfo;
         }
         /// <summary>
-        /// The embedded SIM activation code pools created by this account.
+        /// Delete navigation property embeddedSIMActivationCodePools for deviceManagement
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -118,7 +119,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.EmbeddedSIMActivationCodePools.Item
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// The embedded SIM activation code pools created by this account.
@@ -130,10 +135,14 @@ namespace MicrosoftGraphSdk.DeviceManagement.EmbeddedSIMActivationCodePools.Item
         /// </summary>
         public async Task<EmbeddedSIMActivationCodePool> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<EmbeddedSIMActivationCodePool>(requestInfo, EmbeddedSIMActivationCodePool.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<EmbeddedSIMActivationCodePool>(requestInfo, EmbeddedSIMActivationCodePool.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The embedded SIM activation code pools created by this account.
+        /// Update the navigation property embeddedSIMActivationCodePools in deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -143,7 +152,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.EmbeddedSIMActivationCodePools.Item
         public async Task PatchAsync(EmbeddedSIMActivationCodePool body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The embedded SIM activation code pools created by this account.</summary>
         public class GetQueryParameters : QueryParametersBase {

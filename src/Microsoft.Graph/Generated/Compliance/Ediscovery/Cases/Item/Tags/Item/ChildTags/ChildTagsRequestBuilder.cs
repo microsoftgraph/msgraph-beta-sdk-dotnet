@@ -1,7 +1,9 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildTags.AsHierarchy;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildTags.Ref;
+using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildTags.Count;
+using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildTags.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,23 +11,23 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildTags {
-    /// <summary>Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\tags\{tag-id}\childTags</summary>
+    /// <summary>Provides operations to manage the childTags property of the microsoft.graph.ediscovery.tag entity.</summary>
     public class ChildTagsRequestBuilder {
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        public RefRequestBuilder Ref { get =>
-            new RefRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>
-        /// Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\tags\{tag-id}\childTags\microsoft.graph.ediscovery.asHierarchy()
-        /// </summary>
-        public AsHierarchyRequestBuilder AsHierarchy() {
-            return new AsHierarchyRequestBuilder(PathParameters, RequestAdapter);
-        }
+        /// <summary>Gets an item from the MicrosoftGraphSdk.compliance.ediscovery.cases.item.tags.item.childTags.item collection</summary>
+        public TagItemRequestBuilder this[string position] { get {
+            var urlTplParams = new Dictionary<string, object>(PathParameters);
+            urlTplParams.Add("tag_id1", position);
+            return new TagItemRequestBuilder(urlTplParams, RequestAdapter);
+        } }
         /// <summary>
         /// Instantiates a new ChildTagsRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -82,9 +84,13 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildTags
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ChildTagsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<TagCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ChildTagsResponse>(requestInfo, ChildTagsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<TagCollectionResponse>(requestInfo, TagCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Returns the tags that are a child of a tag.</summary>
         public class GetQueryParameters : QueryParametersBase {

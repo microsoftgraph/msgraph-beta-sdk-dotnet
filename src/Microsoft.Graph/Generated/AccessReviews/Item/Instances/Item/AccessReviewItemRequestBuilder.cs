@@ -1,6 +1,10 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraphSdk.AccessReviews.Item.Instances.Item.Decisions;
+using MicrosoftGraphSdk.AccessReviews.Item.Instances.Item.MyDecisions;
+using MicrosoftGraphSdk.AccessReviews.Item.Instances.Item.Reviewers;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,12 +12,21 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.AccessReviews.Item.Instances.Item {
-    /// <summary>Builds and executes requests for operations under \accessReviews\{accessReview-id}\instances\{accessReview-id1}</summary>
+    /// <summary>Provides operations to manage the instances property of the microsoft.graph.accessReview entity.</summary>
     public class AccessReviewItemRequestBuilder {
+        public DecisionsRequestBuilder Decisions { get =>
+            new DecisionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public MyDecisionsRequestBuilder MyDecisions { get =>
+            new MyDecisionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        public ReviewersRequestBuilder Reviewers { get =>
+            new ReviewersRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -44,7 +57,7 @@ namespace MicrosoftGraphSdk.AccessReviews.Item.Instances.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The collection of access reviews instances past, present and future, if this object is a recurring access review.
+        /// Delete navigation property instances for accessReviews
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -80,7 +93,7 @@ namespace MicrosoftGraphSdk.AccessReviews.Item.Instances.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of access reviews instances past, present and future, if this object is a recurring access review.
+        /// Update the navigation property instances in accessReviews
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -98,7 +111,7 @@ namespace MicrosoftGraphSdk.AccessReviews.Item.Instances.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of access reviews instances past, present and future, if this object is a recurring access review.
+        /// Delete navigation property instances for accessReviews
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -106,7 +119,11 @@ namespace MicrosoftGraphSdk.AccessReviews.Item.Instances.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// The collection of access reviews instances past, present and future, if this object is a recurring access review.
@@ -118,10 +135,14 @@ namespace MicrosoftGraphSdk.AccessReviews.Item.Instances.Item {
         /// </summary>
         public async Task<AccessReview> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AccessReview>(requestInfo, AccessReview.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<AccessReview>(requestInfo, AccessReview.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The collection of access reviews instances past, present and future, if this object is a recurring access review.
+        /// Update the navigation property instances in accessReviews
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -131,7 +152,11 @@ namespace MicrosoftGraphSdk.AccessReviews.Item.Instances.Item {
         public async Task PatchAsync(AccessReview body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The collection of access reviews instances past, present and future, if this object is a recurring access review.</summary>
         public class GetQueryParameters : QueryParametersBase {

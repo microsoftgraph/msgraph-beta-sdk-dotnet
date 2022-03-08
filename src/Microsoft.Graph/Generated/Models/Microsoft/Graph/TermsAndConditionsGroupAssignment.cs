@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class TermsAndConditionsGroupAssignment : Entity, IParsable {
         /// <summary>Unique identifier of a group that the T&C policy is assigned to.</summary>
         public string TargetGroupId { get; set; }

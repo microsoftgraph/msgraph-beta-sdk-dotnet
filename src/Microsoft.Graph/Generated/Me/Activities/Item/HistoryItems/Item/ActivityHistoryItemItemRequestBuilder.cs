@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Me.Activities.Item.HistoryItems.Item.Activity;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,7 +10,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Me.Activities.Item.HistoryItems.Item {
-    /// <summary>Builds and executes requests for operations under \me\activities\{userActivity-id}\historyItems\{activityHistoryItem-id}</summary>
+    /// <summary>Provides operations to manage the historyItems property of the microsoft.graph.userActivity entity.</summary>
     public class ActivityHistoryItemItemRequestBuilder {
         public ActivityRequestBuilder Activity { get =>
             new ActivityRequestBuilder(PathParameters, RequestAdapter);
@@ -48,7 +49,7 @@ namespace MicrosoftGraphSdk.Me.Activities.Item.HistoryItems.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+        /// Delete navigation property historyItems for me
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -84,7 +85,7 @@ namespace MicrosoftGraphSdk.Me.Activities.Item.HistoryItems.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+        /// Update the navigation property historyItems in me
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -102,7 +103,7 @@ namespace MicrosoftGraphSdk.Me.Activities.Item.HistoryItems.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+        /// Delete navigation property historyItems for me
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -110,7 +111,11 @@ namespace MicrosoftGraphSdk.Me.Activities.Item.HistoryItems.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
@@ -122,10 +127,14 @@ namespace MicrosoftGraphSdk.Me.Activities.Item.HistoryItems.Item {
         /// </summary>
         public async Task<ActivityHistoryItem> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ActivityHistoryItem>(requestInfo, ActivityHistoryItem.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<ActivityHistoryItem>(requestInfo, ActivityHistoryItem.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+        /// Update the navigation property historyItems in me
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -135,7 +144,11 @@ namespace MicrosoftGraphSdk.Me.Activities.Item.HistoryItems.Item {
         public async Task PatchAsync(ActivityHistoryItem body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.</summary>
         public class GetQueryParameters : QueryParametersBase {

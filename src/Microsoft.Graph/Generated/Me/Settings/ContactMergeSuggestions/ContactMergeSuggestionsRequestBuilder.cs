@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,7 +9,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Me.Settings.ContactMergeSuggestions {
-    /// <summary>Builds and executes requests for operations under \me\settings\contactMergeSuggestions</summary>
+    /// <summary>Provides operations to manage the contactMergeSuggestions property of the microsoft.graph.userSettings entity.</summary>
     public class ContactMergeSuggestionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -59,7 +60,7 @@ namespace MicrosoftGraphSdk.Me.Settings.ContactMergeSuggestions {
             return requestInfo;
         }
         /// <summary>
-        /// Get contactMergeSuggestions from me
+        /// The user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -106,10 +107,14 @@ namespace MicrosoftGraphSdk.Me.Settings.ContactMergeSuggestions {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get contactMergeSuggestions from me
+        /// The user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -118,7 +123,11 @@ namespace MicrosoftGraphSdk.Me.Settings.ContactMergeSuggestions {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ContactMergeSuggestions> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ContactMergeSuggestions>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ContactMergeSuggestions.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ContactMergeSuggestions>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ContactMergeSuggestions.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property contactMergeSuggestions in me
@@ -131,9 +140,13 @@ namespace MicrosoftGraphSdk.Me.Settings.ContactMergeSuggestions {
         public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.ContactMergeSuggestions body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get contactMergeSuggestions from me</summary>
+        /// <summary>The user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
             public string[] Expand { get; set; }

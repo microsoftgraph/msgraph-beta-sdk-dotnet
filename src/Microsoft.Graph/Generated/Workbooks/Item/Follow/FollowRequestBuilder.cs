@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Workbooks.Item.Follow {
-    /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\microsoft.graph.follow</summary>
+    /// <summary>Provides operations to call the follow method.</summary>
     public class FollowRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Follow {
             return await RequestAdapter.SendAsync<FollowResponse>(requestInfo, FollowResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes driveItem</summary>
-        public class FollowResponse : IParsable {
+        public class FollowResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type driveItem</summary>

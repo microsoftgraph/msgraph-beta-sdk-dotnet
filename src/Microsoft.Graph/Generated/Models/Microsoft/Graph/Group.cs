@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class Group : DirectoryObject, IParsable {
         /// <summary>The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.</summary>
         public List<DirectoryObject> AcceptedSenders { get; set; }
@@ -132,7 +133,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public bool? SecurityEnabled { get; set; }
         /// <summary>Security identifier of the group, used in Windows scenarios. Returned by default.</summary>
         public string SecurityIdentifier { get; set; }
-        /// <summary>Read-only. Nullable.</summary>
+        /// <summary>Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.</summary>
         public List<DirectorySetting> Settings { get; set; }
         /// <summary>The list of SharePoint sites in this group. Access the default site with /sites/root.</summary>
         public List<Site> Sites { get; set; }

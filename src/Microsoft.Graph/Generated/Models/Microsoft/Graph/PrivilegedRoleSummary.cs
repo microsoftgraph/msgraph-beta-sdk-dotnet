@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the collection of privilegedRoleAssignmentRequest entities.</summary>
     public class PrivilegedRoleSummary : Entity, IParsable {
         /// <summary>The number of users that have the role assigned and the role is activated.</summary>
         public int? ElevatedCount { get; set; }

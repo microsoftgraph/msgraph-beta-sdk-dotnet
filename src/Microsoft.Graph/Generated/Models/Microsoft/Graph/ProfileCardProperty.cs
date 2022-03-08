@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the collection of organization entities.</summary>
     public class ProfileCardProperty : Entity, IParsable {
         /// <summary>Allows an administrator to set a custom display label for the directory property and localize it for the users in their tenant.</summary>
         public List<ProfileCardAnnotation> Annotations { get; set; }

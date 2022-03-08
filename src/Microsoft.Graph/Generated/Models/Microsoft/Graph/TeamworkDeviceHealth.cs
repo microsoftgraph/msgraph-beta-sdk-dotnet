@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the teamwork singleton.</summary>
     public class TeamworkDeviceHealth : Entity, IParsable {
         public TeamworkConnection Connection { get; set; }
         /// <summary>Identity of the user who created the device health document.</summary>

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.Messages.Item.EventMessageRequest.Decline {
-    /// <summary>Builds and executes requests for operations under \users\{user-id}\messages\{message-id}\microsoft.graph.eventMessageRequest\microsoft.graph.decline</summary>
+    /// <summary>Provides operations to call the decline method.</summary>
     public class DeclineRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

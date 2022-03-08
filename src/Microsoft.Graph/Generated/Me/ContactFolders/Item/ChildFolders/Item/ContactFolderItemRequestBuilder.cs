@@ -1,6 +1,10 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraphSdk.Me.ContactFolders.Item.ChildFolders.Item.Contacts;
+using MicrosoftGraphSdk.Me.ContactFolders.Item.ChildFolders.Item.MultiValueExtendedProperties;
+using MicrosoftGraphSdk.Me.ContactFolders.Item.ChildFolders.Item.SingleValueExtendedProperties;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,12 +12,21 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Me.ContactFolders.Item.ChildFolders.Item {
-    /// <summary>Builds and executes requests for operations under \me\contactFolders\{contactFolder-id}\childFolders\{contactFolder-id1}</summary>
+    /// <summary>Provides operations to manage the childFolders property of the microsoft.graph.contactFolder entity.</summary>
     public class ContactFolderItemRequestBuilder {
+        public ContactsRequestBuilder Contacts { get =>
+            new ContactsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public MultiValueExtendedPropertiesRequestBuilder MultiValueExtendedProperties { get =>
+            new MultiValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        public SingleValueExtendedPropertiesRequestBuilder SingleValueExtendedProperties { get =>
+            new SingleValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -44,7 +57,7 @@ namespace MicrosoftGraphSdk.Me.ContactFolders.Item.ChildFolders.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The collection of child folders in the folder. Navigation property. Read-only. Nullable.
+        /// Delete navigation property childFolders for me
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -80,7 +93,7 @@ namespace MicrosoftGraphSdk.Me.ContactFolders.Item.ChildFolders.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of child folders in the folder. Navigation property. Read-only. Nullable.
+        /// Update the navigation property childFolders in me
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -98,7 +111,7 @@ namespace MicrosoftGraphSdk.Me.ContactFolders.Item.ChildFolders.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of child folders in the folder. Navigation property. Read-only. Nullable.
+        /// Delete navigation property childFolders for me
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -106,7 +119,11 @@ namespace MicrosoftGraphSdk.Me.ContactFolders.Item.ChildFolders.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// The collection of child folders in the folder. Navigation property. Read-only. Nullable.
@@ -118,10 +135,14 @@ namespace MicrosoftGraphSdk.Me.ContactFolders.Item.ChildFolders.Item {
         /// </summary>
         public async Task<ContactFolder> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ContactFolder>(requestInfo, ContactFolder.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<ContactFolder>(requestInfo, ContactFolder.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The collection of child folders in the folder. Navigation property. Read-only. Nullable.
+        /// Update the navigation property childFolders in me
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -131,7 +152,11 @@ namespace MicrosoftGraphSdk.Me.ContactFolders.Item.ChildFolders.Item {
         public async Task PatchAsync(ContactFolder body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The collection of child folders in the folder. Navigation property. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

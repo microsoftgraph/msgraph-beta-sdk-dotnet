@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class PendingContentUpdate : IParsable {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    public class PendingContentUpdate : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Date and time the pending binary operation was queued in UTC time. Read-only.</summary>

@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class AttachmentItem : IParsable {
+    /// <summary>Provides operations to call the createUploadSession method.</summary>
+    public class AttachmentItem : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type of attachment. Possible values are: file, item, reference. Required.</summary>

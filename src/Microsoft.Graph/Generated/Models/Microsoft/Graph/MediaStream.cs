@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class MediaStream : IParsable {
+    /// <summary>Provides operations to manage the commsApplication singleton.</summary>
+    public class MediaStream : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The direction. The possible values are inactive, sendOnly, receiveOnly, sendReceive.</summary>

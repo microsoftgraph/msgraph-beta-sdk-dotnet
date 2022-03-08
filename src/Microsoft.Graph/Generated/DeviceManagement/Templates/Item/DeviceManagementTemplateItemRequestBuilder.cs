@@ -6,6 +6,7 @@ using MicrosoftGraphSdk.DeviceManagement.Templates.Item.CreateInstance;
 using MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo;
 using MicrosoftGraphSdk.DeviceManagement.Templates.Item.Settings;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,7 +14,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\templates\{deviceManagementTemplate-id}</summary>
+    /// <summary>Provides operations to manage the templates property of the microsoft.graph.deviceManagement entity.</summary>
     public class DeviceManagementTemplateItemRequestBuilder {
         public CategoriesRequestBuilder Categories { get =>
             new CategoriesRequestBuilder(PathParameters, RequestAdapter);
@@ -34,8 +35,8 @@ namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
-        /// Builds and executes requests for operations under \deviceManagement\templates\{deviceManagementTemplate-id}\microsoft.graph.compare(templateId='{templateId}')
-        /// <param name="templateId">Usage: templateId={templateId}</param>
+        /// Provides operations to call the compare method.
+        /// <param name="templateId">Usage: templateId='{templateId}'</param>
         /// </summary>
         public CompareWithTemplateIdRequestBuilder CompareWithTemplateId(string templateId) {
             if(string.IsNullOrEmpty(templateId)) throw new ArgumentNullException(nameof(templateId));
@@ -69,7 +70,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The available templates
+        /// Delete navigation property templates for deviceManagement
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -105,7 +106,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The available templates
+        /// Update the navigation property templates in deviceManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -123,7 +124,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The available templates
+        /// Delete navigation property templates for deviceManagement
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -131,7 +132,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// The available templates
@@ -143,10 +148,14 @@ namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item {
         /// </summary>
         public async Task<DeviceManagementTemplate> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementTemplate>(requestInfo, DeviceManagementTemplate.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<DeviceManagementTemplate>(requestInfo, DeviceManagementTemplate.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The available templates
+        /// Update the navigation property templates in deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -156,7 +165,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item {
         public async Task PatchAsync(DeviceManagementTemplate body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The available templates</summary>
         public class GetQueryParameters : QueryParametersBase {

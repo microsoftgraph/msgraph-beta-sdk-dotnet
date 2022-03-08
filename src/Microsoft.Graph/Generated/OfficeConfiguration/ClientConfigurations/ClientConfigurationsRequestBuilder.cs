@@ -1,6 +1,8 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
+using MicrosoftGraphSdk.OfficeConfiguration.ClientConfigurations.Count;
 using MicrosoftGraphSdk.OfficeConfiguration.ClientConfigurations.Item;
 using MicrosoftGraphSdk.OfficeConfiguration.ClientConfigurations.UpdatePriorities;
 using System;
@@ -10,8 +12,11 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.OfficeConfiguration.ClientConfigurations {
-    /// <summary>Builds and executes requests for operations under \officeConfiguration\clientConfigurations</summary>
+    /// <summary>Provides operations to manage the clientConfigurations property of the microsoft.graph.officeConfiguration entity.</summary>
     public class ClientConfigurationsRequestBuilder {
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -76,7 +81,7 @@ namespace MicrosoftGraphSdk.OfficeConfiguration.ClientConfigurations {
             return requestInfo;
         }
         /// <summary>
-        /// List of office Client configuration.
+        /// Create new navigation property to clientConfigurations for officeConfiguration
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -101,12 +106,16 @@ namespace MicrosoftGraphSdk.OfficeConfiguration.ClientConfigurations {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ClientConfigurationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<OfficeClientConfigurationCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ClientConfigurationsResponse>(requestInfo, ClientConfigurationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<OfficeClientConfigurationCollectionResponse>(requestInfo, OfficeClientConfigurationCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// List of office Client configuration.
+        /// Create new navigation property to clientConfigurations for officeConfiguration
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -116,7 +125,11 @@ namespace MicrosoftGraphSdk.OfficeConfiguration.ClientConfigurations {
         public async Task<OfficeClientConfiguration> PostAsync(OfficeClientConfiguration body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<OfficeClientConfiguration>(requestInfo, OfficeClientConfiguration.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<OfficeClientConfiguration>(requestInfo, OfficeClientConfiguration.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>List of office Client configuration.</summary>
         public class GetQueryParameters : QueryParametersBase {

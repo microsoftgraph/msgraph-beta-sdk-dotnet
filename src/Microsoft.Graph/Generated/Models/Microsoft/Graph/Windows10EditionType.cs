@@ -1,4 +1,5 @@
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public enum Windows10EditionType {
         Windows10Enterprise,
         Windows10EnterpriseN,

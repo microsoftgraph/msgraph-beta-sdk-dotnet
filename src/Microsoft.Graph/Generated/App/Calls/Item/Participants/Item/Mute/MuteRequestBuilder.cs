@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.App.Calls.Item.Participants.Item.Mute {
-    /// <summary>Builds and executes requests for operations under \app\calls\{call-id}\participants\{participant-id}\microsoft.graph.mute</summary>
+    /// <summary>Provides operations to call the mute method.</summary>
     public class MuteRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.App.Calls.Item.Participants.Item.Mute {
             return await RequestAdapter.SendAsync<MuteResponse>(requestInfo, MuteResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes muteParticipantOperation</summary>
-        public class MuteResponse : IParsable {
+        public class MuteResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type muteParticipantOperation</summary>

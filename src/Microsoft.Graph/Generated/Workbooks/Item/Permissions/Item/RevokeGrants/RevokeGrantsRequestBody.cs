@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Workbooks.Item.Permissions.Item.RevokeGrants {
-    public class RevokeGrantsRequestBody : IParsable {
+    /// <summary>Provides operations to call the revokeGrants method.</summary>
+    public class RevokeGrantsRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<DriveRecipient> Grantees { get; set; }

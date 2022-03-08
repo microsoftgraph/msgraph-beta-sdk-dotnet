@@ -1,6 +1,9 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Workbooks.Item.Activities.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
+using MicrosoftGraphSdk.Workbooks.Item.Activities.Count;
+using MicrosoftGraphSdk.Workbooks.Item.Activities.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,17 +11,23 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Workbooks.Item.Activities {
-    /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\activities</summary>
+    /// <summary>Provides operations to manage the activities property of the microsoft.graph.driveItem entity.</summary>
     public class ActivitiesRequestBuilder {
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        public RefRequestBuilder Ref { get =>
-            new RefRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>Gets an item from the MicrosoftGraphSdk.workbooks.item.activities.item collection</summary>
+        public ItemActivityOLDItemRequestBuilder this[string position] { get {
+            var urlTplParams = new Dictionary<string, object>(PathParameters);
+            urlTplParams.Add("itemActivityOLD_id", position);
+            return new ItemActivityOLDItemRequestBuilder(urlTplParams, RequestAdapter);
+        } }
         /// <summary>
         /// Instantiates a new ActivitiesRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -75,9 +84,13 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Activities {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ActivitiesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<ItemActivityOLDCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ActivitiesResponse>(requestInfo, ActivitiesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<ItemActivityOLDCollectionResponse>(requestInfo, ItemActivityOLDCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The list of recent activities that took place on this item.</summary>
         public class GetQueryParameters : QueryParametersBase {

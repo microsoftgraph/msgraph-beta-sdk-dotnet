@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.App.Calls.Item.ChangeScreenSharingRole {
-    /// <summary>Builds and executes requests for operations under \app\calls\{call-id}\microsoft.graph.changeScreenSharingRole</summary>
+    /// <summary>Provides operations to call the changeScreenSharingRole method.</summary>
     public class ChangeScreenSharingRoleRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

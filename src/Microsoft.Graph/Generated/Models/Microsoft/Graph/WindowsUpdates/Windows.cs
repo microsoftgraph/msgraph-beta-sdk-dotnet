@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates {
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class Windows : Entity, IParsable {
         /// <summary>Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates.Updates Updates { get; set; }

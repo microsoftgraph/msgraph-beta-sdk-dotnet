@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Sites.Item.ContentTypes.Item.Publish {
-    /// <summary>Builds and executes requests for operations under \sites\{site-id}\contentTypes\{contentType-id}\microsoft.graph.publish</summary>
+    /// <summary>Provides operations to call the publish method.</summary>
     public class PublishRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

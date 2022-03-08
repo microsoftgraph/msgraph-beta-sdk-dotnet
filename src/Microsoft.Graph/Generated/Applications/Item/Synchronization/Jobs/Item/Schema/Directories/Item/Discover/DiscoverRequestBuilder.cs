@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item.Schema.Directories.Item.Discover {
-    /// <summary>Builds and executes requests for operations under \applications\{application-id}\synchronization\jobs\{synchronizationJob-id}\schema\directories\{directoryDefinition-id}\microsoft.graph.discover</summary>
+    /// <summary>Provides operations to call the discover method.</summary>
     public class DiscoverRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item.Schema.D
             return await RequestAdapter.SendAsync<DiscoverResponse>(requestInfo, DiscoverResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes directoryDefinition</summary>
-        public class DiscoverResponse : IParsable {
+        public class DiscoverResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type directoryDefinition</summary>

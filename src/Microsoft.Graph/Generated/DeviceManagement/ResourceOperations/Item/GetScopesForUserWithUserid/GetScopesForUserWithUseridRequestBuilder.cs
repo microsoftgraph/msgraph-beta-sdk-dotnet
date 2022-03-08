@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.ResourceOperations.Item.GetScopesForUserWithUserid {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\resourceOperations\{resourceOperation-id}\microsoft.graph.getScopesForUser(userid='{userid}')</summary>
+    /// <summary>Provides operations to call the getScopesForUser method.</summary>
     public class GetScopesForUserWithUseridRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -19,7 +19,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ResourceOperations.Item.GetScopesFo
         /// Instantiates a new GetScopesForUserWithUseridRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// <param name="userid">Usage: userid={userid}</param>
+        /// <param name="userid">Usage: userid='{userid}'</param>
         /// </summary>
         public GetScopesForUserWithUseridRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string userid = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
@@ -66,9 +66,9 @@ namespace MicrosoftGraphSdk.DeviceManagement.ResourceOperations.Item.GetScopesFo
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<string>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<GetScopesForUserWithUseridResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendPrimitiveCollectionAsync<string>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetScopesForUserWithUseridResponse>(requestInfo, GetScopesForUserWithUseridResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

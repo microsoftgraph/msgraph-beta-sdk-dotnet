@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the searchEntity singleton.</summary>
     public class SearchEntity : Entity, IParsable {
         /// <summary>Administrative answer in Microsoft Search results to define common acronyms in a organization.</summary>
         public List<Acronym> Acronyms { get; set; }

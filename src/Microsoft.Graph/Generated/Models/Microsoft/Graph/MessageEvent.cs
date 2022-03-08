@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the collection of messageEvent entities.</summary>
     public class MessageEvent : Entity, IParsable {
         public DateTimeOffset? DateTime { get; set; }
         public string Description { get; set; }

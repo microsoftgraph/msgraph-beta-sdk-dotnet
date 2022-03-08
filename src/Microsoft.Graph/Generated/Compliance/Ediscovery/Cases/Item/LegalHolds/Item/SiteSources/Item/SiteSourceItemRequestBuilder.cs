@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.LegalHolds.Item.SiteSources.Item.Site;
 using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,7 +10,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.LegalHolds.Item.SiteSources.Item {
-    /// <summary>Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\legalHolds\{legalHold-id}\siteSources\{siteSource-id}</summary>
+    /// <summary>Provides operations to manage the siteSources property of the microsoft.graph.ediscovery.legalHold entity.</summary>
     public class SiteSourceItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -48,7 +49,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.LegalHolds.Item.Sit
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Data source entity for SharePoint sites associated with the legal hold.
+        /// Delete navigation property siteSources for compliance
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -84,7 +85,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.LegalHolds.Item.Sit
             return requestInfo;
         }
         /// <summary>
-        /// Data source entity for SharePoint sites associated with the legal hold.
+        /// Update the navigation property siteSources in compliance
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -102,7 +103,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.LegalHolds.Item.Sit
             return requestInfo;
         }
         /// <summary>
-        /// Data source entity for SharePoint sites associated with the legal hold.
+        /// Delete navigation property siteSources for compliance
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -110,7 +111,11 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.LegalHolds.Item.Sit
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Data source entity for SharePoint sites associated with the legal hold.
@@ -122,10 +127,14 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.LegalHolds.Item.Sit
         /// </summary>
         public async Task<SiteSource> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SiteSource>(requestInfo, SiteSource.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<SiteSource>(requestInfo, SiteSource.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Data source entity for SharePoint sites associated with the legal hold.
+        /// Update the navigation property siteSources in compliance
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -135,7 +144,11 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.LegalHolds.Item.Sit
         public async Task PatchAsync(SiteSource body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Data source entity for SharePoint sites associated with the legal hold.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.CreateServerLogCollectionRequest {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\microsoftTunnelSites\{microsoftTunnelSite-id}\microsoftTunnelServers\{microsoftTunnelServer-id}\microsoft.graph.createServerLogCollectionRequest</summary>
+    /// <summary>Provides operations to call the createServerLogCollectionRequest method.</summary>
     public class CreateServerLogCollectionRequestRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelSites.Item.Microsoft
             return await RequestAdapter.SendAsync<CreateServerLogCollectionRequestResponse>(requestInfo, CreateServerLogCollectionRequestResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes microsoftTunnelServerLogCollectionResponse</summary>
-        public class CreateServerLogCollectionRequestResponse : IParsable {
+        public class CreateServerLogCollectionRequestResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type microsoftTunnelServerLogCollectionResponse</summary>

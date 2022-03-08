@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Print.Printers.Create {
-    /// <summary>Builds and executes requests for operations under \print\printers\microsoft.graph.create</summary>
+    /// <summary>Provides operations to call the create method.</summary>
     public class CreateRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public class TargetedManagedAppProtection : ManagedAppProtection, IParsable {
         /// <summary>Public Apps selection: group or individual. Possible values are: selectedPublicApps, allCoreMicrosoftApps, allMicrosoftApps, allApps.</summary>
         public TargetedManagedAppGroupType? AppGroupType { get; set; }

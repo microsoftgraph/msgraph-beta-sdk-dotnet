@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.PermissionGrants.Item.GetMemberObjects {
-    public class GetMemberObjectsRequestBody : IParsable {
+    /// <summary>Provides operations to call the getMemberObjects method.</summary>
+    public class GetMemberObjectsRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public bool? SecurityEnabledOnly { get; set; }

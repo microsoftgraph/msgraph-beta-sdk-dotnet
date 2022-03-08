@@ -1,8 +1,10 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.DeviceImages.Count;
 using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages;
 using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.DeviceImages.Item;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,8 +12,11 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.DeviceImages {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\virtualEndpoint\deviceImages</summary>
+    /// <summary>Provides operations to manage the deviceImages property of the microsoft.graph.virtualEndpoint entity.</summary>
     public class DeviceImagesRequestBuilder {
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -73,7 +78,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.DeviceImages {
             return requestInfo;
         }
         /// <summary>
-        /// The image resource on Cloud PC.
+        /// Create new navigation property to deviceImages for deviceManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -98,18 +103,22 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.DeviceImages {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<DeviceImagesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<CloudPcDeviceImageCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceImagesResponse>(requestInfo, DeviceImagesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<CloudPcDeviceImageCollectionResponse>(requestInfo, CloudPcDeviceImageCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \deviceManagement\virtualEndpoint\deviceImages\microsoft.graph.getSourceImages()
+        /// Provides operations to call the getSourceImages method.
         /// </summary>
         public GetSourceImagesRequestBuilder GetSourceImages() {
             return new GetSourceImagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// The image resource on Cloud PC.
+        /// Create new navigation property to deviceImages for deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -119,7 +128,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.DeviceImages {
         public async Task<CloudPcDeviceImage> PostAsync(CloudPcDeviceImage body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<CloudPcDeviceImage>(requestInfo, CloudPcDeviceImage.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<CloudPcDeviceImage>(requestInfo, CloudPcDeviceImage.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The image resource on Cloud PC.</summary>
         public class GetQueryParameters : QueryParametersBase {

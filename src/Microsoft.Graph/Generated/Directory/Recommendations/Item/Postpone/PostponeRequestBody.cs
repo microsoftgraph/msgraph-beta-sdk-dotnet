@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Directory.Recommendations.Item.Postpone {
-    public class PostponeRequestBody : IParsable {
+    /// <summary>Provides operations to call the postpone method.</summary>
+    public class PostponeRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public DateTimeOffset? PostponeUntilDateTime { get; set; }

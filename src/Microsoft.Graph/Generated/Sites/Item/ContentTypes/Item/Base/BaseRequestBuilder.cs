@@ -1,12 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Sites.Item.ContentTypes.Item.Base.AssociateWithHubSites;
-using MicrosoftGraphSdk.Sites.Item.ContentTypes.Item.Base.CopyToDefaultContentLocation;
-using MicrosoftGraphSdk.Sites.Item.ContentTypes.Item.Base.IsPublished;
-using MicrosoftGraphSdk.Sites.Item.ContentTypes.Item.Base.Publish;
-using MicrosoftGraphSdk.Sites.Item.ContentTypes.Item.Base.Ref;
-using MicrosoftGraphSdk.Sites.Item.ContentTypes.Item.Base.Unpublish;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,27 +9,12 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Sites.Item.ContentTypes.Item.Base {
-    /// <summary>Builds and executes requests for operations under \sites\{site-id}\contentTypes\{contentType-id}\base</summary>
+    /// <summary>Provides operations to manage the base property of the microsoft.graph.contentType entity.</summary>
     public class BaseRequestBuilder {
-        public AssociateWithHubSitesRequestBuilder AssociateWithHubSites { get =>
-            new AssociateWithHubSitesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        public CopyToDefaultContentLocationRequestBuilder CopyToDefaultContentLocation { get =>
-            new CopyToDefaultContentLocationRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        public PublishRequestBuilder Publish { get =>
-            new PublishRequestBuilder(PathParameters, RequestAdapter);
-        }
-        public RefRequestBuilder Ref { get =>
-            new RefRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        public UnpublishRequestBuilder Unpublish { get =>
-            new UnpublishRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -95,13 +75,11 @@ namespace MicrosoftGraphSdk.Sites.Item.ContentTypes.Item.Base {
         /// </summary>
         public async Task<ContentType> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ContentType>(requestInfo, ContentType.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>
-        /// Builds and executes requests for operations under \sites\{site-id}\contentTypes\{contentType-id}\base\microsoft.graph.isPublished()
-        /// </summary>
-        public IsPublishedRequestBuilder IsPublished() {
-            return new IsPublishedRequestBuilder(PathParameters, RequestAdapter);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<ContentType>(requestInfo, ContentType.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Parent contentType from which this content type is derived.</summary>
         public class GetQueryParameters : QueryParametersBase {

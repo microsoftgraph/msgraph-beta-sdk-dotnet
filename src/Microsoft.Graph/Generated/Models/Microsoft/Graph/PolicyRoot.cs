@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class PolicyRoot : IParsable {
+    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
+    public class PolicyRoot : IParsable, IAdditionalDataHolder {
         /// <summary>The policy that contains directory-level access review settings.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessReviewPolicy AccessReviewPolicy { get; set; }
         /// <summary>The policy that controls the idle time out for web sessions for applications.</summary>

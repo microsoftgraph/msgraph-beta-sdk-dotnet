@@ -9,6 +9,7 @@ using MicrosoftGraphSdk.BookingBusinesses.Item.Services;
 using MicrosoftGraphSdk.BookingBusinesses.Item.StaffMembers;
 using MicrosoftGraphSdk.BookingBusinesses.Item.Unpublish;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,7 +17,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.BookingBusinesses.Item {
-    /// <summary>Builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}</summary>
+    /// <summary>Provides operations to manage the collection of bookingBusiness entities.</summary>
     public class BookingBusinessItemRequestBuilder {
         public AppointmentsRequestBuilder Appointments { get =>
             new AppointmentsRequestBuilder(PathParameters, RequestAdapter);
@@ -76,7 +77,7 @@ namespace MicrosoftGraphSdk.BookingBusinesses.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Represents a Microsot Bookings Business.
+        /// Delete entity from bookingBusinesses
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -112,7 +113,7 @@ namespace MicrosoftGraphSdk.BookingBusinesses.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents a Microsot Bookings Business.
+        /// Update entity in bookingBusinesses
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -130,7 +131,7 @@ namespace MicrosoftGraphSdk.BookingBusinesses.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents a Microsot Bookings Business.
+        /// Delete entity from bookingBusinesses
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -138,7 +139,11 @@ namespace MicrosoftGraphSdk.BookingBusinesses.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Represents a Microsot Bookings Business.
@@ -150,10 +155,14 @@ namespace MicrosoftGraphSdk.BookingBusinesses.Item {
         /// </summary>
         public async Task<BookingBusiness> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<BookingBusiness>(requestInfo, BookingBusiness.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<BookingBusiness>(requestInfo, BookingBusiness.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Represents a Microsot Bookings Business.
+        /// Update entity in bookingBusinesses
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -163,7 +172,11 @@ namespace MicrosoftGraphSdk.BookingBusinesses.Item {
         public async Task PatchAsync(BookingBusiness body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Represents a Microsot Bookings Business.</summary>
         public class GetQueryParameters : QueryParametersBase {

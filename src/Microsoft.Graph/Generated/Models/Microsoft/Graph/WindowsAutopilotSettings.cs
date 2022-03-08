@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class WindowsAutopilotSettings : Entity, IParsable {
         /// <summary>Last data sync date time with DDS service.</summary>
         public DateTimeOffset? LastManualSyncTriggerDateTime { get; set; }

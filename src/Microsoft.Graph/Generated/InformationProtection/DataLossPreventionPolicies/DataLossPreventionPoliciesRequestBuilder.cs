@@ -1,8 +1,10 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraphSdk.InformationProtection.DataLossPreventionPolicies.Count;
 using MicrosoftGraphSdk.InformationProtection.DataLossPreventionPolicies.Evaluate;
 using MicrosoftGraphSdk.InformationProtection.DataLossPreventionPolicies.Item;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,8 +12,11 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.InformationProtection.DataLossPreventionPolicies {
-    /// <summary>Builds and executes requests for operations under \informationProtection\dataLossPreventionPolicies</summary>
+    /// <summary>Provides operations to manage the dataLossPreventionPolicies property of the microsoft.graph.informationProtection entity.</summary>
     public class DataLossPreventionPoliciesRequestBuilder {
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
         public EvaluateRequestBuilder Evaluate { get =>
             new EvaluateRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -101,9 +106,13 @@ namespace MicrosoftGraphSdk.InformationProtection.DataLossPreventionPolicies {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<DataLossPreventionPoliciesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<DataLossPreventionPolicyCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DataLossPreventionPoliciesResponse>(requestInfo, DataLossPreventionPoliciesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<DataLossPreventionPolicyCollectionResponse>(requestInfo, DataLossPreventionPolicyCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to dataLossPreventionPolicies for informationProtection
@@ -116,7 +125,11 @@ namespace MicrosoftGraphSdk.InformationProtection.DataLossPreventionPolicies {
         public async Task<DataLossPreventionPolicy> PostAsync(DataLossPreventionPolicy body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DataLossPreventionPolicy>(requestInfo, DataLossPreventionPolicy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<DataLossPreventionPolicy>(requestInfo, DataLossPreventionPolicy.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Get dataLossPreventionPolicies from informationProtection</summary>
         public class GetQueryParameters : QueryParametersBase {

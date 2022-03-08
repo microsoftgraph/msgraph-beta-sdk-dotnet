@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Identity.B2cUserFlows.Item.UserAttributeAssignments.GetOrder {
-    /// <summary>Builds and executes requests for operations under \identity\b2cUserFlows\{b2cIdentityUserFlow-id}\userAttributeAssignments\microsoft.graph.getOrder()</summary>
+    /// <summary>Provides operations to call the getOrder method.</summary>
     public class GetOrderRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.Identity.B2cUserFlows.Item.UserAttributeAssignments.
             return await RequestAdapter.SendAsync<GetOrderResponse>(requestInfo, GetOrderResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes assignmentOrder</summary>
-        public class GetOrderResponse : IParsable {
+        public class GetOrderResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type assignmentOrder</summary>

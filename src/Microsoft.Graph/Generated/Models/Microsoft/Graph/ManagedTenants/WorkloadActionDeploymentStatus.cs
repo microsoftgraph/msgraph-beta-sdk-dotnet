@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
-    public class WorkloadActionDeploymentStatus : IParsable {
+    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
+    public class WorkloadActionDeploymentStatus : IParsable, IAdditionalDataHolder {
         /// <summary>The unique identifier for the workload action. Required. Read-only.</summary>
         public string ActionId { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

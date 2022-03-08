@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.SetScheduledRetireState {
-    public class SetScheduledRetireStateRequestBody : IParsable {
+    /// <summary>Provides operations to call the setScheduledRetireState method.</summary>
+    public class SetScheduledRetireStateRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<string> ManagedDeviceIds { get; set; }

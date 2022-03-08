@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class DriveItemVersion : BaseItemVersion, IParsable {
         /// <summary>The content stream for this version of the item.</summary>
         public byte[] Content { get; set; }

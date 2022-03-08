@@ -1,6 +1,11 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraphSdk.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.Category;
+using MicrosoftGraphSdk.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.DefinitionFile;
+using MicrosoftGraphSdk.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.NextVersionDefinition;
+using MicrosoftGraphSdk.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition.Presentations;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,10 +13,22 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\groupPolicyDefinitions\{groupPolicyDefinition-id}\previousVersionDefinition</summary>
+    /// <summary>Provides operations to manage the previousVersionDefinition property of the microsoft.graph.groupPolicyDefinition entity.</summary>
     public class PreviousVersionDefinitionRequestBuilder {
+        public CategoryRequestBuilder Category { get =>
+            new CategoryRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public DefinitionFileRequestBuilder DefinitionFile { get =>
+            new DefinitionFileRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public NextVersionDefinitionRequestBuilder NextVersionDefinition { get =>
+            new NextVersionDefinitionRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        public PresentationsRequestBuilder Presentations { get =>
+            new PresentationsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
@@ -44,7 +61,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyDefinitions.Item.Previou
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Definition of the previous version of this definition
+        /// Delete navigation property previousVersionDefinition for deviceManagement
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -80,7 +97,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyDefinitions.Item.Previou
             return requestInfo;
         }
         /// <summary>
-        /// Definition of the previous version of this definition
+        /// Update the navigation property previousVersionDefinition in deviceManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -98,7 +115,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyDefinitions.Item.Previou
             return requestInfo;
         }
         /// <summary>
-        /// Definition of the previous version of this definition
+        /// Delete navigation property previousVersionDefinition for deviceManagement
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -106,7 +123,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyDefinitions.Item.Previou
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Definition of the previous version of this definition
@@ -118,10 +139,14 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyDefinitions.Item.Previou
         /// </summary>
         public async Task<GroupPolicyDefinition> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<GroupPolicyDefinition>(requestInfo, GroupPolicyDefinition.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<GroupPolicyDefinition>(requestInfo, GroupPolicyDefinition.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Definition of the previous version of this definition
+        /// Update the navigation property previousVersionDefinition in deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -131,7 +156,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyDefinitions.Item.Previou
         public async Task PatchAsync(GroupPolicyDefinition body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Definition of the previous version of this definition</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.FindMeetingTimes {
-    /// <summary>Builds and executes requests for operations under \users\{user-id}\microsoft.graph.findMeetingTimes</summary>
+    /// <summary>Provides operations to call the findMeetingTimes method.</summary>
     public class FindMeetingTimesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Users.Item.FindMeetingTimes {
             return await RequestAdapter.SendAsync<FindMeetingTimesResponse>(requestInfo, FindMeetingTimesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes meetingTimeSuggestionsResult</summary>
-        public class FindMeetingTimesResponse : IParsable {
+        public class FindMeetingTimesResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type meetingTimeSuggestionsResult</summary>

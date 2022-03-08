@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public class SideLoadingKey : Entity, IParsable {
         /// <summary>Side Loading Key description displayed to the ITPro Admins..</summary>
         public string Description { get; set; }

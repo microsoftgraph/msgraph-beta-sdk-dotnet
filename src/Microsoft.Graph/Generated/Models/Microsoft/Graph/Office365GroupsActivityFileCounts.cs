@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to call the getOffice365GroupsActivityFileCounts method.</summary>
     public class Office365GroupsActivityFileCounts : Entity, IParsable {
         /// <summary>The number of files that were viewed, edited, shared, or synced in the group's SharePoint document library.</summary>
         public long? Active { get; set; }

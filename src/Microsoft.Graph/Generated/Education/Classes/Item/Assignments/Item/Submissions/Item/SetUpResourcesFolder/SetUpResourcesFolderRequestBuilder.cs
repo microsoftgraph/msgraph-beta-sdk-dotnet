@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Education.Classes.Item.Assignments.Item.Submissions.Item.SetUpResourcesFolder {
-    /// <summary>Builds and executes requests for operations under \education\classes\{educationClass-id}\assignments\{educationAssignment-id}\submissions\{educationSubmission-id}\microsoft.graph.setUpResourcesFolder</summary>
+    /// <summary>Provides operations to call the setUpResourcesFolder method.</summary>
     public class SetUpResourcesFolderRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.Education.Classes.Item.Assignments.Item.Submissions.
             return await RequestAdapter.SendAsync<SetUpResourcesFolderResponse>(requestInfo, SetUpResourcesFolderResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes educationSubmission</summary>
-        public class SetUpResourcesFolderResponse : IParsable {
+        public class SetUpResourcesFolderResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type educationSubmission</summary>

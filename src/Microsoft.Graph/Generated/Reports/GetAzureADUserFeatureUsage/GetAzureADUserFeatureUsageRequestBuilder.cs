@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Reports.GetAzureADUserFeatureUsage {
-    /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.getAzureADUserFeatureUsage()</summary>
+    /// <summary>Provides operations to call the getAzureADUserFeatureUsage method.</summary>
     public class GetAzureADUserFeatureUsageRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -64,9 +64,9 @@ namespace MicrosoftGraphSdk.Reports.GetAzureADUserFeatureUsage {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<GetAzureADUserFeatureUsage>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<GetAzureADUserFeatureUsageResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<GetAzureADUserFeatureUsage>(requestInfo, GetAzureADUserFeatureUsage.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetAzureADUserFeatureUsageResponse>(requestInfo, GetAzureADUserFeatureUsageResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

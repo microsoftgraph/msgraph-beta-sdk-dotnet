@@ -1,8 +1,9 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.NoncustodialSources.ApplyHold;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.NoncustodialSources.Ref;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.NoncustodialSources.RemoveHold;
+using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.NoncustodialSources.Count;
+using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.NoncustodialSources.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,23 +11,23 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.NoncustodialSources {
-    /// <summary>Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}\noncustodialSources</summary>
+    /// <summary>Provides operations to manage the noncustodialSources property of the microsoft.graph.ediscovery.sourceCollection entity.</summary>
     public class NoncustodialSourcesRequestBuilder {
-        public ApplyHoldRequestBuilder ApplyHold { get =>
-            new ApplyHoldRequestBuilder(PathParameters, RequestAdapter);
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        public RefRequestBuilder Ref { get =>
-            new RefRequestBuilder(PathParameters, RequestAdapter);
-        }
-        public RemoveHoldRequestBuilder RemoveHold { get =>
-            new RemoveHoldRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>Gets an item from the MicrosoftGraphSdk.compliance.ediscovery.cases.item.sourceCollections.item.noncustodialSources.item collection</summary>
+        public NoncustodialDataSourceItemRequestBuilder this[string position] { get {
+            var urlTplParams = new Dictionary<string, object>(PathParameters);
+            urlTplParams.Add("noncustodialDataSource_id", position);
+            return new NoncustodialDataSourceItemRequestBuilder(urlTplParams, RequestAdapter);
+        } }
         /// <summary>
         /// Instantiates a new NoncustodialSourcesRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -83,9 +84,13 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.I
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<NoncustodialSourcesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<NoncustodialDataSourceCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<NoncustodialSourcesResponse>(requestInfo, NoncustodialSourcesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<NoncustodialDataSourceCollectionResponse>(requestInfo, NoncustodialDataSourceCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>noncustodialDataSource sources that are included in the sourceCollection</summary>
         public class GetQueryParameters : QueryParametersBase {

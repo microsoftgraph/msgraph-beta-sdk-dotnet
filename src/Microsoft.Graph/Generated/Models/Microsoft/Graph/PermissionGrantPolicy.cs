@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class PermissionGrantPolicy : PolicyBase, IParsable {
         /// <summary>Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.</summary>
         public List<PermissionGrantConditionSet> Excludes { get; set; }

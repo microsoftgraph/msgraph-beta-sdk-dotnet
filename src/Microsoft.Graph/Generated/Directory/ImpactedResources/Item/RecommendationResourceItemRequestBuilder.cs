@@ -5,6 +5,7 @@ using MicrosoftGraphSdk.Directory.ImpactedResources.Item.Dismiss;
 using MicrosoftGraphSdk.Directory.ImpactedResources.Item.Postpone;
 using MicrosoftGraphSdk.Directory.ImpactedResources.Item.Reactivate;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,7 +13,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Directory.ImpactedResources.Item {
-    /// <summary>Builds and executes requests for operations under \directory\impactedResources\{recommendationResource-id}</summary>
+    /// <summary>Provides operations to manage the impactedResources property of the microsoft.graph.directory entity.</summary>
     public class RecommendationResourceItemRequestBuilder {
         public CompleteRequestBuilder Complete { get =>
             new CompleteRequestBuilder(PathParameters, RequestAdapter);
@@ -122,7 +123,11 @@ namespace MicrosoftGraphSdk.Directory.ImpactedResources.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Get impactedResources from directory
@@ -134,7 +139,11 @@ namespace MicrosoftGraphSdk.Directory.ImpactedResources.Item {
         /// </summary>
         public async Task<RecommendationResource> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RecommendationResource>(requestInfo, RecommendationResource.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<RecommendationResource>(requestInfo, RecommendationResource.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property impactedResources in directory
@@ -147,7 +156,11 @@ namespace MicrosoftGraphSdk.Directory.ImpactedResources.Item {
         public async Task PatchAsync(RecommendationResource body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Get impactedResources from directory</summary>
         public class GetQueryParameters : QueryParametersBase {

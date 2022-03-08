@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.GetRemediationSummary {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\deviceHealthScripts\microsoft.graph.getRemediationSummary()</summary>
+    /// <summary>Provides operations to call the getRemediationSummary method.</summary>
     public class GetRemediationSummaryRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.GetRemediationS
             return await RequestAdapter.SendAsync<GetRemediationSummaryResponse>(requestInfo, GetRemediationSummaryResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes deviceHealthScriptRemediationSummary</summary>
-        public class GetRemediationSummaryResponse : IParsable {
+        public class GetRemediationSummaryResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type deviceHealthScriptRemediationSummary</summary>

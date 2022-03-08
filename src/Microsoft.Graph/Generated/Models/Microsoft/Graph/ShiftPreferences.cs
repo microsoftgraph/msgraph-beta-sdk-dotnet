@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class ShiftPreferences : ChangeTrackedEntity, IParsable {
         /// <summary>Availability of the user to be scheduled for work and its recurrence pattern.</summary>
         public List<ShiftAvailability> Availability { get; set; }

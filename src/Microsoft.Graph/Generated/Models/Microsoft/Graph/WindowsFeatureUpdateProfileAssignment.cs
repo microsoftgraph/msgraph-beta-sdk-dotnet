@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class WindowsFeatureUpdateProfileAssignment : Entity, IParsable {
         /// <summary>The assignment target that the feature update profile is assigned to.</summary>
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }

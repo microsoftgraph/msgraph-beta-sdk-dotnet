@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Insights;
 using MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance;
 using System;
@@ -10,7 +11,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item {
-    /// <summary>Builds and executes requests for operations under \users\{user-id}\pendingAccessReviewInstances\{accessReviewInstance-id}\stages\{accessReviewStage-id}\decisions\{accessReviewInstanceDecisionItem-id}</summary>
+    /// <summary>Provides operations to manage the decisions property of the microsoft.graph.accessReviewStage entity.</summary>
     public class AccessReviewInstanceDecisionItemItemRequestBuilder {
         public InsightsRequestBuilder Insights { get =>
             new InsightsRequestBuilder(PathParameters, RequestAdapter);
@@ -52,7 +53,7 @@ namespace MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Stages.
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
+        /// Delete navigation property decisions for users
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -88,7 +89,7 @@ namespace MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Stages.
             return requestInfo;
         }
         /// <summary>
-        /// Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
+        /// Update the navigation property decisions in users
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -106,7 +107,7 @@ namespace MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Stages.
             return requestInfo;
         }
         /// <summary>
-        /// Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
+        /// Delete navigation property decisions for users
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -114,7 +115,11 @@ namespace MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Stages.
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
@@ -126,10 +131,14 @@ namespace MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Stages.
         /// </summary>
         public async Task<AccessReviewInstanceDecisionItem> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AccessReviewInstanceDecisionItem>(requestInfo, AccessReviewInstanceDecisionItem.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<AccessReviewInstanceDecisionItem>(requestInfo, AccessReviewInstanceDecisionItem.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
+        /// Update the navigation property decisions in users
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -139,7 +148,11 @@ namespace MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Stages.
         public async Task PatchAsync(AccessReviewInstanceDecisionItem body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.</summary>
         public class GetQueryParameters : QueryParametersBase {

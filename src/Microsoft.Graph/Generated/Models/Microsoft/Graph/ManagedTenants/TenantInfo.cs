@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
-    public class TenantInfo : IParsable {
+    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
+    public class TenantInfo : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Optional.</summary>

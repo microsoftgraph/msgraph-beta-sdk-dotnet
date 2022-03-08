@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.TrustFramework.KeySets.Item.UploadPkcs12 {
-    public class UploadPkcs12RequestBody : IParsable {
+    /// <summary>Provides operations to call the uploadPkcs12 method.</summary>
+    public class UploadPkcs12RequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string Key { get; set; }

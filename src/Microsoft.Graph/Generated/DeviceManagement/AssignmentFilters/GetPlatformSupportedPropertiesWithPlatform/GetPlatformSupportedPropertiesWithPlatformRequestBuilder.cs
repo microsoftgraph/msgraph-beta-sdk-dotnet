@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.GetPlatformSupportedPropertiesWithPlatform {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\assignmentFilters\microsoft.graph.getPlatformSupportedProperties(platform={platform})</summary>
+    /// <summary>Provides operations to call the getPlatformSupportedProperties method.</summary>
     public class GetPlatformSupportedPropertiesWithPlatformRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -18,13 +18,13 @@ namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.GetPlatformSuppor
         /// <summary>
         /// Instantiates a new GetPlatformSupportedPropertiesWithPlatformRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
-        /// <param name="platform">Usage: platform={platform}</param>
+        /// <param name="platform">Usage: platform='{platform}'</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// </summary>
         public GetPlatformSupportedPropertiesWithPlatformRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string platform = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/assignmentFilters/microsoft.graph.getPlatformSupportedProperties(platform={platform})";
+            UrlTemplate = "{+baseurl}/deviceManagement/assignmentFilters/microsoft.graph.getPlatformSupportedProperties(platform='{platform}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             urlTplParams.Add("platform", platform);
             PathParameters = urlTplParams;
@@ -38,7 +38,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.GetPlatformSuppor
         public GetPlatformSupportedPropertiesWithPlatformRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/assignmentFilters/microsoft.graph.getPlatformSupportedProperties(platform={platform})";
+            UrlTemplate = "{+baseurl}/deviceManagement/assignmentFilters/microsoft.graph.getPlatformSupportedProperties(platform='{platform}')";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -66,9 +66,9 @@ namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.GetPlatformSuppor
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<GetPlatformSupportedPropertiesWithPlatform>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<GetPlatformSupportedPropertiesWithPlatformResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<GetPlatformSupportedPropertiesWithPlatform>(requestInfo, GetPlatformSupportedPropertiesWithPlatform.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetPlatformSupportedPropertiesWithPlatformResponse>(requestInfo, GetPlatformSupportedPropertiesWithPlatformResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

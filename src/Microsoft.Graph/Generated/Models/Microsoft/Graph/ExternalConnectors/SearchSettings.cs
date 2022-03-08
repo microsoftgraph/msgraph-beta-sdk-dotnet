@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors {
-    public class SearchSettings : IParsable {
+    /// <summary>Provides operations to manage the collection of externalConnection entities.</summary>
+    public class SearchSettings : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed.</summary>

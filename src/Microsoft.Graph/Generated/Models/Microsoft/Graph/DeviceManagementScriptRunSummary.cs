@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DeviceManagementScriptRunSummary : Entity, IParsable {
         /// <summary>Error device count.</summary>
         public int? ErrorDeviceCount { get; set; }

@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using MicrosoftGraphSdk.Models.Microsoft.Graph.Security;
 using MicrosoftGraphSdk.Users.Item.Security.InformationProtection;
 using System;
@@ -9,7 +10,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.Security {
-    /// <summary>Builds and executes requests for operations under \users\{user-id}\security</summary>
+    /// <summary>Provides operations to manage the security property of the microsoft.graph.user entity.</summary>
     public class SecurityRequestBuilder {
         public InformationProtectionRequestBuilder InformationProtection { get =>
             new InformationProtectionRequestBuilder(PathParameters, RequestAdapter);
@@ -110,7 +111,11 @@ namespace MicrosoftGraphSdk.Users.Item.Security {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Get security from users
@@ -122,7 +127,11 @@ namespace MicrosoftGraphSdk.Users.Item.Security {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Security.Security> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Security.Security>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Security.Security.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Security.Security>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Security.Security.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property security in users
@@ -135,7 +144,11 @@ namespace MicrosoftGraphSdk.Users.Item.Security {
         public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Security.Security body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Get security from users</summary>
         public class GetQueryParameters : QueryParametersBase {

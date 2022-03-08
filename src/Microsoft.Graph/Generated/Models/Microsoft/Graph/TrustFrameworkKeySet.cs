@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the trustFramework singleton.</summary>
     public class TrustFrameworkKeySet : Entity, IParsable {
         /// <summary>A collection of the keys.</summary>
         public List<TrustFrameworkKey> Keys { get; set; }

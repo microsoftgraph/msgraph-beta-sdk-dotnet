@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the financials singleton.</summary>
     public class Company : Entity, IParsable {
         public List<Account> Accounts { get; set; }
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.AgedAccountsPayable> AgedAccountsPayable { get; set; }

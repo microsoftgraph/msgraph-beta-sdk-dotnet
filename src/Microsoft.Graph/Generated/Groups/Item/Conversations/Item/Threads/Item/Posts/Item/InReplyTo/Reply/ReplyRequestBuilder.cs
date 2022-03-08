@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.InReplyTo.Reply {
-    /// <summary>Builds and executes requests for operations under \groups\{group-id}\conversations\{conversation-id}\threads\{conversationThread-id}\posts\{post-id}\inReplyTo\microsoft.graph.reply</summary>
+    /// <summary>Provides operations to call the reply method.</summary>
     public class ReplyRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

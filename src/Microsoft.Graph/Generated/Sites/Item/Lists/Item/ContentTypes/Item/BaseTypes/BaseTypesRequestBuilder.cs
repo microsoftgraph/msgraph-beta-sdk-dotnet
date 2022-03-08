@@ -1,9 +1,9 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.BaseTypes.AddCopy;
-using MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.BaseTypes.AddCopyFromContentTypeHub;
-using MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.BaseTypes.GetCompatibleHubContentTypes;
-using MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.BaseTypes.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
+using MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.BaseTypes.Count;
+using MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.BaseTypes.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,23 +11,23 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.BaseTypes {
-    /// <summary>Builds and executes requests for operations under \sites\{site-id}\lists\{list-id}\contentTypes\{contentType-id}\baseTypes</summary>
+    /// <summary>Provides operations to manage the baseTypes property of the microsoft.graph.contentType entity.</summary>
     public class BaseTypesRequestBuilder {
-        public AddCopyRequestBuilder AddCopy { get =>
-            new AddCopyRequestBuilder(PathParameters, RequestAdapter);
-        }
-        public AddCopyFromContentTypeHubRequestBuilder AddCopyFromContentTypeHub { get =>
-            new AddCopyFromContentTypeHubRequestBuilder(PathParameters, RequestAdapter);
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        public RefRequestBuilder Ref { get =>
-            new RefRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>Gets an item from the MicrosoftGraphSdk.sites.item.lists.item.contentTypes.item.baseTypes.item collection</summary>
+        public ContentTypeItemRequestBuilder this[string position] { get {
+            var urlTplParams = new Dictionary<string, object>(PathParameters);
+            urlTplParams.Add("contentType_id1", position);
+            return new ContentTypeItemRequestBuilder(urlTplParams, RequestAdapter);
+        } }
         /// <summary>
         /// Instantiates a new BaseTypesRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -84,15 +84,13 @@ namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.BaseTypes {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<BaseTypesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<ContentTypeCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<BaseTypesResponse>(requestInfo, BaseTypesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>
-        /// Builds and executes requests for operations under \sites\{site-id}\lists\{list-id}\contentTypes\{contentType-id}\baseTypes\microsoft.graph.getCompatibleHubContentTypes()
-        /// </summary>
-        public GetCompatibleHubContentTypesRequestBuilder GetCompatibleHubContentTypes() {
-            return new GetCompatibleHubContentTypesRequestBuilder(PathParameters, RequestAdapter);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<ContentTypeCollectionResponse>(requestInfo, ContentTypeCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The collection of content types that are ancestors of this content type.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.ConfigManagerCollections.GetPolicySummaryWithPolicyId {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\configManagerCollections\microsoft.graph.getPolicySummary(policyId='{policyId}')</summary>
+    /// <summary>Provides operations to call the getPolicySummary method.</summary>
     public class GetPolicySummaryWithPolicyIdRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -19,7 +19,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ConfigManagerCollections.GetPolicyS
         /// <summary>
         /// Instantiates a new GetPolicySummaryWithPolicyIdRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
-        /// <param name="policyId">Usage: policyId={policyId}</param>
+        /// <param name="policyId">Usage: policyId='{policyId}'</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// </summary>
         public GetPolicySummaryWithPolicyIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string policyId = default) {
@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ConfigManagerCollections.GetPolicyS
             return await RequestAdapter.SendAsync<GetPolicySummaryWithPolicyIdResponse>(requestInfo, GetPolicySummaryWithPolicyIdResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes configManagerPolicySummary</summary>
-        public class GetPolicySummaryWithPolicyIdResponse : IParsable {
+        public class GetPolicySummaryWithPolicyIdResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type configManagerPolicySummary</summary>

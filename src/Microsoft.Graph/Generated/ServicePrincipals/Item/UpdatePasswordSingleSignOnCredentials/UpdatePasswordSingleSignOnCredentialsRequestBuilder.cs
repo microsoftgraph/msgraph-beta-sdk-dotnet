@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.ServicePrincipals.Item.UpdatePasswordSingleSignOnCredentials {
-    /// <summary>Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\microsoft.graph.updatePasswordSingleSignOnCredentials</summary>
+    /// <summary>Provides operations to call the updatePasswordSingleSignOnCredentials method.</summary>
     public class UpdatePasswordSingleSignOnCredentialsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

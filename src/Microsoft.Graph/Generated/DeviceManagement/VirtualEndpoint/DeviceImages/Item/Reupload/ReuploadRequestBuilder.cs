@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.DeviceImages.Item.Reupload {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\virtualEndpoint\deviceImages\{cloudPcDeviceImage-id}\microsoft.graph.reupload</summary>
+    /// <summary>Provides operations to call the reupload method.</summary>
     public class ReuploadRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

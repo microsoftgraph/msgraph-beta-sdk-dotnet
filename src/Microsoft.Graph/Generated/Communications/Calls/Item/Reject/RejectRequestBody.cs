@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Communications.Calls.Item.Reject {
-    public class RejectRequestBody : IParsable {
+    /// <summary>Provides operations to call the reject method.</summary>
+    public class RejectRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string CallbackUri { get; set; }

@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.Item.CategorySummaries;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,7 +10,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.Item {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\macOSSoftwareUpdateAccountSummaries\{macOSSoftwareUpdateAccountSummary-id}</summary>
+    /// <summary>Provides operations to manage the macOSSoftwareUpdateAccountSummaries property of the microsoft.graph.deviceManagement entity.</summary>
     public class MacOSSoftwareUpdateAccountSummaryItemRequestBuilder {
         public CategorySummariesRequestBuilder CategorySummaries { get =>
             new CategorySummariesRequestBuilder(PathParameters, RequestAdapter);
@@ -48,7 +49,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.MacOSSoftwareUpdateAccountSummaries
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The MacOS software update account summaries for this account.
+        /// Delete navigation property macOSSoftwareUpdateAccountSummaries for deviceManagement
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -84,7 +85,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.MacOSSoftwareUpdateAccountSummaries
             return requestInfo;
         }
         /// <summary>
-        /// The MacOS software update account summaries for this account.
+        /// Update the navigation property macOSSoftwareUpdateAccountSummaries in deviceManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -102,7 +103,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.MacOSSoftwareUpdateAccountSummaries
             return requestInfo;
         }
         /// <summary>
-        /// The MacOS software update account summaries for this account.
+        /// Delete navigation property macOSSoftwareUpdateAccountSummaries for deviceManagement
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -110,7 +111,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.MacOSSoftwareUpdateAccountSummaries
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// The MacOS software update account summaries for this account.
@@ -122,10 +127,14 @@ namespace MicrosoftGraphSdk.DeviceManagement.MacOSSoftwareUpdateAccountSummaries
         /// </summary>
         public async Task<MacOSSoftwareUpdateAccountSummary> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MacOSSoftwareUpdateAccountSummary>(requestInfo, MacOSSoftwareUpdateAccountSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MacOSSoftwareUpdateAccountSummary>(requestInfo, MacOSSoftwareUpdateAccountSummary.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The MacOS software update account summaries for this account.
+        /// Update the navigation property macOSSoftwareUpdateAccountSummaries in deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -135,7 +144,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.MacOSSoftwareUpdateAccountSummaries
         public async Task PatchAsync(MacOSSoftwareUpdateAccountSummary body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The MacOS software update account summaries for this account.</summary>
         public class GetQueryParameters : QueryParametersBase {

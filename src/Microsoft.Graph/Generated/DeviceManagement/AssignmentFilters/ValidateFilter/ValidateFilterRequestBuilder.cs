@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.ValidateFilter {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\assignmentFilters\microsoft.graph.validateFilter</summary>
+    /// <summary>Provides operations to call the validateFilter method.</summary>
     public class ValidateFilterRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.ValidateFilter {
             return await RequestAdapter.SendAsync<ValidateFilterResponse>(requestInfo, ValidateFilterResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes assignmentFilterValidationResult</summary>
-        public class ValidateFilterResponse : IParsable {
+        public class ValidateFilterResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type assignmentFilterValidationResult</summary>

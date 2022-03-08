@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to call the functions method.</summary>
     public class AttributeMappingFunctionSchema : Entity, IParsable {
         /// <summary>Collection of function parameters.</summary>
         public List<AttributeMappingParameterSchema> Parameters { get; set; }

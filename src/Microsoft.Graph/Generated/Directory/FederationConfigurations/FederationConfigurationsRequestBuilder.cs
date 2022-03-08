@@ -1,8 +1,10 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Directory.FederationConfigurations.AvailableProviderTypes;
+using MicrosoftGraphSdk.Directory.FederationConfigurations.Count;
 using MicrosoftGraphSdk.Directory.FederationConfigurations.Item;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,8 +12,11 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Directory.FederationConfigurations {
-    /// <summary>Builds and executes requests for operations under \directory\federationConfigurations</summary>
+    /// <summary>Provides operations to manage the federationConfigurations property of the microsoft.graph.directory entity.</summary>
     public class FederationConfigurationsRequestBuilder {
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -25,7 +30,7 @@ namespace MicrosoftGraphSdk.Directory.FederationConfigurations {
             return new IdentityProviderBaseItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Builds and executes requests for operations under \directory\federationConfigurations\microsoft.graph.availableProviderTypes()
+        /// Provides operations to call the availableProviderTypes method.
         /// </summary>
         public AvailableProviderTypesRequestBuilder AvailableProviderTypes() {
             return new AvailableProviderTypesRequestBuilder(PathParameters, RequestAdapter);
@@ -79,7 +84,7 @@ namespace MicrosoftGraphSdk.Directory.FederationConfigurations {
             return requestInfo;
         }
         /// <summary>
-        /// Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
+        /// Create new navigation property to federationConfigurations for directory
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -104,12 +109,16 @@ namespace MicrosoftGraphSdk.Directory.FederationConfigurations {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<FederationConfigurationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IdentityProviderBaseCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<FederationConfigurationsResponse>(requestInfo, FederationConfigurationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<IdentityProviderBaseCollectionResponse>(requestInfo, IdentityProviderBaseCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
+        /// Create new navigation property to federationConfigurations for directory
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -119,7 +128,11 @@ namespace MicrosoftGraphSdk.Directory.FederationConfigurations {
         public async Task<IdentityProviderBase> PostAsync(IdentityProviderBase body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<IdentityProviderBase>(requestInfo, IdentityProviderBase.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<IdentityProviderBase>(requestInfo, IdentityProviderBase.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.</summary>
         public class GetQueryParameters : QueryParametersBase {

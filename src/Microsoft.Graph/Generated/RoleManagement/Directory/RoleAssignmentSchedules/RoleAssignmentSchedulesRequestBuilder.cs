@@ -1,6 +1,8 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
+using MicrosoftGraphSdk.RoleManagement.Directory.RoleAssignmentSchedules.Count;
 using MicrosoftGraphSdk.RoleManagement.Directory.RoleAssignmentSchedules.FilterByCurrentUserWithOn;
 using MicrosoftGraphSdk.RoleManagement.Directory.RoleAssignmentSchedules.Item;
 using System;
@@ -10,8 +12,11 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.RoleManagement.Directory.RoleAssignmentSchedules {
-    /// <summary>Builds and executes requests for operations under \roleManagement\directory\roleAssignmentSchedules</summary>
+    /// <summary>Provides operations to manage the roleAssignmentSchedules property of the microsoft.graph.rbacApplication entity.</summary>
     public class RoleAssignmentSchedulesRequestBuilder {
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -91,8 +96,8 @@ namespace MicrosoftGraphSdk.RoleManagement.Directory.RoleAssignmentSchedules {
             return requestInfo;
         }
         /// <summary>
-        /// Builds and executes requests for operations under \roleManagement\directory\roleAssignmentSchedules\microsoft.graph.filterByCurrentUser(on={on})
-        /// <param name="on">Usage: on={on}</param>
+        /// Provides operations to call the filterByCurrentUser method.
+        /// <param name="on">Usage: on='{on}'</param>
         /// </summary>
         public FilterByCurrentUserWithOnRequestBuilder FilterByCurrentUserWithOn(string on) {
             if(string.IsNullOrEmpty(on)) throw new ArgumentNullException(nameof(on));
@@ -106,9 +111,13 @@ namespace MicrosoftGraphSdk.RoleManagement.Directory.RoleAssignmentSchedules {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<RoleAssignmentSchedulesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<UnifiedRoleAssignmentScheduleCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RoleAssignmentSchedulesResponse>(requestInfo, RoleAssignmentSchedulesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<UnifiedRoleAssignmentScheduleCollectionResponse>(requestInfo, UnifiedRoleAssignmentScheduleCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to roleAssignmentSchedules for roleManagement
@@ -121,7 +130,11 @@ namespace MicrosoftGraphSdk.RoleManagement.Directory.RoleAssignmentSchedules {
         public async Task<UnifiedRoleAssignmentSchedule> PostAsync(UnifiedRoleAssignmentSchedule body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UnifiedRoleAssignmentSchedule>(requestInfo, UnifiedRoleAssignmentSchedule.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<UnifiedRoleAssignmentSchedule>(requestInfo, UnifiedRoleAssignmentSchedule.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Get roleAssignmentSchedules from roleManagement</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Print.Printers.Item.GetCapabilities {
-    /// <summary>Builds and executes requests for operations under \print\printers\{printer-id}\microsoft.graph.getCapabilities()</summary>
+    /// <summary>Provides operations to call the getCapabilities method.</summary>
     public class GetCapabilitiesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.Print.Printers.Item.GetCapabilities {
             return await RequestAdapter.SendAsync<GetCapabilitiesResponse>(requestInfo, GetCapabilitiesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes printerCapabilities</summary>
-        public class GetCapabilitiesResponse : IParsable {
+        public class GetCapabilitiesResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type printerCapabilities</summary>

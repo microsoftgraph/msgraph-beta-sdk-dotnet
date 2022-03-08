@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Users.Item.Messages.Item.CreateForward {
-    public class CreateForwardRequestBody : IParsable {
+    /// <summary>Provides operations to call the createForward method.</summary>
+    public class CreateForwardRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string Comment { get; set; }

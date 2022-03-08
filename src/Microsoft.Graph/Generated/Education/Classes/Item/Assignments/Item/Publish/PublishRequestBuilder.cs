@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Education.Classes.Item.Assignments.Item.Publish {
-    /// <summary>Builds and executes requests for operations under \education\classes\{educationClass-id}\assignments\{educationAssignment-id}\microsoft.graph.publish</summary>
+    /// <summary>Provides operations to call the publish method.</summary>
     public class PublishRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.Education.Classes.Item.Assignments.Item.Publish {
             return await RequestAdapter.SendAsync<PublishResponse>(requestInfo, PublishResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes educationAssignment</summary>
-        public class PublishResponse : IParsable {
+        public class PublishResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type educationAssignment</summary>

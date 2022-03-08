@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using MicrosoftGraphSdk.Organization.Item.Settings.ItemInsights;
 using MicrosoftGraphSdk.Organization.Item.Settings.PeopleInsights;
 using MicrosoftGraphSdk.Organization.Item.Settings.ProfileCardProperties;
@@ -11,7 +12,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Organization.Item.Settings {
-    /// <summary>Builds and executes requests for operations under \organization\{organization-id}\settings</summary>
+    /// <summary>Provides operations to manage the settings property of the microsoft.graph.organization entity.</summary>
     public class SettingsRequestBuilder {
         public ItemInsightsRequestBuilder ItemInsights { get =>
             new ItemInsightsRequestBuilder(PathParameters, RequestAdapter);
@@ -56,7 +57,7 @@ namespace MicrosoftGraphSdk.Organization.Item.Settings {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of organizationSettings object. Nullable.
+        /// Delete navigation property settings for organization
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -92,7 +93,7 @@ namespace MicrosoftGraphSdk.Organization.Item.Settings {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of organizationSettings object. Nullable.
+        /// Update the navigation property settings in organization
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -110,7 +111,7 @@ namespace MicrosoftGraphSdk.Organization.Item.Settings {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of organizationSettings object. Nullable.
+        /// Delete navigation property settings for organization
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -118,7 +119,11 @@ namespace MicrosoftGraphSdk.Organization.Item.Settings {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Retrieve the properties and relationships of organizationSettings object. Nullable.
@@ -130,10 +135,14 @@ namespace MicrosoftGraphSdk.Organization.Item.Settings {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.OrganizationSettings> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.OrganizationSettings>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.OrganizationSettings.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.OrganizationSettings>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.OrganizationSettings.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of organizationSettings object. Nullable.
+        /// Update the navigation property settings in organization
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -143,7 +152,11 @@ namespace MicrosoftGraphSdk.Organization.Item.Settings {
         public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.OrganizationSettings body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Retrieve the properties and relationships of organizationSettings object. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

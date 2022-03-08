@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public class MobileAppInstallStatus : Entity, IParsable {
         /// <summary>The navigation link to the mobile app.</summary>
         public MobileApp App { get; set; }

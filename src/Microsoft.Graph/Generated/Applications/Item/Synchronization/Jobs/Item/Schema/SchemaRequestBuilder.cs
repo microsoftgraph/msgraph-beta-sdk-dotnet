@@ -5,6 +5,7 @@ using MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item.Schema.Filte
 using MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item.Schema.Functions;
 using MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item.Schema.ParseExpression;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,7 +13,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item.Schema {
-    /// <summary>Builds and executes requests for operations under \applications\{application-id}\synchronization\jobs\{synchronizationJob-id}\schema</summary>
+    /// <summary>Provides operations to manage the schema property of the microsoft.graph.synchronizationJob entity.</summary>
     public class SchemaRequestBuilder {
         public DirectoriesRequestBuilder Directories { get =>
             new DirectoriesRequestBuilder(PathParameters, RequestAdapter);
@@ -54,7 +55,7 @@ namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item.Schema {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The synchronization schema configured for the job.
+        /// Delete navigation property schema for applications
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -90,7 +91,7 @@ namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item.Schema {
             return requestInfo;
         }
         /// <summary>
-        /// The synchronization schema configured for the job.
+        /// Update the navigation property schema in applications
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -108,7 +109,7 @@ namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item.Schema {
             return requestInfo;
         }
         /// <summary>
-        /// The synchronization schema configured for the job.
+        /// Delete navigation property schema for applications
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -116,16 +117,20 @@ namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item.Schema {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \applications\{application-id}\synchronization\jobs\{synchronizationJob-id}\schema\microsoft.graph.filterOperators()
+        /// Provides operations to call the filterOperators method.
         /// </summary>
         public FilterOperatorsRequestBuilder FilterOperators() {
             return new FilterOperatorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \applications\{application-id}\synchronization\jobs\{synchronizationJob-id}\schema\microsoft.graph.functions()
+        /// Provides operations to call the functions method.
         /// </summary>
         public FunctionsRequestBuilder Functions() {
             return new FunctionsRequestBuilder(PathParameters, RequestAdapter);
@@ -140,10 +145,14 @@ namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item.Schema {
         /// </summary>
         public async Task<SynchronizationSchema> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SynchronizationSchema>(requestInfo, SynchronizationSchema.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<SynchronizationSchema>(requestInfo, SynchronizationSchema.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The synchronization schema configured for the job.
+        /// Update the navigation property schema in applications
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -153,7 +162,11 @@ namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item.Schema {
         public async Task PatchAsync(SynchronizationSchema body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The synchronization schema configured for the job.</summary>
         public class GetQueryParameters : QueryParametersBase {

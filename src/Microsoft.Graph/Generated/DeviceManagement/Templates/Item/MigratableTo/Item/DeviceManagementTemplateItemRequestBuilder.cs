@@ -1,8 +1,11 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.Item.Categories;
 using MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.Item.CompareWithTemplateId;
 using MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.Item.CreateInstance;
+using MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.Item.Settings;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,8 +13,11 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.Item {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\templates\{deviceManagementTemplate-id}\migratableTo\{deviceManagementTemplate-id1}</summary>
+    /// <summary>Provides operations to manage the migratableTo property of the microsoft.graph.deviceManagementTemplate entity.</summary>
     public class DeviceManagementTemplateItemRequestBuilder {
+        public CategoriesRequestBuilder Categories { get =>
+            new CategoriesRequestBuilder(PathParameters, RequestAdapter);
+        }
         public CreateInstanceRequestBuilder CreateInstance { get =>
             new CreateInstanceRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -19,11 +25,14 @@ namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.Item {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        public SettingsRequestBuilder Settings { get =>
+            new SettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
-        /// Builds and executes requests for operations under \deviceManagement\templates\{deviceManagementTemplate-id}\migratableTo\{deviceManagementTemplate-id1}\microsoft.graph.compare(templateId='{templateId}')
-        /// <param name="templateId">Usage: templateId={templateId}</param>
+        /// Provides operations to call the compare method.
+        /// <param name="templateId">Usage: templateId='{templateId}'</param>
         /// </summary>
         public CompareWithTemplateIdRequestBuilder CompareWithTemplateId(string templateId) {
             if(string.IsNullOrEmpty(templateId)) throw new ArgumentNullException(nameof(templateId));
@@ -57,7 +66,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Collection of templates this template can migrate to
+        /// Delete navigation property migratableTo for deviceManagement
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -93,7 +102,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Collection of templates this template can migrate to
+        /// Update the navigation property migratableTo in deviceManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -111,7 +120,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Collection of templates this template can migrate to
+        /// Delete navigation property migratableTo for deviceManagement
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -119,7 +128,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Collection of templates this template can migrate to
@@ -131,10 +144,14 @@ namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.Item {
         /// </summary>
         public async Task<DeviceManagementTemplate> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementTemplate>(requestInfo, DeviceManagementTemplate.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<DeviceManagementTemplate>(requestInfo, DeviceManagementTemplate.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Collection of templates this template can migrate to
+        /// Update the navigation property migratableTo in deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -144,7 +161,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.Item {
         public async Task PatchAsync(DeviceManagementTemplate body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Collection of templates this template can migrate to</summary>
         public class GetQueryParameters : QueryParametersBase {

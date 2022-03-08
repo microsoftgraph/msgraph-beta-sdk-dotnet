@@ -1,4 +1,5 @@
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to call the restart method.</summary>
     public enum SynchronizationJobRestartScope {
         None,
         ConnectorDataStore,

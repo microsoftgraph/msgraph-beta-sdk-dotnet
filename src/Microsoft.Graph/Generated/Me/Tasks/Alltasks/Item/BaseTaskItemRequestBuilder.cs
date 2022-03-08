@@ -6,6 +6,7 @@ using MicrosoftGraphSdk.Me.Tasks.Alltasks.Item.LinkedResources;
 using MicrosoftGraphSdk.Me.Tasks.Alltasks.Item.Move;
 using MicrosoftGraphSdk.Me.Tasks.Alltasks.Item.ParentList;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,7 +14,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Me.Tasks.Alltasks.Item {
-    /// <summary>Builds and executes requests for operations under \me\tasks\alltasks\{baseTask-id}</summary>
+    /// <summary>Provides operations to manage the alltasks property of the microsoft.graph.tasks entity.</summary>
     public class BaseTaskItemRequestBuilder {
         public ChecklistItemsRequestBuilder ChecklistItems { get =>
             new ChecklistItemsRequestBuilder(PathParameters, RequestAdapter);
@@ -64,7 +65,7 @@ namespace MicrosoftGraphSdk.Me.Tasks.Alltasks.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// All tasks in the users mailbox.
+        /// Delete navigation property alltasks for me
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -100,7 +101,7 @@ namespace MicrosoftGraphSdk.Me.Tasks.Alltasks.Item {
             return requestInfo;
         }
         /// <summary>
-        /// All tasks in the users mailbox.
+        /// Update the navigation property alltasks in me
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -118,7 +119,7 @@ namespace MicrosoftGraphSdk.Me.Tasks.Alltasks.Item {
             return requestInfo;
         }
         /// <summary>
-        /// All tasks in the users mailbox.
+        /// Delete navigation property alltasks for me
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -126,7 +127,11 @@ namespace MicrosoftGraphSdk.Me.Tasks.Alltasks.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// All tasks in the users mailbox.
@@ -138,10 +143,14 @@ namespace MicrosoftGraphSdk.Me.Tasks.Alltasks.Item {
         /// </summary>
         public async Task<BaseTask> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<BaseTask>(requestInfo, BaseTask.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<BaseTask>(requestInfo, BaseTask.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// All tasks in the users mailbox.
+        /// Update the navigation property alltasks in me
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -151,7 +160,11 @@ namespace MicrosoftGraphSdk.Me.Tasks.Alltasks.Item {
         public async Task PatchAsync(BaseTask body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>All tasks in the users mailbox.</summary>
         public class GetQueryParameters : QueryParametersBase {

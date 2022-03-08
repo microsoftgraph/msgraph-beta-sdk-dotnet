@@ -4,19 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
+    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class AuditEvent : Entity, IParsable {
+        /// <summary>A string which uniquely represents the operation that occurred. Required. Read-only.</summary>
         public string Activity { get; set; }
+        /// <summary>The time when the activity ocurred. Required. Read-only.</summary>
         public DateTimeOffset? ActivityDateTime { get; set; }
+        /// <summary>The identifier of the activity request that made the audit event. Required. Read-only.</summary>
         public string ActivityId { get; set; }
+        /// <summary>A category which represents a logical grouping of activities. Required. Read-only.</summary>
         public string Category { get; set; }
+        /// <summary>The HTTP verb that was used when making the API request. Required. Read-only.</summary>
         public string HttpVerb { get; set; }
+        /// <summary>The identifier of the app that was used to make the request. Required. Read-only.</summary>
         public string InitiatedByAppId { get; set; }
+        /// <summary>The UPN of the user who initiated the activity. Required. Read-only.</summary>
         public string InitiatedByUpn { get; set; }
+        /// <summary>The identifier of the user who initiated the activity. Required. Read-only.</summary>
         public string InitiatedByUserId { get; set; }
+        /// <summary>The IP address of where the activity was initiated. This may be an IPv4 or IPv6 address. Required. Read-only.</summary>
         public string IpAddress { get; set; }
+        /// <summary>The raw HTTP request body. Some sensitive information may be removed.</summary>
         public string RequestBody { get; set; }
+        /// <summary>The raw HTTP request URL. Required. Read-only.</summary>
         public string RequestUrl { get; set; }
+        /// <summary>The collection of Azure Active Directory tenant identifiers for the managed tenants that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.</summary>
         public string TenantIds { get; set; }
+        /// <summary>The collection of tenant names that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.</summary>
         public string TenantNames { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

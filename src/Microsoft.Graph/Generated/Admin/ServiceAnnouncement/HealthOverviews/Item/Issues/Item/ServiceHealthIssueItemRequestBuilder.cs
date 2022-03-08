@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Admin.ServiceAnnouncement.HealthOverviews.Item.Issues.Item.IncidentReport;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,7 +10,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.HealthOverviews.Item.Issues.Item {
-    /// <summary>Builds and executes requests for operations under \admin\serviceAnnouncement\healthOverviews\{serviceHealth-id}\issues\{serviceHealthIssue-id}</summary>
+    /// <summary>Provides operations to manage the issues property of the microsoft.graph.serviceHealth entity.</summary>
     public class ServiceHealthIssueItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -45,7 +46,7 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.HealthOverviews.Item.Issue
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// A collection of issues that happened on the service, with detailed information for each issue.
+        /// Delete navigation property issues for admin
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -81,7 +82,7 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.HealthOverviews.Item.Issue
             return requestInfo;
         }
         /// <summary>
-        /// A collection of issues that happened on the service, with detailed information for each issue.
+        /// Update the navigation property issues in admin
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -99,7 +100,7 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.HealthOverviews.Item.Issue
             return requestInfo;
         }
         /// <summary>
-        /// A collection of issues that happened on the service, with detailed information for each issue.
+        /// Delete navigation property issues for admin
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -107,7 +108,11 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.HealthOverviews.Item.Issue
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// A collection of issues that happened on the service, with detailed information for each issue.
@@ -119,16 +124,20 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.HealthOverviews.Item.Issue
         /// </summary>
         public async Task<ServiceHealthIssue> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ServiceHealthIssue>(requestInfo, ServiceHealthIssue.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<ServiceHealthIssue>(requestInfo, ServiceHealthIssue.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \admin\serviceAnnouncement\healthOverviews\{serviceHealth-id}\issues\{serviceHealthIssue-id}\microsoft.graph.incidentReport()
+        /// Provides operations to call the incidentReport method.
         /// </summary>
         public IncidentReportRequestBuilder IncidentReport() {
             return new IncidentReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// A collection of issues that happened on the service, with detailed information for each issue.
+        /// Update the navigation property issues in admin
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -138,7 +147,11 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.HealthOverviews.Item.Issue
         public async Task PatchAsync(ServiceHealthIssue body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>A collection of issues that happened on the service, with detailed information for each issue.</summary>
         public class GetQueryParameters : QueryParametersBase {

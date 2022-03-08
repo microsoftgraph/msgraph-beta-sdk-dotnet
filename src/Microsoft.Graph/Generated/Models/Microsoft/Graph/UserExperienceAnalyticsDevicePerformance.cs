@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class UserExperienceAnalyticsDevicePerformance : Entity, IParsable {
         /// <summary>Average (mean) number of Blue Screens per device in the last 14 days. Valid values 0 to 9999999</summary>
         public double? AverageBlueScreens { get; set; }
@@ -21,7 +22,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public long? DeviceCount { get; set; }
         /// <summary>The user experience analytics device name.</summary>
         public string DeviceName { get; set; }
-        /// <summary>The user experience analytics device disk type. Possible values are: hdd, ssd, unknown.</summary>
+        /// <summary>The user experience analytics device disk type. Possible values are: unknown, hdd, ssd, unknownFutureValue.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.DiskType? DiskType { get; set; }
         /// <summary>The user experience analytics device group policy boot time in milliseconds.</summary>
         public int? GroupPolicyBootTimeInMs { get; set; }

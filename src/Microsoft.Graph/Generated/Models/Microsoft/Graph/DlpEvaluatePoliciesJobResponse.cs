@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to call the evaluate method.</summary>
     public class DlpEvaluatePoliciesJobResponse : JobResponseBase, IParsable {
         public DlpPoliciesJobResult Result { get; set; }
         /// <summary>

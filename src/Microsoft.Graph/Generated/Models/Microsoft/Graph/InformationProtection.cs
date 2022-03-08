@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class InformationProtection : Entity, IParsable {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Bitlocker Bitlocker { get; set; }
         public List<DataLossPreventionPolicy> DataLossPreventionPolicies { get; set; }

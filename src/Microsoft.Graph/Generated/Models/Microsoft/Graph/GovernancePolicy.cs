@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class GovernancePolicy : IParsable {
+    /// <summary>Provides operations to manage the collection of approvalWorkflowProvider entities.</summary>
+    public class GovernancePolicy : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<GovernanceCriteria> DecisionMakerCriteria { get; set; }

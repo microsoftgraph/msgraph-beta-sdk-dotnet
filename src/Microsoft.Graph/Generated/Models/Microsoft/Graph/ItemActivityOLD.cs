@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class ItemActivityOLD : Entity, IParsable {
         public ItemActionSet Action { get; set; }
         public IdentitySet Actor { get; set; }

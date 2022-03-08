@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class ItemActionStat : IParsable {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    public class ItemActionStat : IParsable, IAdditionalDataHolder {
         /// <summary>The number of times the action took place. Read-only.</summary>
         public int? ActionCount { get; set; }
         /// <summary>The number of distinct actors that performed the action. Read-only.</summary>

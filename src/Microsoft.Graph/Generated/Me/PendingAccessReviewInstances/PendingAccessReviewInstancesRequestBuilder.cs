@@ -1,8 +1,10 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Count;
 using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.FilterByCurrentUserWithOn;
 using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,8 +12,11 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Me.PendingAccessReviewInstances {
-    /// <summary>Builds and executes requests for operations under \me\pendingAccessReviewInstances</summary>
+    /// <summary>Provides operations to manage the pendingAccessReviewInstances property of the microsoft.graph.user entity.</summary>
     public class PendingAccessReviewInstancesRequestBuilder {
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -73,7 +78,7 @@ namespace MicrosoftGraphSdk.Me.PendingAccessReviewInstances {
             return requestInfo;
         }
         /// <summary>
-        /// Navigation property to get list of access reviews pending approval by reviewer.
+        /// Create new navigation property to pendingAccessReviewInstances for me
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -91,8 +96,8 @@ namespace MicrosoftGraphSdk.Me.PendingAccessReviewInstances {
             return requestInfo;
         }
         /// <summary>
-        /// Builds and executes requests for operations under \me\pendingAccessReviewInstances\microsoft.graph.filterByCurrentUser(on={on})
-        /// <param name="on">Usage: on={on}</param>
+        /// Provides operations to call the filterByCurrentUser method.
+        /// <param name="on">Usage: on='{on}'</param>
         /// </summary>
         public FilterByCurrentUserWithOnRequestBuilder FilterByCurrentUserWithOn(string on) {
             if(string.IsNullOrEmpty(on)) throw new ArgumentNullException(nameof(on));
@@ -106,12 +111,16 @@ namespace MicrosoftGraphSdk.Me.PendingAccessReviewInstances {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<PendingAccessReviewInstancesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<AccessReviewInstanceCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PendingAccessReviewInstancesResponse>(requestInfo, PendingAccessReviewInstancesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<AccessReviewInstanceCollectionResponse>(requestInfo, AccessReviewInstanceCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Navigation property to get list of access reviews pending approval by reviewer.
+        /// Create new navigation property to pendingAccessReviewInstances for me
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -121,7 +130,11 @@ namespace MicrosoftGraphSdk.Me.PendingAccessReviewInstances {
         public async Task<AccessReviewInstance> PostAsync(AccessReviewInstance body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AccessReviewInstance>(requestInfo, AccessReviewInstance.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<AccessReviewInstance>(requestInfo, AccessReviewInstance.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Navigation property to get list of access reviews pending approval by reviewer.</summary>
         public class GetQueryParameters : QueryParametersBase {

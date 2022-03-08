@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\assignmentFilters\{deviceAndAppManagementAssignmentFilter-id}\microsoft.graph.getSupportedProperties()</summary>
+    /// <summary>Provides operations to call the getSupportedProperties method.</summary>
     public class GetSupportedPropertiesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -64,9 +64,9 @@ namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.Item.GetSupported
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<GetSupportedProperties>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<GetSupportedPropertiesResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<GetSupportedProperties>(requestInfo, GetSupportedProperties.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetSupportedPropertiesResponse>(requestInfo, GetSupportedPropertiesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

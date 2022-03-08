@@ -1,7 +1,9 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Identity.B2xUserFlows.Item.UserFlowIdentityProviders.AvailableProviderTypes;
-using MicrosoftGraphSdk.Identity.B2xUserFlows.Item.UserFlowIdentityProviders.Ref;
+using MicrosoftGraphSdk.Identity.B2xUserFlows.Item.UserFlowIdentityProviders.Count;
+using MicrosoftGraphSdk.Identity.B2xUserFlows.Item.UserFlowIdentityProviders.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,23 +11,23 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Identity.B2xUserFlows.Item.UserFlowIdentityProviders {
-    /// <summary>Builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\userFlowIdentityProviders</summary>
+    /// <summary>Provides operations to manage the userFlowIdentityProviders property of the microsoft.graph.b2xIdentityUserFlow entity.</summary>
     public class UserFlowIdentityProvidersRequestBuilder {
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        public RefRequestBuilder Ref { get =>
-            new RefRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>
-        /// Builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\userFlowIdentityProviders\microsoft.graph.availableProviderTypes()
-        /// </summary>
-        public AvailableProviderTypesRequestBuilder AvailableProviderTypes() {
-            return new AvailableProviderTypesRequestBuilder(PathParameters, RequestAdapter);
-        }
+        /// <summary>Gets an item from the MicrosoftGraphSdk.identity.b2xUserFlows.item.userFlowIdentityProviders.item collection</summary>
+        public IdentityProviderBaseItemRequestBuilder this[string position] { get {
+            var urlTplParams = new Dictionary<string, object>(PathParameters);
+            urlTplParams.Add("identityProviderBase_id", position);
+            return new IdentityProviderBaseItemRequestBuilder(urlTplParams, RequestAdapter);
+        } }
         /// <summary>
         /// Instantiates a new UserFlowIdentityProvidersRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -82,9 +84,13 @@ namespace MicrosoftGraphSdk.Identity.B2xUserFlows.Item.UserFlowIdentityProviders
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<UserFlowIdentityProvidersResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IdentityProviderBaseCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UserFlowIdentityProvidersResponse>(requestInfo, UserFlowIdentityProvidersResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<IdentityProviderBaseCollectionResponse>(requestInfo, IdentityProviderBaseCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Get userFlowIdentityProviders from identity</summary>
         public class GetQueryParameters : QueryParametersBase {

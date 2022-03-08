@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.App.Calls.Item.Participants.Invite {
-    /// <summary>Builds and executes requests for operations under \app\calls\{call-id}\participants\microsoft.graph.invite</summary>
+    /// <summary>Provides operations to call the invite method.</summary>
     public class InviteRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.App.Calls.Item.Participants.Invite {
             return await RequestAdapter.SendAsync<InviteResponse>(requestInfo, InviteResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes inviteParticipantsOperation</summary>
-        public class InviteResponse : IParsable {
+        public class InviteResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type inviteParticipantsOperation</summary>

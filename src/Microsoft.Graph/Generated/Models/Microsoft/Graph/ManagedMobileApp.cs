@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public class ManagedMobileApp : Entity, IParsable {
         /// <summary>The identifier for an app with it's operating system type.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.MobileAppIdentifier MobileAppIdentifier { get; set; }

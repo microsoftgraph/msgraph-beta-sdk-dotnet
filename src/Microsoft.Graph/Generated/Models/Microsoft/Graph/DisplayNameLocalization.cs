@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class DisplayNameLocalization : IParsable {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    public class DisplayNameLocalization : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.</summary>

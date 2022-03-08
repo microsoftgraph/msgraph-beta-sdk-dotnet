@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.ReprovisionCloudPc {
-    /// <summary>Builds and executes requests for operations under \me\managedDevices\{managedDevice-id}\microsoft.graph.reprovisionCloudPc</summary>
+    /// <summary>Provides operations to call the reprovisionCloudPc method.</summary>
     public class ReprovisionCloudPcRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

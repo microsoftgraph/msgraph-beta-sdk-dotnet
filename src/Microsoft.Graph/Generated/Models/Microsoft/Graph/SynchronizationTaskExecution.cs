@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class SynchronizationTaskExecution : IParsable {
+    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    public class SynchronizationTaskExecution : IParsable, IAdditionalDataHolder {
         /// <summary>Identifier of the job run.</summary>
         public string ActivityIdentifier { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

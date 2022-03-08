@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public class MobileAppInstallSummary : Entity, IParsable {
         /// <summary>Number of Devices that have failed to install this app.</summary>
         public int? FailedDeviceCount { get; set; }

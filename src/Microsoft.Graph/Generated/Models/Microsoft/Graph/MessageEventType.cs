@@ -1,4 +1,5 @@
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the collection of messageEvent entities.</summary>
     public enum MessageEventType {
         Received,
         Sent,

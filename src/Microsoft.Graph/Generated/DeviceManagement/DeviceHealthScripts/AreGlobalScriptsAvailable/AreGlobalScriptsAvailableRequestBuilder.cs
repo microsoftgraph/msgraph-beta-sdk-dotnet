@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.AreGlobalScriptsAvailable {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\deviceHealthScripts\microsoft.graph.areGlobalScriptsAvailable()</summary>
+    /// <summary>Provides operations to call the areGlobalScriptsAvailable method.</summary>
     public class AreGlobalScriptsAvailableRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.AreGlobalScript
             return await RequestAdapter.SendAsync<AreGlobalScriptsAvailableResponse>(requestInfo, AreGlobalScriptsAvailableResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes globalDeviceHealthScriptState</summary>
-        public class AreGlobalScriptsAvailableResponse : IParsable {
+        public class AreGlobalScriptsAvailableResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type globalDeviceHealthScriptState</summary>

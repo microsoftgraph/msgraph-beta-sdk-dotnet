@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the educationRoot singleton.</summary>
     public class EducationRubric : Entity, IParsable {
         /// <summary>The user who created this resource.</summary>
         public IdentitySet CreatedBy { get; set; }

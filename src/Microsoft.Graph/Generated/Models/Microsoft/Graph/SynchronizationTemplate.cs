@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class SynchronizationTemplate : Entity, IParsable {
         /// <summary>Identifier of the application this template belongs to.</summary>
         public string ApplicationId { get; set; }

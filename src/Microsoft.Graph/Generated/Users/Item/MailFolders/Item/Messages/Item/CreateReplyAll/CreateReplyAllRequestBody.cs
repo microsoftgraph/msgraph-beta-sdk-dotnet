@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Users.Item.MailFolders.Item.Messages.Item.CreateReplyAll {
-    public class CreateReplyAllRequestBody : IParsable {
+    /// <summary>Provides operations to call the createReplyAll method.</summary>
+    public class CreateReplyAllRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string Comment { get; set; }

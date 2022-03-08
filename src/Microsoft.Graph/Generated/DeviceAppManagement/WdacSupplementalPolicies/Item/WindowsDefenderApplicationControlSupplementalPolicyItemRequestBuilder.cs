@@ -5,6 +5,7 @@ using MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item.Assign
 using MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item.DeploySummary;
 using MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item.DeviceStatuses;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,7 +13,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item {
-    /// <summary>Builds and executes requests for operations under \deviceAppManagement\wdacSupplementalPolicies\{windowsDefenderApplicationControlSupplementalPolicy-id}</summary>
+    /// <summary>Provides operations to manage the wdacSupplementalPolicies property of the microsoft.graph.deviceAppManagement entity.</summary>
     public class WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder {
         public AssignRequestBuilder Assign { get =>
             new AssignRequestBuilder(PathParameters, RequestAdapter);
@@ -60,7 +61,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The collection of Windows Defender Application Control Supplemental Policies.
+        /// Delete navigation property wdacSupplementalPolicies for deviceAppManagement
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -96,7 +97,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of Windows Defender Application Control Supplemental Policies.
+        /// Update the navigation property wdacSupplementalPolicies in deviceAppManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -114,7 +115,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of Windows Defender Application Control Supplemental Policies.
+        /// Delete navigation property wdacSupplementalPolicies for deviceAppManagement
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -122,7 +123,11 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// The collection of Windows Defender Application Control Supplemental Policies.
@@ -134,10 +139,14 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item {
         /// </summary>
         public async Task<WindowsDefenderApplicationControlSupplementalPolicy> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<WindowsDefenderApplicationControlSupplementalPolicy>(requestInfo, WindowsDefenderApplicationControlSupplementalPolicy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<WindowsDefenderApplicationControlSupplementalPolicy>(requestInfo, WindowsDefenderApplicationControlSupplementalPolicy.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The collection of Windows Defender Application Control Supplemental Policies.
+        /// Update the navigation property wdacSupplementalPolicies in deviceAppManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -147,7 +156,11 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item {
         public async Task PatchAsync(WindowsDefenderApplicationControlSupplementalPolicy body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The collection of Windows Defender Application Control Supplemental Policies.</summary>
         public class GetQueryParameters : QueryParametersBase {

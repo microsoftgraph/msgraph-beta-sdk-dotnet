@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class UserSecurityState : IParsable {
+    /// <summary>Provides operations to manage the alerts property of the microsoft.graph.security entity.</summary>
+    public class UserSecurityState : IParsable, IAdditionalDataHolder {
         /// <summary>AAD User object identifier (GUID) - represents the physical/multi-account user entity.</summary>
         public string AadUserId { get; set; }
         /// <summary>Account name of user account (without Active Directory domain or DNS domain) - (also called mailNickName).</summary>

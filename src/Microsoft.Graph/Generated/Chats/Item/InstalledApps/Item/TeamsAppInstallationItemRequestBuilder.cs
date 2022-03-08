@@ -4,6 +4,7 @@ using MicrosoftGraphSdk.Chats.Item.InstalledApps.Item.TeamsApp;
 using MicrosoftGraphSdk.Chats.Item.InstalledApps.Item.TeamsAppDefinition;
 using MicrosoftGraphSdk.Chats.Item.InstalledApps.Item.Upgrade;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +12,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Chats.Item.InstalledApps.Item {
-    /// <summary>Builds and executes requests for operations under \chats\{chat-id}\installedApps\{teamsAppInstallation-id}</summary>
+    /// <summary>Provides operations to manage the installedApps property of the microsoft.graph.chat entity.</summary>
     public class TeamsAppInstallationItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -56,7 +57,7 @@ namespace MicrosoftGraphSdk.Chats.Item.InstalledApps.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// A collection of all the apps in the chat. Nullable.
+        /// Delete navigation property installedApps for chats
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -92,7 +93,7 @@ namespace MicrosoftGraphSdk.Chats.Item.InstalledApps.Item {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of all the apps in the chat. Nullable.
+        /// Update the navigation property installedApps in chats
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -110,7 +111,7 @@ namespace MicrosoftGraphSdk.Chats.Item.InstalledApps.Item {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of all the apps in the chat. Nullable.
+        /// Delete navigation property installedApps for chats
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -118,7 +119,11 @@ namespace MicrosoftGraphSdk.Chats.Item.InstalledApps.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// A collection of all the apps in the chat. Nullable.
@@ -130,10 +135,14 @@ namespace MicrosoftGraphSdk.Chats.Item.InstalledApps.Item {
         /// </summary>
         public async Task<TeamsAppInstallation> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TeamsAppInstallation>(requestInfo, TeamsAppInstallation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<TeamsAppInstallation>(requestInfo, TeamsAppInstallation.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A collection of all the apps in the chat. Nullable.
+        /// Update the navigation property installedApps in chats
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -143,7 +152,11 @@ namespace MicrosoftGraphSdk.Chats.Item.InstalledApps.Item {
         public async Task PatchAsync(TeamsAppInstallation body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>A collection of all the apps in the chat. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the identityContainer singleton.</summary>
     public class SignInFrequencySessionControl : ConditionalAccessSessionControl, IParsable {
         /// <summary>Possible values are: days, hours.</summary>
         public SigninFrequencyType? Type { get; set; }

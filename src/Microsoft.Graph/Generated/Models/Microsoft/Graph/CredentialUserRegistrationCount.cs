@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to call the getCredentialUserRegistrationCount method.</summary>
     public class CredentialUserRegistrationCount : Entity, IParsable {
         /// <summary>Provides the total user count in the tenant.</summary>
         public long? TotalUserCount { get; set; }

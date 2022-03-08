@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.Calendars.Item.Events.Item.DismissReminder {
-    /// <summary>Builds and executes requests for operations under \users\{user-id}\calendars\{calendar-id}\events\{event-id}\microsoft.graph.dismissReminder</summary>
+    /// <summary>Provides operations to call the dismissReminder method.</summary>
     public class DismissReminderRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

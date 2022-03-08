@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.ValidateComplianceScript {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\deviceCompliancePolicies\microsoft.graph.validateComplianceScript</summary>
+    /// <summary>Provides operations to call the validateComplianceScript method.</summary>
     public class ValidateComplianceScriptRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.ValidateCo
             return await RequestAdapter.SendAsync<ValidateComplianceScriptResponse>(requestInfo, ValidateComplianceScriptResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes deviceComplianceScriptValidationResult</summary>
-        public class ValidateComplianceScriptResponse : IParsable {
+        public class ValidateComplianceScriptResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type deviceComplianceScriptValidationResult</summary>

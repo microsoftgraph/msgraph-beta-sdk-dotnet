@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using MicrosoftGraphSdk.Workbooks.Item.Activities;
 using MicrosoftGraphSdk.Workbooks.Item.Analytics;
 using MicrosoftGraphSdk.Workbooks.Item.Checkin;
@@ -25,7 +26,6 @@ using MicrosoftGraphSdk.Workbooks.Item.Thumbnails;
 using MicrosoftGraphSdk.Workbooks.Item.Unfollow;
 using MicrosoftGraphSdk.Workbooks.Item.ValidatePermission;
 using MicrosoftGraphSdk.Workbooks.Item.Versions;
-using MicrosoftGraphSdk.Workbooks.Item.Workbook;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -33,7 +33,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Workbooks.Item {
-    /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}</summary>
+    /// <summary>Provides operations to manage the collection of driveItem entities.</summary>
     public class DriveItemItemRequestBuilder {
         public ActivitiesRequestBuilder Activities { get =>
             new ActivitiesRequestBuilder(PathParameters, RequestAdapter);
@@ -100,9 +100,6 @@ namespace MicrosoftGraphSdk.Workbooks.Item {
         }
         public VersionsRequestBuilder Versions { get =>
             new VersionsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        public WorkbookRequestBuilder Workbook { get =>
-            new WorkbookRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new DriveItemItemRequestBuilder and sets the default values.
@@ -194,33 +191,37 @@ namespace MicrosoftGraphSdk.Workbooks.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \workbooks\{driveItem-id}\microsoft.graph.delta()
+        /// Provides operations to call the delta method.
         /// </summary>
         public DeltaRequestBuilder Delta() {
             return new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \workbooks\{driveItem-id}\microsoft.graph.delta(token='{token}')
-        /// <param name="token">Usage: token={token}</param>
+        /// Provides operations to call the delta method.
+        /// <param name="token">Usage: token='{token}'</param>
         /// </summary>
         public DeltaWithTokenRequestBuilder DeltaWithToken(string token) {
             if(string.IsNullOrEmpty(token)) throw new ArgumentNullException(nameof(token));
             return new DeltaWithTokenRequestBuilder(PathParameters, RequestAdapter, token);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \workbooks\{driveItem-id}\microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')
-        /// <param name="endDateTime">Usage: endDateTime={endDateTime}</param>
-        /// <param name="interval">Usage: interval={interval}</param>
-        /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
+        /// Provides operations to call the getActivitiesByInterval method.
+        /// <param name="endDateTime">Usage: endDateTime='{endDateTime}'</param>
+        /// <param name="interval">Usage: interval='{interval}'</param>
+        /// <param name="startDateTime">Usage: startDateTime='{startDateTime}'</param>
         /// </summary>
-        public GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(string endDateTime, string startDateTime, string interval) {
+        public GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(string interval, string endDateTime, string startDateTime) {
             if(string.IsNullOrEmpty(endDateTime)) throw new ArgumentNullException(nameof(endDateTime));
             if(string.IsNullOrEmpty(interval)) throw new ArgumentNullException(nameof(interval));
             if(string.IsNullOrEmpty(startDateTime)) throw new ArgumentNullException(nameof(startDateTime));
-            return new GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime, interval);
+            return new GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder(PathParameters, RequestAdapter, interval, endDateTime, startDateTime);
         }
         /// <summary>
         /// Get entity from workbooks by key
@@ -232,7 +233,11 @@ namespace MicrosoftGraphSdk.Workbooks.Item {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update entity in workbooks
@@ -245,11 +250,15 @@ namespace MicrosoftGraphSdk.Workbooks.Item {
         public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \workbooks\{driveItem-id}\microsoft.graph.search(q='{q}')
-        /// <param name="q">Usage: q={q}</param>
+        /// Provides operations to call the search method.
+        /// <param name="q">Usage: q='{q}'</param>
         /// </summary>
         public SearchWithQRequestBuilder SearchWithQ(string q) {
             if(string.IsNullOrEmpty(q)) throw new ArgumentNullException(nameof(q));

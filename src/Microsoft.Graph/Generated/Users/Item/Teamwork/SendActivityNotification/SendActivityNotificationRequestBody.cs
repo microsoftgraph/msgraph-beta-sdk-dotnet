@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Users.Item.Teamwork.SendActivityNotification {
-    public class SendActivityNotificationRequestBody : IParsable {
+    /// <summary>Provides operations to call the sendActivityNotification method.</summary>
+    public class SendActivityNotificationRequestBody : IParsable, IAdditionalDataHolder {
         public string ActivityType { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

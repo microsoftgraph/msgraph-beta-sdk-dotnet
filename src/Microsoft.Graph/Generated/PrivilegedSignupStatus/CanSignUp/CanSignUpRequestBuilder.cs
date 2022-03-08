@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.PrivilegedSignupStatus.CanSignUp {
-    /// <summary>Builds and executes requests for operations under \privilegedSignupStatus\microsoft.graph.canSignUp()</summary>
+    /// <summary>Provides operations to call the canSignUp method.</summary>
     public class CanSignUpRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -64,9 +64,9 @@ namespace MicrosoftGraphSdk.PrivilegedSignupStatus.CanSignUp {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<bool?> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<CanSignUpResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendPrimitiveAsync<bool?>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CanSignUpResponse>(requestInfo, CanSignUpResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

@@ -5,6 +5,7 @@ using MicrosoftGraphSdk.Communications.Presences.Item.ClearUserPreferredPresence
 using MicrosoftGraphSdk.Communications.Presences.Item.SetPresence;
 using MicrosoftGraphSdk.Communications.Presences.Item.SetUserPreferredPresence;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,7 +13,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Communications.Presences.Item {
-    /// <summary>Builds and executes requests for operations under \communications\presences\{presence-id}</summary>
+    /// <summary>Provides operations to manage the presences property of the microsoft.graph.cloudCommunications entity.</summary>
     public class PresenceItemRequestBuilder {
         public ClearPresenceRequestBuilder ClearPresence { get =>
             new ClearPresenceRequestBuilder(PathParameters, RequestAdapter);
@@ -122,7 +123,11 @@ namespace MicrosoftGraphSdk.Communications.Presences.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Get presences from communications
@@ -134,7 +139,11 @@ namespace MicrosoftGraphSdk.Communications.Presences.Item {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Presence> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Presence>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Presence.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Presence>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Presence.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property presences in communications
@@ -147,7 +156,11 @@ namespace MicrosoftGraphSdk.Communications.Presences.Item {
         public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Presence body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Get presences from communications</summary>
         public class GetQueryParameters : QueryParametersBase {

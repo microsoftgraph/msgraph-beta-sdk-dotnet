@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item.SyncInventory {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\windowsDriverUpdateProfiles\{windowsDriverUpdateProfile-id}\microsoft.graph.syncInventory</summary>
+    /// <summary>Provides operations to call the syncInventory method.</summary>
     public class SyncInventoryRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

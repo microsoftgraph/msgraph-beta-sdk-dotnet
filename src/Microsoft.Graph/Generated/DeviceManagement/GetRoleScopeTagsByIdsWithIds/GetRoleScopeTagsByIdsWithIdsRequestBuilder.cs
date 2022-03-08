@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.GetRoleScopeTagsByIdsWithIds {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\microsoft.graph.getRoleScopeTagsByIds(ids=@ids)</summary>
+    /// <summary>Provides operations to call the getRoleScopeTagsByIds method.</summary>
     public class GetRoleScopeTagsByIdsWithIdsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -71,9 +71,9 @@ namespace MicrosoftGraphSdk.DeviceManagement.GetRoleScopeTagsByIdsWithIds {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<GetRoleScopeTagsByIdsWithIds>> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<GetRoleScopeTagsByIdsWithIdsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendCollectionAsync<GetRoleScopeTagsByIdsWithIds>(requestInfo, GetRoleScopeTagsByIdsWithIds.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetRoleScopeTagsByIdsWithIdsResponse>(requestInfo, GetRoleScopeTagsByIdsWithIdsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Invoke function getRoleScopeTagsByIds</summary>
         public class GetQueryParameters : QueryParametersBase {

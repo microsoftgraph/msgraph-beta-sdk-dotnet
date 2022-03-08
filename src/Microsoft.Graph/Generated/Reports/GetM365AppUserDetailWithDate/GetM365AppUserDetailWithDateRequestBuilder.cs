@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Reports.GetM365AppUserDetailWithDate {
-    /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.getM365AppUserDetail(date={date})</summary>
+    /// <summary>Provides operations to call the getM365AppUserDetail method.</summary>
     public class GetM365AppUserDetailWithDateRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

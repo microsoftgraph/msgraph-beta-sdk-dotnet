@@ -4,16 +4,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class AssignedPlan : IParsable {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    public class AssignedPlan : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time at which the plan was assigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? AssignedDateTime { get; set; }
         /// <summary>Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.</summary>
         public string CapabilityStatus { get; set; }
-        /// <summary>The name of the service; for example, 'Exchange'.</summary>
+        /// <summary>The name of the service; for example, exchange.</summary>
         public string Service { get; set; }
-        /// <summary>A GUID that identifies the service plan.</summary>
+        /// <summary>A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.</summary>
         public string ServicePlanId { get; set; }
         /// <summary>
         /// Instantiates a new assignedPlan and sets the default values.

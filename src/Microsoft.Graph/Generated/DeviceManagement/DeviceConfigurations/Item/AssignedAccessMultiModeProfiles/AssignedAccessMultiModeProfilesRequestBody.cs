@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.AssignedAccessMultiModeProfiles {
-    public class AssignedAccessMultiModeProfilesRequestBody : IParsable {
+    /// <summary>Provides operations to call the assignedAccessMultiModeProfiles method.</summary>
+    public class AssignedAccessMultiModeProfilesRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<WindowsAssignedAccessProfile> AssignedAccessMultiModeProfiles { get; set; }

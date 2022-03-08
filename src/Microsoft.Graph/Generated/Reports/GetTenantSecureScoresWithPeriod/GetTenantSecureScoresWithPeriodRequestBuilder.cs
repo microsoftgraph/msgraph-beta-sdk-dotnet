@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Reports.GetTenantSecureScoresWithPeriod {
-    /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.getTenantSecureScores(period={period})</summary>
+    /// <summary>Provides operations to call the getTenantSecureScores method.</summary>
     public class GetTenantSecureScoresWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.Reports.GetTenantSecureScoresWithPeriod {
             return await RequestAdapter.SendAsync<GetTenantSecureScoresWithPeriodResponse>(requestInfo, GetTenantSecureScoresWithPeriodResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes report</summary>
-        public class GetTenantSecureScoresWithPeriodResponse : IParsable {
+        public class GetTenantSecureScoresWithPeriodResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type report</summary>

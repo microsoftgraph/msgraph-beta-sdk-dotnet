@@ -1,6 +1,9 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
+using MicrosoftGraphSdk.PrivilegedAccess.Item.RoleSettings.Item.Resource;
+using MicrosoftGraphSdk.PrivilegedAccess.Item.RoleSettings.Item.RoleDefinition;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,12 +11,18 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.PrivilegedAccess.Item.RoleSettings.Item {
-    /// <summary>Builds and executes requests for operations under \privilegedAccess\{privilegedAccess-id}\roleSettings\{governanceRoleSetting-id}</summary>
+    /// <summary>Provides operations to manage the roleSettings property of the microsoft.graph.privilegedAccess entity.</summary>
     public class GovernanceRoleSettingItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        public ResourceRequestBuilder Resource { get =>
+            new ResourceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public RoleDefinitionRequestBuilder RoleDefinition { get =>
+            new RoleDefinitionRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -44,7 +53,7 @@ namespace MicrosoftGraphSdk.PrivilegedAccess.Item.RoleSettings.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// A collection of role settings for the provider.
+        /// Delete navigation property roleSettings for privilegedAccess
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -80,7 +89,7 @@ namespace MicrosoftGraphSdk.PrivilegedAccess.Item.RoleSettings.Item {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of role settings for the provider.
+        /// Update the navigation property roleSettings in privilegedAccess
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -98,7 +107,7 @@ namespace MicrosoftGraphSdk.PrivilegedAccess.Item.RoleSettings.Item {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of role settings for the provider.
+        /// Delete navigation property roleSettings for privilegedAccess
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -106,7 +115,11 @@ namespace MicrosoftGraphSdk.PrivilegedAccess.Item.RoleSettings.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// A collection of role settings for the provider.
@@ -118,10 +131,14 @@ namespace MicrosoftGraphSdk.PrivilegedAccess.Item.RoleSettings.Item {
         /// </summary>
         public async Task<GovernanceRoleSetting> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<GovernanceRoleSetting>(requestInfo, GovernanceRoleSetting.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<GovernanceRoleSetting>(requestInfo, GovernanceRoleSetting.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A collection of role settings for the provider.
+        /// Update the navigation property roleSettings in privilegedAccess
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -131,7 +148,11 @@ namespace MicrosoftGraphSdk.PrivilegedAccess.Item.RoleSettings.Item {
         public async Task PatchAsync(GovernanceRoleSetting body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>A collection of role settings for the provider.</summary>
         public class GetQueryParameters : QueryParametersBase {

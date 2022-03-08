@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class RequiredResourceAccess : IParsable {
+    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    public class RequiredResourceAccess : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The list of OAuth2.0 permission scopes and app roles that the application requires from the specified resource.</summary>

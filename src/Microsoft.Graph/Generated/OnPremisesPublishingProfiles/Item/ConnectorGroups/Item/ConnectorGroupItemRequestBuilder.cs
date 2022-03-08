@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.ConnectorGroups.Item.Applications;
 using MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.ConnectorGroups.Item.Members;
 using System;
@@ -10,7 +11,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.ConnectorGroups.Item {
-    /// <summary>Builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\connectorGroups\{connectorGroup-id}</summary>
+    /// <summary>Provides operations to manage the connectorGroups property of the microsoft.graph.onPremisesPublishingProfile entity.</summary>
     public class ConnectorGroupItemRequestBuilder {
         public ApplicationsRequestBuilder Applications { get =>
             new ApplicationsRequestBuilder(PathParameters, RequestAdapter);
@@ -52,7 +53,7 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.ConnectorGroups.It
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
+        /// Delete navigation property connectorGroups for onPremisesPublishingProfiles
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -88,7 +89,7 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.ConnectorGroups.It
             return requestInfo;
         }
         /// <summary>
-        /// List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
+        /// Update the navigation property connectorGroups in onPremisesPublishingProfiles
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -106,7 +107,7 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.ConnectorGroups.It
             return requestInfo;
         }
         /// <summary>
-        /// List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
+        /// Delete navigation property connectorGroups for onPremisesPublishingProfiles
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -114,7 +115,11 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.ConnectorGroups.It
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
@@ -126,10 +131,14 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.ConnectorGroups.It
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectorGroup> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectorGroup>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectorGroup.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectorGroup>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectorGroup.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
+        /// Update the navigation property connectorGroups in onPremisesPublishingProfiles
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -139,7 +148,11 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.ConnectorGroups.It
         public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectorGroup body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

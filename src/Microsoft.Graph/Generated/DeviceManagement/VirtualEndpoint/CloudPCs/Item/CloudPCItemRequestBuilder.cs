@@ -7,6 +7,7 @@ using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Rename;
 using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Reprovision;
 using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Troubleshoot;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,7 +15,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.CloudPCs.Item {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\virtualEndpoint\cloudPCs\{cloudPC-id}</summary>
+    /// <summary>Provides operations to manage the cloudPCs property of the microsoft.graph.virtualEndpoint entity.</summary>
     public class CloudPCItemRequestBuilder {
         public ChangeUserAccountTypeRequestBuilder ChangeUserAccountType { get =>
             new ChangeUserAccountTypeRequestBuilder(PathParameters, RequestAdapter);
@@ -68,7 +69,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.CloudPCs.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Cloud managed virtual desktops.
+        /// Delete navigation property cloudPCs for deviceManagement
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -104,7 +105,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.CloudPCs.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Cloud managed virtual desktops.
+        /// Update the navigation property cloudPCs in deviceManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -122,7 +123,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.CloudPCs.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Cloud managed virtual desktops.
+        /// Delete navigation property cloudPCs for deviceManagement
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -130,7 +131,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.CloudPCs.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Cloud managed virtual desktops.
@@ -142,10 +147,14 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.CloudPCs.Item {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.CloudPC> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.CloudPC>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.CloudPC.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.CloudPC>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.CloudPC.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Cloud managed virtual desktops.
+        /// Update the navigation property cloudPCs in deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -155,7 +164,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.CloudPCs.Item {
         public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.CloudPC body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Cloud managed virtual desktops.</summary>
         public class GetQueryParameters : QueryParametersBase {

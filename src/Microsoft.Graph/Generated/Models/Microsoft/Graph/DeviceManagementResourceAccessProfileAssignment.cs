@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DeviceManagementResourceAccessProfileAssignment : Entity, IParsable {
         /// <summary>The assignment intent for the resource access profile. Possible values are: apply, remove.</summary>
         public DeviceManagementResourceAccessProfileIntent? Intent { get; set; }

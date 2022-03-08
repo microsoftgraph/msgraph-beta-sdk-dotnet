@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.GetSuggestedEnrollmentLimitWithEnrollmentType {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\microsoft.graph.getSuggestedEnrollmentLimit(enrollmentType='{enrollmentType}')</summary>
+    /// <summary>Provides operations to call the getSuggestedEnrollmentLimit method.</summary>
     public class GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -18,7 +18,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GetSuggestedEnrollmentLimitWithEnro
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder and sets the default values.
-        /// <param name="enrollmentType">Usage: enrollmentType={enrollmentType}</param>
+        /// <param name="enrollmentType">Usage: enrollmentType='{enrollmentType}'</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// </summary>
@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GetSuggestedEnrollmentLimitWithEnro
             return await RequestAdapter.SendAsync<GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse>(requestInfo, GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes suggestedEnrollmentLimit</summary>
-        public class GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse : IParsable {
+        public class GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type suggestedEnrollmentLimit</summary>

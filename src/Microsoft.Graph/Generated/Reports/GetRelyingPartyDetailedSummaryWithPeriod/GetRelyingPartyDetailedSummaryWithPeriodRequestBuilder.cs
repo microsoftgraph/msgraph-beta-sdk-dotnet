@@ -1,6 +1,5 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Reports.GetRelyingPartyDetailedSummaryWithPeriod {
-    /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.getRelyingPartyDetailedSummary(period='{period}')</summary>
+    /// <summary>Provides operations to call the getRelyingPartyDetailedSummary method.</summary>
     public class GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -19,7 +18,7 @@ namespace MicrosoftGraphSdk.Reports.GetRelyingPartyDetailedSummaryWithPeriod {
         /// <summary>
         /// Instantiates a new GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
-        /// <param name="period">Usage: period={period}</param>
+        /// <param name="period">Usage: period='{period}'</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// </summary>
         public GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string period = default) {
@@ -67,9 +66,9 @@ namespace MicrosoftGraphSdk.Reports.GetRelyingPartyDetailedSummaryWithPeriod {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<RelyingPartyDetailedSummary>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<GetRelyingPartyDetailedSummaryWithPeriodResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<RelyingPartyDetailedSummary>(requestInfo, RelyingPartyDetailedSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetRelyingPartyDetailedSummaryWithPeriodResponse>(requestInfo, GetRelyingPartyDetailedSummaryWithPeriodResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

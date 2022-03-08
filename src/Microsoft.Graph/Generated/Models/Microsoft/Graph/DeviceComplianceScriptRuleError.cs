@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to call the validateComplianceScript method.</summary>
     public class DeviceComplianceScriptRuleError : DeviceComplianceScriptError, IParsable {
         /// <summary>Setting name for the rule with error.</summary>
         public string SettingName { get; set; }

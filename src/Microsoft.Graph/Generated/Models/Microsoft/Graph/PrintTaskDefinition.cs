@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the print singleton.</summary>
     public class PrintTaskDefinition : Entity, IParsable {
         public AppIdentity CreatedBy { get; set; }
         /// <summary>The name of the printTaskDefinition.</summary>

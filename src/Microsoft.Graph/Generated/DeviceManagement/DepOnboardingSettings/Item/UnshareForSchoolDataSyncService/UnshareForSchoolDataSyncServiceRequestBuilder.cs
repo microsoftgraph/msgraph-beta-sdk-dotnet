@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.UnshareForSchoolDataSyncService {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\microsoft.graph.unshareForSchoolDataSyncService</summary>
+    /// <summary>Provides operations to call the unshareForSchoolDataSyncService method.</summary>
     public class UnshareForSchoolDataSyncServiceRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

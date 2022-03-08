@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Teams.Item.Schedule.TimeCards.Item.Confirm {
-    /// <summary>Builds and executes requests for operations under \teams\{team-id}\schedule\timeCards\{timeCard-id}\microsoft.graph.confirm</summary>
+    /// <summary>Provides operations to call the confirm method.</summary>
     public class ConfirmRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.TimeCards.Item.Confirm {
             return await RequestAdapter.SendAsync<ConfirmResponse>(requestInfo, ConfirmResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes timeCard</summary>
-        public class ConfirmResponse : IParsable {
+        public class ConfirmResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type timeCard</summary>

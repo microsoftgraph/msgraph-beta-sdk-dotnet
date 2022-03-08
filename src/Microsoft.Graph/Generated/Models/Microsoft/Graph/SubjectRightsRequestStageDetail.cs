@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class SubjectRightsRequestStageDetail : IParsable {
+    /// <summary>Provides operations to manage the privacy singleton.</summary>
+    public class SubjectRightsRequestStageDetail : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Describes the error, if any, for the current stage.</summary>

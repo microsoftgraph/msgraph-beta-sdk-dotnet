@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the collection of bookingBusiness entities.</summary>
     public class BookingPerson : BookingNamedEntity, IParsable {
         /// <summary>The email address of the person.</summary>
         public string EmailAddress { get; set; }

@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class Process : IParsable {
+    /// <summary>Provides operations to manage the alerts property of the microsoft.graph.security entity.</summary>
+    public class Process : IParsable, IAdditionalDataHolder {
         /// <summary>User account identifier (user account context the process ran under) for example, AccountName, SID, and so on.</summary>
         public string AccountName { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

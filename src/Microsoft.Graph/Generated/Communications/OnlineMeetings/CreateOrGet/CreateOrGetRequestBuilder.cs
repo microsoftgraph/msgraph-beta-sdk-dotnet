@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Communications.OnlineMeetings.CreateOrGet {
-    /// <summary>Builds and executes requests for operations under \communications\onlineMeetings\microsoft.graph.createOrGet</summary>
+    /// <summary>Provides operations to call the createOrGet method.</summary>
     public class CreateOrGetRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Communications.OnlineMeetings.CreateOrGet {
             return await RequestAdapter.SendAsync<CreateOrGetResponse>(requestInfo, CreateOrGetResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes onlineMeeting</summary>
-        public class CreateOrGetResponse : IParsable {
+        public class CreateOrGetResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type onlineMeeting</summary>

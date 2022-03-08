@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class EducationalActivityDetail : IParsable {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    public class EducationalActivityDetail : IParsable, IAdditionalDataHolder {
         /// <summary>Shortened name of the degree or program (example: PhD, MBA)</summary>
         public string Abbreviation { get; set; }
         /// <summary>Extracurricular activities undertaken alongside the program.</summary>

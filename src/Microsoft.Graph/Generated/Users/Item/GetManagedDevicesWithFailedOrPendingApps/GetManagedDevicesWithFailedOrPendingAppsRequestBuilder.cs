@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.GetManagedDevicesWithFailedOrPendingApps {
-    /// <summary>Builds and executes requests for operations under \users\{user-id}\microsoft.graph.getManagedDevicesWithFailedOrPendingApps()</summary>
+    /// <summary>Provides operations to call the getManagedDevicesWithFailedOrPendingApps method.</summary>
     public class GetManagedDevicesWithFailedOrPendingAppsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -64,9 +64,9 @@ namespace MicrosoftGraphSdk.Users.Item.GetManagedDevicesWithFailedOrPendingApps 
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<GetManagedDevicesWithFailedOrPendingApps>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<GetManagedDevicesWithFailedOrPendingAppsResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<GetManagedDevicesWithFailedOrPendingApps>(requestInfo, GetManagedDevicesWithFailedOrPendingApps.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetManagedDevicesWithFailedOrPendingAppsResponse>(requestInfo, GetManagedDevicesWithFailedOrPendingAppsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

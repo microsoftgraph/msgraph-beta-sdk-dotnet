@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to call the classifyFile method.</summary>
     public class DetectedSensitiveContent : DetectedSensitiveContentBase, IParsable {
         public List<ClassificationAttribute> ClassificationAttributes { get; set; }
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ClassificationMethod? ClassificationMethod { get; set; }

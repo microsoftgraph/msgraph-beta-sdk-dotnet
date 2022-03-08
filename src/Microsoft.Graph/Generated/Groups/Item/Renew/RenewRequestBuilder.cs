@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Groups.Item.Renew {
-    /// <summary>Builds and executes requests for operations under \groups\{group-id}\microsoft.graph.renew</summary>
+    /// <summary>Provides operations to call the renew method.</summary>
     public class RenewRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

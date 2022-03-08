@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.RiskyUsers.Dismiss {
-    public class DismissRequestBody : IParsable {
+    /// <summary>Provides operations to call the dismiss method.</summary>
+    public class DismissRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<string> UserIds { get; set; }

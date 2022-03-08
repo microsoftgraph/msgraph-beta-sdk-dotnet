@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Groups.Item.ResetUnseenCount {
-    /// <summary>Builds and executes requests for operations under \groups\{group-id}\microsoft.graph.resetUnseenCount</summary>
+    /// <summary>Provides operations to call the resetUnseenCount method.</summary>
     public class ResetUnseenCountRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

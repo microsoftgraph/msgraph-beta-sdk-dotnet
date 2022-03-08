@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using MicrosoftGraphSdk.Workbooks.Item.ListItem.Activities;
 using MicrosoftGraphSdk.Workbooks.Item.ListItem.Analytics;
 using MicrosoftGraphSdk.Workbooks.Item.ListItem.CreateLink;
@@ -15,7 +16,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Workbooks.Item.ListItem {
-    /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\listItem</summary>
+    /// <summary>Provides operations to manage the listItem property of the microsoft.graph.driveItem entity.</summary>
     public class ListItemRequestBuilder {
         public ActivitiesRequestBuilder Activities { get =>
             new ActivitiesRequestBuilder(PathParameters, RequestAdapter);
@@ -69,7 +70,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.ListItem {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// For drives in SharePoint, the associated document library list item. Read-only. Nullable.
+        /// Delete navigation property listItem for workbooks
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -105,7 +106,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.ListItem {
             return requestInfo;
         }
         /// <summary>
-        /// For drives in SharePoint, the associated document library list item. Read-only. Nullable.
+        /// Update the navigation property listItem in workbooks
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -123,7 +124,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.ListItem {
             return requestInfo;
         }
         /// <summary>
-        /// For drives in SharePoint, the associated document library list item. Read-only. Nullable.
+        /// Delete navigation property listItem for workbooks
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -131,19 +132,23 @@ namespace MicrosoftGraphSdk.Workbooks.Item.ListItem {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \workbooks\{driveItem-id}\listItem\microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')
-        /// <param name="endDateTime">Usage: endDateTime={endDateTime}</param>
-        /// <param name="interval">Usage: interval={interval}</param>
-        /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
+        /// Provides operations to call the getActivitiesByInterval method.
+        /// <param name="endDateTime">Usage: endDateTime='{endDateTime}'</param>
+        /// <param name="interval">Usage: interval='{interval}'</param>
+        /// <param name="startDateTime">Usage: startDateTime='{startDateTime}'</param>
         /// </summary>
-        public GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(string endDateTime, string startDateTime, string interval) {
+        public GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(string interval, string endDateTime, string startDateTime) {
             if(string.IsNullOrEmpty(endDateTime)) throw new ArgumentNullException(nameof(endDateTime));
             if(string.IsNullOrEmpty(interval)) throw new ArgumentNullException(nameof(interval));
             if(string.IsNullOrEmpty(startDateTime)) throw new ArgumentNullException(nameof(startDateTime));
-            return new GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime, interval);
+            return new GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder(PathParameters, RequestAdapter, interval, endDateTime, startDateTime);
         }
         /// <summary>
         /// For drives in SharePoint, the associated document library list item. Read-only. Nullable.
@@ -155,10 +160,14 @@ namespace MicrosoftGraphSdk.Workbooks.Item.ListItem {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ListItem> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ListItem>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ListItem.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ListItem>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ListItem.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// For drives in SharePoint, the associated document library list item. Read-only. Nullable.
+        /// Update the navigation property listItem in workbooks
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -168,7 +177,11 @@ namespace MicrosoftGraphSdk.Workbooks.Item.ListItem {
         public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.ListItem body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>For drives in SharePoint, the associated document library list item. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

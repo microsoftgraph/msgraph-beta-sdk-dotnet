@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the dataClassificationService singleton.</summary>
     public class DataClassificationService : Entity, IParsable {
         public List<JobResponseBase> ClassifyFileJobs { get; set; }
         public List<JobResponseBase> ClassifyTextJobs { get; set; }

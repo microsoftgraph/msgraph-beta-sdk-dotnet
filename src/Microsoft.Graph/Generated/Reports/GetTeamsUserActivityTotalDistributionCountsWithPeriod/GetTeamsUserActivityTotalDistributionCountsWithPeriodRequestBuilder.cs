@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Reports.GetTeamsUserActivityTotalDistributionCountsWithPeriod {
-    /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.getTeamsUserActivityTotalDistributionCounts(period='{period}')</summary>
+    /// <summary>Provides operations to call the getTeamsUserActivityTotalDistributionCounts method.</summary>
     public class GetTeamsUserActivityTotalDistributionCountsWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -18,7 +18,7 @@ namespace MicrosoftGraphSdk.Reports.GetTeamsUserActivityTotalDistributionCountsW
         /// <summary>
         /// Instantiates a new GetTeamsUserActivityTotalDistributionCountsWithPeriodRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
-        /// <param name="period">Usage: period={period}</param>
+        /// <param name="period">Usage: period='{period}'</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// </summary>
         public GetTeamsUserActivityTotalDistributionCountsWithPeriodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string period = default) {
@@ -66,9 +66,9 @@ namespace MicrosoftGraphSdk.Reports.GetTeamsUserActivityTotalDistributionCountsW
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<Stream> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<GetTeamsUserActivityTotalDistributionCountsWithPeriodResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetTeamsUserActivityTotalDistributionCountsWithPeriodResponse>(requestInfo, GetTeamsUserActivityTotalDistributionCountsWithPeriodResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

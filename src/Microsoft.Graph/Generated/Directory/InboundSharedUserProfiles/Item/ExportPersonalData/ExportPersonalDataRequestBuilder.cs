@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Directory.InboundSharedUserProfiles.Item.ExportPersonalData {
-    /// <summary>Builds and executes requests for operations under \directory\inboundSharedUserProfiles\{inboundSharedUserProfile-userId}\microsoft.graph.exportPersonalData</summary>
+    /// <summary>Provides operations to call the exportPersonalData method.</summary>
     public class ExportPersonalDataRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item.ProvisionOnDemand {
-    /// <summary>Builds and executes requests for operations under \applications\{application-id}\synchronization\jobs\{synchronizationJob-id}\microsoft.graph.provisionOnDemand</summary>
+    /// <summary>Provides operations to call the provisionOnDemand method.</summary>
     public class ProvisionOnDemandRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

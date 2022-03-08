@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.GetAssignmentFiltersStatusDetails {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\microsoft.graph.getAssignmentFiltersStatusDetails</summary>
+    /// <summary>Provides operations to call the getAssignmentFiltersStatusDetails method.</summary>
     public class GetAssignmentFiltersStatusDetailsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GetAssignmentFiltersStatusDetails {
             return await RequestAdapter.SendAsync<GetAssignmentFiltersStatusDetailsResponse>(requestInfo, GetAssignmentFiltersStatusDetailsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes assignmentFilterStatusDetails</summary>
-        public class GetAssignmentFiltersStatusDetailsResponse : IParsable {
+        public class GetAssignmentFiltersStatusDetailsResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type assignmentFilterStatusDetails</summary>

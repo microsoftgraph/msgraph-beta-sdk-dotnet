@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Me.CalendarView.Item.Instances.Item.Cancel {
-    /// <summary>Builds and executes requests for operations under \me\calendarView\{event-id}\instances\{event-id1}\microsoft.graph.cancel</summary>
+    /// <summary>Provides operations to call the cancel method.</summary>
     public class CancelRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

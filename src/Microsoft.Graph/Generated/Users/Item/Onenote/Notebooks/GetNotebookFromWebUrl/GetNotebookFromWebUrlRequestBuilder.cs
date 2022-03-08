@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.Onenote.Notebooks.GetNotebookFromWebUrl {
-    /// <summary>Builds and executes requests for operations under \users\{user-id}\onenote\notebooks\microsoft.graph.getNotebookFromWebUrl</summary>
+    /// <summary>Provides operations to call the getNotebookFromWebUrl method.</summary>
     public class GetNotebookFromWebUrlRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Users.Item.Onenote.Notebooks.GetNotebookFromWebUrl {
             return await RequestAdapter.SendAsync<GetNotebookFromWebUrlResponse>(requestInfo, GetNotebookFromWebUrlResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes CopyNotebookModel</summary>
-        public class GetNotebookFromWebUrlResponse : IParsable {
+        public class GetNotebookFromWebUrlResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type CopyNotebookModel</summary>

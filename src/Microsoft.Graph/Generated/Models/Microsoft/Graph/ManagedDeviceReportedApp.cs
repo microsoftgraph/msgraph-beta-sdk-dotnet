@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class ManagedDeviceReportedApp : IParsable {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    public class ManagedDeviceReportedApp : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The application or bundle identifier of the application</summary>

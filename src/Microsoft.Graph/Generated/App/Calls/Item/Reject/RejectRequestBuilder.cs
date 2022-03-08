@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.App.Calls.Item.Reject {
-    /// <summary>Builds and executes requests for operations under \app\calls\{call-id}\microsoft.graph.reject</summary>
+    /// <summary>Provides operations to call the reject method.</summary>
     public class RejectRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

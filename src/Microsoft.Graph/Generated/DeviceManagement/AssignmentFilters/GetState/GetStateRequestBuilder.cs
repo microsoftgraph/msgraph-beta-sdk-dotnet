@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.GetState {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\assignmentFilters\microsoft.graph.getState()</summary>
+    /// <summary>Provides operations to call the getState method.</summary>
     public class GetStateRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.GetState {
             return await RequestAdapter.SendAsync<GetStateResponse>(requestInfo, GetStateResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes assignmentFilterState</summary>
-        public class GetStateResponse : IParsable {
+        public class GetStateResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type assignmentFilterState</summary>

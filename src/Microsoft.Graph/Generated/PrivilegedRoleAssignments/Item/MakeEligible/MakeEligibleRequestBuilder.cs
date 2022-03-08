@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.PrivilegedRoleAssignments.Item.MakeEligible {
-    /// <summary>Builds and executes requests for operations under \privilegedRoleAssignments\{privilegedRoleAssignment-id}\microsoft.graph.makeEligible</summary>
+    /// <summary>Provides operations to call the makeEligible method.</summary>
     public class MakeEligibleRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.PrivilegedRoleAssignments.Item.MakeEligible {
             return await RequestAdapter.SendAsync<MakeEligibleResponse>(requestInfo, MakeEligibleResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes privilegedRoleAssignment</summary>
-        public class MakeEligibleResponse : IParsable {
+        public class MakeEligibleResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type privilegedRoleAssignment</summary>

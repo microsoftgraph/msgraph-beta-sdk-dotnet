@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class WorkbookChartSeriesFormat : Entity, IParsable {
         /// <summary>Represents the fill format of a chart series, which includes background formating information. Read-only.</summary>
         public WorkbookChartFill Fill { get; set; }

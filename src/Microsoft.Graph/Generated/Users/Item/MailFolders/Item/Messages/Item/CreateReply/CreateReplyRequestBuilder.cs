@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.MailFolders.Item.Messages.Item.CreateReply {
-    /// <summary>Builds and executes requests for operations under \users\{user-id}\mailFolders\{mailFolder-id}\messages\{message-id}\microsoft.graph.createReply</summary>
+    /// <summary>Provides operations to call the createReply method.</summary>
     public class CreateReplyRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Users.Item.MailFolders.Item.Messages.Item.CreateRepl
             return await RequestAdapter.SendAsync<CreateReplyResponse>(requestInfo, CreateReplyResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes message</summary>
-        public class CreateReplyResponse : IParsable {
+        public class CreateReplyResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type message</summary>

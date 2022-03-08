@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.DeleteUserFromSharedAppleDevice {
-    /// <summary>Builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}\microsoft.graph.deleteUserFromSharedAppleDevice</summary>
+    /// <summary>Provides operations to call the deleteUserFromSharedAppleDevice method.</summary>
     public class DeleteUserFromSharedAppleDeviceRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

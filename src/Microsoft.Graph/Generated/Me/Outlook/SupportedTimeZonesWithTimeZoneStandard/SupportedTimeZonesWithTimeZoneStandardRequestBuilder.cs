@@ -1,6 +1,5 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Me.Outlook.SupportedTimeZonesWithTimeZoneStandard {
-    /// <summary>Builds and executes requests for operations under \me\outlook\microsoft.graph.supportedTimeZones(TimeZoneStandard={TimeZoneStandard})</summary>
+    /// <summary>Provides operations to call the supportedTimeZones method.</summary>
     public class SupportedTimeZonesWithTimeZoneStandardRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -20,12 +19,12 @@ namespace MicrosoftGraphSdk.Me.Outlook.SupportedTimeZonesWithTimeZoneStandard {
         /// Instantiates a new SupportedTimeZonesWithTimeZoneStandardRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// <param name="TimeZoneStandard">Usage: TimeZoneStandard={TimeZoneStandard}</param>
+        /// <param name="TimeZoneStandard">Usage: TimeZoneStandard='{TimeZoneStandard}'</param>
         /// </summary>
         public SupportedTimeZonesWithTimeZoneStandardRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string timeZoneStandard = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/outlook/microsoft.graph.supportedTimeZones(TimeZoneStandard={TimeZoneStandard})";
+            UrlTemplate = "{+baseurl}/me/outlook/microsoft.graph.supportedTimeZones(TimeZoneStandard='{TimeZoneStandard}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             urlTplParams.Add("TimeZoneStandard", timeZoneStandard);
             PathParameters = urlTplParams;
@@ -39,7 +38,7 @@ namespace MicrosoftGraphSdk.Me.Outlook.SupportedTimeZonesWithTimeZoneStandard {
         public SupportedTimeZonesWithTimeZoneStandardRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/outlook/microsoft.graph.supportedTimeZones(TimeZoneStandard={TimeZoneStandard})";
+            UrlTemplate = "{+baseurl}/me/outlook/microsoft.graph.supportedTimeZones(TimeZoneStandard='{TimeZoneStandard}')";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -67,9 +66,9 @@ namespace MicrosoftGraphSdk.Me.Outlook.SupportedTimeZonesWithTimeZoneStandard {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<TimeZoneInformation>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<SupportedTimeZonesWithTimeZoneStandardResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<TimeZoneInformation>(requestInfo, TimeZoneInformation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SupportedTimeZonesWithTimeZoneStandardResponse>(requestInfo, SupportedTimeZonesWithTimeZoneStandardResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

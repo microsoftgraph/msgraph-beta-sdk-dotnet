@@ -1,0 +1,47 @@
+using Microsoft.Kiota.Abstractions.Serialization;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the awards property of the microsoft.graph.profile entity.</summary>
+    public class PersonAwardCollectionResponse : IParsable, IAdditionalDataHolder {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        public string NextLink { get; set; }
+        public List<PersonAward> Value { get; set; }
+        /// <summary>
+        /// Instantiates a new PersonAwardCollectionResponse and sets the default values.
+        /// </summary>
+        public PersonAwardCollectionResponse() {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static PersonAwardCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new PersonAwardCollectionResponse();
+        }
+        /// <summary>
+        /// The deserialization information for the current model
+        /// </summary>
+        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
+            return new Dictionary<string, Action<T, IParseNode>> {
+                {"@odata.nextLink", (o,n) => { (o as PersonAwardCollectionResponse).NextLink = n.GetStringValue(); } },
+                {"value", (o,n) => { (o as PersonAwardCollectionResponse).Value = n.GetCollectionOfObjectValues<PersonAward>(PersonAward.CreateFromDiscriminatorValue).ToList(); } },
+            };
+        }
+        /// <summary>
+        /// Serializes information the current object
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
+        /// </summary>
+        public void Serialize(ISerializationWriter writer) {
+            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("@odata.nextLink", NextLink);
+            writer.WriteCollectionOfObjectValues<PersonAward>("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
+        }
+    }
+}

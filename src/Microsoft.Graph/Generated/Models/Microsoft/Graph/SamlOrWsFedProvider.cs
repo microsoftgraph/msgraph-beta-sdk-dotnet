@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the collection of domain entities.</summary>
     public class SamlOrWsFedProvider : IdentityProviderBase, IParsable {
         /// <summary>Issuer URI of the federation server.</summary>
         public string IssuerUri { get; set; }

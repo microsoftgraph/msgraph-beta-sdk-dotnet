@@ -1,6 +1,5 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Reports.GetAzureADApplicationSignInSummaryWithPeriod {
-    /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.getAzureADApplicationSignInSummary(period='{period}')</summary>
+    /// <summary>Provides operations to call the getAzureADApplicationSignInSummary method.</summary>
     public class GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -19,7 +18,7 @@ namespace MicrosoftGraphSdk.Reports.GetAzureADApplicationSignInSummaryWithPeriod
         /// <summary>
         /// Instantiates a new GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
-        /// <param name="period">Usage: period={period}</param>
+        /// <param name="period">Usage: period='{period}'</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// </summary>
         public GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string period = default) {
@@ -67,9 +66,9 @@ namespace MicrosoftGraphSdk.Reports.GetAzureADApplicationSignInSummaryWithPeriod
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<ApplicationSignInSummary>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<GetAzureADApplicationSignInSummaryWithPeriodResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<ApplicationSignInSummary>(requestInfo, ApplicationSignInSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetAzureADApplicationSignInSummaryWithPeriodResponse>(requestInfo, GetAzureADApplicationSignInSummaryWithPeriodResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors {
+    /// <summary>Provides operations to manage the collection of externalConnection entities.</summary>
     public class Schema : Entity, IParsable {
         /// <summary>Must be set to microsoft.graph.externalConnector.externalItem. Required.</summary>
         public string BaseType { get; set; }

@@ -1,6 +1,19 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
+using MicrosoftGraphSdk.Print.Reports.ApplicationSignInDetailedSummary;
+using MicrosoftGraphSdk.Print.Reports.AuthenticationMethods;
+using MicrosoftGraphSdk.Print.Reports.CredentialUserRegistrationDetails;
+using MicrosoftGraphSdk.Print.Reports.DailyPrintUsageByPrinter;
+using MicrosoftGraphSdk.Print.Reports.DailyPrintUsageByUser;
+using MicrosoftGraphSdk.Print.Reports.DailyPrintUsageSummariesByPrinter;
+using MicrosoftGraphSdk.Print.Reports.DailyPrintUsageSummariesByUser;
+using MicrosoftGraphSdk.Print.Reports.MonthlyPrintUsageByPrinter;
+using MicrosoftGraphSdk.Print.Reports.MonthlyPrintUsageByUser;
+using MicrosoftGraphSdk.Print.Reports.MonthlyPrintUsageSummariesByPrinter;
+using MicrosoftGraphSdk.Print.Reports.MonthlyPrintUsageSummariesByUser;
+using MicrosoftGraphSdk.Print.Reports.UserCredentialUsageDetails;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,14 +21,50 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Print.Reports {
-    /// <summary>Builds and executes requests for operations under \print\reports</summary>
+    /// <summary>Provides operations to manage the reports property of the microsoft.graph.print entity.</summary>
     public class ReportsRequestBuilder {
+        public ApplicationSignInDetailedSummaryRequestBuilder ApplicationSignInDetailedSummary { get =>
+            new ApplicationSignInDetailedSummaryRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public AuthenticationMethodsRequestBuilder AuthenticationMethods { get =>
+            new AuthenticationMethodsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public CredentialUserRegistrationDetailsRequestBuilder CredentialUserRegistrationDetails { get =>
+            new CredentialUserRegistrationDetailsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public DailyPrintUsageByPrinterRequestBuilder DailyPrintUsageByPrinter { get =>
+            new DailyPrintUsageByPrinterRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public DailyPrintUsageByUserRequestBuilder DailyPrintUsageByUser { get =>
+            new DailyPrintUsageByUserRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public DailyPrintUsageSummariesByPrinterRequestBuilder DailyPrintUsageSummariesByPrinter { get =>
+            new DailyPrintUsageSummariesByPrinterRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public DailyPrintUsageSummariesByUserRequestBuilder DailyPrintUsageSummariesByUser { get =>
+            new DailyPrintUsageSummariesByUserRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public MonthlyPrintUsageByPrinterRequestBuilder MonthlyPrintUsageByPrinter { get =>
+            new MonthlyPrintUsageByPrinterRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public MonthlyPrintUsageByUserRequestBuilder MonthlyPrintUsageByUser { get =>
+            new MonthlyPrintUsageByUserRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public MonthlyPrintUsageSummariesByPrinterRequestBuilder MonthlyPrintUsageSummariesByPrinter { get =>
+            new MonthlyPrintUsageSummariesByPrinterRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public MonthlyPrintUsageSummariesByUserRequestBuilder MonthlyPrintUsageSummariesByUser { get =>
+            new MonthlyPrintUsageSummariesByUserRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        public UserCredentialUsageDetailsRequestBuilder UserCredentialUsageDetails { get =>
+            new UserCredentialUsageDetailsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new ReportsRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -106,7 +155,11 @@ namespace MicrosoftGraphSdk.Print.Reports {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Get reports from print
@@ -118,7 +171,11 @@ namespace MicrosoftGraphSdk.Print.Reports {
         /// </summary>
         public async Task<ReportRoot> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ReportRoot>(requestInfo, ReportRoot.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<ReportRoot>(requestInfo, ReportRoot.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property reports in print
@@ -131,7 +188,11 @@ namespace MicrosoftGraphSdk.Print.Reports {
         public async Task PatchAsync(ReportRoot body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Get reports from print</summary>
         public class GetQueryParameters : QueryParametersBase {

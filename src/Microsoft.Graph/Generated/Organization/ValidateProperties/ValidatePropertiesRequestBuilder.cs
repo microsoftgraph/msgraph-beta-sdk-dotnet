@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Organization.ValidateProperties {
-    /// <summary>Builds and executes requests for operations under \organization\microsoft.graph.validateProperties</summary>
+    /// <summary>Provides operations to call the validateProperties method.</summary>
     public class ValidatePropertiesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

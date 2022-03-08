@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class DirectorySetting : Entity, IParsable {
         /// <summary>Display name of this group of settings, which comes from the associated template. Read-only.</summary>
         public string DisplayName { get; set; }
         /// <summary>Unique identifier for the template used to create this group of settings. Read-only.</summary>
         public string TemplateId { get; set; }
-        /// <summary>Collection of name value pairs. Must contain and set all the settings defined in the template.</summary>
+        /// <summary>Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced directorySettingTemplates object.</summary>
         public List<SettingValue> Values { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

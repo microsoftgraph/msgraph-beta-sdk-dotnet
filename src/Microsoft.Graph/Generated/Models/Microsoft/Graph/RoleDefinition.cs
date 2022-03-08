@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class RoleDefinition : Entity, IParsable {
         /// <summary>Description of the Role definition.</summary>
         public string Description { get; set; }

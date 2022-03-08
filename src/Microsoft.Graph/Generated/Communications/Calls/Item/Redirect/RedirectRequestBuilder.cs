@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Communications.Calls.Item.Redirect {
-    /// <summary>Builds and executes requests for operations under \communications\calls\{call-id}\microsoft.graph.redirect</summary>
+    /// <summary>Provides operations to call the redirect method.</summary>
     public class RedirectRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

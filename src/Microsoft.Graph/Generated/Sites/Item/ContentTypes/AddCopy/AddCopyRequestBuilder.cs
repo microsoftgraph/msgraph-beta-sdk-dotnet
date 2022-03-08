@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Sites.Item.ContentTypes.AddCopy {
-    /// <summary>Builds and executes requests for operations under \sites\{site-id}\contentTypes\microsoft.graph.addCopy</summary>
+    /// <summary>Provides operations to call the addCopy method.</summary>
     public class AddCopyRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Sites.Item.ContentTypes.AddCopy {
             return await RequestAdapter.SendAsync<AddCopyResponse>(requestInfo, AddCopyResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes contentType</summary>
-        public class AddCopyResponse : IParsable {
+        public class AddCopyResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type contentType</summary>

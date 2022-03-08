@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.PrivilegedRoleAssignmentRequests.Item.Cancel {
-    /// <summary>Builds and executes requests for operations under \privilegedRoleAssignmentRequests\{privilegedRoleAssignmentRequest-id}\microsoft.graph.cancel</summary>
+    /// <summary>Provides operations to call the cancel method.</summary>
     public class CancelRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.PrivilegedRoleAssignmentRequests.Item.Cancel {
             return await RequestAdapter.SendAsync<CancelResponse>(requestInfo, CancelResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes privilegedRoleAssignmentRequest</summary>
-        public class CancelResponse : IParsable {
+        public class CancelResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type privilegedRoleAssignmentRequest</summary>

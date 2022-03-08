@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.ResourceNamespaces;
 using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignmentApprovals;
 using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignments;
@@ -21,7 +22,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement {
-    /// <summary>Builds and executes requests for operations under \roleManagement\entitlementManagement</summary>
+    /// <summary>Provides operations to manage the entitlementManagement property of the microsoft.graph.roleManagement entity.</summary>
     public class EntitlementManagementRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -90,7 +91,7 @@ namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Container for all entitlement management resources in Azure AD identity governance.
+        /// Delete navigation property entitlementManagement for roleManagement
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -126,7 +127,7 @@ namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement {
             return requestInfo;
         }
         /// <summary>
-        /// Container for all entitlement management resources in Azure AD identity governance.
+        /// Update the navigation property entitlementManagement in roleManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -144,7 +145,7 @@ namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement {
             return requestInfo;
         }
         /// <summary>
-        /// Container for all entitlement management resources in Azure AD identity governance.
+        /// Delete navigation property entitlementManagement for roleManagement
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -152,7 +153,11 @@ namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Container for all entitlement management resources in Azure AD identity governance.
@@ -164,10 +169,14 @@ namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement {
         /// </summary>
         public async Task<RbacApplication> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RbacApplication>(requestInfo, RbacApplication.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<RbacApplication>(requestInfo, RbacApplication.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Container for all entitlement management resources in Azure AD identity governance.
+        /// Update the navigation property entitlementManagement in roleManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -177,35 +186,39 @@ namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement {
         public async Task PatchAsync(RbacApplication body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \roleManagement\entitlementManagement\microsoft.graph.roleScheduleInstances(directoryScopeId='{directoryScopeId}',appScopeId='{appScopeId}',principalId='{principalId}',roleDefinitionId='{roleDefinitionId}')
-        /// <param name="appScopeId">Usage: appScopeId={appScopeId}</param>
-        /// <param name="directoryScopeId">Usage: directoryScopeId={directoryScopeId}</param>
-        /// <param name="principalId">Usage: principalId={principalId}</param>
-        /// <param name="roleDefinitionId">Usage: roleDefinitionId={roleDefinitionId}</param>
+        /// Provides operations to call the roleScheduleInstances method.
+        /// <param name="appScopeId">Usage: appScopeId='{appScopeId}'</param>
+        /// <param name="directoryScopeId">Usage: directoryScopeId='{directoryScopeId}'</param>
+        /// <param name="principalId">Usage: principalId='{principalId}'</param>
+        /// <param name="roleDefinitionId">Usage: roleDefinitionId='{roleDefinitionId}'</param>
         /// </summary>
-        public RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId(string appScopeId, string directoryScopeId, string principalId, string roleDefinitionId) {
+        public RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId(string directoryScopeId, string appScopeId, string principalId, string roleDefinitionId) {
             if(string.IsNullOrEmpty(appScopeId)) throw new ArgumentNullException(nameof(appScopeId));
             if(string.IsNullOrEmpty(directoryScopeId)) throw new ArgumentNullException(nameof(directoryScopeId));
             if(string.IsNullOrEmpty(principalId)) throw new ArgumentNullException(nameof(principalId));
             if(string.IsNullOrEmpty(roleDefinitionId)) throw new ArgumentNullException(nameof(roleDefinitionId));
-            return new RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder(PathParameters, RequestAdapter, appScopeId, directoryScopeId, principalId, roleDefinitionId);
+            return new RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder(PathParameters, RequestAdapter, directoryScopeId, appScopeId, principalId, roleDefinitionId);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \roleManagement\entitlementManagement\microsoft.graph.roleSchedules(directoryScopeId='{directoryScopeId}',appScopeId='{appScopeId}',principalId='{principalId}',roleDefinitionId='{roleDefinitionId}')
-        /// <param name="appScopeId">Usage: appScopeId={appScopeId}</param>
-        /// <param name="directoryScopeId">Usage: directoryScopeId={directoryScopeId}</param>
-        /// <param name="principalId">Usage: principalId={principalId}</param>
-        /// <param name="roleDefinitionId">Usage: roleDefinitionId={roleDefinitionId}</param>
+        /// Provides operations to call the roleSchedules method.
+        /// <param name="appScopeId">Usage: appScopeId='{appScopeId}'</param>
+        /// <param name="directoryScopeId">Usage: directoryScopeId='{directoryScopeId}'</param>
+        /// <param name="principalId">Usage: principalId='{principalId}'</param>
+        /// <param name="roleDefinitionId">Usage: roleDefinitionId='{roleDefinitionId}'</param>
         /// </summary>
-        public RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId(string appScopeId, string directoryScopeId, string principalId, string roleDefinitionId) {
+        public RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId(string directoryScopeId, string appScopeId, string principalId, string roleDefinitionId) {
             if(string.IsNullOrEmpty(appScopeId)) throw new ArgumentNullException(nameof(appScopeId));
             if(string.IsNullOrEmpty(directoryScopeId)) throw new ArgumentNullException(nameof(directoryScopeId));
             if(string.IsNullOrEmpty(principalId)) throw new ArgumentNullException(nameof(principalId));
             if(string.IsNullOrEmpty(roleDefinitionId)) throw new ArgumentNullException(nameof(roleDefinitionId));
-            return new RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder(PathParameters, RequestAdapter, appScopeId, directoryScopeId, principalId, roleDefinitionId);
+            return new RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder(PathParameters, RequestAdapter, directoryScopeId, appScopeId, principalId, roleDefinitionId);
         }
         /// <summary>Container for all entitlement management resources in Azure AD identity governance.</summary>
         public class GetQueryParameters : QueryParametersBase {

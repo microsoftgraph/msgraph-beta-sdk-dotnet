@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DataClassification.ClassifyText {
-    /// <summary>Builds and executes requests for operations under \dataClassification\microsoft.graph.classifyText</summary>
+    /// <summary>Provides operations to call the classifyText method.</summary>
     public class ClassifyTextRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.DataClassification.ClassifyText {
             return await RequestAdapter.SendAsync<ClassifyTextResponse>(requestInfo, ClassifyTextResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes classificationJobResponse</summary>
-        public class ClassifyTextResponse : IParsable {
+        public class ClassifyTextResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type classificationJobResponse</summary>

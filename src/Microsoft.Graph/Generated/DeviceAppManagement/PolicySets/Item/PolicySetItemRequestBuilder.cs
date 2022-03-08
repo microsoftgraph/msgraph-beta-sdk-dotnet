@@ -4,6 +4,7 @@ using MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item.Assignments;
 using MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item.Items;
 using MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item.Update;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +12,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item {
-    /// <summary>Builds and executes requests for operations under \deviceAppManagement\policySets\{policySet-id}</summary>
+    /// <summary>Provides operations to manage the policySets property of the microsoft.graph.deviceAppManagement entity.</summary>
     public class PolicySetItemRequestBuilder {
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
@@ -56,7 +57,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The PolicySet of Policies and Applications
+        /// Delete navigation property policySets for deviceAppManagement
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -92,7 +93,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The PolicySet of Policies and Applications
+        /// Update the navigation property policySets in deviceAppManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -110,7 +111,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The PolicySet of Policies and Applications
+        /// Delete navigation property policySets for deviceAppManagement
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -118,7 +119,11 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// The PolicySet of Policies and Applications
@@ -130,10 +135,14 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item {
         /// </summary>
         public async Task<PolicySet> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PolicySet>(requestInfo, PolicySet.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<PolicySet>(requestInfo, PolicySet.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The PolicySet of Policies and Applications
+        /// Update the navigation property policySets in deviceAppManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -143,7 +152,11 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item {
         public async Task PatchAsync(PolicySet body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The PolicySet of Policies and Applications</summary>
         public class GetQueryParameters : QueryParametersBase {

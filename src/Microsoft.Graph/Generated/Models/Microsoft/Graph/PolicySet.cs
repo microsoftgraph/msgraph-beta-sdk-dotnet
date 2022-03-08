@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public class PolicySet : Entity, IParsable {
         /// <summary>Assignments of the PolicySet.</summary>
         public List<PolicySetAssignment> Assignments { get; set; }

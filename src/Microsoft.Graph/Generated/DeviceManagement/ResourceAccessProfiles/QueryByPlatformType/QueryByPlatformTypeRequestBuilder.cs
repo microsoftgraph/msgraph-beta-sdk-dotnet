@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.ResourceAccessProfiles.QueryByPlatformType {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\resourceAccessProfiles\microsoft.graph.queryByPlatformType</summary>
+    /// <summary>Provides operations to call the queryByPlatformType method.</summary>
     public class QueryByPlatformTypeRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -68,10 +68,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.ResourceAccessProfiles.QueryByPlatf
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<QueryByPlatformType>> PostAsync(QueryByPlatformTypeRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<QueryByPlatformTypeResponse> PostAsync(QueryByPlatformTypeRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendCollectionAsync<QueryByPlatformType>(requestInfo, QueryByPlatformType.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<QueryByPlatformTypeResponse>(requestInfo, QueryByPlatformTypeResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

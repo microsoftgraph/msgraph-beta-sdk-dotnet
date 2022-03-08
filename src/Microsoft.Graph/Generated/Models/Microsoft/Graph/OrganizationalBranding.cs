@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the organizationalBranding singleton.</summary>
     public class OrganizationalBranding : OrganizationalBrandingProperties, IParsable {
         /// <summary>Add different branding based on a locale.</summary>
         public List<OrganizationalBrandingLocalization> Localizations { get; set; }

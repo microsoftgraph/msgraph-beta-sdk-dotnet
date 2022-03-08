@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class PlannerProgressTaskBoardTaskFormat : PlannerDelta, IParsable {
         /// <summary>Hint value used to order the task on the Progress view of the Task Board. The format is defined as outlined here.</summary>
         public string OrderHint { get; set; }

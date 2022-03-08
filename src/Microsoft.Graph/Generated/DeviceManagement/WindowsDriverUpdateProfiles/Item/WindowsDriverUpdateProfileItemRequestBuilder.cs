@@ -6,6 +6,7 @@ using MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item.Driver
 using MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item.ExecuteAction;
 using MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item.SyncInventory;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,7 +14,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\windowsDriverUpdateProfiles\{windowsDriverUpdateProfile-id}</summary>
+    /// <summary>Provides operations to manage the windowsDriverUpdateProfiles property of the microsoft.graph.deviceManagement entity.</summary>
     public class WindowsDriverUpdateProfileItemRequestBuilder {
         public AssignRequestBuilder Assign { get =>
             new AssignRequestBuilder(PathParameters, RequestAdapter);
@@ -64,7 +65,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// A collection of windows driver update profiles
+        /// Delete navigation property windowsDriverUpdateProfiles for deviceManagement
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -100,7 +101,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of windows driver update profiles
+        /// Update the navigation property windowsDriverUpdateProfiles in deviceManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -118,7 +119,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of windows driver update profiles
+        /// Delete navigation property windowsDriverUpdateProfiles for deviceManagement
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -126,7 +127,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// A collection of windows driver update profiles
@@ -138,10 +143,14 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item {
         /// </summary>
         public async Task<WindowsDriverUpdateProfile> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<WindowsDriverUpdateProfile>(requestInfo, WindowsDriverUpdateProfile.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<WindowsDriverUpdateProfile>(requestInfo, WindowsDriverUpdateProfile.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A collection of windows driver update profiles
+        /// Update the navigation property windowsDriverUpdateProfiles in deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -151,7 +160,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item {
         public async Task PatchAsync(WindowsDriverUpdateProfile body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>A collection of windows driver update profiles</summary>
         public class GetQueryParameters : QueryParametersBase {

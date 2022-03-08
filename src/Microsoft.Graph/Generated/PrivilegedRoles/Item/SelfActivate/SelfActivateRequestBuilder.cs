@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.PrivilegedRoles.Item.SelfActivate {
-    /// <summary>Builds and executes requests for operations under \privilegedRoles\{privilegedRole-id}\microsoft.graph.selfActivate</summary>
+    /// <summary>Provides operations to call the selfActivate method.</summary>
     public class SelfActivateRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.PrivilegedRoles.Item.SelfActivate {
             return await RequestAdapter.SendAsync<SelfActivateResponse>(requestInfo, SelfActivateResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes privilegedRoleAssignment</summary>
-        public class SelfActivateResponse : IParsable {
+        public class SelfActivateResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type privilegedRoleAssignment</summary>

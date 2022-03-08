@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class DriveItem : BaseItem, IParsable {
         /// <summary>The list of recent activities that took place on this item.</summary>
         public List<ItemActivityOLD> Activities { get; set; }

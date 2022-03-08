@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.GetComanagedDevicesSummary {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\microsoft.graph.getComanagedDevicesSummary()</summary>
+    /// <summary>Provides operations to call the getComanagedDevicesSummary method.</summary>
     public class GetComanagedDevicesSummaryRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GetComanagedDevicesSummary {
             return await RequestAdapter.SendAsync<GetComanagedDevicesSummaryResponse>(requestInfo, GetComanagedDevicesSummaryResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes comanagedDevicesSummary</summary>
-        public class GetComanagedDevicesSummaryResponse : IParsable {
+        public class GetComanagedDevicesSummaryResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type comanagedDevicesSummary</summary>

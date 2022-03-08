@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.ReprocessLicenseAssignment {
-    /// <summary>Builds and executes requests for operations under \users\{user-id}\microsoft.graph.reprocessLicenseAssignment</summary>
+    /// <summary>Provides operations to call the reprocessLicenseAssignment method.</summary>
     public class ReprocessLicenseAssignmentRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.Users.Item.ReprocessLicenseAssignment {
             return await RequestAdapter.SendAsync<ReprocessLicenseAssignmentResponse>(requestInfo, ReprocessLicenseAssignmentResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes user</summary>
-        public class ReprocessLicenseAssignmentResponse : IParsable {
+        public class ReprocessLicenseAssignmentResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type user</summary>

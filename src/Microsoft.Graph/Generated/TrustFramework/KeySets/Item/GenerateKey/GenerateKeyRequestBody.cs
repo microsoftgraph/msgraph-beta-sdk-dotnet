@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.TrustFramework.KeySets.Item.GenerateKey {
-    public class GenerateKeyRequestBody : IParsable {
+    /// <summary>Provides operations to call the generateKey method.</summary>
+    public class GenerateKeyRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public long? Exp { get; set; }

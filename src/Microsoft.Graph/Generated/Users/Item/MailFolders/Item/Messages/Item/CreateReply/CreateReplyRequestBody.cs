@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Users.Item.MailFolders.Item.Messages.Item.CreateReply {
-    public class CreateReplyRequestBody : IParsable {
+    /// <summary>Provides operations to call the createReply method.</summary>
+    public class CreateReplyRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string Comment { get; set; }

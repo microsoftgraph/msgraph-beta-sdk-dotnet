@@ -1,8 +1,10 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraphSdk.DeviceManagement.ManagementConditionStatements.Count;
 using MicrosoftGraphSdk.DeviceManagement.ManagementConditionStatements.GetManagementConditionStatementsForPlatformWithPlatform;
 using MicrosoftGraphSdk.DeviceManagement.ManagementConditionStatements.Item;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,8 +12,11 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.ManagementConditionStatements {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\managementConditionStatements</summary>
+    /// <summary>Provides operations to manage the managementConditionStatements property of the microsoft.graph.deviceManagement entity.</summary>
     public class ManagementConditionStatementsRequestBuilder {
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -73,7 +78,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ManagementConditionStatements {
             return requestInfo;
         }
         /// <summary>
-        /// The management condition statements associated with device management of the company.
+        /// Create new navigation property to managementConditionStatements for deviceManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -98,20 +103,24 @@ namespace MicrosoftGraphSdk.DeviceManagement.ManagementConditionStatements {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ManagementConditionStatementsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagementConditionStatementCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ManagementConditionStatementsResponse>(requestInfo, ManagementConditionStatementsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<ManagementConditionStatementCollectionResponse>(requestInfo, ManagementConditionStatementCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \deviceManagement\managementConditionStatements\microsoft.graph.getManagementConditionStatementsForPlatform(platform={platform})
-        /// <param name="platform">Usage: platform={platform}</param>
+        /// Provides operations to call the getManagementConditionStatementsForPlatform method.
+        /// <param name="platform">Usage: platform='{platform}'</param>
         /// </summary>
         public GetManagementConditionStatementsForPlatformWithPlatformRequestBuilder GetManagementConditionStatementsForPlatformWithPlatform(string platform) {
             if(string.IsNullOrEmpty(platform)) throw new ArgumentNullException(nameof(platform));
             return new GetManagementConditionStatementsForPlatformWithPlatformRequestBuilder(PathParameters, RequestAdapter, platform);
         }
         /// <summary>
-        /// The management condition statements associated with device management of the company.
+        /// Create new navigation property to managementConditionStatements for deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -121,7 +130,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.ManagementConditionStatements {
         public async Task<ManagementConditionStatement> PostAsync(ManagementConditionStatement body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ManagementConditionStatement>(requestInfo, ManagementConditionStatement.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<ManagementConditionStatement>(requestInfo, ManagementConditionStatement.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The management condition statements associated with device management of the company.</summary>
         public class GetQueryParameters : QueryParametersBase {

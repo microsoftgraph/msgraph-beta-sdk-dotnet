@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.RequestRemoteAssistance {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\comanagedDevices\{managedDevice-id}\microsoft.graph.requestRemoteAssistance</summary>
+    /// <summary>Provides operations to call the requestRemoteAssistance method.</summary>
     public class RequestRemoteAssistanceRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

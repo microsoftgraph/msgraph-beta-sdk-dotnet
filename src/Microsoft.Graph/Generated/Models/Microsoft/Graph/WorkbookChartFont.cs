@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class WorkbookChartFont : Entity, IParsable {
         /// <summary>Represents the bold status of font.</summary>
         public bool? Bold { get; set; }

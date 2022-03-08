@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using MicrosoftGraphSdk.Shares.Item.List.Activities;
 using MicrosoftGraphSdk.Shares.Item.List.Columns;
 using MicrosoftGraphSdk.Shares.Item.List.ContentTypes;
@@ -15,7 +16,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Shares.Item.List {
-    /// <summary>Builds and executes requests for operations under \shares\{sharedDriveItem-id}\list</summary>
+    /// <summary>Provides operations to manage the list property of the microsoft.graph.sharedDriveItem entity.</summary>
     public class ListRequestBuilder {
         public ActivitiesRequestBuilder Activities { get =>
             new ActivitiesRequestBuilder(PathParameters, RequestAdapter);
@@ -72,7 +73,7 @@ namespace MicrosoftGraphSdk.Shares.Item.List {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Used to access the underlying list
+        /// Delete navigation property list for shares
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -108,7 +109,7 @@ namespace MicrosoftGraphSdk.Shares.Item.List {
             return requestInfo;
         }
         /// <summary>
-        /// Used to access the underlying list
+        /// Update the navigation property list in shares
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -126,7 +127,7 @@ namespace MicrosoftGraphSdk.Shares.Item.List {
             return requestInfo;
         }
         /// <summary>
-        /// Used to access the underlying list
+        /// Delete navigation property list for shares
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -134,7 +135,11 @@ namespace MicrosoftGraphSdk.Shares.Item.List {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Used to access the underlying list
@@ -146,10 +151,14 @@ namespace MicrosoftGraphSdk.Shares.Item.List {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.List> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.List>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.List.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.List>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.List.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Used to access the underlying list
+        /// Update the navigation property list in shares
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -159,7 +168,11 @@ namespace MicrosoftGraphSdk.Shares.Item.List {
         public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.List body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Used to access the underlying list</summary>
         public class GetQueryParameters : QueryParametersBase {

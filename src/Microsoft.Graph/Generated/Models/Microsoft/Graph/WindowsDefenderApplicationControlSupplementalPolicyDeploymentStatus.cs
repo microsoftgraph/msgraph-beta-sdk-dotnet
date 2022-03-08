@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public class WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus : Entity, IParsable {
         /// <summary>The deployment state of the policy. Possible values are: unknown, success, tokenError, notAuthorizedByToken, policyNotFound.</summary>
         public WindowsDefenderApplicationControlSupplementalPolicyStatuses? DeploymentStatus { get; set; }

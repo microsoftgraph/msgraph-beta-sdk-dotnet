@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetUserInstallStatusReport {
-    public class GetUserInstallStatusReportRequestBody : IParsable {
+    /// <summary>Provides operations to call the getUserInstallStatusReport method.</summary>
+    public class GetUserInstallStatusReportRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string Filter { get; set; }

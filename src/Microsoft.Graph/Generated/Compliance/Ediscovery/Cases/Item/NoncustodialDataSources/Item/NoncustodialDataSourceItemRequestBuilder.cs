@@ -6,6 +6,7 @@ using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources
 using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item.RemoveHold;
 using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item.UpdateIndex;
 using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,7 +14,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item {
-    /// <summary>Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\noncustodialDataSources\{noncustodialDataSource-id}</summary>
+    /// <summary>Provides operations to manage the noncustodialDataSources property of the microsoft.graph.ediscovery.case entity.</summary>
     public class NoncustodialDataSourceItemRequestBuilder {
         public ApplyHoldRequestBuilder ApplyHold { get =>
             new ApplyHoldRequestBuilder(PathParameters, RequestAdapter);
@@ -64,7 +65,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSou
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Returns a list of case noncustodialDataSource objects for this case.  Nullable.
+        /// Delete navigation property noncustodialDataSources for compliance
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -100,7 +101,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSou
             return requestInfo;
         }
         /// <summary>
-        /// Returns a list of case noncustodialDataSource objects for this case.  Nullable.
+        /// Update the navigation property noncustodialDataSources in compliance
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -118,7 +119,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSou
             return requestInfo;
         }
         /// <summary>
-        /// Returns a list of case noncustodialDataSource objects for this case.  Nullable.
+        /// Delete navigation property noncustodialDataSources for compliance
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -126,7 +127,11 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSou
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Returns a list of case noncustodialDataSource objects for this case.  Nullable.
@@ -138,10 +143,14 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSou
         /// </summary>
         public async Task<NoncustodialDataSource> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<NoncustodialDataSource>(requestInfo, NoncustodialDataSource.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<NoncustodialDataSource>(requestInfo, NoncustodialDataSource.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Returns a list of case noncustodialDataSource objects for this case.  Nullable.
+        /// Update the navigation property noncustodialDataSources in compliance
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -151,7 +160,11 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSou
         public async Task PatchAsync(NoncustodialDataSource body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Returns a list of case noncustodialDataSource objects for this case.  Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

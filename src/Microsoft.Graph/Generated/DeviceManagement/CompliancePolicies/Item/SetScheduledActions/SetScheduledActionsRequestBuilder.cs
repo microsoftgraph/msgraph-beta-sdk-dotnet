@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.CompliancePolicies.Item.SetScheduledActions {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\compliancePolicies\{deviceManagementCompliancePolicy-id}\microsoft.graph.setScheduledActions</summary>
+    /// <summary>Provides operations to call the setScheduledActions method.</summary>
     public class SetScheduledActionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -68,10 +68,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.CompliancePolicies.Item.SetSchedule
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<SetScheduledActions>> PostAsync(SetScheduledActionsRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<SetScheduledActionsResponse> PostAsync(SetScheduledActionsRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendCollectionAsync<SetScheduledActions>(requestInfo, SetScheduledActions.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SetScheduledActionsResponse>(requestInfo, SetScheduledActionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

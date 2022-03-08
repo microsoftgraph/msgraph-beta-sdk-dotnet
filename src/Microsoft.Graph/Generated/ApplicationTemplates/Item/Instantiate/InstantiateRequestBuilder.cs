@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.ApplicationTemplates.Item.Instantiate {
-    /// <summary>Builds and executes requests for operations under \applicationTemplates\{applicationTemplate-id}\microsoft.graph.instantiate</summary>
+    /// <summary>Provides operations to call the instantiate method.</summary>
     public class InstantiateRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.ApplicationTemplates.Item.Instantiate {
             return await RequestAdapter.SendAsync<InstantiateResponse>(requestInfo, InstantiateResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes applicationServicePrincipal</summary>
-        public class InstantiateResponse : IParsable {
+        public class InstantiateResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type applicationServicePrincipal</summary>

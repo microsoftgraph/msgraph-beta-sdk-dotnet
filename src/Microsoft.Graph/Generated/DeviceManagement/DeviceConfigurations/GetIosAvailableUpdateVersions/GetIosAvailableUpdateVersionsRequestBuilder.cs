@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.GetIosAvailableUpdateVersions {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\deviceConfigurations\microsoft.graph.getIosAvailableUpdateVersions()</summary>
+    /// <summary>Provides operations to call the getIosAvailableUpdateVersions method.</summary>
     public class GetIosAvailableUpdateVersionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -64,9 +64,9 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.GetIosAvailabl
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<GetIosAvailableUpdateVersions>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<GetIosAvailableUpdateVersionsResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<GetIosAvailableUpdateVersions>(requestInfo, GetIosAvailableUpdateVersions.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetIosAvailableUpdateVersionsResponse>(requestInfo, GetIosAvailableUpdateVersionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

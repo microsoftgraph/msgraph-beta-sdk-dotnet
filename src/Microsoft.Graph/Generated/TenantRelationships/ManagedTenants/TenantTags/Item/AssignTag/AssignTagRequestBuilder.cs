@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantTags.Item.AssignTag {
-    /// <summary>Builds and executes requests for operations under \tenantRelationships\managedTenants\tenantTags\{tenantTag-id}\microsoft.graph.managedTenants.assignTag</summary>
+    /// <summary>Provides operations to call the assignTag method.</summary>
     public class AssignTagRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantTags.Item.A
             return await RequestAdapter.SendAsync<AssignTagResponse>(requestInfo, AssignTagResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes tenantTag</summary>
-        public class AssignTagResponse : IParsable {
+        public class AssignTagResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type tenantTag</summary>

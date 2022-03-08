@@ -1,11 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Count;
 using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.GetMobileAppCountWithStatus;
 using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.GetTopMobileAppsWithStatusWithCount;
 using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.HasPayloadLinks;
 using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item;
 using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.ValidateXml;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,8 +15,11 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps {
-    /// <summary>Builds and executes requests for operations under \deviceAppManagement\mobileApps</summary>
+    /// <summary>Provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.</summary>
     public class MobileAppsRequestBuilder {
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
         public HasPayloadLinksRequestBuilder HasPayloadLinks { get =>
             new HasPayloadLinksRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -82,7 +87,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps {
             return requestInfo;
         }
         /// <summary>
-        /// The mobile apps.
+        /// Create new navigation property to mobileApps for deviceAppManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -107,22 +112,26 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MobileAppsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MobileAppCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MobileAppsResponse>(requestInfo, MobileAppsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MobileAppCollectionResponse>(requestInfo, MobileAppCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \deviceAppManagement\mobileApps\microsoft.graph.getMobileAppCount(status='{status}')
-        /// <param name="status">Usage: status={status}</param>
+        /// Provides operations to call the getMobileAppCount method.
+        /// <param name="status">Usage: status='{status}'</param>
         /// </summary>
         public GetMobileAppCountWithStatusRequestBuilder GetMobileAppCountWithStatus(string status) {
             if(string.IsNullOrEmpty(status)) throw new ArgumentNullException(nameof(status));
             return new GetMobileAppCountWithStatusRequestBuilder(PathParameters, RequestAdapter, status);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \deviceAppManagement\mobileApps\microsoft.graph.getTopMobileApps(status='{status}',count={count})
+        /// Provides operations to call the getTopMobileApps method.
         /// <param name="count">Usage: count={count}</param>
-        /// <param name="status">Usage: status={status}</param>
+        /// <param name="status">Usage: status='{status}'</param>
         /// </summary>
         public GetTopMobileAppsWithStatusWithCountRequestBuilder GetTopMobileAppsWithStatusWithCount(string status, long? count) {
             _ = count ?? throw new ArgumentNullException(nameof(count));
@@ -130,7 +139,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps {
             return new GetTopMobileAppsWithStatusWithCountRequestBuilder(PathParameters, RequestAdapter, status, count);
         }
         /// <summary>
-        /// The mobile apps.
+        /// Create new navigation property to mobileApps for deviceAppManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -140,7 +149,11 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps {
         public async Task<MobileApp> PostAsync(MobileApp body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MobileApp>(requestInfo, MobileApp.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MobileApp>(requestInfo, MobileApp.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The mobile apps.</summary>
         public class GetQueryParameters : QueryParametersBase {

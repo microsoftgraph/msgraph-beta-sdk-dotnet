@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.GetMobileAppCountWithStatus {
-    /// <summary>Builds and executes requests for operations under \deviceAppManagement\mobileApps\microsoft.graph.getMobileAppCount(status='{status}')</summary>
+    /// <summary>Provides operations to call the getMobileAppCount method.</summary>
     public class GetMobileAppCountWithStatusRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -19,7 +19,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.GetMobileAppCountWith
         /// Instantiates a new GetMobileAppCountWithStatusRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// <param name="status">Usage: status={status}</param>
+        /// <param name="status">Usage: status='{status}'</param>
         /// </summary>
         public GetMobileAppCountWithStatusRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string status = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
@@ -66,9 +66,9 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.GetMobileAppCountWith
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<long?> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<GetMobileAppCountWithStatusResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendPrimitiveAsync<long?>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetMobileAppCountWithStatusResponse>(requestInfo, GetMobileAppCountWithStatusResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

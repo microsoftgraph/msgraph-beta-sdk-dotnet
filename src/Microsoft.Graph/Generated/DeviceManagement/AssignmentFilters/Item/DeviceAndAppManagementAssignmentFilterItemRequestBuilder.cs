@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,7 +10,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.Item {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\assignmentFilters\{deviceAndAppManagementAssignmentFilter-id}</summary>
+    /// <summary>Provides operations to manage the assignmentFilters property of the microsoft.graph.deviceManagement entity.</summary>
     public class DeviceAndAppManagementAssignmentFilterItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -45,7 +46,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The list of assignment filters
+        /// Delete navigation property assignmentFilters for deviceManagement
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -81,7 +82,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The list of assignment filters
+        /// Update the navigation property assignmentFilters in deviceManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -99,7 +100,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The list of assignment filters
+        /// Delete navigation property assignmentFilters for deviceManagement
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -107,7 +108,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// The list of assignment filters
@@ -119,16 +124,20 @@ namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.Item {
         /// </summary>
         public async Task<DeviceAndAppManagementAssignmentFilter> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceAndAppManagementAssignmentFilter>(requestInfo, DeviceAndAppManagementAssignmentFilter.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<DeviceAndAppManagementAssignmentFilter>(requestInfo, DeviceAndAppManagementAssignmentFilter.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \deviceManagement\assignmentFilters\{deviceAndAppManagementAssignmentFilter-id}\microsoft.graph.getSupportedProperties()
+        /// Provides operations to call the getSupportedProperties method.
         /// </summary>
         public GetSupportedPropertiesRequestBuilder GetSupportedProperties() {
             return new GetSupportedPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// The list of assignment filters
+        /// Update the navigation property assignmentFilters in deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -138,7 +147,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.Item {
         public async Task PatchAsync(DeviceAndAppManagementAssignmentFilter body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The list of assignment filters</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Policies.CrossTenantAccessPolicy.Default.ResetToSystemDefault {
-    /// <summary>Builds and executes requests for operations under \policies\crossTenantAccessPolicy\default\microsoft.graph.resetToSystemDefault</summary>
+    /// <summary>Provides operations to call the resetToSystemDefault method.</summary>
     public class ResetToSystemDefaultRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

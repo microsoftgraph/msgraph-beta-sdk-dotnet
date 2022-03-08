@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to call the invite method.</summary>
     public class InviteParticipantsOperation : CommsOperation, IParsable {
         /// <summary>The participants to invite.</summary>
         public List<InvitationParticipantInfo> Participants { get; set; }

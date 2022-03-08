@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.App.Calls.Item.Unmute {
-    /// <summary>Builds and executes requests for operations under \app\calls\{call-id}\microsoft.graph.unmute</summary>
+    /// <summary>Provides operations to call the unmute method.</summary>
     public class UnmuteRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.App.Calls.Item.Unmute {
             return await RequestAdapter.SendAsync<UnmuteResponse>(requestInfo, UnmuteResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes unmuteParticipantOperation</summary>
-        public class UnmuteResponse : IParsable {
+        public class UnmuteResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type unmuteParticipantOperation</summary>

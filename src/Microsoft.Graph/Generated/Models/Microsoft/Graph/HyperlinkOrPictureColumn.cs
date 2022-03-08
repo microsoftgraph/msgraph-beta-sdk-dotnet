@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class HyperlinkOrPictureColumn : IParsable {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    public class HyperlinkOrPictureColumn : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies whether the display format used for URL columns is an image or a hyperlink.</summary>

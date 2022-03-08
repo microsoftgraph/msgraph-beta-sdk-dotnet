@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.Tenants.Item.OffboardTenant {
-    /// <summary>Builds and executes requests for operations under \tenantRelationships\managedTenants\tenants\{tenant-id}\microsoft.graph.managedTenants.offboardTenant</summary>
+    /// <summary>Provides operations to call the offboardTenant method.</summary>
     public class OffboardTenantRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.Tenants.Item.Offb
             return await RequestAdapter.SendAsync<OffboardTenantResponse>(requestInfo, OffboardTenantResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes tenant</summary>
-        public class OffboardTenantResponse : IParsable {
+        public class OffboardTenantResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type tenant</summary>

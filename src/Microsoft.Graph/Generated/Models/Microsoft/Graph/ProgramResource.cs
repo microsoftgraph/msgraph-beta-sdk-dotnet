@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the collection of program entities.</summary>
     public class ProgramResource : Identity, IParsable {
         /// <summary>Type of the resource, indicating whether it is a group or an app.</summary>
         public string Type { get; set; }

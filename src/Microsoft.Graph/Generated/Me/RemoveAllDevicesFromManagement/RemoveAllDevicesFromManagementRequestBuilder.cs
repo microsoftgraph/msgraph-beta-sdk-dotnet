@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Me.RemoveAllDevicesFromManagement {
-    /// <summary>Builds and executes requests for operations under \me\microsoft.graph.removeAllDevicesFromManagement</summary>
+    /// <summary>Provides operations to call the removeAllDevicesFromManagement method.</summary>
     public class RemoveAllDevicesFromManagementRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

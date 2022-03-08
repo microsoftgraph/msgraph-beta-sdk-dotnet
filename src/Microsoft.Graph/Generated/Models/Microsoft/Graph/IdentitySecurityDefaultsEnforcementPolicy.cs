@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class IdentitySecurityDefaultsEnforcementPolicy : PolicyBase, IParsable {
         /// <summary>If set to true, Azure Active Directory security defaults is enabled for the tenant.</summary>
         public bool? IsEnabled { get; set; }

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Groups.Item.CheckGrantedPermissionsForApp {
-    /// <summary>Builds and executes requests for operations under \groups\{group-id}\microsoft.graph.checkGrantedPermissionsForApp</summary>
+    /// <summary>Provides operations to call the checkGrantedPermissionsForApp method.</summary>
     public class CheckGrantedPermissionsForAppRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -64,9 +64,9 @@ namespace MicrosoftGraphSdk.Groups.Item.CheckGrantedPermissionsForApp {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<CheckGrantedPermissionsForApp>> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<CheckGrantedPermissionsForAppResponse> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreatePostRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<CheckGrantedPermissionsForApp>(requestInfo, CheckGrantedPermissionsForApp.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CheckGrantedPermissionsForAppResponse>(requestInfo, CheckGrantedPermissionsForAppResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class Notebook : OnenoteEntityHierarchyModel, IParsable {
         /// <summary>Indicates whether this is the user's default notebook. Read-only.</summary>
         public bool? IsDefault { get; set; }

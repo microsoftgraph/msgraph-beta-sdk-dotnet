@@ -1,8 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.Copy;
+using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.MessageRules;
+using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.Messages;
 using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.Move;
+using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.MultiValueExtendedProperties;
+using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.SingleValueExtendedProperties;
+using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.UserConfigurations;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,20 +16,35 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item {
-    /// <summary>Builds and executes requests for operations under \users\{user-id}\mailFolders\{mailFolder-id}\childFolders\{mailFolder-id1}</summary>
+    /// <summary>Provides operations to manage the childFolders property of the microsoft.graph.mailFolder entity.</summary>
     public class MailFolderItemRequestBuilder {
         public CopyRequestBuilder Copy { get =>
             new CopyRequestBuilder(PathParameters, RequestAdapter);
         }
+        public MessageRulesRequestBuilder MessageRules { get =>
+            new MessageRulesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public MessagesRequestBuilder Messages { get =>
+            new MessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
         public MoveRequestBuilder Move { get =>
             new MoveRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public MultiValueExtendedPropertiesRequestBuilder MultiValueExtendedProperties { get =>
+            new MultiValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        public SingleValueExtendedPropertiesRequestBuilder SingleValueExtendedProperties { get =>
+            new SingleValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        public UserConfigurationsRequestBuilder UserConfigurations { get =>
+            new UserConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new MailFolderItemRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -52,7 +73,7 @@ namespace MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The collection of child folders in the mailFolder.
+        /// Delete navigation property childFolders for users
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -88,7 +109,7 @@ namespace MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of child folders in the mailFolder.
+        /// Update the navigation property childFolders in users
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -106,7 +127,7 @@ namespace MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of child folders in the mailFolder.
+        /// Delete navigation property childFolders for users
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -114,7 +135,11 @@ namespace MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// The collection of child folders in the mailFolder.
@@ -126,10 +151,14 @@ namespace MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item {
         /// </summary>
         public async Task<MailFolder> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MailFolder>(requestInfo, MailFolder.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MailFolder>(requestInfo, MailFolder.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The collection of child folders in the mailFolder.
+        /// Update the navigation property childFolders in users
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -139,7 +168,11 @@ namespace MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item {
         public async Task PatchAsync(MailFolder body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The collection of child folders in the mailFolder.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the dataClassificationService singleton.</summary>
     public class ExactMatchDataStoreBase : Entity, IParsable {
         public List<ExactDataMatchStoreColumn> Columns { get; set; }
         public DateTimeOffset? DataLastUpdatedDateTime { get; set; }

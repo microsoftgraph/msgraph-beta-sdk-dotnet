@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Teams.Item.Schedule.TimeCards.Item.ClockOut {
-    /// <summary>Builds and executes requests for operations under \teams\{team-id}\schedule\timeCards\{timeCard-id}\microsoft.graph.clockOut</summary>
+    /// <summary>Provides operations to call the clockOut method.</summary>
     public class ClockOutRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.TimeCards.Item.ClockOut {
             return await RequestAdapter.SendAsync<ClockOutResponse>(requestInfo, ClockOutResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes timeCard</summary>
-        public class ClockOutResponse : IParsable {
+        public class ClockOutResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type timeCard</summary>

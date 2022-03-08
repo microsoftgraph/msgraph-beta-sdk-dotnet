@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.InformationProtection.DecryptBuffer {
-    /// <summary>Builds and executes requests for operations under \informationProtection\microsoft.graph.decryptBuffer</summary>
+    /// <summary>Provides operations to call the decryptBuffer method.</summary>
     public class DecryptBufferRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.InformationProtection.DecryptBuffer {
             return await RequestAdapter.SendAsync<DecryptBufferResponse>(requestInfo, DecryptBufferResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes bufferDecryptionResult</summary>
-        public class DecryptBufferResponse : IParsable {
+        public class DecryptBufferResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type bufferDecryptionResult</summary>

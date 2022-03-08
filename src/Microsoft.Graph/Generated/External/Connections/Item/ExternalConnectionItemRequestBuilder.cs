@@ -1,6 +1,12 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraphSdk.External.Connections.Item.Groups;
+using MicrosoftGraphSdk.External.Connections.Item.Items;
+using MicrosoftGraphSdk.External.Connections.Item.Operations;
+using MicrosoftGraphSdk.External.Connections.Item.Quota;
+using MicrosoftGraphSdk.External.Connections.Item.Schema;
 using MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,12 +14,27 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.External.Connections.Item {
-    /// <summary>Builds and executes requests for operations under \external\connections\{externalConnection-id}</summary>
+    /// <summary>Provides operations to manage the connections property of the microsoft.graph.externalConnectors.external entity.</summary>
     public class ExternalConnectionItemRequestBuilder {
+        public GroupsRequestBuilder Groups { get =>
+            new GroupsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public ItemsRequestBuilder Items { get =>
+            new ItemsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public OperationsRequestBuilder Operations { get =>
+            new OperationsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        public QuotaRequestBuilder Quota { get =>
+            new QuotaRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        public SchemaRequestBuilder Schema { get =>
+            new SchemaRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -106,7 +127,11 @@ namespace MicrosoftGraphSdk.External.Connections.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Get connections from external
@@ -118,7 +143,11 @@ namespace MicrosoftGraphSdk.External.Connections.Item {
         /// </summary>
         public async Task<ExternalConnection> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ExternalConnection>(requestInfo, ExternalConnection.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<ExternalConnection>(requestInfo, ExternalConnection.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property connections in external
@@ -131,7 +160,11 @@ namespace MicrosoftGraphSdk.External.Connections.Item {
         public async Task PatchAsync(ExternalConnection body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Get connections from external</summary>
         public class GetQueryParameters : QueryParametersBase {

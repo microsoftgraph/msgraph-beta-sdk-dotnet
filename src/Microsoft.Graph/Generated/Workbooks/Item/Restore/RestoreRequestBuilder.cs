@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Workbooks.Item.Restore {
-    /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\microsoft.graph.restore</summary>
+    /// <summary>Provides operations to call the restore method.</summary>
     public class RestoreRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Restore {
             return await RequestAdapter.SendAsync<RestoreResponse>(requestInfo, RestoreResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes driveItem</summary>
-        public class RestoreResponse : IParsable {
+        public class RestoreResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type driveItem</summary>

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.GetAssignedRoleDetails {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\microsoft.graph.getAssignedRoleDetails()</summary>
+    /// <summary>Provides operations to call the getAssignedRoleDetails method.</summary>
     public class GetAssignedRoleDetailsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GetAssignedRoleDetails {
             return await RequestAdapter.SendAsync<GetAssignedRoleDetailsResponse>(requestInfo, GetAssignedRoleDetailsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes deviceAndAppManagementAssignedRoleDetails</summary>
-        public class GetAssignedRoleDetailsResponse : IParsable {
+        public class GetAssignedRoleDetailsResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type deviceAndAppManagementAssignedRoleDetails</summary>

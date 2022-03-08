@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DataClassification.ExactMatchDataStores.Item.Sessions.Item.Renew {
-    /// <summary>Builds and executes requests for operations under \dataClassification\exactMatchDataStores\{exactMatchDataStore-id}\sessions\{exactMatchSession-id}\microsoft.graph.renew</summary>
+    /// <summary>Provides operations to call the renew method.</summary>
     public class RenewRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.DataClassification.ExactMatchDataStores.Item.Session
             return await RequestAdapter.SendAsync<RenewResponse>(requestInfo, RenewResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes exactMatchSession</summary>
-        public class RenewResponse : IParsable {
+        public class RenewResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type exactMatchSession</summary>

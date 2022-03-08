@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class CloudPcSupportedRegion : Entity, IParsable {
         /// <summary>The name for the supported region. Read-only.</summary>
         public string DisplayName { get; set; }

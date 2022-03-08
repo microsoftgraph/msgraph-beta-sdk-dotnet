@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Applications.Item.RemoveKey {
-    /// <summary>Builds and executes requests for operations under \applications\{application-id}\microsoft.graph.removeKey</summary>
+    /// <summary>Provides operations to call the removeKey method.</summary>
     public class RemoveKeyRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

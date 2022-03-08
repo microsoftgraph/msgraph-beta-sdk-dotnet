@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Admin.Windows.Updates.Catalog.Entries;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Admin.Windows.Updates.Catalog {
-    /// <summary>Builds and executes requests for operations under \admin\windows\updates\catalog</summary>
+    /// <summary>Provides operations to manage the catalog property of the microsoft.graph.windowsUpdates.updates entity.</summary>
     public class CatalogRequestBuilder {
         public EntriesRequestBuilder Entries { get =>
             new EntriesRequestBuilder(PathParameters, RequestAdapter);
@@ -48,7 +49,7 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.Catalog {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Catalog of content that can be approved for deployment by the deployment service. Read-only.
+        /// Delete navigation property catalog for admin
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -84,7 +85,7 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.Catalog {
             return requestInfo;
         }
         /// <summary>
-        /// Catalog of content that can be approved for deployment by the deployment service. Read-only.
+        /// Update the navigation property catalog in admin
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -102,7 +103,7 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.Catalog {
             return requestInfo;
         }
         /// <summary>
-        /// Catalog of content that can be approved for deployment by the deployment service. Read-only.
+        /// Delete navigation property catalog for admin
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -110,7 +111,11 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.Catalog {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Catalog of content that can be approved for deployment by the deployment service. Read-only.
@@ -122,10 +127,14 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.Catalog {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates.Catalog> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates.Catalog>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates.Catalog.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates.Catalog>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates.Catalog.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Catalog of content that can be approved for deployment by the deployment service. Read-only.
+        /// Update the navigation property catalog in admin
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -135,7 +144,11 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.Catalog {
         public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates.Catalog body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Catalog of content that can be approved for deployment by the deployment service. Read-only.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.ShareForSchoolDataSyncService {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\microsoft.graph.shareForSchoolDataSyncService</summary>
+    /// <summary>Provides operations to call the shareForSchoolDataSyncService method.</summary>
     public class ShareForSchoolDataSyncServiceRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

@@ -5,6 +5,7 @@ using MicrosoftGraphSdk.Identity.B2cUserFlows.Item.Languages;
 using MicrosoftGraphSdk.Identity.B2cUserFlows.Item.UserAttributeAssignments;
 using MicrosoftGraphSdk.Identity.B2cUserFlows.Item.UserFlowIdentityProviders;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,7 +13,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Identity.B2cUserFlows.Item {
-    /// <summary>Builds and executes requests for operations under \identity\b2cUserFlows\{b2cIdentityUserFlow-id}</summary>
+    /// <summary>Provides operations to manage the b2cUserFlows property of the microsoft.graph.identityContainer entity.</summary>
     public class B2cIdentityUserFlowItemRequestBuilder {
         public IdentityProvidersRequestBuilder IdentityProviders { get =>
             new IdentityProvidersRequestBuilder(PathParameters, RequestAdapter);
@@ -60,7 +61,7 @@ namespace MicrosoftGraphSdk.Identity.B2cUserFlows.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Represents entry point for B2C identity userflows.
+        /// Delete navigation property b2cUserFlows for identity
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -96,7 +97,7 @@ namespace MicrosoftGraphSdk.Identity.B2cUserFlows.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents entry point for B2C identity userflows.
+        /// Update the navigation property b2cUserFlows in identity
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -114,7 +115,7 @@ namespace MicrosoftGraphSdk.Identity.B2cUserFlows.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents entry point for B2C identity userflows.
+        /// Delete navigation property b2cUserFlows for identity
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -122,7 +123,11 @@ namespace MicrosoftGraphSdk.Identity.B2cUserFlows.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Represents entry point for B2C identity userflows.
@@ -134,10 +139,14 @@ namespace MicrosoftGraphSdk.Identity.B2cUserFlows.Item {
         /// </summary>
         public async Task<B2cIdentityUserFlow> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<B2cIdentityUserFlow>(requestInfo, B2cIdentityUserFlow.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<B2cIdentityUserFlow>(requestInfo, B2cIdentityUserFlow.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Represents entry point for B2C identity userflows.
+        /// Update the navigation property b2cUserFlows in identity
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -147,7 +156,11 @@ namespace MicrosoftGraphSdk.Identity.B2cUserFlows.Item {
         public async Task PatchAsync(B2cIdentityUserFlow body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Represents entry point for B2C identity userflows.</summary>
         public class GetQueryParameters : QueryParametersBase {

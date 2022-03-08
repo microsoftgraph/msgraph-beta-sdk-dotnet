@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Drives.Item.List.Items.Item.Versions.Item.RestoreVersion {
-    /// <summary>Builds and executes requests for operations under \drives\{drive-id}\list\items\{listItem-id}\versions\{listItemVersion-id}\microsoft.graph.restoreVersion</summary>
+    /// <summary>Provides operations to call the restoreVersion method.</summary>
     public class RestoreVersionRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

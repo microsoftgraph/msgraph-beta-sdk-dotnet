@@ -1,6 +1,8 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
+using MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Messages.Item.Replies.Item.HostedContents;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,8 +10,11 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Messages.Item.Replies.Item {
-    /// <summary>Builds and executes requests for operations under \teams\{team-id}\primaryChannel\messages\{chatMessage-id}\replies\{chatMessage-id1}</summary>
+    /// <summary>Provides operations to manage the replies property of the microsoft.graph.chatMessage entity.</summary>
     public class ChatMessageItemRequestBuilder {
+        public HostedContentsRequestBuilder HostedContents { get =>
+            new HostedContentsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -44,7 +49,7 @@ namespace MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Messages.Item.Replies.Item
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Replies for a specified message.
+        /// Delete navigation property replies for teams
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -80,7 +85,7 @@ namespace MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Messages.Item.Replies.Item
             return requestInfo;
         }
         /// <summary>
-        /// Replies for a specified message.
+        /// Update the navigation property replies in teams
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -98,7 +103,7 @@ namespace MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Messages.Item.Replies.Item
             return requestInfo;
         }
         /// <summary>
-        /// Replies for a specified message.
+        /// Delete navigation property replies for teams
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -106,7 +111,11 @@ namespace MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Messages.Item.Replies.Item
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Replies for a specified message.
@@ -118,10 +127,14 @@ namespace MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Messages.Item.Replies.Item
         /// </summary>
         public async Task<ChatMessage> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ChatMessage>(requestInfo, ChatMessage.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<ChatMessage>(requestInfo, ChatMessage.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Replies for a specified message.
+        /// Update the navigation property replies in teams
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -131,7 +144,11 @@ namespace MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Messages.Item.Replies.Item
         public async Task PatchAsync(ChatMessage body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Replies for a specified message.</summary>
         public class GetQueryParameters : QueryParametersBase {

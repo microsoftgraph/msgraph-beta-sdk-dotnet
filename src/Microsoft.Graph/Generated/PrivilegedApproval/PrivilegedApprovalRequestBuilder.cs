@@ -1,6 +1,8 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
+using MicrosoftGraphSdk.PrivilegedApproval.Count;
 using MicrosoftGraphSdk.PrivilegedApproval.Item;
 using MicrosoftGraphSdk.PrivilegedApproval.MyRequests;
 using System;
@@ -10,8 +12,11 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.PrivilegedApproval {
-    /// <summary>Builds and executes requests for operations under \privilegedApproval</summary>
+    /// <summary>Provides operations to manage the collection of privilegedApproval entities.</summary>
     public class PrivilegedApprovalRequestBuilder {
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -98,12 +103,16 @@ namespace MicrosoftGraphSdk.PrivilegedApproval {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<PrivilegedApprovalResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<PrivilegedApprovalCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PrivilegedApprovalResponse>(requestInfo, PrivilegedApprovalResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<PrivilegedApprovalCollectionResponse>(requestInfo, PrivilegedApprovalCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \privilegedApproval\microsoft.graph.myRequests()
+        /// Provides operations to call the myRequests method.
         /// </summary>
         public MyRequestsRequestBuilder MyRequests() {
             return new MyRequestsRequestBuilder(PathParameters, RequestAdapter);
@@ -119,7 +128,11 @@ namespace MicrosoftGraphSdk.PrivilegedApproval {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedApproval> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedApproval body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedApproval>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedApproval.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedApproval>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedApproval.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Get entities from privilegedApproval</summary>
         public class GetQueryParameters : QueryParametersBase {

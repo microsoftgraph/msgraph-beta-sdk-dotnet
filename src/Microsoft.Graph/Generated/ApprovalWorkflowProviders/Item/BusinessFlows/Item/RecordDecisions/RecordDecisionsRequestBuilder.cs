@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.ApprovalWorkflowProviders.Item.BusinessFlows.Item.RecordDecisions {
-    /// <summary>Builds and executes requests for operations under \approvalWorkflowProviders\{approvalWorkflowProvider-id}\businessFlows\{businessFlow-id}\microsoft.graph.recordDecisions</summary>
+    /// <summary>Provides operations to call the recordDecisions method.</summary>
     public class RecordDecisionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

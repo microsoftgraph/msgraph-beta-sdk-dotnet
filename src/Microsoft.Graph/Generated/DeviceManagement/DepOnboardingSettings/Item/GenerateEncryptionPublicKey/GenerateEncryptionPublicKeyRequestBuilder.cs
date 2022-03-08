@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.GenerateEncryptionPublicKey {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\microsoft.graph.generateEncryptionPublicKey</summary>
+    /// <summary>Provides operations to call the generateEncryptionPublicKey method.</summary>
     public class GenerateEncryptionPublicKeyRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -64,9 +64,9 @@ namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.Generate
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<string> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<GenerateEncryptionPublicKeyResponse> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreatePostRequestInformation(h, o);
-            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GenerateEncryptionPublicKeyResponse>(requestInfo, GenerateEncryptionPublicKeyResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

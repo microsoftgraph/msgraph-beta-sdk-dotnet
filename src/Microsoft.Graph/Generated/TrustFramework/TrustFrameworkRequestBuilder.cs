@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using MicrosoftGraphSdk.TrustFramework.KeySets;
 using MicrosoftGraphSdk.TrustFramework.Policies;
 using System;
@@ -10,7 +11,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.TrustFramework {
-    /// <summary>Builds and executes requests for operations under \trustFramework</summary>
+    /// <summary>Provides operations to manage the trustFramework singleton.</summary>
     public class TrustFrameworkRequestBuilder {
         public KeySetsRequestBuilder KeySets { get =>
             new KeySetsRequestBuilder(PathParameters, RequestAdapter);
@@ -100,7 +101,11 @@ namespace MicrosoftGraphSdk.TrustFramework {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.TrustFramework> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.TrustFramework>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.TrustFramework.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.TrustFramework>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.TrustFramework.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update trustFramework
@@ -113,7 +118,11 @@ namespace MicrosoftGraphSdk.TrustFramework {
         public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.TrustFramework body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Get trustFramework</summary>
         public class GetQueryParameters : QueryParametersBase {

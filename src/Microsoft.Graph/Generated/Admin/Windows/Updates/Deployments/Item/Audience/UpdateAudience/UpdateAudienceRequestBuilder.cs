@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.UpdateAudience {
-    /// <summary>Builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience\microsoft.graph.windowsUpdates.updateAudience</summary>
+    /// <summary>Provides operations to call the updateAudience method.</summary>
     public class UpdateAudienceRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

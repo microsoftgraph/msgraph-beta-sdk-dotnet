@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DirectoryRoles.Item.GetMemberObjects {
-    /// <summary>Builds and executes requests for operations under \directoryRoles\{directoryRole-id}\microsoft.graph.getMemberObjects</summary>
+    /// <summary>Provides operations to call the getMemberObjects method.</summary>
     public class GetMemberObjectsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -68,10 +68,10 @@ namespace MicrosoftGraphSdk.DirectoryRoles.Item.GetMemberObjects {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<string>> PostAsync(GetMemberObjectsRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<GetMemberObjectsResponse> PostAsync(GetMemberObjectsRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendPrimitiveCollectionAsync<string>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetMemberObjectsResponse>(requestInfo, GetMemberObjectsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

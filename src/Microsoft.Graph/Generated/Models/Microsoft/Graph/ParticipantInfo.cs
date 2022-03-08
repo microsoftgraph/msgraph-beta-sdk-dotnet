@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class ParticipantInfo : IParsable {
+    /// <summary>Provides operations to manage the commsApplication singleton.</summary>
+    public class ParticipantInfo : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ISO 3166-1 Alpha-2 country code of the participant's best estimated physical location at the start of the call. Read-only.</summary>

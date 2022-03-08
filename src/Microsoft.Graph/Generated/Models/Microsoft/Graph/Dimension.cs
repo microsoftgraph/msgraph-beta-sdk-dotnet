@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the financials singleton.</summary>
     public class Dimension : Entity, IParsable {
         public string Code { get; set; }
         public List<DimensionValue> DimensionValues { get; set; }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the ipSecurityProfiles property of the microsoft.graph.security entity.</summary>
     public class IpSecurityProfile : Entity, IParsable {
         public List<string> ActivityGroupNames { get; set; }
         public string Address { get; set; }

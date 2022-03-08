@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Teams.Item.Schedule.Share {
-    /// <summary>Builds and executes requests for operations under \teams\{team-id}\schedule\microsoft.graph.share</summary>
+    /// <summary>Provides operations to call the share method.</summary>
     public class ShareRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

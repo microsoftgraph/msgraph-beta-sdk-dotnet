@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public class MobileAppProvisioningConfigGroupAssignment : Entity, IParsable {
         /// <summary>The ID of the AAD group in which the app provisioning configuration is being targeted.</summary>
         public string TargetGroupId { get; set; }

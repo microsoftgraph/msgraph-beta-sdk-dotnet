@@ -1,9 +1,11 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.DeviceManagement.ChromeOSOnboardingSettings.Connect;
+using MicrosoftGraphSdk.DeviceManagement.ChromeOSOnboardingSettings.Count;
 using MicrosoftGraphSdk.DeviceManagement.ChromeOSOnboardingSettings.Disconnect;
 using MicrosoftGraphSdk.DeviceManagement.ChromeOSOnboardingSettings.Item;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,10 +13,13 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.ChromeOSOnboardingSettings {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\chromeOSOnboardingSettings</summary>
+    /// <summary>Provides operations to manage the chromeOSOnboardingSettings property of the microsoft.graph.deviceManagement entity.</summary>
     public class ChromeOSOnboardingSettingsRequestBuilder {
         public ConnectRequestBuilder Connect { get =>
             new ConnectRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         public DisconnectRequestBuilder Disconnect { get =>
             new DisconnectRequestBuilder(PathParameters, RequestAdapter);
@@ -80,7 +85,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ChromeOSOnboardingSettings {
             return requestInfo;
         }
         /// <summary>
-        /// Collection of ChromeOSOnboardingSettings settings associated with account.
+        /// Create new navigation property to chromeOSOnboardingSettings for deviceManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -105,12 +110,16 @@ namespace MicrosoftGraphSdk.DeviceManagement.ChromeOSOnboardingSettings {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ChromeOSOnboardingSettingsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<ChromeOSOnboardingSettingsCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ChromeOSOnboardingSettingsResponse>(requestInfo, ChromeOSOnboardingSettingsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<ChromeOSOnboardingSettingsCollectionResponse>(requestInfo, ChromeOSOnboardingSettingsCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Collection of ChromeOSOnboardingSettings settings associated with account.
+        /// Create new navigation property to chromeOSOnboardingSettings for deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -120,7 +129,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.ChromeOSOnboardingSettings {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ChromeOSOnboardingSettings> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.ChromeOSOnboardingSettings body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ChromeOSOnboardingSettings>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ChromeOSOnboardingSettings.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ChromeOSOnboardingSettings>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ChromeOSOnboardingSettings.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Collection of ChromeOSOnboardingSettings settings associated with account.</summary>
         public class GetQueryParameters : QueryParametersBase {

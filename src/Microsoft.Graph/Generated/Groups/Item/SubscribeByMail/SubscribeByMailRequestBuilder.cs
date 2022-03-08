@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Groups.Item.SubscribeByMail {
-    /// <summary>Builds and executes requests for operations under \groups\{group-id}\microsoft.graph.subscribeByMail</summary>
+    /// <summary>Provides operations to call the subscribeByMail method.</summary>
     public class SubscribeByMailRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

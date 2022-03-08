@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.Item.CompareWithTemplateId {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\templates\{deviceManagementTemplate-id}\migratableTo\{deviceManagementTemplate-id1}\microsoft.graph.compare(templateId='{templateId}')</summary>
+    /// <summary>Provides operations to call the compare method.</summary>
     public class CompareWithTemplateIdRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -19,7 +19,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.Item.Co
         /// Instantiates a new CompareWithTemplateIdRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// <param name="templateId">Usage: templateId={templateId}</param>
+        /// <param name="templateId">Usage: templateId='{templateId}'</param>
         /// </summary>
         public CompareWithTemplateIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string templateId = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
@@ -66,9 +66,9 @@ namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.Item.Co
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<CompareWithTemplateId>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<CompareWithTemplateIdResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<CompareWithTemplateId>(requestInfo, CompareWithTemplateId.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CompareWithTemplateIdResponse>(requestInfo, CompareWithTemplateIdResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

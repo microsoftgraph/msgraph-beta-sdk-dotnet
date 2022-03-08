@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class LogonUser : IParsable {
+    /// <summary>Provides operations to manage the hostSecurityProfiles property of the microsoft.graph.security entity.</summary>
+    public class LogonUser : IParsable, IAdditionalDataHolder {
         /// <summary>Domain of user account used to logon.</summary>
         public string AccountDomain { get; set; }
         /// <summary>Account name of user account used to logon.</summary>

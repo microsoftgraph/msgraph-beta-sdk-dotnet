@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.TriggerConfigurationManagerAction {
-    /// <summary>Builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}\microsoft.graph.triggerConfigurationManagerAction</summary>
+    /// <summary>Provides operations to call the triggerConfigurationManagerAction method.</summary>
     public class TriggerConfigurationManagerActionRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

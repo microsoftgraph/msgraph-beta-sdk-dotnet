@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantTags.Item.AssignTag {
-    public class AssignTagRequestBody : IParsable {
+    /// <summary>Provides operations to call the assignTag method.</summary>
+    public class AssignTagRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<string> TenantIds { get; set; }

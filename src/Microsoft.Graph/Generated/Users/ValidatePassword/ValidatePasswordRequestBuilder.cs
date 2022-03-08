@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.ValidatePassword {
-    /// <summary>Builds and executes requests for operations under \users\microsoft.graph.validatePassword</summary>
+    /// <summary>Provides operations to call the validatePassword method.</summary>
     public class ValidatePasswordRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Users.ValidatePassword {
             return await RequestAdapter.SendAsync<ValidatePasswordResponse>(requestInfo, ValidatePasswordResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes passwordValidationInformation</summary>
-        public class ValidatePasswordResponse : IParsable {
+        public class ValidatePasswordResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type passwordValidationInformation</summary>

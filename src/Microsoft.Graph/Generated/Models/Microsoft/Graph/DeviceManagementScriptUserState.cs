@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DeviceManagementScriptUserState : Entity, IParsable {
         /// <summary>List of run states for this script across all devices of specific user.</summary>
         public List<DeviceManagementScriptDeviceState> DeviceRunStates { get; set; }

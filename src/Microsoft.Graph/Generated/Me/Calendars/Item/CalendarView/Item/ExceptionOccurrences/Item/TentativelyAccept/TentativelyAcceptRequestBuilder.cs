@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Me.Calendars.Item.CalendarView.Item.ExceptionOccurrences.Item.TentativelyAccept {
-    /// <summary>Builds and executes requests for operations under \me\calendars\{calendar-id}\calendarView\{event-id}\exceptionOccurrences\{event-id1}\microsoft.graph.tentativelyAccept</summary>
+    /// <summary>Provides operations to call the tentativelyAccept method.</summary>
     public class TentativelyAcceptRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

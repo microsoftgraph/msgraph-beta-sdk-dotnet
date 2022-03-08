@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class UnsupportedGroupPolicyExtension : Entity, IParsable {
         /// <summary>ExtensionType of the unsupported extension.</summary>
         public string ExtensionType { get; set; }

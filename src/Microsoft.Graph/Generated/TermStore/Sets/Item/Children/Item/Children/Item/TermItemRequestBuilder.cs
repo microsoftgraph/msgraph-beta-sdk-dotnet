@@ -1,6 +1,9 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore;
+using MicrosoftGraphSdk.TermStore.Sets.Item.Children.Item.Children.Item.Relations;
+using MicrosoftGraphSdk.TermStore.Sets.Item.Children.Item.Children.Item.Set;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,12 +11,18 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.TermStore.Sets.Item.Children.Item.Children.Item {
-    /// <summary>Builds and executes requests for operations under \termStore\sets\{set-id}\children\{term-id}\children\{term-id1}</summary>
+    /// <summary>Provides operations to manage the children property of the microsoft.graph.termStore.term entity.</summary>
     public class TermItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        public RelationsRequestBuilder Relations { get =>
+            new RelationsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        public SetRequestBuilder Set { get =>
+            new SetRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -44,7 +53,7 @@ namespace MicrosoftGraphSdk.TermStore.Sets.Item.Children.Item.Children.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Children of current term.
+        /// Delete navigation property children for termStore
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -80,7 +89,7 @@ namespace MicrosoftGraphSdk.TermStore.Sets.Item.Children.Item.Children.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Children of current term.
+        /// Update the navigation property children in termStore
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -98,7 +107,7 @@ namespace MicrosoftGraphSdk.TermStore.Sets.Item.Children.Item.Children.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Children of current term.
+        /// Delete navigation property children for termStore
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -106,7 +115,11 @@ namespace MicrosoftGraphSdk.TermStore.Sets.Item.Children.Item.Children.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Children of current term.
@@ -118,10 +131,14 @@ namespace MicrosoftGraphSdk.TermStore.Sets.Item.Children.Item.Children.Item {
         /// </summary>
         public async Task<Term> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Term>(requestInfo, Term.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<Term>(requestInfo, Term.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Children of current term.
+        /// Update the navigation property children in termStore
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -131,7 +148,11 @@ namespace MicrosoftGraphSdk.TermStore.Sets.Item.Children.Item.Children.Item {
         public async Task PatchAsync(Term body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Children of current term.</summary>
         public class GetQueryParameters : QueryParametersBase {

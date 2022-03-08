@@ -1,6 +1,9 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore;
+using MicrosoftGraphSdk.Sites.Item.TermStore.Groups;
+using MicrosoftGraphSdk.Sites.Item.TermStore.Sets;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,12 +11,18 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Sites.Item.TermStore {
-    /// <summary>Builds and executes requests for operations under \sites\{site-id}\termStore</summary>
+    /// <summary>Provides operations to manage the termStore property of the microsoft.graph.site entity.</summary>
     public class TermStoreRequestBuilder {
+        public GroupsRequestBuilder Groups { get =>
+            new GroupsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        public SetsRequestBuilder Sets { get =>
+            new SetsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -44,7 +53,7 @@ namespace MicrosoftGraphSdk.Sites.Item.TermStore {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The default termStore under this site.
+        /// Delete navigation property termStore for sites
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -80,7 +89,7 @@ namespace MicrosoftGraphSdk.Sites.Item.TermStore {
             return requestInfo;
         }
         /// <summary>
-        /// The default termStore under this site.
+        /// Update the navigation property termStore in sites
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -98,7 +107,7 @@ namespace MicrosoftGraphSdk.Sites.Item.TermStore {
             return requestInfo;
         }
         /// <summary>
-        /// The default termStore under this site.
+        /// Delete navigation property termStore for sites
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -106,7 +115,11 @@ namespace MicrosoftGraphSdk.Sites.Item.TermStore {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// The default termStore under this site.
@@ -118,10 +131,14 @@ namespace MicrosoftGraphSdk.Sites.Item.TermStore {
         /// </summary>
         public async Task<Store> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Store>(requestInfo, Store.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<Store>(requestInfo, Store.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The default termStore under this site.
+        /// Update the navigation property termStore in sites
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -131,7 +148,11 @@ namespace MicrosoftGraphSdk.Sites.Item.TermStore {
         public async Task PatchAsync(Store body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The default termStore under this site.</summary>
         public class GetQueryParameters : QueryParametersBase {

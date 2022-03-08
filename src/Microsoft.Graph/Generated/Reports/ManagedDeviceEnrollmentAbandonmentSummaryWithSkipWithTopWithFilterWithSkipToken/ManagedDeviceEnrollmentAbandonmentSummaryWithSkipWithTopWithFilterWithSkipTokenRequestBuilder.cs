@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Reports.ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipToken {
-    /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.managedDeviceEnrollmentAbandonmentSummary(skip={skip},top={top},filter='{filter}',skipToken='{skipToken}')</summary>
+    /// <summary>Provides operations to call the managedDeviceEnrollmentAbandonmentSummary method.</summary>
     public class ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipTokenRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -18,22 +18,22 @@ namespace MicrosoftGraphSdk.Reports.ManagedDeviceEnrollmentAbandonmentSummaryWit
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipTokenRequestBuilder and sets the default values.
-        /// <param name="filter">Usage: filter={filter}</param>
+        /// <param name="filter">Usage: filter='{filter}'</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="skip">Usage: skip={skip}</param>
-        /// <param name="skipToken">Usage: skipToken={skipToken}</param>
+        /// <param name="skipToken">Usage: skipToken='{skipToken}'</param>
         /// <param name="top">Usage: top={top}</param>
         /// </summary>
-        public ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipTokenRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string skipToken = default, int? top = default, int? skip = default, string filter = default) {
+        public ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipTokenRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, int? top = default, string skipToken = default, string filter = default, int? skip = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/reports/microsoft.graph.managedDeviceEnrollmentAbandonmentSummary(skip={skip},top={top},filter='{filter}',skipToken='{skipToken}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("skipToken", skipToken);
             urlTplParams.Add("top", top);
-            urlTplParams.Add("skip", skip);
+            urlTplParams.Add("skipToken", skipToken);
             urlTplParams.Add("filter", filter);
+            urlTplParams.Add("skip", skip);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -78,7 +78,7 @@ namespace MicrosoftGraphSdk.Reports.ManagedDeviceEnrollmentAbandonmentSummaryWit
             return await RequestAdapter.SendAsync<ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipTokenResponse>(requestInfo, ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipTokenResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes report</summary>
-        public class ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipTokenResponse : IParsable {
+        public class ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipTokenResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type report</summary>

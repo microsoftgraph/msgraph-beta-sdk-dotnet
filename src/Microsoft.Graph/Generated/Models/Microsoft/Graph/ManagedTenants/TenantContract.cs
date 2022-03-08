@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
-    public class TenantContract : IParsable {
+    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
+    public class TenantContract : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type of relationship that exists between the managing entity and tenant. Optional. Read-only.</summary>

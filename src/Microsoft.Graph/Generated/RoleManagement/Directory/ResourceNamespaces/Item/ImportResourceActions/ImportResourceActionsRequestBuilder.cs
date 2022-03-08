@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.RoleManagement.Directory.ResourceNamespaces.Item.ImportResourceActions {
-    /// <summary>Builds and executes requests for operations under \roleManagement\directory\resourceNamespaces\{unifiedRbacResourceNamespace-id}\microsoft.graph.importResourceActions</summary>
+    /// <summary>Provides operations to call the importResourceActions method.</summary>
     public class ImportResourceActionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.RoleManagement.Directory.ResourceNamespaces.Item.Imp
             return await RequestAdapter.SendAsync<ImportResourceActionsResponse>(requestInfo, ImportResourceActionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes unifiedRbacResourceNamespace</summary>
-        public class ImportResourceActionsResponse : IParsable {
+        public class ImportResourceActionsResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type unifiedRbacResourceNamespace</summary>

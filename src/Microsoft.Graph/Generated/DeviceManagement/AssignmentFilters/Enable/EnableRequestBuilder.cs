@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.Enable {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\assignmentFilters\microsoft.graph.enable</summary>
+    /// <summary>Provides operations to call the enable method.</summary>
     public class EnableRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

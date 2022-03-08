@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.Item.Restart {
-    public class RestartRequestBody : IParsable {
+    /// <summary>Provides operations to call the restart method.</summary>
+    public class RestartRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public SynchronizationJobRestartCriteria Criteria { get; set; }

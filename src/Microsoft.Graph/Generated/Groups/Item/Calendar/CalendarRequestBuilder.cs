@@ -8,6 +8,7 @@ using MicrosoftGraphSdk.Groups.Item.Calendar.GetSchedule;
 using MicrosoftGraphSdk.Groups.Item.Calendar.MultiValueExtendedProperties;
 using MicrosoftGraphSdk.Groups.Item.Calendar.SingleValueExtendedProperties;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,7 +16,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Groups.Item.Calendar {
-    /// <summary>Builds and executes requests for operations under \groups\{group-id}\calendar</summary>
+    /// <summary>Provides operations to manage the calendar property of the microsoft.graph.group entity.</summary>
     public class CalendarRequestBuilder {
         public CalendarPermissionsRequestBuilder CalendarPermissions { get =>
             new CalendarPermissionsRequestBuilder(PathParameters, RequestAdapter);
@@ -42,8 +43,8 @@ namespace MicrosoftGraphSdk.Groups.Item.Calendar {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
-        /// Builds and executes requests for operations under \groups\{group-id}\calendar\microsoft.graph.allowedCalendarSharingRoles(User='{User}')
-        /// <param name="User">Usage: User={User}</param>
+        /// Provides operations to call the allowedCalendarSharingRoles method.
+        /// <param name="User">Usage: User='{User}'</param>
         /// </summary>
         public AllowedCalendarSharingRolesWithUserRequestBuilder AllowedCalendarSharingRolesWithUser(string user) {
             if(string.IsNullOrEmpty(user)) throw new ArgumentNullException(nameof(user));
@@ -77,7 +78,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Calendar {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The group's calendar. Read-only.
+        /// Delete navigation property calendar for groups
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -113,7 +114,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Calendar {
             return requestInfo;
         }
         /// <summary>
-        /// The group's calendar. Read-only.
+        /// Update the navigation property calendar in groups
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -131,7 +132,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Calendar {
             return requestInfo;
         }
         /// <summary>
-        /// The group's calendar. Read-only.
+        /// Delete navigation property calendar for groups
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -139,7 +140,11 @@ namespace MicrosoftGraphSdk.Groups.Item.Calendar {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// The group's calendar. Read-only.
@@ -151,10 +156,14 @@ namespace MicrosoftGraphSdk.Groups.Item.Calendar {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The group's calendar. Read-only.
+        /// Update the navigation property calendar in groups
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -164,7 +173,11 @@ namespace MicrosoftGraphSdk.Groups.Item.Calendar {
         public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The group's calendar. Read-only.</summary>
         public class GetQueryParameters : QueryParametersBase {

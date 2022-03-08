@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.PlayLostModeSound {
-    public class PlayLostModeSoundRequestBody : IParsable {
+    /// <summary>Provides operations to call the playLostModeSound method.</summary>
+    public class PlayLostModeSoundRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string DurationInMinutes { get; set; }

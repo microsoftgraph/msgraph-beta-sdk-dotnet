@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the educationRoot singleton.</summary>
     public class EducationSchool : EducationOrganization, IParsable {
         /// <summary>Address of the school.</summary>
         public PhysicalAddress Address { get; set; }

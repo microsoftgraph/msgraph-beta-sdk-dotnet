@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.ServicePrincipals.Item.CreatePasswordSingleSignOnCredentials {
-    /// <summary>Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\microsoft.graph.createPasswordSingleSignOnCredentials</summary>
+    /// <summary>Provides operations to call the createPasswordSingleSignOnCredentials method.</summary>
     public class CreatePasswordSingleSignOnCredentialsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.CreatePasswordSingleSignOnCre
             return await RequestAdapter.SendAsync<CreatePasswordSingleSignOnCredentialsResponse>(requestInfo, CreatePasswordSingleSignOnCredentialsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes passwordSingleSignOnCredentialSet</summary>
-        public class CreatePasswordSingleSignOnCredentialsResponse : IParsable {
+        public class CreatePasswordSingleSignOnCredentialsResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type passwordSingleSignOnCredentialSet</summary>

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Custodians.Item.Activate {
-    /// <summary>Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\custodians\{custodian-id}\microsoft.graph.ediscovery.activate</summary>
+    /// <summary>Provides operations to call the activate method.</summary>
     public class ActivateRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

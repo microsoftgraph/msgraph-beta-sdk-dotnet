@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using MicrosoftGraphSdk.Users.Item.ContactFolders.Item.ChildFolders;
 using MicrosoftGraphSdk.Users.Item.ContactFolders.Item.Contacts;
 using MicrosoftGraphSdk.Users.Item.ContactFolders.Item.MultiValueExtendedProperties;
@@ -12,7 +13,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.ContactFolders.Item {
-    /// <summary>Builds and executes requests for operations under \users\{user-id}\contactFolders\{contactFolder-id}</summary>
+    /// <summary>Provides operations to manage the contactFolders property of the microsoft.graph.user entity.</summary>
     public class ContactFolderItemRequestBuilder {
         public ChildFoldersRequestBuilder ChildFolders { get =>
             new ChildFoldersRequestBuilder(PathParameters, RequestAdapter);
@@ -60,7 +61,7 @@ namespace MicrosoftGraphSdk.Users.Item.ContactFolders.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The user's contacts folders. Read-only. Nullable.
+        /// Delete navigation property contactFolders for users
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -96,7 +97,7 @@ namespace MicrosoftGraphSdk.Users.Item.ContactFolders.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The user's contacts folders. Read-only. Nullable.
+        /// Update the navigation property contactFolders in users
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -114,7 +115,7 @@ namespace MicrosoftGraphSdk.Users.Item.ContactFolders.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The user's contacts folders. Read-only. Nullable.
+        /// Delete navigation property contactFolders for users
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -122,7 +123,11 @@ namespace MicrosoftGraphSdk.Users.Item.ContactFolders.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// The user's contacts folders. Read-only. Nullable.
@@ -134,10 +139,14 @@ namespace MicrosoftGraphSdk.Users.Item.ContactFolders.Item {
         /// </summary>
         public async Task<ContactFolder> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ContactFolder>(requestInfo, ContactFolder.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<ContactFolder>(requestInfo, ContactFolder.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The user's contacts folders. Read-only. Nullable.
+        /// Update the navigation property contactFolders in users
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -147,7 +156,11 @@ namespace MicrosoftGraphSdk.Users.Item.ContactFolders.Item {
         public async Task PatchAsync(ContactFolder body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The user's contacts folders. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -4,6 +4,7 @@ using MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.EnrollmentPr
 using MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles.Item.SetDefaultProfile;
 using MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles.Item.UpdateDeviceProfileAssignment;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +12,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles.Item {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\enrollmentProfiles\{enrollmentProfile-id}</summary>
+    /// <summary>Provides operations to manage the enrollmentProfiles property of the microsoft.graph.depOnboardingSetting entity.</summary>
     public class EnrollmentProfileItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -53,7 +54,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.Enrollme
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The enrollment profiles.
+        /// Delete navigation property enrollmentProfiles for deviceManagement
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -89,7 +90,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.Enrollme
             return requestInfo;
         }
         /// <summary>
-        /// The enrollment profiles.
+        /// Update the navigation property enrollmentProfiles in deviceManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -107,7 +108,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.Enrollme
             return requestInfo;
         }
         /// <summary>
-        /// The enrollment profiles.
+        /// Delete navigation property enrollmentProfiles for deviceManagement
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -115,10 +116,14 @@ namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.Enrollme
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\enrollmentProfiles\{enrollmentProfile-id}\microsoft.graph.exportMobileConfig()
+        /// Provides operations to call the exportMobileConfig method.
         /// </summary>
         public ExportMobileConfigRequestBuilder ExportMobileConfig() {
             return new ExportMobileConfigRequestBuilder(PathParameters, RequestAdapter);
@@ -133,10 +138,14 @@ namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.Enrollme
         /// </summary>
         public async Task<EnrollmentProfile> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<EnrollmentProfile>(requestInfo, EnrollmentProfile.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<EnrollmentProfile>(requestInfo, EnrollmentProfile.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The enrollment profiles.
+        /// Update the navigation property enrollmentProfiles in deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -146,7 +155,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.Enrollme
         public async Task PatchAsync(EnrollmentProfile body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The enrollment profiles.</summary>
         public class GetQueryParameters : QueryParametersBase {

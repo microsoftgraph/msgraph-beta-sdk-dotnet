@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class SelfServiceSignUpAuthenticationFlowConfiguration : IParsable {
+    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
+    public class SelfServiceSignUpAuthenticationFlowConfiguration : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether self-service sign-up flow is enabled or disabled. The default value is false. This property is not a key. Required.</summary>

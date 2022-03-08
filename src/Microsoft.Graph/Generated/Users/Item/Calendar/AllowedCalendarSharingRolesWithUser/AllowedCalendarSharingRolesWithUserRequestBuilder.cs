@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.Calendar.AllowedCalendarSharingRolesWithUser {
-    /// <summary>Builds and executes requests for operations under \users\{user-id}\calendar\microsoft.graph.allowedCalendarSharingRoles(User='{User}')</summary>
+    /// <summary>Provides operations to call the allowedCalendarSharingRoles method.</summary>
     public class AllowedCalendarSharingRolesWithUserRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -19,7 +19,7 @@ namespace MicrosoftGraphSdk.Users.Item.Calendar.AllowedCalendarSharingRolesWithU
         /// Instantiates a new AllowedCalendarSharingRolesWithUserRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// <param name="User">Usage: User={User}</param>
+        /// <param name="User">Usage: User='{User}'</param>
         /// </summary>
         public AllowedCalendarSharingRolesWithUserRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string user = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
@@ -66,9 +66,9 @@ namespace MicrosoftGraphSdk.Users.Item.Calendar.AllowedCalendarSharingRolesWithU
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<string>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<AllowedCalendarSharingRolesWithUserResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendPrimitiveCollectionAsync<string>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AllowedCalendarSharingRolesWithUserResponse>(requestInfo, AllowedCalendarSharingRolesWithUserResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

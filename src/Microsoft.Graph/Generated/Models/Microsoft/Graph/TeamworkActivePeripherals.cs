@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class TeamworkActivePeripherals : IParsable {
+    /// <summary>Provides operations to manage the teamwork singleton.</summary>
+    public class TeamworkActivePeripherals : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public TeamworkPeripheral CommunicationSpeaker { get; set; }

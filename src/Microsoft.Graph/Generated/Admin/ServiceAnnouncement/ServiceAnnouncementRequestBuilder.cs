@@ -4,6 +4,7 @@ using MicrosoftGraphSdk.Admin.ServiceAnnouncement.HealthOverviews;
 using MicrosoftGraphSdk.Admin.ServiceAnnouncement.Issues;
 using MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +12,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement {
-    /// <summary>Builds and executes requests for operations under \admin\serviceAnnouncement</summary>
+    /// <summary>Provides operations to manage the serviceAnnouncement property of the microsoft.graph.admin entity.</summary>
     public class ServiceAnnouncementRequestBuilder {
         public HealthOverviewsRequestBuilder HealthOverviews { get =>
             new HealthOverviewsRequestBuilder(PathParameters, RequestAdapter);
@@ -56,7 +57,7 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// A container for service communications resources. Read-only.
+        /// Delete navigation property serviceAnnouncement for admin
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -92,7 +93,7 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement {
             return requestInfo;
         }
         /// <summary>
-        /// A container for service communications resources. Read-only.
+        /// Update the navigation property serviceAnnouncement in admin
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -110,7 +111,7 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement {
             return requestInfo;
         }
         /// <summary>
-        /// A container for service communications resources. Read-only.
+        /// Delete navigation property serviceAnnouncement for admin
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -118,7 +119,11 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// A container for service communications resources. Read-only.
@@ -130,10 +135,14 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ServiceAnnouncement> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ServiceAnnouncement>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ServiceAnnouncement.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ServiceAnnouncement>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ServiceAnnouncement.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A container for service communications resources. Read-only.
+        /// Update the navigation property serviceAnnouncement in admin
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -143,7 +152,11 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement {
         public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.ServiceAnnouncement body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>A container for service communications resources. Read-only.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class OutlookGeoCoordinates : IParsable {
+    /// <summary>Provides operations to manage the collection of bookingBusiness entities.</summary>
+    public class OutlookGeoCoordinates : IParsable, IAdditionalDataHolder {
         /// <summary>The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.</summary>
         public double? Accuracy { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

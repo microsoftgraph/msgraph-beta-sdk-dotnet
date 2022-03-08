@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.TrustFramework.KeySets.Item.GetActiveKey {
-    /// <summary>Builds and executes requests for operations under \trustFramework\keySets\{trustFrameworkKeySet-id}\microsoft.graph.getActiveKey()</summary>
+    /// <summary>Provides operations to call the getActiveKey method.</summary>
     public class GetActiveKeyRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.TrustFramework.KeySets.Item.GetActiveKey {
             return await RequestAdapter.SendAsync<GetActiveKeyResponse>(requestInfo, GetActiveKeyResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes trustFrameworkKey</summary>
-        public class GetActiveKeyResponse : IParsable {
+        public class GetActiveKeyResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type trustFrameworkKey</summary>

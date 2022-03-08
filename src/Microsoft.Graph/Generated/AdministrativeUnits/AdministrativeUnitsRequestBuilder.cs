@@ -1,11 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraphSdk.AdministrativeUnits.Count;
 using MicrosoftGraphSdk.AdministrativeUnits.Delta;
 using MicrosoftGraphSdk.AdministrativeUnits.GetByIds;
 using MicrosoftGraphSdk.AdministrativeUnits.GetUserOwnedObjects;
 using MicrosoftGraphSdk.AdministrativeUnits.Item;
 using MicrosoftGraphSdk.AdministrativeUnits.ValidateProperties;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,8 +15,11 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.AdministrativeUnits {
-    /// <summary>Builds and executes requests for operations under \administrativeUnits</summary>
+    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class AdministrativeUnitsRequestBuilder {
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
         public GetByIdsRequestBuilder GetByIds { get =>
             new GetByIdsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -103,7 +108,7 @@ namespace MicrosoftGraphSdk.AdministrativeUnits {
             return requestInfo;
         }
         /// <summary>
-        /// Builds and executes requests for operations under \administrativeUnits\microsoft.graph.delta()
+        /// Provides operations to call the delta method.
         /// </summary>
         public DeltaRequestBuilder Delta() {
             return new DeltaRequestBuilder(PathParameters, RequestAdapter);
@@ -116,9 +121,13 @@ namespace MicrosoftGraphSdk.AdministrativeUnits {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<AdministrativeUnitsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<AdministrativeUnitCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AdministrativeUnitsResponse>(requestInfo, AdministrativeUnitsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<AdministrativeUnitCollectionResponse>(requestInfo, AdministrativeUnitCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Add new entity to administrativeUnits
@@ -131,7 +140,11 @@ namespace MicrosoftGraphSdk.AdministrativeUnits {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.AdministrativeUnit> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.AdministrativeUnit body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AdministrativeUnit>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.AdministrativeUnit.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AdministrativeUnit>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.AdministrativeUnit.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Get entities from administrativeUnits</summary>
         public class GetQueryParameters : QueryParametersBase {

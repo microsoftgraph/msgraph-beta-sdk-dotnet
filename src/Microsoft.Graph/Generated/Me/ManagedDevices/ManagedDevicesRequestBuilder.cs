@@ -2,10 +2,12 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Me.ManagedDevices.BulkReprovisionCloudPc;
 using MicrosoftGraphSdk.Me.ManagedDevices.BulkRestoreCloudPc;
+using MicrosoftGraphSdk.Me.ManagedDevices.Count;
 using MicrosoftGraphSdk.Me.ManagedDevices.ExecuteAction;
 using MicrosoftGraphSdk.Me.ManagedDevices.Item;
 using MicrosoftGraphSdk.Me.ManagedDevices.MoveDevicesToOU;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,13 +15,16 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Me.ManagedDevices {
-    /// <summary>Builds and executes requests for operations under \me\managedDevices</summary>
+    /// <summary>Provides operations to manage the managedDevices property of the microsoft.graph.user entity.</summary>
     public class ManagedDevicesRequestBuilder {
         public BulkReprovisionCloudPcRequestBuilder BulkReprovisionCloudPc { get =>
             new BulkReprovisionCloudPcRequestBuilder(PathParameters, RequestAdapter);
         }
         public BulkRestoreCloudPcRequestBuilder BulkRestoreCloudPc { get =>
             new BulkRestoreCloudPcRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         public ExecuteActionRequestBuilder ExecuteAction { get =>
             new ExecuteActionRequestBuilder(PathParameters, RequestAdapter);
@@ -88,7 +93,7 @@ namespace MicrosoftGraphSdk.Me.ManagedDevices {
             return requestInfo;
         }
         /// <summary>
-        /// The managed devices associated with the user.
+        /// Create new navigation property to managedDevices for me
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -113,12 +118,16 @@ namespace MicrosoftGraphSdk.Me.ManagedDevices {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ManagedDevicesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagedDeviceCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ManagedDevicesResponse>(requestInfo, ManagedDevicesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<ManagedDeviceCollectionResponse>(requestInfo, ManagedDeviceCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The managed devices associated with the user.
+        /// Create new navigation property to managedDevices for me
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -128,7 +137,11 @@ namespace MicrosoftGraphSdk.Me.ManagedDevices {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The managed devices associated with the user.</summary>
         public class GetQueryParameters : QueryParametersBase {

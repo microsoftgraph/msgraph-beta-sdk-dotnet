@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the dataClassificationService singleton.</summary>
     public class JobResponseBase : Entity, IParsable {
         public DateTimeOffset? CreationDateTime { get; set; }
         public DateTimeOffset? EndDateTime { get; set; }

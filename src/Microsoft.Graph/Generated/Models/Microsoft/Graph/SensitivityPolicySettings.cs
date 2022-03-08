@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class SensitivityPolicySettings : Entity, IParsable {
         public SensitivityLabelTarget? ApplicableTo { get; set; }
         public bool? DowngradeSensitivityRequiresJustification { get; set; }

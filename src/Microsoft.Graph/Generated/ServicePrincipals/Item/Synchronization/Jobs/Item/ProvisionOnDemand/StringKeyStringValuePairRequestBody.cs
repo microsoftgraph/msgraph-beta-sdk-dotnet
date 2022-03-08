@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.Item.ProvisionOnDemand {
-    public class StringKeyStringValuePairRequestBody : IParsable {
+    /// <summary>Provides operations to call the provisionOnDemand method.</summary>
+    public class StringKeyStringValuePairRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<SynchronizationJobApplicationParameters> Parameters { get; set; }

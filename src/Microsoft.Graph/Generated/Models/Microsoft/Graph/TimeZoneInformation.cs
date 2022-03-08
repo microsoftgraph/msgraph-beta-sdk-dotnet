@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class TimeZoneInformation : IParsable {
+    /// <summary>Provides operations to call the supportedTimeZones method.</summary>
+    public class TimeZoneInformation : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An identifier for the time zone.</summary>
@@ -12,7 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>A display string that represents the time zone.</summary>
         public string DisplayName { get; set; }
         /// <summary>
-        /// Instantiates a new TimeZoneInformation and sets the default values.
+        /// Instantiates a new timeZoneInformation and sets the default values.
         /// </summary>
         public TimeZoneInformation() {
             AdditionalData = new Dictionary<string, object>();

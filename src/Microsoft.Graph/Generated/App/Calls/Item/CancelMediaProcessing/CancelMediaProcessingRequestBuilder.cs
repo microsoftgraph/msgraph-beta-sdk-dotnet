@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.App.Calls.Item.CancelMediaProcessing {
-    /// <summary>Builds and executes requests for operations under \app\calls\{call-id}\microsoft.graph.cancelMediaProcessing</summary>
+    /// <summary>Provides operations to call the cancelMediaProcessing method.</summary>
     public class CancelMediaProcessingRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.App.Calls.Item.CancelMediaProcessing {
             return await RequestAdapter.SendAsync<CancelMediaProcessingResponse>(requestInfo, CancelMediaProcessingResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes cancelMediaProcessingOperation</summary>
-        public class CancelMediaProcessingResponse : IParsable {
+        public class CancelMediaProcessingResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type cancelMediaProcessingOperation</summary>

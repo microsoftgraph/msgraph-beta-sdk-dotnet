@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class WindowsQualityUpdateProfileAssignment : Entity, IParsable {
         /// <summary>The assignment target that the quality update profile is assigned to.</summary>
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }
