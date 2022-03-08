@@ -50,11 +50,6 @@ namespace Microsoft.Graph
         AndroidForWork = 5,
 	
         /// <summary>
-        /// Android Aosp
-        /// </summary>
-        AndroidAosp = 6,
-	
-        /// <summary>
         /// Mac
         /// </summary>
         Mac = 7,

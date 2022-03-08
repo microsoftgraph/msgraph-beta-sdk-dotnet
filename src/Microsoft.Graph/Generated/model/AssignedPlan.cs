@@ -37,14 +37,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets service.
-        /// The name of the service; for example, 'Exchange'.
+        /// The name of the service; for example, exchange.
         /// </summary>
         [JsonPropertyName("service")]
         public string Service { get; set; }
     
         /// <summary>
         /// Gets or sets servicePlanId.
-        /// A GUID that identifies the service plan.
+        /// A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.
         /// </summary>
         [JsonPropertyName("servicePlanId")]
         public Guid? ServicePlanId { get; set; }

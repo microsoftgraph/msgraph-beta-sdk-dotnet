@@ -475,7 +475,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets settings.
-        /// Read-only. Nullable.
+        /// Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
         /// </summary>
         [JsonPropertyName("settings")]
         public IGroupSettingsCollectionPage Settings { get; set; }

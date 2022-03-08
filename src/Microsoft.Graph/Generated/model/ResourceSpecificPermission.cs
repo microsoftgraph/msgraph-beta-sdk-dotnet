@@ -23,30 +23,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets description.
+        /// Describes the level of access that the resource-specific permission represents.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
+        /// The display name for the resource-specific permission.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets id.
+        /// The unique identifier for the resource-specific application permission.
         /// </summary>
         [JsonPropertyName("id")]
         public Guid? Id { get; set; }
     
         /// <summary>
         /// Gets or sets isEnabled.
+        /// Indicates whether the permission is enabled.
         /// </summary>
         [JsonPropertyName("isEnabled")]
         public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets value.
+        /// The value of the permission.
         /// </summary>
         [JsonPropertyName("value")]
         public string Value { get; set; }

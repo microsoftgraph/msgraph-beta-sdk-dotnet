@@ -38,7 +38,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets platform type.
-        /// Type of platform for which this restriction applies. Possible values are: allPlatforms, ios, windows, windowsPhone, android, androidForWork, androidAosp, mac.
+        /// Type of platform for which this restriction applies. Possible values are: allPlatforms, ios, windows, windowsPhone, android, androidForWork, mac.
         /// </summary>
         [JsonPropertyName("platformType")]
         public EnrollmentRestrictionPlatformType? PlatformType { get; set; }

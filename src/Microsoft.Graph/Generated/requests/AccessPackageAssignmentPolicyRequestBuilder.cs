@@ -77,12 +77,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for CustomExtensionHandlers.
         /// </summary>
-        /// <returns>The <see cref="IAccessPackageAssignmentPolicyCustomExtensionHandlersCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IAccessPackageAssignmentPolicyCustomExtensionHandlersCollectionWithReferencesRequestBuilder CustomExtensionHandlers
+        /// <returns>The <see cref="IAccessPackageAssignmentPolicyCustomExtensionHandlersCollectionRequestBuilder"/>.</returns>
+        public IAccessPackageAssignmentPolicyCustomExtensionHandlersCollectionRequestBuilder CustomExtensionHandlers
         {
             get
             {
-                return new AccessPackageAssignmentPolicyCustomExtensionHandlersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("customExtensionHandlers"), this.Client);
+                return new AccessPackageAssignmentPolicyCustomExtensionHandlersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("customExtensionHandlers"), this.Client);
             }
         }
     

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
+        /// Gets or sets orderBy.
+        /// Order the devices should be sorted in. Default is ascending on device name.
+        /// </summary>
+        [JsonPropertyName("orderBy")]
+        public IEnumerable<string> OrderBy { get; set; }
+    
+        /// <summary>
         /// Gets or sets platform.
         /// Platform type of the devices on which the Assignment Filter will be applicable. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
         /// </summary>

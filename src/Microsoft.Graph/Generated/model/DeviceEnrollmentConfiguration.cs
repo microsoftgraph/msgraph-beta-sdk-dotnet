@@ -44,6 +44,13 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
+        /// Gets or sets device enrollment configuration type.
+        /// Support for Enrollment Configuration Type
+        /// </summary>
+        [JsonPropertyName("deviceEnrollmentConfigurationType")]
+        public DeviceEnrollmentConfigurationType? DeviceEnrollmentConfigurationType { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// The display name of the device enrollment configuration
         /// </summary>

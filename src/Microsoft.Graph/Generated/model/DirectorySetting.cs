@@ -36,7 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets values.
-        /// Collection of name value pairs. Must contain and set all the settings defined in the template.
+        /// Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced directorySettingTemplates object.
         /// </summary>
         [JsonPropertyName("values")]
         public IEnumerable<SettingValue> Values { get; set; }

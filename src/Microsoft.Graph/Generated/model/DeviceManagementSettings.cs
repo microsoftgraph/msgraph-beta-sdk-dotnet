@@ -64,6 +64,20 @@ namespace Microsoft.Graph
         public bool? EnableAutopilotDiagnostics { get; set; }
     
         /// <summary>
+        /// Gets or sets enableDeviceGroupMembershipReport.
+        /// Determines whether the device group membership report feature is enabled or not.
+        /// </summary>
+        [JsonPropertyName("enableDeviceGroupMembershipReport")]
+        public bool? EnableDeviceGroupMembershipReport { get; set; }
+    
+        /// <summary>
+        /// Gets or sets enableEnhancedTroubleshootingExperience.
+        /// Determines whether the enhanced troubleshooting UX is enabled or not.
+        /// </summary>
+        [JsonPropertyName("enableEnhancedTroubleshootingExperience")]
+        public bool? EnableEnhancedTroubleshootingExperience { get; set; }
+    
+        /// <summary>
         /// Gets or sets enableLogCollection.
         /// Determines whether the log collection feature should be available for use.
         /// </summary>

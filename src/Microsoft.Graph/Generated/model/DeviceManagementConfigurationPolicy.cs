@@ -23,7 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created date time.
-        /// Policy creation date and time. This property is read-only.
+        /// Policy creation date and time
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets last modified date time.
-        /// Policy last modification date and time. This property is read-only.
+        /// Policy last modification date and time
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
@@ -79,7 +79,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets setting count.
-        /// Number of settings. This property is read-only.
+        /// Number of settings
         /// </summary>
         [JsonPropertyName("settingCount")]
         public Int32? SettingCount { get; set; }

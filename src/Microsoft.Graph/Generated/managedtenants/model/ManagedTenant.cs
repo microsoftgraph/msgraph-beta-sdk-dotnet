@@ -36,6 +36,7 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets audit events.
+        /// The collection of audit events across managed tenants.
         /// </summary>
         [JsonPropertyName("auditEvents")]
         public IManagedTenantAuditEventsCollectionPage AuditEvents { get; set; }

@@ -218,6 +218,27 @@ namespace Microsoft.Graph
             string period = null);
 
         /// <summary>
+        /// Gets the request builder for ReportRootGetBrowserDistributionUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetBrowserDistributionUserCountsRequestBuilder"/>.</returns>
+        IReportRootGetBrowserDistributionUserCountsRequestBuilder GetBrowserDistributionUserCounts(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetBrowserUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetBrowserUserCountsRequestBuilder"/>.</returns>
+        IReportRootGetBrowserUserCountsRequestBuilder GetBrowserUserCounts(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetBrowserUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetBrowserUserDetailRequestBuilder"/>.</returns>
+        IReportRootGetBrowserUserDetailRequestBuilder GetBrowserUserDetail(
+            string period);
+
+        /// <summary>
         /// Gets the request builder for ReportRootGetEmailActivityCounts.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetEmailActivityCountsRequestBuilder"/>.</returns>
@@ -726,6 +747,34 @@ namespace Microsoft.Graph
             string period);
 
         /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsTeamActivityCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsTeamActivityCountsRequestBuilder"/>.</returns>
+        IReportRootGetTeamsTeamActivityCountsRequestBuilder GetTeamsTeamActivityCounts(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsTeamActivityDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsTeamActivityDetailRequestBuilder"/>.</returns>
+        IReportRootGetTeamsTeamActivityDetailRequestBuilder GetTeamsTeamActivityDetail(
+            Date date);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsTeamActivityDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsTeamActivityDetailRequestBuilder"/>.</returns>
+        IReportRootGetTeamsTeamActivityDetailRequestBuilder GetTeamsTeamActivityDetail(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsTeamActivityDistributionCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsTeamActivityDistributionCountsRequestBuilder"/>.</returns>
+        IReportRootGetTeamsTeamActivityDistributionCountsRequestBuilder GetTeamsTeamActivityDistributionCounts(
+            string period);
+
+        /// <summary>
         /// Gets the request builder for ReportRootGetTeamsUserActivityCounts.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetTeamsUserActivityCountsRequestBuilder"/>.</returns>
@@ -751,6 +800,13 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IReportRootGetTeamsUserActivityTotalCountsRequestBuilder"/>.</returns>
         IReportRootGetTeamsUserActivityTotalCountsRequestBuilder GetTeamsUserActivityTotalCounts(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsUserActivityTotalDistributionCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsUserActivityTotalDistributionCountsRequestBuilder"/>.</returns>
+        IReportRootGetTeamsUserActivityTotalDistributionCountsRequestBuilder GetTeamsUserActivityTotalDistributionCounts(
             string period);
 
         /// <summary>

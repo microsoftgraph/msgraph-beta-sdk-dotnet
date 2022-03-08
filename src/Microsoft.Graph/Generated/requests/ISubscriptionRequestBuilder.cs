@@ -31,5 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new ISubscriptionRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for SubscriptionReauthorize.
+        /// </summary>
+        /// <returns>The <see cref="ISubscriptionReauthorizeRequestBuilder"/>.</returns>
+        ISubscriptionReauthorizeRequestBuilder Reauthorize();
+    
     }
 }

@@ -22,7 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets application id.
-        /// Identifier of the application used to create the subscription. Read-only.
+        /// Optional. Identifier of the application used to create the subscription. Read-only.
         /// </summary>
         [JsonPropertyName("applicationId")]
         public string ApplicationId { get; set; }
@@ -43,14 +43,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets creator id.
-        /// Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
+        /// Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
         /// </summary>
         [JsonPropertyName("creatorId")]
         public string CreatorId { get; set; }
     
         /// <summary>
         /// Gets or sets encryption certificate.
-        /// A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
+        /// Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
         /// </summary>
         [JsonPropertyName("encryptionCertificate")]
         public string EncryptionCertificate { get; set; }
@@ -78,7 +78,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets latest supported tls version.
-        /// Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.
+        /// Optional. Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.
         /// </summary>
         [JsonPropertyName("latestSupportedTlsVersion")]
         public string LatestSupportedTlsVersion { get; set; }
@@ -92,14 +92,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets notification content type.
-        /// Desired content-type for Microsoft Graph change notifications for supported resource types. The default content-type is application/json.
+        /// Optional. Desired content-type for Microsoft Graph change notifications for supported resource types. The default content-type is application/json.
         /// </summary>
         [JsonPropertyName("notificationContentType")]
         public string NotificationContentType { get; set; }
     
         /// <summary>
         /// Gets or sets notification query options.
-        /// OData query options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.
+        /// Optional. OData query options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.
         /// </summary>
         [JsonPropertyName("notificationQueryOptions")]
         public string NotificationQueryOptions { get; set; }
@@ -113,6 +113,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets notification url app id.
+        /// Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
         /// </summary>
         [JsonPropertyName("notificationUrlAppId")]
         public string NotificationUrlAppId { get; set; }

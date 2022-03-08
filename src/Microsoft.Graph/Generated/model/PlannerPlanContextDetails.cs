@@ -37,6 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets state.
+        /// Indicates the state of the associated plannerPlanContext.
         /// </summary>
         [JsonPropertyName("state")]
         public PlannerContextState? State { get; set; }
