@@ -29,14 +29,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets restrictForAppsCreatedAfterDateTime.
-        /// Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.
+        /// Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.
         /// </summary>
         [JsonPropertyName("restrictForAppsCreatedAfterDateTime")]
         public DateTimeOffset? RestrictForAppsCreatedAfterDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets restrictionType.
-        /// The type of restriction being applied. The possible values are: passwordAddition, passwordLifetime, symmetricKeyAddition, symmetricKeyLifetime, unknownFutureValue. Each value of restrictionType can be used only once per policy.
+        /// The type of restriction being applied. The possible values are: passwordAddition, passwordLifetime, symmetricKeyAddition, symmetricKeyLifetime,customPasswordAddition, unknownFutureValue. Each value of restrictionType can be used only once per policy.
         /// </summary>
         [JsonPropertyName("restrictionType")]
         public AppCredentialRestrictionType? RestrictionType { get; set; }

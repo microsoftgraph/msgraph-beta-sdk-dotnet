@@ -560,6 +560,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets usage rights.
+        /// Represents the usage rights a user has been granted.
         /// </summary>
         [JsonPropertyName("usageRights")]
         public IUserUsageRightsCollectionPage UsageRights { get; set; }

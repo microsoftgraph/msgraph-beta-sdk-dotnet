@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets lifecycleEvent.
-        /// The type of lifecycle notification if the current notification is a lifecycle notification. Optional. Supported values are missed, subscriptionRemoved, reauthorizationRequired.
+        /// The type of lifecycle notification if the current notification is a lifecycle notification. Optional. Supported values are missed, subscriptionRemoved, reauthorizationRequired. Optional.
         /// </summary>
         [JsonPropertyName("lifecycleEvent")]
         public LifecycleEventType? LifecycleEvent { get; set; }
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets resourceData.
-        /// The content of this property depends on the type of resource being subscribed to. Required.
+        /// The content of this property depends on the type of resource being subscribed to. Optional.
         /// </summary>
         [JsonPropertyName("resourceData")]
         public ResourceData ResourceData { get; set; }
@@ -79,14 +79,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets subscriptionId.
-        /// The unique identifier of the subscription that generated the notification.
+        /// The unique identifier of the subscription that generated the notification.Required.
         /// </summary>
         [JsonPropertyName("subscriptionId")]
         public Guid? SubscriptionId { get; set; }
     
         /// <summary>
         /// Gets or sets tenantId.
-        /// The unique identifier of the tenant from which the change notification originated.
+        /// The unique identifier of the tenant from which the change notification originated. Required.
         /// </summary>
         [JsonPropertyName("tenantId")]
         public Guid? TenantId { get; set; }

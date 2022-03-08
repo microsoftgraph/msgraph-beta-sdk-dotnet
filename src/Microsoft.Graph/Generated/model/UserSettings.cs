@@ -43,6 +43,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets contact merge suggestions.
+        /// The user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
         /// </summary>
         [JsonPropertyName("contactMergeSuggestions")]
         public ContactMergeSuggestions ContactMergeSuggestions { get; set; }

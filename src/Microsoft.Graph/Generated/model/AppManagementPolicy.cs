@@ -30,21 +30,18 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets is enabled.
-        /// Denotes whether the policy is enabled.
         /// </summary>
         [JsonPropertyName("isEnabled")]
         public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets restrictions.
-        /// Restrictions that apply to an application or service principal object.
         /// </summary>
         [JsonPropertyName("restrictions")]
         public AppManagementConfiguration Restrictions { get; set; }
     
         /// <summary>
         /// Gets or sets applies to.
-        /// Collection of application and service principals to which a policy is applied.
         /// </summary>
         [JsonPropertyName("appliesTo")]
         public IAppManagementPolicyAppliesToCollectionWithReferencesPage AppliesTo { get; set; }

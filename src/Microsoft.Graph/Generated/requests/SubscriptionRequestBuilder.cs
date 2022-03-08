@@ -50,5 +50,16 @@ namespace Microsoft.Graph
             return new SubscriptionRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for SubscriptionReauthorize.
+        /// </summary>
+        /// <returns>The <see cref="ISubscriptionReauthorizeRequestBuilder"/>.</returns>
+        public ISubscriptionReauthorizeRequestBuilder Reauthorize()
+        {
+            return new SubscriptionReauthorizeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.reauthorize"),
+                this.Client);
+        }
+    
     }
 }

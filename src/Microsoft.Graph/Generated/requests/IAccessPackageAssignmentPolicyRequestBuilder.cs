@@ -46,8 +46,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for CustomExtensionHandlers.
         /// </summary>
-        /// <returns>The <see cref="IAccessPackageAssignmentPolicyCustomExtensionHandlersCollectionWithReferencesRequestBuilder"/>.</returns>
-        IAccessPackageAssignmentPolicyCustomExtensionHandlersCollectionWithReferencesRequestBuilder CustomExtensionHandlers { get; }
+        /// <returns>The <see cref="IAccessPackageAssignmentPolicyCustomExtensionHandlersCollectionRequestBuilder"/>.</returns>
+        IAccessPackageAssignmentPolicyCustomExtensionHandlersCollectionRequestBuilder CustomExtensionHandlers { get; }
     
     }
 }

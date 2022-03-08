@@ -43,13 +43,6 @@ namespace Microsoft.Graph
         public DeviceEnrollmentPlatformRestriction AndroidRestriction { get; set; }
     
         /// <summary>
-        /// Gets or sets aosp restriction.
-        /// AOSP restrictions based on platform, platform operating system version, and device ownership
-        /// </summary>
-        [JsonPropertyName("aospRestriction")]
-        public DeviceEnrollmentPlatformRestriction AospRestriction { get; set; }
-    
-        /// <summary>
         /// Gets or sets ios restriction.
         /// Ios restrictions based on platform, platform operating system version, and device ownership
         /// </summary>

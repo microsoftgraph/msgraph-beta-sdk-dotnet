@@ -113,6 +113,12 @@ namespace Microsoft.Graph
         public TeamSpecialization? Specialization { get; set; }
     
         /// <summary>
+        /// Gets or sets summary.
+        /// </summary>
+        [JsonPropertyName("summary")]
+        public TeamSummary Summary { get; set; }
+    
+        /// <summary>
         /// Gets or sets visibility.
         /// The visibility of the group and team. Defaults to Public.
         /// </summary>
