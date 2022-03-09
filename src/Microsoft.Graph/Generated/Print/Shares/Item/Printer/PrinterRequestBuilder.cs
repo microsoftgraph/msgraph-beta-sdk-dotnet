@@ -1,10 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Print.Shares.Item.Printer.GetCapabilities;
-using MicrosoftGraphSdk.Print.Shares.Item.Printer.Ref;
-using MicrosoftGraphSdk.Print.Shares.Item.Printer.ResetDefaults;
-using MicrosoftGraphSdk.Print.Shares.Item.Printer.RestoreFactoryDefaults;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,21 +9,12 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Print.Shares.Item.Printer {
-    /// <summary>Builds and executes requests for operations under \print\shares\{printerShare-id}\printer</summary>
+    /// <summary>Provides operations to manage the printer property of the microsoft.graph.printerShare entity.</summary>
     public class PrinterRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        public RefRequestBuilder Ref { get =>
-            new RefRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        public ResetDefaultsRequestBuilder ResetDefaults { get =>
-            new ResetDefaultsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        public RestoreFactoryDefaultsRequestBuilder RestoreFactoryDefaults { get =>
-            new RestoreFactoryDefaultsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -87,13 +75,11 @@ namespace MicrosoftGraphSdk.Print.Shares.Item.Printer {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Printer> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Printer>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Printer.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>
-        /// Builds and executes requests for operations under \print\shares\{printerShare-id}\printer\microsoft.graph.getCapabilities()
-        /// </summary>
-        public GetCapabilitiesRequestBuilder GetCapabilities() {
-            return new GetCapabilitiesRequestBuilder(PathParameters, RequestAdapter);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Printer>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Printer.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The printer that this printer share is related to.</summary>
         public class GetQueryParameters : QueryParametersBase {

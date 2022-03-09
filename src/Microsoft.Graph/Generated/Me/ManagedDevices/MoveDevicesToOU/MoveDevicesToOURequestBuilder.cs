@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Me.ManagedDevices.MoveDevicesToOU {
-    /// <summary>Builds and executes requests for operations under \me\managedDevices\microsoft.graph.moveDevicesToOU</summary>
+    /// <summary>Provides operations to call the moveDevicesToOU method.</summary>
     public class MoveDevicesToOURequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using MicrosoftGraphSdk.Users.Item.ActivateServicePlan;
 using MicrosoftGraphSdk.Users.Item.Activities;
 using MicrosoftGraphSdk.Users.Item.AgreementAcceptances;
@@ -105,7 +106,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item {
-    /// <summary>Builds and executes requests for operations under \users\{user-id}</summary>
+    /// <summary>Provides operations to manage the collection of user entities.</summary>
     public class UserItemRequestBuilder {
         public ActivateServicePlanRequestBuilder ActivateServicePlan { get =>
             new ActivateServicePlanRequestBuilder(PathParameters, RequestAdapter);
@@ -455,16 +456,20 @@ namespace MicrosoftGraphSdk.Users.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \users\{user-id}\microsoft.graph.exportDeviceAndAppManagementData()
+        /// Provides operations to call the exportDeviceAndAppManagementData method.
         /// </summary>
         public ExportDeviceAndAppManagementDataRequestBuilder ExportDeviceAndAppManagementData() {
             return new ExportDeviceAndAppManagementDataRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \users\{user-id}\microsoft.graph.exportDeviceAndAppManagementData(skip={skip},top={top})
+        /// Provides operations to call the exportDeviceAndAppManagementData method.
         /// <param name="skip">Usage: skip={skip}</param>
         /// <param name="top">Usage: top={top}</param>
         /// </summary>
@@ -474,20 +479,20 @@ namespace MicrosoftGraphSdk.Users.Item {
             return new ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder(PathParameters, RequestAdapter, top, skip);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \users\{user-id}\microsoft.graph.findRoomLists()
+        /// Provides operations to call the findRoomLists method.
         /// </summary>
         public FindRoomListsRequestBuilder FindRoomLists() {
             return new FindRoomListsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \users\{user-id}\microsoft.graph.findRooms()
+        /// Provides operations to call the findRooms method.
         /// </summary>
         public FindRoomsRequestBuilder FindRooms() {
             return new FindRoomsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \users\{user-id}\microsoft.graph.findRooms(RoomList='{RoomList}')
-        /// <param name="RoomList">Usage: RoomList={RoomList}</param>
+        /// Provides operations to call the findRooms method.
+        /// <param name="RoomList">Usage: RoomList='{RoomList}'</param>
         /// </summary>
         public FindRoomsWithRoomListRequestBuilder FindRoomsWithRoomList(string roomList) {
             if(string.IsNullOrEmpty(roomList)) throw new ArgumentNullException(nameof(roomList));
@@ -503,46 +508,50 @@ namespace MicrosoftGraphSdk.Users.Item {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.User> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.User>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.User.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.User>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.User.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \users\{user-id}\microsoft.graph.getEffectiveDeviceEnrollmentConfigurations()
+        /// Provides operations to call the getEffectiveDeviceEnrollmentConfigurations method.
         /// </summary>
         public GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder GetEffectiveDeviceEnrollmentConfigurations() {
             return new GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \users\{user-id}\microsoft.graph.getLoggedOnManagedDevices()
+        /// Provides operations to call the getLoggedOnManagedDevices method.
         /// </summary>
         public GetLoggedOnManagedDevicesRequestBuilder GetLoggedOnManagedDevices() {
             return new GetLoggedOnManagedDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \users\{user-id}\microsoft.graph.getManagedAppDiagnosticStatuses()
+        /// Provides operations to call the getManagedAppDiagnosticStatuses method.
         /// </summary>
         public GetManagedAppDiagnosticStatusesRequestBuilder GetManagedAppDiagnosticStatuses() {
             return new GetManagedAppDiagnosticStatusesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \users\{user-id}\microsoft.graph.getManagedAppPolicies()
+        /// Provides operations to call the getManagedAppPolicies method.
         /// </summary>
         public GetManagedAppPoliciesRequestBuilder GetManagedAppPolicies() {
             return new GetManagedAppPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \users\{user-id}\microsoft.graph.getManagedDevicesWithAppFailures()
+        /// Provides operations to call the getManagedDevicesWithAppFailures method.
         /// </summary>
         public GetManagedDevicesWithAppFailuresRequestBuilder GetManagedDevicesWithAppFailures() {
             return new GetManagedDevicesWithAppFailuresRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \users\{user-id}\microsoft.graph.getManagedDevicesWithFailedOrPendingApps()
+        /// Provides operations to call the getManagedDevicesWithFailedOrPendingApps method.
         /// </summary>
         public GetManagedDevicesWithFailedOrPendingAppsRequestBuilder GetManagedDevicesWithFailedOrPendingApps() {
             return new GetManagedDevicesWithFailedOrPendingAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \users\{user-id}\microsoft.graph.isManagedAppUserBlocked()
+        /// Provides operations to call the isManagedAppUserBlocked method.
         /// </summary>
         public IsManagedAppUserBlockedRequestBuilder IsManagedAppUserBlocked() {
             return new IsManagedAppUserBlockedRequestBuilder(PathParameters, RequestAdapter);
@@ -558,17 +567,21 @@ namespace MicrosoftGraphSdk.Users.Item {
         public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.User body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \users\{user-id}\microsoft.graph.reminderView(StartDateTime='{StartDateTime}',EndDateTime='{EndDateTime}')
-        /// <param name="EndDateTime">Usage: EndDateTime={EndDateTime}</param>
-        /// <param name="StartDateTime">Usage: StartDateTime={StartDateTime}</param>
+        /// Provides operations to call the reminderView method.
+        /// <param name="EndDateTime">Usage: EndDateTime='{EndDateTime}'</param>
+        /// <param name="StartDateTime">Usage: StartDateTime='{StartDateTime}'</param>
         /// </summary>
-        public ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder ReminderViewWithStartDateTimeWithEndDateTime(string endDateTime, string startDateTime) {
+        public ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder ReminderViewWithStartDateTimeWithEndDateTime(string startDateTime, string endDateTime) {
             if(string.IsNullOrEmpty(endDateTime)) throw new ArgumentNullException(nameof(endDateTime));
             if(string.IsNullOrEmpty(startDateTime)) throw new ArgumentNullException(nameof(startDateTime));
-            return new ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
+            return new ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, startDateTime, endDateTime);
         }
         /// <summary>Get entity from users by key</summary>
         public class GetQueryParameters : QueryParametersBase {

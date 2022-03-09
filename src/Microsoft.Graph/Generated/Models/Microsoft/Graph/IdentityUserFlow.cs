@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the identityContainer singleton.</summary>
     public class IdentityUserFlow : Entity, IParsable {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.UserFlowType? UserFlowType { get; set; }
         public float? UserFlowTypeVersion { get; set; }

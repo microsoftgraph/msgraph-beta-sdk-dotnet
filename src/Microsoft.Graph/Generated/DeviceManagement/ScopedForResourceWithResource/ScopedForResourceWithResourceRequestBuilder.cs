@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.ScopedForResourceWithResource {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\microsoft.graph.scopedForResource(resource='{resource}')</summary>
+    /// <summary>Provides operations to call the scopedForResource method.</summary>
     public class ScopedForResourceWithResourceRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -19,7 +19,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ScopedForResourceWithResource {
         /// Instantiates a new ScopedForResourceWithResourceRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// <param name="resource">Usage: resource={resource}</param>
+        /// <param name="resource">Usage: resource='{resource}'</param>
         /// </summary>
         public ScopedForResourceWithResourceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string resource = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
@@ -66,9 +66,9 @@ namespace MicrosoftGraphSdk.DeviceManagement.ScopedForResourceWithResource {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<bool?> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<ScopedForResourceWithResourceResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendPrimitiveAsync<bool?>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ScopedForResourceWithResourceResponse>(requestInfo, ScopedForResourceWithResourceResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.HistoryDefinitions.Item.Instances.Item.GenerateDownloadUri {
-    /// <summary>Builds and executes requests for operations under \identityGovernance\accessReviews\historyDefinitions\{accessReviewHistoryDefinition-id}\instances\{accessReviewHistoryInstance-id}\microsoft.graph.generateDownloadUri</summary>
+    /// <summary>Provides operations to call the generateDownloadUri method.</summary>
     public class GenerateDownloadUriRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.HistoryDefinitions.
             return await RequestAdapter.SendAsync<GenerateDownloadUriResponse>(requestInfo, GenerateDownloadUriResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes accessReviewHistoryInstance</summary>
-        public class GenerateDownloadUriResponse : IParsable {
+        public class GenerateDownloadUriResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Union type representation for type accessReviewHistoryInstance</summary>
             public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessReviewHistoryInstance AccessReviewHistoryInstance { get; set; }
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

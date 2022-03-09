@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Reprovision {
-    public class ReprovisionRequestBody : IParsable {
+    /// <summary>Provides operations to call the reprovision method.</summary>
+    public class ReprovisionRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public CloudPcOperatingSystem? OsVersion { get; set; }

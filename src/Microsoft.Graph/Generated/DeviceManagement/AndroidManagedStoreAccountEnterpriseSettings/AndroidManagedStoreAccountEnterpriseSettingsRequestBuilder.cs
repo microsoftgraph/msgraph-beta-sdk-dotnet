@@ -8,6 +8,7 @@ using MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAccountEnterpriseSet
 using MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.SyncApps;
 using MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.Unbind;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,7 +16,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\androidManagedStoreAccountEnterpriseSettings</summary>
+    /// <summary>Provides operations to manage the androidManagedStoreAccountEnterpriseSettings property of the microsoft.graph.deviceManagement entity.</summary>
     public class AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder {
         public ApproveAppsRequestBuilder ApproveApps { get =>
             new ApproveAppsRequestBuilder(PathParameters, RequestAdapter);
@@ -72,7 +73,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAccountEnterpris
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The singleton Android managed store account enterprise settings entity.
+        /// Delete navigation property androidManagedStoreAccountEnterpriseSettings for deviceManagement
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -108,7 +109,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAccountEnterpris
             return requestInfo;
         }
         /// <summary>
-        /// The singleton Android managed store account enterprise settings entity.
+        /// Update the navigation property androidManagedStoreAccountEnterpriseSettings in deviceManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -126,7 +127,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAccountEnterpris
             return requestInfo;
         }
         /// <summary>
-        /// The singleton Android managed store account enterprise settings entity.
+        /// Delete navigation property androidManagedStoreAccountEnterpriseSettings for deviceManagement
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -134,7 +135,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAccountEnterpris
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// The singleton Android managed store account enterprise settings entity.
@@ -146,10 +151,14 @@ namespace MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAccountEnterpris
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.AndroidManagedStoreAccountEnterpriseSettings> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AndroidManagedStoreAccountEnterpriseSettings>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.AndroidManagedStoreAccountEnterpriseSettings.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AndroidManagedStoreAccountEnterpriseSettings>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.AndroidManagedStoreAccountEnterpriseSettings.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The singleton Android managed store account enterprise settings entity.
+        /// Update the navigation property androidManagedStoreAccountEnterpriseSettings in deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -159,7 +168,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAccountEnterpris
         public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.AndroidManagedStoreAccountEnterpriseSettings body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The singleton Android managed store account enterprise settings entity.</summary>
         public class GetQueryParameters : QueryParametersBase {

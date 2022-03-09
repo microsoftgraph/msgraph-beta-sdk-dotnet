@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.App.Calls.Item.UpdateRecordingStatus {
-    public class UpdateRecordingStatusRequestBody : IParsable {
+    /// <summary>Provides operations to call the updateRecordingStatus method.</summary>
+    public class UpdateRecordingStatusRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string ClientContext { get; set; }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public class PolicySetAssignment : Entity, IParsable {
         /// <summary>Last modified time of the PolicySetAssignment.</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class Tag : Entity, IParsable {
         /// <summary>Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery.ChildSelectability? ChildSelectability { get; set; }

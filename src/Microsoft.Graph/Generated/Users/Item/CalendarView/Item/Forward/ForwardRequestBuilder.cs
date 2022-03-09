@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.CalendarView.Item.Forward {
-    /// <summary>Builds and executes requests for operations under \users\{user-id}\calendarView\{event-id}\microsoft.graph.forward</summary>
+    /// <summary>Provides operations to call the forward method.</summary>
     public class ForwardRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

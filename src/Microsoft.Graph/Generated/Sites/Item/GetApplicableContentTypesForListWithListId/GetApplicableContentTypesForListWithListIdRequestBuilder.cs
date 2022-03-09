@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Sites.Item.GetApplicableContentTypesForListWithListId {
-    /// <summary>Builds and executes requests for operations under \sites\{site-id}\microsoft.graph.getApplicableContentTypesForList(listId='{listId}')</summary>
+    /// <summary>Provides operations to call the getApplicableContentTypesForList method.</summary>
     public class GetApplicableContentTypesForListWithListIdRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -17,7 +17,7 @@ namespace MicrosoftGraphSdk.Sites.Item.GetApplicableContentTypesForListWithListI
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new GetApplicableContentTypesForListWithListIdRequestBuilder and sets the default values.
-        /// <param name="listId">Usage: listId={listId}</param>
+        /// <param name="listId">Usage: listId='{listId}'</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// </summary>
@@ -66,9 +66,9 @@ namespace MicrosoftGraphSdk.Sites.Item.GetApplicableContentTypesForListWithListI
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<GetApplicableContentTypesForListWithListId>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<GetApplicableContentTypesForListWithListIdResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<GetApplicableContentTypesForListWithListId>(requestInfo, GetApplicableContentTypesForListWithListId.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetApplicableContentTypesForListWithListIdResponse>(requestInfo, GetApplicableContentTypesForListWithListIdResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

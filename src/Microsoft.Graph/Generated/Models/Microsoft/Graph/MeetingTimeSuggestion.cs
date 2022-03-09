@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class MeetingTimeSuggestion : IParsable {
+    /// <summary>Provides operations to call the findMeetingTimes method.</summary>
+    public class MeetingTimeSuggestion : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An array that shows the availability status of each attendee for this meeting suggestion.</summary>

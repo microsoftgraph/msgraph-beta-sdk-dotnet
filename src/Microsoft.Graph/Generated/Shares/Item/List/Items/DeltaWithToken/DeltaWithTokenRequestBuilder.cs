@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Shares.Item.List.Items.DeltaWithToken {
-    /// <summary>Builds and executes requests for operations under \shares\{sharedDriveItem-id}\list\items\microsoft.graph.delta(token='{token}')</summary>
+    /// <summary>Provides operations to call the delta method.</summary>
     public class DeltaWithTokenRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -19,7 +19,7 @@ namespace MicrosoftGraphSdk.Shares.Item.List.Items.DeltaWithToken {
         /// Instantiates a new DeltaWithTokenRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// <param name="token">Usage: token={token}</param>
+        /// <param name="token">Usage: token='{token}'</param>
         /// </summary>
         public DeltaWithTokenRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string token = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
@@ -66,9 +66,9 @@ namespace MicrosoftGraphSdk.Shares.Item.List.Items.DeltaWithToken {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<DeltaWithToken>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<DeltaWithTokenResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<DeltaWithToken>(requestInfo, DeltaWithToken.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeltaWithTokenResponse>(requestInfo, DeltaWithTokenResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

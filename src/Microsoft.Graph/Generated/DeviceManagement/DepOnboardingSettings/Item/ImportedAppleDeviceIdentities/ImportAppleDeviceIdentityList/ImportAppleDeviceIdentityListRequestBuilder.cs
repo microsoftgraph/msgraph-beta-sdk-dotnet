@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportAppleDeviceIdentityList {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\importedAppleDeviceIdentities\microsoft.graph.importAppleDeviceIdentityList</summary>
+    /// <summary>Provides operations to call the importAppleDeviceIdentityList method.</summary>
     public class ImportAppleDeviceIdentityListRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -68,10 +68,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.Imported
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<ImportAppleDeviceIdentityList>> PostAsync(ImportAppleDeviceIdentityListRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<ImportAppleDeviceIdentityListResponse> PostAsync(ImportAppleDeviceIdentityListRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendCollectionAsync<ImportAppleDeviceIdentityList>(requestInfo, ImportAppleDeviceIdentityList.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ImportAppleDeviceIdentityListResponse>(requestInfo, ImportAppleDeviceIdentityListResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

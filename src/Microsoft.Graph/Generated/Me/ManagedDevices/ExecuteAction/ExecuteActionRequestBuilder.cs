@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Me.ManagedDevices.ExecuteAction {
-    /// <summary>Builds and executes requests for operations under \me\managedDevices\microsoft.graph.executeAction</summary>
+    /// <summary>Provides operations to call the executeAction method.</summary>
     public class ExecuteActionRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Me.ManagedDevices.ExecuteAction {
             return await RequestAdapter.SendAsync<ExecuteActionResponse>(requestInfo, ExecuteActionResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes bulkManagedDeviceActionResult</summary>
-        public class ExecuteActionResponse : IParsable {
+        public class ExecuteActionResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type bulkManagedDeviceActionResult</summary>

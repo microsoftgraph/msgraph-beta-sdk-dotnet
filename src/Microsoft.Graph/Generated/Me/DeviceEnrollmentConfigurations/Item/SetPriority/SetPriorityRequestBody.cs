@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Me.DeviceEnrollmentConfigurations.Item.SetPriority {
-    public class SetPriorityRequestBody : IParsable {
+    /// <summary>Provides operations to call the setPriority method.</summary>
+    public class SetPriorityRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public int? Priority { get; set; }

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Teams.Item.Unarchive {
-    /// <summary>Builds and executes requests for operations under \teams\{team-id}\microsoft.graph.unarchive</summary>
+    /// <summary>Provides operations to call the unarchive method.</summary>
     public class UnarchiveRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

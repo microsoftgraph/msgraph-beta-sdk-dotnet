@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Attachments.CreateUploadSession {
-    /// <summary>Builds and executes requests for operations under \users\{user-id}\calendarGroups\{calendarGroup-id}\calendars\{calendar-id}\calendarView\{event-id}\attachments\microsoft.graph.createUploadSession</summary>
+    /// <summary>Provides operations to call the createUploadSession method.</summary>
     public class CreateUploadSessionRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Users.Item.CalendarGroups.Item.Calendars.Item.Calend
             return await RequestAdapter.SendAsync<CreateUploadSessionResponse>(requestInfo, CreateUploadSessionResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes uploadSession</summary>
-        public class CreateUploadSessionResponse : IParsable {
+        public class CreateUploadSessionResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type uploadSession</summary>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class ApprovalStep : Entity, IParsable {
         /// <summary>Indicates whether the step is assigned to the calling user to review. Read-only.</summary>
         public bool? AssignedToMe { get; set; }

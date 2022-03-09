@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.RiskyUsers.ConfirmCompromised {
-    /// <summary>Builds and executes requests for operations under \riskyUsers\microsoft.graph.confirmCompromised</summary>
+    /// <summary>Provides operations to call the confirmCompromised method.</summary>
     public class ConfirmCompromisedRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

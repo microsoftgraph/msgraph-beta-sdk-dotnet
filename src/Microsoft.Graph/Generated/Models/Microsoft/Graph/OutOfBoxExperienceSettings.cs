@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class OutOfBoxExperienceSettings : IParsable {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    public class OutOfBoxExperienceSettings : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>AAD join authentication type. Possible values are: singleUser, shared.</summary>

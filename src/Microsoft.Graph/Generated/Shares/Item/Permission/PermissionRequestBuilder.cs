@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using MicrosoftGraphSdk.Shares.Item.Permission.Grant;
 using MicrosoftGraphSdk.Shares.Item.Permission.RevokeGrants;
 using System;
@@ -10,7 +11,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Shares.Item.Permission {
-    /// <summary>Builds and executes requests for operations under \shares\{sharedDriveItem-id}\permission</summary>
+    /// <summary>Provides operations to manage the permission property of the microsoft.graph.sharedDriveItem entity.</summary>
     public class PermissionRequestBuilder {
         public GrantRequestBuilder Grant { get =>
             new GrantRequestBuilder(PathParameters, RequestAdapter);
@@ -52,7 +53,7 @@ namespace MicrosoftGraphSdk.Shares.Item.Permission {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Used to access the permission representing the underlying sharing link
+        /// Delete navigation property permission for shares
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -88,7 +89,7 @@ namespace MicrosoftGraphSdk.Shares.Item.Permission {
             return requestInfo;
         }
         /// <summary>
-        /// Used to access the permission representing the underlying sharing link
+        /// Update the navigation property permission in shares
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -106,7 +107,7 @@ namespace MicrosoftGraphSdk.Shares.Item.Permission {
             return requestInfo;
         }
         /// <summary>
-        /// Used to access the permission representing the underlying sharing link
+        /// Delete navigation property permission for shares
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -114,7 +115,11 @@ namespace MicrosoftGraphSdk.Shares.Item.Permission {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Used to access the permission representing the underlying sharing link
@@ -126,10 +131,14 @@ namespace MicrosoftGraphSdk.Shares.Item.Permission {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Permission> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Permission>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Permission.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Permission>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Permission.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Used to access the permission representing the underlying sharing link
+        /// Update the navigation property permission in shares
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -139,7 +148,11 @@ namespace MicrosoftGraphSdk.Shares.Item.Permission {
         public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Permission body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Used to access the permission representing the underlying sharing link</summary>
         public class GetQueryParameters : QueryParametersBase {

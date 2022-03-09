@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.Security.InformationProtection.SensitivityLabels.EvaluateRemoval {
-    /// <summary>Builds and executes requests for operations under \users\{user-id}\security\informationProtection\sensitivityLabels\microsoft.graph.security.evaluateRemoval</summary>
+    /// <summary>Provides operations to call the evaluateRemoval method.</summary>
     public class EvaluateRemovalRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -68,10 +68,10 @@ namespace MicrosoftGraphSdk.Users.Item.Security.InformationProtection.Sensitivit
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<EvaluateRemoval>> PostAsync(EvaluateRemovalRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<EvaluateRemovalResponse> PostAsync(EvaluateRemovalRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendCollectionAsync<EvaluateRemoval>(requestInfo, EvaluateRemoval.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<EvaluateRemovalResponse>(requestInfo, EvaluateRemovalResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

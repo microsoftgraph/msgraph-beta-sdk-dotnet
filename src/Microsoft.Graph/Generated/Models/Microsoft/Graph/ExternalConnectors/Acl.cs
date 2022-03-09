@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors {
-    public class Acl : IParsable {
+    /// <summary>Provides operations to manage the collection of externalConnection entities.</summary>
+    public class Acl : IParsable, IAdditionalDataHolder {
         /// <summary>The access granted to the identity. Possible values are: grant, deny, unknownFutureValue.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors.AccessType? AccessType { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

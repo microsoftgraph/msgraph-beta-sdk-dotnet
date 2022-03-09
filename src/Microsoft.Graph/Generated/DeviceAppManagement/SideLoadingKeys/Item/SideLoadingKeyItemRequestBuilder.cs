@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,7 +9,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceAppManagement.SideLoadingKeys.Item {
-    /// <summary>Builds and executes requests for operations under \deviceAppManagement\sideLoadingKeys\{sideLoadingKey-id}</summary>
+    /// <summary>Provides operations to manage the sideLoadingKeys property of the microsoft.graph.deviceAppManagement entity.</summary>
     public class SideLoadingKeyItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -44,7 +45,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.SideLoadingKeys.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
+        /// Delete navigation property sideLoadingKeys for deviceAppManagement
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -80,7 +81,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.SideLoadingKeys.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
+        /// Update the navigation property sideLoadingKeys in deviceAppManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -98,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.SideLoadingKeys.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
+        /// Delete navigation property sideLoadingKeys for deviceAppManagement
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -106,7 +107,11 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.SideLoadingKeys.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
@@ -118,10 +123,14 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.SideLoadingKeys.Item {
         /// </summary>
         public async Task<SideLoadingKey> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SideLoadingKey>(requestInfo, SideLoadingKey.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<SideLoadingKey>(requestInfo, SideLoadingKey.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
+        /// Update the navigation property sideLoadingKeys in deviceAppManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -131,7 +140,11 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.SideLoadingKeys.Item {
         public async Task PatchAsync(SideLoadingKey body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.App.Calls.Item.KeepAlive {
-    /// <summary>Builds and executes requests for operations under \app\calls\{call-id}\microsoft.graph.keepAlive</summary>
+    /// <summary>Provides operations to call the keepAlive method.</summary>
     public class KeepAliveRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

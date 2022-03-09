@@ -8,6 +8,7 @@ using MicrosoftGraphSdk.Me.Calendar.GetSchedule;
 using MicrosoftGraphSdk.Me.Calendar.MultiValueExtendedProperties;
 using MicrosoftGraphSdk.Me.Calendar.SingleValueExtendedProperties;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,7 +16,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Me.Calendar {
-    /// <summary>Builds and executes requests for operations under \me\calendar</summary>
+    /// <summary>Provides operations to manage the calendar property of the microsoft.graph.user entity.</summary>
     public class CalendarRequestBuilder {
         public CalendarPermissionsRequestBuilder CalendarPermissions { get =>
             new CalendarPermissionsRequestBuilder(PathParameters, RequestAdapter);
@@ -42,8 +43,8 @@ namespace MicrosoftGraphSdk.Me.Calendar {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
-        /// Builds and executes requests for operations under \me\calendar\microsoft.graph.allowedCalendarSharingRoles(User='{User}')
-        /// <param name="User">Usage: User={User}</param>
+        /// Provides operations to call the allowedCalendarSharingRoles method.
+        /// <param name="User">Usage: User='{User}'</param>
         /// </summary>
         public AllowedCalendarSharingRolesWithUserRequestBuilder AllowedCalendarSharingRolesWithUser(string user) {
             if(string.IsNullOrEmpty(user)) throw new ArgumentNullException(nameof(user));
@@ -77,7 +78,7 @@ namespace MicrosoftGraphSdk.Me.Calendar {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The user's primary calendar. Read-only.
+        /// Delete navigation property calendar for me
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -113,7 +114,7 @@ namespace MicrosoftGraphSdk.Me.Calendar {
             return requestInfo;
         }
         /// <summary>
-        /// The user's primary calendar. Read-only.
+        /// Update the navigation property calendar in me
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -131,7 +132,7 @@ namespace MicrosoftGraphSdk.Me.Calendar {
             return requestInfo;
         }
         /// <summary>
-        /// The user's primary calendar. Read-only.
+        /// Delete navigation property calendar for me
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -139,7 +140,11 @@ namespace MicrosoftGraphSdk.Me.Calendar {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// The user's primary calendar. Read-only.
@@ -151,10 +156,14 @@ namespace MicrosoftGraphSdk.Me.Calendar {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The user's primary calendar. Read-only.
+        /// Update the navigation property calendar in me
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -164,7 +173,11 @@ namespace MicrosoftGraphSdk.Me.Calendar {
         public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The user's primary calendar. Read-only.</summary>
         public class GetQueryParameters : QueryParametersBase {

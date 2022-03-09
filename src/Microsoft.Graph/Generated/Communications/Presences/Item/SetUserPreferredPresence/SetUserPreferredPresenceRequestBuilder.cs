@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Communications.Presences.Item.SetUserPreferredPresence {
-    /// <summary>Builds and executes requests for operations under \communications\presences\{presence-id}\microsoft.graph.setUserPreferredPresence</summary>
+    /// <summary>Provides operations to call the setUserPreferredPresence method.</summary>
     public class SetUserPreferredPresenceRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Communications.Presences.Item.SetUserPreferredPresence {
-    public class SetUserPreferredPresenceRequestBody : IParsable {
+    /// <summary>Provides operations to call the setUserPreferredPresence method.</summary>
+    public class SetUserPreferredPresenceRequestBody : IParsable, IAdditionalDataHolder {
         public string Activity { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

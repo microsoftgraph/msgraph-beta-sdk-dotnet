@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DeviceManagementConfigurationPolicy : Entity, IParsable {
         /// <summary>Policy assignments</summary>
         public List<DeviceManagementConfigurationPolicyAssignment> Assignments { get; set; }
-        /// <summary>Policy creation date and time. This property is read-only.</summary>
+        /// <summary>Policy creation date and time</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>Policy creation source</summary>
         public string CreationSource { get; set; }
@@ -15,7 +16,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string Description { get; set; }
         /// <summary>Policy assignment status. This property is read-only.</summary>
         public bool? IsAssigned { get; set; }
-        /// <summary>Policy last modification date and time. This property is read-only.</summary>
+        /// <summary>Policy last modification date and time</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
         /// <summary>Policy name</summary>
         public string Name { get; set; }
@@ -23,7 +24,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DeviceManagementConfigurationPlatforms? Platforms { get; set; }
         /// <summary>List of Scope Tags for this Entity instance.</summary>
         public List<string> RoleScopeTagIds { get; set; }
-        /// <summary>Number of settings. This property is read-only.</summary>
+        /// <summary>Number of settings</summary>
         public int? SettingCount { get; set; }
         /// <summary>Policy settings</summary>
         public List<DeviceManagementConfigurationSetting> Settings { get; set; }

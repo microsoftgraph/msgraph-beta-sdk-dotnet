@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class EstimateStatisticsOperation : CaseOperation, IParsable {
         /// <summary>The estimated count of items for the sourceCollection that matched the content query.</summary>
         public long? IndexedItemCount { get; set; }

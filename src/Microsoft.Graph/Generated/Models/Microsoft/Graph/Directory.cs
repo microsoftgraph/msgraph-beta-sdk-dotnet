@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the directory singleton.</summary>
     public class Directory : Entity, IParsable {
         /// <summary>Conceptual container for user and group directory objects.</summary>
         public List<AdministrativeUnit> AdministrativeUnits { get; set; }

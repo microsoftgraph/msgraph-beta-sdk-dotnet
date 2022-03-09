@@ -11,6 +11,7 @@ using MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.SyncWithAppl
 using MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.UnshareForSchoolDataSyncService;
 using MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.UploadDepToken;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,7 +19,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}</summary>
+    /// <summary>Provides operations to manage the depOnboardingSettings property of the microsoft.graph.deviceManagement entity.</summary>
     public class DepOnboardingSettingItemRequestBuilder {
         public DefaultIosEnrollmentProfileRequestBuilder DefaultIosEnrollmentProfile { get =>
             new DefaultIosEnrollmentProfileRequestBuilder(PathParameters, RequestAdapter);
@@ -81,7 +82,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// This collections of multiple DEP tokens per-tenant.
+        /// Delete navigation property depOnboardingSettings for deviceManagement
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -117,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item {
             return requestInfo;
         }
         /// <summary>
-        /// This collections of multiple DEP tokens per-tenant.
+        /// Update the navigation property depOnboardingSettings in deviceManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -135,7 +136,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item {
             return requestInfo;
         }
         /// <summary>
-        /// This collections of multiple DEP tokens per-tenant.
+        /// Delete navigation property depOnboardingSettings for deviceManagement
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -143,7 +144,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// This collections of multiple DEP tokens per-tenant.
@@ -155,16 +160,20 @@ namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item {
         /// </summary>
         public async Task<DepOnboardingSetting> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DepOnboardingSetting>(requestInfo, DepOnboardingSetting.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<DepOnboardingSetting>(requestInfo, DepOnboardingSetting.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\microsoft.graph.getEncryptionPublicKey()
+        /// Provides operations to call the getEncryptionPublicKey method.
         /// </summary>
         public GetEncryptionPublicKeyRequestBuilder GetEncryptionPublicKey() {
             return new GetEncryptionPublicKeyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// This collections of multiple DEP tokens per-tenant.
+        /// Update the navigation property depOnboardingSettings in deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -174,7 +183,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item {
         public async Task PatchAsync(DepOnboardingSetting body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>This collections of multiple DEP tokens per-tenant.</summary>
         public class GetQueryParameters : QueryParametersBase {

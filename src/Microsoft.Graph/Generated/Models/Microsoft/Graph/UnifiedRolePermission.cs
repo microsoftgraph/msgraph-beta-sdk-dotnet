@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class UnifiedRolePermission : IParsable {
+    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
+    public class UnifiedRolePermission : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Set of tasks that can be performed on a resource. Required.</summary>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the identityContainer singleton.</summary>
     public class B2cIdentityUserFlow : IdentityUserFlow, IParsable {
         /// <summary>Configuration for enabling an API connector for use as part of the user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.</summary>
         public UserFlowApiConnectorConfiguration ApiConnectorConfiguration { get; set; }

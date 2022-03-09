@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DeviceManagementIntentUserState : Entity, IParsable {
         /// <summary>Count of Devices that belongs to a user for an intent</summary>
         public int? DeviceCount { get; set; }

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.EnableGlobalScripts {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\deviceHealthScripts\microsoft.graph.enableGlobalScripts</summary>
+    /// <summary>Provides operations to call the enableGlobalScripts method.</summary>
     public class EnableGlobalScriptsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DeviceManagementConfigurationPolicyTemplate : Entity, IParsable {
         /// <summary>Allow unmanaged setting templates</summary>
         public bool? AllowUnmanagedSettings { get; set; }

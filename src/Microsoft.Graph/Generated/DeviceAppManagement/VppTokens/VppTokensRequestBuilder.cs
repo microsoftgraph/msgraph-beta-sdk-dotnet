@@ -1,9 +1,11 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraphSdk.DeviceAppManagement.VppTokens.Count;
 using MicrosoftGraphSdk.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId;
 using MicrosoftGraphSdk.DeviceAppManagement.VppTokens.Item;
 using MicrosoftGraphSdk.DeviceAppManagement.VppTokens.SyncLicenseCounts;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,8 +13,11 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceAppManagement.VppTokens {
-    /// <summary>Builds and executes requests for operations under \deviceAppManagement\vppTokens</summary>
+    /// <summary>Provides operations to manage the vppTokens property of the microsoft.graph.deviceAppManagement entity.</summary>
     public class VppTokensRequestBuilder {
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -77,7 +82,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.VppTokens {
             return requestInfo;
         }
         /// <summary>
-        /// List of Vpp tokens for this organization.
+        /// Create new navigation property to vppTokens for deviceAppManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -102,20 +107,24 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.VppTokens {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<VppTokensResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<VppTokenCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<VppTokensResponse>(requestInfo, VppTokensResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<VppTokenCollectionResponse>(requestInfo, VppTokenCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \deviceAppManagement\vppTokens\microsoft.graph.getLicensesForApp(bundleId='{bundleId}')
-        /// <param name="bundleId">Usage: bundleId={bundleId}</param>
+        /// Provides operations to call the getLicensesForApp method.
+        /// <param name="bundleId">Usage: bundleId='{bundleId}'</param>
         /// </summary>
         public GetLicensesForAppWithBundleIdRequestBuilder GetLicensesForAppWithBundleId(string bundleId) {
             if(string.IsNullOrEmpty(bundleId)) throw new ArgumentNullException(nameof(bundleId));
             return new GetLicensesForAppWithBundleIdRequestBuilder(PathParameters, RequestAdapter, bundleId);
         }
         /// <summary>
-        /// List of Vpp tokens for this organization.
+        /// Create new navigation property to vppTokens for deviceAppManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -125,7 +134,11 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.VppTokens {
         public async Task<VppToken> PostAsync(VppToken body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<VppToken>(requestInfo, VppToken.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<VppToken>(requestInfo, VppToken.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>List of Vpp tokens for this organization.</summary>
         public class GetQueryParameters : QueryParametersBase {

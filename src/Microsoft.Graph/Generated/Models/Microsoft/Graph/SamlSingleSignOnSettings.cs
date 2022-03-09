@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class SamlSingleSignOnSettings : IParsable {
+    /// <summary>Provides operations to call the instantiate method.</summary>
+    public class SamlSingleSignOnSettings : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The relative URI the service provider would redirect to after completion of the single sign-on flow.</summary>

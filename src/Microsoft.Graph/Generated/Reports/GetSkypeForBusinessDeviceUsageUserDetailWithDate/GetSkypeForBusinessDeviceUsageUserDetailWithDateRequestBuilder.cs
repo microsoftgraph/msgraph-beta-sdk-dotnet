@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Reports.GetSkypeForBusinessDeviceUsageUserDetailWithDate {
-    /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.getSkypeForBusinessDeviceUsageUserDetail(date={date})</summary>
+    /// <summary>Provides operations to call the getSkypeForBusinessDeviceUsageUserDetail method.</summary>
     public class GetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -66,9 +66,9 @@ namespace MicrosoftGraphSdk.Reports.GetSkypeForBusinessDeviceUsageUserDetailWith
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<Stream> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<GetSkypeForBusinessDeviceUsageUserDetailWithDateResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetSkypeForBusinessDeviceUsageUserDetailWithDateResponse>(requestInfo, GetSkypeForBusinessDeviceUsageUserDetailWithDateResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

@@ -1,10 +1,12 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.AreGlobalScriptsAvailable;
+using MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.Count;
 using MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.EnableGlobalScripts;
 using MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.GetRemediationSummary;
 using MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.Item;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,8 +14,11 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\deviceHealthScripts</summary>
+    /// <summary>Provides operations to manage the deviceHealthScripts property of the microsoft.graph.deviceManagement entity.</summary>
     public class DeviceHealthScriptsRequestBuilder {
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
         public EnableGlobalScriptsRequestBuilder EnableGlobalScripts { get =>
             new EnableGlobalScriptsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -30,7 +35,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts {
             return new DeviceHealthScriptItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Builds and executes requests for operations under \deviceManagement\deviceHealthScripts\microsoft.graph.areGlobalScriptsAvailable()
+        /// Provides operations to call the areGlobalScriptsAvailable method.
         /// </summary>
         public AreGlobalScriptsAvailableRequestBuilder AreGlobalScriptsAvailable() {
             return new AreGlobalScriptsAvailableRequestBuilder(PathParameters, RequestAdapter);
@@ -84,7 +89,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts {
             return requestInfo;
         }
         /// <summary>
-        /// The list of device health scripts associated with the tenant.
+        /// Create new navigation property to deviceHealthScripts for deviceManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -109,18 +114,22 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<DeviceHealthScriptsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceHealthScriptCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceHealthScriptsResponse>(requestInfo, DeviceHealthScriptsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<DeviceHealthScriptCollectionResponse>(requestInfo, DeviceHealthScriptCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \deviceManagement\deviceHealthScripts\microsoft.graph.getRemediationSummary()
+        /// Provides operations to call the getRemediationSummary method.
         /// </summary>
         public GetRemediationSummaryRequestBuilder GetRemediationSummary() {
             return new GetRemediationSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// The list of device health scripts associated with the tenant.
+        /// Create new navigation property to deviceHealthScripts for deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -130,7 +139,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts {
         public async Task<DeviceHealthScript> PostAsync(DeviceHealthScript body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DeviceHealthScript>(requestInfo, DeviceHealthScript.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<DeviceHealthScript>(requestInfo, DeviceHealthScript.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The list of device health scripts associated with the tenant.</summary>
         public class GetQueryParameters : QueryParametersBase {

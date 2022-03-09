@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class ProfileCardAnnotation : IParsable {
+    /// <summary>Provides operations to manage the collection of organization entities.</summary>
+    public class ProfileCardAnnotation : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If present, the value of this field is used by the profile card as the default property label in the experience (for example, 'Cost Center').</summary>

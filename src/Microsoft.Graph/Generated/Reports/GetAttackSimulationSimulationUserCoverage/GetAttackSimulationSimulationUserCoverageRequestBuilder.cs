@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Reports.GetAttackSimulationSimulationUserCoverage {
-    /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.getAttackSimulationSimulationUserCoverage()</summary>
+    /// <summary>Provides operations to call the getAttackSimulationSimulationUserCoverage method.</summary>
     public class GetAttackSimulationSimulationUserCoverageRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -64,9 +64,9 @@ namespace MicrosoftGraphSdk.Reports.GetAttackSimulationSimulationUserCoverage {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<GetAttackSimulationSimulationUserCoverage>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<GetAttackSimulationSimulationUserCoverageResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<GetAttackSimulationSimulationUserCoverage>(requestInfo, GetAttackSimulationSimulationUserCoverage.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetAttackSimulationSimulationUserCoverageResponse>(requestInfo, GetAttackSimulationSimulationUserCoverageResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

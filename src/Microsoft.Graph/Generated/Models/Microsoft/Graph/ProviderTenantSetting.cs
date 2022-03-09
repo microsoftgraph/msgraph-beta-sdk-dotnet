@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the providerTenantSettings property of the microsoft.graph.security entity.</summary>
     public class ProviderTenantSetting : Entity, IParsable {
         public string AzureTenantId { get; set; }
         public bool? Enabled { get; set; }

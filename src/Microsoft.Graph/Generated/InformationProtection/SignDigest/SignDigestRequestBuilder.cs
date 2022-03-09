@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.InformationProtection.SignDigest {
-    /// <summary>Builds and executes requests for operations under \informationProtection\microsoft.graph.signDigest</summary>
+    /// <summary>Provides operations to call the signDigest method.</summary>
     public class SignDigestRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.InformationProtection.SignDigest {
             return await RequestAdapter.SendAsync<SignDigestResponse>(requestInfo, SignDigestResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes signingResult</summary>
-        public class SignDigestResponse : IParsable {
+        public class SignDigestResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type signingResult</summary>

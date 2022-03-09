@@ -1,8 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceAppManagement.WindowsManagementApp.Ref;
-using MicrosoftGraphSdk.DeviceAppManagement.WindowsManagementApp.SetAsManagedInstaller;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,18 +9,12 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceAppManagement.WindowsManagementApp {
-    /// <summary>Builds and executes requests for operations under \deviceAppManagement\windowsManagementApp</summary>
+    /// <summary>Provides operations to manage the windowsManagementApp property of the microsoft.graph.deviceAppManagement entity.</summary>
     public class WindowsManagementAppRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        public RefRequestBuilder Ref { get =>
-            new RefRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        public SetAsManagedInstallerRequestBuilder SetAsManagedInstaller { get =>
-            new SetAsManagedInstallerRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -82,7 +75,11 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.WindowsManagementApp {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsManagementApp> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsManagementApp>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsManagementApp.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsManagementApp>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsManagementApp.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Windows management app.</summary>
         public class GetQueryParameters : QueryParametersBase {

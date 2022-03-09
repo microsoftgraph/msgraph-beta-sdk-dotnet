@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using MicrosoftGraphSdk.Reports.AuthenticationMethods.UserRegistrationDetails;
 using MicrosoftGraphSdk.Reports.AuthenticationMethods.UsersRegisteredByFeature;
 using MicrosoftGraphSdk.Reports.AuthenticationMethods.UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRoles;
@@ -13,7 +14,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Reports.AuthenticationMethods {
-    /// <summary>Builds and executes requests for operations under \reports\authenticationMethods</summary>
+    /// <summary>Provides operations to manage the authenticationMethods property of the microsoft.graph.reportRoot entity.</summary>
     public class AuthenticationMethodsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -52,7 +53,7 @@ namespace MicrosoftGraphSdk.Reports.AuthenticationMethods {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Container for navigation properties for Azure AD authentication methods resources.
+        /// Delete navigation property authenticationMethods for reports
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -88,7 +89,7 @@ namespace MicrosoftGraphSdk.Reports.AuthenticationMethods {
             return requestInfo;
         }
         /// <summary>
-        /// Container for navigation properties for Azure AD authentication methods resources.
+        /// Update the navigation property authenticationMethods in reports
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -106,7 +107,7 @@ namespace MicrosoftGraphSdk.Reports.AuthenticationMethods {
             return requestInfo;
         }
         /// <summary>
-        /// Container for navigation properties for Azure AD authentication methods resources.
+        /// Delete navigation property authenticationMethods for reports
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -114,7 +115,11 @@ namespace MicrosoftGraphSdk.Reports.AuthenticationMethods {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Container for navigation properties for Azure AD authentication methods resources.
@@ -126,10 +131,14 @@ namespace MicrosoftGraphSdk.Reports.AuthenticationMethods {
         /// </summary>
         public async Task<AuthenticationMethodsRoot> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AuthenticationMethodsRoot>(requestInfo, AuthenticationMethodsRoot.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<AuthenticationMethodsRoot>(requestInfo, AuthenticationMethodsRoot.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Container for navigation properties for Azure AD authentication methods resources.
+        /// Update the navigation property authenticationMethods in reports
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -139,18 +148,22 @@ namespace MicrosoftGraphSdk.Reports.AuthenticationMethods {
         public async Task PatchAsync(AuthenticationMethodsRoot body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \reports\authenticationMethods\microsoft.graph.usersRegisteredByFeature()
+        /// Provides operations to call the usersRegisteredByFeature method.
         /// </summary>
         public UsersRegisteredByFeatureRequestBuilder UsersRegisteredByFeature() {
             return new UsersRegisteredByFeatureRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \reports\authenticationMethods\microsoft.graph.usersRegisteredByFeature(includedUserTypes={includedUserTypes},includedUserRoles={includedUserRoles})
-        /// <param name="includedUserRoles">Usage: includedUserRoles={includedUserRoles}</param>
-        /// <param name="includedUserTypes">Usage: includedUserTypes={includedUserTypes}</param>
+        /// Provides operations to call the usersRegisteredByFeature method.
+        /// <param name="includedUserRoles">Usage: includedUserRoles='{includedUserRoles}'</param>
+        /// <param name="includedUserTypes">Usage: includedUserTypes='{includedUserTypes}'</param>
         /// </summary>
         public UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRoles(string includedUserRoles, string includedUserTypes) {
             if(string.IsNullOrEmpty(includedUserRoles)) throw new ArgumentNullException(nameof(includedUserRoles));
@@ -158,15 +171,15 @@ namespace MicrosoftGraphSdk.Reports.AuthenticationMethods {
             return new UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder(PathParameters, RequestAdapter, includedUserRoles, includedUserTypes);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \reports\authenticationMethods\microsoft.graph.usersRegisteredByMethod()
+        /// Provides operations to call the usersRegisteredByMethod method.
         /// </summary>
         public UsersRegisteredByMethodRequestBuilder UsersRegisteredByMethod() {
             return new UsersRegisteredByMethodRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \reports\authenticationMethods\microsoft.graph.usersRegisteredByMethod(includedUserTypes={includedUserTypes},includedUserRoles={includedUserRoles})
-        /// <param name="includedUserRoles">Usage: includedUserRoles={includedUserRoles}</param>
-        /// <param name="includedUserTypes">Usage: includedUserTypes={includedUserTypes}</param>
+        /// Provides operations to call the usersRegisteredByMethod method.
+        /// <param name="includedUserRoles">Usage: includedUserRoles='{includedUserRoles}'</param>
+        /// <param name="includedUserTypes">Usage: includedUserTypes='{includedUserTypes}'</param>
         /// </summary>
         public UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRoles(string includedUserRoles, string includedUserTypes) {
             if(string.IsNullOrEmpty(includedUserRoles)) throw new ArgumentNullException(nameof(includedUserRoles));

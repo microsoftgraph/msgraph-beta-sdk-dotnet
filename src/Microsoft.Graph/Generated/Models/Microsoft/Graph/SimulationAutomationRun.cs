@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the attackSimulation property of the microsoft.graph.security entity.</summary>
     public class SimulationAutomationRun : Entity, IParsable {
         public DateTimeOffset? EndDateTime { get; set; }
         public string SimulationId { get; set; }

@@ -1,4 +1,5 @@
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to call the getMailTips method.</summary>
     public enum MailTipsType {
         AutomaticReplies,
         MailboxFullStatus,

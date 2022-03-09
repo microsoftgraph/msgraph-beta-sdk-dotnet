@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
     public class AgreementAcceptance : Entity, IParsable {
         /// <summary>The identifier of the agreement file accepted by the user.</summary>
         public string AgreementFileId { get; set; }

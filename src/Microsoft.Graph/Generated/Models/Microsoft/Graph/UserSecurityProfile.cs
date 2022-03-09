@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the userSecurityProfiles property of the microsoft.graph.security entity.</summary>
     public class UserSecurityProfile : Entity, IParsable {
         public List<UserAccount> Accounts { get; set; }
         public string AzureSubscriptionId { get; set; }

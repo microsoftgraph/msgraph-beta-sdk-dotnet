@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.VerifyWindowsEnrollmentAutoDiscoveryWithDomainName {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\microsoft.graph.verifyWindowsEnrollmentAutoDiscovery(domainName='{domainName}')</summary>
+    /// <summary>Provides operations to call the verifyWindowsEnrollmentAutoDiscovery method.</summary>
     public class VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -17,7 +17,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VerifyWindowsEnrollmentAutoDiscover
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder and sets the default values.
-        /// <param name="domainName">Usage: domainName={domainName}</param>
+        /// <param name="domainName">Usage: domainName='{domainName}'</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// </summary>
@@ -66,9 +66,9 @@ namespace MicrosoftGraphSdk.DeviceManagement.VerifyWindowsEnrollmentAutoDiscover
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<bool?> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendPrimitiveAsync<bool?>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponse>(requestInfo, VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

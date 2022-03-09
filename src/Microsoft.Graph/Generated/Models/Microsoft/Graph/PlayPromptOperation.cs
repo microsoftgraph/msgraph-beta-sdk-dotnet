@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to call the playPrompt method.</summary>
     public class PlayPromptOperation : CommsOperation, IParsable {
         /// <summary>Possible values are: unknown, completedSuccessfully, mediaOperationCanceled.</summary>
         public PlayPromptCompletionReason? CompletionReason { get; set; }

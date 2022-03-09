@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceAppManagement.VppTokens.Item.RevokeLicenses {
-    public class RevokeLicensesRequestBody : IParsable {
+    /// <summary>Provides operations to call the revokeLicenses method.</summary>
+    public class RevokeLicensesRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public bool? NotifyManagedDevices { get; set; }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class AssignmentFilterEvaluationStatusDetails : Entity, IParsable {
         /// <summary>PayloadId on which filter has been applied.</summary>
         public string PayloadId { get; set; }

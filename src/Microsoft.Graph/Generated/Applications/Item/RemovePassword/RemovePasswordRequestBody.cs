@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Applications.Item.RemovePassword {
-    public class RemovePasswordRequestBody : IParsable {
+    /// <summary>Provides operations to call the removePassword method.</summary>
+    public class RemovePasswordRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string KeyId { get; set; }

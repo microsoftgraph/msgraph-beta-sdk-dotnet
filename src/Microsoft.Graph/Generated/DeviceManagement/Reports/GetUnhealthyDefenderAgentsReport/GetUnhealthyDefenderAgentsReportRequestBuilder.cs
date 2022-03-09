@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetUnhealthyDefenderAgentsReport {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getUnhealthyDefenderAgentsReport</summary>
+    /// <summary>Provides operations to call the getUnhealthyDefenderAgentsReport method.</summary>
     public class GetUnhealthyDefenderAgentsReportRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -68,10 +68,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetUnhealthyDefenderAgentsR
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<Stream> PostAsync(GetUnhealthyDefenderAgentsReportRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<GetUnhealthyDefenderAgentsReportResponse> PostAsync(GetUnhealthyDefenderAgentsReportRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetUnhealthyDefenderAgentsReportResponse>(requestInfo, GetUnhealthyDefenderAgentsReportResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

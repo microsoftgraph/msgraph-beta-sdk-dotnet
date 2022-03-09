@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the teamwork singleton.</summary>
     public class Teamwork : Entity, IParsable {
         /// <summary>The Teams devices provisioned for the tenant.</summary>
         public List<TeamworkDevice> Devices { get; set; }

@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportAppleDeviceIdentityList {
-    public class ImportAppleDeviceIdentityListRequestBody : IParsable {
+    /// <summary>Provides operations to call the importAppleDeviceIdentityList method.</summary>
+    public class ImportAppleDeviceIdentityListRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<ImportedAppleDeviceIdentity> ImportedAppleDeviceIdentities { get; set; }

@@ -13,6 +13,7 @@ using MicrosoftGraphSdk.DataClassification.Jobs;
 using MicrosoftGraphSdk.DataClassification.SensitiveTypes;
 using MicrosoftGraphSdk.DataClassification.SensitivityLabels;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -20,7 +21,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DataClassification {
-    /// <summary>Builds and executes requests for operations under \dataClassification</summary>
+    /// <summary>Provides operations to manage the dataClassificationService singleton.</summary>
     public class DataClassificationRequestBuilder {
         public ClassifyExactMatchesRequestBuilder ClassifyExactMatches { get =>
             new ClassifyExactMatchesRequestBuilder(PathParameters, RequestAdapter);
@@ -140,7 +141,11 @@ namespace MicrosoftGraphSdk.DataClassification {
         /// </summary>
         public async Task<DataClassificationService> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DataClassificationService>(requestInfo, DataClassificationService.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<DataClassificationService>(requestInfo, DataClassificationService.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update dataClassification
@@ -153,7 +158,11 @@ namespace MicrosoftGraphSdk.DataClassification {
         public async Task PatchAsync(DataClassificationService body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Get dataClassification</summary>
         public class GetQueryParameters : QueryParametersBase {

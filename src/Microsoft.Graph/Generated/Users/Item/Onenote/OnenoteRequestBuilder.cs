@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using MicrosoftGraphSdk.Users.Item.Onenote.Notebooks;
 using MicrosoftGraphSdk.Users.Item.Onenote.Operations;
 using MicrosoftGraphSdk.Users.Item.Onenote.Pages;
@@ -14,7 +15,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.Onenote {
-    /// <summary>Builds and executes requests for operations under \users\{user-id}\onenote</summary>
+    /// <summary>Provides operations to manage the onenote property of the microsoft.graph.user entity.</summary>
     public class OnenoteRequestBuilder {
         public NotebooksRequestBuilder Notebooks { get =>
             new NotebooksRequestBuilder(PathParameters, RequestAdapter);
@@ -68,7 +69,7 @@ namespace MicrosoftGraphSdk.Users.Item.Onenote {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Read-only.
+        /// Delete navigation property onenote for users
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -104,7 +105,7 @@ namespace MicrosoftGraphSdk.Users.Item.Onenote {
             return requestInfo;
         }
         /// <summary>
-        /// Read-only.
+        /// Update the navigation property onenote in users
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -122,7 +123,7 @@ namespace MicrosoftGraphSdk.Users.Item.Onenote {
             return requestInfo;
         }
         /// <summary>
-        /// Read-only.
+        /// Delete navigation property onenote for users
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -130,7 +131,11 @@ namespace MicrosoftGraphSdk.Users.Item.Onenote {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Read-only.
@@ -142,10 +147,14 @@ namespace MicrosoftGraphSdk.Users.Item.Onenote {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Onenote> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Onenote>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Onenote.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Onenote>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Onenote.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read-only.
+        /// Update the navigation property onenote in users
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -155,7 +164,11 @@ namespace MicrosoftGraphSdk.Users.Item.Onenote {
         public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Onenote body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Read-only.</summary>
         public class GetQueryParameters : QueryParametersBase {

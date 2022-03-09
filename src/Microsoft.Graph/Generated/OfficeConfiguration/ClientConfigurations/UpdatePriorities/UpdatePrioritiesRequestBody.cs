@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.OfficeConfiguration.ClientConfigurations.UpdatePriorities {
-    public class UpdatePrioritiesRequestBody : IParsable {
+    /// <summary>Provides operations to call the updatePriorities method.</summary>
+    public class UpdatePrioritiesRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<string> OfficeConfigurationPolicyIds { get; set; }

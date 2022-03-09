@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.ManagementConditionStatements.Item.GetManagementConditionStatementExpressionString {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\managementConditionStatements\{managementConditionStatement-id}\microsoft.graph.getManagementConditionStatementExpressionString()</summary>
+    /// <summary>Provides operations to call the getManagementConditionStatementExpressionString method.</summary>
     public class GetManagementConditionStatementExpressionStringRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ManagementConditionStatements.Item.
             return await RequestAdapter.SendAsync<GetManagementConditionStatementExpressionStringResponse>(requestInfo, GetManagementConditionStatementExpressionStringResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes managementConditionExpressionString</summary>
-        public class GetManagementConditionStatementExpressionStringResponse : IParsable {
+        public class GetManagementConditionStatementExpressionStringResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type managementConditionExpressionString</summary>

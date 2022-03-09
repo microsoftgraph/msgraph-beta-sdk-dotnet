@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.GetRelatedAppStatesWithUserPrincipalNameWithDeviceId {
-    /// <summary>Builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\microsoft.graph.getRelatedAppStates(userPrincipalName='{userPrincipalName}',deviceId='{deviceId}')</summary>
+    /// <summary>Provides operations to call the getRelatedAppStates method.</summary>
     public class GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -17,10 +17,10 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.GetRelatedAppSta
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder and sets the default values.
-        /// <param name="deviceId">Usage: deviceId={deviceId}</param>
+        /// <param name="deviceId">Usage: deviceId='{deviceId}'</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// <param name="userPrincipalName">Usage: userPrincipalName={userPrincipalName}</param>
+        /// <param name="userPrincipalName">Usage: userPrincipalName='{userPrincipalName}'</param>
         /// </summary>
         public GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string userPrincipalName = default, string deviceId = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
@@ -68,9 +68,9 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.GetRelatedAppSta
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<GetRelatedAppStatesWithUserPrincipalNameWithDeviceId>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<GetRelatedAppStatesWithUserPrincipalNameWithDeviceId>(requestInfo, GetRelatedAppStatesWithUserPrincipalNameWithDeviceId.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdResponse>(requestInfo, GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

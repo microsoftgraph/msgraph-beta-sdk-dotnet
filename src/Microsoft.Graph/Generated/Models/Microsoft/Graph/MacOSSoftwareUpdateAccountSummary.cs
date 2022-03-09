@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class MacOSSoftwareUpdateAccountSummary : Entity, IParsable {
         /// <summary>Summary of the updates by category.</summary>
         public List<MacOSSoftwareUpdateCategorySummary> CategorySummaries { get; set; }

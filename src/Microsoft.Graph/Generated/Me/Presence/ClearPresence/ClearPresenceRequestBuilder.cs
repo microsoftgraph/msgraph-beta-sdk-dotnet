@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Me.Presence.ClearPresence {
-    /// <summary>Builds and executes requests for operations under \me\presence\microsoft.graph.clearPresence</summary>
+    /// <summary>Provides operations to call the clearPresence method.</summary>
     public class ClearPresenceRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

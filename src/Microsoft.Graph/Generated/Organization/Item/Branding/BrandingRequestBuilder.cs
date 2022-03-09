@@ -1,6 +1,12 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
+using MicrosoftGraphSdk.Organization.Item.Branding.BackgroundImage;
+using MicrosoftGraphSdk.Organization.Item.Branding.BannerLogo;
+using MicrosoftGraphSdk.Organization.Item.Branding.Favicon;
+using MicrosoftGraphSdk.Organization.Item.Branding.Localizations;
+using MicrosoftGraphSdk.Organization.Item.Branding.SquareLogo;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,12 +14,27 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Organization.Item.Branding {
-    /// <summary>Builds and executes requests for operations under \organization\{organization-id}\branding</summary>
+    /// <summary>Provides operations to manage the branding property of the microsoft.graph.organization entity.</summary>
     public class BrandingRequestBuilder {
+        public BackgroundImageRequestBuilder BackgroundImage { get =>
+            new BackgroundImageRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public BannerLogoRequestBuilder BannerLogo { get =>
+            new BannerLogoRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public FaviconRequestBuilder Favicon { get =>
+            new FaviconRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public LocalizationsRequestBuilder Localizations { get =>
+            new LocalizationsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        public SquareLogoRequestBuilder SquareLogo { get =>
+            new SquareLogoRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -106,7 +127,11 @@ namespace MicrosoftGraphSdk.Organization.Item.Branding {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Get branding from organization
@@ -118,7 +143,11 @@ namespace MicrosoftGraphSdk.Organization.Item.Branding {
         /// </summary>
         public async Task<OrganizationalBranding> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<OrganizationalBranding>(requestInfo, OrganizationalBranding.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<OrganizationalBranding>(requestInfo, OrganizationalBranding.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property branding in organization
@@ -131,7 +160,11 @@ namespace MicrosoftGraphSdk.Organization.Item.Branding {
         public async Task PatchAsync(OrganizationalBranding body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Get branding from organization</summary>
         public class GetQueryParameters : QueryParametersBase {

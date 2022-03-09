@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.Wipe {
-    public class WipeRequestBody : IParsable {
+    /// <summary>Provides operations to call the wipe method.</summary>
+    public class WipeRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public bool? KeepEnrollmentData { get; set; }

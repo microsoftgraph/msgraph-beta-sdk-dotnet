@@ -3,6 +3,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.DeviceManagement.AppleUserInitiatedEnrollmentProfiles.Item.Assignments;
 using MicrosoftGraphSdk.DeviceManagement.AppleUserInitiatedEnrollmentProfiles.Item.SetPriority;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,7 +11,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.AppleUserInitiatedEnrollmentProfiles.Item {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\appleUserInitiatedEnrollmentProfiles\{appleUserInitiatedEnrollmentProfile-id}</summary>
+    /// <summary>Provides operations to manage the appleUserInitiatedEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.</summary>
     public class AppleUserInitiatedEnrollmentProfileItemRequestBuilder {
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
@@ -52,7 +53,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AppleUserInitiatedEnrollmentProfile
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Apple user initiated enrollment profiles
+        /// Delete navigation property appleUserInitiatedEnrollmentProfiles for deviceManagement
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -88,7 +89,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AppleUserInitiatedEnrollmentProfile
             return requestInfo;
         }
         /// <summary>
-        /// Apple user initiated enrollment profiles
+        /// Update the navigation property appleUserInitiatedEnrollmentProfiles in deviceManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -106,7 +107,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AppleUserInitiatedEnrollmentProfile
             return requestInfo;
         }
         /// <summary>
-        /// Apple user initiated enrollment profiles
+        /// Delete navigation property appleUserInitiatedEnrollmentProfiles for deviceManagement
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -114,7 +115,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.AppleUserInitiatedEnrollmentProfile
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Apple user initiated enrollment profiles
@@ -126,10 +131,14 @@ namespace MicrosoftGraphSdk.DeviceManagement.AppleUserInitiatedEnrollmentProfile
         /// </summary>
         public async Task<AppleUserInitiatedEnrollmentProfile> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AppleUserInitiatedEnrollmentProfile>(requestInfo, AppleUserInitiatedEnrollmentProfile.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<AppleUserInitiatedEnrollmentProfile>(requestInfo, AppleUserInitiatedEnrollmentProfile.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Apple user initiated enrollment profiles
+        /// Update the navigation property appleUserInitiatedEnrollmentProfiles in deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -139,7 +148,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.AppleUserInitiatedEnrollmentProfile
         public async Task PatchAsync(AppleUserInitiatedEnrollmentProfile body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Apple user initiated enrollment profiles</summary>
         public class GetQueryParameters : QueryParametersBase {

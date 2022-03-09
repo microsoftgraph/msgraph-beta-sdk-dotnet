@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Favorite {
-    public class FavoriteRequestBody : IParsable {
+    /// <summary>Provides operations to call the favorite method.</summary>
+    public class FavoriteRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<string> MessageIds { get; set; }

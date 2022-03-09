@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsSummarizeWorkFromAnywhereDevices {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\microsoft.graph.userExperienceAnalyticsSummarizeWorkFromAnywhereDevices()</summary>
+    /// <summary>Provides operations to call the userExperienceAnalyticsSummarizeWorkFromAnywhereDevices method.</summary>
     public class UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsSummarizeWor
             return await RequestAdapter.SendAsync<UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesResponse>(requestInfo, UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes userExperienceAnalyticsWorkFromAnywhereDevicesSummary</summary>
-        public class UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesResponse : IParsable {
+        public class UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type userExperienceAnalyticsWorkFromAnywhereDevicesSummary</summary>

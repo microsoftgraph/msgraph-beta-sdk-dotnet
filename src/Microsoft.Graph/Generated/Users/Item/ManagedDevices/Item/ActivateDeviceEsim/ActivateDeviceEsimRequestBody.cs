@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.ActivateDeviceEsim {
-    public class ActivateDeviceEsimRequestBody : IParsable {
+    /// <summary>Provides operations to call the activateDeviceEsim method.</summary>
+    public class ActivateDeviceEsimRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string CarrierUrl { get; set; }

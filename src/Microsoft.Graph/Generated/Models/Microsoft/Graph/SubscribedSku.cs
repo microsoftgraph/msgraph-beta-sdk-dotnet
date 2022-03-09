@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the collection of subscribedSku entities.</summary>
     public class SubscribedSku : Entity, IParsable {
         /// <summary>For example, 'User' or 'Company'.</summary>
         public string AppliesTo { get; set; }

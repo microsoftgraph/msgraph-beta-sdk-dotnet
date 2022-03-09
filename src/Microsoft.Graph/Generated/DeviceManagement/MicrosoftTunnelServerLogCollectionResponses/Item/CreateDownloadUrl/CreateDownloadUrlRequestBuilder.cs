@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.Item.CreateDownloadUrl {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\microsoftTunnelServerLogCollectionResponses\{microsoftTunnelServerLogCollectionResponse-id}\microsoft.graph.createDownloadUrl</summary>
+    /// <summary>Provides operations to call the createDownloadUrl method.</summary>
     public class CreateDownloadUrlRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -64,9 +64,9 @@ namespace MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelServerLogCollectionR
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<string> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<CreateDownloadUrlResponse> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreatePostRequestInformation(h, o);
-            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CreateDownloadUrlResponse>(requestInfo, CreateDownloadUrlResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

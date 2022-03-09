@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Search {
-    public class AnswerVariant : IParsable {
+    /// <summary>Provides operations to manage the searchEntity singleton.</summary>
+    public class AnswerVariant : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Answer variation description shown on search results page.</summary>

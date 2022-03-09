@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.EnableUnlicensedAdminstrators {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\microsoft.graph.enableUnlicensedAdminstrators</summary>
+    /// <summary>Provides operations to call the enableUnlicensedAdminstrators method.</summary>
     public class EnableUnlicensedAdminstratorsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

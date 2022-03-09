@@ -1,6 +1,5 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.Outlook.SupportedTimeZones {
-    /// <summary>Builds and executes requests for operations under \users\{user-id}\outlook\microsoft.graph.supportedTimeZones()</summary>
+    /// <summary>Provides operations to call the supportedTimeZones method.</summary>
     public class SupportedTimeZonesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -65,9 +64,9 @@ namespace MicrosoftGraphSdk.Users.Item.Outlook.SupportedTimeZones {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<TimeZoneInformation>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<SupportedTimeZonesResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<TimeZoneInformation>(requestInfo, TimeZoneInformation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SupportedTimeZonesResponse>(requestInfo, SupportedTimeZonesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

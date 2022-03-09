@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the collection of program entities.</summary>
     public class Program : Entity, IParsable {
         /// <summary>Controls associated with the program.</summary>
         public List<ProgramControl> Controls { get; set; }

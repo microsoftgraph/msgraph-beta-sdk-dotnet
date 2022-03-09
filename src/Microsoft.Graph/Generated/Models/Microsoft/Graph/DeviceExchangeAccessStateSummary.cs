@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class DeviceExchangeAccessStateSummary : IParsable {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    public class DeviceExchangeAccessStateSummary : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Total count of devices with Exchange Access State: Allowed.</summary>

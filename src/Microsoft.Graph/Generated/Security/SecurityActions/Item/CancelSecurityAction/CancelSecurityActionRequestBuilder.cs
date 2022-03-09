@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Security.SecurityActions.Item.CancelSecurityAction {
-    /// <summary>Builds and executes requests for operations under \security\securityActions\{securityAction-id}\microsoft.graph.cancelSecurityAction</summary>
+    /// <summary>Provides operations to call the cancelSecurityAction method.</summary>
     public class CancelSecurityActionRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

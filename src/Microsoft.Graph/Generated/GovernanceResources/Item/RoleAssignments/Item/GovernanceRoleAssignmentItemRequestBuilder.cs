@@ -1,6 +1,11 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraphSdk.GovernanceResources.Item.RoleAssignments.Item.LinkedEligibleRoleAssignment;
+using MicrosoftGraphSdk.GovernanceResources.Item.RoleAssignments.Item.Resource;
+using MicrosoftGraphSdk.GovernanceResources.Item.RoleAssignments.Item.RoleDefinition;
+using MicrosoftGraphSdk.GovernanceResources.Item.RoleAssignments.Item.Subject;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,12 +13,24 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.GovernanceResources.Item.RoleAssignments.Item {
-    /// <summary>Builds and executes requests for operations under \governanceResources\{governanceResource-id}\roleAssignments\{governanceRoleAssignment-id}</summary>
+    /// <summary>Provides operations to manage the roleAssignments property of the microsoft.graph.governanceResource entity.</summary>
     public class GovernanceRoleAssignmentItemRequestBuilder {
+        public LinkedEligibleRoleAssignmentRequestBuilder LinkedEligibleRoleAssignment { get =>
+            new LinkedEligibleRoleAssignmentRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        public ResourceRequestBuilder Resource { get =>
+            new ResourceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public RoleDefinitionRequestBuilder RoleDefinition { get =>
+            new RoleDefinitionRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public SubjectRequestBuilder Subject { get =>
+            new SubjectRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -44,7 +61,7 @@ namespace MicrosoftGraphSdk.GovernanceResources.Item.RoleAssignments.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The collection of role assignments for the resource.
+        /// Delete navigation property roleAssignments for governanceResources
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -80,7 +97,7 @@ namespace MicrosoftGraphSdk.GovernanceResources.Item.RoleAssignments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of role assignments for the resource.
+        /// Update the navigation property roleAssignments in governanceResources
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -98,7 +115,7 @@ namespace MicrosoftGraphSdk.GovernanceResources.Item.RoleAssignments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of role assignments for the resource.
+        /// Delete navigation property roleAssignments for governanceResources
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -106,7 +123,11 @@ namespace MicrosoftGraphSdk.GovernanceResources.Item.RoleAssignments.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// The collection of role assignments for the resource.
@@ -118,10 +139,14 @@ namespace MicrosoftGraphSdk.GovernanceResources.Item.RoleAssignments.Item {
         /// </summary>
         public async Task<GovernanceRoleAssignment> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<GovernanceRoleAssignment>(requestInfo, GovernanceRoleAssignment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<GovernanceRoleAssignment>(requestInfo, GovernanceRoleAssignment.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The collection of role assignments for the resource.
+        /// Update the navigation property roleAssignments in governanceResources
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -131,7 +156,11 @@ namespace MicrosoftGraphSdk.GovernanceResources.Item.RoleAssignments.Item {
         public async Task PatchAsync(GovernanceRoleAssignment body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The collection of role assignments for the resource.</summary>
         public class GetQueryParameters : QueryParametersBase {

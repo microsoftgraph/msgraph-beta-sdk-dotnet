@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class TemporaryAccessPassAuthenticationMethod : AuthenticationMethod, IParsable {
         /// <summary>The date and time when the temporaryAccessPass was created.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }

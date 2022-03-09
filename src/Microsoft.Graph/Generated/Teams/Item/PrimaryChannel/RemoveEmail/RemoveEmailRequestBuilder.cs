@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Teams.Item.PrimaryChannel.RemoveEmail {
-    /// <summary>Builds and executes requests for operations under \teams\{team-id}\primaryChannel\microsoft.graph.removeEmail</summary>
+    /// <summary>Provides operations to call the removeEmail method.</summary>
     public class RemoveEmailRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the collection of organization entities.</summary>
     public class InsightsSettings : Entity, IParsable {
         /// <summary>The ID of an Azure AD group, of which the specified type of insights are disabled for its members. Default is empty. Optional.</summary>
         public string DisabledForGroup { get; set; }

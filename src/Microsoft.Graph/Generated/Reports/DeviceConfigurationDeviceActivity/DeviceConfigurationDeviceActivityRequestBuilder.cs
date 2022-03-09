@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Reports.DeviceConfigurationDeviceActivity {
-    /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.deviceConfigurationDeviceActivity()</summary>
+    /// <summary>Provides operations to call the deviceConfigurationDeviceActivity method.</summary>
     public class DeviceConfigurationDeviceActivityRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.Reports.DeviceConfigurationDeviceActivity {
             return await RequestAdapter.SendAsync<DeviceConfigurationDeviceActivityResponse>(requestInfo, DeviceConfigurationDeviceActivityResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes report</summary>
-        public class DeviceConfigurationDeviceActivityResponse : IParsable {
+        public class DeviceConfigurationDeviceActivityResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type report</summary>

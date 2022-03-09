@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.TriggerConfigurationManagerAction {
-    public class TriggerConfigurationManagerActionRequestBody : IParsable {
+    /// <summary>Provides operations to call the triggerConfigurationManagerAction method.</summary>
+    public class TriggerConfigurationManagerActionRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Parameter for action triggerConfigurationManagerAction</summary>

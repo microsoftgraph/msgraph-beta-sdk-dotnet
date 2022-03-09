@@ -1,7 +1,16 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraphSdk.Drives.Item.Root.Activities;
+using MicrosoftGraphSdk.Drives.Item.Root.Analytics;
+using MicrosoftGraphSdk.Drives.Item.Root.Children;
 using MicrosoftGraphSdk.Drives.Item.Root.Content;
+using MicrosoftGraphSdk.Drives.Item.Root.ListItem;
+using MicrosoftGraphSdk.Drives.Item.Root.Permissions;
+using MicrosoftGraphSdk.Drives.Item.Root.Subscriptions;
+using MicrosoftGraphSdk.Drives.Item.Root.Thumbnails;
+using MicrosoftGraphSdk.Drives.Item.Root.Versions;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,17 +18,41 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Drives.Item.Root {
-    /// <summary>Builds and executes requests for operations under \drives\{drive-id}\root</summary>
+    /// <summary>Provides operations to manage the root property of the microsoft.graph.drive entity.</summary>
     public class RootRequestBuilder {
+        public ActivitiesRequestBuilder Activities { get =>
+            new ActivitiesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public AnalyticsRequestBuilder Analytics { get =>
+            new AnalyticsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public ChildrenRequestBuilder Children { get =>
+            new ChildrenRequestBuilder(PathParameters, RequestAdapter);
+        }
         public ContentRequestBuilder Content { get =>
             new ContentRequestBuilder(PathParameters, RequestAdapter);
         }
+        public ListItemRequestBuilder ListItem { get =>
+            new ListItemRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        public PermissionsRequestBuilder Permissions { get =>
+            new PermissionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        public SubscriptionsRequestBuilder Subscriptions { get =>
+            new SubscriptionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public ThumbnailsRequestBuilder Thumbnails { get =>
+            new ThumbnailsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        public VersionsRequestBuilder Versions { get =>
+            new VersionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new RootRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -48,7 +81,7 @@ namespace MicrosoftGraphSdk.Drives.Item.Root {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The root folder of the drive. Read-only.
+        /// Delete navigation property root for drives
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -84,7 +117,7 @@ namespace MicrosoftGraphSdk.Drives.Item.Root {
             return requestInfo;
         }
         /// <summary>
-        /// The root folder of the drive. Read-only.
+        /// Update the navigation property root in drives
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -102,7 +135,7 @@ namespace MicrosoftGraphSdk.Drives.Item.Root {
             return requestInfo;
         }
         /// <summary>
-        /// The root folder of the drive. Read-only.
+        /// Delete navigation property root for drives
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -110,7 +143,11 @@ namespace MicrosoftGraphSdk.Drives.Item.Root {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// The root folder of the drive. Read-only.
@@ -122,10 +159,14 @@ namespace MicrosoftGraphSdk.Drives.Item.Root {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The root folder of the drive. Read-only.
+        /// Update the navigation property root in drives
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -135,7 +176,11 @@ namespace MicrosoftGraphSdk.Drives.Item.Root {
         public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The root folder of the drive. Read-only.</summary>
         public class GetQueryParameters : QueryParametersBase {

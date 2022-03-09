@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class AssignmentReviewSettings : IParsable {
+    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
+    public class AssignmentReviewSettings : IParsable, IAdditionalDataHolder {
         /// <summary>The default decision to apply if the request is not reviewed within the period specified in durationInDays. The possible values are: acceptAccessRecommendation, keepAccess, removeAccess, and unknownFutureValue.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessReviewTimeoutBehavior? AccessReviewTimeoutBehavior { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

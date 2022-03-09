@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.GetOemWarranty {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\microsoft.graph.getOemWarranty()</summary>
+    /// <summary>Provides operations to call the getOemWarranty method.</summary>
     public class GetOemWarrantyRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.GetOemWarranty 
             return await RequestAdapter.SendAsync<GetOemWarrantyResponse>(requestInfo, GetOemWarrantyResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes oemWarranty</summary>
-        public class GetOemWarrantyResponse : IParsable {
+        public class GetOemWarrantyResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type oemWarranty</summary>

@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class ControlScore : IParsable {
+    /// <summary>Provides operations to manage the secureScores property of the microsoft.graph.security entity.</summary>
+    public class ControlScore : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Control action category (Identity, Data, Device, Apps, Infrastructure).</summary>

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Groups.Item.AddFavorite {
-    /// <summary>Builds and executes requests for operations under \groups\{group-id}\microsoft.graph.addFavorite</summary>
+    /// <summary>Provides operations to call the addFavorite method.</summary>
     public class AddFavoriteRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

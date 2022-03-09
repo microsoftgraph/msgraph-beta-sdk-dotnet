@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Me.Onenote.SectionGroups.Item.Sections.Item.Pages.Item.Preview {
-    /// <summary>Builds and executes requests for operations under \me\onenote\sectionGroups\{sectionGroup-id}\sections\{onenoteSection-id}\pages\{onenotePage-id}\microsoft.graph.preview()</summary>
+    /// <summary>Provides operations to call the preview method.</summary>
     public class PreviewRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.Me.Onenote.SectionGroups.Item.Sections.Item.Pages.It
             return await RequestAdapter.SendAsync<PreviewResponse>(requestInfo, PreviewResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes onenotePagePreview</summary>
-        public class PreviewResponse : IParsable {
+        public class PreviewResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type onenotePagePreview</summary>

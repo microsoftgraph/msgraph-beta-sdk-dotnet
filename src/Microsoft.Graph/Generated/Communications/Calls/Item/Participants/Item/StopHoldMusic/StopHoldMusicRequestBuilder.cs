@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Communications.Calls.Item.Participants.Item.StopHoldMusic {
-    /// <summary>Builds and executes requests for operations under \communications\calls\{call-id}\participants\{participant-id}\microsoft.graph.stopHoldMusic</summary>
+    /// <summary>Provides operations to call the stopHoldMusic method.</summary>
     public class StopHoldMusicRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.Participants.Item.StopHold
             return await RequestAdapter.SendAsync<StopHoldMusicResponse>(requestInfo, StopHoldMusicResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes stopHoldMusicOperation</summary>
-        public class StopHoldMusicResponse : IParsable {
+        public class StopHoldMusicResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type stopHoldMusicOperation</summary>

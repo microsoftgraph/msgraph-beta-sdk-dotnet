@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class ConvertIdResult : IParsable {
+    /// <summary>Provides operations to call the translateExchangeIds method.</summary>
+    public class ConvertIdResult : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An error object indicating the reason for the conversion failure. This value is not present if the conversion succeeded.</summary>
@@ -14,7 +15,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The converted identifier. This value is not present if the conversion failed.</summary>
         public string TargetId { get; set; }
         /// <summary>
-        /// Instantiates a new ConvertIdResult and sets the default values.
+        /// Instantiates a new convertIdResult and sets the default values.
         /// </summary>
         public ConvertIdResult() {
             AdditionalData = new Dictionary<string, object>();

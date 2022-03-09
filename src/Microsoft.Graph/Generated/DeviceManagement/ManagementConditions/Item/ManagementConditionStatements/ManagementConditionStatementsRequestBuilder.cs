@@ -1,7 +1,9 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.ManagementConditions.Item.ManagementConditionStatements.GetManagementConditionStatementsForPlatformWithPlatform;
-using MicrosoftGraphSdk.DeviceManagement.ManagementConditions.Item.ManagementConditionStatements.Ref;
+using MicrosoftGraphSdk.DeviceManagement.ManagementConditions.Item.ManagementConditionStatements.Count;
+using MicrosoftGraphSdk.DeviceManagement.ManagementConditions.Item.ManagementConditionStatements.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,17 +11,23 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.ManagementConditions.Item.ManagementConditionStatements {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\managementConditions\{managementCondition-id}\managementConditionStatements</summary>
+    /// <summary>Provides operations to manage the managementConditionStatements property of the microsoft.graph.managementCondition entity.</summary>
     public class ManagementConditionStatementsRequestBuilder {
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        public RefRequestBuilder Ref { get =>
-            new RefRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.managementConditions.item.managementConditionStatements.item collection</summary>
+        public ManagementConditionStatementItemRequestBuilder this[string position] { get {
+            var urlTplParams = new Dictionary<string, object>(PathParameters);
+            urlTplParams.Add("managementConditionStatement_id", position);
+            return new ManagementConditionStatementItemRequestBuilder(urlTplParams, RequestAdapter);
+        } }
         /// <summary>
         /// Instantiates a new ManagementConditionStatementsRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -76,17 +84,13 @@ namespace MicrosoftGraphSdk.DeviceManagement.ManagementConditions.Item.Managemen
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ManagementConditionStatementsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagementConditionStatementCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ManagementConditionStatementsResponse>(requestInfo, ManagementConditionStatementsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>
-        /// Builds and executes requests for operations under \deviceManagement\managementConditions\{managementCondition-id}\managementConditionStatements\microsoft.graph.getManagementConditionStatementsForPlatform(platform={platform})
-        /// <param name="platform">Usage: platform={platform}</param>
-        /// </summary>
-        public GetManagementConditionStatementsForPlatformWithPlatformRequestBuilder GetManagementConditionStatementsForPlatformWithPlatform(string platform) {
-            if(string.IsNullOrEmpty(platform)) throw new ArgumentNullException(nameof(platform));
-            return new GetManagementConditionStatementsForPlatformWithPlatformRequestBuilder(PathParameters, RequestAdapter, platform);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<ManagementConditionStatementCollectionResponse>(requestInfo, ManagementConditionStatementCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The management condition statements associated to the management condition.</summary>
         public class GetQueryParameters : QueryParametersBase {

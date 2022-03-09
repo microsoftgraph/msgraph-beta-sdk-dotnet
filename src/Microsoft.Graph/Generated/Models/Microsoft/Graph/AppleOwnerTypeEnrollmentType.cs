@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class AppleOwnerTypeEnrollmentType : IParsable {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    public class AppleOwnerTypeEnrollmentType : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The enrollment type. Possible values are: unknown, device, user.</summary>

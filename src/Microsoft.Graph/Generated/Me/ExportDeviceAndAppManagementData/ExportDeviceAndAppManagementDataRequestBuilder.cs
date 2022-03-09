@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Me.ExportDeviceAndAppManagementData {
-    /// <summary>Builds and executes requests for operations under \me\microsoft.graph.exportDeviceAndAppManagementData()</summary>
+    /// <summary>Provides operations to call the exportDeviceAndAppManagementData method.</summary>
     public class ExportDeviceAndAppManagementDataRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.Me.ExportDeviceAndAppManagementData {
             return await RequestAdapter.SendAsync<ExportDeviceAndAppManagementDataResponse>(requestInfo, ExportDeviceAndAppManagementDataResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes deviceAndAppManagementData</summary>
-        public class ExportDeviceAndAppManagementDataResponse : IParsable {
+        public class ExportDeviceAndAppManagementDataResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type deviceAndAppManagementData</summary>

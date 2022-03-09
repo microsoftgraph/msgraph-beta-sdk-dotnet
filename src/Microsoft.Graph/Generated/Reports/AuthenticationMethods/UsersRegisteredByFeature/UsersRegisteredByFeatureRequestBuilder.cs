@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Reports.AuthenticationMethods.UsersRegisteredByFeature {
-    /// <summary>Builds and executes requests for operations under \reports\authenticationMethods\microsoft.graph.usersRegisteredByFeature()</summary>
+    /// <summary>Provides operations to call the usersRegisteredByFeature method.</summary>
     public class UsersRegisteredByFeatureRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

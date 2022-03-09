@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.ConfigurationPolicies.Item.CreateCopy {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\configurationPolicies\{deviceManagementConfigurationPolicy-id}\microsoft.graph.createCopy</summary>
+    /// <summary>Provides operations to call the createCopy method.</summary>
     public class CreateCopyRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ConfigurationPolicies.Item.CreateCo
             return await RequestAdapter.SendAsync<CreateCopyResponse>(requestInfo, CreateCopyResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes deviceManagementConfigurationPolicy</summary>
-        public class CreateCopyResponse : IParsable {
+        public class CreateCopyResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type deviceManagementConfigurationPolicy</summary>

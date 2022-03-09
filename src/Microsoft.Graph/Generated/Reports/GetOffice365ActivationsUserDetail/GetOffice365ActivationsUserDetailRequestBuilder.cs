@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Reports.GetOffice365ActivationsUserDetail {
-    /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.getOffice365ActivationsUserDetail()</summary>
+    /// <summary>Provides operations to call the getOffice365ActivationsUserDetail method.</summary>
     public class GetOffice365ActivationsUserDetailRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -64,9 +64,9 @@ namespace MicrosoftGraphSdk.Reports.GetOffice365ActivationsUserDetail {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<Stream> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<GetOffice365ActivationsUserDetailResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetOffice365ActivationsUserDetailResponse>(requestInfo, GetOffice365ActivationsUserDetailResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

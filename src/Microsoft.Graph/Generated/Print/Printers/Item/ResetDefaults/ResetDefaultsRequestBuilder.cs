@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Print.Printers.Item.ResetDefaults {
-    /// <summary>Builds and executes requests for operations under \print\printers\{printer-id}\microsoft.graph.resetDefaults</summary>
+    /// <summary>Provides operations to call the resetDefaults method.</summary>
     public class ResetDefaultsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

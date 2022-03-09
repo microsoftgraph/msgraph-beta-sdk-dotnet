@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceAppManagement.SyncMicrosoftStoreForBusinessApps {
-    /// <summary>Builds and executes requests for operations under \deviceAppManagement\microsoft.graph.syncMicrosoftStoreForBusinessApps</summary>
+    /// <summary>Provides operations to call the syncMicrosoftStoreForBusinessApps method.</summary>
     public class SyncMicrosoftStoreForBusinessAppsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

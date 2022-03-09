@@ -1,7 +1,9 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using MicrosoftGraphSdk.Teams.Item.Channels.AllMessages;
+using MicrosoftGraphSdk.Teams.Item.Channels.Count;
 using MicrosoftGraphSdk.Teams.Item.Channels.GetAllMessages;
 using MicrosoftGraphSdk.Teams.Item.Channels.Item;
 using System;
@@ -11,8 +13,11 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Teams.Item.Channels {
-    /// <summary>Builds and executes requests for operations under \teams\{team-id}\channels</summary>
+    /// <summary>Provides operations to manage the channels property of the microsoft.graph.team entity.</summary>
     public class ChannelsRequestBuilder {
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -26,7 +31,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Channels {
             return new ChannelItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Builds and executes requests for operations under \teams\{team-id}\channels\microsoft.graph.allMessages()
+        /// Provides operations to call the allMessages method.
         /// </summary>
         public AllMessagesRequestBuilder AllMessages() {
             return new AllMessagesRequestBuilder(PathParameters, RequestAdapter);
@@ -80,7 +85,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Channels {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of channels and messages associated with the team.
+        /// Create new navigation property to channels for teams
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -98,7 +103,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Channels {
             return requestInfo;
         }
         /// <summary>
-        /// Builds and executes requests for operations under \teams\{team-id}\channels\microsoft.graph.getAllMessages()
+        /// Provides operations to call the getAllMessages method.
         /// </summary>
         public GetAllMessagesRequestBuilder GetAllMessages() {
             return new GetAllMessagesRequestBuilder(PathParameters, RequestAdapter);
@@ -111,12 +116,16 @@ namespace MicrosoftGraphSdk.Teams.Item.Channels {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ChannelsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<ChannelCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ChannelsResponse>(requestInfo, ChannelsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<ChannelCollectionResponse>(requestInfo, ChannelCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The collection of channels and messages associated with the team.
+        /// Create new navigation property to channels for teams
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -126,7 +135,11 @@ namespace MicrosoftGraphSdk.Teams.Item.Channels {
         public async Task<Channel> PostAsync(Channel body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<Channel>(requestInfo, Channel.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<Channel>(requestInfo, Channel.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The collection of channels and messages associated with the team.</summary>
         public class GetQueryParameters : QueryParametersBase {

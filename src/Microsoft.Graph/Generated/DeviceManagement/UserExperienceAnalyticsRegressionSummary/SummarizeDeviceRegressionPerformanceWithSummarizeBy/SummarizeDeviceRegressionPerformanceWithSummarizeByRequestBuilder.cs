@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsRegressionSummary.SummarizeDeviceRegressionPerformanceWithSummarizeBy {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsRegressionSummary\microsoft.graph.summarizeDeviceRegressionPerformance(summarizeBy={summarizeBy})</summary>
+    /// <summary>Provides operations to call the summarizeDeviceRegressionPerformance method.</summary>
     public class SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -20,12 +20,12 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsRegressionSu
         /// Instantiates a new SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// <param name="summarizeBy">Usage: summarizeBy={summarizeBy}</param>
+        /// <param name="summarizeBy">Usage: summarizeBy='{summarizeBy}'</param>
         /// </summary>
         public SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string summarizeBy = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsRegressionSummary/microsoft.graph.summarizeDeviceRegressionPerformance(summarizeBy={summarizeBy})";
+            UrlTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsRegressionSummary/microsoft.graph.summarizeDeviceRegressionPerformance(summarizeBy='{summarizeBy}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             urlTplParams.Add("summarizeBy", summarizeBy);
             PathParameters = urlTplParams;
@@ -39,7 +39,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsRegressionSu
         public SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsRegressionSummary/microsoft.graph.summarizeDeviceRegressionPerformance(summarizeBy={summarizeBy})";
+            UrlTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsRegressionSummary/microsoft.graph.summarizeDeviceRegressionPerformance(summarizeBy='{summarizeBy}')";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsRegressionSu
             return await RequestAdapter.SendAsync<SummarizeDeviceRegressionPerformanceWithSummarizeByResponse>(requestInfo, SummarizeDeviceRegressionPerformanceWithSummarizeByResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes userExperienceAnalyticsRegressionSummary</summary>
-        public class SummarizeDeviceRegressionPerformanceWithSummarizeByResponse : IParsable {
+        public class SummarizeDeviceRegressionPerformanceWithSummarizeByResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type userExperienceAnalyticsRegressionSummary</summary>

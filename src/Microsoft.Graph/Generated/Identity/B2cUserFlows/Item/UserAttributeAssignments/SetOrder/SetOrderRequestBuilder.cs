@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Identity.B2cUserFlows.Item.UserAttributeAssignments.SetOrder {
-    /// <summary>Builds and executes requests for operations under \identity\b2cUserFlows\{b2cIdentityUserFlow-id}\userAttributeAssignments\microsoft.graph.setOrder</summary>
+    /// <summary>Provides operations to call the setOrder method.</summary>
     public class SetOrderRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

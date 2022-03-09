@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class AppleEnrollmentProfileAssignment : Entity, IParsable {
         /// <summary>The assignment target for the Apple user initiated deployment profile.</summary>
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }

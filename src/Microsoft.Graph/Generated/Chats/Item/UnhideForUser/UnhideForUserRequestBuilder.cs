@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Chats.Item.UnhideForUser {
-    /// <summary>Builds and executes requests for operations under \chats\{chat-id}\microsoft.graph.unhideForUser</summary>
+    /// <summary>Provides operations to call the unhideForUser method.</summary>
     public class UnhideForUserRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

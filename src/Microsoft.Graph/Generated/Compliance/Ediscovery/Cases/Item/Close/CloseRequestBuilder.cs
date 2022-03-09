@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Close {
-    /// <summary>Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\microsoft.graph.ediscovery.close</summary>
+    /// <summary>Provides operations to call the close method.</summary>
     public class CloseRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.ServicePrincipals.GetUserOwnedObjects {
-    /// <summary>Builds and executes requests for operations under \servicePrincipals\microsoft.graph.getUserOwnedObjects</summary>
+    /// <summary>Provides operations to call the getUserOwnedObjects method.</summary>
     public class GetUserOwnedObjectsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.ServicePrincipals.GetUserOwnedObjects {
             return await RequestAdapter.SendAsync<GetUserOwnedObjectsResponse>(requestInfo, GetUserOwnedObjectsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes directoryObject</summary>
-        public class GetUserOwnedObjectsResponse : IParsable {
+        public class GetUserOwnedObjectsResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type directoryObject</summary>

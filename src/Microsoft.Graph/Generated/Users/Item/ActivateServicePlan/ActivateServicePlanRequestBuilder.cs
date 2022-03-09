@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.ActivateServicePlan {
-    /// <summary>Builds and executes requests for operations under \users\{user-id}\microsoft.graph.activateServicePlan</summary>
+    /// <summary>Provides operations to call the activateServicePlan method.</summary>
     public class ActivateServicePlanRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

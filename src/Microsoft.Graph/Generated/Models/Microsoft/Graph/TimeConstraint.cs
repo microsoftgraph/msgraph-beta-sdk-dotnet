@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class TimeConstraint : IParsable {
+    /// <summary>Provides operations to call the findMeetingTimes method.</summary>
+    public class TimeConstraint : IParsable, IAdditionalDataHolder {
         /// <summary>The nature of the activity, optional. The possible values are: work, personal, unrestricted, or unknown.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ActivityDomain? ActivityDomain { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

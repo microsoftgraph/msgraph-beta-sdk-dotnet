@@ -1,9 +1,11 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraphSdk.DeviceManagement.AuditEvents.Count;
 using MicrosoftGraphSdk.DeviceManagement.AuditEvents.GetAuditActivityTypesWithCategory;
 using MicrosoftGraphSdk.DeviceManagement.AuditEvents.GetAuditCategories;
 using MicrosoftGraphSdk.DeviceManagement.AuditEvents.Item;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,8 +13,11 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.AuditEvents {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\auditEvents</summary>
+    /// <summary>Provides operations to manage the auditEvents property of the microsoft.graph.deviceManagement entity.</summary>
     public class AuditEventsRequestBuilder {
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -74,7 +79,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AuditEvents {
             return requestInfo;
         }
         /// <summary>
-        /// The Audit Events
+        /// Create new navigation property to auditEvents for deviceManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -99,26 +104,30 @@ namespace MicrosoftGraphSdk.DeviceManagement.AuditEvents {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<AuditEventsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<AuditEventCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AuditEventsResponse>(requestInfo, AuditEventsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<AuditEventCollectionResponse>(requestInfo, AuditEventCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \deviceManagement\auditEvents\microsoft.graph.getAuditActivityTypes(category='{category}')
-        /// <param name="category">Usage: category={category}</param>
+        /// Provides operations to call the getAuditActivityTypes method.
+        /// <param name="category">Usage: category='{category}'</param>
         /// </summary>
         public GetAuditActivityTypesWithCategoryRequestBuilder GetAuditActivityTypesWithCategory(string category) {
             if(string.IsNullOrEmpty(category)) throw new ArgumentNullException(nameof(category));
             return new GetAuditActivityTypesWithCategoryRequestBuilder(PathParameters, RequestAdapter, category);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \deviceManagement\auditEvents\microsoft.graph.getAuditCategories()
+        /// Provides operations to call the getAuditCategories method.
         /// </summary>
         public GetAuditCategoriesRequestBuilder GetAuditCategories() {
             return new GetAuditCategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// The Audit Events
+        /// Create new navigation property to auditEvents for deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -128,7 +137,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.AuditEvents {
         public async Task<AuditEvent> PostAsync(AuditEvent body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AuditEvent>(requestInfo, AuditEvent.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<AuditEvent>(requestInfo, AuditEvent.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The Audit Events</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the collection of messageTrace entities.</summary>
     public class MessageTrace : Entity, IParsable {
         public string DestinationIPAddress { get; set; }
         public string MessageId { get; set; }

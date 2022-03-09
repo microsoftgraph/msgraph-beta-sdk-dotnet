@@ -1,4 +1,5 @@
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to call the findMeetingTimes method.</summary>
     public enum ActivityDomain {
         Unknown,
         Work,

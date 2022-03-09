@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.Authentication.Methods.Item.ResetPassword {
-    /// <summary>Builds and executes requests for operations under \users\{user-id}\authentication\methods\{authenticationMethod-id}\microsoft.graph.resetPassword</summary>
+    /// <summary>Provides operations to call the resetPassword method.</summary>
     public class ResetPasswordRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.Methods.Item.ResetPassword
             return await RequestAdapter.SendAsync<ResetPasswordResponse>(requestInfo, ResetPasswordResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes passwordResetResponse</summary>
-        public class ResetPasswordResponse : IParsable {
+        public class ResetPasswordResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type passwordResetResponse</summary>

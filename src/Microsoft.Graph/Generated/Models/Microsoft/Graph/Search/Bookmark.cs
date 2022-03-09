@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Search {
+    /// <summary>Provides operations to manage the searchEntity singleton.</summary>
     public class Bookmark : SearchAnswer, IParsable {
         /// <summary>Timestamp of when the bookmark will stop to appear as a search result. Set as null for always available.</summary>
         public DateTimeOffset? AvailabilityEndDateTime { get; set; }

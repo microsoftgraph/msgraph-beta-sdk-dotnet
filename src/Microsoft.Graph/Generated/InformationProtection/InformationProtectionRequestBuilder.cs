@@ -11,6 +11,7 @@ using MicrosoftGraphSdk.InformationProtection.SignDigest;
 using MicrosoftGraphSdk.InformationProtection.ThreatAssessmentRequests;
 using MicrosoftGraphSdk.InformationProtection.VerifySignature;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,7 +19,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.InformationProtection {
-    /// <summary>Builds and executes requests for operations under \informationProtection</summary>
+    /// <summary>Provides operations to manage the informationProtection singleton.</summary>
     public class InformationProtectionRequestBuilder {
         public BitlockerRequestBuilder Bitlocker { get =>
             new BitlockerRequestBuilder(PathParameters, RequestAdapter);
@@ -132,7 +133,11 @@ namespace MicrosoftGraphSdk.InformationProtection {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.InformationProtection> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.InformationProtection>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.InformationProtection.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.InformationProtection>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.InformationProtection.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update informationProtection
@@ -145,7 +150,11 @@ namespace MicrosoftGraphSdk.InformationProtection {
         public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.InformationProtection body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Get informationProtection</summary>
         public class GetQueryParameters : QueryParametersBase {

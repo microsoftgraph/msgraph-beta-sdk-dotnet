@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesQuotes.Item.MakeInvoice {
-    /// <summary>Builds and executes requests for operations under \financials\companies\{company-id}\salesQuotes\{salesQuote-id}\microsoft.graph.makeInvoice</summary>
+    /// <summary>Provides operations to call the makeInvoice method.</summary>
     public class MakeInvoiceRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

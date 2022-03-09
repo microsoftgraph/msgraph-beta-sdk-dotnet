@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class RelatedContact : IParsable {
+    /// <summary>Provides operations to manage the educationRoot singleton.</summary>
+    public class RelatedContact : IParsable, IAdditionalDataHolder {
         /// <summary>Indicates whether the user has been consented to access student data.</summary>
         public bool? AccessConsent { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

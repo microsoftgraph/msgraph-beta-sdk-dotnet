@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.Item.ScheduleActionsForRules {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\deviceCompliancePolicies\{deviceCompliancePolicy-id}\microsoft.graph.scheduleActionsForRules</summary>
+    /// <summary>Provides operations to call the scheduleActionsForRules method.</summary>
     public class ScheduleActionsForRulesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

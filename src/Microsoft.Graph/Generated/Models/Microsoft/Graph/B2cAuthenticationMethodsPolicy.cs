@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class B2cAuthenticationMethodsPolicy : Entity, IParsable {
         /// <summary>The tenant admin can configure local accounts using email if the email and password authentication method is enabled.</summary>
         public bool? IsEmailPasswordAuthenticationEnabled { get; set; }

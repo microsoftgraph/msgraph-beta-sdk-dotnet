@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,7 +9,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.DeviceStateSummary {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}\deviceStateSummary</summary>
+    /// <summary>Provides operations to manage the deviceStateSummary property of the microsoft.graph.deviceManagementIntent entity.</summary>
     public class DeviceStateSummaryRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -44,7 +45,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.DeviceStateSummary {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// A summary of device states and counts of devices that belong to corresponding state for all devices that the intent is applied to
+        /// Delete navigation property deviceStateSummary for deviceManagement
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -80,7 +81,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.DeviceStateSummary {
             return requestInfo;
         }
         /// <summary>
-        /// A summary of device states and counts of devices that belong to corresponding state for all devices that the intent is applied to
+        /// Update the navigation property deviceStateSummary in deviceManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -98,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.DeviceStateSummary {
             return requestInfo;
         }
         /// <summary>
-        /// A summary of device states and counts of devices that belong to corresponding state for all devices that the intent is applied to
+        /// Delete navigation property deviceStateSummary for deviceManagement
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -106,7 +107,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.DeviceStateSummary {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// A summary of device states and counts of devices that belong to corresponding state for all devices that the intent is applied to
@@ -118,10 +123,14 @@ namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.DeviceStateSummary {
         /// </summary>
         public async Task<DeviceManagementIntentDeviceStateSummary> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementIntentDeviceStateSummary>(requestInfo, DeviceManagementIntentDeviceStateSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<DeviceManagementIntentDeviceStateSummary>(requestInfo, DeviceManagementIntentDeviceStateSummary.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A summary of device states and counts of devices that belong to corresponding state for all devices that the intent is applied to
+        /// Update the navigation property deviceStateSummary in deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -131,7 +140,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.DeviceStateSummary {
         public async Task PatchAsync(DeviceManagementIntentDeviceStateSummary body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>A summary of device states and counts of devices that belong to corresponding state for all devices that the intent is applied to</summary>
         public class GetQueryParameters : QueryParametersBase {

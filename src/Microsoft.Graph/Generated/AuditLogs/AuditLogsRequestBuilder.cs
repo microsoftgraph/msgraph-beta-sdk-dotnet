@@ -6,6 +6,7 @@ using MicrosoftGraphSdk.AuditLogs.Provisioning;
 using MicrosoftGraphSdk.AuditLogs.RestrictedSignIns;
 using MicrosoftGraphSdk.AuditLogs.SignIns;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,7 +14,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.AuditLogs {
-    /// <summary>Builds and executes requests for operations under \auditLogs</summary>
+    /// <summary>Provides operations to manage the auditLogRoot singleton.</summary>
     public class AuditLogsRequestBuilder {
         public DirectoryAuditsRequestBuilder DirectoryAudits { get =>
             new DirectoryAuditsRequestBuilder(PathParameters, RequestAdapter);
@@ -112,7 +113,11 @@ namespace MicrosoftGraphSdk.AuditLogs {
         /// </summary>
         public async Task<AuditLogRoot> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AuditLogRoot>(requestInfo, AuditLogRoot.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<AuditLogRoot>(requestInfo, AuditLogRoot.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update auditLogs
@@ -125,7 +130,11 @@ namespace MicrosoftGraphSdk.AuditLogs {
         public async Task PatchAsync(AuditLogRoot body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Get auditLogs</summary>
         public class GetQueryParameters : QueryParametersBase {

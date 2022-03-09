@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.SetScheduledRetireState {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\deviceCompliancePolicies\microsoft.graph.setScheduledRetireState</summary>
+    /// <summary>Provides operations to call the setScheduledRetireState method.</summary>
     public class SetScheduledRetireStateRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Organization.Item.ActivateService {
-    /// <summary>Builds and executes requests for operations under \organization\{organization-id}\microsoft.graph.activateService</summary>
+    /// <summary>Provides operations to call the activateService method.</summary>
     public class ActivateServiceRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.GovernanceResources.Register {
-    /// <summary>Builds and executes requests for operations under \governanceResources\microsoft.graph.register</summary>
+    /// <summary>Provides operations to call the register method.</summary>
     public class RegisterRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

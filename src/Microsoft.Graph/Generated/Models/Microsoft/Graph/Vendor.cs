@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the financials singleton.</summary>
     public class Vendor : Entity, IParsable {
         public PostalAddressType Address { get; set; }
         public decimal? Balance { get; set; }

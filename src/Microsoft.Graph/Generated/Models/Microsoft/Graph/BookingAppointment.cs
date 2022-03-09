@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the collection of bookingBusiness entities.</summary>
     public class BookingAppointment : Entity, IParsable {
         /// <summary>Additional information that is sent to the customer when an appointment is confirmed.</summary>
         public string AdditionalInformation { get; set; }
@@ -42,7 +43,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public bool? IsLocationOnline { get; set; }
         /// <summary>The URL of the online meeting for the appointment.</summary>
         public string JoinWebUrl { get; set; }
-        /// <summary>The maximum number of customers allowed in an appointment.</summary>
+        /// <summary>The maximum number of customers allowed in an appointment. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.</summary>
         public int? MaximumAttendeesCount { get; set; }
         public string OnlineMeetingUrl { get; set; }
         /// <summary>If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.</summary>

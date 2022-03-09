@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Me.Onenote.Notebooks.Item.Sections.Item.Pages.Item.CopyToSection {
-    /// <summary>Builds and executes requests for operations under \me\onenote\notebooks\{notebook-id}\sections\{onenoteSection-id}\pages\{onenotePage-id}\microsoft.graph.copyToSection</summary>
+    /// <summary>Provides operations to call the copyToSection method.</summary>
     public class CopyToSectionRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Me.Onenote.Notebooks.Item.Sections.Item.Pages.Item.C
             return await RequestAdapter.SendAsync<CopyToSectionResponse>(requestInfo, CopyToSectionResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes onenoteOperation</summary>
-        public class CopyToSectionResponse : IParsable {
+        public class CopyToSectionResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type onenoteOperation</summary>

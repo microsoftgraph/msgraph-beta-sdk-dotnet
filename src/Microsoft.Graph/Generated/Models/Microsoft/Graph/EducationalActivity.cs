@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class EducationalActivity : ItemFacet, IParsable {
         /// <summary>The month and year the user graduated or completed the activity.</summary>
         public Date? CompletionMonthYear { get; set; }

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.CreateDeviceLogCollectionRequest {
-    /// <summary>Builds and executes requests for operations under \me\managedDevices\{managedDevice-id}\microsoft.graph.createDeviceLogCollectionRequest</summary>
+    /// <summary>Provides operations to call the createDeviceLogCollectionRequest method.</summary>
     public class CreateDeviceLogCollectionRequestRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.CreateDeviceLogCollectionRequ
             return await RequestAdapter.SendAsync<CreateDeviceLogCollectionRequestResponse>(requestInfo, CreateDeviceLogCollectionRequestResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes deviceLogCollectionResponse</summary>
-        public class CreateDeviceLogCollectionRequestResponse : IParsable {
+        public class CreateDeviceLogCollectionRequestResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type deviceLogCollectionResponse</summary>

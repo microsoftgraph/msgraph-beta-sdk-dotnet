@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.MarkUnread {
-    /// <summary>Builds and executes requests for operations under \admin\serviceAnnouncement\messages\microsoft.graph.markUnread</summary>
+    /// <summary>Provides operations to call the markUnread method.</summary>
     public class MarkUnreadRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -68,10 +68,10 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.MarkUnread {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<bool?> PostAsync(MarkUnreadRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MarkUnreadResponse> PostAsync(MarkUnreadRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendPrimitiveAsync<bool?>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MarkUnreadResponse>(requestInfo, MarkUnreadResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

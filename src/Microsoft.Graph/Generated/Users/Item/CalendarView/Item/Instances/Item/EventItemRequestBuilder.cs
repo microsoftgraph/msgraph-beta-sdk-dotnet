@@ -1,11 +1,18 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using MicrosoftGraphSdk.Users.Item.CalendarView.Item.Instances.Item.Accept;
+using MicrosoftGraphSdk.Users.Item.CalendarView.Item.Instances.Item.Attachments;
+using MicrosoftGraphSdk.Users.Item.CalendarView.Item.Instances.Item.Calendar;
 using MicrosoftGraphSdk.Users.Item.CalendarView.Item.Instances.Item.Cancel;
 using MicrosoftGraphSdk.Users.Item.CalendarView.Item.Instances.Item.Decline;
 using MicrosoftGraphSdk.Users.Item.CalendarView.Item.Instances.Item.DismissReminder;
+using MicrosoftGraphSdk.Users.Item.CalendarView.Item.Instances.Item.ExceptionOccurrences;
+using MicrosoftGraphSdk.Users.Item.CalendarView.Item.Instances.Item.Extensions;
 using MicrosoftGraphSdk.Users.Item.CalendarView.Item.Instances.Item.Forward;
+using MicrosoftGraphSdk.Users.Item.CalendarView.Item.Instances.Item.MultiValueExtendedProperties;
+using MicrosoftGraphSdk.Users.Item.CalendarView.Item.Instances.Item.SingleValueExtendedProperties;
 using MicrosoftGraphSdk.Users.Item.CalendarView.Item.Instances.Item.SnoozeReminder;
 using MicrosoftGraphSdk.Users.Item.CalendarView.Item.Instances.Item.TentativelyAccept;
 using System;
@@ -15,10 +22,16 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.CalendarView.Item.Instances.Item {
-    /// <summary>Builds and executes requests for operations under \users\{user-id}\calendarView\{event-id}\instances\{event-id1}</summary>
+    /// <summary>Provides operations to manage the instances property of the microsoft.graph.event entity.</summary>
     public class EventItemRequestBuilder {
         public AcceptRequestBuilder Accept { get =>
             new AcceptRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public AttachmentsRequestBuilder Attachments { get =>
+            new AttachmentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public CalendarRequestBuilder Calendar { get =>
+            new CalendarRequestBuilder(PathParameters, RequestAdapter);
         }
         public CancelRequestBuilder Cancel { get =>
             new CancelRequestBuilder(PathParameters, RequestAdapter);
@@ -29,13 +42,25 @@ namespace MicrosoftGraphSdk.Users.Item.CalendarView.Item.Instances.Item {
         public DismissReminderRequestBuilder DismissReminder { get =>
             new DismissReminderRequestBuilder(PathParameters, RequestAdapter);
         }
+        public ExceptionOccurrencesRequestBuilder ExceptionOccurrences { get =>
+            new ExceptionOccurrencesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public ExtensionsRequestBuilder Extensions { get =>
+            new ExtensionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         public ForwardRequestBuilder Forward { get =>
             new ForwardRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public MultiValueExtendedPropertiesRequestBuilder MultiValueExtendedProperties { get =>
+            new MultiValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        public SingleValueExtendedPropertiesRequestBuilder SingleValueExtendedProperties { get =>
+            new SingleValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
+        }
         public SnoozeReminderRequestBuilder SnoozeReminder { get =>
             new SnoozeReminderRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -72,7 +97,7 @@ namespace MicrosoftGraphSdk.Users.Item.CalendarView.Item.Instances.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+        /// Delete navigation property instances for users
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -108,7 +133,7 @@ namespace MicrosoftGraphSdk.Users.Item.CalendarView.Item.Instances.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+        /// Update the navigation property instances in users
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -126,7 +151,7 @@ namespace MicrosoftGraphSdk.Users.Item.CalendarView.Item.Instances.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+        /// Delete navigation property instances for users
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -134,7 +159,11 @@ namespace MicrosoftGraphSdk.Users.Item.CalendarView.Item.Instances.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
@@ -146,10 +175,14 @@ namespace MicrosoftGraphSdk.Users.Item.CalendarView.Item.Instances.Item {
         /// </summary>
         public async Task<Event> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Event>(requestInfo, Event.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<Event>(requestInfo, Event.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+        /// Update the navigation property instances in users
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -159,7 +192,11 @@ namespace MicrosoftGraphSdk.Users.Item.CalendarView.Item.Instances.Item {
         public async Task PatchAsync(Event body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

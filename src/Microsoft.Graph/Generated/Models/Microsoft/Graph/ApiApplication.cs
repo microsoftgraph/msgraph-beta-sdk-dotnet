@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class ApiApplication : IParsable {
+    /// <summary>Provides operations to manage the collection of application entities.</summary>
+    public class ApiApplication : IParsable, IAdditionalDataHolder {
         /// <summary>When true, allows an application to use claims mapping without specifying a custom signing key.</summary>
         public bool? AcceptMappedClaims { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

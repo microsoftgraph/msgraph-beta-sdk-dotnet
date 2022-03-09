@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Chats.Item.MarkChatReadForUser {
-    public class MarkChatReadForUserRequestBody : IParsable {
+    /// <summary>Provides operations to call the markChatReadForUser method.</summary>
+    public class MarkChatReadForUserRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string TenantId { get; set; }

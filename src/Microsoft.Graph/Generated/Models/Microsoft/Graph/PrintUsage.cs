@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the print singleton.</summary>
     public class PrintUsage : Entity, IParsable {
         public long? CompletedBlackAndWhiteJobCount { get; set; }
         public long? CompletedColorJobCount { get; set; }

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Sites.Item.GetByPathWithPath {
-    /// <summary>Builds and executes requests for operations under \sites\{site-id}\microsoft.graph.getByPath(path='{path}')</summary>
+    /// <summary>Provides operations to call the getByPath method.</summary>
     public class GetByPathWithPathRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -18,7 +18,7 @@ namespace MicrosoftGraphSdk.Sites.Item.GetByPathWithPath {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new GetByPathWithPathRequestBuilder and sets the default values.
-        /// <param name="path">Usage: path={path}</param>
+        /// <param name="path">Usage: path='{path}'</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// </summary>
@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.Sites.Item.GetByPathWithPath {
             return await RequestAdapter.SendAsync<GetByPathWithPathResponse>(requestInfo, GetByPathWithPathResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes site</summary>
-        public class GetByPathWithPathResponse : IParsable {
+        public class GetByPathWithPathResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type site</summary>

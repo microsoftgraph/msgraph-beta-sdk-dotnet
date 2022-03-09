@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.App.Calls.Item.PlayPrompt {
-    /// <summary>Builds and executes requests for operations under \app\calls\{call-id}\microsoft.graph.playPrompt</summary>
+    /// <summary>Provides operations to call the playPrompt method.</summary>
     public class PlayPromptRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.App.Calls.Item.PlayPrompt {
             return await RequestAdapter.SendAsync<PlayPromptResponse>(requestInfo, PlayPromptResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes playPromptOperation</summary>
-        public class PlayPromptResponse : IParsable {
+        public class PlayPromptResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type playPromptOperation</summary>

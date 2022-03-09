@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Communications.OnlineMeetings.Item.Registration.CustomQuestions;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,7 +10,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Communications.OnlineMeetings.Item.Registration {
-    /// <summary>Builds and executes requests for operations under \communications\onlineMeetings\{onlineMeeting-id}\registration</summary>
+    /// <summary>Provides operations to manage the registration property of the microsoft.graph.onlineMeeting entity.</summary>
     public class RegistrationRequestBuilder {
         public CustomQuestionsRequestBuilder CustomQuestions { get =>
             new CustomQuestionsRequestBuilder(PathParameters, RequestAdapter);
@@ -48,7 +49,7 @@ namespace MicrosoftGraphSdk.Communications.OnlineMeetings.Item.Registration {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
+        /// Delete navigation property registration for communications
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -84,7 +85,7 @@ namespace MicrosoftGraphSdk.Communications.OnlineMeetings.Item.Registration {
             return requestInfo;
         }
         /// <summary>
-        /// The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
+        /// Update the navigation property registration in communications
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -102,7 +103,7 @@ namespace MicrosoftGraphSdk.Communications.OnlineMeetings.Item.Registration {
             return requestInfo;
         }
         /// <summary>
-        /// The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
+        /// Delete navigation property registration for communications
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -110,7 +111,11 @@ namespace MicrosoftGraphSdk.Communications.OnlineMeetings.Item.Registration {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
@@ -122,10 +127,14 @@ namespace MicrosoftGraphSdk.Communications.OnlineMeetings.Item.Registration {
         /// </summary>
         public async Task<MeetingRegistration> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MeetingRegistration>(requestInfo, MeetingRegistration.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MeetingRegistration>(requestInfo, MeetingRegistration.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
+        /// Update the navigation property registration in communications
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -135,7 +144,11 @@ namespace MicrosoftGraphSdk.Communications.OnlineMeetings.Item.Registration {
         public async Task PatchAsync(MeetingRegistration body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.</summary>
         public class GetQueryParameters : QueryParametersBase {

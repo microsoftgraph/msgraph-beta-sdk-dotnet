@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class ItemPublication : ItemFacet, IParsable {
         /// <summary>Description of the publication.</summary>
         public string Description { get; set; }

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Applications.Item.AddPassword {
-    /// <summary>Builds and executes requests for operations under \applications\{application-id}\microsoft.graph.addPassword</summary>
+    /// <summary>Provides operations to call the addPassword method.</summary>
     public class AddPasswordRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

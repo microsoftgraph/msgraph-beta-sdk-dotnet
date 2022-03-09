@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.ChangePassword {
-    /// <summary>Builds and executes requests for operations under \users\{user-id}\microsoft.graph.changePassword</summary>
+    /// <summary>Provides operations to call the changePassword method.</summary>
     public class ChangePasswordRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

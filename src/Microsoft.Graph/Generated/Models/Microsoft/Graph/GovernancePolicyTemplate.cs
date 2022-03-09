@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the collection of approvalWorkflowProvider entities.</summary>
     public class GovernancePolicyTemplate : Entity, IParsable {
         public string DisplayName { get; set; }
         public GovernancePolicy Policy { get; set; }

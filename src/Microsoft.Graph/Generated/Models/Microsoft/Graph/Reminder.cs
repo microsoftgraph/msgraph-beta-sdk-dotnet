@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class Reminder : IParsable {
+    /// <summary>Provides operations to call the reminderView method.</summary>
+    public class Reminder : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Identifies the version of the reminder. Every time the reminder is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object.</summary>
@@ -24,7 +25,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The date, time, and time zone that the reminder is set to occur.</summary>
         public DateTimeTimeZone ReminderFireTime { get; set; }
         /// <summary>
-        /// Instantiates a new Reminder and sets the default values.
+        /// Instantiates a new reminder and sets the default values.
         /// </summary>
         public Reminder() {
             AdditionalData = new Dictionary<string, object>();

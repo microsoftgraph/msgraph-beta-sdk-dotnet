@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
     public class AccessPackageResource : Entity, IParsable {
         /// <summary>Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageResourceEnvironment AccessPackageResourceEnvironment { get; set; }

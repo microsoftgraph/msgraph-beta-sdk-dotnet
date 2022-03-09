@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.InformationProtection.SensitivityLabels.Item.Sublabels.Evaluate {
-    /// <summary>Builds and executes requests for operations under \informationProtection\sensitivityLabels\{sensitivityLabel-id}\sublabels\microsoft.graph.evaluate</summary>
+    /// <summary>Provides operations to call the evaluate method.</summary>
     public class EvaluateRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.InformationProtection.SensitivityLabels.Item.Sublabe
             return await RequestAdapter.SendAsync<EvaluateResponse>(requestInfo, EvaluateResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes evaluateLabelJobResponse</summary>
-        public class EvaluateResponse : IParsable {
+        public class EvaluateResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type evaluateLabelJobResponse</summary>

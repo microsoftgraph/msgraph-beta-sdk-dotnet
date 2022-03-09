@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Decisions.RecordAllDecisions {
-    /// <summary>Builds and executes requests for operations under \me\pendingAccessReviewInstances\{accessReviewInstance-id}\decisions\microsoft.graph.recordAllDecisions</summary>
+    /// <summary>Provides operations to call the recordAllDecisions method.</summary>
     public class RecordAllDecisionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

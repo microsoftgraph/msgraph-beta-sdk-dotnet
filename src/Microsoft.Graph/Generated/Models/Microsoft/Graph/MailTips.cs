@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class MailTips : IParsable {
+    /// <summary>Provides operations to call the getMailTips method.</summary>
+    public class MailTips : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Mail tips for automatic reply if it has been set up by the recipient.</summary>
@@ -32,7 +33,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The number of members if the recipient is a distribution list.</summary>
         public int? TotalMemberCount { get; set; }
         /// <summary>
-        /// Instantiates a new MailTips and sets the default values.
+        /// Instantiates a new mailTips and sets the default values.
         /// </summary>
         public MailTips() {
             AdditionalData = new Dictionary<string, object>();

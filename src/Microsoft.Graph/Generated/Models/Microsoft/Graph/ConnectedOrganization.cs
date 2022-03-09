@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
     public class ConnectedOrganization : Entity, IParsable {
         /// <summary>UPN of the user who created this resource. Read-only.</summary>
         public string CreatedBy { get; set; }

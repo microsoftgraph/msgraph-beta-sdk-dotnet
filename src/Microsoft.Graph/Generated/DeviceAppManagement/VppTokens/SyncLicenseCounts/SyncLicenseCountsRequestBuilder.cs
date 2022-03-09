@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceAppManagement.VppTokens.SyncLicenseCounts {
-    /// <summary>Builds and executes requests for operations under \deviceAppManagement\vppTokens\microsoft.graph.syncLicenseCounts</summary>
+    /// <summary>Provides operations to call the syncLicenseCounts method.</summary>
     public class SyncLicenseCountsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class CrossTenantAccessPolicyConfigurationBase : Entity, IParsable {
         /// <summary>Defines your configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.</summary>
         public CrossTenantAccessPolicyB2BSetting B2bCollaborationInbound { get; set; }

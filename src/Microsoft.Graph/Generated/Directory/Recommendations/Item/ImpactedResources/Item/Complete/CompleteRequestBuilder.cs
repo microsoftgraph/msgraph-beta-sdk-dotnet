@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Directory.Recommendations.Item.ImpactedResources.Item.Complete {
-    /// <summary>Builds and executes requests for operations under \directory\recommendations\{recommendation-id}\impactedResources\{recommendationResource-id}\microsoft.graph.complete</summary>
+    /// <summary>Provides operations to call the complete method.</summary>
     public class CompleteRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.Directory.Recommendations.Item.ImpactedResources.Ite
             return await RequestAdapter.SendAsync<CompleteResponse>(requestInfo, CompleteResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes recommendationResource</summary>
-        public class CompleteResponse : IParsable {
+        public class CompleteResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type recommendationResource</summary>

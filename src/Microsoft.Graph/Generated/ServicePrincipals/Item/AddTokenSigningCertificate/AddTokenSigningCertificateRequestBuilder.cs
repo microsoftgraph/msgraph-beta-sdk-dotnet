@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.ServicePrincipals.Item.AddTokenSigningCertificate {
-    /// <summary>Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\microsoft.graph.addTokenSigningCertificate</summary>
+    /// <summary>Provides operations to call the addTokenSigningCertificate method.</summary>
     public class AddTokenSigningCertificateRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

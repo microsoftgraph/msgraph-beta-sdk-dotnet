@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class ExtensionSchemaProperty : IParsable {
+    /// <summary>Provides operations to manage the collection of schemaExtension entities.</summary>
+    public class ExtensionSchemaProperty : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The name of the strongly-typed property defined as part of a schema extension.</summary>

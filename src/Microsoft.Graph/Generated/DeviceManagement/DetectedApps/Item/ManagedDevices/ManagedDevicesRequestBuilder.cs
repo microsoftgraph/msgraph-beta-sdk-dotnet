@@ -1,10 +1,9 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.DetectedApps.Item.ManagedDevices.BulkReprovisionCloudPc;
-using MicrosoftGraphSdk.DeviceManagement.DetectedApps.Item.ManagedDevices.BulkRestoreCloudPc;
-using MicrosoftGraphSdk.DeviceManagement.DetectedApps.Item.ManagedDevices.ExecuteAction;
-using MicrosoftGraphSdk.DeviceManagement.DetectedApps.Item.ManagedDevices.MoveDevicesToOU;
-using MicrosoftGraphSdk.DeviceManagement.DetectedApps.Item.ManagedDevices.Ref;
+using MicrosoftGraphSdk.DeviceManagement.DetectedApps.Item.ManagedDevices.Count;
+using MicrosoftGraphSdk.DeviceManagement.DetectedApps.Item.ManagedDevices.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,29 +11,23 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.DetectedApps.Item.ManagedDevices {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\detectedApps\{detectedApp-id}\managedDevices</summary>
+    /// <summary>Provides operations to manage the managedDevices property of the microsoft.graph.detectedApp entity.</summary>
     public class ManagedDevicesRequestBuilder {
-        public BulkReprovisionCloudPcRequestBuilder BulkReprovisionCloudPc { get =>
-            new BulkReprovisionCloudPcRequestBuilder(PathParameters, RequestAdapter);
-        }
-        public BulkRestoreCloudPcRequestBuilder BulkRestoreCloudPc { get =>
-            new BulkRestoreCloudPcRequestBuilder(PathParameters, RequestAdapter);
-        }
-        public ExecuteActionRequestBuilder ExecuteAction { get =>
-            new ExecuteActionRequestBuilder(PathParameters, RequestAdapter);
-        }
-        public MoveDevicesToOURequestBuilder MoveDevicesToOU { get =>
-            new MoveDevicesToOURequestBuilder(PathParameters, RequestAdapter);
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        public RefRequestBuilder Ref { get =>
-            new RefRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.detectedApps.item.managedDevices.item collection</summary>
+        public ManagedDeviceItemRequestBuilder this[string position] { get {
+            var urlTplParams = new Dictionary<string, object>(PathParameters);
+            urlTplParams.Add("managedDevice_id", position);
+            return new ManagedDeviceItemRequestBuilder(urlTplParams, RequestAdapter);
+        } }
         /// <summary>
         /// Instantiates a new ManagedDevicesRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -91,9 +84,13 @@ namespace MicrosoftGraphSdk.DeviceManagement.DetectedApps.Item.ManagedDevices {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ManagedDevicesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagedDeviceCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ManagedDevicesResponse>(requestInfo, ManagedDevicesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<ManagedDeviceCollectionResponse>(requestInfo, ManagedDeviceCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The devices that have the discovered application installed</summary>
         public class GetQueryParameters : QueryParametersBase {

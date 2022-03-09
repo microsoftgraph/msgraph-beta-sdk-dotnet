@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class UserExperienceAnalyticsRemoteConnection : Entity, IParsable {
         /// <summary>The sign in failure percentage of Cloud PC Device. Valid values 0 to 100</summary>
         public double? CloudPcFailurePercentage { get; set; }

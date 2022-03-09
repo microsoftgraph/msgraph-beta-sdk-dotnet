@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Drive.List.ContentTypes.Item.Unpublish {
-    /// <summary>Builds and executes requests for operations under \drive\list\contentTypes\{contentType-id}\microsoft.graph.unpublish</summary>
+    /// <summary>Provides operations to call the unpublish method.</summary>
     public class UnpublishRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

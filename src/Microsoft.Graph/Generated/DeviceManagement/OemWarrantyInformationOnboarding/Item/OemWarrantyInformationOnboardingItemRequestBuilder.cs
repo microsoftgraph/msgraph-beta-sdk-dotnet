@@ -3,6 +3,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.DeviceManagement.OemWarrantyInformationOnboarding.Item.Disable;
 using MicrosoftGraphSdk.DeviceManagement.OemWarrantyInformationOnboarding.Item.Enable;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,7 +11,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.OemWarrantyInformationOnboarding.Item {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\oemWarrantyInformationOnboarding\{oemWarrantyInformationOnboarding-id}</summary>
+    /// <summary>Provides operations to manage the oemWarrantyInformationOnboarding property of the microsoft.graph.deviceManagement entity.</summary>
     public class OemWarrantyInformationOnboardingItemRequestBuilder {
         public DisableRequestBuilder Disable { get =>
             new DisableRequestBuilder(PathParameters, RequestAdapter);
@@ -52,7 +53,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.OemWarrantyInformationOnboarding.It
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// List of OEM Warranty Statuses
+        /// Delete navigation property oemWarrantyInformationOnboarding for deviceManagement
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -88,7 +89,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.OemWarrantyInformationOnboarding.It
             return requestInfo;
         }
         /// <summary>
-        /// List of OEM Warranty Statuses
+        /// Update the navigation property oemWarrantyInformationOnboarding in deviceManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -106,7 +107,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.OemWarrantyInformationOnboarding.It
             return requestInfo;
         }
         /// <summary>
-        /// List of OEM Warranty Statuses
+        /// Delete navigation property oemWarrantyInformationOnboarding for deviceManagement
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -114,7 +115,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.OemWarrantyInformationOnboarding.It
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// List of OEM Warranty Statuses
@@ -126,10 +131,14 @@ namespace MicrosoftGraphSdk.DeviceManagement.OemWarrantyInformationOnboarding.It
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.OemWarrantyInformationOnboarding> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.OemWarrantyInformationOnboarding>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.OemWarrantyInformationOnboarding.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.OemWarrantyInformationOnboarding>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.OemWarrantyInformationOnboarding.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// List of OEM Warranty Statuses
+        /// Update the navigation property oemWarrantyInformationOnboarding in deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -139,7 +148,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.OemWarrantyInformationOnboarding.It
         public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.OemWarrantyInformationOnboarding body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>List of OEM Warranty Statuses</summary>
         public class GetQueryParameters : QueryParametersBase {

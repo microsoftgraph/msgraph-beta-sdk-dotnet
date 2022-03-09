@@ -5,6 +5,7 @@ using MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs;
 using MicrosoftGraphSdk.Applications.Item.Synchronization.Ping;
 using MicrosoftGraphSdk.Applications.Item.Synchronization.Templates;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,7 +13,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Applications.Item.Synchronization {
-    /// <summary>Builds and executes requests for operations under \applications\{application-id}\synchronization</summary>
+    /// <summary>Provides operations to manage the synchronization property of the microsoft.graph.application entity.</summary>
     public class SynchronizationRequestBuilder {
         public AcquireAccessTokenRequestBuilder AcquireAccessToken { get =>
             new AcquireAccessTokenRequestBuilder(PathParameters, RequestAdapter);
@@ -119,7 +120,11 @@ namespace MicrosoftGraphSdk.Applications.Item.Synchronization {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Get synchronization from applications
@@ -131,7 +136,11 @@ namespace MicrosoftGraphSdk.Applications.Item.Synchronization {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Synchronization> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Synchronization>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Synchronization.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Synchronization>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Synchronization.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property synchronization in applications
@@ -144,10 +153,14 @@ namespace MicrosoftGraphSdk.Applications.Item.Synchronization {
         public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Synchronization body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \applications\{application-id}\synchronization\microsoft.graph.Ping()
+        /// Provides operations to call the Ping method.
         /// </summary>
         public PingRequestBuilder Ping() {
             return new PingRequestBuilder(PathParameters, RequestAdapter);

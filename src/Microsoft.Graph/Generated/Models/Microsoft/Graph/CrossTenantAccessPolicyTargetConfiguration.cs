@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class CrossTenantAccessPolicyTargetConfiguration : IParsable {
+    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
+    public class CrossTenantAccessPolicyTargetConfiguration : IParsable, IAdditionalDataHolder {
         /// <summary>Defines whether access is allowed or blocked. The possible values are: allowed, blocked, unknownFutureValue.</summary>
         public CrossTenantAccessPolicyTargetConfigurationAccessType? AccessType { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

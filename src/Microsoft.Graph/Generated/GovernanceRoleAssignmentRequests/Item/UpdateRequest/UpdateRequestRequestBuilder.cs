@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.GovernanceRoleAssignmentRequests.Item.UpdateRequest {
-    /// <summary>Builds and executes requests for operations under \governanceRoleAssignmentRequests\{governanceRoleAssignmentRequest-id}\microsoft.graph.updateRequest</summary>
+    /// <summary>Provides operations to call the updateRequest method.</summary>
     public class UpdateRequestRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.GovernanceRoleAssignmentRequests.Item.UpdateRequest 
             return await RequestAdapter.SendAsync<UpdateRequestResponse>(requestInfo, UpdateRequestResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes governanceRoleAssignmentRequest</summary>
-        public class UpdateRequestResponse : IParsable {
+        public class UpdateRequestResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type governanceRoleAssignmentRequest</summary>

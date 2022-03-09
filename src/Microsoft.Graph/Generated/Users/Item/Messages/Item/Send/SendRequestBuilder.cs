@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.Messages.Item.Send {
-    /// <summary>Builds and executes requests for operations under \users\{user-id}\messages\{message-id}\microsoft.graph.send</summary>
+    /// <summary>Provides operations to call the send method.</summary>
     public class SendRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Me.Calendar.GetSchedule {
-    public class GetScheduleRequestBody : IParsable {
+    /// <summary>Provides operations to call the getSchedule method.</summary>
+    public class GetScheduleRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public int? AvailabilityViewInterval { get; set; }

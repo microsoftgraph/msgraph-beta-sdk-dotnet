@@ -5,13 +5,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the educationRoot singleton.</summary>
     public class EducationSynchronizationProfile : Entity, IParsable {
         public EducationSynchronizationDataProvider DataProvider { get; set; }
         /// <summary>Name of the configuration profile for syncing identities.</summary>
         public string DisplayName { get; set; }
         /// <summary>All errors associated with this synchronization profile.</summary>
         public List<EducationSynchronizationError> Errors { get; set; }
-        /// <summary>The date the profile should be considered expired and cease syncing. When null. the profile will never expire. (optional)</summary>
+        /// <summary>The date the profile should be considered expired and cease syncing. Provide the date in YYYY-MM-DD format, following ISO 8601. Maximum value is 18 months from profile creation.  (optional)</summary>
         public Date? ExpirationDate { get; set; }
         /// <summary>Determines if School Data Sync should automatically replace unsupported special characters while syncing from source.</summary>
         public bool? HandleSpecialCharacterConstraint { get; set; }

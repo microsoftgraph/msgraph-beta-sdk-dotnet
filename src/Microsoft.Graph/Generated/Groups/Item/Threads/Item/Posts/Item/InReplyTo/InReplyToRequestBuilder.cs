@@ -1,8 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraphSdk.Groups.Item.Threads.Item.Posts.Item.InReplyTo.Attachments;
+using MicrosoftGraphSdk.Groups.Item.Threads.Item.Posts.Item.InReplyTo.Extensions;
 using MicrosoftGraphSdk.Groups.Item.Threads.Item.Posts.Item.InReplyTo.Forward;
+using MicrosoftGraphSdk.Groups.Item.Threads.Item.Posts.Item.InReplyTo.Mentions;
+using MicrosoftGraphSdk.Groups.Item.Threads.Item.Posts.Item.InReplyTo.MultiValueExtendedProperties;
 using MicrosoftGraphSdk.Groups.Item.Threads.Item.Posts.Item.InReplyTo.Reply;
+using MicrosoftGraphSdk.Groups.Item.Threads.Item.Posts.Item.InReplyTo.SingleValueExtendedProperties;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,10 +16,22 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Groups.Item.Threads.Item.Posts.Item.InReplyTo {
-    /// <summary>Builds and executes requests for operations under \groups\{group-id}\threads\{conversationThread-id}\posts\{post-id}\inReplyTo</summary>
+    /// <summary>Provides operations to manage the inReplyTo property of the microsoft.graph.post entity.</summary>
     public class InReplyToRequestBuilder {
+        public AttachmentsRequestBuilder Attachments { get =>
+            new AttachmentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public ExtensionsRequestBuilder Extensions { get =>
+            new ExtensionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         public ForwardRequestBuilder Forward { get =>
             new ForwardRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public MentionsRequestBuilder Mentions { get =>
+            new MentionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public MultiValueExtendedPropertiesRequestBuilder MultiValueExtendedProperties { get =>
+            new MultiValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -22,6 +40,9 @@ namespace MicrosoftGraphSdk.Groups.Item.Threads.Item.Posts.Item.InReplyTo {
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        public SingleValueExtendedPropertiesRequestBuilder SingleValueExtendedProperties { get =>
+            new SingleValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -52,7 +73,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Threads.Item.Posts.Item.InReplyTo {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Read-only. Supports $expand.
+        /// Delete navigation property inReplyTo for groups
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -88,7 +109,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Threads.Item.Posts.Item.InReplyTo {
             return requestInfo;
         }
         /// <summary>
-        /// Read-only. Supports $expand.
+        /// Update the navigation property inReplyTo in groups
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -106,7 +127,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Threads.Item.Posts.Item.InReplyTo {
             return requestInfo;
         }
         /// <summary>
-        /// Read-only. Supports $expand.
+        /// Delete navigation property inReplyTo for groups
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -114,7 +135,11 @@ namespace MicrosoftGraphSdk.Groups.Item.Threads.Item.Posts.Item.InReplyTo {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Read-only. Supports $expand.
@@ -126,10 +151,14 @@ namespace MicrosoftGraphSdk.Groups.Item.Threads.Item.Posts.Item.InReplyTo {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Post> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Post>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Post.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Post>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Post.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read-only. Supports $expand.
+        /// Update the navigation property inReplyTo in groups
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -139,7 +168,11 @@ namespace MicrosoftGraphSdk.Groups.Item.Threads.Item.Posts.Item.InReplyTo {
         public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Post body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Read-only. Supports $expand.</summary>
         public class GetQueryParameters : QueryParametersBase {

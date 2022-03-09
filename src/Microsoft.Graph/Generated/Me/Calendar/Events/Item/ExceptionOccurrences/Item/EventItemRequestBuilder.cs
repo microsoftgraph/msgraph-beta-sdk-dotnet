@@ -1,13 +1,20 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Me.Calendar.Events.Item.ExceptionOccurrences.Item.Accept;
+using MicrosoftGraphSdk.Me.Calendar.Events.Item.ExceptionOccurrences.Item.Attachments;
+using MicrosoftGraphSdk.Me.Calendar.Events.Item.ExceptionOccurrences.Item.Calendar;
 using MicrosoftGraphSdk.Me.Calendar.Events.Item.ExceptionOccurrences.Item.Cancel;
 using MicrosoftGraphSdk.Me.Calendar.Events.Item.ExceptionOccurrences.Item.Decline;
 using MicrosoftGraphSdk.Me.Calendar.Events.Item.ExceptionOccurrences.Item.DismissReminder;
+using MicrosoftGraphSdk.Me.Calendar.Events.Item.ExceptionOccurrences.Item.Extensions;
 using MicrosoftGraphSdk.Me.Calendar.Events.Item.ExceptionOccurrences.Item.Forward;
+using MicrosoftGraphSdk.Me.Calendar.Events.Item.ExceptionOccurrences.Item.Instances;
+using MicrosoftGraphSdk.Me.Calendar.Events.Item.ExceptionOccurrences.Item.MultiValueExtendedProperties;
+using MicrosoftGraphSdk.Me.Calendar.Events.Item.ExceptionOccurrences.Item.SingleValueExtendedProperties;
 using MicrosoftGraphSdk.Me.Calendar.Events.Item.ExceptionOccurrences.Item.SnoozeReminder;
 using MicrosoftGraphSdk.Me.Calendar.Events.Item.ExceptionOccurrences.Item.TentativelyAccept;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,10 +22,16 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Me.Calendar.Events.Item.ExceptionOccurrences.Item {
-    /// <summary>Builds and executes requests for operations under \me\calendar\events\{event-id}\exceptionOccurrences\{event-id1}</summary>
+    /// <summary>Provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.</summary>
     public class EventItemRequestBuilder {
         public AcceptRequestBuilder Accept { get =>
             new AcceptRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public AttachmentsRequestBuilder Attachments { get =>
+            new AttachmentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public CalendarRequestBuilder Calendar { get =>
+            new CalendarRequestBuilder(PathParameters, RequestAdapter);
         }
         public CancelRequestBuilder Cancel { get =>
             new CancelRequestBuilder(PathParameters, RequestAdapter);
@@ -29,13 +42,25 @@ namespace MicrosoftGraphSdk.Me.Calendar.Events.Item.ExceptionOccurrences.Item {
         public DismissReminderRequestBuilder DismissReminder { get =>
             new DismissReminderRequestBuilder(PathParameters, RequestAdapter);
         }
+        public ExtensionsRequestBuilder Extensions { get =>
+            new ExtensionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         public ForwardRequestBuilder Forward { get =>
             new ForwardRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public InstancesRequestBuilder Instances { get =>
+            new InstancesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public MultiValueExtendedPropertiesRequestBuilder MultiValueExtendedProperties { get =>
+            new MultiValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        public SingleValueExtendedPropertiesRequestBuilder SingleValueExtendedProperties { get =>
+            new SingleValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
+        }
         public SnoozeReminderRequestBuilder SnoozeReminder { get =>
             new SnoozeReminderRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -134,7 +159,11 @@ namespace MicrosoftGraphSdk.Me.Calendar.Events.Item.ExceptionOccurrences.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Get exceptionOccurrences from me
@@ -146,7 +175,11 @@ namespace MicrosoftGraphSdk.Me.Calendar.Events.Item.ExceptionOccurrences.Item {
         /// </summary>
         public async Task<Event> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Event>(requestInfo, Event.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<Event>(requestInfo, Event.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property exceptionOccurrences in me
@@ -159,7 +192,11 @@ namespace MicrosoftGraphSdk.Me.Calendar.Events.Item.ExceptionOccurrences.Item {
         public async Task PatchAsync(Event body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Get exceptionOccurrences from me</summary>
         public class GetQueryParameters : QueryParametersBase {

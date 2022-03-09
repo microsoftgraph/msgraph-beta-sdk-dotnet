@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.App.Calls.Item.UpdateRecordingStatus {
-    /// <summary>Builds and executes requests for operations under \app\calls\{call-id}\microsoft.graph.updateRecordingStatus</summary>
+    /// <summary>Provides operations to call the updateRecordingStatus method.</summary>
     public class UpdateRecordingStatusRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.App.Calls.Item.UpdateRecordingStatus {
             return await RequestAdapter.SendAsync<UpdateRecordingStatusResponse>(requestInfo, UpdateRecordingStatusResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes updateRecordingStatusOperation</summary>
-        public class UpdateRecordingStatusResponse : IParsable {
+        public class UpdateRecordingStatusResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type updateRecordingStatusOperation</summary>

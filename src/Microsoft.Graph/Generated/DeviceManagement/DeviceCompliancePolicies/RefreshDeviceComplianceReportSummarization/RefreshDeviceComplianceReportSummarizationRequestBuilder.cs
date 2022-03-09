@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.RefreshDeviceComplianceReportSummarization {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\deviceCompliancePolicies\microsoft.graph.refreshDeviceComplianceReportSummarization</summary>
+    /// <summary>Provides operations to call the refreshDeviceComplianceReportSummarization method.</summary>
     public class RefreshDeviceComplianceReportSummarizationRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

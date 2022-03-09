@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Teams.Item.PrimaryChannel.ProvisionEmail {
-    /// <summary>Builds and executes requests for operations under \teams\{team-id}\primaryChannel\microsoft.graph.provisionEmail</summary>
+    /// <summary>Provides operations to call the provisionEmail method.</summary>
     public class ProvisionEmailRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.Teams.Item.PrimaryChannel.ProvisionEmail {
             return await RequestAdapter.SendAsync<ProvisionEmailResponse>(requestInfo, ProvisionEmailResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes provisionChannelEmailResult</summary>
-        public class ProvisionEmailResponse : IParsable {
+        public class ProvisionEmailResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type provisionChannelEmailResult</summary>

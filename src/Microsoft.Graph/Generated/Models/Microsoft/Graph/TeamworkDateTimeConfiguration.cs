@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class TeamworkDateTimeConfiguration : IParsable {
+    /// <summary>Provides operations to manage the teamwork singleton.</summary>
+    public class TeamworkDateTimeConfiguration : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date format for the device.</summary>

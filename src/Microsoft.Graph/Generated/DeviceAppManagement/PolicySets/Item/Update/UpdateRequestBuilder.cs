@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item.Update {
-    /// <summary>Builds and executes requests for operations under \deviceAppManagement\policySets\{policySet-id}\microsoft.graph.update</summary>
+    /// <summary>Provides operations to call the update method.</summary>
     public class UpdateRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

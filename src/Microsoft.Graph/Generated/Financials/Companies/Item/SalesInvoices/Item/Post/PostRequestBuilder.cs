@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesInvoices.Item.Post {
-    /// <summary>Builds and executes requests for operations under \financials\companies\{company-id}\salesInvoices\{salesInvoice-id}\microsoft.graph.post</summary>
+    /// <summary>Provides operations to call the post method.</summary>
     public class PostRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

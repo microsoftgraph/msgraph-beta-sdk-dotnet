@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Users.Item.Onenote.SectionGroups.Item.Sections.Item.Pages.Item.CopyToSection {
-    public class CopyToSectionRequestBody : IParsable {
+    /// <summary>Provides operations to call the copyToSection method.</summary>
+    public class CopyToSectionRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string GroupId { get; set; }

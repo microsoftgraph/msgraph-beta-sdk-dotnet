@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Communications.Calls.Item.Transfer {
-    /// <summary>Builds and executes requests for operations under \communications\calls\{call-id}\microsoft.graph.transfer</summary>
+    /// <summary>Provides operations to call the transfer method.</summary>
     public class TransferRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

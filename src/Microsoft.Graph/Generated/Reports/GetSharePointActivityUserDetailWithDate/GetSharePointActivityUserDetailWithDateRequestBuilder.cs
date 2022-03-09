@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Reports.GetSharePointActivityUserDetailWithDate {
-    /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.getSharePointActivityUserDetail(date={date})</summary>
+    /// <summary>Provides operations to call the getSharePointActivityUserDetail method.</summary>
     public class GetSharePointActivityUserDetailWithDateRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -66,9 +66,9 @@ namespace MicrosoftGraphSdk.Reports.GetSharePointActivityUserDetailWithDate {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<Stream> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<GetSharePointActivityUserDetailWithDateResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetSharePointActivityUserDetailWithDateResponse>(requestInfo, GetSharePointActivityUserDetailWithDateResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

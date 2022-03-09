@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using MicrosoftGraphSdk.Users.Item.Outlook.MasterCategories;
 using MicrosoftGraphSdk.Users.Item.Outlook.SupportedLanguages;
 using MicrosoftGraphSdk.Users.Item.Outlook.SupportedTimeZones;
@@ -15,7 +16,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.Outlook {
-    /// <summary>Builds and executes requests for operations under \users\{user-id}\outlook</summary>
+    /// <summary>Provides operations to manage the outlook property of the microsoft.graph.user entity.</summary>
     public class OutlookRequestBuilder {
         public MasterCategoriesRequestBuilder MasterCategories { get =>
             new MasterCategoriesRequestBuilder(PathParameters, RequestAdapter);
@@ -63,7 +64,7 @@ namespace MicrosoftGraphSdk.Users.Item.Outlook {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Read-only.
+        /// Delete navigation property outlook for users
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -99,7 +100,7 @@ namespace MicrosoftGraphSdk.Users.Item.Outlook {
             return requestInfo;
         }
         /// <summary>
-        /// Read-only.
+        /// Update the navigation property outlook in users
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -117,7 +118,7 @@ namespace MicrosoftGraphSdk.Users.Item.Outlook {
             return requestInfo;
         }
         /// <summary>
-        /// Read-only.
+        /// Delete navigation property outlook for users
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -125,7 +126,11 @@ namespace MicrosoftGraphSdk.Users.Item.Outlook {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Read-only.
@@ -137,10 +142,14 @@ namespace MicrosoftGraphSdk.Users.Item.Outlook {
         /// </summary>
         public async Task<OutlookUser> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<OutlookUser>(requestInfo, OutlookUser.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<OutlookUser>(requestInfo, OutlookUser.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read-only.
+        /// Update the navigation property outlook in users
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -150,23 +159,27 @@ namespace MicrosoftGraphSdk.Users.Item.Outlook {
         public async Task PatchAsync(OutlookUser body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \users\{user-id}\outlook\microsoft.graph.supportedLanguages()
+        /// Provides operations to call the supportedLanguages method.
         /// </summary>
         public SupportedLanguagesRequestBuilder SupportedLanguages() {
             return new SupportedLanguagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \users\{user-id}\outlook\microsoft.graph.supportedTimeZones()
+        /// Provides operations to call the supportedTimeZones method.
         /// </summary>
         public SupportedTimeZonesRequestBuilder SupportedTimeZones() {
             return new SupportedTimeZonesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \users\{user-id}\outlook\microsoft.graph.supportedTimeZones(TimeZoneStandard={TimeZoneStandard})
-        /// <param name="TimeZoneStandard">Usage: TimeZoneStandard={TimeZoneStandard}</param>
+        /// Provides operations to call the supportedTimeZones method.
+        /// <param name="TimeZoneStandard">Usage: TimeZoneStandard='{TimeZoneStandard}'</param>
         /// </summary>
         public SupportedTimeZonesWithTimeZoneStandardRequestBuilder SupportedTimeZonesWithTimeZoneStandard(string timeZoneStandard) {
             if(string.IsNullOrEmpty(timeZoneStandard)) throw new ArgumentNullException(nameof(timeZoneStandard));

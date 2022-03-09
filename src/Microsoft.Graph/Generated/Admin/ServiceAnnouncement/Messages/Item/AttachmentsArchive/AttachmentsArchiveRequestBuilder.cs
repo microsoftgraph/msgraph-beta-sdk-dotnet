@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Item.AttachmentsArchive {
-    /// <summary>Builds and executes requests for operations under \admin\serviceAnnouncement\messages\{serviceUpdateMessage-id}\attachmentsArchive</summary>
+    /// <summary>Provides operations to manage the media for the admin entity.</summary>
     public class AttachmentsArchiveRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -43,7 +44,7 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Item.AttachmentsA
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get media content for the navigation property messages from admin
+        /// The zip file that contains all attachments for a message.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -58,7 +59,7 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Item.AttachmentsA
             return requestInfo;
         }
         /// <summary>
-        /// Update media content for the navigation property messages in admin
+        /// The zip file that contains all attachments for a message.
         /// <param name="body">Binary request body</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -76,7 +77,7 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Item.AttachmentsA
             return requestInfo;
         }
         /// <summary>
-        /// Get media content for the navigation property messages from admin
+        /// The zip file that contains all attachments for a message.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -84,10 +85,14 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Item.AttachmentsA
         /// </summary>
         public async Task<Stream> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update media content for the navigation property messages in admin
+        /// The zip file that contains all attachments for a message.
         /// <param name="body">Binary request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -97,7 +102,11 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Item.AttachmentsA
         public async Task PutAsync(Stream body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePutRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
     }
 }

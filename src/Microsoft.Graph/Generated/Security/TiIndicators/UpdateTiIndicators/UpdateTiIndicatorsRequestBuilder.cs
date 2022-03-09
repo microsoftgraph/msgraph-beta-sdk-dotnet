@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Security.TiIndicators.UpdateTiIndicators {
-    /// <summary>Builds and executes requests for operations under \security\tiIndicators\microsoft.graph.updateTiIndicators</summary>
+    /// <summary>Provides operations to call the updateTiIndicators method.</summary>
     public class UpdateTiIndicatorsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -68,10 +68,10 @@ namespace MicrosoftGraphSdk.Security.TiIndicators.UpdateTiIndicators {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<UpdateTiIndicators>> PostAsync(UpdateTiIndicatorsRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<UpdateTiIndicatorsResponse> PostAsync(UpdateTiIndicatorsRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendCollectionAsync<UpdateTiIndicators>(requestInfo, UpdateTiIndicators.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UpdateTiIndicatorsResponse>(requestInfo, UpdateTiIndicatorsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

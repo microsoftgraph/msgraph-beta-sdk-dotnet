@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class UserExperienceAnalyticsDeviceStartupProcessPerformance : Entity, IParsable {
         /// <summary>User experience analytics device startup process summarized count.</summary>
         public long? DeviceCount { get; set; }

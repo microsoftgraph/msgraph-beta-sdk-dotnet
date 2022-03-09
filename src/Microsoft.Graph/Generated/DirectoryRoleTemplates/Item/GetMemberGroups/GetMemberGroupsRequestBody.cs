@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DirectoryRoleTemplates.Item.GetMemberGroups {
-    public class GetMemberGroupsRequestBody : IParsable {
+    /// <summary>Provides operations to call the getMemberGroups method.</summary>
+    public class GetMemberGroupsRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public bool? SecurityEnabledOnly { get; set; }

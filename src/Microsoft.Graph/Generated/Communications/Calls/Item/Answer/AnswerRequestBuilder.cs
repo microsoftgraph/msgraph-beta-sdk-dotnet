@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Communications.Calls.Item.Answer {
-    /// <summary>Builds and executes requests for operations under \communications\calls\{call-id}\microsoft.graph.answer</summary>
+    /// <summary>Provides operations to call the answer method.</summary>
     public class AnswerRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

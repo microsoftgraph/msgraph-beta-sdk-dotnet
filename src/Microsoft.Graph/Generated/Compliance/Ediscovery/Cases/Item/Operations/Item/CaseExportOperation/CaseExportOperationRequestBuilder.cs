@@ -42,7 +42,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Operations.Item.Cas
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\operations\{caseOperation-id}\microsoft.graph.ediscovery.caseExportOperation\microsoft.graph.ediscovery.getDownloadUrl()
+        /// Provides operations to call the getDownloadUrl method.
         /// </summary>
         public GetDownloadUrlRequestBuilder GetDownloadUrl() {
             return new GetDownloadUrlRequestBuilder(PathParameters, RequestAdapter);

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Reports.ManagedDeviceEnrollmentTopFailuresWithPeriod {
-    /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.managedDeviceEnrollmentTopFailures(period='{period}')</summary>
+    /// <summary>Provides operations to call the managedDeviceEnrollmentTopFailures method.</summary>
     public class ManagedDeviceEnrollmentTopFailuresWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -19,7 +19,7 @@ namespace MicrosoftGraphSdk.Reports.ManagedDeviceEnrollmentTopFailuresWithPeriod
         /// <summary>
         /// Instantiates a new ManagedDeviceEnrollmentTopFailuresWithPeriodRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
-        /// <param name="period">Usage: period={period}</param>
+        /// <param name="period">Usage: period='{period}'</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// </summary>
         public ManagedDeviceEnrollmentTopFailuresWithPeriodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string period = default) {
@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.Reports.ManagedDeviceEnrollmentTopFailuresWithPeriod
             return await RequestAdapter.SendAsync<ManagedDeviceEnrollmentTopFailuresWithPeriodResponse>(requestInfo, ManagedDeviceEnrollmentTopFailuresWithPeriodResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes report</summary>
-        public class ManagedDeviceEnrollmentTopFailuresWithPeriodResponse : IParsable {
+        public class ManagedDeviceEnrollmentTopFailuresWithPeriodResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type report</summary>

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Me.Authentication.Methods.Item.EnableSmsSignIn {
-    /// <summary>Builds and executes requests for operations under \me\authentication\methods\{authenticationMethod-id}\microsoft.graph.enableSmsSignIn</summary>
+    /// <summary>Provides operations to call the enableSmsSignIn method.</summary>
     public class EnableSmsSignInRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

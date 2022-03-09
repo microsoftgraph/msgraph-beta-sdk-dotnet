@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.UpdateAudienceById {
-    public class UpdateAudienceByIdRequestBody : IParsable {
+    /// <summary>Provides operations to call the updateAudienceById method.</summary>
+    public class UpdateAudienceByIdRequestBody : IParsable, IAdditionalDataHolder {
         public List<string> AddExclusions { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

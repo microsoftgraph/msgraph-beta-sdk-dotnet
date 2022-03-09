@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.OfficeConfiguration.ClientConfigurations.UpdatePriorities {
-    /// <summary>Builds and executes requests for operations under \officeConfiguration\clientConfigurations\microsoft.graph.updatePriorities</summary>
+    /// <summary>Provides operations to call the updatePriorities method.</summary>
     public class UpdatePrioritiesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

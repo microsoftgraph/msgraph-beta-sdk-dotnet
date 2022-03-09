@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Me.SendMail {
-    /// <summary>Builds and executes requests for operations under \me\microsoft.graph.sendMail</summary>
+    /// <summary>Provides operations to call the sendMail method.</summary>
     public class SendMailRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

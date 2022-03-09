@@ -15,6 +15,7 @@ using MicrosoftGraphSdk.Groups.Item.Events.Item.SingleValueExtendedProperties;
 using MicrosoftGraphSdk.Groups.Item.Events.Item.SnoozeReminder;
 using MicrosoftGraphSdk.Groups.Item.Events.Item.TentativelyAccept;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -22,7 +23,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Groups.Item.Events.Item {
-    /// <summary>Builds and executes requests for operations under \groups\{group-id}\events\{event-id}</summary>
+    /// <summary>Provides operations to manage the events property of the microsoft.graph.group entity.</summary>
     public class EventItemRequestBuilder {
         public AcceptRequestBuilder Accept { get =>
             new AcceptRequestBuilder(PathParameters, RequestAdapter);
@@ -100,7 +101,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Events.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The group's calendar events.
+        /// Delete navigation property events for groups
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -136,7 +137,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Events.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The group's calendar events.
+        /// Update the navigation property events in groups
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -154,7 +155,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Events.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The group's calendar events.
+        /// Delete navigation property events for groups
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -162,7 +163,11 @@ namespace MicrosoftGraphSdk.Groups.Item.Events.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// The group's calendar events.
@@ -174,10 +179,14 @@ namespace MicrosoftGraphSdk.Groups.Item.Events.Item {
         /// </summary>
         public async Task<Event> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Event>(requestInfo, Event.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<Event>(requestInfo, Event.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The group's calendar events.
+        /// Update the navigation property events in groups
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -187,7 +196,11 @@ namespace MicrosoftGraphSdk.Groups.Item.Events.Item {
         public async Task PatchAsync(Event body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The group's calendar events.</summary>
         public class GetQueryParameters : QueryParametersBase {

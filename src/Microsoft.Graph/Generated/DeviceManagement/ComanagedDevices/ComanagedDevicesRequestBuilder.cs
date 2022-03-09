@@ -2,10 +2,12 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.BulkReprovisionCloudPc;
 using MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.BulkRestoreCloudPc;
+using MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Count;
 using MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.ExecuteAction;
 using MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item;
 using MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.MoveDevicesToOU;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,13 +15,16 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\comanagedDevices</summary>
+    /// <summary>Provides operations to manage the comanagedDevices property of the microsoft.graph.deviceManagement entity.</summary>
     public class ComanagedDevicesRequestBuilder {
         public BulkReprovisionCloudPcRequestBuilder BulkReprovisionCloudPc { get =>
             new BulkReprovisionCloudPcRequestBuilder(PathParameters, RequestAdapter);
         }
         public BulkRestoreCloudPcRequestBuilder BulkRestoreCloudPc { get =>
             new BulkRestoreCloudPcRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         public ExecuteActionRequestBuilder ExecuteAction { get =>
             new ExecuteActionRequestBuilder(PathParameters, RequestAdapter);
@@ -88,7 +93,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices {
             return requestInfo;
         }
         /// <summary>
-        /// The list of co-managed devices report
+        /// Create new navigation property to comanagedDevices for deviceManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -113,12 +118,16 @@ namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ComanagedDevicesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagedDeviceCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ComanagedDevicesResponse>(requestInfo, ComanagedDevicesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<ManagedDeviceCollectionResponse>(requestInfo, ManagedDeviceCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The list of co-managed devices report
+        /// Create new navigation property to comanagedDevices for deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -128,7 +137,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The list of co-managed devices report</summary>
         public class GetQueryParameters : QueryParametersBase {

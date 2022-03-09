@@ -50,6 +50,7 @@ using MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.WindowsDefenderUp
 using MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.WindowsProtectionState;
 using MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.Wipe;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -57,7 +58,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item {
-    /// <summary>Builds and executes requests for operations under \deviceManagement\comanagedDevices\{managedDevice-id}</summary>
+    /// <summary>Provides operations to manage the comanagedDevices property of the microsoft.graph.deviceManagement entity.</summary>
     public class ManagedDeviceItemRequestBuilder {
         public ActivateDeviceEsimRequestBuilder ActivateDeviceEsim { get =>
             new ActivateDeviceEsimRequestBuilder(PathParameters, RequestAdapter);
@@ -228,7 +229,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The list of co-managed devices report
+        /// Delete navigation property comanagedDevices for deviceManagement
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -264,7 +265,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The list of co-managed devices report
+        /// Update the navigation property comanagedDevices in deviceManagement
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -282,7 +283,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The list of co-managed devices report
+        /// Delete navigation property comanagedDevices for deviceManagement
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -290,7 +291,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item {
         /// </summary>
         public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// The list of co-managed devices report
@@ -302,34 +307,38 @@ namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \deviceManagement\comanagedDevices\{managedDevice-id}\microsoft.graph.getCloudPcRemoteActionResults()
+        /// Provides operations to call the getCloudPcRemoteActionResults method.
         /// </summary>
         public GetCloudPcRemoteActionResultsRequestBuilder GetCloudPcRemoteActionResults() {
             return new GetCloudPcRemoteActionResultsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \deviceManagement\comanagedDevices\{managedDevice-id}\microsoft.graph.getFileVaultKey()
+        /// Provides operations to call the getFileVaultKey method.
         /// </summary>
         public GetFileVaultKeyRequestBuilder GetFileVaultKey() {
             return new GetFileVaultKeyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \deviceManagement\comanagedDevices\{managedDevice-id}\microsoft.graph.getNonCompliantSettings()
+        /// Provides operations to call the getNonCompliantSettings method.
         /// </summary>
         public GetNonCompliantSettingsRequestBuilder GetNonCompliantSettings() {
             return new GetNonCompliantSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \deviceManagement\comanagedDevices\{managedDevice-id}\microsoft.graph.getOemWarranty()
+        /// Provides operations to call the getOemWarranty method.
         /// </summary>
         public GetOemWarrantyRequestBuilder GetOemWarranty() {
             return new GetOemWarrantyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// The list of co-managed devices report
+        /// Update the navigation property comanagedDevices in deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -339,7 +348,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item {
         public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The list of co-managed devices report</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Teamwork.Devices.Item.Restart {
-    /// <summary>Builds and executes requests for operations under \teamwork\devices\{teamworkDevice-id}\microsoft.graph.restart</summary>
+    /// <summary>Provides operations to call the restart method.</summary>
     public class RestartRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

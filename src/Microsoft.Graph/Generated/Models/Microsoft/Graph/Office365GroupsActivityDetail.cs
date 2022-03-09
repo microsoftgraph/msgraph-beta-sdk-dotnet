@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to call the getOffice365GroupsActivityDetail method.</summary>
     public class Office365GroupsActivityDetail : Entity, IParsable {
         /// <summary>The storage used of the group mailbox.</summary>
         public long? ExchangeMailboxStorageUsedInBytes { get; set; }

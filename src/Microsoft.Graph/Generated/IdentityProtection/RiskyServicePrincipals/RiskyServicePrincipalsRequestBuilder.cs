@@ -1,9 +1,11 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.IdentityProtection.RiskyServicePrincipals.ConfirmCompromised;
+using MicrosoftGraphSdk.IdentityProtection.RiskyServicePrincipals.Count;
 using MicrosoftGraphSdk.IdentityProtection.RiskyServicePrincipals.Dismiss;
 using MicrosoftGraphSdk.IdentityProtection.RiskyServicePrincipals.Item;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,10 +13,13 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.IdentityProtection.RiskyServicePrincipals {
-    /// <summary>Builds and executes requests for operations under \identityProtection\riskyServicePrincipals</summary>
+    /// <summary>Provides operations to manage the riskyServicePrincipals property of the microsoft.graph.identityProtectionRoot entity.</summary>
     public class RiskyServicePrincipalsRequestBuilder {
         public ConfirmCompromisedRequestBuilder ConfirmCompromised { get =>
             new ConfirmCompromisedRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         public DismissRequestBuilder Dismiss { get =>
             new DismissRequestBuilder(PathParameters, RequestAdapter);
@@ -80,7 +85,7 @@ namespace MicrosoftGraphSdk.IdentityProtection.RiskyServicePrincipals {
             return requestInfo;
         }
         /// <summary>
-        /// Azure AD service principals that are at risk.
+        /// Create new navigation property to riskyServicePrincipals for identityProtection
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -105,12 +110,16 @@ namespace MicrosoftGraphSdk.IdentityProtection.RiskyServicePrincipals {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<RiskyServicePrincipalsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<RiskyServicePrincipalCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RiskyServicePrincipalsResponse>(requestInfo, RiskyServicePrincipalsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<RiskyServicePrincipalCollectionResponse>(requestInfo, RiskyServicePrincipalCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Azure AD service principals that are at risk.
+        /// Create new navigation property to riskyServicePrincipals for identityProtection
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -120,7 +129,11 @@ namespace MicrosoftGraphSdk.IdentityProtection.RiskyServicePrincipals {
         public async Task<RiskyServicePrincipal> PostAsync(RiskyServicePrincipal body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<RiskyServicePrincipal>(requestInfo, RiskyServicePrincipal.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<RiskyServicePrincipal>(requestInfo, RiskyServicePrincipal.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Azure AD service principals that are at risk.</summary>
         public class GetQueryParameters : QueryParametersBase {

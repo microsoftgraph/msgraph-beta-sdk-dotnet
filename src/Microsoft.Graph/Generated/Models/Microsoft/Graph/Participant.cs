@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the commsApplication singleton.</summary>
     public class Participant : Entity, IParsable {
         public ParticipantInfo Info { get; set; }
         /// <summary>true if the participant is in lobby.</summary>

@@ -4,12 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class AppManagementPolicy : PolicyBase, IParsable {
-        /// <summary>Collection of application and service principals to which a policy is applied.</summary>
         public List<DirectoryObject> AppliesTo { get; set; }
-        /// <summary>Denotes whether the policy is enabled.</summary>
         public bool? IsEnabled { get; set; }
-        /// <summary>Restrictions that apply to an application or service principal object.</summary>
         public AppManagementConfiguration Restrictions { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

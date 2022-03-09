@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the collection of governanceRoleDefinition entities.</summary>
     public class GovernanceResource : Entity, IParsable {
         /// <summary>The display name of the resource.</summary>
         public string DisplayName { get; set; }

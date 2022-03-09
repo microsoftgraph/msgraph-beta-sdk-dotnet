@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Security.TiIndicators.DeleteTiIndicatorsByExternalId {
-    /// <summary>Builds and executes requests for operations under \security\tiIndicators\microsoft.graph.deleteTiIndicatorsByExternalId</summary>
+    /// <summary>Provides operations to call the deleteTiIndicatorsByExternalId method.</summary>
     public class DeleteTiIndicatorsByExternalIdRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -68,10 +68,10 @@ namespace MicrosoftGraphSdk.Security.TiIndicators.DeleteTiIndicatorsByExternalId
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<DeleteTiIndicatorsByExternalId>> PostAsync(DeleteTiIndicatorsByExternalIdRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<DeleteTiIndicatorsByExternalIdResponse> PostAsync(DeleteTiIndicatorsByExternalIdRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendCollectionAsync<DeleteTiIndicatorsByExternalId>(requestInfo, DeleteTiIndicatorsByExternalId.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeleteTiIndicatorsByExternalIdResponse>(requestInfo, DeleteTiIndicatorsByExternalIdResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

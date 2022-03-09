@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Communications.Calls.Item.RecordResponse {
-    public class RecordResponseRequestBody : IParsable {
+    /// <summary>Provides operations to call the recordResponse method.</summary>
+    public class RecordResponseRequestBody : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public bool? BargeInAllowed { get; set; }

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Groups.Item.Calendar.Events.Item.ExceptionOccurrences.Item.Accept {
-    /// <summary>Builds and executes requests for operations under \groups\{group-id}\calendar\events\{event-id}\exceptionOccurrences\{event-id1}\microsoft.graph.accept</summary>
+    /// <summary>Provides operations to call the accept method.</summary>
     public class AcceptRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

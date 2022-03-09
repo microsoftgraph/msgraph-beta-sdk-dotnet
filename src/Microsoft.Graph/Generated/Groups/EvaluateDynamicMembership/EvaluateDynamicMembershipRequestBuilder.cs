@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Groups.EvaluateDynamicMembership {
-    /// <summary>Builds and executes requests for operations under \groups\microsoft.graph.evaluateDynamicMembership</summary>
+    /// <summary>Provides operations to call the evaluateDynamicMembership method.</summary>
     public class EvaluateDynamicMembershipRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Groups.EvaluateDynamicMembership {
             return await RequestAdapter.SendAsync<EvaluateDynamicMembershipResponse>(requestInfo, EvaluateDynamicMembershipResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes evaluateDynamicMembershipResult</summary>
-        public class EvaluateDynamicMembershipResponse : IParsable {
+        public class EvaluateDynamicMembershipResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type evaluateDynamicMembershipResult</summary>

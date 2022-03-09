@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets.EnrollAssets {
-    /// <summary>Builds and executes requests for operations under \admin\windows\updates\updatableAssets\microsoft.graph.windowsUpdates.enrollAssets</summary>
+    /// <summary>Provides operations to call the enrollAssets method.</summary>
     public class EnrollAssetsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

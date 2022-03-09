@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class Package : IParsable {
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    public class Package : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A string indicating the type of package. While oneNote is the only currently defined value, you should expect other package types to be returned and handle them accordingly.</summary>

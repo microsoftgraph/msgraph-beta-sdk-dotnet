@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
     public class CustomExtensionHandler : Entity, IParsable {
         /// <summary>Indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.</summary>
         public CustomAccessPackageWorkflowExtension CustomExtension { get; set; }

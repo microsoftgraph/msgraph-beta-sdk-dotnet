@@ -1,8 +1,10 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using MicrosoftGraphSdk.PrivilegedSignupStatus.CanSignUp;
 using MicrosoftGraphSdk.PrivilegedSignupStatus.CompleteSetup;
+using MicrosoftGraphSdk.PrivilegedSignupStatus.Count;
 using MicrosoftGraphSdk.PrivilegedSignupStatus.IsSignedUp;
 using MicrosoftGraphSdk.PrivilegedSignupStatus.Item;
 using MicrosoftGraphSdk.PrivilegedSignupStatus.SignUp;
@@ -13,10 +15,13 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.PrivilegedSignupStatus {
-    /// <summary>Builds and executes requests for operations under \privilegedSignupStatus</summary>
+    /// <summary>Provides operations to manage the collection of privilegedSignupStatus entities.</summary>
     public class PrivilegedSignupStatusRequestBuilder {
         public CompleteSetupRequestBuilder CompleteSetup { get =>
             new CompleteSetupRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -34,7 +39,7 @@ namespace MicrosoftGraphSdk.PrivilegedSignupStatus {
             return new PrivilegedSignupStatusItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Builds and executes requests for operations under \privilegedSignupStatus\microsoft.graph.canSignUp()
+        /// Provides operations to call the canSignUp method.
         /// </summary>
         public CanSignUpRequestBuilder CanSignUp() {
             return new CanSignUpRequestBuilder(PathParameters, RequestAdapter);
@@ -113,12 +118,16 @@ namespace MicrosoftGraphSdk.PrivilegedSignupStatus {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<PrivilegedSignupStatusResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<PrivilegedSignupStatusCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PrivilegedSignupStatusResponse>(requestInfo, PrivilegedSignupStatusResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<PrivilegedSignupStatusCollectionResponse>(requestInfo, PrivilegedSignupStatusCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Builds and executes requests for operations under \privilegedSignupStatus\microsoft.graph.isSignedUp()
+        /// Provides operations to call the isSignedUp method.
         /// </summary>
         public IsSignedUpRequestBuilder IsSignedUp() {
             return new IsSignedUpRequestBuilder(PathParameters, RequestAdapter);
@@ -134,7 +143,11 @@ namespace MicrosoftGraphSdk.PrivilegedSignupStatus {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Get entities from privilegedSignupStatus</summary>
         public class GetQueryParameters : QueryParametersBase {

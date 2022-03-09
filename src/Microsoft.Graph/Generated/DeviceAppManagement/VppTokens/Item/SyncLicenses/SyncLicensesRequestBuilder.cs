@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceAppManagement.VppTokens.Item.SyncLicenses {
-    /// <summary>Builds and executes requests for operations under \deviceAppManagement\vppTokens\{vppToken-id}\microsoft.graph.syncLicenses</summary>
+    /// <summary>Provides operations to call the syncLicenses method.</summary>
     public class SyncLicensesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.VppTokens.Item.SyncLicenses {
             return await RequestAdapter.SendAsync<SyncLicensesResponse>(requestInfo, SyncLicensesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes vppToken</summary>
-        public class SyncLicensesResponse : IParsable {
+        public class SyncLicensesResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type vppToken</summary>

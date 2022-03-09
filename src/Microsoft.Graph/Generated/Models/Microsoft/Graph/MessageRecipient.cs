@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the collection of messageRecipient entities.</summary>
     public class MessageRecipient : Entity, IParsable {
         public MessageStatus? DeliveryStatus { get; set; }
         public List<MessageEvent> Events { get; set; }

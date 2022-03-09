@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class ConnectionInfo : IParsable {
+    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
+    public class ConnectionInfo : IParsable, IAdditionalDataHolder {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The endpoint that is used by Entitlement Management to communicate with the access package resource.</summary>

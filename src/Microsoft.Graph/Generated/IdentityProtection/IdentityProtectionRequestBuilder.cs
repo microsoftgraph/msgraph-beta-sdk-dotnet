@@ -5,6 +5,7 @@ using MicrosoftGraphSdk.IdentityProtection.RiskyServicePrincipals;
 using MicrosoftGraphSdk.IdentityProtection.RiskyUsers;
 using MicrosoftGraphSdk.IdentityProtection.ServicePrincipalRiskDetections;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,7 +13,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.IdentityProtection {
-    /// <summary>Builds and executes requests for operations under \identityProtection</summary>
+    /// <summary>Provides operations to manage the identityProtectionRoot singleton.</summary>
     public class IdentityProtectionRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -108,7 +109,11 @@ namespace MicrosoftGraphSdk.IdentityProtection {
         /// </summary>
         public async Task<IdentityProtectionRoot> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<IdentityProtectionRoot>(requestInfo, IdentityProtectionRoot.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<IdentityProtectionRoot>(requestInfo, IdentityProtectionRoot.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update identityProtection
@@ -121,7 +126,11 @@ namespace MicrosoftGraphSdk.IdentityProtection {
         public async Task PatchAsync(IdentityProtectionRoot body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Get identityProtection</summary>
         public class GetQueryParameters : QueryParametersBase {

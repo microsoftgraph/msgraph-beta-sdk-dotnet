@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class UnifiedRoleManagementPolicyAssignment : Entity, IParsable {
         /// <summary>The policy for the assignment.</summary>
         public UnifiedRoleManagementPolicy Policy { get; set; }

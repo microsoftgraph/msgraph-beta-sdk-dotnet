@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.App.Calls.Item.RecordResponse {
-    /// <summary>Builds and executes requests for operations under \app\calls\{call-id}\microsoft.graph.recordResponse</summary>
+    /// <summary>Provides operations to call the recordResponse method.</summary>
     public class RecordResponseRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.App.Calls.Item.RecordResponse {
             return await RequestAdapter.SendAsync<RecordResponseResponse>(requestInfo, RecordResponseResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes recordOperation</summary>
-        public class RecordResponseResponse : IParsable {
+        public class RecordResponseResponse : IParsable, IAdditionalDataHolder {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type recordOperation</summary>

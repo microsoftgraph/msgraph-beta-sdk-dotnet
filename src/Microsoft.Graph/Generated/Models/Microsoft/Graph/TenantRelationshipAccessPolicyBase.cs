@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class TenantRelationshipAccessPolicyBase : PolicyBase, IParsable {
         public List<string> Definition { get; set; }
         /// <summary>

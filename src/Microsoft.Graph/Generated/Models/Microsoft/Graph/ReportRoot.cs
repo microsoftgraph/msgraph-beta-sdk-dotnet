@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the print singleton.</summary>
     public class ReportRoot : Entity, IParsable {
         /// <summary>Represents a detailed summary of an application sign-in.</summary>
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.ApplicationSignInDetailedSummary> ApplicationSignInDetailedSummary { get; set; }
