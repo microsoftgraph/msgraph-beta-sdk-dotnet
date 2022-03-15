@@ -123,6 +123,17 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.troubleshoot"),
                 this.Client);
         }
+
+        /// <summary>
+        /// Gets the request builder for CloudPCGetCloudPcLaunchInfo.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCGetCloudPcLaunchInfoRequestBuilder"/>.</returns>
+        public ICloudPCGetCloudPcLaunchInfoRequestBuilder GetCloudPcLaunchInfo()
+        {
+            return new CloudPCGetCloudPcLaunchInfoRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getCloudPcLaunchInfo"),
+                this.Client);
+        }
     
     }
 }

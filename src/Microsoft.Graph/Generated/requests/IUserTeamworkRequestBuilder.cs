@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IUserTeamworkRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for AssociatedTeams.
+        /// </summary>
+        /// <returns>The <see cref="IUserTeamworkAssociatedTeamsCollectionRequestBuilder"/>.</returns>
+        IUserTeamworkAssociatedTeamsCollectionRequestBuilder AssociatedTeams { get; }
+
+        /// <summary>
         /// Gets the request builder for InstalledApps.
         /// </summary>
         /// <returns>The <see cref="IUserTeamworkInstalledAppsCollectionRequestBuilder"/>.</returns>

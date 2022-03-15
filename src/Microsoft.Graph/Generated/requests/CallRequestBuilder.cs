@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ContentSharingSessions.
+        /// </summary>
+        /// <returns>The <see cref="ICallContentSharingSessionsCollectionRequestBuilder"/>.</returns>
+        public ICallContentSharingSessionsCollectionRequestBuilder ContentSharingSessions
+        {
+            get
+            {
+                return new CallContentSharingSessionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("contentSharingSessions"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Operations.
         /// </summary>
         /// <returns>The <see cref="ICallOperationsCollectionRequestBuilder"/>.</returns>

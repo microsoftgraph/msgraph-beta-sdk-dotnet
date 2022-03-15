@@ -114,9 +114,16 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets summary.
+        /// Contains summary information about the team, including number of owners, members, and guests.
         /// </summary>
         [JsonPropertyName("summary")]
         public TeamSummary Summary { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tenant id.
+        /// </summary>
+        [JsonPropertyName("tenantId")]
+        public string TenantId { get; set; }
     
         /// <summary>
         /// Gets or sets visibility.
@@ -131,6 +138,19 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("webUrl")]
         public string WebUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets all channels.
+        /// </summary>
+        [JsonPropertyName("allChannels")]
+        public ITeamAllChannelsCollectionWithReferencesPage AllChannels { get; set; }
+
+        /// <summary>
+        /// Gets or sets allChannelsNextLink.
+        /// </summary>
+        [JsonPropertyName("allChannels@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string AllChannelsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets channels.
@@ -151,6 +171,19 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("group")]
         public Group Group { get; set; }
+    
+        /// <summary>
+        /// Gets or sets incoming channels.
+        /// </summary>
+        [JsonPropertyName("incomingChannels")]
+        public ITeamIncomingChannelsCollectionWithReferencesPage IncomingChannels { get; set; }
+
+        /// <summary>
+        /// Gets or sets incomingChannelsNextLink.
+        /// </summary>
+        [JsonPropertyName("incomingChannels@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string IncomingChannelsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets installed apps.

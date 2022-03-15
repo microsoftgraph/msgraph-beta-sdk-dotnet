@@ -36,6 +36,18 @@ namespace Microsoft.Graph
         public string Id { get; set; }
     
         /// <summary>
+        /// Gets or sets subscriptionDisplayName.
+        /// </summary>
+        [JsonPropertyName("subscriptionDisplayName")]
+        public string SubscriptionDisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets subscriptionId.
+        /// </summary>
+        [JsonPropertyName("subscriptionId")]
+        public string SubscriptionId { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]

@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AllChannels.
+        /// </summary>
+        /// <returns>The <see cref="ITeamAllChannelsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public ITeamAllChannelsCollectionWithReferencesRequestBuilder AllChannels
+        {
+            get
+            {
+                return new TeamAllChannelsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("allChannels"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Channels.
         /// </summary>
         /// <returns>The <see cref="ITeamChannelsCollectionRequestBuilder"/>.</returns>
@@ -71,6 +83,18 @@ namespace Microsoft.Graph
             get
             {
                 return new GroupWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("group"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for IncomingChannels.
+        /// </summary>
+        /// <returns>The <see cref="ITeamIncomingChannelsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public ITeamIncomingChannelsCollectionWithReferencesRequestBuilder IncomingChannels
+        {
+            get
+            {
+                return new TeamIncomingChannelsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("incomingChannels"), this.Client);
             }
         }
 

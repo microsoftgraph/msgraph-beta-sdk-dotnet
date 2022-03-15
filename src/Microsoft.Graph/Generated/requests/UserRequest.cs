@@ -246,6 +246,12 @@ namespace Microsoft.Graph
 
             if (userToInitialize != null)
             {
+                if (userToInitialize.CloudPCs != null && userToInitialize.CloudPCs.CurrentPage != null)
+                {
+                    userToInitialize.CloudPCs.InitializeNextPageRequest(this.Client, userToInitialize.CloudPCsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    userToInitialize.CloudPCs.AdditionalData = userToInitialize.AdditionalData;
+                }
                 if (userToInitialize.UsageRights != null && userToInitialize.UsageRights.CurrentPage != null)
                 {
                     userToInitialize.UsageRights.InitializeNextPageRequest(this.Client, userToInitialize.UsageRightsNextLink);

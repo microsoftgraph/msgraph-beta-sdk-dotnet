@@ -71,6 +71,12 @@ namespace Microsoft.Graph
         public bool? InUse { get; set; }
     
         /// <summary>
+        /// Gets or sets managed by.
+        /// </summary>
+        [JsonPropertyName("managedBy")]
+        public CloudPcManagementService? ManagedBy { get; set; }
+    
+        /// <summary>
         /// Gets or sets organizational unit.
         /// The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.
         /// </summary>

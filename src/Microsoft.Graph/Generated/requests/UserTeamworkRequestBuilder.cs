@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AssociatedTeams.
+        /// </summary>
+        /// <returns>The <see cref="IUserTeamworkAssociatedTeamsCollectionRequestBuilder"/>.</returns>
+        public IUserTeamworkAssociatedTeamsCollectionRequestBuilder AssociatedTeams
+        {
+            get
+            {
+                return new UserTeamworkAssociatedTeamsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("associatedTeams"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for InstalledApps.
         /// </summary>
         /// <returns>The <see cref="IUserTeamworkInstalledAppsCollectionRequestBuilder"/>.</returns>

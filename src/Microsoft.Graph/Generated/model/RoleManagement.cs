@@ -36,7 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets entitlement management.
-        /// Container for all entitlement management resources in Azure AD identity governance.
+        /// Container for roles and assignments for entitlement management resources.
         /// </summary>
         [JsonPropertyName("entitlementManagement")]
         public RbacApplication EntitlementManagement { get; set; }

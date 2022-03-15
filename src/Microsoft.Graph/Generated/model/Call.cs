@@ -205,6 +205,19 @@ namespace Microsoft.Graph
         public string AudioRoutingGroupsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets content sharing sessions.
+        /// </summary>
+        [JsonPropertyName("contentSharingSessions")]
+        public ICallContentSharingSessionsCollectionPage ContentSharingSessions { get; set; }
+
+        /// <summary>
+        /// Gets or sets contentSharingSessionsNextLink.
+        /// </summary>
+        [JsonPropertyName("contentSharingSessions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ContentSharingSessionsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets operations.
         /// Read-only. Nullable.
         /// </summary>

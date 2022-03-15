@@ -79,7 +79,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets state.
-        /// The state of the agreement acceptance. Possible values are: accepted, declined.
+        /// The state of the agreement acceptance. Possible values are: accepted, declined. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("state")]
         public AgreementAcceptanceState? State { get; set; }

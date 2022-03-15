@@ -559,6 +559,19 @@ namespace Microsoft.Graph
         public UserAnalytics Analytics { get; set; }
     
         /// <summary>
+        /// Gets or sets cloud pcs.
+        /// </summary>
+        [JsonPropertyName("cloudPCs")]
+        public IUserCloudPCsCollectionPage CloudPCs { get; set; }
+
+        /// <summary>
+        /// Gets or sets cloudPCsNextLink.
+        /// </summary>
+        [JsonPropertyName("cloudPCs@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string CloudPCsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets usage rights.
         /// Represents the usage rights a user has been granted.
         /// </summary>

@@ -28,6 +28,12 @@ namespace Microsoft.Graph
         public bool? HideBotAfterEscalation { get; set; }
     
         /// <summary>
+        /// Gets or sets isContentSharingNotificationEnabled.
+        /// </summary>
+        [JsonPropertyName("isContentSharingNotificationEnabled")]
+        public bool? IsContentSharingNotificationEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]

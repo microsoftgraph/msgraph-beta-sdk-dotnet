@@ -101,12 +101,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets text body.
+        /// The task body in text format that typically contains information about the task.
         /// </summary>
         [JsonPropertyName("textBody")]
         public string TextBody { get; set; }
     
         /// <summary>
         /// Gets or sets viewpoint.
+        /// Properties that are personal to a user such as reminderDateTime and categories.
         /// </summary>
         [JsonPropertyName("viewpoint")]
         public TaskViewpoint Viewpoint { get; set; }

@@ -22,35 +22,35 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement.
+        /// Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is per device acceptance required.
-        /// Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven't already done so.
+        /// Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven't already done so. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("isPerDeviceAcceptanceRequired")]
         public bool? IsPerDeviceAcceptanceRequired { get; set; }
     
         /// <summary>
         /// Gets or sets is viewing before acceptance required.
-        /// Indicates whether the user has to expand the agreement before accepting.
+        /// Indicates whether the user has to expand the agreement before accepting. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("isViewingBeforeAcceptanceRequired")]
         public bool? IsViewingBeforeAcceptanceRequired { get; set; }
     
         /// <summary>
         /// Gets or sets terms expiration.
-        /// Expiration schedule and frequency of agreement for all users.
+        /// Expiration schedule and frequency of agreement for all users. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("termsExpiration")]
         public TermsExpiration TermsExpiration { get; set; }
     
         /// <summary>
         /// Gets or sets user reaccept required frequency.
-        /// The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations.
+        /// The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("userReacceptRequiredFrequency")]
         public Duration UserReacceptRequiredFrequency { get; set; }
@@ -78,7 +78,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets files.
-        /// PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
+        /// PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead. Supports $expand.
         /// </summary>
         [JsonPropertyName("files")]
         public IAgreementFilesCollectionPage Files { get; set; }

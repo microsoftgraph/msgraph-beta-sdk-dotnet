@@ -50,6 +50,12 @@ namespace Microsoft.Graph
         IChannelMessagesCollectionRequestBuilder Messages { get; }
 
         /// <summary>
+        /// Gets the request builder for SharedWithTeams.
+        /// </summary>
+        /// <returns>The <see cref="IChannelSharedWithTeamsCollectionRequestBuilder"/>.</returns>
+        IChannelSharedWithTeamsCollectionRequestBuilder SharedWithTeams { get; }
+
+        /// <summary>
         /// Gets the request builder for Tabs.
         /// </summary>
         /// <returns>The <see cref="IChannelTabsCollectionRequestBuilder"/>.</returns>
@@ -72,6 +78,15 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IChannelRemoveEmailRequestBuilder"/>.</returns>
         IChannelRemoveEmailRequestBuilder RemoveEmail();
+
+        /// <summary>
+        /// Gets the request builder for ChannelDoesUserHaveAccess.
+        /// </summary>
+        /// <returns>The <see cref="IChannelDoesUserHaveAccessRequestBuilder"/>.</returns>
+        IChannelDoesUserHaveAccessRequestBuilder DoesUserHaveAccess(
+            string userId = null,
+            string tenantId = null,
+            string userPrincipalName = null);
     
     }
 }
