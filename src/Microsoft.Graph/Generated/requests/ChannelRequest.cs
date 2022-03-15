@@ -258,6 +258,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     channelToInitialize.Messages.AdditionalData = channelToInitialize.AdditionalData;
                 }
+                if (channelToInitialize.SharedWithTeams != null && channelToInitialize.SharedWithTeams.CurrentPage != null)
+                {
+                    channelToInitialize.SharedWithTeams.InitializeNextPageRequest(this.Client, channelToInitialize.SharedWithTeamsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    channelToInitialize.SharedWithTeams.AdditionalData = channelToInitialize.AdditionalData;
+                }
                 if (channelToInitialize.Tabs != null && channelToInitialize.Tabs.CurrentPage != null)
                 {
                     channelToInitialize.Tabs.InitializeNextPageRequest(this.Client, channelToInitialize.TabsNextLink);

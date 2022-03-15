@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new ITeamRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for AllChannels.
+        /// </summary>
+        /// <returns>The <see cref="ITeamAllChannelsCollectionWithReferencesRequestBuilder"/>.</returns>
+        ITeamAllChannelsCollectionWithReferencesRequestBuilder AllChannels { get; }
+
+        /// <summary>
         /// Gets the request builder for Channels.
         /// </summary>
         /// <returns>The <see cref="ITeamChannelsCollectionRequestBuilder"/>.</returns>
@@ -42,6 +48,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IGroupWithReferenceRequestBuilder"/>.</returns>
         IGroupWithReferenceRequestBuilder Group { get; }
+
+        /// <summary>
+        /// Gets the request builder for IncomingChannels.
+        /// </summary>
+        /// <returns>The <see cref="ITeamIncomingChannelsCollectionWithReferencesRequestBuilder"/>.</returns>
+        ITeamIncomingChannelsCollectionWithReferencesRequestBuilder IncomingChannels { get; }
 
         /// <summary>
         /// Gets the request builder for InstalledApps.

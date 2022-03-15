@@ -87,6 +87,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for SharedWithTeams.
+        /// </summary>
+        /// <returns>The <see cref="IChannelSharedWithTeamsCollectionRequestBuilder"/>.</returns>
+        public IChannelSharedWithTeamsCollectionRequestBuilder SharedWithTeams
+        {
+            get
+            {
+                return new ChannelSharedWithTeamsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("sharedWithTeams"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Tabs.
         /// </summary>
         /// <returns>The <see cref="IChannelTabsCollectionRequestBuilder"/>.</returns>
@@ -129,6 +141,23 @@ namespace Microsoft.Graph
             return new ChannelRemoveEmailRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.removeEmail"),
                 this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ChannelDoesUserHaveAccess.
+        /// </summary>
+        /// <returns>The <see cref="IChannelDoesUserHaveAccessRequestBuilder"/>.</returns>
+        public IChannelDoesUserHaveAccessRequestBuilder DoesUserHaveAccess(
+            string userId = null,
+            string tenantId = null,
+            string userPrincipalName = null)
+        {
+            return new ChannelDoesUserHaveAccessRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.doesUserHaveAccess"),
+                this.Client,
+                userId,
+                tenantId,
+                userPrincipalName);
         }
     
     }

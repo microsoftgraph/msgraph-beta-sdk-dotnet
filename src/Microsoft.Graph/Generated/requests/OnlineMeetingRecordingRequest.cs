@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The object returned by the PUT call.</returns>
         public System.Threading.Tasks.Task<T> PutAsync<T>(Stream recording, CancellationToken cancellationToken = default, HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead) where T : OnlineMeeting
         {
-            this.ContentType = CoreConstants.MimeTypeNames.Application.Stream;
+            this.ContentType ??= CoreConstants.MimeTypeNames.Application.Stream;
             this.Method = HttpMethods.PUT;
             return this.SendAsync<T>(recording, cancellationToken, completionOption);
         }
@@ -82,7 +82,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object returned by the PUT call.</returns>
         public System.Threading.Tasks.Task<GraphResponse<T>> PutResponseAsync<T>(Stream recording, CancellationToken cancellationToken = default, HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead) where T : OnlineMeeting
         {
-            this.ContentType = CoreConstants.MimeTypeNames.Application.Stream;
+            this.ContentType ??= CoreConstants.MimeTypeNames.Application.Stream;
             this.Method = HttpMethods.PUT;
             return this.SendAsyncWithGraphResponse<T>(recording, cancellationToken, completionOption);
         }

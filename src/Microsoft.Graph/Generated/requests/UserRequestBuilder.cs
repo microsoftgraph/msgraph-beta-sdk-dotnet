@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for CloudPCs.
+        /// </summary>
+        /// <returns>The <see cref="IUserCloudPCsCollectionRequestBuilder"/>.</returns>
+        public IUserCloudPCsCollectionRequestBuilder CloudPCs
+        {
+            get
+            {
+                return new UserCloudPCsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("cloudPCs"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for UsageRights.
         /// </summary>
         /// <returns>The <see cref="IUserUsageRightsCollectionRequestBuilder"/>.</returns>

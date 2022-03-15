@@ -22,6 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package assignment approvals.
+        /// Approval stages for assignment requests.
         /// </summary>
         [JsonPropertyName("accessPackageAssignmentApprovals")]
         public IEntitlementManagementAccessPackageAssignmentApprovalsCollectionPage AccessPackageAssignmentApprovals { get; set; }

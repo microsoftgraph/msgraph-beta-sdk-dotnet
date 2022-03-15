@@ -70,6 +70,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ICloudPCTroubleshootRequestBuilder"/>.</returns>
         ICloudPCTroubleshootRequestBuilder Troubleshoot();
+
+        /// <summary>
+        /// Gets the request builder for CloudPCGetCloudPcLaunchInfo.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCGetCloudPcLaunchInfoRequestBuilder"/>.</returns>
+        ICloudPCGetCloudPcLaunchInfoRequestBuilder GetCloudPcLaunchInfo();
     
     }
 }

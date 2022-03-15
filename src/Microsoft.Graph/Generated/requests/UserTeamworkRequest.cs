@@ -246,6 +246,12 @@ namespace Microsoft.Graph
 
             if (userTeamworkToInitialize != null)
             {
+                if (userTeamworkToInitialize.AssociatedTeams != null && userTeamworkToInitialize.AssociatedTeams.CurrentPage != null)
+                {
+                    userTeamworkToInitialize.AssociatedTeams.InitializeNextPageRequest(this.Client, userTeamworkToInitialize.AssociatedTeamsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    userTeamworkToInitialize.AssociatedTeams.AdditionalData = userTeamworkToInitialize.AdditionalData;
+                }
                 if (userTeamworkToInitialize.InstalledApps != null && userTeamworkToInitialize.InstalledApps.CurrentPage != null)
                 {
                     userTeamworkToInitialize.InstalledApps.InitializeNextPageRequest(this.Client, userTeamworkToInitialize.InstalledAppsNextLink);

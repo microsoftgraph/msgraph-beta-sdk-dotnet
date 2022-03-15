@@ -23,6 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets data.
+        /// Data that represents the terms of use PDF document. Read-only.
         /// </summary>
         [JsonPropertyName("data")]
         public byte[] Data { get; set; }

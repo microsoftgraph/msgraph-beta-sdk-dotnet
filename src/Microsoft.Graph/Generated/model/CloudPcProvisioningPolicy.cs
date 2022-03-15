@@ -78,6 +78,12 @@ namespace Microsoft.Graph
         public string OnPremisesConnectionId { get; set; }
     
         /// <summary>
+        /// Gets or sets windows settings.
+        /// </summary>
+        [JsonPropertyName("windowsSettings")]
+        public CloudPcWindowsSettings WindowsSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets assignments.
         /// A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
         /// </summary>

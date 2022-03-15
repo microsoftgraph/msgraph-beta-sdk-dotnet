@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets tenant id.
-        /// The tenant identifier for the partner Azure AD organization. Read-only.
+        /// The tenant identifier for the partner Azure AD organization. Read-only. Key.
         /// </summary>
         [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }

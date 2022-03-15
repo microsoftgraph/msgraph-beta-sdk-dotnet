@@ -246,11 +246,23 @@ namespace Microsoft.Graph
 
             if (teamToInitialize != null)
             {
+                if (teamToInitialize.AllChannels != null && teamToInitialize.AllChannels.CurrentPage != null)
+                {
+                    teamToInitialize.AllChannels.InitializeNextPageRequest(this.Client, teamToInitialize.AllChannelsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    teamToInitialize.AllChannels.AdditionalData = teamToInitialize.AdditionalData;
+                }
                 if (teamToInitialize.Channels != null && teamToInitialize.Channels.CurrentPage != null)
                 {
                     teamToInitialize.Channels.InitializeNextPageRequest(this.Client, teamToInitialize.ChannelsNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     teamToInitialize.Channels.AdditionalData = teamToInitialize.AdditionalData;
+                }
+                if (teamToInitialize.IncomingChannels != null && teamToInitialize.IncomingChannels.CurrentPage != null)
+                {
+                    teamToInitialize.IncomingChannels.InitializeNextPageRequest(this.Client, teamToInitialize.IncomingChannelsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    teamToInitialize.IncomingChannels.AdditionalData = teamToInitialize.AdditionalData;
                 }
                 if (teamToInitialize.InstalledApps != null && teamToInitialize.InstalledApps.CurrentPage != null)
                 {

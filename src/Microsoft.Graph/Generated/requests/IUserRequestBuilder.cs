@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IUserAnalyticsRequestBuilder Analytics { get; }
 
         /// <summary>
+        /// Gets the request builder for CloudPCs.
+        /// </summary>
+        /// <returns>The <see cref="IUserCloudPCsCollectionRequestBuilder"/>.</returns>
+        IUserCloudPCsCollectionRequestBuilder CloudPCs { get; }
+
+        /// <summary>
         /// Gets the request builder for UsageRights.
         /// </summary>
         /// <returns>The <see cref="IUserUsageRightsCollectionRequestBuilder"/>.</returns>

@@ -252,6 +252,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     callToInitialize.AudioRoutingGroups.AdditionalData = callToInitialize.AdditionalData;
                 }
+                if (callToInitialize.ContentSharingSessions != null && callToInitialize.ContentSharingSessions.CurrentPage != null)
+                {
+                    callToInitialize.ContentSharingSessions.InitializeNextPageRequest(this.Client, callToInitialize.ContentSharingSessionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    callToInitialize.ContentSharingSessions.AdditionalData = callToInitialize.AdditionalData;
+                }
                 if (callToInitialize.Operations != null && callToInitialize.Operations.CurrentPage != null)
                 {
                     callToInitialize.Operations.InitializeNextPageRequest(this.Client, callToInitialize.OperationsNextLink);

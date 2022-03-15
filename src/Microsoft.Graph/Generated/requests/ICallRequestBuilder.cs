@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         ICallAudioRoutingGroupsCollectionRequestBuilder AudioRoutingGroups { get; }
 
         /// <summary>
+        /// Gets the request builder for ContentSharingSessions.
+        /// </summary>
+        /// <returns>The <see cref="ICallContentSharingSessionsCollectionRequestBuilder"/>.</returns>
+        ICallContentSharingSessionsCollectionRequestBuilder ContentSharingSessions { get; }
+
+        /// <summary>
         /// Gets the request builder for Operations.
         /// </summary>
         /// <returns>The <see cref="ICallOperationsCollectionRequestBuilder"/>.</returns>

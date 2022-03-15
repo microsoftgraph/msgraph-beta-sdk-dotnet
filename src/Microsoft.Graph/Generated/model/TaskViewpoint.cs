@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets categories.
+        /// The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
         /// </summary>
         [JsonPropertyName("categories")]
         public IEnumerable<string> Categories { get; set; }
     
         /// <summary>
         /// Gets or sets reminderDateTime.
+        /// The date and time for a reminder alert of the task to occur.
         /// </summary>
         [JsonPropertyName("reminderDateTime")]
         public DateTimeTimeZone ReminderDateTime { get; set; }
