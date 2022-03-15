@@ -5,15 +5,15 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the collection of application entities.</summary>
-    public class SynchronizationProgress : IParsable, IAdditionalDataHolder {
+    public class SynchronizationProgress : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The numerator of a progress ratio; the number of units of changes already processed.</summary>
-        public long? CompletedUnits { get; set; }
+        public int? CompletedUnits { get; set; }
         /// <summary>The time of a progress observation as an offset in minutes from UTC.</summary>
         public DateTimeOffset? ProgressObservationDateTime { get; set; }
         /// <summary>The denominator of a progress ratio; a number of units of changes to be processed to accomplish synchronization.</summary>
-        public long? TotalUnits { get; set; }
+        public int? TotalUnits { get; set; }
         /// <summary>An optional description of the units.</summary>
         public string Units { get; set; }
         /// <summary>
@@ -35,9 +35,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"completedUnits", (o,n) => { (o as SynchronizationProgress).CompletedUnits = n.GetLongValue(); } },
+                {"completedUnits", (o,n) => { (o as SynchronizationProgress).CompletedUnits = n.GetIntValue(); } },
                 {"progressObservationDateTime", (o,n) => { (o as SynchronizationProgress).ProgressObservationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"totalUnits", (o,n) => { (o as SynchronizationProgress).TotalUnits = n.GetLongValue(); } },
+                {"totalUnits", (o,n) => { (o as SynchronizationProgress).TotalUnits = n.GetIntValue(); } },
                 {"units", (o,n) => { (o as SynchronizationProgress).Units = n.GetStringValue(); } },
             };
         }
@@ -47,9 +47,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteLongValue("completedUnits", CompletedUnits);
+            writer.WriteIntValue("completedUnits", CompletedUnits);
             writer.WriteDateTimeOffsetValue("progressObservationDateTime", ProgressObservationDateTime);
-            writer.WriteLongValue("totalUnits", TotalUnits);
+            writer.WriteIntValue("totalUnits", TotalUnits);
             writer.WriteStringValue("units", Units);
             writer.WriteAdditionalData(AdditionalData);
         }

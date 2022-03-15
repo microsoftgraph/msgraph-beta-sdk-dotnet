@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Reports.GetTeamsUserActivityDistributionTotalUserCountsWithPeriod {
     /// <summary>Provides operations to call the getTeamsUserActivityDistributionTotalUserCounts method.</summary>
-    public class GetTeamsUserActivityDistributionTotalUserCountsWithPeriodResponse : IParsable, IAdditionalDataHolder {
+    public class GetTeamsUserActivityDistributionTotalUserCountsWithPeriodResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public byte[] Value { get; set; }

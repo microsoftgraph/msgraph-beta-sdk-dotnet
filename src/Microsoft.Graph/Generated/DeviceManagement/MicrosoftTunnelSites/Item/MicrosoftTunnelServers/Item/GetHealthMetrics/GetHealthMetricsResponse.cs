@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.GetHealthMetrics {
     /// <summary>Provides operations to call the getHealthMetrics method.</summary>
-    public class GetHealthMetricsResponse : IParsable, IAdditionalDataHolder {
+    public class GetHealthMetricsResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<KeyLongValuePair> Value { get; set; }

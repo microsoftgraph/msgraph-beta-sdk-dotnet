@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.UpdateAudience {
     /// <summary>Provides operations to call the updateAudience method.</summary>
-    public class UpdateAudienceRequestBody : IParsable, IAdditionalDataHolder {
+    public class UpdateAudienceRequestBody : IAdditionalDataHolder, IParsable {
         public List<UpdatableAsset> AddExclusions { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.PlayPrompt {
             return await RequestAdapter.SendAsync<PlayPromptResponse>(requestInfo, PlayPromptResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes playPromptOperation</summary>
-        public class PlayPromptResponse : IParsable, IAdditionalDataHolder {
+        public class PlayPromptResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type playPromptOperation</summary>

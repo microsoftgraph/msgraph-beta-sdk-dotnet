@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
-    public class DeviceActionResult : IParsable, IAdditionalDataHolder {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    public class DeviceActionResult : IAdditionalDataHolder, IParsable {
         /// <summary>Action name</summary>
         public string ActionName { get; set; }
         /// <summary>State of the action. Possible values are: none, pending, canceled, active, done, failed, notSupported.</summary>

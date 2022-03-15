@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.IosVppApp.RevokeUserLicense {
     /// <summary>Provides operations to call the revokeUserLicense method.</summary>
-    public class RevokeUserLicenseRequestBody : IParsable, IAdditionalDataHolder {
+    public class RevokeUserLicenseRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public bool? NotifyManagedDevices { get; set; }

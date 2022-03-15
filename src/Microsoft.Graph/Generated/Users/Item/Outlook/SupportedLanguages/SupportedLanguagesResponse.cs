@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Users.Item.Outlook.SupportedLanguages {
     /// <summary>Provides operations to call the supportedLanguages method.</summary>
-    public class SupportedLanguagesResponse : IParsable, IAdditionalDataHolder {
+    public class SupportedLanguagesResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<LocaleInfo> Value { get; set; }

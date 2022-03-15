@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Users.Item.FindMeetingTimes {
             return await RequestAdapter.SendAsync<FindMeetingTimesResponse>(requestInfo, FindMeetingTimesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes meetingTimeSuggestionsResult</summary>
-        public class FindMeetingTimesResponse : IParsable, IAdditionalDataHolder {
+        public class FindMeetingTimesResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type meetingTimeSuggestionsResult</summary>

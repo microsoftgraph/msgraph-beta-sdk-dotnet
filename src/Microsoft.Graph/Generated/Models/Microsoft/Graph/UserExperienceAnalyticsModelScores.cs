@@ -17,7 +17,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>A unique identifier of the user experience analytics model scores: device model.</summary>
         public string Model { get; set; }
         /// <summary>The user experience analytics model device count. Valid values -9.22337203685478E+18 to 9.22337203685478E+18</summary>
-        public long? ModelDeviceCount { get; set; }
+        public int? ModelDeviceCount { get; set; }
         /// <summary>The user experience analytics model startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? StartupPerformanceScore { get; set; }
         /// <summary>The user experience analytics model work from anywhere score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
@@ -40,7 +40,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"healthStatus", (o,n) => { (o as UserExperienceAnalyticsModelScores).HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
                 {"manufacturer", (o,n) => { (o as UserExperienceAnalyticsModelScores).Manufacturer = n.GetStringValue(); } },
                 {"model", (o,n) => { (o as UserExperienceAnalyticsModelScores).Model = n.GetStringValue(); } },
-                {"modelDeviceCount", (o,n) => { (o as UserExperienceAnalyticsModelScores).ModelDeviceCount = n.GetLongValue(); } },
+                {"modelDeviceCount", (o,n) => { (o as UserExperienceAnalyticsModelScores).ModelDeviceCount = n.GetIntValue(); } },
                 {"startupPerformanceScore", (o,n) => { (o as UserExperienceAnalyticsModelScores).StartupPerformanceScore = n.GetDoubleValue(); } },
                 {"workFromAnywhereScore", (o,n) => { (o as UserExperienceAnalyticsModelScores).WorkFromAnywhereScore = n.GetDoubleValue(); } },
             };
@@ -57,7 +57,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteEnumValue<UserExperienceAnalyticsHealthState>("healthStatus", HealthStatus);
             writer.WriteStringValue("manufacturer", Manufacturer);
             writer.WriteStringValue("model", Model);
-            writer.WriteLongValue("modelDeviceCount", ModelDeviceCount);
+            writer.WriteIntValue("modelDeviceCount", ModelDeviceCount);
             writer.WriteDoubleValue("startupPerformanceScore", StartupPerformanceScore);
             writer.WriteDoubleValue("workFromAnywhereScore", WorkFromAnywhereScore);
         }

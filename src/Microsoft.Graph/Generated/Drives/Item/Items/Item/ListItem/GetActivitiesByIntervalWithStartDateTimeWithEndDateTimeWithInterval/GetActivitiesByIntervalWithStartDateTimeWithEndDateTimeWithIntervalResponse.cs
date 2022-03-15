@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Drives.Item.Items.Item.ListItem.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval {
     /// <summary>Provides operations to call the getActivitiesByInterval method.</summary>
-    public class GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponse : IParsable, IAdditionalDataHolder {
+    public class GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<ItemActivityStat> Value { get; set; }

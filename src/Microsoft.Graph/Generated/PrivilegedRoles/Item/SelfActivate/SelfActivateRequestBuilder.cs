@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.PrivilegedRoles.Item.SelfActivate {
             return await RequestAdapter.SendAsync<SelfActivateResponse>(requestInfo, SelfActivateResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes privilegedRoleAssignment</summary>
-        public class SelfActivateResponse : IParsable, IAdditionalDataHolder {
+        public class SelfActivateResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type privilegedRoleAssignment</summary>

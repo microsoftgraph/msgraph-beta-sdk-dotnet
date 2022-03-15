@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Drives.Item.Following.Item.ListItem.CreateLink {
             return await RequestAdapter.SendAsync<CreateLinkResponse>(requestInfo, CreateLinkResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes permission</summary>
-        public class CreateLinkResponse : IParsable, IAdditionalDataHolder {
+        public class CreateLinkResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type permission</summary>

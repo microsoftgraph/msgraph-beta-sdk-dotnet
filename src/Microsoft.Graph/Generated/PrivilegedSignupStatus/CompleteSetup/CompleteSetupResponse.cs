@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.PrivilegedSignupStatus.CompleteSetup {
     /// <summary>Provides operations to call the completeSetup method.</summary>
-    public class CompleteSetupResponse : IParsable, IAdditionalDataHolder {
+    public class CompleteSetupResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<RoleSuccessStatistics> Value { get; set; }

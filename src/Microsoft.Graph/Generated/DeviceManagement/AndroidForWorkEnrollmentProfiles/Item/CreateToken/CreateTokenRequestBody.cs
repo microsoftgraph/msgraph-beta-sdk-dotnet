@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.AndroidForWorkEnrollmentProfiles.Item.CreateToken {
     /// <summary>Provides operations to call the createToken method.</summary>
-    public class CreateTokenRequestBody : IParsable, IAdditionalDataHolder {
+    public class CreateTokenRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public int? TokenValidityInSeconds { get; set; }

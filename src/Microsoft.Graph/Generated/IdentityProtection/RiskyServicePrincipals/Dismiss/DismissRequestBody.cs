@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.IdentityProtection.RiskyServicePrincipals.Dismiss {
     /// <summary>Provides operations to call the dismiss method.</summary>
-    public class DismissRequestBody : IParsable, IAdditionalDataHolder {
+    public class DismissRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<string> ServicePrincipalIds { get; set; }

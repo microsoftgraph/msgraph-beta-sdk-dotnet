@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.Teams.Item.PrimaryChannel.ProvisionEmail {
             return await RequestAdapter.SendAsync<ProvisionEmailResponse>(requestInfo, ProvisionEmailResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes provisionChannelEmailResult</summary>
-        public class ProvisionEmailResponse : IParsable, IAdditionalDataHolder {
+        public class ProvisionEmailResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type provisionChannelEmailResult</summary>

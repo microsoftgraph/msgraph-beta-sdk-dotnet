@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Me.Security.InformationProtection.SensitivityLabels.EvaluateRemoval {
     /// <summary>Provides operations to call the evaluateRemoval method.</summary>
-    public class EvaluateRemovalResponse : IParsable, IAdditionalDataHolder {
+    public class EvaluateRemovalResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<InformationProtectionAction> Value { get; set; }

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the roleManagement singleton.</summary>
-    public class RoleManagement : IParsable, IAdditionalDataHolder {
+    public class RoleManagement : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public RbacApplicationMultiple CloudPC { get; set; }
@@ -13,7 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public RbacApplicationMultiple DeviceManagement { get; set; }
         /// <summary>Read-only. Nullable.</summary>
         public RbacApplication Directory { get; set; }
-        /// <summary>Container for all entitlement management resources in Azure AD identity governance.</summary>
+        /// <summary>Container for roles and assignments for entitlement management resources.</summary>
         public RbacApplication EntitlementManagement { get; set; }
         /// <summary>
         /// Instantiates a new RoleManagement and sets the default values.

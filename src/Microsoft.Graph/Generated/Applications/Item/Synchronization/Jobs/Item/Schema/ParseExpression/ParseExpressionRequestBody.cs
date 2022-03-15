@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item.Schema.ParseExpression {
     /// <summary>Provides operations to call the parseExpression method.</summary>
-    public class ParseExpressionRequestBody : IParsable, IAdditionalDataHolder {
+    public class ParseExpressionRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string Expression { get; set; }

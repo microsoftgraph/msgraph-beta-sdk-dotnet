@@ -8,7 +8,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the getOffice365GroupsActivityCounts method.</summary>
     public class Office365GroupsActivityCounts : Entity, IParsable {
         /// <summary>The number of emails received by Group mailboxes.</summary>
-        public long? ExchangeEmailsReceived { get; set; }
+        public int? ExchangeEmailsReceived { get; set; }
         /// <summary>The date on which a number of emails were sent to a group mailbox or a number of messages were posted, read, or liked in a Yammer group</summary>
         public Date? ReportDate { get; set; }
         /// <summary>The number of days the report covers.</summary>
@@ -16,11 +16,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The latest date of the content.</summary>
         public Date? ReportRefreshDate { get; set; }
         /// <summary>The number of messages liked in Yammer groups.</summary>
-        public long? YammerMessagesLiked { get; set; }
+        public int? YammerMessagesLiked { get; set; }
         /// <summary>The number of messages posted to Yammer groups.</summary>
-        public long? YammerMessagesPosted { get; set; }
+        public int? YammerMessagesPosted { get; set; }
         /// <summary>The number of messages read in Yammer groups.</summary>
-        public long? YammerMessagesRead { get; set; }
+        public int? YammerMessagesRead { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -34,13 +34,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"exchangeEmailsReceived", (o,n) => { (o as Office365GroupsActivityCounts).ExchangeEmailsReceived = n.GetLongValue(); } },
+                {"exchangeEmailsReceived", (o,n) => { (o as Office365GroupsActivityCounts).ExchangeEmailsReceived = n.GetIntValue(); } },
                 {"reportDate", (o,n) => { (o as Office365GroupsActivityCounts).ReportDate = n.GetDateValue(); } },
                 {"reportPeriod", (o,n) => { (o as Office365GroupsActivityCounts).ReportPeriod = n.GetStringValue(); } },
                 {"reportRefreshDate", (o,n) => { (o as Office365GroupsActivityCounts).ReportRefreshDate = n.GetDateValue(); } },
-                {"yammerMessagesLiked", (o,n) => { (o as Office365GroupsActivityCounts).YammerMessagesLiked = n.GetLongValue(); } },
-                {"yammerMessagesPosted", (o,n) => { (o as Office365GroupsActivityCounts).YammerMessagesPosted = n.GetLongValue(); } },
-                {"yammerMessagesRead", (o,n) => { (o as Office365GroupsActivityCounts).YammerMessagesRead = n.GetLongValue(); } },
+                {"yammerMessagesLiked", (o,n) => { (o as Office365GroupsActivityCounts).YammerMessagesLiked = n.GetIntValue(); } },
+                {"yammerMessagesPosted", (o,n) => { (o as Office365GroupsActivityCounts).YammerMessagesPosted = n.GetIntValue(); } },
+                {"yammerMessagesRead", (o,n) => { (o as Office365GroupsActivityCounts).YammerMessagesRead = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -50,13 +50,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteLongValue("exchangeEmailsReceived", ExchangeEmailsReceived);
+            writer.WriteIntValue("exchangeEmailsReceived", ExchangeEmailsReceived);
             writer.WriteDateValue("reportDate", ReportDate);
             writer.WriteStringValue("reportPeriod", ReportPeriod);
             writer.WriteDateValue("reportRefreshDate", ReportRefreshDate);
-            writer.WriteLongValue("yammerMessagesLiked", YammerMessagesLiked);
-            writer.WriteLongValue("yammerMessagesPosted", YammerMessagesPosted);
-            writer.WriteLongValue("yammerMessagesRead", YammerMessagesRead);
+            writer.WriteIntValue("yammerMessagesLiked", YammerMessagesLiked);
+            writer.WriteIntValue("yammerMessagesPosted", YammerMessagesPosted);
+            writer.WriteIntValue("yammerMessagesRead", YammerMessagesRead);
         }
     }
 }

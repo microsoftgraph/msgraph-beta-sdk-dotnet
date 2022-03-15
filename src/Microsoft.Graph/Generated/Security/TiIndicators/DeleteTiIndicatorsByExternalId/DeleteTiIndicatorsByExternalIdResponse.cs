@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Security.TiIndicators.DeleteTiIndicatorsByExternalId {
     /// <summary>Provides operations to call the deleteTiIndicatorsByExternalId method.</summary>
-    public class DeleteTiIndicatorsByExternalIdResponse : IParsable, IAdditionalDataHolder {
+    public class DeleteTiIndicatorsByExternalIdResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<ResultInfo> Value { get; set; }

@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Shares.Item.List.ContentTypes.AddCopyFromContentType
             return await RequestAdapter.SendAsync<AddCopyFromContentTypeHubResponse>(requestInfo, AddCopyFromContentTypeHubResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes contentType</summary>
-        public class AddCopyFromContentTypeHubResponse : IParsable, IAdditionalDataHolder {
+        public class AddCopyFromContentTypeHubResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type contentType</summary>

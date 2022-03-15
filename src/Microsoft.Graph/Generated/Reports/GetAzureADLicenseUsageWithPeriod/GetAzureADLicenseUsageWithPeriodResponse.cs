@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Reports.GetAzureADLicenseUsageWithPeriod {
     /// <summary>Provides operations to call the getAzureADLicenseUsage method.</summary>
-    public class GetAzureADLicenseUsageWithPeriodResponse : IParsable, IAdditionalDataHolder {
+    public class GetAzureADLicenseUsageWithPeriodResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<AzureADLicenseUsage> Value { get; set; }

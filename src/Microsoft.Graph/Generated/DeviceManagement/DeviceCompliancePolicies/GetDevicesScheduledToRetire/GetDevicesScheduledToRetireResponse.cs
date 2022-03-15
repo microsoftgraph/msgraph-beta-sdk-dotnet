@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.GetDevicesScheduledToRetire {
     /// <summary>Provides operations to call the getDevicesScheduledToRetire method.</summary>
-    public class GetDevicesScheduledToRetireResponse : IParsable, IAdditionalDataHolder {
+    public class GetDevicesScheduledToRetireResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<RetireScheduledManagedDevice> Value { get; set; }

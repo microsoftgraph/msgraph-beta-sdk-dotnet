@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the privacy singleton.</summary>
-    public class SubjectRightsRequestHistory : IParsable, IAdditionalDataHolder {
+    public class SubjectRightsRequestHistory : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Identity of the user who changed the  subject rights request.</summary>

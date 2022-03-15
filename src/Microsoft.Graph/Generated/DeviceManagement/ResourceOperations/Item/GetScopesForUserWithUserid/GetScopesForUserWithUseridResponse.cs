@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.ResourceOperations.Item.GetScopesForUserWithUserid {
     /// <summary>Provides operations to call the getScopesForUser method.</summary>
-    public class GetScopesForUserWithUseridResponse : IParsable, IAdditionalDataHolder {
+    public class GetScopesForUserWithUseridResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<string> Value { get; set; }

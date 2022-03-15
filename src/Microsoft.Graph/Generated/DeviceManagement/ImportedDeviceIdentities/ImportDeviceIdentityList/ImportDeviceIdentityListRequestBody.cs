@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.ImportedDeviceIdentities.ImportDeviceIdentityList {
     /// <summary>Provides operations to call the importDeviceIdentityList method.</summary>
-    public class ImportDeviceIdentityListRequestBody : IParsable, IAdditionalDataHolder {
+    public class ImportDeviceIdentityListRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<ImportedDeviceIdentity> ImportedDeviceIdentities { get; set; }

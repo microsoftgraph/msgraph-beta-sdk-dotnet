@@ -1,7 +1,9 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraphSdk.Groups.Item.Team.AllChannels;
 using MicrosoftGraphSdk.Groups.Item.Team.Channels;
 using MicrosoftGraphSdk.Groups.Item.Team.Group;
+using MicrosoftGraphSdk.Groups.Item.Team.IncomingChannels;
 using MicrosoftGraphSdk.Groups.Item.Team.InstalledApps;
 using MicrosoftGraphSdk.Groups.Item.Team.Members;
 using MicrosoftGraphSdk.Groups.Item.Team.Operations;
@@ -23,11 +25,17 @@ using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Groups.Item.Team {
     /// <summary>Provides operations to manage the team property of the microsoft.graph.group entity.</summary>
     public class TeamRequestBuilder {
+        public AllChannelsRequestBuilder AllChannels { get =>
+            new AllChannelsRequestBuilder(PathParameters, RequestAdapter);
+        }
         public ChannelsRequestBuilder Channels { get =>
             new ChannelsRequestBuilder(PathParameters, RequestAdapter);
         }
         public GroupRequestBuilder Group { get =>
             new GroupRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public IncomingChannelsRequestBuilder IncomingChannels { get =>
+            new IncomingChannelsRequestBuilder(PathParameters, RequestAdapter);
         }
         public InstalledAppsRequestBuilder InstalledApps { get =>
             new InstalledAppsRequestBuilder(PathParameters, RequestAdapter);

@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.HistoryDefinitions.
             return await RequestAdapter.SendAsync<GenerateDownloadUriResponse>(requestInfo, GenerateDownloadUriResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes accessReviewHistoryInstance</summary>
-        public class GenerateDownloadUriResponse : IParsable, IAdditionalDataHolder {
+        public class GenerateDownloadUriResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Union type representation for type accessReviewHistoryInstance</summary>
             public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessReviewHistoryInstance AccessReviewHistoryInstance { get; set; }
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

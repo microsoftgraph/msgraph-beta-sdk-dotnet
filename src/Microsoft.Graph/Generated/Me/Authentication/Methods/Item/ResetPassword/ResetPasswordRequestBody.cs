@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Me.Authentication.Methods.Item.ResetPassword {
     /// <summary>Provides operations to call the resetPassword method.</summary>
-    public class ResetPasswordRequestBody : IParsable, IAdditionalDataHolder {
+    public class ResetPasswordRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string NewPassword { get; set; }

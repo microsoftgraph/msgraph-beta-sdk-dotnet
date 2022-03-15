@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Me.Drives.Item.List.ContentTypes.AddCopy {
             return await RequestAdapter.SendAsync<AddCopyResponse>(requestInfo, AddCopyResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes contentType</summary>
-        public class AddCopyResponse : IParsable, IAdditionalDataHolder {
+        public class AddCopyResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type contentType</summary>

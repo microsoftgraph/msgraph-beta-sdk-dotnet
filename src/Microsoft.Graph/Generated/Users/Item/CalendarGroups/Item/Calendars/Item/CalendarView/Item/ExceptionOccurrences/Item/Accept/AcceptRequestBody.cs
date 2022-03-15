@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.ExceptionOccurrences.Item.Accept {
     /// <summary>Provides operations to call the accept method.</summary>
-    public class AcceptRequestBody : IParsable, IAdditionalDataHolder {
+    public class AcceptRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string Comment { get; set; }

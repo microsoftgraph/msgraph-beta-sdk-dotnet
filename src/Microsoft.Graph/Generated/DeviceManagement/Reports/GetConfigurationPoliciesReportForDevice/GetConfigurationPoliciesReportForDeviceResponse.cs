@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetConfigurationPoliciesReportForDevice {
     /// <summary>Provides operations to call the getConfigurationPoliciesReportForDevice method.</summary>
-    public class GetConfigurationPoliciesReportForDeviceResponse : IParsable, IAdditionalDataHolder {
+    public class GetConfigurationPoliciesReportForDeviceResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public byte[] Value { get; set; }

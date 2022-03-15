@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the createLink method.</summary>
-    public class DriveRecipient : IParsable, IAdditionalDataHolder {
+    public class DriveRecipient : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The alias of the domain object, for cases where an email address is unavailable (e.g. security groups).</summary>

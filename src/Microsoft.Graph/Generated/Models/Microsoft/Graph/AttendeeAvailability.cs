@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the findMeetingTimes method.</summary>
-    public class AttendeeAvailability : IParsable, IAdditionalDataHolder {
+    public class AttendeeAvailability : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The email address and type of attendee - whether it's a person or a resource, and whether required or optional if it's a person.</summary>

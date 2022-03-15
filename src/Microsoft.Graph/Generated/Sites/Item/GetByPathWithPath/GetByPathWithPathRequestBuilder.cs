@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.Sites.Item.GetByPathWithPath {
             return await RequestAdapter.SendAsync<GetByPathWithPathResponse>(requestInfo, GetByPathWithPathResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes site</summary>
-        public class GetByPathWithPathResponse : IParsable, IAdditionalDataHolder {
+        public class GetByPathWithPathResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type site</summary>

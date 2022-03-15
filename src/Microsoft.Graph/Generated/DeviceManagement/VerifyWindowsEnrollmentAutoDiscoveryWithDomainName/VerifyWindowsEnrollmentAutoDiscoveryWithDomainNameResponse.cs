@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.VerifyWindowsEnrollmentAutoDiscoveryWithDomainName {
     /// <summary>Provides operations to call the verifyWindowsEnrollmentAutoDiscovery method.</summary>
-    public class VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponse : IParsable, IAdditionalDataHolder {
+    public class VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public bool? Value { get; set; }

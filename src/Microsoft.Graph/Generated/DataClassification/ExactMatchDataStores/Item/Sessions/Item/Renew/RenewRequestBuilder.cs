@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.DataClassification.ExactMatchDataStores.Item.Session
             return await RequestAdapter.SendAsync<RenewResponse>(requestInfo, RenewResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes exactMatchSession</summary>
-        public class RenewResponse : IParsable, IAdditionalDataHolder {
+        public class RenewResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type exactMatchSession</summary>

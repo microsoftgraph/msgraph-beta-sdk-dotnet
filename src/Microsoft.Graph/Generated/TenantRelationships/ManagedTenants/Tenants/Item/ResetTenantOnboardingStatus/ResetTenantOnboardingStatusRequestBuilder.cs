@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.Tenants.Item.Rese
             return await RequestAdapter.SendAsync<ResetTenantOnboardingStatusResponse>(requestInfo, ResetTenantOnboardingStatusResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes tenant</summary>
-        public class ResetTenantOnboardingStatusResponse : IParsable, IAdditionalDataHolder {
+        public class ResetTenantOnboardingStatusResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type tenant</summary>

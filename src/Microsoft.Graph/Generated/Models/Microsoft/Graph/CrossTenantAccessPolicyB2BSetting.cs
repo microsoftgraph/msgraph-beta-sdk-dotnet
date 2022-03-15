@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the policyRoot singleton.</summary>
-    public class CrossTenantAccessPolicyB2BSetting : IParsable, IAdditionalDataHolder {
+    public class CrossTenantAccessPolicyB2BSetting : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The list of applications targeted with your cross-tenant access policy.</summary>

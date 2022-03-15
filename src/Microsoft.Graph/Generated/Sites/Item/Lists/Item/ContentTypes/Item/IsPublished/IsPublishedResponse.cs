@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.IsPublished {
     /// <summary>Provides operations to call the isPublished method.</summary>
-    public class IsPublishedResponse : IParsable, IAdditionalDataHolder {
+    public class IsPublishedResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public bool? Value { get; set; }

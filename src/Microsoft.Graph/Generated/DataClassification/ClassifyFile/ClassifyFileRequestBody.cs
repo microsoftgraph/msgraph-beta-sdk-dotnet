@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DataClassification.ClassifyFile {
     /// <summary>Provides operations to call the classifyFile method.</summary>
-    public class ClassifyFileRequestBody : IParsable, IAdditionalDataHolder {
+    public class ClassifyFileRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public byte[] File { get; set; }

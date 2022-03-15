@@ -5,10 +5,11 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the commsApplication singleton.</summary>
-    public class CallOptions : IParsable, IAdditionalDataHolder {
+    public class CallOptions : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public bool? HideBotAfterEscalation { get; set; }
+        public bool? IsContentSharingNotificationEnabled { get; set; }
         /// <summary>
         /// Instantiates a new callOptions and sets the default values.
         /// </summary>
@@ -29,6 +30,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"hideBotAfterEscalation", (o,n) => { (o as CallOptions).HideBotAfterEscalation = n.GetBoolValue(); } },
+                {"isContentSharingNotificationEnabled", (o,n) => { (o as CallOptions).IsContentSharingNotificationEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -38,6 +40,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("hideBotAfterEscalation", HideBotAfterEscalation);
+            writer.WriteBoolValue("isContentSharingNotificationEnabled", IsContentSharingNotificationEnabled);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

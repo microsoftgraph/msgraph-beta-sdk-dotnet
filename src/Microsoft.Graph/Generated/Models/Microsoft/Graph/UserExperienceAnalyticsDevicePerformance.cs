@@ -19,7 +19,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The user experience analytics device core login time in milliseconds.</summary>
         public int? CoreLoginTimeInMs { get; set; }
         /// <summary>User experience analytics summarized device count.</summary>
-        public long? DeviceCount { get; set; }
+        public int? DeviceCount { get; set; }
         /// <summary>The user experience analytics device name.</summary>
         public string DeviceName { get; set; }
         /// <summary>The user experience analytics device disk type. Possible values are: unknown, hdd, ssd, unknownFutureValue.</summary>
@@ -65,7 +65,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"bootScore", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).BootScore = n.GetIntValue(); } },
                 {"coreBootTimeInMs", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).CoreBootTimeInMs = n.GetIntValue(); } },
                 {"coreLoginTimeInMs", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).CoreLoginTimeInMs = n.GetIntValue(); } },
-                {"deviceCount", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).DeviceCount = n.GetLongValue(); } },
+                {"deviceCount", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).DeviceCount = n.GetIntValue(); } },
                 {"deviceName", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).DeviceName = n.GetStringValue(); } },
                 {"diskType", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).DiskType = n.GetEnumValue<DiskType>(); } },
                 {"groupPolicyBootTimeInMs", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).GroupPolicyBootTimeInMs = n.GetIntValue(); } },
@@ -94,7 +94,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteIntValue("bootScore", BootScore);
             writer.WriteIntValue("coreBootTimeInMs", CoreBootTimeInMs);
             writer.WriteIntValue("coreLoginTimeInMs", CoreLoginTimeInMs);
-            writer.WriteLongValue("deviceCount", DeviceCount);
+            writer.WriteIntValue("deviceCount", DeviceCount);
             writer.WriteStringValue("deviceName", DeviceName);
             writer.WriteEnumValue<DiskType>("diskType", DiskType);
             writer.WriteIntValue("groupPolicyBootTimeInMs", GroupPolicyBootTimeInMs);

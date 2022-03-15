@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the evaluate method.</summary>
-    public class MatchingDlpRule : IParsable, IAdditionalDataHolder {
+    public class MatchingDlpRule : IAdditionalDataHolder, IParsable {
         public List<DlpActionInfo> Actions { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

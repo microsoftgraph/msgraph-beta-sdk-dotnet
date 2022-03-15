@@ -24,6 +24,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.MicrosoftManagedDesktop MicrosoftManagedDesktop { get; set; }
         /// <summary>The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.</summary>
         public string OnPremisesConnectionId { get; set; }
+        public CloudPcWindowsSettings WindowsSettings { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -46,6 +47,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"imageType", (o,n) => { (o as CloudPcProvisioningPolicy).ImageType = n.GetEnumValue<CloudPcProvisioningPolicyImageType>(); } },
                 {"microsoftManagedDesktop", (o,n) => { (o as CloudPcProvisioningPolicy).MicrosoftManagedDesktop = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.MicrosoftManagedDesktop>(MicrosoftGraphSdk.Models.Microsoft.Graph.MicrosoftManagedDesktop.CreateFromDiscriminatorValue); } },
                 {"onPremisesConnectionId", (o,n) => { (o as CloudPcProvisioningPolicy).OnPremisesConnectionId = n.GetStringValue(); } },
+                {"windowsSettings", (o,n) => { (o as CloudPcProvisioningPolicy).WindowsSettings = n.GetObjectValue<CloudPcWindowsSettings>(CloudPcWindowsSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -64,6 +66,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteEnumValue<CloudPcProvisioningPolicyImageType>("imageType", ImageType);
             writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.MicrosoftManagedDesktop>("microsoftManagedDesktop", MicrosoftManagedDesktop);
             writer.WriteStringValue("onPremisesConnectionId", OnPremisesConnectionId);
+            writer.WriteObjectValue<CloudPcWindowsSettings>("windowsSettings", WindowsSettings);
         }
     }
 }

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Security {
     /// <summary>Provides operations to call the evaluateApplication method.</summary>
-    public class ContentInfo : IParsable, IAdditionalDataHolder {
+    public class ContentInfo : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string ContentFormat { get; set; }

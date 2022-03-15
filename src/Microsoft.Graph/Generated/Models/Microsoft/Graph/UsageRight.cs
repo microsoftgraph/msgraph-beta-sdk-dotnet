@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of device entities.</summary>
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class UsageRight : Entity, IParsable {
         /// <summary>Product id corresponding to the usage right.</summary>
         public string CatalogId { get; set; }

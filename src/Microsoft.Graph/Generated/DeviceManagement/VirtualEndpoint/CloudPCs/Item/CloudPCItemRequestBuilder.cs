@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.CloudPCs.Item.ChangeUserAccountType;
 using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.CloudPCs.Item.EndGracePeriod;
+using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.CloudPCs.Item.GetCloudPcLaunchInfo;
 using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Reboot;
 using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Rename;
 using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Reprovision;
@@ -152,6 +153,12 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.CloudPCs.Item {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.CloudPC>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.CloudPC.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Provides operations to call the getCloudPcLaunchInfo method.
+        /// </summary>
+        public GetCloudPcLaunchInfoRequestBuilder GetCloudPcLaunchInfo() {
+            return new GetCloudPcLaunchInfoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Update the navigation property cloudPCs in deviceManagement

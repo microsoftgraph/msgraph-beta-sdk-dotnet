@@ -5,11 +5,11 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the usersRegisteredByMethod method.</summary>
-    public class UserRegistrationMethodSummary : IParsable, IAdditionalDataHolder {
+    public class UserRegistrationMethodSummary : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Total number of users in the tenant.</summary>
-        public long? TotalUserCount { get; set; }
+        public int? TotalUserCount { get; set; }
         /// <summary>Number of users registered for each authentication method.</summary>
         public List<UserRegistrationMethodCount> UserRegistrationMethodCounts { get; set; }
         /// <summary>User role type. Possible values are: all, privilegedAdmin, admin, user.</summary>
@@ -35,7 +35,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"totalUserCount", (o,n) => { (o as UserRegistrationMethodSummary).TotalUserCount = n.GetLongValue(); } },
+                {"totalUserCount", (o,n) => { (o as UserRegistrationMethodSummary).TotalUserCount = n.GetIntValue(); } },
                 {"userRegistrationMethodCounts", (o,n) => { (o as UserRegistrationMethodSummary).UserRegistrationMethodCounts = n.GetCollectionOfObjectValues<UserRegistrationMethodCount>(UserRegistrationMethodCount.CreateFromDiscriminatorValue).ToList(); } },
                 {"userRoles", (o,n) => { (o as UserRegistrationMethodSummary).UserRoles = n.GetEnumValue<IncludedUserRoles>(); } },
                 {"userTypes", (o,n) => { (o as UserRegistrationMethodSummary).UserTypes = n.GetEnumValue<IncludedUserTypes>(); } },
@@ -47,7 +47,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteLongValue("totalUserCount", TotalUserCount);
+            writer.WriteIntValue("totalUserCount", TotalUserCount);
             writer.WriteCollectionOfObjectValues<UserRegistrationMethodCount>("userRegistrationMethodCounts", UserRegistrationMethodCounts);
             writer.WriteEnumValue<IncludedUserRoles>("userRoles", UserRoles);
             writer.WriteEnumValue<IncludedUserTypes>("userTypes", UserTypes);

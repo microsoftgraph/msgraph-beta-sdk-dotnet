@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords {
     /// <summary>Provides operations to manage the cloudCommunications singleton.</summary>
-    public class MediaStream : IParsable, IAdditionalDataHolder {
+    public class MediaStream : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Average Network Mean Opinion Score degradation for stream. Represents how much the network loss and jitter has impacted the quality of received audio.</summary>
@@ -13,7 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords {
         /// <summary>Average jitter for the stream computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.</summary>
         public TimeSpan? AverageAudioNetworkJitter { get; set; }
         /// <summary>Average estimated bandwidth available between two endpoints in bits per second.</summary>
-        public long? AverageBandwidthEstimate { get; set; }
+        public int? AverageBandwidthEstimate { get; set; }
         /// <summary>Average jitter for the stream computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.</summary>
         public TimeSpan? AverageJitter { get; set; }
         /// <summary>Average packet loss rate for stream.</summary>
@@ -47,7 +47,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords {
         /// <summary>Maximum network propagation round-trip time computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.</summary>
         public TimeSpan? MaxRoundTripTime { get; set; }
         /// <summary>Packet count for the stream.</summary>
-        public long? PacketUtilization { get; set; }
+        public int? PacketUtilization { get; set; }
         /// <summary>Packet loss rate after FEC has been applied aggregated across all video streams and codecs.</summary>
         public float? PostForwardErrorCorrectionPacketLossRate { get; set; }
         /// <summary>UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
@@ -79,7 +79,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"averageAudioDegradation", (o,n) => { (o as MediaStream).AverageAudioDegradation = n.GetFloatValue(); } },
                 {"averageAudioNetworkJitter", (o,n) => { (o as MediaStream).AverageAudioNetworkJitter = n.GetTimeSpanValue(); } },
-                {"averageBandwidthEstimate", (o,n) => { (o as MediaStream).AverageBandwidthEstimate = n.GetLongValue(); } },
+                {"averageBandwidthEstimate", (o,n) => { (o as MediaStream).AverageBandwidthEstimate = n.GetIntValue(); } },
                 {"averageJitter", (o,n) => { (o as MediaStream).AverageJitter = n.GetTimeSpanValue(); } },
                 {"averagePacketLossRate", (o,n) => { (o as MediaStream).AveragePacketLossRate = n.GetFloatValue(); } },
                 {"averageRatioOfConcealedSamples", (o,n) => { (o as MediaStream).AverageRatioOfConcealedSamples = n.GetFloatValue(); } },
@@ -96,7 +96,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords {
                 {"maxPacketLossRate", (o,n) => { (o as MediaStream).MaxPacketLossRate = n.GetFloatValue(); } },
                 {"maxRatioOfConcealedSamples", (o,n) => { (o as MediaStream).MaxRatioOfConcealedSamples = n.GetFloatValue(); } },
                 {"maxRoundTripTime", (o,n) => { (o as MediaStream).MaxRoundTripTime = n.GetTimeSpanValue(); } },
-                {"packetUtilization", (o,n) => { (o as MediaStream).PacketUtilization = n.GetLongValue(); } },
+                {"packetUtilization", (o,n) => { (o as MediaStream).PacketUtilization = n.GetIntValue(); } },
                 {"postForwardErrorCorrectionPacketLossRate", (o,n) => { (o as MediaStream).PostForwardErrorCorrectionPacketLossRate = n.GetFloatValue(); } },
                 {"startDateTime", (o,n) => { (o as MediaStream).StartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"streamDirection", (o,n) => { (o as MediaStream).StreamDirection = n.GetEnumValue<MediaStreamDirection>(); } },
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteFloatValue("averageAudioDegradation", AverageAudioDegradation);
             writer.WriteTimeSpanValue("averageAudioNetworkJitter", AverageAudioNetworkJitter);
-            writer.WriteLongValue("averageBandwidthEstimate", AverageBandwidthEstimate);
+            writer.WriteIntValue("averageBandwidthEstimate", AverageBandwidthEstimate);
             writer.WriteTimeSpanValue("averageJitter", AverageJitter);
             writer.WriteFloatValue("averagePacketLossRate", AveragePacketLossRate);
             writer.WriteFloatValue("averageRatioOfConcealedSamples", AverageRatioOfConcealedSamples);
@@ -129,7 +129,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords {
             writer.WriteFloatValue("maxPacketLossRate", MaxPacketLossRate);
             writer.WriteFloatValue("maxRatioOfConcealedSamples", MaxRatioOfConcealedSamples);
             writer.WriteTimeSpanValue("maxRoundTripTime", MaxRoundTripTime);
-            writer.WriteLongValue("packetUtilization", PacketUtilization);
+            writer.WriteIntValue("packetUtilization", PacketUtilization);
             writer.WriteFloatValue("postForwardErrorCorrectionPacketLossRate", PostForwardErrorCorrectionPacketLossRate);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteEnumValue<MediaStreamDirection>("streamDirection", StreamDirection);

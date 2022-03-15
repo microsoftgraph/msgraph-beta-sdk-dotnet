@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplateStepVersions.Item.Deployments.Item.ChangeDeploymentStatus {
     /// <summary>Provides operations to call the changeDeploymentStatus method.</summary>
-    public class ChangeDeploymentStatusRequestBody : IParsable, IAdditionalDataHolder {
+    public class ChangeDeploymentStatusRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string ManagementTemplateStepId { get; set; }

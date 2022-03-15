@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.ManagementConditions.GetManagementConditionsForPlatformWithPlatform {
     /// <summary>Provides operations to call the getManagementConditionsForPlatform method.</summary>
-    public class GetManagementConditionsForPlatformWithPlatformResponse : IParsable, IAdditionalDataHolder {
+    public class GetManagementConditionsForPlatformWithPlatformResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<ManagementCondition> Value { get; set; }

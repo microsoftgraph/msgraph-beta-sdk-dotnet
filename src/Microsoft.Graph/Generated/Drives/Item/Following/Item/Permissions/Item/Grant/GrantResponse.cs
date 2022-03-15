@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Drives.Item.Following.Item.Permissions.Item.Grant {
     /// <summary>Provides operations to call the grant method.</summary>
-    public class GrantResponse : IParsable, IAdditionalDataHolder {
+    public class GrantResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Permission> Value { get; set; }

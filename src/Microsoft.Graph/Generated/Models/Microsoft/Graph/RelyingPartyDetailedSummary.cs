@@ -7,7 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the getRelyingPartyDetailedSummary method.</summary>
     public class RelyingPartyDetailedSummary : Entity, IParsable {
         /// <summary>Number of failed sign in on Active Directory Federation Service in the period specified.</summary>
-        public long? FailedSignInCount { get; set; }
+        public int? FailedSignInCount { get; set; }
         /// <summary>Indication of whether the application can be moved to Azure AD or require more investigation. Possible values are: ready, needsReview, additionalStepsRequired, unknownFutureValue.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.MigrationStatus? MigrationStatus { get; set; }
         /// <summary>Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD.</summary>
@@ -23,11 +23,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Number of successful / (number of successful + number of failed sign ins) on Active Directory Federation Service in the period specified.</summary>
         public double? SignInSuccessRate { get; set; }
         /// <summary>Number of successful sign ins on Active Directory Federation Service.</summary>
-        public long? SuccessfulSignInCount { get; set; }
+        public int? SuccessfulSignInCount { get; set; }
         /// <summary>Number of successful + failed sign ins failed sign ins on Active Directory Federation Service in the period specified.</summary>
-        public long? TotalSignInCount { get; set; }
+        public int? TotalSignInCount { get; set; }
         /// <summary>Number of unique users that have signed into the application.</summary>
-        public long? UniqueUserCount { get; set; }
+        public int? UniqueUserCount { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -41,7 +41,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"failedSignInCount", (o,n) => { (o as RelyingPartyDetailedSummary).FailedSignInCount = n.GetLongValue(); } },
+                {"failedSignInCount", (o,n) => { (o as RelyingPartyDetailedSummary).FailedSignInCount = n.GetIntValue(); } },
                 {"migrationStatus", (o,n) => { (o as RelyingPartyDetailedSummary).MigrationStatus = n.GetEnumValue<MigrationStatus>(); } },
                 {"migrationValidationDetails", (o,n) => { (o as RelyingPartyDetailedSummary).MigrationValidationDetails = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
                 {"relyingPartyId", (o,n) => { (o as RelyingPartyDetailedSummary).RelyingPartyId = n.GetStringValue(); } },
@@ -49,9 +49,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"replyUrls", (o,n) => { (o as RelyingPartyDetailedSummary).ReplyUrls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"serviceId", (o,n) => { (o as RelyingPartyDetailedSummary).ServiceId = n.GetStringValue(); } },
                 {"signInSuccessRate", (o,n) => { (o as RelyingPartyDetailedSummary).SignInSuccessRate = n.GetDoubleValue(); } },
-                {"successfulSignInCount", (o,n) => { (o as RelyingPartyDetailedSummary).SuccessfulSignInCount = n.GetLongValue(); } },
-                {"totalSignInCount", (o,n) => { (o as RelyingPartyDetailedSummary).TotalSignInCount = n.GetLongValue(); } },
-                {"uniqueUserCount", (o,n) => { (o as RelyingPartyDetailedSummary).UniqueUserCount = n.GetLongValue(); } },
+                {"successfulSignInCount", (o,n) => { (o as RelyingPartyDetailedSummary).SuccessfulSignInCount = n.GetIntValue(); } },
+                {"totalSignInCount", (o,n) => { (o as RelyingPartyDetailedSummary).TotalSignInCount = n.GetIntValue(); } },
+                {"uniqueUserCount", (o,n) => { (o as RelyingPartyDetailedSummary).UniqueUserCount = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteLongValue("failedSignInCount", FailedSignInCount);
+            writer.WriteIntValue("failedSignInCount", FailedSignInCount);
             writer.WriteEnumValue<MigrationStatus>("migrationStatus", MigrationStatus);
             writer.WriteCollectionOfObjectValues<KeyValuePair>("migrationValidationDetails", MigrationValidationDetails);
             writer.WriteStringValue("relyingPartyId", RelyingPartyId);
@@ -69,9 +69,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfPrimitiveValues<string>("replyUrls", ReplyUrls);
             writer.WriteStringValue("serviceId", ServiceId);
             writer.WriteDoubleValue("signInSuccessRate", SignInSuccessRate);
-            writer.WriteLongValue("successfulSignInCount", SuccessfulSignInCount);
-            writer.WriteLongValue("totalSignInCount", TotalSignInCount);
-            writer.WriteLongValue("uniqueUserCount", UniqueUserCount);
+            writer.WriteIntValue("successfulSignInCount", SuccessfulSignInCount);
+            writer.WriteIntValue("totalSignInCount", TotalSignInCount);
+            writer.WriteIntValue("uniqueUserCount", UniqueUserCount);
         }
     }
 }

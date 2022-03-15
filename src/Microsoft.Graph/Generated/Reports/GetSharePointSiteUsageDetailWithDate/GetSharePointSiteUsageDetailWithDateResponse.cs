@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Reports.GetSharePointSiteUsageDetailWithDate {
     /// <summary>Provides operations to call the getSharePointSiteUsageDetail method.</summary>
-    public class GetSharePointSiteUsageDetailWithDateResponse : IParsable, IAdditionalDataHolder {
+    public class GetSharePointSiteUsageDetailWithDateResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public byte[] Value { get; set; }

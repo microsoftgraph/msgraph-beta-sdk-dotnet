@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the teamwork singleton.</summary>
-    public class TeamworkHardwareHealth : IParsable, IAdditionalDataHolder {
+    public class TeamworkHardwareHealth : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The system health details for a teamworkDevice.</summary>

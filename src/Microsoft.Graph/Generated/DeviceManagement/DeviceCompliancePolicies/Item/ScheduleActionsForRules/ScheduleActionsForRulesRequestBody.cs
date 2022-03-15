@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.Item.ScheduleActionsForRules {
     /// <summary>Provides operations to call the scheduleActionsForRules method.</summary>
-    public class ScheduleActionsForRulesRequestBody : IParsable, IAdditionalDataHolder {
+    public class ScheduleActionsForRulesRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<DeviceComplianceScheduledActionForRule> DeviceComplianceScheduledActionForRules { get; set; }

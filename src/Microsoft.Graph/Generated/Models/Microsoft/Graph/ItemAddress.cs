@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class ItemAddress : ItemFacet, IParsable {
         public PhysicalAddress Detail { get; set; }
         /// <summary>Friendly name the user has assigned to this address.</summary>

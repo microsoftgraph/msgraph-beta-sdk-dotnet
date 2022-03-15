@@ -25,7 +25,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords {
         /// <summary>Indicates the type of the call. Possible values are: unknown, groupCall, peerToPeer, unknownFutureValue.</summary>
         public CallType? Type { get; set; }
         /// <summary>Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.</summary>
-        public long? Version { get; set; }
+        public int? Version { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -48,7 +48,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords {
                 {"sessions", (o,n) => { (o as CallRecord).Sessions = n.GetCollectionOfObjectValues<Session>(Session.CreateFromDiscriminatorValue).ToList(); } },
                 {"startDateTime", (o,n) => { (o as CallRecord).StartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"type", (o,n) => { (o as CallRecord).Type = n.GetEnumValue<CallType>(); } },
-                {"version", (o,n) => { (o as CallRecord).Version = n.GetLongValue(); } },
+                {"version", (o,n) => { (o as CallRecord).Version = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords {
             writer.WriteCollectionOfObjectValues<Session>("sessions", Sessions);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteEnumValue<CallType>("type", Type);
-            writer.WriteLongValue("version", Version);
+            writer.WriteIntValue("version", Version);
         }
     }
 }

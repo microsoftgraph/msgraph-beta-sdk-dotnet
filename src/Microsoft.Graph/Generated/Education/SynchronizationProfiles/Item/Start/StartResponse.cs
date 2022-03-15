@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Education.SynchronizationProfiles.Item.Start {
     /// <summary>Provides operations to call the start method.</summary>
-    public class StartResponse : IParsable, IAdditionalDataHolder {
+    public class StartResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<EducationFileSynchronizationVerificationMessage> Value { get; set; }

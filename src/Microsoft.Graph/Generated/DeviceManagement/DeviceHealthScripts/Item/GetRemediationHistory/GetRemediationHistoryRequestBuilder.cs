@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.Item.GetRemedia
             return await RequestAdapter.SendAsync<GetRemediationHistoryResponse>(requestInfo, GetRemediationHistoryResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes deviceHealthScriptRemediationHistory</summary>
-        public class GetRemediationHistoryResponse : IParsable, IAdditionalDataHolder {
+        public class GetRemediationHistoryResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type deviceHealthScriptRemediationHistory</summary>

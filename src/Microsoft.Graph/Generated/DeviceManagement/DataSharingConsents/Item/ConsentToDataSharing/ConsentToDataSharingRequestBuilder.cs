@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DataSharingConsents.Item.ConsentToD
             return await RequestAdapter.SendAsync<ConsentToDataSharingResponse>(requestInfo, ConsentToDataSharingResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes dataSharingConsent</summary>
-        public class ConsentToDataSharingResponse : IParsable, IAdditionalDataHolder {
+        public class ConsentToDataSharingResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type dataSharingConsent</summary>

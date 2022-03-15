@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Organization.Item.SetMobileDeviceManagementAuthority {
     /// <summary>Provides operations to call the setMobileDeviceManagementAuthority method.</summary>
-    public class SetMobileDeviceManagementAuthorityResponse : IParsable, IAdditionalDataHolder {
+    public class SetMobileDeviceManagementAuthorityResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public int? Value { get; set; }

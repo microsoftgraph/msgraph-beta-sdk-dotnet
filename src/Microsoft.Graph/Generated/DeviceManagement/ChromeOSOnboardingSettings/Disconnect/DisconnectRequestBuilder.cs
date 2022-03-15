@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ChromeOSOnboardingSettings.Disconne
             return await RequestAdapter.SendAsync<DisconnectResponse>(requestInfo, DisconnectResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes chromeOSOnboardingStatus</summary>
-        public class DisconnectResponse : IParsable, IAdditionalDataHolder {
+        public class DisconnectResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type chromeOSOnboardingStatus</summary>

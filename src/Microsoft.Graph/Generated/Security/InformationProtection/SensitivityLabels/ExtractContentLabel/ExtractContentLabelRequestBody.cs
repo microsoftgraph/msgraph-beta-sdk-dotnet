@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Security.InformationProtection.SensitivityLabels.ExtractContentLabel {
     /// <summary>Provides operations to call the extractContentLabel method.</summary>
-    public class ExtractContentLabelRequestBody : IParsable, IAdditionalDataHolder {
+    public class ExtractContentLabelRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Security.ContentInfo ContentInfo { get; set; }

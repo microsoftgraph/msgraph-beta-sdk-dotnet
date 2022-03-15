@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.PrivilegedRoleAssignmentRequests.Item.Cancel {
             return await RequestAdapter.SendAsync<CancelResponse>(requestInfo, CancelResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes privilegedRoleAssignmentRequest</summary>
-        public class CancelResponse : IParsable, IAdditionalDataHolder {
+        public class CancelResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type privilegedRoleAssignmentRequest</summary>

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.GetHealthMetricTimeSeries {
     /// <summary>Provides operations to call the getHealthMetricTimeSeries method.</summary>
-    public class GetHealthMetricTimeSeriesRequestBody : IParsable, IAdditionalDataHolder {
+    public class GetHealthMetricTimeSeriesRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public DateTimeOffset? EndDateTime { get; set; }

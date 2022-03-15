@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.GetEffectivePermissionsWithScope {
     /// <summary>Provides operations to call the getEffectivePermissions method.</summary>
-    public class GetEffectivePermissionsWithScopeResponse : IParsable, IAdditionalDataHolder {
+    public class GetEffectivePermissionsWithScopeResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<RolePermission> Value { get; set; }

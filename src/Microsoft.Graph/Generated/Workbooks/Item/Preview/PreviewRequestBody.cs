@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Workbooks.Item.Preview {
     /// <summary>Provides operations to call the preview method.</summary>
-    public class PreviewRequestBody : IParsable, IAdditionalDataHolder {
+    public class PreviewRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public bool? AllowEdit { get; set; }

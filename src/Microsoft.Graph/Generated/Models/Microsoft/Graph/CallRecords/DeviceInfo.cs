@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords {
     /// <summary>Provides operations to manage the cloudCommunications singleton.</summary>
-    public class DeviceInfo : IParsable, IAdditionalDataHolder {
+    public class DeviceInfo : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Name of the capture device driver used by the media endpoint.</summary>

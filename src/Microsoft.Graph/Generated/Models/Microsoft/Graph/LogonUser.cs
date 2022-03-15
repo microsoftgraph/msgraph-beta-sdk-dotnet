@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the hostSecurityProfiles property of the microsoft.graph.security entity.</summary>
-    public class LogonUser : IParsable, IAdditionalDataHolder {
+    public class LogonUser : IAdditionalDataHolder, IParsable {
         /// <summary>Domain of user account used to logon.</summary>
         public string AccountDomain { get; set; }
         /// <summary>Account name of user account used to logon.</summary>

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
-    public class UserExperienceAnalyticsSettings : IParsable, IAdditionalDataHolder {
+    public class UserExperienceAnalyticsSettings : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>True if Tenant attach is configured. If configured then SCCM tenant attached devices will show up in UXA reporting.</summary>

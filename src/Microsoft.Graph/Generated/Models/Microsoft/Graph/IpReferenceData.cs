@@ -5,10 +5,10 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the ipSecurityProfiles property of the microsoft.graph.security entity.</summary>
-    public class IpReferenceData : IParsable, IAdditionalDataHolder {
+    public class IpReferenceData : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        public long? Asn { get; set; }
+        public int? Asn { get; set; }
         public string City { get; set; }
         public string CountryOrRegionCode { get; set; }
         public string Organization { get; set; }
@@ -33,7 +33,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"asn", (o,n) => { (o as IpReferenceData).Asn = n.GetLongValue(); } },
+                {"asn", (o,n) => { (o as IpReferenceData).Asn = n.GetIntValue(); } },
                 {"city", (o,n) => { (o as IpReferenceData).City = n.GetStringValue(); } },
                 {"countryOrRegionCode", (o,n) => { (o as IpReferenceData).CountryOrRegionCode = n.GetStringValue(); } },
                 {"organization", (o,n) => { (o as IpReferenceData).Organization = n.GetStringValue(); } },
@@ -47,7 +47,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteLongValue("asn", Asn);
+            writer.WriteIntValue("asn", Asn);
             writer.WriteStringValue("city", City);
             writer.WriteStringValue("countryOrRegionCode", CountryOrRegionCode);
             writer.WriteStringValue("organization", Organization);

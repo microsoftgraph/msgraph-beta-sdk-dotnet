@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
+using MicrosoftGraphSdk.Users.Item.Teamwork.AssociatedTeams;
 using MicrosoftGraphSdk.Users.Item.Teamwork.InstalledApps;
 using MicrosoftGraphSdk.Users.Item.Teamwork.SendActivityNotification;
 using System;
@@ -13,6 +14,9 @@ using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.Teamwork {
     /// <summary>Provides operations to manage the teamwork property of the microsoft.graph.user entity.</summary>
     public class TeamworkRequestBuilder {
+        public AssociatedTeamsRequestBuilder AssociatedTeams { get =>
+            new AssociatedTeamsRequestBuilder(PathParameters, RequestAdapter);
+        }
         public InstalledAppsRequestBuilder InstalledApps { get =>
             new InstalledAppsRequestBuilder(PathParameters, RequestAdapter);
         }

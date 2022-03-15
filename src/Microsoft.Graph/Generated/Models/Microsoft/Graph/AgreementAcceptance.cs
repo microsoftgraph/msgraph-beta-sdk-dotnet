@@ -22,7 +22,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? ExpirationDateTime { get; set; }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? RecordedDateTime { get; set; }
-        /// <summary>The state of the agreement acceptance. Possible values are: accepted, declined.</summary>
+        /// <summary>The state of the agreement acceptance. Possible values are: accepted, declined. Supports $filter (eq).</summary>
         public AgreementAcceptanceState? State { get; set; }
         /// <summary>Display name of the user when the acceptance was recorded.</summary>
         public string UserDisplayName { get; set; }

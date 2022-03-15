@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates {
     /// <summary>Provides operations to manage the admin singleton.</summary>
-    public class SafeguardProfile : IParsable, IAdditionalDataHolder {
+    public class SafeguardProfile : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies the category of safeguards. The possible values are: likelyIssues, unknownFutureValue.</summary>

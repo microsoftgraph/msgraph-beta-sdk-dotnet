@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Groups.EvaluateDynamicMembership {
             return await RequestAdapter.SendAsync<EvaluateDynamicMembershipResponse>(requestInfo, EvaluateDynamicMembershipResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes evaluateDynamicMembershipResult</summary>
-        public class EvaluateDynamicMembershipResponse : IParsable, IAdditionalDataHolder {
+        public class EvaluateDynamicMembershipResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type evaluateDynamicMembershipResult</summary>

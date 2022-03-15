@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.Me.ExportDeviceAndAppManagementData {
             return await RequestAdapter.SendAsync<ExportDeviceAndAppManagementDataResponse>(requestInfo, ExportDeviceAndAppManagementDataResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes deviceAndAppManagementData</summary>
-        public class ExportDeviceAndAppManagementDataResponse : IParsable, IAdditionalDataHolder {
+        public class ExportDeviceAndAppManagementDataResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type deviceAndAppManagementData</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Reports.GetRelyingPartyDetailedSummaryWithPeriod {
     /// <summary>Provides operations to call the getRelyingPartyDetailedSummary method.</summary>
-    public class GetRelyingPartyDetailedSummaryWithPeriodResponse : IParsable, IAdditionalDataHolder {
+    public class GetRelyingPartyDetailedSummaryWithPeriodResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<RelyingPartyDetailedSummary> Value { get; set; }

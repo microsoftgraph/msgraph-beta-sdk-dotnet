@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.Print.Printers.Item.GetCapabilities {
             return await RequestAdapter.SendAsync<GetCapabilitiesResponse>(requestInfo, GetCapabilitiesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes printerCapabilities</summary>
-        public class GetCapabilitiesResponse : IParsable, IAdditionalDataHolder {
+        public class GetCapabilitiesResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type printerCapabilities</summary>

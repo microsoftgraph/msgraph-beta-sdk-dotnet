@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.App.Calls.Item.Record {
             return await RequestAdapter.SendAsync<RecordResponse>(requestInfo, RecordResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes recordOperation</summary>
-        public class RecordResponse : IParsable, IAdditionalDataHolder {
+        public class RecordResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type recordOperation</summary>

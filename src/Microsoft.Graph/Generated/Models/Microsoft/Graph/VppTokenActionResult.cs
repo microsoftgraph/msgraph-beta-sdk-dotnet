@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
-    public class VppTokenActionResult : IParsable, IAdditionalDataHolder {
+    public class VppTokenActionResult : IAdditionalDataHolder, IParsable {
         /// <summary>Action name</summary>
         public string ActionName { get; set; }
         /// <summary>State of the action. Possible values are: none, pending, canceled, active, done, failed, notSupported.</summary>

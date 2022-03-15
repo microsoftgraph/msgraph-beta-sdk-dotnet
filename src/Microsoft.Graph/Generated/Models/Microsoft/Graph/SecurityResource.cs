@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the alerts property of the microsoft.graph.security entity.</summary>
-    public class SecurityResource : IParsable, IAdditionalDataHolder {
+    public class SecurityResource : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Name of the resource that is related to current alert. Required.</summary>

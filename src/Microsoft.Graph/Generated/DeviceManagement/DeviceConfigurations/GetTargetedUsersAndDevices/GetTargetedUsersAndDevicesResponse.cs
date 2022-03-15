@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.GetTargetedUsersAndDevices {
     /// <summary>Provides operations to call the getTargetedUsersAndDevices method.</summary>
-    public class GetTargetedUsersAndDevicesResponse : IParsable, IAdditionalDataHolder {
+    public class GetTargetedUsersAndDevicesResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<DeviceConfigurationTargetedUserAndDevice> Value { get; set; }

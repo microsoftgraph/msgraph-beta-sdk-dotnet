@@ -5,8 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
-    public class ODataError : ApiException, IParsable, IAdditionalDataHolder {
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    public class ODataError : ApiException, IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public MainError Error { get; set; }

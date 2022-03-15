@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.Unmute {
             return await RequestAdapter.SendAsync<UnmuteResponse>(requestInfo, UnmuteResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes unmuteParticipantOperation</summary>
-        public class UnmuteResponse : IParsable, IAdditionalDataHolder {
+        public class UnmuteResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type unmuteParticipantOperation</summary>

@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsSummarizeWor
             return await RequestAdapter.SendAsync<UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesResponse>(requestInfo, UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes userExperienceAnalyticsWorkFromAnywhereDevicesSummary</summary>
-        public class UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesResponse : IParsable, IAdditionalDataHolder {
+        public class UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type userExperienceAnalyticsWorkFromAnywhereDevicesSummary</summary>

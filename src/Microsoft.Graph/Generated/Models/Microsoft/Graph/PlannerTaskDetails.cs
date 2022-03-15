@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class PlannerTaskDetails : PlannerDelta, IParsable {
         /// <summary>The collection of checklist items on the task.</summary>
         public PlannerChecklistItems Checklist { get; set; }

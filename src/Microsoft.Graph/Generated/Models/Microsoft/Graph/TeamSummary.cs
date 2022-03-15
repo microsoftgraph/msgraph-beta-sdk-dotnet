@@ -4,12 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
-    public class TeamSummary : IParsable, IAdditionalDataHolder {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    public class TeamSummary : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Count of guests in a team.</summary>
         public int? GuestsCount { get; set; }
+        /// <summary>Count of members in a team.</summary>
         public int? MembersCount { get; set; }
+        /// <summary>Count of owners in a team.</summary>
         public int? OwnersCount { get; set; }
         /// <summary>
         /// Instantiates a new teamSummary and sets the default values.

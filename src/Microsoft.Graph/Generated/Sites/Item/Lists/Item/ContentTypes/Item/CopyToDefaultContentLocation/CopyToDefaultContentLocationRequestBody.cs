@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.CopyToDefaultContentLocation {
     /// <summary>Provides operations to call the copyToDefaultContentLocation method.</summary>
-    public class CopyToDefaultContentLocationRequestBody : IParsable, IAdditionalDataHolder {
+    public class CopyToDefaultContentLocationRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string DestinationFileName { get; set; }

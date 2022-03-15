@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.GetIosAvailableUpdateVersions {
     /// <summary>Provides operations to call the getIosAvailableUpdateVersions method.</summary>
-    public class GetIosAvailableUpdateVersionsResponse : IParsable, IAdditionalDataHolder {
+    public class GetIosAvailableUpdateVersionsResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<IosAvailableUpdateVersion> Value { get; set; }

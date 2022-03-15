@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the auditLogRoot singleton.</summary>
-    public class GeoCoordinates : IParsable, IAdditionalDataHolder {
+    public class GeoCoordinates : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Optional. The altitude (height), in feet,  above sea level for the item. Read-only.</summary>

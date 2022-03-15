@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Team.Schedule.TimeCards.Item.StartBreak 
             return await RequestAdapter.SendAsync<StartBreakResponse>(requestInfo, StartBreakResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes timeCard</summary>
-        public class StartBreakResponse : IParsable, IAdditionalDataHolder {
+        public class StartBreakResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type timeCard</summary>

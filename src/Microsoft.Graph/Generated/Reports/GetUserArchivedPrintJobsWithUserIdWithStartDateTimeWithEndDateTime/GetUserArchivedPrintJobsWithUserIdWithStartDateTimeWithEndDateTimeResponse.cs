@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Reports.GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime {
     /// <summary>Provides operations to call the getUserArchivedPrintJobs method.</summary>
-    public class GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse : IParsable, IAdditionalDataHolder {
+    public class GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<ArchivedPrintJob> Value { get; set; }

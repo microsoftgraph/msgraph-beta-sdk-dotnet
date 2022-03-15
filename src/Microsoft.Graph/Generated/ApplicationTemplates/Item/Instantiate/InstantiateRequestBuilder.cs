@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.ApplicationTemplates.Item.Instantiate {
             return await RequestAdapter.SendAsync<InstantiateResponse>(requestInfo, InstantiateResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes applicationServicePrincipal</summary>
-        public class InstantiateResponse : IParsable, IAdditionalDataHolder {
+        public class InstantiateResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type applicationServicePrincipal</summary>

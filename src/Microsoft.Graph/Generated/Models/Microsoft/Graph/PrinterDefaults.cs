@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the print singleton.</summary>
-    public class PrinterDefaults : IParsable, IAdditionalDataHolder {
+    public class PrinterDefaults : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The default color mode to use when printing the document. Valid values are described in the following table.</summary>

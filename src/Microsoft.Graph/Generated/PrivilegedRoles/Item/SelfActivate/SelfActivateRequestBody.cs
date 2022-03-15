@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.PrivilegedRoles.Item.SelfActivate {
     /// <summary>Provides operations to call the selfActivate method.</summary>
-    public class SelfActivateRequestBody : IParsable, IAdditionalDataHolder {
+    public class SelfActivateRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string Duration { get; set; }

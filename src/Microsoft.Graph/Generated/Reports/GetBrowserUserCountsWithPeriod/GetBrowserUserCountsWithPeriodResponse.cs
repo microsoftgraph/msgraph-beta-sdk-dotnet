@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Reports.GetBrowserUserCountsWithPeriod {
     /// <summary>Provides operations to call the getBrowserUserCounts method.</summary>
-    public class GetBrowserUserCountsWithPeriodResponse : IParsable, IAdditionalDataHolder {
+    public class GetBrowserUserCountsWithPeriodResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public byte[] Value { get; set; }

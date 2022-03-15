@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.CompareWithTemplateId {
     /// <summary>Provides operations to call the compare method.</summary>
-    public class CompareWithTemplateIdResponse : IParsable, IAdditionalDataHolder {
+    public class CompareWithTemplateIdResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<DeviceManagementSettingComparison> Value { get; set; }

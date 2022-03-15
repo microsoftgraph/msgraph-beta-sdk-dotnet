@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Members.Item.RemoveMembers {
     /// <summary>Provides operations to call the removeMembers method.</summary>
-    public class RemoveMembersRequestBody : IParsable, IAdditionalDataHolder {
+    public class RemoveMembersRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<UpdatableAsset> Assets { get; set; }

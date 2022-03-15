@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsRegressionSu
             return await RequestAdapter.SendAsync<SummarizeDeviceRegressionPerformanceWithSummarizeByResponse>(requestInfo, SummarizeDeviceRegressionPerformanceWithSummarizeByResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes userExperienceAnalyticsRegressionSummary</summary>
-        public class SummarizeDeviceRegressionPerformanceWithSummarizeByResponse : IParsable, IAdditionalDataHolder {
+        public class SummarizeDeviceRegressionPerformanceWithSummarizeByResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type userExperienceAnalyticsRegressionSummary</summary>

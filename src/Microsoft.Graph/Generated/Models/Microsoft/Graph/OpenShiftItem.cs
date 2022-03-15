@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class OpenShiftItem : ShiftItem, IParsable {
         /// <summary>Count of the number of slots for the given open shift.</summary>
         public int? OpenSlotCount { get; set; }

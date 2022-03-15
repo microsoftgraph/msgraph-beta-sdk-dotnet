@@ -7,13 +7,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class MicrosoftTunnelHealthThreshold : Entity, IParsable {
         /// <summary>The default threshold for being healthy</summary>
-        public long? DefaultHealthyThreshold { get; set; }
+        public int? DefaultHealthyThreshold { get; set; }
         /// <summary>The default threshold for being unhealthy</summary>
-        public long? DefaultUnhealthyThreshold { get; set; }
+        public int? DefaultUnhealthyThreshold { get; set; }
         /// <summary>The threshold for being healthy</summary>
-        public long? HealthyThreshold { get; set; }
+        public int? HealthyThreshold { get; set; }
         /// <summary>The threshold for being unhealthy</summary>
-        public long? UnhealthyThreshold { get; set; }
+        public int? UnhealthyThreshold { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -27,10 +27,10 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"defaultHealthyThreshold", (o,n) => { (o as MicrosoftTunnelHealthThreshold).DefaultHealthyThreshold = n.GetLongValue(); } },
-                {"defaultUnhealthyThreshold", (o,n) => { (o as MicrosoftTunnelHealthThreshold).DefaultUnhealthyThreshold = n.GetLongValue(); } },
-                {"healthyThreshold", (o,n) => { (o as MicrosoftTunnelHealthThreshold).HealthyThreshold = n.GetLongValue(); } },
-                {"unhealthyThreshold", (o,n) => { (o as MicrosoftTunnelHealthThreshold).UnhealthyThreshold = n.GetLongValue(); } },
+                {"defaultHealthyThreshold", (o,n) => { (o as MicrosoftTunnelHealthThreshold).DefaultHealthyThreshold = n.GetIntValue(); } },
+                {"defaultUnhealthyThreshold", (o,n) => { (o as MicrosoftTunnelHealthThreshold).DefaultUnhealthyThreshold = n.GetIntValue(); } },
+                {"healthyThreshold", (o,n) => { (o as MicrosoftTunnelHealthThreshold).HealthyThreshold = n.GetIntValue(); } },
+                {"unhealthyThreshold", (o,n) => { (o as MicrosoftTunnelHealthThreshold).UnhealthyThreshold = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -40,10 +40,10 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteLongValue("defaultHealthyThreshold", DefaultHealthyThreshold);
-            writer.WriteLongValue("defaultUnhealthyThreshold", DefaultUnhealthyThreshold);
-            writer.WriteLongValue("healthyThreshold", HealthyThreshold);
-            writer.WriteLongValue("unhealthyThreshold", UnhealthyThreshold);
+            writer.WriteIntValue("defaultHealthyThreshold", DefaultHealthyThreshold);
+            writer.WriteIntValue("defaultUnhealthyThreshold", DefaultUnhealthyThreshold);
+            writer.WriteIntValue("healthyThreshold", HealthyThreshold);
+            writer.WriteIntValue("unhealthyThreshold", UnhealthyThreshold);
         }
     }
 }

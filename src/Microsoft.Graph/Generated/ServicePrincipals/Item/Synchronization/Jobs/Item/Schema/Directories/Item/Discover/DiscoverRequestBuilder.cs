@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.Item.Sch
             return await RequestAdapter.SendAsync<DiscoverResponse>(requestInfo, DiscoverResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes directoryDefinition</summary>
-        public class DiscoverResponse : IParsable, IAdditionalDataHolder {
+        public class DiscoverResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type directoryDefinition</summary>

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Issues.Item.IncidentReport {
     /// <summary>Provides operations to call the incidentReport method.</summary>
-    public class IncidentReportResponse : IParsable, IAdditionalDataHolder {
+    public class IncidentReportResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public byte[] Value { get; set; }

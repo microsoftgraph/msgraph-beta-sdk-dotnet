@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Communications.OnlineMeetings.CreateOrGet {
     /// <summary>Provides operations to call the createOrGet method.</summary>
-    public class CreateOrGetRequestBody : IParsable, IAdditionalDataHolder {
+    public class CreateOrGetRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ChatInfo ChatInfo { get; set; }

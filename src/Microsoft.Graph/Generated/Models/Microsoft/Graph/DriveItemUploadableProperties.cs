@@ -5,13 +5,13 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the createUploadSession method.</summary>
-    public class DriveItemUploadableProperties : IParsable, IAdditionalDataHolder {
+    public class DriveItemUploadableProperties : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Provides a user-visible description of the item. Read-write. Only on OneDrive Personal.</summary>
         public string Description { get; set; }
         /// <summary>Provides an expected file size to perform a quota check prior to upload. Only on OneDrive Personal.</summary>
-        public long? FileSize { get; set; }
+        public int? FileSize { get; set; }
         /// <summary>File system information on client. Read-write.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.FileSystemInfo FileSystemInfo { get; set; }
         /// <summary>The name of the item (filename and extension). Read-write.</summary>
@@ -36,7 +36,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"description", (o,n) => { (o as DriveItemUploadableProperties).Description = n.GetStringValue(); } },
-                {"fileSize", (o,n) => { (o as DriveItemUploadableProperties).FileSize = n.GetLongValue(); } },
+                {"fileSize", (o,n) => { (o as DriveItemUploadableProperties).FileSize = n.GetIntValue(); } },
                 {"fileSystemInfo", (o,n) => { (o as DriveItemUploadableProperties).FileSystemInfo = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.FileSystemInfo>(MicrosoftGraphSdk.Models.Microsoft.Graph.FileSystemInfo.CreateFromDiscriminatorValue); } },
                 {"name", (o,n) => { (o as DriveItemUploadableProperties).Name = n.GetStringValue(); } },
             };
@@ -48,7 +48,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
-            writer.WriteLongValue("fileSize", FileSize);
+            writer.WriteIntValue("fileSize", FileSize);
             writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.FileSystemInfo>("fileSystemInfo", FileSystemInfo);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);

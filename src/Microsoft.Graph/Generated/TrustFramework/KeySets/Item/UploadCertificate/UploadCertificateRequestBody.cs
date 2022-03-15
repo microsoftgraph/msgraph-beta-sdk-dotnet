@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.TrustFramework.KeySets.Item.UploadCertificate {
     /// <summary>Provides operations to call the uploadCertificate method.</summary>
-    public class UploadCertificateRequestBody : IParsable, IAdditionalDataHolder {
+    public class UploadCertificateRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string Key { get; set; }

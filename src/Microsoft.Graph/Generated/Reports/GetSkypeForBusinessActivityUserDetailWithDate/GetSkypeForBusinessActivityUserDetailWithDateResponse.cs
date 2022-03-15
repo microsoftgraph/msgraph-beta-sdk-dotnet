@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Reports.GetSkypeForBusinessActivityUserDetailWithDate {
     /// <summary>Provides operations to call the getSkypeForBusinessActivityUserDetail method.</summary>
-    public class GetSkypeForBusinessActivityUserDetailWithDateResponse : IParsable, IAdditionalDataHolder {
+    public class GetSkypeForBusinessActivityUserDetailWithDateResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public byte[] Value { get; set; }

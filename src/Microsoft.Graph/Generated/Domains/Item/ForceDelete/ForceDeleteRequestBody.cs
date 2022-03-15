@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Domains.Item.ForceDelete {
     /// <summary>Provides operations to call the forceDelete method.</summary>
-    public class ForceDeleteRequestBody : IParsable, IAdditionalDataHolder {
+    public class ForceDeleteRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public bool? DisableUserAccounts { get; set; }

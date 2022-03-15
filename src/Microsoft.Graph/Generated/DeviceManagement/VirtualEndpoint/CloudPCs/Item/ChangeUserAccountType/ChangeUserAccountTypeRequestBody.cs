@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.CloudPCs.Item.ChangeUserAccountType {
     /// <summary>Provides operations to call the changeUserAccountType method.</summary>
-    public class ChangeUserAccountTypeRequestBody : IParsable, IAdditionalDataHolder {
+    public class ChangeUserAccountTypeRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public CloudPcUserAccountType? UserAccountType { get; set; }

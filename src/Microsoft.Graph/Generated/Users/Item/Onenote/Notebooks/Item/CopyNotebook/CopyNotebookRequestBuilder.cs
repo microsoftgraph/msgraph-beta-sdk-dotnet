@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Users.Item.Onenote.Notebooks.Item.CopyNotebook {
             return await RequestAdapter.SendAsync<CopyNotebookResponse>(requestInfo, CopyNotebookResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes onenoteOperation</summary>
-        public class CopyNotebookResponse : IParsable, IAdditionalDataHolder {
+        public class CopyNotebookResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type onenoteOperation</summary>

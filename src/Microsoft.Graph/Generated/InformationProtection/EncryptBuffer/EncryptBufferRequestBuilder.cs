@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.InformationProtection.EncryptBuffer {
             return await RequestAdapter.SendAsync<EncryptBufferResponse>(requestInfo, EncryptBufferResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes bufferEncryptionResult</summary>
-        public class EncryptBufferResponse : IParsable, IAdditionalDataHolder {
+        public class EncryptBufferResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type bufferEncryptionResult</summary>

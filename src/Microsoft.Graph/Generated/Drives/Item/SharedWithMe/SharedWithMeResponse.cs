@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Drives.Item.SharedWithMe {
     /// <summary>Provides operations to call the sharedWithMe method.</summary>
-    public class SharedWithMeResponse : IParsable, IAdditionalDataHolder {
+    public class SharedWithMeResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem> Value { get; set; }

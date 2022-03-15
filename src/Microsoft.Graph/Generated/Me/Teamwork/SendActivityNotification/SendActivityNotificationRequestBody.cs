@@ -6,11 +6,11 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Me.Teamwork.SendActivityNotification {
     /// <summary>Provides operations to call the sendActivityNotification method.</summary>
-    public class SendActivityNotificationRequestBody : IParsable, IAdditionalDataHolder {
+    public class SendActivityNotificationRequestBody : IAdditionalDataHolder, IParsable {
         public string ActivityType { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        public long? ChainId { get; set; }
+        public int? ChainId { get; set; }
         public ItemBody PreviewText { get; set; }
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.KeyValuePair> TemplateParameters { get; set; }
         public TeamworkActivityTopic Topic { get; set; }
@@ -34,7 +34,7 @@ namespace MicrosoftGraphSdk.Me.Teamwork.SendActivityNotification {
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"activityType", (o,n) => { (o as SendActivityNotificationRequestBody).ActivityType = n.GetStringValue(); } },
-                {"chainId", (o,n) => { (o as SendActivityNotificationRequestBody).ChainId = n.GetLongValue(); } },
+                {"chainId", (o,n) => { (o as SendActivityNotificationRequestBody).ChainId = n.GetIntValue(); } },
                 {"previewText", (o,n) => { (o as SendActivityNotificationRequestBody).PreviewText = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
                 {"templateParameters", (o,n) => { (o as SendActivityNotificationRequestBody).TemplateParameters = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.KeyValuePair>(MicrosoftGraphSdk.Models.Microsoft.Graph.KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
                 {"topic", (o,n) => { (o as SendActivityNotificationRequestBody).Topic = n.GetObjectValue<TeamworkActivityTopic>(TeamworkActivityTopic.CreateFromDiscriminatorValue); } },
@@ -47,7 +47,7 @@ namespace MicrosoftGraphSdk.Me.Teamwork.SendActivityNotification {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("activityType", ActivityType);
-            writer.WriteLongValue("chainId", ChainId);
+            writer.WriteIntValue("chainId", ChainId);
             writer.WriteObjectValue<ItemBody>("previewText", PreviewText);
             writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.KeyValuePair>("templateParameters", TemplateParameters);
             writer.WriteObjectValue<TeamworkActivityTopic>("topic", Topic);

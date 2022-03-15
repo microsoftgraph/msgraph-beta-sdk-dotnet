@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Groups.EvaluateDynamicMembership {
     /// <summary>Provides operations to call the evaluateDynamicMembership method.</summary>
-    public class EvaluateDynamicMembershipRequestBody : IParsable, IAdditionalDataHolder {
+    public class EvaluateDynamicMembershipRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string MemberId { get; set; }

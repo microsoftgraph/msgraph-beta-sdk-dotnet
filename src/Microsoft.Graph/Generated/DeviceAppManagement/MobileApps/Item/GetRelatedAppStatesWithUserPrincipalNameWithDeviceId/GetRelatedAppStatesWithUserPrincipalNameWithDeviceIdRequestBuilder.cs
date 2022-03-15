@@ -22,13 +22,13 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.GetRelatedAppSta
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="userPrincipalName">Usage: userPrincipalName='{userPrincipalName}'</param>
         /// </summary>
-        public GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string userPrincipalName = default, string deviceId = default) {
+        public GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string deviceId = default, string userPrincipalName = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp_id}/microsoft.graph.getRelatedAppStates(userPrincipalName='{userPrincipalName}',deviceId='{deviceId}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("userPrincipalName", userPrincipalName);
             urlTplParams.Add("deviceId", deviceId);
+            urlTplParams.Add("userPrincipalName", userPrincipalName);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.AreGlobalScript
             return await RequestAdapter.SendAsync<AreGlobalScriptsAvailableResponse>(requestInfo, AreGlobalScriptsAvailableResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes globalDeviceHealthScriptState</summary>
-        public class AreGlobalScriptsAvailableResponse : IParsable, IAdditionalDataHolder {
+        public class AreGlobalScriptsAvailableResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type globalDeviceHealthScriptState</summary>

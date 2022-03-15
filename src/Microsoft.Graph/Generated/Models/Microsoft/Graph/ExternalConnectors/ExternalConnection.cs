@@ -14,7 +14,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors {
         public string Description { get; set; }
         /// <summary>Read-only. Nullable.</summary>
         public List<ExternalGroup> Groups { get; set; }
-        public long? IngestedItemsCount { get; set; }
+        public int? IngestedItemsCount { get; set; }
         /// <summary>Read-only. Nullable.</summary>
         public List<ExternalItem> Items { get; set; }
         /// <summary>The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.</summary>
@@ -45,7 +45,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors {
                 {"connectorId", (o,n) => { (o as ExternalConnection).ConnectorId = n.GetStringValue(); } },
                 {"description", (o,n) => { (o as ExternalConnection).Description = n.GetStringValue(); } },
                 {"groups", (o,n) => { (o as ExternalConnection).Groups = n.GetCollectionOfObjectValues<ExternalGroup>(ExternalGroup.CreateFromDiscriminatorValue).ToList(); } },
-                {"ingestedItemsCount", (o,n) => { (o as ExternalConnection).IngestedItemsCount = n.GetLongValue(); } },
+                {"ingestedItemsCount", (o,n) => { (o as ExternalConnection).IngestedItemsCount = n.GetIntValue(); } },
                 {"items", (o,n) => { (o as ExternalConnection).Items = n.GetCollectionOfObjectValues<ExternalItem>(ExternalItem.CreateFromDiscriminatorValue).ToList(); } },
                 {"name", (o,n) => { (o as ExternalConnection).Name = n.GetStringValue(); } },
                 {"operations", (o,n) => { (o as ExternalConnection).Operations = n.GetCollectionOfObjectValues<ConnectionOperation>(ConnectionOperation.CreateFromDiscriminatorValue).ToList(); } },
@@ -66,7 +66,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors {
             writer.WriteStringValue("connectorId", ConnectorId);
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfObjectValues<ExternalGroup>("groups", Groups);
-            writer.WriteLongValue("ingestedItemsCount", IngestedItemsCount);
+            writer.WriteIntValue("ingestedItemsCount", IngestedItemsCount);
             writer.WriteCollectionOfObjectValues<ExternalItem>("items", Items);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<ConnectionOperation>("operations", Operations);

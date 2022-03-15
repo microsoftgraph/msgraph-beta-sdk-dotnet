@@ -7,11 +7,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class UserExperienceAnalyticsDeviceStartupProcessPerformance : Entity, IParsable {
         /// <summary>User experience analytics device startup process summarized count.</summary>
-        public long? DeviceCount { get; set; }
+        public int? DeviceCount { get; set; }
         /// <summary>User experience analytics device startup process median impact in milliseconds.</summary>
         public int? MedianImpactInMs { get; set; }
         /// <summary>User experience analytics device startup process median impact in milliseconds.</summary>
-        public long? MedianImpactInMs2 { get; set; }
+        public int? MedianImpactInMs2 { get; set; }
         /// <summary>User experience analytics device startup process name.</summary>
         public string ProcessName { get; set; }
         /// <summary>The user experience analytics device startup process product name.</summary>
@@ -21,7 +21,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>User experience analytics device startup process total impact in milliseconds.</summary>
         public int? TotalImpactInMs { get; set; }
         /// <summary>User experience analytics device startup process total impact in milliseconds.</summary>
-        public long? TotalImpactInMs2 { get; set; }
+        public int? TotalImpactInMs2 { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -35,14 +35,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"deviceCount", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupProcessPerformance).DeviceCount = n.GetLongValue(); } },
+                {"deviceCount", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupProcessPerformance).DeviceCount = n.GetIntValue(); } },
                 {"medianImpactInMs", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupProcessPerformance).MedianImpactInMs = n.GetIntValue(); } },
-                {"medianImpactInMs2", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupProcessPerformance).MedianImpactInMs2 = n.GetLongValue(); } },
+                {"medianImpactInMs2", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupProcessPerformance).MedianImpactInMs2 = n.GetIntValue(); } },
                 {"processName", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupProcessPerformance).ProcessName = n.GetStringValue(); } },
                 {"productName", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupProcessPerformance).ProductName = n.GetStringValue(); } },
                 {"publisher", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupProcessPerformance).Publisher = n.GetStringValue(); } },
                 {"totalImpactInMs", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupProcessPerformance).TotalImpactInMs = n.GetIntValue(); } },
-                {"totalImpactInMs2", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupProcessPerformance).TotalImpactInMs2 = n.GetLongValue(); } },
+                {"totalImpactInMs2", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupProcessPerformance).TotalImpactInMs2 = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -52,14 +52,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteLongValue("deviceCount", DeviceCount);
+            writer.WriteIntValue("deviceCount", DeviceCount);
             writer.WriteIntValue("medianImpactInMs", MedianImpactInMs);
-            writer.WriteLongValue("medianImpactInMs2", MedianImpactInMs2);
+            writer.WriteIntValue("medianImpactInMs2", MedianImpactInMs2);
             writer.WriteStringValue("processName", ProcessName);
             writer.WriteStringValue("productName", ProductName);
             writer.WriteStringValue("publisher", Publisher);
             writer.WriteIntValue("totalImpactInMs", TotalImpactInMs);
-            writer.WriteLongValue("totalImpactInMs2", TotalImpactInMs2);
+            writer.WriteIntValue("totalImpactInMs2", TotalImpactInMs2);
         }
     }
 }

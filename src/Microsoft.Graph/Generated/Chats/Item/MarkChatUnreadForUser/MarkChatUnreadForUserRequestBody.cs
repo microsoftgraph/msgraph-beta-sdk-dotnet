@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Chats.Item.MarkChatUnreadForUser {
     /// <summary>Provides operations to call the markChatUnreadForUser method.</summary>
-    public class MarkChatUnreadForUserRequestBody : IParsable, IAdditionalDataHolder {
+    public class MarkChatUnreadForUserRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public DateTimeOffset? LastMessageReadDateTime { get; set; }

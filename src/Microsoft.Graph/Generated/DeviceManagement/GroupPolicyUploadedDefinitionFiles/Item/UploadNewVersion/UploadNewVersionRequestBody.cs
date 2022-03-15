@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.UploadNewVersion {
     /// <summary>Provides operations to call the uploadNewVersion method.</summary>
-    public class UploadNewVersionRequestBody : IParsable, IAdditionalDataHolder {
+    public class UploadNewVersionRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public byte[] Content { get; set; }

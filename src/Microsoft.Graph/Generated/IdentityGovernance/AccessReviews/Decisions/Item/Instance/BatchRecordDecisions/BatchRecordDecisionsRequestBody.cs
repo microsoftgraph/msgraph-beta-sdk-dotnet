@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Decisions.Item.Instance.BatchRecordDecisions {
     /// <summary>Provides operations to call the batchRecordDecisions method.</summary>
-    public class BatchRecordDecisionsRequestBody : IParsable, IAdditionalDataHolder {
+    public class BatchRecordDecisionsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string Decision { get; set; }

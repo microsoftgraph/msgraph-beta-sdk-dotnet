@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Me.InformationProtection.SensitivityLabels.Evaluate {
     /// <summary>Provides operations to call the evaluate method.</summary>
-    public class EvaluateRequestBody : IParsable, IAdditionalDataHolder {
+    public class EvaluateRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public MicrosoftGraphSdk.Models.Microsoft.Graph.CurrentLabel CurrentLabel { get; set; }

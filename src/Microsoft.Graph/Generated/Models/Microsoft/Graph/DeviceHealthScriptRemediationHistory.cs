@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the getRemediationHistory method.</summary>
-    public class DeviceHealthScriptRemediationHistory : IParsable, IAdditionalDataHolder {
+    public class DeviceHealthScriptRemediationHistory : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of devices remediated by the device health script on the given date.</summary>

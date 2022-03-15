@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the createUploadSession method.</summary>
-    public class AttachmentItem : IParsable, IAdditionalDataHolder {
+    public class AttachmentItem : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type of attachment. Possible values are: file, item, reference. Required.</summary>
@@ -19,7 +19,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.</summary>
         public string Name { get; set; }
         /// <summary>The length of the attachment in bytes. Required.</summary>
-        public long? Size { get; set; }
+        public int? Size { get; set; }
         /// <summary>
         /// Instantiates a new attachmentItem and sets the default values.
         /// </summary>
@@ -44,7 +44,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"contentType", (o,n) => { (o as AttachmentItem).ContentType = n.GetStringValue(); } },
                 {"isInline", (o,n) => { (o as AttachmentItem).IsInline = n.GetBoolValue(); } },
                 {"name", (o,n) => { (o as AttachmentItem).Name = n.GetStringValue(); } },
-                {"size", (o,n) => { (o as AttachmentItem).Size = n.GetLongValue(); } },
+                {"size", (o,n) => { (o as AttachmentItem).Size = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("contentType", ContentType);
             writer.WriteBoolValue("isInline", IsInline);
             writer.WriteStringValue("name", Name);
-            writer.WriteLongValue("size", Size);
+            writer.WriteIntValue("size", Size);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

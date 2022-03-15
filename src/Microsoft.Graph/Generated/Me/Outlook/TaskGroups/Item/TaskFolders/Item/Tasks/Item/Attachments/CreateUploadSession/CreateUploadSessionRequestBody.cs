@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Me.Outlook.TaskGroups.Item.TaskFolders.Item.Tasks.Item.Attachments.CreateUploadSession {
     /// <summary>Provides operations to call the createUploadSession method.</summary>
-    public class CreateUploadSessionRequestBody : IParsable, IAdditionalDataHolder {
+    public class CreateUploadSessionRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AttachmentItem AttachmentItem { get; set; }

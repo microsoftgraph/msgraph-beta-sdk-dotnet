@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the print singleton.</summary>
-    public class PrintJobConfiguration : IParsable, IAdditionalDataHolder {
+    public class PrintJobConfiguration : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the printer should collate pages wehen printing multiple copies of a multi-page document.</summary>

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the teamwork singleton.</summary>
-    public class TeamworkTeamsClientConfiguration : IParsable, IAdditionalDataHolder {
+    public class TeamworkTeamsClientConfiguration : IAdditionalDataHolder, IParsable {
         /// <summary>The configuration of the Microsoft Teams client user account for a device.</summary>
         public TeamworkAccountConfiguration AccountConfiguration { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

@@ -20,6 +20,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public CloudPcOnPremisesConnectionStatusDetails HealthCheckStatusDetails { get; set; }
         /// <summary>When true, the on-premises connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an on-premises connection, including healthCheckStatusDetails. Read-only.</summary>
         public bool? InUse { get; set; }
+        public CloudPcManagementService? ManagedBy { get; set; }
         /// <summary>The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.</summary>
         public string OrganizationalUnit { get; set; }
         /// <summary>The ID of the target resource group. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}'.</summary>
@@ -54,6 +55,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"healthCheckStatus", (o,n) => { (o as CloudPcOnPremisesConnection).HealthCheckStatus = n.GetEnumValue<CloudPcOnPremisesConnectionStatus>(); } },
                 {"healthCheckStatusDetails", (o,n) => { (o as CloudPcOnPremisesConnection).HealthCheckStatusDetails = n.GetObjectValue<CloudPcOnPremisesConnectionStatusDetails>(CloudPcOnPremisesConnectionStatusDetails.CreateFromDiscriminatorValue); } },
                 {"inUse", (o,n) => { (o as CloudPcOnPremisesConnection).InUse = n.GetBoolValue(); } },
+                {"managedBy", (o,n) => { (o as CloudPcOnPremisesConnection).ManagedBy = n.GetEnumValue<CloudPcManagementService>(); } },
                 {"organizationalUnit", (o,n) => { (o as CloudPcOnPremisesConnection).OrganizationalUnit = n.GetStringValue(); } },
                 {"resourceGroupId", (o,n) => { (o as CloudPcOnPremisesConnection).ResourceGroupId = n.GetStringValue(); } },
                 {"subnetId", (o,n) => { (o as CloudPcOnPremisesConnection).SubnetId = n.GetStringValue(); } },
@@ -77,6 +79,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteEnumValue<CloudPcOnPremisesConnectionStatus>("healthCheckStatus", HealthCheckStatus);
             writer.WriteObjectValue<CloudPcOnPremisesConnectionStatusDetails>("healthCheckStatusDetails", HealthCheckStatusDetails);
             writer.WriteBoolValue("inUse", InUse);
+            writer.WriteEnumValue<CloudPcManagementService>("managedBy", ManagedBy);
             writer.WriteStringValue("organizationalUnit", OrganizationalUnit);
             writer.WriteStringValue("resourceGroupId", ResourceGroupId);
             writer.WriteStringValue("subnetId", SubnetId);

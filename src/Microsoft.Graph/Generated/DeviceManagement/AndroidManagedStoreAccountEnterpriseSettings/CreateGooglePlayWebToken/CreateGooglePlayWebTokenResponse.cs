@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CreateGooglePlayWebToken {
     /// <summary>Provides operations to call the createGooglePlayWebToken method.</summary>
-    public class CreateGooglePlayWebTokenResponse : IParsable, IAdditionalDataHolder {
+    public class CreateGooglePlayWebTokenResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string Value { get; set; }

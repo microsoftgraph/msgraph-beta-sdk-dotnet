@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Groups.Item.Threads.Item.Reply {
     /// <summary>Provides operations to call the reply method.</summary>
-    public class ReplyRequestBody : IParsable, IAdditionalDataHolder {
+    public class ReplyRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Post Post { get; set; }

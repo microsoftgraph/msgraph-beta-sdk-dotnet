@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.AddToReviewSet {
     /// <summary>Provides operations to call the addToReviewSet method.</summary>
-    public class AddToReviewSetRequestBody : IParsable, IAdditionalDataHolder {
+    public class AddToReviewSetRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery.AdditionalDataOptions? AdditionalDataOptions { get; set; }

@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GetComanagementEligibleDevicesSumma
             return await RequestAdapter.SendAsync<GetComanagementEligibleDevicesSummaryResponse>(requestInfo, GetComanagementEligibleDevicesSummaryResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes comanagementEligibleDevicesSummary</summary>
-        public class GetComanagementEligibleDevicesSummaryResponse : IParsable, IAdditionalDataHolder {
+        public class GetComanagementEligibleDevicesSummaryResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type comanagementEligibleDevicesSummary</summary>

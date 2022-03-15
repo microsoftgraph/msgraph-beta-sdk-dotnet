@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.GetTopMobileAppsWithStatusWithCount {
     /// <summary>Provides operations to call the getTopMobileApps method.</summary>
-    public class GetTopMobileAppsWithStatusWithCountResponse : IParsable, IAdditionalDataHolder {
+    public class GetTopMobileAppsWithStatusWithCountResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<MobileApp> Value { get; set; }

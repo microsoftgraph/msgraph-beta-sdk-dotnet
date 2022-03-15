@@ -23,13 +23,13 @@ namespace MicrosoftGraphSdk.Me.ExportDeviceAndAppManagementDataWithSkipWithTop {
         /// <param name="skip">Usage: skip={skip}</param>
         /// <param name="top">Usage: top={top}</param>
         /// </summary>
-        public ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, int? top = default, int? skip = default) {
+        public ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, int? skip = default, int? top = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/me/microsoft.graph.exportDeviceAndAppManagementData(skip={skip},top={top})";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("top", top);
             urlTplParams.Add("skip", skip);
+            urlTplParams.Add("top", top);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -74,7 +74,7 @@ namespace MicrosoftGraphSdk.Me.ExportDeviceAndAppManagementDataWithSkipWithTop {
             return await RequestAdapter.SendAsync<ExportDeviceAndAppManagementDataWithSkipWithTopResponse>(requestInfo, ExportDeviceAndAppManagementDataWithSkipWithTopResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes deviceAndAppManagementData</summary>
-        public class ExportDeviceAndAppManagementDataWithSkipWithTopResponse : IParsable, IAdditionalDataHolder {
+        public class ExportDeviceAndAppManagementDataWithSkipWithTopResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type deviceAndAppManagementData</summary>

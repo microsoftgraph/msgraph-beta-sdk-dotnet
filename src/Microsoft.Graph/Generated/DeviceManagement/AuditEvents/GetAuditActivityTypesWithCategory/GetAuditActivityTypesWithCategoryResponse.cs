@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.AuditEvents.GetAuditActivityTypesWithCategory {
     /// <summary>Provides operations to call the getAuditActivityTypes method.</summary>
-    public class GetAuditActivityTypesWithCategoryResponse : IParsable, IAdditionalDataHolder {
+    public class GetAuditActivityTypesWithCategoryResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<string> Value { get; set; }

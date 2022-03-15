@@ -42,7 +42,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string FileName { get; set; }
         public string FilePacker { get; set; }
         public string FilePath { get; set; }
-        public long? FileSize { get; set; }
+        public int? FileSize { get; set; }
         public string FileType { get; set; }
         /// <summary>Stamped by the system when the indicator is ingested. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? IngestedDateTime { get; set; }
@@ -57,7 +57,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible which can be found via the Windows Defender Security Intelligence threat encyclopedia.</summary>
         public List<string> MalwareFamilyNames { get; set; }
         public string NetworkCidrBlock { get; set; }
-        public long? NetworkDestinationAsn { get; set; }
+        public int? NetworkDestinationAsn { get; set; }
         public string NetworkDestinationCidrBlock { get; set; }
         public string NetworkDestinationIPv4 { get; set; }
         public string NetworkDestinationIPv6 { get; set; }
@@ -66,7 +66,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string NetworkIPv6 { get; set; }
         public int? NetworkPort { get; set; }
         public int? NetworkProtocol { get; set; }
-        public long? NetworkSourceAsn { get; set; }
+        public int? NetworkSourceAsn { get; set; }
         public string NetworkSourceCidrBlock { get; set; }
         public string NetworkSourceIPv4 { get; set; }
         public string NetworkSourceIPv6 { get; set; }
@@ -125,7 +125,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"fileName", (o,n) => { (o as TiIndicator).FileName = n.GetStringValue(); } },
                 {"filePacker", (o,n) => { (o as TiIndicator).FilePacker = n.GetStringValue(); } },
                 {"filePath", (o,n) => { (o as TiIndicator).FilePath = n.GetStringValue(); } },
-                {"fileSize", (o,n) => { (o as TiIndicator).FileSize = n.GetLongValue(); } },
+                {"fileSize", (o,n) => { (o as TiIndicator).FileSize = n.GetIntValue(); } },
                 {"fileType", (o,n) => { (o as TiIndicator).FileType = n.GetStringValue(); } },
                 {"ingestedDateTime", (o,n) => { (o as TiIndicator).IngestedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"isActive", (o,n) => { (o as TiIndicator).IsActive = n.GetBoolValue(); } },
@@ -134,7 +134,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"lastReportedDateTime", (o,n) => { (o as TiIndicator).LastReportedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"malwareFamilyNames", (o,n) => { (o as TiIndicator).MalwareFamilyNames = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"networkCidrBlock", (o,n) => { (o as TiIndicator).NetworkCidrBlock = n.GetStringValue(); } },
-                {"networkDestinationAsn", (o,n) => { (o as TiIndicator).NetworkDestinationAsn = n.GetLongValue(); } },
+                {"networkDestinationAsn", (o,n) => { (o as TiIndicator).NetworkDestinationAsn = n.GetIntValue(); } },
                 {"networkDestinationCidrBlock", (o,n) => { (o as TiIndicator).NetworkDestinationCidrBlock = n.GetStringValue(); } },
                 {"networkDestinationIPv4", (o,n) => { (o as TiIndicator).NetworkDestinationIPv4 = n.GetStringValue(); } },
                 {"networkDestinationIPv6", (o,n) => { (o as TiIndicator).NetworkDestinationIPv6 = n.GetStringValue(); } },
@@ -143,7 +143,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"networkIPv6", (o,n) => { (o as TiIndicator).NetworkIPv6 = n.GetStringValue(); } },
                 {"networkPort", (o,n) => { (o as TiIndicator).NetworkPort = n.GetIntValue(); } },
                 {"networkProtocol", (o,n) => { (o as TiIndicator).NetworkProtocol = n.GetIntValue(); } },
-                {"networkSourceAsn", (o,n) => { (o as TiIndicator).NetworkSourceAsn = n.GetLongValue(); } },
+                {"networkSourceAsn", (o,n) => { (o as TiIndicator).NetworkSourceAsn = n.GetIntValue(); } },
                 {"networkSourceCidrBlock", (o,n) => { (o as TiIndicator).NetworkSourceCidrBlock = n.GetStringValue(); } },
                 {"networkSourceIPv4", (o,n) => { (o as TiIndicator).NetworkSourceIPv4 = n.GetStringValue(); } },
                 {"networkSourceIPv6", (o,n) => { (o as TiIndicator).NetworkSourceIPv6 = n.GetStringValue(); } },
@@ -192,7 +192,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("fileName", FileName);
             writer.WriteStringValue("filePacker", FilePacker);
             writer.WriteStringValue("filePath", FilePath);
-            writer.WriteLongValue("fileSize", FileSize);
+            writer.WriteIntValue("fileSize", FileSize);
             writer.WriteStringValue("fileType", FileType);
             writer.WriteDateTimeOffsetValue("ingestedDateTime", IngestedDateTime);
             writer.WriteBoolValue("isActive", IsActive);
@@ -201,7 +201,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteDateTimeOffsetValue("lastReportedDateTime", LastReportedDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("malwareFamilyNames", MalwareFamilyNames);
             writer.WriteStringValue("networkCidrBlock", NetworkCidrBlock);
-            writer.WriteLongValue("networkDestinationAsn", NetworkDestinationAsn);
+            writer.WriteIntValue("networkDestinationAsn", NetworkDestinationAsn);
             writer.WriteStringValue("networkDestinationCidrBlock", NetworkDestinationCidrBlock);
             writer.WriteStringValue("networkDestinationIPv4", NetworkDestinationIPv4);
             writer.WriteStringValue("networkDestinationIPv6", NetworkDestinationIPv6);
@@ -210,7 +210,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("networkIPv6", NetworkIPv6);
             writer.WriteIntValue("networkPort", NetworkPort);
             writer.WriteIntValue("networkProtocol", NetworkProtocol);
-            writer.WriteLongValue("networkSourceAsn", NetworkSourceAsn);
+            writer.WriteIntValue("networkSourceAsn", NetworkSourceAsn);
             writer.WriteStringValue("networkSourceCidrBlock", NetworkSourceCidrBlock);
             writer.WriteStringValue("networkSourceIPv4", NetworkSourceIPv4);
             writer.WriteStringValue("networkSourceIPv6", NetworkSourceIPv6);

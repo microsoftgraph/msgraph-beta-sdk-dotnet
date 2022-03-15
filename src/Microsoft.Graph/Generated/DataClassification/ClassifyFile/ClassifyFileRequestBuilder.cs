@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.DataClassification.ClassifyFile {
             return await RequestAdapter.SendAsync<ClassifyFileResponse>(requestInfo, ClassifyFileResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes classificationJobResponse</summary>
-        public class ClassifyFileResponse : IParsable, IAdditionalDataHolder {
+        public class ClassifyFileResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type classificationJobResponse</summary>

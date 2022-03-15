@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Teams.Item.Schedule.TimeCards.Item.EndBreak {
     /// <summary>Provides operations to call the endBreak method.</summary>
-    public class EndBreakRequestBody : IParsable, IAdditionalDataHolder {
+    public class EndBreakRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public bool? AtApprovedLocation { get; set; }

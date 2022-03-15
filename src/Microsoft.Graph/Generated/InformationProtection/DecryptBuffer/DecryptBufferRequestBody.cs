@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.InformationProtection.DecryptBuffer {
     /// <summary>Provides operations to call the decryptBuffer method.</summary>
-    public class DecryptBufferRequestBody : IParsable, IAdditionalDataHolder {
+    public class DecryptBufferRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public byte[] EncryptedBuffer { get; set; }

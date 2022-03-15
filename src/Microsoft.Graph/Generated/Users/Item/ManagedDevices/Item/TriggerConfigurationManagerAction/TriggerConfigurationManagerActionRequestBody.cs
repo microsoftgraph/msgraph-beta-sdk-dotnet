@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.TriggerConfigurationManagerAction {
     /// <summary>Provides operations to call the triggerConfigurationManagerAction method.</summary>
-    public class TriggerConfigurationManagerActionRequestBody : IParsable, IAdditionalDataHolder {
+    public class TriggerConfigurationManagerActionRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Parameter for action triggerConfigurationManagerAction</summary>

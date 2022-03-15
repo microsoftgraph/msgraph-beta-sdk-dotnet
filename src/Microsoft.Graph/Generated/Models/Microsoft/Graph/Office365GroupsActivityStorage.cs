@@ -8,7 +8,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the getOffice365GroupsActivityStorage method.</summary>
     public class Office365GroupsActivityStorage : Entity, IParsable {
         /// <summary>The storage used in group mailbox.</summary>
-        public long? MailboxStorageUsedInBytes { get; set; }
+        public int? MailboxStorageUsedInBytes { get; set; }
         /// <summary>The snapshot date for Exchange and SharePoint used storage.</summary>
         public Date? ReportDate { get; set; }
         /// <summary>The number of days the report covers.</summary>
@@ -16,7 +16,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The latest date of the content.</summary>
         public Date? ReportRefreshDate { get; set; }
         /// <summary>The storage used in SharePoint document library.</summary>
-        public long? SiteStorageUsedInBytes { get; set; }
+        public int? SiteStorageUsedInBytes { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -30,11 +30,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"mailboxStorageUsedInBytes", (o,n) => { (o as Office365GroupsActivityStorage).MailboxStorageUsedInBytes = n.GetLongValue(); } },
+                {"mailboxStorageUsedInBytes", (o,n) => { (o as Office365GroupsActivityStorage).MailboxStorageUsedInBytes = n.GetIntValue(); } },
                 {"reportDate", (o,n) => { (o as Office365GroupsActivityStorage).ReportDate = n.GetDateValue(); } },
                 {"reportPeriod", (o,n) => { (o as Office365GroupsActivityStorage).ReportPeriod = n.GetStringValue(); } },
                 {"reportRefreshDate", (o,n) => { (o as Office365GroupsActivityStorage).ReportRefreshDate = n.GetDateValue(); } },
-                {"siteStorageUsedInBytes", (o,n) => { (o as Office365GroupsActivityStorage).SiteStorageUsedInBytes = n.GetLongValue(); } },
+                {"siteStorageUsedInBytes", (o,n) => { (o as Office365GroupsActivityStorage).SiteStorageUsedInBytes = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -44,11 +44,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteLongValue("mailboxStorageUsedInBytes", MailboxStorageUsedInBytes);
+            writer.WriteIntValue("mailboxStorageUsedInBytes", MailboxStorageUsedInBytes);
             writer.WriteDateValue("reportDate", ReportDate);
             writer.WriteStringValue("reportPeriod", ReportPeriod);
             writer.WriteDateValue("reportRefreshDate", ReportRefreshDate);
-            writer.WriteLongValue("siteStorageUsedInBytes", SiteStorageUsedInBytes);
+            writer.WriteIntValue("siteStorageUsedInBytes", SiteStorageUsedInBytes);
         }
     }
 }

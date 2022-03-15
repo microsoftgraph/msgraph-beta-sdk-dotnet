@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the getHealthMetricTimeSeries method.</summary>
-    public class TimeSeriesParameter : IParsable, IAdditionalDataHolder {
+    public class TimeSeriesParameter : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>End time of the series being requested. Optional; if not specified, current time is used.</summary>

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.PrivilegedSignupStatus.CanSignUp {
     /// <summary>Provides operations to call the canSignUp method.</summary>
-    public class CanSignUpResponse : IParsable, IAdditionalDataHolder {
+    public class CanSignUpResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public bool? Value { get; set; }

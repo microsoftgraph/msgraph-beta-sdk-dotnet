@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.UpdateRecordingStatus {
             return await RequestAdapter.SendAsync<UpdateRecordingStatusResponse>(requestInfo, UpdateRecordingStatusResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes updateRecordingStatusOperation</summary>
-        public class UpdateRecordingStatusResponse : IParsable, IAdditionalDataHolder {
+        public class UpdateRecordingStatusResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type updateRecordingStatusOperation</summary>

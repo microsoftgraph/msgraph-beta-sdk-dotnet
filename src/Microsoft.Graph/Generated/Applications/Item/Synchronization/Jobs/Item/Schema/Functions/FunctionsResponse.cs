@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item.Schema.Functions {
     /// <summary>Provides operations to call the functions method.</summary>
-    public class FunctionsResponse : IParsable, IAdditionalDataHolder {
+    public class FunctionsResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<AttributeMappingFunctionSchema> Value { get; set; }

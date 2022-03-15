@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.GetCloudPcRemoteActionResults {
     /// <summary>Provides operations to call the getCloudPcRemoteActionResults method.</summary>
-    public class GetCloudPcRemoteActionResultsResponse : IParsable, IAdditionalDataHolder {
+    public class GetCloudPcRemoteActionResultsResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<CloudPcRemoteActionResult> Value { get; set; }

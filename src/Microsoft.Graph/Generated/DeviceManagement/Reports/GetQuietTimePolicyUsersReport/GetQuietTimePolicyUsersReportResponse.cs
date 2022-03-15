@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetQuietTimePolicyUsersReport {
     /// <summary>Provides operations to call the getQuietTimePolicyUsersReport method.</summary>
-    public class GetQuietTimePolicyUsersReportResponse : IParsable, IAdditionalDataHolder {
+    public class GetQuietTimePolicyUsersReportResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public byte[] Value { get; set; }

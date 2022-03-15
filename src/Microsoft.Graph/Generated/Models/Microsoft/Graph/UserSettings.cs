@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class UserSettings : Entity, IParsable {
         /// <summary>The user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ContactMergeSuggestions ContactMergeSuggestions { get; set; }

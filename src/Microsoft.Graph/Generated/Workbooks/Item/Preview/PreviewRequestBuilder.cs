@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Preview {
             return await RequestAdapter.SendAsync<PreviewResponse>(requestInfo, PreviewResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes itemPreviewInfo</summary>
-        public class PreviewResponse : IParsable, IAdditionalDataHolder {
+        public class PreviewResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type itemPreviewInfo</summary>

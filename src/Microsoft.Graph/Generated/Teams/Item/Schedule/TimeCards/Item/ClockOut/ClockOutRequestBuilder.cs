@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.TimeCards.Item.ClockOut {
             return await RequestAdapter.SendAsync<ClockOutResponse>(requestInfo, ClockOutResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes timeCard</summary>
-        public class ClockOutResponse : IParsable, IAdditionalDataHolder {
+        public class ClockOutResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type timeCard</summary>

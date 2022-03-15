@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Me.Presence.SetPresence {
     /// <summary>Provides operations to call the setPresence method.</summary>
-    public class SetPresenceRequestBody : IParsable, IAdditionalDataHolder {
+    public class SetPresenceRequestBody : IAdditionalDataHolder, IParsable {
         public string Activity { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

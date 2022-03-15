@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.Identity.B2xUserFlows.Item.UserAttributeAssignments.
             return await RequestAdapter.SendAsync<GetOrderResponse>(requestInfo, GetOrderResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes assignmentOrder</summary>
-        public class GetOrderResponse : IParsable, IAdditionalDataHolder {
+        public class GetOrderResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type assignmentOrder</summary>

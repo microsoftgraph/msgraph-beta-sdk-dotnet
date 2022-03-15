@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the triggerConfigurationManagerAction method.</summary>
-    public class ConfigurationManagerAction : IParsable, IAdditionalDataHolder {
+    public class ConfigurationManagerAction : IAdditionalDataHolder, IParsable {
         /// <summary>The action type to trigger on Configuration Manager client. Possible values are: refreshMachinePolicy, refreshUserPolicy, wakeUpClient, appEvaluation, quickScan, fullScan, windowsDefenderUpdateSignatures.</summary>
         public ConfigurationManagerActionType? Action { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.GroupLifecyclePolicies.Item.AddGroup {
     /// <summary>Provides operations to call the addGroup method.</summary>
-    public class AddGroupResponse : IParsable, IAdditionalDataHolder {
+    public class AddGroupResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public bool? Value { get; set; }

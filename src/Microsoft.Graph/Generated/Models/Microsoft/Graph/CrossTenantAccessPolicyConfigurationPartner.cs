@@ -8,7 +8,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class CrossTenantAccessPolicyConfigurationPartner : CrossTenantAccessPolicyConfigurationBase, IParsable {
         /// <summary>Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.</summary>
         public bool? IsServiceProvider { get; set; }
-        /// <summary>The tenant identifier for the partner Azure AD organization. Read-only.</summary>
+        /// <summary>The tenant identifier for the partner Azure AD organization. Read-only. Key.</summary>
         public string TenantId { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

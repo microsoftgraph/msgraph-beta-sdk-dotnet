@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class User : DirectoryObject, IParsable {
         /// <summary>A freeform text entry field for the user to describe themselves. Returned only on $select.</summary>
         public string AboutMe { get; set; }
@@ -42,6 +42,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<Chat> Chats { get; set; }
         /// <summary>The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
         public string City { get; set; }
+        public List<CloudPC> CloudPCs { get; set; }
         /// <summary>The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
         public string CompanyName { get; set; }
         /// <summary>Sets whether consent has been obtained for minors. Allowed values: null, Granted, Denied and NotRequired. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).</summary>
@@ -300,6 +301,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"calendarView", (o,n) => { (o as User).CalendarView = n.GetCollectionOfObjectValues<Event>(Event.CreateFromDiscriminatorValue).ToList(); } },
                 {"chats", (o,n) => { (o as User).Chats = n.GetCollectionOfObjectValues<Chat>(Chat.CreateFromDiscriminatorValue).ToList(); } },
                 {"city", (o,n) => { (o as User).City = n.GetStringValue(); } },
+                {"cloudPCs", (o,n) => { (o as User).CloudPCs = n.GetCollectionOfObjectValues<CloudPC>(CloudPC.CreateFromDiscriminatorValue).ToList(); } },
                 {"companyName", (o,n) => { (o as User).CompanyName = n.GetStringValue(); } },
                 {"consentProvidedForMinor", (o,n) => { (o as User).ConsentProvidedForMinor = n.GetStringValue(); } },
                 {"contactFolders", (o,n) => { (o as User).ContactFolders = n.GetCollectionOfObjectValues<ContactFolder>(ContactFolder.CreateFromDiscriminatorValue).ToList(); } },
@@ -447,6 +449,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<Event>("calendarView", CalendarView);
             writer.WriteCollectionOfObjectValues<Chat>("chats", Chats);
             writer.WriteStringValue("city", City);
+            writer.WriteCollectionOfObjectValues<CloudPC>("cloudPCs", CloudPCs);
             writer.WriteStringValue("companyName", CompanyName);
             writer.WriteStringValue("consentProvidedForMinor", ConsentProvidedForMinor);
             writer.WriteCollectionOfObjectValues<ContactFolder>("contactFolders", ContactFolders);

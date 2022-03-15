@@ -171,10 +171,10 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item {
         /// <param name="deviceId">Usage: deviceId='{deviceId}'</param>
         /// <param name="userPrincipalName">Usage: userPrincipalName='{userPrincipalName}'</param>
         /// </summary>
-        public GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder GetRelatedAppStatesWithUserPrincipalNameWithDeviceId(string userPrincipalName, string deviceId) {
+        public GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder GetRelatedAppStatesWithUserPrincipalNameWithDeviceId(string deviceId, string userPrincipalName) {
             if(string.IsNullOrEmpty(deviceId)) throw new ArgumentNullException(nameof(deviceId));
             if(string.IsNullOrEmpty(userPrincipalName)) throw new ArgumentNullException(nameof(userPrincipalName));
-            return new GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder(PathParameters, RequestAdapter, userPrincipalName, deviceId);
+            return new GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder(PathParameters, RequestAdapter, deviceId, userPrincipalName);
         }
         /// <summary>
         /// Update the navigation property mobileApps in deviceAppManagement

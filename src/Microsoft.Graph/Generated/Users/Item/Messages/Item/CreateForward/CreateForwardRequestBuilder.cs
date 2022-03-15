@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Users.Item.Messages.Item.CreateForward {
             return await RequestAdapter.SendAsync<CreateForwardResponse>(requestInfo, CreateForwardResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes message</summary>
-        public class CreateForwardResponse : IParsable, IAdditionalDataHolder {
+        public class CreateForwardResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type message</summary>

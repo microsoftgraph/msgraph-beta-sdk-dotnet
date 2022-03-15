@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Search {
     /// <summary>Provides operations to manage the qnas property of the microsoft.graph.searchEntity entity.</summary>
-    public class QnaCollectionResponse : IParsable, IAdditionalDataHolder {
+    public class QnaCollectionResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string NextLink { get; set; }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class Channel : Entity, IParsable {
         /// <summary>Read only. Timestamp at which the channel was created.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
@@ -26,8 +26,10 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<ChatMessage> Messages { get; set; }
         /// <summary>Settings to configure channel moderation to control who can start new posts and reply to posts in that channel.</summary>
         public ChannelModerationSettings ModerationSettings { get; set; }
+        public List<SharedWithChannelTeamInfo> SharedWithTeams { get; set; }
         /// <summary>A collection of all the tabs in the channel. A navigation property.</summary>
         public List<TeamsTab> Tabs { get; set; }
+        public string TenantId { get; set; }
         /// <summary>A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.</summary>
         public string WebUrl { get; set; }
         /// <summary>
@@ -53,7 +55,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"membershipType", (o,n) => { (o as Channel).MembershipType = n.GetEnumValue<ChannelMembershipType>(); } },
                 {"messages", (o,n) => { (o as Channel).Messages = n.GetCollectionOfObjectValues<ChatMessage>(ChatMessage.CreateFromDiscriminatorValue).ToList(); } },
                 {"moderationSettings", (o,n) => { (o as Channel).ModerationSettings = n.GetObjectValue<ChannelModerationSettings>(ChannelModerationSettings.CreateFromDiscriminatorValue); } },
+                {"sharedWithTeams", (o,n) => { (o as Channel).SharedWithTeams = n.GetCollectionOfObjectValues<SharedWithChannelTeamInfo>(SharedWithChannelTeamInfo.CreateFromDiscriminatorValue).ToList(); } },
                 {"tabs", (o,n) => { (o as Channel).Tabs = n.GetCollectionOfObjectValues<TeamsTab>(TeamsTab.CreateFromDiscriminatorValue).ToList(); } },
+                {"tenantId", (o,n) => { (o as Channel).TenantId = n.GetStringValue(); } },
                 {"webUrl", (o,n) => { (o as Channel).WebUrl = n.GetStringValue(); } },
             };
         }
@@ -74,7 +78,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteEnumValue<ChannelMembershipType>("membershipType", MembershipType);
             writer.WriteCollectionOfObjectValues<ChatMessage>("messages", Messages);
             writer.WriteObjectValue<ChannelModerationSettings>("moderationSettings", ModerationSettings);
+            writer.WriteCollectionOfObjectValues<SharedWithChannelTeamInfo>("sharedWithTeams", SharedWithTeams);
             writer.WriteCollectionOfObjectValues<TeamsTab>("tabs", Tabs);
+            writer.WriteStringValue("tenantId", TenantId);
             writer.WriteStringValue("webUrl", WebUrl);
         }
     }
