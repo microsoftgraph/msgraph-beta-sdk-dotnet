@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the collection of application entities.</summary>
-    public class VerifiedPublisher : IParsable, IAdditionalDataHolder {
+    public class VerifiedPublisher : IAdditionalDataHolder, IParsable {
         /// <summary>The timestamp when the verified publisher was first added or most recently updated.</summary>
         public DateTimeOffset? AddedDateTime { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

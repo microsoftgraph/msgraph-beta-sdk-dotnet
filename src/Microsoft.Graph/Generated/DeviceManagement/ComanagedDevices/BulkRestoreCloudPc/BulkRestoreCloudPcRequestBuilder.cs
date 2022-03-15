@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.BulkRestoreCloudPc
             return await RequestAdapter.SendAsync<BulkRestoreCloudPcResponse>(requestInfo, BulkRestoreCloudPcResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes cloudPcBulkRemoteActionResult</summary>
-        public class BulkRestoreCloudPcResponse : IParsable, IAdditionalDataHolder {
+        public class BulkRestoreCloudPcResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type cloudPcBulkRemoteActionResult</summary>

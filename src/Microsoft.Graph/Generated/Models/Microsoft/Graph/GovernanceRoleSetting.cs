@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of governanceRoleDefinition entities.</summary>
+    /// <summary>Provides operations to manage the collection of governanceResource entities.</summary>
     public class GovernanceRoleSetting : Entity, IParsable {
         /// <summary>The rule settings that are evaluated when an administrator tries to add an eligible role assignment.</summary>
         public List<GovernanceRuleSetting> AdminEligibleSettings { get; set; }

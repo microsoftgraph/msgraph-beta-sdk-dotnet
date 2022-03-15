@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.ResourceAccessProfiles.QueryByPlatformType {
     /// <summary>Provides operations to call the queryByPlatformType method.</summary>
-    public class QueryByPlatformTypeRequestBody : IParsable, IAdditionalDataHolder {
+    public class QueryByPlatformTypeRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public PolicyPlatformType? PlatformType { get; set; }

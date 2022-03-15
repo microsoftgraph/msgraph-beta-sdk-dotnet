@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.RoleScopeTags.GetRoleScopeTagsById {
     /// <summary>Provides operations to call the getRoleScopeTagsById method.</summary>
-    public class GetRoleScopeTagsByIdResponse : IParsable, IAdditionalDataHolder {
+    public class GetRoleScopeTagsByIdResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<RoleScopeTag> Value { get; set; }

@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Communications.OnlineMeetings.CreateOrGet {
             return await RequestAdapter.SendAsync<CreateOrGetResponse>(requestInfo, CreateOrGetResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes onlineMeeting</summary>
-        public class CreateOrGetResponse : IParsable, IAdditionalDataHolder {
+        public class CreateOrGetResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type onlineMeeting</summary>

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Users.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Cancel {
     /// <summary>Provides operations to call the cancel method.</summary>
-    public class CancelRequestBody : IParsable, IAdditionalDataHolder {
+    public class CancelRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string Comment { get; set; }

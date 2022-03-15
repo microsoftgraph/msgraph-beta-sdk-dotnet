@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetCompliancePoliciesReportForDevice {
     /// <summary>Provides operations to call the getCompliancePoliciesReportForDevice method.</summary>
-    public class GetCompliancePoliciesReportForDeviceRequestBody : IParsable, IAdditionalDataHolder {
+    public class GetCompliancePoliciesReportForDeviceRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string Filter { get; set; }

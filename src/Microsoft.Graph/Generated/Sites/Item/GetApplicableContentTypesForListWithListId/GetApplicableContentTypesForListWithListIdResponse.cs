@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Sites.Item.GetApplicableContentTypesForListWithListId {
     /// <summary>Provides operations to call the getApplicableContentTypesForList method.</summary>
-    public class GetApplicableContentTypesForListWithListIdResponse : IParsable, IAdditionalDataHolder {
+    public class GetApplicableContentTypesForListWithListIdResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<ContentType> Value { get; set; }

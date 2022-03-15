@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
-    public class DeviceManagementConfigurationPolicyTemplateReference : IParsable, IAdditionalDataHolder {
+    public class DeviceManagementConfigurationPolicyTemplateReference : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Template Display Name of the referenced template. This property is read-only.</summary>

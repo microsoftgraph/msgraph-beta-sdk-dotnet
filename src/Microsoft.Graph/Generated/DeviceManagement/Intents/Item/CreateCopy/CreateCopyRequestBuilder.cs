@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.CreateCopy {
             return await RequestAdapter.SendAsync<CreateCopyResponse>(requestInfo, CreateCopyResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes deviceManagementIntent</summary>
-        public class CreateCopyResponse : IParsable, IAdditionalDataHolder {
+        public class CreateCopyResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type deviceManagementIntent</summary>

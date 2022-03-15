@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ChromeOSOnboardingSettings.Connect 
             return await RequestAdapter.SendAsync<ConnectResponse>(requestInfo, ConnectResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes chromeOSOnboardingStatus</summary>
-        public class ConnectResponse : IParsable, IAdditionalDataHolder {
+        public class ConnectResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type chromeOSOnboardingStatus</summary>

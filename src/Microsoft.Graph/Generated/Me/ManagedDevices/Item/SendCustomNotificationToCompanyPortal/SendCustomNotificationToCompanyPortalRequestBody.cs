@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.SendCustomNotificationToCompanyPortal {
     /// <summary>Provides operations to call the sendCustomNotificationToCompanyPortal method.</summary>
-    public class SendCustomNotificationToCompanyPortalRequestBody : IParsable, IAdditionalDataHolder {
+    public class SendCustomNotificationToCompanyPortalRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string NotificationBody { get; set; }

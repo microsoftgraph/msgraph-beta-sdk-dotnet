@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the hasPayloadLinks method.</summary>
-    public class HasPayloadLinkResultItem : IParsable, IAdditionalDataHolder {
+    public class HasPayloadLinkResultItem : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Exception information indicates if check for this item was successful or not.Empty string for no error.</summary>

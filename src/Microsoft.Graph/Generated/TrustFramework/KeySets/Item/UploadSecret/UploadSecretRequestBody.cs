@@ -5,12 +5,12 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.TrustFramework.KeySets.Item.UploadSecret {
     /// <summary>Provides operations to call the uploadSecret method.</summary>
-    public class UploadSecretRequestBody : IParsable, IAdditionalDataHolder {
+    public class UploadSecretRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        public long? Exp { get; set; }
+        public int? Exp { get; set; }
         public string K { get; set; }
-        public long? Nbf { get; set; }
+        public int? Nbf { get; set; }
         public string Use { get; set; }
         /// <summary>
         /// Instantiates a new uploadSecretRequestBody and sets the default values.
@@ -31,9 +31,9 @@ namespace MicrosoftGraphSdk.TrustFramework.KeySets.Item.UploadSecret {
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"exp", (o,n) => { (o as UploadSecretRequestBody).Exp = n.GetLongValue(); } },
+                {"exp", (o,n) => { (o as UploadSecretRequestBody).Exp = n.GetIntValue(); } },
                 {"k", (o,n) => { (o as UploadSecretRequestBody).K = n.GetStringValue(); } },
-                {"nbf", (o,n) => { (o as UploadSecretRequestBody).Nbf = n.GetLongValue(); } },
+                {"nbf", (o,n) => { (o as UploadSecretRequestBody).Nbf = n.GetIntValue(); } },
                 {"use", (o,n) => { (o as UploadSecretRequestBody).Use = n.GetStringValue(); } },
             };
         }
@@ -43,9 +43,9 @@ namespace MicrosoftGraphSdk.TrustFramework.KeySets.Item.UploadSecret {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteLongValue("exp", Exp);
+            writer.WriteIntValue("exp", Exp);
             writer.WriteStringValue("k", K);
-            writer.WriteLongValue("nbf", Nbf);
+            writer.WriteIntValue("nbf", Nbf);
             writer.WriteStringValue("use", Use);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Users.Item.Calendar.Events.Item.ExceptionOccurrences.Item.Instances.Item.Decline {
     /// <summary>Provides operations to call the decline method.</summary>
-    public class DeclineRequestBody : IParsable, IAdditionalDataHolder {
+    public class DeclineRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string Comment { get; set; }

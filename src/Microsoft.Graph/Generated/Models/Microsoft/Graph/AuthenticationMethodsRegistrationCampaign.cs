@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the authenticationMethodsPolicy singleton.</summary>
-    public class AuthenticationMethodsRegistrationCampaign : IParsable, IAdditionalDataHolder {
+    public class AuthenticationMethodsRegistrationCampaign : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Users and groups of users that are excluded from being prompted to set up the authentication method.</summary>

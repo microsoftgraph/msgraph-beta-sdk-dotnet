@@ -8,19 +8,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Agreement : Entity, IParsable {
         /// <summary>Read-only. Information about acceptances of this agreement.</summary>
         public List<AgreementAcceptance> Acceptances { get; set; }
-        /// <summary>Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement.</summary>
+        /// <summary>Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement. Supports $filter (eq).</summary>
         public string DisplayName { get; set; }
         /// <summary>Default PDF linked to this agreement.</summary>
         public AgreementFile File { get; set; }
-        /// <summary>PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.</summary>
+        /// <summary>PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead. Supports $expand.</summary>
         public List<AgreementFileLocalization> Files { get; set; }
-        /// <summary>Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven't already done so.</summary>
+        /// <summary>Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven't already done so. Supports $filter (eq).</summary>
         public bool? IsPerDeviceAcceptanceRequired { get; set; }
-        /// <summary>Indicates whether the user has to expand the agreement before accepting.</summary>
+        /// <summary>Indicates whether the user has to expand the agreement before accepting. Supports $filter (eq).</summary>
         public bool? IsViewingBeforeAcceptanceRequired { get; set; }
-        /// <summary>Expiration schedule and frequency of agreement for all users.</summary>
+        /// <summary>Expiration schedule and frequency of agreement for all users. Supports $filter (eq).</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.TermsExpiration TermsExpiration { get; set; }
-        /// <summary>The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations.</summary>
+        /// <summary>The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations. Supports $filter (eq).</summary>
         public TimeSpan? UserReacceptRequiredFrequency { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

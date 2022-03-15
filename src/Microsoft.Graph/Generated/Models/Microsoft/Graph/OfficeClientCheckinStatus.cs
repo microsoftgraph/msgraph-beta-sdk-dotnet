@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the officeConfiguration singleton.</summary>
-    public class OfficeClientCheckinStatus : IParsable, IAdditionalDataHolder {
+    public class OfficeClientCheckinStatus : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of policies delivered to the device as last checkin.</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Reports.GetOffice365ActiveUserCountsWithPeriod {
     /// <summary>Provides operations to call the getOffice365ActiveUserCounts method.</summary>
-    public class GetOffice365ActiveUserCountsWithPeriodResponse : IParsable, IAdditionalDataHolder {
+    public class GetOffice365ActiveUserCountsWithPeriodResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<Office365ActiveUserCounts> Value { get; set; }

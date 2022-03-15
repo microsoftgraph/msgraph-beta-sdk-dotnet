@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the collection of onPremisesPublishingProfile entities.</summary>
-    public class UpdateWindow : IParsable, IAdditionalDataHolder {
+    public class UpdateWindow : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>End of a time window during which agents can receive updates</summary>

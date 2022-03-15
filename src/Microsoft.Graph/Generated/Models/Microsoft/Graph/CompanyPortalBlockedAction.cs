@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
-    public class CompanyPortalBlockedAction : IParsable, IAdditionalDataHolder {
+    public class CompanyPortalBlockedAction : IAdditionalDataHolder, IParsable {
         /// <summary>Device Action. Possible values are: unknown, remove, reset.</summary>
         public CompanyPortalAction? Action { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

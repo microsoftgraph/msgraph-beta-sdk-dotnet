@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.
             return await RequestAdapter.SendAsync<CreateReplyResponse>(requestInfo, CreateReplyResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes message</summary>
-        public class CreateReplyResponse : IParsable, IAdditionalDataHolder {
+        public class CreateReplyResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type message</summary>

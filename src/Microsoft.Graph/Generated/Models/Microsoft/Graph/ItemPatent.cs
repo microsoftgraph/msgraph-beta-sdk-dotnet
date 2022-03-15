@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class ItemPatent : ItemFacet, IParsable {
         /// <summary>Descpription of the patent or filing.</summary>
         public string Description { get; set; }

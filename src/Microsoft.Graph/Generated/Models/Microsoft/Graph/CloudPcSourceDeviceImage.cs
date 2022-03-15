@@ -5,13 +5,15 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the getSourceImages method.</summary>
-    public class CloudPcSourceDeviceImage : IParsable, IAdditionalDataHolder {
+    public class CloudPcSourceDeviceImage : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The display name for the source image.</summary>
         public string DisplayName { get; set; }
         /// <summary>The ID of the source image.</summary>
         public string Id { get; set; }
+        public string SubscriptionDisplayName { get; set; }
+        public string SubscriptionId { get; set; }
         /// <summary>
         /// Instantiates a new cloudPcSourceDeviceImage and sets the default values.
         /// </summary>
@@ -33,6 +35,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"displayName", (o,n) => { (o as CloudPcSourceDeviceImage).DisplayName = n.GetStringValue(); } },
                 {"id", (o,n) => { (o as CloudPcSourceDeviceImage).Id = n.GetStringValue(); } },
+                {"subscriptionDisplayName", (o,n) => { (o as CloudPcSourceDeviceImage).SubscriptionDisplayName = n.GetStringValue(); } },
+                {"subscriptionId", (o,n) => { (o as CloudPcSourceDeviceImage).SubscriptionId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -43,6 +47,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("subscriptionDisplayName", SubscriptionDisplayName);
+            writer.WriteStringValue("subscriptionId", SubscriptionId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

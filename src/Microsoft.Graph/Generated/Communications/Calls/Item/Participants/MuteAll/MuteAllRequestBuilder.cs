@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.Participants.MuteAll {
             return await RequestAdapter.SendAsync<MuteAllResponse>(requestInfo, MuteAllResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes muteParticipantsOperation</summary>
-        public class MuteAllResponse : IParsable, IAdditionalDataHolder {
+        public class MuteAllResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type muteParticipantsOperation</summary>

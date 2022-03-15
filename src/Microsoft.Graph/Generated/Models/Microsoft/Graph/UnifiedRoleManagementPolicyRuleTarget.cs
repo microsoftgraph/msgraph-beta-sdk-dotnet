@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the policyRoot singleton.</summary>
-    public class UnifiedRoleManagementPolicyRuleTarget : IParsable, IAdditionalDataHolder {
+    public class UnifiedRoleManagementPolicyRuleTarget : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The caller for the policy rule target. Allowed values are: None, Admin, EndUser.</summary>

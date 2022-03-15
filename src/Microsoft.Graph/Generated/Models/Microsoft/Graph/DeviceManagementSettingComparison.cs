@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the compare method.</summary>
-    public class DeviceManagementSettingComparison : IParsable, IAdditionalDataHolder {
+    public class DeviceManagementSettingComparison : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Setting comparison result. Possible values are: unknown, equal, notEqual, added, removed.</summary>

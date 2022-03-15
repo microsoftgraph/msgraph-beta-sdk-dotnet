@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetFailedMobileAppsReport {
     /// <summary>Provides operations to call the getFailedMobileAppsReport method.</summary>
-    public class GetFailedMobileAppsReportResponse : IParsable, IAdditionalDataHolder {
+    public class GetFailedMobileAppsReportResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public byte[] Value { get; set; }

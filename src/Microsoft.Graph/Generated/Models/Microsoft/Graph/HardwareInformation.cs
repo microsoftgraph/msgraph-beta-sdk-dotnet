@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
-    public class HardwareInformation : IParsable, IAdditionalDataHolder {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    public class HardwareInformation : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of charge cycles the device’s current battery has gone through. Valid values 0 to 2147483647</summary>
@@ -27,7 +27,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>eSIM identifier</summary>
         public string EsimIdentifier { get; set; }
         /// <summary>Free storage space of the device.</summary>
-        public long? FreeStorageSpace { get; set; }
+        public int? FreeStorageSpace { get; set; }
         /// <summary>IMEI</summary>
         public string Imei { get; set; }
         /// <summary>IPAddressV4</summary>
@@ -65,7 +65,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>BIOS version as reported by SMBIOS</summary>
         public string SystemManagementBIOSVersion { get; set; }
         /// <summary>Total storage space of the device.</summary>
-        public long? TotalStorageSpace { get; set; }
+        public int? TotalStorageSpace { get; set; }
         /// <summary>The identifying information that uniquely names the TPM manufacturer</summary>
         public string TpmManufacturer { get; set; }
         /// <summary>String that specifies the specification version.</summary>
@@ -102,7 +102,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"deviceGuardVirtualizationBasedSecurityHardwareRequirementState", (o,n) => { (o as HardwareInformation).DeviceGuardVirtualizationBasedSecurityHardwareRequirementState = n.GetEnumValue<DeviceGuardVirtualizationBasedSecurityHardwareRequirementState>(); } },
                 {"deviceGuardVirtualizationBasedSecurityState", (o,n) => { (o as HardwareInformation).DeviceGuardVirtualizationBasedSecurityState = n.GetEnumValue<DeviceGuardVirtualizationBasedSecurityState>(); } },
                 {"esimIdentifier", (o,n) => { (o as HardwareInformation).EsimIdentifier = n.GetStringValue(); } },
-                {"freeStorageSpace", (o,n) => { (o as HardwareInformation).FreeStorageSpace = n.GetLongValue(); } },
+                {"freeStorageSpace", (o,n) => { (o as HardwareInformation).FreeStorageSpace = n.GetIntValue(); } },
                 {"imei", (o,n) => { (o as HardwareInformation).Imei = n.GetStringValue(); } },
                 {"ipAddressV4", (o,n) => { (o as HardwareInformation).IpAddressV4 = n.GetStringValue(); } },
                 {"isEncrypted", (o,n) => { (o as HardwareInformation).IsEncrypted = n.GetBoolValue(); } },
@@ -121,7 +121,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"subnetAddress", (o,n) => { (o as HardwareInformation).SubnetAddress = n.GetStringValue(); } },
                 {"subscriberCarrier", (o,n) => { (o as HardwareInformation).SubscriberCarrier = n.GetStringValue(); } },
                 {"systemManagementBIOSVersion", (o,n) => { (o as HardwareInformation).SystemManagementBIOSVersion = n.GetStringValue(); } },
-                {"totalStorageSpace", (o,n) => { (o as HardwareInformation).TotalStorageSpace = n.GetLongValue(); } },
+                {"totalStorageSpace", (o,n) => { (o as HardwareInformation).TotalStorageSpace = n.GetIntValue(); } },
                 {"tpmManufacturer", (o,n) => { (o as HardwareInformation).TpmManufacturer = n.GetStringValue(); } },
                 {"tpmSpecificationVersion", (o,n) => { (o as HardwareInformation).TpmSpecificationVersion = n.GetStringValue(); } },
                 {"tpmVersion", (o,n) => { (o as HardwareInformation).TpmVersion = n.GetStringValue(); } },
@@ -143,7 +143,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteEnumValue<DeviceGuardVirtualizationBasedSecurityHardwareRequirementState>("deviceGuardVirtualizationBasedSecurityHardwareRequirementState", DeviceGuardVirtualizationBasedSecurityHardwareRequirementState);
             writer.WriteEnumValue<DeviceGuardVirtualizationBasedSecurityState>("deviceGuardVirtualizationBasedSecurityState", DeviceGuardVirtualizationBasedSecurityState);
             writer.WriteStringValue("esimIdentifier", EsimIdentifier);
-            writer.WriteLongValue("freeStorageSpace", FreeStorageSpace);
+            writer.WriteIntValue("freeStorageSpace", FreeStorageSpace);
             writer.WriteStringValue("imei", Imei);
             writer.WriteStringValue("ipAddressV4", IpAddressV4);
             writer.WriteBoolValue("isEncrypted", IsEncrypted);
@@ -162,7 +162,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("subnetAddress", SubnetAddress);
             writer.WriteStringValue("subscriberCarrier", SubscriberCarrier);
             writer.WriteStringValue("systemManagementBIOSVersion", SystemManagementBIOSVersion);
-            writer.WriteLongValue("totalStorageSpace", TotalStorageSpace);
+            writer.WriteIntValue("totalStorageSpace", TotalStorageSpace);
             writer.WriteStringValue("tpmManufacturer", TpmManufacturer);
             writer.WriteStringValue("tpmSpecificationVersion", TpmSpecificationVersion);
             writer.WriteStringValue("tpmVersion", TpmVersion);

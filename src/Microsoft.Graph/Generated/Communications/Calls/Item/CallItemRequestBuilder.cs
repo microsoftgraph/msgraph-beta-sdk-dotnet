@@ -4,6 +4,7 @@ using MicrosoftGraphSdk.Communications.Calls.Item.Answer;
 using MicrosoftGraphSdk.Communications.Calls.Item.AudioRoutingGroups;
 using MicrosoftGraphSdk.Communications.Calls.Item.CancelMediaProcessing;
 using MicrosoftGraphSdk.Communications.Calls.Item.ChangeScreenSharingRole;
+using MicrosoftGraphSdk.Communications.Calls.Item.ContentSharingSessions;
 using MicrosoftGraphSdk.Communications.Calls.Item.KeepAlive;
 using MicrosoftGraphSdk.Communications.Calls.Item.Mute;
 using MicrosoftGraphSdk.Communications.Calls.Item.Operations;
@@ -39,6 +40,9 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item {
         }
         public ChangeScreenSharingRoleRequestBuilder ChangeScreenSharingRole { get =>
             new ChangeScreenSharingRoleRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public ContentSharingSessionsRequestBuilder ContentSharingSessions { get =>
+            new ContentSharingSessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         public KeepAliveRequestBuilder KeepAlive { get =>
             new KeepAliveRequestBuilder(PathParameters, RequestAdapter);

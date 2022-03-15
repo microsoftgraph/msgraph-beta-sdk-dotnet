@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Communications.Presences.Item.ClearPresence {
     /// <summary>Provides operations to call the clearPresence method.</summary>
-    public class ClearPresenceRequestBody : IParsable, IAdditionalDataHolder {
+    public class ClearPresenceRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string SessionId { get; set; }

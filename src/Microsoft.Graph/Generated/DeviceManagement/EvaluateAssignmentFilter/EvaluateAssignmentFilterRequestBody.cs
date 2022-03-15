@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.EvaluateAssignmentFilter {
     /// <summary>Provides operations to call the evaluateAssignmentFilter method.</summary>
-    public class EvaluateAssignmentFilterRequestBody : IParsable, IAdditionalDataHolder {
+    public class EvaluateAssignmentFilterRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public AssignmentFilterEvaluateRequest Data { get; set; }

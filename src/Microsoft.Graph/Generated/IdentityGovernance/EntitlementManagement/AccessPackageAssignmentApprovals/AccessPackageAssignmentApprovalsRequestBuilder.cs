@@ -57,7 +57,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get accessPackageAssignmentApprovals from identityGovernance
+        /// Approval stages for assignment requests.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -104,7 +104,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Get accessPackageAssignmentApprovals from identityGovernance
+        /// Approval stages for assignment requests.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -136,7 +136,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             };
             return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Approval>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Approval.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get accessPackageAssignmentApprovals from identityGovernance</summary>
+        /// <summary>Approval stages for assignment requests.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
             public bool? Count { get; set; }

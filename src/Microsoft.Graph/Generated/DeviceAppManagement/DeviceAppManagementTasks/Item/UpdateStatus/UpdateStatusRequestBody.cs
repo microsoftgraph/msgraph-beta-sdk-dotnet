@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceAppManagement.DeviceAppManagementTasks.Item.UpdateStatus {
     /// <summary>Provides operations to call the updateStatus method.</summary>
-    public class UpdateStatusRequestBody : IParsable, IAdditionalDataHolder {
+    public class UpdateStatusRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string Note { get; set; }

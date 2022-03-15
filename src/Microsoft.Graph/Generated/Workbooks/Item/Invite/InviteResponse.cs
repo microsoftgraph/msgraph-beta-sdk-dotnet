@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Workbooks.Item.Invite {
     /// <summary>Provides operations to call the invite method.</summary>
-    public class InviteResponse : IParsable, IAdditionalDataHolder {
+    public class InviteResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Permission> Value { get; set; }

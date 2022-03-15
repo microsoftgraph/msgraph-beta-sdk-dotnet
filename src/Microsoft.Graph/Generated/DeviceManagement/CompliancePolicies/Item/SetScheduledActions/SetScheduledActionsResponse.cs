@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.CompliancePolicies.Item.SetScheduledActions {
     /// <summary>Provides operations to call the setScheduledActions method.</summary>
-    public class SetScheduledActionsResponse : IParsable, IAdditionalDataHolder {
+    public class SetScheduledActionsResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<DeviceManagementComplianceScheduledActionForRule> Value { get; set; }

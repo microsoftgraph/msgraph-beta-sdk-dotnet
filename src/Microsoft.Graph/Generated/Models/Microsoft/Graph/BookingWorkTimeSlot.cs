@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the collection of bookingBusiness entities.</summary>
-    public class BookingWorkTimeSlot : IParsable, IAdditionalDataHolder {
+    public class BookingWorkTimeSlot : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The time of the day when work stops. For example, 17:00:00.0000000.</summary>

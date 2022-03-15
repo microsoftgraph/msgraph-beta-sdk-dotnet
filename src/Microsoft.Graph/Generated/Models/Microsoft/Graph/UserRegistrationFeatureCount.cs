@@ -5,13 +5,13 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the usersRegisteredByFeature method.</summary>
-    public class UserRegistrationFeatureCount : IParsable, IAdditionalDataHolder {
+    public class UserRegistrationFeatureCount : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of users registered or capable for Multi-Factor Authentication, Self-Service Password Reset and Passwordless Authentication. Possible values are: ssprRegistered, ssprEnabled, ssprCapable, passwordlessCapable, mfaCapable.</summary>
         public AuthenticationMethodFeature? Feature { get; set; }
         /// <summary>Number of users.</summary>
-        public long? UserCount { get; set; }
+        public int? UserCount { get; set; }
         /// <summary>
         /// Instantiates a new userRegistrationFeatureCount and sets the default values.
         /// </summary>
@@ -32,7 +32,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"feature", (o,n) => { (o as UserRegistrationFeatureCount).Feature = n.GetEnumValue<AuthenticationMethodFeature>(); } },
-                {"userCount", (o,n) => { (o as UserRegistrationFeatureCount).UserCount = n.GetLongValue(); } },
+                {"userCount", (o,n) => { (o as UserRegistrationFeatureCount).UserCount = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -42,7 +42,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<AuthenticationMethodFeature>("feature", Feature);
-            writer.WriteLongValue("userCount", UserCount);
+            writer.WriteIntValue("userCount", UserCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

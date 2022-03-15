@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Groups.Item.Drives.Item.Root.Permissions.Item.RevokeGrants {
     /// <summary>Provides operations to call the revokeGrants method.</summary>
-    public class RevokeGrantsRequestBody : IParsable, IAdditionalDataHolder {
+    public class RevokeGrantsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<DriveRecipient> Grantees { get; set; }

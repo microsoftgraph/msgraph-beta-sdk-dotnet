@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item.Assign {
     /// <summary>Provides operations to call the assign method.</summary>
-    public class AssignRequestBody : IParsable, IAdditionalDataHolder {
+    public class AssignRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<WindowsDriverUpdateProfileAssignment> Assignments { get; set; }

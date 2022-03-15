@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class WorkbookTableRow : Entity, IParsable {
         /// <summary>Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.</summary>
         public int? Index { get; set; }

@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.App.Calls.Item.CancelMediaProcessing {
             return await RequestAdapter.SendAsync<CancelMediaProcessingResponse>(requestInfo, CancelMediaProcessingResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes cancelMediaProcessingOperation</summary>
-        public class CancelMediaProcessingResponse : IParsable, IAdditionalDataHolder {
+        public class CancelMediaProcessingResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type cancelMediaProcessingOperation</summary>

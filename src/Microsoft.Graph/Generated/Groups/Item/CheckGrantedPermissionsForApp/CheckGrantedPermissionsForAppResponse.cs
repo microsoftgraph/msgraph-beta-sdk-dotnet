@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Groups.Item.CheckGrantedPermissionsForApp {
     /// <summary>Provides operations to call the checkGrantedPermissionsForApp method.</summary>
-    public class CheckGrantedPermissionsForAppResponse : IParsable, IAdditionalDataHolder {
+    public class CheckGrantedPermissionsForAppResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<ResourceSpecificPermissionGrant> Value { get; set; }

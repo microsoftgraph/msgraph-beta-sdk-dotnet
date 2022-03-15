@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Drives.Item.Items.Item.Permissions.Item.
             return await RequestAdapter.SendAsync<RevokeGrantsResponse>(requestInfo, RevokeGrantsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes permission</summary>
-        public class RevokeGrantsResponse : IParsable, IAdditionalDataHolder {
+        public class RevokeGrantsResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type permission</summary>

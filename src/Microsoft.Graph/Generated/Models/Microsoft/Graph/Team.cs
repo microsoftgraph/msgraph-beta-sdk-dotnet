@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class Team : Entity, IParsable {
+        public List<Channel> AllChannels { get; set; }
         /// <summary>The collection of channels and messages associated with the team.</summary>
         public List<Channel> Channels { get; set; }
         /// <summary>An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.</summary>
@@ -23,6 +24,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Group Group { get; set; }
         /// <summary>Settings to configure whether guests can create, update, or delete channels in the team.</summary>
         public TeamGuestSettings GuestSettings { get; set; }
+        public List<Channel> IncomingChannels { get; set; }
         /// <summary>The apps installed in this team.</summary>
         public List<TeamsAppInstallation> InstalledApps { get; set; }
         /// <summary>A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.</summary>
@@ -51,11 +53,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Schedule Schedule { get; set; }
         /// <summary>Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.</summary>
         public TeamSpecialization? Specialization { get; set; }
+        /// <summary>Contains summary information about the team, including number of owners, members, and guests.</summary>
         public TeamSummary Summary { get; set; }
         /// <summary>The tags associated with the team.</summary>
         public List<TeamworkTag> Tags { get; set; }
         /// <summary>The template this team was created from. See available templates.</summary>
         public TeamsTemplate Template { get; set; }
+        public string TenantId { get; set; }
         /// <summary>The visibility of the group and team. Defaults to Public.</summary>
         public TeamVisibilityType? Visibility { get; set; }
         /// <summary>A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.</summary>
@@ -73,6 +77,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
+                {"allChannels", (o,n) => { (o as Team).AllChannels = n.GetCollectionOfObjectValues<Channel>(Channel.CreateFromDiscriminatorValue).ToList(); } },
                 {"channels", (o,n) => { (o as Team).Channels = n.GetCollectionOfObjectValues<Channel>(Channel.CreateFromDiscriminatorValue).ToList(); } },
                 {"classification", (o,n) => { (o as Team).Classification = n.GetStringValue(); } },
                 {"createdDateTime", (o,n) => { (o as Team).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -82,6 +87,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"funSettings", (o,n) => { (o as Team).FunSettings = n.GetObjectValue<TeamFunSettings>(TeamFunSettings.CreateFromDiscriminatorValue); } },
                 {"group", (o,n) => { (o as Team).Group = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Group>(MicrosoftGraphSdk.Models.Microsoft.Graph.Group.CreateFromDiscriminatorValue); } },
                 {"guestSettings", (o,n) => { (o as Team).GuestSettings = n.GetObjectValue<TeamGuestSettings>(TeamGuestSettings.CreateFromDiscriminatorValue); } },
+                {"incomingChannels", (o,n) => { (o as Team).IncomingChannels = n.GetCollectionOfObjectValues<Channel>(Channel.CreateFromDiscriminatorValue).ToList(); } },
                 {"installedApps", (o,n) => { (o as Team).InstalledApps = n.GetCollectionOfObjectValues<TeamsAppInstallation>(TeamsAppInstallation.CreateFromDiscriminatorValue).ToList(); } },
                 {"internalId", (o,n) => { (o as Team).InternalId = n.GetStringValue(); } },
                 {"isArchived", (o,n) => { (o as Team).IsArchived = n.GetBoolValue(); } },
@@ -99,6 +105,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"summary", (o,n) => { (o as Team).Summary = n.GetObjectValue<TeamSummary>(TeamSummary.CreateFromDiscriminatorValue); } },
                 {"tags", (o,n) => { (o as Team).Tags = n.GetCollectionOfObjectValues<TeamworkTag>(TeamworkTag.CreateFromDiscriminatorValue).ToList(); } },
                 {"template", (o,n) => { (o as Team).Template = n.GetObjectValue<TeamsTemplate>(TeamsTemplate.CreateFromDiscriminatorValue); } },
+                {"tenantId", (o,n) => { (o as Team).TenantId = n.GetStringValue(); } },
                 {"visibility", (o,n) => { (o as Team).Visibility = n.GetEnumValue<TeamVisibilityType>(); } },
                 {"webUrl", (o,n) => { (o as Team).WebUrl = n.GetStringValue(); } },
             };
@@ -110,6 +117,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<Channel>("allChannels", AllChannels);
             writer.WriteCollectionOfObjectValues<Channel>("channels", Channels);
             writer.WriteStringValue("classification", Classification);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
@@ -119,6 +127,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteObjectValue<TeamFunSettings>("funSettings", FunSettings);
             writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Group>("group", Group);
             writer.WriteObjectValue<TeamGuestSettings>("guestSettings", GuestSettings);
+            writer.WriteCollectionOfObjectValues<Channel>("incomingChannels", IncomingChannels);
             writer.WriteCollectionOfObjectValues<TeamsAppInstallation>("installedApps", InstalledApps);
             writer.WriteStringValue("internalId", InternalId);
             writer.WriteBoolValue("isArchived", IsArchived);
@@ -136,6 +145,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteObjectValue<TeamSummary>("summary", Summary);
             writer.WriteCollectionOfObjectValues<TeamworkTag>("tags", Tags);
             writer.WriteObjectValue<TeamsTemplate>("template", Template);
+            writer.WriteStringValue("tenantId", TenantId);
             writer.WriteEnumValue<TeamVisibilityType>("visibility", Visibility);
             writer.WriteStringValue("webUrl", WebUrl);
         }

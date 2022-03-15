@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.MarkRead {
     /// <summary>Provides operations to call the markRead method.</summary>
-    public class MarkReadRequestBody : IParsable, IAdditionalDataHolder {
+    public class MarkReadRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<string> MessageIds { get; set; }

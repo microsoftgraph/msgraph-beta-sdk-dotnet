@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.GetState {
             return await RequestAdapter.SendAsync<GetStateResponse>(requestInfo, GetStateResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes assignmentFilterState</summary>
-        public class GetStateResponse : IParsable, IAdditionalDataHolder {
+        public class GetStateResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type assignmentFilterState</summary>

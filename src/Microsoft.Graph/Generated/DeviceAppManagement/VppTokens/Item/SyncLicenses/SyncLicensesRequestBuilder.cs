@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.VppTokens.Item.SyncLicenses {
             return await RequestAdapter.SendAsync<SyncLicensesResponse>(requestInfo, SyncLicensesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes vppToken</summary>
-        public class SyncLicensesResponse : IParsable, IAdditionalDataHolder {
+        public class SyncLicensesResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type vppToken</summary>

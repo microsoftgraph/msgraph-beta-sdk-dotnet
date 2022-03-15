@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Operations.Item.CaseExportOperation.GetDownloadUrl {
     /// <summary>Provides operations to call the getDownloadUrl method.</summary>
-    public class GetDownloadUrlResponse : IParsable, IAdditionalDataHolder {
+    public class GetDownloadUrlResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string Value { get; set; }

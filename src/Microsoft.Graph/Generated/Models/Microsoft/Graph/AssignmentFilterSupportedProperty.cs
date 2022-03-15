@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the getSupportedProperties method.</summary>
-    public class AssignmentFilterSupportedProperty : IParsable, IAdditionalDataHolder {
+    public class AssignmentFilterSupportedProperty : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The data type of the property.</summary>

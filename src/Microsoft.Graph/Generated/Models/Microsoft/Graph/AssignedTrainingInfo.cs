@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the attackSimulation property of the microsoft.graph.security entity.</summary>
-    public class AssignedTrainingInfo : IParsable, IAdditionalDataHolder {
+    public class AssignedTrainingInfo : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of users who were assigned the training in an attack simulation and training campaign.</summary>

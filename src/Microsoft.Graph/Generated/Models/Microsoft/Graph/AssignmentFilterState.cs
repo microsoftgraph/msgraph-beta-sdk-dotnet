@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the getState method.</summary>
-    public class AssignmentFilterState : IParsable, IAdditionalDataHolder {
+    public class AssignmentFilterState : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicator to if AssignmentFilter is enabled or disabled.</summary>

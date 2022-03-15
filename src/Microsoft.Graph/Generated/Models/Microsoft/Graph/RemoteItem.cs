@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
-    public class RemoteItem : IParsable, IAdditionalDataHolder {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    public class RemoteItem : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Identity of the user, device, and application which created the item. Read-only.</summary>
@@ -37,7 +37,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Provides interop between items in OneDrive for Business and SharePoint with the full set of item identifiers. Read-only.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.SharepointIds SharepointIds { get; set; }
         /// <summary>Size of the remote item. Read-only.</summary>
-        public long? Size { get; set; }
+        public int? Size { get; set; }
         /// <summary>If the current item is also available as a special folder, this facet is returned. Read-only.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.SpecialFolder SpecialFolder { get; set; }
         /// <summary>Video metadata, if the item is a video. Read-only.</summary>
@@ -79,7 +79,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"parentReference", (o,n) => { (o as RemoteItem).ParentReference = n.GetObjectValue<ItemReference>(ItemReference.CreateFromDiscriminatorValue); } },
                 {"shared", (o,n) => { (o as RemoteItem).Shared = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Shared>(MicrosoftGraphSdk.Models.Microsoft.Graph.Shared.CreateFromDiscriminatorValue); } },
                 {"sharepointIds", (o,n) => { (o as RemoteItem).SharepointIds = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.SharepointIds>(MicrosoftGraphSdk.Models.Microsoft.Graph.SharepointIds.CreateFromDiscriminatorValue); } },
-                {"size", (o,n) => { (o as RemoteItem).Size = n.GetLongValue(); } },
+                {"size", (o,n) => { (o as RemoteItem).Size = n.GetIntValue(); } },
                 {"specialFolder", (o,n) => { (o as RemoteItem).SpecialFolder = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.SpecialFolder>(MicrosoftGraphSdk.Models.Microsoft.Graph.SpecialFolder.CreateFromDiscriminatorValue); } },
                 {"video", (o,n) => { (o as RemoteItem).Video = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Video>(MicrosoftGraphSdk.Models.Microsoft.Graph.Video.CreateFromDiscriminatorValue); } },
                 {"webDavUrl", (o,n) => { (o as RemoteItem).WebDavUrl = n.GetStringValue(); } },
@@ -106,7 +106,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteObjectValue<ItemReference>("parentReference", ParentReference);
             writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Shared>("shared", Shared);
             writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.SharepointIds>("sharepointIds", SharepointIds);
-            writer.WriteLongValue("size", Size);
+            writer.WriteIntValue("size", Size);
             writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.SpecialFolder>("specialFolder", SpecialFolder);
             writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Video>("video", Video);
             writer.WriteStringValue("webDavUrl", WebDavUrl);

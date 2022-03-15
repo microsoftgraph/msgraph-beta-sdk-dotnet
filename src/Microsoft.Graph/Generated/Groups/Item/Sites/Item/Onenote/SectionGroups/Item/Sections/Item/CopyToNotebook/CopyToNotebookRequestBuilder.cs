@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Sites.Item.Onenote.SectionGroups.Item.Se
             return await RequestAdapter.SendAsync<CopyToNotebookResponse>(requestInfo, CopyToNotebookResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes onenoteOperation</summary>
-        public class CopyToNotebookResponse : IParsable, IAdditionalDataHolder {
+        public class CopyToNotebookResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type onenoteOperation</summary>

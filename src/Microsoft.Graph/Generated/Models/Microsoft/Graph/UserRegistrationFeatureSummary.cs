@@ -5,11 +5,11 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the usersRegisteredByFeature method.</summary>
-    public class UserRegistrationFeatureSummary : IParsable, IAdditionalDataHolder {
+    public class UserRegistrationFeatureSummary : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Total number of users accounts, excluding those that are blocked</summary>
-        public long? TotalUserCount { get; set; }
+        public int? TotalUserCount { get; set; }
         /// <summary>Number of users registered or capable for Multi-Factor Authentication, Self-Service Password Reset and Passwordless Authentication.</summary>
         public List<UserRegistrationFeatureCount> UserRegistrationFeatureCounts { get; set; }
         /// <summary>User role type. Possible values are: all, privilegedAdmin, admin, user.</summary>
@@ -35,7 +35,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"totalUserCount", (o,n) => { (o as UserRegistrationFeatureSummary).TotalUserCount = n.GetLongValue(); } },
+                {"totalUserCount", (o,n) => { (o as UserRegistrationFeatureSummary).TotalUserCount = n.GetIntValue(); } },
                 {"userRegistrationFeatureCounts", (o,n) => { (o as UserRegistrationFeatureSummary).UserRegistrationFeatureCounts = n.GetCollectionOfObjectValues<UserRegistrationFeatureCount>(UserRegistrationFeatureCount.CreateFromDiscriminatorValue).ToList(); } },
                 {"userRoles", (o,n) => { (o as UserRegistrationFeatureSummary).UserRoles = n.GetEnumValue<IncludedUserRoles>(); } },
                 {"userTypes", (o,n) => { (o as UserRegistrationFeatureSummary).UserTypes = n.GetEnumValue<IncludedUserTypes>(); } },
@@ -47,7 +47,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteLongValue("totalUserCount", TotalUserCount);
+            writer.WriteIntValue("totalUserCount", TotalUserCount);
             writer.WriteCollectionOfObjectValues<UserRegistrationFeatureCount>("userRegistrationFeatureCounts", UserRegistrationFeatureCounts);
             writer.WriteEnumValue<IncludedUserRoles>("userRoles", UserRoles);
             writer.WriteEnumValue<IncludedUserTypes>("userTypes", UserTypes);

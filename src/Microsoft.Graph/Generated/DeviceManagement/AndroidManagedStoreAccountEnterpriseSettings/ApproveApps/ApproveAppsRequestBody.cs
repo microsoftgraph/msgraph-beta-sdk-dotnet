@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.ApproveApps {
     /// <summary>Provides operations to call the approveApps method.</summary>
-    public class ApproveAppsRequestBody : IParsable, IAdditionalDataHolder {
+    public class ApproveAppsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public bool? ApproveAllPermissions { get; set; }

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedAppRegistrations.GetUserIdsWithFlaggedAppRegistration {
     /// <summary>Provides operations to call the getUserIdsWithFlaggedAppRegistration method.</summary>
-    public class GetUserIdsWithFlaggedAppRegistrationResponse : IParsable, IAdditionalDataHolder {
+    public class GetUserIdsWithFlaggedAppRegistrationResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<string> Value { get; set; }

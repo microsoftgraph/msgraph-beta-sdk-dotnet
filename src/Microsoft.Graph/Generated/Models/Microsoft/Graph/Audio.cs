@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
-    public class Audio : IParsable, IAdditionalDataHolder {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    public class Audio : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The title of the album for this audio file.</summary>
@@ -15,7 +15,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The performing artist for the audio file.</summary>
         public string Artist { get; set; }
         /// <summary>Bitrate expressed in kbps.</summary>
-        public long? Bitrate { get; set; }
+        public int? Bitrate { get; set; }
         /// <summary>The name of the composer of the audio file.</summary>
         public string Composers { get; set; }
         /// <summary>Copyright information for the audio file.</summary>
@@ -25,7 +25,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The total number of discs in this album.</summary>
         public int? DiscCount { get; set; }
         /// <summary>Duration of the audio file, expressed in milliseconds</summary>
-        public long? Duration { get; set; }
+        public int? Duration { get; set; }
         /// <summary>The genre of this audio file.</summary>
         public string Genre { get; set; }
         /// <summary>Indicates if the file is protected with digital rights management.</summary>
@@ -62,12 +62,12 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"album", (o,n) => { (o as Audio).Album = n.GetStringValue(); } },
                 {"albumArtist", (o,n) => { (o as Audio).AlbumArtist = n.GetStringValue(); } },
                 {"artist", (o,n) => { (o as Audio).Artist = n.GetStringValue(); } },
-                {"bitrate", (o,n) => { (o as Audio).Bitrate = n.GetLongValue(); } },
+                {"bitrate", (o,n) => { (o as Audio).Bitrate = n.GetIntValue(); } },
                 {"composers", (o,n) => { (o as Audio).Composers = n.GetStringValue(); } },
                 {"copyright", (o,n) => { (o as Audio).Copyright = n.GetStringValue(); } },
                 {"disc", (o,n) => { (o as Audio).Disc = n.GetIntValue(); } },
                 {"discCount", (o,n) => { (o as Audio).DiscCount = n.GetIntValue(); } },
-                {"duration", (o,n) => { (o as Audio).Duration = n.GetLongValue(); } },
+                {"duration", (o,n) => { (o as Audio).Duration = n.GetIntValue(); } },
                 {"genre", (o,n) => { (o as Audio).Genre = n.GetStringValue(); } },
                 {"hasDrm", (o,n) => { (o as Audio).HasDrm = n.GetBoolValue(); } },
                 {"isVariableBitrate", (o,n) => { (o as Audio).IsVariableBitrate = n.GetBoolValue(); } },
@@ -86,12 +86,12 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("album", Album);
             writer.WriteStringValue("albumArtist", AlbumArtist);
             writer.WriteStringValue("artist", Artist);
-            writer.WriteLongValue("bitrate", Bitrate);
+            writer.WriteIntValue("bitrate", Bitrate);
             writer.WriteStringValue("composers", Composers);
             writer.WriteStringValue("copyright", Copyright);
             writer.WriteIntValue("disc", Disc);
             writer.WriteIntValue("discCount", DiscCount);
-            writer.WriteLongValue("duration", Duration);
+            writer.WriteIntValue("duration", Duration);
             writer.WriteStringValue("genre", Genre);
             writer.WriteBoolValue("hasDrm", HasDrm);
             writer.WriteBoolValue("isVariableBitrate", IsVariableBitrate);

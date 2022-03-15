@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
-    public class TeamDiscoverySettings : IParsable, IAdditionalDataHolder {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    public class TeamDiscoverySettings : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If set to true, the team is visible via search and suggestions from the Teams client.</summary>

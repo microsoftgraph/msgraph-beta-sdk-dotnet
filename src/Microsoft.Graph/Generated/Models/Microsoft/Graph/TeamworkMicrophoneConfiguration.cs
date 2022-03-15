@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the teamwork singleton.</summary>
-    public class TeamworkMicrophoneConfiguration : IParsable, IAdditionalDataHolder {
+    public class TeamworkMicrophoneConfiguration : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public TeamworkPeripheral DefaultMicrophone { get; set; }

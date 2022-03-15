@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DirectoryRoles.Delta {
     /// <summary>Provides operations to call the delta method.</summary>
-    public class DeltaResponse : IParsable, IAdditionalDataHolder {
+    public class DeltaResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<DirectoryRole> Value { get; set; }

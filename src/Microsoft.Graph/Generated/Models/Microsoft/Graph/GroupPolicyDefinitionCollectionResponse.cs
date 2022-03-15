@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the definitions property of the microsoft.graph.groupPolicyCategory entity.</summary>
-    public class GroupPolicyDefinitionCollectionResponse : IParsable, IAdditionalDataHolder {
+    public class GroupPolicyDefinitionCollectionResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string NextLink { get; set; }

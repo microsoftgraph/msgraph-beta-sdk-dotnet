@@ -5,13 +5,13 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the usersRegisteredByMethod method.</summary>
-    public class UserRegistrationMethodCount : IParsable, IAdditionalDataHolder {
+    public class UserRegistrationMethodCount : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Name of authentication method.</summary>
         public string AuthenticationMethod { get; set; }
         /// <summary>Number of users registered.</summary>
-        public long? UserCount { get; set; }
+        public int? UserCount { get; set; }
         /// <summary>
         /// Instantiates a new userRegistrationMethodCount and sets the default values.
         /// </summary>
@@ -32,7 +32,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"authenticationMethod", (o,n) => { (o as UserRegistrationMethodCount).AuthenticationMethod = n.GetStringValue(); } },
-                {"userCount", (o,n) => { (o as UserRegistrationMethodCount).UserCount = n.GetLongValue(); } },
+                {"userCount", (o,n) => { (o as UserRegistrationMethodCount).UserCount = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -42,7 +42,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("authenticationMethod", AuthenticationMethod);
-            writer.WriteLongValue("userCount", UserCount);
+            writer.WriteIntValue("userCount", UserCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.InformationProtection.Policy.Labels.EvaluateRemoval {
     /// <summary>Provides operations to call the evaluateRemoval method.</summary>
-    public class EvaluateRemovalRequestBody : IParsable, IAdditionalDataHolder {
+    public class EvaluateRemovalRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ContentInfo ContentInfo { get; set; }

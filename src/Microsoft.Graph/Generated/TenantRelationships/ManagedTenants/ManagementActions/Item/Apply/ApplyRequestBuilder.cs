@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementActions
             return await RequestAdapter.SendAsync<ApplyResponse>(requestInfo, ApplyResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes managementActionDeploymentStatus</summary>
-        public class ApplyResponse : IParsable, IAdditionalDataHolder {
+        public class ApplyResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type managementActionDeploymentStatus</summary>

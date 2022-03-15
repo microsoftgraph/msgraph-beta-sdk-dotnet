@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Me.AssignLicense {
             return await RequestAdapter.SendAsync<AssignLicenseResponse>(requestInfo, AssignLicenseResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes user</summary>
-        public class AssignLicenseResponse : IParsable, IAdditionalDataHolder {
+        public class AssignLicenseResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type user</summary>

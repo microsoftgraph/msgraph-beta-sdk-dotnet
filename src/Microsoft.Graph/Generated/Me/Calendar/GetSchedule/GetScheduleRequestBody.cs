@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Me.Calendar.GetSchedule {
     /// <summary>Provides operations to call the getSchedule method.</summary>
-    public class GetScheduleRequestBody : IParsable, IAdditionalDataHolder {
+    public class GetScheduleRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public int? AvailabilityViewInterval { get; set; }

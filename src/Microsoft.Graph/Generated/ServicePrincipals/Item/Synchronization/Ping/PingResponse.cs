@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Ping {
     /// <summary>Provides operations to call the Ping method.</summary>
-    public class PingResponse : IParsable, IAdditionalDataHolder {
+    public class PingResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string Value { get; set; }

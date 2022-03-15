@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Directory.Recommendations.Item.Dismiss {
             return await RequestAdapter.SendAsync<DismissResponse>(requestInfo, DismissResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes recommendation</summary>
-        public class DismissResponse : IParsable, IAdditionalDataHolder {
+        public class DismissResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type recommendation</summary>

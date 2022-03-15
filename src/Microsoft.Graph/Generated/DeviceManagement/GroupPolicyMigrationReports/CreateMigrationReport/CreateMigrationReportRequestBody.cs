@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyMigrationReports.CreateMigrationReport {
     /// <summary>Provides operations to call the createMigrationReport method.</summary>
-    public class CreateMigrationReportRequestBody : IParsable, IAdditionalDataHolder {
+    public class CreateMigrationReportRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public MicrosoftGraphSdk.Models.Microsoft.Graph.GroupPolicyObjectFile GroupPolicyObjectFile { get; set; }

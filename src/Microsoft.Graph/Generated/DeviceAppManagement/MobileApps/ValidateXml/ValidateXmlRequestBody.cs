@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.ValidateXml {
     /// <summary>Provides operations to call the validateXml method.</summary>
-    public class ValidateXmlRequestBody : IParsable, IAdditionalDataHolder {
+    public class ValidateXmlRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public byte[] OfficeConfigurationXml { get; set; }

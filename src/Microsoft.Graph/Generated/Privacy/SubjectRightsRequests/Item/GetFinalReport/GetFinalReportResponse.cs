@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Privacy.SubjectRightsRequests.Item.GetFinalReport {
     /// <summary>Provides operations to call the getFinalReport method.</summary>
-    public class GetFinalReportResponse : IParsable, IAdditionalDataHolder {
+    public class GetFinalReportResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public byte[] Value { get; set; }

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DataClassification.ExactMatchDataStores.Item.Lookup {
     /// <summary>Provides operations to call the lookup method.</summary>
-    public class LookupRequestBody : IParsable, IAdditionalDataHolder {
+    public class LookupRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string Key { get; set; }

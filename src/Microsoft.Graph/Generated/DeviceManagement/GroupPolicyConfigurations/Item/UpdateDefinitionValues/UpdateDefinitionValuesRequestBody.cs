@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyConfigurations.Item.UpdateDefinitionValues {
     /// <summary>Provides operations to call the updateDefinitionValues method.</summary>
-    public class UpdateDefinitionValuesRequestBody : IParsable, IAdditionalDataHolder {
+    public class UpdateDefinitionValuesRequestBody : IAdditionalDataHolder, IParsable {
         public List<GroupPolicyDefinitionValue> Added { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

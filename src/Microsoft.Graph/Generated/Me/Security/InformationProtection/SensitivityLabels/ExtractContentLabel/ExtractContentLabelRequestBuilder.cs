@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Me.Security.InformationProtection.SensitivityLabels.
             return await RequestAdapter.SendAsync<ExtractContentLabelResponse>(requestInfo, ExtractContentLabelResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes contentLabel</summary>
-        public class ExtractContentLabelResponse : IParsable, IAdditionalDataHolder {
+        public class ExtractContentLabelResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type contentLabel</summary>

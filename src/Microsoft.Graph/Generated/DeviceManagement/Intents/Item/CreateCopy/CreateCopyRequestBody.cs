@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.CreateCopy {
     /// <summary>Provides operations to call the createCopy method.</summary>
-    public class CreateCopyRequestBody : IParsable, IAdditionalDataHolder {
+    public class CreateCopyRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string Description { get; set; }

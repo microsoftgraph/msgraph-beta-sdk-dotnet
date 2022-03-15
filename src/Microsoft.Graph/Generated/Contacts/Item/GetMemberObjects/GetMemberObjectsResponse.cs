@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Contacts.Item.GetMemberObjects {
     /// <summary>Provides operations to call the getMemberObjects method.</summary>
-    public class GetMemberObjectsResponse : IParsable, IAdditionalDataHolder {
+    public class GetMemberObjectsResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<string> Value { get; set; }

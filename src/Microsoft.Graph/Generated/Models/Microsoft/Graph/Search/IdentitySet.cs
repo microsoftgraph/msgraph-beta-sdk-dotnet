@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Search {
     /// <summary>Provides operations to manage the searchEntity singleton.</summary>
-    public class IdentitySet : IParsable, IAdditionalDataHolder {
+    public class IdentitySet : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public Identity Application { get; set; }

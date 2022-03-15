@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Me.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.CopyToNotebook {
     /// <summary>Provides operations to call the copyToNotebook method.</summary>
-    public class CopyToNotebookRequestBody : IParsable, IAdditionalDataHolder {
+    public class CopyToNotebookRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string GroupId { get; set; }

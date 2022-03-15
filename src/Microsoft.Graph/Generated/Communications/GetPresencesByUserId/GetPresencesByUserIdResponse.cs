@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Communications.GetPresencesByUserId {
     /// <summary>Provides operations to call the getPresencesByUserId method.</summary>
-    public class GetPresencesByUserIdResponse : IParsable, IAdditionalDataHolder {
+    public class GetPresencesByUserIdResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Presence> Value { get; set; }

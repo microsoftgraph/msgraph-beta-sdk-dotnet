@@ -5,15 +5,15 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the getHealthMetricTimeSeries method.</summary>
-    public class CertificateConnectorHealthMetricValue : IParsable, IAdditionalDataHolder {
+    public class CertificateConnectorHealthMetricValue : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Timestamp for this metric data-point.</summary>
         public DateTimeOffset? DateTime { get; set; }
         /// <summary>Count of failed requests/operations.</summary>
-        public long? FailureCount { get; set; }
+        public int? FailureCount { get; set; }
         /// <summary>Count of successful requests/operations.</summary>
-        public long? SuccessCount { get; set; }
+        public int? SuccessCount { get; set; }
         /// <summary>
         /// Instantiates a new certificateConnectorHealthMetricValue and sets the default values.
         /// </summary>
@@ -34,8 +34,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"dateTime", (o,n) => { (o as CertificateConnectorHealthMetricValue).DateTime = n.GetDateTimeOffsetValue(); } },
-                {"failureCount", (o,n) => { (o as CertificateConnectorHealthMetricValue).FailureCount = n.GetLongValue(); } },
-                {"successCount", (o,n) => { (o as CertificateConnectorHealthMetricValue).SuccessCount = n.GetLongValue(); } },
+                {"failureCount", (o,n) => { (o as CertificateConnectorHealthMetricValue).FailureCount = n.GetIntValue(); } },
+                {"successCount", (o,n) => { (o as CertificateConnectorHealthMetricValue).SuccessCount = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -45,8 +45,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("dateTime", DateTime);
-            writer.WriteLongValue("failureCount", FailureCount);
-            writer.WriteLongValue("successCount", SuccessCount);
+            writer.WriteIntValue("failureCount", FailureCount);
+            writer.WriteIntValue("successCount", SuccessCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

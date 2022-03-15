@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Follow {
             return await RequestAdapter.SendAsync<FollowResponse>(requestInfo, FollowResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes driveItem</summary>
-        public class FollowResponse : IParsable, IAdditionalDataHolder {
+        public class FollowResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type driveItem</summary>

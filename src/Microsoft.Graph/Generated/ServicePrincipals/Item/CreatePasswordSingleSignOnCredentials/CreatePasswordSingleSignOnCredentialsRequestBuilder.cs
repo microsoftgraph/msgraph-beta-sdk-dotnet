@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.CreatePasswordSingleSignOnCre
             return await RequestAdapter.SendAsync<CreatePasswordSingleSignOnCredentialsResponse>(requestInfo, CreatePasswordSingleSignOnCredentialsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes passwordSingleSignOnCredentialSet</summary>
-        public class CreatePasswordSingleSignOnCredentialsResponse : IParsable, IAdditionalDataHolder {
+        public class CreatePasswordSingleSignOnCredentialsResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type passwordSingleSignOnCredentialSet</summary>

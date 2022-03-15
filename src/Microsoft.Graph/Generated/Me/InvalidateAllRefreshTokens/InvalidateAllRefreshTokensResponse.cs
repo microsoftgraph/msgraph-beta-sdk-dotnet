@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Me.InvalidateAllRefreshTokens {
     /// <summary>Provides operations to call the invalidateAllRefreshTokens method.</summary>
-    public class InvalidateAllRefreshTokensResponse : IParsable, IAdditionalDataHolder {
+    public class InvalidateAllRefreshTokensResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public bool? Value { get; set; }

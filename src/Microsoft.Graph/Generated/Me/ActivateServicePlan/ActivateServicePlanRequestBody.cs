@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Me.ActivateServicePlan {
     /// <summary>Provides operations to call the activateServicePlan method.</summary>
-    public class ActivateServicePlanRequestBody : IParsable, IAdditionalDataHolder {
+    public class ActivateServicePlanRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string ServicePlanId { get; set; }

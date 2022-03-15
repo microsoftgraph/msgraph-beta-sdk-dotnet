@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Applications.Item.CheckMemberObjects {
     /// <summary>Provides operations to call the checkMemberObjects method.</summary>
-    public class CheckMemberObjectsResponse : IParsable, IAdditionalDataHolder {
+    public class CheckMemberObjectsResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<string> Value { get; set; }

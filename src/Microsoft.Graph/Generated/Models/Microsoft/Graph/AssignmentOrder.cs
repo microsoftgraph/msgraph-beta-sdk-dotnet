@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the getOrder method.</summary>
-    public class AssignmentOrder : IParsable, IAdditionalDataHolder {
+    public class AssignmentOrder : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A list of identityUserFlowAttribute object identifiers that determine the order in which attributes should be collected within a user flow.</summary>

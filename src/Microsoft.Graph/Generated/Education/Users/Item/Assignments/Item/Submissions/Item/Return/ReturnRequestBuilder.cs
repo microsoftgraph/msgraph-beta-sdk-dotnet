@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.Education.Users.Item.Assignments.Item.Submissions.It
             return await RequestAdapter.SendAsync<ReturnResponse>(requestInfo, ReturnResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes educationSubmission</summary>
-        public class ReturnResponse : IParsable, IAdditionalDataHolder {
+        public class ReturnResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type educationSubmission</summary>

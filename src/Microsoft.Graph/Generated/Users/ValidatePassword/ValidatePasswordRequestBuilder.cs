@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Users.ValidatePassword {
             return await RequestAdapter.SendAsync<ValidatePasswordResponse>(requestInfo, ValidatePasswordResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes passwordValidationInformation</summary>
-        public class ValidatePasswordResponse : IParsable, IAdditionalDataHolder {
+        public class ValidatePasswordResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type passwordValidationInformation</summary>

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.Item.RemoveMembersById {
     /// <summary>Provides operations to call the removeMembersById method.</summary>
-    public class RemoveMembersByIdRequestBody : IParsable, IAdditionalDataHolder {
+    public class RemoveMembersByIdRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<string> Ids { get; set; }

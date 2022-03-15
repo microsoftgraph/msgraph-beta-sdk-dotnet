@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties {
     /// <summary>Provides operations to call the getSupportedProperties method.</summary>
-    public class GetSupportedPropertiesResponse : IParsable, IAdditionalDataHolder {
+    public class GetSupportedPropertiesResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<AssignmentFilterSupportedProperty> Value { get; set; }

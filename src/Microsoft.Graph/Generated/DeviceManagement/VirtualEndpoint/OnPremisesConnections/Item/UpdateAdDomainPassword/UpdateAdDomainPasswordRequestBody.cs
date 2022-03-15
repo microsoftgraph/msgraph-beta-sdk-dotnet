@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.OnPremisesConnections.Item.UpdateAdDomainPassword {
     /// <summary>Provides operations to call the updateAdDomainPassword method.</summary>
-    public class UpdateAdDomainPasswordRequestBody : IParsable, IAdditionalDataHolder {
+    public class UpdateAdDomainPasswordRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string AdDomainPassword { get; set; }

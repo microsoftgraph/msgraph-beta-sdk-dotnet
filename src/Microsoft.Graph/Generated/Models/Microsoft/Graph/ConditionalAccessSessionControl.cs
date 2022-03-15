@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the identityContainer singleton.</summary>
-    public class ConditionalAccessSessionControl : IParsable, IAdditionalDataHolder {
+    public class ConditionalAccessSessionControl : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies whether the session control is enabled.</summary>

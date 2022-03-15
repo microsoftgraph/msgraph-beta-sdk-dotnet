@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Groups.Item.Team.PrimaryChannel.Members.Add {
     /// <summary>Provides operations to call the add method.</summary>
-    public class AddResponse : IParsable, IAdditionalDataHolder {
+    public class AddResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<ActionResultPart> Value { get; set; }

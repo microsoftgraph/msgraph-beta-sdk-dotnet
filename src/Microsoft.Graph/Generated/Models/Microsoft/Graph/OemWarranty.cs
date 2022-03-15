@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the getOemWarranty method.</summary>
-    public class OemWarranty : IParsable, IAdditionalDataHolder {
+    public class OemWarranty : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of additional warranty offers. This collection can contain a maximum of 100 elements.</summary>

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Me.ChangePassword {
     /// <summary>Provides operations to call the changePassword method.</summary>
-    public class ChangePasswordRequestBody : IParsable, IAdditionalDataHolder {
+    public class ChangePasswordRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string CurrentPassword { get; set; }

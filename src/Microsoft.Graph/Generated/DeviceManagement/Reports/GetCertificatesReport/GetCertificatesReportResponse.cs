@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetCertificatesReport {
     /// <summary>Provides operations to call the getCertificatesReport method.</summary>
-    public class GetCertificatesReportResponse : IParsable, IAdditionalDataHolder {
+    public class GetCertificatesReportResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public byte[] Value { get; set; }

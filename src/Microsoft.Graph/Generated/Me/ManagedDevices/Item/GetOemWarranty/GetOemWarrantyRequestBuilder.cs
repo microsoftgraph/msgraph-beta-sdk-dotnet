@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.GetOemWarranty {
             return await RequestAdapter.SendAsync<GetOemWarrantyResponse>(requestInfo, GetOemWarrantyResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes oemWarranty</summary>
-        public class GetOemWarrantyResponse : IParsable, IAdditionalDataHolder {
+        public class GetOemWarrantyResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type oemWarranty</summary>

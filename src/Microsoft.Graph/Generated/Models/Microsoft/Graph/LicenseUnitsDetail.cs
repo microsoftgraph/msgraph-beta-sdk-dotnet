@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the collection of subscribedSku entities.</summary>
-    public class LicenseUnitsDetail : IParsable, IAdditionalDataHolder {
+    public class LicenseUnitsDetail : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of units that are enabled for the active subscription of the service SKU.</summary>

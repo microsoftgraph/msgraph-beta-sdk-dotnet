@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Reports.GetYammerDeviceUsageDistributionUserCountsWithPeriod {
     /// <summary>Provides operations to call the getYammerDeviceUsageDistributionUserCounts method.</summary>
-    public class GetYammerDeviceUsageDistributionUserCountsWithPeriodResponse : IParsable, IAdditionalDataHolder {
+    public class GetYammerDeviceUsageDistributionUserCountsWithPeriodResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public byte[] Value { get; set; }

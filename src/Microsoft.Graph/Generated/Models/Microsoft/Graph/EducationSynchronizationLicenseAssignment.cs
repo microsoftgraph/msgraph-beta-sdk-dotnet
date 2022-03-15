@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the educationRoot singleton.</summary>
-    public class EducationSynchronizationLicenseAssignment : IParsable, IAdditionalDataHolder {
+    public class EducationSynchronizationLicenseAssignment : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The user role type to assign to license. Possible values are: student, teacher, faculty.</summary>

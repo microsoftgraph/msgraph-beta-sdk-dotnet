@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.ScopedForResourceWithResource {
     /// <summary>Provides operations to call the scopedForResource method.</summary>
-    public class ScopedForResourceWithResourceResponse : IParsable, IAdditionalDataHolder {
+    public class ScopedForResourceWithResourceResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public bool? Value { get; set; }

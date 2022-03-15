@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the validatePassword method.</summary>
-    public class ValidationResult : IParsable, IAdditionalDataHolder {
+    public class ValidationResult : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The string containing the reason for why the rule passed or not. Read-only. Not nullable.</summary>

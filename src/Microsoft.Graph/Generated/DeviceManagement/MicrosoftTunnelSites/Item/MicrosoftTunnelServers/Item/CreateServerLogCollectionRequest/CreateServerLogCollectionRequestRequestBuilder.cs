@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelSites.Item.Microsoft
             return await RequestAdapter.SendAsync<CreateServerLogCollectionRequestResponse>(requestInfo, CreateServerLogCollectionRequestResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes microsoftTunnelServerLogCollectionResponse</summary>
-        public class CreateServerLogCollectionRequestResponse : IParsable, IAdditionalDataHolder {
+        public class CreateServerLogCollectionRequestResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type microsoftTunnelServerLogCollectionResponse</summary>

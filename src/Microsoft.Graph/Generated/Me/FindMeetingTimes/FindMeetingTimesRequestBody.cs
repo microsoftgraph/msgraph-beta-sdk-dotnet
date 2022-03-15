@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Me.FindMeetingTimes {
     /// <summary>Provides operations to call the findMeetingTimes method.</summary>
-    public class FindMeetingTimesRequestBody : IParsable, IAdditionalDataHolder {
+    public class FindMeetingTimesRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<AttendeeBase> Attendees { get; set; }

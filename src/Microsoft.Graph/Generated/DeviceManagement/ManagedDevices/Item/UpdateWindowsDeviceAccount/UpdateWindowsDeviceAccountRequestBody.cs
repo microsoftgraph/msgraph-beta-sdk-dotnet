@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.UpdateWindowsDeviceAccount {
     /// <summary>Provides operations to call the updateWindowsDeviceAccount method.</summary>
-    public class UpdateWindowsDeviceAccountRequestBody : IParsable, IAdditionalDataHolder {
+    public class UpdateWindowsDeviceAccountRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public MicrosoftGraphSdk.Models.Microsoft.Graph.UpdateWindowsDeviceAccountActionParameter UpdateWindowsDeviceAccountActionParameter { get; set; }

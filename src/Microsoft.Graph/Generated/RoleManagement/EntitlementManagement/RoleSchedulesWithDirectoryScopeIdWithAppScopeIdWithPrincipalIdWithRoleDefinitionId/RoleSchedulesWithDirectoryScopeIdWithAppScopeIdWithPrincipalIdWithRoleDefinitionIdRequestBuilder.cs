@@ -24,13 +24,13 @@ namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleSchedulesWi
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="roleDefinitionId">Usage: roleDefinitionId='{roleDefinitionId}'</param>
         /// </summary>
-        public RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string directoryScopeId = default, string appScopeId = default, string principalId = default, string roleDefinitionId = default) {
+        public RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string appScopeId = default, string directoryScopeId = default, string principalId = default, string roleDefinitionId = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/roleManagement/entitlementManagement/microsoft.graph.roleSchedules(directoryScopeId='{directoryScopeId}',appScopeId='{appScopeId}',principalId='{principalId}',roleDefinitionId='{roleDefinitionId}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("directoryScopeId", directoryScopeId);
             urlTplParams.Add("appScopeId", appScopeId);
+            urlTplParams.Add("directoryScopeId", directoryScopeId);
             urlTplParams.Add("principalId", principalId);
             urlTplParams.Add("roleDefinitionId", roleDefinitionId);
             PathParameters = urlTplParams;

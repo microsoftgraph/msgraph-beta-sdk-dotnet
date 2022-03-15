@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the collection of invitation entities.</summary>
-    public class InvitedUserMessageInfo : IParsable, IAdditionalDataHolder {
+    public class InvitedUserMessageInfo : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Additional recipients the invitation message should be sent to. Currently only 1 additional recipient is supported.</summary>

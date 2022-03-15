@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates {
     /// <summary>Provides operations to manage the admin singleton.</summary>
-    public class DeploymentSettings : IParsable, IAdditionalDataHolder {
+    public class DeploymentSettings : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Settings governing conditions to monitor and automated actions to take.</summary>

@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.Reports.DeviceConfigurationDeviceActivity {
             return await RequestAdapter.SendAsync<DeviceConfigurationDeviceActivityResponse>(requestInfo, DeviceConfigurationDeviceActivityResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes report</summary>
-        public class DeviceConfigurationDeviceActivityResponse : IParsable, IAdditionalDataHolder {
+        public class DeviceConfigurationDeviceActivityResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type report</summary>

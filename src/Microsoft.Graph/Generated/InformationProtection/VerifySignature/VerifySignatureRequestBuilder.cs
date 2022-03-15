@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.InformationProtection.VerifySignature {
             return await RequestAdapter.SendAsync<VerifySignatureResponse>(requestInfo, VerifySignatureResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes verificationResult</summary>
-        public class VerifySignatureResponse : IParsable, IAdditionalDataHolder {
+        public class VerifySignatureResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type verificationResult</summary>

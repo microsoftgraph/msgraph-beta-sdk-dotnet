@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Drives.Item.List.Items.Item.CreateLink {
     /// <summary>Provides operations to call the createLink method.</summary>
-    public class CreateLinkRequestBody : IParsable, IAdditionalDataHolder {
+    public class CreateLinkRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public DateTimeOffset? ExpirationDateTime { get; set; }

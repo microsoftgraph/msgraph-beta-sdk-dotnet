@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the organizationalBranding singleton.</summary>
-    public class LoginPageTextVisibilitySettings : IParsable, IAdditionalDataHolder {
+    public class LoginPageTextVisibilitySettings : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Option to hide the self-service password reset (SSPR) 'Can't access your account?' hyperlink on the sign-in form.</summary>

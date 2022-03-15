@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.App.Calls.Item.SubscribeToTone {
             return await RequestAdapter.SendAsync<SubscribeToToneResponse>(requestInfo, SubscribeToToneResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes subscribeToToneOperation</summary>
-        public class SubscribeToToneResponse : IParsable, IAdditionalDataHolder {
+        public class SubscribeToToneResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type subscribeToToneOperation</summary>

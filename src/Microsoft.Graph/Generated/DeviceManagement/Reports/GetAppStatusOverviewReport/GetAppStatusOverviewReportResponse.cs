@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetAppStatusOverviewReport {
     /// <summary>Provides operations to call the getAppStatusOverviewReport method.</summary>
-    public class GetAppStatusOverviewReportResponse : IParsable, IAdditionalDataHolder {
+    public class GetAppStatusOverviewReportResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public byte[] Value { get; set; }

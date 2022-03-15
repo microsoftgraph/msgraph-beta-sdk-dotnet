@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.InformationProtection.SensitivityLabels.Item.Sublabe
             return await RequestAdapter.SendAsync<EvaluateResponse>(requestInfo, EvaluateResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes evaluateLabelJobResponse</summary>
-        public class EvaluateResponse : IParsable, IAdditionalDataHolder {
+        public class EvaluateResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type evaluateLabelJobResponse</summary>

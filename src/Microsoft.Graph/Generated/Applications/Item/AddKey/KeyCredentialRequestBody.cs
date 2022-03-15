@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Applications.Item.AddKey {
     /// <summary>Provides operations to call the addKey method.</summary>
-    public class KeyCredentialRequestBody : IParsable, IAdditionalDataHolder {
+    public class KeyCredentialRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public MicrosoftGraphSdk.Models.Microsoft.Graph.KeyCredential KeyCredential { get; set; }

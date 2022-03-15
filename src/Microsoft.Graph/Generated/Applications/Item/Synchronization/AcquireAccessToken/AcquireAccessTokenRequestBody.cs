@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Applications.Item.Synchronization.AcquireAccessToken {
     /// <summary>Provides operations to call the acquireAccessToken method.</summary>
-    public class AcquireAccessTokenRequestBody : IParsable, IAdditionalDataHolder {
+    public class AcquireAccessTokenRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<SynchronizationSecretKeyStringValuePair> Credentials { get; set; }

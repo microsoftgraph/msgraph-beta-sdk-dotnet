@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedAppRegistrations.Item.AppliedPolicies.Item.ManagedAppProtection.TargetApps {
     /// <summary>Provides operations to call the targetApps method.</summary>
-    public class TargetAppsRequestBody : IParsable, IAdditionalDataHolder {
+    public class TargetAppsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<ManagedMobileApp> Apps { get; set; }

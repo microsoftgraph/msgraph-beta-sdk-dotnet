@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsRemoteConnection.SummarizeDeviceRemoteConnectionWithSummarizeBy {
     /// <summary>Provides operations to call the summarizeDeviceRemoteConnection method.</summary>
-    public class SummarizeDeviceRemoteConnectionWithSummarizeByResponse : IParsable, IAdditionalDataHolder {
+    public class SummarizeDeviceRemoteConnectionWithSummarizeByResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsRemoteConnection> Value { get; set; }

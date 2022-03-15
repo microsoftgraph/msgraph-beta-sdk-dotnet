@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Me.Authentication.Methods.Item.ResetPassword {
             return await RequestAdapter.SendAsync<ResetPasswordResponse>(requestInfo, ResetPasswordResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes passwordResetResponse</summary>
-        public class ResetPasswordResponse : IParsable, IAdditionalDataHolder {
+        public class ResetPasswordResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type passwordResetResponse</summary>

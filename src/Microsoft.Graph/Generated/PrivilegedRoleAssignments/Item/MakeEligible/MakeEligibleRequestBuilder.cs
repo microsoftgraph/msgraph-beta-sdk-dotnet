@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.PrivilegedRoleAssignments.Item.MakeEligible {
             return await RequestAdapter.SendAsync<MakeEligibleResponse>(requestInfo, MakeEligibleResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes privilegedRoleAssignment</summary>
-        public class MakeEligibleResponse : IParsable, IAdditionalDataHolder {
+        public class MakeEligibleResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type privilegedRoleAssignment</summary>

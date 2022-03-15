@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Reports.GetEmailActivityUserDetailWithPeriod {
     /// <summary>Provides operations to call the getEmailActivityUserDetail method.</summary>
-    public class GetEmailActivityUserDetailWithPeriodResponse : IParsable, IAdditionalDataHolder {
+    public class GetEmailActivityUserDetailWithPeriodResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public byte[] Value { get; set; }

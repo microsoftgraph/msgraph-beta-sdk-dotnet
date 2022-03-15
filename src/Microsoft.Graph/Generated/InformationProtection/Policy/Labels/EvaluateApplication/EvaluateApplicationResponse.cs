@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.InformationProtection.Policy.Labels.EvaluateApplication {
     /// <summary>Provides operations to call the evaluateApplication method.</summary>
-    public class EvaluateApplicationResponse : IParsable, IAdditionalDataHolder {
+    public class EvaluateApplicationResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<InformationProtectionAction> Value { get; set; }

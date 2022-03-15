@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
-    public class Video : IParsable, IAdditionalDataHolder {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    public class Video : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of audio bits per sample.</summary>
@@ -19,7 +19,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Bit rate of the video in bits per second.</summary>
         public int? Bitrate { get; set; }
         /// <summary>Duration of the file in milliseconds.</summary>
-        public long? Duration { get; set; }
+        public int? Duration { get; set; }
         /// <summary>'Four character code' name of the video format.</summary>
         public string FourCC { get; set; }
         /// <summary>Frame rate of the video.</summary>
@@ -52,7 +52,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"audioFormat", (o,n) => { (o as Video).AudioFormat = n.GetStringValue(); } },
                 {"audioSamplesPerSecond", (o,n) => { (o as Video).AudioSamplesPerSecond = n.GetIntValue(); } },
                 {"bitrate", (o,n) => { (o as Video).Bitrate = n.GetIntValue(); } },
-                {"duration", (o,n) => { (o as Video).Duration = n.GetLongValue(); } },
+                {"duration", (o,n) => { (o as Video).Duration = n.GetIntValue(); } },
                 {"fourCC", (o,n) => { (o as Video).FourCC = n.GetStringValue(); } },
                 {"frameRate", (o,n) => { (o as Video).FrameRate = n.GetDoubleValue(); } },
                 {"height", (o,n) => { (o as Video).Height = n.GetIntValue(); } },
@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("audioFormat", AudioFormat);
             writer.WriteIntValue("audioSamplesPerSecond", AudioSamplesPerSecond);
             writer.WriteIntValue("bitrate", Bitrate);
-            writer.WriteLongValue("duration", Duration);
+            writer.WriteIntValue("duration", Duration);
             writer.WriteStringValue("fourCC", FourCC);
             writer.WriteDoubleValue("frameRate", FrameRate);
             writer.WriteIntValue("height", Height);

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Unfavorite {
     /// <summary>Provides operations to call the unfavorite method.</summary>
-    public class UnfavoriteRequestBody : IParsable, IAdditionalDataHolder {
+    public class UnfavoriteRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<string> MessageIds { get; set; }

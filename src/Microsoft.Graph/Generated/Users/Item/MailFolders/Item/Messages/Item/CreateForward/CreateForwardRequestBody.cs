@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Users.Item.MailFolders.Item.Messages.Item.CreateForward {
     /// <summary>Provides operations to call the createForward method.</summary>
-    public class CreateForwardRequestBody : IParsable, IAdditionalDataHolder {
+    public class CreateForwardRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string Comment { get; set; }

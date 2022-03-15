@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.RoleManagement.Directory.ResourceNamespaces.Item.Imp
             return await RequestAdapter.SendAsync<ImportResourceActionsResponse>(requestInfo, ImportResourceActionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes unifiedRbacResourceNamespace</summary>
-        public class ImportResourceActionsResponse : IParsable, IAdditionalDataHolder {
+        public class ImportResourceActionsResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type unifiedRbacResourceNamespace</summary>

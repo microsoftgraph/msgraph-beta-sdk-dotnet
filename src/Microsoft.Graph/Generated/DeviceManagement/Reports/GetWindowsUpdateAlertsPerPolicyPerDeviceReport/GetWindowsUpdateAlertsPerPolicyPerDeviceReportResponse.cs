@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetWindowsUpdateAlertsPerPolicyPerDeviceReport {
     /// <summary>Provides operations to call the getWindowsUpdateAlertsPerPolicyPerDeviceReport method.</summary>
-    public class GetWindowsUpdateAlertsPerPolicyPerDeviceReportResponse : IParsable, IAdditionalDataHolder {
+    public class GetWindowsUpdateAlertsPerPolicyPerDeviceReportResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public byte[] Value { get; set; }

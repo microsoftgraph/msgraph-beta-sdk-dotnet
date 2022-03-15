@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.WindowsDefenderScan {
     /// <summary>Provides operations to call the windowsDefenderScan method.</summary>
-    public class WindowsDefenderScanRequestBody : IParsable, IAdditionalDataHolder {
+    public class WindowsDefenderScanRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public bool? QuickScan { get; set; }

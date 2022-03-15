@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Sites.Item.Onenote.Notebooks.GetRecentNotebooksWithIncludePersonalNotebooks {
     /// <summary>Provides operations to call the getRecentNotebooks method.</summary>
-    public class GetRecentNotebooksWithIncludePersonalNotebooksResponse : IParsable, IAdditionalDataHolder {
+    public class GetRecentNotebooksWithIncludePersonalNotebooksResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<RecentNotebook> Value { get; set; }

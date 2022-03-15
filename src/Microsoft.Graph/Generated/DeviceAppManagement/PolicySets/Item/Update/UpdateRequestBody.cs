@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item.Update {
     /// <summary>Provides operations to call the update method.</summary>
-    public class UpdateRequestBody : IParsable, IAdditionalDataHolder {
+    public class UpdateRequestBody : IAdditionalDataHolder, IParsable {
         public List<PolicySetItem> AddedPolicySetItems { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

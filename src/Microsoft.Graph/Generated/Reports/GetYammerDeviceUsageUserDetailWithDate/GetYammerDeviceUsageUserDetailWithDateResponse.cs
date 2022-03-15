@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Reports.GetYammerDeviceUsageUserDetailWithDate {
     /// <summary>Provides operations to call the getYammerDeviceUsageUserDetail method.</summary>
-    public class GetYammerDeviceUsageUserDetailWithDateResponse : IParsable, IAdditionalDataHolder {
+    public class GetYammerDeviceUsageUserDetailWithDateResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public byte[] Value { get; set; }

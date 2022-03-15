@@ -13,7 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>ID of the application that the user signed in to.</summary>
         public string AppId { get; set; }
         /// <summary>Count of sign-ins made by the application.</summary>
-        public long? SignInCount { get; set; }
+        public int? SignInCount { get; set; }
         /// <summary>Details of the sign-in status.</summary>
         public SignInStatus Status { get; set; }
         /// <summary>
@@ -32,7 +32,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"aggregatedEventDateTime", (o,n) => { (o as ApplicationSignInDetailedSummary).AggregatedEventDateTime = n.GetDateTimeOffsetValue(); } },
                 {"appDisplayName", (o,n) => { (o as ApplicationSignInDetailedSummary).AppDisplayName = n.GetStringValue(); } },
                 {"appId", (o,n) => { (o as ApplicationSignInDetailedSummary).AppId = n.GetStringValue(); } },
-                {"signInCount", (o,n) => { (o as ApplicationSignInDetailedSummary).SignInCount = n.GetLongValue(); } },
+                {"signInCount", (o,n) => { (o as ApplicationSignInDetailedSummary).SignInCount = n.GetIntValue(); } },
                 {"status", (o,n) => { (o as ApplicationSignInDetailedSummary).Status = n.GetObjectValue<SignInStatus>(SignInStatus.CreateFromDiscriminatorValue); } },
             };
         }
@@ -46,7 +46,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteDateTimeOffsetValue("aggregatedEventDateTime", AggregatedEventDateTime);
             writer.WriteStringValue("appDisplayName", AppDisplayName);
             writer.WriteStringValue("appId", AppId);
-            writer.WriteLongValue("signInCount", SignInCount);
+            writer.WriteIntValue("signInCount", SignInCount);
             writer.WriteObjectValue<SignInStatus>("status", Status);
         }
     }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class ManagedDevice : Entity, IParsable {
         /// <summary>Whether the device is Azure Active Directory registered. This property is read-only.</summary>
         public bool? AadRegistered { get; set; }
@@ -80,7 +80,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Last time the device contacted Exchange. This property is read-only.</summary>
         public DateTimeOffset? ExchangeLastSuccessfulSyncDateTime { get; set; }
         /// <summary>Free Storage in Bytes. This property is read-only.</summary>
-        public long? FreeStorageSpaceInBytes { get; set; }
+        public int? FreeStorageSpaceInBytes { get; set; }
         /// <summary>The hardward details for the device.  Includes information such as storage space, manufacturer, serial number, etc. This property is read-only.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.HardwareInformation HardwareInformation { get; set; }
         /// <summary>Integrated Circuit Card Identifier, it is A SIM card's unique identification number. This property is read-only.</summary>
@@ -134,7 +134,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Phone number of the device. This property is read-only.</summary>
         public string PhoneNumber { get; set; }
         /// <summary>Total Memory in Bytes. This property is read-only.</summary>
-        public long? PhysicalMemoryInBytes { get; set; }
+        public int? PhysicalMemoryInBytes { get; set; }
         /// <summary>Reports the DateTime the preferMdmOverGroupPolicy setting was set.  When set, the Intune MDM settings will override Group Policy settings if there is a conflict. Read Only. This property is read-only.</summary>
         public DateTimeOffset? PreferMdmOverGroupPolicyAppliedDateTime { get; set; }
         /// <summary>Processor architecture. This property is read-only. Possible values are: unknown, x86, x64, arm, arM64.</summary>
@@ -162,7 +162,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Subscriber Carrier. This property is read-only.</summary>
         public string SubscriberCarrier { get; set; }
         /// <summary>Total Storage in Bytes. This property is read-only.</summary>
-        public long? TotalStorageSpaceInBytes { get; set; }
+        public int? TotalStorageSpaceInBytes { get; set; }
         /// <summary>Unique Device Identifier for iOS and macOS devices. This property is read-only.</summary>
         public string Udid { get; set; }
         /// <summary>User display name. This property is read-only.</summary>
@@ -233,7 +233,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"exchangeAccessState", (o,n) => { (o as ManagedDevice).ExchangeAccessState = n.GetEnumValue<DeviceManagementExchangeAccessState>(); } },
                 {"exchangeAccessStateReason", (o,n) => { (o as ManagedDevice).ExchangeAccessStateReason = n.GetEnumValue<DeviceManagementExchangeAccessStateReason>(); } },
                 {"exchangeLastSuccessfulSyncDateTime", (o,n) => { (o as ManagedDevice).ExchangeLastSuccessfulSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"freeStorageSpaceInBytes", (o,n) => { (o as ManagedDevice).FreeStorageSpaceInBytes = n.GetLongValue(); } },
+                {"freeStorageSpaceInBytes", (o,n) => { (o as ManagedDevice).FreeStorageSpaceInBytes = n.GetIntValue(); } },
                 {"hardwareInformation", (o,n) => { (o as ManagedDevice).HardwareInformation = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.HardwareInformation>(MicrosoftGraphSdk.Models.Microsoft.Graph.HardwareInformation.CreateFromDiscriminatorValue); } },
                 {"iccid", (o,n) => { (o as ManagedDevice).Iccid = n.GetStringValue(); } },
                 {"imei", (o,n) => { (o as ManagedDevice).Imei = n.GetStringValue(); } },
@@ -260,7 +260,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"ownerType", (o,n) => { (o as ManagedDevice).OwnerType = n.GetEnumValue<OwnerType>(); } },
                 {"partnerReportedThreatState", (o,n) => { (o as ManagedDevice).PartnerReportedThreatState = n.GetEnumValue<ManagedDevicePartnerReportedHealthState>(); } },
                 {"phoneNumber", (o,n) => { (o as ManagedDevice).PhoneNumber = n.GetStringValue(); } },
-                {"physicalMemoryInBytes", (o,n) => { (o as ManagedDevice).PhysicalMemoryInBytes = n.GetLongValue(); } },
+                {"physicalMemoryInBytes", (o,n) => { (o as ManagedDevice).PhysicalMemoryInBytes = n.GetIntValue(); } },
                 {"preferMdmOverGroupPolicyAppliedDateTime", (o,n) => { (o as ManagedDevice).PreferMdmOverGroupPolicyAppliedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"processorArchitecture", (o,n) => { (o as ManagedDevice).ProcessorArchitecture = n.GetEnumValue<ManagedDeviceArchitecture>(); } },
                 {"remoteAssistanceSessionErrorDetails", (o,n) => { (o as ManagedDevice).RemoteAssistanceSessionErrorDetails = n.GetStringValue(); } },
@@ -274,7 +274,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"skuNumber", (o,n) => { (o as ManagedDevice).SkuNumber = n.GetIntValue(); } },
                 {"specificationVersion", (o,n) => { (o as ManagedDevice).SpecificationVersion = n.GetStringValue(); } },
                 {"subscriberCarrier", (o,n) => { (o as ManagedDevice).SubscriberCarrier = n.GetStringValue(); } },
-                {"totalStorageSpaceInBytes", (o,n) => { (o as ManagedDevice).TotalStorageSpaceInBytes = n.GetLongValue(); } },
+                {"totalStorageSpaceInBytes", (o,n) => { (o as ManagedDevice).TotalStorageSpaceInBytes = n.GetIntValue(); } },
                 {"udid", (o,n) => { (o as ManagedDevice).Udid = n.GetStringValue(); } },
                 {"userDisplayName", (o,n) => { (o as ManagedDevice).UserDisplayName = n.GetStringValue(); } },
                 {"userId", (o,n) => { (o as ManagedDevice).UserId = n.GetStringValue(); } },
@@ -331,7 +331,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteEnumValue<DeviceManagementExchangeAccessState>("exchangeAccessState", ExchangeAccessState);
             writer.WriteEnumValue<DeviceManagementExchangeAccessStateReason>("exchangeAccessStateReason", ExchangeAccessStateReason);
             writer.WriteDateTimeOffsetValue("exchangeLastSuccessfulSyncDateTime", ExchangeLastSuccessfulSyncDateTime);
-            writer.WriteLongValue("freeStorageSpaceInBytes", FreeStorageSpaceInBytes);
+            writer.WriteIntValue("freeStorageSpaceInBytes", FreeStorageSpaceInBytes);
             writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.HardwareInformation>("hardwareInformation", HardwareInformation);
             writer.WriteStringValue("iccid", Iccid);
             writer.WriteStringValue("imei", Imei);
@@ -358,7 +358,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteEnumValue<OwnerType>("ownerType", OwnerType);
             writer.WriteEnumValue<ManagedDevicePartnerReportedHealthState>("partnerReportedThreatState", PartnerReportedThreatState);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
-            writer.WriteLongValue("physicalMemoryInBytes", PhysicalMemoryInBytes);
+            writer.WriteIntValue("physicalMemoryInBytes", PhysicalMemoryInBytes);
             writer.WriteDateTimeOffsetValue("preferMdmOverGroupPolicyAppliedDateTime", PreferMdmOverGroupPolicyAppliedDateTime);
             writer.WriteEnumValue<ManagedDeviceArchitecture>("processorArchitecture", ProcessorArchitecture);
             writer.WriteStringValue("remoteAssistanceSessionErrorDetails", RemoteAssistanceSessionErrorDetails);
@@ -372,7 +372,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteIntValue("skuNumber", SkuNumber);
             writer.WriteStringValue("specificationVersion", SpecificationVersion);
             writer.WriteStringValue("subscriberCarrier", SubscriberCarrier);
-            writer.WriteLongValue("totalStorageSpaceInBytes", TotalStorageSpaceInBytes);
+            writer.WriteIntValue("totalStorageSpaceInBytes", TotalStorageSpaceInBytes);
             writer.WriteStringValue("udid", Udid);
             writer.WriteStringValue("userDisplayName", UserDisplayName);
             writer.WriteStringValue("userId", UserId);

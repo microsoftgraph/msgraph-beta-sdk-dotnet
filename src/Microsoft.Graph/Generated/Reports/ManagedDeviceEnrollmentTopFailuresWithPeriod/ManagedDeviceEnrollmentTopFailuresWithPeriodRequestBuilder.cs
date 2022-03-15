@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.Reports.ManagedDeviceEnrollmentTopFailuresWithPeriod
             return await RequestAdapter.SendAsync<ManagedDeviceEnrollmentTopFailuresWithPeriodResponse>(requestInfo, ManagedDeviceEnrollmentTopFailuresWithPeriodResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes report</summary>
-        public class ManagedDeviceEnrollmentTopFailuresWithPeriodResponse : IParsable, IAdditionalDataHolder {
+        public class ManagedDeviceEnrollmentTopFailuresWithPeriodResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type report</summary>

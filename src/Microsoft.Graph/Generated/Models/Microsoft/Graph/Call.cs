@@ -21,6 +21,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<CallRoute> CallRoutes { get; set; }
         /// <summary>The chat information. Required information for joining a meeting.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ChatInfo ChatInfo { get; set; }
+        public List<ContentSharingSession> ContentSharingSessions { get; set; }
         /// <summary>The direction of the call. The possible value are incoming or outgoing. Read-only.</summary>
         public CallDirection? Direction { get; set; }
         /// <summary>The context associated with an incoming call. Read-only. Server generated.</summary>
@@ -72,6 +73,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"callOptions", (o,n) => { (o as Call).CallOptions = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.CallOptions>(MicrosoftGraphSdk.Models.Microsoft.Graph.CallOptions.CreateFromDiscriminatorValue); } },
                 {"callRoutes", (o,n) => { (o as Call).CallRoutes = n.GetCollectionOfObjectValues<CallRoute>(CallRoute.CreateFromDiscriminatorValue).ToList(); } },
                 {"chatInfo", (o,n) => { (o as Call).ChatInfo = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ChatInfo>(MicrosoftGraphSdk.Models.Microsoft.Graph.ChatInfo.CreateFromDiscriminatorValue); } },
+                {"contentSharingSessions", (o,n) => { (o as Call).ContentSharingSessions = n.GetCollectionOfObjectValues<ContentSharingSession>(ContentSharingSession.CreateFromDiscriminatorValue).ToList(); } },
                 {"direction", (o,n) => { (o as Call).Direction = n.GetEnumValue<CallDirection>(); } },
                 {"incomingContext", (o,n) => { (o as Call).IncomingContext = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.IncomingContext>(MicrosoftGraphSdk.Models.Microsoft.Graph.IncomingContext.CreateFromDiscriminatorValue); } },
                 {"mediaConfig", (o,n) => { (o as Call).MediaConfig = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.MediaConfig>(MicrosoftGraphSdk.Models.Microsoft.Graph.MediaConfig.CreateFromDiscriminatorValue); } },
@@ -110,6 +112,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.CallOptions>("callOptions", CallOptions);
             writer.WriteCollectionOfObjectValues<CallRoute>("callRoutes", CallRoutes);
             writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ChatInfo>("chatInfo", ChatInfo);
+            writer.WriteCollectionOfObjectValues<ContentSharingSession>("contentSharingSessions", ContentSharingSessions);
             writer.WriteEnumValue<CallDirection>("direction", Direction);
             writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.IncomingContext>("incomingContext", IncomingContext);
             writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.MediaConfig>("mediaConfig", MediaConfig);

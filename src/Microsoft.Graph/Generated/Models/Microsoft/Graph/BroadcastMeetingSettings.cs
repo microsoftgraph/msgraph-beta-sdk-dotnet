@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the commsApplication singleton.</summary>
-    public class BroadcastMeetingSettings : IParsable, IAdditionalDataHolder {
+    public class BroadcastMeetingSettings : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Defines who can join the Teams live event. Possible values are listed in the following table.</summary>

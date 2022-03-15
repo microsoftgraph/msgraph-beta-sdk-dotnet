@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the query method.</summary>
-    public class SearchHitsContainer : IParsable, IAdditionalDataHolder {
+    public class SearchHitsContainer : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains the collection of aggregations computed based on the provided aggregationOption specified in the request.</summary>

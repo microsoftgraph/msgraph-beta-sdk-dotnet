@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Reports.GetOffice365GroupsActivityCountsWithPeriod {
     /// <summary>Provides operations to call the getOffice365GroupsActivityCounts method.</summary>
-    public class GetOffice365GroupsActivityCountsWithPeriodResponse : IParsable, IAdditionalDataHolder {
+    public class GetOffice365GroupsActivityCountsWithPeriodResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<Office365GroupsActivityCounts> Value { get; set; }

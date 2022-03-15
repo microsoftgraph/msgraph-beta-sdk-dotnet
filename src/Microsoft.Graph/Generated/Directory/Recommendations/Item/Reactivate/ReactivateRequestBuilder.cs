@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.Directory.Recommendations.Item.Reactivate {
             return await RequestAdapter.SendAsync<ReactivateResponse>(requestInfo, ReactivateResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes recommendation</summary>
-        public class ReactivateResponse : IParsable, IAdditionalDataHolder {
+        public class ReactivateResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type recommendation</summary>

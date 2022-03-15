@@ -5,9 +5,10 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the collection of agreement entities.</summary>
-    public class AgreementFileData : IParsable, IAdditionalDataHolder {
+    public class AgreementFileData : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Data that represents the terms of use PDF document. Read-only.</summary>
         public byte[] Data { get; set; }
         /// <summary>
         /// Instantiates a new agreementFileData and sets the default values.

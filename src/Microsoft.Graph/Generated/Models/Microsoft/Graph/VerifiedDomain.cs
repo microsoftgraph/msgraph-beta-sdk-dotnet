@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the collection of organization entities.</summary>
-    public class VerifiedDomain : IParsable, IAdditionalDataHolder {
+    public class VerifiedDomain : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>For example, 'Email', 'OfficeCommunicationsOnline'.</summary>

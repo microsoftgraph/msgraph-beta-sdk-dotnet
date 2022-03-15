@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.FilterByCurrentUserWithOn {
     /// <summary>Provides operations to call the filterByCurrentUser method.</summary>
-    public class FilterByCurrentUserWithOnResponse : IParsable, IAdditionalDataHolder {
+    public class FilterByCurrentUserWithOnResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageAssignment> Value { get; set; }

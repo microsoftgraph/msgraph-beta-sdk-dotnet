@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Reports.GetAttackSimulationSimulationUserCoverage {
     /// <summary>Provides operations to call the getAttackSimulationSimulationUserCoverage method.</summary>
-    public class GetAttackSimulationSimulationUserCoverageResponse : IParsable, IAdditionalDataHolder {
+    public class GetAttackSimulationSimulationUserCoverageResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<AttackSimulationSimulationUserCoverage> Value { get; set; }

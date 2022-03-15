@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the getPolicySummary method.</summary>
-    public class ConfigManagerPolicySummary : IParsable, IAdditionalDataHolder {
+    public class ConfigManagerPolicySummary : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of devices evaluated to be compliant by the policy.</summary>

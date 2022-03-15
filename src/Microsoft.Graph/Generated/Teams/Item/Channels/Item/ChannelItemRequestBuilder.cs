@@ -3,11 +3,13 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using MicrosoftGraphSdk.Teams.Item.Channels.Item.CompleteMigration;
+using MicrosoftGraphSdk.Teams.Item.Channels.Item.DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalName;
 using MicrosoftGraphSdk.Teams.Item.Channels.Item.FilesFolder;
 using MicrosoftGraphSdk.Teams.Item.Channels.Item.Members;
 using MicrosoftGraphSdk.Teams.Item.Channels.Item.Messages;
 using MicrosoftGraphSdk.Teams.Item.Channels.Item.ProvisionEmail;
 using MicrosoftGraphSdk.Teams.Item.Channels.Item.RemoveEmail;
+using MicrosoftGraphSdk.Teams.Item.Channels.Item.SharedWithTeams;
 using MicrosoftGraphSdk.Teams.Item.Channels.Item.Tabs;
 using System;
 using System.Collections.Generic;
@@ -40,6 +42,9 @@ namespace MicrosoftGraphSdk.Teams.Item.Channels.Item {
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        public SharedWithTeamsRequestBuilder SharedWithTeams { get =>
+            new SharedWithTeamsRequestBuilder(PathParameters, RequestAdapter);
+        }
         public TabsRequestBuilder Tabs { get =>
             new TabsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -140,6 +145,18 @@ namespace MicrosoftGraphSdk.Teams.Item.Channels.Item {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Provides operations to call the doesUserHaveAccess method.
+        /// <param name="tenantId">Usage: tenantId='{tenantId}'</param>
+        /// <param name="userId">Usage: userId='{userId}'</param>
+        /// <param name="userPrincipalName">Usage: userPrincipalName='{userPrincipalName}'</param>
+        /// </summary>
+        public DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameRequestBuilder DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalName(string tenantId, string userId, string userPrincipalName) {
+            if(string.IsNullOrEmpty(tenantId)) throw new ArgumentNullException(nameof(tenantId));
+            if(string.IsNullOrEmpty(userId)) throw new ArgumentNullException(nameof(userId));
+            if(string.IsNullOrEmpty(userPrincipalName)) throw new ArgumentNullException(nameof(userPrincipalName));
+            return new DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter, tenantId, userId, userPrincipalName);
         }
         /// <summary>
         /// The collection of channels and messages associated with the team.

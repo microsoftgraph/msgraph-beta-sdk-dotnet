@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Security {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class InformationProtection : Entity, IParsable {
         public InformationProtectionPolicySetting LabelPolicySettings { get; set; }
         public List<SensitivityLabel> SensitivityLabels { get; set; }

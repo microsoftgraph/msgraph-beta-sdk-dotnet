@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Me.Onenote.Notebooks.GetNotebookFromWebUrl {
             return await RequestAdapter.SendAsync<GetNotebookFromWebUrlResponse>(requestInfo, GetNotebookFromWebUrlResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes CopyNotebookModel</summary>
-        public class GetNotebookFromWebUrlResponse : IParsable, IAdditionalDataHolder {
+        public class GetNotebookFromWebUrlResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type CopyNotebookModel</summary>

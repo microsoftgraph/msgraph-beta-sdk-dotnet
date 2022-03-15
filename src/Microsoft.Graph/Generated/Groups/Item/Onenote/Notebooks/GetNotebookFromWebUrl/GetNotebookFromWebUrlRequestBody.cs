@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Groups.Item.Onenote.Notebooks.GetNotebookFromWebUrl {
     /// <summary>Provides operations to call the getNotebookFromWebUrl method.</summary>
-    public class GetNotebookFromWebUrlRequestBody : IParsable, IAdditionalDataHolder {
+    public class GetNotebookFromWebUrlRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string WebUrl { get; set; }

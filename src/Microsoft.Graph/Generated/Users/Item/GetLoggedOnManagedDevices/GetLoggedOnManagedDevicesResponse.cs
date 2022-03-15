@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Users.Item.GetLoggedOnManagedDevices {
     /// <summary>Provides operations to call the getLoggedOnManagedDevices method.</summary>
-    public class GetLoggedOnManagedDevicesResponse : IParsable, IAdditionalDataHolder {
+    public class GetLoggedOnManagedDevicesResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice> Value { get; set; }

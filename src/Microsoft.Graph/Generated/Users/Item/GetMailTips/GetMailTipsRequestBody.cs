@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Users.Item.GetMailTips {
     /// <summary>Provides operations to call the getMailTips method.</summary>
-    public class GetMailTipsRequestBody : IParsable, IAdditionalDataHolder {
+    public class GetMailTipsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<string> EmailAddresses { get; set; }

@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ReusablePolicySettings.Item.Clone {
             return await RequestAdapter.SendAsync<CloneResponse>(requestInfo, CloneResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes deviceManagementReusablePolicySetting</summary>
-        public class CloneResponse : IParsable, IAdditionalDataHolder {
+        public class CloneResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type deviceManagementReusablePolicySetting</summary>

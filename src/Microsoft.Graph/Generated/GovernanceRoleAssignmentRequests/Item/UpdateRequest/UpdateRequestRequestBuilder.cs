@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.GovernanceRoleAssignmentRequests.Item.UpdateRequest 
             return await RequestAdapter.SendAsync<UpdateRequestResponse>(requestInfo, UpdateRequestResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes governanceRoleAssignmentRequest</summary>
-        public class UpdateRequestResponse : IParsable, IAdditionalDataHolder {
+        public class UpdateRequestResponse : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type governanceRoleAssignmentRequest</summary>

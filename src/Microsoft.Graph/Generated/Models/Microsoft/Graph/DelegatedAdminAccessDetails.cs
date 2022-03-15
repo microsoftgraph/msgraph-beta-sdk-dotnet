@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
-    public class DelegatedAdminAccessDetails : IParsable, IAdditionalDataHolder {
+    public class DelegatedAdminAccessDetails : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<UnifiedRole> UnifiedRoles { get; set; }

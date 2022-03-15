@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the preview method.</summary>
-    public class OnenotePagePreview : IParsable, IAdditionalDataHolder {
+    public class OnenotePagePreview : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public OnenotePagePreviewLinks Links { get; set; }

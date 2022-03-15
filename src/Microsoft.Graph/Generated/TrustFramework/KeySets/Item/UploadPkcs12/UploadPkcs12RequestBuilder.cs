@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.TrustFramework.KeySets.Item.UploadPkcs12 {
             return await RequestAdapter.SendAsync<UploadPkcs12Response>(requestInfo, UploadPkcs12Response.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes trustFrameworkKey</summary>
-        public class UploadPkcs12Response : IParsable, IAdditionalDataHolder {
+        public class UploadPkcs12Response : IAdditionalDataHolder, IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type trustFrameworkKey</summary>

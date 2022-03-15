@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the auditLogRoot singleton.</summary>
-    public class StatusBase : IParsable, IAdditionalDataHolder {
+    public class StatusBase : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Possible values are: success, warning, failure, skipped, unknownFutureValue.</summary>

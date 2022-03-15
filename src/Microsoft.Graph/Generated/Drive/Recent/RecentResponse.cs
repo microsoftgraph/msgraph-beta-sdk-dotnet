@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Drive.Recent {
     /// <summary>Provides operations to call the recent method.</summary>
-    public class RecentResponse : IParsable, IAdditionalDataHolder {
+    public class RecentResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem> Value { get; set; }

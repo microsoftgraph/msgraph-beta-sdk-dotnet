@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the getAttackSimulationSimulationUserCoverage method.</summary>
-    public class AttackSimulationSimulationUserCoverage : IParsable, IAdditionalDataHolder {
+    public class AttackSimulationSimulationUserCoverage : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>User in an attack simulation and training campaign.</summary>

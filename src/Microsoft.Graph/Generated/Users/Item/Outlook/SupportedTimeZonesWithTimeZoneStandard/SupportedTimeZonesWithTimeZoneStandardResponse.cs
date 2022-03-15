@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Users.Item.Outlook.SupportedTimeZonesWithTimeZoneStandard {
     /// <summary>Provides operations to call the supportedTimeZones method.</summary>
-    public class SupportedTimeZonesWithTimeZoneStandardResponse : IParsable, IAdditionalDataHolder {
+    public class SupportedTimeZonesWithTimeZoneStandardResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<TimeZoneInformation> Value { get; set; }

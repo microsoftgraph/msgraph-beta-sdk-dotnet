@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Users.Item.ReminderViewWithStartDateTimeWithEndDateTime {
     /// <summary>Provides operations to call the reminderView method.</summary>
-    public class ReminderViewWithStartDateTimeWithEndDateTimeResponse : IParsable, IAdditionalDataHolder {
+    public class ReminderViewWithStartDateTimeWithEndDateTimeResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<Reminder> Value { get; set; }

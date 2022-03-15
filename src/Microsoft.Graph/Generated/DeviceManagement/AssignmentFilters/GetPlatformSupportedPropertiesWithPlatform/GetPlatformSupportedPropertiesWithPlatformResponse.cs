@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.GetPlatformSupportedPropertiesWithPlatform {
     /// <summary>Provides operations to call the getPlatformSupportedProperties method.</summary>
-    public class GetPlatformSupportedPropertiesWithPlatformResponse : IParsable, IAdditionalDataHolder {
+    public class GetPlatformSupportedPropertiesWithPlatformResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<AssignmentFilterSupportedProperty> Value { get; set; }

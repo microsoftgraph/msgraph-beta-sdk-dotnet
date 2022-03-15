@@ -18,7 +18,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<MalwareState> MalwareStates { get; set; }
         public List<string> Names { get; set; }
         public string RiskScore { get; set; }
-        public long? Size { get; set; }
+        public int? Size { get; set; }
         public List<string> Tags { get; set; }
         public SecurityVendorInformation VendorInformation { get; set; }
         public List<VulnerabilityState> VulnerabilityStates { get; set; }
@@ -47,7 +47,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"malwareStates", (o,n) => { (o as FileSecurityProfile).MalwareStates = n.GetCollectionOfObjectValues<MalwareState>(MalwareState.CreateFromDiscriminatorValue).ToList(); } },
                 {"names", (o,n) => { (o as FileSecurityProfile).Names = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"riskScore", (o,n) => { (o as FileSecurityProfile).RiskScore = n.GetStringValue(); } },
-                {"size", (o,n) => { (o as FileSecurityProfile).Size = n.GetLongValue(); } },
+                {"size", (o,n) => { (o as FileSecurityProfile).Size = n.GetIntValue(); } },
                 {"tags", (o,n) => { (o as FileSecurityProfile).Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"vendorInformation", (o,n) => { (o as FileSecurityProfile).VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
                 {"vulnerabilityStates", (o,n) => { (o as FileSecurityProfile).VulnerabilityStates = n.GetCollectionOfObjectValues<VulnerabilityState>(VulnerabilityState.CreateFromDiscriminatorValue).ToList(); } },
@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<MalwareState>("malwareStates", MalwareStates);
             writer.WriteCollectionOfPrimitiveValues<string>("names", Names);
             writer.WriteStringValue("riskScore", RiskScore);
-            writer.WriteLongValue("size", Size);
+            writer.WriteIntValue("size", Size);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteObjectValue<SecurityVendorInformation>("vendorInformation", VendorInformation);
             writer.WriteCollectionOfObjectValues<VulnerabilityState>("vulnerabilityStates", VulnerabilityStates);

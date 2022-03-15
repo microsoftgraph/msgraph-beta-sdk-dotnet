@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets.EnrollAssetsById {
     /// <summary>Provides operations to call the enrollAssetsById method.</summary>
-    public class EnrollAssetsByIdRequestBody : IParsable, IAdditionalDataHolder {
+    public class EnrollAssetsByIdRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<string> Ids { get; set; }

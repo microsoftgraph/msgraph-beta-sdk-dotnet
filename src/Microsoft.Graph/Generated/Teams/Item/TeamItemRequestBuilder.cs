@@ -2,11 +2,13 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
+using MicrosoftGraphSdk.Teams.Item.AllChannels;
 using MicrosoftGraphSdk.Teams.Item.Archive;
 using MicrosoftGraphSdk.Teams.Item.Channels;
 using MicrosoftGraphSdk.Teams.Item.Clone;
 using MicrosoftGraphSdk.Teams.Item.CompleteMigration;
 using MicrosoftGraphSdk.Teams.Item.Group;
+using MicrosoftGraphSdk.Teams.Item.IncomingChannels;
 using MicrosoftGraphSdk.Teams.Item.InstalledApps;
 using MicrosoftGraphSdk.Teams.Item.Members;
 using MicrosoftGraphSdk.Teams.Item.Operations;
@@ -28,6 +30,9 @@ using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Teams.Item {
     /// <summary>Provides operations to manage the collection of team entities.</summary>
     public class TeamItemRequestBuilder {
+        public AllChannelsRequestBuilder AllChannels { get =>
+            new AllChannelsRequestBuilder(PathParameters, RequestAdapter);
+        }
         public ArchiveRequestBuilder Archive { get =>
             new ArchiveRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -42,6 +47,9 @@ namespace MicrosoftGraphSdk.Teams.Item {
         }
         public GroupRequestBuilder Group { get =>
             new GroupRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public IncomingChannelsRequestBuilder IncomingChannels { get =>
+            new IncomingChannelsRequestBuilder(PathParameters, RequestAdapter);
         }
         public InstalledAppsRequestBuilder InstalledApps { get =>
             new InstalledAppsRequestBuilder(PathParameters, RequestAdapter);

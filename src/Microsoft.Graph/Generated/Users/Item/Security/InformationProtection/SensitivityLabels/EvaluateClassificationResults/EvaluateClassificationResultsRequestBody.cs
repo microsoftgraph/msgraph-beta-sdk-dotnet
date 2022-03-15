@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Users.Item.Security.InformationProtection.SensitivityLabels.EvaluateClassificationResults {
     /// <summary>Provides operations to call the evaluateClassificationResults method.</summary>
-    public class EvaluateClassificationResultsRequestBody : IParsable, IAdditionalDataHolder {
+    public class EvaluateClassificationResultsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public List<ClassificationResult> ClassificationResults { get; set; }

@@ -17,6 +17,7 @@ using MicrosoftGraphSdk.Me.ChangePassword;
 using MicrosoftGraphSdk.Me.Chats;
 using MicrosoftGraphSdk.Me.CheckMemberGroups;
 using MicrosoftGraphSdk.Me.CheckMemberObjects;
+using MicrosoftGraphSdk.Me.CloudPCs;
 using MicrosoftGraphSdk.Me.ContactFolders;
 using MicrosoftGraphSdk.Me.Contacts;
 using MicrosoftGraphSdk.Me.CreatedObjects;
@@ -158,6 +159,9 @@ namespace MicrosoftGraphSdk.Me {
         }
         public CheckMemberObjectsRequestBuilder CheckMemberObjects { get =>
             new CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public CloudPCsRequestBuilder CloudPCs { get =>
+            new CloudPCsRequestBuilder(PathParameters, RequestAdapter);
         }
         public ContactFoldersRequestBuilder ContactFolders { get =>
             new ContactFoldersRequestBuilder(PathParameters, RequestAdapter);
@@ -443,10 +447,10 @@ namespace MicrosoftGraphSdk.Me {
         /// <param name="skip">Usage: skip={skip}</param>
         /// <param name="top">Usage: top={top}</param>
         /// </summary>
-        public ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder ExportDeviceAndAppManagementDataWithSkipWithTop(int? top, int? skip) {
+        public ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder ExportDeviceAndAppManagementDataWithSkipWithTop(int? skip, int? top) {
             _ = skip ?? throw new ArgumentNullException(nameof(skip));
             _ = top ?? throw new ArgumentNullException(nameof(top));
-            return new ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder(PathParameters, RequestAdapter, top, skip);
+            return new ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder(PathParameters, RequestAdapter, skip, top);
         }
         /// <summary>
         /// Provides operations to call the findRoomLists method.
@@ -548,10 +552,10 @@ namespace MicrosoftGraphSdk.Me {
         /// <param name="EndDateTime">Usage: EndDateTime='{EndDateTime}'</param>
         /// <param name="StartDateTime">Usage: StartDateTime='{StartDateTime}'</param>
         /// </summary>
-        public ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder ReminderViewWithStartDateTimeWithEndDateTime(string startDateTime, string endDateTime) {
+        public ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder ReminderViewWithStartDateTimeWithEndDateTime(string endDateTime, string startDateTime) {
             if(string.IsNullOrEmpty(endDateTime)) throw new ArgumentNullException(nameof(endDateTime));
             if(string.IsNullOrEmpty(startDateTime)) throw new ArgumentNullException(nameof(startDateTime));
-            return new ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, startDateTime, endDateTime);
+            return new ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>Get me</summary>
         public class GetQueryParameters : QueryParametersBase {
