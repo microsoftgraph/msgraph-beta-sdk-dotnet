@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DeviceConfigurationUserStateSummary : Entity, IParsable {
         /// <summary>Number of compliant users</summary>
         public int? CompliantUserCount { get; set; }

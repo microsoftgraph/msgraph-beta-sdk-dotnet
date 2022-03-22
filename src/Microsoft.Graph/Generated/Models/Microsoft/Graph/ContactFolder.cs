@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class ContactFolder : Entity, IParsable {
         /// <summary>The collection of child folders in the folder. Navigation property. Read-only. Nullable.</summary>
         public List<ContactFolder> ChildFolders { get; set; }

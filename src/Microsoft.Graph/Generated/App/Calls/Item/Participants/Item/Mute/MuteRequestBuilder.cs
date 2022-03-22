@@ -69,44 +69,10 @@ namespace MicrosoftGraphSdk.App.Calls.Item.Participants.Item.Mute {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MuteResponse> PostAsync(MuteRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MuteParticipantOperation> PostAsync(MuteRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MuteResponse>(requestInfo, MuteResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>Union type wrapper for classes muteParticipantOperation</summary>
-        public class MuteResponse : IAdditionalDataHolder, IParsable {
-            /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-            public IDictionary<string, object> AdditionalData { get; set; }
-            /// <summary>Union type representation for type muteParticipantOperation</summary>
-            public MicrosoftGraphSdk.Models.Microsoft.Graph.MuteParticipantOperation MuteParticipantOperation { get; set; }
-            /// <summary>
-            /// Instantiates a new muteResponse and sets the default values.
-            /// </summary>
-            public MuteResponse() {
-                AdditionalData = new Dictionary<string, object>();
-            }
-            public static MuteResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                return new MuteResponse();
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-                return new Dictionary<string, Action<T, IParseNode>> {
-                    {"muteParticipantOperation", (o,n) => { (o as MuteResponse).MuteParticipantOperation = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.MuteParticipantOperation>(MicrosoftGraphSdk.Models.Microsoft.Graph.MuteParticipantOperation.CreateFromDiscriminatorValue); } },
-                };
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            /// </summary>
-            public void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.MuteParticipantOperation>("muteParticipantOperation", MuteParticipantOperation);
-                writer.WriteAdditionalData(AdditionalData);
-            }
+            return await RequestAdapter.SendAsync<MuteParticipantOperation>(requestInfo, MuteParticipantOperation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

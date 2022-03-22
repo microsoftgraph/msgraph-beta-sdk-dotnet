@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of allowedDataLocation entities.</summary>
     public class AllowedDataLocation : Entity, IParsable {
         public string AppId { get; set; }
         public string Domain { get; set; }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class MicrosoftTunnelServer : Entity, IParsable {
         /// <summary>The digest of the current agent image running on this server</summary>
         public string AgentImageDigest { get; set; }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public class ManagedAppOperation : Entity, IParsable {
         /// <summary>The operation name.</summary>
         public string DisplayName { get; set; }

@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the financials singleton.</summary>
     public class CustomerPayment : Entity, IParsable {
         public decimal? Amount { get; set; }
         public string AppliesToInvoiceId { get; set; }

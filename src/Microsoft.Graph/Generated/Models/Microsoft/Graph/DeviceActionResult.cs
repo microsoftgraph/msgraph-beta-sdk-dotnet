@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    /// <summary>Device action result</summary>
     public class DeviceActionResult : IAdditionalDataHolder, IParsable {
         /// <summary>Action name</summary>
         public string ActionName { get; set; }

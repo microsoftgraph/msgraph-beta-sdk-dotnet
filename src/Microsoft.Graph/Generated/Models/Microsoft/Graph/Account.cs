@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the financials singleton.</summary>
     public class Account : Entity, IParsable {
         public bool? Blocked { get; set; }
         public string Category { get; set; }

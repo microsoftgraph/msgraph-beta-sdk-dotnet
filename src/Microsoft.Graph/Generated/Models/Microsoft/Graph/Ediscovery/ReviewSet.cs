@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class ReviewSet : Entity, IParsable {
         /// <summary>The user who created the review set. Read-only.</summary>
         public IdentitySet CreatedBy { get; set; }

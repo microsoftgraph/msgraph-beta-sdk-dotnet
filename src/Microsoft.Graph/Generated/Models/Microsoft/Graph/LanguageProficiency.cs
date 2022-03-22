@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class LanguageProficiency : ItemFacet, IParsable {
         /// <summary>Contains the long-form name for the language.</summary>
         public string DisplayName { get; set; }

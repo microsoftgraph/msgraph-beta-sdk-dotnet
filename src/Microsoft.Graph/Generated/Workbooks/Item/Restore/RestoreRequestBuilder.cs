@@ -69,44 +69,10 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Restore {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<RestoreResponse> PostAsync(RestoreRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem> PostAsync(RestoreRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<RestoreResponse>(requestInfo, RestoreResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>Union type wrapper for classes driveItem</summary>
-        public class RestoreResponse : IAdditionalDataHolder, IParsable {
-            /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-            public IDictionary<string, object> AdditionalData { get; set; }
-            /// <summary>Union type representation for type driveItem</summary>
-            public MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem DriveItem { get; set; }
-            /// <summary>
-            /// Instantiates a new restoreResponse and sets the default values.
-            /// </summary>
-            public RestoreResponse() {
-                AdditionalData = new Dictionary<string, object>();
-            }
-            public static RestoreResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                return new RestoreResponse();
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-                return new Dictionary<string, Action<T, IParseNode>> {
-                    {"driveItem", (o,n) => { (o as RestoreResponse).DriveItem = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>(MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem.CreateFromDiscriminatorValue); } },
-                };
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            /// </summary>
-            public void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>("driveItem", DriveItem);
-                writer.WriteAdditionalData(AdditionalData);
-            }
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

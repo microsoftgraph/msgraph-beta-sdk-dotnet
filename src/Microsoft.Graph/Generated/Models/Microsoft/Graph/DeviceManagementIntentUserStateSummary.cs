@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DeviceManagementIntentUserStateSummary : Entity, IParsable {
         /// <summary>Number of users in conflict</summary>
         public int? ConflictCount { get; set; }

@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DriveItem : BaseItem, IParsable {
         /// <summary>The list of recent activities that took place on this item.</summary>
         public List<ItemActivityOLD> Activities { get; set; }
         /// <summary>Analytics about the view activities that took place on this item.</summary>
         public ItemAnalytics Analytics { get; set; }
-        /// <summary>Audio metadata, if the item is an audio file. Read-only. Only on OneDrive Personal.</summary>
+        /// <summary>Audio metadata, if the item is an audio file. Read-only. Read-only. Only on OneDrive Personal.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Audio Audio { get; set; }
+        /// <summary>Bundle metadata, if the item is a bundle. Read-only.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Bundle Bundle { get; set; }
         /// <summary>Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.</summary>
         public List<DriveItem> Children { get; set; }
@@ -58,7 +58,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Returns identifiers useful for SharePoint REST compatibility. Read-only.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.SharepointIds SharepointIds { get; set; }
         /// <summary>Size of the item in bytes. Read-only.</summary>
-        public int? Size { get; set; }
+        public long? Size { get; set; }
         /// <summary>Information about the drive item source. Read-only. Only on OneDrive for Business and SharePoint.</summary>
         public DriveItemSource Source { get; set; }
         /// <summary>If the current item is also available as a special folder, this facet is returned. Read-only.</summary>
@@ -114,7 +114,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"searchResult", (o,n) => { (o as DriveItem).SearchResult = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.SearchResult>(MicrosoftGraphSdk.Models.Microsoft.Graph.SearchResult.CreateFromDiscriminatorValue); } },
                 {"shared", (o,n) => { (o as DriveItem).Shared = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Shared>(MicrosoftGraphSdk.Models.Microsoft.Graph.Shared.CreateFromDiscriminatorValue); } },
                 {"sharepointIds", (o,n) => { (o as DriveItem).SharepointIds = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.SharepointIds>(MicrosoftGraphSdk.Models.Microsoft.Graph.SharepointIds.CreateFromDiscriminatorValue); } },
-                {"size", (o,n) => { (o as DriveItem).Size = n.GetIntValue(); } },
+                {"size", (o,n) => { (o as DriveItem).Size = n.GetLongValue(); } },
                 {"source", (o,n) => { (o as DriveItem).Source = n.GetObjectValue<DriveItemSource>(DriveItemSource.CreateFromDiscriminatorValue); } },
                 {"specialFolder", (o,n) => { (o as DriveItem).SpecialFolder = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.SpecialFolder>(MicrosoftGraphSdk.Models.Microsoft.Graph.SpecialFolder.CreateFromDiscriminatorValue); } },
                 {"subscriptions", (o,n) => { (o as DriveItem).Subscriptions = n.GetCollectionOfObjectValues<Subscription>(Subscription.CreateFromDiscriminatorValue).ToList(); } },
@@ -158,7 +158,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.SearchResult>("searchResult", SearchResult);
             writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Shared>("shared", Shared);
             writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.SharepointIds>("sharepointIds", SharepointIds);
-            writer.WriteIntValue("size", Size);
+            writer.WriteLongValue("size", Size);
             writer.WriteObjectValue<DriveItemSource>("source", Source);
             writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.SpecialFolder>("specialFolder", SpecialFolder);
             writer.WriteCollectionOfObjectValues<Subscription>("subscriptions", Subscriptions);

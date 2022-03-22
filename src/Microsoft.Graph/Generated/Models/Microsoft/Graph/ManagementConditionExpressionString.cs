@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to call the getManagementConditionStatementExpressionString method.</summary>
     public class ManagementConditionExpressionString : ManagementConditionExpression, IParsable {
         /// <summary>The management condition statement expression string value.</summary>
         public string Value { get; set; }

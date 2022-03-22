@@ -2,8 +2,6 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Shares.Item.List.Activities.Count;
-using MicrosoftGraphSdk.Shares.Item.List.Activities.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,21 +11,12 @@ using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Shares.Item.List.Activities {
     /// <summary>Provides operations to manage the activities property of the microsoft.graph.list entity.</summary>
     public class ActivitiesRequestBuilder {
-        public CountRequestBuilder Count { get =>
-            new CountRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.shares.item.list.activities.item collection</summary>
-        public ItemActivityOLDItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("itemActivityOLD_id", position);
-            return new ItemActivityOLDItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
         /// <summary>
         /// Instantiates a new ActivitiesRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>

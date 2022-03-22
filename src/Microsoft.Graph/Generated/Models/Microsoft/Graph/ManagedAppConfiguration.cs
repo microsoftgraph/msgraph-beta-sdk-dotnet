@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public class ManagedAppConfiguration : ManagedAppPolicy, IParsable {
         /// <summary>A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service</summary>
         public List<KeyValuePair> CustomSettings { get; set; }

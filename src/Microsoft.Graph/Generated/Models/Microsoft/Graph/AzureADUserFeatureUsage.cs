@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to call the getAzureADUserFeatureUsage method.</summary>
     public class AzureADUserFeatureUsage : Entity, IParsable {
         public List<FeatureUsageDetail> FeatureUsageDetails { get; set; }
         public DateTimeOffset? LastUpdatedDateTime { get; set; }

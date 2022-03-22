@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class WindowsDriverUpdateProfileAssignment : Entity, IParsable {
         /// <summary>Base type for assignment targets.</summary>
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }

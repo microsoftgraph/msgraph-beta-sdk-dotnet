@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the commsApplication singleton.</summary>
     public class ToneInfo : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An incremental identifier used for ordering DTMF events.</summary>
-        public int? SequenceId { get; set; }
+        public long? SequenceId { get; set; }
         /// <summary>Possible values are: tone0, tone1, tone2, tone3, tone4, tone5, tone6, tone7, tone8, tone9, star, pound, a, b, c, d, flash.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Tone? Tone { get; set; }
         /// <summary>
@@ -31,7 +30,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"sequenceId", (o,n) => { (o as ToneInfo).SequenceId = n.GetIntValue(); } },
+                {"sequenceId", (o,n) => { (o as ToneInfo).SequenceId = n.GetLongValue(); } },
                 {"tone", (o,n) => { (o as ToneInfo).Tone = n.GetEnumValue<Tone>(); } },
             };
         }
@@ -41,7 +40,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("sequenceId", SequenceId);
+            writer.WriteLongValue("sequenceId", SequenceId);
             writer.WriteEnumValue<Tone>("tone", Tone);
             writer.WriteAdditionalData(AdditionalData);
         }

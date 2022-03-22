@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
     public class AssignmentReviewSettings : IAdditionalDataHolder, IParsable {
         /// <summary>The default decision to apply if the request is not reviewed within the period specified in durationInDays. The possible values are: acceptAccessRecommendation, keepAccess, removeAccess, and unknownFutureValue.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessReviewTimeoutBehavior? AccessReviewTimeoutBehavior { get; set; }

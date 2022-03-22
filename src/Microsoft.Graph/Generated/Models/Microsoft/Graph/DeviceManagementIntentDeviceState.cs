@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DeviceManagementIntentDeviceState : Entity, IParsable {
         /// <summary>Device name that is being reported</summary>
         public string DeviceDisplayName { get; set; }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class ProjectParticipation : ItemFacet, IParsable {
         /// <summary>Contains categories a user has associated with the project (for example, digital transformation, oil rig).</summary>
         public List<string> Categories { get; set; }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to call the getSourceImages method.</summary>
     public class CloudPcSourceDeviceImage : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -12,7 +11,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string DisplayName { get; set; }
         /// <summary>The ID of the source image.</summary>
         public string Id { get; set; }
+        /// <summary>The display name of subscription that hosts the source image.</summary>
         public string SubscriptionDisplayName { get; set; }
+        /// <summary>The ID of subscription that hosts the source image.</summary>
         public string SubscriptionId { get; set; }
         /// <summary>
         /// Instantiates a new cloudPcSourceDeviceImage and sets the default values.

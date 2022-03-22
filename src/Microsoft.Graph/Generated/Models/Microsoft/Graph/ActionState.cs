@@ -1,5 +1,5 @@
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public enum ActionState {
         None,
         Pending,

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
     public class EntitlementManagement : Entity, IParsable {
         /// <summary>Approval stages for assignment requests.</summary>
         public List<Approval> AccessPackageAssignmentApprovals { get; set; }

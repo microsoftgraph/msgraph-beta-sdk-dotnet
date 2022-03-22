@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the print singleton.</summary>
     public class ApplicationSignInDetailedSummary : Entity, IParsable {
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? AggregatedEventDateTime { get; set; }
@@ -13,7 +12,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>ID of the application that the user signed in to.</summary>
         public string AppId { get; set; }
         /// <summary>Count of sign-ins made by the application.</summary>
-        public int? SignInCount { get; set; }
+        public long? SignInCount { get; set; }
         /// <summary>Details of the sign-in status.</summary>
         public SignInStatus Status { get; set; }
         /// <summary>
@@ -32,7 +31,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"aggregatedEventDateTime", (o,n) => { (o as ApplicationSignInDetailedSummary).AggregatedEventDateTime = n.GetDateTimeOffsetValue(); } },
                 {"appDisplayName", (o,n) => { (o as ApplicationSignInDetailedSummary).AppDisplayName = n.GetStringValue(); } },
                 {"appId", (o,n) => { (o as ApplicationSignInDetailedSummary).AppId = n.GetStringValue(); } },
-                {"signInCount", (o,n) => { (o as ApplicationSignInDetailedSummary).SignInCount = n.GetIntValue(); } },
+                {"signInCount", (o,n) => { (o as ApplicationSignInDetailedSummary).SignInCount = n.GetLongValue(); } },
                 {"status", (o,n) => { (o as ApplicationSignInDetailedSummary).Status = n.GetObjectValue<SignInStatus>(SignInStatus.CreateFromDiscriminatorValue); } },
             };
         }
@@ -46,7 +45,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteDateTimeOffsetValue("aggregatedEventDateTime", AggregatedEventDateTime);
             writer.WriteStringValue("appDisplayName", AppDisplayName);
             writer.WriteStringValue("appId", AppId);
-            writer.WriteIntValue("signInCount", SignInCount);
+            writer.WriteLongValue("signInCount", SignInCount);
             writer.WriteObjectValue<SignInStatus>("status", Status);
         }
     }

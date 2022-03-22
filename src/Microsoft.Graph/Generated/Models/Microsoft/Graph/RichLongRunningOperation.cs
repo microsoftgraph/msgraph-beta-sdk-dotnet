@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class RichLongRunningOperation : LongRunningOperation, IParsable {
         /// <summary>Error due to which the operation failed.</summary>
         public PublicError Error { get; set; }

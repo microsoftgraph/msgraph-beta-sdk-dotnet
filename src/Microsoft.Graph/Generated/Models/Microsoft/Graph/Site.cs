@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class Site : BaseItem, IParsable {
         /// <summary>Analytics about the view activities that took place in this site.</summary>
         public ItemAnalytics Analytics { get; set; }

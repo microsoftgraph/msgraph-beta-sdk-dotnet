@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class RegionalAndLanguageSettings : Entity, IParsable {
         /// <summary>Prioritized list of languages the user reads and authors in.Returned by default. Not nullable.</summary>
         public List<LocaleInfo> AuthoringLanguages { get; set; }

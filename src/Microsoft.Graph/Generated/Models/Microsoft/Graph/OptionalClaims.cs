@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class OptionalClaims : IAdditionalDataHolder, IParsable {
         /// <summary>The optional claims returned in the JWT access token.</summary>
         public List<OptionalClaim> AccessToken { get; set; }

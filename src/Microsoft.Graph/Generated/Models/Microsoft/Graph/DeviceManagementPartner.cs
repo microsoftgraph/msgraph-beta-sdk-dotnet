@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DeviceManagementPartner : Entity, IParsable {
         /// <summary>Partner display name</summary>
         public string DisplayName { get; set; }

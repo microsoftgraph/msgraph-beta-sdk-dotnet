@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of chat entities.</summary>
     public class TeamsAsyncOperation : Entity, IParsable {
         /// <summary>Number of times the operation was attempted before being marked successful or failed.</summary>
         public int? AttemptsCount { get; set; }

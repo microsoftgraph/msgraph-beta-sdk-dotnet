@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to call the getCredentialUserRegistrationCount method.</summary>
     public class CredentialUserRegistrationCount : Entity, IParsable {
         /// <summary>Provides the total user count in the tenant.</summary>
-        public int? TotalUserCount { get; set; }
+        public long? TotalUserCount { get; set; }
         /// <summary>A collection of registration count and status information for users in your tenant.</summary>
         public List<UserRegistrationCount> UserRegistrationCounts { get; set; }
         /// <summary>
@@ -23,7 +22,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"totalUserCount", (o,n) => { (o as CredentialUserRegistrationCount).TotalUserCount = n.GetIntValue(); } },
+                {"totalUserCount", (o,n) => { (o as CredentialUserRegistrationCount).TotalUserCount = n.GetLongValue(); } },
                 {"userRegistrationCounts", (o,n) => { (o as CredentialUserRegistrationCount).UserRegistrationCounts = n.GetCollectionOfObjectValues<UserRegistrationCount>(UserRegistrationCount.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
@@ -34,7 +33,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteIntValue("totalUserCount", TotalUserCount);
+            writer.WriteLongValue("totalUserCount", TotalUserCount);
             writer.WriteCollectionOfObjectValues<UserRegistrationCount>("userRegistrationCounts", UserRegistrationCounts);
         }
     }

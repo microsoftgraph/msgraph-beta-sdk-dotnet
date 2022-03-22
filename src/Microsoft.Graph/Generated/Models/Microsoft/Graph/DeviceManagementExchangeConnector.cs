@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DeviceManagementExchangeConnector : Entity, IParsable {
         /// <summary>The name of the server hosting the Exchange Connector.</summary>
         public string ConnectorServerName { get; set; }

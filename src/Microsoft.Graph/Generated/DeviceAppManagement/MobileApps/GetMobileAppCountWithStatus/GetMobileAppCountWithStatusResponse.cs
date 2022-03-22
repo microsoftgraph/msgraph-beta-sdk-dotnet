@@ -8,7 +8,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.GetMobileAppCountWith
     public class GetMobileAppCountWithStatusResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        public int? Value { get; set; }
+        public long? Value { get; set; }
         /// <summary>
         /// Instantiates a new getMobileAppCountWithStatusResponse and sets the default values.
         /// </summary>
@@ -28,7 +28,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.GetMobileAppCountWith
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"value", (o,n) => { (o as GetMobileAppCountWithStatusResponse).Value = n.GetIntValue(); } },
+                {"value", (o,n) => { (o as GetMobileAppCountWithStatusResponse).Value = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -37,7 +37,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.GetMobileAppCountWith
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("value", Value);
+            writer.WriteLongValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

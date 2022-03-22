@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class WorkbookWorksheetProtection : Entity, IParsable {
         /// <summary>Sheet protection options. Read-only.</summary>
         public WorkbookWorksheetProtectionOptions Options { get; set; }

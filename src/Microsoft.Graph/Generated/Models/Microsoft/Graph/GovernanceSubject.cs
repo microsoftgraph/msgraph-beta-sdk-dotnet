@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of governanceResource entities.</summary>
     public class GovernanceSubject : Entity, IParsable {
         /// <summary>The display name of the subject.</summary>
         public string DisplayName { get; set; }

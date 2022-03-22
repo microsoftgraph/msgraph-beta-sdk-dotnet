@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class ServiceUpdateMessage : ServiceAnnouncementBase, IParsable {
         /// <summary>The expected deadline of the action for the message.</summary>
         public DateTimeOffset? ActionRequiredByDateTime { get; set; }

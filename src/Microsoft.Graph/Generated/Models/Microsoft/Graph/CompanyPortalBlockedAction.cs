@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    /// <summary>Blocked actions on the company portal as per platform and device ownership types</summary>
     public class CompanyPortalBlockedAction : IAdditionalDataHolder, IParsable {
         /// <summary>Device Action. Possible values are: unknown, remove, reset.</summary>
         public CompanyPortalAction? Action { get; set; }

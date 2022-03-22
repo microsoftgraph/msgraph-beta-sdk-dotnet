@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of privilegedRoleAssignment entities.</summary>
     public class PrivilegedRole : Entity, IParsable {
         /// <summary>The assignments for this role. Read-only. Nullable.</summary>
         public List<PrivilegedRoleAssignment> Assignments { get; set; }

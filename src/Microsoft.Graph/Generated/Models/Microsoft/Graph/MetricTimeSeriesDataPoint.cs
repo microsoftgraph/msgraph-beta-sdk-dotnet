@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to call the getHealthMetricTimeSeries method.</summary>
+    /// <summary>Metric Time series data point</summary>
     public class MetricTimeSeriesDataPoint : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Time of the metric time series data point</summary>
         public DateTimeOffset? DateTime { get; set; }
         /// <summary>Value of the metric time series data point</summary>
-        public int? Value { get; set; }
+        public long? Value { get; set; }
         /// <summary>
         /// Instantiates a new metricTimeSeriesDataPoint and sets the default values.
         /// </summary>
@@ -32,7 +32,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"dateTime", (o,n) => { (o as MetricTimeSeriesDataPoint).DateTime = n.GetDateTimeOffsetValue(); } },
-                {"value", (o,n) => { (o as MetricTimeSeriesDataPoint).Value = n.GetIntValue(); } },
+                {"value", (o,n) => { (o as MetricTimeSeriesDataPoint).Value = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -42,7 +42,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("dateTime", DateTime);
-            writer.WriteIntValue("value", Value);
+            writer.WriteLongValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

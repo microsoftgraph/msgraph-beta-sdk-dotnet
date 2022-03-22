@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class User : DirectoryObject, IParsable {
         /// <summary>A freeform text entry field for the user to describe themselves. Returned only on $select.</summary>
         public string AboutMe { get; set; }

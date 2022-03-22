@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class Message : OutlookItem, IParsable {
         /// <summary>The fileAttachment and itemAttachment attachments for the message.</summary>
         public List<Attachment> Attachments { get; set; }

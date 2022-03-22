@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DriveItemVersion : BaseItemVersion, IParsable {
         /// <summary>The content stream for this version of the item.</summary>
         public byte[] Content { get; set; }
         /// <summary>Indicates the size of the content stream for this version of the item.</summary>
-        public int? Size { get; set; }
+        public long? Size { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -24,7 +23,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"content", (o,n) => { (o as DriveItemVersion).Content = n.GetByteArrayValue(); } },
-                {"size", (o,n) => { (o as DriveItemVersion).Size = n.GetIntValue(); } },
+                {"size", (o,n) => { (o as DriveItemVersion).Size = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -35,7 +34,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteByteArrayValue("content", Content);
-            writer.WriteIntValue("size", Size);
+            writer.WriteLongValue("size", Size);
         }
     }
 }

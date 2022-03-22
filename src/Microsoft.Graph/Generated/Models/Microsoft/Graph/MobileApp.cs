@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public class MobileApp : Entity, IParsable {
         /// <summary>The list of group assignments for this mobile app.</summary>
         public List<MobileAppAssignment> Assignments { get; set; }

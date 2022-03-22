@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the roleManagement singleton.</summary>
     public class UnifiedRoleEligibilitySchedule : UnifiedRoleScheduleBase, IParsable {
         /// <summary>Membership type of the eligible assignment. It can either be Inherited, Direct, or Group.</summary>
         public string MemberType { get; set; }

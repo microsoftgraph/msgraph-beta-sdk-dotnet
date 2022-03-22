@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class Team : Entity, IParsable {
         public List<Channel> AllChannels { get; set; }
         /// <summary>The collection of channels and messages associated with the team.</summary>

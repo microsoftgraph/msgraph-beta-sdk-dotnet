@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class UserTeamwork : Entity, IParsable {
         public List<AssociatedTeamInfo> AssociatedTeams { get; set; }
         /// <summary>The apps installed in the personal scope of this user.</summary>

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the roleManagement singleton.</summary>
     public class UnifiedRoleAssignmentSchedule : UnifiedRoleScheduleBase, IParsable {
         /// <summary>If the roleAssignmentSchedule is activated by a roleEligibilitySchedule, this is the link to that schedule.</summary>
         public UnifiedRoleEligibilitySchedule ActivatedUsing { get; set; }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class UserExperienceAnalyticsResourcePerformance : Entity, IParsable {
         /// <summary>AverageSpikeTimeScore of a device or a model type. Valid values 0 to 100</summary>
         public int? AverageSpikeTimeScore { get; set; }
@@ -15,7 +14,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The user experience analytics device CPU spike time score. Valid values 0 to 100</summary>
         public int? CpuSpikeTimeScore { get; set; }
         /// <summary>User experience analytics summarized device count.</summary>
-        public int? DeviceCount { get; set; }
+        public long? DeviceCount { get; set; }
         /// <summary>The id of the device.</summary>
         public string DeviceId { get; set; }
         /// <summary>The name of the device.</summary>
@@ -49,7 +48,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"cpuSpikeTimePercentage", (o,n) => { (o as UserExperienceAnalyticsResourcePerformance).CpuSpikeTimePercentage = n.GetDoubleValue(); } },
                 {"cpuSpikeTimePercentageThreshold", (o,n) => { (o as UserExperienceAnalyticsResourcePerformance).CpuSpikeTimePercentageThreshold = n.GetDoubleValue(); } },
                 {"cpuSpikeTimeScore", (o,n) => { (o as UserExperienceAnalyticsResourcePerformance).CpuSpikeTimeScore = n.GetIntValue(); } },
-                {"deviceCount", (o,n) => { (o as UserExperienceAnalyticsResourcePerformance).DeviceCount = n.GetIntValue(); } },
+                {"deviceCount", (o,n) => { (o as UserExperienceAnalyticsResourcePerformance).DeviceCount = n.GetLongValue(); } },
                 {"deviceId", (o,n) => { (o as UserExperienceAnalyticsResourcePerformance).DeviceId = n.GetStringValue(); } },
                 {"deviceName", (o,n) => { (o as UserExperienceAnalyticsResourcePerformance).DeviceName = n.GetStringValue(); } },
                 {"deviceResourcePerformanceScore", (o,n) => { (o as UserExperienceAnalyticsResourcePerformance).DeviceResourcePerformanceScore = n.GetIntValue(); } },
@@ -71,7 +70,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteDoubleValue("cpuSpikeTimePercentage", CpuSpikeTimePercentage);
             writer.WriteDoubleValue("cpuSpikeTimePercentageThreshold", CpuSpikeTimePercentageThreshold);
             writer.WriteIntValue("cpuSpikeTimeScore", CpuSpikeTimeScore);
-            writer.WriteIntValue("deviceCount", DeviceCount);
+            writer.WriteLongValue("deviceCount", DeviceCount);
             writer.WriteStringValue("deviceId", DeviceId);
             writer.WriteStringValue("deviceName", DeviceName);
             writer.WriteIntValue("deviceResourcePerformanceScore", DeviceResourcePerformanceScore);

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class UserExperienceAnalyticsWorkFromAnywhereMetric : Entity, IParsable {
         /// <summary>The work from anywhere metric devices.</summary>
         public List<UserExperienceAnalyticsWorkFromAnywhereDevice> MetricDevices { get; set; }

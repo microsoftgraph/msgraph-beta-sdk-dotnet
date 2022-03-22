@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class ContactMergeSuggestions : Entity, IParsable {
         /// <summary>true if the duplicate contact merge suggestions feature is enabled for the user; false if the feature is disabled. Default value is true.</summary>
         public bool? IsEnabled { get; set; }

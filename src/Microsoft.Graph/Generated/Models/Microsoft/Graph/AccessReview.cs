@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class AccessReview : Entity, IParsable {
         /// <summary>The business flow template identifier. Required on create.  This value is case sensitive.</summary>
         public string BusinessFlowTemplateId { get; set; }

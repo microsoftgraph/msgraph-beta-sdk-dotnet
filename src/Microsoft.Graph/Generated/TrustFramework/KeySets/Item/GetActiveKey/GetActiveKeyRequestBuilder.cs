@@ -65,43 +65,9 @@ namespace MicrosoftGraphSdk.TrustFramework.KeySets.Item.GetActiveKey {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<GetActiveKeyResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<TrustFrameworkKey> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<GetActiveKeyResponse>(requestInfo, GetActiveKeyResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>Union type wrapper for classes trustFrameworkKey</summary>
-        public class GetActiveKeyResponse : IAdditionalDataHolder, IParsable {
-            /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-            public IDictionary<string, object> AdditionalData { get; set; }
-            /// <summary>Union type representation for type trustFrameworkKey</summary>
-            public MicrosoftGraphSdk.Models.Microsoft.Graph.TrustFrameworkKey TrustFrameworkKey { get; set; }
-            /// <summary>
-            /// Instantiates a new getActiveKeyResponse and sets the default values.
-            /// </summary>
-            public GetActiveKeyResponse() {
-                AdditionalData = new Dictionary<string, object>();
-            }
-            public static GetActiveKeyResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                return new GetActiveKeyResponse();
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-                return new Dictionary<string, Action<T, IParseNode>> {
-                    {"trustFrameworkKey", (o,n) => { (o as GetActiveKeyResponse).TrustFrameworkKey = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.TrustFrameworkKey>(MicrosoftGraphSdk.Models.Microsoft.Graph.TrustFrameworkKey.CreateFromDiscriminatorValue); } },
-                };
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            /// </summary>
-            public void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.TrustFrameworkKey>("trustFrameworkKey", TrustFrameworkKey);
-                writer.WriteAdditionalData(AdditionalData);
-            }
+            return await RequestAdapter.SendAsync<TrustFrameworkKey>(requestInfo, TrustFrameworkKey.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

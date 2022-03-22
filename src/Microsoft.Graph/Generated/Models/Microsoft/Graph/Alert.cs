@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the alerts property of the microsoft.graph.security entity.</summary>
     public class Alert : Entity, IParsable {
         /// <summary>Name or alias of the activity group (attacker) this alert is attributed to.</summary>
         public string ActivityGroupName { get; set; }

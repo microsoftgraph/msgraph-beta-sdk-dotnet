@@ -4,13 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class UnifiedRoleManagementPolicy : Entity, IParsable {
         /// <summary>Description for the policy.</summary>
         public string Description { get; set; }
         /// <summary>Display name for the policy.</summary>
         public string DisplayName { get; set; }
-        /// <summary>The list of effective rules like approval rule, expiration rule, etc. evaluated based on inherited referenced rules. E.g. If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.</summary>
+        /// <summary>Not implemented. The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval.</summary>
         public List<UnifiedRoleManagementPolicyRule> EffectiveRules { get; set; }
         /// <summary>This can only be set to true for a single tenant wide policy which will apply to all scopes and roles. Set the scopeId to '/' and scopeType to Directory.</summary>
         public bool? IsOrganizationDefault { get; set; }
@@ -18,11 +17,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public Identity LastModifiedBy { get; set; }
         /// <summary>The time when the role setting was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
-        /// <summary>The collection of rules like approval rule, expiration rule, etc.</summary>
+        /// <summary>The collection of rules like approval rules and expiration rules.</summary>
         public List<UnifiedRoleManagementPolicyRule> Rules { get; set; }
-        /// <summary>The id of the scope where the policy is created. E.g. '/', groupId, etc.</summary>
+        /// <summary>The id of the scope where the policy is created. Can be / for the tenant or a group ID. Required.</summary>
         public string ScopeId { get; set; }
-        /// <summary>The type of the scope where the policy is created. One of Directory, DirectoryRole, Group.</summary>
+        /// <summary>The type of the scope where the policy is created. One of Directory, DirectoryRole. Required.</summary>
         public string ScopeType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

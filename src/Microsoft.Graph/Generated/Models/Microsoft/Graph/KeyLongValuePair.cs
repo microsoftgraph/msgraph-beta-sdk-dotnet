@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to call the getHealthMetrics method.</summary>
+    /// <summary>Key long value pair</summary>
     public class KeyLongValuePair : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Name for this key long value pair</summary>
         public string Name { get; set; }
         /// <summary>Value for this key long value pair</summary>
-        public int? Value { get; set; }
+        public long? Value { get; set; }
         /// <summary>
         /// Instantiates a new keyLongValuePair and sets the default values.
         /// </summary>
@@ -32,7 +32,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"name", (o,n) => { (o as KeyLongValuePair).Name = n.GetStringValue(); } },
-                {"value", (o,n) => { (o as KeyLongValuePair).Value = n.GetIntValue(); } },
+                {"value", (o,n) => { (o as KeyLongValuePair).Value = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -42,7 +42,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
-            writer.WriteIntValue("value", Value);
+            writer.WriteLongValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of governanceResource entities.</summary>
     public class GovernanceRoleAssignmentRequestStatus : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The status of the role assignment request. The value can be InProgress or Closed.</summary>
         public string Status { get; set; }
+        /// <summary>The details of the status of the role assignment request. It represents the evaluation results of different rules.</summary>
         public List<KeyValue> StatusDetails { get; set; }
+        /// <summary>The sub status of the role assignment request. The values can be Accepted, PendingEvaluation, Granted, Denied, PendingProvisioning, Provisioned, PendingRevocation, Revoked, Canceled, Failed, PendingApprovalProvisioning, PendingApproval, FailedAsResourceIsLocked, PendingAdminDecision, AdminApproved, AdminDenied, TimedOut, and ProvisioningStarted.</summary>
         public string SubStatus { get; set; }
         /// <summary>
         /// Instantiates a new governanceRoleAssignmentRequestStatus and sets the default values.

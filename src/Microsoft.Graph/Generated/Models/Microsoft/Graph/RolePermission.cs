@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    /// <summary>Contains the set of ResourceActions determining the allowed and not allowed permissions for each role.</summary>
     public class RolePermission : IAdditionalDataHolder, IParsable {
         /// <summary>Allowed Actions - Deprecated</summary>
         public List<string> Actions { get; set; }

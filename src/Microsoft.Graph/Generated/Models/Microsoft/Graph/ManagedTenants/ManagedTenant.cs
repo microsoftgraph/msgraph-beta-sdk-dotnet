@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
-    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class ManagedTenant : Entity, IParsable {
         /// <summary>Aggregate view of device compliance policies across managed tenants.</summary>
         public List<AggregatedPolicyCompliance> AggregatedPolicyCompliances { get; set; }

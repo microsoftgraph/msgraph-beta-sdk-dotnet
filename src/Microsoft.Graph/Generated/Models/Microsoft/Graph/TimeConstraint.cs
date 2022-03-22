@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to call the findMeetingTimes method.</summary>
     public class TimeConstraint : IAdditionalDataHolder, IParsable {
         /// <summary>The nature of the activity, optional. The possible values are: work, personal, unrestricted, or unknown.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ActivityDomain? ActivityDomain { get; set; }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to call the getAzureADFeatureUsage method.</summary>
     public class AzureADFeatureUsage : Entity, IParsable {
         public string FeatureName { get; set; }
         public DateTimeOffset? SnapshotDateTime { get; set; }

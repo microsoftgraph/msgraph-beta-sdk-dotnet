@@ -4,9 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors {
-    /// <summary>Provides operations to manage the collection of externalConnection entities.</summary>
     public class ConnectionQuota : Entity, IParsable {
-        public int? ItemsRemaining { get; set; }
+        public long? ItemsRemaining { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -20,7 +19,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"itemsRemaining", (o,n) => { (o as ConnectionQuota).ItemsRemaining = n.GetIntValue(); } },
+                {"itemsRemaining", (o,n) => { (o as ConnectionQuota).ItemsRemaining = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -30,7 +29,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteIntValue("itemsRemaining", ItemsRemaining);
+            writer.WriteLongValue("itemsRemaining", ItemsRemaining);
         }
     }
 }

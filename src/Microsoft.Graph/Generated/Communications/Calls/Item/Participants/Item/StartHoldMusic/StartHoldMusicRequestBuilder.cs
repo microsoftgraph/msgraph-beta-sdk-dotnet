@@ -69,44 +69,10 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.Participants.Item.StartHol
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<StartHoldMusicResponse> PostAsync(StartHoldMusicRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<StartHoldMusicOperation> PostAsync(StartHoldMusicRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<StartHoldMusicResponse>(requestInfo, StartHoldMusicResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>Union type wrapper for classes startHoldMusicOperation</summary>
-        public class StartHoldMusicResponse : IAdditionalDataHolder, IParsable {
-            /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-            public IDictionary<string, object> AdditionalData { get; set; }
-            /// <summary>Union type representation for type startHoldMusicOperation</summary>
-            public MicrosoftGraphSdk.Models.Microsoft.Graph.StartHoldMusicOperation StartHoldMusicOperation { get; set; }
-            /// <summary>
-            /// Instantiates a new startHoldMusicResponse and sets the default values.
-            /// </summary>
-            public StartHoldMusicResponse() {
-                AdditionalData = new Dictionary<string, object>();
-            }
-            public static StartHoldMusicResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                return new StartHoldMusicResponse();
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-                return new Dictionary<string, Action<T, IParseNode>> {
-                    {"startHoldMusicOperation", (o,n) => { (o as StartHoldMusicResponse).StartHoldMusicOperation = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.StartHoldMusicOperation>(MicrosoftGraphSdk.Models.Microsoft.Graph.StartHoldMusicOperation.CreateFromDiscriminatorValue); } },
-                };
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            /// </summary>
-            public void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.StartHoldMusicOperation>("startHoldMusicOperation", StartHoldMusicOperation);
-                writer.WriteAdditionalData(AdditionalData);
-            }
+            return await RequestAdapter.SendAsync<StartHoldMusicOperation>(requestInfo, StartHoldMusicOperation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

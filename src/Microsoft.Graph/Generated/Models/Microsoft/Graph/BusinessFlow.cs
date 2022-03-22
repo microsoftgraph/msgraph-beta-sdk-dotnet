@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of approvalWorkflowProvider entities.</summary>
     public class BusinessFlow : Entity, IParsable {
         public string CustomData { get; set; }
         public string DeDuplicationId { get; set; }

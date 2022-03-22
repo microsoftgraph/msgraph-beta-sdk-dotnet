@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class LinkedResource_v2 : Entity, IParsable {
         /// <summary>Field indicating the app name of the source that is sending the linkedResource.</summary>
         public string ApplicationName { get; set; }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class WorkbookCommentReply : Entity, IParsable {
         /// <summary>The content of a comment reply.</summary>
         public string Content { get; set; }

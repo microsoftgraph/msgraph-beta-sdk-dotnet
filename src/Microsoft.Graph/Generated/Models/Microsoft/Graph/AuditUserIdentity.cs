@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the auditLogRoot singleton.</summary>
     public class AuditUserIdentity : UserIdentity, IParsable {
         /// <summary>For user sign ins, the identifier of the tenant that the user is a member of.</summary>
         public string HomeTenantId { get; set; }

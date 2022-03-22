@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
-    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class ManagementIntent : Entity, IParsable {
         /// <summary>The display name for the management intent. Optional. Read-only.</summary>
         public string DisplayName { get; set; }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class SiteSource : DataSource, IParsable {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Site Site { get; set; }
         /// <summary>

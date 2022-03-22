@@ -65,13 +65,13 @@ namespace MicrosoftGraphSdk.Users.Item.Events.Item.Instances.Item.MultiValueExte
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<string> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<int?> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendPrimitiveAsync<int?>(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
     }
 }

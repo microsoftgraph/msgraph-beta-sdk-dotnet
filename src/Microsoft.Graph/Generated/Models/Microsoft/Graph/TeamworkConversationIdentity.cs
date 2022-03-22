@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of chat entities.</summary>
     public class TeamworkConversationIdentity : Identity, IParsable {
         /// <summary>Type of conversation. Possible values are: team, channel, chat, and unknownFutureValue.</summary>
         public TeamworkConversationIdentityType? ConversationIdentityType { get; set; }

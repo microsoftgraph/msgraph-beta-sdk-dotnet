@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to call the importDeviceIdentityList method.</summary>
     public class ImportedDeviceIdentityResult : ImportedDeviceIdentity, IParsable {
         /// <summary>Status of imported device identity</summary>
         public bool? Status { get; set; }

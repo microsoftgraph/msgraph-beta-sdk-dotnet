@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class WorkbookChartAxes : Entity, IParsable {
         /// <summary>Represents the category axis in a chart. Read-only.</summary>
         public WorkbookChartAxis CategoryAxis { get; set; }

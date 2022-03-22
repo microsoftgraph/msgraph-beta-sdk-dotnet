@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class TimeCard : ChangeTrackedEntity, IParsable {
         /// <summary>The list of breaks associated with the timeCard.</summary>
         public List<TimeCardBreak> Breaks { get; set; }

@@ -65,43 +65,9 @@ namespace MicrosoftGraphSdk.Identity.B2cUserFlows.Item.UserAttributeAssignments.
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<GetOrderResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<AssignmentOrder> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<GetOrderResponse>(requestInfo, GetOrderResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>Union type wrapper for classes assignmentOrder</summary>
-        public class GetOrderResponse : IAdditionalDataHolder, IParsable {
-            /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-            public IDictionary<string, object> AdditionalData { get; set; }
-            /// <summary>Union type representation for type assignmentOrder</summary>
-            public MicrosoftGraphSdk.Models.Microsoft.Graph.AssignmentOrder AssignmentOrder { get; set; }
-            /// <summary>
-            /// Instantiates a new getOrderResponse and sets the default values.
-            /// </summary>
-            public GetOrderResponse() {
-                AdditionalData = new Dictionary<string, object>();
-            }
-            public static GetOrderResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                return new GetOrderResponse();
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-                return new Dictionary<string, Action<T, IParseNode>> {
-                    {"assignmentOrder", (o,n) => { (o as GetOrderResponse).AssignmentOrder = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AssignmentOrder>(MicrosoftGraphSdk.Models.Microsoft.Graph.AssignmentOrder.CreateFromDiscriminatorValue); } },
-                };
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            /// </summary>
-            public void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AssignmentOrder>("assignmentOrder", AssignmentOrder);
-                writer.WriteAdditionalData(AdditionalData);
-            }
+            return await RequestAdapter.SendAsync<AssignmentOrder>(requestInfo, AssignmentOrder.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

@@ -69,44 +69,10 @@ namespace MicrosoftGraphSdk.Users.Item.InformationProtection.Policy.Labels.Extra
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ExtractLabelResponse> PostAsync(ExtractLabelRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<InformationProtectionContentLabel> PostAsync(ExtractLabelRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ExtractLabelResponse>(requestInfo, ExtractLabelResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>Union type wrapper for classes informationProtectionContentLabel</summary>
-        public class ExtractLabelResponse : IAdditionalDataHolder, IParsable {
-            /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-            public IDictionary<string, object> AdditionalData { get; set; }
-            /// <summary>Union type representation for type informationProtectionContentLabel</summary>
-            public MicrosoftGraphSdk.Models.Microsoft.Graph.InformationProtectionContentLabel InformationProtectionContentLabel { get; set; }
-            /// <summary>
-            /// Instantiates a new extractLabelResponse and sets the default values.
-            /// </summary>
-            public ExtractLabelResponse() {
-                AdditionalData = new Dictionary<string, object>();
-            }
-            public static ExtractLabelResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                return new ExtractLabelResponse();
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-                return new Dictionary<string, Action<T, IParseNode>> {
-                    {"informationProtectionContentLabel", (o,n) => { (o as ExtractLabelResponse).InformationProtectionContentLabel = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.InformationProtectionContentLabel>(MicrosoftGraphSdk.Models.Microsoft.Graph.InformationProtectionContentLabel.CreateFromDiscriminatorValue); } },
-                };
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            /// </summary>
-            public void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.InformationProtectionContentLabel>("informationProtectionContentLabel", InformationProtectionContentLabel);
-                writer.WriteAdditionalData(AdditionalData);
-            }
+            return await RequestAdapter.SendAsync<InformationProtectionContentLabel>(requestInfo, InformationProtectionContentLabel.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

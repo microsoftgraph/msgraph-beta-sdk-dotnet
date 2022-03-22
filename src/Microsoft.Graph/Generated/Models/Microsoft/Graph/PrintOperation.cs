@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the print singleton.</summary>
     public class PrintOperation : Entity, IParsable {
         /// <summary>The DateTimeOffset when the operation was created. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }

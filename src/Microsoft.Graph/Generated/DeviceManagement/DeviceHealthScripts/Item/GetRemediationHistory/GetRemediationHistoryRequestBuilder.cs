@@ -65,43 +65,9 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.Item.GetRemedia
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<GetRemediationHistoryResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceHealthScriptRemediationHistory> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<GetRemediationHistoryResponse>(requestInfo, GetRemediationHistoryResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>Union type wrapper for classes deviceHealthScriptRemediationHistory</summary>
-        public class GetRemediationHistoryResponse : IAdditionalDataHolder, IParsable {
-            /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-            public IDictionary<string, object> AdditionalData { get; set; }
-            /// <summary>Union type representation for type deviceHealthScriptRemediationHistory</summary>
-            public MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceHealthScriptRemediationHistory DeviceHealthScriptRemediationHistory { get; set; }
-            /// <summary>
-            /// Instantiates a new getRemediationHistoryResponse and sets the default values.
-            /// </summary>
-            public GetRemediationHistoryResponse() {
-                AdditionalData = new Dictionary<string, object>();
-            }
-            public static GetRemediationHistoryResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                return new GetRemediationHistoryResponse();
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-                return new Dictionary<string, Action<T, IParseNode>> {
-                    {"deviceHealthScriptRemediationHistory", (o,n) => { (o as GetRemediationHistoryResponse).DeviceHealthScriptRemediationHistory = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceHealthScriptRemediationHistory>(MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceHealthScriptRemediationHistory.CreateFromDiscriminatorValue); } },
-                };
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            /// </summary>
-            public void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceHealthScriptRemediationHistory>("deviceHealthScriptRemediationHistory", DeviceHealthScriptRemediationHistory);
-                writer.WriteAdditionalData(AdditionalData);
-            }
+            return await RequestAdapter.SendAsync<DeviceHealthScriptRemediationHistory>(requestInfo, DeviceHealthScriptRemediationHistory.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

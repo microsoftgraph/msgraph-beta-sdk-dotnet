@@ -69,44 +69,10 @@ namespace MicrosoftGraphSdk.Directory.Recommendations.Item.ImpactedResources.Ite
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<DismissResponse> PostAsync(DismissRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<RecommendationResource> PostAsync(DismissRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DismissResponse>(requestInfo, DismissResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>Union type wrapper for classes recommendationResource</summary>
-        public class DismissResponse : IAdditionalDataHolder, IParsable {
-            /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-            public IDictionary<string, object> AdditionalData { get; set; }
-            /// <summary>Union type representation for type recommendationResource</summary>
-            public MicrosoftGraphSdk.Models.Microsoft.Graph.RecommendationResource RecommendationResource { get; set; }
-            /// <summary>
-            /// Instantiates a new dismissResponse and sets the default values.
-            /// </summary>
-            public DismissResponse() {
-                AdditionalData = new Dictionary<string, object>();
-            }
-            public static DismissResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                return new DismissResponse();
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-                return new Dictionary<string, Action<T, IParseNode>> {
-                    {"recommendationResource", (o,n) => { (o as DismissResponse).RecommendationResource = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.RecommendationResource>(MicrosoftGraphSdk.Models.Microsoft.Graph.RecommendationResource.CreateFromDiscriminatorValue); } },
-                };
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            /// </summary>
-            public void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.RecommendationResource>("recommendationResource", RecommendationResource);
-                writer.WriteAdditionalData(AdditionalData);
-            }
+            return await RequestAdapter.SendAsync<RecommendationResource>(requestInfo, RecommendationResource.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

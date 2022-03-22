@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class OutlookUser : Entity, IParsable {
         /// <summary>A list of categories defined for the user.</summary>
         public List<OutlookCategory> MasterCategories { get; set; }

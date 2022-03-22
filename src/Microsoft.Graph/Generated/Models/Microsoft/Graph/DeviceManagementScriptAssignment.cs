@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DeviceManagementScriptAssignment : Entity, IParsable {
         /// <summary>The Id of the Azure Active Directory group we are targeting the script to.</summary>
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }

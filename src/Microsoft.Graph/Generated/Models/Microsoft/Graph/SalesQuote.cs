@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the financials singleton.</summary>
     public class SalesQuote : Entity, IParsable {
         public Date? AcceptedDate { get; set; }
         public PostalAddressType BillingPostalAddress { get; set; }

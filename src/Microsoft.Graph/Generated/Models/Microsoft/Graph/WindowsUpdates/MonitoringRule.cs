@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates {
-    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class MonitoringRule : IAdditionalDataHolder, IParsable {
         /// <summary>The action triggered when the threshold for the given signal is met. Possible values are: alertError, pauseDeployment, unknownFutureValue.</summary>
         public MonitoringAction? Action { get; set; }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class OnenotePage : OnenoteEntitySchemaObjectModel, IParsable {
         /// <summary>The page's HTML content.</summary>
         public byte[] Content { get; set; }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to call the query method.</summary>
     public class SearchHit : IAdditionalDataHolder, IParsable {
         public string _id { get; set; }
         public int? _score { get; set; }

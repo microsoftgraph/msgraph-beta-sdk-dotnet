@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    /// <summary>Managed Device Mobile App Configuration Setting State for a given device.</summary>
     public class ManagedDeviceMobileAppConfigurationSettingState : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Current value of setting on device</summary>
         public string CurrentValue { get; set; }
         /// <summary>Error code for the setting</summary>
-        public int? ErrorCode { get; set; }
+        public long? ErrorCode { get; set; }
         /// <summary>Error description</summary>
         public string ErrorDescription { get; set; }
         /// <summary>Name of setting instance that is being reported.</summary>
@@ -54,7 +54,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"currentValue", (o,n) => { (o as ManagedDeviceMobileAppConfigurationSettingState).CurrentValue = n.GetStringValue(); } },
-                {"errorCode", (o,n) => { (o as ManagedDeviceMobileAppConfigurationSettingState).ErrorCode = n.GetIntValue(); } },
+                {"errorCode", (o,n) => { (o as ManagedDeviceMobileAppConfigurationSettingState).ErrorCode = n.GetLongValue(); } },
                 {"errorDescription", (o,n) => { (o as ManagedDeviceMobileAppConfigurationSettingState).ErrorDescription = n.GetStringValue(); } },
                 {"instanceDisplayName", (o,n) => { (o as ManagedDeviceMobileAppConfigurationSettingState).InstanceDisplayName = n.GetStringValue(); } },
                 {"setting", (o,n) => { (o as ManagedDeviceMobileAppConfigurationSettingState).Setting = n.GetStringValue(); } },
@@ -75,7 +75,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("currentValue", CurrentValue);
-            writer.WriteIntValue("errorCode", ErrorCode);
+            writer.WriteLongValue("errorCode", ErrorCode);
             writer.WriteStringValue("errorDescription", ErrorDescription);
             writer.WriteStringValue("instanceDisplayName", InstanceDisplayName);
             writer.WriteStringValue("setting", Setting);

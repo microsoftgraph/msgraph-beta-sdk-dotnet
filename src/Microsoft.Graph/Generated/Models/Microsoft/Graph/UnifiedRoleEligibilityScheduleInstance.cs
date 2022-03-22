@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the roleManagement singleton.</summary>
     public class UnifiedRoleEligibilityScheduleInstance : UnifiedRoleScheduleInstanceBase, IParsable {
         /// <summary>Time that the roleEligibilityScheduleInstance will expire.</summary>
         public DateTimeOffset? EndDateTime { get; set; }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class EmbeddedSIMDeviceState : Entity, IParsable {
         /// <summary>The time the embedded SIM device status was created. Generated service side.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }

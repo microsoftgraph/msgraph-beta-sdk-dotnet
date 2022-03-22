@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class DirectoryDefinition : Entity, IParsable {
         /// <summary>Read only value indicating what type of discovery the app supports. Possible values are: AttributeDataTypes, AttributeNames, AttributeReadOnly, None, ReferenceAttributes, UnknownFutureValue.</summary>
         public DirectoryDefinitionDiscoverabilities? Discoverabilities { get; set; }

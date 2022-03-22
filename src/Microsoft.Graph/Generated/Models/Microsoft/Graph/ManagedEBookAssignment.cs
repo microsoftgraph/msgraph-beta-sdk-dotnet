@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public class ManagedEBookAssignment : Entity, IParsable {
         /// <summary>The install intent for eBook. Possible values are: available, required, uninstall, availableWithoutEnrollment.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.InstallIntent? InstallIntent { get; set; }

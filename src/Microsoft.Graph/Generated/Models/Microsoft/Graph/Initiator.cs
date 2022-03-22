@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the auditLogRoot singleton.</summary>
     public class Initiator : Identity, IParsable {
         /// <summary>Type of initiator. Possible values are: user, application, system, unknownFutureValue.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.InitiatorType? InitiatorType { get; set; }

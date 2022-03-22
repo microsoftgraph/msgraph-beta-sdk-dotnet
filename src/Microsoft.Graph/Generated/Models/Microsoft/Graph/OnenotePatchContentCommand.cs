@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to call the onenotePatchContent method.</summary>
     public class OnenotePatchContentCommand : IAdditionalDataHolder, IParsable {
         /// <summary>The action to perform on the target element. The possible values are: replace, append, delete, insert, or prepend.</summary>
         public OnenotePatchActionType? Action { get; set; }

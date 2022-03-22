@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class ColumnDefinition : Entity, IParsable {
         /// <summary>This column stores boolean values.</summary>
         public BooleanColumn Boolean { get; set; }
@@ -58,6 +57,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public bool? Required { get; set; }
         /// <summary>The source column for the content type column.</summary>
         public ColumnDefinition SourceColumn { get; set; }
+        /// <summary>ContentType from which this column is inherited from. Present only in contentTypes columns response. Read-only.</summary>
+        public ContentTypeInfo SourceContentType { get; set; }
         /// <summary>This column stores taxonomy terms.</summary>
         public TermColumn Term { get; set; }
         /// <summary>This column stores text values.</summary>
@@ -107,6 +108,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"readOnly", (o,n) => { (o as ColumnDefinition).ReadOnly = n.GetBoolValue(); } },
                 {"required", (o,n) => { (o as ColumnDefinition).Required = n.GetBoolValue(); } },
                 {"sourceColumn", (o,n) => { (o as ColumnDefinition).SourceColumn = n.GetObjectValue<ColumnDefinition>(ColumnDefinition.CreateFromDiscriminatorValue); } },
+                {"sourceContentType", (o,n) => { (o as ColumnDefinition).SourceContentType = n.GetObjectValue<ContentTypeInfo>(ContentTypeInfo.CreateFromDiscriminatorValue); } },
                 {"term", (o,n) => { (o as ColumnDefinition).Term = n.GetObjectValue<TermColumn>(TermColumn.CreateFromDiscriminatorValue); } },
                 {"text", (o,n) => { (o as ColumnDefinition).Text = n.GetObjectValue<TextColumn>(TextColumn.CreateFromDiscriminatorValue); } },
                 {"thumbnail", (o,n) => { (o as ColumnDefinition).Thumbnail = n.GetObjectValue<ThumbnailColumn>(ThumbnailColumn.CreateFromDiscriminatorValue); } },
@@ -147,6 +149,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteBoolValue("readOnly", ReadOnly);
             writer.WriteBoolValue("required", Required);
             writer.WriteObjectValue<ColumnDefinition>("sourceColumn", SourceColumn);
+            writer.WriteObjectValue<ContentTypeInfo>("sourceContentType", SourceContentType);
             writer.WriteObjectValue<TermColumn>("term", Term);
             writer.WriteObjectValue<TextColumn>("text", Text);
             writer.WriteObjectValue<ThumbnailColumn>("thumbnail", Thumbnail);

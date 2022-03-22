@@ -4,16 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    /// <summary>Color in RGB.</summary>
     public class RgbColor : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Blue value</summary>
-        public int? B { get; set; }
+        public byte? B { get; set; }
         /// <summary>Green value</summary>
-        public int? G { get; set; }
+        public byte? G { get; set; }
         /// <summary>Red value</summary>
-        public int? R { get; set; }
+        public byte? R { get; set; }
         /// <summary>
         /// Instantiates a new rgbColor and sets the default values.
         /// </summary>
@@ -33,9 +33,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"b", (o,n) => { (o as RgbColor).B = n.GetIntValue(); } },
-                {"g", (o,n) => { (o as RgbColor).G = n.GetIntValue(); } },
-                {"r", (o,n) => { (o as RgbColor).R = n.GetIntValue(); } },
+                {"b", (o,n) => { (o as RgbColor).B = n.GetByteValue(); } },
+                {"g", (o,n) => { (o as RgbColor).G = n.GetByteValue(); } },
+                {"r", (o,n) => { (o as RgbColor).R = n.GetByteValue(); } },
             };
         }
         /// <summary>
@@ -44,9 +44,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("b", B);
-            writer.WriteIntValue("g", G);
-            writer.WriteIntValue("r", R);
+            writer.WriteByteValue("b", B);
+            writer.WriteByteValue("g", G);
+            writer.WriteByteValue("r", R);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

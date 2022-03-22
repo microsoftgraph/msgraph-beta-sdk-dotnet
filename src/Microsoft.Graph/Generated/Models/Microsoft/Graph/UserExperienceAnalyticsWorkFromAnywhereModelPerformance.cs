@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class UserExperienceAnalyticsWorkFromAnywhereModelPerformance : Entity, IParsable {
         /// <summary>The user experience work from anywhere's cloud identity score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? CloudIdentityScore { get; set; }

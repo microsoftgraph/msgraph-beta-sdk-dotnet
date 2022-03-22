@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to call the instantiate method.</summary>
     public class LicenseDetails : Entity, IParsable {
         /// <summary>Information about the service plans assigned with the license. Read-only, Not nullable</summary>
         public List<ServicePlanInfo> ServicePlans { get; set; }

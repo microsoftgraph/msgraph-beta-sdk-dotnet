@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class DirectoryRoleAccessReviewPolicy : Entity, IParsable {
         public AccessReviewScheduleSettings Settings { get; set; }
         /// <summary>

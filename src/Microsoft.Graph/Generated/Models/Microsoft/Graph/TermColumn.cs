@@ -1,17 +1,19 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class TermColumn : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies whether the column will allow more than one value.</summary>
         public bool? AllowMultipleValues { get; set; }
+        public Term ParentTerm { get; set; }
         /// <summary>Specifies whether to display the entire term path or only the term label.</summary>
         public bool? ShowFullyQualifiedName { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Set TermSet { get; set; }
         /// <summary>
         /// Instantiates a new termColumn and sets the default values.
         /// </summary>
@@ -32,7 +34,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"allowMultipleValues", (o,n) => { (o as TermColumn).AllowMultipleValues = n.GetBoolValue(); } },
+                {"parentTerm", (o,n) => { (o as TermColumn).ParentTerm = n.GetObjectValue<Term>(Term.CreateFromDiscriminatorValue); } },
                 {"showFullyQualifiedName", (o,n) => { (o as TermColumn).ShowFullyQualifiedName = n.GetBoolValue(); } },
+                {"termSet", (o,n) => { (o as TermColumn).TermSet = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Set>(MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Set.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -42,7 +46,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allowMultipleValues", AllowMultipleValues);
+            writer.WriteObjectValue<Term>("parentTerm", ParentTerm);
             writer.WriteBoolValue("showFullyQualifiedName", ShowFullyQualifiedName);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Set>("termSet", TermSet);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

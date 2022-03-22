@@ -4,19 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to call the completeSetup method.</summary>
     public class RoleSuccessStatistics : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        public int? PermanentFail { get; set; }
-        public int? PermanentSuccess { get; set; }
-        public int? RemoveFail { get; set; }
-        public int? RemoveSuccess { get; set; }
+        public long? PermanentFail { get; set; }
+        public long? PermanentSuccess { get; set; }
+        public long? RemoveFail { get; set; }
+        public long? RemoveSuccess { get; set; }
         public string RoleId { get; set; }
         public string RoleName { get; set; }
-        public int? TemporaryFail { get; set; }
-        public int? TemporarySuccess { get; set; }
-        public int? UnknownFail { get; set; }
+        public long? TemporaryFail { get; set; }
+        public long? TemporarySuccess { get; set; }
+        public long? UnknownFail { get; set; }
         /// <summary>
         /// Instantiates a new roleSuccessStatistics and sets the default values.
         /// </summary>
@@ -36,15 +35,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"permanentFail", (o,n) => { (o as RoleSuccessStatistics).PermanentFail = n.GetIntValue(); } },
-                {"permanentSuccess", (o,n) => { (o as RoleSuccessStatistics).PermanentSuccess = n.GetIntValue(); } },
-                {"removeFail", (o,n) => { (o as RoleSuccessStatistics).RemoveFail = n.GetIntValue(); } },
-                {"removeSuccess", (o,n) => { (o as RoleSuccessStatistics).RemoveSuccess = n.GetIntValue(); } },
+                {"permanentFail", (o,n) => { (o as RoleSuccessStatistics).PermanentFail = n.GetLongValue(); } },
+                {"permanentSuccess", (o,n) => { (o as RoleSuccessStatistics).PermanentSuccess = n.GetLongValue(); } },
+                {"removeFail", (o,n) => { (o as RoleSuccessStatistics).RemoveFail = n.GetLongValue(); } },
+                {"removeSuccess", (o,n) => { (o as RoleSuccessStatistics).RemoveSuccess = n.GetLongValue(); } },
                 {"roleId", (o,n) => { (o as RoleSuccessStatistics).RoleId = n.GetStringValue(); } },
                 {"roleName", (o,n) => { (o as RoleSuccessStatistics).RoleName = n.GetStringValue(); } },
-                {"temporaryFail", (o,n) => { (o as RoleSuccessStatistics).TemporaryFail = n.GetIntValue(); } },
-                {"temporarySuccess", (o,n) => { (o as RoleSuccessStatistics).TemporarySuccess = n.GetIntValue(); } },
-                {"unknownFail", (o,n) => { (o as RoleSuccessStatistics).UnknownFail = n.GetIntValue(); } },
+                {"temporaryFail", (o,n) => { (o as RoleSuccessStatistics).TemporaryFail = n.GetLongValue(); } },
+                {"temporarySuccess", (o,n) => { (o as RoleSuccessStatistics).TemporarySuccess = n.GetLongValue(); } },
+                {"unknownFail", (o,n) => { (o as RoleSuccessStatistics).UnknownFail = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -53,15 +52,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("permanentFail", PermanentFail);
-            writer.WriteIntValue("permanentSuccess", PermanentSuccess);
-            writer.WriteIntValue("removeFail", RemoveFail);
-            writer.WriteIntValue("removeSuccess", RemoveSuccess);
+            writer.WriteLongValue("permanentFail", PermanentFail);
+            writer.WriteLongValue("permanentSuccess", PermanentSuccess);
+            writer.WriteLongValue("removeFail", RemoveFail);
+            writer.WriteLongValue("removeSuccess", RemoveSuccess);
             writer.WriteStringValue("roleId", RoleId);
             writer.WriteStringValue("roleName", RoleName);
-            writer.WriteIntValue("temporaryFail", TemporaryFail);
-            writer.WriteIntValue("temporarySuccess", TemporarySuccess);
-            writer.WriteIntValue("unknownFail", UnknownFail);
+            writer.WriteLongValue("temporaryFail", TemporaryFail);
+            writer.WriteLongValue("temporarySuccess", TemporarySuccess);
+            writer.WriteLongValue("unknownFail", UnknownFail);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

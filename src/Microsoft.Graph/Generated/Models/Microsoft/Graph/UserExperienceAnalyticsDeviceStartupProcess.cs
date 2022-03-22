@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class UserExperienceAnalyticsDeviceStartupProcess : Entity, IParsable {
         /// <summary>The user experience analytics device id.</summary>
         public string ManagedDeviceId { get; set; }

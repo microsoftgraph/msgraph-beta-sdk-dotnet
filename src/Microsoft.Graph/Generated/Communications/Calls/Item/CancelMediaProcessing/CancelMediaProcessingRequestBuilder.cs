@@ -69,44 +69,10 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.CancelMediaProcessing {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<CancelMediaProcessingResponse> PostAsync(CancelMediaProcessingRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<CancelMediaProcessingOperation> PostAsync(CancelMediaProcessingRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<CancelMediaProcessingResponse>(requestInfo, CancelMediaProcessingResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>Union type wrapper for classes cancelMediaProcessingOperation</summary>
-        public class CancelMediaProcessingResponse : IAdditionalDataHolder, IParsable {
-            /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-            public IDictionary<string, object> AdditionalData { get; set; }
-            /// <summary>Union type representation for type cancelMediaProcessingOperation</summary>
-            public MicrosoftGraphSdk.Models.Microsoft.Graph.CancelMediaProcessingOperation CancelMediaProcessingOperation { get; set; }
-            /// <summary>
-            /// Instantiates a new cancelMediaProcessingResponse and sets the default values.
-            /// </summary>
-            public CancelMediaProcessingResponse() {
-                AdditionalData = new Dictionary<string, object>();
-            }
-            public static CancelMediaProcessingResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                return new CancelMediaProcessingResponse();
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-                return new Dictionary<string, Action<T, IParseNode>> {
-                    {"cancelMediaProcessingOperation", (o,n) => { (o as CancelMediaProcessingResponse).CancelMediaProcessingOperation = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.CancelMediaProcessingOperation>(MicrosoftGraphSdk.Models.Microsoft.Graph.CancelMediaProcessingOperation.CreateFromDiscriminatorValue); } },
-                };
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            /// </summary>
-            public void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.CancelMediaProcessingOperation>("cancelMediaProcessingOperation", CancelMediaProcessingOperation);
-                writer.WriteAdditionalData(AdditionalData);
-            }
+            return await RequestAdapter.SendAsync<CancelMediaProcessingOperation>(requestInfo, CancelMediaProcessingOperation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

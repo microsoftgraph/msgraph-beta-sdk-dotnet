@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class WindowsProtectionState : Entity, IParsable {
         /// <summary>Current anti malware version</summary>
         public string AntiMalwareVersion { get; set; }

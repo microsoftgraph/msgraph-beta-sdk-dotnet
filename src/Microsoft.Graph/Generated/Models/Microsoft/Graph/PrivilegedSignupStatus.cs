@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of privilegedSignupStatus entities.</summary>
     public class PrivilegedSignupStatus : Entity, IParsable {
         public bool? IsRegistered { get; set; }
         public SetupStatus? Status { get; set; }

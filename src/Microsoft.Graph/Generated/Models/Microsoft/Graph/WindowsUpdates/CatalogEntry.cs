@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates {
-    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class CatalogEntry : Entity, IParsable {
         /// <summary>The date on which the content is no longer available to deploy using the service. Read-only.</summary>
         public DateTimeOffset? DeployableUntilDateTime { get; set; }

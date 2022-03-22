@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class UserExperienceAnalyticsRegressionSummary : Entity, IParsable {
         /// <summary>The metric values for the user experience analytics Manufacturer regression.</summary>
         public List<UserExperienceAnalyticsMetric> ManufacturerRegression { get; set; }

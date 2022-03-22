@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class MicrosoftTunnelSite : Entity, IParsable {
         /// <summary>The MicrosoftTunnelSite's description</summary>
         public string Description { get; set; }

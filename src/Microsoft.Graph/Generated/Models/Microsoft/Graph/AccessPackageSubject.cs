@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
     public class AccessPackageSubject : Entity, IParsable {
         public string AltSecId { get; set; }
         /// <summary>The connected organization of the subject. Read-only. Nullable.</summary>

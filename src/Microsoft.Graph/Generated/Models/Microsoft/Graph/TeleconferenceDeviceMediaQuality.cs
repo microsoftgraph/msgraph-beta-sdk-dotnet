@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to call the logTeleconferenceDeviceQuality method.</summary>
     public class TeleconferenceDeviceMediaQuality : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -23,7 +22,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The channel index of media. Indexing begins with 1.  If a media session contains 3 video modalities, channel indexes will be 1, 2, and 3.</summary>
         public int? ChannelIndex { get; set; }
         /// <summary>The total number of the inbound packets.</summary>
-        public int? InboundPackets { get; set; }
+        public long? InboundPackets { get; set; }
         /// <summary>the local IP address for the media session.</summary>
         public string LocalIPAddress { get; set; }
         /// <summary>The local media port.</summary>
@@ -43,9 +42,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The total modality duration. If the media enabled and disabled multiple times, MediaDuration will the summation of all of the durations.</summary>
         public TimeSpan? MediaDuration { get; set; }
         /// <summary>The network link speed in bytes</summary>
-        public int? NetworkLinkSpeedInBytes { get; set; }
+        public long? NetworkLinkSpeedInBytes { get; set; }
         /// <summary>The total number of the outbound packets.</summary>
-        public int? OutboundPackets { get; set; }
+        public long? OutboundPackets { get; set; }
         /// <summary>The remote IP address for the media session.</summary>
         public string RemoteIPAddress { get; set; }
         /// <summary>The remote media port.</summary>
@@ -76,7 +75,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"averageOutboundPacketLossRateInPercentage", (o,n) => { (o as TeleconferenceDeviceMediaQuality).AverageOutboundPacketLossRateInPercentage = n.GetDoubleValue(); } },
                 {"averageOutboundRoundTripDelay", (o,n) => { (o as TeleconferenceDeviceMediaQuality).AverageOutboundRoundTripDelay = n.GetTimeSpanValue(); } },
                 {"channelIndex", (o,n) => { (o as TeleconferenceDeviceMediaQuality).ChannelIndex = n.GetIntValue(); } },
-                {"inboundPackets", (o,n) => { (o as TeleconferenceDeviceMediaQuality).InboundPackets = n.GetIntValue(); } },
+                {"inboundPackets", (o,n) => { (o as TeleconferenceDeviceMediaQuality).InboundPackets = n.GetLongValue(); } },
                 {"localIPAddress", (o,n) => { (o as TeleconferenceDeviceMediaQuality).LocalIPAddress = n.GetStringValue(); } },
                 {"localPort", (o,n) => { (o as TeleconferenceDeviceMediaQuality).LocalPort = n.GetIntValue(); } },
                 {"maximumInboundJitter", (o,n) => { (o as TeleconferenceDeviceMediaQuality).MaximumInboundJitter = n.GetTimeSpanValue(); } },
@@ -86,8 +85,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"maximumOutboundPacketLossRateInPercentage", (o,n) => { (o as TeleconferenceDeviceMediaQuality).MaximumOutboundPacketLossRateInPercentage = n.GetDoubleValue(); } },
                 {"maximumOutboundRoundTripDelay", (o,n) => { (o as TeleconferenceDeviceMediaQuality).MaximumOutboundRoundTripDelay = n.GetTimeSpanValue(); } },
                 {"mediaDuration", (o,n) => { (o as TeleconferenceDeviceMediaQuality).MediaDuration = n.GetTimeSpanValue(); } },
-                {"networkLinkSpeedInBytes", (o,n) => { (o as TeleconferenceDeviceMediaQuality).NetworkLinkSpeedInBytes = n.GetIntValue(); } },
-                {"outboundPackets", (o,n) => { (o as TeleconferenceDeviceMediaQuality).OutboundPackets = n.GetIntValue(); } },
+                {"networkLinkSpeedInBytes", (o,n) => { (o as TeleconferenceDeviceMediaQuality).NetworkLinkSpeedInBytes = n.GetLongValue(); } },
+                {"outboundPackets", (o,n) => { (o as TeleconferenceDeviceMediaQuality).OutboundPackets = n.GetLongValue(); } },
                 {"remoteIPAddress", (o,n) => { (o as TeleconferenceDeviceMediaQuality).RemoteIPAddress = n.GetStringValue(); } },
                 {"remotePort", (o,n) => { (o as TeleconferenceDeviceMediaQuality).RemotePort = n.GetIntValue(); } },
             };
@@ -105,7 +104,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteDoubleValue("averageOutboundPacketLossRateInPercentage", AverageOutboundPacketLossRateInPercentage);
             writer.WriteTimeSpanValue("averageOutboundRoundTripDelay", AverageOutboundRoundTripDelay);
             writer.WriteIntValue("channelIndex", ChannelIndex);
-            writer.WriteIntValue("inboundPackets", InboundPackets);
+            writer.WriteLongValue("inboundPackets", InboundPackets);
             writer.WriteStringValue("localIPAddress", LocalIPAddress);
             writer.WriteIntValue("localPort", LocalPort);
             writer.WriteTimeSpanValue("maximumInboundJitter", MaximumInboundJitter);
@@ -115,8 +114,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteDoubleValue("maximumOutboundPacketLossRateInPercentage", MaximumOutboundPacketLossRateInPercentage);
             writer.WriteTimeSpanValue("maximumOutboundRoundTripDelay", MaximumOutboundRoundTripDelay);
             writer.WriteTimeSpanValue("mediaDuration", MediaDuration);
-            writer.WriteIntValue("networkLinkSpeedInBytes", NetworkLinkSpeedInBytes);
-            writer.WriteIntValue("outboundPackets", OutboundPackets);
+            writer.WriteLongValue("networkLinkSpeedInBytes", NetworkLinkSpeedInBytes);
+            writer.WriteLongValue("outboundPackets", OutboundPackets);
             writer.WriteStringValue("remoteIPAddress", RemoteIPAddress);
             writer.WriteIntValue("remotePort", RemotePort);
             writer.WriteAdditionalData(AdditionalData);

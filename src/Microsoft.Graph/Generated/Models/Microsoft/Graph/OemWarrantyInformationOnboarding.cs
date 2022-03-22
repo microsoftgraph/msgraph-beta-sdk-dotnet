@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class OemWarrantyInformationOnboarding : Entity, IParsable {
         /// <summary>Specifies whether warranty API is available. This property is read-only.</summary>
         public bool? Available { get; set; }

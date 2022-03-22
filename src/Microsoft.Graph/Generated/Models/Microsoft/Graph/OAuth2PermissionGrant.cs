@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to call the instantiate method.</summary>
     public class OAuth2PermissionGrant : Entity, IParsable {
         /// <summary>The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).</summary>
         public string ClientId { get; set; }
@@ -16,7 +15,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string PrincipalId { get; set; }
         /// <summary>The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.</summary>
         public string ResourceId { get; set; }
-        /// <summary>A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.</summary>
+        /// <summary>A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.</summary>
         public string Scope { get; set; }
         /// <summary>Currently, the start time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.</summary>
         public DateTimeOffset? StartTime { get; set; }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DeviceManagementIntentSettingCategory : DeviceManagementSettingCategory, IParsable {
         /// <summary>The settings this category contains</summary>
         public List<DeviceManagementSettingInstance> Settings { get; set; }

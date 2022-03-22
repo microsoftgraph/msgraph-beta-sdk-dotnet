@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class CloudPcOnPremisesConnection : Entity, IParsable {
         /// <summary>The fully qualified domain name (FQDN) of the Active Directory domain you want to join. Optional.</summary>
         public string AdDomainName { get; set; }
@@ -20,6 +19,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public CloudPcOnPremisesConnectionStatusDetails HealthCheckStatusDetails { get; set; }
         /// <summary>When true, the on-premises connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an on-premises connection, including healthCheckStatusDetails. Read-only.</summary>
         public bool? InUse { get; set; }
+        /// <summary>Specifies which services manage the on-premises connection. Possible values are: windows365, devBox and unknownFutureValue. Read-only.</summary>
         public CloudPcManagementService? ManagedBy { get; set; }
         /// <summary>The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.</summary>
         public string OrganizationalUnit { get; set; }

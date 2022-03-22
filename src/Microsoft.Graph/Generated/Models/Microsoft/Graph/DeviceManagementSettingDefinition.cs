@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DeviceManagementSettingDefinition : Entity, IParsable {
         /// <summary>Collection of constraints for the setting value</summary>
         public List<DeviceManagementConstraint> Constraints { get; set; }

@@ -69,44 +69,10 @@ namespace MicrosoftGraphSdk.InformationProtection.VerifySignature {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<VerifySignatureResponse> PostAsync(VerifySignatureRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<VerificationResult> PostAsync(VerifySignatureRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<VerifySignatureResponse>(requestInfo, VerifySignatureResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>Union type wrapper for classes verificationResult</summary>
-        public class VerifySignatureResponse : IAdditionalDataHolder, IParsable {
-            /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-            public IDictionary<string, object> AdditionalData { get; set; }
-            /// <summary>Union type representation for type verificationResult</summary>
-            public MicrosoftGraphSdk.Models.Microsoft.Graph.VerificationResult VerificationResult { get; set; }
-            /// <summary>
-            /// Instantiates a new verifySignatureResponse and sets the default values.
-            /// </summary>
-            public VerifySignatureResponse() {
-                AdditionalData = new Dictionary<string, object>();
-            }
-            public static VerifySignatureResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                return new VerifySignatureResponse();
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-                return new Dictionary<string, Action<T, IParseNode>> {
-                    {"verificationResult", (o,n) => { (o as VerifySignatureResponse).VerificationResult = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.VerificationResult>(MicrosoftGraphSdk.Models.Microsoft.Graph.VerificationResult.CreateFromDiscriminatorValue); } },
-                };
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            /// </summary>
-            public void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.VerificationResult>("verificationResult", VerificationResult);
-                writer.WriteAdditionalData(AdditionalData);
-            }
+            return await RequestAdapter.SendAsync<VerificationResult>(requestInfo, VerificationResult.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

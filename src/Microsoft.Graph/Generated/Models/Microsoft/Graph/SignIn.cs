@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the auditLogRoot singleton.</summary>
     public class SignIn : Entity, IParsable {
         /// <summary>App name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).</summary>
         public string AppDisplayName { get; set; }
@@ -99,7 +98,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string ServicePrincipalName { get; set; }
         /// <summary>Any conditional access session management policies that were applied during the sign-in event.</summary>
         public List<SessionLifetimePolicy> SessionLifetimePolicies { get; set; }
-        /// <summary>Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue. Supports $filter (eq operator only).</summary>
+        /// <summary>Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue. Supports $filter (eq, ne).</summary>
         public List<string> SignInEventTypes { get; set; }
         /// <summary>The identification that the user provided to sign in. It may be the userPrincipalName but it's also populated when a user signs in using other identifiers.</summary>
         public string SignInIdentifier { get; set; }

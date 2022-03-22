@@ -69,44 +69,10 @@ namespace MicrosoftGraphSdk.Me.Tasks.Alltasks.Item.Move {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MoveResponse> PostAsync(MoveRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<BaseTask> PostAsync(MoveRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MoveResponse>(requestInfo, MoveResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>Union type wrapper for classes baseTask</summary>
-        public class MoveResponse : IAdditionalDataHolder, IParsable {
-            /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-            public IDictionary<string, object> AdditionalData { get; set; }
-            /// <summary>Union type representation for type baseTask</summary>
-            public MicrosoftGraphSdk.Models.Microsoft.Graph.BaseTask BaseTask { get; set; }
-            /// <summary>
-            /// Instantiates a new moveResponse and sets the default values.
-            /// </summary>
-            public MoveResponse() {
-                AdditionalData = new Dictionary<string, object>();
-            }
-            public static MoveResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                return new MoveResponse();
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-                return new Dictionary<string, Action<T, IParseNode>> {
-                    {"baseTask", (o,n) => { (o as MoveResponse).BaseTask = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.BaseTask>(MicrosoftGraphSdk.Models.Microsoft.Graph.BaseTask.CreateFromDiscriminatorValue); } },
-                };
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            /// </summary>
-            public void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.BaseTask>("baseTask", BaseTask);
-                writer.WriteAdditionalData(AdditionalData);
-            }
+            return await RequestAdapter.SendAsync<BaseTask>(requestInfo, BaseTask.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the directory singleton.</summary>
     public class TenantReference : DirectoryObject, IParsable {
         public string TenantId { get; set; }
         /// <summary>

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class OutlookTask : OutlookItem, IParsable {
         /// <summary>The name of the person who has been assigned the task in Outlook. Read-only.</summary>
         public string AssignedTo { get; set; }

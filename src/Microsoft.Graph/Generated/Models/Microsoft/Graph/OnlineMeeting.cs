@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the commsApplication singleton.</summary>
     public class OnlineMeeting : Entity, IParsable {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessLevel? AccessLevel { get; set; }
         /// <summary>Indicates whether attendees can turn on their camera.</summary>

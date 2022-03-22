@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class WorkbookChartLineFormat : Entity, IParsable {
         /// <summary>HTML color code representing the color of lines in the chart.</summary>
         public string Color { get; set; }

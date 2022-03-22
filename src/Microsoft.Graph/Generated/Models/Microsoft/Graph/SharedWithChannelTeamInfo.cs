@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class SharedWithChannelTeamInfo : TeamInfo, IParsable {
         public List<ConversationMember> AllowedMembers { get; set; }
         public bool? IsHostTeam { get; set; }

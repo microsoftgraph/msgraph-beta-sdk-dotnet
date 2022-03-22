@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class ItemActivityStat : Entity, IParsable {
         /// <summary>Statistics about the access actions in this interval. Read-only.</summary>
         public ItemActionStat Access { get; set; }

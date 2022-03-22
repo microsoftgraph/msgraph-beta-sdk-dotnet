@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the educationRoot singleton.</summary>
     public class RelatedContact : IAdditionalDataHolder, IParsable {
         /// <summary>Indicates whether the user has been consented to access student data.</summary>
         public bool? AccessConsent { get; set; }

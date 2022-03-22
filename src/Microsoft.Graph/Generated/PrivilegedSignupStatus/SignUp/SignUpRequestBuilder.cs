@@ -65,43 +65,9 @@ namespace MicrosoftGraphSdk.PrivilegedSignupStatus.SignUp {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<SignUpResponse> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreatePostRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<SignUpResponse>(requestInfo, SignUpResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>Union type wrapper for classes privilegedSignupStatus</summary>
-        public class SignUpResponse : IAdditionalDataHolder, IParsable {
-            /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-            public IDictionary<string, object> AdditionalData { get; set; }
-            /// <summary>Union type representation for type privilegedSignupStatus</summary>
-            public MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus PrivilegedSignupStatus { get; set; }
-            /// <summary>
-            /// Instantiates a new signUpResponse and sets the default values.
-            /// </summary>
-            public SignUpResponse() {
-                AdditionalData = new Dictionary<string, object>();
-            }
-            public static SignUpResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                return new SignUpResponse();
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-                return new Dictionary<string, Action<T, IParseNode>> {
-                    {"privilegedSignupStatus", (o,n) => { (o as SignUpResponse).PrivilegedSignupStatus = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus>(MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus.CreateFromDiscriminatorValue); } },
-                };
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            /// </summary>
-            public void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus>("privilegedSignupStatus", PrivilegedSignupStatus);
-                writer.WriteAdditionalData(AdditionalData);
-            }
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

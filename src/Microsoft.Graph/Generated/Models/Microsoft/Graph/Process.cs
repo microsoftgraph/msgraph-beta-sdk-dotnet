@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the alerts property of the microsoft.graph.security entity.</summary>
     public class Process : IAdditionalDataHolder, IParsable {
         /// <summary>User account identifier (user account context the process ran under) for example, AccountName, SID, and so on.</summary>
         public string AccountName { get; set; }

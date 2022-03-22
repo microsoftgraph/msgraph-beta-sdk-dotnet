@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class UserExperienceAnalyticsBatteryHealthDeviceAppImpact : Entity, IParsable {
         /// <summary>User friendly display name for the app. Eg: Outlook</summary>
         public string AppDisplayName { get; set; }

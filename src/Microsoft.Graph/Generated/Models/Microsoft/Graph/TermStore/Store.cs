@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class Store : Entity, IParsable {
         /// <summary>Default language of the term store.</summary>
         public string DefaultLanguageTag { get; set; }

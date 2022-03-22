@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Security {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class SensitivityLabel : Entity, IParsable {
         public string Color { get; set; }
         public List<string> ContentFormats { get; set; }

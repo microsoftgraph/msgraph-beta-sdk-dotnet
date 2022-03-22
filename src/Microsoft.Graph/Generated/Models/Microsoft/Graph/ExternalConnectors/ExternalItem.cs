@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors {
-    /// <summary>Provides operations to manage the collection of externalConnection entities.</summary>
     public class ExternalItem : Entity, IParsable {
         /// <summary>An array of access control entries. Each entry specifies the access granted to a user or group. Required.</summary>
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors.Acl> Acl { get; set; }

@@ -69,44 +69,10 @@ namespace MicrosoftGraphSdk.RoleManagement.CloudPC.ResourceNamespaces.Item.Impor
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ImportResourceActionsResponse> PostAsync(ImportResourceActionsRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<UnifiedRbacResourceNamespace> PostAsync(ImportResourceActionsRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ImportResourceActionsResponse>(requestInfo, ImportResourceActionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>Union type wrapper for classes unifiedRbacResourceNamespace</summary>
-        public class ImportResourceActionsResponse : IAdditionalDataHolder, IParsable {
-            /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-            public IDictionary<string, object> AdditionalData { get; set; }
-            /// <summary>Union type representation for type unifiedRbacResourceNamespace</summary>
-            public MicrosoftGraphSdk.Models.Microsoft.Graph.UnifiedRbacResourceNamespace UnifiedRbacResourceNamespace { get; set; }
-            /// <summary>
-            /// Instantiates a new importResourceActionsResponse and sets the default values.
-            /// </summary>
-            public ImportResourceActionsResponse() {
-                AdditionalData = new Dictionary<string, object>();
-            }
-            public static ImportResourceActionsResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                return new ImportResourceActionsResponse();
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-                return new Dictionary<string, Action<T, IParseNode>> {
-                    {"unifiedRbacResourceNamespace", (o,n) => { (o as ImportResourceActionsResponse).UnifiedRbacResourceNamespace = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.UnifiedRbacResourceNamespace>(MicrosoftGraphSdk.Models.Microsoft.Graph.UnifiedRbacResourceNamespace.CreateFromDiscriminatorValue); } },
-                };
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            /// </summary>
-            public void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.UnifiedRbacResourceNamespace>("unifiedRbacResourceNamespace", UnifiedRbacResourceNamespace);
-                writer.WriteAdditionalData(AdditionalData);
-            }
+            return await RequestAdapter.SendAsync<UnifiedRbacResourceNamespace>(requestInfo, UnifiedRbacResourceNamespace.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

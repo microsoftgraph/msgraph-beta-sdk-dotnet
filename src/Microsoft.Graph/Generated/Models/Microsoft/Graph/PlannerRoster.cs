@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the planner singleton.</summary>
     public class PlannerRoster : Entity, IParsable {
         /// <summary>Retrieves the members of the plannerRoster.</summary>
         public List<PlannerRosterMember> Members { get; set; }

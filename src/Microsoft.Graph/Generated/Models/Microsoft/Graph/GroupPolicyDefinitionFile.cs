@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class GroupPolicyDefinitionFile : Entity, IParsable {
         /// <summary>The group policy definitions associated with the file.</summary>
         public List<GroupPolicyDefinition> Definitions { get; set; }

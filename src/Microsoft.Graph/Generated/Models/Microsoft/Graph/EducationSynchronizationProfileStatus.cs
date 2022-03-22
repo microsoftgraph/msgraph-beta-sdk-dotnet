@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the educationRoot singleton.</summary>
     public class EducationSynchronizationProfileStatus : Entity, IParsable {
         /// <summary>Number of errors during synchronization.</summary>
-        public int? ErrorCount { get; set; }
+        public long? ErrorCount { get; set; }
         /// <summary>Represents the time when most recent changes were observed in profile.</summary>
         public DateTimeOffset? LastActivityDateTime { get; set; }
         /// <summary>Represents the time of the most recent successful  synchronization.</summary>
@@ -29,7 +28,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"errorCount", (o,n) => { (o as EducationSynchronizationProfileStatus).ErrorCount = n.GetIntValue(); } },
+                {"errorCount", (o,n) => { (o as EducationSynchronizationProfileStatus).ErrorCount = n.GetLongValue(); } },
                 {"lastActivityDateTime", (o,n) => { (o as EducationSynchronizationProfileStatus).LastActivityDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastSynchronizationDateTime", (o,n) => { (o as EducationSynchronizationProfileStatus).LastSynchronizationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"status", (o,n) => { (o as EducationSynchronizationProfileStatus).Status = n.GetEnumValue<EducationSynchronizationStatus>(); } },
@@ -43,7 +42,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteIntValue("errorCount", ErrorCount);
+            writer.WriteLongValue("errorCount", ErrorCount);
             writer.WriteDateTimeOffsetValue("lastActivityDateTime", LastActivityDateTime);
             writer.WriteDateTimeOffsetValue("lastSynchronizationDateTime", LastSynchronizationDateTime);
             writer.WriteEnumValue<EducationSynchronizationStatus>("status", Status);

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DeviceManagementReports : Entity, IParsable {
         /// <summary>Entity representing the configuration of a cached report</summary>
         public List<DeviceManagementCachedReportConfiguration> CachedReportConfigurations { get; set; }

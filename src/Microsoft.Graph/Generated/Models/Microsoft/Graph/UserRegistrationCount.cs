@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to call the getCredentialUserRegistrationCount method.</summary>
     public class UserRegistrationCount : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Provides the registration count for your tenant.</summary>
-        public int? RegistrationCount { get; set; }
+        public long? RegistrationCount { get; set; }
         /// <summary>Represents the status of user registration. Possible values are: registered, enabled, capable, and mfaRegistered.</summary>
         public RegistrationStatusType? RegistrationStatus { get; set; }
         /// <summary>
@@ -31,7 +30,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"registrationCount", (o,n) => { (o as UserRegistrationCount).RegistrationCount = n.GetIntValue(); } },
+                {"registrationCount", (o,n) => { (o as UserRegistrationCount).RegistrationCount = n.GetLongValue(); } },
                 {"registrationStatus", (o,n) => { (o as UserRegistrationCount).RegistrationStatus = n.GetEnumValue<RegistrationStatusType>(); } },
             };
         }
@@ -41,7 +40,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("registrationCount", RegistrationCount);
+            writer.WriteLongValue("registrationCount", RegistrationCount);
             writer.WriteEnumValue<RegistrationStatusType>("registrationStatus", RegistrationStatus);
             writer.WriteAdditionalData(AdditionalData);
         }

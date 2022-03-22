@@ -65,43 +65,9 @@ namespace MicrosoftGraphSdk.DeviceManagement.GetAssignedRoleDetails {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<GetAssignedRoleDetailsResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceAndAppManagementAssignedRoleDetails> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<GetAssignedRoleDetailsResponse>(requestInfo, GetAssignedRoleDetailsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>Union type wrapper for classes deviceAndAppManagementAssignedRoleDetails</summary>
-        public class GetAssignedRoleDetailsResponse : IAdditionalDataHolder, IParsable {
-            /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-            public IDictionary<string, object> AdditionalData { get; set; }
-            /// <summary>Union type representation for type deviceAndAppManagementAssignedRoleDetails</summary>
-            public MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceAndAppManagementAssignedRoleDetails DeviceAndAppManagementAssignedRoleDetails { get; set; }
-            /// <summary>
-            /// Instantiates a new getAssignedRoleDetailsResponse and sets the default values.
-            /// </summary>
-            public GetAssignedRoleDetailsResponse() {
-                AdditionalData = new Dictionary<string, object>();
-            }
-            public static GetAssignedRoleDetailsResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                return new GetAssignedRoleDetailsResponse();
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-                return new Dictionary<string, Action<T, IParseNode>> {
-                    {"deviceAndAppManagementAssignedRoleDetails", (o,n) => { (o as GetAssignedRoleDetailsResponse).DeviceAndAppManagementAssignedRoleDetails = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceAndAppManagementAssignedRoleDetails>(MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceAndAppManagementAssignedRoleDetails.CreateFromDiscriminatorValue); } },
-                };
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            /// </summary>
-            public void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceAndAppManagementAssignedRoleDetails>("deviceAndAppManagementAssignedRoleDetails", DeviceAndAppManagementAssignedRoleDetails);
-                writer.WriteAdditionalData(AdditionalData);
-            }
+            return await RequestAdapter.SendAsync<DeviceAndAppManagementAssignedRoleDetails>(requestInfo, DeviceAndAppManagementAssignedRoleDetails.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

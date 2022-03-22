@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class PlannerGroup : Entity, IParsable {
         /// <summary>Read-only. Nullable. Returns the plannerPlans owned by the group.</summary>
         public List<PlannerPlan> Plans { get; set; }

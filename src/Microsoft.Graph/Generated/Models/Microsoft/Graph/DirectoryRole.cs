@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of directoryRole entities.</summary>
     public class DirectoryRole : DirectoryObject, IParsable {
         /// <summary>The description for the directory role. Read-only. Supports $filter (eq), $search, $select.</summary>
         public string Description { get; set; }

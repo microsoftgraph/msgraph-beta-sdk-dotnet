@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class PasswordlessMicrosoftAuthenticatorAuthenticationMethod : AuthenticationMethod, IParsable {
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>The timestamp when this method was registered to the user.</summary>

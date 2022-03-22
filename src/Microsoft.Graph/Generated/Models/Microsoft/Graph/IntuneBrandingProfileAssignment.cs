@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class IntuneBrandingProfileAssignment : Entity, IParsable {
         /// <summary>Assignment target that the branding profile is assigned to.</summary>
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }

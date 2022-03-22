@@ -22,7 +22,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.GetTopMobileAppsWithS
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="status">Usage: status='{status}'</param>
         /// </summary>
-        public GetTopMobileAppsWithStatusWithCountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, int? count = default, string status = default) {
+        public GetTopMobileAppsWithStatusWithCountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, long? count = default, string status = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/microsoft.graph.getTopMobileApps(status='{status}',count={count})";

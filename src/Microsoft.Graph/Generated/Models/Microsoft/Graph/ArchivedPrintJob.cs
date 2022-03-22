@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to call the getGroupArchivedPrintJobs method.</summary>
     public class ArchivedPrintJob : IAdditionalDataHolder, IParsable {
         /// <summary>True if the job was acquired by a printer; false otherwise. Read-only.</summary>
         public bool? AcquiredByPrinter { get; set; }

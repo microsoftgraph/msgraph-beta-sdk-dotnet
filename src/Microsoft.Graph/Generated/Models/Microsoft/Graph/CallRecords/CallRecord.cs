@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords {
-    /// <summary>Provides operations to manage the cloudCommunications singleton.</summary>
     public class CallRecord : Entity, IParsable {
         /// <summary>UTC time when the last user left the call. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? EndDateTime { get; set; }
@@ -25,7 +24,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords {
         /// <summary>Indicates the type of the call. Possible values are: unknown, groupCall, peerToPeer, unknownFutureValue.</summary>
         public CallType? Type { get; set; }
         /// <summary>Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.</summary>
-        public int? Version { get; set; }
+        public long? Version { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -48,7 +47,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords {
                 {"sessions", (o,n) => { (o as CallRecord).Sessions = n.GetCollectionOfObjectValues<Session>(Session.CreateFromDiscriminatorValue).ToList(); } },
                 {"startDateTime", (o,n) => { (o as CallRecord).StartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"type", (o,n) => { (o as CallRecord).Type = n.GetEnumValue<CallType>(); } },
-                {"version", (o,n) => { (o as CallRecord).Version = n.GetIntValue(); } },
+                {"version", (o,n) => { (o as CallRecord).Version = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -67,7 +66,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords {
             writer.WriteCollectionOfObjectValues<Session>("sessions", Sessions);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteEnumValue<CallType>("type", Type);
-            writer.WriteIntValue("version", Version);
+            writer.WriteLongValue("version", Version);
         }
     }
 }

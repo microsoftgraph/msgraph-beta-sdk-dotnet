@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class CrossTenantAccessPolicyConfigurationDefault : CrossTenantAccessPolicyConfigurationBase, IParsable {
         /// <summary>If true, the default configuration is set to the system default configuration. If false, the default settings have been customized.</summary>
         public bool? IsServiceDefault { get; set; }

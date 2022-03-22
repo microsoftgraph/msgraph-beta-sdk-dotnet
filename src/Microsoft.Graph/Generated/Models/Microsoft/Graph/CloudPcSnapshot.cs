@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class CloudPcSnapshot : Entity, IParsable {
         /// <summary>The unique identifier for the Cloud PC.</summary>
         public string CloudPcId { get; set; }

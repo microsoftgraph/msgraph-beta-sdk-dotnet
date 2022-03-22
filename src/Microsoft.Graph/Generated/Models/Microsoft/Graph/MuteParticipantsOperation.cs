@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to call the muteAll method.</summary>
     public class MuteParticipantsOperation : CommsOperation, IParsable {
         public List<string> Participants { get; set; }
         /// <summary>

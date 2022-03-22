@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId : Entity, IParsable {
         /// <summary>The number of crashes for the app. Valid values -2147483648 to 2147483647</summary>
         public int? AppCrashCount { get; set; }

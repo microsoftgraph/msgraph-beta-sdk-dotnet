@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DeviceManagementComplianceScheduledActionForRule : Entity, IParsable {
         /// <summary>Name of the rule which this scheduled action applies to.</summary>
         public string RuleName { get; set; }

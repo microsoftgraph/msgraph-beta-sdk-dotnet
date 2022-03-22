@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public class WindowsInformationProtectionWipeAction : Entity, IParsable {
         /// <summary>Last checkin time of the device that was targeted by this wipe action.</summary>
         public DateTimeOffset? LastCheckInDateTime { get; set; }

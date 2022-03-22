@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of onPremisesPublishingProfile entities.</summary>
     public class PublishedResource : Entity, IParsable {
         /// <summary>List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.</summary>
         public List<OnPremisesAgentGroup> AgentGroups { get; set; }

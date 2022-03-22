@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
     public class AccessReviewSet : Entity, IParsable {
         /// <summary>Represents an Azure AD access review decision on an instance of a review.</summary>
         public List<AccessReviewInstanceDecisionItem> Decisions { get; set; }
