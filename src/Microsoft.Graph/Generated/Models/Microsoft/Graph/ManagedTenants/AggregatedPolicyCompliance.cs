@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
-    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class AggregatedPolicyCompliance : Entity, IParsable {
         /// <summary>Identifier for the device compliance policy. Optional. Read-only.</summary>
         public string CompliancePolicyId { get; set; }
@@ -17,11 +16,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         /// <summary>Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.</summary>
         public DateTimeOffset? LastRefreshedDateTime { get; set; }
         /// <summary>The number of devices that are in a compliant status. Optional. Read-only.</summary>
-        public int? NumberOfCompliantDevices { get; set; }
+        public long? NumberOfCompliantDevices { get; set; }
         /// <summary>The number of devices that are in an error status. Optional. Read-only.</summary>
-        public int? NumberOfErrorDevices { get; set; }
+        public long? NumberOfErrorDevices { get; set; }
         /// <summary>The number of device that are in a non-compliant status. Optional. Read-only.</summary>
-        public int? NumberOfNonCompliantDevices { get; set; }
+        public long? NumberOfNonCompliantDevices { get; set; }
         /// <summary>The date and time the device policy was last modified. Optional. Read-only.</summary>
         public DateTimeOffset? PolicyModifiedDateTime { get; set; }
         /// <summary>The display name for the managed tenant. Optional. Read-only.</summary>
@@ -46,9 +45,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
                 {"compliancePolicyPlatform", (o,n) => { (o as AggregatedPolicyCompliance).CompliancePolicyPlatform = n.GetStringValue(); } },
                 {"compliancePolicyType", (o,n) => { (o as AggregatedPolicyCompliance).CompliancePolicyType = n.GetStringValue(); } },
                 {"lastRefreshedDateTime", (o,n) => { (o as AggregatedPolicyCompliance).LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"numberOfCompliantDevices", (o,n) => { (o as AggregatedPolicyCompliance).NumberOfCompliantDevices = n.GetIntValue(); } },
-                {"numberOfErrorDevices", (o,n) => { (o as AggregatedPolicyCompliance).NumberOfErrorDevices = n.GetIntValue(); } },
-                {"numberOfNonCompliantDevices", (o,n) => { (o as AggregatedPolicyCompliance).NumberOfNonCompliantDevices = n.GetIntValue(); } },
+                {"numberOfCompliantDevices", (o,n) => { (o as AggregatedPolicyCompliance).NumberOfCompliantDevices = n.GetLongValue(); } },
+                {"numberOfErrorDevices", (o,n) => { (o as AggregatedPolicyCompliance).NumberOfErrorDevices = n.GetLongValue(); } },
+                {"numberOfNonCompliantDevices", (o,n) => { (o as AggregatedPolicyCompliance).NumberOfNonCompliantDevices = n.GetLongValue(); } },
                 {"policyModifiedDateTime", (o,n) => { (o as AggregatedPolicyCompliance).PolicyModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"tenantDisplayName", (o,n) => { (o as AggregatedPolicyCompliance).TenantDisplayName = n.GetStringValue(); } },
                 {"tenantId", (o,n) => { (o as AggregatedPolicyCompliance).TenantId = n.GetStringValue(); } },
@@ -66,9 +65,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
             writer.WriteStringValue("compliancePolicyPlatform", CompliancePolicyPlatform);
             writer.WriteStringValue("compliancePolicyType", CompliancePolicyType);
             writer.WriteDateTimeOffsetValue("lastRefreshedDateTime", LastRefreshedDateTime);
-            writer.WriteIntValue("numberOfCompliantDevices", NumberOfCompliantDevices);
-            writer.WriteIntValue("numberOfErrorDevices", NumberOfErrorDevices);
-            writer.WriteIntValue("numberOfNonCompliantDevices", NumberOfNonCompliantDevices);
+            writer.WriteLongValue("numberOfCompliantDevices", NumberOfCompliantDevices);
+            writer.WriteLongValue("numberOfErrorDevices", NumberOfErrorDevices);
+            writer.WriteLongValue("numberOfNonCompliantDevices", NumberOfNonCompliantDevices);
             writer.WriteDateTimeOffsetValue("policyModifiedDateTime", PolicyModifiedDateTime);
             writer.WriteStringValue("tenantDisplayName", TenantDisplayName);
             writer.WriteStringValue("tenantId", TenantId);

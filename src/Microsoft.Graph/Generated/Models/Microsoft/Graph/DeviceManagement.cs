@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    /// <summary>Singleton entity that acts as a container for all device management functionality.</summary>
     public class DeviceManagement : Entity, IParsable {
         /// <summary>The date & time when tenant data moved between scaleunits.</summary>
         public DateTimeOffset? AccountMoveCompletionDateTime { get; set; }
@@ -170,7 +170,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<ManagementCondition> ManagementConditions { get; set; }
         /// <summary>The management condition statements associated with device management of the company.</summary>
         public List<ManagementConditionStatement> ManagementConditionStatements { get; set; }
-        /// <summary>Maximum number of DEP tokens allowed per-tenant.</summary>
+        /// <summary>Maximum number of dep tokens allowed per-tenant.</summary>
         public int? MaximumDepTokens { get; set; }
         /// <summary>Collection of MicrosoftTunnelConfiguration settings associated with account.</summary>
         public List<MicrosoftTunnelConfiguration> MicrosoftTunnelConfigurations { get; set; }
@@ -218,7 +218,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DeviceManagementSettings Settings { get; set; }
         /// <summary>The software update status summary.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.SoftwareUpdateStatusSummary SoftwareUpdateStatusSummary { get; set; }
-        /// <summary>Tenant's Subscription. Possible values are: none, intune, office365, intunePremium, intune_EDU, intune_SMB.</summary>
+        /// <summary>Tenant's Subscription.</summary>
         public DeviceManagementSubscriptions? Subscriptions { get; set; }
         /// <summary>Tenant mobile device management subscription state. Possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.</summary>
         public DeviceManagementSubscriptionState? SubscriptionState { get; set; }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class SynchronizationQuarantine : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -19,7 +18,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Date and time when the quarantine was first imposed in this series (a series starts when a quarantine is first imposed, and is reset as soon as the quarantine is lifted). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? SeriesBegan { get; set; }
         /// <summary>Number of times in this series the quarantine was re-evaluated and left in effect (a series starts when quarantine is first imposed, and is reset as soon as quarantine is lifted).</summary>
-        public int? SeriesCount { get; set; }
+        public long? SeriesCount { get; set; }
         /// <summary>
         /// Instantiates a new synchronizationQuarantine and sets the default values.
         /// </summary>
@@ -44,7 +43,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"nextAttempt", (o,n) => { (o as SynchronizationQuarantine).NextAttempt = n.GetDateTimeOffsetValue(); } },
                 {"reason", (o,n) => { (o as SynchronizationQuarantine).Reason = n.GetEnumValue<QuarantineReason>(); } },
                 {"seriesBegan", (o,n) => { (o as SynchronizationQuarantine).SeriesBegan = n.GetDateTimeOffsetValue(); } },
-                {"seriesCount", (o,n) => { (o as SynchronizationQuarantine).SeriesCount = n.GetIntValue(); } },
+                {"seriesCount", (o,n) => { (o as SynchronizationQuarantine).SeriesCount = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -58,7 +57,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteDateTimeOffsetValue("nextAttempt", NextAttempt);
             writer.WriteEnumValue<QuarantineReason>("reason", Reason);
             writer.WriteDateTimeOffsetValue("seriesBegan", SeriesBegan);
-            writer.WriteIntValue("seriesCount", SeriesCount);
+            writer.WriteLongValue("seriesCount", SeriesCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

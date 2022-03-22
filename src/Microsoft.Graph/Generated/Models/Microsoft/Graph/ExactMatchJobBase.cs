@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the dataClassificationService singleton.</summary>
     public class ExactMatchJobBase : Entity, IParsable {
         public DateTimeOffset? CompletionDateTime { get; set; }
         public DateTimeOffset? CreationDateTime { get; set; }

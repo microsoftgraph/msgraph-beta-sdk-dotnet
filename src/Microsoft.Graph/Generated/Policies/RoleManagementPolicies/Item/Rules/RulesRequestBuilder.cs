@@ -56,7 +56,7 @@ namespace MicrosoftGraphSdk.Policies.RoleManagementPolicies.Item.Rules {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The collection of rules like approval rule, expiration rule, etc.
+        /// The collection of rules like approval rules and expiration rules.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -95,7 +95,7 @@ namespace MicrosoftGraphSdk.Policies.RoleManagementPolicies.Item.Rules {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of rules like approval rule, expiration rule, etc.
+        /// The collection of rules like approval rules and expiration rules.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -127,7 +127,7 @@ namespace MicrosoftGraphSdk.Policies.RoleManagementPolicies.Item.Rules {
             };
             return await RequestAdapter.SendAsync<UnifiedRoleManagementPolicyRule>(requestInfo, UnifiedRoleManagementPolicyRule.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>The collection of rules like approval rule, expiration rule, etc.</summary>
+        /// <summary>The collection of rules like approval rules and expiration rules.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
             public bool? Count { get; set; }

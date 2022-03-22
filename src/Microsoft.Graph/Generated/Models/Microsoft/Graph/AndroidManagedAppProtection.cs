@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public class AndroidManagedAppProtection : TargetedManagedAppProtection, IParsable {
         /// <summary>Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work.</summary>
         public string AllowedAndroidDeviceManufacturers { get; set; }

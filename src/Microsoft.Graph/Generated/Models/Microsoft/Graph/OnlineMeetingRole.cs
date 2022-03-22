@@ -5,5 +5,6 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         Presenter,
         UnknownFutureValue,
         Producer,
+        Coorganizer,
     }
 }

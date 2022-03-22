@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DeviceManagementCachedReportConfiguration : Entity, IParsable {
         /// <summary>Time that the cached report expires</summary>
         public DateTimeOffset? ExpirationDateTime { get; set; }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class CrossTenantAccessPolicyConfigurationPartner : CrossTenantAccessPolicyConfigurationBase, IParsable {
         /// <summary>Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.</summary>
         public bool? IsServiceProvider { get; set; }

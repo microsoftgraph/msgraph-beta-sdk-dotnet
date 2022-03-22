@@ -4,14 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class SynchronizationStatus : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>High-level status code of the synchronization job. Possible values are: NotConfigured, NotRun, Active, Paused, Quarantine.</summary>
         public SynchronizationStatusCode? Code { get; set; }
         /// <summary>Number of consecutive times this job failed.</summary>
-        public int? CountSuccessiveCompleteFailures { get; set; }
+        public long? CountSuccessiveCompleteFailures { get; set; }
         /// <summary>true if the job's escrows (object-level errors) were pruned during initial synchronization. Escrows can be pruned if during the initial synchronization, you reach the threshold of errors that would normally put the job in quarantine. Instead of going into quarantine, the synchronization process clears the job's errors and continues until the initial synchronization is completed. When the initial synchronization is completed, the job will pause and wait for the customer to clean up the errors.</summary>
         public bool? EscrowsPruned { get; set; }
         /// <summary>Details of the last execution of the job.</summary>
@@ -52,7 +51,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"code", (o,n) => { (o as SynchronizationStatus).Code = n.GetEnumValue<SynchronizationStatusCode>(); } },
-                {"countSuccessiveCompleteFailures", (o,n) => { (o as SynchronizationStatus).CountSuccessiveCompleteFailures = n.GetIntValue(); } },
+                {"countSuccessiveCompleteFailures", (o,n) => { (o as SynchronizationStatus).CountSuccessiveCompleteFailures = n.GetLongValue(); } },
                 {"escrowsPruned", (o,n) => { (o as SynchronizationStatus).EscrowsPruned = n.GetBoolValue(); } },
                 {"lastExecution", (o,n) => { (o as SynchronizationStatus).LastExecution = n.GetObjectValue<SynchronizationTaskExecution>(SynchronizationTaskExecution.CreateFromDiscriminatorValue); } },
                 {"lastSuccessfulExecution", (o,n) => { (o as SynchronizationStatus).LastSuccessfulExecution = n.GetObjectValue<SynchronizationTaskExecution>(SynchronizationTaskExecution.CreateFromDiscriminatorValue); } },
@@ -72,7 +71,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<SynchronizationStatusCode>("code", Code);
-            writer.WriteIntValue("countSuccessiveCompleteFailures", CountSuccessiveCompleteFailures);
+            writer.WriteLongValue("countSuccessiveCompleteFailures", CountSuccessiveCompleteFailures);
             writer.WriteBoolValue("escrowsPruned", EscrowsPruned);
             writer.WriteObjectValue<SynchronizationTaskExecution>("lastExecution", LastExecution);
             writer.WriteObjectValue<SynchronizationTaskExecution>("lastSuccessfulExecution", LastSuccessfulExecution);

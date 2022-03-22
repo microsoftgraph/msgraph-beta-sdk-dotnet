@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class UserExperienceAnalyticsBatteryHealthAppImpact : Entity, IParsable {
         /// <summary>Number of active devices for using that app over a 14-day period. Valid values -2147483648 to 2147483647</summary>
         public int? ActiveDevices { get; set; }

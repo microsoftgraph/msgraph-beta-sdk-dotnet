@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public class WindowsInformationProtectionPolicy : WindowsInformationProtection, IParsable {
         /// <summary>Offline interval before app data is wiped (days)</summary>
         public int? DaysWithoutContactBeforeUnenroll { get; set; }

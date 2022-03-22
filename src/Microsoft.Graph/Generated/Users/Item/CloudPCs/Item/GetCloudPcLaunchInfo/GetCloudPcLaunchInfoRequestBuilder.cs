@@ -65,43 +65,9 @@ namespace MicrosoftGraphSdk.Users.Item.CloudPCs.Item.GetCloudPcLaunchInfo {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<GetCloudPcLaunchInfoResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<CloudPcLaunchInfo> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<GetCloudPcLaunchInfoResponse>(requestInfo, GetCloudPcLaunchInfoResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>Union type wrapper for classes cloudPcLaunchInfo</summary>
-        public class GetCloudPcLaunchInfoResponse : IAdditionalDataHolder, IParsable {
-            /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-            public IDictionary<string, object> AdditionalData { get; set; }
-            /// <summary>Union type representation for type cloudPcLaunchInfo</summary>
-            public MicrosoftGraphSdk.Models.Microsoft.Graph.CloudPcLaunchInfo CloudPcLaunchInfo { get; set; }
-            /// <summary>
-            /// Instantiates a new getCloudPcLaunchInfoResponse and sets the default values.
-            /// </summary>
-            public GetCloudPcLaunchInfoResponse() {
-                AdditionalData = new Dictionary<string, object>();
-            }
-            public static GetCloudPcLaunchInfoResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                return new GetCloudPcLaunchInfoResponse();
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-                return new Dictionary<string, Action<T, IParseNode>> {
-                    {"cloudPcLaunchInfo", (o,n) => { (o as GetCloudPcLaunchInfoResponse).CloudPcLaunchInfo = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.CloudPcLaunchInfo>(MicrosoftGraphSdk.Models.Microsoft.Graph.CloudPcLaunchInfo.CreateFromDiscriminatorValue); } },
-                };
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            /// </summary>
-            public void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.CloudPcLaunchInfo>("cloudPcLaunchInfo", CloudPcLaunchInfo);
-                writer.WriteAdditionalData(AdditionalData);
-            }
+            return await RequestAdapter.SendAsync<CloudPcLaunchInfo>(requestInfo, CloudPcLaunchInfo.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

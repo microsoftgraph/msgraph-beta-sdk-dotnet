@@ -4,16 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class SharedAppleDeviceUser : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Data quota</summary>
-        public int? DataQuota { get; set; }
+        public long? DataQuota { get; set; }
         /// <summary>Data to sync</summary>
         public bool? DataToSync { get; set; }
         /// <summary>Data quota</summary>
-        public int? DataUsed { get; set; }
+        public long? DataUsed { get; set; }
         /// <summary>User name</summary>
         public string UserPrincipalName { get; set; }
         /// <summary>
@@ -35,9 +34,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"dataQuota", (o,n) => { (o as SharedAppleDeviceUser).DataQuota = n.GetIntValue(); } },
+                {"dataQuota", (o,n) => { (o as SharedAppleDeviceUser).DataQuota = n.GetLongValue(); } },
                 {"dataToSync", (o,n) => { (o as SharedAppleDeviceUser).DataToSync = n.GetBoolValue(); } },
-                {"dataUsed", (o,n) => { (o as SharedAppleDeviceUser).DataUsed = n.GetIntValue(); } },
+                {"dataUsed", (o,n) => { (o as SharedAppleDeviceUser).DataUsed = n.GetLongValue(); } },
                 {"userPrincipalName", (o,n) => { (o as SharedAppleDeviceUser).UserPrincipalName = n.GetStringValue(); } },
             };
         }
@@ -47,9 +46,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("dataQuota", DataQuota);
+            writer.WriteLongValue("dataQuota", DataQuota);
             writer.WriteBoolValue("dataToSync", DataToSync);
-            writer.WriteIntValue("dataUsed", DataUsed);
+            writer.WriteLongValue("dataUsed", DataUsed);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
             writer.WriteAdditionalData(AdditionalData);
         }

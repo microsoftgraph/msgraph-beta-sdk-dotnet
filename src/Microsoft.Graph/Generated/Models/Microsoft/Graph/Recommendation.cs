@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the directory singleton.</summary>
     public class Recommendation : Entity, IParsable {
         public List<ActionStep> ActionSteps { get; set; }
         public string Benefits { get; set; }

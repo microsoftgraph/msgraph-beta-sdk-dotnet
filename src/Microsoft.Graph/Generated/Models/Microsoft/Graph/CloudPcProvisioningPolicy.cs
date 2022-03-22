@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class CloudPcProvisioningPolicy : Entity, IParsable {
         /// <summary>A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.</summary>
         public List<CloudPcProvisioningPolicyAssignment> Assignments { get; set; }
@@ -24,6 +23,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.MicrosoftManagedDesktop MicrosoftManagedDesktop { get; set; }
         /// <summary>The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.</summary>
         public string OnPremisesConnectionId { get; set; }
+        /// <summary>Specific Windows settings to configure while creating Cloud PCs for this provisioning policy.</summary>
         public CloudPcWindowsSettings WindowsSettings { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

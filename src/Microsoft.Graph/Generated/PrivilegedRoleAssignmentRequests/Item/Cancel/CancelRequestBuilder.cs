@@ -65,43 +65,9 @@ namespace MicrosoftGraphSdk.PrivilegedRoleAssignmentRequests.Item.Cancel {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<CancelResponse> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<PrivilegedRoleAssignmentRequest> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreatePostRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<CancelResponse>(requestInfo, CancelResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>Union type wrapper for classes privilegedRoleAssignmentRequest</summary>
-        public class CancelResponse : IAdditionalDataHolder, IParsable {
-            /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-            public IDictionary<string, object> AdditionalData { get; set; }
-            /// <summary>Union type representation for type privilegedRoleAssignmentRequest</summary>
-            public MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedRoleAssignmentRequest PrivilegedRoleAssignmentRequest { get; set; }
-            /// <summary>
-            /// Instantiates a new cancelResponse and sets the default values.
-            /// </summary>
-            public CancelResponse() {
-                AdditionalData = new Dictionary<string, object>();
-            }
-            public static CancelResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                return new CancelResponse();
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-                return new Dictionary<string, Action<T, IParseNode>> {
-                    {"privilegedRoleAssignmentRequest", (o,n) => { (o as CancelResponse).PrivilegedRoleAssignmentRequest = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedRoleAssignmentRequest>(MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedRoleAssignmentRequest.CreateFromDiscriminatorValue); } },
-                };
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            /// </summary>
-            public void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedRoleAssignmentRequest>("privilegedRoleAssignmentRequest", PrivilegedRoleAssignmentRequest);
-                writer.WriteAdditionalData(AdditionalData);
-            }
+            return await RequestAdapter.SendAsync<PrivilegedRoleAssignmentRequest>(requestInfo, PrivilegedRoleAssignmentRequest.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

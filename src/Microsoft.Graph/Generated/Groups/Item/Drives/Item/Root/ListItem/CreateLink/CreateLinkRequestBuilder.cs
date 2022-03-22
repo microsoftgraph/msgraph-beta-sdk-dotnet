@@ -69,44 +69,10 @@ namespace MicrosoftGraphSdk.Groups.Item.Drives.Item.Root.ListItem.CreateLink {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<CreateLinkResponse> PostAsync(CreateLinkRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Permission> PostAsync(CreateLinkRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<CreateLinkResponse>(requestInfo, CreateLinkResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>Union type wrapper for classes permission</summary>
-        public class CreateLinkResponse : IAdditionalDataHolder, IParsable {
-            /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-            public IDictionary<string, object> AdditionalData { get; set; }
-            /// <summary>Union type representation for type permission</summary>
-            public MicrosoftGraphSdk.Models.Microsoft.Graph.Permission Permission { get; set; }
-            /// <summary>
-            /// Instantiates a new createLinkResponse and sets the default values.
-            /// </summary>
-            public CreateLinkResponse() {
-                AdditionalData = new Dictionary<string, object>();
-            }
-            public static CreateLinkResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                return new CreateLinkResponse();
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-                return new Dictionary<string, Action<T, IParseNode>> {
-                    {"permission", (o,n) => { (o as CreateLinkResponse).Permission = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Permission>(MicrosoftGraphSdk.Models.Microsoft.Graph.Permission.CreateFromDiscriminatorValue); } },
-                };
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            /// </summary>
-            public void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Permission>("permission", Permission);
-                writer.WriteAdditionalData(AdditionalData);
-            }
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Permission>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Permission.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

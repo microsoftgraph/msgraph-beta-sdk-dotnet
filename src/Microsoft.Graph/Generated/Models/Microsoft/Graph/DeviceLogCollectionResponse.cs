@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DeviceLogCollectionResponse : Entity, IParsable {
         /// <summary>The error code, if any. Valid values -9.22337203685478E+18 to 9.22337203685478E+18</summary>
-        public int? ErrorCode { get; set; }
+        public long? ErrorCode { get; set; }
         /// <summary>The DateTime of the expiration of the logs</summary>
         public DateTimeOffset? ExpirationDateTimeUTC { get; set; }
         /// <summary>The UPN for who initiated the request</summary>
@@ -35,7 +34,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"errorCode", (o,n) => { (o as DeviceLogCollectionResponse).ErrorCode = n.GetIntValue(); } },
+                {"errorCode", (o,n) => { (o as DeviceLogCollectionResponse).ErrorCode = n.GetLongValue(); } },
                 {"expirationDateTimeUTC", (o,n) => { (o as DeviceLogCollectionResponse).ExpirationDateTimeUTC = n.GetDateTimeOffsetValue(); } },
                 {"initiatedByUserPrincipalName", (o,n) => { (o as DeviceLogCollectionResponse).InitiatedByUserPrincipalName = n.GetStringValue(); } },
                 {"managedDeviceId", (o,n) => { (o as DeviceLogCollectionResponse).ManagedDeviceId = n.GetStringValue(); } },
@@ -52,7 +51,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteIntValue("errorCode", ErrorCode);
+            writer.WriteLongValue("errorCode", ErrorCode);
             writer.WriteDateTimeOffsetValue("expirationDateTimeUTC", ExpirationDateTimeUTC);
             writer.WriteStringValue("initiatedByUserPrincipalName", InitiatedByUserPrincipalName);
             writer.WriteStringValue("managedDeviceId", ManagedDeviceId);

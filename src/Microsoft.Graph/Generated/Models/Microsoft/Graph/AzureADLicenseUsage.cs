@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to call the getAzureADLicenseUsage method.</summary>
     public class AzureADLicenseUsage : Entity, IParsable {
         public List<LicenseInfoDetail> LicenseInfoDetails { get; set; }
         public DateTimeOffset? SnapshotDateTime { get; set; }

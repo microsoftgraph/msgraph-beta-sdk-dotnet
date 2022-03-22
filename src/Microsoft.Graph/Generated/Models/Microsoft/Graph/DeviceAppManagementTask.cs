@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public class DeviceAppManagementTask : Entity, IParsable {
         /// <summary>The name or email of the admin this task is assigned to.</summary>
         public string AssignedTo { get; set; }

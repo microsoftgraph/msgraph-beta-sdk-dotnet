@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
+    /// <summary>Singleton entity that acts as a container for all device app management functionality.</summary>
     public class DeviceAppManagement : Entity, IParsable {
         /// <summary>Android managed app policies.</summary>
         public List<AndroidManagedAppProtection> AndroidManagedAppProtections { get; set; }

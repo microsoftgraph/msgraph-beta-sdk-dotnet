@@ -74,39 +74,5 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Templates.Ite
             var requestInfo = CreatePostRequestInformation(body, h, o);
             return await RequestAdapter.SendAsync<ParseExpressionResponse>(requestInfo, ParseExpressionResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
-        /// <summary>Union type wrapper for classes parseExpressionResponse</summary>
-        public class ParseExpressionResponse : IAdditionalDataHolder, IParsable {
-            /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-            public IDictionary<string, object> AdditionalData { get; set; }
-            /// <summary>Union type representation for type parseExpressionResponse</summary>
-            public ParseExpressionResponse ParseExpressionResponse_prop { get; set; }
-            /// <summary>
-            /// Instantiates a new parseExpressionResponse and sets the default values.
-            /// </summary>
-            public ParseExpressionResponse() {
-                AdditionalData = new Dictionary<string, object>();
-            }
-            public static ParseExpressionResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                return new ParseExpressionResponse();
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-                return new Dictionary<string, Action<T, IParseNode>> {
-                    {"parseExpressionResponse", (o,n) => { (o as ParseExpressionResponse).ParseExpressionResponse_prop = n.GetObjectValue<ParseExpressionResponse>(ParseExpressionResponse.CreateFromDiscriminatorValue); } },
-                };
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            /// </summary>
-            public void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<ParseExpressionResponse>("parseExpressionResponse", ParseExpressionResponse_prop);
-                writer.WriteAdditionalData(AdditionalData);
-            }
-        }
     }
 }

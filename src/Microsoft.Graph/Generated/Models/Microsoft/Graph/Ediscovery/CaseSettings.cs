@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class CaseSettings : Entity, IParsable {
         /// <summary>The OCR (Optical Character Recognition) settings for the case.</summary>
         public OcrSettings Ocr { get; set; }

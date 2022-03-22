@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class TeamworkTag : Entity, IParsable {
         /// <summary>Tag description as it will appear to the user in Microsoft Teams.</summary>
         public string Description { get; set; }

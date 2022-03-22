@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public class WindowsManagementApp : Entity, IParsable {
         /// <summary>Windows management app available version.</summary>
         public string AvailableVersion { get; set; }

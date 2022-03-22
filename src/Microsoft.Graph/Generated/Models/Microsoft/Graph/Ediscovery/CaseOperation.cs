@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class CaseOperation : Entity, IParsable {
         /// <summary>The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics</summary>
         public CaseAction? Action { get; set; }

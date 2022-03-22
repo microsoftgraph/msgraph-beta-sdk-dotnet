@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class AuditEvent : Entity, IParsable {
         /// <summary>Friendly name of the activity.</summary>
         public string Activity { get; set; }

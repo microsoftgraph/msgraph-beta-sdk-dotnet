@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the roleManagement singleton.</summary>
     public class UnifiedRoleDefinition : Entity, IParsable {
         /// <summary>The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.</summary>
         public string Description { get; set; }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DeviceHealthAttestationState : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -55,9 +54,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Informational attribute that identifies the HASH algorithm that was used by TPM</summary>
         public string PcrHashAlgorithm { get; set; }
         /// <summary>The number of times a PC device has hibernated or resumed</summary>
-        public int? ResetCount { get; set; }
+        public long? ResetCount { get; set; }
         /// <summary>The number of times a PC device has rebooted</summary>
-        public int? RestartCount { get; set; }
+        public long? RestartCount { get; set; }
         /// <summary>Safe mode is a troubleshooting option for Windows that starts your computer in a limited state</summary>
         public string SafeMode { get; set; }
         /// <summary>When Secure Boot is enabled, the core components must have the correct cryptographic signatures</summary>
@@ -114,8 +113,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"operatingSystemRevListInfo", (o,n) => { (o as DeviceHealthAttestationState).OperatingSystemRevListInfo = n.GetStringValue(); } },
                 {"pcr0", (o,n) => { (o as DeviceHealthAttestationState).Pcr0 = n.GetStringValue(); } },
                 {"pcrHashAlgorithm", (o,n) => { (o as DeviceHealthAttestationState).PcrHashAlgorithm = n.GetStringValue(); } },
-                {"resetCount", (o,n) => { (o as DeviceHealthAttestationState).ResetCount = n.GetIntValue(); } },
-                {"restartCount", (o,n) => { (o as DeviceHealthAttestationState).RestartCount = n.GetIntValue(); } },
+                {"resetCount", (o,n) => { (o as DeviceHealthAttestationState).ResetCount = n.GetLongValue(); } },
+                {"restartCount", (o,n) => { (o as DeviceHealthAttestationState).RestartCount = n.GetLongValue(); } },
                 {"safeMode", (o,n) => { (o as DeviceHealthAttestationState).SafeMode = n.GetStringValue(); } },
                 {"secureBoot", (o,n) => { (o as DeviceHealthAttestationState).SecureBoot = n.GetStringValue(); } },
                 {"secureBootConfigurationPolicyFingerPrint", (o,n) => { (o as DeviceHealthAttestationState).SecureBootConfigurationPolicyFingerPrint = n.GetStringValue(); } },
@@ -154,8 +153,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("operatingSystemRevListInfo", OperatingSystemRevListInfo);
             writer.WriteStringValue("pcr0", Pcr0);
             writer.WriteStringValue("pcrHashAlgorithm", PcrHashAlgorithm);
-            writer.WriteIntValue("resetCount", ResetCount);
-            writer.WriteIntValue("restartCount", RestartCount);
+            writer.WriteLongValue("resetCount", ResetCount);
+            writer.WriteLongValue("restartCount", RestartCount);
             writer.WriteStringValue("safeMode", SafeMode);
             writer.WriteStringValue("secureBoot", SecureBoot);
             writer.WriteStringValue("secureBootConfigurationPolicyFingerPrint", SecureBootConfigurationPolicyFingerPrint);

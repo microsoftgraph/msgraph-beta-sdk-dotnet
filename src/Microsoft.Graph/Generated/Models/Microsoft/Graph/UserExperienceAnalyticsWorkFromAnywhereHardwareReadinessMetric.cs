@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric : Entity, IParsable {
         /// <summary>The percentage of devices for which OS check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? OsCheckFailedPercentage { get; set; }

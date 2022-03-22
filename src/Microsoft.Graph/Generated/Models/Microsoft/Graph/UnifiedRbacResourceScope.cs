@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the roleManagement singleton.</summary>
     public class UnifiedRbacResourceScope : Entity, IParsable {
         public string DisplayName { get; set; }
         public string Scope { get; set; }

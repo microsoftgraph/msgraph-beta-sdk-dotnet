@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DeviceManagementAutopilotPolicyStatusDetail : Entity, IParsable {
         /// <summary>The policy compliance status. Possible values are: unknown, compliant, installed, notCompliant, notInstalled, error.</summary>
         public DeviceManagementAutopilotPolicyComplianceStatus? ComplianceStatus { get; set; }

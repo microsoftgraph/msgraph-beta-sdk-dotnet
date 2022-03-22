@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class UserExperienceAnalyticsDevicePerformance : Entity, IParsable {
         /// <summary>Average (mean) number of Blue Screens per device in the last 14 days. Valid values 0 to 9999999</summary>
         public double? AverageBlueScreens { get; set; }
@@ -19,7 +18,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The user experience analytics device core login time in milliseconds.</summary>
         public int? CoreLoginTimeInMs { get; set; }
         /// <summary>User experience analytics summarized device count.</summary>
-        public int? DeviceCount { get; set; }
+        public long? DeviceCount { get; set; }
         /// <summary>The user experience analytics device name.</summary>
         public string DeviceName { get; set; }
         /// <summary>The user experience analytics device disk type. Possible values are: unknown, hdd, ssd, unknownFutureValue.</summary>
@@ -65,7 +64,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"bootScore", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).BootScore = n.GetIntValue(); } },
                 {"coreBootTimeInMs", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).CoreBootTimeInMs = n.GetIntValue(); } },
                 {"coreLoginTimeInMs", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).CoreLoginTimeInMs = n.GetIntValue(); } },
-                {"deviceCount", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).DeviceCount = n.GetIntValue(); } },
+                {"deviceCount", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).DeviceCount = n.GetLongValue(); } },
                 {"deviceName", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).DeviceName = n.GetStringValue(); } },
                 {"diskType", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).DiskType = n.GetEnumValue<DiskType>(); } },
                 {"groupPolicyBootTimeInMs", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).GroupPolicyBootTimeInMs = n.GetIntValue(); } },
@@ -94,7 +93,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteIntValue("bootScore", BootScore);
             writer.WriteIntValue("coreBootTimeInMs", CoreBootTimeInMs);
             writer.WriteIntValue("coreLoginTimeInMs", CoreLoginTimeInMs);
-            writer.WriteIntValue("deviceCount", DeviceCount);
+            writer.WriteLongValue("deviceCount", DeviceCount);
             writer.WriteStringValue("deviceName", DeviceName);
             writer.WriteEnumValue<DiskType>("diskType", DiskType);
             writer.WriteIntValue("groupPolicyBootTimeInMs", GroupPolicyBootTimeInMs);

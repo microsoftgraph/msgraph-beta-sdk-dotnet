@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of domain entities.</summary>
     public class SharedEmailDomainInvitation : Entity, IParsable {
         public DateTimeOffset? ExpiryTime { get; set; }
         public string InvitationDomain { get; set; }

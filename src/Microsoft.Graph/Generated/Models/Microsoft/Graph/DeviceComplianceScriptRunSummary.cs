@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DeviceComplianceScriptRunSummary : Entity, IParsable {
         /// <summary>Number of devices on which the detection script execution encountered an error and did not complete. Valid values -2147483648 to 2147483647</summary>
         public int? DetectionScriptErrorDeviceCount { get; set; }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class MobileThreatDefenseConnector : Entity, IParsable {
         /// <summary>For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about installed applications from Intune</summary>
         public bool? AllowPartnerToCollectIOSApplicationMetadata { get; set; }

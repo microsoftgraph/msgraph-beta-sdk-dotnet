@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the identityProtectionRoot singleton.</summary>
     public class RiskyServicePrincipal : Entity, IParsable {
         /// <summary>true if the service principal account is enabled; otherwise, false.</summary>
         public bool? AccountEnabled { get; set; }
@@ -12,6 +11,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string AppId { get; set; }
         /// <summary>The display name for the service principal.</summary>
         public string DisplayName { get; set; }
+        /// <summary>Represents the risk history of Azure AD service principals.</summary>
         public List<RiskyServicePrincipalHistoryItem> History { get; set; }
         /// <summary>Indicates whether Azure AD is currently processing the service principal's risky state.</summary>
         public bool? IsProcessing { get; set; }

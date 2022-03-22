@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public class ManagedEBookCategory : Entity, IParsable {
         /// <summary>The name of the eBook category.</summary>
         public string DisplayName { get; set; }

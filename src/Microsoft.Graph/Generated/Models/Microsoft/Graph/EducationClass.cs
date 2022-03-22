@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the educationRoot singleton.</summary>
     public class EducationClass : Entity, IParsable {
         public List<EducationCategory> AssignmentCategories { get; set; }
         public EducationAssignmentDefaults AssignmentDefaults { get; set; }

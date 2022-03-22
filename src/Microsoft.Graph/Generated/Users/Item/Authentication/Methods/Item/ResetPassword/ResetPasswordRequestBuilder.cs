@@ -69,44 +69,10 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.Methods.Item.ResetPassword
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ResetPasswordResponse> PostAsync(ResetPasswordRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<PasswordResetResponse> PostAsync(ResetPasswordRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ResetPasswordResponse>(requestInfo, ResetPasswordResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>Union type wrapper for classes passwordResetResponse</summary>
-        public class ResetPasswordResponse : IAdditionalDataHolder, IParsable {
-            /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-            public IDictionary<string, object> AdditionalData { get; set; }
-            /// <summary>Union type representation for type passwordResetResponse</summary>
-            public MicrosoftGraphSdk.Models.Microsoft.Graph.PasswordResetResponse PasswordResetResponse { get; set; }
-            /// <summary>
-            /// Instantiates a new resetPasswordResponse and sets the default values.
-            /// </summary>
-            public ResetPasswordResponse() {
-                AdditionalData = new Dictionary<string, object>();
-            }
-            public static ResetPasswordResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                return new ResetPasswordResponse();
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-                return new Dictionary<string, Action<T, IParseNode>> {
-                    {"passwordResetResponse", (o,n) => { (o as ResetPasswordResponse).PasswordResetResponse = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PasswordResetResponse>(MicrosoftGraphSdk.Models.Microsoft.Graph.PasswordResetResponse.CreateFromDiscriminatorValue); } },
-                };
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            /// </summary>
-            public void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PasswordResetResponse>("passwordResetResponse", PasswordResetResponse);
-                writer.WriteAdditionalData(AdditionalData);
-            }
+            return await RequestAdapter.SendAsync<PasswordResetResponse>(requestInfo, PasswordResetResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

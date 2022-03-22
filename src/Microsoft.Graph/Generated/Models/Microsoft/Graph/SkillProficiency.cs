@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class SkillProficiency : ItemFacet, IParsable {
         /// <summary>Contains categories a user has associated with the skill (for example, personal, professional, hobby).</summary>
         public List<string> Categories { get; set; }

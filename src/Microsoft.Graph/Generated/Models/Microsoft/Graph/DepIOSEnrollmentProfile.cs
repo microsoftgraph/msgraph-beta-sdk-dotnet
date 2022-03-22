@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DepIOSEnrollmentProfile : DepEnrollmentBaseProfile, IParsable {
         /// <summary>Indicates if Apperance screen is disabled</summary>
         public bool? AppearanceScreenDisabled { get; set; }

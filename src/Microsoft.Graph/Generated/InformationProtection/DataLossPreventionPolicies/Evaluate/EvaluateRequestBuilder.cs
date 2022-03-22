@@ -69,44 +69,10 @@ namespace MicrosoftGraphSdk.InformationProtection.DataLossPreventionPolicies.Eva
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<EvaluateResponse> PostAsync(EvaluateRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<DlpEvaluatePoliciesJobResponse> PostAsync(EvaluateRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<EvaluateResponse>(requestInfo, EvaluateResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>Union type wrapper for classes dlpEvaluatePoliciesJobResponse</summary>
-        public class EvaluateResponse : IAdditionalDataHolder, IParsable {
-            /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-            public IDictionary<string, object> AdditionalData { get; set; }
-            /// <summary>Union type representation for type dlpEvaluatePoliciesJobResponse</summary>
-            public MicrosoftGraphSdk.Models.Microsoft.Graph.DlpEvaluatePoliciesJobResponse DlpEvaluatePoliciesJobResponse { get; set; }
-            /// <summary>
-            /// Instantiates a new evaluateResponse and sets the default values.
-            /// </summary>
-            public EvaluateResponse() {
-                AdditionalData = new Dictionary<string, object>();
-            }
-            public static EvaluateResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                return new EvaluateResponse();
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-                return new Dictionary<string, Action<T, IParseNode>> {
-                    {"dlpEvaluatePoliciesJobResponse", (o,n) => { (o as EvaluateResponse).DlpEvaluatePoliciesJobResponse = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DlpEvaluatePoliciesJobResponse>(MicrosoftGraphSdk.Models.Microsoft.Graph.DlpEvaluatePoliciesJobResponse.CreateFromDiscriminatorValue); } },
-                };
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            /// </summary>
-            public void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DlpEvaluatePoliciesJobResponse>("dlpEvaluatePoliciesJobResponse", DlpEvaluatePoliciesJobResponse);
-                writer.WriteAdditionalData(AdditionalData);
-            }
+            return await RequestAdapter.SendAsync<DlpEvaluatePoliciesJobResponse>(requestInfo, DlpEvaluatePoliciesJobResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

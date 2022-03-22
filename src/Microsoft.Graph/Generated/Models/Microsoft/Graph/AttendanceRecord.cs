@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the commsApplication singleton.</summary>
     public class AttendanceRecord : Entity, IParsable {
         /// <summary>List of time periods between joining and leaving a meeting.</summary>
         public List<AttendanceInterval> AttendanceIntervals { get; set; }
@@ -12,6 +11,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string EmailAddress { get; set; }
         /// <summary>Identity of the user associated with this atttendance record.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Identity Identity { get; set; }
+        /// <summary>Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.</summary>
+        public string RegistrantId { get; set; }
         /// <summary>Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.</summary>
         public string Role { get; set; }
         /// <summary>Total duration of the attendances in seconds.</summary>
@@ -32,6 +33,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"attendanceIntervals", (o,n) => { (o as AttendanceRecord).AttendanceIntervals = n.GetCollectionOfObjectValues<AttendanceInterval>(AttendanceInterval.CreateFromDiscriminatorValue).ToList(); } },
                 {"emailAddress", (o,n) => { (o as AttendanceRecord).EmailAddress = n.GetStringValue(); } },
                 {"identity", (o,n) => { (o as AttendanceRecord).Identity = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Identity>(MicrosoftGraphSdk.Models.Microsoft.Graph.Identity.CreateFromDiscriminatorValue); } },
+                {"registrantId", (o,n) => { (o as AttendanceRecord).RegistrantId = n.GetStringValue(); } },
                 {"role", (o,n) => { (o as AttendanceRecord).Role = n.GetStringValue(); } },
                 {"totalAttendanceInSeconds", (o,n) => { (o as AttendanceRecord).TotalAttendanceInSeconds = n.GetIntValue(); } },
             };
@@ -46,6 +48,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<AttendanceInterval>("attendanceIntervals", AttendanceIntervals);
             writer.WriteStringValue("emailAddress", EmailAddress);
             writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Identity>("identity", Identity);
+            writer.WriteStringValue("registrantId", RegistrantId);
             writer.WriteStringValue("role", Role);
             writer.WriteIntValue("totalAttendanceInSeconds", TotalAttendanceInSeconds);
         }

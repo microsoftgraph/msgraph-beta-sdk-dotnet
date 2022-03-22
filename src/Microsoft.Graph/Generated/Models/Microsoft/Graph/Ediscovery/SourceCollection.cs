@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class SourceCollection : Entity, IParsable {
         /// <summary>Adds an additional source to the sourceCollection.</summary>
         public List<DataSource> AdditionalSources { get; set; }

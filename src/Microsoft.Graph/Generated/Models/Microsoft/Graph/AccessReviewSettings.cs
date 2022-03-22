@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class AccessReviewSettings : IAdditionalDataHolder, IParsable {
         /// <summary>Indicates whether showing recommendations to reviewers is enabled.</summary>
         public bool? AccessRecommendationsEnabled { get; set; }

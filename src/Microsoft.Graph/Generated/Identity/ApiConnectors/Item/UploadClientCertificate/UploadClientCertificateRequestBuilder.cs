@@ -69,44 +69,10 @@ namespace MicrosoftGraphSdk.Identity.ApiConnectors.Item.UploadClientCertificate 
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<UploadClientCertificateResponse> PostAsync(UploadClientCertificateRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IdentityApiConnector> PostAsync(UploadClientCertificateRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UploadClientCertificateResponse>(requestInfo, UploadClientCertificateResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>Union type wrapper for classes identityApiConnector</summary>
-        public class UploadClientCertificateResponse : IAdditionalDataHolder, IParsable {
-            /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-            public IDictionary<string, object> AdditionalData { get; set; }
-            /// <summary>Union type representation for type identityApiConnector</summary>
-            public MicrosoftGraphSdk.Models.Microsoft.Graph.IdentityApiConnector IdentityApiConnector { get; set; }
-            /// <summary>
-            /// Instantiates a new uploadClientCertificateResponse and sets the default values.
-            /// </summary>
-            public UploadClientCertificateResponse() {
-                AdditionalData = new Dictionary<string, object>();
-            }
-            public static UploadClientCertificateResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                return new UploadClientCertificateResponse();
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-                return new Dictionary<string, Action<T, IParseNode>> {
-                    {"identityApiConnector", (o,n) => { (o as UploadClientCertificateResponse).IdentityApiConnector = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.IdentityApiConnector>(MicrosoftGraphSdk.Models.Microsoft.Graph.IdentityApiConnector.CreateFromDiscriminatorValue); } },
-                };
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            /// </summary>
-            public void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.IdentityApiConnector>("identityApiConnector", IdentityApiConnector);
-                writer.WriteAdditionalData(AdditionalData);
-            }
+            return await RequestAdapter.SendAsync<IdentityApiConnector>(requestInfo, IdentityApiConnector.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

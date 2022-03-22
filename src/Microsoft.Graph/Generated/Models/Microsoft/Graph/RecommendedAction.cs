@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the attackSimulation property of the microsoft.graph.security entity.</summary>
     public class RecommendedAction : IAdditionalDataHolder, IParsable {
         /// <summary>Web URL to the recommended action.</summary>
         public string ActionWebUrl { get; set; }

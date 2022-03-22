@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the cloudAppSecurityProfiles property of the microsoft.graph.security entity.</summary>
     public class CloudAppSecurityProfile : Entity, IParsable {
         public string AzureSubscriptionId { get; set; }
         public string AzureTenantId { get; set; }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class SynchronizationJob : Entity, IParsable {
         /// <summary>Schedule used to run the job. Read-only.</summary>
         public SynchronizationSchedule Schedule { get; set; }

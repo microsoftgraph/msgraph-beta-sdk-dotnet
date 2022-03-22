@@ -69,44 +69,10 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Preview {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<PreviewResponse> PostAsync(PreviewRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<ItemPreviewInfo> PostAsync(PreviewRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<PreviewResponse>(requestInfo, PreviewResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>Union type wrapper for classes itemPreviewInfo</summary>
-        public class PreviewResponse : IAdditionalDataHolder, IParsable {
-            /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-            public IDictionary<string, object> AdditionalData { get; set; }
-            /// <summary>Union type representation for type itemPreviewInfo</summary>
-            public MicrosoftGraphSdk.Models.Microsoft.Graph.ItemPreviewInfo ItemPreviewInfo { get; set; }
-            /// <summary>
-            /// Instantiates a new previewResponse and sets the default values.
-            /// </summary>
-            public PreviewResponse() {
-                AdditionalData = new Dictionary<string, object>();
-            }
-            public static PreviewResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                return new PreviewResponse();
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-                return new Dictionary<string, Action<T, IParseNode>> {
-                    {"itemPreviewInfo", (o,n) => { (o as PreviewResponse).ItemPreviewInfo = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ItemPreviewInfo>(MicrosoftGraphSdk.Models.Microsoft.Graph.ItemPreviewInfo.CreateFromDiscriminatorValue); } },
-                };
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            /// </summary>
-            public void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ItemPreviewInfo>("itemPreviewInfo", ItemPreviewInfo);
-                writer.WriteAdditionalData(AdditionalData);
-            }
+            return await RequestAdapter.SendAsync<ItemPreviewInfo>(requestInfo, ItemPreviewInfo.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

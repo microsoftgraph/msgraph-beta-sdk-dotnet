@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of chat entities.</summary>
     public class Chat : Entity, IParsable {
         /// <summary>Specifies the type of chat. Possible values are: group, oneOnOne, meeting, unknownFutureValue.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ChatType? ChatType { get; set; }

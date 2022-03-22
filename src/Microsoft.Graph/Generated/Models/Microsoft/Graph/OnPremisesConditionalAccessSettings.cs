@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class OnPremisesConditionalAccessSettings : Entity, IParsable {
         /// <summary>Indicates if on premises conditional access is enabled for this organization</summary>
         public bool? Enabled { get; set; }

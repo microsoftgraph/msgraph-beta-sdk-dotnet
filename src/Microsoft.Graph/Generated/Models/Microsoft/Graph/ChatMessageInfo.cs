@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of chat entities.</summary>
     public class ChatMessageInfo : Entity, IParsable {
         /// <summary>Body of the chatMessage. This will still contain markers for @mentions and attachments even though the object does not return @mentions and attachments.</summary>
         public ItemBody Body { get; set; }

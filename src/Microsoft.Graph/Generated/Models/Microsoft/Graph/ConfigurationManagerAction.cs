@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to call the triggerConfigurationManagerAction method.</summary>
+    /// <summary>Parameter for action triggerConfigurationManagerAction</summary>
     public class ConfigurationManagerAction : IAdditionalDataHolder, IParsable {
         /// <summary>The action type to trigger on Configuration Manager client. Possible values are: refreshMachinePolicy, refreshUserPolicy, wakeUpClient, appEvaluation, quickScan, fullScan, windowsDefenderUpdateSignatures.</summary>
         public ConfigurationManagerActionType? Action { get; set; }

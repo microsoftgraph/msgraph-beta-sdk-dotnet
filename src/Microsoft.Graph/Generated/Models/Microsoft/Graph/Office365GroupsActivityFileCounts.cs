@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to call the getOffice365GroupsActivityFileCounts method.</summary>
     public class Office365GroupsActivityFileCounts : Entity, IParsable {
         /// <summary>The number of files that were viewed, edited, shared, or synced in the group's SharePoint document library.</summary>
-        public int? Active { get; set; }
+        public long? Active { get; set; }
         /// <summary>The date on which a number of files were active in the group's SharePoint site.</summary>
         public Date? ReportDate { get; set; }
         /// <summary>The number of days the report covers.</summary>
@@ -16,7 +15,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The latest date of the content.</summary>
         public Date? ReportRefreshDate { get; set; }
         /// <summary>The total number of files in the group's SharePoint document library.</summary>
-        public int? Total { get; set; }
+        public long? Total { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -30,11 +29,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"active", (o,n) => { (o as Office365GroupsActivityFileCounts).Active = n.GetIntValue(); } },
+                {"active", (o,n) => { (o as Office365GroupsActivityFileCounts).Active = n.GetLongValue(); } },
                 {"reportDate", (o,n) => { (o as Office365GroupsActivityFileCounts).ReportDate = n.GetDateValue(); } },
                 {"reportPeriod", (o,n) => { (o as Office365GroupsActivityFileCounts).ReportPeriod = n.GetStringValue(); } },
                 {"reportRefreshDate", (o,n) => { (o as Office365GroupsActivityFileCounts).ReportRefreshDate = n.GetDateValue(); } },
-                {"total", (o,n) => { (o as Office365GroupsActivityFileCounts).Total = n.GetIntValue(); } },
+                {"total", (o,n) => { (o as Office365GroupsActivityFileCounts).Total = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -44,11 +43,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteIntValue("active", Active);
+            writer.WriteLongValue("active", Active);
             writer.WriteDateValue("reportDate", ReportDate);
             writer.WriteStringValue("reportPeriod", ReportPeriod);
             writer.WriteDateValue("reportRefreshDate", ReportRefreshDate);
-            writer.WriteIntValue("total", Total);
+            writer.WriteLongValue("total", Total);
         }
     }
 }

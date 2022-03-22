@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors {
-    /// <summary>Provides operations to manage the collection of externalConnection entities.</summary>
     public class Acl : IAdditionalDataHolder, IParsable {
         /// <summary>The access granted to the identity. Possible values are: grant, deny, unknownFutureValue.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors.AccessType? AccessType { get; set; }

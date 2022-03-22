@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
-    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class WorkloadAction : IAdditionalDataHolder, IParsable {
         /// <summary>The unique identifier for the workload action. Required. Read-only.</summary>
         public string ActionId { get; set; }

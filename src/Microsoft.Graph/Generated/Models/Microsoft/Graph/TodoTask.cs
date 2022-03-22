@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class TodoTask : Entity, IParsable {
         /// <summary>The task body that typically contains information about the task.</summary>
         public ItemBody Body { get; set; }

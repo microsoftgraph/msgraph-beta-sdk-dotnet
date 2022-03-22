@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the print singleton.</summary>
     public class PrintConnector : Entity, IParsable {
         /// <summary>The connector's version.</summary>
         public string AppVersion { get; set; }

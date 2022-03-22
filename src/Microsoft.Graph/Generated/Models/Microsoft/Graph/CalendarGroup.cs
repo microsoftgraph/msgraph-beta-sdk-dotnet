@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class CalendarGroup : Entity, IParsable {
         /// <summary>The calendars in the calendar group. Navigation property. Read-only. Nullable.</summary>
         public List<Calendar> Calendars { get; set; }

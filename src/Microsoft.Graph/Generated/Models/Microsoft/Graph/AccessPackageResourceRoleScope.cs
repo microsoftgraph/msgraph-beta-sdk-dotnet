@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
     public class AccessPackageResourceRoleScope : Entity, IParsable {
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageResourceRole AccessPackageResourceRole { get; set; }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class Extension : Entity, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

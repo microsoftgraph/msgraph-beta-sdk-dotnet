@@ -67,43 +67,9 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsRegressionSu
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<SummarizeDeviceRegressionPerformanceWithSummarizeByResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsRegressionSummary> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<SummarizeDeviceRegressionPerformanceWithSummarizeByResponse>(requestInfo, SummarizeDeviceRegressionPerformanceWithSummarizeByResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>Union type wrapper for classes userExperienceAnalyticsRegressionSummary</summary>
-        public class SummarizeDeviceRegressionPerformanceWithSummarizeByResponse : IAdditionalDataHolder, IParsable {
-            /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-            public IDictionary<string, object> AdditionalData { get; set; }
-            /// <summary>Union type representation for type userExperienceAnalyticsRegressionSummary</summary>
-            public MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsRegressionSummary UserExperienceAnalyticsRegressionSummary { get; set; }
-            /// <summary>
-            /// Instantiates a new summarizeDeviceRegressionPerformanceWithSummarizeByResponse and sets the default values.
-            /// </summary>
-            public SummarizeDeviceRegressionPerformanceWithSummarizeByResponse() {
-                AdditionalData = new Dictionary<string, object>();
-            }
-            public static SummarizeDeviceRegressionPerformanceWithSummarizeByResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                return new SummarizeDeviceRegressionPerformanceWithSummarizeByResponse();
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-                return new Dictionary<string, Action<T, IParseNode>> {
-                    {"userExperienceAnalyticsRegressionSummary", (o,n) => { (o as SummarizeDeviceRegressionPerformanceWithSummarizeByResponse).UserExperienceAnalyticsRegressionSummary = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsRegressionSummary>(MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsRegressionSummary.CreateFromDiscriminatorValue); } },
-                };
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            /// </summary>
-            public void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsRegressionSummary>("userExperienceAnalyticsRegressionSummary", UserExperienceAnalyticsRegressionSummary);
-                writer.WriteAdditionalData(AdditionalData);
-            }
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsRegressionSummary>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsRegressionSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

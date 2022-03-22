@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of domain entities.</summary>
     public class IdentityProviderBase : Entity, IParsable {
         /// <summary>The display name of the identity provider.</summary>
         public string DisplayName { get; set; }

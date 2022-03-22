@@ -69,44 +69,10 @@ namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.ExecuteAction {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ExecuteActionResponse> PostAsync(ExecuteActionRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<BulkManagedDeviceActionResult> PostAsync(ExecuteActionRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ExecuteActionResponse>(requestInfo, ExecuteActionResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>Union type wrapper for classes bulkManagedDeviceActionResult</summary>
-        public class ExecuteActionResponse : IAdditionalDataHolder, IParsable {
-            /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-            public IDictionary<string, object> AdditionalData { get; set; }
-            /// <summary>Union type representation for type bulkManagedDeviceActionResult</summary>
-            public MicrosoftGraphSdk.Models.Microsoft.Graph.BulkManagedDeviceActionResult BulkManagedDeviceActionResult { get; set; }
-            /// <summary>
-            /// Instantiates a new executeActionResponse and sets the default values.
-            /// </summary>
-            public ExecuteActionResponse() {
-                AdditionalData = new Dictionary<string, object>();
-            }
-            public static ExecuteActionResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                return new ExecuteActionResponse();
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-                return new Dictionary<string, Action<T, IParseNode>> {
-                    {"bulkManagedDeviceActionResult", (o,n) => { (o as ExecuteActionResponse).BulkManagedDeviceActionResult = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.BulkManagedDeviceActionResult>(MicrosoftGraphSdk.Models.Microsoft.Graph.BulkManagedDeviceActionResult.CreateFromDiscriminatorValue); } },
-                };
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            /// </summary>
-            public void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.BulkManagedDeviceActionResult>("bulkManagedDeviceActionResult", BulkManagedDeviceActionResult);
-                writer.WriteAdditionalData(AdditionalData);
-            }
+            return await RequestAdapter.SendAsync<BulkManagedDeviceActionResult>(requestInfo, BulkManagedDeviceActionResult.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

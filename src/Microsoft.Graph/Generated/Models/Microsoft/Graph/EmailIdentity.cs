@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the attackSimulation property of the microsoft.graph.security entity.</summary>
     public class EmailIdentity : Identity, IParsable {
         /// <summary>Email address of the user.</summary>
         public string Email { get; set; }

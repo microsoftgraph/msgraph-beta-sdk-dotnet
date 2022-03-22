@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
     public class AccessReviewPolicy : Entity, IParsable {
         /// <summary>Description for this policy. Read-only.</summary>
         public string Description { get; set; }

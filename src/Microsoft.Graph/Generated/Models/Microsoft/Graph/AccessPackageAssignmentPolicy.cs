@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
     public class AccessPackageAssignmentPolicy : Entity, IParsable {
         /// <summary>The access package with this policy. Read-only. Nullable. Supports $expand.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackage AccessPackage { get; set; }

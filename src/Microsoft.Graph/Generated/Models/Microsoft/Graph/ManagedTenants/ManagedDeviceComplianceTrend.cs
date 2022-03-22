@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
-    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class ManagedDeviceComplianceTrend : Entity, IParsable {
         /// <summary>The number of devices with a compliant status. Required. Read-only.</summary>
         public int? CompliantDeviceCount { get; set; }

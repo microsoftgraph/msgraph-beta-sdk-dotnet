@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class NoncustodialDataSource : DataSourceContainer, IParsable {
         /// <summary>Indicates if hold is applied to non-custodial data source (such as mailbox or site).</summary>
         public bool? ApplyHoldToSource { get; set; }

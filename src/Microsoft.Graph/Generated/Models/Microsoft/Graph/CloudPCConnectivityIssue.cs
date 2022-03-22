@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class CloudPCConnectivityIssue : Entity, IParsable {
         /// <summary>The Intune DeviceId of the device the connection is associated with.</summary>
         public string DeviceId { get; set; }

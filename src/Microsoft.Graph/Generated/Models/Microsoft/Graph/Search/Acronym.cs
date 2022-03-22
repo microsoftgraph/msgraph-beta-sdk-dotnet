@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Search {
-    /// <summary>Provides operations to manage the searchEntity singleton.</summary>
     public class Acronym : SearchAnswer, IParsable {
         /// <summary>What the acronym stands for.</summary>
         public string StandsFor { get; set; }

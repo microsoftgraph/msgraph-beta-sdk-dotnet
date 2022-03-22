@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class ApiApplication : IAdditionalDataHolder, IParsable {
         /// <summary>When true, allows an application to use claims mapping without specifying a custom signing key.</summary>
         public bool? AcceptMappedClaims { get; set; }

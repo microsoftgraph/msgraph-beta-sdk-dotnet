@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public class EnterpriseCodeSigningCertificate : Entity, IParsable {
         /// <summary>The Windows Enterprise Code-Signing Certificate in the raw data format.</summary>
         public byte[] Content { get; set; }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class EducationalActivityDetail : IAdditionalDataHolder, IParsable {
         /// <summary>Shortened name of the degree or program (example: PhD, MBA)</summary>
         public string Abbreviation { get; set; }

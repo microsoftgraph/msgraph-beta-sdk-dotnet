@@ -65,43 +65,9 @@ namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.GetOemWarranty {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<GetOemWarrantyResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<OemWarranty> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<GetOemWarrantyResponse>(requestInfo, GetOemWarrantyResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>Union type wrapper for classes oemWarranty</summary>
-        public class GetOemWarrantyResponse : IAdditionalDataHolder, IParsable {
-            /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-            public IDictionary<string, object> AdditionalData { get; set; }
-            /// <summary>Union type representation for type oemWarranty</summary>
-            public MicrosoftGraphSdk.Models.Microsoft.Graph.OemWarranty OemWarranty { get; set; }
-            /// <summary>
-            /// Instantiates a new getOemWarrantyResponse and sets the default values.
-            /// </summary>
-            public GetOemWarrantyResponse() {
-                AdditionalData = new Dictionary<string, object>();
-            }
-            public static GetOemWarrantyResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                return new GetOemWarrantyResponse();
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-                return new Dictionary<string, Action<T, IParseNode>> {
-                    {"oemWarranty", (o,n) => { (o as GetOemWarrantyResponse).OemWarranty = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.OemWarranty>(MicrosoftGraphSdk.Models.Microsoft.Graph.OemWarranty.CreateFromDiscriminatorValue); } },
-                };
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            /// </summary>
-            public void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.OemWarranty>("oemWarranty", OemWarranty);
-                writer.WriteAdditionalData(AdditionalData);
-            }
+            return await RequestAdapter.SendAsync<OemWarranty>(requestInfo, OemWarranty.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

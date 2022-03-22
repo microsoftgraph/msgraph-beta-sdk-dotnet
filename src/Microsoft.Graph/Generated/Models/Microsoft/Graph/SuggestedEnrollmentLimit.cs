@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to call the getSuggestedEnrollmentLimit method.</summary>
+    /// <summary>The suggestedEnrollmentLimit resource represents the suggested enrollment limit when given an enrollment type.</summary>
     public class SuggestedEnrollmentLimit : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

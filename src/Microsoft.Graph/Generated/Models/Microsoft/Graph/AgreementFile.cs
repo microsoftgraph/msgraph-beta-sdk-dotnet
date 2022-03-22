@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
     public class AgreementFile : AgreementFileProperties, IParsable {
         /// <summary>The localized version of the terms of use agreement files attached to the agreement.</summary>
         public List<AgreementFileLocalization> Localizations { get; set; }

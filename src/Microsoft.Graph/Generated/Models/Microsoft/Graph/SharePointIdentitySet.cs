@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class SharePointIdentitySet : IdentitySet, IParsable {
         /// <summary>The group associated with this action. Optional.</summary>
         public Identity Group { get; set; }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class ScheduleChangeRequest : ChangeTrackedEntity, IParsable {
         public ScheduleChangeRequestActor? AssignedTo { get; set; }
         public DateTimeOffset? ManagerActionDateTime { get; set; }

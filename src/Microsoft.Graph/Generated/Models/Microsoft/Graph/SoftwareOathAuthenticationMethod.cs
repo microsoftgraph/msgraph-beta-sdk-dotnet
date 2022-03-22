@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class SoftwareOathAuthenticationMethod : AuthenticationMethod, IParsable {
         /// <summary>The secret key of the method. Always returns null.</summary>
         public string SecretKey { get; set; }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DetectedApp : Entity, IParsable {
         /// <summary>The number of devices that have installed this application</summary>
         public int? DeviceCount { get; set; }
@@ -13,7 +12,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The devices that have the discovered application installed</summary>
         public List<ManagedDevice> ManagedDevices { get; set; }
         /// <summary>Discovered application size in bytes. Read-only</summary>
-        public int? SizeInByte { get; set; }
+        public long? SizeInByte { get; set; }
         /// <summary>Version of the discovered application. Read-only</summary>
         public string Version { get; set; }
         /// <summary>
@@ -32,7 +31,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"deviceCount", (o,n) => { (o as DetectedApp).DeviceCount = n.GetIntValue(); } },
                 {"displayName", (o,n) => { (o as DetectedApp).DisplayName = n.GetStringValue(); } },
                 {"managedDevices", (o,n) => { (o as DetectedApp).ManagedDevices = n.GetCollectionOfObjectValues<ManagedDevice>(ManagedDevice.CreateFromDiscriminatorValue).ToList(); } },
-                {"sizeInByte", (o,n) => { (o as DetectedApp).SizeInByte = n.GetIntValue(); } },
+                {"sizeInByte", (o,n) => { (o as DetectedApp).SizeInByte = n.GetLongValue(); } },
                 {"version", (o,n) => { (o as DetectedApp).Version = n.GetStringValue(); } },
             };
         }
@@ -46,7 +45,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteIntValue("deviceCount", DeviceCount);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfObjectValues<ManagedDevice>("managedDevices", ManagedDevices);
-            writer.WriteIntValue("sizeInByte", SizeInByte);
+            writer.WriteLongValue("sizeInByte", SizeInByte);
             writer.WriteStringValue("version", Version);
         }
     }

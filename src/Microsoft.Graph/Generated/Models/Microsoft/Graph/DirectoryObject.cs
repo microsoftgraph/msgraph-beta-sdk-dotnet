@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class DirectoryObject : Entity, IParsable {
         /// <summary>Date and time when this object was deleted. Always null when the object hasn't been deleted.</summary>
         public DateTimeOffset? DeletedDateTime { get; set; }

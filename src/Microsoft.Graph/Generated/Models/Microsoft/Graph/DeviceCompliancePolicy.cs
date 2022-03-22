@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class DeviceCompliancePolicy : Entity, IParsable {
         /// <summary>The collection of assignments for this compliance policy.</summary>
         public List<DeviceCompliancePolicyAssignment> Assignments { get; set; }

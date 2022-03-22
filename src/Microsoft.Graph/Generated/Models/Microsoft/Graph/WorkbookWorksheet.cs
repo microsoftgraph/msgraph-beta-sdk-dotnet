@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class WorkbookWorksheet : Entity, IParsable {
         /// <summary>Returns collection of charts that are part of the worksheet. Read-only.</summary>
         public List<WorkbookChart> Charts { get; set; }

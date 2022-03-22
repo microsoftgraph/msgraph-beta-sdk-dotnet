@@ -112,7 +112,6 @@ using MicrosoftGraphSdk.Reports.GetTeamsUserActivityTotalUserCountsWithPeriod;
 using MicrosoftGraphSdk.Reports.GetTeamsUserActivityUserCountsWithPeriod;
 using MicrosoftGraphSdk.Reports.GetTeamsUserActivityUserDetailWithDate;
 using MicrosoftGraphSdk.Reports.GetTeamsUserActivityUserDetailWithPeriod;
-using MicrosoftGraphSdk.Reports.GetTenantSecureScoresWithPeriod;
 using MicrosoftGraphSdk.Reports.GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime;
 using MicrosoftGraphSdk.Reports.GetYammerActivityCountsWithPeriod;
 using MicrosoftGraphSdk.Reports.GetYammerActivityUserCountsWithPeriod;
@@ -1082,14 +1081,6 @@ namespace MicrosoftGraphSdk.Reports {
         public GetTeamsUserActivityUserDetailWithPeriodRequestBuilder GetTeamsUserActivityUserDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
             return new GetTeamsUserActivityUserDetailWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
-        }
-        /// <summary>
-        /// Provides operations to call the getTenantSecureScores method.
-        /// <param name="period">Usage: period={period}</param>
-        /// </summary>
-        public GetTenantSecureScoresWithPeriodRequestBuilder GetTenantSecureScoresWithPeriod(int? period) {
-            _ = period ?? throw new ArgumentNullException(nameof(period));
-            return new GetTenantSecureScoresWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
         }
         /// <summary>
         /// Provides operations to call the getUserArchivedPrintJobs method.

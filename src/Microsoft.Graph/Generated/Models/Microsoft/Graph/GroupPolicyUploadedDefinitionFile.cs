@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class GroupPolicyUploadedDefinitionFile : GroupPolicyDefinitionFile, IParsable {
         /// <summary>The contents of the uploaded ADMX file.</summary>
         public byte[] Content { get; set; }

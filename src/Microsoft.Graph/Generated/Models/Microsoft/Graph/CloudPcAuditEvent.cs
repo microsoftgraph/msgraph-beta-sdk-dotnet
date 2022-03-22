@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class CloudPcAuditEvent : Entity, IParsable {
         /// <summary>Friendly name of the activity. Optional.</summary>
         public string Activity { get; set; }

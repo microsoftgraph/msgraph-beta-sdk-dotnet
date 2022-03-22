@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class RemoteAssistanceSettings : Entity, IParsable {
         /// <summary>Indicates if sessions to unenrolled devices are allowed for the account. This setting is configurable by the admin. Default value is false.</summary>
         public bool? AllowSessionsToUnenrolledDevices { get; set; }

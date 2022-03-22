@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class EmbeddedSIMActivationCodePool : Entity, IParsable {
         /// <summary>The total count of activation codes which belong to this pool.</summary>
         public int? ActivationCodeCount { get; set; }

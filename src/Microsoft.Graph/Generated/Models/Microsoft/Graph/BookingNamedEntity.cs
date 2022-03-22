@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of bookingBusiness entities.</summary>
     public class BookingNamedEntity : Entity, IParsable {
         /// <summary>A name for the derived entity, which interfaces with customers.</summary>
         public string DisplayName { get; set; }

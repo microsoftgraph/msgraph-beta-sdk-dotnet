@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class ServicePrincipalCreationConditionSet : Entity, IParsable {
         public List<string> ApplicationIds { get; set; }
         public List<string> ApplicationPublisherIds { get; set; }

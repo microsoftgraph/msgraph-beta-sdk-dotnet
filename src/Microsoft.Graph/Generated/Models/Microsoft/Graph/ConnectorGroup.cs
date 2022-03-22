@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class ConnectorGroup : Entity, IParsable {
         /// <summary>Read-only. Nullable.</summary>
         public List<Application> Applications { get; set; }

@@ -60,7 +60,7 @@ namespace MicrosoftGraphSdk.IdentityProtection.RiskyServicePrincipals.Item.Histo
             return requestInfo;
         }
         /// <summary>
-        /// Get history from identityProtection
+        /// Represents the risk history of Azure AD service principals.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -114,7 +114,7 @@ namespace MicrosoftGraphSdk.IdentityProtection.RiskyServicePrincipals.Item.Histo
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get history from identityProtection
+        /// Represents the risk history of Azure AD service principals.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -146,7 +146,7 @@ namespace MicrosoftGraphSdk.IdentityProtection.RiskyServicePrincipals.Item.Histo
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get history from identityProtection</summary>
+        /// <summary>Represents the risk history of Azure AD service principals.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
             public string[] Expand { get; set; }

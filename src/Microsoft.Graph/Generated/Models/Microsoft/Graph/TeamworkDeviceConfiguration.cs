@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the teamwork singleton.</summary>
     public class TeamworkDeviceConfiguration : Entity, IParsable {
         /// <summary>The camera configuration. Applicable only for Microsoft Teams Rooms-enabled devices.</summary>
         public TeamworkCameraConfiguration CameraConfiguration { get; set; }

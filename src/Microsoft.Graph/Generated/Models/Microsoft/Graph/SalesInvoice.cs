@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the financials singleton.</summary>
     public class SalesInvoice : Entity, IParsable {
         public PostalAddressType BillingPostalAddress { get; set; }
         public string BillToCustomerId { get; set; }

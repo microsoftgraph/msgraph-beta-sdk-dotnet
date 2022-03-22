@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class TeamInfo : Entity, IParsable {
         public string DisplayName { get; set; }
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Team Team { get; set; }

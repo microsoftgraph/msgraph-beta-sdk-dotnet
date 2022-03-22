@@ -4,14 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class StringKeyLongValuePair : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Key.</summary>
         public string Key { get; set; }
         /// <summary>Value.</summary>
-        public int? Value { get; set; }
+        public long? Value { get; set; }
         /// <summary>
         /// Instantiates a new stringKeyLongValuePair and sets the default values.
         /// </summary>
@@ -32,7 +31,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"key", (o,n) => { (o as StringKeyLongValuePair).Key = n.GetStringValue(); } },
-                {"value", (o,n) => { (o as StringKeyLongValuePair).Value = n.GetIntValue(); } },
+                {"value", (o,n) => { (o as StringKeyLongValuePair).Value = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -42,7 +41,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("key", Key);
-            writer.WriteIntValue("value", Value);
+            writer.WriteLongValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

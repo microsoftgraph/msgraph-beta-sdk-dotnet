@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class ColumnLink : Entity, IParsable {
         /// <summary>The name of the column  in this content type.</summary>
         public string Name { get; set; }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of place entities.</summary>
     public class Place : Entity, IParsable {
         /// <summary>The street address of the place.</summary>
         public PhysicalAddress Address { get; set; }

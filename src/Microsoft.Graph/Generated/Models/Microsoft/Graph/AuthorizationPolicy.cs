@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class AuthorizationPolicy : PolicyBase, IParsable {
         /// <summary>Indicates whether users can sign up for email based subscriptions.</summary>
         public bool? AllowedToSignUpEmailBasedSubscriptions { get; set; }

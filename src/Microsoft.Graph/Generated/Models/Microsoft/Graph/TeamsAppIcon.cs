@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the appCatalogs singleton.</summary>
     public class TeamsAppIcon : Entity, IParsable {
         /// <summary>The contents of the app icon if the icon is hosted within the Teams infrastructure.</summary>
         public TeamworkHostedContent HostedContent { get; set; }

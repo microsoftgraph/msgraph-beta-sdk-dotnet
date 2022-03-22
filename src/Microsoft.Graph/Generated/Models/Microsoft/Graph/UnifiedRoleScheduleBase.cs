@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the roleManagement singleton.</summary>
     public class UnifiedRoleScheduleBase : Entity, IParsable {
         /// <summary>Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AppScope AppScope { get; set; }

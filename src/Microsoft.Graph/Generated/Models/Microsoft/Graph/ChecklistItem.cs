@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class ChecklistItem : Entity, IParsable {
         /// <summary>The date and time when the checklistItem was finished.</summary>
         public DateTimeOffset? CheckedDateTime { get; set; }

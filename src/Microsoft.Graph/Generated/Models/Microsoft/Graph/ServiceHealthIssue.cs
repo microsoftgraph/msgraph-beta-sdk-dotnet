@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class ServiceHealthIssue : ServiceAnnouncementBase, IParsable {
         /// <summary>The type of service health issue. Possible values are: advisory, incident, unknownFutureValue.</summary>
         public ServiceHealthClassificationType? Classification { get; set; }

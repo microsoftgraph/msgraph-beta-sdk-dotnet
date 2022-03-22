@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class AppLogCollectionRequest : Entity, IParsable {
         /// <summary>Time at which the upload log request reached a terminal state</summary>
         public DateTimeOffset? CompletedDateTime { get; set; }

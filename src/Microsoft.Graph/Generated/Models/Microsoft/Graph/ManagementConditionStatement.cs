@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class ManagementConditionStatement : Entity, IParsable {
         /// <summary>The applicable platforms for this management condition statement.</summary>
         public List<DevicePlatformType?> ApplicablePlatforms { get; set; }

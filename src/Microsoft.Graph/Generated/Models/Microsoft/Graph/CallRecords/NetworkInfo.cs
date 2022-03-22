@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords {
-    /// <summary>Provides operations to manage the cloudCommunications singleton.</summary>
     public class NetworkInfo : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -21,7 +20,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords {
         /// <summary>IP address of the media endpoint.</summary>
         public string IpAddress { get; set; }
         /// <summary>Link speed in bits per second reported by the network adapter used by the media endpoint.</summary>
-        public int? LinkSpeed { get; set; }
+        public long? LinkSpeed { get; set; }
         /// <summary>The media access control (MAC) address of the media endpoint's network device.</summary>
         public string MacAddress { get; set; }
         /// <summary>Network port number used by media endpoint.</summary>
@@ -81,7 +80,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords {
                 {"delayEventRatio", (o,n) => { (o as NetworkInfo).DelayEventRatio = n.GetFloatValue(); } },
                 {"dnsSuffix", (o,n) => { (o as NetworkInfo).DnsSuffix = n.GetStringValue(); } },
                 {"ipAddress", (o,n) => { (o as NetworkInfo).IpAddress = n.GetStringValue(); } },
-                {"linkSpeed", (o,n) => { (o as NetworkInfo).LinkSpeed = n.GetIntValue(); } },
+                {"linkSpeed", (o,n) => { (o as NetworkInfo).LinkSpeed = n.GetLongValue(); } },
                 {"macAddress", (o,n) => { (o as NetworkInfo).MacAddress = n.GetStringValue(); } },
                 {"port", (o,n) => { (o as NetworkInfo).Port = n.GetIntValue(); } },
                 {"receivedQualityEventRatio", (o,n) => { (o as NetworkInfo).ReceivedQualityEventRatio = n.GetFloatValue(); } },
@@ -113,7 +112,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords {
             writer.WriteFloatValue("delayEventRatio", DelayEventRatio);
             writer.WriteStringValue("dnsSuffix", DnsSuffix);
             writer.WriteStringValue("ipAddress", IpAddress);
-            writer.WriteIntValue("linkSpeed", LinkSpeed);
+            writer.WriteLongValue("linkSpeed", LinkSpeed);
             writer.WriteStringValue("macAddress", MacAddress);
             writer.WriteIntValue("port", Port);
             writer.WriteFloatValue("receivedQualityEventRatio", ReceivedQualityEventRatio);

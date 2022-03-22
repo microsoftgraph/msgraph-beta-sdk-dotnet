@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
-    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class ManagementTemplateStepVersion : Entity, IParsable {
         public ManagementTemplateStep AcceptedFor { get; set; }
         public string ContentMarkdown { get; set; }

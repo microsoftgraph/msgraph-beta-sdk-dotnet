@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class UserExperienceAnalyticsModelScores : Entity, IParsable {
         /// <summary>The user experience analytics model app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? AppReliabilityScore { get; set; }
@@ -17,7 +16,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>A unique identifier of the user experience analytics model scores: device model.</summary>
         public string Model { get; set; }
         /// <summary>The user experience analytics model device count. Valid values -9.22337203685478E+18 to 9.22337203685478E+18</summary>
-        public int? ModelDeviceCount { get; set; }
+        public long? ModelDeviceCount { get; set; }
         /// <summary>The user experience analytics model startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? StartupPerformanceScore { get; set; }
         /// <summary>The user experience analytics model work from anywhere score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
@@ -40,7 +39,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"healthStatus", (o,n) => { (o as UserExperienceAnalyticsModelScores).HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
                 {"manufacturer", (o,n) => { (o as UserExperienceAnalyticsModelScores).Manufacturer = n.GetStringValue(); } },
                 {"model", (o,n) => { (o as UserExperienceAnalyticsModelScores).Model = n.GetStringValue(); } },
-                {"modelDeviceCount", (o,n) => { (o as UserExperienceAnalyticsModelScores).ModelDeviceCount = n.GetIntValue(); } },
+                {"modelDeviceCount", (o,n) => { (o as UserExperienceAnalyticsModelScores).ModelDeviceCount = n.GetLongValue(); } },
                 {"startupPerformanceScore", (o,n) => { (o as UserExperienceAnalyticsModelScores).StartupPerformanceScore = n.GetDoubleValue(); } },
                 {"workFromAnywhereScore", (o,n) => { (o as UserExperienceAnalyticsModelScores).WorkFromAnywhereScore = n.GetDoubleValue(); } },
             };
@@ -57,7 +56,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteEnumValue<UserExperienceAnalyticsHealthState>("healthStatus", HealthStatus);
             writer.WriteStringValue("manufacturer", Manufacturer);
             writer.WriteStringValue("model", Model);
-            writer.WriteIntValue("modelDeviceCount", ModelDeviceCount);
+            writer.WriteLongValue("modelDeviceCount", ModelDeviceCount);
             writer.WriteDoubleValue("startupPerformanceScore", StartupPerformanceScore);
             writer.WriteDoubleValue("workFromAnywhereScore", WorkFromAnywhereScore);
         }

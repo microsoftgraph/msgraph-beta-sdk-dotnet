@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class AuthenticationFlowsPolicy : Entity, IParsable {
         /// <summary>Inherited property. A description of the policy. Optional. Read-only.</summary>
         public string Description { get; set; }

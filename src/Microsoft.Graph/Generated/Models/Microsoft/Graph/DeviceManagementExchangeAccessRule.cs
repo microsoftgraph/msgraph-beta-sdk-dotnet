@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    /// <summary>Device Access Rules in Exchange.</summary>
     public class DeviceManagementExchangeAccessRule : IAdditionalDataHolder, IParsable {
         /// <summary>Access Level for Exchange granted by this rule. Possible values are: none, allow, block, quarantine.</summary>
         public DeviceManagementExchangeAccessLevel? AccessLevel { get; set; }

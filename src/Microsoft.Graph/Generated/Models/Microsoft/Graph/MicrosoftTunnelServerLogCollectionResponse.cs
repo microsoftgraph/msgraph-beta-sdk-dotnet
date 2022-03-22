@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class MicrosoftTunnelServerLogCollectionResponse : Entity, IParsable {
         /// <summary>The end time of the logs collected</summary>
         public DateTimeOffset? EndDateTime { get; set; }
@@ -15,7 +14,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>ID of the server the log collection is requested upon</summary>
         public string ServerId { get; set; }
         /// <summary>The size of the logs in bytes</summary>
-        public int? SizeInBytes { get; set; }
+        public long? SizeInBytes { get; set; }
         /// <summary>The start time of the logs collected</summary>
         public DateTimeOffset? StartDateTime { get; set; }
         /// <summary>The status of log collection. Possible values are: pending, completed, failed.</summary>
@@ -37,7 +36,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"expiryDateTime", (o,n) => { (o as MicrosoftTunnelServerLogCollectionResponse).ExpiryDateTime = n.GetDateTimeOffsetValue(); } },
                 {"requestDateTime", (o,n) => { (o as MicrosoftTunnelServerLogCollectionResponse).RequestDateTime = n.GetDateTimeOffsetValue(); } },
                 {"serverId", (o,n) => { (o as MicrosoftTunnelServerLogCollectionResponse).ServerId = n.GetStringValue(); } },
-                {"sizeInBytes", (o,n) => { (o as MicrosoftTunnelServerLogCollectionResponse).SizeInBytes = n.GetIntValue(); } },
+                {"sizeInBytes", (o,n) => { (o as MicrosoftTunnelServerLogCollectionResponse).SizeInBytes = n.GetLongValue(); } },
                 {"startDateTime", (o,n) => { (o as MicrosoftTunnelServerLogCollectionResponse).StartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"status", (o,n) => { (o as MicrosoftTunnelServerLogCollectionResponse).Status = n.GetEnumValue<MicrosoftTunnelLogCollectionStatus>(); } },
             };
@@ -53,7 +52,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteDateTimeOffsetValue("expiryDateTime", ExpiryDateTime);
             writer.WriteDateTimeOffsetValue("requestDateTime", RequestDateTime);
             writer.WriteStringValue("serverId", ServerId);
-            writer.WriteIntValue("sizeInBytes", SizeInBytes);
+            writer.WriteLongValue("sizeInBytes", SizeInBytes);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteEnumValue<MicrosoftTunnelLogCollectionStatus>("status", Status);
         }

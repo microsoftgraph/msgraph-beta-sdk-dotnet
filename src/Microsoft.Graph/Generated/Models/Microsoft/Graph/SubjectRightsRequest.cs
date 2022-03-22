@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the privacy singleton.</summary>
     public class SubjectRightsRequest : Entity, IParsable {
         /// <summary>Identity that the request is assigned to.</summary>
         public Identity AssignedTo { get; set; }

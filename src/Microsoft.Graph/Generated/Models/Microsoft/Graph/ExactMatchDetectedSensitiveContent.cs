@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to call the classifyExactMatches method.</summary>
     public class ExactMatchDetectedSensitiveContent : DetectedSensitiveContentBase, IParsable {
         public List<SensitiveContentLocation> Matches { get; set; }
         /// <summary>

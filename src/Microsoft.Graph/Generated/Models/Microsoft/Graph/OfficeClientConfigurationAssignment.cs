@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the officeConfiguration singleton.</summary>
     public class OfficeClientConfigurationAssignment : Entity, IParsable {
         /// <summary>The target assignment defined by the admin.</summary>
         public OfficeConfigurationAssignmentTarget Target { get; set; }

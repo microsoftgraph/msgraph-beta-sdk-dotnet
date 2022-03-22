@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of command entities.</summary>
     public class Command : Entity, IParsable {
         public string AppServiceName { get; set; }
         public string Error { get; set; }

@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraphSdk.App.Calls.Item.AddLargeGalleryView;
 using MicrosoftGraphSdk.App.Calls.Item.Answer;
 using MicrosoftGraphSdk.App.Calls.Item.AudioRoutingGroups;
 using MicrosoftGraphSdk.App.Calls.Item.CancelMediaProcessing;
@@ -29,6 +30,9 @@ using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.App.Calls.Item {
     /// <summary>Provides operations to manage the calls property of the microsoft.graph.commsApplication entity.</summary>
     public class CallItemRequestBuilder {
+        public AddLargeGalleryViewRequestBuilder AddLargeGalleryView { get =>
+            new AddLargeGalleryViewRequestBuilder(PathParameters, RequestAdapter);
+        }
         public AnswerRequestBuilder Answer { get =>
             new AnswerRequestBuilder(PathParameters, RequestAdapter);
         }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class Relation : Entity, IParsable {
         /// <summary>The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].</summary>
         public Term FromTerm { get; set; }

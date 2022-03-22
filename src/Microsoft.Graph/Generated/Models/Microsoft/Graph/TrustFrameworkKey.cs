@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the trustFramework singleton.</summary>
     public class TrustFrameworkKey : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -17,7 +16,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>RSA Key - public exponent</summary>
         public string E { get; set; }
         /// <summary>This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)</summary>
-        public int? Exp { get; set; }
+        public long? Exp { get; set; }
         /// <summary>Symmetric Key for oct key type. Field cannot be read back.</summary>
         public string K { get; set; }
         /// <summary>The unique identifier for the key.</summary>
@@ -27,7 +26,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>RSA Key - modulus</summary>
         public string N { get; set; }
         /// <summary>This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)</summary>
-        public int? Nbf { get; set; }
+        public long? Nbf { get; set; }
         /// <summary>RSA Key - first prime. Field cannot be read back.</summary>
         public string P { get; set; }
         /// <summary>RSA Key - second prime. Field cannot be read back.</summary>
@@ -63,12 +62,12 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"dp", (o,n) => { (o as TrustFrameworkKey).Dp = n.GetStringValue(); } },
                 {"dq", (o,n) => { (o as TrustFrameworkKey).Dq = n.GetStringValue(); } },
                 {"e", (o,n) => { (o as TrustFrameworkKey).E = n.GetStringValue(); } },
-                {"exp", (o,n) => { (o as TrustFrameworkKey).Exp = n.GetIntValue(); } },
+                {"exp", (o,n) => { (o as TrustFrameworkKey).Exp = n.GetLongValue(); } },
                 {"k", (o,n) => { (o as TrustFrameworkKey).K = n.GetStringValue(); } },
                 {"kid", (o,n) => { (o as TrustFrameworkKey).Kid = n.GetStringValue(); } },
                 {"kty", (o,n) => { (o as TrustFrameworkKey).Kty = n.GetStringValue(); } },
                 {"n", (o,n) => { (o as TrustFrameworkKey).N = n.GetStringValue(); } },
-                {"nbf", (o,n) => { (o as TrustFrameworkKey).Nbf = n.GetIntValue(); } },
+                {"nbf", (o,n) => { (o as TrustFrameworkKey).Nbf = n.GetLongValue(); } },
                 {"p", (o,n) => { (o as TrustFrameworkKey).P = n.GetStringValue(); } },
                 {"q", (o,n) => { (o as TrustFrameworkKey).Q = n.GetStringValue(); } },
                 {"qi", (o,n) => { (o as TrustFrameworkKey).Qi = n.GetStringValue(); } },
@@ -87,12 +86,12 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("dp", Dp);
             writer.WriteStringValue("dq", Dq);
             writer.WriteStringValue("e", E);
-            writer.WriteIntValue("exp", Exp);
+            writer.WriteLongValue("exp", Exp);
             writer.WriteStringValue("k", K);
             writer.WriteStringValue("kid", Kid);
             writer.WriteStringValue("kty", Kty);
             writer.WriteStringValue("n", N);
-            writer.WriteIntValue("nbf", Nbf);
+            writer.WriteLongValue("nbf", Nbf);
             writer.WriteStringValue("p", P);
             writer.WriteStringValue("q", Q);
             writer.WriteStringValue("qi", Qi);

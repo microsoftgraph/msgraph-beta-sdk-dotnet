@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates {
-    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class Updates : Entity, IParsable {
         /// <summary>Catalog of content that can be approved for deployment by the deployment service. Read-only.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates.Catalog Catalog { get; set; }

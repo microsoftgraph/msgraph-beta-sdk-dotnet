@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to call the evaluate method.</summary>
     public class DlpEvaluationInput : IAdditionalDataHolder, IParsable {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessScope? AccessScope { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

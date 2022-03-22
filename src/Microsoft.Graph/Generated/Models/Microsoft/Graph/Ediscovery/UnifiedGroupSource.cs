@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class UnifiedGroupSource : DataSource, IParsable {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Group Group { get; set; }
         /// <summary>Specifies which sources are included in this group. Possible values are: mailbox, site.</summary>

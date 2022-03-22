@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the print singleton.</summary>
     public class PrinterBase : Entity, IParsable {
         /// <summary>The capabilities of the printer/printerShare.</summary>
         public PrinterCapabilities Capabilities { get; set; }

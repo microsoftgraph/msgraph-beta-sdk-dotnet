@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
+    /// <summary>The status of the action performed with an Apple Volume Purchase Program token.</summary>
     public class VppTokenActionResult : IAdditionalDataHolder, IParsable {
         /// <summary>Action name</summary>
         public string ActionName { get; set; }

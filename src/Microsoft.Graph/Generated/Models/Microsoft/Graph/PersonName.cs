@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class PersonName : ItemFacet, IParsable {
         /// <summary>Provides an ordered rendering of firstName and lastName depending on the locale of the user or their device.</summary>
         public string DisplayName { get; set; }

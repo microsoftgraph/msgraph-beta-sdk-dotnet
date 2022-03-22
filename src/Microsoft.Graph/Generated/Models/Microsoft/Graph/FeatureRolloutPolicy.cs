@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the directory singleton.</summary>
     public class FeatureRolloutPolicy : Entity, IParsable {
         /// <summary>Nullable. Specifies a list of directoryObjects that feature is enabled for.</summary>
         public List<DirectoryObject> AppliesTo { get; set; }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of approvalWorkflowProvider entities.</summary>
     public class ApprovalWorkflowProvider : Entity, IParsable {
         public List<BusinessFlow> BusinessFlows { get; set; }
         public List<BusinessFlow> BusinessFlowsWithRequestsAwaitingMyDecision { get; set; }

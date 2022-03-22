@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class DelegatedAdminCustomer : Entity, IParsable {
         public string DisplayName { get; set; }
         public List<DelegatedAdminServiceManagementDetail> ServiceManagementDetails { get; set; }

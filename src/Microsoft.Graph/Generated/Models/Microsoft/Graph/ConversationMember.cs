@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of chat entities.</summary>
     public class ConversationMember : Entity, IParsable {
         /// <summary>The display name of the user.</summary>
         public string DisplayName { get; set; }

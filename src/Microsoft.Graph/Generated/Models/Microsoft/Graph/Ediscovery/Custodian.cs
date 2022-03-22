@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class Custodian : DataSourceContainer, IParsable {
         /// <summary>Date and time the custodian acknowledged a hold notification.</summary>
         public DateTimeOffset? AcknowledgedDateTime { get; set; }

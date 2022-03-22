@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class Tasks : Entity, IParsable {
         /// <summary>All tasks in the users mailbox.</summary>
         public List<BaseTask> Alltasks { get; set; }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the commsApplication singleton.</summary>
     public class AudioRoutingGroup : Entity, IParsable {
         /// <summary>List of receiving participant ids.</summary>
         public List<string> Receivers { get; set; }

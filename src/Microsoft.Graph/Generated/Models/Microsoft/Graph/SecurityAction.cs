@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the securityActions property of the microsoft.graph.security entity.</summary>
     public class SecurityAction : Entity, IParsable {
         /// <summary>Reason for invoking this action.</summary>
         public string ActionReason { get; set; }

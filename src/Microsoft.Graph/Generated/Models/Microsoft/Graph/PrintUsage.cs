@@ -5,11 +5,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the print singleton.</summary>
     public class PrintUsage : Entity, IParsable {
-        public int? CompletedBlackAndWhiteJobCount { get; set; }
-        public int? CompletedColorJobCount { get; set; }
-        public int? IncompleteJobCount { get; set; }
+        public long? CompletedBlackAndWhiteJobCount { get; set; }
+        public long? CompletedColorJobCount { get; set; }
+        public long? IncompleteJobCount { get; set; }
         public Date? UsageDate { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -24,9 +23,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"completedBlackAndWhiteJobCount", (o,n) => { (o as PrintUsage).CompletedBlackAndWhiteJobCount = n.GetIntValue(); } },
-                {"completedColorJobCount", (o,n) => { (o as PrintUsage).CompletedColorJobCount = n.GetIntValue(); } },
-                {"incompleteJobCount", (o,n) => { (o as PrintUsage).IncompleteJobCount = n.GetIntValue(); } },
+                {"completedBlackAndWhiteJobCount", (o,n) => { (o as PrintUsage).CompletedBlackAndWhiteJobCount = n.GetLongValue(); } },
+                {"completedColorJobCount", (o,n) => { (o as PrintUsage).CompletedColorJobCount = n.GetLongValue(); } },
+                {"incompleteJobCount", (o,n) => { (o as PrintUsage).IncompleteJobCount = n.GetLongValue(); } },
                 {"usageDate", (o,n) => { (o as PrintUsage).UsageDate = n.GetDateValue(); } },
             };
         }
@@ -37,9 +36,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteIntValue("completedBlackAndWhiteJobCount", CompletedBlackAndWhiteJobCount);
-            writer.WriteIntValue("completedColorJobCount", CompletedColorJobCount);
-            writer.WriteIntValue("incompleteJobCount", IncompleteJobCount);
+            writer.WriteLongValue("completedBlackAndWhiteJobCount", CompletedBlackAndWhiteJobCount);
+            writer.WriteLongValue("completedColorJobCount", CompletedColorJobCount);
+            writer.WriteLongValue("incompleteJobCount", IncompleteJobCount);
             writer.WriteDateValue("usageDate", UsageDate);
         }
     }

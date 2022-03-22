@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the print singleton.</summary>
     public class PrintTaskTrigger : Entity, IParsable {
         public PrintTaskDefinition Definition { get; set; }
         /// <summary>The Universal Print event that will cause a new printTask to be triggered. Valid values are described in the following table.</summary>

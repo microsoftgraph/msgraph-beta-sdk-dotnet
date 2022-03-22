@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the educationRoot singleton.</summary>
     public class EducationSynchronizationProfile : Entity, IParsable {
         public EducationSynchronizationDataProvider DataProvider { get; set; }
         /// <summary>Name of the configuration profile for syncing identities.</summary>

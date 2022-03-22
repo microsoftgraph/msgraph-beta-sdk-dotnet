@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class WorkPosition : ItemFacet, IParsable {
         /// <summary>Categories that the user has associated with this position.</summary>
         public List<string> Categories { get; set; }

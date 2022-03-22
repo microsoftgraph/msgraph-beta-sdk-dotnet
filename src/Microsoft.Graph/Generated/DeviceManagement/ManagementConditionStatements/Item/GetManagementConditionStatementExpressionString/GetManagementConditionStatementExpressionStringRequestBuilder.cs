@@ -65,43 +65,9 @@ namespace MicrosoftGraphSdk.DeviceManagement.ManagementConditionStatements.Item.
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<GetManagementConditionStatementExpressionStringResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagementConditionExpressionString> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<GetManagementConditionStatementExpressionStringResponse>(requestInfo, GetManagementConditionStatementExpressionStringResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>Union type wrapper for classes managementConditionExpressionString</summary>
-        public class GetManagementConditionStatementExpressionStringResponse : IAdditionalDataHolder, IParsable {
-            /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-            public IDictionary<string, object> AdditionalData { get; set; }
-            /// <summary>Union type representation for type managementConditionExpressionString</summary>
-            public MicrosoftGraphSdk.Models.Microsoft.Graph.ManagementConditionExpressionString ManagementConditionExpressionString { get; set; }
-            /// <summary>
-            /// Instantiates a new getManagementConditionStatementExpressionStringResponse and sets the default values.
-            /// </summary>
-            public GetManagementConditionStatementExpressionStringResponse() {
-                AdditionalData = new Dictionary<string, object>();
-            }
-            public static GetManagementConditionStatementExpressionStringResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                return new GetManagementConditionStatementExpressionStringResponse();
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-                return new Dictionary<string, Action<T, IParseNode>> {
-                    {"managementConditionExpressionString", (o,n) => { (o as GetManagementConditionStatementExpressionStringResponse).ManagementConditionExpressionString = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagementConditionExpressionString>(MicrosoftGraphSdk.Models.Microsoft.Graph.ManagementConditionExpressionString.CreateFromDiscriminatorValue); } },
-                };
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            /// </summary>
-            public void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagementConditionExpressionString>("managementConditionExpressionString", ManagementConditionExpressionString);
-                writer.WriteAdditionalData(AdditionalData);
-            }
+            return await RequestAdapter.SendAsync<ManagementConditionExpressionString>(requestInfo, ManagementConditionExpressionString.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

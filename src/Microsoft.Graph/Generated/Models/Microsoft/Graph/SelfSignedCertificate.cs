@@ -4,18 +4,26 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to call the addTokenSigningCertificate method.</summary>
     public class SelfSignedCertificate : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Custom key identifier.</summary>
         public byte[] CustomKeyIdentifier { get; set; }
+        /// <summary>The friendly name for the key.</summary>
         public string DisplayName { get; set; }
+        /// <summary>The date and time at which the credential expires. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? EndDateTime { get; set; }
+        /// <summary>The value for the key credential. Should be a base-64 encoded value.</summary>
         public byte[] Key { get; set; }
+        /// <summary>The unique identifier (GUID) for the key.</summary>
         public string KeyId { get; set; }
+        /// <summary>The date and time at which the credential becomes valid. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? StartDateTime { get; set; }
+        /// <summary>The thumbprint value for the key.</summary>
         public string Thumbprint { get; set; }
+        /// <summary>The type of key credential. 'AsymmetricX509Cert'.</summary>
         public string Type { get; set; }
+        /// <summary>A string that describes the purpose for which the key can be used. For example, 'Verify'.</summary>
         public string Usage { get; set; }
         /// <summary>
         /// Instantiates a new SelfSignedCertificate and sets the default values.

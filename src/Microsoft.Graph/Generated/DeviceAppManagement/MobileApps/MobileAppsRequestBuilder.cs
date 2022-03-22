@@ -133,7 +133,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps {
         /// <param name="count">Usage: count={count}</param>
         /// <param name="status">Usage: status='{status}'</param>
         /// </summary>
-        public GetTopMobileAppsWithStatusWithCountRequestBuilder GetTopMobileAppsWithStatusWithCount(int? count, string status) {
+        public GetTopMobileAppsWithStatusWithCountRequestBuilder GetTopMobileAppsWithStatusWithCount(long? count, string status) {
             _ = count ?? throw new ArgumentNullException(nameof(count));
             if(string.IsNullOrEmpty(status)) throw new ArgumentNullException(nameof(status));
             return new GetTopMobileAppsWithStatusWithCountRequestBuilder(PathParameters, RequestAdapter, count, status);

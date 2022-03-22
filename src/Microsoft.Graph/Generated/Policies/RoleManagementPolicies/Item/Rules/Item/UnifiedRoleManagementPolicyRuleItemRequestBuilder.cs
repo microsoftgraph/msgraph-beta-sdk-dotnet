@@ -60,7 +60,7 @@ namespace MicrosoftGraphSdk.Policies.RoleManagementPolicies.Item.Rules.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of rules like approval rule, expiration rule, etc.
+        /// The collection of rules like approval rules and expiration rules.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -114,7 +114,7 @@ namespace MicrosoftGraphSdk.Policies.RoleManagementPolicies.Item.Rules.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The collection of rules like approval rule, expiration rule, etc.
+        /// The collection of rules like approval rules and expiration rules.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -146,7 +146,7 @@ namespace MicrosoftGraphSdk.Policies.RoleManagementPolicies.Item.Rules.Item {
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>The collection of rules like approval rule, expiration rule, etc.</summary>
+        /// <summary>The collection of rules like approval rules and expiration rules.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
             public string[] Expand { get; set; }

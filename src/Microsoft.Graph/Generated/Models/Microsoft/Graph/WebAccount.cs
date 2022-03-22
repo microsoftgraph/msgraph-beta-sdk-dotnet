@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public class WebAccount : ItemFacet, IParsable {
         /// <summary>Contains the description the user has provided for the account on the service being referenced.</summary>
         public string Description { get; set; }
