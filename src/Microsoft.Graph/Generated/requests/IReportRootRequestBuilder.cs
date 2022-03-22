@@ -949,13 +949,6 @@ namespace Microsoft.Graph
             DateTimeOffset? endDateTime = null);
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetTenantSecureScores.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetTenantSecureScoresRequestBuilder"/>.</returns>
-        IReportRootGetTenantSecureScoresRequestBuilder GetTenantSecureScores(
-            Int32 period);
-
-        /// <summary>
         /// Gets the request builder for ReportRootGetAttackSimulationRepeatOffenders.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetAttackSimulationRepeatOffendersRequestBuilder"/>.</returns>

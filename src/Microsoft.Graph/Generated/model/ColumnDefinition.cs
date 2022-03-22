@@ -197,6 +197,13 @@ namespace Microsoft.Graph
         public bool? Required { get; set; }
     
         /// <summary>
+        /// Gets or sets source content type.
+        /// ContentType from which this column is inherited from. Present only in contentTypes columns response. Read-only.
+        /// </summary>
+        [JsonPropertyName("sourceContentType")]
+        public ContentTypeInfo SourceContentType { get; set; }
+    
+        /// <summary>
         /// Gets or sets term.
         /// This column stores taxonomy terms.
         /// </summary>

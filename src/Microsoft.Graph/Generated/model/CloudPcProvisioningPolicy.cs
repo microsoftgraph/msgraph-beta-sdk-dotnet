@@ -79,6 +79,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets windows settings.
+        /// Specific Windows settings to configure while creating Cloud PCs for this provisioning policy.
         /// </summary>
         [JsonPropertyName("windowsSettings")]
         public CloudPcWindowsSettings WindowsSettings { get; set; }

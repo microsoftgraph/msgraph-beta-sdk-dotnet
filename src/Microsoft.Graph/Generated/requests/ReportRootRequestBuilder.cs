@@ -1765,19 +1765,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetTenantSecureScores.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetTenantSecureScoresRequestBuilder"/>.</returns>
-        public IReportRootGetTenantSecureScoresRequestBuilder GetTenantSecureScores(
-            Int32 period)
-        {
-            return new ReportRootGetTenantSecureScoresRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getTenantSecureScores"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
         /// Gets the request builder for ReportRootGetAttackSimulationRepeatOffenders.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetAttackSimulationRepeatOffendersRequestBuilder"/>.</returns>

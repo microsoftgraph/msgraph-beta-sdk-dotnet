@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets maximum dep tokens.
-        /// Maximum number of DEP tokens allowed per-tenant.
+        /// Maximum number of dep tokens allowed per-tenant.
         /// </summary>
         [JsonPropertyName("maximumDepTokens")]
         public Int32? MaximumDepTokens { get; set; }
@@ -107,7 +107,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets subscriptions.
-        /// Tenant's Subscription. Possible values are: none, intune, office365, intunePremium, intune_EDU, intune_SMB.
+        /// Tenant's Subscription.
         /// </summary>
         [JsonPropertyName("subscriptions")]
         public DeviceManagementSubscriptions? Subscriptions { get; set; }

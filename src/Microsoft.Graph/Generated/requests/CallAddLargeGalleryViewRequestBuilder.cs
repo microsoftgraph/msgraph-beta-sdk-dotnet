@@ -14,24 +14,23 @@ namespace Microsoft.Graph
     using System.IO;
 
     /// <summary>
-    /// The type ReportRootGetTenantSecureScoresRequestBuilder.
+    /// The type CallAddLargeGalleryViewRequestBuilder.
     /// </summary>
-    public partial class ReportRootGetTenantSecureScoresRequestBuilder : BaseFunctionMethodRequestBuilder<IReportRootGetTenantSecureScoresRequest>, IReportRootGetTenantSecureScoresRequestBuilder
+    public partial class CallAddLargeGalleryViewRequestBuilder : BaseActionMethodRequestBuilder<ICallAddLargeGalleryViewRequest>, ICallAddLargeGalleryViewRequestBuilder
     {
         /// <summary>
-        /// Constructs a new <see cref="ReportRootGetTenantSecureScoresRequestBuilder"/>.
+        /// Constructs a new <see cref="CallAddLargeGalleryViewRequestBuilder"/>.
         /// </summary>
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        /// <param name="period">A period parameter for the OData method call.</param>
-        public ReportRootGetTenantSecureScoresRequestBuilder(
+        /// <param name="clientContext">A clientContext parameter for the OData method call.</param>
+        public CallAddLargeGalleryViewRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            Int32 period)
+            string clientContext)
             : base(requestUrl, client)
         {
-            this.SetParameter("period", period, false);
-            this.SetFunctionParameters();
+            this.SetParameter("clientContext", clientContext, true);
         }
 
         /// <summary>
@@ -40,9 +39,14 @@ namespace Microsoft.Graph
         /// <param name="functionUrl">The request URL to </param>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>An instance of a specific request class.</returns>
-        protected override IReportRootGetTenantSecureScoresRequest CreateRequest(string functionUrl, IEnumerable<Option> options)
+        protected override ICallAddLargeGalleryViewRequest CreateRequest(string functionUrl, IEnumerable<Option> options)
         {
-            var request = new ReportRootGetTenantSecureScoresRequest(functionUrl, this.Client, options);
+            var request = new CallAddLargeGalleryViewRequest(functionUrl, this.Client, options);
+
+            if (this.HasParameter("clientContext"))
+            {
+                request.RequestBody.ClientContext = this.GetParameter<string>("clientContext");
+            }
 
             return request;
         }

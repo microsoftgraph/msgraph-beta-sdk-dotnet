@@ -68,6 +68,13 @@ namespace Microsoft.Graph
             string callbackUri = null);
 
         /// <summary>
+        /// Gets the request builder for CallAddLargeGalleryView.
+        /// </summary>
+        /// <returns>The <see cref="ICallAddLargeGalleryViewRequestBuilder"/>.</returns>
+        ICallAddLargeGalleryViewRequestBuilder AddLargeGalleryView(
+            string clientContext = null);
+
+        /// <summary>
         /// Gets the request builder for CallAnswer.
         /// </summary>
         /// <returns>The <see cref="ICallAnswerRequestBuilder"/>.</returns>

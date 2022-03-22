@@ -36,6 +36,18 @@ namespace Microsoft.Graph
         public bool? ShowFullyQualifiedName { get; set; }
     
         /// <summary>
+        /// Gets or sets parentTerm.
+        /// </summary>
+        [JsonPropertyName("parentTerm")]
+        public Microsoft.Graph.TermStore.Term ParentTerm { get; set; }
+    
+        /// <summary>
+        /// Gets or sets termSet.
+        /// </summary>
+        [JsonPropertyName("termSet")]
+        public Microsoft.Graph.TermStore.Set TermSet { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]

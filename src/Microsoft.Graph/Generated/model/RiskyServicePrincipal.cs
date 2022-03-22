@@ -86,6 +86,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets history.
+        /// Represents the risk history of Azure AD service principals.
         /// </summary>
         [JsonPropertyName("history")]
         public IRiskyServicePrincipalHistoryCollectionPage History { get; set; }

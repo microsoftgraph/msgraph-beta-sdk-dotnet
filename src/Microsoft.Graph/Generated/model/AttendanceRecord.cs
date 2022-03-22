@@ -42,6 +42,13 @@ namespace Microsoft.Graph
         public Identity Identity { get; set; }
     
         /// <summary>
+        /// Gets or sets registrant id.
+        /// Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
+        /// </summary>
+        [JsonPropertyName("registrantId")]
+        public string RegistrantId { get; set; }
+    
+        /// <summary>
         /// Gets or sets role.
         /// Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
         /// </summary>
