@@ -57,21 +57,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets scope id.
-        /// The id of the scope where the policy is created. E.g. '/', groupId, etc.
+        /// The id of the scope where the policy is created. Can be / for the tenant or a group ID. Required.
         /// </summary>
         [JsonPropertyName("scopeId")]
         public string ScopeId { get; set; }
     
         /// <summary>
         /// Gets or sets scope type.
-        /// The type of the scope where the policy is created. One of Directory, DirectoryRole, Group.
+        /// The type of the scope where the policy is created. One of Directory, DirectoryRole. Required.
         /// </summary>
         [JsonPropertyName("scopeType")]
         public string ScopeType { get; set; }
     
         /// <summary>
         /// Gets or sets effective rules.
-        /// The list of effective rules like approval rule, expiration rule, etc. evaluated based on inherited referenced rules. E.g. If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.
+        /// Not implemented. The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval.
         /// </summary>
         [JsonPropertyName("effectiveRules")]
         public IUnifiedRoleManagementPolicyEffectiveRulesCollectionPage EffectiveRules { get; set; }
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets rules.
-        /// The collection of rules like approval rule, expiration rule, etc.
+        /// The collection of rules like approval rules and expiration rules.
         /// </summary>
         [JsonPropertyName("rules")]
         public IUnifiedRoleManagementPolicyRulesCollectionPage Rules { get; set; }

@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets status.
+        /// The status of the role assignment request. The value can be InProgress or Closed.
         /// </summary>
         [JsonPropertyName("status")]
         public string Status { get; set; }
     
         /// <summary>
         /// Gets or sets statusDetails.
+        /// The details of the status of the role assignment request. It represents the evaluation results of different rules.
         /// </summary>
         [JsonPropertyName("statusDetails")]
         public IEnumerable<KeyValue> StatusDetails { get; set; }
     
         /// <summary>
         /// Gets or sets subStatus.
+        /// The sub status of the role assignment request. The values can be Accepted, PendingEvaluation, Granted, Denied, PendingProvisioning, Provisioned, PendingRevocation, Revoked, Canceled, Failed, PendingApprovalProvisioning, PendingApproval, FailedAsResourceIsLocked, PendingAdminDecision, AdminApproved, AdminDenied, TimedOut, and ProvisioningStarted.
         /// </summary>
         [JsonPropertyName("subStatus")]
         public string SubStatus { get; set; }

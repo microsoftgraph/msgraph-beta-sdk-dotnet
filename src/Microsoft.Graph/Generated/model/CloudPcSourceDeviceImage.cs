@@ -37,12 +37,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets subscriptionDisplayName.
+        /// The display name of subscription that hosts the source image.
         /// </summary>
         [JsonPropertyName("subscriptionDisplayName")]
         public string SubscriptionDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets subscriptionId.
+        /// The ID of subscription that hosts the source image.
         /// </summary>
         [JsonPropertyName("subscriptionId")]
         public string SubscriptionId { get; set; }
