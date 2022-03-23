@@ -11,8 +11,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      NUGET_URL: https://nuget.pkg.github.com/microsoft/index.json
-      GRAPH_NUGET_URL: https://nuget.pkg.github.com/microsoftgraph/index.json
       solutionName: Microsoft.Graph.Beta.sln
     steps:
       - uses: actions/checkout@v2.4.0
@@ -24,12 +22,6 @@ jobs:
         uses: github/codeql-action/init@v1
         with:
           languages: csharp
-      - name: Add NuGet kiota source
-        run: |
-          dotnet nuget add source ${{env.NUGET_URL}} -n ReadKiotaGithubPackages -u ${{secrets.PUBLISH_GH_USERNAME}} -p ${{secrets.PUBLISH_GH_TOKEN}} --store-password-in-clear-text
-      - name: Add Graph Core source
-        run: |
-          dotnet nuget add source ${{env.GRAPH_NUGET_URL}} -n ReadGithubPackages -u ${{secrets.PUBLISH_GH_USERNAME}} -p ${{secrets.PUBLISH_GH_TOKEN}} --store-password-in-clear-text
       - name: Restore dependencies
         run: dotnet restore ${{ env.solutionName }}
       - name: Build

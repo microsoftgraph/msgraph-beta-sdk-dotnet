@@ -13,6 +13,8 @@ The Microsoft Graph Beta .NET Client Library 0.x targets .NetStandard 1.1 and .N
 
 The Microsoft Graph Beta .NET Client Library 4.x targets .NetStandard 2.0 and .Net Framework 4.6.2.
 
+The Microsoft Graph Beta .NET Client Library 5.x targets .NetStandard 2.1
+
 ## Installation via NuGet
 
 To install the client library via NuGet:
@@ -78,6 +80,10 @@ Between 0.x and 4.x there were some major breaking changes:
  * Upgrading Microsoft.Graph.Core dependency to version 2.0.0
 
 View the upgrade guide [here](https://github.com/microsoftgraph/msgraph-sdk-dotnet/blob/dev/docs/upgrade-to-v4.md)..
+
+### Upgrading to v5
+
+View the upgrade guide [here](https://github.com/microsoftgraph/msgraph-sdk-dotnet/blob/feature/5.0/docs/upgrade-to-v5.md)..
 
 ## Issues
 
