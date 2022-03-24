@@ -21,7 +21,8 @@
     <DelaySign>false</DelaySign>
     <AssemblyOriginatorKeyFile>35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <PackageReleaseNotes>  
+    <PackageReleaseNotes>
+      - Kiota generated SDK version
     </PackageReleaseNotes>
     <!-- edit this value to change the current major.minor.patch version -->
     <VersionPrefix>5.0.0</VersionPrefix>
