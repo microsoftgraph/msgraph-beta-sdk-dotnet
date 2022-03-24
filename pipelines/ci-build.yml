@@ -15,6 +15,10 @@ variables:
   BuildConfiguration: 'release'
 
 steps:
+- pwsh: git config --system core.longpaths true
+
+- checkout: self
+
 - task: UseDotNet@2
   displayName: 'Use .NET sdk'
   inputs:
