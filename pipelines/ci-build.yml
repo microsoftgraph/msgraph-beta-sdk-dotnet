@@ -85,7 +85,6 @@ steps:
   displayName: 'run tests'
   inputs:
     command: 'test'
-    projects: 'tests/Microsoft.Graph.DotnetCore.Test/Microsoft.Graph.DotnetCore.Test.csproj'
     arguments: '--configuration $(BuildConfiguration) --verbosity normal'
 
 - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
