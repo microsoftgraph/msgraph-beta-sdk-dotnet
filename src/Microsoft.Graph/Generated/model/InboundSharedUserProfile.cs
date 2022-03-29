@@ -17,17 +17,10 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Inbound Shared User Profile.
     /// </summary>
-    public partial class InboundSharedUserProfile : DirectoryObject
+    [JsonConverter(typeof(DerivedTypeConverter<InboundSharedUserProfile>))]
+    public partial class InboundSharedUserProfile
     {
     
-        ///<summary>
-        /// The InboundSharedUserProfile constructor
-        ///</summary>
-        public InboundSharedUserProfile()
-        {
-            this.ODataType = "microsoft.graph.inboundSharedUserProfile";
-        }
-
         /// <summary>
         /// Gets or sets display name.
         /// </summary>
@@ -51,6 +44,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonPropertyName("@odata.type")]
+        public string ODataType { get; set; }
+
+        /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

@@ -14,28 +14,22 @@ namespace Microsoft.Graph
     using System.IO;
 
     /// <summary>
-    /// The interface IOutboundSharedUserProfileRequestBuilder.
+    /// The interface IMicrosoftApplicationDataAccessSettingsRequestBuilder.
     /// </summary>
-    public partial interface IOutboundSharedUserProfileRequestBuilder : IBaseRequestBuilder
+    public partial interface IMicrosoftApplicationDataAccessSettingsRequestBuilder : IEntityRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        IOutboundSharedUserProfileRequest Request();
+        new IMicrosoftApplicationDataAccessSettingsRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        IOutboundSharedUserProfileRequest Request(IEnumerable<Option> options);
-    
-        /// <summary>
-        /// Gets the request builder for Tenants.
-        /// </summary>
-        /// <returns>The <see cref="IOutboundSharedUserProfileTenantsCollectionRequestBuilder"/>.</returns>
-        IOutboundSharedUserProfileTenantsCollectionRequestBuilder Tenants { get; }
+        new IMicrosoftApplicationDataAccessSettingsRequest Request(IEnumerable<Option> options);
     
     }
 }

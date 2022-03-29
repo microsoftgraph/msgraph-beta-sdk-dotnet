@@ -43,6 +43,12 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets view point.
+        /// </summary>
+        [JsonPropertyName("viewPoint")]
+        public PrinterShareViewpoint ViewPoint { get; set; }
+    
+        /// <summary>
         /// Gets or sets allowed groups.
         /// The groups whose users have access to print using the printer.
         /// </summary>

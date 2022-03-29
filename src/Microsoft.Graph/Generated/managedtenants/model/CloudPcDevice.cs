@@ -28,6 +28,12 @@ namespace Microsoft.Graph.ManagedTenants
         public string CloudPcStatus { get; set; }
     
         /// <summary>
+        /// Gets or sets device specification.
+        /// </summary>
+        [JsonPropertyName("deviceSpecification")]
+        public string DeviceSpecification { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// The display name for the cloud PC. Required. Read-only.
         /// </summary>
@@ -68,6 +74,12 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         [JsonPropertyName("servicePlanName")]
         public string ServicePlanName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets service plan type.
+        /// </summary>
+        [JsonPropertyName("servicePlanType")]
+        public string ServicePlanType { get; set; }
     
         /// <summary>
         /// Gets or sets tenant display name.

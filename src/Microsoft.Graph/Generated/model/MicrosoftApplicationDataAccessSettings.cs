@@ -15,29 +15,22 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type Tenant Reference.
+    /// The type Microsoft Application Data Access Settings.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<TenantReference>))]
-    public partial class TenantReference
+    public partial class MicrosoftApplicationDataAccessSettings : Entity
     {
     
         /// <summary>
-        /// Gets or sets tenant id.
+        /// Gets or sets disabled for group.
         /// </summary>
-        [JsonPropertyName("tenantId")]
-        public string TenantId { get; set; }
+        [JsonPropertyName("disabledForGroup")]
+        public string DisabledForGroup { get; set; }
     
         /// <summary>
-        /// Gets or sets @odata.type.
+        /// Gets or sets is enabled for all microsoft applications.
         /// </summary>
-        [JsonPropertyName("@odata.type")]
-        public string ODataType { get; set; }
-
-        /// <summary>
-        /// Gets or sets additional data.
-        /// </summary>
-        [JsonExtensionData]
-        public IDictionary<string, object> AdditionalData { get; set; }
+        [JsonPropertyName("isEnabledForAllMicrosoftApplications")]
+        public bool? IsEnabledForAllMicrosoftApplications { get; set; }
     
     }
 }

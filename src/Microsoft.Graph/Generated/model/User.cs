@@ -483,6 +483,12 @@ namespace Microsoft.Graph
         public Int32? DeviceEnrollmentLimit { get; set; }
     
         /// <summary>
+        /// Gets or sets print.
+        /// </summary>
+        [JsonPropertyName("print")]
+        public UserPrint Print { get; set; }
+    
+        /// <summary>
         /// Gets or sets about me.
         /// A freeform text entry field for the user to describe themselves. Returned only on $select.
         /// </summary>
@@ -1248,6 +1254,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets authentication.
+        /// The authentication methods that are supported for the user.
         /// </summary>
         [JsonPropertyName("authentication")]
         public Authentication Authentication { get; set; }

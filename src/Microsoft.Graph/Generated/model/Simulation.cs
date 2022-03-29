@@ -37,6 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets automation id.
+        /// Unique identifier for the attack simulation automation.
         /// </summary>
         [JsonPropertyName("automationId")]
         public string AutomationId { get; set; }
@@ -120,7 +121,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// Status of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, draft, inProgress, scheduled, completed, partiallyCompleted, failed, cancelled, excluded, deleted, included, unknownFutureValue.
+        /// Status of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, draft, running, scheduled, succeeded, failed, cancelled, excluded, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("status")]
         public SimulationStatus? Status { get; set; }

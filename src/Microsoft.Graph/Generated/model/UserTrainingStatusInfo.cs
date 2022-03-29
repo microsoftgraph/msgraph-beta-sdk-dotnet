@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets trainingStatus.
-        /// Status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, notCompleted, unknownFutureValue.
+        /// Status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("trainingStatus")]
         public TrainingStatus? TrainingStatus { get; set; }

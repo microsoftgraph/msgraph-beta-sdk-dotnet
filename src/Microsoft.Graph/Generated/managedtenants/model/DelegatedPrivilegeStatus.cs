@@ -34,5 +34,15 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         UnknownFutureValue = 2,
 	
+        /// <summary>
+        /// Granular Delegated Admin Privileges
+        /// </summary>
+        GranularDelegatedAdminPrivileges = 3,
+	
+        /// <summary>
+        /// Delegated And Granular Delegeted Admin Privileges
+        /// </summary>
+        DelegatedAndGranularDelegetedAdminPrivileges = 4,
+	
     }
 }

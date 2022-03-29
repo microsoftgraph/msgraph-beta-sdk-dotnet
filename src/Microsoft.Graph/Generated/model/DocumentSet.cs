@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets shouldPrefixNameToFile.
-        /// Add the name of the document set to each file name.
+        /// Indicates whether to add the name of the document set to each file name.
         /// </summary>
         [JsonPropertyName("shouldPrefixNameToFile")]
         public bool? ShouldPrefixNameToFile { get; set; }
