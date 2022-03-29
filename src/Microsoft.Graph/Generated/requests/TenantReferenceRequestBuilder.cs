@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type TenantReferenceRequestBuilder.
     /// </summary>
-    public partial class TenantReferenceRequestBuilder : DirectoryObjectRequestBuilder, ITenantReferenceRequestBuilder
+    public partial class TenantReferenceRequestBuilder : BaseRequestBuilder, ITenantReferenceRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new ITenantReferenceRequest Request()
+        public ITenantReferenceRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new ITenantReferenceRequest Request(IEnumerable<Option> options)
+        public ITenantReferenceRequest Request(IEnumerable<Option> options)
         {
             return new TenantReferenceRequest(this.RequestUrl, this.Client, options);
         }

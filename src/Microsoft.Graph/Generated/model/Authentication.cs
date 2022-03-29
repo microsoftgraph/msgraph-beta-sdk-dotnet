@@ -22,6 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets email methods.
+        /// Represents the email addresses registered to a user for authentication.
         /// </summary>
         [JsonPropertyName("emailMethods")]
         public IAuthenticationEmailMethodsCollectionPage EmailMethods { get; set; }
@@ -35,6 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets fido2methods.
+        /// Represents the FIDO2 security keys registered to a user for authentication.
         /// </summary>
         [JsonPropertyName("fido2Methods")]
         public IAuthenticationFido2MethodsCollectionPage Fido2Methods { get; set; }
@@ -48,6 +50,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets methods.
+        /// Represents all authentication methods registered to a user.
         /// </summary>
         [JsonPropertyName("methods")]
         public IAuthenticationMethodsCollectionPage Methods { get; set; }
@@ -61,6 +64,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets microsoft authenticator methods.
+        /// The details of the Microsoft Authenticator app registered to a user for authentication.
         /// </summary>
         [Obsolete("")]
         [JsonPropertyName("microsoftAuthenticatorMethods")]
@@ -88,6 +92,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets passwordless microsoft authenticator methods.
+        /// Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
         /// </summary>
         [JsonPropertyName("passwordlessMicrosoftAuthenticatorMethods")]
         public IAuthenticationPasswordlessMicrosoftAuthenticatorMethodsCollectionPage PasswordlessMicrosoftAuthenticatorMethods { get; set; }
@@ -101,6 +106,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets password methods.
+        /// Represents the details of the password authentication method registered to a user for authentication.
         /// </summary>
         [JsonPropertyName("passwordMethods")]
         public IAuthenticationPasswordMethodsCollectionPage PasswordMethods { get; set; }
@@ -114,6 +120,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets phone methods.
+        /// Represents the phone registered to a user for authentication.
         /// </summary>
         [JsonPropertyName("phoneMethods")]
         public IAuthenticationPhoneMethodsCollectionPage PhoneMethods { get; set; }
@@ -140,6 +147,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets temporary access pass methods.
+        /// Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
         /// </summary>
         [JsonPropertyName("temporaryAccessPassMethods")]
         public IAuthenticationTemporaryAccessPassMethodsCollectionPage TemporaryAccessPassMethods { get; set; }
@@ -153,6 +161,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets windows hello for business methods.
+        /// Represents the Windows Hello for Business authentication method registered to a user for authentication.
         /// </summary>
         [JsonPropertyName("windowsHelloForBusinessMethods")]
         public IAuthenticationWindowsHelloForBusinessMethodsCollectionPage WindowsHelloForBusinessMethods { get; set; }

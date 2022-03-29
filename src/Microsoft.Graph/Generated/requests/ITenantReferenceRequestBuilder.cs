@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ITenantReferenceRequestBuilder.
     /// </summary>
-    public partial interface ITenantReferenceRequestBuilder : IDirectoryObjectRequestBuilder
+    public partial interface ITenantReferenceRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new ITenantReferenceRequest Request();
+        ITenantReferenceRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new ITenantReferenceRequest Request(IEnumerable<Option> options);
+        ITenantReferenceRequest Request(IEnumerable<Option> options);
     
         /// <summary>
         /// Gets the request builder for TenantReferenceRemovePersonalData.

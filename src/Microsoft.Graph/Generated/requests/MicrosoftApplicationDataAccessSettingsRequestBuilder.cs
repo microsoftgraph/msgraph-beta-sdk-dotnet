@@ -14,17 +14,17 @@ namespace Microsoft.Graph
     using System.IO;
 
     /// <summary>
-    /// The type OutboundSharedUserProfileRequestBuilder.
+    /// The type MicrosoftApplicationDataAccessSettingsRequestBuilder.
     /// </summary>
-    public partial class OutboundSharedUserProfileRequestBuilder : BaseRequestBuilder, IOutboundSharedUserProfileRequestBuilder
+    public partial class MicrosoftApplicationDataAccessSettingsRequestBuilder : EntityRequestBuilder, IMicrosoftApplicationDataAccessSettingsRequestBuilder
     {
 
         /// <summary>
-        /// Constructs a new OutboundSharedUserProfileRequestBuilder.
+        /// Constructs a new MicrosoftApplicationDataAccessSettingsRequestBuilder.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        public OutboundSharedUserProfileRequestBuilder(
+        public MicrosoftApplicationDataAccessSettingsRequestBuilder(
             string requestUrl,
             IBaseClient client)
             : base(requestUrl, client)
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public IOutboundSharedUserProfileRequest Request()
+        public new IMicrosoftApplicationDataAccessSettingsRequest Request()
         {
             return this.Request(null);
         }
@@ -45,21 +45,9 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public IOutboundSharedUserProfileRequest Request(IEnumerable<Option> options)
+        public new IMicrosoftApplicationDataAccessSettingsRequest Request(IEnumerable<Option> options)
         {
-            return new OutboundSharedUserProfileRequest(this.RequestUrl, this.Client, options);
-        }
-    
-        /// <summary>
-        /// Gets the request builder for Tenants.
-        /// </summary>
-        /// <returns>The <see cref="IOutboundSharedUserProfileTenantsCollectionRequestBuilder"/>.</returns>
-        public IOutboundSharedUserProfileTenantsCollectionRequestBuilder Tenants
-        {
-            get
-            {
-                return new OutboundSharedUserProfileTenantsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("tenants"), this.Client);
-            }
+            return new MicrosoftApplicationDataAccessSettingsRequest(this.RequestUrl, this.Client, options);
         }
     
     }

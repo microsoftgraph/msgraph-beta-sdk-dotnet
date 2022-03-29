@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets latestTrainingStatus.
-        /// Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, notCompleted, unknownFutureValue.
+        /// Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("latestTrainingStatus")]
         public TrainingStatus? LatestTrainingStatus { get; set; }

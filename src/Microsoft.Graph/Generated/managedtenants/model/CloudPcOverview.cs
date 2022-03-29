@@ -132,6 +132,12 @@ namespace Microsoft.Graph.ManagedTenants
         public string TenantId { get; set; }
     
         /// <summary>
+        /// Gets or sets total business licenses.
+        /// </summary>
+        [JsonPropertyName("totalBusinessLicenses")]
+        public Int32? TotalBusinessLicenses { get; set; }
+    
+        /// <summary>
         /// Gets or sets total cloud pc connection status.
         /// The total number of cloud PC connection statuses for the given managed tenant. Optional. Read-only.
         /// </summary>
@@ -144,6 +150,12 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         [JsonPropertyName("totalCloudPcStatus")]
         public Int32? TotalCloudPcStatus { get; set; }
+    
+        /// <summary>
+        /// Gets or sets total enterprise licenses.
+        /// </summary>
+        [JsonPropertyName("totalEnterpriseLicenses")]
+        public Int32? TotalEnterpriseLicenses { get; set; }
     
     }
 }

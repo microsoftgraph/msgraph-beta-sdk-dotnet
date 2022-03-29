@@ -49,6 +49,12 @@ namespace Microsoft.Graph
         public string HomePageUrl { get; set; }
     
         /// <summary>
+        /// Gets or sets informational urls.
+        /// </summary>
+        [JsonPropertyName("informationalUrls")]
+        public InformationalUrls InformationalUrls { get; set; }
+    
+        /// <summary>
         /// Gets or sets logo url.
         /// The URL to get the logo for this application.
         /// </summary>

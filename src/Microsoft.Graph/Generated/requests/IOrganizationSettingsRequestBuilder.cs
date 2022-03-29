@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IOrganizationSettingsRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for MicrosoftApplicationDataAccess.
+        /// </summary>
+        /// <returns>The <see cref="IMicrosoftApplicationDataAccessSettingsRequestBuilder"/>.</returns>
+        IMicrosoftApplicationDataAccessSettingsRequestBuilder MicrosoftApplicationDataAccess { get; }
+
+        /// <summary>
         /// Gets the request builder for ItemInsights.
         /// </summary>
         /// <returns>The <see cref="IInsightsSettingsRequestBuilder"/>.</returns>

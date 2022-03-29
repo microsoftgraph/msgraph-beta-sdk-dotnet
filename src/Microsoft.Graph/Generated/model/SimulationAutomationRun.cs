@@ -23,24 +23,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets end date time.
+        /// Date and time when the run ends in an attack simulation automation.
         /// </summary>
         [JsonPropertyName("endDateTime")]
         public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets simulation id.
+        /// Unique identifier for the attack simulation campaign initiated in the attack simulation automation run.
         /// </summary>
         [JsonPropertyName("simulationId")]
         public string SimulationId { get; set; }
     
         /// <summary>
         /// Gets or sets start date time.
+        /// Date and time when the run starts in an attack simulation automation.
         /// </summary>
         [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// Status of the run of an attack simulation automation. The possible values are: unknown, running, succeeded, failed, skipped, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("status")]
         public SimulationAutomationRunStatus? Status { get; set; }

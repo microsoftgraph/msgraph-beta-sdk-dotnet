@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for MicrosoftApplicationDataAccess.
+        /// </summary>
+        /// <returns>The <see cref="IMicrosoftApplicationDataAccessSettingsRequestBuilder"/>.</returns>
+        public IMicrosoftApplicationDataAccessSettingsRequestBuilder MicrosoftApplicationDataAccess
+        {
+            get
+            {
+                return new MicrosoftApplicationDataAccessSettingsRequestBuilder(this.AppendSegmentToRequestUrl("microsoftApplicationDataAccess"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ItemInsights.
         /// </summary>
         /// <returns>The <see cref="IInsightsSettingsRequestBuilder"/>.</returns>
