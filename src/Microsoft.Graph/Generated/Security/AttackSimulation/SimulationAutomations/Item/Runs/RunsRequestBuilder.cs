@@ -56,7 +56,7 @@ namespace MicrosoftGraphSdk.Security.AttackSimulation.SimulationAutomations.Item
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get runs from security
+        /// A collection of simulation automation runs.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -95,7 +95,7 @@ namespace MicrosoftGraphSdk.Security.AttackSimulation.SimulationAutomations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get runs from security
+        /// A collection of simulation automation runs.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -127,7 +127,7 @@ namespace MicrosoftGraphSdk.Security.AttackSimulation.SimulationAutomations.Item
             };
             return await RequestAdapter.SendAsync<SimulationAutomationRun>(requestInfo, SimulationAutomationRun.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get runs from security</summary>
+        /// <summary>A collection of simulation automation runs.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
             public bool? Count { get; set; }

@@ -56,7 +56,7 @@ namespace MicrosoftGraphSdk.Me.Authentication.MicrosoftAuthenticatorMethods {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get microsoftAuthenticatorMethods from me
+        /// The details of the Microsoft Authenticator app registered to a user for authentication.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -95,7 +95,7 @@ namespace MicrosoftGraphSdk.Me.Authentication.MicrosoftAuthenticatorMethods {
             return requestInfo;
         }
         /// <summary>
-        /// Get microsoftAuthenticatorMethods from me
+        /// The details of the Microsoft Authenticator app registered to a user for authentication.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -127,7 +127,7 @@ namespace MicrosoftGraphSdk.Me.Authentication.MicrosoftAuthenticatorMethods {
             };
             return await RequestAdapter.SendAsync<MicrosoftAuthenticatorAuthenticationMethod>(requestInfo, MicrosoftAuthenticatorAuthenticationMethod.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get microsoftAuthenticatorMethods from me</summary>
+        /// <summary>The details of the Microsoft Authenticator app registered to a user for authentication.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
             public bool? Count { get; set; }

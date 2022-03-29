@@ -9,7 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Display name of the training.</summary>
         public string DisplayName { get; set; }
-        /// <summary>Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, notCompleted, unknownFutureValue.</summary>
+        /// <summary>Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.</summary>
         public TrainingStatus? LatestTrainingStatus { get; set; }
         /// <summary>Event details of the training when it was assigned to the user.</summary>
         public UserTrainingContentEventInfo TrainingAssignedProperties { get; set; }

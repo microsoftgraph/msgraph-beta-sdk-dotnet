@@ -5,15 +5,25 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SimulationAutomation : Entity, IParsable {
+        /// <summary>Identity of the user who created the attack simulation automation.</summary>
         public EmailIdentity CreatedBy { get; set; }
+        /// <summary>Date and time when the attack simulation automation was created.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
+        /// <summary>Description of the attack simulation automation.</summary>
         public string Description { get; set; }
+        /// <summary>Display name of the attack simulation automation. Supports $filter and $orderby.</summary>
         public string DisplayName { get; set; }
+        /// <summary>Identity of the user who most recently modified the attack simulation automation.</summary>
         public EmailIdentity LastModifiedBy { get; set; }
+        /// <summary>Date and time when the attack simulation automation was most recently modified.</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+        /// <summary>Date and time of the latest run of the attack simulation automation.</summary>
         public DateTimeOffset? LastRunDateTime { get; set; }
+        /// <summary>Date and time of the upcoming run of the attack simulation automation.</summary>
         public DateTimeOffset? NextRunDateTime { get; set; }
+        /// <summary>A collection of simulation automation runs.</summary>
         public List<SimulationAutomationRun> Runs { get; set; }
+        /// <summary>Status of the attack simulation automation. Supports $filter and $orderby. The possible values are: unknown, draft, notRunning, running, completed, unknownFutureValue.</summary>
         public SimulationAutomationStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

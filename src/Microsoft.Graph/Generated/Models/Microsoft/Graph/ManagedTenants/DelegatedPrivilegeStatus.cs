@@ -4,5 +4,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         None,
         DelegatedAdminPrivileges,
         UnknownFutureValue,
+        GranularDelegatedAdminPrivileges,
+        DelegatedAndGranularDelegetedAdminPrivileges,
     }
 }

@@ -60,7 +60,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.PasswordMethods.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get passwordMethods from users
+        /// Represents the details of the password authentication method registered to a user for authentication.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -114,7 +114,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.PasswordMethods.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get passwordMethods from users
+        /// Represents the details of the password authentication method registered to a user for authentication.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -146,7 +146,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.PasswordMethods.Item {
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get passwordMethods from users</summary>
+        /// <summary>Represents the details of the password authentication method registered to a user for authentication.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
             public string[] Expand { get; set; }

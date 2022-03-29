@@ -15,6 +15,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>The printer that this printer share is related to.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Printer Printer { get; set; }
+        public PrinterShareViewpoint ViewPoint { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -33,6 +34,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"allowedUsers", (o,n) => { (o as PrinterShare).AllowedUsers = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue).ToList(); } },
                 {"createdDateTime", (o,n) => { (o as PrinterShare).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"printer", (o,n) => { (o as PrinterShare).Printer = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Printer>(MicrosoftGraphSdk.Models.Microsoft.Graph.Printer.CreateFromDiscriminatorValue); } },
+                {"viewPoint", (o,n) => { (o as PrinterShare).ViewPoint = n.GetObjectValue<PrinterShareViewpoint>(PrinterShareViewpoint.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -47,6 +49,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<User>("allowedUsers", AllowedUsers);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Printer>("printer", Printer);
+            writer.WriteObjectValue<PrinterShareViewpoint>("viewPoint", ViewPoint);
         }
     }
 }

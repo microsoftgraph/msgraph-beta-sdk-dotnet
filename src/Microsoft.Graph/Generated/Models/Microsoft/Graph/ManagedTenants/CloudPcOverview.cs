@@ -36,10 +36,12 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         /// <summary>The display name for the managed tenant. Optional. Read-only.</summary>
         public string TenantDisplayName { get; set; }
         public string TenantId { get; set; }
+        public int? TotalBusinessLicenses { get; set; }
         /// <summary>The total number of cloud PC connection statuses for the given managed tenant. Optional. Read-only.</summary>
         public int? TotalCloudPcConnectionStatus { get; set; }
         /// <summary>The total number of cloud PC statues for the given managed tenant. Optional. Read-only.</summary>
         public int? TotalCloudPcStatus { get; set; }
+        public int? TotalEnterpriseLicenses { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -69,8 +71,10 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
                 {"numberOfCloudPcStatusUpgrading", (o,n) => { (o as CloudPcOverview).NumberOfCloudPcStatusUpgrading = n.GetIntValue(); } },
                 {"tenantDisplayName", (o,n) => { (o as CloudPcOverview).TenantDisplayName = n.GetStringValue(); } },
                 {"tenantId", (o,n) => { (o as CloudPcOverview).TenantId = n.GetStringValue(); } },
+                {"totalBusinessLicenses", (o,n) => { (o as CloudPcOverview).TotalBusinessLicenses = n.GetIntValue(); } },
                 {"totalCloudPcConnectionStatus", (o,n) => { (o as CloudPcOverview).TotalCloudPcConnectionStatus = n.GetIntValue(); } },
                 {"totalCloudPcStatus", (o,n) => { (o as CloudPcOverview).TotalCloudPcStatus = n.GetIntValue(); } },
+                {"totalEnterpriseLicenses", (o,n) => { (o as CloudPcOverview).TotalEnterpriseLicenses = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -96,8 +100,10 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
             writer.WriteIntValue("numberOfCloudPcStatusUpgrading", NumberOfCloudPcStatusUpgrading);
             writer.WriteStringValue("tenantDisplayName", TenantDisplayName);
             writer.WriteStringValue("tenantId", TenantId);
+            writer.WriteIntValue("totalBusinessLicenses", TotalBusinessLicenses);
             writer.WriteIntValue("totalCloudPcConnectionStatus", TotalCloudPcConnectionStatus);
             writer.WriteIntValue("totalCloudPcStatus", TotalCloudPcStatus);
+            writer.WriteIntValue("totalEnterpriseLicenses", TotalEnterpriseLicenses);
         }
     }
 }

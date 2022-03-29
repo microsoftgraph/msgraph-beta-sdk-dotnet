@@ -64,7 +64,7 @@ namespace MicrosoftGraphSdk.Security.AttackSimulation.SimulationAutomations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get simulationAutomations from security
+        /// Represents simulation automations created to run on a tenant.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Security.AttackSimulation.SimulationAutomations.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get simulationAutomations from security
+        /// Represents simulation automations created to run on a tenant.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -150,7 +150,7 @@ namespace MicrosoftGraphSdk.Security.AttackSimulation.SimulationAutomations.Item
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get simulationAutomations from security</summary>
+        /// <summary>Represents simulation automations created to run on a tenant.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
             public string[] Expand { get; set; }

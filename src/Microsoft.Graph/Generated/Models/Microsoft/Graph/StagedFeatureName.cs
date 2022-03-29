@@ -1,5 +1,5 @@
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the directory singleton.</summary>
+    /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public enum StagedFeatureName {
         PassthroughAuthentication,
         SeamlessSso,

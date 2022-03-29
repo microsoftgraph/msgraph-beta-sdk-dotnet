@@ -3,6 +3,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using MicrosoftGraphSdk.Organization.Item.Settings.ItemInsights;
+using MicrosoftGraphSdk.Organization.Item.Settings.MicrosoftApplicationDataAccess;
 using MicrosoftGraphSdk.Organization.Item.Settings.PeopleInsights;
 using MicrosoftGraphSdk.Organization.Item.Settings.ProfileCardProperties;
 using System;
@@ -16,6 +17,9 @@ namespace MicrosoftGraphSdk.Organization.Item.Settings {
     public class SettingsRequestBuilder {
         public ItemInsightsRequestBuilder ItemInsights { get =>
             new ItemInsightsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public MicrosoftApplicationDataAccessRequestBuilder MicrosoftApplicationDataAccess { get =>
+            new MicrosoftApplicationDataAccessRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

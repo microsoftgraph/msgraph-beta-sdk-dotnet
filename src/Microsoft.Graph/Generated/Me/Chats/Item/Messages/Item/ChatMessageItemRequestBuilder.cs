@@ -2,6 +2,8 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Me.Chats.Item.Messages.Item.HostedContents;
 using MicrosoftGraphSdk.Me.Chats.Item.Messages.Item.Replies;
+using MicrosoftGraphSdk.Me.Chats.Item.Messages.Item.SoftDelete;
+using MicrosoftGraphSdk.Me.Chats.Item.Messages.Item.UndoSoftDelete;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
@@ -23,6 +25,12 @@ namespace MicrosoftGraphSdk.Me.Chats.Item.Messages.Item {
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        public SoftDeleteRequestBuilder SoftDelete { get =>
+            new SoftDeleteRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public UndoSoftDeleteRequestBuilder UndoSoftDelete { get =>
+            new UndoSoftDeleteRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

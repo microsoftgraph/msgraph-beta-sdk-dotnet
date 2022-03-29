@@ -56,7 +56,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.PasswordMethods {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get passwordMethods from users
+        /// Represents the details of the password authentication method registered to a user for authentication.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -95,7 +95,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.PasswordMethods {
             return requestInfo;
         }
         /// <summary>
-        /// Get passwordMethods from users
+        /// Represents the details of the password authentication method registered to a user for authentication.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -127,7 +127,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.PasswordMethods {
             };
             return await RequestAdapter.SendAsync<PasswordAuthenticationMethod>(requestInfo, PasswordAuthenticationMethod.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get passwordMethods from users</summary>
+        /// <summary>Represents the details of the password authentication method registered to a user for authentication.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
             public bool? Count { get; set; }

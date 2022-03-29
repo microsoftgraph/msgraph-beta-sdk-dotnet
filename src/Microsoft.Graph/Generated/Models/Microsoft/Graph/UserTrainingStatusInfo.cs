@@ -13,7 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? CompletionDateTime { get; set; }
         /// <summary>Display name of the assigned training.</summary>
         public string DisplayName { get; set; }
-        /// <summary>Status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, notCompleted, unknownFutureValue.</summary>
+        /// <summary>Status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.TrainingStatus? TrainingStatus { get; set; }
         /// <summary>
         /// Instantiates a new userTrainingStatusInfo and sets the default values.

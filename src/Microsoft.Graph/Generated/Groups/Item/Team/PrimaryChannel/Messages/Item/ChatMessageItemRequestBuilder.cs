@@ -2,6 +2,8 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Groups.Item.Team.PrimaryChannel.Messages.Item.HostedContents;
 using MicrosoftGraphSdk.Groups.Item.Team.PrimaryChannel.Messages.Item.Replies;
+using MicrosoftGraphSdk.Groups.Item.Team.PrimaryChannel.Messages.Item.SoftDelete;
+using MicrosoftGraphSdk.Groups.Item.Team.PrimaryChannel.Messages.Item.UndoSoftDelete;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
@@ -23,6 +25,12 @@ namespace MicrosoftGraphSdk.Groups.Item.Team.PrimaryChannel.Messages.Item {
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        public SoftDeleteRequestBuilder SoftDelete { get =>
+            new SoftDeleteRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public UndoSoftDeleteRequestBuilder UndoSoftDelete { get =>
+            new UndoSoftDeleteRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

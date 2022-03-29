@@ -60,7 +60,7 @@ namespace MicrosoftGraphSdk.Me.Authentication.Fido2Methods.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get fido2Methods from me
+        /// Represents the FIDO2 security keys registered to a user for authentication.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -114,7 +114,7 @@ namespace MicrosoftGraphSdk.Me.Authentication.Fido2Methods.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get fido2Methods from me
+        /// Represents the FIDO2 security keys registered to a user for authentication.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -146,7 +146,7 @@ namespace MicrosoftGraphSdk.Me.Authentication.Fido2Methods.Item {
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get fido2Methods from me</summary>
+        /// <summary>Represents the FIDO2 security keys registered to a user for authentication.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
             public string[] Expand { get; set; }

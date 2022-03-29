@@ -4,21 +4,29 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    public class TenantReference : DirectoryObject, IParsable {
+    public class TenantReference : IAdditionalDataHolder, IParsable {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         public string TenantId { get; set; }
+        /// <summary>
+        /// Instantiates a new tenantReference and sets the default values.
+        /// </summary>
+        public TenantReference() {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
-        public static new TenantReference CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static TenantReference CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new TenantReference();
         }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
+        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
+            return new Dictionary<string, Action<T, IParseNode>> {
                 {"tenantId", (o,n) => { (o as TenantReference).TenantId = n.GetStringValue(); } },
             };
         }
@@ -26,10 +34,10 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// Serializes information the current object
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
-        public new void Serialize(ISerializationWriter writer) {
+        public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
             writer.WriteStringValue("tenantId", TenantId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -13,6 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string DisplayName { get; set; }
         /// <summary>The home page URL of the application.</summary>
         public string HomePageUrl { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.InformationalUrls InformationalUrls { get; set; }
         /// <summary>The URL to get the logo for this application.</summary>
         public string LogoUrl { get; set; }
         /// <summary>The name of the publisher for this application.</summary>
@@ -38,6 +39,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"description", (o,n) => { (o as ApplicationTemplate).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as ApplicationTemplate).DisplayName = n.GetStringValue(); } },
                 {"homePageUrl", (o,n) => { (o as ApplicationTemplate).HomePageUrl = n.GetStringValue(); } },
+                {"informationalUrls", (o,n) => { (o as ApplicationTemplate).InformationalUrls = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.InformationalUrls>(MicrosoftGraphSdk.Models.Microsoft.Graph.InformationalUrls.CreateFromDiscriminatorValue); } },
                 {"logoUrl", (o,n) => { (o as ApplicationTemplate).LogoUrl = n.GetStringValue(); } },
                 {"publisher", (o,n) => { (o as ApplicationTemplate).Publisher = n.GetStringValue(); } },
                 {"supportedProvisioningTypes", (o,n) => { (o as ApplicationTemplate).SupportedProvisioningTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
@@ -55,6 +57,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("homePageUrl", HomePageUrl);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.InformationalUrls>("informationalUrls", InformationalUrls);
             writer.WriteStringValue("logoUrl", LogoUrl);
             writer.WriteStringValue("publisher", Publisher);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedProvisioningTypes", SupportedProvisioningTypes);
