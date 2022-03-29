@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public SimulationAttackTechnique? AttackTechnique { get; set; }
         /// <summary>Attack type of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, social, cloud, endpoint, unknownFutureValue.</summary>
         public SimulationAttackType? AttackType { get; set; }
+        /// <summary>Unique identifier for the attack simulation automation.</summary>
         public string AutomationId { get; set; }
         /// <summary>Date and time of completion of the attack simulation and training campaign. Supports $filter and $orderby.</summary>
         public DateTimeOffset? CompletionDateTime { get; set; }
@@ -32,7 +33,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.PayloadDeliveryPlatform? PayloadDeliveryPlatform { get; set; }
         /// <summary>Report of the attack simulation and training campaign.</summary>
         public SimulationReport Report { get; set; }
-        /// <summary>Status of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, draft, inProgress, scheduled, completed, partiallyCompleted, failed, cancelled, excluded, deleted, included, unknownFutureValue.</summary>
+        /// <summary>Status of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, draft, running, scheduled, succeeded, failed, cancelled, excluded, unknownFutureValue.</summary>
         public SimulationStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

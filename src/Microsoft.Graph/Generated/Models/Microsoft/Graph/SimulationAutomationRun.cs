@@ -5,9 +5,13 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SimulationAutomationRun : Entity, IParsable {
+        /// <summary>Date and time when the run ends in an attack simulation automation.</summary>
         public DateTimeOffset? EndDateTime { get; set; }
+        /// <summary>Unique identifier for the attack simulation campaign initiated in the attack simulation automation run.</summary>
         public string SimulationId { get; set; }
+        /// <summary>Date and time when the run starts in an attack simulation automation.</summary>
         public DateTimeOffset? StartDateTime { get; set; }
+        /// <summary>Status of the run of an attack simulation automation. The possible values are: unknown, running, succeeded, failed, skipped, unknownFutureValue.</summary>
         public SimulationAutomationRunStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

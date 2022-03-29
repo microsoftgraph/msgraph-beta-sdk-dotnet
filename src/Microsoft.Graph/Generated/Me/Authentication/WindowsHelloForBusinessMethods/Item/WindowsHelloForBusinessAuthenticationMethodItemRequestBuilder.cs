@@ -64,7 +64,7 @@ namespace MicrosoftGraphSdk.Me.Authentication.WindowsHelloForBusinessMethods.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Get windowsHelloForBusinessMethods from me
+        /// Represents the Windows Hello for Business authentication method registered to a user for authentication.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Me.Authentication.WindowsHelloForBusinessMethods.Ite
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get windowsHelloForBusinessMethods from me
+        /// Represents the Windows Hello for Business authentication method registered to a user for authentication.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -150,7 +150,7 @@ namespace MicrosoftGraphSdk.Me.Authentication.WindowsHelloForBusinessMethods.Ite
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get windowsHelloForBusinessMethods from me</summary>
+        /// <summary>Represents the Windows Hello for Business authentication method registered to a user for authentication.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
             public string[] Expand { get; set; }

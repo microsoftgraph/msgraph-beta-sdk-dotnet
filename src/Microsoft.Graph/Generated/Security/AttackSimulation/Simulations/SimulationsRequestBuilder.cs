@@ -56,7 +56,7 @@ namespace MicrosoftGraphSdk.Security.AttackSimulation.Simulations {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Represent attack simulation and training campaign of a tenant.
+        /// Represents an attack simulation training campaign in a tenant.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -95,7 +95,7 @@ namespace MicrosoftGraphSdk.Security.AttackSimulation.Simulations {
             return requestInfo;
         }
         /// <summary>
-        /// Represent attack simulation and training campaign of a tenant.
+        /// Represents an attack simulation training campaign in a tenant.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -127,7 +127,7 @@ namespace MicrosoftGraphSdk.Security.AttackSimulation.Simulations {
             };
             return await RequestAdapter.SendAsync<Simulation>(requestInfo, Simulation.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Represent attack simulation and training campaign of a tenant.</summary>
+        /// <summary>Represents an attack simulation training campaign in a tenant.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
             public bool? Count { get; set; }

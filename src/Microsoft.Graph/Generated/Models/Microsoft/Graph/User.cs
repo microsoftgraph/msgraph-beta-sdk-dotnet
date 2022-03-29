@@ -25,6 +25,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<AssignedLicense> AssignedLicenses { get; set; }
         /// <summary>The plans that are assigned to the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq and not).</summary>
         public List<AssignedPlan> AssignedPlans { get; set; }
+        /// <summary>The authentication methods that are supported for the user.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Authentication Authentication { get; set; }
         /// <summary>The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.</summary>
         public DateTimeOffset? Birthday { get; set; }
@@ -216,6 +217,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The preferred name for the user. Returned only on $select.</summary>
         public string PreferredName { get; set; }
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Presence Presence { get; set; }
+        public UserPrint Print { get; set; }
         /// <summary>Represents properties that are descriptive of a user in a tenant.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Profile Profile { get; set; }
         /// <summary>The plans that are provisioned for the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le).</summary>
@@ -392,6 +394,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"preferredLanguage", (o,n) => { (o as User).PreferredLanguage = n.GetStringValue(); } },
                 {"preferredName", (o,n) => { (o as User).PreferredName = n.GetStringValue(); } },
                 {"presence", (o,n) => { (o as User).Presence = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Presence>(MicrosoftGraphSdk.Models.Microsoft.Graph.Presence.CreateFromDiscriminatorValue); } },
+                {"print", (o,n) => { (o as User).Print = n.GetObjectValue<UserPrint>(UserPrint.CreateFromDiscriminatorValue); } },
                 {"profile", (o,n) => { (o as User).Profile = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Profile>(MicrosoftGraphSdk.Models.Microsoft.Graph.Profile.CreateFromDiscriminatorValue); } },
                 {"provisionedPlans", (o,n) => { (o as User).ProvisionedPlans = n.GetCollectionOfObjectValues<ProvisionedPlan>(ProvisionedPlan.CreateFromDiscriminatorValue).ToList(); } },
                 {"proxyAddresses", (o,n) => { (o as User).ProxyAddresses = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
@@ -540,6 +543,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("preferredLanguage", PreferredLanguage);
             writer.WriteStringValue("preferredName", PreferredName);
             writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Presence>("presence", Presence);
+            writer.WriteObjectValue<UserPrint>("print", Print);
             writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Profile>("profile", Profile);
             writer.WriteCollectionOfObjectValues<ProvisionedPlan>("provisionedPlans", ProvisionedPlans);
             writer.WriteCollectionOfPrimitiveValues<string>("proxyAddresses", ProxyAddresses);

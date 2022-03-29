@@ -56,7 +56,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.PhoneMethods {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get phoneMethods from users
+        /// Represents the phone registered to a user for authentication.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -95,7 +95,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.PhoneMethods {
             return requestInfo;
         }
         /// <summary>
-        /// Get phoneMethods from users
+        /// Represents the phone registered to a user for authentication.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -127,7 +127,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.PhoneMethods {
             };
             return await RequestAdapter.SendAsync<PhoneAuthenticationMethod>(requestInfo, PhoneAuthenticationMethod.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get phoneMethods from users</summary>
+        /// <summary>Represents the phone registered to a user for authentication.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
             public bool? Count { get; set; }

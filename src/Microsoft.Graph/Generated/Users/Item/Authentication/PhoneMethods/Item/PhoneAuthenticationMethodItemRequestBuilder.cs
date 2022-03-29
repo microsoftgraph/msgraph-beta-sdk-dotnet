@@ -60,7 +60,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.PhoneMethods.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get phoneMethods from users
+        /// Represents the phone registered to a user for authentication.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -114,7 +114,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.PhoneMethods.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get phoneMethods from users
+        /// Represents the phone registered to a user for authentication.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -146,7 +146,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.PhoneMethods.Item {
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get phoneMethods from users</summary>
+        /// <summary>Represents the phone registered to a user for authentication.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
             public string[] Expand { get; set; }

@@ -7,6 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
     public class CloudPcDevice : Entity, IParsable {
         /// <summary>The status of the cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed. Required. Read-only.</summary>
         public string CloudPcStatus { get; set; }
+        public string DeviceSpecification { get; set; }
         /// <summary>The display name for the cloud PC. Required. Read-only.</summary>
         public string DisplayName { get; set; }
         /// <summary>Date and time the entity was last updated in the multi-tenant management platform. Required. Read-only.</summary>
@@ -19,6 +20,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         public string ProvisioningPolicyId { get; set; }
         /// <summary>The service plan name for the cloud PC. Required. Read-only.</summary>
         public string ServicePlanName { get; set; }
+        public string ServicePlanType { get; set; }
         /// <summary>The display name for the managed tenant. Required. Read-only.</summary>
         public string TenantDisplayName { get; set; }
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.</summary>
@@ -39,12 +41,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"cloudPcStatus", (o,n) => { (o as CloudPcDevice).CloudPcStatus = n.GetStringValue(); } },
+                {"deviceSpecification", (o,n) => { (o as CloudPcDevice).DeviceSpecification = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as CloudPcDevice).DisplayName = n.GetStringValue(); } },
                 {"lastRefreshedDateTime", (o,n) => { (o as CloudPcDevice).LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"managedDeviceId", (o,n) => { (o as CloudPcDevice).ManagedDeviceId = n.GetStringValue(); } },
                 {"managedDeviceName", (o,n) => { (o as CloudPcDevice).ManagedDeviceName = n.GetStringValue(); } },
                 {"provisioningPolicyId", (o,n) => { (o as CloudPcDevice).ProvisioningPolicyId = n.GetStringValue(); } },
                 {"servicePlanName", (o,n) => { (o as CloudPcDevice).ServicePlanName = n.GetStringValue(); } },
+                {"servicePlanType", (o,n) => { (o as CloudPcDevice).ServicePlanType = n.GetStringValue(); } },
                 {"tenantDisplayName", (o,n) => { (o as CloudPcDevice).TenantDisplayName = n.GetStringValue(); } },
                 {"tenantId", (o,n) => { (o as CloudPcDevice).TenantId = n.GetStringValue(); } },
                 {"userPrincipalName", (o,n) => { (o as CloudPcDevice).UserPrincipalName = n.GetStringValue(); } },
@@ -58,12 +62,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("cloudPcStatus", CloudPcStatus);
+            writer.WriteStringValue("deviceSpecification", DeviceSpecification);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastRefreshedDateTime", LastRefreshedDateTime);
             writer.WriteStringValue("managedDeviceId", ManagedDeviceId);
             writer.WriteStringValue("managedDeviceName", ManagedDeviceName);
             writer.WriteStringValue("provisioningPolicyId", ProvisioningPolicyId);
             writer.WriteStringValue("servicePlanName", ServicePlanName);
+            writer.WriteStringValue("servicePlanType", ServicePlanType);
             writer.WriteStringValue("tenantDisplayName", TenantDisplayName);
             writer.WriteStringValue("tenantId", TenantId);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);

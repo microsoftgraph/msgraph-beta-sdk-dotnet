@@ -56,7 +56,7 @@ namespace MicrosoftGraphSdk.Me.Authentication.Fido2Methods {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get fido2Methods from me
+        /// Represents the FIDO2 security keys registered to a user for authentication.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -95,7 +95,7 @@ namespace MicrosoftGraphSdk.Me.Authentication.Fido2Methods {
             return requestInfo;
         }
         /// <summary>
-        /// Get fido2Methods from me
+        /// Represents the FIDO2 security keys registered to a user for authentication.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -127,7 +127,7 @@ namespace MicrosoftGraphSdk.Me.Authentication.Fido2Methods {
             };
             return await RequestAdapter.SendAsync<Fido2AuthenticationMethod>(requestInfo, Fido2AuthenticationMethod.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get fido2Methods from me</summary>
+        /// <summary>Represents the FIDO2 security keys registered to a user for authentication.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
             public bool? Count { get; set; }

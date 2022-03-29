@@ -56,7 +56,7 @@ namespace MicrosoftGraphSdk.Me.Authentication.PasswordlessMicrosoftAuthenticator
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get passwordlessMicrosoftAuthenticatorMethods from me
+        /// Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -95,7 +95,7 @@ namespace MicrosoftGraphSdk.Me.Authentication.PasswordlessMicrosoftAuthenticator
             return requestInfo;
         }
         /// <summary>
-        /// Get passwordlessMicrosoftAuthenticatorMethods from me
+        /// Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -127,7 +127,7 @@ namespace MicrosoftGraphSdk.Me.Authentication.PasswordlessMicrosoftAuthenticator
             };
             return await RequestAdapter.SendAsync<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>(requestInfo, PasswordlessMicrosoftAuthenticatorAuthenticationMethod.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get passwordlessMicrosoftAuthenticatorMethods from me</summary>
+        /// <summary>Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
             public bool? Count { get; set; }

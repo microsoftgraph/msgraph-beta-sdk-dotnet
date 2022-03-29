@@ -60,7 +60,7 @@ namespace MicrosoftGraphSdk.Security.AttackSimulation.Simulations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represent attack simulation and training campaign of a tenant.
+        /// Represents an attack simulation training campaign in a tenant.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -114,7 +114,7 @@ namespace MicrosoftGraphSdk.Security.AttackSimulation.Simulations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Represent attack simulation and training campaign of a tenant.
+        /// Represents an attack simulation training campaign in a tenant.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -146,7 +146,7 @@ namespace MicrosoftGraphSdk.Security.AttackSimulation.Simulations.Item {
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Represent attack simulation and training campaign of a tenant.</summary>
+        /// <summary>Represents an attack simulation training campaign in a tenant.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
             public string[] Expand { get; set; }

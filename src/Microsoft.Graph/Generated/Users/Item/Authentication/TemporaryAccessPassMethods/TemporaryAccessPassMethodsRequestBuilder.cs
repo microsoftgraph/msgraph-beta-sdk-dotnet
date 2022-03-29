@@ -56,7 +56,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.TemporaryAccessPassMethods
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get temporaryAccessPassMethods from users
+        /// Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -95,7 +95,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.TemporaryAccessPassMethods
             return requestInfo;
         }
         /// <summary>
-        /// Get temporaryAccessPassMethods from users
+        /// Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -127,7 +127,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.TemporaryAccessPassMethods
             };
             return await RequestAdapter.SendAsync<TemporaryAccessPassAuthenticationMethod>(requestInfo, TemporaryAccessPassAuthenticationMethod.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get temporaryAccessPassMethods from users</summary>
+        /// <summary>Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
             public bool? Count { get; set; }

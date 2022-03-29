@@ -56,7 +56,7 @@ namespace MicrosoftGraphSdk.Me.Authentication.WindowsHelloForBusinessMethods {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get windowsHelloForBusinessMethods from me
+        /// Represents the Windows Hello for Business authentication method registered to a user for authentication.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -95,7 +95,7 @@ namespace MicrosoftGraphSdk.Me.Authentication.WindowsHelloForBusinessMethods {
             return requestInfo;
         }
         /// <summary>
-        /// Get windowsHelloForBusinessMethods from me
+        /// Represents the Windows Hello for Business authentication method registered to a user for authentication.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -127,7 +127,7 @@ namespace MicrosoftGraphSdk.Me.Authentication.WindowsHelloForBusinessMethods {
             };
             return await RequestAdapter.SendAsync<WindowsHelloForBusinessAuthenticationMethod>(requestInfo, WindowsHelloForBusinessAuthenticationMethod.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get windowsHelloForBusinessMethods from me</summary>
+        /// <summary>Represents the Windows Hello for Business authentication method registered to a user for authentication.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
             public bool? Count { get; set; }

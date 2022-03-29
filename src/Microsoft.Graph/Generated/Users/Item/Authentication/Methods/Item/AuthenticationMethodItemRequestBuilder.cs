@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.Methods.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get methods from users
+        /// Represents all authentication methods registered to a user.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -126,7 +126,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.Methods.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get methods from users
+        /// Represents all authentication methods registered to a user.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -158,7 +158,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.Methods.Item {
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get methods from users</summary>
+        /// <summary>Represents all authentication methods registered to a user.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
             public string[] Expand { get; set; }
