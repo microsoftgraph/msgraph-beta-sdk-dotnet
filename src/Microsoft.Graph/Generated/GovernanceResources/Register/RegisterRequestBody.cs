@@ -8,6 +8,7 @@ namespace MicrosoftGraphSdk.GovernanceResources.Register {
     public class RegisterRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The externalId property</summary>
         public string ExternalId { get; set; }
         /// <summary>
         /// Instantiates a new registerRequestBody and sets the default values.

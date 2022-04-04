@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PrintTaskTrigger : Entity, IParsable {
+        /// <summary>The definition property</summary>
         public PrintTaskDefinition Definition { get; set; }
         /// <summary>The Universal Print event that will cause a new printTask to be triggered. Valid values are described in the following table.</summary>
         public PrintEvent? Event { get; set; }

@@ -17,9 +17,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public TeamsAsyncOperationType? OperationType { get; set; }
         /// <summary>Operation status.</summary>
         public TeamsAsyncOperationStatus? Status { get; set; }
-        /// <summary>The ID of the object that's created or modified as result of this async operation, typically a team.</summary>
+        /// <summary>The ID of the object that&apos;s created or modified as result of this async operation, typically a team.</summary>
         public string TargetResourceId { get; set; }
-        /// <summary>The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.</summary>
+        /// <summary>The location of the object that&apos;s created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.</summary>
         public string TargetResourceLocation { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

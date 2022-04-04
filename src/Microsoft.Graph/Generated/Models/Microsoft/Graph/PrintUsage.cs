@@ -6,9 +6,13 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PrintUsage : Entity, IParsable {
+        /// <summary>The completedBlackAndWhiteJobCount property</summary>
         public long? CompletedBlackAndWhiteJobCount { get; set; }
+        /// <summary>The completedColorJobCount property</summary>
         public long? CompletedColorJobCount { get; set; }
+        /// <summary>The incompleteJobCount property</summary>
         public long? IncompleteJobCount { get; set; }
+        /// <summary>The usageDate property</summary>
         public Date? UsageDate { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

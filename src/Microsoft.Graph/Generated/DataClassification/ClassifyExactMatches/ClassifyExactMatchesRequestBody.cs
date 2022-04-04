@@ -9,9 +9,13 @@ namespace MicrosoftGraphSdk.DataClassification.ClassifyExactMatches {
     public class ClassifyExactMatchesRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The contentClassifications property</summary>
         public List<ContentClassification> ContentClassifications { get; set; }
+        /// <summary>The sensitiveTypeIds property</summary>
         public List<string> SensitiveTypeIds { get; set; }
+        /// <summary>The text property</summary>
         public string Text { get; set; }
+        /// <summary>The timeoutInMs property</summary>
         public string TimeoutInMs { get; set; }
         /// <summary>
         /// Instantiates a new classifyExactMatchesRequestBody and sets the default values.

@@ -7,12 +7,17 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Communications.Calls.Item.Answer {
     /// <summary>Provides operations to call the answer method.</summary>
     public class AnswerRequestBody : IAdditionalDataHolder, IParsable {
+        /// <summary>The acceptedModalities property</summary>
         public List<Modality?> AcceptedModalities { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The callbackUri property</summary>
         public string CallbackUri { get; set; }
+        /// <summary>The callOptions property</summary>
         public IncomingCallOptions CallOptions { get; set; }
+        /// <summary>The mediaConfig property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.MediaConfig MediaConfig { get; set; }
+        /// <summary>The participantCapacity property</summary>
         public int? ParticipantCapacity { get; set; }
         /// <summary>
         /// Instantiates a new answerRequestBody and sets the default values.

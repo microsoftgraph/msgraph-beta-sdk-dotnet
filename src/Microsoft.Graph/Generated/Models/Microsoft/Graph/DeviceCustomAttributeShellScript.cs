@@ -11,7 +11,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>The name of the custom attribute.</summary>
         public string CustomAttributeName { get; set; }
-        /// <summary>The expected type of the custom attribute's value. Possible values are: integer, string, dateTime.</summary>
+        /// <summary>The expected type of the custom attribute&apos;s value. Possible values are: integer, string, dateTime.</summary>
         public DeviceCustomAttributeValueType? CustomAttributeType { get; set; }
         /// <summary>Optional description for the device management script.</summary>
         public string Description { get; set; }

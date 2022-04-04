@@ -19,7 +19,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Program Program { get; set; }
         /// <summary>The programId of the program this control is a part of. Required on create.</summary>
         public string ProgramId { get; set; }
-        /// <summary>The resource, a group or an app, targeted by this program control's access review.</summary>
+        /// <summary>The resource, a group or an app, targeted by this program control&apos;s access review.</summary>
         public ProgramResource Resource { get; set; }
         /// <summary>The life cycle status of the control.</summary>
         public string Status { get; set; }

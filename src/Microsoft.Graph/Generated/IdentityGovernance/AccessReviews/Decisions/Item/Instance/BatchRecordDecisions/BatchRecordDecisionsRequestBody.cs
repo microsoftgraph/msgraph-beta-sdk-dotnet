@@ -8,9 +8,13 @@ namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Decisions.Item.Inst
     public class BatchRecordDecisionsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The decision property</summary>
         public string Decision { get; set; }
+        /// <summary>The justification property</summary>
         public string Justification { get; set; }
+        /// <summary>The principalId property</summary>
         public string PrincipalId { get; set; }
+        /// <summary>The resourceId property</summary>
         public string ResourceId { get; set; }
         /// <summary>
         /// Instantiates a new batchRecordDecisionsRequestBody and sets the default values.

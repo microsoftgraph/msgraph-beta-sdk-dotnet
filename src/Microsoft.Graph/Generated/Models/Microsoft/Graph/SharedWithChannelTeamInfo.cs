@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SharedWithChannelTeamInfo : TeamInfo, IParsable {
+        /// <summary>The allowedMembers property</summary>
         public List<ConversationMember> AllowedMembers { get; set; }
+        /// <summary>The isHostTeam property</summary>
         public bool? IsHostTeam { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

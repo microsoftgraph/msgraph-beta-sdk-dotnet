@@ -36,82 +36,107 @@ using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Policies {
     /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class PoliciesRequestBuilder {
+        /// <summary>The accessReviewPolicy property</summary>
         public AccessReviewPolicyRequestBuilder AccessReviewPolicy { get =>
             new AccessReviewPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The activityBasedTimeoutPolicies property</summary>
         public ActivityBasedTimeoutPoliciesRequestBuilder ActivityBasedTimeoutPolicies { get =>
             new ActivityBasedTimeoutPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The adminConsentRequestPolicy property</summary>
         public AdminConsentRequestPolicyRequestBuilder AdminConsentRequestPolicy { get =>
             new AdminConsentRequestPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The appManagementPolicies property</summary>
         public AppManagementPoliciesRequestBuilder AppManagementPolicies { get =>
             new AppManagementPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The authenticationFlowsPolicy property</summary>
         public AuthenticationFlowsPolicyRequestBuilder AuthenticationFlowsPolicy { get =>
             new AuthenticationFlowsPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The authenticationMethodsPolicy property</summary>
         public AuthenticationMethodsPolicyRequestBuilder AuthenticationMethodsPolicy { get =>
             new AuthenticationMethodsPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The authorizationPolicy property</summary>
         public AuthorizationPolicyRequestBuilder AuthorizationPolicy { get =>
             new AuthorizationPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The b2cAuthenticationMethodsPolicy property</summary>
         public B2cAuthenticationMethodsPolicyRequestBuilder B2cAuthenticationMethodsPolicy { get =>
             new B2cAuthenticationMethodsPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The claimsMappingPolicies property</summary>
         public ClaimsMappingPoliciesRequestBuilder ClaimsMappingPolicies { get =>
             new ClaimsMappingPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The conditionalAccessPolicies property</summary>
         public ConditionalAccessPoliciesRequestBuilder ConditionalAccessPolicies { get =>
             new ConditionalAccessPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The crossTenantAccessPolicy property</summary>
         public CrossTenantAccessPolicyRequestBuilder CrossTenantAccessPolicy { get =>
             new CrossTenantAccessPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The defaultAppManagementPolicy property</summary>
         public DefaultAppManagementPolicyRequestBuilder DefaultAppManagementPolicy { get =>
             new DefaultAppManagementPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The directoryRoleAccessReviewPolicy property</summary>
         public DirectoryRoleAccessReviewPolicyRequestBuilder DirectoryRoleAccessReviewPolicy { get =>
             new DirectoryRoleAccessReviewPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The externalIdentitiesPolicy property</summary>
         public ExternalIdentitiesPolicyRequestBuilder ExternalIdentitiesPolicy { get =>
             new ExternalIdentitiesPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The featureRolloutPolicies property</summary>
         public FeatureRolloutPoliciesRequestBuilder FeatureRolloutPolicies { get =>
             new FeatureRolloutPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The homeRealmDiscoveryPolicies property</summary>
         public HomeRealmDiscoveryPoliciesRequestBuilder HomeRealmDiscoveryPolicies { get =>
             new HomeRealmDiscoveryPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The identitySecurityDefaultsEnforcementPolicy property</summary>
         public IdentitySecurityDefaultsEnforcementPolicyRequestBuilder IdentitySecurityDefaultsEnforcementPolicy { get =>
             new IdentitySecurityDefaultsEnforcementPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The mobileAppManagementPolicies property</summary>
         public MobileAppManagementPoliciesRequestBuilder MobileAppManagementPolicies { get =>
             new MobileAppManagementPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The mobileDeviceManagementPolicies property</summary>
         public MobileDeviceManagementPoliciesRequestBuilder MobileDeviceManagementPolicies { get =>
             new MobileDeviceManagementPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>The permissionGrantPolicies property</summary>
         public PermissionGrantPoliciesRequestBuilder PermissionGrantPolicies { get =>
             new PermissionGrantPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The roleManagementPolicies property</summary>
         public RoleManagementPoliciesRequestBuilder RoleManagementPolicies { get =>
             new RoleManagementPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The roleManagementPolicyAssignments property</summary>
         public RoleManagementPolicyAssignmentsRequestBuilder RoleManagementPolicyAssignments { get =>
             new RoleManagementPolicyAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The servicePrincipalCreationPolicies property</summary>
         public ServicePrincipalCreationPoliciesRequestBuilder ServicePrincipalCreationPolicies { get =>
             new ServicePrincipalCreationPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The tokenIssuancePolicies property</summary>
         public TokenIssuancePoliciesRequestBuilder TokenIssuancePolicies { get =>
             new TokenIssuancePoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The tokenLifetimePolicies property</summary>
         public TokenLifetimePoliciesRequestBuilder TokenLifetimePolicies { get =>
             new TokenLifetimePoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -146,32 +171,32 @@ namespace MicrosoftGraphSdk.Policies {
         }
         /// <summary>
         /// Get policies
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
-        /// <param name="q">Request query parameters</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
+        /// <param name="queryParameters">Request query parameters</param>
         /// </summary>
-        public RequestInformation CreateGetRequestInformation(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreateGetRequestInformation(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            if (q != null) {
+            if (queryParameters != null) {
                 var qParams = new GetQueryParameters();
-                q.Invoke(qParams);
+                queryParameters.Invoke(qParams);
                 qParams.AddQueryParameters(requestInfo.QueryParameters);
             }
-            h?.Invoke(requestInfo.Headers);
-            requestInfo.AddRequestOptions(o?.ToArray());
+            headers?.Invoke(requestInfo.Headers);
+            requestInfo.AddRequestOptions(options?.ToArray());
             return requestInfo;
         }
         /// <summary>
         /// Update policies
         /// <param name="body"></param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreatePatchRequestInformation(PolicyRoot body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePatchRequestInformation(PolicyRoot body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -179,20 +204,20 @@ namespace MicrosoftGraphSdk.Policies {
                 PathParameters = PathParameters,
             };
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
-            h?.Invoke(requestInfo.Headers);
-            requestInfo.AddRequestOptions(o?.ToArray());
+            headers?.Invoke(requestInfo.Headers);
+            requestInfo.AddRequestOptions(options?.ToArray());
             return requestInfo;
         }
         /// <summary>
         /// Get policies
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
-        /// <param name="q">Request query parameters</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
+        /// <param name="queryParameters">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<PolicyRoot> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateGetRequestInformation(q, h, o);
+        public async Task<PolicyRoot> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+            var requestInfo = CreateGetRequestInformation(queryParameters, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
@@ -203,13 +228,13 @@ namespace MicrosoftGraphSdk.Policies {
         /// Update policies
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(PolicyRoot body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(PolicyRoot body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = CreatePatchRequestInformation(body, h, o);
+            var requestInfo = CreatePatchRequestInformation(body, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},

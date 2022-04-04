@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>A class to hold specialty enrollment data used for enrolling via Google's Android Management API, such as Token, Url, and QR code content</summary>
+    /// <summary>A class to hold specialty enrollment data used for enrolling via Google&apos;s Android Management API, such as Token, Url, and QR code content</summary>
     public class AndroidEnrollmentCompanyCode : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

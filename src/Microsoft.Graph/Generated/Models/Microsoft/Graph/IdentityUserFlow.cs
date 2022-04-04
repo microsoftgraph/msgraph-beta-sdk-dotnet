@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class IdentityUserFlow : Entity, IParsable {
+        /// <summary>The userFlowType property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.UserFlowType? UserFlowType { get; set; }
+        /// <summary>The userFlowTypeVersion property</summary>
         public float? UserFlowTypeVersion { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

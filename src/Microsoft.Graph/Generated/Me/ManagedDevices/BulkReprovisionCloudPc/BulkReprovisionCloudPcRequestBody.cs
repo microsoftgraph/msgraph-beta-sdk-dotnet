@@ -8,6 +8,7 @@ namespace MicrosoftGraphSdk.Me.ManagedDevices.BulkReprovisionCloudPc {
     public class BulkReprovisionCloudPcRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The managedDeviceIds property</summary>
         public List<string> ManagedDeviceIds { get; set; }
         /// <summary>
         /// Instantiates a new bulkReprovisionCloudPcRequestBody and sets the default values.

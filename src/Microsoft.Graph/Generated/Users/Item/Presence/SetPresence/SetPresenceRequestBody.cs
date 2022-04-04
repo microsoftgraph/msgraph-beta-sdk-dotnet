@@ -6,11 +6,15 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Users.Item.Presence.SetPresence {
     /// <summary>Provides operations to call the setPresence method.</summary>
     public class SetPresenceRequestBody : IAdditionalDataHolder, IParsable {
+        /// <summary>The activity property</summary>
         public string Activity { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The availability property</summary>
         public string Availability { get; set; }
+        /// <summary>The expirationDuration property</summary>
         public TimeSpan? ExpirationDuration { get; set; }
+        /// <summary>The sessionId property</summary>
         public string SessionId { get; set; }
         /// <summary>
         /// Instantiates a new setPresenceRequestBody and sets the default values.

@@ -17,6 +17,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string Level { get; set; }
         /// <summary>The operations for policy rule target. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.</summary>
         public List<string> Operations { get; set; }
+        /// <summary>The targetObjects property</summary>
         public List<DirectoryObject> TargetObjects { get; set; }
         /// <summary>
         /// Instantiates a new unifiedRoleManagementPolicyRuleTarget and sets the default values.

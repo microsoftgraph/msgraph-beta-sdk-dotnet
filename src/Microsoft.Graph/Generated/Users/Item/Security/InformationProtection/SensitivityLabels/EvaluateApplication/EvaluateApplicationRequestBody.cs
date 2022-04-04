@@ -9,7 +9,9 @@ namespace MicrosoftGraphSdk.Users.Item.Security.InformationProtection.Sensitivit
     public class EvaluateApplicationRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The contentInfo property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Security.ContentInfo ContentInfo { get; set; }
+        /// <summary>The labelingOptions property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Security.LabelingOptions LabelingOptions { get; set; }
         /// <summary>
         /// Instantiates a new evaluateApplicationRequestBody and sets the default values.

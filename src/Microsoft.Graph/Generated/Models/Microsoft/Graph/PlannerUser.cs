@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PlannerUser : PlannerDelta, IParsable {
+        /// <summary>The all property</summary>
         public List<PlannerDelta> All { get; set; }
         /// <summary>A collection containing the references to the plans that the user has marked as favorites.</summary>
         public PlannerFavoritePlanReferenceCollection FavoritePlanReferences { get; set; }

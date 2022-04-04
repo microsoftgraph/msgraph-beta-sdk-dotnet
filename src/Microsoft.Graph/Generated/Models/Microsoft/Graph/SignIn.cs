@@ -41,7 +41,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public SignInAccessType? CrossTenantAccessType { get; set; }
         /// <summary>Device information from where the sign-in occurred; includes device ID, operating system, and browser. Supports $filter (eq and startsWith operators only) on browser and operatingSytem properties.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceDetail DeviceDetail { get; set; }
-        /// <summary>Contains the identifier of an application's federated identity credential, if a federated identity credential was used to sign in.</summary>
+        /// <summary>Contains the identifier of an application&apos;s federated identity credential, if a federated identity credential was used to sign in.</summary>
         public string FederatedCredentialId { get; set; }
         /// <summary>During a failed sign in, a user may click a button in the Azure portal to mark the failed event for tenant admins. If a user clicked the button to flag the failed sign in, this value is true.</summary>
         public bool? FlaggedForReview { get; set; }
@@ -61,6 +61,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public bool? IsTenantRestricted { get; set; }
         /// <summary>Provides the city, state, and country code where the sign-in originated. Supports $filter (eq and startsWith operators only) on city, state, and countryOrRegion properties.</summary>
         public SignInLocation Location { get; set; }
+        /// <summary>The mfaDetail property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.MfaDetail MfaDetail { get; set; }
         /// <summary>The network location details including the type of network used and its names.</summary>
         public List<NetworkLocationDetail> NetworkLocationDetails { get; set; }
@@ -78,7 +79,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string ResourceServicePrincipalId { get; set; }
         /// <summary>The tenant identifier of the resource referenced in the sign in.</summary>
         public string ResourceTenantId { get; set; }
-        /// <summary>Provides the 'reason' behind a specific state of a risky user, sign-in or a risk event. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq operator only).Note: Details for this property require an Azure AD Premium P2 license. Other licenses return the value hidden.</summary>
+        /// <summary>Provides the &apos;reason&apos; behind a specific state of a risky user, sign-in or a risk event. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq operator only).Note: Details for this property require an Azure AD Premium P2 license. Other licenses return the value hidden.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.RiskDetail? RiskDetail { get; set; }
         /// <summary>The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).</summary>
         public List<string> RiskEventTypes_v2 { get; set; }
@@ -100,7 +101,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<SessionLifetimePolicy> SessionLifetimePolicies { get; set; }
         /// <summary>Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue. Supports $filter (eq, ne).</summary>
         public List<string> SignInEventTypes { get; set; }
-        /// <summary>The identification that the user provided to sign in. It may be the userPrincipalName but it's also populated when a user signs in using other identifiers.</summary>
+        /// <summary>The identification that the user provided to sign in. It may be the userPrincipalName but it&apos;s also populated when a user signs in using other identifiers.</summary>
         public string SignInIdentifier { get; set; }
         /// <summary>The type of sign in identifier. Possible values are: userPrincipalName, phoneNumber, proxyAddress, qrCode, onPremisesUserPrincipalName, unknownFutureValue.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.SignInIdentifierType? SignInIdentifierType { get; set; }

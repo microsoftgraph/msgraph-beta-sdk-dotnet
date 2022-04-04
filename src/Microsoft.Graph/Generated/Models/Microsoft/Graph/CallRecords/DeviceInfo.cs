@@ -27,7 +27,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords {
         public float? LowSpeechLevelEventRatio { get; set; }
         /// <summary>Fraction of the call that the media endpoint detected low speech to noise level that caused poor quality of the audio being sent.</summary>
         public float? LowSpeechToNoiseEventRatio { get; set; }
-        /// <summary>Glitches per 5 minute interval for the media endpoint's microphone.</summary>
+        /// <summary>Glitches per 5 minute interval for the media endpoint&apos;s microphone.</summary>
         public float? MicGlitchRate { get; set; }
         /// <summary>Average energy level of received audio for audio classified as mono noise or left channel of stereo noise by the media endpoint.</summary>
         public int? ReceivedNoiseLevel { get; set; }
@@ -47,7 +47,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords {
         public int? SentNoiseLevel { get; set; }
         /// <summary>Average energy level of sent audio for audio classified as mono speech, or left channel of stereo speech by the media endpoint.</summary>
         public int? SentSignalLevel { get; set; }
-        /// <summary>Glitches per 5 minute internal for the media endpoint's loudspeaker.</summary>
+        /// <summary>Glitches per 5 minute internal for the media endpoint&apos;s loudspeaker.</summary>
         public float? SpeakerGlitchRate { get; set; }
         /// <summary>
         /// Instantiates a new deviceInfo and sets the default values.

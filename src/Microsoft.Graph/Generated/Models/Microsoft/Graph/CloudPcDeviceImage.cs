@@ -6,23 +6,23 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class CloudPcDeviceImage : Entity, IParsable {
-        /// <summary>The image's display name.</summary>
+        /// <summary>The image&apos;s display name.</summary>
         public string DisplayName { get; set; }
         /// <summary>The date the image became unavailable.</summary>
         public Date? ExpirationDate { get; set; }
-        /// <summary>The data and time that the image was last modified. The time is shown in ISO 8601 format and  Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.</summary>
+        /// <summary>The data and time that the image was last modified. The time is shown in ISO 8601 format and  Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as &apos;2014-01-01T00:00:00Z&apos;.</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
-        /// <summary>The image's operating system. For example: Windows 10 Enterprise.</summary>
+        /// <summary>The image&apos;s operating system. For example: Windows 10 Enterprise.</summary>
         public string OperatingSystem { get; set; }
-        /// <summary>The image's OS build version. For example: 1909.</summary>
+        /// <summary>The image&apos;s OS build version. For example: 1909.</summary>
         public string OsBuildNumber { get; set; }
         /// <summary>The OS status of this image. Possible values are: supported, supportedWithWarning, unknownFutureValue.</summary>
         public CloudPcDeviceImageOsStatus? OsStatus { get; set; }
-        /// <summary>The ID of the source image resource on Azure. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}'.</summary>
+        /// <summary>The ID of the source image resource on Azure. Required format: &apos;/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}&apos;.</summary>
         public string SourceImageResourceId { get; set; }
         /// <summary>The status of the image on Cloud PC. Possible values are: pending, ready, failed.</summary>
         public CloudPcDeviceImageStatus? Status { get; set; }
-        /// <summary>The details of the image's status, which indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, and sourceImageNotGeneralized.</summary>
+        /// <summary>The details of the image&apos;s status, which indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, and sourceImageNotGeneralized.</summary>
         public CloudPcDeviceImageStatusDetails? StatusDetails { get; set; }
         /// <summary>The image version. For example: 0.0.1, 1.5.13.</summary>
         public string Version { get; set; }

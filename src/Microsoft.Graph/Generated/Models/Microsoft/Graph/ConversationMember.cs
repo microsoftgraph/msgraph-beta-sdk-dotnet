@@ -9,7 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string DisplayName { get; set; }
         /// <summary>The roles for that user.</summary>
         public List<string> Roles { get; set; }
-        /// <summary>The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.</summary>
+        /// <summary>The timestamp denoting how far back a conversation&apos;s history is shared with the conversation member. This property is settable only for members of a chat.</summary>
         public DateTimeOffset? VisibleHistoryStartDateTime { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

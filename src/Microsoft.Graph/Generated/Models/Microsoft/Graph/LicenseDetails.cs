@@ -9,7 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<ServicePlanInfo> ServicePlans { get; set; }
         /// <summary>Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only</summary>
         public string SkuId { get; set; }
-        /// <summary>Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: 'AAD_Premium'. Read-only</summary>
+        /// <summary>Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: &apos;AAD_Premium&apos;. Read-only</summary>
         public string SkuPartNumber { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

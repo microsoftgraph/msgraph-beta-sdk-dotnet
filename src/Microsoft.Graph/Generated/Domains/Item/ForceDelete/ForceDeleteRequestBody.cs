@@ -8,6 +8,7 @@ namespace MicrosoftGraphSdk.Domains.Item.ForceDelete {
     public class ForceDeleteRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The disableUserAccounts property</summary>
         public bool? DisableUserAccounts { get; set; }
         /// <summary>
         /// Instantiates a new forceDeleteRequestBody and sets the default values.

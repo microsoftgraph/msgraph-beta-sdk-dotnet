@@ -9,7 +9,9 @@ namespace MicrosoftGraphSdk.Groups.Item.CalendarView.Item.Instances.Item.Forward
     public class ForwardRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The Comment property</summary>
         public string Comment { get; set; }
+        /// <summary>The ToRecipients property</summary>
         public List<Recipient> ToRecipients { get; set; }
         /// <summary>
         /// Instantiates a new forwardRequestBody and sets the default values.

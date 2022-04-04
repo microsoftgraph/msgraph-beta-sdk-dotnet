@@ -11,9 +11,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public ConditionalAccessFilter DeviceFilter { get; set; }
         /// <summary>States excluded from the scope of the policy. Possible values: Compliant, DomainJoined. Cannot be set if deviceFIlter is set.</summary>
         public List<string> ExcludeDevices { get; set; }
+        /// <summary>The excludeDeviceStates property</summary>
         public List<string> ExcludeDeviceStates { get; set; }
         /// <summary>States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFIlter is set.</summary>
         public List<string> IncludeDevices { get; set; }
+        /// <summary>The includeDeviceStates property</summary>
         public List<string> IncludeDeviceStates { get; set; }
         /// <summary>
         /// Instantiates a new conditionalAccessDevices and sets the default values.

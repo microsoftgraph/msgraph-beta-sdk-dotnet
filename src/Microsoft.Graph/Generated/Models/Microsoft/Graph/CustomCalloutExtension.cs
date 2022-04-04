@@ -13,7 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string Description { get; set; }
         /// <summary>Display name for the customCalloutExtension object.</summary>
         public string DisplayName { get; set; }
-        /// <summary>The type and details for configuring the endpoint to call the logic app's workflow.</summary>
+        /// <summary>The type and details for configuring the endpoint to call the logic app&apos;s workflow.</summary>
         public CustomExtensionEndpointConfiguration EndpointConfiguration { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

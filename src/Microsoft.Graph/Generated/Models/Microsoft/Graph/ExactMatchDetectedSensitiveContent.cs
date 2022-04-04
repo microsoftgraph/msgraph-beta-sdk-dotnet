@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ExactMatchDetectedSensitiveContent : DetectedSensitiveContentBase, IParsable {
+        /// <summary>The matches property</summary>
         public List<SensitiveContentLocation> Matches { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

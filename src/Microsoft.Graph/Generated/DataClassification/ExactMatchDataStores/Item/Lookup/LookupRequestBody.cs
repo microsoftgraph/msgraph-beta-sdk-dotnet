@@ -8,8 +8,11 @@ namespace MicrosoftGraphSdk.DataClassification.ExactMatchDataStores.Item.Lookup 
     public class LookupRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The key property</summary>
         public string Key { get; set; }
+        /// <summary>The resultColumnNames property</summary>
         public List<string> ResultColumnNames { get; set; }
+        /// <summary>The values property</summary>
         public List<string> Values { get; set; }
         /// <summary>
         /// Instantiates a new lookupRequestBody and sets the default values.

@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors {
     public class ConnectionQuota : Entity, IParsable {
+        /// <summary>The itemsRemaining property</summary>
         public long? ItemsRemaining { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

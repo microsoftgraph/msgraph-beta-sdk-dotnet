@@ -19,6 +19,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string Floor { get; set; }
         /// <summary>The description of the floor that the printer is located on.</summary>
         public string FloorDescription { get; set; }
+        /// <summary>The floorNumber property</summary>
         public int? FloorNumber { get; set; }
         /// <summary>The latitude that the printer is located at.</summary>
         public double? Latitude { get; set; }
@@ -32,6 +33,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string RoomDescription { get; set; }
         /// <summary>The room that the printer is located in. Only numerical values are supported right now.</summary>
         public string RoomName { get; set; }
+        /// <summary>The roomNumber property</summary>
         public int? RoomNumber { get; set; }
         /// <summary>The site that the printer is located in.</summary>
         public string Site { get; set; }
@@ -41,6 +43,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string StreetAddress { get; set; }
         /// <summary>The subdivision that the printer is located in. The elements should be in hierarchical order.</summary>
         public List<string> Subdivision { get; set; }
+        /// <summary>The subunit property</summary>
         public List<string> Subunit { get; set; }
         /// <summary>
         /// Instantiates a new printerLocation and sets the default values.

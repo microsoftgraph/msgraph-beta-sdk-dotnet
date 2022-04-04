@@ -7,15 +7,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class LoginPageTextVisibilitySettings : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Option to hide the self-service password reset (SSPR) 'Can't access your account?' hyperlink on the sign-in form.</summary>
+        /// <summary>Option to hide the self-service password reset (SSPR) &apos;Can&apos;t access your account?&apos; hyperlink on the sign-in form.</summary>
         public bool? HideCannotAccessYourAccount { get; set; }
-        /// <summary>Option to hide the self-service password reset (SSPR) 'Forgot my password' hyperlink on the sign-in form.</summary>
+        /// <summary>Option to hide the self-service password reset (SSPR) &apos;Forgot my password&apos; hyperlink on the sign-in form.</summary>
         public bool? HideForgotMyPassword { get; set; }
-        /// <summary>Option to hide the 'Privacy & Cookies' hyperlink in the footer.</summary>
+        /// <summary>Option to hide the &apos;Privacy &amp; Cookies&apos; hyperlink in the footer.</summary>
         public bool? HidePrivacyAndCookies { get; set; }
-        /// <summary>Option to hide the self-service password reset (SSPR) 'reset it now' hyperlink on the sign-in form.</summary>
+        /// <summary>Option to hide the self-service password reset (SSPR) &apos;reset it now&apos; hyperlink on the sign-in form.</summary>
         public bool? HideResetItNow { get; set; }
-        /// <summary>Option to hide the 'Terms of Use' hyperlink in the footer.</summary>
+        /// <summary>Option to hide the &apos;Terms of Use&apos; hyperlink in the footer.</summary>
         public bool? HideTermsOfUse { get; set; }
         /// <summary>
         /// Instantiates a new loginPageTextVisibilitySettings and sets the default values.

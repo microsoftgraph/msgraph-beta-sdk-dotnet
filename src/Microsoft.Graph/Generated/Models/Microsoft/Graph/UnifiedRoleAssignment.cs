@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AppScope AppScope { get; set; }
         /// <summary>Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or directoryScopeId is required. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, in).</summary>
         public string AppScopeId { get; set; }
+        /// <summary>The condition property</summary>
         public string Condition { get; set; }
         /// <summary>The directory object that is the scope of the assignment. Read-only. Supports $expand.</summary>
         public DirectoryObject DirectoryScope { get; set; }
@@ -18,6 +19,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DirectoryObject Principal { get; set; }
         /// <summary>Identifier of the principal to which the assignment is granted. Supports $filter (eq, in).</summary>
         public string PrincipalId { get; set; }
+        /// <summary>The principalOrganizationId property</summary>
         public string PrincipalOrganizationId { get; set; }
         /// <summary>The scope at which the unifiedRoleAssignment applies. This is / for service-wide. DO NOT USE. This property will be deprecated soon.</summary>
         public string ResourceScope { get; set; }

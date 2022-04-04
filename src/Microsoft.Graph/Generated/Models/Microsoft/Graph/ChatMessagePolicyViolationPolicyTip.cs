@@ -7,11 +7,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ChatMessagePolicyViolationPolicyTip : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The URL a user can visit to read about the data loss prevention policies for the organization. (ie, policies about what users shouldn't say in chats)</summary>
+        /// <summary>The URL a user can visit to read about the data loss prevention policies for the organization. (ie, policies about what users shouldn&apos;t say in chats)</summary>
         public string ComplianceUrl { get; set; }
         /// <summary>Explanatory text shown to the sender of the message.</summary>
         public string GeneralText { get; set; }
-        /// <summary>The list of improper data in the message that was detected by the data loss prevention app. Each DLP app defines its own conditions, examples include 'Credit Card Number' and 'Social Security Number'.</summary>
+        /// <summary>The list of improper data in the message that was detected by the data loss prevention app. Each DLP app defines its own conditions, examples include &apos;Credit Card Number&apos; and &apos;Social Security Number&apos;.</summary>
         public List<string> MatchedConditionDescriptions { get; set; }
         /// <summary>
         /// Instantiates a new chatMessagePolicyViolationPolicyTip and sets the default values.

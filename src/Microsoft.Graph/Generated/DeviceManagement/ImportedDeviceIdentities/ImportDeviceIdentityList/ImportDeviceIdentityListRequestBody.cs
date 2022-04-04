@@ -9,7 +9,9 @@ namespace MicrosoftGraphSdk.DeviceManagement.ImportedDeviceIdentities.ImportDevi
     public class ImportDeviceIdentityListRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The importedDeviceIdentities property</summary>
         public List<ImportedDeviceIdentity> ImportedDeviceIdentities { get; set; }
+        /// <summary>The overwriteImportedDeviceIdentities property</summary>
         public bool? OverwriteImportedDeviceIdentities { get; set; }
         /// <summary>
         /// Instantiates a new importDeviceIdentityListRequestBody and sets the default values.

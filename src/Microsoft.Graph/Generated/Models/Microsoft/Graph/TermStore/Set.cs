@@ -13,9 +13,10 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore {
         public string Description { get; set; }
         /// <summary>Name of the set for each languageTag.</summary>
         public List<LocalizedName> LocalizedNames { get; set; }
+        /// <summary>The parentGroup property</summary>
         public Group ParentGroup { get; set; }
         /// <summary>Custom properties for the set.</summary>
-        public List<KeyValue> Properties { get; set; }
+        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.KeyValue> Properties { get; set; }
         /// <summary>Indicates which terms have been pinned or reused directly under the set.</summary>
         public List<Relation> Relations { get; set; }
         /// <summary>All the terms under the set.</summary>
@@ -38,7 +39,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore {
                 {"description", (o,n) => { (o as Set).Description = n.GetStringValue(); } },
                 {"localizedNames", (o,n) => { (o as Set).LocalizedNames = n.GetCollectionOfObjectValues<LocalizedName>(LocalizedName.CreateFromDiscriminatorValue).ToList(); } },
                 {"parentGroup", (o,n) => { (o as Set).ParentGroup = n.GetObjectValue<Group>(Group.CreateFromDiscriminatorValue); } },
-                {"properties", (o,n) => { (o as Set).Properties = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue).ToList(); } },
+                {"properties", (o,n) => { (o as Set).Properties = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.KeyValue>(MicrosoftGraphSdk.Models.Microsoft.Graph.KeyValue.CreateFromDiscriminatorValue).ToList(); } },
                 {"relations", (o,n) => { (o as Set).Relations = n.GetCollectionOfObjectValues<Relation>(Relation.CreateFromDiscriminatorValue).ToList(); } },
                 {"terms", (o,n) => { (o as Set).Terms = n.GetCollectionOfObjectValues<Term>(Term.CreateFromDiscriminatorValue).ToList(); } },
             };
@@ -55,7 +56,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore {
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfObjectValues<LocalizedName>("localizedNames", LocalizedNames);
             writer.WriteObjectValue<Group>("parentGroup", ParentGroup);
-            writer.WriteCollectionOfObjectValues<KeyValue>("properties", Properties);
+            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.KeyValue>("properties", Properties);
             writer.WriteCollectionOfObjectValues<Relation>("relations", Relations);
             writer.WriteCollectionOfObjectValues<Term>("terms", Terms);
         }

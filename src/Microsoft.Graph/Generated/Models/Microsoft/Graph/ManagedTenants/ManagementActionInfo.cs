@@ -11,6 +11,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         public string ManagementActionId { get; set; }
         /// <summary>The identifier for the management template. Required. Read-only.</summary>
         public string ManagementTemplateId { get; set; }
+        /// <summary>The managementTemplateVersion property</summary>
         public int? ManagementTemplateVersion { get; set; }
         /// <summary>
         /// Instantiates a new managementActionInfo and sets the default values.

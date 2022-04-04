@@ -7,14 +7,23 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class MessageSecurityState : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The connectingIP property</summary>
         public string ConnectingIP { get; set; }
+        /// <summary>The deliveryAction property</summary>
         public string DeliveryAction { get; set; }
+        /// <summary>The deliveryLocation property</summary>
         public string DeliveryLocation { get; set; }
+        /// <summary>The directionality property</summary>
         public string Directionality { get; set; }
+        /// <summary>The internetMessageId property</summary>
         public string InternetMessageId { get; set; }
+        /// <summary>The messageFingerprint property</summary>
         public string MessageFingerprint { get; set; }
+        /// <summary>The messageReceivedDateTime property</summary>
         public DateTimeOffset? MessageReceivedDateTime { get; set; }
+        /// <summary>The messageSubject property</summary>
         public string MessageSubject { get; set; }
+        /// <summary>The networkMessageId property</summary>
         public string NetworkMessageId { get; set; }
         /// <summary>
         /// Instantiates a new messageSecurityState and sets the default values.

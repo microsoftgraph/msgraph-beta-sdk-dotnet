@@ -5,8 +5,11 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ServicePrincipalCreationPolicy : PolicyBase, IParsable {
+        /// <summary>The excludes property</summary>
         public List<ServicePrincipalCreationConditionSet> Excludes { get; set; }
+        /// <summary>The includes property</summary>
         public List<ServicePrincipalCreationConditionSet> Includes { get; set; }
+        /// <summary>The isBuiltIn property</summary>
         public bool? IsBuiltIn { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

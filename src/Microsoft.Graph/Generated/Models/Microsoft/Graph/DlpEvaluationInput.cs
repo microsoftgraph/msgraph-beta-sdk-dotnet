@@ -5,10 +5,13 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DlpEvaluationInput : IAdditionalDataHolder, IParsable {
+        /// <summary>The accessScope property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessScope? AccessScope { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The currentLabel property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.CurrentLabel CurrentLabel { get; set; }
+        /// <summary>The discoveredSensitiveTypes property</summary>
         public List<DiscoveredSensitiveType> DiscoveredSensitiveTypes { get; set; }
         /// <summary>
         /// Instantiates a new dlpEvaluationInput and sets the default values.

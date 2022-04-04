@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.Item.Assign {
     public class AssignRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The deviceHealthScriptAssignments property</summary>
         public List<DeviceHealthScriptAssignment> DeviceHealthScriptAssignments { get; set; }
         /// <summary>
         /// Instantiates a new assignRequestBody and sets the default values.

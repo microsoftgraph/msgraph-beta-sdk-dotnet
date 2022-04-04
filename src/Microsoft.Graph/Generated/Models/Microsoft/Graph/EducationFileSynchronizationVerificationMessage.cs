@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Detailed information about the message type.</summary>
         public string Description { get; set; }
+        /// <summary>The fileName property</summary>
         public string FileName { get; set; }
         /// <summary>Type of the message. Possible values are: error, warning, information.</summary>
         public string Type { get; set; }

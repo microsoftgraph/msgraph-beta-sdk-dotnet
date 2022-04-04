@@ -9,9 +9,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Information of the meeting attendees.</summary>
         public List<MeetingParticipantInfo> Attendees { get; set; }
+        /// <summary>The contributors property</summary>
         public List<MeetingParticipantInfo> Contributors { get; set; }
         /// <summary>Information of the meeting organizer.</summary>
         public MeetingParticipantInfo Organizer { get; set; }
+        /// <summary>The producers property</summary>
         public List<MeetingParticipantInfo> Producers { get; set; }
         /// <summary>
         /// Instantiates a new meetingParticipants and sets the default values.

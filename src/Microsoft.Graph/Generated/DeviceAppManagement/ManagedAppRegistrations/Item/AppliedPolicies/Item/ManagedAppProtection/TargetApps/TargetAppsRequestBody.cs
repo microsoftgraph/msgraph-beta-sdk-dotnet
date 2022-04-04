@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedAppRegistrations.Item.App
     public class TargetAppsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The apps property</summary>
         public List<ManagedMobileApp> Apps { get; set; }
         /// <summary>
         /// Instantiates a new targetAppsRequestBody and sets the default values.

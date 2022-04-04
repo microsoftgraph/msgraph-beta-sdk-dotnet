@@ -8,6 +8,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Sites.Item.Onenote.Notebooks.GetNotebook
     public class GetNotebookFromWebUrlRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The webUrl property</summary>
         public string WebUrl { get; set; }
         /// <summary>
         /// Instantiates a new getNotebookFromWebUrlRequestBody and sets the default values.

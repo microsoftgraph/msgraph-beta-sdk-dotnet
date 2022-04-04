@@ -5,8 +5,11 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AppManagementPolicy : PolicyBase, IParsable {
+        /// <summary>The appliesTo property</summary>
         public List<DirectoryObject> AppliesTo { get; set; }
+        /// <summary>The isEnabled property</summary>
         public bool? IsEnabled { get; set; }
+        /// <summary>The restrictions property</summary>
         public AppManagementConfiguration Restrictions { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -5,12 +5,19 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PaymentTerm : Entity, IParsable {
+        /// <summary>The calculateDiscountOnCreditMemos property</summary>
         public bool? CalculateDiscountOnCreditMemos { get; set; }
+        /// <summary>The code property</summary>
         public string Code { get; set; }
+        /// <summary>The discountDateCalculation property</summary>
         public string DiscountDateCalculation { get; set; }
+        /// <summary>The discountPercent property</summary>
         public decimal? DiscountPercent { get; set; }
+        /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
+        /// <summary>The dueDateCalculation property</summary>
         public string DueDateCalculation { get; set; }
+        /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

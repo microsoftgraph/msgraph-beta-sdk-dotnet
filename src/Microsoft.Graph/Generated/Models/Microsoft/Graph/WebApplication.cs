@@ -11,8 +11,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string HomePageUrl { get; set; }
         /// <summary>Specifies whether this web application can request tokens using the OAuth 2.0 implicit flow.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ImplicitGrantSettings ImplicitGrantSettings { get; set; }
-        /// <summary>Specifies the URL that will be used by Microsoft's authorization service to logout an user using front-channel, back-channel or SAML logout protocols.</summary>
+        /// <summary>Specifies the URL that will be used by Microsoft&apos;s authorization service to logout an user using front-channel, back-channel or SAML logout protocols.</summary>
         public string LogoutUrl { get; set; }
+        /// <summary>The oauth2AllowImplicitFlow property</summary>
         public bool? Oauth2AllowImplicitFlow { get; set; }
         /// <summary>Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.</summary>
         public List<string> RedirectUris { get; set; }

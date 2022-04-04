@@ -15,7 +15,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string ScheduleId { get; set; }
         /// <summary>Contains the items that describe the availability of the user or resource.</summary>
         public List<ScheduleItem> ScheduleItems { get; set; }
-        /// <summary>The days of the week and hours in a specific time zone that the user works. These are set as part of the user's mailboxSettings.</summary>
+        /// <summary>The days of the week and hours in a specific time zone that the user works. These are set as part of the user&apos;s mailboxSettings.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.WorkingHours WorkingHours { get; set; }
         /// <summary>
         /// Instantiates a new scheduleInformation and sets the default values.

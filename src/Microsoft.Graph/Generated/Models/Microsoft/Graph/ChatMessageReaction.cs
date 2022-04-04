@@ -11,6 +11,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>Supported values are like, angry, sad, laugh, heart, surprised.</summary>
         public string ReactionType { get; set; }
+        /// <summary>The user property</summary>
         public ChatMessageReactionIdentitySet User { get; set; }
         /// <summary>
         /// Instantiates a new chatMessageReaction and sets the default values.

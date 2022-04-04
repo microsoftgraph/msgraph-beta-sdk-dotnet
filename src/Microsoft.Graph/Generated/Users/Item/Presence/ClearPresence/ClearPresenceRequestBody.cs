@@ -8,6 +8,7 @@ namespace MicrosoftGraphSdk.Users.Item.Presence.ClearPresence {
     public class ClearPresenceRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The sessionId property</summary>
         public string SessionId { get; set; }
         /// <summary>
         /// Instantiates a new clearPresenceRequestBody and sets the default values.

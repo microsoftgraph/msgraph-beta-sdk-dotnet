@@ -7,7 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ManagedAppPolicy : Entity, IParsable {
         /// <summary>The date and time the policy was created.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
-        /// <summary>The policy's description.</summary>
+        /// <summary>The policy&apos;s description.</summary>
         public string Description { get; set; }
         /// <summary>Policy display name.</summary>
         public string DisplayName { get; set; }

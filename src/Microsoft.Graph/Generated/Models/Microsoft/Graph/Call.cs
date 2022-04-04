@@ -15,11 +15,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string CallbackUri { get; set; }
         /// <summary>A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This needs to be copied over from Microsoft.Graph.Call.CallChainId.</summary>
         public string CallChainId { get; set; }
+        /// <summary>The callOptions property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.CallOptions CallOptions { get; set; }
         /// <summary>The routing information on how the call was retargeted. Read-only.</summary>
         public List<CallRoute> CallRoutes { get; set; }
         /// <summary>The chat information. Required information for joining a meeting.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ChatInfo ChatInfo { get; set; }
+        /// <summary>The contentSharingSessions property</summary>
         public List<ContentSharingSession> ContentSharingSessions { get; set; }
         /// <summary>The direction of the call. The possible value are incoming or outgoing. Read-only.</summary>
         public CallDirection? Direction { get; set; }
@@ -31,23 +33,35 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public CallMediaState MediaState { get; set; }
         /// <summary>Contains the capabilities of a meeting. Read-only.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.MeetingCapability MeetingCapability { get; set; }
-        /// <summary>The meeting information that's required for joining a meeting.</summary>
+        /// <summary>The meeting information that&apos;s required for joining a meeting.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.MeetingInfo MeetingInfo { get; set; }
+        /// <summary>The myParticipantId property</summary>
         public string MyParticipantId { get; set; }
         /// <summary>Read-only. Nullable.</summary>
         public List<CommsOperation> Operations { get; set; }
         /// <summary>Read-only. Nullable.</summary>
         public List<Participant> Participants { get; set; }
+        /// <summary>The requestedModalities property</summary>
         public List<Modality?> RequestedModalities { get; set; }
+        /// <summary>The resultInfo property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ResultInfo ResultInfo { get; set; }
+        /// <summary>The ringingTimeoutInSeconds property</summary>
         public int? RingingTimeoutInSeconds { get; set; }
+        /// <summary>The routingPolicies property</summary>
         public List<RoutingPolicy?> RoutingPolicies { get; set; }
+        /// <summary>The source property</summary>
         public ParticipantInfo Source { get; set; }
+        /// <summary>The state property</summary>
         public CallState? State { get; set; }
+        /// <summary>The subject property</summary>
         public string Subject { get; set; }
+        /// <summary>The targets property</summary>
         public List<InvitationParticipantInfo> Targets { get; set; }
+        /// <summary>The tenantId property</summary>
         public string TenantId { get; set; }
+        /// <summary>The terminationReason property</summary>
         public string TerminationReason { get; set; }
+        /// <summary>The toneInfo property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ToneInfo ToneInfo { get; set; }
         /// <summary>The transcription information for the call. Read-only.</summary>
         public CallTranscriptionInfo Transcription { get; set; }

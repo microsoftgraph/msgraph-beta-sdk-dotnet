@@ -5,9 +5,13 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class TaxGroup : Entity, IParsable {
+        /// <summary>The code property</summary>
         public string Code { get; set; }
+        /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
+        /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+        /// <summary>The taxType property</summary>
         public string TaxType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

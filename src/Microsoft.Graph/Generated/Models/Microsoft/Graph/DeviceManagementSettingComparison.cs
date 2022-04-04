@@ -10,15 +10,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Setting comparison result. Possible values are: unknown, equal, notEqual, added, removed.</summary>
         public DeviceManagementComparisonResult? ComparisonResult { get; set; }
-        /// <summary>JSON representation of current intent (or) template setting's value</summary>
+        /// <summary>JSON representation of current intent (or) template setting&apos;s value</summary>
         public string CurrentValueJson { get; set; }
         /// <summary>The ID of the setting definition for this instance</summary>
         public string DefinitionId { get; set; }
-        /// <summary>The setting's display name</summary>
+        /// <summary>The setting&apos;s display name</summary>
         public string DisplayName { get; set; }
         /// <summary>The setting ID</summary>
         public string Id { get; set; }
-        /// <summary>JSON representation of new template setting's value</summary>
+        /// <summary>JSON representation of new template setting&apos;s value</summary>
         public string NewValueJson { get; set; }
         /// <summary>
         /// Instantiates a new deviceManagementSettingComparison and sets the default values.

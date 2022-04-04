@@ -7,7 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PageLinks : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Opens the page in the OneNote native client if it's installed.</summary>
+        /// <summary>Opens the page in the OneNote native client if it&apos;s installed.</summary>
         public ExternalLink OneNoteClientUrl { get; set; }
         /// <summary>Opens the page in OneNote on the web.</summary>
         public ExternalLink OneNoteWebUrl { get; set; }

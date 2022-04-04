@@ -10,7 +10,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
         /// <summary>The date and time the operation was completed.</summary>
         public DateTimeOffset? CompletedDateTime { get; set; }
         /// <summary>The user that created the operation.</summary>
-        public IdentitySet CreatedBy { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.IdentitySet CreatedBy { get; set; }
         /// <summary>The date and time the operation was created.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>The progress of the operation.</summary>
@@ -34,7 +34,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"action", (o,n) => { (o as CaseOperation).Action = n.GetEnumValue<CaseAction>(); } },
                 {"completedDateTime", (o,n) => { (o as CaseOperation).CompletedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"createdBy", (o,n) => { (o as CaseOperation).CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"createdBy", (o,n) => { (o as CaseOperation).CreatedBy = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.IdentitySet>(MicrosoftGraphSdk.Models.Microsoft.Graph.IdentitySet.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", (o,n) => { (o as CaseOperation).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"percentProgress", (o,n) => { (o as CaseOperation).PercentProgress = n.GetIntValue(); } },
                 {"resultInfo", (o,n) => { (o as CaseOperation).ResultInfo = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ResultInfo>(MicrosoftGraphSdk.Models.Microsoft.Graph.ResultInfo.CreateFromDiscriminatorValue); } },
@@ -50,7 +50,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
             base.Serialize(writer);
             writer.WriteEnumValue<CaseAction>("action", Action);
             writer.WriteDateTimeOffsetValue("completedDateTime", CompletedDateTime);
-            writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteIntValue("percentProgress", PercentProgress);
             writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ResultInfo>("resultInfo", ResultInfo);

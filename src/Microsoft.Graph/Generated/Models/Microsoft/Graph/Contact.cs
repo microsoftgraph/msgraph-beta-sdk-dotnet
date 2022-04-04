@@ -6,19 +6,19 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Contact : OutlookItem, IParsable {
-        /// <summary>The name of the contact's assistant.</summary>
+        /// <summary>The name of the contact&apos;s assistant.</summary>
         public string AssistantName { get; set; }
-        /// <summary>The contact's birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        /// <summary>The contact&apos;s birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? Birthday { get; set; }
-        /// <summary>The names of the contact's children.</summary>
+        /// <summary>The names of the contact&apos;s children.</summary>
         public List<string> Children { get; set; }
-        /// <summary>The name of the contact's company.</summary>
+        /// <summary>The name of the contact&apos;s company.</summary>
         public string CompanyName { get; set; }
-        /// <summary>The contact's department.</summary>
+        /// <summary>The contact&apos;s department.</summary>
         public string Department { get; set; }
-        /// <summary>The contact's display name. You can specify the display name in a create or update operation. Note that later updates to other properties may cause an automatically generated value to overwrite the displayName value you have specified. To preserve a pre-existing value, always include it as displayName in an update operation.</summary>
+        /// <summary>The contact&apos;s display name. You can specify the display name in a create or update operation. Note that later updates to other properties may cause an automatically generated value to overwrite the displayName value you have specified. To preserve a pre-existing value, always include it as displayName in an update operation.</summary>
         public string DisplayName { get; set; }
-        /// <summary>The contact's email addresses.</summary>
+        /// <summary>The contact&apos;s email addresses.</summary>
         public List<TypedEmailAddress> EmailAddresses { get; set; }
         /// <summary>The collection of open extensions defined for the contact. Read-only. Nullable.</summary>
         public List<Extension> Extensions { get; set; }
@@ -26,38 +26,59 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string FileAs { get; set; }
         /// <summary>The flag value that indicates the status, start date, due date, or completion date for the contact.</summary>
         public FollowupFlag Flag { get; set; }
-        /// <summary>The contact's gender.</summary>
+        /// <summary>The contact&apos;s gender.</summary>
         public string Gender { get; set; }
-        /// <summary>The contact's generation.</summary>
+        /// <summary>The contact&apos;s generation.</summary>
         public string Generation { get; set; }
-        /// <summary>The contact's given name.</summary>
+        /// <summary>The contact&apos;s given name.</summary>
         public string GivenName { get; set; }
+        /// <summary>The imAddresses property</summary>
         public List<string> ImAddresses { get; set; }
+        /// <summary>The initials property</summary>
         public string Initials { get; set; }
+        /// <summary>The isFavorite property</summary>
         public bool? IsFavorite { get; set; }
+        /// <summary>The jobTitle property</summary>
         public string JobTitle { get; set; }
+        /// <summary>The manager property</summary>
         public string Manager { get; set; }
+        /// <summary>The middleName property</summary>
         public string MiddleName { get; set; }
         /// <summary>The collection of multi-value extended properties defined for the contact. Read-only. Nullable.</summary>
         public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties { get; set; }
+        /// <summary>The nickName property</summary>
         public string NickName { get; set; }
+        /// <summary>The officeLocation property</summary>
         public string OfficeLocation { get; set; }
+        /// <summary>The parentFolderId property</summary>
         public string ParentFolderId { get; set; }
+        /// <summary>The personalNotes property</summary>
         public string PersonalNotes { get; set; }
+        /// <summary>The phones property</summary>
         public List<Phone> Phones { get; set; }
         /// <summary>Optional contact picture. You can get or set a photo for a contact.</summary>
         public ProfilePhoto Photo { get; set; }
+        /// <summary>The postalAddresses property</summary>
         public List<PhysicalAddress> PostalAddresses { get; set; }
+        /// <summary>The profession property</summary>
         public string Profession { get; set; }
         /// <summary>The collection of single-value extended properties defined for the contact. Read-only. Nullable.</summary>
         public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties { get; set; }
+        /// <summary>The spouseName property</summary>
         public string SpouseName { get; set; }
+        /// <summary>The surname property</summary>
         public string Surname { get; set; }
+        /// <summary>The title property</summary>
         public string Title { get; set; }
+        /// <summary>The websites property</summary>
         public List<Website> Websites { get; set; }
+        /// <summary>The weddingAnniversary property</summary>
         public Date? WeddingAnniversary { get; set; }
+        /// <summary>The yomiCompanyName property</summary>
         public string YomiCompanyName { get; set; }
+        /// <summary>The yomiGivenName property</summary>
         public string YomiGivenName { get; set; }
+        /// <summary>The yomiSurname property</summary>
         public string YomiSurname { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -5,8 +5,11 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class GovernancePolicyTemplate : Entity, IParsable {
+        /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
+        /// <summary>The policy property</summary>
         public GovernancePolicy Policy { get; set; }
+        /// <summary>The settings property</summary>
         public BusinessFlowSettings Settings { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

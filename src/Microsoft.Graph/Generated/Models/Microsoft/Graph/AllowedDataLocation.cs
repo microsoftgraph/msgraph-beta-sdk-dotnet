@@ -5,9 +5,13 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AllowedDataLocation : Entity, IParsable {
+        /// <summary>The appId property</summary>
         public string AppId { get; set; }
+        /// <summary>The domain property</summary>
         public string Domain { get; set; }
+        /// <summary>The isDefault property</summary>
         public bool? IsDefault { get; set; }
+        /// <summary>The location property</summary>
         public string Location { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

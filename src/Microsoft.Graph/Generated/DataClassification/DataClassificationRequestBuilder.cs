@@ -23,33 +23,43 @@ using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DataClassification {
     /// <summary>Provides operations to manage the dataClassificationService singleton.</summary>
     public class DataClassificationRequestBuilder {
+        /// <summary>The classifyExactMatches property</summary>
         public ClassifyExactMatchesRequestBuilder ClassifyExactMatches { get =>
             new ClassifyExactMatchesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The classifyFile property</summary>
         public ClassifyFileRequestBuilder ClassifyFile { get =>
             new ClassifyFileRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The classifyFileJobs property</summary>
         public ClassifyFileJobsRequestBuilder ClassifyFileJobs { get =>
             new ClassifyFileJobsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The classifyText property</summary>
         public ClassifyTextRequestBuilder ClassifyText { get =>
             new ClassifyTextRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The classifyTextJobs property</summary>
         public ClassifyTextJobsRequestBuilder ClassifyTextJobs { get =>
             new ClassifyTextJobsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The evaluateDlpPoliciesJobs property</summary>
         public EvaluateDlpPoliciesJobsRequestBuilder EvaluateDlpPoliciesJobs { get =>
             new EvaluateDlpPoliciesJobsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The evaluateLabelJobs property</summary>
         public EvaluateLabelJobsRequestBuilder EvaluateLabelJobs { get =>
             new EvaluateLabelJobsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The exactMatchDataStores property</summary>
         public ExactMatchDataStoresRequestBuilder ExactMatchDataStores { get =>
             new ExactMatchDataStoresRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The exactMatchUploadAgents property</summary>
         public ExactMatchUploadAgentsRequestBuilder ExactMatchUploadAgents { get =>
             new ExactMatchUploadAgentsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The jobs property</summary>
         public JobsRequestBuilder Jobs { get =>
             new JobsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -57,9 +67,11 @@ namespace MicrosoftGraphSdk.DataClassification {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The sensitiveTypes property</summary>
         public SensitiveTypesRequestBuilder SensitiveTypes { get =>
             new SensitiveTypesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The sensitivityLabels property</summary>
         public SensitivityLabelsRequestBuilder SensitivityLabels { get =>
             new SensitivityLabelsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -94,32 +106,32 @@ namespace MicrosoftGraphSdk.DataClassification {
         }
         /// <summary>
         /// Get dataClassification
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
-        /// <param name="q">Request query parameters</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
+        /// <param name="queryParameters">Request query parameters</param>
         /// </summary>
-        public RequestInformation CreateGetRequestInformation(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreateGetRequestInformation(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            if (q != null) {
+            if (queryParameters != null) {
                 var qParams = new GetQueryParameters();
-                q.Invoke(qParams);
+                queryParameters.Invoke(qParams);
                 qParams.AddQueryParameters(requestInfo.QueryParameters);
             }
-            h?.Invoke(requestInfo.Headers);
-            requestInfo.AddRequestOptions(o?.ToArray());
+            headers?.Invoke(requestInfo.Headers);
+            requestInfo.AddRequestOptions(options?.ToArray());
             return requestInfo;
         }
         /// <summary>
         /// Update dataClassification
         /// <param name="body"></param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreatePatchRequestInformation(DataClassificationService body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePatchRequestInformation(DataClassificationService body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -127,20 +139,20 @@ namespace MicrosoftGraphSdk.DataClassification {
                 PathParameters = PathParameters,
             };
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
-            h?.Invoke(requestInfo.Headers);
-            requestInfo.AddRequestOptions(o?.ToArray());
+            headers?.Invoke(requestInfo.Headers);
+            requestInfo.AddRequestOptions(options?.ToArray());
             return requestInfo;
         }
         /// <summary>
         /// Get dataClassification
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
-        /// <param name="q">Request query parameters</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
+        /// <param name="queryParameters">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<DataClassificationService> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateGetRequestInformation(q, h, o);
+        public async Task<DataClassificationService> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+            var requestInfo = CreateGetRequestInformation(queryParameters, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
@@ -151,13 +163,13 @@ namespace MicrosoftGraphSdk.DataClassification {
         /// Update dataClassification
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(DataClassificationService body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(DataClassificationService body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = CreatePatchRequestInformation(body, h, o);
+            var requestInfo = CreatePatchRequestInformation(body, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},

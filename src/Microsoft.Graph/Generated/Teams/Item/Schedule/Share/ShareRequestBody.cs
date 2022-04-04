@@ -8,8 +8,11 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.Share {
     public class ShareRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The endDateTime property</summary>
         public DateTimeOffset? EndDateTime { get; set; }
+        /// <summary>The notifyTeam property</summary>
         public bool? NotifyTeam { get; set; }
+        /// <summary>The startDateTime property</summary>
         public DateTimeOffset? StartDateTime { get; set; }
         /// <summary>
         /// Instantiates a new shareRequestBody and sets the default values.

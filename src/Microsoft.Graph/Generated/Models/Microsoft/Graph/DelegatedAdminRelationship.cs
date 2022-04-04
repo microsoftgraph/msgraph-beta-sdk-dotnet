@@ -5,18 +5,31 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DelegatedAdminRelationship : Entity, IParsable {
+        /// <summary>The accessAssignments property</summary>
         public List<DelegatedAdminAccessAssignment> AccessAssignments { get; set; }
+        /// <summary>The accessDetails property</summary>
         public DelegatedAdminAccessDetails AccessDetails { get; set; }
+        /// <summary>The activatedDateTime property</summary>
         public DateTimeOffset? ActivatedDateTime { get; set; }
+        /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
+        /// <summary>The customer property</summary>
         public DelegatedAdminRelationshipCustomerParticipant Customer { get; set; }
+        /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
+        /// <summary>The duration property</summary>
         public TimeSpan? Duration { get; set; }
+        /// <summary>The endDateTime property</summary>
         public DateTimeOffset? EndDateTime { get; set; }
+        /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+        /// <summary>The operations property</summary>
         public List<DelegatedAdminRelationshipOperation> Operations { get; set; }
+        /// <summary>The partner property</summary>
         public DelegatedAdminRelationshipParticipant Partner { get; set; }
+        /// <summary>The requests property</summary>
         public List<DelegatedAdminRelationshipRequest> Requests { get; set; }
+        /// <summary>The status property</summary>
         public DelegatedAdminRelationshipStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

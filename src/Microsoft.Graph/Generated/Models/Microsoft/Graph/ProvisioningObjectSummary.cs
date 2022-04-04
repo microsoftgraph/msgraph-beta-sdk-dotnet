@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ProvisioningObjectSummary : Entity, IParsable {
+        /// <summary>The action property</summary>
         public string Action { get; set; }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? ActivityDateTime { get; set; }
@@ -32,6 +33,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public ProvisionedIdentity SourceIdentity { get; set; }
         /// <summary>Details of source system of the object being provisioned.</summary>
         public ProvisioningSystem SourceSystem { get; set; }
+        /// <summary>The statusInfo property</summary>
         public StatusBase StatusInfo { get; set; }
         /// <summary>Details of target object being provisioned.</summary>
         public ProvisionedIdentity TargetIdentity { get; set; }

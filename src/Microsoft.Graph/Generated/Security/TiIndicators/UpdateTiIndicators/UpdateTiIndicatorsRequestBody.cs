@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Security.TiIndicators.UpdateTiIndicators {
     public class UpdateTiIndicatorsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The value property</summary>
         public List<TiIndicator> Value { get; set; }
         /// <summary>
         /// Instantiates a new updateTiIndicatorsRequestBody and sets the default values.

@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Permissions.Item.Grant {
     public class GrantResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The value property</summary>
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Permission> Value { get; set; }
         /// <summary>
         /// Instantiates a new grantResponse and sets the default values.

@@ -29,9 +29,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string TenantId { get; set; }
         /// <summary>The id of the user that is associated with the operation.</summary>
         public string UserId { get; set; }
-        /// <summary>The user's email.</summary>
+        /// <summary>The user&apos;s email.</summary>
         public string UserMail { get; set; }
-        /// <summary>The user's display name.</summary>
+        /// <summary>The user&apos;s display name.</summary>
         public string UserName { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

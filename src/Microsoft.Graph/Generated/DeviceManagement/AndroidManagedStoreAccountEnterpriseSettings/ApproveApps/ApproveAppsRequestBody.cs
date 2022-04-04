@@ -8,7 +8,9 @@ namespace MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAccountEnterpris
     public class ApproveAppsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The approveAllPermissions property</summary>
         public bool? ApproveAllPermissions { get; set; }
+        /// <summary>The packageIds property</summary>
         public List<string> PackageIds { get; set; }
         /// <summary>
         /// Instantiates a new approveAppsRequestBody and sets the default values.

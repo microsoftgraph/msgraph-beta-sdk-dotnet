@@ -13,7 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties { get; set; }
         /// <summary>The name of the task folder.</summary>
         public string Name { get; set; }
-        /// <summary>The unique GUID identifier for the task folder's parent group.</summary>
+        /// <summary>The unique GUID identifier for the task folder&apos;s parent group.</summary>
         public string ParentGroupKey { get; set; }
         /// <summary>The collection of single-value extended properties defined for the task folder. Read-only. Nullable.</summary>
         public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties { get; set; }

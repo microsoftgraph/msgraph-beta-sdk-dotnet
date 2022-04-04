@@ -6,12 +6,17 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.UpdateAudienceById {
     /// <summary>Provides operations to call the updateAudienceById method.</summary>
     public class UpdateAudienceByIdRequestBody : IAdditionalDataHolder, IParsable {
+        /// <summary>The addExclusions property</summary>
         public List<string> AddExclusions { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The addMembers property</summary>
         public List<string> AddMembers { get; set; }
+        /// <summary>The memberEntityType property</summary>
         public string MemberEntityType { get; set; }
+        /// <summary>The removeExclusions property</summary>
         public List<string> RemoveExclusions { get; set; }
+        /// <summary>The removeMembers property</summary>
         public List<string> RemoveMembers { get; set; }
         /// <summary>
         /// Instantiates a new updateAudienceByIdRequestBody and sets the default values.

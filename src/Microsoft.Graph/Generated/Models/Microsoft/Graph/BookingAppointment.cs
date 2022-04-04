@@ -13,11 +13,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string CustomerId { get; set; }
         /// <summary>Represents location information for the bookingCustomer who is booking the appointment.</summary>
         public Location CustomerLocation { get; set; }
-        /// <summary>The customer's name.</summary>
+        /// <summary>The customer&apos;s name.</summary>
         public string CustomerName { get; set; }
         /// <summary>Notes from the customer associated with this appointment. You can get the value only when reading this bookingAppointment by its ID.  You can set this property only when initially creating an appointment with a new customer. After that point, the value is computed from the customer represented by customerId.</summary>
         public string CustomerNotes { get; set; }
-        /// <summary>The customer's phone number.</summary>
+        /// <summary>The customer&apos;s phone number.</summary>
         public string CustomerPhone { get; set; }
         /// <summary>It lists down the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.</summary>
         public List<BookingCustomerInformationBase> Customers { get; set; }
@@ -25,6 +25,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string CustomerTimeZone { get; set; }
         /// <summary>The length of the appointment, denoted in ISO8601 format.</summary>
         public TimeSpan? Duration { get; set; }
+        /// <summary>The end property</summary>
         public DateTimeTimeZone End { get; set; }
         /// <summary>The current number of customers in the appointment</summary>
         public int? FilledAttendeesCount { get; set; }
@@ -44,6 +45,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string JoinWebUrl { get; set; }
         /// <summary>The maximum number of customers allowed in an appointment. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.</summary>
         public int? MaximumAttendeesCount { get; set; }
+        /// <summary>The onlineMeetingUrl property</summary>
         public string OnlineMeetingUrl { get; set; }
         /// <summary>If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.</summary>
         public bool? OptOutOfCustomerEmail { get; set; }
@@ -71,6 +73,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public bool? SmsNotificationsEnabled { get; set; }
         /// <summary>The ID of each bookingStaffMember who is scheduled in this appointment.</summary>
         public List<string> StaffMemberIds { get; set; }
+        /// <summary>The start property</summary>
         public DateTimeTimeZone Start { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

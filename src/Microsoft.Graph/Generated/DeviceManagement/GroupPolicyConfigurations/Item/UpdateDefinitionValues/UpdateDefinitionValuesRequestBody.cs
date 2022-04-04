@@ -7,10 +7,13 @@ using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyConfigurations.Item.UpdateDefinitionValues {
     /// <summary>Provides operations to call the updateDefinitionValues method.</summary>
     public class UpdateDefinitionValuesRequestBody : IAdditionalDataHolder, IParsable {
+        /// <summary>The added property</summary>
         public List<GroupPolicyDefinitionValue> Added { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The deletedIds property</summary>
         public List<string> DeletedIds { get; set; }
+        /// <summary>The updated property</summary>
         public List<GroupPolicyDefinitionValue> Updated { get; set; }
         /// <summary>
         /// Instantiates a new updateDefinitionValuesRequestBody and sets the default values.

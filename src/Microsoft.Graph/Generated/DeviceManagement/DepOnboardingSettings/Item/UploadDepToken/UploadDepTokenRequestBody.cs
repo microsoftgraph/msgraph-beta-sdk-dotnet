@@ -8,7 +8,9 @@ namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.UploadDe
     public class UploadDepTokenRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The appleId property</summary>
         public string AppleId { get; set; }
+        /// <summary>The depToken property</summary>
         public string DepToken { get; set; }
         /// <summary>
         /// Instantiates a new uploadDepTokenRequestBody and sets the default values.

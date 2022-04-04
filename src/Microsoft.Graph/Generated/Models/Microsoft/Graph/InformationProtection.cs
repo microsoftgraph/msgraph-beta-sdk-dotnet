@@ -5,11 +5,17 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class InformationProtection : Entity, IParsable {
+        /// <summary>The bitlocker property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Bitlocker Bitlocker { get; set; }
+        /// <summary>The dataLossPreventionPolicies property</summary>
         public List<DataLossPreventionPolicy> DataLossPreventionPolicies { get; set; }
+        /// <summary>The policy property</summary>
         public InformationProtectionPolicy Policy { get; set; }
+        /// <summary>The sensitivityLabels property</summary>
         public List<SensitivityLabel> SensitivityLabels { get; set; }
+        /// <summary>The sensitivityPolicySettings property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.SensitivityPolicySettings SensitivityPolicySettings { get; set; }
+        /// <summary>The threatAssessmentRequests property</summary>
         public List<ThreatAssessmentRequest> ThreatAssessmentRequests { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

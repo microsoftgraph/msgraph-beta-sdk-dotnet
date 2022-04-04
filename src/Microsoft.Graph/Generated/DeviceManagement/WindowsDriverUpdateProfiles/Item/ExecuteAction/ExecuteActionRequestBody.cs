@@ -7,10 +7,13 @@ using System.Linq;
 namespace MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item.ExecuteAction {
     /// <summary>Provides operations to call the executeAction method.</summary>
     public class ExecuteActionRequestBody : IAdditionalDataHolder, IParsable {
+        /// <summary>The actionName property</summary>
         public DriverApprovalAction? ActionName { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The deploymentDate property</summary>
         public DateTimeOffset? DeploymentDate { get; set; }
+        /// <summary>The driverIds property</summary>
         public List<string> DriverIds { get; set; }
         /// <summary>
         /// Instantiates a new executeActionRequestBody and sets the default values.

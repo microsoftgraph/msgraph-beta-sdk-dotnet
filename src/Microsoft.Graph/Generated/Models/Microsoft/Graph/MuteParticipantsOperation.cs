@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class MuteParticipantsOperation : CommsOperation, IParsable {
+        /// <summary>The participants property</summary>
         public List<string> Participants { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

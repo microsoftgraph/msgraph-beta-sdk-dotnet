@@ -7,7 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SiteSettings : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The languageTag property</summary>
         public string LanguageTag { get; set; }
+        /// <summary>The timeZone property</summary>
         public string TimeZone { get; set; }
         /// <summary>
         /// Instantiates a new siteSettings and sets the default values.

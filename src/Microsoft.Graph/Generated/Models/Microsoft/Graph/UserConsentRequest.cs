@@ -7,7 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UserConsentRequest : Request, IParsable {
         /// <summary>Approval decisions associated with a request.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Approval Approval { get; set; }
-        /// <summary>The user's justification for requiring access to the app. Supports $filter (eq only) and $orderby.</summary>
+        /// <summary>The user&apos;s justification for requiring access to the app. Supports $filter (eq only) and $orderby.</summary>
         public string Reason { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

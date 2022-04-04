@@ -5,18 +5,31 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SensitivityLabel : Entity, IParsable {
+        /// <summary>The applicableTo property</summary>
         public SensitivityLabelTarget? ApplicableTo { get; set; }
+        /// <summary>The applicationMode property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ApplicationMode? ApplicationMode { get; set; }
+        /// <summary>The assignedPolicies property</summary>
         public List<LabelPolicy> AssignedPolicies { get; set; }
+        /// <summary>The autoLabeling property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AutoLabeling AutoLabeling { get; set; }
+        /// <summary>The description property</summary>
         public string Description { get; set; }
+        /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
+        /// <summary>The isDefault property</summary>
         public bool? IsDefault { get; set; }
+        /// <summary>The isEndpointProtectionEnabled property</summary>
         public bool? IsEndpointProtectionEnabled { get; set; }
+        /// <summary>The labelActions property</summary>
         public List<LabelActionBase> LabelActions { get; set; }
+        /// <summary>The name property</summary>
         public string Name { get; set; }
+        /// <summary>The priority property</summary>
         public int? Priority { get; set; }
+        /// <summary>The sublabels property</summary>
         public List<SensitivityLabel> Sublabels { get; set; }
+        /// <summary>The toolTip property</summary>
         public string ToolTip { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

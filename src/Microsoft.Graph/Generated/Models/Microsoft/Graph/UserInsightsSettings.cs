@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UserInsightsSettings : Entity, IParsable {
-        /// <summary>true if user's itemInsights and meeting hours insights are enabled; false if user's itemInsights and meeting hours insights are disabled. Default is true. Optional.</summary>
+        /// <summary>true if user&apos;s itemInsights and meeting hours insights are enabled; false if user&apos;s itemInsights and meeting hours insights are disabled. Default is true. Optional.</summary>
         public bool? IsEnabled { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -11,7 +11,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string Color { get; set; }
         /// <summary>Represents the italic status of the font.</summary>
         public bool? Italic { get; set; }
-        /// <summary>Font name (e.g. 'Calibri')</summary>
+        /// <summary>Font name (e.g. &apos;Calibri&apos;)</summary>
         public string Name { get; set; }
         /// <summary>Size of the font (e.g. 11)</summary>
         public double? Size { get; set; }

@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Memb
     public class AddMembersRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The assets property</summary>
         public List<UpdatableAsset> Assets { get; set; }
         /// <summary>
         /// Instantiates a new addMembersRequestBody and sets the default values.

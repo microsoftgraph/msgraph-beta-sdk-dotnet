@@ -19,7 +19,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public int? Bitrate { get; set; }
         /// <summary>Duration of the file in milliseconds.</summary>
         public long? Duration { get; set; }
-        /// <summary>'Four character code' name of the video format.</summary>
+        /// <summary>&apos;Four character code&apos; name of the video format.</summary>
         public string FourCC { get; set; }
         /// <summary>Frame rate of the video.</summary>
         public double? FrameRate { get; set; }

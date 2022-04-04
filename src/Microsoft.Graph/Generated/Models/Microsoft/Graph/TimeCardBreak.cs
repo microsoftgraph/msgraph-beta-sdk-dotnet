@@ -13,6 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public TimeCardEvent End { get; set; }
         /// <summary>Notes about the timeCardBreak.</summary>
         public ItemBody Notes { get; set; }
+        /// <summary>The start property</summary>
         public TimeCardEvent Start { get; set; }
         /// <summary>
         /// Instantiates a new timeCardBreak and sets the default values.

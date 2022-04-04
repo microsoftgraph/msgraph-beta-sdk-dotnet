@@ -7,10 +7,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PostalAddressType : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The city property</summary>
         public string City { get; set; }
+        /// <summary>The countryLetterCode property</summary>
         public string CountryLetterCode { get; set; }
+        /// <summary>The postalCode property</summary>
         public string PostalCode { get; set; }
+        /// <summary>The state property</summary>
         public string State { get; set; }
+        /// <summary>The street property</summary>
         public string Street { get; set; }
         /// <summary>
         /// Instantiates a new postalAddressType and sets the default values.

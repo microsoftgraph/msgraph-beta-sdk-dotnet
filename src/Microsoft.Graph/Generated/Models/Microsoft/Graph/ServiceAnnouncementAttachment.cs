@@ -7,9 +7,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ServiceAnnouncementAttachment : Entity, IParsable {
         /// <summary>The attachment content.</summary>
         public byte[] Content { get; set; }
+        /// <summary>The contentType property</summary>
         public string ContentType { get; set; }
+        /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+        /// <summary>The name property</summary>
         public string Name { get; set; }
+        /// <summary>The size property</summary>
         public int? Size { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

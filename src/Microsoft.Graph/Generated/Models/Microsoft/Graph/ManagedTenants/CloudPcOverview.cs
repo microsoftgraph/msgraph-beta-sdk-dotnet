@@ -35,12 +35,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         public int? NumberOfCloudPcStatusUpgrading { get; set; }
         /// <summary>The display name for the managed tenant. Optional. Read-only.</summary>
         public string TenantDisplayName { get; set; }
+        /// <summary>The tenantId property</summary>
         public string TenantId { get; set; }
+        /// <summary>The totalBusinessLicenses property</summary>
         public int? TotalBusinessLicenses { get; set; }
         /// <summary>The total number of cloud PC connection statuses for the given managed tenant. Optional. Read-only.</summary>
         public int? TotalCloudPcConnectionStatus { get; set; }
         /// <summary>The total number of cloud PC statues for the given managed tenant. Optional. Read-only.</summary>
         public int? TotalCloudPcStatus { get; set; }
+        /// <summary>The totalEnterpriseLicenses property</summary>
         public int? TotalEnterpriseLicenses { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

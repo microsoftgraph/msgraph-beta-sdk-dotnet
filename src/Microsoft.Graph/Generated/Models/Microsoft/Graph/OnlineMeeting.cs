@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class OnlineMeeting : Entity, IParsable {
+        /// <summary>The accessLevel property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessLevel? AccessLevel { get; set; }
         /// <summary>Indicates whether attendees can turn on their camera.</summary>
         public bool? AllowAttendeeToEnableCamera { get; set; }
@@ -26,7 +27,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AudioConferencing AudioConferencing { get; set; }
         /// <summary>Settings related to a live event.</summary>
         public BroadcastMeetingSettings BroadcastSettings { get; set; }
+        /// <summary>The canceledDateTime property</summary>
         public DateTimeOffset? CanceledDateTime { get; set; }
+        /// <summary>The capabilities property</summary>
         public List<MeetingCapabilities?> Capabilities { get; set; }
         /// <summary>The chat information associated with this online meeting.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ChatInfo ChatInfo { get; set; }
@@ -34,21 +37,27 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? CreationDateTime { get; set; }
         /// <summary>The meeting end time in UTC.</summary>
         public DateTimeOffset? EndDateTime { get; set; }
+        /// <summary>The entryExitAnnouncement property</summary>
         public bool? EntryExitAnnouncement { get; set; }
+        /// <summary>The expirationDateTime property</summary>
         public DateTimeOffset? ExpirationDateTime { get; set; }
         /// <summary>The external ID. A custom ID. Optional.</summary>
         public string ExternalId { get; set; }
         /// <summary>Indicates if this is a Teams live event.</summary>
         public bool? IsBroadcast { get; set; }
+        /// <summary>The isCancelled property</summary>
         public bool? IsCancelled { get; set; }
         /// <summary>Indicates whether to announce when callers join or leave.</summary>
         public bool? IsEntryExitAnnounced { get; set; }
         /// <summary>The join information in the language and locale variant specified in the Accept-Language request HTTP header. Read-only.</summary>
         public ItemBody JoinInformation { get; set; }
+        /// <summary>The joinMeetingIdSettings property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.JoinMeetingIdSettings JoinMeetingIdSettings { get; set; }
+        /// <summary>The joinUrl property</summary>
         public string JoinUrl { get; set; }
         /// <summary>Specifies which participants can bypass the meeting   lobby.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.LobbyBypassSettings LobbyBypassSettings { get; set; }
+        /// <summary>The meetingAttendanceReport property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.MeetingAttendanceReport MeetingAttendanceReport { get; set; }
         /// <summary>The participants associated with the online meeting.  This includes the organizer and the attendees.</summary>
         public MeetingParticipants Participants { get; set; }

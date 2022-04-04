@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SubscribedSku : Entity, IParsable {
-        /// <summary>For example, 'User' or 'Company'.</summary>
+        /// <summary>For example, &apos;User&apos; or &apos;Company&apos;.</summary>
         public string AppliesTo { get; set; }
         /// <summary>Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut. The capabilityStatus is Enabled if the prepaidUnits property has at least 1 unit that is enabled, and LockedOut if the customer cancelled their subscription.</summary>
         public string CapabilityStatus { get; set; }
@@ -17,7 +17,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<ServicePlanInfo> ServicePlans { get; set; }
         /// <summary>The unique identifier (GUID) for the service SKU.</summary>
         public string SkuId { get; set; }
-        /// <summary>The SKU part number; for example: 'AAD_PREMIUM' or 'RMSBASIC'. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.</summary>
+        /// <summary>The SKU part number; for example: &apos;AAD_PREMIUM&apos; or &apos;RMSBASIC&apos;. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.</summary>
         public string SkuPartNumber { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

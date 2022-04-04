@@ -5,12 +5,13 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PrintDocument : Entity, IParsable {
+        /// <summary>The configuration property</summary>
         public PrinterDocumentConfiguration Configuration { get; set; }
-        /// <summary>The document's content (MIME) type. Read-only.</summary>
+        /// <summary>The document&apos;s content (MIME) type. Read-only.</summary>
         public string ContentType { get; set; }
-        /// <summary>The document's name. Read-only.</summary>
+        /// <summary>The document&apos;s name. Read-only.</summary>
         public string DisplayName { get; set; }
-        /// <summary>The document's size in bytes. Read-only.</summary>
+        /// <summary>The document&apos;s size in bytes. Read-only.</summary>
         public long? Size { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

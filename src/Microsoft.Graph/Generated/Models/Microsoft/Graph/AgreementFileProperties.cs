@@ -15,9 +15,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string FileName { get; set; }
         /// <summary>If none of the languages matches the client preference, indicates whether this is the default agreement file . If none of the files are marked as default, the first one is treated as the default. Read-only.</summary>
         public bool? IsDefault { get; set; }
-        /// <summary>Indicates whether the agreement file is a major version update. Major version updates invalidate the agreement's acceptances on the corresponding language.</summary>
+        /// <summary>Indicates whether the agreement file is a major version update. Major version updates invalidate the agreement&apos;s acceptances on the corresponding language.</summary>
         public bool? IsMajorVersion { get; set; }
-        /// <summary>The language of the agreement file in the format 'languagecode2-country/regioncode2'. 'languagecode2' is a lowercase two-letter code derived from ISO 639-1, while 'country/regioncode2' is derived from ISO 3166 and usually consists of two uppercase letters, or a BCP-47 language tag. For example, U.S. English is en-US. Read-only.</summary>
+        /// <summary>The language of the agreement file in the format &apos;languagecode2-country/regioncode2&apos;. &apos;languagecode2&apos; is a lowercase two-letter code derived from ISO 639-1, while &apos;country/regioncode2&apos; is derived from ISO 3166 and usually consists of two uppercase letters, or a BCP-47 language tag. For example, U.S. English is en-US. Read-only.</summary>
         public string Language { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,10 +8,15 @@ namespace MicrosoftGraphSdk.Sites.Item.Onenote.Sections.Item.CopyToNotebook {
     public class CopyToNotebookRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The groupId property</summary>
         public string GroupId { get; set; }
+        /// <summary>The id property</summary>
         public string Id { get; set; }
+        /// <summary>The renameAs property</summary>
         public string RenameAs { get; set; }
+        /// <summary>The siteCollectionId property</summary>
         public string SiteCollectionId { get; set; }
+        /// <summary>The siteId property</summary>
         public string SiteId { get; set; }
         /// <summary>
         /// Instantiates a new copyToNotebookRequestBody and sets the default values.

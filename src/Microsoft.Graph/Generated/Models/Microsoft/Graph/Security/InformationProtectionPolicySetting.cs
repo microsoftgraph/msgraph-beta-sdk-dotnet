@@ -5,9 +5,13 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Security {
     public class InformationProtectionPolicySetting : Entity, IParsable {
+        /// <summary>The defaultLabelId property</summary>
         public string DefaultLabelId { get; set; }
+        /// <summary>The isDowngradeJustificationRequired property</summary>
         public bool? IsDowngradeJustificationRequired { get; set; }
+        /// <summary>The isMandatory property</summary>
         public bool? IsMandatory { get; set; }
+        /// <summary>The moreInfoUrl property</summary>
         public string MoreInfoUrl { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

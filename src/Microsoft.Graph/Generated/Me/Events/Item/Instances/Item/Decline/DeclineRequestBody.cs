@@ -9,8 +9,11 @@ namespace MicrosoftGraphSdk.Me.Events.Item.Instances.Item.Decline {
     public class DeclineRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The Comment property</summary>
         public string Comment { get; set; }
+        /// <summary>The ProposedNewTime property</summary>
         public TimeSlot ProposedNewTime { get; set; }
+        /// <summary>The SendResponse property</summary>
         public bool? SendResponse { get; set; }
         /// <summary>
         /// Instantiates a new declineRequestBody and sets the default values.

@@ -5,8 +5,11 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DelegatedAdminServiceManagementDetail : Entity, IParsable {
+        /// <summary>The serviceId property</summary>
         public string ServiceId { get; set; }
+        /// <summary>The serviceManagementUrl property</summary>
         public string ServiceManagementUrl { get; set; }
+        /// <summary>The serviceName property</summary>
         public string ServiceName { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

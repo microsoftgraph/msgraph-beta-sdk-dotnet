@@ -11,6 +11,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public ItemAnalytics Analytics { get; set; }
         /// <summary>The content type of this list item</summary>
         public ContentTypeInfo ContentType { get; set; }
+        /// <summary>The deleted property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Deleted Deleted { get; set; }
         /// <summary>For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem DriveItem { get; set; }

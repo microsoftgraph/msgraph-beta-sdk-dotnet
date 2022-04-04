@@ -7,6 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SharedInsight : Entity, IParsable {
         /// <summary>Details about the shared item. Read only.</summary>
         public SharingDetail LastShared { get; set; }
+        /// <summary>The lastSharedMethod property</summary>
         public Entity LastSharedMethod { get; set; }
         /// <summary>Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.</summary>
         public Entity Resource { get; set; }
@@ -14,6 +15,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ResourceReference ResourceReference { get; set; }
         /// <summary>Properties that you can use to visualize the document in your experience. Read-only</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ResourceVisualization ResourceVisualization { get; set; }
+        /// <summary>The sharingHistory property</summary>
         public List<SharingDetail> SharingHistory { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

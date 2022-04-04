@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ClassificationError : ClassifcationErrorBase, IParsable {
+        /// <summary>The details property</summary>
         public List<ClassifcationErrorBase> Details { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

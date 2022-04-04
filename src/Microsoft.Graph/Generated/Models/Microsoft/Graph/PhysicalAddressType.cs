@@ -1,5 +1,5 @@
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
-    /// <summary>Provides operations to manage the collection of bookingBusiness entities.</summary>
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public enum PhysicalAddressType {
         Unknown,
         Home,

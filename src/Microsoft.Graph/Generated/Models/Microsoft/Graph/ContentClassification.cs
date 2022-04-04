@@ -7,9 +7,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ContentClassification : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The confidence property</summary>
         public int? Confidence { get; set; }
+        /// <summary>The matches property</summary>
         public List<MatchLocation> Matches { get; set; }
+        /// <summary>The sensitiveTypeId property</summary>
         public string SensitiveTypeId { get; set; }
+        /// <summary>The uniqueCount property</summary>
         public int? UniqueCount { get; set; }
         /// <summary>
         /// Instantiates a new contentClassification and sets the default values.

@@ -7,25 +7,45 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PrinterDocumentConfiguration : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The collate property</summary>
         public bool? Collate { get; set; }
+        /// <summary>The colorMode property</summary>
         public PrintColorMode? ColorMode { get; set; }
+        /// <summary>The copies property</summary>
         public int? Copies { get; set; }
+        /// <summary>The dpi property</summary>
         public int? Dpi { get; set; }
+        /// <summary>The duplexMode property</summary>
         public PrintDuplexMode? DuplexMode { get; set; }
+        /// <summary>The feedDirection property</summary>
         public PrinterFeedDirection? FeedDirection { get; set; }
+        /// <summary>The feedOrientation property</summary>
         public PrinterFeedOrientation? FeedOrientation { get; set; }
+        /// <summary>The finishings property</summary>
         public List<PrintFinishing?> Finishings { get; set; }
+        /// <summary>The fitPdfToPage property</summary>
         public bool? FitPdfToPage { get; set; }
+        /// <summary>The inputBin property</summary>
         public string InputBin { get; set; }
+        /// <summary>The margin property</summary>
         public PrintMargin Margin { get; set; }
+        /// <summary>The mediaSize property</summary>
         public string MediaSize { get; set; }
+        /// <summary>The mediaType property</summary>
         public string MediaType { get; set; }
+        /// <summary>The multipageLayout property</summary>
         public PrintMultipageLayout? MultipageLayout { get; set; }
+        /// <summary>The orientation property</summary>
         public PrintOrientation? Orientation { get; set; }
+        /// <summary>The outputBin property</summary>
         public string OutputBin { get; set; }
+        /// <summary>The pageRanges property</summary>
         public List<IntegerRange> PageRanges { get; set; }
+        /// <summary>The pagesPerSheet property</summary>
         public int? PagesPerSheet { get; set; }
+        /// <summary>The quality property</summary>
         public PrintQuality? Quality { get; set; }
+        /// <summary>The scaling property</summary>
         public PrintScaling? Scaling { get; set; }
         /// <summary>
         /// Instantiates a new printerDocumentConfiguration and sets the default values.

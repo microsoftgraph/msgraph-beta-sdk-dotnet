@@ -7,8 +7,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class EvaluateLabelJobResult : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The responsiblePolicy property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ResponsiblePolicy ResponsiblePolicy { get; set; }
+        /// <summary>The responsibleSensitiveTypes property</summary>
         public List<ResponsibleSensitiveType> ResponsibleSensitiveTypes { get; set; }
+        /// <summary>The sensitivityLabel property</summary>
         public MatchingLabel SensitivityLabel { get; set; }
         /// <summary>
         /// Instantiates a new evaluateLabelJobResult and sets the default values.

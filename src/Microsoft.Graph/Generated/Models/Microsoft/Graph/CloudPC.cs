@@ -11,9 +11,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string DisplayName { get; set; }
         /// <summary>The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? GracePeriodEndDateTime { get; set; }
-        /// <summary>Name of the OS image that's on the Cloud PC.</summary>
+        /// <summary>Name of the OS image that&apos;s on the Cloud PC.</summary>
         public string ImageDisplayName { get; set; }
-        /// <summary>The last login result of the Cloud PC. For example, { 'time': '2014-01-01T00:00:00Z'}.</summary>
+        /// <summary>The last login result of the Cloud PC. For example, { &apos;time&apos;: &apos;2014-01-01T00:00:00Z&apos;}.</summary>
         public CloudPcLoginResult LastLoginResult { get; set; }
         /// <summary>The last modified date and time of the Cloud PC. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }

@@ -7,7 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class TrustFramework : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The keySets property</summary>
         public List<TrustFrameworkKeySet> KeySets { get; set; }
+        /// <summary>The policies property</summary>
         public List<TrustFrameworkPolicy> Policies { get; set; }
         /// <summary>
         /// Instantiates a new TrustFramework and sets the default values.

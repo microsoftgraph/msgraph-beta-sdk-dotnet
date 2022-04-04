@@ -5,12 +5,19 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class CustomerPaymentJournal : Entity, IParsable {
+        /// <summary>The account property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Account Account { get; set; }
+        /// <summary>The balancingAccountId property</summary>
         public string BalancingAccountId { get; set; }
+        /// <summary>The balancingAccountNumber property</summary>
         public string BalancingAccountNumber { get; set; }
+        /// <summary>The code property</summary>
         public string Code { get; set; }
+        /// <summary>The customerPayments property</summary>
         public List<CustomerPayment> CustomerPayments { get; set; }
+        /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
+        /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

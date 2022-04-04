@@ -9,8 +9,11 @@ namespace MicrosoftGraphSdk.Me.InformationProtection.DataLossPreventionPolicies.
     public class EvaluateRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The evaluationInput property</summary>
         public DlpEvaluationInput EvaluationInput { get; set; }
+        /// <summary>The notificationInfo property</summary>
         public DlpNotification NotificationInfo { get; set; }
+        /// <summary>The target property</summary>
         public string Target { get; set; }
         /// <summary>
         /// Instantiates a new evaluateRequestBody and sets the default values.

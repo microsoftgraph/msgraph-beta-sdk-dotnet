@@ -5,12 +5,13 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Notification : Entity, IParsable {
-        /// <summary>Sets how long (in seconds) this notification content will stay in each platform's notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification will stay in the user's Windows Action Center.</summary>
+        /// <summary>Sets how long (in seconds) this notification content will stay in each platform&apos;s notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification will stay in the user&apos;s Windows Action Center.</summary>
         public int? DisplayTimeToLive { get; set; }
-        /// <summary>Sets a UTC expiration date and time on a user notification using ISO 8601 format (for example, midnight UTC on Jan 1, 2019 would look like this: '2019-01-01T00:00:00Z'). When time is up, the notification is removed from the Microsoft Graph notification feed store completely and is no longer part of notification history. Max value is 30 days.</summary>
+        /// <summary>Sets a UTC expiration date and time on a user notification using ISO 8601 format (for example, midnight UTC on Jan 1, 2019 would look like this: &apos;2019-01-01T00:00:00Z&apos;). When time is up, the notification is removed from the Microsoft Graph notification feed store completely and is no longer part of notification history. Max value is 30 days.</summary>
         public DateTimeOffset? ExpirationDateTime { get; set; }
         /// <summary>The name of the group that this notification belongs to. It is set by the developer for the purpose of grouping notifications together.</summary>
         public string GroupName { get; set; }
+        /// <summary>The payload property</summary>
         public PayloadTypes Payload { get; set; }
         /// <summary>Indicates the priority of a raw user notification. Visual notifications are sent with high priority by default. Valid values are None, High and Low.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Priority? Priority { get; set; }

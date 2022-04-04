@@ -6,11 +6,12 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
     public class DataSource : Entity, IParsable {
         /// <summary>The user who created the dataSource.</summary>
-        public IdentitySet CreatedBy { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.IdentitySet CreatedBy { get; set; }
         /// <summary>The date and time the dataSource was created.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>The display name of the dataSource. This will be the name of the SharePoint site.</summary>
         public string DisplayName { get; set; }
+        /// <summary>The holdStatus property</summary>
         public DataSourceHoldStatus? HoldStatus { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -25,7 +26,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdBy", (o,n) => { (o as DataSource).CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"createdBy", (o,n) => { (o as DataSource).CreatedBy = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.IdentitySet>(MicrosoftGraphSdk.Models.Microsoft.Graph.IdentitySet.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", (o,n) => { (o as DataSource).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"displayName", (o,n) => { (o as DataSource).DisplayName = n.GetStringValue(); } },
                 {"holdStatus", (o,n) => { (o as DataSource).HoldStatus = n.GetEnumValue<DataSourceHoldStatus>(); } },
@@ -38,7 +39,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteEnumValue<DataSourceHoldStatus>("holdStatus", HoldStatus);

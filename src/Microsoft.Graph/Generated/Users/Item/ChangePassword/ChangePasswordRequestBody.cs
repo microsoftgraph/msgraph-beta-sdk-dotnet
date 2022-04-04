@@ -8,7 +8,9 @@ namespace MicrosoftGraphSdk.Users.Item.ChangePassword {
     public class ChangePasswordRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The currentPassword property</summary>
         public string CurrentPassword { get; set; }
+        /// <summary>The newPassword property</summary>
         public string NewPassword { get; set; }
         /// <summary>
         /// Instantiates a new changePasswordRequestBody and sets the default values.

@@ -5,12 +5,19 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AzureADUserFeatureUsage : Entity, IParsable {
+        /// <summary>The featureUsageDetails property</summary>
         public List<FeatureUsageDetail> FeatureUsageDetails { get; set; }
+        /// <summary>The lastUpdatedDateTime property</summary>
         public DateTimeOffset? LastUpdatedDateTime { get; set; }
+        /// <summary>The licenseAssigned property</summary>
         public AzureADLicenseType? LicenseAssigned { get; set; }
+        /// <summary>The licenseRecommended property</summary>
         public AzureADLicenseType? LicenseRecommended { get; set; }
+        /// <summary>The userDisplayName property</summary>
         public string UserDisplayName { get; set; }
+        /// <summary>The userId property</summary>
         public string UserId { get; set; }
+        /// <summary>The userPrincipalName property</summary>
         public string UserPrincipalName { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

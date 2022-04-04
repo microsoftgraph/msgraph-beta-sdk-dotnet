@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.CalendarSharingMessage {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\mailFolders\{mailFolder-id}\childFolders\{mailFolder-id1}\messages\{message-id}\microsoft.graph.calendarSharingMessage</summary>
     public class CalendarSharingMessageRequestBuilder {
+        /// <summary>The accept property</summary>
         public AcceptRequestBuilder Accept { get =>
             new AcceptRequestBuilder(PathParameters, RequestAdapter);
         }

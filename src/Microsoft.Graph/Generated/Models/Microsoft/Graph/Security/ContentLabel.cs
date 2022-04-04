@@ -7,8 +7,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Security {
     public class ContentLabel : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The assignmentMethod property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Security.AssignmentMethod? AssignmentMethod { get; set; }
+        /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
+        /// <summary>The sensitivityLabelId property</summary>
         public string SensitivityLabelId { get; set; }
         /// <summary>
         /// Instantiates a new contentLabel and sets the default values.

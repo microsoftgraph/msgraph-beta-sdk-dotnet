@@ -13,21 +13,23 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string DisplayName { get; set; }
         /// <summary>The email address for sending messages to the channel. Read-only.</summary>
         public string Email { get; set; }
-        /// <summary>Metadata for the location where the channel's files are stored.</summary>
+        /// <summary>Metadata for the location where the channel&apos;s files are stored.</summary>
         public DriveItem FilesFolder { get; set; }
-        /// <summary>Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.</summary>
+        /// <summary>Indicates whether the channel should automatically be marked &apos;favorite&apos; for all members of the team. Can only be set programmatically with Create team. Default: false.</summary>
         public bool? IsFavoriteByDefault { get; set; }
         /// <summary>A collection of membership records associated with the channel.</summary>
         public List<ConversationMember> Members { get; set; }
-        /// <summary>The type of the channel. Can be set during creation and can't be changed. Possible values are: standard - Channel inherits the list of members of the parent team; private - Channel can have members that are a subset of all the members on the parent team.</summary>
+        /// <summary>The type of the channel. Can be set during creation and can&apos;t be changed. Possible values are: standard - Channel inherits the list of members of the parent team; private - Channel can have members that are a subset of all the members on the parent team.</summary>
         public ChannelMembershipType? MembershipType { get; set; }
         /// <summary>A collection of all the messages in the channel. A navigation property. Nullable.</summary>
         public List<ChatMessage> Messages { get; set; }
         /// <summary>Settings to configure channel moderation to control who can start new posts and reply to posts in that channel.</summary>
         public ChannelModerationSettings ModerationSettings { get; set; }
+        /// <summary>The sharedWithTeams property</summary>
         public List<SharedWithChannelTeamInfo> SharedWithTeams { get; set; }
         /// <summary>A collection of all the tabs in the channel. A navigation property.</summary>
         public List<TeamsTab> Tabs { get; set; }
+        /// <summary>The tenantId property</summary>
         public string TenantId { get; set; }
         /// <summary>A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.</summary>
         public string WebUrl { get; set; }

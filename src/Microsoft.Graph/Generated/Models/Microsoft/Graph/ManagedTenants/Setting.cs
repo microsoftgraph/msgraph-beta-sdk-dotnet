@@ -13,6 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         public string JsonValue { get; set; }
         /// <summary>A flag indicating whether the setting can be override existing configurations when applied. Required. Read-only.</summary>
         public bool? OverwriteAllowed { get; set; }
+        /// <summary>The settingId property</summary>
         public string SettingId { get; set; }
         /// <summary>The data type for the setting. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.</summary>
         public ManagementParameterValueType? ValueType { get; set; }

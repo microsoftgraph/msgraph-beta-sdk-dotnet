@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DataLossPreventionPolicy : Entity, IParsable {
+        /// <summary>The name property</summary>
         public string Name { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -10,9 +10,11 @@ using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.EventMessageRequest {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\mailFolders\{mailFolder-id}\childFolders\{mailFolder-id1}\messages\{message-id}\microsoft.graph.eventMessageRequest</summary>
     public class EventMessageRequestRequestBuilder {
+        /// <summary>The accept property</summary>
         public AcceptRequestBuilder Accept { get =>
             new AcceptRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The decline property</summary>
         public DeclineRequestBuilder Decline { get =>
             new DeclineRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -20,6 +22,7 @@ namespace MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.Messag
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The tentativelyAccept property</summary>
         public TentativelyAcceptRequestBuilder TentativelyAccept { get =>
             new TentativelyAcceptRequestBuilder(PathParameters, RequestAdapter);
         }

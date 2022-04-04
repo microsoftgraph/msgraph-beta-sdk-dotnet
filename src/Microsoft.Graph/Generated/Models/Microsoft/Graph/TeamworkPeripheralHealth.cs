@@ -11,6 +11,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public TeamworkConnection Connection { get; set; }
         /// <summary>True if the peripheral is optional. Used for health computation.</summary>
         public bool? IsOptional { get; set; }
+        /// <summary>The peripheral property</summary>
         public TeamworkPeripheral Peripheral { get; set; }
         /// <summary>
         /// Instantiates a new teamworkPeripheralHealth and sets the default values.

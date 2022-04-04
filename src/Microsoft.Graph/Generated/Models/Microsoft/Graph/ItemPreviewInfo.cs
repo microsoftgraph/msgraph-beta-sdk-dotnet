@@ -7,8 +7,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ItemPreviewInfo : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The getUrl property</summary>
         public string GetUrl { get; set; }
+        /// <summary>The postParameters property</summary>
         public string PostParameters { get; set; }
+        /// <summary>The postUrl property</summary>
         public string PostUrl { get; set; }
         /// <summary>
         /// Instantiates a new itemPreviewInfo and sets the default values.

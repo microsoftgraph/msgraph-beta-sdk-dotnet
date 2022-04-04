@@ -8,7 +8,9 @@ namespace MicrosoftGraphSdk.InformationProtection.DecryptBuffer {
     public class DecryptBufferRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The encryptedBuffer property</summary>
         public byte[] EncryptedBuffer { get; set; }
+        /// <summary>The publishingLicense property</summary>
         public byte[] PublishingLicense { get; set; }
         /// <summary>
         /// Instantiates a new decryptBufferRequestBody and sets the default values.

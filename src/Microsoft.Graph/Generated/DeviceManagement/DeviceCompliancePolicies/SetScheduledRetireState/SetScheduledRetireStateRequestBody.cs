@@ -9,7 +9,9 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.SetSchedul
     public class SetScheduledRetireStateRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The managedDeviceIds property</summary>
         public List<string> ManagedDeviceIds { get; set; }
+        /// <summary>The state property</summary>
         public ScheduledRetireState? State { get; set; }
         /// <summary>
         /// Instantiates a new setScheduledRetireStateRequestBody and sets the default values.

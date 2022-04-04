@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Templates.ImportOffice365DeviceConf
     public class ImportOffice365DeviceConfigurationPoliciesResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The value property</summary>
         public List<DeviceManagementIntent> Value { get; set; }
         /// <summary>
         /// Instantiates a new importOffice365DeviceConfigurationPoliciesResponse and sets the default values.

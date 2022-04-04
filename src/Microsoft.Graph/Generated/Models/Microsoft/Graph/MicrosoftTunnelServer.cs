@@ -7,13 +7,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class MicrosoftTunnelServer : Entity, IParsable {
         /// <summary>The digest of the current agent image running on this server</summary>
         public string AgentImageDigest { get; set; }
-        /// <summary>The MicrosoftTunnelServer's display name</summary>
+        /// <summary>The MicrosoftTunnelServer&apos;s display name</summary>
         public string DisplayName { get; set; }
         /// <summary>When the MicrosoftTunnelServer last checked in</summary>
         public DateTimeOffset? LastCheckinDateTime { get; set; }
         /// <summary>The digest of the current server image running on this server</summary>
         public string ServerImageDigest { get; set; }
-        /// <summary>The MicrosoftTunnelServer's health status. Possible values are: unknown, healthy, unhealthy, warning, offline, upgradeInProgress, upgradeFailed.</summary>
+        /// <summary>The MicrosoftTunnelServer&apos;s health status. Possible values are: unknown, healthy, unhealthy, warning, offline, upgradeInProgress, upgradeFailed.</summary>
         public MicrosoftTunnelServerHealthStatus? TunnelServerHealthStatus { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

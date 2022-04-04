@@ -17,19 +17,29 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeTimeZone DueDateTime { get; set; }
         /// <summary>Set to true if the task has attachments.</summary>
         public bool? HasAttachments { get; set; }
+        /// <summary>The importance property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Importance? Importance { get; set; }
+        /// <summary>The isReminderOn property</summary>
         public bool? IsReminderOn { get; set; }
         /// <summary>The collection of multi-value extended properties defined for the task. Read-only. Nullable.</summary>
         public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties { get; set; }
+        /// <summary>The owner property</summary>
         public string Owner { get; set; }
+        /// <summary>The parentFolderId property</summary>
         public string ParentFolderId { get; set; }
+        /// <summary>The recurrence property</summary>
         public PatternedRecurrence Recurrence { get; set; }
+        /// <summary>The reminderDateTime property</summary>
         public DateTimeTimeZone ReminderDateTime { get; set; }
+        /// <summary>The sensitivity property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Sensitivity? Sensitivity { get; set; }
         /// <summary>The collection of single-value extended properties defined for the task. Read-only. Nullable.</summary>
         public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties { get; set; }
+        /// <summary>The startDateTime property</summary>
         public DateTimeTimeZone StartDateTime { get; set; }
+        /// <summary>The status property</summary>
         public TaskStatus? Status { get; set; }
+        /// <summary>The subject property</summary>
         public string Subject { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

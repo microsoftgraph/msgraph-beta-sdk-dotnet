@@ -11,18 +11,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string ArchiveFolder { get; set; }
         /// <summary>Configuration settings to automatically notify the sender of an incoming email with a message from the signed-in user.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AutomaticRepliesSetting AutomaticRepliesSetting { get; set; }
-        /// <summary>The date format for the user's mailbox.</summary>
+        /// <summary>The date format for the user&apos;s mailbox.</summary>
         public string DateFormat { get; set; }
         /// <summary>If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.DelegateMeetingMessageDeliveryOptions? DelegateMeetingMessageDeliveryOptions { get; set; }
         /// <summary>The locale information for the user, including the preferred language and country/region.</summary>
         public LocaleInfo Language { get; set; }
-        /// <summary>The time format for the user's mailbox.</summary>
+        /// <summary>The time format for the user&apos;s mailbox.</summary>
         public string TimeFormat { get; set; }
-        /// <summary>The default time zone for the user's mailbox.</summary>
+        /// <summary>The default time zone for the user&apos;s mailbox.</summary>
         public string TimeZone { get; set; }
         /// <summary>The purpose of the mailbox. Used to differentiate a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. Read only.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.UserPurpose? UserPurpose { get; set; }
+        /// <summary>The userPurposeV2 property</summary>
         public MailboxRecipientType? UserPurposeV2 { get; set; }
         /// <summary>The days of the week and hours in a specific time zone that the user works.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.WorkingHours WorkingHours { get; set; }

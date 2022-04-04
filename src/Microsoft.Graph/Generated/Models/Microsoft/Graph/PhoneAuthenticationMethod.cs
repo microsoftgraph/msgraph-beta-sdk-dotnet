@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PhoneAuthenticationMethod : AuthenticationMethod, IParsable {
-        /// <summary>The phone number to text or call for authentication. Phone numbers use the format '+<country code> <number>x<extension>', with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating/updating if they do not match the required format.</summary>
+        /// <summary>The phone number to text or call for authentication. Phone numbers use the format &apos;+&lt;country code&gt; &lt;number&gt;x&lt;extension&gt;&apos;, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating/updating if they do not match the required format.</summary>
         public string PhoneNumber { get; set; }
         /// <summary>The type of this phone. Possible values are: mobile, alternateMobile, or office.</summary>
         public AuthenticationPhoneType? PhoneType { get; set; }

@@ -13,6 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string Description { get; set; }
         /// <summary>Contains a friendly name for the interest.</summary>
         public string DisplayName { get; set; }
+        /// <summary>The thumbnailUrl property</summary>
         public string ThumbnailUrl { get; set; }
         /// <summary>Contains a link to a web page or resource about the interest.</summary>
         public string WebUrl { get; set; }

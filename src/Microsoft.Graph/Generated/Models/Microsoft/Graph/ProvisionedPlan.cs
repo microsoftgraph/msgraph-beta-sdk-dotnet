@@ -7,11 +7,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ProvisionedPlan : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>For example, 'Enabled'.</summary>
+        /// <summary>For example, &apos;Enabled&apos;.</summary>
         public string CapabilityStatus { get; set; }
-        /// <summary>For example, 'Success'.</summary>
+        /// <summary>For example, &apos;Success&apos;.</summary>
         public string ProvisioningStatus { get; set; }
-        /// <summary>The name of the service; for example, 'AccessControlS2S'</summary>
+        /// <summary>The name of the service; for example, &apos;AccessControlS2S&apos;</summary>
         public string Service { get; set; }
         /// <summary>
         /// Instantiates a new provisionedPlan and sets the default values.

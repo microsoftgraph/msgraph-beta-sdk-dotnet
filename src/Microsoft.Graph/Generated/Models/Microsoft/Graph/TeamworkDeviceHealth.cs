@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class TeamworkDeviceHealth : Entity, IParsable {
+        /// <summary>The connection property</summary>
         public TeamworkConnection Connection { get; set; }
         /// <summary>Identity of the user who created the device health document.</summary>
         public IdentitySet CreatedBy { get; set; }

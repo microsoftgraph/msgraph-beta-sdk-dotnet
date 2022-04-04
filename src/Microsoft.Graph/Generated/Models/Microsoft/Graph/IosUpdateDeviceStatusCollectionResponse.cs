@@ -7,7 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class IosUpdateDeviceStatusCollectionResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The nextLink property</summary>
         public string NextLink { get; set; }
+        /// <summary>The value property</summary>
         public List<IosUpdateDeviceStatus> Value { get; set; }
         /// <summary>
         /// Instantiates a new IosUpdateDeviceStatusCollectionResponse and sets the default values.

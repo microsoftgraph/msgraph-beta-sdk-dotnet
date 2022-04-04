@@ -21,8 +21,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public PrinterFeedOrientation? FeedOrientation { get; set; }
         /// <summary>Finishing processes to use when printing.</summary>
         public List<PrintFinishing?> Finishings { get; set; }
+        /// <summary>The fitPdfToPage property</summary>
         public bool? FitPdfToPage { get; set; }
-        /// <summary>The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.</summary>
+        /// <summary>The input bin (tray) to use when printing. See the printer&apos;s capabilities for a list of supported input bins.</summary>
         public string InputBin { get; set; }
         /// <summary>The margin settings to use when printing.</summary>
         public PrintMargin Margin { get; set; }
@@ -34,7 +35,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public PrintMultipageLayout? MultipageLayout { get; set; }
         /// <summary>The orientation setting the printer should use when printing the job. Valid values are described in the following table.</summary>
         public PrintOrientation? Orientation { get; set; }
-        /// <summary>The output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.</summary>
+        /// <summary>The output bin to place completed prints into. See the printer&apos;s capabilities for a list of supported output bins.</summary>
         public string OutputBin { get; set; }
         /// <summary>The page ranges to print. Read-only.</summary>
         public List<IntegerRange> PageRanges { get; set; }

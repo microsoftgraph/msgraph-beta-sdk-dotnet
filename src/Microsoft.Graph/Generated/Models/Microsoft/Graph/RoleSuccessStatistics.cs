@@ -7,14 +7,23 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class RoleSuccessStatistics : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The permanentFail property</summary>
         public long? PermanentFail { get; set; }
+        /// <summary>The permanentSuccess property</summary>
         public long? PermanentSuccess { get; set; }
+        /// <summary>The removeFail property</summary>
         public long? RemoveFail { get; set; }
+        /// <summary>The removeSuccess property</summary>
         public long? RemoveSuccess { get; set; }
+        /// <summary>The roleId property</summary>
         public string RoleId { get; set; }
+        /// <summary>The roleName property</summary>
         public string RoleName { get; set; }
+        /// <summary>The temporaryFail property</summary>
         public long? TemporaryFail { get; set; }
+        /// <summary>The temporarySuccess property</summary>
         public long? TemporarySuccess { get; set; }
+        /// <summary>The unknownFail property</summary>
         public long? UnknownFail { get; set; }
         /// <summary>
         /// Instantiates a new roleSuccessStatistics and sets the default values.

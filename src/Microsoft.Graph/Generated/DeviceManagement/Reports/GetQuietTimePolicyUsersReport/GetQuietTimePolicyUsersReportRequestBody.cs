@@ -8,15 +8,25 @@ namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetQuietTimePolicyUsersRepo
     public class GetQuietTimePolicyUsersReportRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The filter property</summary>
         public string Filter { get; set; }
+        /// <summary>The groupBy property</summary>
         public List<string> GroupBy { get; set; }
+        /// <summary>The name property</summary>
         public string Name { get; set; }
+        /// <summary>The orderBy property</summary>
         public List<string> OrderBy { get; set; }
+        /// <summary>The search property</summary>
         public string Search { get; set; }
+        /// <summary>The select property</summary>
         public List<string> Select { get; set; }
+        /// <summary>The sessionId property</summary>
         public string SessionId { get; set; }
+        /// <summary>The skip property</summary>
         public int? Skip { get; set; }
+        /// <summary>The skipToken property</summary>
         public string SkipToken { get; set; }
+        /// <summary>The top property</summary>
         public int? Top { get; set; }
         /// <summary>
         /// Instantiates a new getQuietTimePolicyUsersReportRequestBody and sets the default values.

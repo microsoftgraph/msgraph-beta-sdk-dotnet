@@ -7,10 +7,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class File : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Hashes of the file's binary content, if available. Read-only.</summary>
+        /// <summary>Hashes of the file&apos;s binary content, if available. Read-only.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Hashes Hashes { get; set; }
         /// <summary>The MIME type for the file. This is determined by logic on the server and might not be the value provided when the file was uploaded. Read-only.</summary>
         public string MimeType { get; set; }
+        /// <summary>The processingMetadata property</summary>
         public bool? ProcessingMetadata { get; set; }
         /// <summary>
         /// Instantiates a new file and sets the default values.

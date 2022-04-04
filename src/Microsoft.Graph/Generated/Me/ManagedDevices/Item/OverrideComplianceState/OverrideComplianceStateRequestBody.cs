@@ -9,7 +9,9 @@ namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.OverrideComplianceState {
     public class OverrideComplianceStateRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The complianceState property</summary>
         public AdministratorConfiguredDeviceComplianceState? ComplianceState { get; set; }
+        /// <summary>The remediationUrl property</summary>
         public string RemediationUrl { get; set; }
         /// <summary>
         /// Instantiates a new overrideComplianceStateRequestBody and sets the default values.

@@ -7,13 +7,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class WorkbookFilterCriteria : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The color property</summary>
         public string Color { get; set; }
+        /// <summary>The criterion1 property</summary>
         public string Criterion1 { get; set; }
+        /// <summary>The criterion2 property</summary>
         public string Criterion2 { get; set; }
+        /// <summary>The dynamicCriteria property</summary>
         public string DynamicCriteria { get; set; }
+        /// <summary>The filterOn property</summary>
         public string FilterOn { get; set; }
+        /// <summary>The icon property</summary>
         public WorkbookIcon Icon { get; set; }
+        /// <summary>The operator property</summary>
         public string Operator { get; set; }
+        /// <summary>The values property</summary>
         public Json Values { get; set; }
         /// <summary>
         /// Instantiates a new workbookFilterCriteria and sets the default values.

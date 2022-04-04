@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>True if the current peripheral is optional. If set to false, this property is also used as part of the calculation of the health state for the device.</summary>
         public bool? IsOptional { get; set; }
+        /// <summary>The peripheral property</summary>
         public TeamworkPeripheral Peripheral { get; set; }
         /// <summary>
         /// Instantiates a new teamworkConfiguredPeripheral and sets the default values.

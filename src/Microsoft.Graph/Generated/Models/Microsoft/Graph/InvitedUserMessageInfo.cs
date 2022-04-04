@@ -9,7 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Additional recipients the invitation message should be sent to. Currently only 1 additional recipient is supported.</summary>
         public List<Recipient> CcRecipients { get; set; }
-        /// <summary>Customized message body you want to send if you don't want the default message.</summary>
+        /// <summary>Customized message body you want to send if you don&apos;t want the default message.</summary>
         public string CustomizedMessageBody { get; set; }
         /// <summary>The language you want to send the default message in. If the customizedMessageBody is specified, this property is ignored, and the message is sent using the customizedMessageBody. The language format should be in ISO 639. The default is en-US.</summary>
         public string MessageLanguage { get; set; }

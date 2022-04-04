@@ -7,9 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PrintOperationStatus : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A human-readable description of the printOperation's current processing state. Read-only.</summary>
+        /// <summary>A human-readable description of the printOperation&apos;s current processing state. Read-only.</summary>
         public string Description { get; set; }
-        /// <summary>The printOperation's current processing state. Valid values are described in the following table. Read-only.</summary>
+        /// <summary>The printOperation&apos;s current processing state. Valid values are described in the following table. Read-only.</summary>
         public PrintOperationProcessingState? State { get; set; }
         /// <summary>
         /// Instantiates a new printOperationStatus and sets the default values.

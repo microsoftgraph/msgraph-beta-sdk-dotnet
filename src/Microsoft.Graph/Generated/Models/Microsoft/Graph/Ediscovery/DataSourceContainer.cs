@@ -9,7 +9,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>Display name of the dataSourceContainer entity.</summary>
         public string DisplayName { get; set; }
+        /// <summary>The holdStatus property</summary>
         public DataSourceHoldStatus? HoldStatus { get; set; }
+        /// <summary>The lastIndexOperation property</summary>
         public CaseIndexOperation LastIndexOperation { get; set; }
         /// <summary>Last modified date and time of the dataSourceContainer.</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }

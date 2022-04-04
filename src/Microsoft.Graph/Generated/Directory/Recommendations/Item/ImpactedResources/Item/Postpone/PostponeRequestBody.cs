@@ -8,6 +8,7 @@ namespace MicrosoftGraphSdk.Directory.Recommendations.Item.ImpactedResources.Ite
     public class PostponeRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The postponeUntilDateTime property</summary>
         public DateTimeOffset? PostponeUntilDateTime { get; set; }
         /// <summary>
         /// Instantiates a new postponeRequestBody and sets the default values.

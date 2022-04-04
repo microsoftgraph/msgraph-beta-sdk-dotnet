@@ -8,6 +8,7 @@ namespace MicrosoftGraphSdk.RiskyUsers.Dismiss {
     public class DismissRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The userIds property</summary>
         public List<string> UserIds { get; set; }
         /// <summary>
         /// Instantiates a new dismissRequestBody and sets the default values.

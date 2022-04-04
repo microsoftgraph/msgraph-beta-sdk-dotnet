@@ -39,7 +39,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string SupportDepartment { get; set; }
         /// <summary>Support phone number</summary>
         public string SupportPhoneNumber { get; set; }
-        /// <summary>Indicates if 'Terms and Conditions' setup pane is disabled</summary>
+        /// <summary>Indicates if &apos;Terms and Conditions&apos; setup pane is disabled</summary>
         public bool? TermsAndConditionsDisabled { get; set; }
         /// <summary>Indicates if touch id setup pane is disabled</summary>
         public bool? TouchIdDisabled { get; set; }

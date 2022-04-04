@@ -5,9 +5,9 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class OnenotePage : OnenoteEntitySchemaObjectModel, IParsable {
-        /// <summary>The page's HTML content.</summary>
+        /// <summary>The page&apos;s HTML content.</summary>
         public byte[] Content { get; set; }
-        /// <summary>The URL for the page's HTML content.  Read-only.</summary>
+        /// <summary>The URL for the page&apos;s HTML content.  Read-only.</summary>
         public string ContentUrl { get; set; }
         /// <summary>The unique identifier of the application that created the page. Read-only.</summary>
         public string CreatedByAppId { get; set; }
@@ -15,7 +15,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? LastModifiedDateTime { get; set; }
         /// <summary>The indentation level of the page. Read-only.</summary>
         public int? Level { get; set; }
-        /// <summary>Links for opening the page. The oneNoteClientURL link opens the page in the OneNote native client if it 's installed. The oneNoteWebUrl link opens the page in OneNote on the web. Read-only.</summary>
+        /// <summary>Links for opening the page. The oneNoteClientURL link opens the page in the OneNote native client if it &apos;s installed. The oneNoteWebUrl link opens the page in OneNote on the web. Read-only.</summary>
         public PageLinks Links { get; set; }
         /// <summary>The order of the page within its parent section. Read-only.</summary>
         public int? Order { get; set; }
@@ -25,6 +25,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public OnenoteSection ParentSection { get; set; }
         /// <summary>The title of the page.</summary>
         public string Title { get; set; }
+        /// <summary>The userTags property</summary>
         public List<string> UserTags { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

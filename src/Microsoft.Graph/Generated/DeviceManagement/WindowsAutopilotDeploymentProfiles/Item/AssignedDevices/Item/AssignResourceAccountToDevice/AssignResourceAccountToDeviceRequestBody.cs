@@ -8,8 +8,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeploymentProfiles.
     public class AssignResourceAccountToDeviceRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The addressableUserName property</summary>
         public string AddressableUserName { get; set; }
+        /// <summary>The resourceAccountName property</summary>
         public string ResourceAccountName { get; set; }
+        /// <summary>The userPrincipalName property</summary>
         public string UserPrincipalName { get; set; }
         /// <summary>
         /// Instantiates a new assignResourceAccountToDeviceRequestBody and sets the default values.

@@ -14,12 +14,15 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.IosVppApp {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The revokeAllLicenses property</summary>
         public RevokeAllLicensesRequestBuilder RevokeAllLicenses { get =>
             new RevokeAllLicensesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The revokeDeviceLicense property</summary>
         public RevokeDeviceLicenseRequestBuilder RevokeDeviceLicense { get =>
             new RevokeDeviceLicenseRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The revokeUserLicense property</summary>
         public RevokeUserLicenseRequestBuilder RevokeUserLicense { get =>
             new RevokeUserLicenseRequestBuilder(PathParameters, RequestAdapter);
         }

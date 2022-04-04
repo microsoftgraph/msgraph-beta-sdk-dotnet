@@ -17,7 +17,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeTimeZone Start { get; set; }
         /// <summary>The availability status of the user or resource during the corresponding event. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.</summary>
         public FreeBusyStatus? Status { get; set; }
-        /// <summary>The corresponding event's subject line. Optional.</summary>
+        /// <summary>The corresponding event&apos;s subject line. Optional.</summary>
         public string Subject { get; set; }
         /// <summary>
         /// Instantiates a new scheduleItem and sets the default values.

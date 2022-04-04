@@ -8,11 +8,17 @@ namespace MicrosoftGraphSdk.DeviceManagement.GetAssignmentFiltersStatusDetails {
     public class GetAssignmentFiltersStatusDetailsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The assignmentFilterIds property</summary>
         public List<string> AssignmentFilterIds { get; set; }
+        /// <summary>The managedDeviceId property</summary>
         public string ManagedDeviceId { get; set; }
+        /// <summary>The payloadId property</summary>
         public string PayloadId { get; set; }
+        /// <summary>The skip property</summary>
         public int? Skip { get; set; }
+        /// <summary>The top property</summary>
         public int? Top { get; set; }
+        /// <summary>The userId property</summary>
         public string UserId { get; set; }
         /// <summary>
         /// Instantiates a new getAssignmentFiltersStatusDetailsRequestBody and sets the default values.

@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ItemAddress : ItemFacet, IParsable {
+        /// <summary>The detail property</summary>
         public PhysicalAddress Detail { get; set; }
         /// <summary>Friendly name the user has assigned to this address.</summary>
         public string DisplayName { get; set; }

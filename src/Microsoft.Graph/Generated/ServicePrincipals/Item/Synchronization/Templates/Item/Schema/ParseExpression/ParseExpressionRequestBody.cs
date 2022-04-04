@@ -9,8 +9,11 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Templates.Ite
     public class ParseExpressionRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The expression property</summary>
         public string Expression { get; set; }
+        /// <summary>The targetAttributeDefinition property</summary>
         public AttributeDefinition TargetAttributeDefinition { get; set; }
+        /// <summary>The testInputObject property</summary>
         public ExpressionInputObject TestInputObject { get; set; }
         /// <summary>
         /// Instantiates a new parseExpressionRequestBody and sets the default values.

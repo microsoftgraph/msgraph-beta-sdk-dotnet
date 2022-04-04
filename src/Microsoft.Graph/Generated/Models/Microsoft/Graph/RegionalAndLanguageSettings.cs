@@ -7,7 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class RegionalAndLanguageSettings : Entity, IParsable {
         /// <summary>Prioritized list of languages the user reads and authors in.Returned by default. Not nullable.</summary>
         public List<LocaleInfo> AuthoringLanguages { get; set; }
-        /// <summary>The  user's preferred user interface language (menus, buttons, ribbons, warning messages) for Microsoft web applications.Returned by default. Not nullable.</summary>
+        /// <summary>The  user&apos;s preferred user interface language (menus, buttons, ribbons, warning messages) for Microsoft web applications.Returned by default. Not nullable.</summary>
         public LocaleInfo DefaultDisplayLanguage { get; set; }
         /// <summary>The locale that drives the default date, time, and calendar formatting.Returned by default.</summary>
         public LocaleInfo DefaultRegionalFormat { get; set; }
@@ -17,7 +17,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public LocaleInfo DefaultTranslationLanguage { get; set; }
         /// <summary>Allows a user to override their defaultRegionalFormat with field specific formats.Returned by default.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.RegionalFormatOverrides RegionalFormatOverrides { get; set; }
-        /// <summary>The user's preferred settings when consuming translated documents, emails, messages, and websites.Returned by default. Not nullable.</summary>
+        /// <summary>The user&apos;s preferred settings when consuming translated documents, emails, messages, and websites.Returned by default. Not nullable.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.TranslationPreferences TranslationPreferences { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

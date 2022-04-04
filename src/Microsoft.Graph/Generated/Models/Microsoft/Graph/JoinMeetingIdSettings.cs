@@ -7,8 +7,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class JoinMeetingIdSettings : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The isPasscodeRequired property</summary>
         public bool? IsPasscodeRequired { get; set; }
+        /// <summary>The joinMeetingId property</summary>
         public string JoinMeetingId { get; set; }
+        /// <summary>The passcode property</summary>
         public string Passcode { get; set; }
         /// <summary>
         /// Instantiates a new joinMeetingIdSettings and sets the default values.

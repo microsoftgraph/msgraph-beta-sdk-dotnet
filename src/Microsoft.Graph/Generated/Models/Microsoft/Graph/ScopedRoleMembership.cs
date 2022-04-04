@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string AdministrativeUnitId { get; set; }
         /// <summary>Unique identifier for the directory role that the member is in.</summary>
         public string RoleId { get; set; }
+        /// <summary>The roleMemberInfo property</summary>
         public Identity RoleMemberInfo { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

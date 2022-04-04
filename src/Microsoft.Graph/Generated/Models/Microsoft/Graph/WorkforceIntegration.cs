@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public int? ApiVersion { get; set; }
         /// <summary>Name of the workforce integration.</summary>
         public string DisplayName { get; set; }
+        /// <summary>The eligibilityFilteringEnabledEntities property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.EligibilityFilteringEnabledEntities? EligibilityFilteringEnabledEntities { get; set; }
         /// <summary>The workforce integration encryption resource.</summary>
         public WorkforceIntegrationEncryption Encryption { get; set; }

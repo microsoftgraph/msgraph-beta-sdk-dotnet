@@ -7,7 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class GovernancePolicy : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The decisionMakerCriteria property</summary>
         public List<GovernanceCriteria> DecisionMakerCriteria { get; set; }
+        /// <summary>The notificationPolicy property</summary>
         public GovernanceNotificationPolicy NotificationPolicy { get; set; }
         /// <summary>
         /// Instantiates a new governancePolicy and sets the default values.

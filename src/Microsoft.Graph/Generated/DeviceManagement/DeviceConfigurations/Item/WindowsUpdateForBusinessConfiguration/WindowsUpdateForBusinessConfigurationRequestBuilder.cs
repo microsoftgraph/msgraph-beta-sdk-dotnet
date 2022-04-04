@@ -9,9 +9,11 @@ using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.WindowsUpdateForBusinessConfiguration {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\microsoft.graph.windowsUpdateForBusinessConfiguration</summary>
     public class WindowsUpdateForBusinessConfigurationRequestBuilder {
+        /// <summary>The extendFeatureUpdatesPause property</summary>
         public ExtendFeatureUpdatesPauseRequestBuilder ExtendFeatureUpdatesPause { get =>
             new ExtendFeatureUpdatesPauseRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The extendQualityUpdatesPause property</summary>
         public ExtendQualityUpdatesPauseRequestBuilder ExtendQualityUpdatesPause { get =>
             new ExtendQualityUpdatesPauseRequestBuilder(PathParameters, RequestAdapter);
         }

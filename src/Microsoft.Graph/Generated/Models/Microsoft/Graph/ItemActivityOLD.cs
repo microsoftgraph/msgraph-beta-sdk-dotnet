@@ -5,10 +5,15 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ItemActivityOLD : Entity, IParsable {
+        /// <summary>The action property</summary>
         public ItemActionSet Action { get; set; }
+        /// <summary>The actor property</summary>
         public IdentitySet Actor { get; set; }
+        /// <summary>The driveItem property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem DriveItem { get; set; }
+        /// <summary>The listItem property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ListItem ListItem { get; set; }
+        /// <summary>The times property</summary>
         public ItemActivityTimeSet Times { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

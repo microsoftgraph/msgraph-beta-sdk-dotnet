@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ActivityDomain? ActivityDomain { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The timeSlots property</summary>
         public List<TimeSlot> TimeSlots { get; set; }
         /// <summary>
         /// Instantiates a new timeConstraint and sets the default values.

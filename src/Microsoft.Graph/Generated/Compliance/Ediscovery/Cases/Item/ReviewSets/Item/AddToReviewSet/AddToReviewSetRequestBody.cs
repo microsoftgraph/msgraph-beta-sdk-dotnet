@@ -9,7 +9,9 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Add
     public class AddToReviewSetRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The additionalDataOptions property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery.AdditionalDataOptions? AdditionalDataOptions { get; set; }
+        /// <summary>The sourceCollection property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery.SourceCollection SourceCollection { get; set; }
         /// <summary>
         /// Instantiates a new addToReviewSetRequestBody and sets the default values.

@@ -7,9 +7,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class LicenseInfoDetail : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The licenseType property</summary>
         public AzureADLicenseType? LicenseType { get; set; }
+        /// <summary>The totalAssignedCount property</summary>
         public int? TotalAssignedCount { get; set; }
+        /// <summary>The totalLicenseCount property</summary>
         public int? TotalLicenseCount { get; set; }
+        /// <summary>The totalUsageCount property</summary>
         public int? TotalUsageCount { get; set; }
         /// <summary>
         /// Instantiates a new licenseInfoDetail and sets the default values.

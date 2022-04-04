@@ -8,6 +8,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.ValidateXml {
     public class ValidateXmlRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The officeConfigurationXml property</summary>
         public byte[] OfficeConfigurationXml { get; set; }
         /// <summary>
         /// Instantiates a new validateXmlRequestBody and sets the default values.

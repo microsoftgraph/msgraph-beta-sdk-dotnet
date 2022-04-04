@@ -7,10 +7,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class TeamworkActivePeripherals : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The communicationSpeaker property</summary>
         public TeamworkPeripheral CommunicationSpeaker { get; set; }
+        /// <summary>The contentCamera property</summary>
         public TeamworkPeripheral ContentCamera { get; set; }
+        /// <summary>The microphone property</summary>
         public TeamworkPeripheral Microphone { get; set; }
+        /// <summary>The roomCamera property</summary>
         public TeamworkPeripheral RoomCamera { get; set; }
+        /// <summary>The speaker property</summary>
         public TeamworkPeripheral Speaker { get; set; }
         /// <summary>
         /// Instantiates a new teamworkActivePeripherals and sets the default values.

@@ -8,8 +8,11 @@ namespace MicrosoftGraphSdk.PrivilegedRoleAssignments.Item.MakePermanent {
     public class MakePermanentRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The reason property</summary>
         public string Reason { get; set; }
+        /// <summary>The ticketNumber property</summary>
         public string TicketNumber { get; set; }
+        /// <summary>The ticketSystem property</summary>
         public string TicketSystem { get; set; }
         /// <summary>
         /// Instantiates a new makePermanentRequestBody and sets the default values.

@@ -9,7 +9,9 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyUploadedDefinitionFiles.
     public class UploadNewVersionRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The content property</summary>
         public byte[] Content { get; set; }
+        /// <summary>The groupPolicyUploadedLanguageFiles property</summary>
         public List<GroupPolicyUploadedLanguageFile> GroupPolicyUploadedLanguageFiles { get; set; }
         /// <summary>
         /// Instantiates a new uploadNewVersionRequestBody and sets the default values.

@@ -5,10 +5,13 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class EducationClass : Entity, IParsable {
+        /// <summary>The assignmentCategories property</summary>
         public List<EducationCategory> AssignmentCategories { get; set; }
+        /// <summary>The assignmentDefaults property</summary>
         public EducationAssignmentDefaults AssignmentDefaults { get; set; }
         /// <summary>All assignments associated with this class. Nullable.</summary>
         public List<EducationAssignment> Assignments { get; set; }
+        /// <summary>The assignmentSettings property</summary>
         public EducationAssignmentSettings AssignmentSettings { get; set; }
         /// <summary>Class code used by the school to identify the class.</summary>
         public string ClassCode { get; set; }

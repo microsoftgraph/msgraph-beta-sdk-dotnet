@@ -9,7 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public int? ElevatedCount { get; set; }
         /// <summary>The number of users that have the role assigned but the role is deactivated.</summary>
         public int? ManagedCount { get; set; }
-        /// <summary>true if the role activation requires MFA. false if the role activation doesn't require MFA.</summary>
+        /// <summary>true if the role activation requires MFA. false if the role activation doesn&apos;t require MFA.</summary>
         public bool? MfaEnabled { get; set; }
         /// <summary>Possible values are: ok, bad. The value depends on the ratio of (managedCount / usersCount). If the ratio is less than a predefined threshold, ok is returned. Otherwise, bad is returned.</summary>
         public RoleSummaryStatus? Status { get; set; }

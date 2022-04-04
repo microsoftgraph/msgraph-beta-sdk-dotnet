@@ -8,8 +8,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelSites.Item.Microsoft
     public class GetHealthMetricTimeSeriesRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The endDateTime property</summary>
         public DateTimeOffset? EndDateTime { get; set; }
+        /// <summary>The metricName property</summary>
         public string MetricName { get; set; }
+        /// <summary>The startDateTime property</summary>
         public DateTimeOffset? StartDateTime { get; set; }
         /// <summary>
         /// Instantiates a new getHealthMetricTimeSeriesRequestBody and sets the default values.

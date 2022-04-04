@@ -32,13 +32,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<ManagedEBook> ManagedEBooks { get; set; }
         /// <summary>Windows information protection for apps running on devices which are MDM enrolled.</summary>
         public List<MdmWindowsInformationProtectionPolicy> MdmWindowsInformationProtectionPolicies { get; set; }
-        /// <summary>The locale information used to sync applications from the Microsoft Store for Business. Cultures that are specific to a country/region. The names of these cultures follow RFC 4646 (Windows Vista and later). The format is -<country/regioncode2>, where  is a lowercase two-letter code derived from ISO 639-1 and <country/regioncode2> is an uppercase two-letter code derived from ISO 3166. For example, en-US for English (United States) is a specific culture.</summary>
+        /// <summary>The locale information used to sync applications from the Microsoft Store for Business. Cultures that are specific to a country/region. The names of these cultures follow RFC 4646 (Windows Vista and later). The format is -&lt;country/regioncode2&gt;, where  is a lowercase two-letter code derived from ISO 639-1 and &lt;country/regioncode2&gt; is an uppercase two-letter code derived from ISO 3166. For example, en-US for English (United States) is a specific culture.</summary>
         public string MicrosoftStoreForBusinessLanguage { get; set; }
         /// <summary>The last time an application sync from the Microsoft Store for Business was completed.</summary>
         public DateTimeOffset? MicrosoftStoreForBusinessLastCompletedApplicationSyncTime { get; set; }
         /// <summary>The last time the apps from the Microsoft Store for Business were synced successfully for the account.</summary>
         public DateTimeOffset? MicrosoftStoreForBusinessLastSuccessfulSyncDateTime { get; set; }
-        /// <summary>The end user portal information is used to sync applications from the Microsoft Store for Business to Intune Company Portal. There are three options to pick from ['Company portal only', 'Company portal and private store', 'Private store only']. Possible values are: none, companyPortal, privateStore.</summary>
+        /// <summary>The end user portal information is used to sync applications from the Microsoft Store for Business to Intune Company Portal. There are three options to pick from [&apos;Company portal only&apos;, &apos;Company portal and private store&apos;, &apos;Private store only&apos;]. Possible values are: none, companyPortal, privateStore.</summary>
         public MicrosoftStoreForBusinessPortalSelectionOptions? MicrosoftStoreForBusinessPortalSelection { get; set; }
         /// <summary>The mobile app categories.</summary>
         public List<MobileAppCategory> MobileAppCategories { get; set; }

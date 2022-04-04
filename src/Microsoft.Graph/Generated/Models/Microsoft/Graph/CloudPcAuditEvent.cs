@@ -15,6 +15,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public CloudPcAuditActivityResult? ActivityResult { get; set; }
         /// <summary>The type of activity that was performed. Read-only.</summary>
         public string ActivityType { get; set; }
+        /// <summary>The actor property</summary>
         public CloudPcAuditActor Actor { get; set; }
         /// <summary>Audit category. Read-only.</summary>
         public CloudPcAuditCategory? Category { get; set; }

@@ -13,6 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string Name { get; set; }
         /// <summary>Collection of objects supported by the directory.</summary>
         public List<ObjectDefinition> Objects { get; set; }
+        /// <summary>The readOnly property</summary>
         public bool? ReadOnly { get; set; }
         /// <summary>Read only value that indicates version discovered. null if discovery has not yet occurred.</summary>
         public string Version { get; set; }

@@ -7,7 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Settings : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Specifies if the user's primary mailbox is hosted in the cloud and is enabled for Microsoft Graph.</summary>
+        /// <summary>Specifies if the user&apos;s primary mailbox is hosted in the cloud and is enabled for Microsoft Graph.</summary>
         public bool? HasGraphMailbox { get; set; }
         /// <summary>Specifies if the user has a MyAnalytics license assigned.</summary>
         public bool? HasLicense { get; set; }

@@ -16,6 +16,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? LastModifiedDateTime { get; set; }
         /// <summary>The version of the policy in use. Read-only.</summary>
         public string PolicyVersion { get; set; }
+        /// <summary>The reconfirmationInDays property</summary>
         public int? ReconfirmationInDays { get; set; }
         /// <summary>Enforce registration at sign-in time. This property can be used to remind users to set up targeted authentication methods.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.RegistrationEnforcement RegistrationEnforcement { get; set; }

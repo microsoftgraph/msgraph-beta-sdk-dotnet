@@ -6,7 +6,7 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Singleton entity that acts as a container for all device management functionality.</summary>
     public class DeviceManagement : Entity, IParsable {
-        /// <summary>The date & time when tenant data moved between scaleunits.</summary>
+        /// <summary>The date &amp; time when tenant data moved between scaleunits.</summary>
         public DateTimeOffset? AccountMoveCompletionDateTime { get; set; }
         /// <summary>Admin consent information.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AdminConsent AdminConsent { get; set; }
@@ -218,7 +218,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DeviceManagementSettings Settings { get; set; }
         /// <summary>The software update status summary.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.SoftwareUpdateStatusSummary SoftwareUpdateStatusSummary { get; set; }
-        /// <summary>Tenant's Subscription.</summary>
+        /// <summary>Tenant&apos;s Subscription.</summary>
         public DeviceManagementSubscriptions? Subscriptions { get; set; }
         /// <summary>Tenant mobile device management subscription state. Possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.</summary>
         public DeviceManagementSubscriptionState? SubscriptionState { get; set; }
@@ -316,6 +316,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsWorkFromAnywhereModelPerformance> UserExperienceAnalyticsWorkFromAnywhereModelPerformance { get; set; }
         /// <summary>Collection of PFX certificates associated with a user.</summary>
         public List<UserPFXCertificate> UserPfxCertificates { get; set; }
+        /// <summary>The virtualEndpoint property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.VirtualEndpoint VirtualEndpoint { get; set; }
         /// <summary>Windows auto pilot deployment profiles</summary>
         public List<WindowsAutopilotDeploymentProfile> WindowsAutopilotDeploymentProfiles { get; set; }

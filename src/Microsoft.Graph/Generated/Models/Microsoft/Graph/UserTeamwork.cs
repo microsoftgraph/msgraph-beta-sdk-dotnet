@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UserTeamwork : Entity, IParsable {
+        /// <summary>The associatedTeams property</summary>
         public List<AssociatedTeamInfo> AssociatedTeams { get; set; }
         /// <summary>The apps installed in the personal scope of this user.</summary>
         public List<UserScopeTeamsAppInstallation> InstalledApps { get; set; }

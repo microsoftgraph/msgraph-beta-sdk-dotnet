@@ -9,7 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A valid smtp email address for the privacy statement contact. Not required.</summary>
         public string ContactEmail { get; set; }
-        /// <summary>A valid URL format that begins with http:// or https://. Maximum length is 255 characters. The URL that directs to the company's privacy statement. Not required.</summary>
+        /// <summary>A valid URL format that begins with http:// or https://. Maximum length is 255 characters. The URL that directs to the company&apos;s privacy statement. Not required.</summary>
         public string StatementUrl { get; set; }
         /// <summary>
         /// Instantiates a new privacyProfile and sets the default values.

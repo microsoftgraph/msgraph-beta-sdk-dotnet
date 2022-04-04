@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Users.Item.CloudPCs.Item.ChangeUserAccountType {
     public class ChangeUserAccountTypeRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The userAccountType property</summary>
         public CloudPcUserAccountType? UserAccountType { get; set; }
         /// <summary>
         /// Instantiates a new changeUserAccountTypeRequestBody and sets the default values.

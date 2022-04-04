@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Users.Item.AppConsentRequestsForApproval.Item.UserCo
     public class FilterByCurrentUserWithOnResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The value property</summary>
         public List<UserConsentRequest> Value { get; set; }
         /// <summary>
         /// Instantiates a new filterByCurrentUserWithOnResponse and sets the default values.

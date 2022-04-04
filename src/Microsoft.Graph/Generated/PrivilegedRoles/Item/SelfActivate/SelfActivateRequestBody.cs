@@ -8,9 +8,13 @@ namespace MicrosoftGraphSdk.PrivilegedRoles.Item.SelfActivate {
     public class SelfActivateRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The duration property</summary>
         public string Duration { get; set; }
+        /// <summary>The reason property</summary>
         public string Reason { get; set; }
+        /// <summary>The ticketNumber property</summary>
         public string TicketNumber { get; set; }
+        /// <summary>The ticketSystem property</summary>
         public string TicketSystem { get; set; }
         /// <summary>
         /// Instantiates a new selfActivateRequestBody and sets the default values.

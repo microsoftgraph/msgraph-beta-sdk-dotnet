@@ -9,8 +9,11 @@ namespace MicrosoftGraphSdk.Applications.Item.AddKey {
     public class KeyCredentialRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The keyCredential property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.KeyCredential KeyCredential { get; set; }
+        /// <summary>The passwordCredential property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.PasswordCredential PasswordCredential { get; set; }
+        /// <summary>The proof property</summary>
         public string Proof { get; set; }
         /// <summary>
         /// Instantiates a new KeyCredentialRequestBody and sets the default values.

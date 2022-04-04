@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ManagedMobileApp : Entity, IParsable {
-        /// <summary>The identifier for an app with it's operating system type.</summary>
+        /// <summary>The identifier for an app with it&apos;s operating system type.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.MobileAppIdentifier MobileAppIdentifier { get; set; }
         /// <summary>Version of the entity.</summary>
         public string Version { get; set; }

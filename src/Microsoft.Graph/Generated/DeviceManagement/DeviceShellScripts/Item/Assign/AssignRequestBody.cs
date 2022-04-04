@@ -9,7 +9,9 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceShellScripts.Item.Assign {
     public class AssignRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The deviceManagementScriptAssignments property</summary>
         public List<DeviceManagementScriptAssignment> DeviceManagementScriptAssignments { get; set; }
+        /// <summary>The deviceManagementScriptGroupAssignments property</summary>
         public List<DeviceManagementScriptGroupAssignment> DeviceManagementScriptGroupAssignments { get; set; }
         /// <summary>
         /// Instantiates a new assignRequestBody and sets the default values.

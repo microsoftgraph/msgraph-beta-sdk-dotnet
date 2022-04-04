@@ -5,21 +5,21 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class TermsAndConditions : Entity, IParsable {
-        /// <summary>Administrator-supplied explanation of the terms and conditions, typically describing what it means to accept the terms and conditions set out in the T&C policy. This is shown to the user on prompts to accept the T&C policy.</summary>
+        /// <summary>Administrator-supplied explanation of the terms and conditions, typically describing what it means to accept the terms and conditions set out in the T&amp;C policy. This is shown to the user on prompts to accept the T&amp;C policy.</summary>
         public string AcceptanceStatement { get; set; }
-        /// <summary>The list of acceptance statuses for this T&C policy.</summary>
+        /// <summary>The list of acceptance statuses for this T&amp;C policy.</summary>
         public List<TermsAndConditionsAcceptanceStatus> AcceptanceStatuses { get; set; }
-        /// <summary>The list of assignments for this T&C policy.</summary>
+        /// <summary>The list of assignments for this T&amp;C policy.</summary>
         public List<TermsAndConditionsAssignment> Assignments { get; set; }
-        /// <summary>Administrator-supplied body text of the terms and conditions, typically the terms themselves. This is shown to the user on prompts to accept the T&C policy.</summary>
+        /// <summary>Administrator-supplied body text of the terms and conditions, typically the terms themselves. This is shown to the user on prompts to accept the T&amp;C policy.</summary>
         public string BodyText { get; set; }
         /// <summary>DateTime the object was created.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
-        /// <summary>Administrator-supplied description of the T&C policy.</summary>
+        /// <summary>Administrator-supplied description of the T&amp;C policy.</summary>
         public string Description { get; set; }
-        /// <summary>Administrator-supplied name for the T&C policy.</summary>
+        /// <summary>Administrator-supplied name for the T&amp;C policy.</summary>
         public string DisplayName { get; set; }
-        /// <summary>The list of group assignments for this T&C policy.</summary>
+        /// <summary>The list of group assignments for this T&amp;C policy.</summary>
         public List<TermsAndConditionsGroupAssignment> GroupAssignments { get; set; }
         /// <summary>DateTime the object was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
@@ -27,9 +27,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? ModifiedDateTime { get; set; }
         /// <summary>List of Scope Tags for this Entity instance.</summary>
         public List<string> RoleScopeTagIds { get; set; }
-        /// <summary>Administrator-supplied title of the terms and conditions. This is shown to the user on prompts to accept the T&C policy.</summary>
+        /// <summary>Administrator-supplied title of the terms and conditions. This is shown to the user on prompts to accept the T&amp;C policy.</summary>
         public string Title { get; set; }
-        /// <summary>Integer indicating the current version of the terms. Incremented when an administrator makes a change to the terms and wishes to require users to re-accept the modified T&C policy.</summary>
+        /// <summary>Integer indicating the current version of the terms. Incremented when an administrator makes a change to the terms and wishes to require users to re-accept the modified T&amp;C policy.</summary>
         public int? Version { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

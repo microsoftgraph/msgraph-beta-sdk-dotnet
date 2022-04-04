@@ -15,7 +15,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AllowInvitesFrom? AllowInvitesFrom { get; set; }
         /// <summary>To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.</summary>
         public bool? BlockMsolPowerShell { get; set; }
+        /// <summary>The defaultUserRoleOverrides property</summary>
         public List<DefaultUserRoleOverride> DefaultUserRoleOverrides { get; set; }
+        /// <summary>The defaultUserRolePermissions property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.DefaultUserRolePermissions DefaultUserRolePermissions { get; set; }
         /// <summary>List of features enabled for private preview on the tenant.</summary>
         public List<string> EnabledPreviewFeatures { get; set; }

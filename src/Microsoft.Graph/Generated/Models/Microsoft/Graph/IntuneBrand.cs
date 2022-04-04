@@ -32,9 +32,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string DisplayName { get; set; }
         /// <summary>Customized device enrollment flow displayed to the end user . Possible values are: availableWithPrompts, availableWithoutPrompts, unavailable.</summary>
         public EnrollmentAvailabilityOptions? EnrollmentAvailability { get; set; }
-        /// <summary>Boolean that represents whether the adminsistrator has disabled the 'Factory Reset' action on corporate owned devices.</summary>
+        /// <summary>Boolean that represents whether the adminsistrator has disabled the &apos;Factory Reset&apos; action on corporate owned devices.</summary>
         public bool? IsFactoryResetDisabled { get; set; }
-        /// <summary>Boolean that represents whether the adminsistrator has disabled the 'Remove Device' action on corporate owned devices.</summary>
+        /// <summary>Boolean that represents whether the adminsistrator has disabled the &apos;Remove Device&apos; action on corporate owned devices.</summary>
         public bool? IsRemoveDeviceDisabled { get; set; }
         /// <summary>Customized image displayed in Company Portal app landing page</summary>
         public MimeContent LandingPageCustomizedImage { get; set; }

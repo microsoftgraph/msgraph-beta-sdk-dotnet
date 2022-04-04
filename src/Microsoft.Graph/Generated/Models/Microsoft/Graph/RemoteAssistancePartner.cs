@@ -13,7 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? OnboardingRequestExpiryDateTime { get; set; }
         /// <summary>A friendly description of the current TeamViewer connector status. Possible values are: notOnboarded, onboarding, onboarded.</summary>
         public RemoteAssistanceOnboardingStatus? OnboardingStatus { get; set; }
-        /// <summary>URL of the partner's onboarding portal, where an administrator can configure their Remote Assistance service.</summary>
+        /// <summary>URL of the partner&apos;s onboarding portal, where an administrator can configure their Remote Assistance service.</summary>
         public string OnboardingUrl { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

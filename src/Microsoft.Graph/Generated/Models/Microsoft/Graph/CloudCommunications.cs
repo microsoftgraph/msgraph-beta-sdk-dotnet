@@ -7,9 +7,13 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the cloudCommunications singleton.</summary>
     public class CloudCommunications : Entity, IParsable {
+        /// <summary>The callRecords property</summary>
         public List<CallRecord> CallRecords { get; set; }
+        /// <summary>The calls property</summary>
         public List<Call> Calls { get; set; }
+        /// <summary>The onlineMeetings property</summary>
         public List<OnlineMeeting> OnlineMeetings { get; set; }
+        /// <summary>The presences property</summary>
         public List<Presence> Presences { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -6,15 +6,25 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AgedAccountsReceivable : Entity, IParsable {
+        /// <summary>The agedAsOfDate property</summary>
         public Date? AgedAsOfDate { get; set; }
+        /// <summary>The balanceDue property</summary>
         public decimal? BalanceDue { get; set; }
+        /// <summary>The currencyCode property</summary>
         public string CurrencyCode { get; set; }
+        /// <summary>The currentAmount property</summary>
         public decimal? CurrentAmount { get; set; }
+        /// <summary>The customerNumber property</summary>
         public string CustomerNumber { get; set; }
+        /// <summary>The name property</summary>
         public string Name { get; set; }
+        /// <summary>The period1Amount property</summary>
         public decimal? Period1Amount { get; set; }
+        /// <summary>The period2Amount property</summary>
         public decimal? Period2Amount { get; set; }
+        /// <summary>The period3Amount property</summary>
         public decimal? Period3Amount { get; set; }
+        /// <summary>The periodLengthFilter property</summary>
         public string PeriodLengthFilter { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

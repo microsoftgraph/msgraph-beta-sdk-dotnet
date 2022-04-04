@@ -5,8 +5,11 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class MessageRecipient : Entity, IParsable {
+        /// <summary>The deliveryStatus property</summary>
         public MessageStatus? DeliveryStatus { get; set; }
+        /// <summary>The events property</summary>
         public List<MessageEvent> Events { get; set; }
+        /// <summary>The recipientEmail property</summary>
         public string RecipientEmail { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

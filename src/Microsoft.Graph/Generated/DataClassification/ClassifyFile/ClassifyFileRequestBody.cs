@@ -8,7 +8,9 @@ namespace MicrosoftGraphSdk.DataClassification.ClassifyFile {
     public class ClassifyFileRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The file property</summary>
         public byte[] File { get; set; }
+        /// <summary>The sensitiveTypeIds property</summary>
         public List<string> SensitiveTypeIds { get; set; }
         /// <summary>
         /// Instantiates a new classifyFileRequestBody and sets the default values.

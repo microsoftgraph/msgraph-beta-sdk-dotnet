@@ -13,7 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string Color { get; set; }
         /// <summary>Represents additional sorting options for this field. The possible values are: Normal, TextAsNumber.</summary>
         public string DataOption { get; set; }
-        /// <summary>Represents the icon that is the target of the condition if the sorting is on the cell's icon.</summary>
+        /// <summary>Represents the icon that is the target of the condition if the sorting is on the cell&apos;s icon.</summary>
         public WorkbookIcon Icon { get; set; }
         /// <summary>Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).</summary>
         public int? Key { get; set; }

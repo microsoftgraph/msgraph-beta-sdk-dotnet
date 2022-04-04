@@ -9,14 +9,23 @@ namespace MicrosoftGraphSdk.App.Calls.Item.RecordResponse {
     public class RecordResponseRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The bargeInAllowed property</summary>
         public bool? BargeInAllowed { get; set; }
+        /// <summary>The clientContext property</summary>
         public string ClientContext { get; set; }
+        /// <summary>The initialSilenceTimeoutInSeconds property</summary>
         public int? InitialSilenceTimeoutInSeconds { get; set; }
+        /// <summary>The maxRecordDurationInSeconds property</summary>
         public int? MaxRecordDurationInSeconds { get; set; }
+        /// <summary>The maxSilenceTimeoutInSeconds property</summary>
         public int? MaxSilenceTimeoutInSeconds { get; set; }
+        /// <summary>The playBeep property</summary>
         public bool? PlayBeep { get; set; }
+        /// <summary>The prompts property</summary>
         public List<Prompt> Prompts { get; set; }
+        /// <summary>The stopTones property</summary>
         public List<string> StopTones { get; set; }
+        /// <summary>The streamWhileRecording property</summary>
         public bool? StreamWhileRecording { get; set; }
         /// <summary>
         /// Instantiates a new recordResponseRequestBody and sets the default values.

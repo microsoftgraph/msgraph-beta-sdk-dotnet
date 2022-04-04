@@ -17,10 +17,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>A collection of custom workflow extension instances being run on an assignment request. Read-only.</summary>
         public List<CustomExtensionHandlerInstance> CustomExtensionHandlerInstances { get; set; }
+        /// <summary>The expirationDateTime property</summary>
         public DateTimeOffset? ExpirationDateTime { get; set; }
         /// <summary>True if the request is not to be processed for assignment.</summary>
         public bool? IsValidationOnly { get; set; }
-        /// <summary>The requestor's supplied justification.</summary>
+        /// <summary>The requestor&apos;s supplied justification.</summary>
         public string Justification { get; set; }
         /// <summary>The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.</summary>
         public AccessPackageSubject Requestor { get; set; }

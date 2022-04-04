@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UpdateRelationsh
     public class UpdateRelationshipsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The relationships property</summary>
         public List<MobileAppRelationship> Relationships { get; set; }
         /// <summary>
         /// Instantiates a new updateRelationshipsRequestBody and sets the default values.

@@ -9,7 +9,9 @@ namespace MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.Messag
     public class ReplyAllRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The Comment property</summary>
         public string Comment { get; set; }
+        /// <summary>The Message property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Message Message { get; set; }
         /// <summary>
         /// Instantiates a new replyAllRequestBody and sets the default values.

@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.GetDevices
     public class GetDevicesScheduledToRetireResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The value property</summary>
         public List<RetireScheduledManagedDevice> Value { get; set; }
         /// <summary>
         /// Instantiates a new getDevicesScheduledToRetireResponse and sets the default values.

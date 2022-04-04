@@ -9,7 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Destination IP Address of the connection to the cloud application/service.</summary>
         public string DestinationServiceIp { get; set; }
-        /// <summary>Cloud application/service name (for example 'Salesforce', 'DropBox', etc.).</summary>
+        /// <summary>Cloud application/service name (for example &apos;Salesforce&apos;, &apos;DropBox&apos;, etc.).</summary>
         public string DestinationServiceName { get; set; }
         /// <summary>Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.</summary>
         public string RiskScore { get; set; }

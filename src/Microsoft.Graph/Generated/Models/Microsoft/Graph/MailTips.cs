@@ -9,9 +9,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Mail tips for automatic reply if it has been set up by the recipient.</summary>
         public AutomaticRepliesMailTips AutomaticReplies { get; set; }
-        /// <summary>A custom mail tip that can be set on the recipient's mailbox.</summary>
+        /// <summary>A custom mail tip that can be set on the recipient&apos;s mailbox.</summary>
         public string CustomMailTip { get; set; }
-        /// <summary>Whether the recipient's mailbox is restricted, for example, accepting messages from only a predefined list of senders, rejecting messages from a predefined list of senders, or accepting messages from only authenticated senders.</summary>
+        /// <summary>Whether the recipient&apos;s mailbox is restricted, for example, accepting messages from only a predefined list of senders, rejecting messages from a predefined list of senders, or accepting messages from only authenticated senders.</summary>
         public bool? DeliveryRestricted { get; set; }
         /// <summary>The email address of the recipient to get mailtips for.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.EmailAddress EmailAddress { get; set; }
@@ -19,13 +19,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public MailTipsError Error { get; set; }
         /// <summary>The number of external members if the recipient is a distribution list.</summary>
         public int? ExternalMemberCount { get; set; }
-        /// <summary>Whether sending messages to the recipient requires approval. For example, if the recipient is a large distribution list and a moderator has been set up to approve messages sent to that distribution list, or if sending messages to a recipient requires approval of the recipient's manager.</summary>
+        /// <summary>Whether sending messages to the recipient requires approval. For example, if the recipient is a large distribution list and a moderator has been set up to approve messages sent to that distribution list, or if sending messages to a recipient requires approval of the recipient&apos;s manager.</summary>
         public bool? IsModerated { get; set; }
         /// <summary>The mailbox full status of the recipient.</summary>
         public bool? MailboxFull { get; set; }
-        /// <summary>The maximum message size that has been configured for the recipient's organization or mailbox.</summary>
+        /// <summary>The maximum message size that has been configured for the recipient&apos;s organization or mailbox.</summary>
         public int? MaxMessageSize { get; set; }
-        /// <summary>The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its 'partner'. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It's also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone and content.</summary>
+        /// <summary>The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its &apos;partner&apos;. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It&apos;s also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone and content.</summary>
         public RecipientScopeType? RecipientScope { get; set; }
         /// <summary>Recipients suggested based on previous contexts where they appear in the same message.</summary>
         public List<Recipient> RecipientSuggestions { get; set; }

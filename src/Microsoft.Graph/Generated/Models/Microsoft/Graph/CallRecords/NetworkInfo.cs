@@ -21,7 +21,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords {
         public string IpAddress { get; set; }
         /// <summary>Link speed in bits per second reported by the network adapter used by the media endpoint.</summary>
         public long? LinkSpeed { get; set; }
-        /// <summary>The media access control (MAC) address of the media endpoint's network device.</summary>
+        /// <summary>The media access control (MAC) address of the media endpoint&apos;s network device.</summary>
         public string MacAddress { get; set; }
         /// <summary>Network port number used by media endpoint.</summary>
         public int? Port { get; set; }

@@ -5,11 +5,11 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Notebook : OnenoteEntityHierarchyModel, IParsable {
-        /// <summary>Indicates whether this is the user's default notebook. Read-only.</summary>
+        /// <summary>Indicates whether this is the user&apos;s default notebook. Read-only.</summary>
         public bool? IsDefault { get; set; }
         /// <summary>Indicates whether the notebook is shared. If true, the contents of the notebook can be seen by people other than the owner. Read-only.</summary>
         public bool? IsShared { get; set; }
-        /// <summary>Links for opening the notebook. The oneNoteClientURL link opens the notebook in the OneNote native client if it's installed. The oneNoteWebURL link opens the notebook in OneNote on the web.</summary>
+        /// <summary>Links for opening the notebook. The oneNoteClientURL link opens the notebook in the OneNote native client if it&apos;s installed. The oneNoteWebURL link opens the notebook in OneNote on the web.</summary>
         public NotebookLinks Links { get; set; }
         /// <summary>The section groups in the notebook. Read-only. Nullable.</summary>
         public List<SectionGroup> SectionGroups { get; set; }

@@ -7,7 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class OutlookCategory : Entity, IParsable {
         /// <summary>A pre-set color constant that characterizes a category, and that is mapped to one of 25 predefined colors. See the note below.</summary>
         public CategoryColor? Color { get; set; }
-        /// <summary>A unique name that identifies a category in the user's mailbox. After a category is created, the name cannot be changed. Read-only.</summary>
+        /// <summary>A unique name that identifies a category in the user&apos;s mailbox. After a category is created, the name cannot be changed. Read-only.</summary>
         public string DisplayName { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

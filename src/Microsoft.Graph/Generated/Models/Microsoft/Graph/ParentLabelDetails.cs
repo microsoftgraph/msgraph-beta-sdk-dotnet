@@ -17,6 +17,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public bool? IsActive { get; set; }
         /// <summary>The plaintext name of the label.</summary>
         public string Name { get; set; }
+        /// <summary>The parent property</summary>
         public ParentLabelDetails Parent { get; set; }
         /// <summary>The sensitivity value of the label, where lower is less sensitive.</summary>
         public int? Sensitivity { get; set; }

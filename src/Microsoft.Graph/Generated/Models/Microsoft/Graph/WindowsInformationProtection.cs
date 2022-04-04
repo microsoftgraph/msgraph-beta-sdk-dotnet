@@ -15,7 +15,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public WindowsInformationProtectionEnforcementLevel? EnforcementLevel { get; set; }
         /// <summary>Primary enterprise domain</summary>
         public string EnterpriseDomain { get; set; }
-        /// <summary>This is the comma-separated list of internal proxy servers. For example, '157.54.14.28, 157.54.11.118, 10.202.14.167, 157.53.14.163, 157.69.210.59'. These proxies have been configured by the admin to connect to specific resources on the Internet. They are considered to be enterprise network locations. The proxies are only leveraged in configuring the EnterpriseProxiedDomains policy to force traffic to the matched domains through these proxies</summary>
+        /// <summary>This is the comma-separated list of internal proxy servers. For example, &apos;157.54.14.28, 157.54.11.118, 10.202.14.167, 157.53.14.163, 157.69.210.59&apos;. These proxies have been configured by the admin to connect to specific resources on the Internet. They are considered to be enterprise network locations. The proxies are only leveraged in configuring the EnterpriseProxiedDomains policy to force traffic to the matched domains through these proxies</summary>
         public List<WindowsInformationProtectionResourceCollection> EnterpriseInternalProxyServers { get; set; }
         /// <summary>Sets the enterprise IP ranges that define the computers in the enterprise network. Data that comes from those computers will be considered part of the enterprise and protected. These locations will be considered a safe destination for enterprise data to be shared to</summary>
         public List<WindowsInformationProtectionIPRangeCollection> EnterpriseIPRanges { get; set; }
@@ -49,7 +49,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<WindowsInformationProtectionApp> ProtectedApps { get; set; }
         /// <summary>Specifies whether the protection under lock feature (also known as encrypt under pin) should be configured</summary>
         public bool? ProtectionUnderLockConfigRequired { get; set; }
-        /// <summary>This policy controls whether to revoke the WIP keys when a device unenrolls from the management service. If set to 1 (Don't revoke keys), the keys will not be revoked and the user will continue to have access to protected files after unenrollment. If the keys are not revoked, there will be no revoked file cleanup subsequently.</summary>
+        /// <summary>This policy controls whether to revoke the WIP keys when a device unenrolls from the management service. If set to 1 (Don&apos;t revoke keys), the keys will not be revoked and the user will continue to have access to protected files after unenrollment. If the keys are not revoked, there will be no revoked file cleanup subsequently.</summary>
         public bool? RevokeOnUnenrollDisabled { get; set; }
         /// <summary>TemplateID GUID to use for RMS encryption. The RMS template allows the IT admin to configure the details about who has access to RMS-protected file and how long they have access</summary>
         public string RightsManagementServicesTemplateId { get; set; }

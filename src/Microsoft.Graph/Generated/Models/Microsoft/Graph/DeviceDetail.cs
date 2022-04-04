@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates the browser information of the used for signing in.</summary>
         public string Browser { get; set; }
+        /// <summary>The browserId property</summary>
         public string BrowserId { get; set; }
         /// <summary>Refers to the UniqueID of the device used for signing in.</summary>
         public string DeviceId { get; set; }

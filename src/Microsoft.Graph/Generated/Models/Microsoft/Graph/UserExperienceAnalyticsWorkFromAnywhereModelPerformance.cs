@@ -5,19 +5,19 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UserExperienceAnalyticsWorkFromAnywhereModelPerformance : Entity, IParsable {
-        /// <summary>The user experience work from anywhere's cloud identity score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
+        /// <summary>The user experience work from anywhere&apos;s cloud identity score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? CloudIdentityScore { get; set; }
-        /// <summary>The user experience work from anywhere's cloud management score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
+        /// <summary>The user experience work from anywhere&apos;s cloud management score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? CloudManagementScore { get; set; }
-        /// <summary>The user experience work from anywhere's cloud provisioning score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
+        /// <summary>The user experience work from anywhere&apos;s cloud provisioning score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? CloudProvisioningScore { get; set; }
         /// <summary>The health state of the user experience analytics work from anywhere model. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.</summary>
         public UserExperienceAnalyticsHealthState? HealthStatus { get; set; }
-        /// <summary>The user experience work from anywhere's manufacturer name of the devices.</summary>
+        /// <summary>The user experience work from anywhere&apos;s manufacturer name of the devices.</summary>
         public string Manufacturer { get; set; }
-        /// <summary>The user experience work from anywhere's model name of the devices.</summary>
+        /// <summary>The user experience work from anywhere&apos;s model name of the devices.</summary>
         public string Model { get; set; }
-        /// <summary>The user experience work from anywhere's devices count for the model. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>The user experience work from anywhere&apos;s devices count for the model. Valid values -2147483648 to 2147483647</summary>
         public int? ModelDeviceCount { get; set; }
         /// <summary>The user experience work from anywhere windows score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? WindowsScore { get; set; }

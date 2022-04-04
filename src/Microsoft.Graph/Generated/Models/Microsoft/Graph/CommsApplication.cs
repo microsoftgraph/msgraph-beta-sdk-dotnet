@@ -7,7 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class CommsApplication : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The calls property</summary>
         public List<Call> Calls { get; set; }
+        /// <summary>The onlineMeetings property</summary>
         public List<OnlineMeeting> OnlineMeetings { get; set; }
         /// <summary>
         /// Instantiates a new CommsApplication and sets the default values.

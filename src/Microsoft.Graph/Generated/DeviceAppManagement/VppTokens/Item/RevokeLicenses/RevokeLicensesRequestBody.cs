@@ -8,7 +8,9 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.VppTokens.Item.RevokeLicenses {
     public class RevokeLicensesRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The notifyManagedDevices property</summary>
         public bool? NotifyManagedDevices { get; set; }
+        /// <summary>The revokeUntrackedLicenses property</summary>
         public bool? RevokeUntrackedLicenses { get; set; }
         /// <summary>
         /// Instantiates a new revokeLicensesRequestBody and sets the default values.

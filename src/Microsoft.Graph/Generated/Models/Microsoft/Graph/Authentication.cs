@@ -13,6 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<AuthenticationMethod> Methods { get; set; }
         /// <summary>The details of the Microsoft Authenticator app registered to a user for authentication.</summary>
         public List<MicrosoftAuthenticatorAuthenticationMethod> MicrosoftAuthenticatorMethods { get; set; }
+        /// <summary>The operations property</summary>
         public List<LongRunningOperation> Operations { get; set; }
         /// <summary>Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.</summary>
         public List<PasswordlessMicrosoftAuthenticatorAuthenticationMethod> PasswordlessMicrosoftAuthenticatorMethods { get; set; }
@@ -20,6 +21,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<PasswordAuthenticationMethod> PasswordMethods { get; set; }
         /// <summary>Represents the phone registered to a user for authentication.</summary>
         public List<PhoneAuthenticationMethod> PhoneMethods { get; set; }
+        /// <summary>The softwareOathMethods property</summary>
         public List<SoftwareOathAuthenticationMethod> SoftwareOathMethods { get; set; }
         /// <summary>Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.</summary>
         public List<TemporaryAccessPassAuthenticationMethod> TemporaryAccessPassMethods { get; set; }

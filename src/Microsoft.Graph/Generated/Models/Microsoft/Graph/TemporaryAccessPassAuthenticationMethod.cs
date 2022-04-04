@@ -7,7 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class TemporaryAccessPassAuthenticationMethod : AuthenticationMethod, IParsable {
         /// <summary>The date and time when the temporaryAccessPass was created.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
-        /// <summary>The state of the authentication method that indicates whether it's currently usable by the user.</summary>
+        /// <summary>The state of the authentication method that indicates whether it&apos;s currently usable by the user.</summary>
         public bool? IsUsable { get; set; }
         /// <summary>Determines whether the pass is limited to a one time use. If true, the pass can be used once; if false, the pass can be used multiple times within the temporaryAccessPass lifetime.</summary>
         public bool? IsUsableOnce { get; set; }

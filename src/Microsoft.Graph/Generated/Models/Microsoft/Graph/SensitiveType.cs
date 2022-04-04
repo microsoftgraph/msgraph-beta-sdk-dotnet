@@ -5,14 +5,23 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SensitiveType : Entity, IParsable {
+        /// <summary>The classificationMethod property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ClassificationMethod? ClassificationMethod { get; set; }
+        /// <summary>The description property</summary>
         public string Description { get; set; }
+        /// <summary>The name property</summary>
         public string Name { get; set; }
+        /// <summary>The publisherName property</summary>
         public string PublisherName { get; set; }
+        /// <summary>The rulePackageId property</summary>
         public string RulePackageId { get; set; }
+        /// <summary>The rulePackageType property</summary>
         public string RulePackageType { get; set; }
+        /// <summary>The scope property</summary>
         public SensitiveTypeScope? Scope { get; set; }
+        /// <summary>The sensitiveTypeSource property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.SensitiveTypeSource? SensitiveTypeSource { get; set; }
+        /// <summary>The state property</summary>
         public string State { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

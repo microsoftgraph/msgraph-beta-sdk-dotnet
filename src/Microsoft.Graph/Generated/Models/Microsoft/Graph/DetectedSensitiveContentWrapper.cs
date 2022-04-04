@@ -7,6 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DetectedSensitiveContentWrapper : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The classification property</summary>
         public List<DetectedSensitiveContent> Classification { get; set; }
         /// <summary>
         /// Instantiates a new detectedSensitiveContentWrapper and sets the default values.

@@ -7,7 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class GovernanceNotificationPolicy : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The enabledTemplateTypes property</summary>
         public List<string> EnabledTemplateTypes { get; set; }
+        /// <summary>The notificationTemplates property</summary>
         public List<GovernanceNotificationTemplate> NotificationTemplates { get; set; }
         /// <summary>
         /// Instantiates a new governanceNotificationPolicy and sets the default values.

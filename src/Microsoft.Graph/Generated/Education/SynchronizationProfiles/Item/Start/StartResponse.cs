@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Education.SynchronizationProfiles.Item.Start {
     public class StartResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The value property</summary>
         public List<EducationFileSynchronizationVerificationMessage> Value { get; set; }
         /// <summary>
         /// Instantiates a new startResponse and sets the default values.

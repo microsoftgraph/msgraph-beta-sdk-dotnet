@@ -7,7 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ApplicationServicePrincipal : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The application property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Application Application { get; set; }
+        /// <summary>The servicePrincipal property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ServicePrincipal ServicePrincipal { get; set; }
         /// <summary>
         /// Instantiates a new applicationServicePrincipal and sets the default values.

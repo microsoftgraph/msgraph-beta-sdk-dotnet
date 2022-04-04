@@ -12,6 +12,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedAppRegistrations.Item.Int
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The targetApps property</summary>
         public TargetAppsRequestBuilder TargetApps { get =>
             new TargetAppsRequestBuilder(PathParameters, RequestAdapter);
         }

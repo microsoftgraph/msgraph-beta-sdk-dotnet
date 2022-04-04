@@ -5,10 +5,15 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ProviderTenantSetting : Entity, IParsable {
+        /// <summary>The azureTenantId property</summary>
         public string AzureTenantId { get; set; }
+        /// <summary>The enabled property</summary>
         public bool? Enabled { get; set; }
+        /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+        /// <summary>The provider property</summary>
         public string Provider { get; set; }
+        /// <summary>The vendor property</summary>
         public string Vendor { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

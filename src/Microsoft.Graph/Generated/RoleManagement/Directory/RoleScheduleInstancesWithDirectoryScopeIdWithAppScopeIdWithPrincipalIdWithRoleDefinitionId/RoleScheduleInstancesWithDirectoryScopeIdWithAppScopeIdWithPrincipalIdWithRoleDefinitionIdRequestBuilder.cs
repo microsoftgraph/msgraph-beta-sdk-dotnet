@@ -17,12 +17,12 @@ namespace MicrosoftGraphSdk.RoleManagement.Directory.RoleScheduleInstancesWithDi
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder and sets the default values.
-        /// <param name="appScopeId">Usage: appScopeId='{appScopeId}'</param>
-        /// <param name="directoryScopeId">Usage: directoryScopeId='{directoryScopeId}'</param>
+        /// <param name="appScopeId">Usage: appScopeId=&apos;{appScopeId}&apos;</param>
+        /// <param name="directoryScopeId">Usage: directoryScopeId=&apos;{directoryScopeId}&apos;</param>
         /// <param name="pathParameters">Path parameters for the request</param>
-        /// <param name="principalId">Usage: principalId='{principalId}'</param>
+        /// <param name="principalId">Usage: principalId=&apos;{principalId}&apos;</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// <param name="roleDefinitionId">Usage: roleDefinitionId='{roleDefinitionId}'</param>
+        /// <param name="roleDefinitionId">Usage: roleDefinitionId=&apos;{roleDefinitionId}&apos;</param>
         /// </summary>
         public RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string appScopeId = default, string directoryScopeId = default, string principalId = default, string roleDefinitionId = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
@@ -52,28 +52,28 @@ namespace MicrosoftGraphSdk.RoleManagement.Directory.RoleScheduleInstancesWithDi
         }
         /// <summary>
         /// Invoke function roleScheduleInstances
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreateGetRequestInformation(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreateGetRequestInformation(Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            h?.Invoke(requestInfo.Headers);
-            requestInfo.AddRequestOptions(o?.ToArray());
+            headers?.Invoke(requestInfo.Headers);
+            requestInfo.AddRequestOptions(options?.ToArray());
             return requestInfo;
         }
         /// <summary>
         /// Invoke function roleScheduleInstances
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateGetRequestInformation(h, o);
+        public async Task<RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdResponse> GetAsync(Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+            var requestInfo = CreateGetRequestInformation(headers, options);
             return await RequestAdapter.SendAsync<RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdResponse>(requestInfo, RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }

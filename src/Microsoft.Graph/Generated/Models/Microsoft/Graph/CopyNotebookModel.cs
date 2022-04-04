@@ -7,20 +7,35 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class CopyNotebookModel : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The createdBy property</summary>
         public string CreatedBy { get; set; }
+        /// <summary>The createdByIdentity property</summary>
         public IdentitySet CreatedByIdentity { get; set; }
+        /// <summary>The createdTime property</summary>
         public DateTimeOffset? CreatedTime { get; set; }
+        /// <summary>The id property</summary>
         public string Id { get; set; }
+        /// <summary>The isDefault property</summary>
         public bool? IsDefault { get; set; }
+        /// <summary>The isShared property</summary>
         public bool? IsShared { get; set; }
+        /// <summary>The lastModifiedBy property</summary>
         public string LastModifiedBy { get; set; }
+        /// <summary>The lastModifiedByIdentity property</summary>
         public IdentitySet LastModifiedByIdentity { get; set; }
+        /// <summary>The lastModifiedTime property</summary>
         public DateTimeOffset? LastModifiedTime { get; set; }
+        /// <summary>The links property</summary>
         public NotebookLinks Links { get; set; }
+        /// <summary>The name property</summary>
         public string Name { get; set; }
+        /// <summary>The sectionGroupsUrl property</summary>
         public string SectionGroupsUrl { get; set; }
+        /// <summary>The sectionsUrl property</summary>
         public string SectionsUrl { get; set; }
+        /// <summary>The self property</summary>
         public string Self { get; set; }
+        /// <summary>The userRole property</summary>
         public OnenoteUserRole? UserRole { get; set; }
         /// <summary>
         /// Instantiates a new CopyNotebookModel and sets the default values.

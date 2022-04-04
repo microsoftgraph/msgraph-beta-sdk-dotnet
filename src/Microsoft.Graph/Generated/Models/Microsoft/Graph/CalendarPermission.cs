@@ -7,11 +7,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class CalendarPermission : Entity, IParsable {
         /// <summary>List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.</summary>
         public List<CalendarRoleType?> AllowedRoles { get; set; }
-        /// <summary>Represents a sharee or delegate who has access to the calendar. For the 'My Organization' sharee, the address property is null. Read-only.</summary>
+        /// <summary>Represents a sharee or delegate who has access to the calendar. For the &apos;My Organization&apos; sharee, the address property is null. Read-only.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.EmailAddress EmailAddress { get; set; }
         /// <summary>True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.</summary>
         public bool? IsInsideOrganization { get; set; }
-        /// <summary>True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You cannot remove 'My organization' as a sharee to a calendar.</summary>
+        /// <summary>True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The &apos;My organization&apos; user determines the permissions other people within your organization have to the given calendar. You cannot remove &apos;My organization&apos; as a sharee to a calendar.</summary>
         public bool? IsRemovable { get; set; }
         /// <summary>Current permission level of the calendar sharee or delegate.</summary>
         public CalendarRoleType? Role { get; set; }

@@ -5,21 +5,37 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class FileSecurityProfile : Entity, IParsable {
+        /// <summary>The activityGroupNames property</summary>
         public List<string> ActivityGroupNames { get; set; }
+        /// <summary>The azureSubscriptionId property</summary>
         public string AzureSubscriptionId { get; set; }
+        /// <summary>The azureTenantId property</summary>
         public string AzureTenantId { get; set; }
+        /// <summary>The certificateThumbprint property</summary>
         public string CertificateThumbprint { get; set; }
+        /// <summary>The extensions property</summary>
         public List<string> Extensions { get; set; }
+        /// <summary>The fileType property</summary>
         public string FileType { get; set; }
+        /// <summary>The firstSeenDateTime property</summary>
         public DateTimeOffset? FirstSeenDateTime { get; set; }
+        /// <summary>The hashes property</summary>
         public List<FileHash> Hashes { get; set; }
+        /// <summary>The lastSeenDateTime property</summary>
         public DateTimeOffset? LastSeenDateTime { get; set; }
+        /// <summary>The malwareStates property</summary>
         public List<MalwareState> MalwareStates { get; set; }
+        /// <summary>The names property</summary>
         public List<string> Names { get; set; }
+        /// <summary>The riskScore property</summary>
         public string RiskScore { get; set; }
+        /// <summary>The size property</summary>
         public long? Size { get; set; }
+        /// <summary>The tags property</summary>
         public List<string> Tags { get; set; }
+        /// <summary>The vendorInformation property</summary>
         public SecurityVendorInformation VendorInformation { get; set; }
+        /// <summary>The vulnerabilityStates property</summary>
         public List<VulnerabilityState> VulnerabilityStates { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

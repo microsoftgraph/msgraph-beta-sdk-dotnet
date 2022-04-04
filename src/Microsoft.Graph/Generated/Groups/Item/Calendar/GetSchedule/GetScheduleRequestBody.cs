@@ -9,9 +9,13 @@ namespace MicrosoftGraphSdk.Groups.Item.Calendar.GetSchedule {
     public class GetScheduleRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The AvailabilityViewInterval property</summary>
         public int? AvailabilityViewInterval { get; set; }
+        /// <summary>The EndTime property</summary>
         public DateTimeTimeZone EndTime { get; set; }
+        /// <summary>The Schedules property</summary>
         public List<string> Schedules { get; set; }
+        /// <summary>The StartTime property</summary>
         public DateTimeTimeZone StartTime { get; set; }
         /// <summary>
         /// Instantiates a new getScheduleRequestBody and sets the default values.

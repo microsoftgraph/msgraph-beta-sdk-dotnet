@@ -5,10 +5,15 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DetectedSensitiveContent : DetectedSensitiveContentBase, IParsable {
+        /// <summary>The classificationAttributes property</summary>
         public List<ClassificationAttribute> ClassificationAttributes { get; set; }
+        /// <summary>The classificationMethod property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ClassificationMethod? ClassificationMethod { get; set; }
+        /// <summary>The matches property</summary>
         public List<SensitiveContentLocation> Matches { get; set; }
+        /// <summary>The scope property</summary>
         public SensitiveTypeScope? Scope { get; set; }
+        /// <summary>The sensitiveTypeSource property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.SensitiveTypeSource? SensitiveTypeSource { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

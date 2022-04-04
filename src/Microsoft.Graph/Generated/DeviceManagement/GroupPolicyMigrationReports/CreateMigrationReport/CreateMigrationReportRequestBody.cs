@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyMigrationReports.CreateM
     public class CreateMigrationReportRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The groupPolicyObjectFile property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.GroupPolicyObjectFile GroupPolicyObjectFile { get; set; }
         /// <summary>
         /// Instantiates a new createMigrationReportRequestBody and sets the default values.

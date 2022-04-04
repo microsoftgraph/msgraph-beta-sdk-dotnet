@@ -6,20 +6,35 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class CustomerPayment : Entity, IParsable {
+        /// <summary>The amount property</summary>
         public decimal? Amount { get; set; }
+        /// <summary>The appliesToInvoiceId property</summary>
         public string AppliesToInvoiceId { get; set; }
+        /// <summary>The appliesToInvoiceNumber property</summary>
         public string AppliesToInvoiceNumber { get; set; }
+        /// <summary>The comment property</summary>
         public string Comment { get; set; }
+        /// <summary>The contactId property</summary>
         public string ContactId { get; set; }
+        /// <summary>The customer property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Customer Customer { get; set; }
+        /// <summary>The customerId property</summary>
         public string CustomerId { get; set; }
+        /// <summary>The customerNumber property</summary>
         public string CustomerNumber { get; set; }
+        /// <summary>The description property</summary>
         public string Description { get; set; }
+        /// <summary>The documentNumber property</summary>
         public string DocumentNumber { get; set; }
+        /// <summary>The externalDocumentNumber property</summary>
         public string ExternalDocumentNumber { get; set; }
+        /// <summary>The journalDisplayName property</summary>
         public string JournalDisplayName { get; set; }
+        /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+        /// <summary>The lineNumber property</summary>
         public int? LineNumber { get; set; }
+        /// <summary>The postingDate property</summary>
         public Date? PostingDate { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

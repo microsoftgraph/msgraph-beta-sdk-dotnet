@@ -5,9 +5,9 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Attendee : AttendeeBase, IParsable {
-        /// <summary>An alternate date/time proposed by the attendee for a meeting request to start and end. If the attendee hasn't proposed another time, then this property is not included in a response of a GET event.</summary>
+        /// <summary>An alternate date/time proposed by the attendee for a meeting request to start and end. If the attendee hasn&apos;t proposed another time, then this property is not included in a response of a GET event.</summary>
         public TimeSlot ProposedNewTime { get; set; }
-        /// <summary>The attendee's response (none, accepted, declined, etc.) for the event and date-time that the response was sent.</summary>
+        /// <summary>The attendee&apos;s response (none, accepted, declined, etc.) for the event and date-time that the response was sent.</summary>
         public ResponseStatus Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

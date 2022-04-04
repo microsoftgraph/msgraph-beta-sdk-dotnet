@@ -10,7 +10,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
         /// <summary>Returns the tags that are a child of a tag.</summary>
         public List<Tag> ChildTags { get; set; }
         /// <summary>The user who created the tag.</summary>
-        public IdentitySet CreatedBy { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.IdentitySet CreatedBy { get; set; }
         /// <summary>The description for the tag.</summary>
         public string Description { get; set; }
         /// <summary>Display name of the tag.</summary>
@@ -34,7 +34,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"childSelectability", (o,n) => { (o as Tag).ChildSelectability = n.GetEnumValue<ChildSelectability>(); } },
                 {"childTags", (o,n) => { (o as Tag).ChildTags = n.GetCollectionOfObjectValues<Tag>(Tag.CreateFromDiscriminatorValue).ToList(); } },
-                {"createdBy", (o,n) => { (o as Tag).CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"createdBy", (o,n) => { (o as Tag).CreatedBy = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.IdentitySet>(MicrosoftGraphSdk.Models.Microsoft.Graph.IdentitySet.CreateFromDiscriminatorValue); } },
                 {"description", (o,n) => { (o as Tag).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as Tag).DisplayName = n.GetStringValue(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as Tag).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -50,7 +50,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
             base.Serialize(writer);
             writer.WriteEnumValue<ChildSelectability>("childSelectability", ChildSelectability);
             writer.WriteCollectionOfObjectValues<Tag>("childTags", ChildTags);
-            writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.IdentitySet>("createdBy", CreatedBy);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);

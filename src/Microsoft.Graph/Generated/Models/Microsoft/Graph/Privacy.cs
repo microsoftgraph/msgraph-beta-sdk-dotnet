@@ -7,6 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Privacy : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The subjectRightsRequests property</summary>
         public List<SubjectRightsRequest> SubjectRightsRequests { get; set; }
         /// <summary>
         /// Instantiates a new Privacy and sets the default values.

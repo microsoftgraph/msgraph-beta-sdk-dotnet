@@ -21,6 +21,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public TeamworkUserIdentity CurrentUser { get; set; }
         /// <summary>The type of device. The possible values are: unknown, ipPhone, teamsRoom, surfaceHub, collaborationBar, teamsDisplay, touchConsole, lowCostPhone, teamsPanel, sip, unknownFutureValue.</summary>
         public TeamworkDeviceType? DeviceType { get; set; }
+        /// <summary>The hardwareDetail property</summary>
         public TeamworkHardwareDetail HardwareDetail { get; set; }
         /// <summary>The health properties of the device.</summary>
         public TeamworkDeviceHealth Health { get; set; }

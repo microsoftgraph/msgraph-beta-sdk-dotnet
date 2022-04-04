@@ -8,6 +8,7 @@ namespace MicrosoftGraphSdk.GroupLifecyclePolicies.Item.AddGroup {
     public class AddGroupRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The groupId property</summary>
         public string GroupId { get; set; }
         /// <summary>
         /// Instantiates a new addGroupRequestBody and sets the default values.

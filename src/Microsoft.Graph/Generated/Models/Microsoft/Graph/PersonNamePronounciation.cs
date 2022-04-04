@@ -7,10 +7,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PersonNamePronounciation : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
+        /// <summary>The first property</summary>
         public string First { get; set; }
+        /// <summary>The last property</summary>
         public string Last { get; set; }
+        /// <summary>The maiden property</summary>
         public string Maiden { get; set; }
+        /// <summary>The middle property</summary>
         public string Middle { get; set; }
         /// <summary>
         /// Instantiates a new personNamePronounciation and sets the default values.

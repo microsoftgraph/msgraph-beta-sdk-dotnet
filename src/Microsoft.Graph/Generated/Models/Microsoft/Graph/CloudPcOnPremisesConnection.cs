@@ -13,9 +13,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string AdDomainUsername { get; set; }
         /// <summary>The display name for the on-premises connection.</summary>
         public string DisplayName { get; set; }
-        /// <summary>The status of the most recent health check done on the on-premises connection. For example, if status is 'passed', the on-premises connection has passed all checks run by the service. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.</summary>
+        /// <summary>The status of the most recent health check done on the on-premises connection. For example, if status is &apos;passed&apos;, the on-premises connection has passed all checks run by the service. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.</summary>
         public CloudPcOnPremisesConnectionStatus? HealthCheckStatus { get; set; }
-        /// <summary>The details of the connection's health checks and the corresponding results. Returned only on $select.For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an on-premises connection, including healthCheckStatusDetails. Read-only.</summary>
+        /// <summary>The details of the connection&apos;s health checks and the corresponding results. Returned only on $select.For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an on-premises connection, including healthCheckStatusDetails. Read-only.</summary>
         public CloudPcOnPremisesConnectionStatusDetails HealthCheckStatusDetails { get; set; }
         /// <summary>When true, the on-premises connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an on-premises connection, including healthCheckStatusDetails. Read-only.</summary>
         public bool? InUse { get; set; }
@@ -23,9 +23,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public CloudPcManagementService? ManagedBy { get; set; }
         /// <summary>The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.</summary>
         public string OrganizationalUnit { get; set; }
-        /// <summary>The ID of the target resource group. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}'.</summary>
+        /// <summary>The ID of the target resource group. Required format: &apos;/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}&apos;.</summary>
         public string ResourceGroupId { get; set; }
-        /// <summary>The ID of the target subnet. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}'.</summary>
+        /// <summary>The ID of the target subnet. Required format: &apos;/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}&apos;.</summary>
         public string SubnetId { get; set; }
         /// <summary>The ID of the target Azure subscription that’s associated with your tenant.</summary>
         public string SubscriptionId { get; set; }
@@ -33,7 +33,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string SubscriptionName { get; set; }
         /// <summary>Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.</summary>
         public CloudPcOnPremisesConnectionType? Type { get; set; }
-        /// <summary>The ID of the target virtual network. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}'.</summary>
+        /// <summary>The ID of the target virtual network. Required format: &apos;/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}&apos;.</summary>
         public string VirtualNetworkId { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

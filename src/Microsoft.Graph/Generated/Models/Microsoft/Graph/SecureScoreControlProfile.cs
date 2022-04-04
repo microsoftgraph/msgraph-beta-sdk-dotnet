@@ -25,7 +25,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? LastModifiedDateTime { get; set; }
         /// <summary>max attainable score for the control.</summary>
         public double? MaxScore { get; set; }
-        /// <summary>Microsoft's stack ranking of control.</summary>
+        /// <summary>Microsoft&apos;s stack ranking of control.</summary>
         public int? Rank { get; set; }
         /// <summary>Description of what the control will help remediate.</summary>
         public string Remediation { get; set; }
@@ -41,6 +41,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string Title { get; set; }
         /// <summary>User impact of implementing control (low, moderate, high).</summary>
         public string UserImpact { get; set; }
+        /// <summary>The vendorInformation property</summary>
         public SecurityVendorInformation VendorInformation { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -5,11 +5,11 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
     public class UserSource : DataSource, IParsable {
-        /// <summary>Email address of the user's mailbox.</summary>
+        /// <summary>Email address of the user&apos;s mailbox.</summary>
         public string Email { get; set; }
         /// <summary>Specifies which sources are included in this group. Possible values are: mailbox, site.</summary>
         public SourceType? IncludedSources { get; set; }
-        /// <summary>The URL of the user's OneDrive for Business site. Read-only.</summary>
+        /// <summary>The URL of the user&apos;s OneDrive for Business site. Read-only.</summary>
         public string SiteWebUrl { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

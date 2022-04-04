@@ -6,17 +6,29 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class CompanyInformation : Entity, IParsable {
+        /// <summary>The address property</summary>
         public PostalAddressType Address { get; set; }
+        /// <summary>The currencyCode property</summary>
         public string CurrencyCode { get; set; }
+        /// <summary>The currentFiscalYearStartDate property</summary>
         public Date? CurrentFiscalYearStartDate { get; set; }
+        /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
+        /// <summary>The email property</summary>
         public string Email { get; set; }
+        /// <summary>The faxNumber property</summary>
         public string FaxNumber { get; set; }
+        /// <summary>The industry property</summary>
         public string Industry { get; set; }
+        /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+        /// <summary>The phoneNumber property</summary>
         public string PhoneNumber { get; set; }
+        /// <summary>The picture property</summary>
         public byte[] Picture { get; set; }
+        /// <summary>The taxRegistrationNumber property</summary>
         public string TaxRegistrationNumber { get; set; }
+        /// <summary>The website property</summary>
         public string Website { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

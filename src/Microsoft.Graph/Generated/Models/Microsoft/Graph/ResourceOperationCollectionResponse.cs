@@ -7,7 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ResourceOperationCollectionResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The nextLink property</summary>
         public string NextLink { get; set; }
+        /// <summary>The value property</summary>
         public List<ResourceOperation> Value { get; set; }
         /// <summary>
         /// Instantiates a new ResourceOperationCollectionResponse and sets the default values.

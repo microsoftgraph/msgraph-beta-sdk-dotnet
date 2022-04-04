@@ -13,6 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         public string DisplayName { get; set; }
         /// <summary>The reference for the management template used to generate the management action. Required. Read-only.</summary>
         public string ReferenceTemplateId { get; set; }
+        /// <summary>The referenceTemplateVersion property</summary>
         public int? ReferenceTemplateVersion { get; set; }
         /// <summary>The collection of workload actions associated with the management action. Required. Read-only.</summary>
         public List<WorkloadAction> WorkloadActions { get; set; }

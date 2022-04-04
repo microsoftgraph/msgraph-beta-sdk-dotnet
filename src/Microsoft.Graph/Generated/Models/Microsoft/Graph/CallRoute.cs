@@ -7,7 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class CallRoute : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The final property</summary>
         public IdentitySet Final { get; set; }
+        /// <summary>The original property</summary>
         public IdentitySet Original { get; set; }
         /// <summary>Possible values are: forwarded, lookup, selfFork.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.RoutingType? RoutingType { get; set; }

@@ -5,12 +5,13 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Domain : Entity, IParsable {
-        /// <summary>Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. This property is read-only and is not nullable.</summary>
+        /// <summary>Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant&apos;s on-premises Active Directory via Active Directory Federation Services. This property is read-only and is not nullable.</summary>
         public string AuthenticationType { get; set; }
         /// <summary>This property is always null except when the verify action is used. When the verify action is used, a domain entity is returned in the response. The availabilityStatus property of the domain entity in the response is either AvailableImmediately or EmailVerifiedDomainTakeoverScheduled.</summary>
         public string AvailabilityStatus { get; set; }
         /// <summary>Read-only, Nullable</summary>
         public List<DirectoryObject> DomainNameReferences { get; set; }
+        /// <summary>The federationConfiguration property</summary>
         public List<InternalDomainFederation> FederationConfiguration { get; set; }
         /// <summary>The value of the property is false if the DNS record management of the domain has been delegated to Microsoft 365. Otherwise, the value is true. Not nullable</summary>
         public bool? IsAdminManaged { get; set; }
@@ -28,6 +29,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public int? PasswordValidityPeriodInDays { get; set; }
         /// <summary>DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable</summary>
         public List<DomainDnsRecord> ServiceConfigurationRecords { get; set; }
+        /// <summary>The sharedEmailDomainInvitations property</summary>
         public List<SharedEmailDomainInvitation> SharedEmailDomainInvitations { get; set; }
         /// <summary>Status of asynchronous operations scheduled for the domain.</summary>
         public DomainState State { get; set; }

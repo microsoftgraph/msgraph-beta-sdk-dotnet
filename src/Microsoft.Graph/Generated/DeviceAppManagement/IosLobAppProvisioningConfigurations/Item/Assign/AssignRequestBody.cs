@@ -9,7 +9,9 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.IosLobAppProvisioningConfigurati
     public class AssignRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The appProvisioningConfigurationGroupAssignments property</summary>
         public List<MobileAppProvisioningConfigGroupAssignment> AppProvisioningConfigurationGroupAssignments { get; set; }
+        /// <summary>The iOSLobAppProvisioningConfigAssignments property</summary>
         public List<IosLobAppProvisioningConfigurationAssignment> IOSLobAppProvisioningConfigAssignments { get; set; }
         /// <summary>
         /// Instantiates a new assignRequestBody and sets the default values.

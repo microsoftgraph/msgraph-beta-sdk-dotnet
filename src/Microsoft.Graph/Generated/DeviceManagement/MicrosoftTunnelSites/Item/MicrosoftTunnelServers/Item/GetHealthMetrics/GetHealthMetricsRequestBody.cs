@@ -8,6 +8,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelSites.Item.Microsoft
     public class GetHealthMetricsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The metricNames property</summary>
         public List<string> MetricNames { get; set; }
         /// <summary>
         /// Instantiates a new getHealthMetricsRequestBody and sets the default values.

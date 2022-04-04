@@ -5,9 +5,13 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SensitivityPolicySettings : Entity, IParsable {
+        /// <summary>The applicableTo property</summary>
         public SensitivityLabelTarget? ApplicableTo { get; set; }
+        /// <summary>The downgradeSensitivityRequiresJustification property</summary>
         public bool? DowngradeSensitivityRequiresJustification { get; set; }
+        /// <summary>The helpWebUrl property</summary>
         public string HelpWebUrl { get; set; }
+        /// <summary>The isMandatory property</summary>
         public bool? IsMandatory { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,6 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
     public class CloudPcDevice : Entity, IParsable {
         /// <summary>The status of the cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed. Required. Read-only.</summary>
         public string CloudPcStatus { get; set; }
+        /// <summary>The deviceSpecification property</summary>
         public string DeviceSpecification { get; set; }
         /// <summary>The display name for the cloud PC. Required. Read-only.</summary>
         public string DisplayName { get; set; }
@@ -20,6 +21,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         public string ProvisioningPolicyId { get; set; }
         /// <summary>The service plan name for the cloud PC. Required. Read-only.</summary>
         public string ServicePlanName { get; set; }
+        /// <summary>The servicePlanType property</summary>
         public string ServicePlanType { get; set; }
         /// <summary>The display name for the managed tenant. Required. Read-only.</summary>
         public string TenantDisplayName { get; set; }

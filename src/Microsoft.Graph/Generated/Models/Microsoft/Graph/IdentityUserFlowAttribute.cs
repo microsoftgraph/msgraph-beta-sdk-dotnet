@@ -7,7 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class IdentityUserFlowAttribute : Entity, IParsable {
         /// <summary>The data type of the user flow attribute. This cannot be modified after the custom user flow attribute is created. The supported values for dataType are: string , boolean , int64 , stringCollection , dateTime.</summary>
         public IdentityUserFlowAttributeDataType? DataType { get; set; }
-        /// <summary>The description of the user flow attribute that's shown to the user at the time of sign-up.</summary>
+        /// <summary>The description of the user flow attribute that&apos;s shown to the user at the time of sign-up.</summary>
         public string Description { get; set; }
         /// <summary>The display name of the user flow attribute.</summary>
         public string DisplayName { get; set; }

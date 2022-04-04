@@ -8,11 +8,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class WindowsUpdateRolloutSettings : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The feature update's ending  of release date and time to be set, update, and displayed for a feature Update profile for example: 2020-06-09T10:00:00Z.</summary>
+        /// <summary>The feature update&apos;s ending  of release date and time to be set, update, and displayed for a feature Update profile for example: 2020-06-09T10:00:00Z.</summary>
         public DateTimeOffset? OfferEndDateTimeInUTC { get; set; }
         /// <summary>The number of day(s) between each set of offers to be set, updated, and displayed for a feature update profile, for example: if OfferStartDateTimeInUTC is 2020-06-09T10:00:00Z, and OfferIntervalInDays is 1, then the next two sets of offers will be made consecutively on 2020-06-10T10:00:00Z (next day at the same specified time) and 2020-06-11T10:00:00Z (next next day at the same specified time) with 1 day in between each set of offers.</summary>
         public int? OfferIntervalInDays { get; set; }
-        /// <summary>The feature update's starting date and time to be set, update, and displayed for a feature Update profile for example: 2020-06-09T10:00:00Z.</summary>
+        /// <summary>The feature update&apos;s starting date and time to be set, update, and displayed for a feature Update profile for example: 2020-06-09T10:00:00Z.</summary>
         public DateTimeOffset? OfferStartDateTimeInUTC { get; set; }
         /// <summary>
         /// Instantiates a new windowsUpdateRolloutSettings and sets the default values.

@@ -25,7 +25,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DocumentSetContent DocumentTemplate { get; set; }
         /// <summary>The name of the group this content type belongs to. Helps organize related content types.</summary>
         public string Group { get; set; }
-        /// <summary>Indicates whether the content type is hidden in the list's 'New' menu.</summary>
+        /// <summary>Indicates whether the content type is hidden in the list&apos;s &apos;New&apos; menu.</summary>
         public bool? Hidden { get; set; }
         /// <summary>If this content type is inherited from another scope (like a site), provides a reference to the item where the content type is defined.</summary>
         public ItemReference InheritedFrom { get; set; }
@@ -39,9 +39,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string ParentId { get; set; }
         /// <summary>If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.</summary>
         public bool? PropagateChanges { get; set; }
-        /// <summary>If true, the content type can't be modified unless this value is first set to false.</summary>
+        /// <summary>If true, the content type can&apos;t be modified unless this value is first set to false.</summary>
         public bool? ReadOnly { get; set; }
-        /// <summary>If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.</summary>
+        /// <summary>If true, the content type can&apos;t be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.</summary>
         public bool? Sealed { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

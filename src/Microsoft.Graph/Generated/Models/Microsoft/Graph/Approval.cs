@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Approval : Entity, IParsable {
+        /// <summary>The steps property</summary>
         public List<ApprovalStep> Steps { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

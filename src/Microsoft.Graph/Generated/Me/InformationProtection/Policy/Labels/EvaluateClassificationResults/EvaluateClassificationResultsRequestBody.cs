@@ -9,7 +9,9 @@ namespace MicrosoftGraphSdk.Me.InformationProtection.Policy.Labels.EvaluateClass
     public class EvaluateClassificationResultsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The classificationResults property</summary>
         public List<ClassificationResult> ClassificationResults { get; set; }
+        /// <summary>The contentInfo property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ContentInfo ContentInfo { get; set; }
         /// <summary>
         /// Instantiates a new evaluateClassificationResultsRequestBody and sets the default values.

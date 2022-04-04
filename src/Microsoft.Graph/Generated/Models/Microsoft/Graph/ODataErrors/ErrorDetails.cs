@@ -7,8 +7,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors {
     public class ErrorDetails : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The code property</summary>
         public string Code { get; set; }
+        /// <summary>The message property</summary>
         public string Message { get; set; }
+        /// <summary>The target property</summary>
         public string Target { get; set; }
         /// <summary>
         /// Instantiates a new ErrorDetails and sets the default values.

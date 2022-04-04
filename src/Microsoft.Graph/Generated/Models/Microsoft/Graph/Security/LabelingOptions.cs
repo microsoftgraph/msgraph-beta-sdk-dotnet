@@ -7,9 +7,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Security {
     public class LabelingOptions : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The assignmentMethod property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Security.AssignmentMethod? AssignmentMethod { get; set; }
+        /// <summary>The downgradeJustification property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Security.DowngradeJustification DowngradeJustification { get; set; }
+        /// <summary>The extendedProperties property</summary>
         public List<KeyValuePair> ExtendedProperties { get; set; }
+        /// <summary>The labelId property</summary>
         public string LabelId { get; set; }
         /// <summary>
         /// Instantiates a new labelingOptions and sets the default values.

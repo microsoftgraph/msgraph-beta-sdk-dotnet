@@ -7,6 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class OrganizationSettings : Entity, IParsable {
         /// <summary>Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. List itemInsights returns the settings to display or return item insights in an organization.</summary>
         public InsightsSettings ItemInsights { get; set; }
+        /// <summary>The microsoftApplicationDataAccess property</summary>
         public MicrosoftApplicationDataAccessSettings MicrosoftApplicationDataAccess { get; set; }
         /// <summary>Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.</summary>
         public InsightsSettings PeopleInsights { get; set; }

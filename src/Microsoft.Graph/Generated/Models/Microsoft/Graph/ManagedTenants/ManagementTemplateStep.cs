@@ -5,17 +5,29 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
     public class ManagementTemplateStep : Entity, IParsable {
+        /// <summary>The acceptedVersion property</summary>
         public ManagementTemplateStepVersion AcceptedVersion { get; set; }
+        /// <summary>The category property</summary>
         public ManagementCategory? Category { get; set; }
+        /// <summary>The createdByUserId property</summary>
         public string CreatedByUserId { get; set; }
+        /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
+        /// <summary>The description property</summary>
         public string Description { get; set; }
+        /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
+        /// <summary>The lastActionByUserId property</summary>
         public string LastActionByUserId { get; set; }
+        /// <summary>The lastActionDateTime property</summary>
         public DateTimeOffset? LastActionDateTime { get; set; }
+        /// <summary>The managementTemplate property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants.ManagementTemplate ManagementTemplate { get; set; }
-        public ActionUrl PortalLink { get; set; }
+        /// <summary>The portalLink property</summary>
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ActionUrl PortalLink { get; set; }
+        /// <summary>The priority property</summary>
         public int? Priority { get; set; }
+        /// <summary>The versions property</summary>
         public List<ManagementTemplateStepVersion> Versions { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +51,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
                 {"lastActionByUserId", (o,n) => { (o as ManagementTemplateStep).LastActionByUserId = n.GetStringValue(); } },
                 {"lastActionDateTime", (o,n) => { (o as ManagementTemplateStep).LastActionDateTime = n.GetDateTimeOffsetValue(); } },
                 {"managementTemplate", (o,n) => { (o as ManagementTemplateStep).ManagementTemplate = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants.ManagementTemplate>(MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants.ManagementTemplate.CreateFromDiscriminatorValue); } },
-                {"portalLink", (o,n) => { (o as ManagementTemplateStep).PortalLink = n.GetObjectValue<ActionUrl>(ActionUrl.CreateFromDiscriminatorValue); } },
+                {"portalLink", (o,n) => { (o as ManagementTemplateStep).PortalLink = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ActionUrl>(MicrosoftGraphSdk.Models.Microsoft.Graph.ActionUrl.CreateFromDiscriminatorValue); } },
                 {"priority", (o,n) => { (o as ManagementTemplateStep).Priority = n.GetIntValue(); } },
                 {"versions", (o,n) => { (o as ManagementTemplateStep).Versions = n.GetCollectionOfObjectValues<ManagementTemplateStepVersion>(ManagementTemplateStepVersion.CreateFromDiscriminatorValue).ToList(); } },
             };
@@ -60,7 +72,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
             writer.WriteStringValue("lastActionByUserId", LastActionByUserId);
             writer.WriteDateTimeOffsetValue("lastActionDateTime", LastActionDateTime);
             writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants.ManagementTemplate>("managementTemplate", ManagementTemplate);
-            writer.WriteObjectValue<ActionUrl>("portalLink", PortalLink);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ActionUrl>("portalLink", PortalLink);
             writer.WriteIntValue("priority", Priority);
             writer.WriteCollectionOfObjectValues<ManagementTemplateStepVersion>("versions", Versions);
         }

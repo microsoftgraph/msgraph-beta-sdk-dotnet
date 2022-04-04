@@ -35,54 +35,71 @@ using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants {
     /// <summary>Provides operations to manage the managedTenants property of the microsoft.graph.tenantRelationship entity.</summary>
     public class ManagedTenantsRequestBuilder {
+        /// <summary>The aggregatedPolicyCompliances property</summary>
         public AggregatedPolicyCompliancesRequestBuilder AggregatedPolicyCompliances { get =>
             new AggregatedPolicyCompliancesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The auditEvents property</summary>
         public AuditEventsRequestBuilder AuditEvents { get =>
             new AuditEventsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The cloudPcConnections property</summary>
         public CloudPcConnectionsRequestBuilder CloudPcConnections { get =>
             new CloudPcConnectionsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The cloudPcDevices property</summary>
         public CloudPcDevicesRequestBuilder CloudPcDevices { get =>
             new CloudPcDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The cloudPcsOverview property</summary>
         public CloudPcsOverviewRequestBuilder CloudPcsOverview { get =>
             new CloudPcsOverviewRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The conditionalAccessPolicyCoverages property</summary>
         public ConditionalAccessPolicyCoveragesRequestBuilder ConditionalAccessPolicyCoverages { get =>
             new ConditionalAccessPolicyCoveragesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The credentialUserRegistrationsSummaries property</summary>
         public CredentialUserRegistrationsSummariesRequestBuilder CredentialUserRegistrationsSummaries { get =>
             new CredentialUserRegistrationsSummariesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The deviceCompliancePolicySettingStateSummaries property</summary>
         public DeviceCompliancePolicySettingStateSummariesRequestBuilder DeviceCompliancePolicySettingStateSummaries { get =>
             new DeviceCompliancePolicySettingStateSummariesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The managedDeviceCompliances property</summary>
         public ManagedDeviceCompliancesRequestBuilder ManagedDeviceCompliances { get =>
             new ManagedDeviceCompliancesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The managedDeviceComplianceTrends property</summary>
         public ManagedDeviceComplianceTrendsRequestBuilder ManagedDeviceComplianceTrends { get =>
             new ManagedDeviceComplianceTrendsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The managementActions property</summary>
         public ManagementActionsRequestBuilder ManagementActions { get =>
             new ManagementActionsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The managementActionTenantDeploymentStatuses property</summary>
         public ManagementActionTenantDeploymentStatusesRequestBuilder ManagementActionTenantDeploymentStatuses { get =>
             new ManagementActionTenantDeploymentStatusesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The managementIntents property</summary>
         public ManagementIntentsRequestBuilder ManagementIntents { get =>
             new ManagementIntentsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The managementTemplateCollections property</summary>
         public ManagementTemplateCollectionsRequestBuilder ManagementTemplateCollections { get =>
             new ManagementTemplateCollectionsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The managementTemplates property</summary>
         public ManagementTemplatesRequestBuilder ManagementTemplates { get =>
             new ManagementTemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The managementTemplateSteps property</summary>
         public ManagementTemplateStepsRequestBuilder ManagementTemplateSteps { get =>
             new ManagementTemplateStepsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The managementTemplateStepVersions property</summary>
         public ManagementTemplateStepVersionsRequestBuilder ManagementTemplateStepVersions { get =>
             new ManagementTemplateStepVersionsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -90,26 +107,33 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The tenantGroups property</summary>
         public TenantGroupsRequestBuilder TenantGroups { get =>
             new TenantGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The tenants property</summary>
         public TenantsRequestBuilder Tenants { get =>
             new TenantsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The tenantsCustomizedInformation property</summary>
         public TenantsCustomizedInformationRequestBuilder TenantsCustomizedInformation { get =>
             new TenantsCustomizedInformationRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The tenantsDetailedInformation property</summary>
         public TenantsDetailedInformationRequestBuilder TenantsDetailedInformation { get =>
             new TenantsDetailedInformationRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The tenantTags property</summary>
         public TenantTagsRequestBuilder TenantTags { get =>
             new TenantTagsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>The windowsDeviceMalwareStates property</summary>
         public WindowsDeviceMalwareStatesRequestBuilder WindowsDeviceMalwareStates { get =>
             new WindowsDeviceMalwareStatesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The windowsProtectionStates property</summary>
         public WindowsProtectionStatesRequestBuilder WindowsProtectionStates { get =>
             new WindowsProtectionStatesRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -142,47 +166,47 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants {
         }
         /// <summary>
         /// Delete navigation property managedTenants for tenantRelationships
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreateDeleteRequestInformation(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreateDeleteRequestInformation(Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            h?.Invoke(requestInfo.Headers);
-            requestInfo.AddRequestOptions(o?.ToArray());
+            headers?.Invoke(requestInfo.Headers);
+            requestInfo.AddRequestOptions(options?.ToArray());
             return requestInfo;
         }
         /// <summary>
         /// The operations available to interact with the multi-tenant management platform.
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
-        /// <param name="q">Request query parameters</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
+        /// <param name="queryParameters">Request query parameters</param>
         /// </summary>
-        public RequestInformation CreateGetRequestInformation(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreateGetRequestInformation(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            if (q != null) {
+            if (queryParameters != null) {
                 var qParams = new GetQueryParameters();
-                q.Invoke(qParams);
+                queryParameters.Invoke(qParams);
                 qParams.AddQueryParameters(requestInfo.QueryParameters);
             }
-            h?.Invoke(requestInfo.Headers);
-            requestInfo.AddRequestOptions(o?.ToArray());
+            headers?.Invoke(requestInfo.Headers);
+            requestInfo.AddRequestOptions(options?.ToArray());
             return requestInfo;
         }
         /// <summary>
         /// Update the navigation property managedTenants in tenantRelationships
         /// <param name="body"></param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreatePatchRequestInformation(ManagedTenant body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePatchRequestInformation(ManagedTenant body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -190,19 +214,19 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants {
                 PathParameters = PathParameters,
             };
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
-            h?.Invoke(requestInfo.Headers);
-            requestInfo.AddRequestOptions(o?.ToArray());
+            headers?.Invoke(requestInfo.Headers);
+            requestInfo.AddRequestOptions(options?.ToArray());
             return requestInfo;
         }
         /// <summary>
         /// Delete navigation property managedTenants for tenantRelationships
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateDeleteRequestInformation(h, o);
+        public async Task DeleteAsync(Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+            var requestInfo = CreateDeleteRequestInformation(headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
@@ -212,13 +236,13 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants {
         /// <summary>
         /// The operations available to interact with the multi-tenant management platform.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
-        /// <param name="q">Request query parameters</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
+        /// <param name="queryParameters">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ManagedTenant> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateGetRequestInformation(q, h, o);
+        public async Task<ManagedTenant> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+            var requestInfo = CreateGetRequestInformation(queryParameters, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
@@ -229,13 +253,13 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants {
         /// Update the navigation property managedTenants in tenantRelationships
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(ManagedTenant body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(ManagedTenant body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = CreatePatchRequestInformation(body, h, o);
+            var requestInfo = CreatePatchRequestInformation(body, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},

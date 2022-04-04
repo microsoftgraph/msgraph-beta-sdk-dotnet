@@ -5,8 +5,11 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class TeamInfo : Entity, IParsable {
+        /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
+        /// <summary>The team property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Team Team { get; set; }
+        /// <summary>The tenantId property</summary>
         public string TenantId { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -15,10 +15,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? AppliedDateTime { get; set; }
         /// <summary>The outcome of applying the decision, one of NotApplied, Success, Failed, NotFound or NotSupported.</summary>
         public string ApplyResult { get; set; }
-        /// <summary>The reviewer's business justification, if supplied.</summary>
+        /// <summary>The reviewer&apos;s business justification, if supplied.</summary>
         public string Justification { get; set; }
         /// <summary>The identity of the reviewer. If the recommendation was used as the review, the userPrincipalName is empty.</summary>
         public UserIdentity ReviewedBy { get; set; }
+        /// <summary>The reviewedDateTime property</summary>
         public DateTimeOffset? ReviewedDateTime { get; set; }
         /// <summary>The result of the review, one of NotReviewed, Deny, DontKnow or Approve.</summary>
         public string ReviewResult { get; set; }

@@ -8,6 +8,7 @@ namespace MicrosoftGraphSdk.Me.Drives.Item.List.ContentTypes.AddCopyFromContentT
     public class AddCopyFromContentTypeHubRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The contentTypeId property</summary>
         public string ContentTypeId { get; set; }
         /// <summary>
         /// Instantiates a new addCopyFromContentTypeHubRequestBody and sets the default values.

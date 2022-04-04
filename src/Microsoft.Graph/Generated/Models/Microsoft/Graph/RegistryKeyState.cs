@@ -19,7 +19,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string OldValueName { get; set; }
         /// <summary>Operation that changed the registry key name and/or value. Possible values are: unknown, create, modify, delete.</summary>
         public RegistryOperation? Operation { get; set; }
-        /// <summary>Process ID (PID) of the process that modified the registry key (process details will appear in the alert 'processes' collection).</summary>
+        /// <summary>Process ID (PID) of the process that modified the registry key (process details will appear in the alert &apos;processes&apos; collection).</summary>
         public int? ProcessId { get; set; }
         /// <summary>Current (i.e. changed) registry key value data (contents).</summary>
         public string ValueData { get; set; }

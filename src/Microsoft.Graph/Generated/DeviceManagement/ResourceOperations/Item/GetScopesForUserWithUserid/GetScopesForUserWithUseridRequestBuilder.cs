@@ -19,7 +19,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ResourceOperations.Item.GetScopesFo
         /// Instantiates a new GetScopesForUserWithUseridRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// <param name="userid">Usage: userid='{userid}'</param>
+        /// <param name="userid">Usage: userid=&apos;{userid}&apos;</param>
         /// </summary>
         public GetScopesForUserWithUseridRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string userid = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
@@ -46,28 +46,28 @@ namespace MicrosoftGraphSdk.DeviceManagement.ResourceOperations.Item.GetScopesFo
         }
         /// <summary>
         /// Invoke function getScopesForUser
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreateGetRequestInformation(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreateGetRequestInformation(Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            h?.Invoke(requestInfo.Headers);
-            requestInfo.AddRequestOptions(o?.ToArray());
+            headers?.Invoke(requestInfo.Headers);
+            requestInfo.AddRequestOptions(options?.ToArray());
             return requestInfo;
         }
         /// <summary>
         /// Invoke function getScopesForUser
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<GetScopesForUserWithUseridResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateGetRequestInformation(h, o);
+        public async Task<GetScopesForUserWithUseridResponse> GetAsync(Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+            var requestInfo = CreateGetRequestInformation(headers, options);
             return await RequestAdapter.SendAsync<GetScopesForUserWithUseridResponse>(requestInfo, GetScopesForUserWithUseridResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }

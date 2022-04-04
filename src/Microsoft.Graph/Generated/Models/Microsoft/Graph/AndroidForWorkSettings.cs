@@ -21,7 +21,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string OwnerOrganizationName { get; set; }
         /// <summary>Owner UPN that created the enterprise</summary>
         public string OwnerUserPrincipalName { get; set; }
-        /// <summary>Specifies which AAD groups can enroll devices in Android for Work device management if enrollmentTarget is set to 'Targeted'</summary>
+        /// <summary>Specifies which AAD groups can enroll devices in Android for Work device management if enrollmentTarget is set to &apos;Targeted&apos;</summary>
         public List<string> TargetGroupIds { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,8 +9,11 @@ namespace MicrosoftGraphSdk.Groups.Item.Team.Schedule.TimeCards.ClockIn {
     public class ClockInRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The atApprovedLocation property</summary>
         public bool? AtApprovedLocation { get; set; }
+        /// <summary>The notes property</summary>
         public ItemBody Notes { get; set; }
+        /// <summary>The onBehalfOfUserId property</summary>
         public string OnBehalfOfUserId { get; set; }
         /// <summary>
         /// Instantiates a new clockInRequestBody and sets the default values.

@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The error code.</summary>
         public string Code { get; set; }
+        /// <summary>The innerError property</summary>
         public WorkbookOperationError InnerError { get; set; }
         /// <summary>The error message.</summary>
         public string Message { get; set; }

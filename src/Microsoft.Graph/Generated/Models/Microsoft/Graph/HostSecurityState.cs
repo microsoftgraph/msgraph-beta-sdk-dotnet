@@ -9,7 +9,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Host FQDN (Fully Qualified Domain Name) (for example, machine.company.com).</summary>
         public string Fqdn { get; set; }
+        /// <summary>The isAzureAdJoined property</summary>
         public bool? IsAzureAdJoined { get; set; }
+        /// <summary>The isAzureAdRegistered property</summary>
         public bool? IsAzureAdRegistered { get; set; }
         /// <summary>True if the host is domain joined to an on-premises Active Directory domain.</summary>
         public bool? IsHybridAzureDomainJoined { get; set; }

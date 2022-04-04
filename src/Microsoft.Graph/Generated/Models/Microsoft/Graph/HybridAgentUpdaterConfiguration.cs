@@ -11,6 +11,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public bool? AllowUpdateConfigurationOverride { get; set; }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? DeferUpdateDateTime { get; set; }
+        /// <summary>The updateWindow property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.UpdateWindow UpdateWindow { get; set; }
         /// <summary>
         /// Instantiates a new hybridAgentUpdaterConfiguration and sets the default values.

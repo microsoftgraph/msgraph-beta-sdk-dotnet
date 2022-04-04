@@ -37,7 +37,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public bool? IsShared { get; set; }
         /// <summary>true if the user has been shared this calendar, false otherwise. This property is always false for a calendar owner. This property is set when sharing is initiated in an Outlook client, and can be reset when the sharing is cancelled through the client or the corresponding calendarPermission resource. Read-only.</summary>
         public bool? IsSharedWithMe { get; set; }
-        /// <summary>Indicates whether this user calendar supports tracking of meeting responses. Only meeting invites sent from users' primary calendars support tracking of meeting responses.</summary>
+        /// <summary>Indicates whether this user calendar supports tracking of meeting responses. Only meeting invites sent from users&apos; primary calendars support tracking of meeting responses.</summary>
         public bool? IsTallyingResponses { get; set; }
         /// <summary>The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.</summary>
         public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties { get; set; }

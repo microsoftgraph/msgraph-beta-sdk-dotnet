@@ -8,10 +8,15 @@ namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.Wipe {
     public class WipeRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The keepEnrollmentData property</summary>
         public bool? KeepEnrollmentData { get; set; }
+        /// <summary>The keepUserData property</summary>
         public bool? KeepUserData { get; set; }
+        /// <summary>The macOsUnlockCode property</summary>
         public string MacOsUnlockCode { get; set; }
+        /// <summary>The persistEsimDataPlan property</summary>
         public bool? PersistEsimDataPlan { get; set; }
+        /// <summary>The useProtectedWipe property</summary>
         public bool? UseProtectedWipe { get; set; }
         /// <summary>
         /// Instantiates a new wipeRequestBody and sets the default values.

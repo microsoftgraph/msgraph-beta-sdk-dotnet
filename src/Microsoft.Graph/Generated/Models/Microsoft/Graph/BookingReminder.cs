@@ -10,7 +10,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The message in the reminder.</summary>
         public string Message { get; set; }
-        /// <summary>The amount of time before the start of an appointment that the reminder should be sent. It's denoted in ISO 8601 format.</summary>
+        /// <summary>The amount of time before the start of an appointment that the reminder should be sent. It&apos;s denoted in ISO 8601 format.</summary>
         public TimeSpan? Offset { get; set; }
         /// <summary>The persons who should receive the reminder. Possible values are: allAttendees, staff, customer, unknownFutureValue.</summary>
         public BookingReminderRecipients? Recipients { get; set; }

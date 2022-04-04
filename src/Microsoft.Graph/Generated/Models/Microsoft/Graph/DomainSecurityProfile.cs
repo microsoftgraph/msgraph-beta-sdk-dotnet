@@ -5,19 +5,33 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DomainSecurityProfile : Entity, IParsable {
+        /// <summary>The activityGroupNames property</summary>
         public List<string> ActivityGroupNames { get; set; }
+        /// <summary>The azureSubscriptionId property</summary>
         public string AzureSubscriptionId { get; set; }
+        /// <summary>The azureTenantId property</summary>
         public string AzureTenantId { get; set; }
+        /// <summary>The countHits property</summary>
         public int? CountHits { get; set; }
+        /// <summary>The countInOrg property</summary>
         public int? CountInOrg { get; set; }
+        /// <summary>The domainCategories property</summary>
         public List<ReputationCategory> DomainCategories { get; set; }
+        /// <summary>The domainRegisteredDateTime property</summary>
         public DateTimeOffset? DomainRegisteredDateTime { get; set; }
+        /// <summary>The firstSeenDateTime property</summary>
         public DateTimeOffset? FirstSeenDateTime { get; set; }
+        /// <summary>The lastSeenDateTime property</summary>
         public DateTimeOffset? LastSeenDateTime { get; set; }
+        /// <summary>The name property</summary>
         public string Name { get; set; }
+        /// <summary>The registrant property</summary>
         public DomainRegistrant Registrant { get; set; }
+        /// <summary>The riskScore property</summary>
         public string RiskScore { get; set; }
+        /// <summary>The tags property</summary>
         public List<string> Tags { get; set; }
+        /// <summary>The vendorInformation property</summary>
         public SecurityVendorInformation VendorInformation { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

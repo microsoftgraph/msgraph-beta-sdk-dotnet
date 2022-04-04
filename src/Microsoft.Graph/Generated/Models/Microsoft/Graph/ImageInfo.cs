@@ -11,6 +11,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Optional; alt-text accessible content for the image</summary>
         public string AlternateText { get; set; }
+        /// <summary>The alternativeText property</summary>
         public string AlternativeText { get; set; }
         /// <summary>Optional; URI that points to an icon which represents the application used to generate the activity</summary>
         public string IconUrl { get; set; }

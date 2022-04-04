@@ -5,13 +5,13 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class BaseTask : Entity, IParsable {
-        /// <summary>The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.</summary>
+        /// <summary>The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: &apos;2020-01-01T00:00:00Z&apos;.</summary>
         public DateTimeOffset? BodyLastModifiedDateTime { get; set; }
         /// <summary>A collection of checklistItems linked to a task.</summary>
         public List<ChecklistItem> ChecklistItems { get; set; }
         /// <summary>The date when the task was finished.</summary>
         public DateTimeOffset? CompletedDateTime { get; set; }
-        /// <summary>The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.</summary>
+        /// <summary>The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: &apos;2020-01-01T00:00:00Z&apos;.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>The name of the task.</summary>
         public string DisplayName { get; set; }
@@ -21,7 +21,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<Extension> Extensions { get; set; }
         /// <summary>The importance of the task. Possible values are: low, normal, high.  The possible values are: low, normal, high.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Importance? Importance { get; set; }
-        /// <summary>The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.</summary>
+        /// <summary>The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: &apos;2020-01-01T00:00:00Z&apos;.</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
         /// <summary>A collection of resources linked to the task.</summary>
         public List<LinkedResource_v2> LinkedResources { get; set; }
@@ -35,6 +35,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public TaskStatus_v2? Status { get; set; }
         /// <summary>The task body in text format that typically contains information about the task.</summary>
         public string TextBody { get; set; }
+        /// <summary>The viewpoint property</summary>
         public TaskViewpoint Viewpoint { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

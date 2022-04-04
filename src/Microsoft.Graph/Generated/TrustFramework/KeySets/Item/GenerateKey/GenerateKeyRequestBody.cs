@@ -8,9 +8,13 @@ namespace MicrosoftGraphSdk.TrustFramework.KeySets.Item.GenerateKey {
     public class GenerateKeyRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The exp property</summary>
         public long? Exp { get; set; }
+        /// <summary>The kty property</summary>
         public string Kty { get; set; }
+        /// <summary>The nbf property</summary>
         public long? Nbf { get; set; }
+        /// <summary>The use property</summary>
         public string Use { get; set; }
         /// <summary>
         /// Instantiates a new generateKeyRequestBody and sets the default values.

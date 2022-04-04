@@ -9,11 +9,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<KeyValuePair> AdvancedSettings { get; set; }
         /// <summary>The Default Domain appendix that will be used by the clients</summary>
         public string DefaultDomainSuffix { get; set; }
-        /// <summary>The MicrosoftTunnelConfiguration's description</summary>
+        /// <summary>The MicrosoftTunnelConfiguration&apos;s description</summary>
         public string Description { get; set; }
         /// <summary>When DisableUdpConnections is set, the clients and VPN server will not use DTLS connections to tansfer data.</summary>
         public bool? DisableUdpConnections { get; set; }
-        /// <summary>The MicrosoftTunnelConfiguration's display name</summary>
+        /// <summary>The MicrosoftTunnelConfiguration&apos;s display name</summary>
         public string DisplayName { get; set; }
         /// <summary>The DNS servers that will be used by the clients</summary>
         public List<string> DnsServers { get; set; }

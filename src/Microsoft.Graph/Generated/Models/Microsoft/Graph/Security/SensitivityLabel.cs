@@ -5,15 +5,25 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Security {
     public class SensitivityLabel : Entity, IParsable {
+        /// <summary>The color property</summary>
         public string Color { get; set; }
+        /// <summary>The contentFormats property</summary>
         public List<string> ContentFormats { get; set; }
+        /// <summary>The description property</summary>
         public string Description { get; set; }
+        /// <summary>The hasProtection property</summary>
         public bool? HasProtection { get; set; }
+        /// <summary>The isActive property</summary>
         public bool? IsActive { get; set; }
+        /// <summary>The isAppliable property</summary>
         public bool? IsAppliable { get; set; }
+        /// <summary>The name property</summary>
         public string Name { get; set; }
+        /// <summary>The parent property</summary>
         public SensitivityLabel Parent { get; set; }
+        /// <summary>The sensitivity property</summary>
         public int? Sensitivity { get; set; }
+        /// <summary>The tooltip property</summary>
         public string Tooltip { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

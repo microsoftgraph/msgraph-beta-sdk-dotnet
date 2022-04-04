@@ -9,7 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Provides additional details on the sign-in activity</summary>
         public string AdditionalDetails { get; set; }
-        /// <summary>Provides the 5-6 digit error code that's generated during a sign-in failure. Check out the list of error codes and messages.</summary>
+        /// <summary>Provides the 5-6 digit error code that&apos;s generated during a sign-in failure. Check out the list of error codes and messages.</summary>
         public int? ErrorCode { get; set; }
         /// <summary>Provides the error message or the reason for failure for the corresponding sign-in activity. Check out the list of error codes and messages.</summary>
         public string FailureReason { get; set; }

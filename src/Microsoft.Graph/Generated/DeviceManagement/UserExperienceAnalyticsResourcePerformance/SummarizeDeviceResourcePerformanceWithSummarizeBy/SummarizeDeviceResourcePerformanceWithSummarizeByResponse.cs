@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsResourcePerf
     public class SummarizeDeviceResourcePerformanceWithSummarizeByResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The value property</summary>
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsResourcePerformance> Value { get; set; }
         /// <summary>
         /// Instantiates a new summarizeDeviceResourcePerformanceWithSummarizeByResponse and sets the default values.

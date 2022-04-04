@@ -8,6 +8,7 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.Unmute {
     public class UnmuteRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The clientContext property</summary>
         public string ClientContext { get; set; }
         /// <summary>
         /// Instantiates a new unmuteRequestBody and sets the default values.

@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class EducationSynchronizationProfile : Entity, IParsable {
+        /// <summary>The dataProvider property</summary>
         public EducationSynchronizationDataProvider DataProvider { get; set; }
         /// <summary>Name of the configuration profile for syncing identities.</summary>
         public string DisplayName { get; set; }
@@ -15,6 +16,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public Date? ExpirationDate { get; set; }
         /// <summary>Determines if School Data Sync should automatically replace unsupported special characters while syncing from source.</summary>
         public bool? HandleSpecialCharacterConstraint { get; set; }
+        /// <summary>The identitySynchronizationConfiguration property</summary>
         public EducationIdentitySynchronizationConfiguration IdentitySynchronizationConfiguration { get; set; }
         /// <summary>License setup configuration.</summary>
         public List<EducationSynchronizationLicenseAssignment> LicensesToAssign { get; set; }

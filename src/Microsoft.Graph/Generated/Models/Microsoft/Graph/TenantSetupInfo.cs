@@ -5,11 +5,17 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class TenantSetupInfo : Entity, IParsable {
+        /// <summary>The defaultRolesSettings property</summary>
         public PrivilegedRoleSettings DefaultRolesSettings { get; set; }
+        /// <summary>The firstTimeSetup property</summary>
         public bool? FirstTimeSetup { get; set; }
+        /// <summary>The relevantRolesSettings property</summary>
         public List<string> RelevantRolesSettings { get; set; }
+        /// <summary>The setupStatus property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.SetupStatus? SetupStatus { get; set; }
+        /// <summary>The skipSetup property</summary>
         public bool? SkipSetup { get; set; }
+        /// <summary>The userRolesActions property</summary>
         public string UserRolesActions { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

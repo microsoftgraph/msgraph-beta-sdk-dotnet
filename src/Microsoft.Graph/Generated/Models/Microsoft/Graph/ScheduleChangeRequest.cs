@@ -5,13 +5,21 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ScheduleChangeRequest : ChangeTrackedEntity, IParsable {
+        /// <summary>The assignedTo property</summary>
         public ScheduleChangeRequestActor? AssignedTo { get; set; }
+        /// <summary>The managerActionDateTime property</summary>
         public DateTimeOffset? ManagerActionDateTime { get; set; }
+        /// <summary>The managerActionMessage property</summary>
         public string ManagerActionMessage { get; set; }
+        /// <summary>The managerUserId property</summary>
         public string ManagerUserId { get; set; }
+        /// <summary>The senderDateTime property</summary>
         public DateTimeOffset? SenderDateTime { get; set; }
+        /// <summary>The senderMessage property</summary>
         public string SenderMessage { get; set; }
+        /// <summary>The senderUserId property</summary>
         public string SenderUserId { get; set; }
+        /// <summary>The state property</summary>
         public ScheduleChangeState? State { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.EvaluateAssignmentFilter {
     public class EvaluateAssignmentFilterRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The data property</summary>
         public AssignmentFilterEvaluateRequest Data { get; set; }
         /// <summary>
         /// Instantiates a new evaluateAssignmentFilterRequestBody and sets the default values.

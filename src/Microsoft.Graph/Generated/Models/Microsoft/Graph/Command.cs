@@ -5,14 +5,23 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Command : Entity, IParsable {
+        /// <summary>The appServiceName property</summary>
         public string AppServiceName { get; set; }
+        /// <summary>The error property</summary>
         public string Error { get; set; }
+        /// <summary>The packageFamilyName property</summary>
         public string PackageFamilyName { get; set; }
+        /// <summary>The payload property</summary>
         public PayloadRequest Payload { get; set; }
+        /// <summary>The permissionTicket property</summary>
         public string PermissionTicket { get; set; }
+        /// <summary>The postBackUri property</summary>
         public string PostBackUri { get; set; }
+        /// <summary>The responsepayload property</summary>
         public PayloadResponse Responsepayload { get; set; }
+        /// <summary>The status property</summary>
         public string Status { get; set; }
+        /// <summary>The type property</summary>
         public string Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

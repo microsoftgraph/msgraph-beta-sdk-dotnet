@@ -5,20 +5,35 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Recommendation : Entity, IParsable {
+        /// <summary>The actionSteps property</summary>
         public List<ActionStep> ActionSteps { get; set; }
+        /// <summary>The benefits property</summary>
         public string Benefits { get; set; }
+        /// <summary>The category property</summary>
         public RecommendationCategory? Category { get; set; }
+        /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
+        /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
+        /// <summary>The impactedResources property</summary>
         public List<RecommendationResource> ImpactedResources { get; set; }
+        /// <summary>The impactStartDateTime property</summary>
         public DateTimeOffset? ImpactStartDateTime { get; set; }
+        /// <summary>The impactType property</summary>
         public string ImpactType { get; set; }
+        /// <summary>The insights property</summary>
         public string Insights { get; set; }
+        /// <summary>The lastCheckedDateTime property</summary>
         public DateTimeOffset? LastCheckedDateTime { get; set; }
+        /// <summary>The lastModifiedBy property</summary>
         public string LastModifiedBy { get; set; }
+        /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+        /// <summary>The postponeUntilDateTime property</summary>
         public DateTimeOffset? PostponeUntilDateTime { get; set; }
+        /// <summary>The priority property</summary>
         public RecommendationPriority? Priority { get; set; }
+        /// <summary>The status property</summary>
         public RecommendationStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

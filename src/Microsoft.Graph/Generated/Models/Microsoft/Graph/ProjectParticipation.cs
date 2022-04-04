@@ -13,12 +13,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<string> CollaborationTags { get; set; }
         /// <summary>Lists people that also worked on the project.</summary>
         public List<RelatedPerson> Colleagues { get; set; }
-        /// <summary>Contains detail about the user's role on the project.</summary>
+        /// <summary>Contains detail about the user&apos;s role on the project.</summary>
         public PositionDetail Detail { get; set; }
         /// <summary>Contains a friendly name for the project.</summary>
         public string DisplayName { get; set; }
         /// <summary>The Person or people who sponsored the project.</summary>
         public List<RelatedPerson> Sponsors { get; set; }
+        /// <summary>The thumbnailUrl property</summary>
         public string ThumbnailUrl { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

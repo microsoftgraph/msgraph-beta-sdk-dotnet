@@ -1,6 +1,6 @@
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to call the validateComplianceScript method.</summary>
-    public enum @Operator {
+    public enum Operator {
         None,
         And,
         Or,

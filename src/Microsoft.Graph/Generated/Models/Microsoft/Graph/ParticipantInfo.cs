@@ -7,10 +7,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ParticipantInfo : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ISO 3166-1 Alpha-2 country code of the participant's best estimated physical location at the start of the call. Read-only.</summary>
+        /// <summary>The ISO 3166-1 Alpha-2 country code of the participant&apos;s best estimated physical location at the start of the call. Read-only.</summary>
         public string CountryCode { get; set; }
         /// <summary>The type of endpoint the participant is using. Possible values are: default, skypeForBusiness, or skypeForBusinessVoipPhone. Read-only.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.EndpointType? EndpointType { get; set; }
+        /// <summary>The identity property</summary>
         public IdentitySet Identity { get; set; }
         /// <summary>The language culture string. Read-only.</summary>
         public string LanguageId { get; set; }
@@ -18,7 +19,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string ParticipantId { get; set; }
         /// <summary>The client platform ID of the participant. Read-only.</summary>
         public string PlatformId { get; set; }
-        /// <summary>The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.</summary>
+        /// <summary>The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant&apos;s current physical location. Read-only.</summary>
         public string Region { get; set; }
         /// <summary>
         /// Instantiates a new participantInfo and sets the default values.

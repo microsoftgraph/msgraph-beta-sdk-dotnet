@@ -5,13 +5,21 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ExactMatchSessionBase : ExactMatchJobBase, IParsable {
+        /// <summary>The dataStoreId property</summary>
         public string DataStoreId { get; set; }
+        /// <summary>The processingCompletionDateTime property</summary>
         public DateTimeOffset? ProcessingCompletionDateTime { get; set; }
+        /// <summary>The remainingBlockCount property</summary>
         public int? RemainingBlockCount { get; set; }
+        /// <summary>The remainingJobCount property</summary>
         public int? RemainingJobCount { get; set; }
+        /// <summary>The state property</summary>
         public string State { get; set; }
+        /// <summary>The totalBlockCount property</summary>
         public int? TotalBlockCount { get; set; }
+        /// <summary>The totalJobCount property</summary>
         public int? TotalJobCount { get; set; }
+        /// <summary>The uploadCompletionDateTime property</summary>
         public DateTimeOffset? UploadCompletionDateTime { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

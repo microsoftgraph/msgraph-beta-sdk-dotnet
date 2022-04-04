@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AccessPackageSubject : Entity, IParsable {
+        /// <summary>The altSecId property</summary>
         public string AltSecId { get; set; }
         /// <summary>The connected organization of the subject. Read-only. Nullable.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectedOrganization ConnectedOrganization { get; set; }
@@ -16,7 +17,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string Email { get; set; }
         /// <summary>The object identifier of the subject. null if the subject is not yet a user in the tenant.</summary>
         public string ObjectId { get; set; }
-        /// <summary>A string representation of the principal's security identifier, if known, or null if the subject does not have a security identifier.</summary>
+        /// <summary>A string representation of the principal&apos;s security identifier, if known, or null if the subject does not have a security identifier.</summary>
         public string OnPremisesSecurityIdentifier { get; set; }
         /// <summary>The principal name, if known, of the subject.</summary>
         public string PrincipalName { get; set; }

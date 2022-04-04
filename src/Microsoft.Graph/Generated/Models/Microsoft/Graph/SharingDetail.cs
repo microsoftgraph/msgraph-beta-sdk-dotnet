@@ -11,10 +11,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public InsightIdentity SharedBy { get; set; }
         /// <summary>The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? SharedDateTime { get; set; }
+        /// <summary>The sharingReference property</summary>
         public ResourceReference SharingReference { get; set; }
         /// <summary>The subject with which the document was shared.</summary>
         public string SharingSubject { get; set; }
-        /// <summary>Determines the way the document was shared, can be by a 'Link', 'Attachment', 'Group', 'Site'.</summary>
+        /// <summary>Determines the way the document was shared, can be by a &apos;Link&apos;, &apos;Attachment&apos;, &apos;Group&apos;, &apos;Site&apos;.</summary>
         public string SharingType { get; set; }
         /// <summary>
         /// Instantiates a new sharingDetail and sets the default values.

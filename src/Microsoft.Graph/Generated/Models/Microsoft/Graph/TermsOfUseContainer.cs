@@ -5,9 +5,9 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class TermsOfUseContainer : Entity, IParsable {
-        /// <summary>Represents the current status of a user's response to a company's customizable terms of use agreement.</summary>
+        /// <summary>Represents the current status of a user&apos;s response to a company&apos;s customizable terms of use agreement.</summary>
         public List<AgreementAcceptance> AgreementAcceptances { get; set; }
-        /// <summary>Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).</summary>
+        /// <summary>Represents a tenant&apos;s customizable terms of use agreement that&apos;s created and managed with Azure Active Directory (Azure AD).</summary>
         public List<Agreement> Agreements { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

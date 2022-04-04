@@ -5,24 +5,43 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Vendor : Entity, IParsable {
+        /// <summary>The address property</summary>
         public PostalAddressType Address { get; set; }
+        /// <summary>The balance property</summary>
         public decimal? Balance { get; set; }
+        /// <summary>The blocked property</summary>
         public string Blocked { get; set; }
+        /// <summary>The currency property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Currency Currency { get; set; }
+        /// <summary>The currencyCode property</summary>
         public string CurrencyCode { get; set; }
+        /// <summary>The currencyId property</summary>
         public string CurrencyId { get; set; }
+        /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
+        /// <summary>The email property</summary>
         public string Email { get; set; }
+        /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+        /// <summary>The number property</summary>
         public string Number { get; set; }
+        /// <summary>The paymentMethod property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.PaymentMethod PaymentMethod { get; set; }
+        /// <summary>The paymentMethodId property</summary>
         public string PaymentMethodId { get; set; }
+        /// <summary>The paymentTerm property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.PaymentTerm PaymentTerm { get; set; }
+        /// <summary>The paymentTermsId property</summary>
         public string PaymentTermsId { get; set; }
+        /// <summary>The phoneNumber property</summary>
         public string PhoneNumber { get; set; }
+        /// <summary>The picture property</summary>
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Picture> Picture { get; set; }
+        /// <summary>The taxLiable property</summary>
         public bool? TaxLiable { get; set; }
+        /// <summary>The taxRegistrationNumber property</summary>
         public string TaxRegistrationNumber { get; set; }
+        /// <summary>The website property</summary>
         public string Website { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

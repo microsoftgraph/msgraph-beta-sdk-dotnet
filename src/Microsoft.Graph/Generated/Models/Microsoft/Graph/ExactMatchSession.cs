@@ -5,13 +5,21 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ExactMatchSession : ExactMatchSessionBase, IParsable {
+        /// <summary>The checksum property</summary>
         public string Checksum { get; set; }
+        /// <summary>The dataUploadURI property</summary>
         public string DataUploadURI { get; set; }
+        /// <summary>The fields property</summary>
         public List<string> Fields { get; set; }
+        /// <summary>The fileName property</summary>
         public string FileName { get; set; }
+        /// <summary>The rowsPerBlock property</summary>
         public int? RowsPerBlock { get; set; }
+        /// <summary>The salt property</summary>
         public string Salt { get; set; }
+        /// <summary>The uploadAgent property</summary>
         public ExactMatchUploadAgent UploadAgent { get; set; }
+        /// <summary>The uploadAgentId property</summary>
         public string UploadAgentId { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

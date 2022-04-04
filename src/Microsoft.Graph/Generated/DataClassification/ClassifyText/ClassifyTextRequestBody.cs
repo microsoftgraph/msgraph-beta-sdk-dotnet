@@ -9,10 +9,15 @@ namespace MicrosoftGraphSdk.DataClassification.ClassifyText {
     public class ClassifyTextRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The fileExtension property</summary>
         public string FileExtension { get; set; }
+        /// <summary>The matchTolerancesToInclude property</summary>
         public MlClassificationMatchTolerance? MatchTolerancesToInclude { get; set; }
+        /// <summary>The scopesToRun property</summary>
         public SensitiveTypeScope? ScopesToRun { get; set; }
+        /// <summary>The sensitiveTypeIds property</summary>
         public List<string> SensitiveTypeIds { get; set; }
+        /// <summary>The text property</summary>
         public string Text { get; set; }
         /// <summary>
         /// Instantiates a new classifyTextRequestBody and sets the default values.

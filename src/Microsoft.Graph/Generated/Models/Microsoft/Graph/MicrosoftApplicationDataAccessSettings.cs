@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class MicrosoftApplicationDataAccessSettings : Entity, IParsable {
+        /// <summary>The disabledForGroup property</summary>
         public string DisabledForGroup { get; set; }
+        /// <summary>The isEnabledForAllMicrosoftApplications property</summary>
         public bool? IsEnabledForAllMicrosoftApplications { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Reports.GetOffice365ActiveUserDetailWithPeriod {
     public class GetOffice365ActiveUserDetailWithPeriodResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The value property</summary>
         public List<Office365ActiveUserDetail> Value { get; set; }
         /// <summary>
         /// Instantiates a new getOffice365ActiveUserDetailWithPeriodResponse and sets the default values.

@@ -5,23 +5,41 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class HostSecurityProfile : Entity, IParsable {
+        /// <summary>The azureSubscriptionId property</summary>
         public string AzureSubscriptionId { get; set; }
+        /// <summary>The azureTenantId property</summary>
         public string AzureTenantId { get; set; }
+        /// <summary>The firstSeenDateTime property</summary>
         public DateTimeOffset? FirstSeenDateTime { get; set; }
+        /// <summary>The fqdn property</summary>
         public string Fqdn { get; set; }
+        /// <summary>The isAzureAdJoined property</summary>
         public bool? IsAzureAdJoined { get; set; }
+        /// <summary>The isAzureAdRegistered property</summary>
         public bool? IsAzureAdRegistered { get; set; }
+        /// <summary>The isHybridAzureDomainJoined property</summary>
         public bool? IsHybridAzureDomainJoined { get; set; }
+        /// <summary>The lastSeenDateTime property</summary>
         public DateTimeOffset? LastSeenDateTime { get; set; }
+        /// <summary>The logonUsers property</summary>
         public List<LogonUser> LogonUsers { get; set; }
+        /// <summary>The netBiosName property</summary>
         public string NetBiosName { get; set; }
+        /// <summary>The networkInterfaces property</summary>
         public List<NetworkInterface> NetworkInterfaces { get; set; }
+        /// <summary>The os property</summary>
         public string Os { get; set; }
+        /// <summary>The osVersion property</summary>
         public string OsVersion { get; set; }
+        /// <summary>The parentHost property</summary>
         public string ParentHost { get; set; }
+        /// <summary>The relatedHostIds property</summary>
         public List<string> RelatedHostIds { get; set; }
+        /// <summary>The riskScore property</summary>
         public string RiskScore { get; set; }
+        /// <summary>The tags property</summary>
         public List<string> Tags { get; set; }
+        /// <summary>The vendorInformation property</summary>
         public SecurityVendorInformation VendorInformation { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

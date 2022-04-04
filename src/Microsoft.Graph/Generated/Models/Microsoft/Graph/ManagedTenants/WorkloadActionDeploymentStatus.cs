@@ -12,9 +12,12 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         /// <summary>The identifier of any policy that was created by applying the workload action. Optional. Read-only.</summary>
         public string DeployedPolicyId { get; set; }
         /// <summary>The detailed information for exceptions that occur when deploying the workload action. Optional. Required.</summary>
-        public GenericError Error { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.GenericError Error { get; set; }
+        /// <summary>The excludeGroups property</summary>
         public List<string> ExcludeGroups { get; set; }
+        /// <summary>The includeAllUsers property</summary>
         public bool? IncludeAllUsers { get; set; }
+        /// <summary>The includeGroups property</summary>
         public List<string> IncludeGroups { get; set; }
         /// <summary>The date and time the workload action was last deployed. Optional.</summary>
         public DateTimeOffset? LastDeploymentDateTime { get; set; }
@@ -41,7 +44,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"actionId", (o,n) => { (o as WorkloadActionDeploymentStatus).ActionId = n.GetStringValue(); } },
                 {"deployedPolicyId", (o,n) => { (o as WorkloadActionDeploymentStatus).DeployedPolicyId = n.GetStringValue(); } },
-                {"error", (o,n) => { (o as WorkloadActionDeploymentStatus).Error = n.GetObjectValue<GenericError>(GenericError.CreateFromDiscriminatorValue); } },
+                {"error", (o,n) => { (o as WorkloadActionDeploymentStatus).Error = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.GenericError>(MicrosoftGraphSdk.Models.Microsoft.Graph.GenericError.CreateFromDiscriminatorValue); } },
                 {"excludeGroups", (o,n) => { (o as WorkloadActionDeploymentStatus).ExcludeGroups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"includeAllUsers", (o,n) => { (o as WorkloadActionDeploymentStatus).IncludeAllUsers = n.GetBoolValue(); } },
                 {"includeGroups", (o,n) => { (o as WorkloadActionDeploymentStatus).IncludeGroups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
@@ -57,7 +60,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("actionId", ActionId);
             writer.WriteStringValue("deployedPolicyId", DeployedPolicyId);
-            writer.WriteObjectValue<GenericError>("error", Error);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.GenericError>("error", Error);
             writer.WriteCollectionOfPrimitiveValues<string>("excludeGroups", ExcludeGroups);
             writer.WriteBoolValue("includeAllUsers", IncludeAllUsers);
             writer.WriteCollectionOfPrimitiveValues<string>("includeGroups", IncludeGroups);

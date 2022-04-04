@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.ChangeScreenSharingRole {
     public class ChangeScreenSharingRoleRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The role property</summary>
         public ScreenSharingRole? Role { get; set; }
         /// <summary>
         /// Instantiates a new changeScreenSharingRoleRequestBody and sets the default values.

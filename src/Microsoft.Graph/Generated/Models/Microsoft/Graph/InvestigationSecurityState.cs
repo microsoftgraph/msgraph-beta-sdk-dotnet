@@ -7,7 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class InvestigationSecurityState : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The name property</summary>
         public string Name { get; set; }
+        /// <summary>The status property</summary>
         public string Status { get; set; }
         /// <summary>
         /// Instantiates a new investigationSecurityState and sets the default values.

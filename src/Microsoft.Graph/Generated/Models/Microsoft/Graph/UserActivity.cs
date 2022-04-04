@@ -23,14 +23,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? ExpirationDateTime { get; set; }
         /// <summary>Optional. URL used to launch the activity in a web-based app, if available.</summary>
         public string FallbackUrl { get; set; }
-        /// <summary>Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.</summary>
+        /// <summary>Optional. NavigationProperty/Containment; navigation property to the activity&apos;s historyItems.</summary>
         public List<ActivityHistoryItem> HistoryItems { get; set; }
         /// <summary>Set by the server. DateTime in UTC when the object was modified on the server.</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
         /// <summary>Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Status? Status { get; set; }
-        /// <summary>Optional. The timezone in which the user's device used to generate the activity was located at activity creation time; values supplied as Olson IDs in order to support cross-platform representation.</summary>
+        /// <summary>Optional. The timezone in which the user&apos;s device used to generate the activity was located at activity creation time; values supplied as Olson IDs in order to support cross-platform representation.</summary>
         public string UserTimezone { get; set; }
+        /// <summary>The visualElements property</summary>
         public VisualInfo VisualElements { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

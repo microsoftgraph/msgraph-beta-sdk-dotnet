@@ -7,7 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ProvisionedIdentity : Identity, IParsable {
         /// <summary>Details of the identity.</summary>
         public DetailsInfo Details { get; set; }
-        /// <summary>Type of identity that has been provisioned, such as 'user' or 'group'.</summary>
+        /// <summary>Type of identity that has been provisioned, such as &apos;user&apos; or &apos;group&apos;.</summary>
         public string IdentityType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

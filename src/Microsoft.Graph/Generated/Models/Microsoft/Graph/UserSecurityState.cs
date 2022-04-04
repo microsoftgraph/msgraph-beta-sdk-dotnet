@@ -13,7 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>NetBIOS/Active Directory domain of user account (that is, domain/account format).</summary>
         public string DomainName { get; set; }
-        /// <summary>For email-related alerts - user account's email 'role'. Possible values are: unknown, sender, recipient.</summary>
+        /// <summary>For email-related alerts - user account&apos;s email &apos;role&apos;. Possible values are: unknown, sender, recipient.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.EmailRole? EmailRole { get; set; }
         /// <summary>Indicates whether the user logged on through a VPN.</summary>
         public bool? IsVpn { get; set; }

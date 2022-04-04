@@ -10,7 +10,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If true, app is denied protection or exemption.</summary>
         public bool? Denied { get; set; }
-        /// <summary>The app's description.</summary>
+        /// <summary>The app&apos;s description.</summary>
         public string Description { get; set; }
         /// <summary>App display name.</summary>
         public string DisplayName { get; set; }

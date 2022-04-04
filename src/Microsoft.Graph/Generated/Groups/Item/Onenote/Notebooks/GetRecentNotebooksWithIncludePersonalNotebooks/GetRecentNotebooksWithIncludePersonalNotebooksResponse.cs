@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Onenote.Notebooks.GetRecentNotebooksWith
     public class GetRecentNotebooksWithIncludePersonalNotebooksResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The value property</summary>
         public List<RecentNotebook> Value { get; set; }
         /// <summary>
         /// Instantiates a new getRecentNotebooksWithIncludePersonalNotebooksResponse and sets the default values.

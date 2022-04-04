@@ -13,7 +13,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<PrintOperation> Operations { get; set; }
         /// <summary>The list of printers registered in the tenant.</summary>
         public List<Printer> Printers { get; set; }
+        /// <summary>The printerShares property</summary>
         public List<PrinterShare> PrinterShares { get; set; }
+        /// <summary>The reports property</summary>
         public ReportRoot Reports { get; set; }
         /// <summary>The list of available Universal Print service endpoints.</summary>
         public List<PrintService> Services { get; set; }

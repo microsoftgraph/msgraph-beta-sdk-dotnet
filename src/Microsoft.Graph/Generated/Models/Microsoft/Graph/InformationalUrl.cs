@@ -7,15 +7,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class InformationalUrl : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>CDN URL to the application's logo, Read-only.</summary>
+        /// <summary>CDN URL to the application&apos;s logo, Read-only.</summary>
         public string LogoUrl { get; set; }
-        /// <summary>Link to the application's marketing page. For example, https://www.contoso.com/app/marketing</summary>
+        /// <summary>Link to the application&apos;s marketing page. For example, https://www.contoso.com/app/marketing</summary>
         public string MarketingUrl { get; set; }
-        /// <summary>Link to the application's privacy statement. For example, https://www.contoso.com/app/privacy</summary>
+        /// <summary>Link to the application&apos;s privacy statement. For example, https://www.contoso.com/app/privacy</summary>
         public string PrivacyStatementUrl { get; set; }
-        /// <summary>Link to the application's support page. For example, https://www.contoso.com/app/support</summary>
+        /// <summary>Link to the application&apos;s support page. For example, https://www.contoso.com/app/support</summary>
         public string SupportUrl { get; set; }
-        /// <summary>Link to the application's terms of service statement. For example, https://www.contoso.com/app/termsofservice</summary>
+        /// <summary>Link to the application&apos;s terms of service statement. For example, https://www.contoso.com/app/termsofservice</summary>
         public string TermsOfServiceUrl { get; set; }
         /// <summary>
         /// Instantiates a new informationalUrl and sets the default values.

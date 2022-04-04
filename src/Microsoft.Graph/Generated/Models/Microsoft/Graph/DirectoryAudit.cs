@@ -7,17 +7,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DirectoryAudit : Entity, IParsable {
         /// <summary>Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ActivityDateTime { get; set; }
-        /// <summary>Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For full list, see Azure AD activity list.</summary>
+        /// <summary>Indicates the activity name or the operation name (examples: &apos;Create User&apos; and &apos;Add member to group&apos;). For full list, see Azure AD activity list.</summary>
         public string ActivityDisplayName { get; set; }
         /// <summary>Indicates additional details on the activity.</summary>
         public List<KeyValue> AdditionalDetails { get; set; }
-        /// <summary>Indicates which resource category that's targeted by the activity. (For example: User Management, Group Management etc..)</summary>
+        /// <summary>Indicates which resource category that&apos;s targeted by the activity. (For example: User Management, Group Management etc..)</summary>
         public string Category { get; set; }
         /// <summary>Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.</summary>
         public string CorrelationId { get; set; }
+        /// <summary>The initiatedBy property</summary>
         public AuditActivityInitiator InitiatedBy { get; set; }
         /// <summary>Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management.</summary>
         public string LoggedByService { get; set; }
+        /// <summary>The operationType property</summary>
         public string OperationType { get; set; }
         /// <summary>Indicates the result of the activity. Possible values are: success, failure, timeout, unknownFutureValue.</summary>
         public OperationResult? Result { get; set; }

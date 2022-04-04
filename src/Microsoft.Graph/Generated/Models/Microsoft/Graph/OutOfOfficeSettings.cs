@@ -7,7 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class OutOfOfficeSettings : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>True if either:It is currently in the out of office time window configured on the Outlook or Teams client.There is currently an event on the user's calendar that's marked as Show as Out of OfficeOtherwise, false.</summary>
+        /// <summary>True if either:It is currently in the out of office time window configured on the Outlook or Teams client.There is currently an event on the user&apos;s calendar that&apos;s marked as Show as Out of OfficeOtherwise, false.</summary>
         public bool? IsOutOfOffice { get; set; }
         /// <summary>The out of office message that the user configured on Outlook client (Automatic Replies (Out of Office)) or the Teams client (Schedule out of office).</summary>
         public string Message { get; set; }

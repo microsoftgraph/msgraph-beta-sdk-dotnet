@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackage AccessPackage { get; set; }
         /// <summary>Read-only. Nullable. Supports $filter (eq) on the id property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageAssignmentPolicy AccessPackageAssignmentPolicy { get; set; }
+        /// <summary>The accessPackageAssignmentRequests property</summary>
         public List<AccessPackageAssignmentRequest> AccessPackageAssignmentRequests { get; set; }
         /// <summary>The resource roles delivered to the target user for this assignment. Read-only. Nullable.</summary>
         public List<AccessPackageAssignmentResourceRole> AccessPackageAssignmentResourceRoles { get; set; }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedAppRegistrations.Item.AppliedPolicies.Item.TargetedManagedAppProtection {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\{managedAppRegistration-id}\appliedPolicies\{managedAppPolicy-id}\microsoft.graph.targetedManagedAppProtection</summary>
     public class TargetedManagedAppProtectionRequestBuilder {
+        /// <summary>The assign property</summary>
         public AssignRequestBuilder Assign { get =>
             new AssignRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -16,6 +17,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedAppRegistrations.Item.App
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The targetApps property</summary>
         public TargetAppsRequestBuilder TargetApps { get =>
             new TargetAppsRequestBuilder(PathParameters, RequestAdapter);
         }

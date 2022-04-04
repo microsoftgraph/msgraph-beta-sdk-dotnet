@@ -7,10 +7,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Schedule : Entity, IParsable {
         /// <summary>Indicates whether the schedule is enabled for the team. Required.</summary>
         public bool? Enabled { get; set; }
+        /// <summary>The offerShiftRequests property</summary>
         public List<OfferShiftRequest> OfferShiftRequests { get; set; }
         /// <summary>Indicates whether offer shift requests are enabled for the schedule.</summary>
         public bool? OfferShiftRequestsEnabled { get; set; }
+        /// <summary>The openShiftChangeRequests property</summary>
         public List<OpenShiftChangeRequest> OpenShiftChangeRequests { get; set; }
+        /// <summary>The openShifts property</summary>
         public List<OpenShift> OpenShifts { get; set; }
         /// <summary>Indicates whether open shifts are enabled for the schedule.</summary>
         public bool? OpenShiftsEnabled { get; set; }
@@ -22,15 +25,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<SchedulingGroup> SchedulingGroups { get; set; }
         /// <summary>The shifts in the schedule.</summary>
         public List<Shift> Shifts { get; set; }
+        /// <summary>The swapShiftsChangeRequests property</summary>
         public List<SwapShiftsChangeRequest> SwapShiftsChangeRequests { get; set; }
         /// <summary>Indicates whether swap shifts requests are enabled for the schedule.</summary>
         public bool? SwapShiftsRequestsEnabled { get; set; }
+        /// <summary>The timeCards property</summary>
         public List<TimeCard> TimeCards { get; set; }
         /// <summary>Indicates whether time clock is enabled for the schedule.</summary>
         public bool? TimeClockEnabled { get; set; }
+        /// <summary>The timeClockSettings property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.TimeClockSettings TimeClockSettings { get; set; }
         /// <summary>The set of reasons for a time off in the schedule.</summary>
         public List<TimeOffReason> TimeOffReasons { get; set; }
+        /// <summary>The timeOffRequests property</summary>
         public List<TimeOffRequest> TimeOffRequests { get; set; }
         /// <summary>Indicates whether time off requests are enabled for the schedule.</summary>
         public bool? TimeOffRequestsEnabled { get; set; }
@@ -38,6 +45,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<TimeOff> TimesOff { get; set; }
         /// <summary>Indicates the time zone of the schedule team using tz database format. Required.</summary>
         public string TimeZone { get; set; }
+        /// <summary>The workforceIntegrationIds property</summary>
         public List<string> WorkforceIntegrationIds { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

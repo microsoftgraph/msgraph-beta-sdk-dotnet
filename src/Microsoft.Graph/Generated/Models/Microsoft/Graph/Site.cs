@@ -12,6 +12,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<ColumnDefinition> Columns { get; set; }
         /// <summary>The collection of content types defined for this site.</summary>
         public List<ContentType> ContentTypes { get; set; }
+        /// <summary>The deleted property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Deleted Deleted { get; set; }
         /// <summary>The full title for the site. Read-only.</summary>
         public string DisplayName { get; set; }
@@ -21,7 +22,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive> Drives { get; set; }
         /// <summary>The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.</summary>
         public List<ColumnDefinition> ExternalColumns { get; set; }
-        /// <summary>Used to address any item contained in this site. This collection can't be enumerated.</summary>
+        /// <summary>Used to address any item contained in this site. This collection can&apos;t be enumerated.</summary>
         public List<BaseItem> Items { get; set; }
         /// <summary>The collection of lists under this site.</summary>
         public List<List> Lists { get; set; }
@@ -35,10 +36,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<Permission> Permissions { get; set; }
         /// <summary>If present, indicates that this is the root site in the site collection. Read-only.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Root Root { get; set; }
+        /// <summary>The settings property</summary>
         public SiteSettings Settings { get; set; }
         /// <summary>Returns identifiers useful for SharePoint REST compatibility. Read-only.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.SharepointIds SharepointIds { get; set; }
-        /// <summary>Provides details about the site's site collection. Available only on the root site. Read-only.</summary>
+        /// <summary>Provides details about the site&apos;s site collection. Available only on the root site. Read-only.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.SiteCollection SiteCollection { get; set; }
         /// <summary>The collection of the sub-sites under this site.</summary>
         public List<Site> Sites { get; set; }

@@ -15,6 +15,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         public string Description { get; set; }
         /// <summary>The display name for the workload action. Optional. Read-only.</summary>
         public string DisplayName { get; set; }
+        /// <summary>The licenses property</summary>
         public List<string> Licenses { get; set; }
         /// <summary>The service associated with workload action. Optional. Read-only.</summary>
         public string Service { get; set; }

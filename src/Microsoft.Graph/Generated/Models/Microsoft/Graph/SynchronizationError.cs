@@ -7,8 +7,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SynchronizationError : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The code property</summary>
         public string Code { get; set; }
+        /// <summary>The message property</summary>
         public string Message { get; set; }
+        /// <summary>The tenantActionable property</summary>
         public bool? TenantActionable { get; set; }
         /// <summary>
         /// Instantiates a new synchronizationError and sets the default values.

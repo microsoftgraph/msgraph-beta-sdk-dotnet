@@ -5,13 +5,13 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class MobileAppRelationship : Entity, IParsable {
-        /// <summary>The target mobile app's display name.</summary>
+        /// <summary>The target mobile app&apos;s display name.</summary>
         public string TargetDisplayName { get; set; }
-        /// <summary>The target mobile app's display version.</summary>
+        /// <summary>The target mobile app&apos;s display version.</summary>
         public string TargetDisplayVersion { get; set; }
-        /// <summary>The target mobile app's app id.</summary>
+        /// <summary>The target mobile app&apos;s app id.</summary>
         public string TargetId { get; set; }
-        /// <summary>The target mobile app's publisher.</summary>
+        /// <summary>The target mobile app&apos;s publisher.</summary>
         public string TargetPublisher { get; set; }
         /// <summary>The type of relationship indicating whether the target is a parent or child. Possible values are: child, parent.</summary>
         public MobileAppRelationshipType? TargetType { get; set; }

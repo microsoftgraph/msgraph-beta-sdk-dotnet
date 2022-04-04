@@ -7,8 +7,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class OutlookUser : Entity, IParsable {
         /// <summary>A list of categories defined for the user.</summary>
         public List<OutlookCategory> MasterCategories { get; set; }
+        /// <summary>The taskFolders property</summary>
         public List<OutlookTaskFolder> TaskFolders { get; set; }
+        /// <summary>The taskGroups property</summary>
         public List<OutlookTaskGroup> TaskGroups { get; set; }
+        /// <summary>The tasks property</summary>
         public List<OutlookTask> Tasks { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

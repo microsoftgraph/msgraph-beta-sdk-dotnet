@@ -13,6 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AttestationLevel? AttestationLevel { get; set; }
         /// <summary>The timestamp when this key was registered to the user.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
+        /// <summary>The creationDateTime property</summary>
         public DateTimeOffset? CreationDateTime { get; set; }
         /// <summary>The display name of the key as given by the user.</summary>
         public string DisplayName { get; set; }

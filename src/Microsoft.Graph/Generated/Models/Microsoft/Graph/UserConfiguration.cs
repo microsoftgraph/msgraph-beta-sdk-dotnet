@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UserConfiguration : Entity, IParsable {
+        /// <summary>The binaryData property</summary>
         public byte[] BinaryData { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

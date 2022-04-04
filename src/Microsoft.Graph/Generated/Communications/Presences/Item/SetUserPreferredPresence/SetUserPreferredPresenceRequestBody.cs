@@ -6,10 +6,13 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Communications.Presences.Item.SetUserPreferredPresence {
     /// <summary>Provides operations to call the setUserPreferredPresence method.</summary>
     public class SetUserPreferredPresenceRequestBody : IAdditionalDataHolder, IParsable {
+        /// <summary>The activity property</summary>
         public string Activity { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The availability property</summary>
         public string Availability { get; set; }
+        /// <summary>The expirationDuration property</summary>
         public TimeSpan? ExpirationDuration { get; set; }
         /// <summary>
         /// Instantiates a new setUserPreferredPresenceRequestBody and sets the default values.

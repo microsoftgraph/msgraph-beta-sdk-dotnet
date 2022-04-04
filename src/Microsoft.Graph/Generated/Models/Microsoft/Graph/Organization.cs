@@ -7,6 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Organization : DirectoryObject, IParsable {
         /// <summary>The collection of service plans associated with the tenant. Not nullable.</summary>
         public List<AssignedPlan> AssignedPlans { get; set; }
+        /// <summary>The branding property</summary>
         public OrganizationalBranding Branding { get; set; }
         /// <summary>Telephone number for the organization. Although this is a string collection, only one number can be set for this property.</summary>
         public List<string> BusinessPhones { get; set; }
@@ -46,7 +47,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.PrivacyProfile PrivacyProfile { get; set; }
         /// <summary>Not nullable.</summary>
         public List<ProvisionedPlan> ProvisionedPlans { get; set; }
+        /// <summary>The securityComplianceNotificationMails property</summary>
         public List<string> SecurityComplianceNotificationMails { get; set; }
+        /// <summary>The securityComplianceNotificationPhones property</summary>
         public List<string> SecurityComplianceNotificationPhones { get; set; }
         /// <summary>Retrieve the properties and relationships of organizationSettings object. Nullable.</summary>
         public OrganizationSettings Settings { get; set; }

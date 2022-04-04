@@ -11,6 +11,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         public string ManagementActionId { get; set; }
         /// <summary>The management template identifier that was used to generate the management action. Required. Read-only.</summary>
         public string ManagementTemplateId { get; set; }
+        /// <summary>The managementTemplateVersion property</summary>
         public int? ManagementTemplateVersion { get; set; }
         /// <summary>The status of the management action. Possible values are: toAddress, completed, error, timeOut, inProgress, planned, resolvedBy3rdParty, resolvedThroughAlternateMitigation, riskAccepted, unknownFutureValue. Required.</summary>
         public ManagementActionStatus? Status { get; set; }

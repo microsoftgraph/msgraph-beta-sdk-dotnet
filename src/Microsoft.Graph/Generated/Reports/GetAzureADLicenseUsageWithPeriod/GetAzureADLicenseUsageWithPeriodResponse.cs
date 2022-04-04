@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Reports.GetAzureADLicenseUsageWithPeriod {
     public class GetAzureADLicenseUsageWithPeriodResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The value property</summary>
         public List<AzureADLicenseUsage> Value { get; set; }
         /// <summary>
         /// Instantiates a new getAzureADLicenseUsageWithPeriodResponse and sets the default values.

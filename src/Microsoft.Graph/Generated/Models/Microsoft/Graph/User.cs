@@ -10,16 +10,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string AboutMe { get; set; }
         /// <summary>true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter (eq, ne, not, and in).</summary>
         public bool? AccountEnabled { get; set; }
-        /// <summary>The user's activities across devices. Read-only. Nullable.</summary>
+        /// <summary>The user&apos;s activities across devices. Read-only. Nullable.</summary>
         public List<UserActivity> Activities { get; set; }
         /// <summary>Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).</summary>
         public string AgeGroup { get; set; }
-        /// <summary>The user's terms of use acceptance statuses. Read-only. Nullable.</summary>
+        /// <summary>The user&apos;s terms of use acceptance statuses. Read-only. Nullable.</summary>
         public List<AgreementAcceptance> AgreementAcceptances { get; set; }
+        /// <summary>The analytics property</summary>
         public UserAnalytics Analytics { get; set; }
+        /// <summary>The appConsentRequestsForApproval property</summary>
         public List<AppConsentRequest> AppConsentRequestsForApproval { get; set; }
         /// <summary>Represents the app roles a user has been granted for an application. Supports $expand.</summary>
         public List<AppRoleAssignment> AppRoleAssignments { get; set; }
+        /// <summary>The approvals property</summary>
         public List<Approval> Approvals { get; set; }
         /// <summary>The licenses that are assigned to the user, including inherited (group-based) licenses.  Not nullable. Returned only on $select. Supports $filter (eq and not).</summary>
         public List<AssignedLicense> AssignedLicenses { get; set; }
@@ -31,25 +34,27 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? Birthday { get; set; }
         /// <summary>The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).</summary>
         public List<string> BusinessPhones { get; set; }
-        /// <summary>The user's primary calendar. Read-only.</summary>
+        /// <summary>The user&apos;s primary calendar. Read-only.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar Calendar { get; set; }
-        /// <summary>The user's calendar groups. Read-only. Nullable.</summary>
+        /// <summary>The user&apos;s calendar groups. Read-only. Nullable.</summary>
         public List<CalendarGroup> CalendarGroups { get; set; }
-        /// <summary>The user's calendars. Read-only. Nullable.</summary>
+        /// <summary>The user&apos;s calendars. Read-only. Nullable.</summary>
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar> Calendars { get; set; }
         /// <summary>The calendar view for the calendar. Read-only. Nullable.</summary>
         public List<Event> CalendarView { get; set; }
+        /// <summary>The chats property</summary>
         public List<Chat> Chats { get; set; }
         /// <summary>The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
         public string City { get; set; }
+        /// <summary>The cloudPCs property</summary>
         public List<CloudPC> CloudPCs { get; set; }
         /// <summary>The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
         public string CompanyName { get; set; }
         /// <summary>Sets whether consent has been obtained for minors. Allowed values: null, Granted, Denied and NotRequired. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).</summary>
         public string ConsentProvidedForMinor { get; set; }
-        /// <summary>The user's contacts folders. Read-only. Nullable.</summary>
+        /// <summary>The user&apos;s contacts folders. Read-only. Nullable.</summary>
         public List<ContactFolder> ContactFolders { get; set; }
-        /// <summary>The user's contacts. Read-only. Nullable.</summary>
+        /// <summary>The user&apos;s contacts. Read-only. Nullable.</summary>
         public List<Contact> Contacts { get; set; }
         /// <summary>The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
         public string Country { get; set; }
@@ -67,15 +72,17 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<DeviceEnrollmentConfiguration> DeviceEnrollmentConfigurations { get; set; }
         /// <summary>The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.</summary>
         public int? DeviceEnrollmentLimit { get; set; }
+        /// <summary>The deviceKeys property</summary>
         public List<DeviceKey> DeviceKeys { get; set; }
         /// <summary>The list of troubleshooting events for this user.</summary>
         public List<DeviceManagementTroubleshootingEvent> DeviceManagementTroubleshootingEvents { get; set; }
+        /// <summary>The devices property</summary>
         public List<Device> Devices { get; set; }
         /// <summary>The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.</summary>
         public List<DirectoryObject> DirectReports { get; set; }
-        /// <summary>The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderBy, and $search.</summary>
+        /// <summary>The name displayed in the address book for the user. This is usually the combination of the user&apos;s first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderBy, and $search.</summary>
         public string DisplayName { get; set; }
-        /// <summary>The user's OneDrive. Read-only.</summary>
+        /// <summary>The user&apos;s OneDrive. Read-only.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Drive Drive { get; set; }
         /// <summary>A collection of drives available for this user. Read-only.</summary>
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive> Drives { get; set; }
@@ -87,16 +94,17 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.EmployeeOrgData EmployeeOrgData { get; set; }
         /// <summary>Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith).</summary>
         public string EmployeeType { get; set; }
-        /// <summary>The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.</summary>
+        /// <summary>The user&apos;s events. Default is to show Events under the Default Calendar. Read-only. Nullable.</summary>
         public List<Event> Events { get; set; }
         /// <summary>The collection of open extensions defined for the user. Read-only. Nullable.</summary>
         public List<Extension> Extensions { get; set; }
-        /// <summary>For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Returned only on $select. Supports $filter (eq, ne, not , in).</summary>
+        /// <summary>For an external user invited to the tenant using the invitation API, this property represents the invited user&apos;s invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Returned only on $select. Supports $filter (eq, ne, not , in).</summary>
         public string ExternalUserState { get; set; }
         /// <summary>Shows the timestamp for the latest change to the externalUserState property. Returned only on $select. Supports $filter (eq, ne, not , in).</summary>
         public string ExternalUserStateChangeDateTime { get; set; }
         /// <summary>The fax number of the user. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).</summary>
         public string FaxNumber { get; set; }
+        /// <summary>The followedSites property</summary>
         public List<Site> FollowedSites { get; set; }
         /// <summary>The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).</summary>
         public string GivenName { get; set; }
@@ -106,10 +114,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<ObjectIdentity> Identities { get; set; }
         /// <summary>The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).</summary>
         public List<string> ImAddresses { get; set; }
-        /// <summary>Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.</summary>
+        /// <summary>Relevance classification of the user&apos;s messages based on explicit designations which override inferred relevance or importance.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.InferenceClassification InferenceClassification { get; set; }
         /// <summary>Identifies the info segments assigned to the user.  Supports $filter (eq, not, ge, le, startsWith).</summary>
         public List<string> InfoCatalogs { get; set; }
+        /// <summary>The informationProtection property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.InformationProtection InformationProtection { get; set; }
         /// <summary>Read-only. Nullable.</summary>
         public ItemInsights Insights { get; set; }
@@ -117,7 +126,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<string> Interests { get; set; }
         /// <summary>Do not use – reserved for future use.</summary>
         public bool? IsResourceAccount { get; set; }
-        /// <summary>The user's job title. Maximum length is 128 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).</summary>
+        /// <summary>The user&apos;s job title. Maximum length is 128 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).</summary>
         public string JobTitle { get; set; }
         /// <summary>Read-only. Nullable.</summary>
         public List<Group> JoinedGroups { get; set; }
@@ -129,13 +138,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string LegalAgeGroupClassification { get; set; }
         /// <summary>State of license assignments for this user. Read-only. Returned only on $select.</summary>
         public List<LicenseAssignmentState> LicenseAssignmentStates { get; set; }
-        /// <summary>A collection of this user's license details. Read-only.</summary>
+        /// <summary>A collection of this user&apos;s license details. Read-only.</summary>
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.LicenseDetails> LicenseDetails { get; set; }
-        /// <summary>The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com.Changes to this property will also update the user's proxyAddresses collection to include the value as an SMTP address. For Azure AD B2C accounts, this property can be updated up to only ten times with unique SMTP addresses. This property cannot contain accent characters.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).</summary>
+        /// <summary>The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com.Changes to this property will also update the user&apos;s proxyAddresses collection to include the value as an SMTP address. For Azure AD B2C accounts, this property can be updated up to only ten times with unique SMTP addresses. This property cannot contain accent characters.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).</summary>
         public string Mail { get; set; }
         /// <summary>Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale and time zone. Returned only on $select.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.MailboxSettings MailboxSettings { get; set; }
-        /// <summary>The user's mail folders. Read-only. Nullable.</summary>
+        /// <summary>The user&apos;s mail folders. Read-only. Nullable.</summary>
         public List<MailFolder> MailFolders { get; set; }
         /// <summary>The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
         public string MailNickname { get; set; }
@@ -143,7 +152,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<ManagedAppRegistration> ManagedAppRegistrations { get; set; }
         /// <summary>The managed devices associated with the user.</summary>
         public List<ManagedDevice> ManagedDevices { get; set; }
-        /// <summary>The user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.</summary>
+        /// <summary>The user or contact that is this user&apos;s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.</summary>
         public DirectoryObject Manager { get; set; }
         /// <summary>The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.</summary>
         public List<DirectoryObject> MemberOf { get; set; }
@@ -155,14 +164,17 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<MobileAppTroubleshootingEvent> MobileAppTroubleshootingEvents { get; set; }
         /// <summary>The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
         public string MobilePhone { get; set; }
-        /// <summary>The URL for the user's personal site. Returned only on $select.</summary>
+        /// <summary>The URL for the user&apos;s personal site. Returned only on $select.</summary>
         public string MySite { get; set; }
+        /// <summary>The notifications property</summary>
         public List<Notification> Notifications { get; set; }
+        /// <summary>The oauth2PermissionGrants property</summary>
         public List<OAuth2PermissionGrant> Oauth2PermissionGrants { get; set; }
-        /// <summary>The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+        /// <summary>The office location in the user&apos;s place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
         public string OfficeLocation { get; set; }
         /// <summary>Read-only.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Onenote Onenote { get; set; }
+        /// <summary>The onlineMeetings property</summary>
         public List<OnlineMeeting> OnlineMeetings { get; set; }
         /// <summary>Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.</summary>
         public string OnPremisesDistinguishedName { get; set; }
@@ -170,7 +182,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string OnPremisesDomainName { get; set; }
         /// <summary>Contains extensionAttributes1-15 for the user. The individual extension attributes are neither selectable nor filterable. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. These extension attributes are also known as Exchange custom attributes 1-15.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.OnPremisesExtensionAttributes OnPremisesExtensionAttributes { get; set; }
-        /// <summary>This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user's userPrincipalName (UPN) property. NOTE: The $ and _ characters cannot be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in)..</summary>
+        /// <summary>This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user&apos;s userPrincipalName (UPN) property. NOTE: The $ and _ characters cannot be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in)..</summary>
         public string OnPremisesImmutableId { get; set; }
         /// <summary>Indicates the last time at which the object was synced with the on-premises directory; for example: 2013-02-16T03:04:54Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in).</summary>
         public DateTimeOffset? OnPremisesLastSyncDateTime { get; set; }
@@ -184,7 +196,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public bool? OnPremisesSyncEnabled { get; set; }
         /// <summary>Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).</summary>
         public string OnPremisesUserPrincipalName { get; set; }
-        /// <summary>A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith).</summary>
+        /// <summary>A list of additional email addresses for the user; for example: [&apos;bob@contoso.com&apos;, &apos;Robert@fabrikam.com&apos;]. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith).</summary>
         public List<string> OtherMails { get; set; }
         /// <summary>Read-only.</summary>
         public OutlookUser Outlook { get; set; }
@@ -202,13 +214,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<AccessReviewInstance> PendingAccessReviewInstances { get; set; }
         /// <summary>People that are relevant to the user. Read-only. Nullable.</summary>
         public List<Person> People { get; set; }
-        /// <summary>The user's profile photo. Read-only.</summary>
+        /// <summary>The user&apos;s profile photo. Read-only.</summary>
         public ProfilePhoto Photo { get; set; }
         /// <summary>Read-only. Nullable.</summary>
         public List<ProfilePhoto> Photos { get; set; }
         /// <summary>Entry-point to the Planner resource that might exist for a user. Read-only.</summary>
         public PlannerUser Planner { get; set; }
-        /// <summary>The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+        /// <summary>The postal code for the user&apos;s postal address. The postal code is specific to the user&apos;s country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
         public string PostalCode { get; set; }
         /// <summary>The preferred data location for the user. For more information, see OneDrive Online Multi-Geo.</summary>
         public string PreferredDataLocation { get; set; }
@@ -216,13 +228,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string PreferredLanguage { get; set; }
         /// <summary>The preferred name for the user. Returned only on $select.</summary>
         public string PreferredName { get; set; }
+        /// <summary>The presence property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Presence Presence { get; set; }
+        /// <summary>The print property</summary>
         public UserPrint Print { get; set; }
         /// <summary>Represents properties that are descriptive of a user in a tenant.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Profile Profile { get; set; }
         /// <summary>The plans that are provisioned for the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le).</summary>
         public List<ProvisionedPlan> ProvisionedPlans { get; set; }
-        /// <summary>For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).</summary>
+        /// <summary>For example: [&apos;SMTP: bob@contoso.com&apos;, &apos;smtp: bob@sales.contoso.com&apos;]. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).</summary>
         public List<string> ProxyAddresses { get; set; }
         /// <summary>Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Returned only on $select. Read-only.</summary>
         public DateTimeOffset? RefreshTokensValidFromDateTime { get; set; }
@@ -234,28 +248,31 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<string> Schools { get; set; }
         /// <summary>The scoped-role administrative unit memberships for this user. Read-only. Nullable.</summary>
         public List<ScopedRoleMembership> ScopedRoleMemberOf { get; set; }
+        /// <summary>The security property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Security.Security Security { get; set; }
         /// <summary>Read-only. Nullable.</summary>
         public UserSettings Settings { get; set; }
         /// <summary>true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Returned only on $select. Supports $filter (eq, ne, not, in).</summary>
         public bool? ShowInAddressList { get; set; }
-        /// <summary>Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but, not with any other filterable properties. Note: Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.Note: There's a known issue with retrieving this property.</summary>
+        /// <summary>Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but, not with any other filterable properties. Note: Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.Note: There&apos;s a known issue with retrieving this property.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.SignInActivity SignInActivity { get; set; }
         /// <summary>Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.</summary>
         public DateTimeOffset? SignInSessionsValidFromDateTime { get; set; }
         /// <summary>A list for the user to enumerate their skills. Returned only on $select.</summary>
         public List<string> Skills { get; set; }
-        /// <summary>The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+        /// <summary>The state or province in the user&apos;s address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
         public string State { get; set; }
-        /// <summary>The street address of the user's place of business. Maximum length is 1024 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+        /// <summary>The street address of the user&apos;s place of business. Maximum length is 1024 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
         public string StreetAddress { get; set; }
-        /// <summary>The user's surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+        /// <summary>The user&apos;s surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
         public string Surname { get; set; }
+        /// <summary>The tasks property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Tasks Tasks { get; set; }
         /// <summary>A container for Microsoft Teams features available for the user. Read-only. Nullable.</summary>
         public UserTeamwork Teamwork { get; set; }
         /// <summary>Represents the To Do services available to a user.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Todo Todo { get; set; }
+        /// <summary>The transitiveMemberOf property</summary>
         public List<DirectoryObject> TransitiveMemberOf { get; set; }
         /// <summary>The transitive reports for a user. Read-only.</summary>
         public List<DirectoryObject> TransitiveReports { get; set; }
@@ -263,7 +280,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string UsageLocation { get; set; }
         /// <summary>Represents the usage rights a user has been granted.</summary>
         public List<UsageRight> UsageRights { get; set; }
-        /// <summary>The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.</summary>
+        /// <summary>The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user&apos;s email name. The general format is alias@domain, where domain must be present in the tenant&apos;s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, &apos; . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.</summary>
         public string UserPrincipalName { get; set; }
         /// <summary>A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?</summary>
         public string UserType { get; set; }
