@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantGroups.Tena
     public class TenantSearchResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The value property</summary>
         public List<TenantGroup> Value { get; set; }
         /// <summary>
         /// Instantiates a new tenantSearchResponse and sets the default values.

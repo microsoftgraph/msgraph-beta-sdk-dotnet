@@ -10,7 +10,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>AAD join authentication type. Possible values are: singleUser, shared.</summary>
         public WindowsDeviceUsageType? DeviceUsageType { get; set; }
-        /// <summary>If set to true, then the user can't start over with different account, on company sign-in</summary>
+        /// <summary>If set to true, then the user can&apos;t start over with different account, on company sign-in</summary>
         public bool? HideEscapeLink { get; set; }
         /// <summary>Show or hide EULA to user</summary>
         public bool? HideEULA { get; set; }

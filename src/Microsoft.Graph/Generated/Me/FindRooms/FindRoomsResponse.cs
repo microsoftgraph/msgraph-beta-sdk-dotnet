@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Me.FindRooms {
     public class FindRoomsResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The value property</summary>
         public List<EmailAddress> Value { get; set; }
         /// <summary>
         /// Instantiates a new findRoomsResponse and sets the default values.

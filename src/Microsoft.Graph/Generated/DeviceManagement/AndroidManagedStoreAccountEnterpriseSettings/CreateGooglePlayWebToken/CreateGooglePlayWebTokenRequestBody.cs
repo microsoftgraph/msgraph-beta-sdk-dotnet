@@ -8,6 +8,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAccountEnterpris
     public class CreateGooglePlayWebTokenRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The parentUri property</summary>
         public string ParentUri { get; set; }
         /// <summary>
         /// Instantiates a new createGooglePlayWebTokenRequestBody and sets the default values.

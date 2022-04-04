@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Onenote.Pages.Item.OnenotePatchContent {
     public class OnenotePatchContentRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The commands property</summary>
         public List<OnenotePatchContentCommand> Commands { get; set; }
         /// <summary>
         /// Instantiates a new onenotePatchContentRequestBody and sets the default values.

@@ -7,7 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ExactMatchClassificationResult : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The classification property</summary>
         public List<ExactMatchDetectedSensitiveContent> Classification { get; set; }
+        /// <summary>The errors property</summary>
         public List<ClassificationError> Errors { get; set; }
         /// <summary>
         /// Instantiates a new exactMatchClassificationResult and sets the default values.

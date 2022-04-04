@@ -9,8 +9,11 @@ namespace MicrosoftGraphSdk.Me.Messages.Item.EventMessageRequest.TentativelyAcce
     public class TentativelyAcceptRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The Comment property</summary>
         public string Comment { get; set; }
+        /// <summary>The ProposedNewTime property</summary>
         public TimeSlot ProposedNewTime { get; set; }
+        /// <summary>The SendResponse property</summary>
         public bool? SendResponse { get; set; }
         /// <summary>
         /// Instantiates a new tentativelyAcceptRequestBody and sets the default values.

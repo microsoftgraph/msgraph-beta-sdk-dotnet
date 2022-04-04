@@ -5,8 +5,11 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class RbacApplicationMultiple : Entity, IParsable {
+        /// <summary>The resourceNamespaces property</summary>
         public List<UnifiedRbacResourceNamespace> ResourceNamespaces { get; set; }
+        /// <summary>The roleAssignments property</summary>
         public List<UnifiedRoleAssignmentMultiple> RoleAssignments { get; set; }
+        /// <summary>The roleDefinitions property</summary>
         public List<UnifiedRoleDefinition> RoleDefinitions { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

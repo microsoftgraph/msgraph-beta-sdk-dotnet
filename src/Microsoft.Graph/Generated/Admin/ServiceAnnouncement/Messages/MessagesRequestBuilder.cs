@@ -19,18 +19,23 @@ using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages {
     /// <summary>Provides operations to manage the messages property of the microsoft.graph.serviceAnnouncement entity.</summary>
     public class MessagesRequestBuilder {
+        /// <summary>The archive property</summary>
         public ArchiveRequestBuilder Archive { get =>
             new ArchiveRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The favorite property</summary>
         public FavoriteRequestBuilder Favorite { get =>
             new FavoriteRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The markRead property</summary>
         public MarkReadRequestBuilder MarkRead { get =>
             new MarkReadRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The markUnread property</summary>
         public MarkUnreadRequestBuilder MarkUnread { get =>
             new MarkUnreadRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -38,9 +43,11 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The unarchive property</summary>
         public UnarchiveRequestBuilder Unarchive { get =>
             new UnarchiveRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The unfavorite property</summary>
         public UnfavoriteRequestBuilder Unfavorite { get =>
             new UnfavoriteRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -81,32 +88,32 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages {
         }
         /// <summary>
         /// A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
-        /// <param name="q">Request query parameters</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
+        /// <param name="queryParameters">Request query parameters</param>
         /// </summary>
-        public RequestInformation CreateGetRequestInformation(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreateGetRequestInformation(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            if (q != null) {
+            if (queryParameters != null) {
                 var qParams = new GetQueryParameters();
-                q.Invoke(qParams);
+                queryParameters.Invoke(qParams);
                 qParams.AddQueryParameters(requestInfo.QueryParameters);
             }
-            h?.Invoke(requestInfo.Headers);
-            requestInfo.AddRequestOptions(o?.ToArray());
+            headers?.Invoke(requestInfo.Headers);
+            requestInfo.AddRequestOptions(options?.ToArray());
             return requestInfo;
         }
         /// <summary>
         /// Create new navigation property to messages for admin
         /// <param name="body"></param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(ServiceUpdateMessage body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePostRequestInformation(ServiceUpdateMessage body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -114,20 +121,20 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages {
                 PathParameters = PathParameters,
             };
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
-            h?.Invoke(requestInfo.Headers);
-            requestInfo.AddRequestOptions(o?.ToArray());
+            headers?.Invoke(requestInfo.Headers);
+            requestInfo.AddRequestOptions(options?.ToArray());
             return requestInfo;
         }
         /// <summary>
         /// A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
-        /// <param name="q">Request query parameters</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
+        /// <param name="queryParameters">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ServiceUpdateMessageCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateGetRequestInformation(q, h, o);
+        public async Task<ServiceUpdateMessageCollectionResponse> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+            var requestInfo = CreateGetRequestInformation(queryParameters, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
@@ -138,13 +145,13 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages {
         /// Create new navigation property to messages for admin
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ServiceUpdateMessage> PostAsync(ServiceUpdateMessage body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<ServiceUpdateMessage> PostAsync(ServiceUpdateMessage body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = CreatePostRequestInformation(body, h, o);
+            var requestInfo = CreatePostRequestInformation(body, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},

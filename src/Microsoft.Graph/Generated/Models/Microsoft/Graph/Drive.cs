@@ -19,10 +19,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.List List { get; set; }
         /// <summary>Optional. The user account that owns the drive. Read-only.</summary>
         public IdentitySet Owner { get; set; }
-        /// <summary>Optional. Information about the drive's storage space quota. Read-only.</summary>
+        /// <summary>Optional. Information about the drive&apos;s storage space quota. Read-only.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Quota Quota { get; set; }
         /// <summary>The root folder of the drive. Read-only.</summary>
         public DriveItem Root { get; set; }
+        /// <summary>The sharePointIds property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.SharepointIds SharePointIds { get; set; }
         /// <summary>Collection of common folders available in OneDrive. Read-only. Nullable.</summary>
         public List<DriveItem> Special { get; set; }

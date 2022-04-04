@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AuthoredNote : Entity, IParsable {
-        /// <summary>Identity information about the note's author.</summary>
+        /// <summary>Identity information about the note&apos;s author.</summary>
         public Identity Author { get; set; }
         /// <summary>The content of the note.</summary>
         public ItemBody Content { get; set; }

@@ -8,7 +8,9 @@ namespace MicrosoftGraphSdk.Workbooks.Item.ValidatePermission {
     public class ValidatePermissionRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The challengeToken property</summary>
         public string ChallengeToken { get; set; }
+        /// <summary>The password property</summary>
         public string Password { get; set; }
         /// <summary>
         /// Instantiates a new validatePermissionRequestBody and sets the default values.

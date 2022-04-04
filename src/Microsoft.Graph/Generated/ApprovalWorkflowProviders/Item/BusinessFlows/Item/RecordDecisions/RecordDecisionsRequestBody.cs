@@ -8,7 +8,9 @@ namespace MicrosoftGraphSdk.ApprovalWorkflowProviders.Item.BusinessFlows.Item.Re
     public class RecordDecisionsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The justification property</summary>
         public string Justification { get; set; }
+        /// <summary>The reviewResult property</summary>
         public string ReviewResult { get; set; }
         /// <summary>
         /// Instantiates a new recordDecisionsRequestBody and sets the default values.

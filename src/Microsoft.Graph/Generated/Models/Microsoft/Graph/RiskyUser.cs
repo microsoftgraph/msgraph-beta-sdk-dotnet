@@ -9,7 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<RiskyUserHistoryItem> History { get; set; }
         /// <summary>Indicates whether the user is deleted. Possible values are: true, false.</summary>
         public bool? IsDeleted { get; set; }
-        /// <summary>Indicates whether a user's risky state is being processed by the backend.</summary>
+        /// <summary>Indicates whether a user&apos;s risky state is being processed by the backend.</summary>
         public bool? IsProcessing { get; set; }
         /// <summary>Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.RiskDetail? RiskDetail { get; set; }
@@ -17,7 +17,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? RiskLastUpdatedDateTime { get; set; }
         /// <summary>Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.RiskLevel? RiskLevel { get; set; }
-        /// <summary>State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.</summary>
+        /// <summary>State of the user&apos;s risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.RiskState? RiskState { get; set; }
         /// <summary>Risky user display name.</summary>
         public string UserDisplayName { get; set; }

@@ -11,6 +11,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string Email { get; set; }
         /// <summary>Provides information about who sent the invitation that created this permission, if that information is available. Read-only.</summary>
         public IdentitySet InvitedBy { get; set; }
+        /// <summary>The redeemedBy property</summary>
         public string RedeemedBy { get; set; }
         /// <summary>If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.</summary>
         public bool? SignInRequired { get; set; }

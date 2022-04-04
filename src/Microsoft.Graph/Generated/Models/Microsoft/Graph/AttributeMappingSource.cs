@@ -7,9 +7,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AttributeMappingSource : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The expression property</summary>
         public string Expression { get; set; }
+        /// <summary>The name property</summary>
         public string Name { get; set; }
+        /// <summary>The parameters property</summary>
         public List<StringKeyAttributeMappingSourceValuePair> Parameters { get; set; }
+        /// <summary>The type property</summary>
         public AttributeMappingSourceType? Type { get; set; }
         /// <summary>
         /// Instantiates a new attributeMappingSource and sets the default values.

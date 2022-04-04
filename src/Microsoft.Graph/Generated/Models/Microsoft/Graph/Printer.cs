@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Printer : PrinterBase, IParsable {
+        /// <summary>The acceptingJobs property</summary>
         public bool? AcceptingJobs { get; set; }
         /// <summary>The connectors that are associated with the printer.</summary>
         public List<PrintConnector> Connectors { get; set; }
@@ -16,6 +17,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? LastSeenDateTime { get; set; }
         /// <summary>The DateTimeOffset when the printer was registered. Read-only.</summary>
         public DateTimeOffset? RegisteredDateTime { get; set; }
+        /// <summary>The share property</summary>
         public PrinterShare Share { get; set; }
         /// <summary>The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.</summary>
         public List<PrinterShare> Shares { get; set; }

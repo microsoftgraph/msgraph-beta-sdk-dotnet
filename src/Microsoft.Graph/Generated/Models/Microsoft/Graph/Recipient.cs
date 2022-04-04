@@ -7,7 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Recipient : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The recipient's email address.</summary>
+        /// <summary>The recipient&apos;s email address.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.EmailAddress EmailAddress { get; set; }
         /// <summary>
         /// Instantiates a new recipient and sets the default values.

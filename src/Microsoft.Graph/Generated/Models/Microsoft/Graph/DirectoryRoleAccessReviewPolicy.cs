@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DirectoryRoleAccessReviewPolicy : Entity, IParsable {
+        /// <summary>The settings property</summary>
         public AccessReviewScheduleSettings Settings { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

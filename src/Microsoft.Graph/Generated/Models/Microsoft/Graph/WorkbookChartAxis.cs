@@ -17,7 +17,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public Json Minimum { get; set; }
         /// <summary>Returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.</summary>
         public WorkbookChartGridlines MinorGridlines { get; set; }
-        /// <summary>Represents the interval between two minor tick marks. 'Can be set to a numeric value or an empty string (for automatic axis values). The returned value is always a number.</summary>
+        /// <summary>Represents the interval between two minor tick marks. &apos;Can be set to a numeric value or an empty string (for automatic axis values). The returned value is always a number.</summary>
         public Json MinorUnit { get; set; }
         /// <summary>Represents the axis title. Read-only.</summary>
         public WorkbookChartAxisTitle Title { get; set; }

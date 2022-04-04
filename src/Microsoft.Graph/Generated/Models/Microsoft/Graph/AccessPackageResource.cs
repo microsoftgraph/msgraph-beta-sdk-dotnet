@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AccessPackageResource : Entity, IParsable {
-        /// <summary>Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.</summary>
+        /// <summary>Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment&apos;s originId.Supports $expand.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageResourceEnvironment AccessPackageResourceEnvironment { get; set; }
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
         public List<AccessPackageResourceRole> AccessPackageResourceRoles { get; set; }

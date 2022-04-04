@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Security {
     public class InformationProtection : Entity, IParsable {
+        /// <summary>The labelPolicySettings property</summary>
         public InformationProtectionPolicySetting LabelPolicySettings { get; set; }
+        /// <summary>The sensitivityLabels property</summary>
         public List<SensitivityLabel> SensitivityLabels { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

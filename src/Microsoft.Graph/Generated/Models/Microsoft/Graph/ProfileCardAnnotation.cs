@@ -7,9 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ProfileCardAnnotation : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>If present, the value of this field is used by the profile card as the default property label in the experience (for example, 'Cost Center').</summary>
+        /// <summary>If present, the value of this field is used by the profile card as the default property label in the experience (for example, &apos;Cost Center&apos;).</summary>
         public string DisplayName { get; set; }
-        /// <summary>Each resource in this collection represents the localized value of the attribute name for a given language, used as the default label for that locale. For example, a user with a no-NB client gets 'Kostnads Senter' as the attribute label, rather than 'Cost Center.'</summary>
+        /// <summary>Each resource in this collection represents the localized value of the attribute name for a given language, used as the default label for that locale. For example, a user with a no-NB client gets &apos;Kostnads Senter&apos; as the attribute label, rather than &apos;Cost Center.&apos;</summary>
         public List<DisplayNameLocalization> Localizations { get; set; }
         /// <summary>
         /// Instantiates a new profileCardAnnotation and sets the default values.

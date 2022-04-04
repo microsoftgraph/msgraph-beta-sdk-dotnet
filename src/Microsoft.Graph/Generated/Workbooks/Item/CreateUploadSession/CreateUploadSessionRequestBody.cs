@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.CreateUploadSession {
     public class CreateUploadSessionRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The item property</summary>
         public DriveItemUploadableProperties Item { get; set; }
         /// <summary>
         /// Instantiates a new createUploadSessionRequestBody and sets the default values.

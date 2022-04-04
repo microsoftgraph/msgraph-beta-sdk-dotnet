@@ -5,8 +5,11 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Workbook : Entity, IParsable {
+        /// <summary>The application property</summary>
         public WorkbookApplication Application { get; set; }
+        /// <summary>The comments property</summary>
         public List<WorkbookComment> Comments { get; set; }
+        /// <summary>The functions property</summary>
         public WorkbookFunctions Functions { get; set; }
         /// <summary>Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.</summary>
         public List<WorkbookNamedItem> Names { get; set; }

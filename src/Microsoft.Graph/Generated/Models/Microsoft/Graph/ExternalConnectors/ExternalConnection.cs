@@ -13,6 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors {
         public string Description { get; set; }
         /// <summary>Read-only. Nullable.</summary>
         public List<ExternalGroup> Groups { get; set; }
+        /// <summary>The ingestedItemsCount property</summary>
         public long? IngestedItemsCount { get; set; }
         /// <summary>Read-only. Nullable.</summary>
         public List<ExternalItem> Items { get; set; }
@@ -20,6 +21,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors {
         public string Name { get; set; }
         /// <summary>Read-only. Nullable.</summary>
         public List<ConnectionOperation> Operations { get; set; }
+        /// <summary>The quota property</summary>
         public ConnectionQuota Quota { get; set; }
         /// <summary>Read-only. Nullable.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors.Schema Schema { get; set; }

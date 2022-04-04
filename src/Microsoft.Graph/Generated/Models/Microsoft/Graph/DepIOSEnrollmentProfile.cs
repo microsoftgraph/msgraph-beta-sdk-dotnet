@@ -11,13 +11,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public bool? AwaitDeviceConfiguredConfirmation { get; set; }
         /// <summary>Carrier URL for activating device eSIM.</summary>
         public string CarrierActivationUrl { get; set; }
-        /// <summary>If set, indicates which Vpp token should be used to deploy the Company Portal w/ device licensing. 'enableAuthenticationViaCompanyPortal' must be set in order for this property to be set.</summary>
+        /// <summary>If set, indicates which Vpp token should be used to deploy the Company Portal w/ device licensing. &apos;enableAuthenticationViaCompanyPortal&apos; must be set in order for this property to be set.</summary>
         public string CompanyPortalVppTokenId { get; set; }
         /// <summary>Indicates if Device To Device Migration is disabled</summary>
         public bool? DeviceToDeviceMigrationDisabled { get; set; }
         /// <summary>This indicates whether the device is to be enrolled in a mode which enables multi user scenarios. Only applicable in shared iPads.</summary>
         public bool? EnableSharedIPad { get; set; }
-        /// <summary>Tells the device to enable single app mode and apply app-lock during enrollment. Default is false. 'enableAuthenticationViaCompanyPortal' and 'companyPortalVppTokenId' must be set for this property to be set.</summary>
+        /// <summary>Tells the device to enable single app mode and apply app-lock during enrollment. Default is false. &apos;enableAuthenticationViaCompanyPortal&apos; and &apos;companyPortalVppTokenId&apos; must be set for this property to be set.</summary>
         public bool? EnableSingleAppEnrollmentMode { get; set; }
         /// <summary>Indicates if Express Language screen is disabled</summary>
         public bool? ExpressLanguageScreenDisabled { get; set; }
@@ -53,7 +53,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public int? TemporarySessionTimeoutInSeconds { get; set; }
         /// <summary>Indicates if Weclome screen is disabled</summary>
         public bool? UpdateCompleteScreenDisabled { get; set; }
-        /// <summary>Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See Shared iOS and iPadOS devices</summary>
+        /// <summary>Indicates that this apple device is designated to support &apos;shared device mode&apos; scenarios. This is distinct from the &apos;shared iPad&apos; scenario. See Shared iOS and iPadOS devices</summary>
         public bool? UserlessSharedAadModeEnabled { get; set; }
         /// <summary>Indicates timeout of temporary session</summary>
         public int? UserSessionTimeoutInSeconds { get; set; }

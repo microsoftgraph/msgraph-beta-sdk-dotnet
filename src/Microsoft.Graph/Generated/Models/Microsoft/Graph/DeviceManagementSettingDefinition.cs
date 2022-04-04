@@ -9,9 +9,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<DeviceManagementConstraint> Constraints { get; set; }
         /// <summary>Collection of dependencies on other settings</summary>
         public List<DeviceManagementSettingDependency> Dependencies { get; set; }
-        /// <summary>The setting's description</summary>
+        /// <summary>The setting&apos;s description</summary>
         public string Description { get; set; }
-        /// <summary>The setting's display name</summary>
+        /// <summary>The setting&apos;s display name</summary>
         public string DisplayName { get; set; }
         /// <summary>Url to setting documentation</summary>
         public string DocumentationUrl { get; set; }

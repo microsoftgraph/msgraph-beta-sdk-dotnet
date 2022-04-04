@@ -7,7 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ActionUrl : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
+        /// <summary>The url property</summary>
         public string Url { get; set; }
         /// <summary>
         /// Instantiates a new actionUrl and sets the default values.

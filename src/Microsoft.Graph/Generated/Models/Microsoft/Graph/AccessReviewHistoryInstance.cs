@@ -9,15 +9,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string DownloadUri { get; set; }
         /// <summary>Timestamp when this instance and associated data expires and the history is deleted. Required.</summary>
         public DateTimeOffset? ExpirationDateTime { get; set; }
-        /// <summary>Timestamp when all of the available data for this instance was collected. This will be set after this instance's status is set to done. Required.</summary>
+        /// <summary>Timestamp when all of the available data for this instance was collected. This will be set after this instance&apos;s status is set to done. Required.</summary>
         public DateTimeOffset? FulfilledDateTime { get; set; }
         /// <summary>Timestamp, reviews ending on or before this date will be included in the fetched history data.</summary>
         public DateTimeOffset? ReviewHistoryPeriodEndDateTime { get; set; }
         /// <summary>Timestamp, reviews starting on or after this date will be included in the fetched history data.</summary>
         public DateTimeOffset? ReviewHistoryPeriodStartDateTime { get; set; }
-        /// <summary>Timestamp when the instance's history data is scheduled to be generated.</summary>
+        /// <summary>Timestamp when the instance&apos;s history data is scheduled to be generated.</summary>
         public DateTimeOffset? RunDateTime { get; set; }
-        /// <summary>Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue. Once the status has been marked as done, a link can be generated to retrieve the instance's data by calling generateDownloadUri method.</summary>
+        /// <summary>Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue. Once the status has been marked as done, a link can be generated to retrieve the instance&apos;s data by calling generateDownloadUri method.</summary>
         public AccessReviewHistoryStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

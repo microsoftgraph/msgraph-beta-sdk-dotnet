@@ -7,7 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UserExperienceAnalyticsDeviceWithoutCloudIdentity : Entity, IParsable {
         /// <summary>Azure Active Directory Device Id</summary>
         public string AzureAdDeviceId { get; set; }
-        /// <summary>The tenant attach device's name.</summary>
+        /// <summary>The tenant attach device&apos;s name.</summary>
         public string DeviceName { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

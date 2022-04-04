@@ -8,6 +8,7 @@ namespace MicrosoftGraphSdk.Directory.InboundSharedUserProfiles.Item.ExportPerso
     public class ExportPersonalDataRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The storageLocation property</summary>
         public string StorageLocation { get; set; }
         /// <summary>
         /// Instantiates a new exportPersonalDataRequestBody and sets the default values.

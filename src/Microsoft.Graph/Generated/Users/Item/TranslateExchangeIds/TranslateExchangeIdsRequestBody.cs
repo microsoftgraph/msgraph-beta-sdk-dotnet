@@ -9,8 +9,11 @@ namespace MicrosoftGraphSdk.Users.Item.TranslateExchangeIds {
     public class TranslateExchangeIdsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The InputIds property</summary>
         public List<string> InputIds { get; set; }
+        /// <summary>The SourceIdType property</summary>
         public ExchangeIdFormat? SourceIdType { get; set; }
+        /// <summary>The TargetIdType property</summary>
         public ExchangeIdFormat? TargetIdType { get; set; }
         /// <summary>
         /// Instantiates a new translateExchangeIdsRequestBody and sets the default values.

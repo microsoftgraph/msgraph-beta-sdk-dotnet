@@ -5,22 +5,39 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Item {
     public class Item : Entity, IParsable {
+        /// <summary>The baseUnitOfMeasureId property</summary>
         public string BaseUnitOfMeasureId { get; set; }
+        /// <summary>The blocked property</summary>
         public bool? Blocked { get; set; }
+        /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
+        /// <summary>The gtin property</summary>
         public string Gtin { get; set; }
+        /// <summary>The inventory property</summary>
         public decimal? Inventory { get; set; }
+        /// <summary>The itemCategory property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ItemCategory ItemCategory { get; set; }
+        /// <summary>The itemCategoryCode property</summary>
         public string ItemCategoryCode { get; set; }
+        /// <summary>The itemCategoryId property</summary>
         public string ItemCategoryId { get; set; }
+        /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+        /// <summary>The number property</summary>
         public string Number { get; set; }
+        /// <summary>The picture property</summary>
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Picture> Picture { get; set; }
+        /// <summary>The priceIncludesTax property</summary>
         public bool? PriceIncludesTax { get; set; }
+        /// <summary>The taxGroupCode property</summary>
         public string TaxGroupCode { get; set; }
+        /// <summary>The taxGroupId property</summary>
         public string TaxGroupId { get; set; }
+        /// <summary>The type property</summary>
         public string Type { get; set; }
+        /// <summary>The unitCost property</summary>
         public decimal? UnitCost { get; set; }
+        /// <summary>The unitPrice property</summary>
         public decimal? UnitPrice { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

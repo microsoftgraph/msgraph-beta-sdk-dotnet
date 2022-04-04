@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ExchangeConnectors.Item.Sync {
     public class SyncRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The syncType property</summary>
         public DeviceManagementExchangeConnectorSyncType? SyncType { get; set; }
         /// <summary>
         /// Instantiates a new syncRequestBody and sets the default values.

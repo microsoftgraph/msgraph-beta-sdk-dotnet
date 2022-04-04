@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AzureADLicenseUsage : Entity, IParsable {
+        /// <summary>The licenseInfoDetails property</summary>
         public List<LicenseInfoDetail> LicenseInfoDetails { get; set; }
+        /// <summary>The snapshotDateTime property</summary>
         public DateTimeOffset? SnapshotDateTime { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

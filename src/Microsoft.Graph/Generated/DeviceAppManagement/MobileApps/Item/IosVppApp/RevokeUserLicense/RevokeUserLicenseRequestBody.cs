@@ -8,7 +8,9 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.IosVppApp.Revoke
     public class RevokeUserLicenseRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The notifyManagedDevices property</summary>
         public bool? NotifyManagedDevices { get; set; }
+        /// <summary>The userId property</summary>
         public string UserId { get; set; }
         /// <summary>
         /// Instantiates a new revokeUserLicenseRequestBody and sets the default values.

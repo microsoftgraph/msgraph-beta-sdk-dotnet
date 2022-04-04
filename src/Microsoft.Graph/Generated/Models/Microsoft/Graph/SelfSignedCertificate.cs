@@ -21,9 +21,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? StartDateTime { get; set; }
         /// <summary>The thumbprint value for the key.</summary>
         public string Thumbprint { get; set; }
-        /// <summary>The type of key credential. 'AsymmetricX509Cert'.</summary>
+        /// <summary>The type of key credential. &apos;AsymmetricX509Cert&apos;.</summary>
         public string Type { get; set; }
-        /// <summary>A string that describes the purpose for which the key can be used. For example, 'Verify'.</summary>
+        /// <summary>A string that describes the purpose for which the key can be used. For example, &apos;Verify&apos;.</summary>
         public string Usage { get; set; }
         /// <summary>
         /// Instantiates a new SelfSignedCertificate and sets the default values.

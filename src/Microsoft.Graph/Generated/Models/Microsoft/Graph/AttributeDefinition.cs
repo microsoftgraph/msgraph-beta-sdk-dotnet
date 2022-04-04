@@ -7,19 +7,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AttributeDefinition : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object's attributes must be designated as the anchor to support synchronization.</summary>
+        /// <summary>true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object&apos;s attributes must be designated as the anchor to support synchronization.</summary>
         public bool? Anchor { get; set; }
+        /// <summary>The apiExpressions property</summary>
         public List<StringKeyStringValuePair> ApiExpressions { get; set; }
         /// <summary>true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.</summary>
         public bool? CaseExact { get; set; }
+        /// <summary>The defaultValue property</summary>
         public string DefaultValue { get; set; }
-        /// <summary>'true' to allow null values for attributes.</summary>
+        /// <summary>&apos;true&apos; to allow null values for attributes.</summary>
         public bool? FlowNullValues { get; set; }
         /// <summary>Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.</summary>
         public List<MetadataEntry> Metadata { get; set; }
         /// <summary>true if an attribute can have multiple values. Default is false.</summary>
         public bool? Multivalued { get; set; }
-        /// <summary>An attribute's mutability. Possible values are:  ReadWrite, ReadOnly, Immutable, WriteOnly. Default is ReadWrite.</summary>
+        /// <summary>An attribute&apos;s mutability. Possible values are:  ReadWrite, ReadOnly, Immutable, WriteOnly. Default is ReadWrite.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Mutability? Mutability { get; set; }
         /// <summary>Name of the attribute. Must be unique within the object definition. Not nullable.</summary>
         public string Name { get; set; }

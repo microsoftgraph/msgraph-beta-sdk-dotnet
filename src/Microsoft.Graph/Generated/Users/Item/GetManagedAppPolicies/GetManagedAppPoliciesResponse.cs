@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Users.Item.GetManagedAppPolicies {
     public class GetManagedAppPoliciesResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The value property</summary>
         public List<ManagedAppPolicy> Value { get; set; }
         /// <summary>
         /// Instantiates a new getManagedAppPoliciesResponse and sets the default values.

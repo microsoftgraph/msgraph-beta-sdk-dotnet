@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AuthenticationMethodsRoot : Entity, IParsable {
-        /// <summary>Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).</summary>
+        /// <summary>Represents the state of a user&apos;s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).</summary>
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.UserRegistrationDetails> UserRegistrationDetails { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

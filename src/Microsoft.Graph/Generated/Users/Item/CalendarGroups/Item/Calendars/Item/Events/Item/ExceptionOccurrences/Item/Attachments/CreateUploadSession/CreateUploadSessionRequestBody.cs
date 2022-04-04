@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Users.Item.CalendarGroups.Item.Calendars.Item.Events
     public class CreateUploadSessionRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The AttachmentItem property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AttachmentItem AttachmentItem { get; set; }
         /// <summary>
         /// Instantiates a new createUploadSessionRequestBody and sets the default values.

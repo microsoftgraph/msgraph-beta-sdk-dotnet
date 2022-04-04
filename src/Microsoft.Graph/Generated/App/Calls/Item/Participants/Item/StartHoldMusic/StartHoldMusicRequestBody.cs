@@ -9,7 +9,9 @@ namespace MicrosoftGraphSdk.App.Calls.Item.Participants.Item.StartHoldMusic {
     public class StartHoldMusicRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The clientContext property</summary>
         public string ClientContext { get; set; }
+        /// <summary>The customPrompt property</summary>
         public Prompt CustomPrompt { get; set; }
         /// <summary>
         /// Instantiates a new startHoldMusicRequestBody and sets the default values.

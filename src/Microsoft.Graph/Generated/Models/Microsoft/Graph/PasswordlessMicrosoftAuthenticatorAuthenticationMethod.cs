@@ -5,9 +5,11 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PasswordlessMicrosoftAuthenticatorAuthenticationMethod : AuthenticationMethod, IParsable {
+        /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>The timestamp when this method was registered to the user.</summary>
         public DateTimeOffset? CreationDateTime { get; set; }
+        /// <summary>The device property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Device Device { get; set; }
         /// <summary>The display name of the mobile device as given by the user.</summary>
         public string DisplayName { get; set; }

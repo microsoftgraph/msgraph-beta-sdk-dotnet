@@ -7,11 +7,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class TodoTask : Entity, IParsable {
         /// <summary>The task body that typically contains information about the task.</summary>
         public ItemBody Body { get; set; }
-        /// <summary>The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.</summary>
+        /// <summary>The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: &apos;2020-01-01T00:00:00Z&apos;.</summary>
         public DateTimeOffset? BodyLastModifiedDateTime { get; set; }
         /// <summary>The date in the specified time zone that the task was finished.</summary>
         public DateTimeTimeZone CompletedDateTime { get; set; }
-        /// <summary>The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.</summary>
+        /// <summary>The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: &apos;2020-01-01T00:00:00Z&apos;.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>The date in the specified time zone that the task is to be finished.</summary>
         public DateTimeTimeZone DueDateTime { get; set; }
@@ -21,7 +21,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Importance? Importance { get; set; }
         /// <summary>Set to true if an alert is set to remind the user of the task.</summary>
         public bool? IsReminderOn { get; set; }
-        /// <summary>The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.</summary>
+        /// <summary>The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: &apos;2020-01-01T00:00:00Z&apos;.</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
         /// <summary>A collection of resources linked to the task.</summary>
         public List<LinkedResource> LinkedResources { get; set; }

@@ -8,7 +8,9 @@ namespace MicrosoftGraphSdk.Applications.Item.RemoveKey {
     public class RemoveKeyRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The keyId property</summary>
         public string KeyId { get; set; }
+        /// <summary>The proof property</summary>
         public string Proof { get; set; }
         /// <summary>
         /// Instantiates a new removeKeyRequestBody and sets the default values.

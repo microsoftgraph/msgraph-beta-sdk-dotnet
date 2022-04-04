@@ -16,7 +16,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore {
         /// <summary>Last date and time of term modification. Read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
         /// <summary>Collection of properties on the term.</summary>
-        public List<KeyValue> Properties { get; set; }
+        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.KeyValue> Properties { get; set; }
         /// <summary>To indicate which terms are related to the current term as either pinned or reused.</summary>
         public List<Relation> Relations { get; set; }
         /// <summary>The [set] in which the term is created.</summary>
@@ -39,7 +39,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore {
                 {"descriptions", (o,n) => { (o as Term).Descriptions = n.GetCollectionOfObjectValues<LocalizedDescription>(LocalizedDescription.CreateFromDiscriminatorValue).ToList(); } },
                 {"labels", (o,n) => { (o as Term).Labels = n.GetCollectionOfObjectValues<LocalizedLabel>(LocalizedLabel.CreateFromDiscriminatorValue).ToList(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as Term).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"properties", (o,n) => { (o as Term).Properties = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue).ToList(); } },
+                {"properties", (o,n) => { (o as Term).Properties = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.KeyValue>(MicrosoftGraphSdk.Models.Microsoft.Graph.KeyValue.CreateFromDiscriminatorValue).ToList(); } },
                 {"relations", (o,n) => { (o as Term).Relations = n.GetCollectionOfObjectValues<Relation>(Relation.CreateFromDiscriminatorValue).ToList(); } },
                 {"set", (o,n) => { (o as Term).Set = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Set>(MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Set.CreateFromDiscriminatorValue); } },
             };
@@ -56,7 +56,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore {
             writer.WriteCollectionOfObjectValues<LocalizedDescription>("descriptions", Descriptions);
             writer.WriteCollectionOfObjectValues<LocalizedLabel>("labels", Labels);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteCollectionOfObjectValues<KeyValue>("properties", Properties);
+            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.KeyValue>("properties", Properties);
             writer.WriteCollectionOfObjectValues<Relation>("relations", Relations);
             writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Set>("set", Set);
         }

@@ -7,7 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Permission : Entity, IParsable {
         /// <summary>A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.</summary>
         public DateTimeOffset? ExpirationDateTime { get; set; }
+        /// <summary>The grantedTo property</summary>
         public IdentitySet GrantedTo { get; set; }
+        /// <summary>The grantedToIdentities property</summary>
         public List<IdentitySet> GrantedToIdentities { get; set; }
         /// <summary>For link type permissions, the details of the users to whom permission was granted. Read-only.</summary>
         public List<SharePointIdentitySet> GrantedToIdentitiesV2 { get; set; }

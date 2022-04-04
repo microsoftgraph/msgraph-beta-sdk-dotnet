@@ -8,7 +8,9 @@ namespace MicrosoftGraphSdk.DirectoryRoleTemplates.GetByIds {
     public class GetByIdsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The ids property</summary>
         public List<string> Ids { get; set; }
+        /// <summary>The types property</summary>
         public List<string> Types { get; set; }
         /// <summary>
         /// Instantiates a new getByIdsRequestBody and sets the default values.

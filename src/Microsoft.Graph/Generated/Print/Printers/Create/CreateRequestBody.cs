@@ -9,12 +9,19 @@ namespace MicrosoftGraphSdk.Print.Printers.Create {
     public class CreateRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The certificateSigningRequest property</summary>
         public PrintCertificateSigningRequest CertificateSigningRequest { get; set; }
+        /// <summary>The connectorId property</summary>
         public string ConnectorId { get; set; }
+        /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
+        /// <summary>The hasPhysicalDevice property</summary>
         public bool? HasPhysicalDevice { get; set; }
+        /// <summary>The manufacturer property</summary>
         public string Manufacturer { get; set; }
+        /// <summary>The model property</summary>
         public string Model { get; set; }
+        /// <summary>The physicalDeviceId property</summary>
         public string PhysicalDeviceId { get; set; }
         /// <summary>
         /// Instantiates a new createRequestBody and sets the default values.

@@ -7,7 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
     public class Custodian : DataSourceContainer, IParsable {
         /// <summary>Date and time the custodian acknowledged a hold notification.</summary>
         public DateTimeOffset? AcknowledgedDateTime { get; set; }
-        /// <summary>Identifies whether a custodian's sources were placed on hold during creation.</summary>
+        /// <summary>Identifies whether a custodian&apos;s sources were placed on hold during creation.</summary>
         public bool? ApplyHoldToSources { get; set; }
         /// <summary>Email address of the custodian.</summary>
         public string Email { get; set; }
@@ -15,7 +15,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
         public List<SiteSource> SiteSources { get; set; }
         /// <summary>Data source entity for groups associated with the custodian.</summary>
         public List<UnifiedGroupSource> UnifiedGroupSources { get; set; }
-        /// <summary>Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.</summary>
+        /// <summary>Data source entity for a the custodian. This is the container for a custodian&apos;s mailbox and OneDrive for Business site.</summary>
         public List<UserSource> UserSources { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

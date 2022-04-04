@@ -5,10 +5,13 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ActionStep : IAdditionalDataHolder, IParsable {
+        /// <summary>The actionUrl property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ActionUrl ActionUrl { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The stepNumber property</summary>
         public long? StepNumber { get; set; }
+        /// <summary>The text property</summary>
         public string Text { get; set; }
         /// <summary>
         /// Instantiates a new actionStep and sets the default values.

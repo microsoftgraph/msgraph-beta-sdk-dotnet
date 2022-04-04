@@ -7,6 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AggregationOption : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The bucketDefinition property</summary>
         public BucketAggregationDefinition BucketDefinition { get; set; }
         /// <summary>Computes aggregation on the field while the field exists in current entity type. Required.</summary>
         public string Field { get; set; }

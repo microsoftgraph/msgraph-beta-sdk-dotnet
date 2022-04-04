@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Me.CalendarView.Item.SnoozeReminder {
     public class SnoozeReminderRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The NewReminderTime property</summary>
         public DateTimeTimeZone NewReminderTime { get; set; }
         /// <summary>
         /// Instantiates a new snoozeReminderRequestBody and sets the default values.

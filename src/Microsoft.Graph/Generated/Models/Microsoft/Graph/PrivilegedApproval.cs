@@ -5,21 +5,27 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PrivilegedApproval : Entity, IParsable {
+        /// <summary>The approvalDuration property</summary>
         public TimeSpan? ApprovalDuration { get; set; }
         /// <summary>Possible values are: pending, approved, denied, aborted, canceled.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ApprovalState? ApprovalState { get; set; }
+        /// <summary>The approvalType property</summary>
         public string ApprovalType { get; set; }
+        /// <summary>The approverReason property</summary>
         public string ApproverReason { get; set; }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? EndDateTime { get; set; }
         /// <summary>Read-only. The role assignment request for this approval object</summary>
         public PrivilegedRoleAssignmentRequest Request { get; set; }
+        /// <summary>The requestorReason property</summary>
         public string RequestorReason { get; set; }
+        /// <summary>The roleId property</summary>
         public string RoleId { get; set; }
         /// <summary>Read-only. Nullable.</summary>
         public PrivilegedRole RoleInfo { get; set; }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? StartDateTime { get; set; }
+        /// <summary>The userId property</summary>
         public string UserId { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

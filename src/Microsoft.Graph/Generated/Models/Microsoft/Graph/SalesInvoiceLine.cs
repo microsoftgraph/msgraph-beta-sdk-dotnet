@@ -7,29 +7,53 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SalesInvoiceLine : Entity, IParsable {
+        /// <summary>The account property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Account Account { get; set; }
+        /// <summary>The accountId property</summary>
         public string AccountId { get; set; }
+        /// <summary>The amountExcludingTax property</summary>
         public decimal? AmountExcludingTax { get; set; }
+        /// <summary>The amountIncludingTax property</summary>
         public decimal? AmountIncludingTax { get; set; }
+        /// <summary>The description property</summary>
         public string Description { get; set; }
+        /// <summary>The discountAmount property</summary>
         public decimal? DiscountAmount { get; set; }
+        /// <summary>The discountAppliedBeforeTax property</summary>
         public bool? DiscountAppliedBeforeTax { get; set; }
+        /// <summary>The discountPercent property</summary>
         public decimal? DiscountPercent { get; set; }
+        /// <summary>The documentId property</summary>
         public string DocumentId { get; set; }
+        /// <summary>The invoiceDiscountAllocation property</summary>
         public decimal? InvoiceDiscountAllocation { get; set; }
+        /// <summary>The item property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Item.Item Item { get; set; }
+        /// <summary>The itemId property</summary>
         public string ItemId { get; set; }
+        /// <summary>The lineType property</summary>
         public string LineType { get; set; }
+        /// <summary>The netAmount property</summary>
         public decimal? NetAmount { get; set; }
+        /// <summary>The netAmountIncludingTax property</summary>
         public decimal? NetAmountIncludingTax { get; set; }
+        /// <summary>The netTaxAmount property</summary>
         public decimal? NetTaxAmount { get; set; }
+        /// <summary>The quantity property</summary>
         public decimal? Quantity { get; set; }
+        /// <summary>The sequence property</summary>
         public int? Sequence { get; set; }
+        /// <summary>The shipmentDate property</summary>
         public Date? ShipmentDate { get; set; }
+        /// <summary>The taxCode property</summary>
         public string TaxCode { get; set; }
+        /// <summary>The taxPercent property</summary>
         public decimal? TaxPercent { get; set; }
+        /// <summary>The totalTaxAmount property</summary>
         public decimal? TotalTaxAmount { get; set; }
+        /// <summary>The unitOfMeasureId property</summary>
         public string UnitOfMeasureId { get; set; }
+        /// <summary>The unitPrice property</summary>
         public decimal? UnitPrice { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

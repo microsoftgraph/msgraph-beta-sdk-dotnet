@@ -13,15 +13,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string ContainerType { get; set; }
         /// <summary>A path leading to the folder in which the item is stored.</summary>
         public string ContainerWebUrl { get; set; }
-        /// <summary>The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.</summary>
+        /// <summary>The item&apos;s media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.</summary>
         public string MediaType { get; set; }
         /// <summary>A URL leading to the preview image for the item.</summary>
         public string PreviewImageUrl { get; set; }
         /// <summary>A preview text for the item.</summary>
         public string PreviewText { get; set; }
-        /// <summary>The item's title text.</summary>
+        /// <summary>The item&apos;s title text.</summary>
         public string Title { get; set; }
-        /// <summary>The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.</summary>
+        /// <summary>The item&apos;s media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.</summary>
         public string Type { get; set; }
         /// <summary>
         /// Instantiates a new resourceVisualization and sets the default values.

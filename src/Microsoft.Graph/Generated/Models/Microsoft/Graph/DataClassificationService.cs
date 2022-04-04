@@ -6,14 +6,23 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the dataClassificationService singleton.</summary>
     public class DataClassificationService : Entity, IParsable {
+        /// <summary>The classifyFileJobs property</summary>
         public List<JobResponseBase> ClassifyFileJobs { get; set; }
+        /// <summary>The classifyTextJobs property</summary>
         public List<JobResponseBase> ClassifyTextJobs { get; set; }
+        /// <summary>The evaluateDlpPoliciesJobs property</summary>
         public List<JobResponseBase> EvaluateDlpPoliciesJobs { get; set; }
+        /// <summary>The evaluateLabelJobs property</summary>
         public List<JobResponseBase> EvaluateLabelJobs { get; set; }
+        /// <summary>The exactMatchDataStores property</summary>
         public List<ExactMatchDataStore> ExactMatchDataStores { get; set; }
+        /// <summary>The exactMatchUploadAgents property</summary>
         public List<ExactMatchUploadAgent> ExactMatchUploadAgents { get; set; }
+        /// <summary>The jobs property</summary>
         public List<JobResponseBase> Jobs { get; set; }
+        /// <summary>The sensitiveTypes property</summary>
         public List<SensitiveType> SensitiveTypes { get; set; }
+        /// <summary>The sensitivityLabels property</summary>
         public List<SensitivityLabel> SensitivityLabels { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

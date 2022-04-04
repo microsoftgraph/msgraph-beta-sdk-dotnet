@@ -7,7 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class EvaluateLabelJobResultGroup : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The automatic property</summary>
         public EvaluateLabelJobResult Automatic { get; set; }
+        /// <summary>The recommended property</summary>
         public EvaluateLabelJobResult Recommended { get; set; }
         /// <summary>
         /// Instantiates a new evaluateLabelJobResultGroup and sets the default values.

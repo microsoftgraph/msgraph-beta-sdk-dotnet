@@ -15,6 +15,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string ConversationThreadId { get; set; }
         /// <summary>The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.</summary>
         public List<Extension> Extensions { get; set; }
+        /// <summary>The from property</summary>
         public Recipient From { get; set; }
         /// <summary>Indicates whether the post has at least one attachment. This is a default property.</summary>
         public bool? HasAttachments { get; set; }
@@ -22,6 +23,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Importance? Importance { get; set; }
         /// <summary>Read-only. Supports $expand.</summary>
         public Post InReplyTo { get; set; }
+        /// <summary>The mentions property</summary>
         public List<Mention> Mentions { get; set; }
         /// <summary>The collection of multi-value extended properties defined for the post. Read-only. Nullable.</summary>
         public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties { get; set; }

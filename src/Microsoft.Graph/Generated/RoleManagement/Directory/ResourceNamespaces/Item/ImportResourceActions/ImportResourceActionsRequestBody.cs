@@ -8,8 +8,11 @@ namespace MicrosoftGraphSdk.RoleManagement.Directory.ResourceNamespaces.Item.Imp
     public class ImportResourceActionsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The format property</summary>
         public string Format { get; set; }
+        /// <summary>The overwriteResourceNamespace property</summary>
         public bool? OverwriteResourceNamespace { get; set; }
+        /// <summary>The value property</summary>
         public string Value { get; set; }
         /// <summary>
         /// Instantiates a new importResourceActionsRequestBody and sets the default values.

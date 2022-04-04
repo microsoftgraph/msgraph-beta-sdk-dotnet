@@ -6,17 +6,29 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class JournalLine : Entity, IParsable {
+        /// <summary>The account property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Account Account { get; set; }
+        /// <summary>The accountId property</summary>
         public string AccountId { get; set; }
+        /// <summary>The accountNumber property</summary>
         public string AccountNumber { get; set; }
+        /// <summary>The amount property</summary>
         public decimal? Amount { get; set; }
+        /// <summary>The comment property</summary>
         public string Comment { get; set; }
+        /// <summary>The description property</summary>
         public string Description { get; set; }
+        /// <summary>The documentNumber property</summary>
         public string DocumentNumber { get; set; }
+        /// <summary>The externalDocumentNumber property</summary>
         public string ExternalDocumentNumber { get; set; }
+        /// <summary>The journalDisplayName property</summary>
         public string JournalDisplayName { get; set; }
+        /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+        /// <summary>The lineNumber property</summary>
         public int? LineNumber { get; set; }
+        /// <summary>The postingDate property</summary>
         public Date? PostingDate { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

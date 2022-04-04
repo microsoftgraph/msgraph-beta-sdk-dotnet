@@ -9,7 +9,9 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.DeviceAppManagementTasks.Item.Up
     public class UpdateStatusRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The note property</summary>
         public string Note { get; set; }
+        /// <summary>The status property</summary>
         public DeviceAppManagementTaskStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new updateStatusRequestBody and sets the default values.

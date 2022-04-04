@@ -8,9 +8,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Office365ActiveUserDetail : Entity, IParsable {
         /// <summary>All the products assigned for the user.</summary>
         public List<string> AssignedProducts { get; set; }
-        /// <summary>The date when the delete operation happened. Default value is 'null' when the user has not been deleted.</summary>
+        /// <summary>The date when the delete operation happened. Default value is &apos;null&apos; when the user has not been deleted.</summary>
         public Date? DeletedDate { get; set; }
-        /// <summary>The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates.</summary>
+        /// <summary>The name displayed in the address book for the user. This is usually the combination of the user&apos;s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates.</summary>
         public string DisplayName { get; set; }
         /// <summary>The date when user last read or sent email.</summary>
         public Date? ExchangeLastActivityDate { get; set; }
@@ -48,7 +48,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public Date? TeamsLastActivityDate { get; set; }
         /// <summary>The last date when the user was assigned a Teams license.</summary>
         public Date? TeamsLicenseAssignDate { get; set; }
-        /// <summary>The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant’s collection of verified domains. This property is required when a user is created.</summary>
+        /// <summary>The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user&apos;s email name. The general format is alias@domain, where domain must be present in the tenant’s collection of verified domains. This property is required when a user is created.</summary>
         public string UserPrincipalName { get; set; }
         /// <summary>The date when user last posted, read, or liked message.</summary>
         public Date? YammerLastActivityDate { get; set; }

@@ -7,10 +7,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SensitiveContentLocation : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The confidence property</summary>
         public int? Confidence { get; set; }
+        /// <summary>The evidences property</summary>
         public List<SensitiveContentEvidence> Evidences { get; set; }
+        /// <summary>The idMatch property</summary>
         public string IdMatch { get; set; }
+        /// <summary>The length property</summary>
         public int? Length { get; set; }
+        /// <summary>The offset property</summary>
         public int? Offset { get; set; }
         /// <summary>
         /// Instantiates a new sensitiveContentLocation and sets the default values.

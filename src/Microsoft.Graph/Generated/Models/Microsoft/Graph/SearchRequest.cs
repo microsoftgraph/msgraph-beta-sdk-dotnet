@@ -7,7 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SearchRequest : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Contains one or more filters to obtain search results aggregated and filtered to a specific value of a field. Optional.Build this filter based on a prior search that aggregates by the same field. From the response of the prior search, identify the searchBucket that filters results to the specific value of the field, use the string in its aggregationFilterToken property, and build an aggregation filter string in the format '{field}:/'{aggregationFilterToken}/''. If multiple values for the same field need to be provided, use the strings in its aggregationFilterToken property and build an aggregation filter string in the format '{field}:or(/'{aggregationFilterToken1}/',/'{aggregationFilterToken2}/')'. For example, searching and aggregating drive items by file type returns a searchBucket for the file type docx in the response. You can conveniently use the aggregationFilterToken returned for this searchBucket in a subsequent search query and filter matches down to drive items of the docx file type. Example 1 and example 2 show the actual requests and responses.</summary>
+        /// <summary>Contains one or more filters to obtain search results aggregated and filtered to a specific value of a field. Optional.Build this filter based on a prior search that aggregates by the same field. From the response of the prior search, identify the searchBucket that filters results to the specific value of the field, use the string in its aggregationFilterToken property, and build an aggregation filter string in the format &apos;{field}:/&apos;{aggregationFilterToken}/&apos;&apos;. If multiple values for the same field need to be provided, use the strings in its aggregationFilterToken property and build an aggregation filter string in the format &apos;{field}:or(/&apos;{aggregationFilterToken1}/&apos;,/&apos;{aggregationFilterToken2}/&apos;)&apos;. For example, searching and aggregating drive items by file type returns a searchBucket for the file type docx in the response. You can conveniently use the aggregationFilterToken returned for this searchBucket in a subsequent search query and filter matches down to drive items of the docx file type. Example 1 and example 2 show the actual requests and responses.</summary>
         public List<string> AggregationFilters { get; set; }
         /// <summary>Specifies aggregations (also known as refiners) to be returned alongside search results. Optional.</summary>
         public List<AggregationOption> Aggregations { get; set; }
@@ -21,8 +21,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<string> Fields { get; set; }
         /// <summary>Specifies the offset for the search results. Offset 0 returns the very first result. Optional.</summary>
         public int? From { get; set; }
+        /// <summary>The query property</summary>
         public SearchQuery Query { get; set; }
-        /// <summary>Query alteration options formatted in a JSON blob that contains two optional flags related to spelling correction. Optional.</summary>
+        /// <summary>Provides query alteration options formatted as a JSON blob that contains two optional flags related to spelling correction. Optional.</summary>
         public SearchAlterationOptions QueryAlterationOptions { get; set; }
         /// <summary>Provides the search result templates options for rendering connectors search results.</summary>
         public ResultTemplateOption ResultTemplateOptions { get; set; }
@@ -30,7 +31,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public int? Size { get; set; }
         /// <summary>Contains the ordered collection of fields and direction to sort results. There can be at most 5 sort properties in the collection. Optional.</summary>
         public List<SortProperty> SortProperties { get; set; }
+        /// <summary>The stored_fields property</summary>
         public List<string> Stored_fields { get; set; }
+        /// <summary>Indicates whether to trim away the duplicate SharePoint files from search results. Default value is false. Optional.</summary>
         public bool? TrimDuplicates { get; set; }
         /// <summary>
         /// Instantiates a new searchRequest and sets the default values.

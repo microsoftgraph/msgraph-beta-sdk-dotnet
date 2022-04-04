@@ -17,10 +17,10 @@ namespace MicrosoftGraphSdk.Me.ReminderViewWithStartDateTimeWithEndDateTime {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder and sets the default values.
-        /// <param name="EndDateTime">Usage: EndDateTime='{EndDateTime}'</param>
+        /// <param name="endDateTime">Usage: EndDateTime=&apos;{EndDateTime}&apos;</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// <param name="StartDateTime">Usage: StartDateTime='{StartDateTime}'</param>
+        /// <param name="startDateTime">Usage: StartDateTime=&apos;{StartDateTime}&apos;</param>
         /// </summary>
         public ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string endDateTime = default, string startDateTime = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
@@ -48,28 +48,28 @@ namespace MicrosoftGraphSdk.Me.ReminderViewWithStartDateTimeWithEndDateTime {
         }
         /// <summary>
         /// Invoke function reminderView
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreateGetRequestInformation(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreateGetRequestInformation(Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            h?.Invoke(requestInfo.Headers);
-            requestInfo.AddRequestOptions(o?.ToArray());
+            headers?.Invoke(requestInfo.Headers);
+            requestInfo.AddRequestOptions(options?.ToArray());
             return requestInfo;
         }
         /// <summary>
         /// Invoke function reminderView
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ReminderViewWithStartDateTimeWithEndDateTimeResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateGetRequestInformation(h, o);
+        public async Task<ReminderViewWithStartDateTimeWithEndDateTimeResponse> GetAsync(Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+            var requestInfo = CreateGetRequestInformation(headers, options);
             return await RequestAdapter.SendAsync<ReminderViewWithStartDateTimeWithEndDateTimeResponse>(requestInfo, ReminderViewWithStartDateTimeWithEndDateTimeResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }

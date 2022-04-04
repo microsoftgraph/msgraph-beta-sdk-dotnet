@@ -15,6 +15,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string ResourceId { get; set; }
         /// <summary>The associated role setting for the role definition.</summary>
         public GovernanceRoleSetting RoleSetting { get; set; }
+        /// <summary>The templateId property</summary>
         public string TemplateId { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

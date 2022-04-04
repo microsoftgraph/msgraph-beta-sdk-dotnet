@@ -31,10 +31,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         public List<ManagementActionTenantDeploymentStatus> ManagementActionTenantDeploymentStatuses { get; set; }
         /// <summary>The collection of baseline management intents across managed tenants.</summary>
         public List<ManagementIntent> ManagementIntents { get; set; }
+        /// <summary>The managementTemplateCollections property</summary>
         public List<ManagementTemplateCollection> ManagementTemplateCollections { get; set; }
         /// <summary>The collection of baseline management templates across managed tenants.</summary>
         public List<ManagementTemplate> ManagementTemplates { get; set; }
+        /// <summary>The managementTemplateSteps property</summary>
         public List<ManagementTemplateStep> ManagementTemplateSteps { get; set; }
+        /// <summary>The managementTemplateStepVersions property</summary>
         public List<ManagementTemplateStepVersion> ManagementTemplateStepVersions { get; set; }
         /// <summary>The collection of a logical grouping of managed tenants used by the multi-tenant management platform.</summary>
         public List<TenantGroup> TenantGroups { get; set; }

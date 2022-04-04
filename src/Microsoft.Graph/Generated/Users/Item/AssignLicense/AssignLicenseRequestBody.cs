@@ -9,7 +9,9 @@ namespace MicrosoftGraphSdk.Users.Item.AssignLicense {
     public class AssignLicenseRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The addLicenses property</summary>
         public List<AssignedLicense> AddLicenses { get; set; }
+        /// <summary>The removeLicenses property</summary>
         public List<string> RemoveLicenses { get; set; }
         /// <summary>
         /// Instantiates a new assignLicenseRequestBody and sets the default values.

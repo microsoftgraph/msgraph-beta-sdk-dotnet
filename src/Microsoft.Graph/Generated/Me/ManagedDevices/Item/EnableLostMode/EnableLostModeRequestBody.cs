@@ -8,8 +8,11 @@ namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.EnableLostMode {
     public class EnableLostModeRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The footer property</summary>
         public string Footer { get; set; }
+        /// <summary>The message property</summary>
         public string Message { get; set; }
+        /// <summary>The phoneNumber property</summary>
         public string PhoneNumber { get; set; }
         /// <summary>
         /// Instantiates a new enableLostModeRequestBody and sets the default values.

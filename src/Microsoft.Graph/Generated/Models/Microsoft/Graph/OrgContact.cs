@@ -11,7 +11,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string CompanyName { get; set; }
         /// <summary>The name for the department in which the contact works. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
         public string Department { get; set; }
-        /// <summary>The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable. Supports $expand.</summary>
+        /// <summary>The contact&apos;s direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable. Supports $expand.</summary>
         public List<DirectoryObject> DirectReports { get; set; }
         /// <summary>Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.</summary>
         public string DisplayName { get; set; }
@@ -19,11 +19,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string GivenName { get; set; }
         /// <summary>Job title for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
         public string JobTitle { get; set; }
-        /// <summary>The SMTP address for the contact, for example, 'jeff@contoso.onmicrosoft.com'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+        /// <summary>The SMTP address for the contact, for example, &apos;jeff@contoso.onmicrosoft.com&apos;. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
         public string Mail { get; set; }
         /// <summary>Email alias (portion of email address pre-pending the @ symbol) for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
         public string MailNickname { get; set; }
-        /// <summary>The user or contact that is this contact's manager. Read-only. Supports $expand.</summary>
+        /// <summary>The user or contact that is this contact&apos;s manager. Read-only. Supports $expand.</summary>
         public DirectoryObject Manager { get; set; }
         /// <summary>Groups that this contact is a member of. Read-only. Nullable. Supports $expand.</summary>
         public List<DirectoryObject> MemberOf { get; set; }
@@ -35,10 +35,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public bool? OnPremisesSyncEnabled { get; set; }
         /// <summary>List of phones for this organizational contact. Phone types can be mobile, business, and businessFax. Only one of each type can ever be present in the collection. Supports $filter (eq, ne, not, in).</summary>
         public List<Phone> Phones { get; set; }
-        /// <summary>For example: 'SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com'. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith).</summary>
+        /// <summary>For example: &apos;SMTP: bob@contoso.com&apos;, &apos;smtp: bob@sales.contoso.com&apos;. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith).</summary>
         public List<string> ProxyAddresses { get; set; }
         /// <summary>Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)</summary>
         public string Surname { get; set; }
+        /// <summary>The transitiveMemberOf property</summary>
         public List<DirectoryObject> TransitiveMemberOf { get; set; }
         /// <summary>The transitive reports for a contact. Read-only.</summary>
         public List<DirectoryObject> TransitiveReports { get; set; }

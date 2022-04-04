@@ -8,6 +8,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ApplePushNotificationCertificate.Ge
     public class GenerateApplePushNotificationCertificateSigningRequestResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The value property</summary>
         public string Value { get; set; }
         /// <summary>
         /// Instantiates a new generateApplePushNotificationCertificateSigningRequestResponse and sets the default values.

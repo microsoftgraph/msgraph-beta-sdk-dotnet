@@ -8,7 +8,9 @@ namespace MicrosoftGraphSdk.Me.ManagedDevices.MoveDevicesToOU {
     public class MoveDevicesToOURequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The deviceIds property</summary>
         public List<string> DeviceIds { get; set; }
+        /// <summary>The organizationalUnitPath property</summary>
         public string OrganizationalUnitPath { get; set; }
         /// <summary>
         /// Instantiates a new moveDevicesToOURequestBody and sets the default values.

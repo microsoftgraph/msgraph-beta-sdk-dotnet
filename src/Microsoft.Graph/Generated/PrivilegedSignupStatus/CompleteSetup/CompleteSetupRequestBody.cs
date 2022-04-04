@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.PrivilegedSignupStatus.CompleteSetup {
     public class CompleteSetupRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The tenantSetupInfo property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.TenantSetupInfo TenantSetupInfo { get; set; }
         /// <summary>
         /// Instantiates a new completeSetupRequestBody and sets the default values.

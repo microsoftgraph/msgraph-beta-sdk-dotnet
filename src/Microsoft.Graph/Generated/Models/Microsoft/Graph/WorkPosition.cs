@@ -9,10 +9,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<string> Categories { get; set; }
         /// <summary>Colleagues that are associated with this position.</summary>
         public List<RelatedPerson> Colleagues { get; set; }
+        /// <summary>The detail property</summary>
         public PositionDetail Detail { get; set; }
         /// <summary>Denotes whether or not the position is current.</summary>
         public bool? IsCurrent { get; set; }
-        /// <summary>Contains detail of the user's manager in this position.</summary>
+        /// <summary>Contains detail of the user&apos;s manager in this position.</summary>
         public RelatedPerson Manager { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

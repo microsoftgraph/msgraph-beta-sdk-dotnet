@@ -5,24 +5,27 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class TeamsAppDefinition : Entity, IParsable {
-        /// <summary>A collection of scopes where the Teams app can be installed. Possible values are:team — Indicates that the Teams app can be installed within a team and is authorized to access that team's data. groupChat  — Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat's data.  personal — Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user's data.</summary>
+        /// <summary>A collection of scopes where the Teams app can be installed. Possible values are:team — Indicates that the Teams app can be installed within a team and is authorized to access that team&apos;s data. groupChat  — Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat&apos;s data.  personal — Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user&apos;s data.</summary>
         public TeamsAppInstallationScopes? AllowedInstallationScopes { get; set; }
         /// <summary>The WebApplicationInfo.Id from the Teams app manifest.</summary>
         public string AzureADAppId { get; set; }
         /// <summary>The details of the bot specified in the Teams app manifest.</summary>
         public TeamworkBot Bot { get; set; }
-        /// <summary>The color version of the Teams app's icon.</summary>
+        /// <summary>The color version of the Teams app&apos;s icon.</summary>
         public TeamsAppIcon ColorIcon { get; set; }
+        /// <summary>The createdBy property</summary>
         public IdentitySet CreatedBy { get; set; }
         /// <summary>Verbose description of the application.</summary>
         public string Description { get; set; }
         /// <summary>The name of the app provided by the app developer.</summary>
         public string DisplayName { get; set; }
+        /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
-        /// <summary>The outline version of the Teams app's icon.</summary>
+        /// <summary>The outline version of the Teams app&apos;s icon.</summary>
         public TeamsAppIcon OutlineIcon { get; set; }
         /// <summary>The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.</summary>
         public TeamsAppPublishingState? PublishingState { get; set; }
+        /// <summary>The shortdescription property</summary>
         public string Shortdescription { get; set; }
         /// <summary>The ID from the Teams app manifest.</summary>
         public string TeamsAppId { get; set; }

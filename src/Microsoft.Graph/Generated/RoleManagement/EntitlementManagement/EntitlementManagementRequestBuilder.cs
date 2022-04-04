@@ -28,36 +28,47 @@ namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The resourceNamespaces property</summary>
         public ResourceNamespacesRequestBuilder ResourceNamespaces { get =>
             new ResourceNamespacesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The roleAssignmentApprovals property</summary>
         public RoleAssignmentApprovalsRequestBuilder RoleAssignmentApprovals { get =>
             new RoleAssignmentApprovalsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The roleAssignments property</summary>
         public RoleAssignmentsRequestBuilder RoleAssignments { get =>
             new RoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The roleAssignmentScheduleInstances property</summary>
         public RoleAssignmentScheduleInstancesRequestBuilder RoleAssignmentScheduleInstances { get =>
             new RoleAssignmentScheduleInstancesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The roleAssignmentScheduleRequests property</summary>
         public RoleAssignmentScheduleRequestsRequestBuilder RoleAssignmentScheduleRequests { get =>
             new RoleAssignmentScheduleRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The roleAssignmentSchedules property</summary>
         public RoleAssignmentSchedulesRequestBuilder RoleAssignmentSchedules { get =>
             new RoleAssignmentSchedulesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The roleDefinitions property</summary>
         public RoleDefinitionsRequestBuilder RoleDefinitions { get =>
             new RoleDefinitionsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The roleEligibilityScheduleInstances property</summary>
         public RoleEligibilityScheduleInstancesRequestBuilder RoleEligibilityScheduleInstances { get =>
             new RoleEligibilityScheduleInstancesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The roleEligibilityScheduleRequests property</summary>
         public RoleEligibilityScheduleRequestsRequestBuilder RoleEligibilityScheduleRequests { get =>
             new RoleEligibilityScheduleRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The roleEligibilitySchedules property</summary>
         public RoleEligibilitySchedulesRequestBuilder RoleEligibilitySchedules { get =>
             new RoleEligibilitySchedulesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The transitiveRoleAssignments property</summary>
         public TransitiveRoleAssignmentsRequestBuilder TransitiveRoleAssignments { get =>
             new TransitiveRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -92,47 +103,47 @@ namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement {
         }
         /// <summary>
         /// Delete navigation property entitlementManagement for roleManagement
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreateDeleteRequestInformation(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreateDeleteRequestInformation(Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            h?.Invoke(requestInfo.Headers);
-            requestInfo.AddRequestOptions(o?.ToArray());
+            headers?.Invoke(requestInfo.Headers);
+            requestInfo.AddRequestOptions(options?.ToArray());
             return requestInfo;
         }
         /// <summary>
         /// Container for roles and assignments for entitlement management resources.
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
-        /// <param name="q">Request query parameters</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
+        /// <param name="queryParameters">Request query parameters</param>
         /// </summary>
-        public RequestInformation CreateGetRequestInformation(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreateGetRequestInformation(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            if (q != null) {
+            if (queryParameters != null) {
                 var qParams = new GetQueryParameters();
-                q.Invoke(qParams);
+                queryParameters.Invoke(qParams);
                 qParams.AddQueryParameters(requestInfo.QueryParameters);
             }
-            h?.Invoke(requestInfo.Headers);
-            requestInfo.AddRequestOptions(o?.ToArray());
+            headers?.Invoke(requestInfo.Headers);
+            requestInfo.AddRequestOptions(options?.ToArray());
             return requestInfo;
         }
         /// <summary>
         /// Update the navigation property entitlementManagement in roleManagement
         /// <param name="body"></param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreatePatchRequestInformation(RbacApplication body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePatchRequestInformation(RbacApplication body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -140,19 +151,19 @@ namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement {
                 PathParameters = PathParameters,
             };
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
-            h?.Invoke(requestInfo.Headers);
-            requestInfo.AddRequestOptions(o?.ToArray());
+            headers?.Invoke(requestInfo.Headers);
+            requestInfo.AddRequestOptions(options?.ToArray());
             return requestInfo;
         }
         /// <summary>
         /// Delete navigation property entitlementManagement for roleManagement
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task DeleteAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateDeleteRequestInformation(h, o);
+        public async Task DeleteAsync(Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+            var requestInfo = CreateDeleteRequestInformation(headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
@@ -162,13 +173,13 @@ namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement {
         /// <summary>
         /// Container for roles and assignments for entitlement management resources.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
-        /// <param name="q">Request query parameters</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
+        /// <param name="queryParameters">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<RbacApplication> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateGetRequestInformation(q, h, o);
+        public async Task<RbacApplication> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+            var requestInfo = CreateGetRequestInformation(queryParameters, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
@@ -179,13 +190,13 @@ namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement {
         /// Update the navigation property entitlementManagement in roleManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(RbacApplication body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(RbacApplication body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = CreatePatchRequestInformation(body, h, o);
+            var requestInfo = CreatePatchRequestInformation(body, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
@@ -194,10 +205,10 @@ namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement {
         }
         /// <summary>
         /// Provides operations to call the roleScheduleInstances method.
-        /// <param name="appScopeId">Usage: appScopeId='{appScopeId}'</param>
-        /// <param name="directoryScopeId">Usage: directoryScopeId='{directoryScopeId}'</param>
-        /// <param name="principalId">Usage: principalId='{principalId}'</param>
-        /// <param name="roleDefinitionId">Usage: roleDefinitionId='{roleDefinitionId}'</param>
+        /// <param name="appScopeId">Usage: appScopeId=&apos;{appScopeId}&apos;</param>
+        /// <param name="directoryScopeId">Usage: directoryScopeId=&apos;{directoryScopeId}&apos;</param>
+        /// <param name="principalId">Usage: principalId=&apos;{principalId}&apos;</param>
+        /// <param name="roleDefinitionId">Usage: roleDefinitionId=&apos;{roleDefinitionId}&apos;</param>
         /// </summary>
         public RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId(string appScopeId, string directoryScopeId, string principalId, string roleDefinitionId) {
             if(string.IsNullOrEmpty(appScopeId)) throw new ArgumentNullException(nameof(appScopeId));
@@ -208,10 +219,10 @@ namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement {
         }
         /// <summary>
         /// Provides operations to call the roleSchedules method.
-        /// <param name="appScopeId">Usage: appScopeId='{appScopeId}'</param>
-        /// <param name="directoryScopeId">Usage: directoryScopeId='{directoryScopeId}'</param>
-        /// <param name="principalId">Usage: principalId='{principalId}'</param>
-        /// <param name="roleDefinitionId">Usage: roleDefinitionId='{roleDefinitionId}'</param>
+        /// <param name="appScopeId">Usage: appScopeId=&apos;{appScopeId}&apos;</param>
+        /// <param name="directoryScopeId">Usage: directoryScopeId=&apos;{directoryScopeId}&apos;</param>
+        /// <param name="principalId">Usage: principalId=&apos;{principalId}&apos;</param>
+        /// <param name="roleDefinitionId">Usage: roleDefinitionId=&apos;{roleDefinitionId}&apos;</param>
         /// </summary>
         public RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId(string appScopeId, string directoryScopeId, string principalId, string roleDefinitionId) {
             if(string.IsNullOrEmpty(appScopeId)) throw new ArgumentNullException(nameof(appScopeId));

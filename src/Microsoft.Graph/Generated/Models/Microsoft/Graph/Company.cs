@@ -6,44 +6,83 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Company : Entity, IParsable {
+        /// <summary>The accounts property</summary>
         public List<Account> Accounts { get; set; }
+        /// <summary>The agedAccountsPayable property</summary>
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.AgedAccountsPayable> AgedAccountsPayable { get; set; }
+        /// <summary>The agedAccountsReceivable property</summary>
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.AgedAccountsReceivable> AgedAccountsReceivable { get; set; }
+        /// <summary>The businessProfileId property</summary>
         public string BusinessProfileId { get; set; }
+        /// <summary>The companyInformation property</summary>
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.CompanyInformation> CompanyInformation { get; set; }
+        /// <summary>The countriesRegions property</summary>
         public List<CountryRegion> CountriesRegions { get; set; }
+        /// <summary>The currencies property</summary>
         public List<Currency> Currencies { get; set; }
+        /// <summary>The customerPaymentJournals property</summary>
         public List<CustomerPaymentJournal> CustomerPaymentJournals { get; set; }
+        /// <summary>The customerPayments property</summary>
         public List<CustomerPayment> CustomerPayments { get; set; }
+        /// <summary>The customers property</summary>
         public List<Customer> Customers { get; set; }
+        /// <summary>The dimensions property</summary>
         public List<Dimension> Dimensions { get; set; }
+        /// <summary>The dimensionValues property</summary>
         public List<DimensionValue> DimensionValues { get; set; }
+        /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
+        /// <summary>The employees property</summary>
         public List<Employee> Employees { get; set; }
+        /// <summary>The generalLedgerEntries property</summary>
         public List<GeneralLedgerEntry> GeneralLedgerEntries { get; set; }
+        /// <summary>The itemCategories property</summary>
         public List<ItemCategory> ItemCategories { get; set; }
+        /// <summary>The items property</summary>
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Item.Item> Items { get; set; }
+        /// <summary>The journalLines property</summary>
         public List<JournalLine> JournalLines { get; set; }
+        /// <summary>The journals property</summary>
         public List<Journal> Journals { get; set; }
+        /// <summary>The name property</summary>
         public string Name { get; set; }
+        /// <summary>The paymentMethods property</summary>
         public List<PaymentMethod> PaymentMethods { get; set; }
+        /// <summary>The paymentTerms property</summary>
         public List<PaymentTerm> PaymentTerms { get; set; }
+        /// <summary>The picture property</summary>
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Picture> Picture { get; set; }
+        /// <summary>The purchaseInvoiceLines property</summary>
         public List<PurchaseInvoiceLine> PurchaseInvoiceLines { get; set; }
+        /// <summary>The purchaseInvoices property</summary>
         public List<PurchaseInvoice> PurchaseInvoices { get; set; }
+        /// <summary>The salesCreditMemoLines property</summary>
         public List<SalesCreditMemoLine> SalesCreditMemoLines { get; set; }
+        /// <summary>The salesCreditMemos property</summary>
         public List<SalesCreditMemo> SalesCreditMemos { get; set; }
+        /// <summary>The salesInvoiceLines property</summary>
         public List<SalesInvoiceLine> SalesInvoiceLines { get; set; }
+        /// <summary>The salesInvoices property</summary>
         public List<SalesInvoice> SalesInvoices { get; set; }
+        /// <summary>The salesOrderLines property</summary>
         public List<SalesOrderLine> SalesOrderLines { get; set; }
+        /// <summary>The salesOrders property</summary>
         public List<SalesOrder> SalesOrders { get; set; }
+        /// <summary>The salesQuoteLines property</summary>
         public List<SalesQuoteLine> SalesQuoteLines { get; set; }
+        /// <summary>The salesQuotes property</summary>
         public List<SalesQuote> SalesQuotes { get; set; }
+        /// <summary>The shipmentMethods property</summary>
         public List<ShipmentMethod> ShipmentMethods { get; set; }
+        /// <summary>The systemVersion property</summary>
         public string SystemVersion { get; set; }
+        /// <summary>The taxAreas property</summary>
         public List<TaxArea> TaxAreas { get; set; }
+        /// <summary>The taxGroups property</summary>
         public List<TaxGroup> TaxGroups { get; set; }
+        /// <summary>The unitsOfMeasure property</summary>
         public List<UnitOfMeasure> UnitsOfMeasure { get; set; }
+        /// <summary>The vendors property</summary>
         public List<Vendor> Vendors { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

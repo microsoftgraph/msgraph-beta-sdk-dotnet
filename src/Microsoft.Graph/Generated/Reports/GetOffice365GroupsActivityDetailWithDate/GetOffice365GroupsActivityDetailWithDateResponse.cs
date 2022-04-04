@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Reports.GetOffice365GroupsActivityDetailWithDate {
     public class GetOffice365GroupsActivityDetailWithDateResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The value property</summary>
         public List<Office365GroupsActivityDetail> Value { get; set; }
         /// <summary>
         /// Instantiates a new getOffice365GroupsActivityDetailWithDateResponse and sets the default values.

@@ -8,7 +8,9 @@ namespace MicrosoftGraphSdk.DeviceManagement.ChromeOSOnboardingSettings.Connect 
     public class ConnectRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The ownerAccessToken property</summary>
         public string OwnerAccessToken { get; set; }
+        /// <summary>The ownerUserPrincipalName property</summary>
         public string OwnerUserPrincipalName { get; set; }
         /// <summary>
         /// Instantiates a new connectRequestBody and sets the default values.

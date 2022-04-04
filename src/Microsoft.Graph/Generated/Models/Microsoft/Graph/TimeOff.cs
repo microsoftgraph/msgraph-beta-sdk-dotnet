@@ -7,6 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class TimeOff : ChangeTrackedEntity, IParsable {
         /// <summary>The draft version of this timeOff that is viewable by managers. Required.</summary>
         public TimeOffItem DraftTimeOff { get; set; }
+        /// <summary>The isStagedForDeletion property</summary>
         public bool? IsStagedForDeletion { get; set; }
         /// <summary>The shared version of this timeOff that is viewable by both employees and managers. Required.</summary>
         public TimeOffItem SharedTimeOff { get; set; }

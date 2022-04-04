@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.</summary>
         public RiskDetail? Detail { get; set; }
+        /// <summary>The eventTypes property</summary>
         public List<RiskEventType?> EventTypes { get; set; }
         /// <summary>The type of risk event detected.</summary>
         public List<string> RiskEventTypes { get; set; }

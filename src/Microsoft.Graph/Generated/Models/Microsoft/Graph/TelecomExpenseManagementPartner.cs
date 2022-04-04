@@ -5,15 +5,15 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class TelecomExpenseManagementPartner : Entity, IParsable {
-        /// <summary>Whether the partner's AAD app has been authorized to access Intune.</summary>
+        /// <summary>Whether the partner&apos;s AAD app has been authorized to access Intune.</summary>
         public bool? AppAuthorized { get; set; }
         /// <summary>Display name of the TEM partner.</summary>
         public string DisplayName { get; set; }
-        /// <summary>Whether Intune's connection to the TEM service is currently enabled or disabled.</summary>
+        /// <summary>Whether Intune&apos;s connection to the TEM service is currently enabled or disabled.</summary>
         public bool? Enabled { get; set; }
         /// <summary>Timestamp of the last request sent to Intune by the TEM partner.</summary>
         public DateTimeOffset? LastConnectionDateTime { get; set; }
-        /// <summary>URL of the TEM partner's administrative control panel, where an administrator can configure their TEM service.</summary>
+        /// <summary>URL of the TEM partner&apos;s administrative control panel, where an administrator can configure their TEM service.</summary>
         public string Url { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

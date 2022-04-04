@@ -7,7 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
     public class NoncustodialDataSourceCollectionResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The nextLink property</summary>
         public string NextLink { get; set; }
+        /// <summary>The value property</summary>
         public List<NoncustodialDataSource> Value { get; set; }
         /// <summary>
         /// Instantiates a new NoncustodialDataSourceCollectionResponse and sets the default values.

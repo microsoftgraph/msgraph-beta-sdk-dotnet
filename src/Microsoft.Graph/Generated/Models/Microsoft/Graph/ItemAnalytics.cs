@@ -5,8 +5,11 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ItemAnalytics : Entity, IParsable {
+        /// <summary>The allTime property</summary>
         public ItemActivityStat AllTime { get; set; }
+        /// <summary>The itemActivityStats property</summary>
         public List<ItemActivityStat> ItemActivityStats { get; set; }
+        /// <summary>The lastSevenDays property</summary>
         public ItemActivityStat LastSevenDays { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

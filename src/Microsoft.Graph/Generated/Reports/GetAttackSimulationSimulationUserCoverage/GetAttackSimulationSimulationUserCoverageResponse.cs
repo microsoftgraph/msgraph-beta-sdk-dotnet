@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Reports.GetAttackSimulationSimulationUserCoverage {
     public class GetAttackSimulationSimulationUserCoverageResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The value property</summary>
         public List<AttackSimulationSimulationUserCoverage> Value { get; set; }
         /// <summary>
         /// Instantiates a new getAttackSimulationSimulationUserCoverageResponse and sets the default values.

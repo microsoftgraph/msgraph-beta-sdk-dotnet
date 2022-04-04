@@ -6,7 +6,7 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
     public class Case : Entity, IParsable {
         /// <summary>The user who closed the case.</summary>
-        public IdentitySet ClosedBy { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.IdentitySet ClosedBy { get; set; }
         /// <summary>The date and time when the case was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? ClosedDateTime { get; set; }
         /// <summary>The date and time when the entity was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
@@ -20,7 +20,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
         /// <summary>The external case number for customer reference.</summary>
         public string ExternalId { get; set; }
         /// <summary>The last user who modified the entity.</summary>
-        public IdentitySet LastModifiedBy { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.IdentitySet LastModifiedBy { get; set; }
         /// <summary>The latest date and time when the case was modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
         /// <summary>Returns a list of case legalHold objects for this case.  Nullable.</summary>
@@ -31,6 +31,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
         public List<CaseOperation> Operations { get; set; }
         /// <summary>Returns a list of reviewSet objects in the case. Read-only. Nullable.</summary>
         public List<ReviewSet> ReviewSets { get; set; }
+        /// <summary>The settings property</summary>
         public CaseSettings Settings { get; set; }
         /// <summary>Returns a list of sourceCollection objects associated with this case.</summary>
         public List<SourceCollection> SourceCollections { get; set; }
@@ -51,14 +52,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"closedBy", (o,n) => { (o as Case).ClosedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"closedBy", (o,n) => { (o as Case).ClosedBy = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.IdentitySet>(MicrosoftGraphSdk.Models.Microsoft.Graph.IdentitySet.CreateFromDiscriminatorValue); } },
                 {"closedDateTime", (o,n) => { (o as Case).ClosedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"createdDateTime", (o,n) => { (o as Case).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"custodians", (o,n) => { (o as Case).Custodians = n.GetCollectionOfObjectValues<Custodian>(Custodian.CreateFromDiscriminatorValue).ToList(); } },
                 {"description", (o,n) => { (o as Case).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as Case).DisplayName = n.GetStringValue(); } },
                 {"externalId", (o,n) => { (o as Case).ExternalId = n.GetStringValue(); } },
-                {"lastModifiedBy", (o,n) => { (o as Case).LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"lastModifiedBy", (o,n) => { (o as Case).LastModifiedBy = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.IdentitySet>(MicrosoftGraphSdk.Models.Microsoft.Graph.IdentitySet.CreateFromDiscriminatorValue); } },
                 {"lastModifiedDateTime", (o,n) => { (o as Case).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"legalHolds", (o,n) => { (o as Case).LegalHolds = n.GetCollectionOfObjectValues<LegalHold>(LegalHold.CreateFromDiscriminatorValue).ToList(); } },
                 {"noncustodialDataSources", (o,n) => { (o as Case).NoncustodialDataSources = n.GetCollectionOfObjectValues<NoncustodialDataSource>(NoncustodialDataSource.CreateFromDiscriminatorValue).ToList(); } },
@@ -77,14 +78,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<IdentitySet>("closedBy", ClosedBy);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.IdentitySet>("closedBy", ClosedBy);
             writer.WriteDateTimeOffsetValue("closedDateTime", ClosedDateTime);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteCollectionOfObjectValues<Custodian>("custodians", Custodians);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("externalId", ExternalId);
-            writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteCollectionOfObjectValues<LegalHold>("legalHolds", LegalHolds);
             writer.WriteCollectionOfObjectValues<NoncustodialDataSource>("noncustodialDataSources", NoncustodialDataSources);

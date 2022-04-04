@@ -9,7 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>User in an attack simulation and training campaign.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AttackSimulationUser AttackSimulationUser { get; set; }
-        /// <summary>List of assigned trainings' and their statuses for the user.</summary>
+        /// <summary>List of assigned trainings&apos; and their statuses for the user.</summary>
         public List<UserTrainingStatusInfo> UserTrainings { get; set; }
         /// <summary>
         /// Instantiates a new attackSimulationTrainingUserCoverage and sets the default values.

@@ -10,11 +10,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public AnalyticsActivityType? Activity { get; set; }
         /// <summary>Total hours spent on the activity. The value is represented in ISO 8601 format for durations.</summary>
         public TimeSpan? Duration { get; set; }
-        /// <summary>Date when the activity ended, expressed in ISO 8601 format for calendar dates. For example, the property value could be '2019-07-03' that follows the YYYY-MM-DD format.</summary>
+        /// <summary>Date when the activity ended, expressed in ISO 8601 format for calendar dates. For example, the property value could be &apos;2019-07-03&apos; that follows the YYYY-MM-DD format.</summary>
         public Date? EndDate { get; set; }
-        /// <summary>Date when the activity started, expressed in ISO 8601 format for calendar dates. For example, the property value could be '2019-07-04' that follows the YYYY-MM-DD format.</summary>
+        /// <summary>Date when the activity started, expressed in ISO 8601 format for calendar dates. For example, the property value could be &apos;2019-07-04&apos; that follows the YYYY-MM-DD format.</summary>
         public Date? StartDate { get; set; }
-        /// <summary>The time zone that the user sets in Microsoft Outlook is used for the computation. For example, the property value could be 'Pacific Standard Time.'</summary>
+        /// <summary>The time zone that the user sets in Microsoft Outlook is used for the computation. For example, the property value could be &apos;Pacific Standard Time.&apos;</summary>
         public string TimeZoneUsed { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,6 +8,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.CleanWindowsD
     public class CleanWindowsDeviceRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The keepUserData property</summary>
         public bool? KeepUserData { get; set; }
         /// <summary>
         /// Instantiates a new cleanWindowsDeviceRequestBody and sets the default values.

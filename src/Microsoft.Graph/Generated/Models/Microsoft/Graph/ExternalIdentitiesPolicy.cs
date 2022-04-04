@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ExternalIdentitiesPolicy : PolicyBase, IParsable {
+        /// <summary>The allowDeletedIdentitiesDataRemoval property</summary>
         public bool? AllowDeletedIdentitiesDataRemoval { get; set; }
+        /// <summary>The allowExternalIdentitiesToLeave property</summary>
         public bool? AllowExternalIdentitiesToLeave { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

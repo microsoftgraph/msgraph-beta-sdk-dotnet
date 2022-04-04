@@ -5,11 +5,17 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Currency : Entity, IParsable {
+        /// <summary>The amountDecimalPlaces property</summary>
         public string AmountDecimalPlaces { get; set; }
+        /// <summary>The amountRoundingPrecision property</summary>
         public decimal? AmountRoundingPrecision { get; set; }
+        /// <summary>The code property</summary>
         public string Code { get; set; }
+        /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
+        /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+        /// <summary>The symbol property</summary>
         public string Symbol { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

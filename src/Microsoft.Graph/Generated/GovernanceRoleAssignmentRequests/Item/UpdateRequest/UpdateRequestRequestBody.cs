@@ -9,9 +9,13 @@ namespace MicrosoftGraphSdk.GovernanceRoleAssignmentRequests.Item.UpdateRequest 
     public class UpdateRequestRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The assignmentState property</summary>
         public string AssignmentState { get; set; }
+        /// <summary>The decision property</summary>
         public string Decision { get; set; }
+        /// <summary>The reason property</summary>
         public string Reason { get; set; }
+        /// <summary>The schedule property</summary>
         public GovernanceSchedule Schedule { get; set; }
         /// <summary>
         /// Instantiates a new updateRequestRequestBody and sets the default values.

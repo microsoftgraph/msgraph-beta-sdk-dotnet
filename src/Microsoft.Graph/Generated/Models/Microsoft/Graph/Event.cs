@@ -21,6 +21,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<string> CancelledOccurrences { get; set; }
         /// <summary>The date, time, and time zone that the event ends. By default, the end time is in UTC.</summary>
         public DateTimeTimeZone End { get; set; }
+        /// <summary>The exceptionOccurrences property</summary>
         public List<Event> ExceptionOccurrences { get; set; }
         /// <summary>The collection of open extensions defined for the event. Nullable.</summary>
         public List<Extension> Extensions { get; set; }
@@ -28,41 +29,71 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public bool? HasAttachments { get; set; }
         /// <summary>When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.</summary>
         public bool? HideAttendees { get; set; }
+        /// <summary>The importance property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Importance? Importance { get; set; }
         /// <summary>The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.</summary>
         public List<Event> Instances { get; set; }
+        /// <summary>The isAllDay property</summary>
         public bool? IsAllDay { get; set; }
+        /// <summary>The isCancelled property</summary>
         public bool? IsCancelled { get; set; }
+        /// <summary>The isDraft property</summary>
         public bool? IsDraft { get; set; }
+        /// <summary>The isOnlineMeeting property</summary>
         public bool? IsOnlineMeeting { get; set; }
+        /// <summary>The isOrganizer property</summary>
         public bool? IsOrganizer { get; set; }
+        /// <summary>The isReminderOn property</summary>
         public bool? IsReminderOn { get; set; }
+        /// <summary>The location property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Location Location { get; set; }
+        /// <summary>The locations property</summary>
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Location> Locations { get; set; }
         /// <summary>The collection of multi-value extended properties defined for the event. Read-only. Nullable.</summary>
         public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties { get; set; }
+        /// <summary>The occurrenceId property</summary>
         public string OccurrenceId { get; set; }
+        /// <summary>The onlineMeeting property</summary>
         public OnlineMeetingInfo OnlineMeeting { get; set; }
+        /// <summary>The onlineMeetingProvider property</summary>
         public OnlineMeetingProviderType? OnlineMeetingProvider { get; set; }
+        /// <summary>The onlineMeetingUrl property</summary>
         public string OnlineMeetingUrl { get; set; }
+        /// <summary>The organizer property</summary>
         public Recipient Organizer { get; set; }
+        /// <summary>The originalEndTimeZone property</summary>
         public string OriginalEndTimeZone { get; set; }
+        /// <summary>The originalStart property</summary>
         public DateTimeOffset? OriginalStart { get; set; }
+        /// <summary>The originalStartTimeZone property</summary>
         public string OriginalStartTimeZone { get; set; }
+        /// <summary>The recurrence property</summary>
         public PatternedRecurrence Recurrence { get; set; }
+        /// <summary>The reminderMinutesBeforeStart property</summary>
         public int? ReminderMinutesBeforeStart { get; set; }
+        /// <summary>The responseRequested property</summary>
         public bool? ResponseRequested { get; set; }
+        /// <summary>The responseStatus property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ResponseStatus ResponseStatus { get; set; }
+        /// <summary>The sensitivity property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Sensitivity? Sensitivity { get; set; }
+        /// <summary>The seriesMasterId property</summary>
         public string SeriesMasterId { get; set; }
+        /// <summary>The showAs property</summary>
         public FreeBusyStatus? ShowAs { get; set; }
         /// <summary>The collection of single-value extended properties defined for the event. Read-only. Nullable.</summary>
         public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties { get; set; }
+        /// <summary>The start property</summary>
         public DateTimeTimeZone Start { get; set; }
+        /// <summary>The subject property</summary>
         public string Subject { get; set; }
+        /// <summary>The transactionId property</summary>
         public string TransactionId { get; set; }
+        /// <summary>The type property</summary>
         public EventType? Type { get; set; }
+        /// <summary>The uid property</summary>
         public string Uid { get; set; }
+        /// <summary>The webLink property</summary>
         public string WebLink { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

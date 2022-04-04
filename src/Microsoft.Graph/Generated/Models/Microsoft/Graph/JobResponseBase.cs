@@ -5,12 +5,19 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class JobResponseBase : Entity, IParsable {
+        /// <summary>The creationDateTime property</summary>
         public DateTimeOffset? CreationDateTime { get; set; }
+        /// <summary>The endDateTime property</summary>
         public DateTimeOffset? EndDateTime { get; set; }
+        /// <summary>The error property</summary>
         public ClassificationError Error { get; set; }
+        /// <summary>The startDateTime property</summary>
         public DateTimeOffset? StartDateTime { get; set; }
+        /// <summary>The status property</summary>
         public string Status { get; set; }
+        /// <summary>The tenantId property</summary>
         public string TenantId { get; set; }
+        /// <summary>The type property</summary>
         public string Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

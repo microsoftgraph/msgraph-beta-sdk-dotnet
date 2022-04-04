@@ -9,7 +9,9 @@ namespace MicrosoftGraphSdk.Me.InformationProtection.SensitivityLabels.Evaluate 
     public class EvaluateRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The currentLabel property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.CurrentLabel CurrentLabel { get; set; }
+        /// <summary>The discoveredSensitiveTypes property</summary>
         public List<DiscoveredSensitiveType> DiscoveredSensitiveTypes { get; set; }
         /// <summary>
         /// Instantiates a new evaluateRequestBody and sets the default values.

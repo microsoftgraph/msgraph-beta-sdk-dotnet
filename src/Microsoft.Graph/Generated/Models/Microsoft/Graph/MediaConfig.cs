@@ -7,6 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class MediaConfig : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The removeFromDefaultAudioGroup property</summary>
         public bool? RemoveFromDefaultAudioGroup { get; set; }
         /// <summary>
         /// Instantiates a new mediaConfig and sets the default values.

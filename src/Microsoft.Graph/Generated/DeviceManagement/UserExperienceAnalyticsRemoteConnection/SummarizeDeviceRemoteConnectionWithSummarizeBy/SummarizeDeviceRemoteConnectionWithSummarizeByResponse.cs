@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsRemoteConnec
     public class SummarizeDeviceRemoteConnectionWithSummarizeByResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The value property</summary>
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsRemoteConnection> Value { get; set; }
         /// <summary>
         /// Instantiates a new summarizeDeviceRemoteConnectionWithSummarizeByResponse and sets the default values.

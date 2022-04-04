@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.Item.GetSupported
     public class GetSupportedPropertiesResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The value property</summary>
         public List<AssignmentFilterSupportedProperty> Value { get; set; }
         /// <summary>
         /// Instantiates a new getSupportedPropertiesResponse and sets the default values.

@@ -13,9 +13,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string BackgroundColor { get; set; }
         /// <summary>Optional. Custom piece of data - JSON object used to provide custom content to render the activity in the Windows Shell UI</summary>
         public Json Content { get; set; }
-        /// <summary>Optional. Longer text description of the user's unique activity (example: document name, first sentence, and/or metadata)</summary>
+        /// <summary>Optional. Longer text description of the user&apos;s unique activity (example: document name, first sentence, and/or metadata)</summary>
         public string Description { get; set; }
-        /// <summary>Required. Short text description of the user's unique activity (for example, document name in cases where an activity refers to document creation)</summary>
+        /// <summary>Required. Short text description of the user&apos;s unique activity (for example, document name in cases where an activity refers to document creation)</summary>
         public string DisplayText { get; set; }
         /// <summary>
         /// Instantiates a new visualInfo and sets the default values.

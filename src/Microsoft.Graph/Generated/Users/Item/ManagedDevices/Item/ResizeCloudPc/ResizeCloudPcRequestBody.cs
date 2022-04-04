@@ -8,6 +8,7 @@ namespace MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.ResizeCloudPc {
     public class ResizeCloudPcRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The targetServicePlanId property</summary>
         public string TargetServicePlanId { get; set; }
         /// <summary>
         /// Instantiates a new resizeCloudPcRequestBody and sets the default values.

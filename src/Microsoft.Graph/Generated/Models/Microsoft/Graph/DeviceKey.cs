@@ -7,8 +7,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DeviceKey : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The deviceId property</summary>
         public string DeviceId { get; set; }
+        /// <summary>The keyMaterial property</summary>
         public byte[] KeyMaterial { get; set; }
+        /// <summary>The keyType property</summary>
         public string KeyType { get; set; }
         /// <summary>
         /// Instantiates a new deviceKey and sets the default values.

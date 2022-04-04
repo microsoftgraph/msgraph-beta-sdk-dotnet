@@ -17,9 +17,11 @@ using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps {
     /// <summary>Provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.</summary>
     public class MobileAppsRequestBuilder {
+        /// <summary>The count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The hasPayloadLinks property</summary>
         public HasPayloadLinksRequestBuilder HasPayloadLinks { get =>
             new HasPayloadLinksRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -29,6 +31,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>The validateXml property</summary>
         public ValidateXmlRequestBuilder ValidateXml { get =>
             new ValidateXmlRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -67,32 +70,32 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps {
         }
         /// <summary>
         /// The mobile apps.
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
-        /// <param name="q">Request query parameters</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
+        /// <param name="queryParameters">Request query parameters</param>
         /// </summary>
-        public RequestInformation CreateGetRequestInformation(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreateGetRequestInformation(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            if (q != null) {
+            if (queryParameters != null) {
                 var qParams = new GetQueryParameters();
-                q.Invoke(qParams);
+                queryParameters.Invoke(qParams);
                 qParams.AddQueryParameters(requestInfo.QueryParameters);
             }
-            h?.Invoke(requestInfo.Headers);
-            requestInfo.AddRequestOptions(o?.ToArray());
+            headers?.Invoke(requestInfo.Headers);
+            requestInfo.AddRequestOptions(options?.ToArray());
             return requestInfo;
         }
         /// <summary>
         /// Create new navigation property to mobileApps for deviceAppManagement
         /// <param name="body"></param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(MobileApp body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePostRequestInformation(MobileApp body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -100,20 +103,20 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps {
                 PathParameters = PathParameters,
             };
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
-            h?.Invoke(requestInfo.Headers);
-            requestInfo.AddRequestOptions(o?.ToArray());
+            headers?.Invoke(requestInfo.Headers);
+            requestInfo.AddRequestOptions(options?.ToArray());
             return requestInfo;
         }
         /// <summary>
         /// The mobile apps.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
-        /// <param name="q">Request query parameters</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
+        /// <param name="queryParameters">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MobileAppCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateGetRequestInformation(q, h, o);
+        public async Task<MobileAppCollectionResponse> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+            var requestInfo = CreateGetRequestInformation(queryParameters, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
@@ -122,7 +125,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps {
         }
         /// <summary>
         /// Provides operations to call the getMobileAppCount method.
-        /// <param name="status">Usage: status='{status}'</param>
+        /// <param name="status">Usage: status=&apos;{status}&apos;</param>
         /// </summary>
         public GetMobileAppCountWithStatusRequestBuilder GetMobileAppCountWithStatus(string status) {
             if(string.IsNullOrEmpty(status)) throw new ArgumentNullException(nameof(status));
@@ -131,7 +134,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps {
         /// <summary>
         /// Provides operations to call the getTopMobileApps method.
         /// <param name="count">Usage: count={count}</param>
-        /// <param name="status">Usage: status='{status}'</param>
+        /// <param name="status">Usage: status=&apos;{status}&apos;</param>
         /// </summary>
         public GetTopMobileAppsWithStatusWithCountRequestBuilder GetTopMobileAppsWithStatusWithCount(long? count, string status) {
             _ = count ?? throw new ArgumentNullException(nameof(count));
@@ -142,13 +145,13 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps {
         /// Create new navigation property to mobileApps for deviceAppManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MobileApp> PostAsync(MobileApp body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MobileApp> PostAsync(MobileApp body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = CreatePostRequestInformation(body, h, o);
+            var requestInfo = CreatePostRequestInformation(body, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},

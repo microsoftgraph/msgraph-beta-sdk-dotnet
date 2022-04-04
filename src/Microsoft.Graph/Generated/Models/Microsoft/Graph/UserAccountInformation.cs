@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string AgeGroup { get; set; }
         /// <summary>Contains the two-character country code associated with the users account.</summary>
         public string CountryCode { get; set; }
+        /// <summary>The preferredLanguageTag property</summary>
         public LocaleInfo PreferredLanguageTag { get; set; }
         /// <summary>The user principal name (UPN) of the user associated with the account.</summary>
         public string UserPrincipalName { get; set; }

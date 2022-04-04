@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Me.Security.InformationProtection.SensitivityLabels.
     public class ExtractContentLabelRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The contentInfo property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Security.ContentInfo ContentInfo { get; set; }
         /// <summary>
         /// Instantiates a new extractContentLabelRequestBody and sets the default values.

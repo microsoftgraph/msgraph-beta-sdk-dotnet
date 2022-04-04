@@ -11,9 +11,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string ConferenceId { get; set; }
         /// <summary>A URL to the externally-accessible web page that contains dial-in information.</summary>
         public string DialinUrl { get; set; }
+        /// <summary>The tollFreeNumber property</summary>
         public string TollFreeNumber { get; set; }
         /// <summary>List of toll-free numbers that are displayed in the meeting invite.</summary>
         public List<string> TollFreeNumbers { get; set; }
+        /// <summary>The tollNumber property</summary>
         public string TollNumber { get; set; }
         /// <summary>List of toll numbers that are displayed in the meeting invite.</summary>
         public List<string> TollNumbers { get; set; }

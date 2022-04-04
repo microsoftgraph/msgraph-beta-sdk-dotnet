@@ -9,7 +9,9 @@ namespace MicrosoftGraphSdk.Me.Security.InformationProtection.SensitivityLabels.
     public class EvaluateRemovalRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The contentInfo property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Security.ContentInfo ContentInfo { get; set; }
+        /// <summary>The downgradeJustification property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Security.DowngradeJustification DowngradeJustification { get; set; }
         /// <summary>
         /// Instantiates a new evaluateRemovalRequestBody and sets the default values.

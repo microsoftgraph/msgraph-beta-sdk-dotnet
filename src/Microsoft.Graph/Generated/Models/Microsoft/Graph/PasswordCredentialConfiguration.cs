@@ -7,6 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PasswordCredentialConfiguration : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The maxLifetime property</summary>
         public TimeSpan? MaxLifetime { get; set; }
         /// <summary>Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.</summary>
         public DateTimeOffset? RestrictForAppsCreatedAfterDateTime { get; set; }

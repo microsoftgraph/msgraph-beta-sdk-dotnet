@@ -7,9 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ResourceReference : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The item's unique identifier.</summary>
+        /// <summary>The item&apos;s unique identifier.</summary>
         public string Id { get; set; }
-        /// <summary>A string value that can be used to classify the item, such as 'microsoft.graph.driveItem'</summary>
+        /// <summary>A string value that can be used to classify the item, such as &apos;microsoft.graph.driveItem&apos;</summary>
         public string Type { get; set; }
         /// <summary>A URL leading to the referenced item.</summary>
         public string WebUrl { get; set; }

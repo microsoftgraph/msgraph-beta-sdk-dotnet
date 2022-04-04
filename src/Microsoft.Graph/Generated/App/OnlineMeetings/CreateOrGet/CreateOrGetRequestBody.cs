@@ -9,11 +9,17 @@ namespace MicrosoftGraphSdk.App.OnlineMeetings.CreateOrGet {
     public class CreateOrGetRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The chatInfo property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ChatInfo ChatInfo { get; set; }
+        /// <summary>The endDateTime property</summary>
         public DateTimeOffset? EndDateTime { get; set; }
+        /// <summary>The externalId property</summary>
         public string ExternalId { get; set; }
+        /// <summary>The participants property</summary>
         public MeetingParticipants Participants { get; set; }
+        /// <summary>The startDateTime property</summary>
         public DateTimeOffset? StartDateTime { get; set; }
+        /// <summary>The subject property</summary>
         public string Subject { get; set; }
         /// <summary>
         /// Instantiates a new createOrGetRequestBody and sets the default values.

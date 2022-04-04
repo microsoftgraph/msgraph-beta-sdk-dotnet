@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class TermsAndConditionsGroupAssignment : Entity, IParsable {
-        /// <summary>Unique identifier of a group that the T&C policy is assigned to.</summary>
+        /// <summary>Unique identifier of a group that the T&amp;C policy is assigned to.</summary>
         public string TargetGroupId { get; set; }
         /// <summary>Navigation link to the terms and conditions that are assigned.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.TermsAndConditions TermsAndConditions { get; set; }

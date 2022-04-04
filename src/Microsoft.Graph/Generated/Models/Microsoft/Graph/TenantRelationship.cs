@@ -7,7 +7,9 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class TenantRelationship : Entity, IParsable {
+        /// <summary>The delegatedAdminCustomers property</summary>
         public List<DelegatedAdminCustomer> DelegatedAdminCustomers { get; set; }
+        /// <summary>The delegatedAdminRelationships property</summary>
         public List<DelegatedAdminRelationship> DelegatedAdminRelationships { get; set; }
         /// <summary>The operations available to interact with the multi-tenant management platform.</summary>
         public ManagedTenant ManagedTenants { get; set; }

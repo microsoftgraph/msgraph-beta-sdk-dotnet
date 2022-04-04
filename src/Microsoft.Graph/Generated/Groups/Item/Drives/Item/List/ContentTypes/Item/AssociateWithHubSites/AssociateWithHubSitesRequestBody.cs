@@ -8,7 +8,9 @@ namespace MicrosoftGraphSdk.Groups.Item.Drives.Item.List.ContentTypes.Item.Assoc
     public class AssociateWithHubSitesRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The hubSiteUrls property</summary>
         public List<string> HubSiteUrls { get; set; }
+        /// <summary>The propagateToExistingLists property</summary>
         public bool? PropagateToExistingLists { get; set; }
         /// <summary>
         /// Instantiates a new associateWithHubSitesRequestBody and sets the default values.

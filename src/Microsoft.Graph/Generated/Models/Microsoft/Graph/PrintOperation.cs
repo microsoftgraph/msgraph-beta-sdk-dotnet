@@ -7,6 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PrintOperation : Entity, IParsable {
         /// <summary>The DateTimeOffset when the operation was created. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
+        /// <summary>The status property</summary>
         public PrintOperationStatus Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

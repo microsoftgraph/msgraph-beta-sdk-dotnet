@@ -7,15 +7,25 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class MatchingLabel : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The applicationMode property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ApplicationMode? ApplicationMode { get; set; }
+        /// <summary>The description property</summary>
         public string Description { get; set; }
+        /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
+        /// <summary>The id property</summary>
         public string Id { get; set; }
+        /// <summary>The isEndpointProtectionEnabled property</summary>
         public bool? IsEndpointProtectionEnabled { get; set; }
+        /// <summary>The labelActions property</summary>
         public List<LabelActionBase> LabelActions { get; set; }
+        /// <summary>The name property</summary>
         public string Name { get; set; }
+        /// <summary>The policyTip property</summary>
         public string PolicyTip { get; set; }
+        /// <summary>The priority property</summary>
         public int? Priority { get; set; }
+        /// <summary>The toolTip property</summary>
         public string ToolTip { get; set; }
         /// <summary>
         /// Instantiates a new matchingLabel and sets the default values.

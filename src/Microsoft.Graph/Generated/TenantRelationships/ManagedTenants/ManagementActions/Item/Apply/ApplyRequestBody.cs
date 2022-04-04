@@ -8,11 +8,17 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementActions
     public class ApplyRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The excludeGroups property</summary>
         public List<string> ExcludeGroups { get; set; }
+        /// <summary>The includeAllUsers property</summary>
         public bool? IncludeAllUsers { get; set; }
+        /// <summary>The includeGroups property</summary>
         public List<string> IncludeGroups { get; set; }
+        /// <summary>The managementTemplateId property</summary>
         public string ManagementTemplateId { get; set; }
+        /// <summary>The tenantGroupId property</summary>
         public string TenantGroupId { get; set; }
+        /// <summary>The tenantId property</summary>
         public string TenantId { get; set; }
         /// <summary>
         /// Instantiates a new applyRequestBody and sets the default values.

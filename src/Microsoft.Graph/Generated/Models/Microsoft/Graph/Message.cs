@@ -25,33 +25,53 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public FollowupFlag Flag { get; set; }
         /// <summary>The owner of the mailbox from which the message is sent. In most cases, this value is the same as the sender property, except for sharing or delegation scenarios. The value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.</summary>
         public Recipient From { get; set; }
-        /// <summary>Indicates whether the message has attachments. This property doesn't include inline attachments, so if a message contains only inline attachments, this property is false. To verify the existence of inline attachments, parse the body property to look for a src attribute, such as <IMG src='cid:image001.jpg@01D26CD8.6C05F070'>.</summary>
+        /// <summary>Indicates whether the message has attachments. This property doesn&apos;t include inline attachments, so if a message contains only inline attachments, this property is false. To verify the existence of inline attachments, parse the body property to look for a src attribute, such as &lt;IMG src=&apos;cid:image001.jpg@01D26CD8.6C05F070&apos;&gt;.</summary>
         public bool? HasAttachments { get; set; }
+        /// <summary>The importance property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Importance? Importance { get; set; }
+        /// <summary>The inferenceClassification property</summary>
         public InferenceClassificationType? InferenceClassification { get; set; }
+        /// <summary>The internetMessageHeaders property</summary>
         public List<InternetMessageHeader> InternetMessageHeaders { get; set; }
+        /// <summary>The internetMessageId property</summary>
         public string InternetMessageId { get; set; }
+        /// <summary>The isDeliveryReceiptRequested property</summary>
         public bool? IsDeliveryReceiptRequested { get; set; }
+        /// <summary>The isDraft property</summary>
         public bool? IsDraft { get; set; }
+        /// <summary>The isRead property</summary>
         public bool? IsRead { get; set; }
+        /// <summary>The isReadReceiptRequested property</summary>
         public bool? IsReadReceiptRequested { get; set; }
         /// <summary>A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.</summary>
         public List<Mention> Mentions { get; set; }
+        /// <summary>The mentionsPreview property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.MentionsPreview MentionsPreview { get; set; }
         /// <summary>The collection of multi-value extended properties defined for the message. Nullable.</summary>
         public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties { get; set; }
+        /// <summary>The parentFolderId property</summary>
         public string ParentFolderId { get; set; }
+        /// <summary>The receivedDateTime property</summary>
         public DateTimeOffset? ReceivedDateTime { get; set; }
+        /// <summary>The replyTo property</summary>
         public List<Recipient> ReplyTo { get; set; }
+        /// <summary>The sender property</summary>
         public Recipient Sender { get; set; }
+        /// <summary>The sentDateTime property</summary>
         public DateTimeOffset? SentDateTime { get; set; }
         /// <summary>The collection of single-value extended properties defined for the message. Nullable.</summary>
         public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties { get; set; }
+        /// <summary>The subject property</summary>
         public string Subject { get; set; }
+        /// <summary>The toRecipients property</summary>
         public List<Recipient> ToRecipients { get; set; }
+        /// <summary>The uniqueBody property</summary>
         public ItemBody UniqueBody { get; set; }
+        /// <summary>The unsubscribeData property</summary>
         public List<string> UnsubscribeData { get; set; }
+        /// <summary>The unsubscribeEnabled property</summary>
         public bool? UnsubscribeEnabled { get; set; }
+        /// <summary>The webLink property</summary>
         public string WebLink { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

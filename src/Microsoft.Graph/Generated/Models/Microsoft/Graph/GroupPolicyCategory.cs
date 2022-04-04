@@ -11,7 +11,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public GroupPolicyDefinitionFile DefinitionFile { get; set; }
         /// <summary>The immediate GroupPolicyDefinition children of the category</summary>
         public List<GroupPolicyDefinition> Definitions { get; set; }
-        /// <summary>The string id of the category's display name</summary>
+        /// <summary>The string id of the category&apos;s display name</summary>
         public string DisplayName { get; set; }
         /// <summary>Defines if the category is a root category</summary>
         public bool? IsRoot { get; set; }

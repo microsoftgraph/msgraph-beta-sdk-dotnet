@@ -7,7 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ColumnDefinition : Entity, IParsable {
         /// <summary>This column stores boolean values.</summary>
         public BooleanColumn Boolean { get; set; }
-        /// <summary>This column's data is calculated based on other columns.</summary>
+        /// <summary>This column&apos;s data is calculated based on other columns.</summary>
         public CalculatedColumn Calculated { get; set; }
         /// <summary>This column stores data from a list of choices.</summary>
         public ChoiceColumn Choice { get; set; }
@@ -41,7 +41,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public bool? IsReorderable { get; set; }
         /// <summary>Specifies whether the column can be changed.</summary>
         public bool? IsSealed { get; set; }
-        /// <summary>This column's data is looked up from another source in the site.</summary>
+        /// <summary>This column&apos;s data is looked up from another source in the site.</summary>
         public LookupColumn Lookup { get; set; }
         /// <summary>The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.</summary>
         public string Name { get; set; }
@@ -49,11 +49,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public NumberColumn Number { get; set; }
         /// <summary>This column stores Person or Group values.</summary>
         public PersonOrGroupColumn PersonOrGroup { get; set; }
-        /// <summary>If 'true', changes to this column will be propagated to lists that implement the column.</summary>
+        /// <summary>If &apos;true&apos;, changes to this column will be propagated to lists that implement the column.</summary>
         public bool? PropagateChanges { get; set; }
         /// <summary>Specifies whether the column values can be modified.</summary>
         public bool? ReadOnly { get; set; }
-        /// <summary>Specifies whether the column value isn't optional.</summary>
+        /// <summary>Specifies whether the column value isn&apos;t optional.</summary>
         public bool? Required { get; set; }
         /// <summary>The source column for the content type column.</summary>
         public ColumnDefinition SourceColumn { get; set; }

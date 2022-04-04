@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ExactMatchUploadAgent : Entity, IParsable {
+        /// <summary>The creationDateTime property</summary>
         public DateTimeOffset? CreationDateTime { get; set; }
+        /// <summary>The description property</summary>
         public string Description { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

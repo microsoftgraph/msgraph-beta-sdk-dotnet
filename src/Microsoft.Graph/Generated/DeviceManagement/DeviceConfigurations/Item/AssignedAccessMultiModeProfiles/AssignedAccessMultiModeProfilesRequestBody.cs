@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.AssignedA
     public class AssignedAccessMultiModeProfilesRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The assignedAccessMultiModeProfiles property</summary>
         public List<WindowsAssignedAccessProfile> AssignedAccessMultiModeProfiles { get; set; }
         /// <summary>
         /// Instantiates a new assignedAccessMultiModeProfilesRequestBody and sets the default values.

@@ -11,11 +11,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public SynchronizationStatusCode? Code { get; set; }
         /// <summary>Number of consecutive times this job failed.</summary>
         public long? CountSuccessiveCompleteFailures { get; set; }
-        /// <summary>true if the job's escrows (object-level errors) were pruned during initial synchronization. Escrows can be pruned if during the initial synchronization, you reach the threshold of errors that would normally put the job in quarantine. Instead of going into quarantine, the synchronization process clears the job's errors and continues until the initial synchronization is completed. When the initial synchronization is completed, the job will pause and wait for the customer to clean up the errors.</summary>
+        /// <summary>true if the job&apos;s escrows (object-level errors) were pruned during initial synchronization. Escrows can be pruned if during the initial synchronization, you reach the threshold of errors that would normally put the job in quarantine. Instead of going into quarantine, the synchronization process clears the job&apos;s errors and continues until the initial synchronization is completed. When the initial synchronization is completed, the job will pause and wait for the customer to clean up the errors.</summary>
         public bool? EscrowsPruned { get; set; }
         /// <summary>Details of the last execution of the job.</summary>
         public SynchronizationTaskExecution LastExecution { get; set; }
-        /// <summary>Details of the last execution of this job, which didn't have any errors.</summary>
+        /// <summary>Details of the last execution of this job, which didn&apos;t have any errors.</summary>
         public SynchronizationTaskExecution LastSuccessfulExecution { get; set; }
         /// <summary>Details of the last execution of the job, which exported objects into the target directory.</summary>
         public SynchronizationTaskExecution LastSuccessfulExecutionWithExports { get; set; }

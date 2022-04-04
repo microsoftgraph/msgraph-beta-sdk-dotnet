@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PrintUsageByPrinter : PrintUsage, IParsable {
+        /// <summary>The printerId property</summary>
         public string PrinterId { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

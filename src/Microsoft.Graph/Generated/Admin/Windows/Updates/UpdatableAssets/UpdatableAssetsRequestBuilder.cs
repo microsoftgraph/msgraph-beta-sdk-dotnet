@@ -17,12 +17,15 @@ using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets {
     /// <summary>Provides operations to manage the updatableAssets property of the microsoft.graph.windowsUpdates.updates entity.</summary>
     public class UpdatableAssetsRequestBuilder {
+        /// <summary>The count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The enrollAssets property</summary>
         public EnrollAssetsRequestBuilder EnrollAssets { get =>
             new EnrollAssetsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The enrollAssetsById property</summary>
         public EnrollAssetsByIdRequestBuilder EnrollAssetsById { get =>
             new EnrollAssetsByIdRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -30,9 +33,11 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The unenrollAssets property</summary>
         public UnenrollAssetsRequestBuilder UnenrollAssets { get =>
             new UnenrollAssetsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The unenrollAssetsById property</summary>
         public UnenrollAssetsByIdRequestBuilder UnenrollAssetsById { get =>
             new UnenrollAssetsByIdRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -73,32 +78,32 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets {
         }
         /// <summary>
         /// Assets registered with the deployment service that can receive updates. Read-only.
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
-        /// <param name="q">Request query parameters</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
+        /// <param name="queryParameters">Request query parameters</param>
         /// </summary>
-        public RequestInformation CreateGetRequestInformation(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreateGetRequestInformation(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            if (q != null) {
+            if (queryParameters != null) {
                 var qParams = new GetQueryParameters();
-                q.Invoke(qParams);
+                queryParameters.Invoke(qParams);
                 qParams.AddQueryParameters(requestInfo.QueryParameters);
             }
-            h?.Invoke(requestInfo.Headers);
-            requestInfo.AddRequestOptions(o?.ToArray());
+            headers?.Invoke(requestInfo.Headers);
+            requestInfo.AddRequestOptions(options?.ToArray());
             return requestInfo;
         }
         /// <summary>
         /// Create new navigation property to updatableAssets for admin
         /// <param name="body"></param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(UpdatableAsset body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePostRequestInformation(UpdatableAsset body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -106,20 +111,20 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets {
                 PathParameters = PathParameters,
             };
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
-            h?.Invoke(requestInfo.Headers);
-            requestInfo.AddRequestOptions(o?.ToArray());
+            headers?.Invoke(requestInfo.Headers);
+            requestInfo.AddRequestOptions(options?.ToArray());
             return requestInfo;
         }
         /// <summary>
         /// Assets registered with the deployment service that can receive updates. Read-only.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
-        /// <param name="q">Request query parameters</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
+        /// <param name="queryParameters">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<UpdatableAssetCollectionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateGetRequestInformation(q, h, o);
+        public async Task<UpdatableAssetCollectionResponse> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+            var requestInfo = CreateGetRequestInformation(queryParameters, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
@@ -130,13 +135,13 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets {
         /// Create new navigation property to updatableAssets for admin
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<UpdatableAsset> PostAsync(UpdatableAsset body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<UpdatableAsset> PostAsync(UpdatableAsset body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = CreatePostRequestInformation(body, h, o);
+            var requestInfo = CreatePostRequestInformation(body, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},

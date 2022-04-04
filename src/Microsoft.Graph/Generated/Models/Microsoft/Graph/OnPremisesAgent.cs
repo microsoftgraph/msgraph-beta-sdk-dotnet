@@ -13,6 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string MachineName { get; set; }
         /// <summary>Possible values are: active, inactive.</summary>
         public AgentStatus? Status { get; set; }
+        /// <summary>The supportedPublishingTypes property</summary>
         public List<OnPremisesPublishingType?> SupportedPublishingTypes { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.ValidateFilter {
     public class ValidateFilterRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The deviceAndAppManagementAssignmentFilter property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceAndAppManagementAssignmentFilter DeviceAndAppManagementAssignmentFilter { get; set; }
         /// <summary>
         /// Instantiates a new validateFilterRequestBody and sets the default values.

@@ -8,6 +8,7 @@ namespace MicrosoftGraphSdk.DirectoryRoleTemplates.Item.GetMemberObjects {
     public class GetMemberObjectsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The securityEnabledOnly property</summary>
         public bool? SecurityEnabledOnly { get; set; }
         /// <summary>
         /// Instantiates a new getMemberObjectsRequestBody and sets the default values.

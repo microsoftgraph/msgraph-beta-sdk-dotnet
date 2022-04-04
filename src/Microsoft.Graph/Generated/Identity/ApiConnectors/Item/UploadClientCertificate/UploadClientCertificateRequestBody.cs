@@ -8,7 +8,9 @@ namespace MicrosoftGraphSdk.Identity.ApiConnectors.Item.UploadClientCertificate 
     public class UploadClientCertificateRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The password property</summary>
         public string Password { get; set; }
+        /// <summary>The pkcs12Value property</summary>
         public string Pkcs12Value { get; set; }
         /// <summary>
         /// Instantiates a new uploadClientCertificateRequestBody and sets the default values.

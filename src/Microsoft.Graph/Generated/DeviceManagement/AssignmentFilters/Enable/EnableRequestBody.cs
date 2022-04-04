@@ -8,6 +8,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.Enable {
     public class EnableRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The enable property</summary>
         public bool? Enable { get; set; }
         /// <summary>
         /// Instantiates a new enableRequestBody and sets the default values.

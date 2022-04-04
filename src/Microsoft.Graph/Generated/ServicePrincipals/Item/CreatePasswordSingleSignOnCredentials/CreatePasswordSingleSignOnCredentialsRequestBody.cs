@@ -9,7 +9,9 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.CreatePasswordSingleSignOnCre
     public class CreatePasswordSingleSignOnCredentialsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The credentials property</summary>
         public List<Credential> Credentials { get; set; }
+        /// <summary>The id property</summary>
         public string Id { get; set; }
         /// <summary>
         /// Instantiates a new createPasswordSingleSignOnCredentialsRequestBody and sets the default values.

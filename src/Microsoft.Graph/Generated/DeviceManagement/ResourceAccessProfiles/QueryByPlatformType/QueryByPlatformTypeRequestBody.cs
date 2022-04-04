@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ResourceAccessProfiles.QueryByPlatf
     public class QueryByPlatformTypeRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The platformType property</summary>
         public PolicyPlatformType? PlatformType { get; set; }
         /// <summary>
         /// Instantiates a new queryByPlatformTypeRequestBody and sets the default values.

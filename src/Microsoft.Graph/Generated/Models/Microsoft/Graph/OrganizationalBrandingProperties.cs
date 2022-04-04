@@ -20,21 +20,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<string> CdnList { get; set; }
         /// <summary>A custom URL for resetting account credentials. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters.</summary>
         public string CustomAccountResetCredentialsUrl { get; set; }
-        /// <summary>A string to replace the default 'Can't access your account?' self-service password reset (SSPR) hyperlink text on the sign-in page. This text must be in Unicode format and not exceed 256 characters.</summary>
+        /// <summary>A string to replace the default &apos;Can&apos;t access your account?&apos; self-service password reset (SSPR) hyperlink text on the sign-in page. This text must be in Unicode format and not exceed 256 characters.</summary>
         public string CustomCannotAccessYourAccountText { get; set; }
-        /// <summary>A custom URL to replace the default URL of the self-service password reset (SSPR) 'Can't access your account?' hyperlink on the sign-in page. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters. DO NOT USE. Use customAccountResetCredentialsUrl instead.</summary>
+        /// <summary>A custom URL to replace the default URL of the self-service password reset (SSPR) &apos;Can&apos;t access your account?&apos; hyperlink on the sign-in page. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters. DO NOT USE. Use customAccountResetCredentialsUrl instead.</summary>
         public string CustomCannotAccessYourAccountUrl { get; set; }
-        /// <summary>A string to replace the default 'Forgot my password' hyperlink text on the sign-in form. This text must be in Unicode format and not exceed 256 characters.</summary>
+        /// <summary>A string to replace the default &apos;Forgot my password&apos; hyperlink text on the sign-in form. This text must be in Unicode format and not exceed 256 characters.</summary>
         public string CustomForgotMyPasswordText { get; set; }
-        /// <summary>A string to replace the default 'Privacy and Cookies' hyperlink text in the footer. This text must be in Unicode format and not exceed 256 characters.</summary>
+        /// <summary>A string to replace the default &apos;Privacy and Cookies&apos; hyperlink text in the footer. This text must be in Unicode format and not exceed 256 characters.</summary>
         public string CustomPrivacyAndCookiesText { get; set; }
-        /// <summary>A custom URL to replace the default URL of the 'Privacy and Cookies' hyperlink in the footer. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters.</summary>
+        /// <summary>A custom URL to replace the default URL of the &apos;Privacy and Cookies&apos; hyperlink in the footer. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters.</summary>
         public string CustomPrivacyAndCookiesUrl { get; set; }
-        /// <summary>A string to replace the default 'reset it now' hyperlink text on the sign-in form. This text must be in Unicode format and not exceed 256 characters. DO NOT USE: Customization of the 'reset it now' hyperlink text is currently not supported.</summary>
+        /// <summary>A string to replace the default &apos;reset it now&apos; hyperlink text on the sign-in form. This text must be in Unicode format and not exceed 256 characters. DO NOT USE: Customization of the &apos;reset it now&apos; hyperlink text is currently not supported.</summary>
         public string CustomResetItNowText { get; set; }
-        /// <summary>A string to replace the the default 'Terms of Use' hyperlink text in the footer. This text must be in Unicode format and not exceed 256 characters.</summary>
+        /// <summary>A string to replace the the default &apos;Terms of Use&apos; hyperlink text in the footer. This text must be in Unicode format and not exceed 256 characters.</summary>
         public string CustomTermsOfUseText { get; set; }
-        /// <summary>A custom URL to replace the default URL of the 'Terms of Use' hyperlink in the footer. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128characters.</summary>
+        /// <summary>A custom URL to replace the default URL of the &apos;Terms of Use&apos; hyperlink in the footer. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128characters.</summary>
         public string CustomTermsOfUseUrl { get; set; }
         /// <summary>A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.</summary>
         public byte[] Favicon { get; set; }
@@ -50,7 +50,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public byte[] SquareLogo { get; set; }
         /// <summary>A relative url for the squareLogo property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.</summary>
         public string SquareLogoRelativeUrl { get; set; }
-        /// <summary>String that shows as the hint in the username textbox on the sign-in screen. This text must be a Unicode, without links or code, and can't exceed 64 characters.</summary>
+        /// <summary>String that shows as the hint in the username textbox on the sign-in screen. This text must be a Unicode, without links or code, and can&apos;t exceed 64 characters.</summary>
         public string UsernameHintText { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

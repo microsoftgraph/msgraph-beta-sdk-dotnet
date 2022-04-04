@@ -18,7 +18,7 @@ namespace MicrosoftGraphSdk.Reports.GetSharePointSiteUsageFileCountsWithPeriod {
         /// <summary>
         /// Instantiates a new GetSharePointSiteUsageFileCountsWithPeriodRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// </summary>
         public GetSharePointSiteUsageFileCountsWithPeriodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string period = default) {
@@ -46,28 +46,28 @@ namespace MicrosoftGraphSdk.Reports.GetSharePointSiteUsageFileCountsWithPeriod {
         }
         /// <summary>
         /// Invoke function getSharePointSiteUsageFileCounts
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreateGetRequestInformation(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreateGetRequestInformation(Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            h?.Invoke(requestInfo.Headers);
-            requestInfo.AddRequestOptions(o?.ToArray());
+            headers?.Invoke(requestInfo.Headers);
+            requestInfo.AddRequestOptions(options?.ToArray());
             return requestInfo;
         }
         /// <summary>
         /// Invoke function getSharePointSiteUsageFileCounts
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<GetSharePointSiteUsageFileCountsWithPeriodResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateGetRequestInformation(h, o);
+        public async Task<GetSharePointSiteUsageFileCountsWithPeriodResponse> GetAsync(Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+            var requestInfo = CreateGetRequestInformation(headers, options);
             return await RequestAdapter.SendAsync<GetSharePointSiteUsageFileCountsWithPeriodResponse>(requestInfo, GetSharePointSiteUsageFileCountsWithPeriodResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }

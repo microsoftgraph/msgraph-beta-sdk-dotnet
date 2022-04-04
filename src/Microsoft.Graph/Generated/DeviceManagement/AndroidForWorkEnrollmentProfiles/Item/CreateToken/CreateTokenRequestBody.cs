@@ -8,6 +8,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AndroidForWorkEnrollmentProfiles.It
     public class CreateTokenRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The tokenValidityInSeconds property</summary>
         public int? TokenValidityInSeconds { get; set; }
         /// <summary>
         /// Instantiates a new createTokenRequestBody and sets the default values.

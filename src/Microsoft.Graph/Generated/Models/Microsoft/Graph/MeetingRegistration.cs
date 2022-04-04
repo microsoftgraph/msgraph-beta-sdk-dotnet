@@ -15,7 +15,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public int? RegistrationPageViewCount { get; set; }
         /// <summary>The URL of the registration page. Read-only.</summary>
         public string RegistrationPageWebUrl { get; set; }
-        /// <summary>The meeting speaker's information.</summary>
+        /// <summary>The meeting speaker&apos;s information.</summary>
         public List<MeetingSpeaker> Speakers { get; set; }
         /// <summary>The meeting start time in UTC.</summary>
         public DateTimeOffset? StartDateTime { get; set; }

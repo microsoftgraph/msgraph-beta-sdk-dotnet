@@ -7,11 +7,17 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ResponsibleSensitiveType : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The description property</summary>
         public string Description { get; set; }
+        /// <summary>The id property</summary>
         public string Id { get; set; }
+        /// <summary>The name property</summary>
         public string Name { get; set; }
+        /// <summary>The publisherName property</summary>
         public string PublisherName { get; set; }
+        /// <summary>The rulePackageId property</summary>
         public string RulePackageId { get; set; }
+        /// <summary>The rulePackageType property</summary>
         public string RulePackageType { get; set; }
         /// <summary>
         /// Instantiates a new responsibleSensitiveType and sets the default values.

@@ -7,7 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SigningResult : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The signature property</summary>
         public byte[] Signature { get; set; }
+        /// <summary>The signingKeyId property</summary>
         public string SigningKeyId { get; set; }
         /// <summary>
         /// Instantiates a new signingResult and sets the default values.

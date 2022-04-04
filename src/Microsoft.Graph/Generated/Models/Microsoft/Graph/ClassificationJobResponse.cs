@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ClassificationJobResponse : JobResponseBase, IParsable {
+        /// <summary>The result property</summary>
         public DetectedSensitiveContentWrapper Result { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

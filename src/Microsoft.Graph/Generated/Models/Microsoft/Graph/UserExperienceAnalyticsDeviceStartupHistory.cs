@@ -21,7 +21,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public bool? IsFeatureUpdate { get; set; }
         /// <summary>The user experience analytics device first login.</summary>
         public bool? IsFirstLogin { get; set; }
-        /// <summary>The user experience analytics device boot record's operating system version.</summary>
+        /// <summary>The user experience analytics device boot record&apos;s operating system version.</summary>
         public string OperatingSystemVersion { get; set; }
         /// <summary>The user experience analytics responsive desktop time in milliseconds.</summary>
         public int? ResponsiveDesktopTimeInMs { get; set; }

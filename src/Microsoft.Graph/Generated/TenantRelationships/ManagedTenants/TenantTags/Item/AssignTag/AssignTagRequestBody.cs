@@ -8,6 +8,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantTags.Item.A
     public class AssignTagRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The tenantIds property</summary>
         public List<string> TenantIds { get; set; }
         /// <summary>
         /// Instantiates a new assignTagRequestBody and sets the default values.

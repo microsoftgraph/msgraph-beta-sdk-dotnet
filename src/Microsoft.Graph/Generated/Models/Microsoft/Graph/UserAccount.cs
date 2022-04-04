@@ -7,11 +7,17 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UserAccount : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
+        /// <summary>The lastSeenDateTime property</summary>
         public DateTimeOffset? LastSeenDateTime { get; set; }
+        /// <summary>The riskScore property</summary>
         public string RiskScore { get; set; }
+        /// <summary>The service property</summary>
         public string Service { get; set; }
+        /// <summary>The signinName property</summary>
         public string SigninName { get; set; }
+        /// <summary>The status property</summary>
         public AccountStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new userAccount and sets the default values.

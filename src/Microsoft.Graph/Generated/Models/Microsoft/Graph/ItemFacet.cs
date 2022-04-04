@@ -7,12 +7,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ItemFacet : Entity, IParsable {
         /// <summary>The audiences that are able to see the values contained within the associated entity. Possible values are: me, family, contacts, groupMembers, organization, federatedOrganizations, everyone, unknownFutureValue.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AllowedAudiences? AllowedAudiences { get; set; }
+        /// <summary>The createdBy property</summary>
         public IdentitySet CreatedBy { get; set; }
         /// <summary>Provides the dateTimeOffset for when the entity was created.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>Contains inference detail if the entity is inferred by the creating or modifying application.</summary>
         public InferenceData Inference { get; set; }
+        /// <summary>The isSearchable property</summary>
         public bool? IsSearchable { get; set; }
+        /// <summary>The lastModifiedBy property</summary>
         public IdentitySet LastModifiedBy { get; set; }
         /// <summary>Provides the dateTimeOffset for when the entity was created.</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }

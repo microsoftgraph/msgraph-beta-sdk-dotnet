@@ -6,8 +6,11 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PersonAnnualEvent : ItemFacet, IParsable {
+        /// <summary>The date property</summary>
         public Date? Date { get; set; }
+        /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
+        /// <summary>The type property</summary>
         public PersonAnnualEventType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

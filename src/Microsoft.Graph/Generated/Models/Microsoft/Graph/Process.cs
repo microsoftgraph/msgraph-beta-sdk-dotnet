@@ -19,7 +19,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public ProcessIntegrityLevel? IntegrityLevel { get; set; }
         /// <summary>True if the process is elevated.</summary>
         public bool? IsElevated { get; set; }
-        /// <summary>The name of the process' Image file.</summary>
+        /// <summary>The name of the process&apos; Image file.</summary>
         public string Name { get; set; }
         /// <summary>DateTime at which the parent process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ParentProcessCreatedDateTime { get; set; }

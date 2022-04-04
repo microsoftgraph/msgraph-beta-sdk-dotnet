@@ -9,9 +9,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string AntiMalwareVersion { get; set; }
         /// <summary>Device malware list</summary>
         public List<WindowsDeviceMalwareState> DetectedMalwareState { get; set; }
-        /// <summary>Computer's state (like clean or pending full scan or pending reboot etc). Possible values are: clean, fullScanPending, rebootPending, manualStepsPending, offlineScanPending, critical.</summary>
+        /// <summary>Computer&apos;s state (like clean or pending full scan or pending reboot etc). Possible values are: clean, fullScanPending, rebootPending, manualStepsPending, offlineScanPending, critical.</summary>
         public WindowsDeviceHealthState? DeviceState { get; set; }
-        /// <summary>Current endpoint protection engine's version</summary>
+        /// <summary>Current endpoint protection engine&apos;s version</summary>
         public string EngineVersion { get; set; }
         /// <summary>Full scan overdue or not?</summary>
         public bool? FullScanOverdue { get; set; }

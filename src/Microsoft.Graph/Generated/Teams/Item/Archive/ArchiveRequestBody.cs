@@ -8,6 +8,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Archive {
     public class ArchiveRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The shouldSetSpoSiteReadOnlyForMembers property</summary>
         public bool? ShouldSetSpoSiteReadOnlyForMembers { get; set; }
         /// <summary>
         /// Instantiates a new archiveRequestBody and sets the default values.

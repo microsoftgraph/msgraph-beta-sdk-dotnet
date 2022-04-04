@@ -7,6 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ChatMessage : Entity, IParsable {
         /// <summary>References to attached objects like files, tabs, meetings etc.</summary>
         public List<ChatMessageAttachment> Attachments { get; set; }
+        /// <summary>The body property</summary>
         public ItemBody Body { get; set; }
         /// <summary>If the message was sent in a channel, represents identity of the channel.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ChannelIdentity ChannelIdentity { get; set; }
@@ -26,7 +27,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<ChatMessageHostedContent> HostedContents { get; set; }
         /// <summary>The importance of the chat message. The possible values are: normal, high, urgent.</summary>
         public ChatMessageImportance? Importance { get; set; }
-        /// <summary>Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.</summary>
+        /// <summary>Read only. Timestamp when edits to the chat message were made. Triggers an &apos;Edited&apos; flag in the Teams UI. If no edits are made the value is null.</summary>
         public DateTimeOffset? LastEditedDateTime { get; set; }
         /// <summary>Read only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }

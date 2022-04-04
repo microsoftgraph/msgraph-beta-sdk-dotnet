@@ -11,7 +11,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<ManagedAppDataStorageLocation?> AllowedDataStorageLocations { get; set; }
         /// <summary>Sources from which data is allowed to be transferred. Possible values are: allApps, managedApps, none.</summary>
         public ManagedAppDataTransferLevel? AllowedInboundDataTransferSources { get; set; }
-        /// <summary>Specify the number of characters that may be cut or copied from Org data and accounts to any application. This setting overrides the AllowedOutboundClipboardSharingLevel restriction. Default value of '0' means no exception is allowed.</summary>
+        /// <summary>Specify the number of characters that may be cut or copied from Org data and accounts to any application. This setting overrides the AllowedOutboundClipboardSharingLevel restriction. Default value of &apos;0&apos; means no exception is allowed.</summary>
         public int? AllowedOutboundClipboardSharingExceptionLength { get; set; }
         /// <summary>The level to which the clipboard may be shared between apps on the managed device. Possible values are: allApps, managedAppsWithPasteIn, managedApps, blocked.</summary>
         public ManagedAppClipboardSharingLevel? AllowedOutboundClipboardSharingLevel { get; set; }
@@ -25,9 +25,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public ManagedAppRemediationAction? AppActionIfUnableToAuthenticateUser { get; set; }
         /// <summary>Indicates whether a user can bring data into org documents.</summary>
         public bool? BlockDataIngestionIntoOrganizationDocuments { get; set; }
-        /// <summary>Indicates whether contacts can be synced to the user's device.</summary>
+        /// <summary>Indicates whether contacts can be synced to the user&apos;s device.</summary>
         public bool? ContactSyncBlocked { get; set; }
-        /// <summary>Indicates whether the backup of a managed app's data is blocked.</summary>
+        /// <summary>Indicates whether the backup of a managed app&apos;s data is blocked.</summary>
         public bool? DataBackupBlocked { get; set; }
         /// <summary>Indicates whether device compliance is required.</summary>
         public bool? DeviceComplianceRequired { get; set; }
@@ -67,7 +67,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string MinimumWipeAppVersion { get; set; }
         /// <summary>Versions less than or equal to the specified version will wipe the managed app and the associated company data.</summary>
         public string MinimumWipeOsVersion { get; set; }
-        /// <summary>Determines what action to take if the mobile threat defense threat threshold isn't met. Warn isn't a supported value for this property. Possible values are: block, wipe, warn.</summary>
+        /// <summary>Determines what action to take if the mobile threat defense threat threshold isn&apos;t met. Warn isn&apos;t a supported value for this property. Possible values are: block, wipe, warn.</summary>
         public ManagedAppRemediationAction? MobileThreatDefenseRemediationAction { get; set; }
         /// <summary>Specify app notification restriction. Possible values are: allow, blockOrganizationalData, block.</summary>
         public ManagedAppNotificationRestriction? NotificationRestriction { get; set; }
@@ -91,7 +91,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public int? PreviousPinBlockCount { get; set; }
         /// <summary>Indicates whether printing is allowed from managed apps.</summary>
         public bool? PrintBlocked { get; set; }
-        /// <summary>Indicates whether users may use the 'Save As' menu item to save a copy of protected files.</summary>
+        /// <summary>Indicates whether users may use the &apos;Save As&apos; menu item to save a copy of protected files.</summary>
         public bool? SaveAsBlocked { get; set; }
         /// <summary>Indicates whether simplePin is blocked.</summary>
         public bool? SimplePinBlocked { get; set; }

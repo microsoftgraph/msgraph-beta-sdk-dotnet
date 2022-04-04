@@ -7,8 +7,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SensitiveContentEvidence : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The length property</summary>
         public int? Length { get; set; }
+        /// <summary>The match property</summary>
         public string Match { get; set; }
+        /// <summary>The offset property</summary>
         public int? Offset { get; set; }
         /// <summary>
         /// Instantiates a new sensitiveContentEvidence and sets the default values.

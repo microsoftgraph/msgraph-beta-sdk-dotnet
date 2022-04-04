@@ -146,36 +146,47 @@ using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Reports {
     /// <summary>Provides operations to manage the reportRoot singleton.</summary>
     public class ReportsRequestBuilder {
+        /// <summary>The applicationSignInDetailedSummary property</summary>
         public ApplicationSignInDetailedSummaryRequestBuilder ApplicationSignInDetailedSummary { get =>
             new ApplicationSignInDetailedSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The authenticationMethods property</summary>
         public AuthenticationMethodsRequestBuilder AuthenticationMethods { get =>
             new AuthenticationMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The credentialUserRegistrationDetails property</summary>
         public CredentialUserRegistrationDetailsRequestBuilder CredentialUserRegistrationDetails { get =>
             new CredentialUserRegistrationDetailsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The dailyPrintUsageByPrinter property</summary>
         public DailyPrintUsageByPrinterRequestBuilder DailyPrintUsageByPrinter { get =>
             new DailyPrintUsageByPrinterRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The dailyPrintUsageByUser property</summary>
         public DailyPrintUsageByUserRequestBuilder DailyPrintUsageByUser { get =>
             new DailyPrintUsageByUserRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The dailyPrintUsageSummariesByPrinter property</summary>
         public DailyPrintUsageSummariesByPrinterRequestBuilder DailyPrintUsageSummariesByPrinter { get =>
             new DailyPrintUsageSummariesByPrinterRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The dailyPrintUsageSummariesByUser property</summary>
         public DailyPrintUsageSummariesByUserRequestBuilder DailyPrintUsageSummariesByUser { get =>
             new DailyPrintUsageSummariesByUserRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The monthlyPrintUsageByPrinter property</summary>
         public MonthlyPrintUsageByPrinterRequestBuilder MonthlyPrintUsageByPrinter { get =>
             new MonthlyPrintUsageByPrinterRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The monthlyPrintUsageByUser property</summary>
         public MonthlyPrintUsageByUserRequestBuilder MonthlyPrintUsageByUser { get =>
             new MonthlyPrintUsageByUserRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The monthlyPrintUsageSummariesByPrinter property</summary>
         public MonthlyPrintUsageSummariesByPrinterRequestBuilder MonthlyPrintUsageSummariesByPrinter { get =>
             new MonthlyPrintUsageSummariesByPrinterRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The monthlyPrintUsageSummariesByUser property</summary>
         public MonthlyPrintUsageSummariesByUserRequestBuilder MonthlyPrintUsageSummariesByUser { get =>
             new MonthlyPrintUsageSummariesByUserRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -185,6 +196,7 @@ namespace MicrosoftGraphSdk.Reports {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>The userCredentialUsageDetails property</summary>
         public UserCredentialUsageDetailsRequestBuilder UserCredentialUsageDetails { get =>
             new UserCredentialUsageDetailsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -217,32 +229,32 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Get reports
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
-        /// <param name="q">Request query parameters</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
+        /// <param name="queryParameters">Request query parameters</param>
         /// </summary>
-        public RequestInformation CreateGetRequestInformation(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreateGetRequestInformation(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            if (q != null) {
+            if (queryParameters != null) {
                 var qParams = new GetQueryParameters();
-                q.Invoke(qParams);
+                queryParameters.Invoke(qParams);
                 qParams.AddQueryParameters(requestInfo.QueryParameters);
             }
-            h?.Invoke(requestInfo.Headers);
-            requestInfo.AddRequestOptions(o?.ToArray());
+            headers?.Invoke(requestInfo.Headers);
+            requestInfo.AddRequestOptions(options?.ToArray());
             return requestInfo;
         }
         /// <summary>
         /// Update reports
         /// <param name="body"></param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreatePatchRequestInformation(ReportRoot body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePatchRequestInformation(ReportRoot body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -250,8 +262,8 @@ namespace MicrosoftGraphSdk.Reports {
                 PathParameters = PathParameters,
             };
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
-            h?.Invoke(requestInfo.Headers);
-            requestInfo.AddRequestOptions(o?.ToArray());
+            headers?.Invoke(requestInfo.Headers);
+            requestInfo.AddRequestOptions(options?.ToArray());
             return requestInfo;
         }
         /// <summary>
@@ -269,13 +281,13 @@ namespace MicrosoftGraphSdk.Reports {
         /// <summary>
         /// Get reports
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
-        /// <param name="q">Request query parameters</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
+        /// <param name="queryParameters">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ReportRoot> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateGetRequestInformation(q, h, o);
+        public async Task<ReportRoot> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+            var requestInfo = CreateGetRequestInformation(queryParameters, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
@@ -302,7 +314,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getAzureADApplicationSignInSummary method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder GetAzureADApplicationSignInSummaryWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -310,7 +322,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getAzureADFeatureUsage method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetAzureADFeatureUsageWithPeriodRequestBuilder GetAzureADFeatureUsageWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -318,7 +330,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getAzureADLicenseUsage method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetAzureADLicenseUsageWithPeriodRequestBuilder GetAzureADLicenseUsageWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -332,7 +344,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getBrowserDistributionUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetBrowserDistributionUserCountsWithPeriodRequestBuilder GetBrowserDistributionUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -340,7 +352,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getBrowserUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetBrowserUserCountsWithPeriodRequestBuilder GetBrowserUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -348,7 +360,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getBrowserUserDetail method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetBrowserUserDetailWithPeriodRequestBuilder GetBrowserUserDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -356,7 +368,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getCredentialUsageSummary method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetCredentialUsageSummaryWithPeriodRequestBuilder GetCredentialUsageSummaryWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -370,7 +382,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getEmailActivityCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetEmailActivityCountsWithPeriodRequestBuilder GetEmailActivityCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -378,7 +390,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getEmailActivityUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetEmailActivityUserCountsWithPeriodRequestBuilder GetEmailActivityUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -394,7 +406,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getEmailActivityUserDetail method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetEmailActivityUserDetailWithPeriodRequestBuilder GetEmailActivityUserDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -402,7 +414,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getEmailAppUsageAppsUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetEmailAppUsageAppsUserCountsWithPeriodRequestBuilder GetEmailAppUsageAppsUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -410,7 +422,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getEmailAppUsageUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetEmailAppUsageUserCountsWithPeriodRequestBuilder GetEmailAppUsageUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -426,7 +438,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getEmailAppUsageUserDetail method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetEmailAppUsageUserDetailWithPeriodRequestBuilder GetEmailAppUsageUserDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -434,7 +446,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getEmailAppUsageVersionsUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetEmailAppUsageVersionsUserCountsWithPeriodRequestBuilder GetEmailAppUsageVersionsUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -442,9 +454,9 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getGroupArchivedPrintJobs method.
-        /// <param name="endDateTime">Usage: endDateTime='{endDateTime}'</param>
-        /// <param name="groupId">Usage: groupId='{groupId}'</param>
-        /// <param name="startDateTime">Usage: startDateTime='{startDateTime}'</param>
+        /// <param name="endDateTime">Usage: endDateTime=&apos;{endDateTime}&apos;</param>
+        /// <param name="groupId">Usage: groupId=&apos;{groupId}&apos;</param>
+        /// <param name="startDateTime">Usage: startDateTime=&apos;{startDateTime}&apos;</param>
         /// </summary>
         public GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, string groupId, DateTimeOffset? startDateTime) {
             _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
@@ -454,7 +466,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getM365AppPlatformUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetM365AppPlatformUserCountsWithPeriodRequestBuilder GetM365AppPlatformUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -462,7 +474,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getM365AppUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetM365AppUserCountsWithPeriodRequestBuilder GetM365AppUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -478,7 +490,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getM365AppUserDetail method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetM365AppUserDetailWithPeriodRequestBuilder GetM365AppUserDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -486,7 +498,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getMailboxUsageDetail method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetMailboxUsageDetailWithPeriodRequestBuilder GetMailboxUsageDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -494,7 +506,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getMailboxUsageMailboxCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetMailboxUsageMailboxCountsWithPeriodRequestBuilder GetMailboxUsageMailboxCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -502,7 +514,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getMailboxUsageQuotaStatusMailboxCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetMailboxUsageQuotaStatusMailboxCountsWithPeriodRequestBuilder GetMailboxUsageQuotaStatusMailboxCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -510,7 +522,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getMailboxUsageStorage method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetMailboxUsageStorageWithPeriodRequestBuilder GetMailboxUsageStorageWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -536,7 +548,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getOffice365ActiveUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetOffice365ActiveUserCountsWithPeriodRequestBuilder GetOffice365ActiveUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -552,7 +564,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getOffice365ActiveUserDetail method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetOffice365ActiveUserDetailWithPeriodRequestBuilder GetOffice365ActiveUserDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -560,7 +572,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getOffice365GroupsActivityCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetOffice365GroupsActivityCountsWithPeriodRequestBuilder GetOffice365GroupsActivityCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -576,7 +588,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getOffice365GroupsActivityDetail method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetOffice365GroupsActivityDetailWithPeriodRequestBuilder GetOffice365GroupsActivityDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -584,7 +596,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getOffice365GroupsActivityFileCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder GetOffice365GroupsActivityFileCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -592,7 +604,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getOffice365GroupsActivityGroupCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilder GetOffice365GroupsActivityGroupCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -600,7 +612,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getOffice365GroupsActivityStorage method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetOffice365GroupsActivityStorageWithPeriodRequestBuilder GetOffice365GroupsActivityStorageWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -608,7 +620,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getOffice365ServicesUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetOffice365ServicesUserCountsWithPeriodRequestBuilder GetOffice365ServicesUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -616,7 +628,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getOneDriveActivityFileCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetOneDriveActivityFileCountsWithPeriodRequestBuilder GetOneDriveActivityFileCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -624,7 +636,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getOneDriveActivityUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetOneDriveActivityUserCountsWithPeriodRequestBuilder GetOneDriveActivityUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -640,7 +652,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getOneDriveActivityUserDetail method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetOneDriveActivityUserDetailWithPeriodRequestBuilder GetOneDriveActivityUserDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -648,7 +660,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getOneDriveUsageAccountCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetOneDriveUsageAccountCountsWithPeriodRequestBuilder GetOneDriveUsageAccountCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -664,7 +676,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getOneDriveUsageAccountDetail method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetOneDriveUsageAccountDetailWithPeriodRequestBuilder GetOneDriveUsageAccountDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -672,7 +684,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getOneDriveUsageFileCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetOneDriveUsageFileCountsWithPeriodRequestBuilder GetOneDriveUsageFileCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -680,7 +692,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getOneDriveUsageStorage method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetOneDriveUsageStorageWithPeriodRequestBuilder GetOneDriveUsageStorageWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -688,9 +700,9 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getPrinterArchivedPrintJobs method.
-        /// <param name="endDateTime">Usage: endDateTime='{endDateTime}'</param>
-        /// <param name="printerId">Usage: printerId='{printerId}'</param>
-        /// <param name="startDateTime">Usage: startDateTime='{startDateTime}'</param>
+        /// <param name="endDateTime">Usage: endDateTime=&apos;{endDateTime}&apos;</param>
+        /// <param name="printerId">Usage: printerId=&apos;{printerId}&apos;</param>
+        /// <param name="startDateTime">Usage: startDateTime=&apos;{startDateTime}&apos;</param>
         /// </summary>
         public GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilder GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, string printerId, DateTimeOffset? startDateTime) {
             _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
@@ -700,7 +712,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getRelyingPartyDetailedSummary method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder GetRelyingPartyDetailedSummaryWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -708,7 +720,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getSharePointActivityFileCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetSharePointActivityFileCountsWithPeriodRequestBuilder GetSharePointActivityFileCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -716,7 +728,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getSharePointActivityPages method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetSharePointActivityPagesWithPeriodRequestBuilder GetSharePointActivityPagesWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -724,7 +736,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getSharePointActivityUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetSharePointActivityUserCountsWithPeriodRequestBuilder GetSharePointActivityUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -740,7 +752,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getSharePointActivityUserDetail method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetSharePointActivityUserDetailWithPeriodRequestBuilder GetSharePointActivityUserDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -756,7 +768,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getSharePointSiteUsageDetail method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetSharePointSiteUsageDetailWithPeriodRequestBuilder GetSharePointSiteUsageDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -764,7 +776,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getSharePointSiteUsageFileCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetSharePointSiteUsageFileCountsWithPeriodRequestBuilder GetSharePointSiteUsageFileCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -772,7 +784,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getSharePointSiteUsagePages method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetSharePointSiteUsagePagesWithPeriodRequestBuilder GetSharePointSiteUsagePagesWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -780,7 +792,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getSharePointSiteUsageSiteCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetSharePointSiteUsageSiteCountsWithPeriodRequestBuilder GetSharePointSiteUsageSiteCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -788,7 +800,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getSharePointSiteUsageStorage method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetSharePointSiteUsageStorageWithPeriodRequestBuilder GetSharePointSiteUsageStorageWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -796,7 +808,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessActivityCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetSkypeForBusinessActivityCountsWithPeriodRequestBuilder GetSkypeForBusinessActivityCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -804,7 +816,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessActivityUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetSkypeForBusinessActivityUserCountsWithPeriodRequestBuilder GetSkypeForBusinessActivityUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -820,7 +832,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessActivityUserDetail method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetSkypeForBusinessActivityUserDetailWithPeriodRequestBuilder GetSkypeForBusinessActivityUserDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -828,7 +840,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessDeviceUsageDistributionUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriodRequestBuilder GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -836,7 +848,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessDeviceUsageUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilder GetSkypeForBusinessDeviceUsageUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -852,7 +864,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessDeviceUsageUserDetail method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetSkypeForBusinessDeviceUsageUserDetailWithPeriodRequestBuilder GetSkypeForBusinessDeviceUsageUserDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -860,7 +872,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessOrganizerActivityCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetSkypeForBusinessOrganizerActivityCountsWithPeriodRequestBuilder GetSkypeForBusinessOrganizerActivityCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -868,7 +880,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessOrganizerActivityMinuteCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriodRequestBuilder GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -876,7 +888,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessOrganizerActivityUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodRequestBuilder GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -884,7 +896,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessParticipantActivityCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetSkypeForBusinessParticipantActivityCountsWithPeriodRequestBuilder GetSkypeForBusinessParticipantActivityCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -892,7 +904,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessParticipantActivityMinuteCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilder GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -900,7 +912,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessParticipantActivityUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetSkypeForBusinessParticipantActivityUserCountsWithPeriodRequestBuilder GetSkypeForBusinessParticipantActivityUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -908,7 +920,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessPeerToPeerActivityCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetSkypeForBusinessPeerToPeerActivityCountsWithPeriodRequestBuilder GetSkypeForBusinessPeerToPeerActivityCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -916,7 +928,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessPeerToPeerActivityMinuteCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriodRequestBuilder GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -924,7 +936,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessPeerToPeerActivityUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetSkypeForBusinessPeerToPeerActivityUserCountsWithPeriodRequestBuilder GetSkypeForBusinessPeerToPeerActivityUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -932,7 +944,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getTeamsDeviceUsageDistributionTotalUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilder GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -940,7 +952,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getTeamsDeviceUsageDistributionUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetTeamsDeviceUsageDistributionUserCountsWithPeriodRequestBuilder GetTeamsDeviceUsageDistributionUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -948,7 +960,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getTeamsDeviceUsageTotalUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetTeamsDeviceUsageTotalUserCountsWithPeriodRequestBuilder GetTeamsDeviceUsageTotalUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -956,7 +968,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getTeamsDeviceUsageUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetTeamsDeviceUsageUserCountsWithPeriodRequestBuilder GetTeamsDeviceUsageUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -972,7 +984,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getTeamsDeviceUsageUserDetail method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetTeamsDeviceUsageUserDetailWithPeriodRequestBuilder GetTeamsDeviceUsageUserDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -980,7 +992,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getTeamsTeamActivityCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetTeamsTeamActivityCountsWithPeriodRequestBuilder GetTeamsTeamActivityCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -996,7 +1008,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getTeamsTeamActivityDetail method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetTeamsTeamActivityDetailWithPeriodRequestBuilder GetTeamsTeamActivityDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1004,7 +1016,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getTeamsTeamActivityDistributionCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetTeamsTeamActivityDistributionCountsWithPeriodRequestBuilder GetTeamsTeamActivityDistributionCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1012,7 +1024,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getTeamsUserActivityCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetTeamsUserActivityCountsWithPeriodRequestBuilder GetTeamsUserActivityCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1020,7 +1032,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getTeamsUserActivityDistributionTotalUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetTeamsUserActivityDistributionTotalUserCountsWithPeriodRequestBuilder GetTeamsUserActivityDistributionTotalUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1028,7 +1040,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getTeamsUserActivityDistributionUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetTeamsUserActivityDistributionUserCountsWithPeriodRequestBuilder GetTeamsUserActivityDistributionUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1036,7 +1048,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getTeamsUserActivityTotalCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetTeamsUserActivityTotalCountsWithPeriodRequestBuilder GetTeamsUserActivityTotalCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1044,7 +1056,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getTeamsUserActivityTotalDistributionCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetTeamsUserActivityTotalDistributionCountsWithPeriodRequestBuilder GetTeamsUserActivityTotalDistributionCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1052,7 +1064,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getTeamsUserActivityTotalUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetTeamsUserActivityTotalUserCountsWithPeriodRequestBuilder GetTeamsUserActivityTotalUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1060,7 +1072,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getTeamsUserActivityUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetTeamsUserActivityUserCountsWithPeriodRequestBuilder GetTeamsUserActivityUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1076,7 +1088,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getTeamsUserActivityUserDetail method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetTeamsUserActivityUserDetailWithPeriodRequestBuilder GetTeamsUserActivityUserDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1084,9 +1096,9 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getUserArchivedPrintJobs method.
-        /// <param name="endDateTime">Usage: endDateTime='{endDateTime}'</param>
-        /// <param name="startDateTime">Usage: startDateTime='{startDateTime}'</param>
-        /// <param name="userId">Usage: userId='{userId}'</param>
+        /// <param name="endDateTime">Usage: endDateTime=&apos;{endDateTime}&apos;</param>
+        /// <param name="startDateTime">Usage: startDateTime=&apos;{startDateTime}&apos;</param>
+        /// <param name="userId">Usage: userId=&apos;{userId}&apos;</param>
         /// </summary>
         public GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime, string userId) {
             _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
@@ -1096,7 +1108,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getYammerActivityCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetYammerActivityCountsWithPeriodRequestBuilder GetYammerActivityCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1104,7 +1116,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getYammerActivityUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetYammerActivityUserCountsWithPeriodRequestBuilder GetYammerActivityUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1120,7 +1132,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getYammerActivityUserDetail method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetYammerActivityUserDetailWithPeriodRequestBuilder GetYammerActivityUserDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1128,7 +1140,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getYammerDeviceUsageDistributionUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetYammerDeviceUsageDistributionUserCountsWithPeriodRequestBuilder GetYammerDeviceUsageDistributionUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1136,7 +1148,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getYammerDeviceUsageUserCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetYammerDeviceUsageUserCountsWithPeriodRequestBuilder GetYammerDeviceUsageUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1152,7 +1164,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getYammerDeviceUsageUserDetail method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetYammerDeviceUsageUserDetailWithPeriodRequestBuilder GetYammerDeviceUsageUserDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1160,7 +1172,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getYammerGroupsActivityCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetYammerGroupsActivityCountsWithPeriodRequestBuilder GetYammerGroupsActivityCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1176,7 +1188,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getYammerGroupsActivityDetail method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetYammerGroupsActivityDetailWithPeriodRequestBuilder GetYammerGroupsActivityDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1184,7 +1196,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the getYammerGroupsActivityGroupCounts method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder GetYammerGroupsActivityGroupCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1192,9 +1204,9 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the managedDeviceEnrollmentAbandonmentDetails method.
-        /// <param name="filter">Usage: filter='{filter}'</param>
+        /// <param name="filter">Usage: filter=&apos;{filter}&apos;</param>
         /// <param name="skip">Usage: skip={skip}</param>
-        /// <param name="skipToken">Usage: skipToken='{skipToken}'</param>
+        /// <param name="skipToken">Usage: skipToken=&apos;{skipToken}&apos;</param>
         /// <param name="top">Usage: top={top}</param>
         /// </summary>
         public ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipToken(string filter, int? skip, string skipToken, int? top) {
@@ -1206,9 +1218,9 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the managedDeviceEnrollmentAbandonmentSummary method.
-        /// <param name="filter">Usage: filter='{filter}'</param>
+        /// <param name="filter">Usage: filter=&apos;{filter}&apos;</param>
         /// <param name="skip">Usage: skip={skip}</param>
-        /// <param name="skipToken">Usage: skipToken='{skipToken}'</param>
+        /// <param name="skipToken">Usage: skipToken=&apos;{skipToken}&apos;</param>
         /// <param name="top">Usage: top={top}</param>
         /// </summary>
         public ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipTokenRequestBuilder ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipToken(string filter, int? skip, string skipToken, int? top) {
@@ -1226,9 +1238,9 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the managedDeviceEnrollmentFailureDetails method.
-        /// <param name="filter">Usage: filter='{filter}'</param>
+        /// <param name="filter">Usage: filter=&apos;{filter}&apos;</param>
         /// <param name="skip">Usage: skip={skip}</param>
-        /// <param name="skipToken">Usage: skipToken='{skipToken}'</param>
+        /// <param name="skipToken">Usage: skipToken=&apos;{skipToken}&apos;</param>
         /// <param name="top">Usage: top={top}</param>
         /// </summary>
         public ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipToken(string filter, int? skip, string skipToken, int? top) {
@@ -1252,7 +1264,7 @@ namespace MicrosoftGraphSdk.Reports {
         }
         /// <summary>
         /// Provides operations to call the managedDeviceEnrollmentTopFailures method.
-        /// <param name="period">Usage: period='{period}'</param>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// </summary>
         public ManagedDeviceEnrollmentTopFailuresWithPeriodRequestBuilder ManagedDeviceEnrollmentTopFailuresWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1262,13 +1274,13 @@ namespace MicrosoftGraphSdk.Reports {
         /// Update reports
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(ReportRoot body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(ReportRoot body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = CreatePatchRequestInformation(body, h, o);
+            var requestInfo = CreatePatchRequestInformation(body, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},

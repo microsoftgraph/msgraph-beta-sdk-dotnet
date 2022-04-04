@@ -5,18 +5,27 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class RbacApplication : Entity, IParsable {
+        /// <summary>The resourceNamespaces property</summary>
         public List<UnifiedRbacResourceNamespace> ResourceNamespaces { get; set; }
+        /// <summary>The roleAssignmentApprovals property</summary>
         public List<Approval> RoleAssignmentApprovals { get; set; }
         /// <summary>Resource to grant access to users or groups.</summary>
         public List<UnifiedRoleAssignment> RoleAssignments { get; set; }
+        /// <summary>The roleAssignmentScheduleInstances property</summary>
         public List<UnifiedRoleAssignmentScheduleInstance> RoleAssignmentScheduleInstances { get; set; }
+        /// <summary>The roleAssignmentScheduleRequests property</summary>
         public List<UnifiedRoleAssignmentScheduleRequest> RoleAssignmentScheduleRequests { get; set; }
+        /// <summary>The roleAssignmentSchedules property</summary>
         public List<UnifiedRoleAssignmentSchedule> RoleAssignmentSchedules { get; set; }
         /// <summary>Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.</summary>
         public List<UnifiedRoleDefinition> RoleDefinitions { get; set; }
+        /// <summary>The roleEligibilityScheduleInstances property</summary>
         public List<UnifiedRoleEligibilityScheduleInstance> RoleEligibilityScheduleInstances { get; set; }
+        /// <summary>The roleEligibilityScheduleRequests property</summary>
         public List<UnifiedRoleEligibilityScheduleRequest> RoleEligibilityScheduleRequests { get; set; }
+        /// <summary>The roleEligibilitySchedules property</summary>
         public List<UnifiedRoleEligibilitySchedule> RoleEligibilitySchedules { get; set; }
+        /// <summary>The transitiveRoleAssignments property</summary>
         public List<UnifiedRoleAssignment> TransitiveRoleAssignments { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -13,6 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string DisplayName { get; set; }
         /// <summary>Detail of the users proficiency with this skill. Possible values are: elementary, limitedWorking, generalProfessional, advancedProfessional, expert, unknownFutureValue.</summary>
         public SkillProficiencyLevel? Proficiency { get; set; }
+        /// <summary>The thumbnailUrl property</summary>
         public string ThumbnailUrl { get; set; }
         /// <summary>Contains a link to an information source about the skill.</summary>
         public string WebUrl { get; set; }

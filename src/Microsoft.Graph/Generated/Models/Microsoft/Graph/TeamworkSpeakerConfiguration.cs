@@ -7,12 +7,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class TeamworkSpeakerConfiguration : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The defaultCommunicationSpeaker property</summary>
         public TeamworkPeripheral DefaultCommunicationSpeaker { get; set; }
+        /// <summary>The defaultSpeaker property</summary>
         public TeamworkPeripheral DefaultSpeaker { get; set; }
         /// <summary>True if the communication speaker is optional. Used to compute the health state if the communication speaker is not optional.</summary>
         public bool? IsCommunicationSpeakerOptional { get; set; }
         /// <summary>True if the configured speaker is optional. Used to compute the health state if the speaker is not optional.</summary>
         public bool? IsSpeakerOptional { get; set; }
+        /// <summary>The speakers property</summary>
         public List<TeamworkPeripheral> Speakers { get; set; }
         /// <summary>
         /// Instantiates a new teamworkSpeakerConfiguration and sets the default values.

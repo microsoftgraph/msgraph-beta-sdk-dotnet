@@ -5,15 +5,15 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UserSettings : Entity, IParsable {
-        /// <summary>The user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.</summary>
+        /// <summary>The user&apos;s settings for the visibility of merge suggestion for the duplicate contacts in the user&apos;s contact list.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ContactMergeSuggestions ContactMergeSuggestions { get; set; }
-        /// <summary>Reflects the Office Delve organization level setting. When set to true, the organization doesn't have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.</summary>
+        /// <summary>Reflects the Office Delve organization level setting. When set to true, the organization doesn&apos;t have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.</summary>
         public bool? ContributionToContentDiscoveryAsOrganizationDisabled { get; set; }
-        /// <summary>When set to true, documents in the user's Office Delve are disabled. Users can control this setting in Office Delve.</summary>
+        /// <summary>When set to true, documents in the user&apos;s Office Delve are disabled. Users can control this setting in Office Delve.</summary>
         public bool? ContributionToContentDiscoveryDisabled { get; set; }
-        /// <summary>The user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.</summary>
+        /// <summary>The user&apos;s settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.</summary>
         public UserInsightsSettings ItemInsights { get; set; }
-        /// <summary>The user's preferences for languages, regional locale and date/time formatting.</summary>
+        /// <summary>The user&apos;s preferences for languages, regional locale and date/time formatting.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.RegionalAndLanguageSettings RegionalAndLanguageSettings { get; set; }
         /// <summary>The shift preferences for the user.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ShiftPreferences ShiftPreferences { get; set; }

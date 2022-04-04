@@ -7,8 +7,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Search {
     public class IdentitySet : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The application property</summary>
         public Identity Application { get; set; }
+        /// <summary>The device property</summary>
         public Identity Device { get; set; }
+        /// <summary>The user property</summary>
         public Identity User { get; set; }
         /// <summary>
         /// Instantiates a new identitySet and sets the default values.

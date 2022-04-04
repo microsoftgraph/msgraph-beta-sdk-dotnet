@@ -8,7 +8,9 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Checkin {
     public class CheckinRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The checkInAs property</summary>
         public string CheckInAs { get; set; }
+        /// <summary>The comment property</summary>
         public string Comment { get; set; }
         /// <summary>
         /// Instantiates a new checkinRequestBody and sets the default values.

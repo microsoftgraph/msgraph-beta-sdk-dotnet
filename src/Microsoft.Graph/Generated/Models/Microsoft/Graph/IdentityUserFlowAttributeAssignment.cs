@@ -7,9 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class IdentityUserFlowAttributeAssignment : Entity, IParsable {
         /// <summary>The display name of the identityUserFlowAttribute within a user flow.</summary>
         public string DisplayName { get; set; }
-        /// <summary>Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user cannot complete sign-up without providing a value.</summary>
+        /// <summary>Determines whether the identityUserFlowAttribute is optional. true means the user doesn&apos;t have to provide a value. false means the user cannot complete sign-up without providing a value.</summary>
         public bool? IsOptional { get; set; }
-        /// <summary>Determines whether the identityUserFlowAttribute requires verification. This is only used for verifying the user's phone number or email address.</summary>
+        /// <summary>Determines whether the identityUserFlowAttribute requires verification. This is only used for verifying the user&apos;s phone number or email address.</summary>
         public bool? RequiresVerification { get; set; }
         /// <summary>The user attribute that you want to add to your user flow.</summary>
         public IdentityUserFlowAttribute UserAttribute { get; set; }

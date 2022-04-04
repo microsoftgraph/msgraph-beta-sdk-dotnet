@@ -15,6 +15,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>The printer that this printer share is related to.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Printer Printer { get; set; }
+        /// <summary>The viewPoint property</summary>
         public PrinterShareViewpoint ViewPoint { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

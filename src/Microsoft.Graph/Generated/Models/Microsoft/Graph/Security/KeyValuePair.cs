@@ -7,7 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Security {
     public class KeyValuePair : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The name property</summary>
         public string Name { get; set; }
+        /// <summary>The value property</summary>
         public string Value { get; set; }
         /// <summary>
         /// Instantiates a new keyValuePair and sets the default values.

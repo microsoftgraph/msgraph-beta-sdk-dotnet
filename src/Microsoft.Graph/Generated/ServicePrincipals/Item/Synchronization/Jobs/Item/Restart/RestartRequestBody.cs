@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.Item.Res
     public class RestartRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The criteria property</summary>
         public SynchronizationJobRestartCriteria Criteria { get; set; }
         /// <summary>
         /// Instantiates a new restartRequestBody and sets the default values.

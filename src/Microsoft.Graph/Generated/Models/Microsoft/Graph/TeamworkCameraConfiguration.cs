@@ -7,9 +7,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class TeamworkCameraConfiguration : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The cameras property</summary>
         public List<TeamworkPeripheral> Cameras { get; set; }
         /// <summary>The configuration for the content camera.</summary>
         public TeamworkContentCameraConfiguration ContentCameraConfiguration { get; set; }
+        /// <summary>The defaultContentCamera property</summary>
         public TeamworkPeripheral DefaultContentCamera { get; set; }
         /// <summary>
         /// Instantiates a new teamworkCameraConfiguration and sets the default values.

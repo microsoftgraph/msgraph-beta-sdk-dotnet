@@ -7,9 +7,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class TeamworkMicrophoneConfiguration : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The defaultMicrophone property</summary>
         public TeamworkPeripheral DefaultMicrophone { get; set; }
         /// <summary>True if the configured microphone is optional. False if the microphone is not optional and the health state of the device should be computed.</summary>
         public bool? IsMicrophoneOptional { get; set; }
+        /// <summary>The microphones property</summary>
         public List<TeamworkPeripheral> Microphones { get; set; }
         /// <summary>
         /// Instantiates a new teamworkMicrophoneConfiguration and sets the default values.

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DefaultUserRoleOverride : Entity, IParsable {
+        /// <summary>The isDefault property</summary>
         public bool? IsDefault { get; set; }
+        /// <summary>The rolePermissions property</summary>
         public List<UnifiedRolePermission> RolePermissions { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

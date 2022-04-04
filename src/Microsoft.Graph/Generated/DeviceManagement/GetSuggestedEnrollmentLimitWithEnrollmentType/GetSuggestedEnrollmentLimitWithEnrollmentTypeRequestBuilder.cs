@@ -18,7 +18,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GetSuggestedEnrollmentLimitWithEnro
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder and sets the default values.
-        /// <param name="enrollmentType">Usage: enrollmentType='{enrollmentType}'</param>
+        /// <param name="enrollmentType">Usage: enrollmentType=&apos;{enrollmentType}&apos;</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// </summary>
@@ -47,28 +47,28 @@ namespace MicrosoftGraphSdk.DeviceManagement.GetSuggestedEnrollmentLimitWithEnro
         }
         /// <summary>
         /// Invoke function getSuggestedEnrollmentLimit
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreateGetRequestInformation(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreateGetRequestInformation(Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            h?.Invoke(requestInfo.Headers);
-            requestInfo.AddRequestOptions(o?.ToArray());
+            headers?.Invoke(requestInfo.Headers);
+            requestInfo.AddRequestOptions(options?.ToArray());
             return requestInfo;
         }
         /// <summary>
         /// Invoke function getSuggestedEnrollmentLimit
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<SuggestedEnrollmentLimit> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateGetRequestInformation(h, o);
+        public async Task<SuggestedEnrollmentLimit> GetAsync(Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+            var requestInfo = CreateGetRequestInformation(headers, options);
             return await RequestAdapter.SendAsync<SuggestedEnrollmentLimit>(requestInfo, SuggestedEnrollmentLimit.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }

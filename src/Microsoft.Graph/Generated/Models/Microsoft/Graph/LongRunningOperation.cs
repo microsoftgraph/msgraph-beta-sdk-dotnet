@@ -5,10 +5,15 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class LongRunningOperation : Entity, IParsable {
+        /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
+        /// <summary>The lastActionDateTime property</summary>
         public DateTimeOffset? LastActionDateTime { get; set; }
+        /// <summary>The resourceLocation property</summary>
         public string ResourceLocation { get; set; }
+        /// <summary>The status property</summary>
         public LongRunningOperationStatus? Status { get; set; }
+        /// <summary>The statusDetail property</summary>
         public string StatusDetail { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

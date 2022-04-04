@@ -10,9 +10,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies whether the column will allow more than one value.</summary>
         public bool? AllowMultipleValues { get; set; }
+        /// <summary>The parentTerm property</summary>
         public Term ParentTerm { get; set; }
         /// <summary>Specifies whether to display the entire term path or only the term label.</summary>
         public bool? ShowFullyQualifiedName { get; set; }
+        /// <summary>The termSet property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Set TermSet { get; set; }
         /// <summary>
         /// Instantiates a new termColumn and sets the default values.

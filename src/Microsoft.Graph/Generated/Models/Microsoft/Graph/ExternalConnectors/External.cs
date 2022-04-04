@@ -7,6 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors {
     public class External : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The connections property</summary>
         public List<ExternalConnection> Connections { get; set; }
         /// <summary>
         /// Instantiates a new External and sets the default values.

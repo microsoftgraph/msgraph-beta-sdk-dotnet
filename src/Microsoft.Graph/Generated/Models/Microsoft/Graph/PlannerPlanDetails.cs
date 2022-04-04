@@ -9,7 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public PlannerCategoryDescriptions CategoryDescriptions { get; set; }
         /// <summary>Read-only. A collection of additional information associated with plannerPlanContext entries that are defined for the plannerPlan container.</summary>
         public PlannerPlanContextDetailsCollection ContextDetails { get; set; }
-        /// <summary>Set of user ids that this plan is shared with. If you are leveraging Microsoft 365 groups, use the Groups API to manage group membership to share the group's plan. You can also add existing members of the group to this collection though it is not required for them to access the plan owned by the group.</summary>
+        /// <summary>Set of user ids that this plan is shared with. If you are leveraging Microsoft 365 groups, use the Groups API to manage group membership to share the group&apos;s plan. You can also add existing members of the group to this collection though it is not required for them to access the plan owned by the group.</summary>
         public PlannerUserIds SharedWith { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

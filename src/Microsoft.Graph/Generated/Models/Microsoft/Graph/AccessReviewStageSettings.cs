@@ -15,6 +15,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public int? DurationInDays { get; set; }
         /// <summary>If provided, the fallback reviewers are asked to complete a review if the primary reviewers do not exist. For example, if managers are selected as reviewers and a principal under review does not have a manager in Azure AD, the fallback reviewers are asked to review that principal. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition object.</summary>
         public List<AccessReviewReviewerScope> FallbackReviewers { get; set; }
+        /// <summary>The recommendationInsightSettings property</summary>
         public List<AccessReviewRecommendationInsightSetting> RecommendationInsightSettings { get; set; }
         /// <summary>Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition object.</summary>
         public TimeSpan? RecommendationLookBackDuration { get; set; }

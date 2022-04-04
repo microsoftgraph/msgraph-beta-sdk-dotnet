@@ -11,6 +11,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string Description { get; set; }
         /// <summary>Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).</summary>
         public string Name { get; set; }
+        /// <summary>The resourceScope property</summary>
         public UnifiedRbacResourceScope ResourceScope { get; set; }
         /// <summary>Not implemented.</summary>
         public string ResourceScopeId { get; set; }

@@ -13,9 +13,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string ContentType { get; set; }
         /// <summary>The default number of copies printed per job.</summary>
         public int? CopiesPerJob { get; set; }
+        /// <summary>The documentMimeType property</summary>
         public string DocumentMimeType { get; set; }
         /// <summary>The default resolution in DPI to use when printing the job.</summary>
         public int? Dpi { get; set; }
+        /// <summary>The duplexConfiguration property</summary>
         public PrintDuplexConfiguration? DuplexConfiguration { get; set; }
         /// <summary>The default duplex (double-sided) configuration to use when printing a document. Valid values are described in the following table.</summary>
         public PrintDuplexMode? DuplexMode { get; set; }
@@ -35,13 +37,17 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public PrintMultipageLayout? MultipageLayout { get; set; }
         /// <summary>The default orientation to use when printing the document. Valid values are described in the following table.</summary>
         public PrintOrientation? Orientation { get; set; }
-        /// <summary>The default output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.</summary>
+        /// <summary>The default output bin to place completed prints into. See the printer&apos;s capabilities for a list of supported output bins.</summary>
         public string OutputBin { get; set; }
         /// <summary>The default number of document pages to print on each sheet.</summary>
         public int? PagesPerSheet { get; set; }
+        /// <summary>The pdfFitToPage property</summary>
         public bool? PdfFitToPage { get; set; }
+        /// <summary>The presentationDirection property</summary>
         public PrintPresentationDirection? PresentationDirection { get; set; }
+        /// <summary>The printColorConfiguration property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.PrintColorConfiguration? PrintColorConfiguration { get; set; }
+        /// <summary>The printQuality property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.PrintQuality? PrintQuality { get; set; }
         /// <summary>The default quality to use when printing the document. Valid values are described in the following table.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.PrintQuality? Quality { get; set; }

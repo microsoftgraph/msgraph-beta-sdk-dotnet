@@ -7,9 +7,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DomainRegistrant : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The countryOrRegionCode property</summary>
         public string CountryOrRegionCode { get; set; }
+        /// <summary>The organization property</summary>
         public string Organization { get; set; }
+        /// <summary>The url property</summary>
         public string Url { get; set; }
+        /// <summary>The vendor property</summary>
         public string Vendor { get; set; }
         /// <summary>
         /// Instantiates a new domainRegistrant and sets the default values.

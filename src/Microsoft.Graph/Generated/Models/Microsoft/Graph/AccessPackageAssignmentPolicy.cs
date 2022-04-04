@@ -7,6 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AccessPackageAssignmentPolicy : Entity, IParsable {
         /// <summary>The access package with this policy. Read-only. Nullable. Supports $expand.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackage AccessPackage { get; set; }
+        /// <summary>The accessPackageCatalog property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageCatalog AccessPackageCatalog { get; set; }
         /// <summary>Identifier of the access package.</summary>
         public string AccessPackageId { get; set; }

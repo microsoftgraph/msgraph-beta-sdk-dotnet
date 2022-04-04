@@ -13,6 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<UserFlowLanguageConfiguration> Languages { get; set; }
         /// <summary>The user attribute assignments included in the user flow.</summary>
         public List<IdentityUserFlowAttributeAssignment> UserAttributeAssignments { get; set; }
+        /// <summary>The userFlowIdentityProviders property</summary>
         public List<IdentityProviderBase> UserFlowIdentityProviders { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

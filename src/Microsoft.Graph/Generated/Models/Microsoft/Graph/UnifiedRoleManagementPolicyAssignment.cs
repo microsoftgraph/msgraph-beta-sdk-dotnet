@@ -11,7 +11,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string PolicyId { get; set; }
         /// <summary>The id of the role definition where the policy applies. If not specified, the policy applies to all roles.</summary>
         public string RoleDefinitionId { get; set; }
-        /// <summary>The id of the scope where the policy is assigned. E.g. '/', groupId, etc.</summary>
+        /// <summary>The id of the scope where the policy is assigned. E.g. &apos;/&apos;, groupId, etc.</summary>
         public string ScopeId { get; set; }
         /// <summary>The type of the scope where the policy is assigned. One of Directory, DirectoryRole, Group.</summary>
         public string ScopeType { get; set; }

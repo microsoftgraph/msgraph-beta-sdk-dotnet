@@ -7,6 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class LanguageProficiency : ItemFacet, IParsable {
         /// <summary>Contains the long-form name for the language.</summary>
         public string DisplayName { get; set; }
+        /// <summary>The proficiency property</summary>
         public LanguageProficiencyLevel? Proficiency { get; set; }
         /// <summary>Represents the users reading comprehension for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.</summary>
         public LanguageProficiencyLevel? Reading { get; set; }
@@ -14,6 +15,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public LanguageProficiencyLevel? Spoken { get; set; }
         /// <summary>Contains the four-character BCP47 name for the language (en-US, no-NB, en-AU).</summary>
         public string Tag { get; set; }
+        /// <summary>The thumbnailUrl property</summary>
         public string ThumbnailUrl { get; set; }
         /// <summary>Represents the users written proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.</summary>
         public LanguageProficiencyLevel? Written { get; set; }

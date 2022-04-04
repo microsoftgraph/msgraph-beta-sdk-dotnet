@@ -5,23 +5,23 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UserExperienceAnalyticsNotAutopilotReadyDevice : Entity, IParsable {
-        /// <summary>The intune device's autopilotProfileAssigned.</summary>
+        /// <summary>The intune device&apos;s autopilotProfileAssigned.</summary>
         public bool? AutoPilotProfileAssigned { get; set; }
-        /// <summary>The intune device's autopilotRegistered.</summary>
+        /// <summary>The intune device&apos;s autopilotRegistered.</summary>
         public bool? AutoPilotRegistered { get; set; }
-        /// <summary>The intune device's azure Ad joinType.</summary>
+        /// <summary>The intune device&apos;s azure Ad joinType.</summary>
         public string AzureAdJoinType { get; set; }
-        /// <summary>The intune device's azureAdRegistered.</summary>
+        /// <summary>The intune device&apos;s azureAdRegistered.</summary>
         public bool? AzureAdRegistered { get; set; }
-        /// <summary>The intune device's name.</summary>
+        /// <summary>The intune device&apos;s name.</summary>
         public string DeviceName { get; set; }
-        /// <summary>The intune device's managed by.</summary>
+        /// <summary>The intune device&apos;s managed by.</summary>
         public string ManagedBy { get; set; }
-        /// <summary>The intune device's manufacturer.</summary>
+        /// <summary>The intune device&apos;s manufacturer.</summary>
         public string Manufacturer { get; set; }
-        /// <summary>The intune device's model.</summary>
+        /// <summary>The intune device&apos;s model.</summary>
         public string Model { get; set; }
-        /// <summary>The intune device's serial number.</summary>
+        /// <summary>The intune device&apos;s serial number.</summary>
         public string SerialNumber { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

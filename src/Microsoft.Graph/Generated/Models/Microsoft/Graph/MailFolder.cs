@@ -9,17 +9,17 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public int? ChildFolderCount { get; set; }
         /// <summary>The collection of child folders in the mailFolder.</summary>
         public List<MailFolder> ChildFolders { get; set; }
-        /// <summary>The mailFolder's display name.</summary>
+        /// <summary>The mailFolder&apos;s display name.</summary>
         public string DisplayName { get; set; }
         /// <summary>Indicates whether the mailFolder is hidden. This property can be set only when creating the folder. Find more information in Hidden mail folders.</summary>
         public bool? IsHidden { get; set; }
-        /// <summary>The collection of rules that apply to the user's Inbox folder.</summary>
+        /// <summary>The collection of rules that apply to the user&apos;s Inbox folder.</summary>
         public List<MessageRule> MessageRules { get; set; }
         /// <summary>The collection of messages in the mailFolder.</summary>
         public List<Message> Messages { get; set; }
         /// <summary>The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.</summary>
         public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties { get; set; }
-        /// <summary>The unique identifier for the mailFolder's parent mailFolder.</summary>
+        /// <summary>The unique identifier for the mailFolder&apos;s parent mailFolder.</summary>
         public string ParentFolderId { get; set; }
         /// <summary>The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.</summary>
         public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties { get; set; }
@@ -27,6 +27,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public int? TotalItemCount { get; set; }
         /// <summary>The number of items in the mailFolder marked as unread.</summary>
         public int? UnreadItemCount { get; set; }
+        /// <summary>The userConfigurations property</summary>
         public List<UserConfiguration> UserConfigurations { get; set; }
         /// <summary>The well-known folder name for the folder. The possible values are listed above. This property is only set for default folders created by Outlook. For other folders, this property is null.</summary>
         public string WellKnownName { get; set; }

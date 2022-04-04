@@ -21,6 +21,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<IdentityProviderBase> IdentityProviders { get; set; }
         /// <summary>Represents entry point for identity userflow attributes.</summary>
         public List<IdentityUserFlowAttribute> UserFlowAttributes { get; set; }
+        /// <summary>The userFlows property</summary>
         public List<IdentityUserFlow> UserFlows { get; set; }
         /// <summary>
         /// Instantiates a new IdentityContainer and sets the default values.

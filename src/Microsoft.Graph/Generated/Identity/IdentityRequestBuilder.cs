@@ -19,21 +19,27 @@ using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.Identity {
     /// <summary>Provides operations to manage the identityContainer singleton.</summary>
     public class IdentityRequestBuilder {
+        /// <summary>The apiConnectors property</summary>
         public ApiConnectorsRequestBuilder ApiConnectors { get =>
             new ApiConnectorsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The b2cUserFlows property</summary>
         public B2cUserFlowsRequestBuilder B2cUserFlows { get =>
             new B2cUserFlowsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The b2xUserFlows property</summary>
         public B2xUserFlowsRequestBuilder B2xUserFlows { get =>
             new B2xUserFlowsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The conditionalAccess property</summary>
         public ConditionalAccessRequestBuilder ConditionalAccess { get =>
             new ConditionalAccessRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The continuousAccessEvaluationPolicy property</summary>
         public ContinuousAccessEvaluationPolicyRequestBuilder ContinuousAccessEvaluationPolicy { get =>
             new ContinuousAccessEvaluationPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The identityProviders property</summary>
         public IdentityProvidersRequestBuilder IdentityProviders { get =>
             new IdentityProvidersRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -43,9 +49,11 @@ namespace MicrosoftGraphSdk.Identity {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>The userFlowAttributes property</summary>
         public UserFlowAttributesRequestBuilder UserFlowAttributes { get =>
             new UserFlowAttributesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The userFlows property</summary>
         public UserFlowsRequestBuilder UserFlows { get =>
             new UserFlowsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -78,32 +86,32 @@ namespace MicrosoftGraphSdk.Identity {
         }
         /// <summary>
         /// Get identity
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
-        /// <param name="q">Request query parameters</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
+        /// <param name="queryParameters">Request query parameters</param>
         /// </summary>
-        public RequestInformation CreateGetRequestInformation(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreateGetRequestInformation(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            if (q != null) {
+            if (queryParameters != null) {
                 var qParams = new GetQueryParameters();
-                q.Invoke(qParams);
+                queryParameters.Invoke(qParams);
                 qParams.AddQueryParameters(requestInfo.QueryParameters);
             }
-            h?.Invoke(requestInfo.Headers);
-            requestInfo.AddRequestOptions(o?.ToArray());
+            headers?.Invoke(requestInfo.Headers);
+            requestInfo.AddRequestOptions(options?.ToArray());
             return requestInfo;
         }
         /// <summary>
         /// Update identity
         /// <param name="body"></param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreatePatchRequestInformation(IdentityContainer body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePatchRequestInformation(IdentityContainer body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -111,20 +119,20 @@ namespace MicrosoftGraphSdk.Identity {
                 PathParameters = PathParameters,
             };
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
-            h?.Invoke(requestInfo.Headers);
-            requestInfo.AddRequestOptions(o?.ToArray());
+            headers?.Invoke(requestInfo.Headers);
+            requestInfo.AddRequestOptions(options?.ToArray());
             return requestInfo;
         }
         /// <summary>
         /// Get identity
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
-        /// <param name="q">Request query parameters</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
+        /// <param name="queryParameters">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IdentityContainer> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateGetRequestInformation(q, h, o);
+        public async Task<IdentityContainer> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+            var requestInfo = CreateGetRequestInformation(queryParameters, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
@@ -135,13 +143,13 @@ namespace MicrosoftGraphSdk.Identity {
         /// Update identity
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="h">Request headers</param>
-        /// <param name="o">Request options</param>
+        /// <param name="headers">Request headers</param>
+        /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(IdentityContainer body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(IdentityContainer body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = CreatePatchRequestInformation(body, h, o);
+            var requestInfo = CreatePatchRequestInformation(body, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},

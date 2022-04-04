@@ -9,11 +9,17 @@ namespace MicrosoftGraphSdk.Teams.Item.Clone {
     public class CloneRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The classification property</summary>
         public string Classification { get; set; }
+        /// <summary>The description property</summary>
         public string Description { get; set; }
+        /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
+        /// <summary>The mailNickname property</summary>
         public string MailNickname { get; set; }
+        /// <summary>The partsToClone property</summary>
         public ClonableTeamParts? PartsToClone { get; set; }
+        /// <summary>The visibility property</summary>
         public TeamVisibilityType? Visibility { get; set; }
         /// <summary>
         /// Instantiates a new cloneRequestBody and sets the default values.

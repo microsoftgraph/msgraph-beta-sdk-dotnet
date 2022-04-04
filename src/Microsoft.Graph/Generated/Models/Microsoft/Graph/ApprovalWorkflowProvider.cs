@@ -5,9 +5,13 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ApprovalWorkflowProvider : Entity, IParsable {
+        /// <summary>The businessFlows property</summary>
         public List<BusinessFlow> BusinessFlows { get; set; }
+        /// <summary>The businessFlowsWithRequestsAwaitingMyDecision property</summary>
         public List<BusinessFlow> BusinessFlowsWithRequestsAwaitingMyDecision { get; set; }
+        /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
+        /// <summary>The policyTemplates property</summary>
         public List<GovernancePolicyTemplate> PolicyTemplates { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

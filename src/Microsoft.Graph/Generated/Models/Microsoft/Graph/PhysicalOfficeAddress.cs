@@ -9,7 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The city.</summary>
         public string City { get; set; }
-        /// <summary>The country or region. It's a free-format string value, for example, 'United States'.</summary>
+        /// <summary>The country or region. It&apos;s a free-format string value, for example, &apos;United States&apos;.</summary>
         public string CountryOrRegion { get; set; }
         /// <summary>Office location such as building and office number for an organizational contact.</summary>
         public string OfficeLocation { get; set; }

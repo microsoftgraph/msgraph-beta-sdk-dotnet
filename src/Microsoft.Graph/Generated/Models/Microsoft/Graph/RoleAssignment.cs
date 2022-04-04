@@ -15,7 +15,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.RoleDefinition RoleDefinition { get; set; }
         /// <summary>List of ids of role scope member security groups.  These are IDs from Azure Active Directory.</summary>
         public List<string> ScopeMembers { get; set; }
-        /// <summary>Specifies the type of scope for a Role Assignment. Default type 'ResourceScope' allows assignment of ResourceScopes. For 'AllDevices', 'AllLicensedUsers', and 'AllDevicesAndLicensedUsers', the ResourceScopes property should be left empty. Possible values are: resourceScope, allDevices, allLicensedUsers, allDevicesAndLicensedUsers.</summary>
+        /// <summary>Specifies the type of scope for a Role Assignment. Default type &apos;ResourceScope&apos; allows assignment of ResourceScopes. For &apos;AllDevices&apos;, &apos;AllLicensedUsers&apos;, and &apos;AllDevicesAndLicensedUsers&apos;, the ResourceScopes property should be left empty. Possible values are: resourceScope, allDevices, allLicensedUsers, allDevicesAndLicensedUsers.</summary>
         public RoleAssignmentScopeType? ScopeType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

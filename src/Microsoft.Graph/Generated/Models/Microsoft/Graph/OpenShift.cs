@@ -7,6 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class OpenShift : ChangeTrackedEntity, IParsable {
         /// <summary>An unpublished open shift.</summary>
         public OpenShiftItem DraftOpenShift { get; set; }
+        /// <summary>The isStagedForDeletion property</summary>
         public bool? IsStagedForDeletion { get; set; }
         /// <summary>ID for the scheduling group that the open shift belongs to.</summary>
         public string SchedulingGroupId { get; set; }

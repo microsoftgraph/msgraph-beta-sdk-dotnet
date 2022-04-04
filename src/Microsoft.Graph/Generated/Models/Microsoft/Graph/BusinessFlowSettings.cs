@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class BusinessFlowSettings : AccessReviewSettings, IParsable {
+        /// <summary>The durationInDays property</summary>
         public int? DurationInDays { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

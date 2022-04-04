@@ -8,6 +8,7 @@ namespace MicrosoftGraphSdk.Me.WipeManagedAppRegistrationByDeviceTag {
     public class WipeManagedAppRegistrationByDeviceTagRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The deviceTag property</summary>
         public string DeviceTag { get; set; }
         /// <summary>
         /// Instantiates a new wipeManagedAppRegistrationByDeviceTagRequestBody and sets the default values.

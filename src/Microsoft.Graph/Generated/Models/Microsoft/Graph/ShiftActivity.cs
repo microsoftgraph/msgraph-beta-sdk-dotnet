@@ -17,6 +17,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public bool? IsPaid { get; set; }
         /// <summary>The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.</summary>
         public DateTimeOffset? StartDateTime { get; set; }
+        /// <summary>The theme property</summary>
         public ScheduleEntityTheme? Theme { get; set; }
         /// <summary>
         /// Instantiates a new shiftActivity and sets the default values.

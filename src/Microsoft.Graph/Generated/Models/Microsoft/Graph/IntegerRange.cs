@@ -9,7 +9,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The inclusive upper bound of the integer range.</summary>
         public long? End { get; set; }
+        /// <summary>The maximum property</summary>
         public long? Maximum { get; set; }
+        /// <summary>The minimum property</summary>
         public long? Minimum { get; set; }
         /// <summary>The inclusive lower bound of the integer range.</summary>
         public long? Start { get; set; }

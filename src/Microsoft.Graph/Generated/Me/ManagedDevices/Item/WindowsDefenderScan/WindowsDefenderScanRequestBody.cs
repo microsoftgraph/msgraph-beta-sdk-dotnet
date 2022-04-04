@@ -8,6 +8,7 @@ namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.WindowsDefenderScan {
     public class WindowsDefenderScanRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The quickScan property</summary>
         public bool? QuickScan { get; set; }
         /// <summary>
         /// Instantiates a new windowsDefenderScanRequestBody and sets the default values.

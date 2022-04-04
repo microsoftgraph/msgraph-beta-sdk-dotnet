@@ -5,12 +5,19 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class InternalDomainFederation : SamlOrWsFedProvider, IParsable {
+        /// <summary>The activeSignInUri property</summary>
         public string ActiveSignInUri { get; set; }
+        /// <summary>The federatedIdpMfaBehavior property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.FederatedIdpMfaBehavior? FederatedIdpMfaBehavior { get; set; }
+        /// <summary>The isSignedAuthenticationRequestRequired property</summary>
         public bool? IsSignedAuthenticationRequestRequired { get; set; }
+        /// <summary>The nextSigningCertificate property</summary>
         public string NextSigningCertificate { get; set; }
+        /// <summary>The promptLoginBehavior property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.PromptLoginBehavior? PromptLoginBehavior { get; set; }
+        /// <summary>The signingCertificateUpdateStatus property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.SigningCertificateUpdateStatus SigningCertificateUpdateStatus { get; set; }
+        /// <summary>The signOutUri property</summary>
         public string SignOutUri { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

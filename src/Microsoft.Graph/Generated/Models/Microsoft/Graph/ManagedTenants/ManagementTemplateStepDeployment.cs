@@ -5,13 +5,21 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
     public class ManagementTemplateStepDeployment : Entity, IParsable {
+        /// <summary>The createdByUserId property</summary>
         public string CreatedByUserId { get; set; }
+        /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
+        /// <summary>The error property</summary>
         public GraphAPIErrorDetails Error { get; set; }
+        /// <summary>The lastActionByUserId property</summary>
         public string LastActionByUserId { get; set; }
+        /// <summary>The lastActionDateTime property</summary>
         public DateTimeOffset? LastActionDateTime { get; set; }
+        /// <summary>The status property</summary>
         public ManagementTemplateDeploymentStatus? Status { get; set; }
+        /// <summary>The templateStepVersion property</summary>
         public ManagementTemplateStepVersion TemplateStepVersion { get; set; }
+        /// <summary>The tenantId property</summary>
         public string TenantId { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

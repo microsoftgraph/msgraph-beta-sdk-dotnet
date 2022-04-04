@@ -12,9 +12,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string DisplayName { get; set; }
         /// <summary>List of modified properties.</summary>
         public List<AuditProperty> ModifiedProperties { get; set; }
-        /// <summary>Audit resource's Id.</summary>
+        /// <summary>Audit resource&apos;s Id.</summary>
         public string ResourceId { get; set; }
-        /// <summary>Audit resource's type.</summary>
+        /// <summary>Audit resource&apos;s type.</summary>
         public string Type { get; set; }
         /// <summary>
         /// Instantiates a new auditResource and sets the default values.

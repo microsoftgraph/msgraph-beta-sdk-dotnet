@@ -5,8 +5,11 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class MessageEvent : Entity, IParsable {
+        /// <summary>The dateTime property</summary>
         public DateTimeOffset? DateTime { get; set; }
+        /// <summary>The description property</summary>
         public string Description { get; set; }
+        /// <summary>The eventType property</summary>
         public MessageEventType? EventType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

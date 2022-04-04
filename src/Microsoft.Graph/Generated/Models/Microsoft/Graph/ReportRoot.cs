@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
+    /// <summary>Provides operations to manage the reportRoot singleton.</summary>
     public class ReportRoot : Entity, IParsable {
         /// <summary>Represents a detailed summary of an application sign-in.</summary>
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.ApplicationSignInDetailedSummary> ApplicationSignInDetailedSummary { get; set; }
@@ -11,13 +12,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public AuthenticationMethodsRoot AuthenticationMethods { get; set; }
         /// <summary>Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.</summary>
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.CredentialUserRegistrationDetails> CredentialUserRegistrationDetails { get; set; }
+        /// <summary>The dailyPrintUsageByPrinter property</summary>
         public List<PrintUsageByPrinter> DailyPrintUsageByPrinter { get; set; }
+        /// <summary>The dailyPrintUsageByUser property</summary>
         public List<PrintUsageByUser> DailyPrintUsageByUser { get; set; }
+        /// <summary>The dailyPrintUsageSummariesByPrinter property</summary>
         public List<PrintUsageByPrinter> DailyPrintUsageSummariesByPrinter { get; set; }
+        /// <summary>The dailyPrintUsageSummariesByUser property</summary>
         public List<PrintUsageByUser> DailyPrintUsageSummariesByUser { get; set; }
+        /// <summary>The monthlyPrintUsageByPrinter property</summary>
         public List<PrintUsageByPrinter> MonthlyPrintUsageByPrinter { get; set; }
+        /// <summary>The monthlyPrintUsageByUser property</summary>
         public List<PrintUsageByUser> MonthlyPrintUsageByUser { get; set; }
+        /// <summary>The monthlyPrintUsageSummariesByPrinter property</summary>
         public List<PrintUsageByPrinter> MonthlyPrintUsageSummariesByPrinter { get; set; }
+        /// <summary>The monthlyPrintUsageSummariesByUser property</summary>
         public List<PrintUsageByUser> MonthlyPrintUsageSummariesByUser { get; set; }
         /// <summary>Represents the self-service password reset (SSPR) usage for a given tenant.</summary>
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.UserCredentialUsageDetails> UserCredentialUsageDetails { get; set; }

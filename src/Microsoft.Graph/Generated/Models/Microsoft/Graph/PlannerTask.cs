@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public int? ChecklistItemCount { get; set; }
         /// <summary>Identity of the user that completed the task.</summary>
         public IdentitySet CompletedBy { get; set; }
-        /// <summary>Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        /// <summary>Read-only. Date and time at which the &apos;percentComplete&apos; of the task is set to &apos;100&apos;. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? CompletedDateTime { get; set; }
         /// <summary>Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.</summary>
         public string ConversationThreadId { get; set; }
@@ -47,7 +47,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string PlanId { get; set; }
         /// <summary>This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference.</summary>
         public PlannerPreviewType? PreviewType { get; set; }
-        /// <summary>Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.</summary>
+        /// <summary>Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as &apos;urgent&apos;, 2 and 3 and 4 as &apos;important&apos;, 5, 6, and 7 as &apos;medium&apos;, and 8, 9, and 10 as &apos;low&apos;.  Currently, Planner sets the value 1 for &apos;urgent&apos;, 3 for &apos;important&apos;, 5 for &apos;medium&apos;, and 9 for &apos;low&apos;.</summary>
         public int? Priority { get; set; }
         /// <summary>Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.</summary>
         public PlannerProgressTaskBoardTaskFormat ProgressTaskBoardFormat { get; set; }

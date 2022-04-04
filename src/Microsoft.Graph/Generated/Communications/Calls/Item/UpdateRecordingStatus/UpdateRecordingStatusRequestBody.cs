@@ -9,7 +9,9 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.UpdateRecordingStatus {
     public class UpdateRecordingStatusRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The clientContext property</summary>
         public string ClientContext { get; set; }
+        /// <summary>The status property</summary>
         public RecordingStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new updateRecordingStatusRequestBody and sets the default values.

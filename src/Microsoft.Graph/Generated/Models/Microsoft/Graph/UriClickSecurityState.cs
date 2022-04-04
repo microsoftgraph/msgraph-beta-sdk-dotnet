@@ -7,11 +7,17 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UriClickSecurityState : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The clickAction property</summary>
         public string ClickAction { get; set; }
+        /// <summary>The clickDateTime property</summary>
         public DateTimeOffset? ClickDateTime { get; set; }
+        /// <summary>The id property</summary>
         public string Id { get; set; }
+        /// <summary>The sourceId property</summary>
         public string SourceId { get; set; }
+        /// <summary>The uriDomain property</summary>
         public string UriDomain { get; set; }
+        /// <summary>The verdict property</summary>
         public string Verdict { get; set; }
         /// <summary>
         /// Instantiates a new uriClickSecurityState and sets the default values.

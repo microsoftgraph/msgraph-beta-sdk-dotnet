@@ -11,9 +11,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public byte[] EncryptedPfxBlob { get; set; }
         /// <summary>Encrypted PFX password.</summary>
         public string EncryptedPfxPassword { get; set; }
-        /// <summary>Certificate's validity expiration date/time.</summary>
+        /// <summary>Certificate&apos;s validity expiration date/time.</summary>
         public DateTimeOffset? ExpirationDateTime { get; set; }
-        /// <summary>Certificate's intended purpose from the point-of-view of deployment. Possible values are: unassigned, smimeEncryption, smimeSigning, vpn, wifi.</summary>
+        /// <summary>Certificate&apos;s intended purpose from the point-of-view of deployment. Possible values are: unassigned, smimeEncryption, smimeSigning, vpn, wifi.</summary>
         public UserPfxIntendedPurpose? IntendedPurpose { get; set; }
         /// <summary>Name of the key (within the provider) used to encrypt the blob.</summary>
         public string KeyName { get; set; }
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public UserPfxPaddingScheme? PaddingScheme { get; set; }
         /// <summary>Crypto provider used to encrypt this blob.</summary>
         public string ProviderName { get; set; }
-        /// <summary>Certificate's validity start date/time.</summary>
+        /// <summary>Certificate&apos;s validity start date/time.</summary>
         public DateTimeOffset? StartDateTime { get; set; }
         /// <summary>SHA-1 thumbprint of the PFX certificate.</summary>
         public string Thumbprint { get; set; }

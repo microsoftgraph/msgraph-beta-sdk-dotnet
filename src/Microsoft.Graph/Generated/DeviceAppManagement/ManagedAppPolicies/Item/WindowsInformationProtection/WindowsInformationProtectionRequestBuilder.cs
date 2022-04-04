@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedAppPolicies.Item.WindowsInformationProtection {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\managedAppPolicies\{managedAppPolicy-id}\microsoft.graph.windowsInformationProtection</summary>
     public class WindowsInformationProtectionRequestBuilder {
+        /// <summary>The assign property</summary>
         public AssignRequestBuilder Assign { get =>
             new AssignRequestBuilder(PathParameters, RequestAdapter);
         }

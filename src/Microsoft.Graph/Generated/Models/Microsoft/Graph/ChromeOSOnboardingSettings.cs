@@ -5,13 +5,13 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ChromeOSOnboardingSettings : Entity, IParsable {
-        /// <summary>The ChromebookTenant's LastDirectorySyncDateTime</summary>
+        /// <summary>The ChromebookTenant&apos;s LastDirectorySyncDateTime</summary>
         public DateTimeOffset? LastDirectorySyncDateTime { get; set; }
-        /// <summary>The ChromebookTenant's LastModifiedDateTime</summary>
+        /// <summary>The ChromebookTenant&apos;s LastModifiedDateTime</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
-        /// <summary>The ChromebookTenant's OnboardingStatus. Possible values are: unknown, inprogress, onboarded, failed, offboarding, unknownFutureValue.</summary>
+        /// <summary>The ChromebookTenant&apos;s OnboardingStatus. Possible values are: unknown, inprogress, onboarded, failed, offboarding, unknownFutureValue.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.OnboardingStatus? OnboardingStatus { get; set; }
-        /// <summary>The ChromebookTenant's OwnerUserPrincipalName</summary>
+        /// <summary>The ChromebookTenant&apos;s OwnerUserPrincipalName</summary>
         public string OwnerUserPrincipalName { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -5,15 +5,23 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class MatchingDlpRule : IAdditionalDataHolder, IParsable {
+        /// <summary>The actions property</summary>
         public List<DlpActionInfo> Actions { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The isMostRestrictive property</summary>
         public bool? IsMostRestrictive { get; set; }
+        /// <summary>The policyId property</summary>
         public string PolicyId { get; set; }
+        /// <summary>The policyName property</summary>
         public string PolicyName { get; set; }
+        /// <summary>The priority property</summary>
         public int? Priority { get; set; }
+        /// <summary>The ruleId property</summary>
         public string RuleId { get; set; }
+        /// <summary>The ruleMode property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.RuleMode? RuleMode { get; set; }
+        /// <summary>The ruleName property</summary>
         public string RuleName { get; set; }
         /// <summary>
         /// Instantiates a new matchingDlpRule and sets the default values.

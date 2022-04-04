@@ -7,9 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DeviceManagementTemplate : Entity, IParsable {
         /// <summary>Collection of setting categories within the template</summary>
         public List<DeviceManagementTemplateSettingCategory> Categories { get; set; }
-        /// <summary>The template's description</summary>
+        /// <summary>The template&apos;s description</summary>
         public string Description { get; set; }
-        /// <summary>The template's display name</summary>
+        /// <summary>The template&apos;s display name</summary>
         public string DisplayName { get; set; }
         /// <summary>Number of Intents created from this template.</summary>
         public int? IntentCount { get; set; }
@@ -17,17 +17,17 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public bool? IsDeprecated { get; set; }
         /// <summary>Collection of templates this template can migrate to</summary>
         public List<DeviceManagementTemplate> MigratableTo { get; set; }
-        /// <summary>The template's platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, all.</summary>
+        /// <summary>The template&apos;s platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, all.</summary>
         public PolicyPlatformType? PlatformType { get; set; }
         /// <summary>When the template was published</summary>
         public DateTimeOffset? PublishedDateTime { get; set; }
         /// <summary>Collection of all settings this template has</summary>
         public List<DeviceManagementSettingInstance> Settings { get; set; }
-        /// <summary>The template's subtype. Possible values are: none, firewall, diskEncryption, attackSurfaceReduction, endpointDetectionReponse, accountProtection, antivirus, firewallSharedAppList, firewallSharedIpList, firewallSharedPortlist.</summary>
+        /// <summary>The template&apos;s subtype. Possible values are: none, firewall, diskEncryption, attackSurfaceReduction, endpointDetectionReponse, accountProtection, antivirus, firewallSharedAppList, firewallSharedIpList, firewallSharedPortlist.</summary>
         public DeviceManagementTemplateSubtype? TemplateSubtype { get; set; }
-        /// <summary>The template's type. Possible values are: securityBaseline, specializedDevices, advancedThreatProtectionSecurityBaseline, deviceConfiguration, custom, securityTemplate, microsoftEdgeSecurityBaseline, microsoftOffice365ProPlusSecurityBaseline, deviceCompliance, deviceConfigurationForOffice365, cloudPC, firewallSharedSettings.</summary>
+        /// <summary>The template&apos;s type. Possible values are: securityBaseline, specializedDevices, advancedThreatProtectionSecurityBaseline, deviceConfiguration, custom, securityTemplate, microsoftEdgeSecurityBaseline, microsoftOffice365ProPlusSecurityBaseline, deviceCompliance, deviceConfigurationForOffice365, cloudPC, firewallSharedSettings.</summary>
         public DeviceManagementTemplateType? TemplateType { get; set; }
-        /// <summary>The template's version information</summary>
+        /// <summary>The template&apos;s version information</summary>
         public string VersionInfo { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

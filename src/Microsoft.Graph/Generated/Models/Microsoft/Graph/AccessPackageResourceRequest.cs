@@ -9,12 +9,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageResource AccessPackageResource { get; set; }
         /// <summary>The unique ID of the access package catalog.</summary>
         public string CatalogId { get; set; }
+        /// <summary>The executeImmediately property</summary>
         public bool? ExecuteImmediately { get; set; }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? ExpirationDateTime { get; set; }
         /// <summary>If set, does not add the resource.</summary>
         public bool? IsValidationOnly { get; set; }
-        /// <summary>The requestor's justification for adding or removing the resource.</summary>
+        /// <summary>The requestor&apos;s justification for adding or removing the resource.</summary>
         public string Justification { get; set; }
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
         public AccessPackageSubject Requestor { get; set; }

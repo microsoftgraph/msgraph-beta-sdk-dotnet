@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Search.Query {
     public class QueryRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The requests property</summary>
         public List<SearchRequest> Requests { get; set; }
         /// <summary>
         /// Instantiates a new queryRequestBody and sets the default values.

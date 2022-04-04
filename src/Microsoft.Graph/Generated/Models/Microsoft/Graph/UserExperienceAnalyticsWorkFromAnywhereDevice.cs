@@ -5,15 +5,15 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UserExperienceAnalyticsWorkFromAnywhereDevice : Entity, IParsable {
-        /// <summary>The user experience analytics work from anywhere intune device's autopilotProfileAssigned.</summary>
+        /// <summary>The user experience analytics work from anywhere intune device&apos;s autopilotProfileAssigned.</summary>
         public bool? AutoPilotProfileAssigned { get; set; }
-        /// <summary>The user experience work from anywhere intune device's autopilotRegistered.</summary>
+        /// <summary>The user experience work from anywhere intune device&apos;s autopilotRegistered.</summary>
         public bool? AutoPilotRegistered { get; set; }
         /// <summary>The user experience work from anywhere azure Ad device Id.</summary>
         public string AzureAdDeviceId { get; set; }
-        /// <summary>The user experience work from anywhere device's azure Ad joinType.</summary>
+        /// <summary>The user experience work from anywhere device&apos;s azure Ad joinType.</summary>
         public string AzureAdJoinType { get; set; }
-        /// <summary>The user experience work from anywhere device's azureAdRegistered.</summary>
+        /// <summary>The user experience work from anywhere device&apos;s azureAdRegistered.</summary>
         public bool? AzureAdRegistered { get; set; }
         /// <summary>The user experience work from anywhere per device cloud identity score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? CloudIdentityScore { get; set; }
@@ -21,31 +21,31 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public double? CloudManagementScore { get; set; }
         /// <summary>The user experience work from anywhere per device cloud provisioning score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? CloudProvisioningScore { get; set; }
-        /// <summary>The user experience work from anywhere device's compliancePolicySetToIntune.</summary>
+        /// <summary>The user experience work from anywhere device&apos;s compliancePolicySetToIntune.</summary>
         public bool? CompliancePolicySetToIntune { get; set; }
         /// <summary>The user experience work from anywhere device Id.</summary>
         public string DeviceId { get; set; }
-        /// <summary>The work from anywhere device's name.</summary>
+        /// <summary>The work from anywhere device&apos;s name.</summary>
         public string DeviceName { get; set; }
         /// <summary>The user experience work from anywhere per device health status. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.</summary>
         public UserExperienceAnalyticsHealthState? HealthStatus { get; set; }
-        /// <summary>The user experience work from anywhere device's Cloud Management Gateway for Configuration Manager is enabled.</summary>
+        /// <summary>The user experience work from anywhere device&apos;s Cloud Management Gateway for Configuration Manager is enabled.</summary>
         public bool? IsCloudManagedGatewayEnabled { get; set; }
         /// <summary>The user experience work from anywhere management agent of the device.</summary>
         public string ManagedBy { get; set; }
-        /// <summary>The user experience work from anywhere device's manufacturer.</summary>
+        /// <summary>The user experience work from anywhere device&apos;s manufacturer.</summary>
         public string Manufacturer { get; set; }
-        /// <summary>The user experience work from anywhere device's model.</summary>
+        /// <summary>The user experience work from anywhere device&apos;s model.</summary>
         public string Model { get; set; }
         /// <summary>The user experience work from anywhere device, Is OS check failed for device to upgrade to the latest version of windows.</summary>
         public bool? OsCheckFailed { get; set; }
-        /// <summary>The user experience work from anywhere device's OS Description.</summary>
+        /// <summary>The user experience work from anywhere device&apos;s OS Description.</summary>
         public string OsDescription { get; set; }
-        /// <summary>The user experience work from anywhere device's OS Version.</summary>
+        /// <summary>The user experience work from anywhere device&apos;s OS Version.</summary>
         public string OsVersion { get; set; }
-        /// <summary>The user experience work from anywhere device's otherWorkloadsSetToIntune.</summary>
+        /// <summary>The user experience work from anywhere device&apos;s otherWorkloadsSetToIntune.</summary>
         public bool? OtherWorkloadsSetToIntune { get; set; }
-        /// <summary>The user experience work from anywhere device's ownership.</summary>
+        /// <summary>The user experience work from anywhere device&apos;s ownership.</summary>
         public string Ownership { get; set; }
         /// <summary>The user experience work from anywhere device, Is processor hardware 64-bit architecture check failed for device to upgrade to the latest version of windows.</summary>
         public bool? Processor64BitCheckFailed { get; set; }
@@ -59,11 +59,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public bool? RamCheckFailed { get; set; }
         /// <summary>The user experience work from anywhere device, Is secure boot hardware check failed for device to upgrade to the latest version of windows.</summary>
         public bool? SecureBootCheckFailed { get; set; }
-        /// <summary>The user experience work from anywhere device's serial number.</summary>
+        /// <summary>The user experience work from anywhere device&apos;s serial number.</summary>
         public string SerialNumber { get; set; }
         /// <summary>The user experience work from anywhere device, Is storage hardware check failed for device to upgrade to the latest version of windows.</summary>
         public bool? StorageCheckFailed { get; set; }
-        /// <summary>The user experience work from anywhere device's tenantAttached.</summary>
+        /// <summary>The user experience work from anywhere device&apos;s tenantAttached.</summary>
         public bool? TenantAttached { get; set; }
         /// <summary>The user experience work from anywhere device, Is Trusted Platform Module (TPM) hardware check failed for device to the latest version of upgrade to windows.</summary>
         public bool? TpmCheckFailed { get; set; }

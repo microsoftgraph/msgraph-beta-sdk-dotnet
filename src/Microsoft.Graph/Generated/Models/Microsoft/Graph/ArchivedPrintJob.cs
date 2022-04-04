@@ -25,13 +25,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>The number of duplex (double-sided) pages that were printed. Read-only.</summary>
         public int? DuplexPageCount { get; set; }
-        /// <summary>The archived print job's GUID. Read-only.</summary>
+        /// <summary>The archived print job&apos;s GUID. Read-only.</summary>
         public string Id { get; set; }
         /// <summary>The total number of pages that were printed. Read-only.</summary>
         public int? PageCount { get; set; }
         /// <summary>The printer ID that the job was queued for. Read-only.</summary>
         public string PrinterId { get; set; }
-        /// <summary>The print job's final processing state. Read-only.</summary>
+        /// <summary>The print job&apos;s final processing state. Read-only.</summary>
         public PrintJobProcessingState? ProcessingState { get; set; }
         /// <summary>The number of simplex (single-sided) pages that were printed. Read-only.</summary>
         public int? SimplexPageCount { get; set; }

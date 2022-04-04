@@ -6,37 +6,69 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SalesCreditMemo : Entity, IParsable {
+        /// <summary>The billingPostalAddress property</summary>
         public PostalAddressType BillingPostalAddress { get; set; }
+        /// <summary>The billToCustomerId property</summary>
         public string BillToCustomerId { get; set; }
+        /// <summary>The billToCustomerNumber property</summary>
         public string BillToCustomerNumber { get; set; }
+        /// <summary>The billToName property</summary>
         public string BillToName { get; set; }
+        /// <summary>The creditMemoDate property</summary>
         public Date? CreditMemoDate { get; set; }
+        /// <summary>The currency property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Currency Currency { get; set; }
+        /// <summary>The currencyCode property</summary>
         public string CurrencyCode { get; set; }
+        /// <summary>The currencyId property</summary>
         public string CurrencyId { get; set; }
+        /// <summary>The customer property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Customer Customer { get; set; }
+        /// <summary>The customerId property</summary>
         public string CustomerId { get; set; }
+        /// <summary>The customerName property</summary>
         public string CustomerName { get; set; }
+        /// <summary>The customerNumber property</summary>
         public string CustomerNumber { get; set; }
+        /// <summary>The discountAmount property</summary>
         public decimal? DiscountAmount { get; set; }
+        /// <summary>The discountAppliedBeforeTax property</summary>
         public bool? DiscountAppliedBeforeTax { get; set; }
+        /// <summary>The dueDate property</summary>
         public Date? DueDate { get; set; }
+        /// <summary>The email property</summary>
         public string Email { get; set; }
+        /// <summary>The externalDocumentNumber property</summary>
         public string ExternalDocumentNumber { get; set; }
+        /// <summary>The invoiceId property</summary>
         public string InvoiceId { get; set; }
+        /// <summary>The invoiceNumber property</summary>
         public string InvoiceNumber { get; set; }
+        /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+        /// <summary>The number property</summary>
         public string Number { get; set; }
+        /// <summary>The paymentTerm property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.PaymentTerm PaymentTerm { get; set; }
+        /// <summary>The paymentTermsId property</summary>
         public string PaymentTermsId { get; set; }
+        /// <summary>The phoneNumber property</summary>
         public string PhoneNumber { get; set; }
+        /// <summary>The pricesIncludeTax property</summary>
         public bool? PricesIncludeTax { get; set; }
+        /// <summary>The salesCreditMemoLines property</summary>
         public List<SalesCreditMemoLine> SalesCreditMemoLines { get; set; }
+        /// <summary>The salesperson property</summary>
         public string Salesperson { get; set; }
+        /// <summary>The sellingPostalAddress property</summary>
         public PostalAddressType SellingPostalAddress { get; set; }
+        /// <summary>The status property</summary>
         public string Status { get; set; }
+        /// <summary>The totalAmountExcludingTax property</summary>
         public decimal? TotalAmountExcludingTax { get; set; }
+        /// <summary>The totalAmountIncludingTax property</summary>
         public decimal? TotalAmountIncludingTax { get; set; }
+        /// <summary>The totalTaxAmount property</summary>
         public decimal? TotalTaxAmount { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

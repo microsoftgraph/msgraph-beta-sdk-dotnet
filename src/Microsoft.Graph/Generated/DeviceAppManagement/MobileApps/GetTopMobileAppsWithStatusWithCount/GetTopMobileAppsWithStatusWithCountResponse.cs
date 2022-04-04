@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.GetTopMobileAppsWithS
     public class GetTopMobileAppsWithStatusWithCountResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The value property</summary>
         public List<MobileApp> Value { get; set; }
         /// <summary>
         /// Instantiates a new getTopMobileAppsWithStatusWithCountResponse and sets the default values.

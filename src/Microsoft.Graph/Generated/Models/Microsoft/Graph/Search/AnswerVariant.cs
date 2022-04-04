@@ -11,7 +11,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Search {
         public string Description { get; set; }
         /// <summary>Answer variation name displayed in search results.</summary>
         public string DisplayName { get; set; }
+        /// <summary>The languageTag property</summary>
         public string LanguageTag { get; set; }
+        /// <summary>The platform property</summary>
         public DevicePlatformType? Platform { get; set; }
         /// <summary>Answer variation URL link. When users click this answer variation in search results, they will go to this URL.</summary>
         public string WebUrl { get; set; }

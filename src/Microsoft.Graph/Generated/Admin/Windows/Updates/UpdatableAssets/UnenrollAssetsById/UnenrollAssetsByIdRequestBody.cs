@@ -9,8 +9,11 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets.UnenrollAssets
     public class UnenrollAssetsByIdRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The ids property</summary>
         public List<string> Ids { get; set; }
+        /// <summary>The memberEntityType property</summary>
         public string MemberEntityType { get; set; }
+        /// <summary>The updateCategory property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates.UpdateCategory? UpdateCategory { get; set; }
         /// <summary>
         /// Instantiates a new unenrollAssetsByIdRequestBody and sets the default values.

@@ -7,6 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ActivityHistoryItem : Entity, IParsable {
         /// <summary>Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.</summary>
         public int? ActiveDurationSeconds { get; set; }
+        /// <summary>The activity property</summary>
         public UserActivity Activity { get; set; }
         /// <summary>Set by the server. DateTime in UTC when the object was created on the server.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
@@ -20,7 +21,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? StartedDateTime { get; set; }
         /// <summary>Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Status? Status { get; set; }
-        /// <summary>Optional. The timezone in which the user's device used to generate the activity was located at activity creation time. Values supplied as Olson IDs in order to support cross-platform representation.</summary>
+        /// <summary>Optional. The timezone in which the user&apos;s device used to generate the activity was located at activity creation time. Values supplied as Olson IDs in order to support cross-platform representation.</summary>
         public string UserTimezone { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

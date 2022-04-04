@@ -7,7 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class IdentityUserFlowCollectionResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The nextLink property</summary>
         public string NextLink { get; set; }
+        /// <summary>The value property</summary>
         public List<IdentityUserFlow> Value { get; set; }
         /// <summary>
         /// Instantiates a new IdentityUserFlowCollectionResponse and sets the default values.

@@ -21,6 +21,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<int?> Dpis { get; set; }
         /// <summary>The list of duplex modes that are supported by the printer. Valid values are described in the following table.</summary>
         public List<PrintDuplexMode?> DuplexModes { get; set; }
+        /// <summary>The feedDirections property</summary>
         public List<PrinterFeedDirection?> FeedDirections { get; set; }
         /// <summary>The list of feed orientations that are supported by the printer.</summary>
         public List<PrinterFeedOrientation?> FeedOrientations { get; set; }
@@ -44,7 +45,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<PrintMultipageLayout?> MultipageLayouts { get; set; }
         /// <summary>The print orientations supported by the printer. Valid values are described in the following table.</summary>
         public List<PrintOrientation?> Orientations { get; set; }
-        /// <summary>The printer's supported output bins (trays).</summary>
+        /// <summary>The printer&apos;s supported output bins (trays).</summary>
         public List<string> OutputBins { get; set; }
         /// <summary>Supported number of Input Pages to impose upon a single Impression.</summary>
         public List<int?> PagesPerSheet { get; set; }
@@ -54,18 +55,31 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<int?> RightMargins { get; set; }
         /// <summary>Supported print scalings.</summary>
         public List<PrintScaling?> Scalings { get; set; }
+        /// <summary>The supportedColorConfigurations property</summary>
         public List<PrintColorConfiguration?> SupportedColorConfigurations { get; set; }
+        /// <summary>The supportedCopiesPerJob property</summary>
         public IntegerRange SupportedCopiesPerJob { get; set; }
+        /// <summary>The supportedDocumentMimeTypes property</summary>
         public List<string> SupportedDocumentMimeTypes { get; set; }
+        /// <summary>The supportedDuplexConfigurations property</summary>
         public List<PrintDuplexConfiguration?> SupportedDuplexConfigurations { get; set; }
+        /// <summary>The supportedFinishings property</summary>
         public List<PrintFinishing?> SupportedFinishings { get; set; }
+        /// <summary>The supportedMediaColors property</summary>
         public List<string> SupportedMediaColors { get; set; }
+        /// <summary>The supportedMediaSizes property</summary>
         public List<string> SupportedMediaSizes { get; set; }
+        /// <summary>The supportedMediaTypes property</summary>
         public List<PrintMediaType?> SupportedMediaTypes { get; set; }
+        /// <summary>The supportedOrientations property</summary>
         public List<PrintOrientation?> SupportedOrientations { get; set; }
+        /// <summary>The supportedOutputBins property</summary>
         public List<string> SupportedOutputBins { get; set; }
+        /// <summary>The supportedPagesPerSheet property</summary>
         public IntegerRange SupportedPagesPerSheet { get; set; }
+        /// <summary>The supportedPresentationDirections property</summary>
         public List<PrintPresentationDirection?> SupportedPresentationDirections { get; set; }
+        /// <summary>The supportedPrintQualities property</summary>
         public List<PrintQuality?> SupportedPrintQualities { get; set; }
         /// <summary>True if the printer supports scaling PDF pages to match the print media size; false otherwise.</summary>
         public bool? SupportsFitPdfToPage { get; set; }

@@ -17,6 +17,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string ExternalId { get; set; }
         /// <summary>ID of principal in syncing system.</summary>
         public string ExternalPrincipalId { get; set; }
+        /// <summary>The fax property</summary>
         public string Fax { get; set; }
         /// <summary>Highest grade taught.</summary>
         public string HighestGrade { get; set; }

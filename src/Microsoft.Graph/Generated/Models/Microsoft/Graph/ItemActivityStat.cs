@@ -19,7 +19,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? EndDateTime { get; set; }
         /// <summary>Indicates that the statistics in this interval are based on incomplete data. Read-only.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.IncompleteData IncompleteData { get; set; }
-        /// <summary>Indicates whether the item is 'trending.' Read-only.</summary>
+        /// <summary>Indicates whether the item is &apos;trending.&apos; Read-only.</summary>
         public bool? IsTrending { get; set; }
         /// <summary>Statistics about the move actions in this interval. Read-only.</summary>
         public ItemActionStat Move { get; set; }

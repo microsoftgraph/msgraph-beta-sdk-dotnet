@@ -8,7 +8,9 @@ namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.MigrateToTemplate {
     public class MigrateToTemplateRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The newTemplateId property</summary>
         public string NewTemplateId { get; set; }
+        /// <summary>The preserveCustomValues property</summary>
         public bool? PreserveCustomValues { get; set; }
         /// <summary>
         /// Instantiates a new migrateToTemplateRequestBody and sets the default values.

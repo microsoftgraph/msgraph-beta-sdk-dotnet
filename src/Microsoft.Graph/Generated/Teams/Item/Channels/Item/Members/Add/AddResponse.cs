@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Channels.Item.Members.Add {
     public class AddResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The value property</summary>
         public List<ActionResultPart> Value { get; set; }
         /// <summary>
         /// Instantiates a new addResponse and sets the default values.

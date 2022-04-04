@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ServiceAnnouncementBase : Entity, IParsable {
-        /// <summary>Additional details about service event. This property doesn't support filters.</summary>
+        /// <summary>Additional details about service event. This property doesn&apos;t support filters.</summary>
         public List<KeyValuePair> Details { get; set; }
         /// <summary>The end time of the service event.</summary>
         public DateTimeOffset? EndDateTime { get; set; }

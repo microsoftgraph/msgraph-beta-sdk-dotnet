@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Identity.B2cUserFlows.Item.UserAttributeAssignments.
     public class SetOrderRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The newAssignmentOrder property</summary>
         public AssignmentOrder NewAssignmentOrder { get; set; }
         /// <summary>
         /// Instantiates a new setOrderRequestBody and sets the default values.

@@ -21,9 +21,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>Text comments regarding what the admin has access to on the device</summary>
         public string CustomCanSeePrivacyMessage { get; set; }
-        /// <summary>Text comments regarding what the admin doesn't have access to on the device</summary>
+        /// <summary>Text comments regarding what the admin doesn&apos;t have access to on the device</summary>
         public string CustomCantSeePrivacyMessage { get; set; }
-        /// <summary>Text comments regarding what the admin doesn't have access to on the device</summary>
+        /// <summary>Text comments regarding what the admin doesn&apos;t have access to on the device</summary>
         public string CustomPrivacyMessage { get; set; }
         /// <summary>Applies to telemetry sent from all clients to the Intune service. When disabled, all proactive troubleshooting and issue warnings within the client are turned off, and telemetry settings appear inactive or hidden to the device user.</summary>
         public bool? DisableClientTelemetry { get; set; }
@@ -33,9 +33,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public EnrollmentAvailabilityOptions? EnrollmentAvailability { get; set; }
         /// <summary>Boolean that represents whether the profile is used as default or not</summary>
         public bool? IsDefaultProfile { get; set; }
-        /// <summary>Boolean that represents whether the adminsistrator has disabled the 'Factory Reset' action on corporate owned devices.</summary>
+        /// <summary>Boolean that represents whether the adminsistrator has disabled the &apos;Factory Reset&apos; action on corporate owned devices.</summary>
         public bool? IsFactoryResetDisabled { get; set; }
-        /// <summary>Boolean that represents whether the adminsistrator has disabled the 'Remove Device' action on corporate owned devices.</summary>
+        /// <summary>Boolean that represents whether the adminsistrator has disabled the &apos;Remove Device&apos; action on corporate owned devices.</summary>
         public bool? IsRemoveDeviceDisabled { get; set; }
         /// <summary>Customized image displayed in Company Portal apps landing page</summary>
         public MimeContent LandingPageCustomizedImage { get; set; }

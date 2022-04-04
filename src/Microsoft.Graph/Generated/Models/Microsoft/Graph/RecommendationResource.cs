@@ -5,15 +5,25 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class RecommendationResource : Entity, IParsable {
+        /// <summary>The addedDateTime property</summary>
         public DateTimeOffset? AddedDateTime { get; set; }
+        /// <summary>The additionalDetails property</summary>
         public List<KeyValue> AdditionalDetails { get; set; }
+        /// <summary>The apiUrl property</summary>
         public string ApiUrl { get; set; }
+        /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
+        /// <summary>The owner property</summary>
         public string Owner { get; set; }
+        /// <summary>The portalUrl property</summary>
         public string PortalUrl { get; set; }
+        /// <summary>The rank property</summary>
         public int? Rank { get; set; }
+        /// <summary>The recommendationId property</summary>
         public string RecommendationId { get; set; }
+        /// <summary>The resourceType property</summary>
         public string ResourceType { get; set; }
+        /// <summary>The status property</summary>
         public RecommendationStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

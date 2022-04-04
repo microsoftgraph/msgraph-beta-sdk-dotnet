@@ -7,11 +7,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ChatMessageMention : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id='{index}'> tag in the message body.</summary>
+        /// <summary>Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding &lt;at id=&apos;{index}&apos;&gt; tag in the message body.</summary>
         public int? Id { get; set; }
         /// <summary>The entity (user, application, team, or channel) that was @mentioned.</summary>
         public ChatMessageMentionedIdentitySet Mentioned { get; set; }
-        /// <summary>String used to represent the mention. For example, a user's display name, a team name.</summary>
+        /// <summary>String used to represent the mention. For example, a user&apos;s display name, a team name.</summary>
         public string MentionText { get; set; }
         /// <summary>
         /// Instantiates a new chatMessageMention and sets the default values.

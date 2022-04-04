@@ -7,9 +7,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SitePage : BaseItem, IParsable {
         /// <summary>The content type of the page.</summary>
         public ContentTypeInfo ContentType { get; set; }
+        /// <summary>The pageLayoutType property</summary>
         public string PageLayoutType { get; set; }
+        /// <summary>The publishingState property</summary>
         public PublicationFacet PublishingState { get; set; }
+        /// <summary>The title property</summary>
         public string Title { get; set; }
+        /// <summary>The webParts property</summary>
         public List<WebPart> WebParts { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

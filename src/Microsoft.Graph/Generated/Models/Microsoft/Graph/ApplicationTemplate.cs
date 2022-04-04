@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ApplicationTemplate : Entity, IParsable {
-        /// <summary>The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.</summary>
+        /// <summary>The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design &amp; hosting.</summary>
         public List<string> Categories { get; set; }
         /// <summary>A description of the application.</summary>
         public string Description { get; set; }
@@ -13,6 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string DisplayName { get; set; }
         /// <summary>The home page URL of the application.</summary>
         public string HomePageUrl { get; set; }
+        /// <summary>The informationalUrls property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.InformationalUrls InformationalUrls { get; set; }
         /// <summary>The URL to get the logo for this application.</summary>
         public string LogoUrl { get; set; }

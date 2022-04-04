@@ -21,6 +21,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string Manufacturer { get; set; }
         /// <summary>The model name of the printer/printerShare.</summary>
         public string Model { get; set; }
+        /// <summary>The name property</summary>
         public string Name { get; set; }
         /// <summary>The processing status of the printer/printerShare, including any errors.</summary>
         public PrinterStatus Status { get; set; }

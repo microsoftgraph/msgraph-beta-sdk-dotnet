@@ -7,9 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class MfaDetail : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Indicates the MFA auth detail for the corresponding Sign-in activity when the MFA Required is 'Yes'.</summary>
+        /// <summary>Indicates the MFA auth detail for the corresponding Sign-in activity when the MFA Required is &apos;Yes&apos;.</summary>
         public string AuthDetail { get; set; }
-        /// <summary>Indicates the MFA Auth methods (SMS, Phone, Authenticator App are some of the value) for the corresponding sign-in activity when the MFA Required field is 'Yes'.</summary>
+        /// <summary>Indicates the MFA Auth methods (SMS, Phone, Authenticator App are some of the value) for the corresponding sign-in activity when the MFA Required field is &apos;Yes&apos;.</summary>
         public string AuthMethod { get; set; }
         /// <summary>
         /// Instantiates a new mfaDetail and sets the default values.

@@ -5,11 +5,15 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ClassificationInnerError : IAdditionalDataHolder, IParsable {
+        /// <summary>The activityId property</summary>
         public string ActivityId { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The clientRequestId property</summary>
         public string ClientRequestId { get; set; }
+        /// <summary>The code property</summary>
         public string Code { get; set; }
+        /// <summary>The errorDateTime property</summary>
         public DateTimeOffset? ErrorDateTime { get; set; }
         /// <summary>
         /// Instantiates a new classificationInnerError and sets the default values.

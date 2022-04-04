@@ -13,6 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         public string DisplayName { get; set; }
         /// <summary>The unique identifier for the management template. Required. Read-only.</summary>
         public string ManagementTemplateId { get; set; }
+        /// <summary>The version property</summary>
         public int? Version { get; set; }
         /// <summary>
         /// Instantiates a new managementTemplateDetailedInfo and sets the default values.

@@ -7,11 +7,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AutomaticRepliesSetting : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. The possible values are: none, contactsOnly, all.</summary>
+        /// <summary>The set of audience external to the signed-in user&apos;s organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. The possible values are: none, contactsOnly, all.</summary>
         public ExternalAudienceScope? ExternalAudience { get; set; }
         /// <summary>The automatic reply to send to the specified external audience, if Status is AlwaysEnabled or Scheduled.</summary>
         public string ExternalReplyMessage { get; set; }
-        /// <summary>The automatic reply to send to the audience internal to the signed-in user's organization, if Status is AlwaysEnabled or Scheduled.</summary>
+        /// <summary>The automatic reply to send to the audience internal to the signed-in user&apos;s organization, if Status is AlwaysEnabled or Scheduled.</summary>
         public string InternalReplyMessage { get; set; }
         /// <summary>The date and time that automatic replies are set to end, if Status is set to Scheduled.</summary>
         public DateTimeTimeZone ScheduledEndDateTime { get; set; }

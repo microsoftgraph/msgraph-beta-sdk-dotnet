@@ -73,7 +73,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Video Video { get; set; }
         /// <summary>WebDAV compatible URL for the item.</summary>
         public string WebDavUrl { get; set; }
-        /// <summary>For files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.</summary>
+        /// <summary>For files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet&apos;s contents. Nullable.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Workbook Workbook { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

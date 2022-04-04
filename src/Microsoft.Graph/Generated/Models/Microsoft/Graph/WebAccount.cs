@@ -7,13 +7,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class WebAccount : ItemFacet, IParsable {
         /// <summary>Contains the description the user has provided for the account on the service being referenced.</summary>
         public string Description { get; set; }
+        /// <summary>The service property</summary>
         public ServiceInformation Service { get; set; }
         /// <summary>Contains a status message from the cloud service if provided or synchronized.</summary>
         public string StatusMessage { get; set; }
+        /// <summary>The thumbnailUrl property</summary>
         public string ThumbnailUrl { get; set; }
         /// <summary>The user name  displayed for the webaccount.</summary>
         public string UserId { get; set; }
-        /// <summary>Contains a link to the user's profile on the cloud service if one exists.</summary>
+        /// <summary>Contains a link to the user&apos;s profile on the cloud service if one exists.</summary>
         public string WebUrl { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

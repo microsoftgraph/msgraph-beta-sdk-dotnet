@@ -6,29 +6,29 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class MicrosoftTunnelSite : Entity, IParsable {
-        /// <summary>The MicrosoftTunnelSite's description</summary>
+        /// <summary>The MicrosoftTunnelSite&apos;s description</summary>
         public string Description { get; set; }
-        /// <summary>The MicrosoftTunnelSite's display name</summary>
+        /// <summary>The MicrosoftTunnelSite&apos;s display name</summary>
         public string DisplayName { get; set; }
-        /// <summary>The MicrosoftTunnelSite's Internal Network Access Probe URL</summary>
+        /// <summary>The MicrosoftTunnelSite&apos;s Internal Network Access Probe URL</summary>
         public string InternalNetworkProbeUrl { get; set; }
         /// <summary>The MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.MicrosoftTunnelConfiguration MicrosoftTunnelConfiguration { get; set; }
         /// <summary>A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite</summary>
         public List<MicrosoftTunnelServer> MicrosoftTunnelServers { get; set; }
-        /// <summary>The MicrosoftTunnelSite's public domain name or IP address</summary>
+        /// <summary>The MicrosoftTunnelSite&apos;s public domain name or IP address</summary>
         public string PublicAddress { get; set; }
         /// <summary>List of Scope Tags for this Entity instance.</summary>
         public List<string> RoleScopeTagIds { get; set; }
-        /// <summary>The site's automatic upgrade setting. True for automatic upgrades, false for manual control</summary>
+        /// <summary>The site&apos;s automatic upgrade setting. True for automatic upgrades, false for manual control</summary>
         public bool? UpgradeAutomatically { get; set; }
         /// <summary>True if an upgrade is available</summary>
         public bool? UpgradeAvailable { get; set; }
-        /// <summary>The site's upgrade window end time of day</summary>
+        /// <summary>The site&apos;s upgrade window end time of day</summary>
         public Time? UpgradeWindowEndTime { get; set; }
-        /// <summary>The site's upgrade window start time of day</summary>
+        /// <summary>The site&apos;s upgrade window start time of day</summary>
         public Time? UpgradeWindowStartTime { get; set; }
-        /// <summary>The site's timezone represented as a minute offset from UTC</summary>
+        /// <summary>The site&apos;s timezone represented as a minute offset from UTC</summary>
         public int? UpgradeWindowUtcOffsetInMinutes { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

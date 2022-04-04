@@ -9,7 +9,9 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Que
     public class ApplyTagsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The tagsToAdd property</summary>
         public List<Tag> TagsToAdd { get; set; }
+        /// <summary>The tagsToRemove property</summary>
         public List<Tag> TagsToRemove { get; set; }
         /// <summary>
         /// Instantiates a new applyTagsRequestBody and sets the default values.

@@ -9,7 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<WindowsDefenderApplicationControlSupplementalPolicyAssignment> Assignments { get; set; }
         /// <summary>The WindowsDefenderApplicationControl supplemental policy content in byte array format.</summary>
         public byte[] Content { get; set; }
-        /// <summary>The WindowsDefenderApplicationControl supplemental policy content's file name.</summary>
+        /// <summary>The WindowsDefenderApplicationControl supplemental policy content&apos;s file name.</summary>
         public string ContentFileName { get; set; }
         /// <summary>The date and time when the WindowsDefenderApplicationControl supplemental policy was uploaded.</summary>
         public DateTimeOffset? CreationDateTime { get; set; }
@@ -25,7 +25,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? LastModifiedDateTime { get; set; }
         /// <summary>List of Scope Tags for this WindowsDefenderApplicationControl supplemental policy entity.</summary>
         public List<string> RoleScopeTagIds { get; set; }
-        /// <summary>The WindowsDefenderApplicationControl supplemental policy's version.</summary>
+        /// <summary>The WindowsDefenderApplicationControl supplemental policy&apos;s version.</summary>
         public string Version { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

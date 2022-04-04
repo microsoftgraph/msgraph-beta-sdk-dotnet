@@ -5,10 +5,15 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DelegatedAdminRelationshipOperation : Entity, IParsable {
+        /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
+        /// <summary>The data property</summary>
         public string Data { get; set; }
+        /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+        /// <summary>The operationType property</summary>
         public DelegatedAdminRelationshipOperationType? OperationType { get; set; }
+        /// <summary>The status property</summary>
         public DelegatedAdminRelationshipOperationStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

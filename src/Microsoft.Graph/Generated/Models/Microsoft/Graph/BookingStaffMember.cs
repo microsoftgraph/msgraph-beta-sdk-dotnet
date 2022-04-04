@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class BookingStaffMember : BookingPerson, IParsable {
-        /// <summary>True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member's availability in their personal calendar in Microsoft 365, before making a booking.</summary>
+        /// <summary>True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member&apos;s availability in their personal calendar in Microsoft 365, before making a booking.</summary>
         public bool? AvailabilityIsAffectedByPersonalCalendar { get; set; }
         /// <summary>Identifies a color to represent the staff member. The color corresponds to the color palette in the Staff details page in the Bookings app.</summary>
         public int? ColorIndex { get; set; }
@@ -13,7 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public BookingStaffRole? Role { get; set; }
         /// <summary>The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.</summary>
         public string TimeZone { get; set; }
-        /// <summary>True means the staff member's availability is as specified in the businessHours property of the business. False means the availability is determined by the staff member's workingHours property setting.</summary>
+        /// <summary>True means the staff member&apos;s availability is as specified in the businessHours property of the business. False means the availability is determined by the staff member&apos;s workingHours property setting.</summary>
         public bool? UseBusinessHours { get; set; }
         /// <summary>The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.</summary>
         public List<BookingWorkHours> WorkingHours { get; set; }

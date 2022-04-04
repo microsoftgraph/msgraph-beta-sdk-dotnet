@@ -9,11 +9,17 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Exp
     public class ExportRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The azureBlobContainer property</summary>
         public string AzureBlobContainer { get; set; }
+        /// <summary>The azureBlobToken property</summary>
         public string AzureBlobToken { get; set; }
+        /// <summary>The description property</summary>
         public string Description { get; set; }
+        /// <summary>The exportOptions property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery.ExportOptions? ExportOptions { get; set; }
+        /// <summary>The exportStructure property</summary>
         public ExportFileStructure? ExportStructure { get; set; }
+        /// <summary>The outputName property</summary>
         public string OutputName { get; set; }
         /// <summary>
         /// Instantiates a new exportRequestBody and sets the default values.

@@ -8,7 +8,9 @@ namespace MicrosoftGraphSdk.App.Calls.Item.Participants.MuteAll {
     public class MuteAllRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The clientContext property</summary>
         public string ClientContext { get; set; }
+        /// <summary>The participants property</summary>
         public List<string> Participants { get; set; }
         /// <summary>
         /// Instantiates a new muteAllRequestBody and sets the default values.

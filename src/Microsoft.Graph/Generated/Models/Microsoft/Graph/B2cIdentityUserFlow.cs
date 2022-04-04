@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public UserFlowApiConnectorConfiguration ApiConnectorConfiguration { get; set; }
         /// <summary>Indicates the default language of the b2cIdentityUserFlow that is used when no ui_locale tag is specified in the request. This field is RFC 5646 compliant.</summary>
         public string DefaultLanguageTag { get; set; }
+        /// <summary>The identityProviders property</summary>
         public List<IdentityProvider> IdentityProviders { get; set; }
         /// <summary>The property that determines whether language customization is enabled within the B2C user flow. Language customization is not enabled by default for B2C user flows.</summary>
         public bool? IsLanguageCustomizationEnabled { get; set; }
@@ -16,6 +17,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<UserFlowLanguageConfiguration> Languages { get; set; }
         /// <summary>The user attribute assignments included in the user flow.</summary>
         public List<IdentityUserFlowAttributeAssignment> UserAttributeAssignments { get; set; }
+        /// <summary>The userFlowIdentityProviders property</summary>
         public List<IdentityProviderBase> UserFlowIdentityProviders { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

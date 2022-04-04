@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ContinuousAccessEvaluationPolicy : Entity, IParsable {
-        /// <summary>Continuous access evaluation automatically blocks access to resources and applications in near real time when a user's access is removed or a client IP address changes. Read-only.</summary>
+        /// <summary>Continuous access evaluation automatically blocks access to resources and applications in near real time when a user&apos;s access is removed or a client IP address changes. Read-only.</summary>
         public string Description { get; set; }
         /// <summary>The value is always Continuous Access Evaluation. Read-only.</summary>
         public string DisplayName { get; set; }

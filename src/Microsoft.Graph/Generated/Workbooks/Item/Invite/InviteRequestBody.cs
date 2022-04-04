@@ -9,13 +9,21 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Invite {
     public class InviteRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The expirationDateTime property</summary>
         public string ExpirationDateTime { get; set; }
+        /// <summary>The message property</summary>
         public string Message { get; set; }
+        /// <summary>The password property</summary>
         public string Password { get; set; }
+        /// <summary>The recipients property</summary>
         public List<DriveRecipient> Recipients { get; set; }
+        /// <summary>The requireSignIn property</summary>
         public bool? RequireSignIn { get; set; }
+        /// <summary>The retainInheritedPermissions property</summary>
         public bool? RetainInheritedPermissions { get; set; }
+        /// <summary>The roles property</summary>
         public List<string> Roles { get; set; }
+        /// <summary>The sendInvitation property</summary>
         public bool? SendInvitation { get; set; }
         /// <summary>
         /// Instantiates a new inviteRequestBody and sets the default values.

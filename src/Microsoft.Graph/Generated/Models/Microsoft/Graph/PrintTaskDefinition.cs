@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PrintTaskDefinition : Entity, IParsable {
+        /// <summary>The createdBy property</summary>
         public AppIdentity CreatedBy { get; set; }
         /// <summary>The name of the printTaskDefinition.</summary>
         public string DisplayName { get; set; }

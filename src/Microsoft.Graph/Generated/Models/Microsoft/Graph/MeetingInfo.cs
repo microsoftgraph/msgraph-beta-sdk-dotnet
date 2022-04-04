@@ -7,6 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class MeetingInfo : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The allowConversationWithoutHost property</summary>
         public bool? AllowConversationWithoutHost { get; set; }
         /// <summary>
         /// Instantiates a new meetingInfo and sets the default values.

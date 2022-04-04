@@ -11,6 +11,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public PolicyPlatformType? PlatformType { get; set; }
         /// <summary>Count of how many setting a policy holds</summary>
         public int? SettingCount { get; set; }
+        /// <summary>The settingStates property</summary>
         public List<DeviceConfigurationSettingState> SettingStates { get; set; }
         /// <summary>The compliance state of the policy</summary>
         public ComplianceStatus? State { get; set; }

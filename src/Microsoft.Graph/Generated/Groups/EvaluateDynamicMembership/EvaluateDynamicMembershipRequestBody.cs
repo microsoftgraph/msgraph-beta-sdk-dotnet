@@ -8,7 +8,9 @@ namespace MicrosoftGraphSdk.Groups.EvaluateDynamicMembership {
     public class EvaluateDynamicMembershipRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The memberId property</summary>
         public string MemberId { get; set; }
+        /// <summary>The membershipRule property</summary>
         public string MembershipRule { get; set; }
         /// <summary>
         /// Instantiates a new evaluateDynamicMembershipRequestBody and sets the default values.

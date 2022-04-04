@@ -7,7 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SigningCertificateUpdateStatus : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The certificateUpdateResult property</summary>
         public string CertificateUpdateResult { get; set; }
+        /// <summary>The lastRunDateTime property</summary>
         public DateTimeOffset? LastRunDateTime { get; set; }
         /// <summary>
         /// Instantiates a new signingCertificateUpdateStatus and sets the default values.

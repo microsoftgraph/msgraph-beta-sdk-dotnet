@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Profile : Entity, IParsable {
+        /// <summary>The account property</summary>
         public List<UserAccountInformation> Account { get; set; }
         /// <summary>Represents details of addresses associated with the user.</summary>
         public List<ItemAddress> Addresses { get; set; }
@@ -30,7 +31,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<ItemPatent> Patents { get; set; }
         /// <summary>Represents detailed information about phone numbers associated with a user in various services.</summary>
         public List<ItemPhone> Phones { get; set; }
-        /// <summary>Represents detailed information about work positions associated with a user's profile.</summary>
+        /// <summary>Represents detailed information about work positions associated with a user&apos;s profile.</summary>
         public List<WorkPosition> Positions { get; set; }
         /// <summary>Represents detailed information about projects associated with a user.</summary>
         public List<ProjectParticipation> Projects { get; set; }

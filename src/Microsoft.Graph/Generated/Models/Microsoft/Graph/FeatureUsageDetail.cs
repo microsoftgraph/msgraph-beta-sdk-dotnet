@@ -7,10 +7,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class FeatureUsageDetail : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The featureName property</summary>
         public string FeatureName { get; set; }
+        /// <summary>The lastConfiguredDateTime property</summary>
         public DateTimeOffset? LastConfiguredDateTime { get; set; }
+        /// <summary>The lastUsedDateTime property</summary>
         public DateTimeOffset? LastUsedDateTime { get; set; }
+        /// <summary>The licenseAssigned property</summary>
         public AzureADLicenseType? LicenseAssigned { get; set; }
+        /// <summary>The licenseRequired property</summary>
         public AzureADLicenseType? LicenseRequired { get; set; }
         /// <summary>
         /// Instantiates a new featureUsageDetail and sets the default values.

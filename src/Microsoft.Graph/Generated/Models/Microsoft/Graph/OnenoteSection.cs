@@ -5,9 +5,9 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class OnenoteSection : OnenoteEntityHierarchyModel, IParsable {
-        /// <summary>Indicates whether this is the user's default section. Read-only.</summary>
+        /// <summary>Indicates whether this is the user&apos;s default section. Read-only.</summary>
         public bool? IsDefault { get; set; }
-        /// <summary>Links for opening the section. The oneNoteClientURL link opens the section in the OneNote native client if it's installed. The oneNoteWebURL link opens the section in OneNote on the web.</summary>
+        /// <summary>Links for opening the section. The oneNoteClientURL link opens the section in the OneNote native client if it&apos;s installed. The oneNoteWebURL link opens the section in OneNote on the web.</summary>
         public SectionLinks Links { get; set; }
         /// <summary>The collection of pages in the section.  Read-only. Nullable.</summary>
         public List<OnenotePage> Pages { get; set; }

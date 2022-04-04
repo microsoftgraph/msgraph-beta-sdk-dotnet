@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AccessReviewHistoryDefinition : Entity, IParsable {
+        /// <summary>The createdBy property</summary>
         public UserIdentity CreatedBy { get; set; }
         /// <summary>Timestamp when the access review definition was created.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
@@ -12,7 +13,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<AccessReviewHistoryDecisionFilter?> Decisions { get; set; }
         /// <summary>Name for the access review history data collection. Required.</summary>
         public string DisplayName { get; set; }
+        /// <summary>The downloadUri property</summary>
         public string DownloadUri { get; set; }
+        /// <summary>The fulfilledDateTime property</summary>
         public DateTimeOffset? FulfilledDateTime { get; set; }
         /// <summary>If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.</summary>
         public List<AccessReviewHistoryInstance> Instances { get; set; }

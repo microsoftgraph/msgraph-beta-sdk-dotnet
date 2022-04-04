@@ -10,7 +10,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public Date? CompletionMonthYear { get; set; }
         /// <summary>The month and year the user completed the educational activity referenced.</summary>
         public Date? EndMonthYear { get; set; }
+        /// <summary>The institution property</summary>
         public InstitutionData Institution { get; set; }
+        /// <summary>The program property</summary>
         public EducationalActivityDetail Program { get; set; }
         /// <summary>The month and year the user commenced the activity referenced.</summary>
         public Date? StartMonthYear { get; set; }

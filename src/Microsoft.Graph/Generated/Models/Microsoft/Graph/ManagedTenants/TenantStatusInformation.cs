@@ -21,7 +21,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         public DateTimeOffset? OnboardedDateTime { get; set; }
         /// <summary>The onboarding status for the managed tenant.. Possible values are: ineligible, inProcess, active, inactive, unknownFutureValue. Optional. Read-only.</summary>
         public TenantOnboardingStatus? OnboardingStatus { get; set; }
-        /// <summary>Organization's onboarding eligibility reason in Microsoft 365 Lighthouse.. Possible values are: none, contractType, delegatedAdminPrivileges,usersCount,license and unknownFutureValue. Optional. Read-only.</summary>
+        /// <summary>Organization&apos;s onboarding eligibility reason in Microsoft 365 Lighthouse.. Possible values are: none, contractType, delegatedAdminPrivileges,usersCount,license and unknownFutureValue. Optional. Read-only.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants.TenantOnboardingEligibilityReason? TenantOnboardingEligibilityReason { get; set; }
         /// <summary>The collection of workload statues for the managed tenant. Optional. Read-only.</summary>
         public List<WorkloadStatus> WorkloadStatuses { get; set; }

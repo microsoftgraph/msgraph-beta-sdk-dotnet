@@ -42,7 +42,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"deviceComplianceScriptRuleDataType", (o,n) => { (o as DeviceComplianceScriptRule).DeviceComplianceScriptRuleDataType = n.GetEnumValue<DeviceComplianceScriptRuleDataType>(); } },
                 {"deviceComplianceScriptRulOperator", (o,n) => { (o as DeviceComplianceScriptRule).DeviceComplianceScriptRulOperator = n.GetEnumValue<DeviceComplianceScriptRulOperator>(); } },
                 {"operand", (o,n) => { (o as DeviceComplianceScriptRule).Operand = n.GetStringValue(); } },
-                {"operator", (o,n) => { (o as DeviceComplianceScriptRule).Operator = n.GetEnumValue<@Operator>(); } },
+                {"operator", (o,n) => { (o as DeviceComplianceScriptRule).Operator = n.GetEnumValue<Operator>(); } },
                 {"settingName", (o,n) => { (o as DeviceComplianceScriptRule).SettingName = n.GetStringValue(); } },
             };
         }
@@ -56,7 +56,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteEnumValue<DeviceComplianceScriptRuleDataType>("deviceComplianceScriptRuleDataType", DeviceComplianceScriptRuleDataType);
             writer.WriteEnumValue<DeviceComplianceScriptRulOperator>("deviceComplianceScriptRulOperator", DeviceComplianceScriptRulOperator);
             writer.WriteStringValue("operand", Operand);
-            writer.WriteEnumValue<@Operator>("operator", Operator);
+            writer.WriteEnumValue<Operator>("operator", Operator);
             writer.WriteStringValue("settingName", SettingName);
             writer.WriteAdditionalData(AdditionalData);
         }

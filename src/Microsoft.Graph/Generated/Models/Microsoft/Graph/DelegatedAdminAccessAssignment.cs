@@ -5,10 +5,15 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DelegatedAdminAccessAssignment : Entity, IParsable {
+        /// <summary>The accessContainer property</summary>
         public DelegatedAdminAccessContainer AccessContainer { get; set; }
+        /// <summary>The accessDetails property</summary>
         public DelegatedAdminAccessDetails AccessDetails { get; set; }
+        /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
+        /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+        /// <summary>The status property</summary>
         public DelegatedAdminAccessAssignmentStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

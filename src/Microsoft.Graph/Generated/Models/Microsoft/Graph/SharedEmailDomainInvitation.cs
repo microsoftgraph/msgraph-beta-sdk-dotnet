@@ -5,8 +5,11 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SharedEmailDomainInvitation : Entity, IParsable {
+        /// <summary>The expiryTime property</summary>
         public DateTimeOffset? ExpiryTime { get; set; }
+        /// <summary>The invitationDomain property</summary>
         public string InvitationDomain { get; set; }
+        /// <summary>The invitationStatus property</summary>
         public string InvitationStatus { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

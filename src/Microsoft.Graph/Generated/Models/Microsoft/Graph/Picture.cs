@@ -5,9 +5,13 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Picture : Entity, IParsable {
+        /// <summary>The content property</summary>
         public byte[] Content { get; set; }
+        /// <summary>The contentType property</summary>
         public string ContentType { get; set; }
+        /// <summary>The height property</summary>
         public int? Height { get; set; }
+        /// <summary>The width property</summary>
         public int? Width { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

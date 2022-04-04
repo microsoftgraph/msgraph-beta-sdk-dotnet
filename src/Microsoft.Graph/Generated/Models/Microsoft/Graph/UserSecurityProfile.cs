@@ -5,15 +5,25 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UserSecurityProfile : Entity, IParsable {
+        /// <summary>The accounts property</summary>
         public List<UserAccount> Accounts { get; set; }
+        /// <summary>The azureSubscriptionId property</summary>
         public string AzureSubscriptionId { get; set; }
+        /// <summary>The azureTenantId property</summary>
         public string AzureTenantId { get; set; }
+        /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
+        /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
+        /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+        /// <summary>The riskScore property</summary>
         public string RiskScore { get; set; }
+        /// <summary>The tags property</summary>
         public List<string> Tags { get; set; }
+        /// <summary>The userPrincipalName property</summary>
         public string UserPrincipalName { get; set; }
+        /// <summary>The vendorInformation property</summary>
         public SecurityVendorInformation VendorInformation { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

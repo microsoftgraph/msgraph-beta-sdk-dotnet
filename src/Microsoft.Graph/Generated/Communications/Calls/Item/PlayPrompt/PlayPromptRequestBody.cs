@@ -9,8 +9,11 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.PlayPrompt {
     public class PlayPromptRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The clientContext property</summary>
         public string ClientContext { get; set; }
+        /// <summary>The loop property</summary>
         public bool? Loop { get; set; }
+        /// <summary>The prompts property</summary>
         public List<Prompt> Prompts { get; set; }
         /// <summary>
         /// Instantiates a new playPromptRequestBody and sets the default values.

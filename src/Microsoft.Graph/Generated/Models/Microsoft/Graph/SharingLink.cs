@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The app the link is associated with.</summary>
         public Identity Application { get; set; }
+        /// <summary>The configuratorUrl property</summary>
         public string ConfiguratorUrl { get; set; }
         /// <summary>If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.</summary>
         public bool? PreventsDownload { get; set; }
@@ -16,7 +17,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string Scope { get; set; }
         /// <summary>The type of the link created.</summary>
         public string Type { get; set; }
-        /// <summary>For embed links, this property contains the HTML code for an <iframe> element that will embed the item in a webpage.</summary>
+        /// <summary>For embed links, this property contains the HTML code for an &lt;iframe&gt; element that will embed the item in a webpage.</summary>
         public string WebHtml { get; set; }
         /// <summary>A URL that opens the item in the browser on the OneDrive website.</summary>
         public string WebUrl { get; set; }

@@ -7,6 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Shift : ChangeTrackedEntity, IParsable {
         /// <summary>The draft version of this shift that is viewable by managers. Required.</summary>
         public ShiftItem DraftShift { get; set; }
+        /// <summary>The isStagedForDeletion property</summary>
         public bool? IsStagedForDeletion { get; set; }
         /// <summary>ID of the scheduling group the shift is part of. Required.</summary>
         public string SchedulingGroupId { get; set; }

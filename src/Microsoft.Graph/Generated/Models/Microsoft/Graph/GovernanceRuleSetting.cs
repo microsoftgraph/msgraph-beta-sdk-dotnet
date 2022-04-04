@@ -9,7 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The id of the rule. For example, ExpirationRule and MfaRule.</summary>
         public string RuleIdentifier { get; set; }
-        /// <summary>The settings of the rule. The value is a JSON string with a list of pairs in the format of Parameter_Name:Parameter_Value. For example, {'permanentAssignment':false,'maximumGrantPeriodInMinutes':129600}</summary>
+        /// <summary>The settings of the rule. The value is a JSON string with a list of pairs in the format of Parameter_Name:Parameter_Value. For example, {&apos;permanentAssignment&apos;:false,&apos;maximumGrantPeriodInMinutes&apos;:129600}</summary>
         public string Setting { get; set; }
         /// <summary>
         /// Instantiates a new governanceRuleSetting and sets the default values.

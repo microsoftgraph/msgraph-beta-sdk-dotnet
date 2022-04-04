@@ -9,7 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Default BCP 47 language tag for the description.</summary>
         public string DefaultLanguage { get; set; }
-        /// <summary>Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.</summary>
+        /// <summary>Localized messages that explain what is needed for this column&apos;s value to be considered valid. User will be prompted with this message if validation fails.</summary>
         public List<DisplayNameLocalization> Descriptions { get; set; }
         /// <summary>The formula to validate column value. For examples, see Examples of common formulas in lists.</summary>
         public string Formula { get; set; }

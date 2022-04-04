@@ -7,13 +7,19 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Teams.Item.SendActivityNotification {
     /// <summary>Provides operations to call the sendActivityNotification method.</summary>
     public class SendActivityNotificationRequestBody : IAdditionalDataHolder, IParsable {
+        /// <summary>The activityType property</summary>
         public string ActivityType { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The chainId property</summary>
         public long? ChainId { get; set; }
+        /// <summary>The previewText property</summary>
         public ItemBody PreviewText { get; set; }
+        /// <summary>The recipient property</summary>
         public TeamworkNotificationRecipient Recipient { get; set; }
+        /// <summary>The templateParameters property</summary>
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.KeyValuePair> TemplateParameters { get; set; }
+        /// <summary>The topic property</summary>
         public TeamworkActivityTopic Topic { get; set; }
         /// <summary>
         /// Instantiates a new sendActivityNotificationRequestBody and sets the default values.

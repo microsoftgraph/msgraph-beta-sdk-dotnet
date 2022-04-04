@@ -8,6 +8,7 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Issues.Item.IncidentReport
     public class IncidentReportResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The value property</summary>
         public byte[] Value { get; set; }
         /// <summary>
         /// Instantiates a new incidentReportResponse and sets the default values.

@@ -9,7 +9,9 @@ namespace MicrosoftGraphSdk.Me.CloudPCs.Item.Reprovision {
     public class ReprovisionRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The osVersion property</summary>
         public CloudPcOperatingSystem? OsVersion { get; set; }
+        /// <summary>The userAccountType property</summary>
         public CloudPcUserAccountType? UserAccountType { get; set; }
         /// <summary>
         /// Instantiates a new reprovisionRequestBody and sets the default values.

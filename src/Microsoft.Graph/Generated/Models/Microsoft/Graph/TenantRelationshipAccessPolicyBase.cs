@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class TenantRelationshipAccessPolicyBase : PolicyBase, IParsable {
+        /// <summary>The definition property</summary>
         public List<string> Definition { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

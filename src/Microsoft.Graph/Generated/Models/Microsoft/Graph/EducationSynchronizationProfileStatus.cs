@@ -13,7 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? LastSynchronizationDateTime { get; set; }
         /// <summary>The status of a sync. The possible values are: paused, inProgress, success, error, validationError, quarantined, unknownFutureValue, extracting, validating. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: extracting, validating.</summary>
         public EducationSynchronizationStatus? Status { get; set; }
-        /// <summary>Status message for the current profile's synchronization stage.</summary>
+        /// <summary>Status message for the current profile&apos;s synchronization stage.</summary>
         public string StatusMessage { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

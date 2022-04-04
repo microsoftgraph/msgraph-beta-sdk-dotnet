@@ -5,9 +5,13 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SearchHit : IAdditionalDataHolder, IParsable {
+        /// <summary>The _id property</summary>
         public string _id { get; set; }
+        /// <summary>The _score property</summary>
         public int? _score { get; set; }
+        /// <summary>The _source property</summary>
         public Entity _source { get; set; }
+        /// <summary>The _summary property</summary>
         public string _summary { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -17,6 +21,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string HitId { get; set; }
         /// <summary>The rank or the order of the result.</summary>
         public int? Rank { get; set; }
+        /// <summary>The resource property</summary>
         public Entity Resource { get; set; }
         /// <summary>ID of the result template used to render the search result. This ID must map to a display layout in the resultTemplates dictionary that is also included in the searchResponse.</summary>
         public string ResultTemplateId { get; set; }

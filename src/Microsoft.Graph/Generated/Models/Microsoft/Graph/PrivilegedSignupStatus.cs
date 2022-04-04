@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PrivilegedSignupStatus : Entity, IParsable {
+        /// <summary>The isRegistered property</summary>
         public bool? IsRegistered { get; set; }
+        /// <summary>The status property</summary>
         public SetupStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

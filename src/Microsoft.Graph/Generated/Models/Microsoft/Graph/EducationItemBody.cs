@@ -7,7 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class EducationItemBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The content property</summary>
         public string Content { get; set; }
+        /// <summary>The contentType property</summary>
         public BodyType? ContentType { get; set; }
         /// <summary>
         /// Instantiates a new educationItemBody and sets the default values.

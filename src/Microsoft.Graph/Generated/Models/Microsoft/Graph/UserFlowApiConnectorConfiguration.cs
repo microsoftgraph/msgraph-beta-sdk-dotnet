@@ -7,8 +7,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UserFlowApiConnectorConfiguration : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The postAttributeCollection property</summary>
         public IdentityApiConnector PostAttributeCollection { get; set; }
+        /// <summary>The postFederationSignup property</summary>
         public IdentityApiConnector PostFederationSignup { get; set; }
+        /// <summary>The preTokenIssuance property</summary>
         public IdentityApiConnector PreTokenIssuance { get; set; }
         /// <summary>
         /// Instantiates a new userFlowApiConnectorConfiguration and sets the default values.

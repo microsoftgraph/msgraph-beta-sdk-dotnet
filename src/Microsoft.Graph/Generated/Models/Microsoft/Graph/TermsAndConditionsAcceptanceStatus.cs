@@ -7,7 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class TermsAndConditionsAcceptanceStatus : Entity, IParsable {
         /// <summary>DateTime when the terms were last accepted by the user.</summary>
         public DateTimeOffset? AcceptedDateTime { get; set; }
-        /// <summary>Most recent version number of the T&C accepted by the user.</summary>
+        /// <summary>Most recent version number of the T&amp;C accepted by the user.</summary>
         public int? AcceptedVersion { get; set; }
         /// <summary>Navigation link to the terms and conditions that are assigned.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.TermsAndConditions TermsAndConditions { get; set; }

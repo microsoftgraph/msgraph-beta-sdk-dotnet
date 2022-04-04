@@ -6,7 +6,7 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors {
     public class ConnectionOperation : Entity, IParsable {
         /// <summary>If status is failed, provides more information about the error that caused the failure.</summary>
-        public PublicError Error { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.PublicError Error { get; set; }
         /// <summary>Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed, unknownFutureValue.</summary>
         public ConnectionOperationStatus? Status { get; set; }
         /// <summary>
@@ -22,7 +22,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"error", (o,n) => { (o as ConnectionOperation).Error = n.GetObjectValue<PublicError>(PublicError.CreateFromDiscriminatorValue); } },
+                {"error", (o,n) => { (o as ConnectionOperation).Error = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PublicError>(MicrosoftGraphSdk.Models.Microsoft.Graph.PublicError.CreateFromDiscriminatorValue); } },
                 {"status", (o,n) => { (o as ConnectionOperation).Status = n.GetEnumValue<ConnectionOperationStatus>(); } },
             };
         }
@@ -33,7 +33,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<PublicError>("error", Error);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PublicError>("error", Error);
             writer.WriteEnumValue<ConnectionOperationStatus>("status", Status);
         }
     }

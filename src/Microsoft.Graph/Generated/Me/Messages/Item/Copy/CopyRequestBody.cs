@@ -8,6 +8,7 @@ namespace MicrosoftGraphSdk.Me.Messages.Item.Copy {
     public class CopyRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The DestinationId property</summary>
         public string DestinationId { get; set; }
         /// <summary>
         /// Instantiates a new copyRequestBody and sets the default values.

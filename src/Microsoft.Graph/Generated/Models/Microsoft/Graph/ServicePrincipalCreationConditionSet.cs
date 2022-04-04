@@ -5,10 +5,15 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ServicePrincipalCreationConditionSet : Entity, IParsable {
+        /// <summary>The applicationIds property</summary>
         public List<string> ApplicationIds { get; set; }
+        /// <summary>The applicationPublisherIds property</summary>
         public List<string> ApplicationPublisherIds { get; set; }
+        /// <summary>The applicationsFromVerifiedPublisherOnly property</summary>
         public bool? ApplicationsFromVerifiedPublisherOnly { get; set; }
+        /// <summary>The applicationTenantIds property</summary>
         public List<string> ApplicationTenantIds { get; set; }
+        /// <summary>The certifiedApplicationsOnly property</summary>
         public bool? CertifiedApplicationsOnly { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

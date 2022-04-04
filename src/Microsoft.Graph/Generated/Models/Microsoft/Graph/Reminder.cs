@@ -17,7 +17,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public Location EventLocation { get; set; }
         /// <summary>The date, time, and time zone that the event starts.</summary>
         public DateTimeTimeZone EventStartTime { get; set; }
-        /// <summary>The text of the event's subject line.</summary>
+        /// <summary>The text of the event&apos;s subject line.</summary>
         public string EventSubject { get; set; }
         /// <summary>The URL to open the event in Outlook on the web.The event will open in the browser if you are logged in to your mailbox via Outlook on the web. You will be prompted to login if you are not already logged in with the browser.This URL cannot be accessed from within an iFrame.</summary>
         public string EventWebLink { get; set; }

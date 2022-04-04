@@ -7,7 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ChoiceColumn : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>If true, allows custom values that aren't in the configured choices.</summary>
+        /// <summary>If true, allows custom values that aren&apos;t in the configured choices.</summary>
         public bool? AllowTextEntry { get; set; }
         /// <summary>The list of values available for this column.</summary>
         public List<string> Choices { get; set; }

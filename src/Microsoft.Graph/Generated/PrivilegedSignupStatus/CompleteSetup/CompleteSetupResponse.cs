@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.PrivilegedSignupStatus.CompleteSetup {
     public class CompleteSetupResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The value property</summary>
         public List<RoleSuccessStatistics> Value { get; set; }
         /// <summary>
         /// Instantiates a new completeSetupResponse and sets the default values.

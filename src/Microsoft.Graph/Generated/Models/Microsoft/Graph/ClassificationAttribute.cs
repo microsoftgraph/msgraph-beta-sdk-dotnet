@@ -7,7 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ClassificationAttribute : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The confidence property</summary>
         public int? Confidence { get; set; }
+        /// <summary>The count property</summary>
         public int? Count { get; set; }
         /// <summary>
         /// Instantiates a new classificationAttribute and sets the default values.

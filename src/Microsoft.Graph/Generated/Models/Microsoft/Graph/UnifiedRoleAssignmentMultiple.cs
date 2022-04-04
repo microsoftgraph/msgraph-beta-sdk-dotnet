@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<string> AppScopeIds { get; set; }
         /// <summary>Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.</summary>
         public List<AppScope> AppScopes { get; set; }
+        /// <summary>The condition property</summary>
         public string Condition { get; set; }
         /// <summary>Description of the role assignment.</summary>
         public string Description { get; set; }

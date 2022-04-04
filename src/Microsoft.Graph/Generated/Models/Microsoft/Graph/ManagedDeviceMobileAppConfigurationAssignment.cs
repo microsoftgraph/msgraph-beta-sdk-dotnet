@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ManagedDeviceMobileAppConfigurationAssignment : Entity, IParsable {
-        /// <summary>Assignment target that the T&C policy is assigned to.</summary>
+        /// <summary>Assignment target that the T&amp;C policy is assigned to.</summary>
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

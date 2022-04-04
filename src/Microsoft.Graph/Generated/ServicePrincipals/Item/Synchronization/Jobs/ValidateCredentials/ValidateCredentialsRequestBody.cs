@@ -9,9 +9,13 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.Validate
     public class ValidateCredentialsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The applicationIdentifier property</summary>
         public string ApplicationIdentifier { get; set; }
+        /// <summary>The credentials property</summary>
         public List<SynchronizationSecretKeyStringValuePair> Credentials { get; set; }
+        /// <summary>The templateId property</summary>
         public string TemplateId { get; set; }
+        /// <summary>The useSavedCredentials property</summary>
         public bool? UseSavedCredentials { get; set; }
         /// <summary>
         /// Instantiates a new validateCredentialsRequestBody and sets the default values.

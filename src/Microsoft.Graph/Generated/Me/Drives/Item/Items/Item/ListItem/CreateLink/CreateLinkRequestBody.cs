@@ -9,11 +9,17 @@ namespace MicrosoftGraphSdk.Me.Drives.Item.Items.Item.ListItem.CreateLink {
     public class CreateLinkRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The expirationDateTime property</summary>
         public DateTimeOffset? ExpirationDateTime { get; set; }
+        /// <summary>The password property</summary>
         public string Password { get; set; }
+        /// <summary>The recipients property</summary>
         public List<DriveRecipient> Recipients { get; set; }
+        /// <summary>The retainInheritedPermissions property</summary>
         public bool? RetainInheritedPermissions { get; set; }
+        /// <summary>The scope property</summary>
         public string Scope { get; set; }
+        /// <summary>The type property</summary>
         public string Type { get; set; }
         /// <summary>
         /// Instantiates a new createLinkRequestBody and sets the default values.

@@ -7,6 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ItemActivityTimeSet : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The lastRecordedDateTime property</summary>
         public DateTimeOffset? LastRecordedDateTime { get; set; }
         /// <summary>When the activity was observed to take place.</summary>
         public DateTimeOffset? ObservedDateTime { get; set; }

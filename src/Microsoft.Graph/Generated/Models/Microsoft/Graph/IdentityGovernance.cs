@@ -5,11 +5,15 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class IdentityGovernance : IAdditionalDataHolder, IParsable {
+        /// <summary>The accessReviews property</summary>
         public AccessReviewSet AccessReviews { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The appConsent property</summary>
         public AppConsentApprovalRoute AppConsent { get; set; }
+        /// <summary>The entitlementManagement property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.EntitlementManagement EntitlementManagement { get; set; }
+        /// <summary>The termsOfUse property</summary>
         public TermsOfUseContainer TermsOfUse { get; set; }
         /// <summary>
         /// Instantiates a new IdentityGovernance and sets the default values.

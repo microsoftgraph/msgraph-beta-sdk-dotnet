@@ -9,7 +9,9 @@ namespace MicrosoftGraphSdk.Teamwork.Devices.Item.UpdateSoftware {
     public class UpdateSoftwareRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The softwareType property</summary>
         public TeamworkSoftwareType? SoftwareType { get; set; }
+        /// <summary>The softwareVersion property</summary>
         public string SoftwareVersion { get; set; }
         /// <summary>
         /// Instantiates a new updateSoftwareRequestBody and sets the default values.

@@ -19,29 +19,49 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string Description { get; set; }
         /// <summary>The area of the Diamond Model in which this indicator exists. Possible values are: unknown, adversary, capability, infrastructure, victim.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.DiamondModel? DiamondModel { get; set; }
+        /// <summary>The domainName property</summary>
         public string DomainName { get; set; }
+        /// <summary>The emailEncoding property</summary>
         public string EmailEncoding { get; set; }
+        /// <summary>The emailLanguage property</summary>
         public string EmailLanguage { get; set; }
+        /// <summary>The emailRecipient property</summary>
         public string EmailRecipient { get; set; }
+        /// <summary>The emailSenderAddress property</summary>
         public string EmailSenderAddress { get; set; }
+        /// <summary>The emailSenderName property</summary>
         public string EmailSenderName { get; set; }
+        /// <summary>The emailSourceDomain property</summary>
         public string EmailSourceDomain { get; set; }
+        /// <summary>The emailSourceIpAddress property</summary>
         public string EmailSourceIpAddress { get; set; }
+        /// <summary>The emailSubject property</summary>
         public string EmailSubject { get; set; }
+        /// <summary>The emailXMailer property</summary>
         public string EmailXMailer { get; set; }
         /// <summary>DateTime string indicating when the Indicator expires. All indicators must have an expiration date to avoid stale indicators persisting in the system. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.</summary>
         public DateTimeOffset? ExpirationDateTime { get; set; }
         /// <summary>An identification number that ties the indicator back to the indicator provider’s system (e.g. a foreign key).</summary>
         public string ExternalId { get; set; }
+        /// <summary>The fileCompileDateTime property</summary>
         public DateTimeOffset? FileCompileDateTime { get; set; }
+        /// <summary>The fileCreatedDateTime property</summary>
         public DateTimeOffset? FileCreatedDateTime { get; set; }
+        /// <summary>The fileHashType property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.FileHashType? FileHashType { get; set; }
+        /// <summary>The fileHashValue property</summary>
         public string FileHashValue { get; set; }
+        /// <summary>The fileMutexName property</summary>
         public string FileMutexName { get; set; }
+        /// <summary>The fileName property</summary>
         public string FileName { get; set; }
+        /// <summary>The filePacker property</summary>
         public string FilePacker { get; set; }
+        /// <summary>The filePath property</summary>
         public string FilePath { get; set; }
+        /// <summary>The fileSize property</summary>
         public long? FileSize { get; set; }
+        /// <summary>The fileType property</summary>
         public string FileType { get; set; }
         /// <summary>Stamped by the system when the indicator is ingested. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? IngestedDateTime { get; set; }
@@ -55,20 +75,35 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? LastReportedDateTime { get; set; }
         /// <summary>The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible which can be found via the Windows Defender Security Intelligence threat encyclopedia.</summary>
         public List<string> MalwareFamilyNames { get; set; }
+        /// <summary>The networkCidrBlock property</summary>
         public string NetworkCidrBlock { get; set; }
+        /// <summary>The networkDestinationAsn property</summary>
         public long? NetworkDestinationAsn { get; set; }
+        /// <summary>The networkDestinationCidrBlock property</summary>
         public string NetworkDestinationCidrBlock { get; set; }
+        /// <summary>The networkDestinationIPv4 property</summary>
         public string NetworkDestinationIPv4 { get; set; }
+        /// <summary>The networkDestinationIPv6 property</summary>
         public string NetworkDestinationIPv6 { get; set; }
+        /// <summary>The networkDestinationPort property</summary>
         public int? NetworkDestinationPort { get; set; }
+        /// <summary>The networkIPv4 property</summary>
         public string NetworkIPv4 { get; set; }
+        /// <summary>The networkIPv6 property</summary>
         public string NetworkIPv6 { get; set; }
+        /// <summary>The networkPort property</summary>
         public int? NetworkPort { get; set; }
+        /// <summary>The networkProtocol property</summary>
         public int? NetworkProtocol { get; set; }
+        /// <summary>The networkSourceAsn property</summary>
         public long? NetworkSourceAsn { get; set; }
+        /// <summary>The networkSourceCidrBlock property</summary>
         public string NetworkSourceCidrBlock { get; set; }
+        /// <summary>The networkSourceIPv4 property</summary>
         public string NetworkSourceIPv4 { get; set; }
+        /// <summary>The networkSourceIPv6 property</summary>
         public string NetworkSourceIPv6 { get; set; }
+        /// <summary>The networkSourcePort property</summary>
         public int? NetworkSourcePort { get; set; }
         /// <summary>Determines if the indicator should trigger an event that is visible to an end-user. When set to ‘true,’ security tools will not notify the end user that a ‘hit’ has occurred. This is most often treated as audit or silent mode by security products where they will simply log that a match occurred but will not perform the action. Default value is false.</summary>
         public bool? PassiveOnly { get; set; }
@@ -82,7 +117,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string ThreatType { get; set; }
         /// <summary>Traffic Light Protocol value for the indicator. Possible values are: unknown, white, green, amber, red. Required.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.TlpLevel? TlpLevel { get; set; }
+        /// <summary>The url property</summary>
         public string Url { get; set; }
+        /// <summary>The userAgent property</summary>
         public string UserAgent { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

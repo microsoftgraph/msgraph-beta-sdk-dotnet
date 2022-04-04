@@ -5,10 +5,15 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ExactMatchJobBase : Entity, IParsable {
+        /// <summary>The completionDateTime property</summary>
         public DateTimeOffset? CompletionDateTime { get; set; }
+        /// <summary>The creationDateTime property</summary>
         public DateTimeOffset? CreationDateTime { get; set; }
+        /// <summary>The error property</summary>
         public ClassificationError Error { get; set; }
+        /// <summary>The lastUpdatedDateTime property</summary>
         public DateTimeOffset? LastUpdatedDateTime { get; set; }
+        /// <summary>The startDateTime property</summary>
         public DateTimeOffset? StartDateTime { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

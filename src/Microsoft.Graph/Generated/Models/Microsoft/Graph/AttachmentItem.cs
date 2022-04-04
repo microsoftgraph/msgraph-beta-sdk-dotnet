@@ -9,7 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type of attachment. Possible values are: file, item, reference. Required.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.AttachmentType? AttachmentType { get; set; }
-        /// <summary>The CID or Content-Id of the attachment for referencing in case of in-line attachments using <img src='cid:contentId'> tag in HTML messages. Optional.</summary>
+        /// <summary>The CID or Content-Id of the attachment for referencing in case of in-line attachments using &lt;img src=&apos;cid:contentId&apos;&gt; tag in HTML messages. Optional.</summary>
         public string ContentId { get; set; }
         /// <summary>The nature of the data in the attachment. Optional.</summary>
         public string ContentType { get; set; }

@@ -7,6 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PrinterShareViewpoint : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The lastUsedDateTime property</summary>
         public DateTimeOffset? LastUsedDateTime { get; set; }
         /// <summary>
         /// Instantiates a new printerShareViewpoint and sets the default values.

@@ -11,6 +11,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<ServiceAnnouncementAttachment> Attachments { get; set; }
         /// <summary>The zip file that contains all attachments for a message.</summary>
         public byte[] AttachmentsArchive { get; set; }
+        /// <summary>The body property</summary>
         public ItemBody Body { get; set; }
         /// <summary>The service message category. Possible values are: preventOrFixIssue, planForChange, stayInformed, unknownFutureValue.</summary>
         public ServiceUpdateCategory? Category { get; set; }

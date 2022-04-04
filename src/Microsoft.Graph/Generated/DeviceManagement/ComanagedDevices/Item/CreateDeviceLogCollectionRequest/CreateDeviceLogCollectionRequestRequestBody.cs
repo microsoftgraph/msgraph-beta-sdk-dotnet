@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.CreateDeviceL
     public class CreateDeviceLogCollectionRequestRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The templateType property</summary>
         public DeviceLogCollectionRequest TemplateType { get; set; }
         /// <summary>
         /// Instantiates a new createDeviceLogCollectionRequestRequestBody and sets the default values.

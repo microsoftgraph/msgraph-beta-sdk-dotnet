@@ -5,10 +5,11 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Team : Entity, IParsable {
+        /// <summary>The allChannels property</summary>
         public List<Channel> AllChannels { get; set; }
         /// <summary>The collection of channels and messages associated with the team.</summary>
         public List<Channel> Channels { get; set; }
-        /// <summary>An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.</summary>
+        /// <summary>An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant&apos;s directory.</summary>
         public string Classification { get; set; }
         /// <summary>Timestamp at which the team was created.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
@@ -20,9 +21,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string DisplayName { get; set; }
         /// <summary>Settings to configure use of Giphy, memes, and stickers in the team.</summary>
         public TeamFunSettings FunSettings { get; set; }
+        /// <summary>The group property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Group Group { get; set; }
         /// <summary>Settings to configure whether guests can create, update, or delete channels in the team.</summary>
         public TeamGuestSettings GuestSettings { get; set; }
+        /// <summary>The incomingChannels property</summary>
         public List<Channel> IncomingChannels { get; set; }
         /// <summary>The apps installed in this team.</summary>
         public List<TeamsAppInstallation> InstalledApps { get; set; }
@@ -40,7 +43,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public TeamMessagingSettings MessagingSettings { get; set; }
         /// <summary>The async operations that ran or are running on this team.</summary>
         public List<TeamsAsyncOperation> Operations { get; set; }
-        /// <summary>The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.</summary>
+        /// <summary>The list of this team&apos;s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.</summary>
         public List<User> Owners { get; set; }
         /// <summary>A collection of permissions granted to apps to access the team.</summary>
         public List<ResourceSpecificPermissionGrant> PermissionGrants { get; set; }
@@ -58,6 +61,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<TeamworkTag> Tags { get; set; }
         /// <summary>The template this team was created from. See available templates.</summary>
         public TeamsTemplate Template { get; set; }
+        /// <summary>The tenantId property</summary>
         public string TenantId { get; set; }
         /// <summary>The visibility of the group and team. Defaults to Public.</summary>
         public TeamVisibilityType? Visibility { get; set; }

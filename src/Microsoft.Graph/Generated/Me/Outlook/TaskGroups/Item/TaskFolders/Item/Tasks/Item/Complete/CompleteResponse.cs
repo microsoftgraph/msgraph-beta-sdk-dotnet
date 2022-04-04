@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Me.Outlook.TaskGroups.Item.TaskFolders.Item.Tasks.It
     public class CompleteResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The value property</summary>
         public List<OutlookTask> Value { get; set; }
         /// <summary>
         /// Instantiates a new completeResponse and sets the default values.

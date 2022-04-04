@@ -16,11 +16,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public ResultantAppState? InstallState { get; set; }
         /// <summary>The install state detail of the app. Possible values are: noAdditionalDetails, dependencyFailedToInstall, dependencyWithRequirementsNotMet, dependencyPendingReboot, dependencyWithAutoInstallDisabled, supersededAppUninstallFailed, supersededAppUninstallPendingReboot, removingSupersededApps, iosAppStoreUpdateFailedToInstall, vppAppHasUpdateAvailable, userRejectedUpdate, uninstallPendingReboot, supersedingAppsDetected, supersededAppsDetected, seeInstallErrorCode, autoInstallDisabled, managedAppNoLongerPresent, userRejectedInstall, userIsNotLoggedIntoAppStore, untargetedSupersedingAppsDetected, appRemovedBySupersedence, seeUninstallErrorCode, pendingReboot, installingDependencies, contentDownloaded, supersedingAppsNotApplicable, powerShellScriptRequirementNotMet, registryRequirementNotMet, fileSystemRequirementNotMet, platformNotApplicable, minimumCpuSpeedNotMet, minimumLogicalProcessorCountNotMet, minimumPhysicalMemoryNotMet, minimumOsVersionNotMet, minimumDiskSpaceNotMet, processorArchitectureNotApplicable.</summary>
         public ResultantAppStateDetail? InstallStateDetail { get; set; }
-        /// <summary>The collection of source mobile app's ids.</summary>
+        /// <summary>The collection of source mobile app&apos;s ids.</summary>
         public List<string> SourceIds { get; set; }
-        /// <summary>The related target app's display name.</summary>
+        /// <summary>The related target app&apos;s display name.</summary>
         public string TargetDisplayName { get; set; }
-        /// <summary>The related target app's id.</summary>
+        /// <summary>The related target app&apos;s id.</summary>
         public string TargetId { get; set; }
         /// <summary>The last sync time of the target app.</summary>
         public DateTimeOffset? TargetLastSyncDateTime { get; set; }

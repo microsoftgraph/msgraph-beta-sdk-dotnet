@@ -5,11 +5,17 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Account : Entity, IParsable {
+        /// <summary>The blocked property</summary>
         public bool? Blocked { get; set; }
+        /// <summary>The category property</summary>
         public string Category { get; set; }
+        /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
+        /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+        /// <summary>The number property</summary>
         public string Number { get; set; }
+        /// <summary>The subCategory property</summary>
         public string SubCategory { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,13 +9,21 @@ namespace MicrosoftGraphSdk.Users.Item.FindMeetingTimes {
     public class FindMeetingTimesRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The attendees property</summary>
         public List<AttendeeBase> Attendees { get; set; }
+        /// <summary>The isOrganizerOptional property</summary>
         public bool? IsOrganizerOptional { get; set; }
+        /// <summary>The locationConstraint property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.LocationConstraint LocationConstraint { get; set; }
+        /// <summary>The maxCandidates property</summary>
         public int? MaxCandidates { get; set; }
+        /// <summary>The meetingDuration property</summary>
         public TimeSpan? MeetingDuration { get; set; }
+        /// <summary>The minimumAttendeePercentage property</summary>
         public double? MinimumAttendeePercentage { get; set; }
+        /// <summary>The returnSuggestionReasons property</summary>
         public bool? ReturnSuggestionReasons { get; set; }
+        /// <summary>The timeConstraint property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.TimeConstraint TimeConstraint { get; set; }
         /// <summary>
         /// Instantiates a new findMeetingTimesRequestBody and sets the default values.

@@ -9,7 +9,9 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.Reject {
     public class RejectRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The callbackUri property</summary>
         public string CallbackUri { get; set; }
+        /// <summary>The reason property</summary>
         public RejectReason? Reason { get; set; }
         /// <summary>
         /// Instantiates a new rejectRequestBody and sets the default values.

@@ -5,13 +5,21 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class MessageTrace : Entity, IParsable {
+        /// <summary>The destinationIPAddress property</summary>
         public string DestinationIPAddress { get; set; }
+        /// <summary>The messageId property</summary>
         public string MessageId { get; set; }
+        /// <summary>The receivedDateTime property</summary>
         public DateTimeOffset? ReceivedDateTime { get; set; }
+        /// <summary>The recipients property</summary>
         public List<MessageRecipient> Recipients { get; set; }
+        /// <summary>The senderEmail property</summary>
         public string SenderEmail { get; set; }
+        /// <summary>The size property</summary>
         public int? Size { get; set; }
+        /// <summary>The sourceIPAddress property</summary>
         public string SourceIPAddress { get; set; }
+        /// <summary>The subject property</summary>
         public string Subject { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

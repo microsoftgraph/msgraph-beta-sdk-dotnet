@@ -7,11 +7,15 @@ using System.Linq;
 namespace MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item.Update {
     /// <summary>Provides operations to call the update method.</summary>
     public class UpdateRequestBody : IAdditionalDataHolder, IParsable {
+        /// <summary>The addedPolicySetItems property</summary>
         public List<PolicySetItem> AddedPolicySetItems { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The assignments property</summary>
         public List<PolicySetAssignment> Assignments { get; set; }
+        /// <summary>The deletedPolicySetItems property</summary>
         public List<string> DeletedPolicySetItems { get; set; }
+        /// <summary>The updatedPolicySetItems property</summary>
         public List<PolicySetItem> UpdatedPolicySetItems { get; set; }
         /// <summary>
         /// Instantiates a new updateRequestBody and sets the default values.

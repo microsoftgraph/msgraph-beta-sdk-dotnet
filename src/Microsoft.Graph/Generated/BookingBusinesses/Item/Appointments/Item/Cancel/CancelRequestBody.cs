@@ -8,6 +8,7 @@ namespace MicrosoftGraphSdk.BookingBusinesses.Item.Appointments.Item.Cancel {
     public class CancelRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The cancellationMessage property</summary>
         public string CancellationMessage { get; set; }
         /// <summary>
         /// Instantiates a new cancelRequestBody and sets the default values.

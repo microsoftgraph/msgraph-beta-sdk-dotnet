@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public ItemBody Detail { get; set; }
         /// <summary>Contains a friendly name for the note.</summary>
         public string DisplayName { get; set; }
+        /// <summary>The thumbnailUrl property</summary>
         public string ThumbnailUrl { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

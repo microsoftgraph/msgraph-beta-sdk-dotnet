@@ -7,7 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class InformationalUrls : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The appSignUpUrl property</summary>
         public string AppSignUpUrl { get; set; }
+        /// <summary>The singleSignOnDocumentationUrl property</summary>
         public string SingleSignOnDocumentationUrl { get; set; }
         /// <summary>
         /// Instantiates a new informationalUrls and sets the default values.

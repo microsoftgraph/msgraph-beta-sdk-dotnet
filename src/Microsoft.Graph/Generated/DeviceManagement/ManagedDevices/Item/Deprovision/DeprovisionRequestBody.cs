@@ -8,6 +8,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.Deprovision {
     public class DeprovisionRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The deprovisionReason property</summary>
         public string DeprovisionReason { get; set; }
         /// <summary>
         /// Instantiates a new deprovisionRequestBody and sets the default values.

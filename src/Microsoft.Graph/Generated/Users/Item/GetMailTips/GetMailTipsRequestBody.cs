@@ -9,7 +9,9 @@ namespace MicrosoftGraphSdk.Users.Item.GetMailTips {
     public class GetMailTipsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The EmailAddresses property</summary>
         public List<string> EmailAddresses { get; set; }
+        /// <summary>The MailTipsOptions property</summary>
         public MailTipsType? MailTipsOptions { get; set; }
         /// <summary>
         /// Instantiates a new getMailTipsRequestBody and sets the default values.

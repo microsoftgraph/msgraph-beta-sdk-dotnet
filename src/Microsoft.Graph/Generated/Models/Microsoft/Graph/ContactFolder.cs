@@ -9,11 +9,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<ContactFolder> ChildFolders { get; set; }
         /// <summary>The contacts in the folder. Navigation property. Read-only. Nullable.</summary>
         public List<Contact> Contacts { get; set; }
-        /// <summary>The folder's display name.</summary>
+        /// <summary>The folder&apos;s display name.</summary>
         public string DisplayName { get; set; }
         /// <summary>The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.</summary>
         public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties { get; set; }
-        /// <summary>The ID of the folder's parent folder.</summary>
+        /// <summary>The ID of the folder&apos;s parent folder.</summary>
         public string ParentFolderId { get; set; }
         /// <summary>The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.</summary>
         public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties { get; set; }

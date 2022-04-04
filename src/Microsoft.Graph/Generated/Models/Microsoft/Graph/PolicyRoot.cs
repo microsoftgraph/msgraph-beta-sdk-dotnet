@@ -31,7 +31,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.CrossTenantAccessPolicy CrossTenantAccessPolicy { get; set; }
         /// <summary>The tenant-wide policy that enforces app management restrictions for all applications and service principals.</summary>
         public TenantAppManagementPolicy DefaultAppManagementPolicy { get; set; }
+        /// <summary>The directoryRoleAccessReviewPolicy property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.DirectoryRoleAccessReviewPolicy DirectoryRoleAccessReviewPolicy { get; set; }
+        /// <summary>The externalIdentitiesPolicy property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalIdentitiesPolicy ExternalIdentitiesPolicy { get; set; }
         /// <summary>The feature rollout policy associated with a directory object.</summary>
         public List<FeatureRolloutPolicy> FeatureRolloutPolicies { get; set; }
@@ -41,6 +43,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public MicrosoftGraphSdk.Models.Microsoft.Graph.IdentitySecurityDefaultsEnforcementPolicy IdentitySecurityDefaultsEnforcementPolicy { get; set; }
         /// <summary>The policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.</summary>
         public List<MobilityManagementPolicy> MobileAppManagementPolicies { get; set; }
+        /// <summary>The mobileDeviceManagementPolicies property</summary>
         public List<MobilityManagementPolicy> MobileDeviceManagementPolicies { get; set; }
         /// <summary>The policy that specifies the conditions under which consent can be granted.</summary>
         public List<PermissionGrantPolicy> PermissionGrantPolicies { get; set; }
@@ -48,6 +51,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<UnifiedRoleManagementPolicy> RoleManagementPolicies { get; set; }
         /// <summary>Represents the role management policy assignments.</summary>
         public List<UnifiedRoleManagementPolicyAssignment> RoleManagementPolicyAssignments { get; set; }
+        /// <summary>The servicePrincipalCreationPolicies property</summary>
         public List<ServicePrincipalCreationPolicy> ServicePrincipalCreationPolicies { get; set; }
         /// <summary>The policy that specifies the characteristics of SAML tokens issued by Azure AD.</summary>
         public List<TokenIssuancePolicy> TokenIssuancePolicies { get; set; }

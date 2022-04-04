@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class RestrictedSignIn : SignIn, IParsable {
+        /// <summary>The targetTenantId property</summary>
         public string TargetTenantId { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

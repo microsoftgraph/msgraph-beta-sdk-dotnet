@@ -7,19 +7,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SharepointIds : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The unique identifier (guid) for the item's list in SharePoint.</summary>
+        /// <summary>The unique identifier (guid) for the item&apos;s list in SharePoint.</summary>
         public string ListId { get; set; }
         /// <summary>An integer identifier for the item within the containing list.</summary>
         public string ListItemId { get; set; }
         /// <summary>The unique identifier (guid) for the item within OneDrive for Business or a SharePoint site.</summary>
         public string ListItemUniqueId { get; set; }
-        /// <summary>The unique identifier (guid) for the item's site collection (SPSite).</summary>
+        /// <summary>The unique identifier (guid) for the item&apos;s site collection (SPSite).</summary>
         public string SiteId { get; set; }
         /// <summary>The SharePoint URL for the site that contains the item.</summary>
         public string SiteUrl { get; set; }
         /// <summary>The unique identifier (guid) for the tenancy.</summary>
         public string TenantId { get; set; }
-        /// <summary>The unique identifier (guid) for the item's site (SPWeb).</summary>
+        /// <summary>The unique identifier (guid) for the item&apos;s site (SPWeb).</summary>
         public string WebId { get; set; }
         /// <summary>
         /// Instantiates a new sharepointIds and sets the default values.

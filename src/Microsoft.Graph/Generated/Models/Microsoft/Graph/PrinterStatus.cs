@@ -7,12 +7,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PrinterStatus : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A human-readable description of the printer's current processing state. Read-only.</summary>
+        /// <summary>A human-readable description of the printer&apos;s current processing state. Read-only.</summary>
         public string Description { get; set; }
         /// <summary>The list of details describing why the printer is in the current state. Valid values are described in the following table. Read-only.</summary>
         public List<PrinterProcessingStateDetail?> Details { get; set; }
+        /// <summary>The processingState property</summary>
         public PrinterProcessingState? ProcessingState { get; set; }
+        /// <summary>The processingStateDescription property</summary>
         public string ProcessingStateDescription { get; set; }
+        /// <summary>The processingStateReasons property</summary>
         public List<PrinterProcessingStateReason?> ProcessingStateReasons { get; set; }
         /// <summary>The current processing state. Valid values are described in the following table. Read-only.</summary>
         public PrinterProcessingState? State { get; set; }

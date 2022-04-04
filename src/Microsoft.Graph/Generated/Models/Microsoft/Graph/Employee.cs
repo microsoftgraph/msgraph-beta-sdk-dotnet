@@ -6,23 +6,41 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Employee : Entity, IParsable {
+        /// <summary>The address property</summary>
         public PostalAddressType Address { get; set; }
+        /// <summary>The birthDate property</summary>
         public Date? BirthDate { get; set; }
+        /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
+        /// <summary>The email property</summary>
         public string Email { get; set; }
+        /// <summary>The employmentDate property</summary>
         public Date? EmploymentDate { get; set; }
+        /// <summary>The givenName property</summary>
         public string GivenName { get; set; }
+        /// <summary>The jobTitle property</summary>
         public string JobTitle { get; set; }
+        /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+        /// <summary>The middleName property</summary>
         public string MiddleName { get; set; }
+        /// <summary>The mobilePhone property</summary>
         public string MobilePhone { get; set; }
+        /// <summary>The number property</summary>
         public string Number { get; set; }
+        /// <summary>The personalEmail property</summary>
         public string PersonalEmail { get; set; }
+        /// <summary>The phoneNumber property</summary>
         public string PhoneNumber { get; set; }
+        /// <summary>The picture property</summary>
         public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Picture> Picture { get; set; }
+        /// <summary>The statisticsGroupCode property</summary>
         public string StatisticsGroupCode { get; set; }
+        /// <summary>The status property</summary>
         public string Status { get; set; }
+        /// <summary>The surname property</summary>
         public string Surname { get; set; }
+        /// <summary>The terminationDate property</summary>
         public Date? TerminationDate { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

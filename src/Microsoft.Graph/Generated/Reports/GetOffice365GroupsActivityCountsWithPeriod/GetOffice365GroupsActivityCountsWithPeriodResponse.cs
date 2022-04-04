@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Reports.GetOffice365GroupsActivityCountsWithPeriod {
     public class GetOffice365GroupsActivityCountsWithPeriodResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The value property</summary>
         public List<Office365GroupsActivityCounts> Value { get; set; }
         /// <summary>
         /// Instantiates a new getOffice365GroupsActivityCountsWithPeriodResponse and sets the default values.

@@ -7,11 +7,17 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class IpReferenceData : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The asn property</summary>
         public long? Asn { get; set; }
+        /// <summary>The city property</summary>
         public string City { get; set; }
+        /// <summary>The countryOrRegionCode property</summary>
         public string CountryOrRegionCode { get; set; }
+        /// <summary>The organization property</summary>
         public string Organization { get; set; }
+        /// <summary>The state property</summary>
         public string State { get; set; }
+        /// <summary>The vendor property</summary>
         public string Vendor { get; set; }
         /// <summary>
         /// Instantiates a new ipReferenceData and sets the default values.

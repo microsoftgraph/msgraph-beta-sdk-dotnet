@@ -5,8 +5,11 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UnifiedRbacResourceScope : Entity, IParsable {
+        /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
+        /// <summary>The scope property</summary>
         public string Scope { get; set; }
+        /// <summary>The type property</summary>
         public string Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

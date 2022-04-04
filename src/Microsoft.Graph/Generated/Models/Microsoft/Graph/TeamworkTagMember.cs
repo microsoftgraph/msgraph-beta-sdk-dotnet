@@ -5,9 +5,11 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class TeamworkTagMember : Entity, IParsable {
-        /// <summary>The member's display name.</summary>
+        /// <summary>The member&apos;s display name.</summary>
         public string DisplayName { get; set; }
+        /// <summary>The tenantId property</summary>
         public string TenantId { get; set; }
+        /// <summary>The userId property</summary>
         public string UserId { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Participant : Entity, IParsable {
+        /// <summary>The info property</summary>
         public ParticipantInfo Info { get; set; }
         /// <summary>true if the participant is in lobby.</summary>
         public bool? IsInLobby { get; set; }

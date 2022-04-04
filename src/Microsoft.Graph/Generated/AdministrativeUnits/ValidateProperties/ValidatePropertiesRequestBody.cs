@@ -8,9 +8,13 @@ namespace MicrosoftGraphSdk.AdministrativeUnits.ValidateProperties {
     public class ValidatePropertiesRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
+        /// <summary>The entityType property</summary>
         public string EntityType { get; set; }
+        /// <summary>The mailNickname property</summary>
         public string MailNickname { get; set; }
+        /// <summary>The onBehalfOfUserId property</summary>
         public string OnBehalfOfUserId { get; set; }
         /// <summary>
         /// Instantiates a new validatePropertiesRequestBody and sets the default values.

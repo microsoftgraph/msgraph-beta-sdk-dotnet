@@ -13,7 +13,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public long? Remaining { get; set; }
         /// <summary>Enumeration value that indicates the state of the storage space. Read-only.</summary>
         public string State { get; set; }
-        /// <summary>Information about the drive's storage quota plans. Only in Personal OneDrive.</summary>
+        /// <summary>Information about the drive&apos;s storage quota plans. Only in Personal OneDrive.</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.StoragePlanInformation StoragePlanInformation { get; set; }
         /// <summary>Total allowed storage space, in bytes. Read-only.</summary>
         public long? Total { get; set; }

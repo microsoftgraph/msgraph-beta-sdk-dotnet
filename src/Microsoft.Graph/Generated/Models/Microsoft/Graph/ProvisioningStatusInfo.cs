@@ -7,6 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ProvisioningStatusInfo : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The errorInformation property</summary>
         public ProvisioningErrorInfo ErrorInformation { get; set; }
         /// <summary>Possible values are: success, warning, failure, skipped, unknownFutureValue.</summary>
         public ProvisioningResult? Status { get; set; }

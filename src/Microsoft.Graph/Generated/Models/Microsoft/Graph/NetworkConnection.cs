@@ -11,19 +11,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string ApplicationName { get; set; }
         /// <summary>Destination IP address (of the network connection).</summary>
         public string DestinationAddress { get; set; }
-        /// <summary>Destination domain portion of the destination URL. (for example 'www.contoso.com').</summary>
+        /// <summary>Destination domain portion of the destination URL. (for example &apos;www.contoso.com&apos;).</summary>
         public string DestinationDomain { get; set; }
         /// <summary>Location (by IP address mapping) associated with the destination of a network connection.</summary>
         public string DestinationLocation { get; set; }
         /// <summary>Destination port (of the network connection).</summary>
         public string DestinationPort { get; set; }
-        /// <summary>Network connection URL/URI string - excluding parameters. (for example 'www.contoso.com/products/default.html')</summary>
+        /// <summary>Network connection URL/URI string - excluding parameters. (for example &apos;www.contoso.com/products/default.html&apos;)</summary>
         public string DestinationUrl { get; set; }
         /// <summary>Network connection direction. Possible values are: unknown, inbound, outbound.</summary>
         public ConnectionDirection? Direction { get; set; }
         /// <summary>Date when the destination domain was registered. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? DomainRegisteredDateTime { get; set; }
-        /// <summary>The local DNS name resolution as it appears in the host's local DNS cache (for example, in case the 'hosts' file was tampered with).</summary>
+        /// <summary>The local DNS name resolution as it appears in the host&apos;s local DNS cache (for example, in case the &apos;hosts&apos; file was tampered with).</summary>
         public string LocalDnsName { get; set; }
         /// <summary>Network Address Translation destination IP address.</summary>
         public string NatDestinationAddress { get; set; }

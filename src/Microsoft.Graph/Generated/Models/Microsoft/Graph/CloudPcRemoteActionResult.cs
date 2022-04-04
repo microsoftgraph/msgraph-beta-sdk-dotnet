@@ -13,11 +13,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the Cloud PC device on which the remote action is performed. Read-only.</summary>
         public string CloudPcId { get; set; }
-        /// <summary>Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.</summary>
+        /// <summary>Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as &apos;2014-01-01T00:00:00Z&apos;.</summary>
         public DateTimeOffset? LastUpdatedDateTime { get; set; }
         /// <summary>The ID of the Intune managed device on which the remote action is performed. Read-only.</summary>
         public string ManagedDeviceId { get; set; }
-        /// <summary>Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.</summary>
+        /// <summary>Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as &apos;2014-01-01T00:00:00Z&apos;.</summary>
         public DateTimeOffset? StartDateTime { get; set; }
         /// <summary>The details of the Cloud PC status.</summary>
         public CloudPcStatusDetails StatusDetails { get; set; }

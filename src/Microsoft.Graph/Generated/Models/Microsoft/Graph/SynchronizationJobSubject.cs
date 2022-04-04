@@ -7,6 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SynchronizationJobSubject : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The links property</summary>
         public SynchronizationLinkedObjects Links { get; set; }
         /// <summary>The identifier of an object to which a synchronizationJob  is to be applied.</summary>
         public string ObjectId { get; set; }

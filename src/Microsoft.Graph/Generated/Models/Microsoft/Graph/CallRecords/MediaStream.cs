@@ -9,11 +9,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Average Network Mean Opinion Score degradation for stream. Represents how much the network loss and jitter has impacted the quality of received audio.</summary>
         public float? AverageAudioDegradation { get; set; }
-        /// <summary>Average jitter for the stream computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.</summary>
+        /// <summary>Average jitter for the stream computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as &apos;PT1S&apos;, where &apos;P&apos; is the duration designator, &apos;T&apos; is the time designator, and &apos;S&apos; is the second designator.</summary>
         public TimeSpan? AverageAudioNetworkJitter { get; set; }
         /// <summary>Average estimated bandwidth available between two endpoints in bits per second.</summary>
         public long? AverageBandwidthEstimate { get; set; }
-        /// <summary>Average jitter for the stream computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.</summary>
+        /// <summary>Average jitter for the stream computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as &apos;PT1S&apos;, where &apos;P&apos; is the duration designator, &apos;T&apos; is the time designator, and &apos;S&apos; is the second designator.</summary>
         public TimeSpan? AverageJitter { get; set; }
         /// <summary>Average packet loss rate for stream.</summary>
         public float? AveragePacketLossRate { get; set; }
@@ -21,7 +21,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords {
         public float? AverageRatioOfConcealedSamples { get; set; }
         /// <summary>Average frames per second received for all video streams computed over the duration of the session.</summary>
         public float? AverageReceivedFrameRate { get; set; }
-        /// <summary>Average network propagation round-trip time computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.</summary>
+        /// <summary>Average network propagation round-trip time computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as &apos;PT1S&apos;, where &apos;P&apos; is the duration designator, &apos;T&apos; is the time designator, and &apos;S&apos; is the second designator.</summary>
         public TimeSpan? AverageRoundTripTime { get; set; }
         /// <summary>Average percentage of video frames lost as displayed to the user.</summary>
         public float? AverageVideoFrameLossPercentage { get; set; }
@@ -35,15 +35,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords {
         public float? LowFrameRateRatio { get; set; }
         /// <summary>Fraction of the call that the client is running less than 70% expected video processing capability.</summary>
         public float? LowVideoProcessingCapabilityRatio { get; set; }
-        /// <summary>Maximum of audio network jitter computed over each of the 20 second windows during the session, denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.</summary>
+        /// <summary>Maximum of audio network jitter computed over each of the 20 second windows during the session, denoted in [ISO 8601][] format. For example, 1 second is denoted as &apos;PT1S&apos;, where &apos;P&apos; is the duration designator, &apos;T&apos; is the time designator, and &apos;S&apos; is the second designator.</summary>
         public TimeSpan? MaxAudioNetworkJitter { get; set; }
-        /// <summary>Maximum jitter for the stream computed as specified in RFC 3550, denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.</summary>
+        /// <summary>Maximum jitter for the stream computed as specified in RFC 3550, denoted in [ISO 8601][] format. For example, 1 second is denoted as &apos;PT1S&apos;, where &apos;P&apos; is the duration designator, &apos;T&apos; is the time designator, and &apos;S&apos; is the second designator.</summary>
         public TimeSpan? MaxJitter { get; set; }
         /// <summary>Maximum packet loss rate for the stream.</summary>
         public float? MaxPacketLossRate { get; set; }
         /// <summary>Maximum ratio of packets concealed by the healer.</summary>
         public float? MaxRatioOfConcealedSamples { get; set; }
-        /// <summary>Maximum network propagation round-trip time computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.</summary>
+        /// <summary>Maximum network propagation round-trip time computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as &apos;PT1S&apos;, where &apos;P&apos; is the duration designator, &apos;T&apos; is the time designator, and &apos;S&apos; is the second designator.</summary>
         public TimeSpan? MaxRoundTripTime { get; set; }
         /// <summary>Packet count for the stream.</summary>
         public long? PacketUtilization { get; set; }

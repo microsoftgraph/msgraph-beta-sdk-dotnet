@@ -5,8 +5,11 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AzureADFeatureUsage : Entity, IParsable {
+        /// <summary>The featureName property</summary>
         public string FeatureName { get; set; }
+        /// <summary>The snapshotDateTime property</summary>
         public DateTimeOffset? SnapshotDateTime { get; set; }
+        /// <summary>The usage property</summary>
         public int? Usage { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

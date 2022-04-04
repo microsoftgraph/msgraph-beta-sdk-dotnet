@@ -7,8 +7,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DlpPoliciesJobResult : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The auditCorrelationId property</summary>
         public string AuditCorrelationId { get; set; }
+        /// <summary>The evaluationDateTime property</summary>
         public DateTimeOffset? EvaluationDateTime { get; set; }
+        /// <summary>The matchingRules property</summary>
         public List<MatchingDlpRule> MatchingRules { get; set; }
         /// <summary>
         /// Instantiates a new dlpPoliciesJobResult and sets the default values.

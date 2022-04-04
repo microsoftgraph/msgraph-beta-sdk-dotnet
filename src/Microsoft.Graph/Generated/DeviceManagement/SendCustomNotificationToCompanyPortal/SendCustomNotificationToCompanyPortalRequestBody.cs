@@ -8,8 +8,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.SendCustomNotificationToCompanyPort
     public class SendCustomNotificationToCompanyPortalRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The groupsToNotify property</summary>
         public List<string> GroupsToNotify { get; set; }
+        /// <summary>The notificationBody property</summary>
         public string NotificationBody { get; set; }
+        /// <summary>The notificationTitle property</summary>
         public string NotificationTitle { get; set; }
         /// <summary>
         /// Instantiates a new sendCustomNotificationToCompanyPortalRequestBody and sets the default values.

@@ -8,7 +8,9 @@ namespace MicrosoftGraphSdk.Me.ActivateServicePlan {
     public class ActivateServicePlanRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The servicePlanId property</summary>
         public string ServicePlanId { get; set; }
+        /// <summary>The skuId property</summary>
         public string SkuId { get; set; }
         /// <summary>
         /// Instantiates a new activateServicePlanRequestBody and sets the default values.

@@ -7,9 +7,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DiscoveredSensitiveType : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The classificationAttributes property</summary>
         public List<ClassificationAttribute> ClassificationAttributes { get; set; }
+        /// <summary>The confidence property</summary>
         public int? Confidence { get; set; }
+        /// <summary>The count property</summary>
         public int? Count { get; set; }
+        /// <summary>The id property</summary>
         public string Id { get; set; }
         /// <summary>
         /// Instantiates a new discoveredSensitiveType and sets the default values.

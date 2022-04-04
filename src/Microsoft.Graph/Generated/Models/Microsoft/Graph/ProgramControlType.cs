@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ProgramControlType : Entity, IParsable {
+        /// <summary>The controlTypeGroupId property</summary>
         public string ControlTypeGroupId { get; set; }
         /// <summary>The name of the program control type</summary>
         public string DisplayName { get; set; }

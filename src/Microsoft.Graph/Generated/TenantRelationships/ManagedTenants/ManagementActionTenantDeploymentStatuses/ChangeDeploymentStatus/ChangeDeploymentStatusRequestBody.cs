@@ -8,11 +8,17 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementActionT
     public class ChangeDeploymentStatusRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The managementActionId property</summary>
         public string ManagementActionId { get; set; }
+        /// <summary>The managementTemplateId property</summary>
         public string ManagementTemplateId { get; set; }
+        /// <summary>The managementTemplateVersion property</summary>
         public int? ManagementTemplateVersion { get; set; }
+        /// <summary>The status property</summary>
         public string Status { get; set; }
+        /// <summary>The tenantGroupId property</summary>
         public string TenantGroupId { get; set; }
+        /// <summary>The tenantId property</summary>
         public string TenantId { get; set; }
         /// <summary>
         /// Instantiates a new changeDeploymentStatusRequestBody and sets the default values.

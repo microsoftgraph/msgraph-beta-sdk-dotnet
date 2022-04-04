@@ -6,34 +6,63 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PurchaseInvoice : Entity, IParsable {
+        /// <summary>The buyFromAddress property</summary>
         public PostalAddressType BuyFromAddress { get; set; }
+        /// <summary>The currency property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Currency Currency { get; set; }
+        /// <summary>The currencyCode property</summary>
         public string CurrencyCode { get; set; }
+        /// <summary>The currencyId property</summary>
         public string CurrencyId { get; set; }
+        /// <summary>The discountAmount property</summary>
         public decimal? DiscountAmount { get; set; }
+        /// <summary>The discountAppliedBeforeTax property</summary>
         public bool? DiscountAppliedBeforeTax { get; set; }
+        /// <summary>The dueDate property</summary>
         public Date? DueDate { get; set; }
+        /// <summary>The invoiceDate property</summary>
         public Date? InvoiceDate { get; set; }
+        /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+        /// <summary>The number property</summary>
         public string Number { get; set; }
+        /// <summary>The payToAddress property</summary>
         public PostalAddressType PayToAddress { get; set; }
+        /// <summary>The payToContact property</summary>
         public string PayToContact { get; set; }
+        /// <summary>The payToName property</summary>
         public string PayToName { get; set; }
+        /// <summary>The payToVendorId property</summary>
         public string PayToVendorId { get; set; }
+        /// <summary>The payToVendorNumber property</summary>
         public string PayToVendorNumber { get; set; }
+        /// <summary>The pricesIncludeTax property</summary>
         public bool? PricesIncludeTax { get; set; }
+        /// <summary>The purchaseInvoiceLines property</summary>
         public List<PurchaseInvoiceLine> PurchaseInvoiceLines { get; set; }
+        /// <summary>The shipToAddress property</summary>
         public PostalAddressType ShipToAddress { get; set; }
+        /// <summary>The shipToContact property</summary>
         public string ShipToContact { get; set; }
+        /// <summary>The shipToName property</summary>
         public string ShipToName { get; set; }
+        /// <summary>The status property</summary>
         public string Status { get; set; }
+        /// <summary>The totalAmountExcludingTax property</summary>
         public decimal? TotalAmountExcludingTax { get; set; }
+        /// <summary>The totalAmountIncludingTax property</summary>
         public decimal? TotalAmountIncludingTax { get; set; }
+        /// <summary>The totalTaxAmount property</summary>
         public decimal? TotalTaxAmount { get; set; }
+        /// <summary>The vendor property</summary>
         public MicrosoftGraphSdk.Models.Microsoft.Graph.Vendor Vendor { get; set; }
+        /// <summary>The vendorId property</summary>
         public string VendorId { get; set; }
+        /// <summary>The vendorInvoiceNumber property</summary>
         public string VendorInvoiceNumber { get; set; }
+        /// <summary>The vendorName property</summary>
         public string VendorName { get; set; }
+        /// <summary>The vendorNumber property</summary>
         public string VendorNumber { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

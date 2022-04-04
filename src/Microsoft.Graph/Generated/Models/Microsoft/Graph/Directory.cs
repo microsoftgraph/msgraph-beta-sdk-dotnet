@@ -18,10 +18,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<FeatureRolloutPolicy> FeatureRolloutPolicies { get; set; }
         /// <summary>Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.</summary>
         public List<IdentityProviderBase> FederationConfigurations { get; set; }
+        /// <summary>The impactedResources property</summary>
         public List<RecommendationResource> ImpactedResources { get; set; }
+        /// <summary>The inboundSharedUserProfiles property</summary>
         public List<InboundSharedUserProfile> InboundSharedUserProfiles { get; set; }
+        /// <summary>The outboundSharedUserProfiles property</summary>
         public List<OutboundSharedUserProfile> OutboundSharedUserProfiles { get; set; }
+        /// <summary>The recommendations property</summary>
         public List<Recommendation> Recommendations { get; set; }
+        /// <summary>The sharedEmailDomains property</summary>
         public List<SharedEmailDomain> SharedEmailDomains { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

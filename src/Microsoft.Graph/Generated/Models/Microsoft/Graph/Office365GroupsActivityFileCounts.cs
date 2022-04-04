@@ -6,15 +6,15 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Office365GroupsActivityFileCounts : Entity, IParsable {
-        /// <summary>The number of files that were viewed, edited, shared, or synced in the group's SharePoint document library.</summary>
+        /// <summary>The number of files that were viewed, edited, shared, or synced in the group&apos;s SharePoint document library.</summary>
         public long? Active { get; set; }
-        /// <summary>The date on which a number of files were active in the group's SharePoint site.</summary>
+        /// <summary>The date on which a number of files were active in the group&apos;s SharePoint site.</summary>
         public Date? ReportDate { get; set; }
         /// <summary>The number of days the report covers.</summary>
         public string ReportPeriod { get; set; }
         /// <summary>The latest date of the content.</summary>
         public Date? ReportRefreshDate { get; set; }
-        /// <summary>The total number of files in the group's SharePoint document library.</summary>
+        /// <summary>The total number of files in the group&apos;s SharePoint document library.</summary>
         public long? Total { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
     public class GetApplicablePolicyRequirementsResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The value property</summary>
         public List<AccessPackageAssignmentRequestRequirements> Value { get; set; }
         /// <summary>
         /// Instantiates a new getApplicablePolicyRequirementsResponse and sets the default values.

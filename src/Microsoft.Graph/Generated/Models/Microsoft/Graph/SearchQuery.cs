@@ -7,9 +7,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SearchQuery : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The query_string property</summary>
         public SearchQueryString Query_string { get; set; }
         /// <summary>The search query containing the search terms. Required.</summary>
         public string QueryString { get; set; }
+        /// <summary>Provides a way to decorate the query string. Supports both KQL and query variables. Optional.</summary>
         public string QueryTemplate { get; set; }
         /// <summary>
         /// Instantiates a new searchQuery and sets the default values.

@@ -7,22 +7,33 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
     public class ManagementTemplate : Entity, IParsable {
         /// <summary>The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.</summary>
         public ManagementCategory? Category { get; set; }
+        /// <summary>The createdByUserId property</summary>
         public string CreatedByUserId { get; set; }
+        /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>The description for the management template. Optional. Read-only.</summary>
         public string Description { get; set; }
         /// <summary>The display name for the management template. Required. Read-only.</summary>
         public string DisplayName { get; set; }
-        public List<ActionUrl> InformationLinks { get; set; }
+        /// <summary>The informationLinks property</summary>
+        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.ActionUrl> InformationLinks { get; set; }
+        /// <summary>The lastActionByUserId property</summary>
         public string LastActionByUserId { get; set; }
+        /// <summary>The lastActionDateTime property</summary>
         public DateTimeOffset? LastActionDateTime { get; set; }
+        /// <summary>The managementTemplateCollections property</summary>
         public List<ManagementTemplateCollection> ManagementTemplateCollections { get; set; }
+        /// <summary>The managementTemplateSteps property</summary>
         public List<ManagementTemplateStep> ManagementTemplateSteps { get; set; }
         /// <summary>The collection of parameters used by the management template. Optional. Read-only.</summary>
         public List<TemplateParameter> Parameters { get; set; }
+        /// <summary>The priority property</summary>
         public int? Priority { get; set; }
+        /// <summary>The provider property</summary>
         public ManagementProvider? Provider { get; set; }
+        /// <summary>The userImpact property</summary>
         public string UserImpact { get; set; }
+        /// <summary>The version property</summary>
         public int? Version { get; set; }
         /// <summary>The collection of workload actions associated with the management template. Optional. Read-only.</summary>
         public List<WorkloadAction> WorkloadActions { get; set; }
@@ -44,7 +55,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
                 {"createdDateTime", (o,n) => { (o as ManagementTemplate).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", (o,n) => { (o as ManagementTemplate).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as ManagementTemplate).DisplayName = n.GetStringValue(); } },
-                {"informationLinks", (o,n) => { (o as ManagementTemplate).InformationLinks = n.GetCollectionOfObjectValues<ActionUrl>(ActionUrl.CreateFromDiscriminatorValue).ToList(); } },
+                {"informationLinks", (o,n) => { (o as ManagementTemplate).InformationLinks = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.ActionUrl>(MicrosoftGraphSdk.Models.Microsoft.Graph.ActionUrl.CreateFromDiscriminatorValue).ToList(); } },
                 {"lastActionByUserId", (o,n) => { (o as ManagementTemplate).LastActionByUserId = n.GetStringValue(); } },
                 {"lastActionDateTime", (o,n) => { (o as ManagementTemplate).LastActionDateTime = n.GetDateTimeOffsetValue(); } },
                 {"managementTemplateCollections", (o,n) => { (o as ManagementTemplate).ManagementTemplateCollections = n.GetCollectionOfObjectValues<ManagementTemplateCollection>(ManagementTemplateCollection.CreateFromDiscriminatorValue).ToList(); } },
@@ -69,7 +80,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<ActionUrl>("informationLinks", InformationLinks);
+            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.ActionUrl>("informationLinks", InformationLinks);
             writer.WriteStringValue("lastActionByUserId", LastActionByUserId);
             writer.WriteDateTimeOffsetValue("lastActionDateTime", LastActionDateTime);
             writer.WriteCollectionOfObjectValues<ManagementTemplateCollection>("managementTemplateCollections", ManagementTemplateCollections);

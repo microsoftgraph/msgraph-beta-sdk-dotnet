@@ -7,9 +7,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ObjectDefinition : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The attributes property</summary>
         public List<AttributeDefinition> Attributes { get; set; }
+        /// <summary>The metadata property</summary>
         public List<MetadataEntry> Metadata { get; set; }
+        /// <summary>The name property</summary>
         public string Name { get; set; }
+        /// <summary>The supportedApis property</summary>
         public List<string> SupportedApis { get; set; }
         /// <summary>
         /// Instantiates a new objectDefinition and sets the default values.

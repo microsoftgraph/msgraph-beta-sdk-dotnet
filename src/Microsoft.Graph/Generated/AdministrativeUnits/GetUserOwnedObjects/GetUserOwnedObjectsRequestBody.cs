@@ -8,7 +8,9 @@ namespace MicrosoftGraphSdk.AdministrativeUnits.GetUserOwnedObjects {
     public class GetUserOwnedObjectsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The type property</summary>
         public string Type { get; set; }
+        /// <summary>The userId property</summary>
         public string UserId { get; set; }
         /// <summary>
         /// Instantiates a new getUserOwnedObjectsRequestBody and sets the default values.
