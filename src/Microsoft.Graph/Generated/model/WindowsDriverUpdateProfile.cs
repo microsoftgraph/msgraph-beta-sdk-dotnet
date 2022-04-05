@@ -64,6 +64,13 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets inventory sync status.
+        /// Driver inventory sync status for this profile.
+        /// </summary>
+        [JsonPropertyName("inventorySyncStatus")]
+        public WindowsDriverUpdateProfileInventorySyncStatus InventorySyncStatus { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified date time.
         /// The date time that the profile was last modified.
         /// </summary>

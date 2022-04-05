@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets displayName.
+        /// The display name of the customer tenant as set by Azure AD. Read only
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets tenantId.
+        /// The Azure AD-assigned tenant ID of the customer tenant.
         /// </summary>
         [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }

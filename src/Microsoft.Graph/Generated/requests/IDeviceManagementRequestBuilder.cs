@@ -428,6 +428,12 @@ namespace Microsoft.Graph
         IDeviceManagementRemoteActionAuditsCollectionRequestBuilder RemoteActionAudits { get; }
 
         /// <summary>
+        /// Gets the request builder for TenantAttachRBAC.
+        /// </summary>
+        /// <returns>The <see cref="ITenantAttachRBACRequestBuilder"/>.</returns>
+        ITenantAttachRBACRequestBuilder TenantAttachRBAC { get; }
+
+        /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsAppHealthApplicationPerformance.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionRequestBuilder"/>.</returns>

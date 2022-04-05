@@ -57,6 +57,13 @@ namespace Microsoft.Graph
         public bool? V14_0 { get; set; }
     
         /// <summary>
+        /// Gets or sets v15_0.
+        /// Version 15.0 or later.
+        /// </summary>
+        [JsonPropertyName("v15_0")]
+        public bool? V15_0 { get; set; }
+    
+        /// <summary>
         /// Gets or sets v8_0.
         /// Version 8.0 or later.
         /// </summary>

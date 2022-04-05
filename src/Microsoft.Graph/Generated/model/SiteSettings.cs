@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets languageTag.
+        /// The language tag for the language used on this site.
         /// </summary>
         [JsonPropertyName("languageTag")]
         public string LanguageTag { get; set; }
     
         /// <summary>
         /// Gets or sets timeZone.
+        /// Indicates the time offset for the time zone of the site from Coordinated Universal Time (UTC).
         /// </summary>
         [JsonPropertyName("timeZone")]
         public string TimeZone { get; set; }

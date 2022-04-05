@@ -23,30 +23,35 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created date time.
+        /// The time in ISO 8601 format and in UTC time when the long-running operation was created. Read-only.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets data.
+        /// The data (payload) for the operation. Read-only.
         /// </summary>
         [JsonPropertyName("data")]
         public string Data { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
+        /// The time in ISO 8601 format and in UTC time when the long-running operation was last modified. Read-only.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets operation type.
+        /// The type of long-running operation. The possible values are: delegatedAdminAccessAssignmentUpdate, unknownFutureValue. Read-only.
         /// </summary>
         [JsonPropertyName("operationType")]
         public DelegatedAdminRelationshipOperationType? OperationType { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// The status of the operation. Read-only. The possible values are: notStarted, running, complete, failed, unknownFutureValue. Read-only. Supports $orderBy.
         /// </summary>
         [JsonPropertyName("status")]
         public DelegatedAdminRelationshipOperationStatus? Status { get; set; }

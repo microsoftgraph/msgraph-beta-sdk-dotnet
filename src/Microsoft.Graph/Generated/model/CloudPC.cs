@@ -86,7 +86,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises connection name.
-        /// The on-premises connection that is applied during the provisioning of Cloud PCs.
+        /// The Azure network connection that is applied during the provisioning of Cloud PCs.
         /// </summary>
         [JsonPropertyName("onPremisesConnectionName")]
         public string OnPremisesConnectionName { get; set; }

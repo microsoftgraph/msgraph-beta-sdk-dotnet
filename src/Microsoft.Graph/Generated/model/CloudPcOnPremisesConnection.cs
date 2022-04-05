@@ -44,28 +44,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name for the on-premises connection.
+        /// The display name for the Azure network connection.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets health check status.
-        /// The status of the most recent health check done on the on-premises connection. For example, if status is 'passed', the on-premises connection has passed all checks run by the service. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
+        /// The status of the most recent health check done on the Azure network connection. For example, if status is 'passed', the Azure network connection has passed all checks run by the service. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
         /// </summary>
         [JsonPropertyName("healthCheckStatus")]
         public CloudPcOnPremisesConnectionStatus? HealthCheckStatus { get; set; }
     
         /// <summary>
         /// Gets or sets health check status details.
-        /// The details of the connection's health checks and the corresponding results. Returned only on $select.For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an on-premises connection, including healthCheckStatusDetails. Read-only.
+        /// The details of the connection's health checks and the corresponding results. Returned only on $select.For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
         /// </summary>
         [JsonPropertyName("healthCheckStatusDetails")]
         public CloudPcOnPremisesConnectionStatusDetails HealthCheckStatusDetails { get; set; }
     
         /// <summary>
         /// Gets or sets in use.
-        /// When true, the on-premises connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an on-premises connection, including healthCheckStatusDetails. Read-only.
+        /// When true, the Azure network connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
         /// </summary>
         [JsonPropertyName("inUse")]
         public bool? InUse { get; set; }

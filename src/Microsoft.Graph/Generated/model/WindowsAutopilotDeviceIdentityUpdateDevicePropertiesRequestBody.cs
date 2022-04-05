@@ -44,5 +44,23 @@ namespace Microsoft.Graph
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
+        /// <summary>
+        /// Gets or sets DeviceAccountUpn.
+        /// </summary>
+        [JsonPropertyName("deviceAccountUpn")]
+        public string DeviceAccountUpn { get; set; }
+    
+        /// <summary>
+        /// Gets or sets DeviceAccountPassword.
+        /// </summary>
+        [JsonPropertyName("deviceAccountPassword")]
+        public string DeviceAccountPassword { get; set; }
+    
+        /// <summary>
+        /// Gets or sets DeviceFriendlyName.
+        /// </summary>
+        [JsonPropertyName("deviceFriendlyName")]
+        public string DeviceFriendlyName { get; set; }
+    
     }
 }

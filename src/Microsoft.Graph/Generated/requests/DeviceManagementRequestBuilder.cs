@@ -843,6 +843,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for TenantAttachRBAC.
+        /// </summary>
+        /// <returns>The <see cref="ITenantAttachRBACRequestBuilder"/>.</returns>
+        public ITenantAttachRBACRequestBuilder TenantAttachRBAC
+        {
+            get
+            {
+                return new TenantAttachRBACRequestBuilder(this.AppendSegmentToRequestUrl("tenantAttachRBAC"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsAppHealthApplicationPerformance.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionRequestBuilder"/>.</returns>

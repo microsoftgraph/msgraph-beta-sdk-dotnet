@@ -23,24 +23,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets action.
+        /// The action to be performed on the delegated admin relationship.
         /// </summary>
         [JsonPropertyName("action")]
         public DelegatedAdminRelationshipRequestAction? Action { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
+        /// The date and time in ISO 8601 format and in UTC time when the relationship request was created. Read-only.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
+        /// The date and time in ISO 8601 format and UTC time when this relationship request was last modified. Read-only.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// The status of the request. Read-only. The possible values are: created, pending, complete, failed, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("status")]
         public DelegatedAdminRelationshipRequestStatus? Status { get; set; }

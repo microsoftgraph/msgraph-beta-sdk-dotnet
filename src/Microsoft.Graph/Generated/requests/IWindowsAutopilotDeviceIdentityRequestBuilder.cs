@@ -80,7 +80,10 @@ namespace Microsoft.Graph
             string userPrincipalName = null,
             string addressableUserName = null,
             string groupTag = null,
-            string displayName = null);
+            string displayName = null,
+            string deviceAccountUpn = null,
+            string deviceAccountPassword = null,
+            string deviceFriendlyName = null);
     
     }
 }

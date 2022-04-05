@@ -50,5 +50,17 @@ namespace Microsoft.Graph
             return new AospDeviceOwnerCertificateProfileBaseRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for RootCertificate.
+        /// </summary>
+        /// <returns>The <see cref="IAospDeviceOwnerTrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
+        public IAospDeviceOwnerTrustedRootCertificateWithReferenceRequestBuilder RootCertificate
+        {
+            get
+            {
+                return new AospDeviceOwnerTrustedRootCertificateWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("rootCertificate"), this.Client);
+            }
+        }
+    
     }
 }

@@ -443,6 +443,13 @@ namespace Microsoft.Graph
         public bool? KioskModeShowDeviceInfo { get; set; }
     
         /// <summary>
+        /// Gets or sets kiosk mode use managed home screen app.
+        /// Whether or not to use single app kiosk mode or multi-app kiosk mode. Possible values are: notConfigured, singleAppMode, multiAppMode.
+        /// </summary>
+        [JsonPropertyName("kioskModeUseManagedHomeScreenApp")]
+        public KioskModeType? KioskModeUseManagedHomeScreenApp { get; set; }
+    
+        /// <summary>
         /// Gets or sets kiosk mode virtual home button enabled.
         /// Whether or not to display a virtual home button when the device is in Kiosk Mode.
         /// </summary>

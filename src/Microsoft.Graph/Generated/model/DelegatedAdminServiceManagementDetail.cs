@@ -28,12 +28,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets service management url.
+        /// The URL of the management portal for the managed service. Read-only.
         /// </summary>
         [JsonPropertyName("serviceManagementUrl")]
         public string ServiceManagementUrl { get; set; }
     
         /// <summary>
         /// Gets or sets service name.
+        /// The name of a managed service. Read-only.
         /// </summary>
         [JsonPropertyName("serviceName")]
         public string ServiceName { get; set; }

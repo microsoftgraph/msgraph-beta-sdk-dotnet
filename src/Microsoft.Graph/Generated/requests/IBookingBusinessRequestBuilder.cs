@@ -68,6 +68,15 @@ namespace Microsoft.Graph
         IBookingBusinessStaffMembersCollectionRequestBuilder StaffMembers { get; }
     
         /// <summary>
+        /// Gets the request builder for BookingBusinessGetStaffAvailability.
+        /// </summary>
+        /// <returns>The <see cref="IBookingBusinessGetStaffAvailabilityRequestBuilder"/>.</returns>
+        IBookingBusinessGetStaffAvailabilityRequestBuilder GetStaffAvailability(
+            IEnumerable<string> staffIds,
+            DateTimeTimeZone startDateTime,
+            DateTimeTimeZone endDateTime);
+
+        /// <summary>
         /// Gets the request builder for BookingBusinessPublish.
         /// </summary>
         /// <returns>The <see cref="IBookingBusinessPublishRequestBuilder"/>.</returns>

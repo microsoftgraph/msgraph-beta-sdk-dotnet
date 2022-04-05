@@ -31,5 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IAospDeviceOwnerCertificateProfileBaseRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for RootCertificate.
+        /// </summary>
+        /// <returns>The <see cref="IAospDeviceOwnerTrustedRootCertificateWithReferenceRequestBuilder"/>.</returns>
+        IAospDeviceOwnerTrustedRootCertificateWithReferenceRequestBuilder RootCertificate { get; }
+    
     }
 }

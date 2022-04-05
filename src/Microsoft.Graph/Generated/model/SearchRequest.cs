@@ -79,7 +79,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets queryAlterationOptions.
-        /// Query alteration options formatted in a JSON blob that contains two optional flags related to spelling correction. Optional.
+        /// Provides query alteration options formatted as a JSON blob that contains two optional flags related to spelling correction. Optional.
         /// </summary>
         [JsonPropertyName("queryAlterationOptions")]
         public SearchAlterationOptions QueryAlterationOptions { get; set; }
@@ -114,6 +114,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets trimDuplicates.
+        /// Indicates whether to trim away the duplicate SharePoint files from search results. Default value is false. Optional.
         /// </summary>
         [JsonPropertyName("trimDuplicates")]
         public bool? TrimDuplicates { get; set; }

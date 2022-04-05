@@ -27,19 +27,28 @@ namespace Microsoft.Graph
         /// <param name="addressableUserName">A addressableUserName parameter for the OData method call.</param>
         /// <param name="groupTag">A groupTag parameter for the OData method call.</param>
         /// <param name="displayName">A displayName parameter for the OData method call.</param>
+        /// <param name="deviceAccountUpn">A deviceAccountUpn parameter for the OData method call.</param>
+        /// <param name="deviceAccountPassword">A deviceAccountPassword parameter for the OData method call.</param>
+        /// <param name="deviceFriendlyName">A deviceFriendlyName parameter for the OData method call.</param>
         public WindowsAutopilotDeviceIdentityUpdateDevicePropertiesRequestBuilder(
             string requestUrl,
             IBaseClient client,
             string userPrincipalName,
             string addressableUserName,
             string groupTag,
-            string displayName)
+            string displayName,
+            string deviceAccountUpn,
+            string deviceAccountPassword,
+            string deviceFriendlyName)
             : base(requestUrl, client)
         {
             this.SetParameter("userPrincipalName", userPrincipalName, true);
             this.SetParameter("addressableUserName", addressableUserName, true);
             this.SetParameter("groupTag", groupTag, true);
             this.SetParameter("displayName", displayName, true);
+            this.SetParameter("deviceAccountUpn", deviceAccountUpn, true);
+            this.SetParameter("deviceAccountPassword", deviceAccountPassword, true);
+            this.SetParameter("deviceFriendlyName", deviceFriendlyName, true);
         }
 
         /// <summary>
@@ -70,6 +79,21 @@ namespace Microsoft.Graph
             if (this.HasParameter("displayName"))
             {
                 request.RequestBody.DisplayName = this.GetParameter<string>("displayName");
+            }
+
+            if (this.HasParameter("deviceAccountUpn"))
+            {
+                request.RequestBody.DeviceAccountUpn = this.GetParameter<string>("deviceAccountUpn");
+            }
+
+            if (this.HasParameter("deviceAccountPassword"))
+            {
+                request.RequestBody.DeviceAccountPassword = this.GetParameter<string>("deviceAccountPassword");
+            }
+
+            if (this.HasParameter("deviceFriendlyName"))
+            {
+                request.RequestBody.DeviceFriendlyName = this.GetParameter<string>("deviceFriendlyName");
             }
 
             return request;

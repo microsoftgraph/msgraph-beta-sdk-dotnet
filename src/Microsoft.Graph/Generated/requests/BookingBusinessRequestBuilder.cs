@@ -123,6 +123,23 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for BookingBusinessGetStaffAvailability.
+        /// </summary>
+        /// <returns>The <see cref="IBookingBusinessGetStaffAvailabilityRequestBuilder"/>.</returns>
+        public IBookingBusinessGetStaffAvailabilityRequestBuilder GetStaffAvailability(
+            IEnumerable<string> staffIds,
+            DateTimeTimeZone startDateTime,
+            DateTimeTimeZone endDateTime)
+        {
+            return new BookingBusinessGetStaffAvailabilityRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getStaffAvailability"),
+                this.Client,
+                staffIds,
+                startDateTime,
+                endDateTime);
+        }
+
+        /// <summary>
         /// Gets the request builder for BookingBusinessPublish.
         /// </summary>
         /// <returns>The <see cref="IBookingBusinessPublishRequestBuilder"/>.</returns>
