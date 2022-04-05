@@ -23,6 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets roleDefinitionId.
+        /// The unified role definition ID of the directory role. Refer to unifiedRoleDefinition resource.
         /// </summary>
         [JsonPropertyName("roleDefinitionId")]
         public string RoleDefinitionId { get; set; }

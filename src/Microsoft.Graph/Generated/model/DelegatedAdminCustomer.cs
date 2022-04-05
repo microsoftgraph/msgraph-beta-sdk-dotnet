@@ -22,18 +22,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
+        /// The Azure AD display name of the customer tenant. Read-only. Supports $orderBy.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.
+        /// The Azure AD-assigned tenant ID of the customer. Read-only.
         /// </summary>
         [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }
     
         /// <summary>
         /// Gets or sets service management details.
+        /// Contains the management details of a service in the customer tenant that's managed by delegated administration.
         /// </summary>
         [JsonPropertyName("serviceManagementDetails")]
         public IDelegatedAdminCustomerServiceManagementDetailsCollectionPage ServiceManagementDetails { get; set; }

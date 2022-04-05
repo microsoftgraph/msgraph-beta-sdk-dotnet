@@ -64,6 +64,27 @@ namespace Microsoft.Graph
         public WindowsAutopilotProfileAssignmentStatus? DeploymentProfileAssignmentStatus { get; set; }
     
         /// <summary>
+        /// Gets or sets device account password.
+        /// Surface Hub Device Account Password
+        /// </summary>
+        [JsonPropertyName("deviceAccountPassword")]
+        public string DeviceAccountPassword { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device account upn.
+        /// Surface Hub Device Account Upn
+        /// </summary>
+        [JsonPropertyName("deviceAccountUpn")]
+        public string DeviceAccountUpn { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device friendly name.
+        /// Surface Hub Device Friendly Name
+        /// </summary>
+        [JsonPropertyName("deviceFriendlyName")]
+        public string DeviceFriendlyName { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// Display Name
         /// </summary>

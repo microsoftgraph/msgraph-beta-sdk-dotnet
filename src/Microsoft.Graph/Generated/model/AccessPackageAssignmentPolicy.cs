@@ -50,7 +50,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created date time.
-        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
@@ -64,7 +64,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name of the policy. Supports $filter (eq).
+        /// The display name of the policy.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
@@ -92,7 +92,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets modified date time.
-        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("modifiedDateTime")]
         public DateTimeOffset? ModifiedDateTime { get; set; }
@@ -106,21 +106,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets request approval settings.
-        /// Who must approve requests for access package in this policy.
+        /// Specifies the settings for approval of requests for an access package assignment through this policy. For example, if approval is required for new requests.
         /// </summary>
         [JsonPropertyName("requestApprovalSettings")]
         public ApprovalSettings RequestApprovalSettings { get; set; }
     
         /// <summary>
         /// Gets or sets requestor settings.
-        /// Who can request this access package from this policy.
+        /// Provides additional settings to select who can create a request for an access package assignment through this policy, and what they can include in their request.
         /// </summary>
         [JsonPropertyName("requestorSettings")]
         public RequestorSettings RequestorSettings { get; set; }
     
         /// <summary>
         /// Gets or sets access package.
-        /// The access package with this policy. Read-only. Nullable. Supports $expand.
+        /// Access package containing this policy. Read-only.
         /// </summary>
         [JsonPropertyName("accessPackage")]
         public AccessPackage AccessPackage { get; set; }

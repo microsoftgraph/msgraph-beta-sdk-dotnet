@@ -29,6 +29,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets delegated admin customers.
+        /// The customer who has a delegated admin relationship with a Microsoft partner.
         /// </summary>
         [JsonPropertyName("delegatedAdminCustomers")]
         public ITenantRelationshipDelegatedAdminCustomersCollectionPage DelegatedAdminCustomers { get; set; }
@@ -42,6 +43,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets delegated admin relationships.
+        /// The details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
         /// </summary>
         [JsonPropertyName("delegatedAdminRelationships")]
         public ITenantRelationshipDelegatedAdminRelationshipsCollectionPage DelegatedAdminRelationships { get; set; }

@@ -50,6 +50,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets settings.
+        /// The settings on this site. Returned only on $select. Read-only.
         /// </summary>
         [JsonPropertyName("settings")]
         public SiteSettings Settings { get; set; }

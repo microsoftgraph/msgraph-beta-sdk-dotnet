@@ -265,6 +265,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DriveItemExtractSensitivityLabels.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemExtractSensitivityLabelsRequestBuilder"/>.</returns>
+        public IDriveItemExtractSensitivityLabelsRequestBuilder ExtractSensitivityLabels()
+        {
+            return new DriveItemExtractSensitivityLabelsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.extractSensitivityLabels"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for DriveItemFollow.
         /// </summary>
         /// <returns>The <see cref="IDriveItemFollowRequestBuilder"/>.</returns>

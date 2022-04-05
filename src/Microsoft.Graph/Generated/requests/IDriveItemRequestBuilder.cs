@@ -142,6 +142,12 @@ namespace Microsoft.Graph
             bool? retainInheritedPermissions = null);
 
         /// <summary>
+        /// Gets the request builder for DriveItemExtractSensitivityLabels.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemExtractSensitivityLabelsRequestBuilder"/>.</returns>
+        IDriveItemExtractSensitivityLabelsRequestBuilder ExtractSensitivityLabels();
+
+        /// <summary>
         /// Gets the request builder for DriveItemFollow.
         /// </summary>
         /// <returns>The <see cref="IDriveItemFollowRequestBuilder"/>.</returns>

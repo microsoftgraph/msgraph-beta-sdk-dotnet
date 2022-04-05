@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets maximum dep tokens.
-        /// Maximum number of dep tokens allowed per-tenant.
+        /// Maximum number of DEP tokens allowed per-tenant.
         /// </summary>
         [JsonPropertyName("maximumDepTokens")]
         public Int32? MaximumDepTokens { get; set; }
@@ -107,7 +107,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets subscriptions.
-        /// Tenant's Subscription.
+        /// Tenant's Subscription. Possible values are: none, intune, office365, intunePremium, intune_EDU, intune_SMB.
         /// </summary>
         [JsonPropertyName("subscriptions")]
         public DeviceManagementSubscriptions? Subscriptions { get; set; }
@@ -971,6 +971,13 @@ namespace Microsoft.Graph
         [JsonPropertyName("remoteActionAudits@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string RemoteActionAuditsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tenant attach rbac.
+        /// TenantAttach RBAC Enablement
+        /// </summary>
+        [JsonPropertyName("tenantAttachRBAC")]
+        public TenantAttachRBAC TenantAttachRBAC { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics app health application performance.

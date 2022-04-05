@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets accessContainerId.
+        /// The identifier of the access container (for example, a security group). For 'securityGroup' access containers, this must be a valid ID of an Azure AD security group in the Microsoft partner's tenant.
         /// </summary>
         [JsonPropertyName("accessContainerId")]
         public string AccessContainerId { get; set; }
     
         /// <summary>
         /// Gets or sets accessContainerType.
+        /// The type of access container (for example, security group) that will be assigned one or more roles through a delegated admin relationship. The possible values are: securityGroup, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("accessContainerType")]
         public DelegatedAdminAccessContainerType? AccessContainerType { get; set; }

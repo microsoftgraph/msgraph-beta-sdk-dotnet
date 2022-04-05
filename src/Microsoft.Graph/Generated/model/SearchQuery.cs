@@ -30,6 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets queryTemplate.
+        /// Provides a way to decorate the query string. Supports both KQL and query variables. Optional.
         /// </summary>
         [JsonPropertyName("queryTemplate")]
         public string QueryTemplate { get; set; }

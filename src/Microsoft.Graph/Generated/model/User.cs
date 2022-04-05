@@ -330,7 +330,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises security identifier.
-        /// Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq) on null values only.
+        /// Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select.  Supports $filter (eq including on null values).
         /// </summary>
         [JsonPropertyName("onPremisesSecurityIdentifier")]
         public string OnPremisesSecurityIdentifier { get; set; }

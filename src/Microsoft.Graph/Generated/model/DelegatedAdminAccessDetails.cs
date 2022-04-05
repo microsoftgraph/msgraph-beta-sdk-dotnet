@@ -23,6 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets unifiedRoles.
+        /// The directory roles that the Microsoft partner is assigned in the customer tenant.
         /// </summary>
         [JsonPropertyName("unifiedRoles")]
         public IEnumerable<UnifiedRole> UnifiedRoles { get; set; }

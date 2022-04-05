@@ -36,6 +36,13 @@ namespace Microsoft.Graph
         public bool? AccessibilityScreenDisabled { get; set; }
     
         /// <summary>
+        /// Gets or sets auto unlock with watch disabled.
+        /// Indicates if UnlockWithWatch screen is disabled
+        /// </summary>
+        [JsonPropertyName("autoUnlockWithWatchDisabled")]
+        public bool? AutoUnlockWithWatchDisabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets choose your lock screen disabled.
         /// Indicates if iCloud Documents and Desktop screen is disabled
         /// </summary>

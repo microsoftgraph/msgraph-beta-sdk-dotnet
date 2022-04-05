@@ -23,7 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets related contacts.
-        /// Related records related to the user. Possible relationships are parent, relative, aide, doctor, guardian, child, other, unknownFutureValue
+        /// Related records associated with the user. Read-only.
         /// </summary>
         [JsonPropertyName("relatedContacts")]
         public IEnumerable<RelatedContact> RelatedContacts { get; set; }
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created by.
-        /// Entity who created the user.
+        /// The entity who created the user.
         /// </summary>
         [JsonPropertyName("createdBy")]
         public IdentitySet CreatedBy { get; set; }
@@ -86,7 +86,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets external source detail.
-        /// The name of the external source this resources was generated from.
+        /// The name of the external source this resource was generated from.
         /// </summary>
         [JsonPropertyName("externalSourceDetail")]
         public string ExternalSourceDetail { get; set; }
@@ -100,14 +100,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets mail.
-        /// The SMTP address for the user; for example, jeff@contoso.onmicrosoft.com. Read-Only. Supports $filter.
+        /// The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com. Read-Only. Supports $filter.
         /// </summary>
         [JsonPropertyName("mail")]
         public string Mail { get; set; }
     
         /// <summary>
         /// Gets or sets mailing address.
-        /// Mail address of user.
+        /// The mail address of the user.
         /// </summary>
         [JsonPropertyName("mailingAddress")]
         public PhysicalAddress MailingAddress { get; set; }
@@ -121,7 +121,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets middle name.
-        /// The middle name of user.
+        /// The middle name of the user.
         /// </summary>
         [JsonPropertyName("middleName")]
         public string MiddleName { get; set; }
@@ -141,7 +141,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises info.
-        /// Additional information used to associate the Azure AD user with its Active Directory counterpart.
+        /// Additional information used to associate the Azure Active Directory user with its Active Directory counterpart.
         /// </summary>
         [JsonPropertyName("onPremisesInfo")]
         public EducationOnPremisesInfo OnPremisesInfo { get; set; }
@@ -162,7 +162,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets preferred language.
-        /// The preferred language for the user. Should follow ISO 639-1 Code; for example, 'en-US'.
+        /// The preferred language for the user that should follow the ISO 639-1 code, for example, en-US.
         /// </summary>
         [JsonPropertyName("preferredLanguage")]
         public string PreferredLanguage { get; set; }
@@ -189,14 +189,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets residence address.
-        /// Address where user lives.
+        /// The address where the user lives.
         /// </summary>
         [JsonPropertyName("residenceAddress")]
         public PhysicalAddress ResidenceAddress { get; set; }
     
         /// <summary>
         /// Gets or sets show in address list.
-        /// true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false.
+        /// True if the Outlook Global Address List should contain this user; otherwise, false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false.
         /// </summary>
         [JsonPropertyName("showInAddressList")]
         public bool? ShowInAddressList { get; set; }
@@ -224,28 +224,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets usage location.
-        /// A two-letter country code (ISO standard 3166). Required for users who will be assigned licenses due to a legal requirement to check for availability of services in countries or regions. Examples include: 'US', 'JP', and 'GB'. Not nullable. Supports $filter.
+        /// A two-letter country code (ISO standard 3166). Required for users who will be assigned licenses due to a legal requirement to check for availability of services in countries or regions. Examples include: US, JP, and GB. Not nullable. Supports $filter.
         /// </summary>
         [JsonPropertyName("usageLocation")]
         public string UsageLocation { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.
-        /// The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization. Supports $filter and $orderby.
+        /// The user principal name (UPN) of the user. The UPN is an internet-style login name for the user based on the internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of the organization. Supports $filter and $orderby.
         /// </summary>
         [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets user type.
-        /// A string value that can be used to classify user types in your directory, such as 'Member' and 'Guest'. Supports $filter.
+        /// A string value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter.
         /// </summary>
         [JsonPropertyName("userType")]
         public string UserType { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
-        /// Assignments belonging to the user.
+        /// Assignments that belongs to the user.
         /// </summary>
         [JsonPropertyName("assignments")]
         public IEducationUserAssignmentsCollectionPage Assignments { get; set; }
@@ -314,7 +314,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user.
-        /// The directory user corresponding to this user.
+        /// The directory user that corresponds to this user.
         /// </summary>
         [JsonPropertyName("user")]
         public User User { get; set; }
