@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Count;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.ValidateCredentials;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.Count;
-using MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.Item;
-using MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.ValidateCredentials;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs {
+namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs {
     /// <summary>Provides operations to manage the jobs property of the microsoft.graph.synchronization entity.</summary>
     public class JobsRequestBuilder {
         /// <summary>The count property</summary>
@@ -28,7 +28,7 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs {
         public ValidateCredentialsRequestBuilder ValidateCredentials { get =>
             new ValidateCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.servicePrincipals.item.synchronization.jobs.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.servicePrincipals.item.synchronization.jobs.item collection</summary>
         public SynchronizationJobItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("synchronizationJob_id", position);

@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Security;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Security.InformationProtection.SensitivityLabels.EvaluateRemoval {
+namespace Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.EvaluateRemoval {
     /// <summary>Provides operations to call the evaluateRemoval method.</summary>
     public class EvaluateRemovalResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

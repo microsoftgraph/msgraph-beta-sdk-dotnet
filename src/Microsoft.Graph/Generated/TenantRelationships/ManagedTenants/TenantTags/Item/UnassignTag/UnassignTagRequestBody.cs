@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantTags.Item.UnassignTag {
+namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Item.UnassignTag {
     /// <summary>Provides operations to call the unassignTag method.</summary>
     public class UnassignTagRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

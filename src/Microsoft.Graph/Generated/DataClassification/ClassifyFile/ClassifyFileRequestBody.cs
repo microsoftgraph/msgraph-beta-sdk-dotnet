@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DataClassification.ClassifyFile {
+namespace Microsoft.Graph.Beta.DataClassification.ClassifyFile {
     /// <summary>Provides operations to call the classifyFile method.</summary>
     public class ClassifyFileRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

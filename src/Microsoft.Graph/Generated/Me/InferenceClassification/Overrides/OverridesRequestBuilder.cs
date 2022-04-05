@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.InferenceClassification.Overrides.Count;
+using Microsoft.Graph.Beta.Me.InferenceClassification.Overrides.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.InferenceClassification.Overrides.Count;
-using MicrosoftGraphSdk.Me.InferenceClassification.Overrides.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.InferenceClassification.Overrides {
+namespace Microsoft.Graph.Beta.Me.InferenceClassification.Overrides {
     /// <summary>Provides operations to manage the overrides property of the microsoft.graph.inferenceClassification entity.</summary>
     public class OverridesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.InferenceClassification.Overrides {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.inferenceClassification.overrides.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.inferenceClassification.overrides.item collection</summary>
         public InferenceClassificationOverrideItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("inferenceClassificationOverride_id", position);

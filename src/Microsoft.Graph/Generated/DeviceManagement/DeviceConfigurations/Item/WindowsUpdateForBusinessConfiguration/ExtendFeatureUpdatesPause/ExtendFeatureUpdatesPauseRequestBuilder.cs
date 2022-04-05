@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.WindowsUpdateForBusinessConfiguration.ExtendFeatureUpdatesPause {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.WindowsUpdateForBusinessConfiguration.ExtendFeatureUpdatesPause {
     /// <summary>Provides operations to call the extendFeatureUpdatesPause method.</summary>
     public class ExtendFeatureUpdatesPauseRequestBuilder {
         /// <summary>Path parameters for the request</summary>

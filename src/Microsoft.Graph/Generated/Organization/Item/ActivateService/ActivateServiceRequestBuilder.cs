@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Organization.Item.ActivateService {
+namespace Microsoft.Graph.Beta.Organization.Item.ActivateService {
     /// <summary>Provides operations to call the activateService method.</summary>
     public class ActivateServiceRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,20 +1,20 @@
+using Microsoft.Graph.Beta.Contacts.Count;
+using Microsoft.Graph.Beta.Contacts.Delta;
+using Microsoft.Graph.Beta.Contacts.GetByIds;
+using Microsoft.Graph.Beta.Contacts.GetUserOwnedObjects;
+using Microsoft.Graph.Beta.Contacts.Item;
+using Microsoft.Graph.Beta.Contacts.ValidateProperties;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Contacts.Count;
-using MicrosoftGraphSdk.Contacts.Delta;
-using MicrosoftGraphSdk.Contacts.GetByIds;
-using MicrosoftGraphSdk.Contacts.GetUserOwnedObjects;
-using MicrosoftGraphSdk.Contacts.Item;
-using MicrosoftGraphSdk.Contacts.ValidateProperties;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Contacts {
+namespace Microsoft.Graph.Beta.Contacts {
     /// <summary>Provides operations to manage the collection of orgContact entities.</summary>
     public class ContactsRequestBuilder {
         /// <summary>The count property</summary>
@@ -39,7 +39,7 @@ namespace MicrosoftGraphSdk.Contacts {
         public ValidatePropertiesRequestBuilder ValidateProperties { get =>
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.contacts.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.contacts.item collection</summary>
         public OrgContactItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("orgContact_id", position);

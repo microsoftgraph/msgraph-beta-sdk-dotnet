@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetEnrollmentConfigurationPoliciesByDevice {
+namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetEnrollmentConfigurationPoliciesByDevice {
     /// <summary>Provides operations to call the getEnrollmentConfigurationPoliciesByDevice method.</summary>
     public class GetEnrollmentConfigurationPoliciesByDeviceRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

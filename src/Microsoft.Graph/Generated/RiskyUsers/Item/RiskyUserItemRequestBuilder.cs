@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.RiskyUsers.Item.History;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.RiskyUsers.Item.History;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.RiskyUsers.Item {
+namespace Microsoft.Graph.Beta.RiskyUsers.Item {
     /// <summary>Provides operations to manage the collection of riskyUser entities.</summary>
     public class RiskyUserItemRequestBuilder {
         /// <summary>The history property</summary>

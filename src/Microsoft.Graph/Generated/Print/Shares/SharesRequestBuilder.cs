@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Print.Shares.Count;
+using Microsoft.Graph.Beta.Print.Shares.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Print.Shares.Count;
-using MicrosoftGraphSdk.Print.Shares.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Print.Shares {
+namespace Microsoft.Graph.Beta.Print.Shares {
     /// <summary>Provides operations to manage the shares property of the microsoft.graph.print entity.</summary>
     public class SharesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Print.Shares {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.print.shares.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.print.shares.item collection</summary>
         public PrinterShareItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("printerShare_id", position);

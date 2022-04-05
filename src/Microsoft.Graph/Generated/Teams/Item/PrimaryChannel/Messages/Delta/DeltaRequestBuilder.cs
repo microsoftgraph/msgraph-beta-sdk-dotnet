@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Messages.Delta {
+namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Messages.Delta {
     /// <summary>Provides operations to call the delta method.</summary>
     public class DeltaRequestBuilder {
         /// <summary>Path parameters for the request</summary>

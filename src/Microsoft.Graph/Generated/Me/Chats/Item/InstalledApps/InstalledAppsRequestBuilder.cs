@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.Chats.Item.InstalledApps.Count;
+using Microsoft.Graph.Beta.Me.Chats.Item.InstalledApps.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Chats.Item.InstalledApps.Count;
-using MicrosoftGraphSdk.Me.Chats.Item.InstalledApps.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Chats.Item.InstalledApps {
+namespace Microsoft.Graph.Beta.Me.Chats.Item.InstalledApps {
     /// <summary>Provides operations to manage the installedApps property of the microsoft.graph.chat entity.</summary>
     public class InstalledAppsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.Chats.Item.InstalledApps {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.chats.item.installedApps.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.chats.item.installedApps.item collection</summary>
         public TeamsAppInstallationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("teamsAppInstallation_id", position);

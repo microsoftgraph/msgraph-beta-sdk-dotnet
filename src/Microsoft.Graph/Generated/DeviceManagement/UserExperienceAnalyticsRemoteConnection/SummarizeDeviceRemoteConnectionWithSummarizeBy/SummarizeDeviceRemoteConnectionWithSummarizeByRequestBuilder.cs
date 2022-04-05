@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsRemoteConnection.SummarizeDeviceRemoteConnectionWithSummarizeBy {
+namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRemoteConnection.SummarizeDeviceRemoteConnectionWithSummarizeBy {
     /// <summary>Provides operations to call the summarizeDeviceRemoteConnection method.</summary>
     public class SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,20 +1,20 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.Pages.Item.Content;
+using Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.Pages.Item.CopyToSection;
+using Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.Pages.Item.OnenotePatchContent;
+using Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.Pages.Item.ParentNotebook;
+using Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.Pages.Item.ParentSection;
+using Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.Pages.Item.Preview;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.Pages.Item.Content;
-using MicrosoftGraphSdk.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.Pages.Item.CopyToSection;
-using MicrosoftGraphSdk.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.Pages.Item.OnenotePatchContent;
-using MicrosoftGraphSdk.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.Pages.Item.ParentNotebook;
-using MicrosoftGraphSdk.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.Pages.Item.ParentSection;
-using MicrosoftGraphSdk.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.Pages.Item.Preview;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.Pages.Item {
+namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.Pages.Item {
     /// <summary>Provides operations to manage the pages property of the microsoft.graph.onenoteSection entity.</summary>
     public class OnenotePageItemRequestBuilder {
         /// <summary>The content property</summary>

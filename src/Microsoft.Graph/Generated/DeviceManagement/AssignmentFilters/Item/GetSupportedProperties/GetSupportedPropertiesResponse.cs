@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties {
+namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties {
     /// <summary>Provides operations to call the getSupportedProperties method.</summary>
     public class GetSupportedPropertiesResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

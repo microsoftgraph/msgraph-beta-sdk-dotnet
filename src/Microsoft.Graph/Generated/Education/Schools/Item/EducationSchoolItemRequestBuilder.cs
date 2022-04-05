@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Education.Schools.Item.AdministrativeUnit;
+using Microsoft.Graph.Beta.Education.Schools.Item.Classes;
+using Microsoft.Graph.Beta.Education.Schools.Item.Users;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Education.Schools.Item.AdministrativeUnit;
-using MicrosoftGraphSdk.Education.Schools.Item.Classes;
-using MicrosoftGraphSdk.Education.Schools.Item.Users;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Education.Schools.Item {
+namespace Microsoft.Graph.Beta.Education.Schools.Item {
     /// <summary>Provides operations to manage the schools property of the microsoft.graph.educationRoot entity.</summary>
     public class EducationSchoolItemRequestBuilder {
         /// <summary>The administrativeUnit property</summary>

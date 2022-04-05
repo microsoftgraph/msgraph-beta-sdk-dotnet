@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResourceEnvironments.Item.AccessPackageResources.Count;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResourceEnvironments.Item.AccessPackageResources.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageResourceEnvironments.Item.AccessPackageResources.Count;
-using MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageResourceEnvironments.Item.AccessPackageResources.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageResourceEnvironments.Item.AccessPackageResources {
+namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResourceEnvironments.Item.AccessPackageResources {
     /// <summary>Provides operations to manage the accessPackageResources property of the microsoft.graph.accessPackageResourceEnvironment entity.</summary>
     public class AccessPackageResourcesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.identityGovernance.entitlementManagement.accessPackageResourceEnvironments.item.accessPackageResources.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.identityGovernance.entitlementManagement.accessPackageResourceEnvironments.item.accessPackageResources.item collection</summary>
         public AccessPackageResourceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessPackageResource_id", position);

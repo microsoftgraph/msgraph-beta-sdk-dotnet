@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item.Assign;
+using Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item.Assignments;
+using Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item.DeviceStatuses;
+using Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item.GroupAssignments;
+using Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item.UserStatuses;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item.Assign;
-using MicrosoftGraphSdk.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item.Assignments;
-using MicrosoftGraphSdk.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item.DeviceStatuses;
-using MicrosoftGraphSdk.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item.GroupAssignments;
-using MicrosoftGraphSdk.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item.UserStatuses;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item {
     /// <summary>Provides operations to manage the iosLobAppProvisioningConfigurations property of the microsoft.graph.deviceAppManagement entity.</summary>
     public class IosLobAppProvisioningConfigurationItemRequestBuilder {
         /// <summary>The assign property</summary>

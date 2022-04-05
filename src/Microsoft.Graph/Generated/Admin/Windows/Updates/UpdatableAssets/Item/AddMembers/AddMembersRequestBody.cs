@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models.WindowsUpdates;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets.Item.AddMembers {
+namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item.AddMembers {
     /// <summary>Provides operations to call the addMembers method.</summary>
     public class AddMembersRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

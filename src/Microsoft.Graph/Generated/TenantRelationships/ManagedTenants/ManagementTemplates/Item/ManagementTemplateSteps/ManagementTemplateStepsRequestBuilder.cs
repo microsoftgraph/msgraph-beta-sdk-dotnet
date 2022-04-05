@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models.ManagedTenants;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplates.Item.ManagementTemplateSteps.Count;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplates.Item.ManagementTemplateSteps.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplates.Item.ManagementTemplateSteps.Count;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplates.Item.ManagementTemplateSteps.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplates.Item.ManagementTemplateSteps {
+namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplates.Item.ManagementTemplateSteps {
     /// <summary>Provides operations to manage the managementTemplateSteps property of the microsoft.graph.managedTenants.managementTemplate entity.</summary>
     public class ManagementTemplateStepsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplat
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.tenantRelationships.managedTenants.managementTemplates.item.managementTemplateSteps.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.tenantRelationships.managedTenants.managementTemplates.item.managementTemplateSteps.item collection</summary>
         public ManagementTemplateStepItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managementTemplateStep_id", position);

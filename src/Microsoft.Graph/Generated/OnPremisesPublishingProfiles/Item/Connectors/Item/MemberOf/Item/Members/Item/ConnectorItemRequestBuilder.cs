@@ -1,14 +1,14 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.Connectors.Item.MemberOf.Item.Members.Item {
+namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.Item.MemberOf.Item.Members.Item {
     /// <summary>Provides operations to manage the members property of the microsoft.graph.connectorGroup entity.</summary>
     public class ConnectorItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

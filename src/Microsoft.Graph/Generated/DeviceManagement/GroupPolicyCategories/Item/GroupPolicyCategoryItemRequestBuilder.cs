@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item.Children;
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item.DefinitionFile;
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item.Definitions;
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item.Parent;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.GroupPolicyCategories.Item.Children;
-using MicrosoftGraphSdk.DeviceManagement.GroupPolicyCategories.Item.DefinitionFile;
-using MicrosoftGraphSdk.DeviceManagement.GroupPolicyCategories.Item.Definitions;
-using MicrosoftGraphSdk.DeviceManagement.GroupPolicyCategories.Item.Parent;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyCategories.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item {
     /// <summary>Provides operations to manage the groupPolicyCategories property of the microsoft.graph.deviceManagement entity.</summary>
     public class GroupPolicyCategoryItemRequestBuilder {
         /// <summary>The children property</summary>

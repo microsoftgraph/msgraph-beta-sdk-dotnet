@@ -1,12 +1,12 @@
+using Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppPolicies.Item.TargetedManagedAppProtection.Assign;
+using Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppPolicies.Item.TargetedManagedAppProtection.TargetApps;
 using Microsoft.Kiota.Abstractions;
-using MicrosoftGraphSdk.DeviceAppManagement.ManagedAppPolicies.Item.TargetedManagedAppProtection.Assign;
-using MicrosoftGraphSdk.DeviceAppManagement.ManagedAppPolicies.Item.TargetedManagedAppProtection.TargetApps;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedAppPolicies.Item.TargetedManagedAppProtection {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppPolicies.Item.TargetedManagedAppProtection {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\managedAppPolicies\{managedAppPolicy-id}\microsoft.graph.targetedManagedAppProtection</summary>
     public class TargetedManagedAppProtectionRequestBuilder {
         /// <summary>The assign property</summary>

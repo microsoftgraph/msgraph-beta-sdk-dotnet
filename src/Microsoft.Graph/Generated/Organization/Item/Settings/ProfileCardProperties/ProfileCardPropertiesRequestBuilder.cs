@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Organization.Item.Settings.ProfileCardProperties.Count;
+using Microsoft.Graph.Beta.Organization.Item.Settings.ProfileCardProperties.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Organization.Item.Settings.ProfileCardProperties.Count;
-using MicrosoftGraphSdk.Organization.Item.Settings.ProfileCardProperties.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Organization.Item.Settings.ProfileCardProperties {
+namespace Microsoft.Graph.Beta.Organization.Item.Settings.ProfileCardProperties {
     /// <summary>Provides operations to manage the profileCardProperties property of the microsoft.graph.organizationSettings entity.</summary>
     public class ProfileCardPropertiesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Organization.Item.Settings.ProfileCardProperties {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.organization.item.settings.profileCardProperties.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.organization.item.settings.profileCardProperties.item collection</summary>
         public ProfileCardPropertyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("profileCardProperty_id", position);

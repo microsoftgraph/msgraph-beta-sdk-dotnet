@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Security.TiIndicators.DeleteTiIndicatorsByExternalId {
+namespace Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicatorsByExternalId {
     /// <summary>Provides operations to call the deleteTiIndicatorsByExternalId method.</summary>
     public class DeleteTiIndicatorsByExternalIdRequestBuilder {
         /// <summary>Path parameters for the request</summary>

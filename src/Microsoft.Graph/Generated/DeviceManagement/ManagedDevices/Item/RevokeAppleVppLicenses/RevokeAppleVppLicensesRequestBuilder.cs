@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.RevokeAppleVppLicenses {
+namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RevokeAppleVppLicenses {
     /// <summary>Provides operations to call the revokeAppleVppLicenses method.</summary>
     public class RevokeAppleVppLicensesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

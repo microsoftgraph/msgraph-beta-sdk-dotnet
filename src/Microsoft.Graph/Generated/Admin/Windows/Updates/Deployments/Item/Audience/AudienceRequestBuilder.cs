@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.UpdateAudience;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.UpdateAudienceById;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models.WindowsUpdates;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions;
-using MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Members;
-using MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.UpdateAudience;
-using MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.UpdateAudienceById;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience {
+namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience {
     /// <summary>Provides operations to manage the audience property of the microsoft.graph.windowsUpdates.deployment entity.</summary>
     public class AudienceRequestBuilder {
         /// <summary>The exclusions property</summary>

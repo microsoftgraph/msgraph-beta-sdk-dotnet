@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.GovernanceResources.Item.RoleDefinitions.Count;
+using Microsoft.Graph.Beta.GovernanceResources.Item.RoleDefinitions.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.GovernanceResources.Item.RoleDefinitions.Count;
-using MicrosoftGraphSdk.GovernanceResources.Item.RoleDefinitions.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.GovernanceResources.Item.RoleDefinitions {
+namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleDefinitions {
     /// <summary>Provides operations to manage the roleDefinitions property of the microsoft.graph.governanceResource entity.</summary>
     public class RoleDefinitionsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.GovernanceResources.Item.RoleDefinitions {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.governanceResources.item.roleDefinitions.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.governanceResources.item.roleDefinitions.item collection</summary>
         public GovernanceRoleDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("governanceRoleDefinition_id", position);

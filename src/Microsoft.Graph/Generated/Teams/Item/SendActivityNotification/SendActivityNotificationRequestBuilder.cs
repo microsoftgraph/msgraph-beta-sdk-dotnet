@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Teams.Item.SendActivityNotification {
+namespace Microsoft.Graph.Beta.Teams.Item.SendActivityNotification {
     /// <summary>Provides operations to call the sendActivityNotification method.</summary>
     public class SendActivityNotificationRequestBuilder {
         /// <summary>Path parameters for the request</summary>

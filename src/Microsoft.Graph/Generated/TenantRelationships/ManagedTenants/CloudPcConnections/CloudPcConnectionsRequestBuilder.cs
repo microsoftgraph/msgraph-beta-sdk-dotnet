@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models.ManagedTenants;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnections.Count;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnections.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.CloudPcConnections.Count;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.CloudPcConnections.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.CloudPcConnections {
+namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnections {
     /// <summary>Provides operations to manage the cloudPcConnections property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
     public class CloudPcConnectionsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.CloudPcConnection
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.tenantRelationships.managedTenants.cloudPcConnections.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.tenantRelationships.managedTenants.cloudPcConnections.item collection</summary>
         public CloudPcConnectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudPcConnection_id", position);

@@ -1,26 +1,26 @@
+using Microsoft.Graph.Beta.DataClassification.ClassifyExactMatches;
+using Microsoft.Graph.Beta.DataClassification.ClassifyFile;
+using Microsoft.Graph.Beta.DataClassification.ClassifyFileJobs;
+using Microsoft.Graph.Beta.DataClassification.ClassifyText;
+using Microsoft.Graph.Beta.DataClassification.ClassifyTextJobs;
+using Microsoft.Graph.Beta.DataClassification.EvaluateDlpPoliciesJobs;
+using Microsoft.Graph.Beta.DataClassification.EvaluateLabelJobs;
+using Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores;
+using Microsoft.Graph.Beta.DataClassification.ExactMatchUploadAgents;
+using Microsoft.Graph.Beta.DataClassification.Jobs;
+using Microsoft.Graph.Beta.DataClassification.SensitiveTypes;
+using Microsoft.Graph.Beta.DataClassification.SensitivityLabels;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DataClassification.ClassifyExactMatches;
-using MicrosoftGraphSdk.DataClassification.ClassifyFile;
-using MicrosoftGraphSdk.DataClassification.ClassifyFileJobs;
-using MicrosoftGraphSdk.DataClassification.ClassifyText;
-using MicrosoftGraphSdk.DataClassification.ClassifyTextJobs;
-using MicrosoftGraphSdk.DataClassification.EvaluateDlpPoliciesJobs;
-using MicrosoftGraphSdk.DataClassification.EvaluateLabelJobs;
-using MicrosoftGraphSdk.DataClassification.ExactMatchDataStores;
-using MicrosoftGraphSdk.DataClassification.ExactMatchUploadAgents;
-using MicrosoftGraphSdk.DataClassification.Jobs;
-using MicrosoftGraphSdk.DataClassification.SensitiveTypes;
-using MicrosoftGraphSdk.DataClassification.SensitivityLabels;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DataClassification {
+namespace Microsoft.Graph.Beta.DataClassification {
     /// <summary>Provides operations to manage the dataClassificationService singleton.</summary>
     public class DataClassificationRequestBuilder {
         /// <summary>The classifyExactMatches property</summary>

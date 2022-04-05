@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.Import {
+namespace Microsoft.Graph.Beta.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.Import {
     /// <summary>Provides operations to call the import method.</summary>
     public class ImportRequestBuilder {
         /// <summary>Path parameters for the request</summary>

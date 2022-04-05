@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Reprovision {
+namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Reprovision {
     /// <summary>Provides operations to call the reprovision method.</summary>
     public class ReprovisionRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.ExportPersonalData {
+namespace Microsoft.Graph.Beta.Users.Item.ExportPersonalData {
     /// <summary>Provides operations to call the exportPersonalData method.</summary>
     public class ExportPersonalDataRequestBuilder {
         /// <summary>Path parameters for the request</summary>

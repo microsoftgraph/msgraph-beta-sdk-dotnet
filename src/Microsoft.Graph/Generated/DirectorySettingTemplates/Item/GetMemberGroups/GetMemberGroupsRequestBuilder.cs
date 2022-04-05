@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DirectorySettingTemplates.Item.GetMemberGroups {
+namespace Microsoft.Graph.Beta.DirectorySettingTemplates.Item.GetMemberGroups {
     /// <summary>Provides operations to call the getMemberGroups method.</summary>
     public class GetMemberGroupsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

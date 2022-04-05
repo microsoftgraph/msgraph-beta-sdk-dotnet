@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Me.ContactFolders.Item.ChildFolders.Count;
+using Microsoft.Graph.Beta.Me.ContactFolders.Item.ChildFolders.Delta;
+using Microsoft.Graph.Beta.Me.ContactFolders.Item.ChildFolders.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.ContactFolders.Item.ChildFolders.Count;
-using MicrosoftGraphSdk.Me.ContactFolders.Item.ChildFolders.Delta;
-using MicrosoftGraphSdk.Me.ContactFolders.Item.ChildFolders.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.ContactFolders.Item.ChildFolders {
+namespace Microsoft.Graph.Beta.Me.ContactFolders.Item.ChildFolders {
     /// <summary>Provides operations to manage the childFolders property of the microsoft.graph.contactFolder entity.</summary>
     public class ChildFoldersRequestBuilder {
         /// <summary>The count property</summary>
@@ -24,11 +24,11 @@ namespace MicrosoftGraphSdk.Me.ContactFolders.Item.ChildFolders {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.contactFolders.item.childFolders.item collection</summary>
-        public MicrosoftGraphSdk.Me.ContactFolders.Item.ChildFolders.Item.ContactFolderItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.contactFolders.item.childFolders.item collection</summary>
+        public Microsoft.Graph.Beta.Me.ContactFolders.Item.ChildFolders.Item.ContactFolderItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("contactFolder_id1", position);
-            return new MicrosoftGraphSdk.Me.ContactFolders.Item.ChildFolders.Item.ContactFolderItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new Microsoft.Graph.Beta.Me.ContactFolders.Item.ChildFolders.Item.ContactFolderItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ChildFoldersRequestBuilder and sets the default values.

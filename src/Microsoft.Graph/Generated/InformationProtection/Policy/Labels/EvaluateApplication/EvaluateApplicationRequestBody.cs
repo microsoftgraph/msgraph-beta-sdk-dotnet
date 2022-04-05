@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.InformationProtection.Policy.Labels.EvaluateApplication {
+namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels.EvaluateApplication {
     /// <summary>Provides operations to call the evaluateApplication method.</summary>
     public class EvaluateApplicationRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The contentInfo property</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.ContentInfo ContentInfo { get; set; }
+        public Microsoft.Graph.Beta.Models.ContentInfo ContentInfo { get; set; }
         /// <summary>The labelingOptions property</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.LabelingOptions LabelingOptions { get; set; }
+        public Microsoft.Graph.Beta.Models.LabelingOptions LabelingOptions { get; set; }
         /// <summary>
         /// Instantiates a new evaluateApplicationRequestBody and sets the default values.
         /// </summary>
@@ -32,8 +32,8 @@ namespace MicrosoftGraphSdk.InformationProtection.Policy.Labels.EvaluateApplicat
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"contentInfo", (o,n) => { (o as EvaluateApplicationRequestBody).ContentInfo = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ContentInfo>(MicrosoftGraphSdk.Models.Microsoft.Graph.ContentInfo.CreateFromDiscriminatorValue); } },
-                {"labelingOptions", (o,n) => { (o as EvaluateApplicationRequestBody).LabelingOptions = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.LabelingOptions>(MicrosoftGraphSdk.Models.Microsoft.Graph.LabelingOptions.CreateFromDiscriminatorValue); } },
+                {"contentInfo", (o,n) => { (o as EvaluateApplicationRequestBody).ContentInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ContentInfo>(Microsoft.Graph.Beta.Models.ContentInfo.CreateFromDiscriminatorValue); } },
+                {"labelingOptions", (o,n) => { (o as EvaluateApplicationRequestBody).LabelingOptions = n.GetObjectValue<Microsoft.Graph.Beta.Models.LabelingOptions>(Microsoft.Graph.Beta.Models.LabelingOptions.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -42,8 +42,8 @@ namespace MicrosoftGraphSdk.InformationProtection.Policy.Labels.EvaluateApplicat
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ContentInfo>("contentInfo", ContentInfo);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.LabelingOptions>("labelingOptions", LabelingOptions);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ContentInfo>("contentInfo", ContentInfo);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.LabelingOptions>("labelingOptions", LabelingOptions);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Drive.SharedWithMe {
+namespace Microsoft.Graph.Beta.Drive.SharedWithMe {
     /// <summary>Provides operations to call the sharedWithMe method.</summary>
     public class SharedWithMeRequestBuilder {
         /// <summary>Path parameters for the request</summary>

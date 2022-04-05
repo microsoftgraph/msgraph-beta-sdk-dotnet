@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Security.SecurityActions.Count;
+using Microsoft.Graph.Beta.Security.SecurityActions.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Security.SecurityActions.Count;
-using MicrosoftGraphSdk.Security.SecurityActions.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Security.SecurityActions {
+namespace Microsoft.Graph.Beta.Security.SecurityActions {
     /// <summary>Provides operations to manage the securityActions property of the microsoft.graph.security entity.</summary>
     public class SecurityActionsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Security.SecurityActions {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.security.securityActions.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.security.securityActions.item collection</summary>
         public SecurityActionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("securityAction_id", position);

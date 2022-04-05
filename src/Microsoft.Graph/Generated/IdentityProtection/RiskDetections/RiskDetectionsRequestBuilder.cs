@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.IdentityProtection.RiskDetections.Count;
+using Microsoft.Graph.Beta.IdentityProtection.RiskDetections.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.IdentityProtection.RiskDetections.Count;
-using MicrosoftGraphSdk.IdentityProtection.RiskDetections.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.IdentityProtection.RiskDetections {
+namespace Microsoft.Graph.Beta.IdentityProtection.RiskDetections {
     /// <summary>Provides operations to manage the riskDetections property of the microsoft.graph.identityProtectionRoot entity.</summary>
     public class RiskDetectionsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.IdentityProtection.RiskDetections {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.identityProtection.riskDetections.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.identityProtection.riskDetections.item collection</summary>
         public RiskDetectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("riskDetection_id", position);

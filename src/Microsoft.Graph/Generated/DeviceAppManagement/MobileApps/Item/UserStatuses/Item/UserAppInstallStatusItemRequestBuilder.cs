@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.App;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.DeviceStatuses;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.App;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.DeviceStatuses;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses.Item {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UserStatuses.Item {
     /// <summary>Provides operations to manage the userStatuses property of the microsoft.graph.mobileApp entity.</summary>
     public class UserAppInstallStatusItemRequestBuilder {
         /// <summary>The app property</summary>

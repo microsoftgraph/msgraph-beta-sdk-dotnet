@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.GetFileVaultKey {
+namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.GetFileVaultKey {
     /// <summary>Provides operations to call the getFileVaultKey method.</summary>
     public class GetFileVaultKeyRequestBuilder {
         /// <summary>Path parameters for the request</summary>

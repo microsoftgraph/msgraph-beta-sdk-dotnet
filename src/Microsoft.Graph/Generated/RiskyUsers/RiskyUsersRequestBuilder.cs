@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.RiskyUsers.ConfirmCompromised;
+using Microsoft.Graph.Beta.RiskyUsers.Count;
+using Microsoft.Graph.Beta.RiskyUsers.Dismiss;
+using Microsoft.Graph.Beta.RiskyUsers.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.RiskyUsers.ConfirmCompromised;
-using MicrosoftGraphSdk.RiskyUsers.Count;
-using MicrosoftGraphSdk.RiskyUsers.Dismiss;
-using MicrosoftGraphSdk.RiskyUsers.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.RiskyUsers {
+namespace Microsoft.Graph.Beta.RiskyUsers {
     /// <summary>Provides operations to manage the collection of riskyUser entities.</summary>
     public class RiskyUsersRequestBuilder {
         /// <summary>The confirmCompromised property</summary>
@@ -33,7 +33,7 @@ namespace MicrosoftGraphSdk.RiskyUsers {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.riskyUsers.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.riskyUsers.item collection</summary>
         public RiskyUserItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("riskyUser_id", position);

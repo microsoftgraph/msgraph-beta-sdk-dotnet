@@ -1,21 +1,21 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories;
+using Microsoft.Graph.Beta.Users.Item.Outlook.SupportedLanguages;
+using Microsoft.Graph.Beta.Users.Item.Outlook.SupportedTimeZones;
+using Microsoft.Graph.Beta.Users.Item.Outlook.SupportedTimeZonesWithTimeZoneStandard;
+using Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders;
+using Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups;
+using Microsoft.Graph.Beta.Users.Item.Outlook.Tasks;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.Outlook.MasterCategories;
-using MicrosoftGraphSdk.Users.Item.Outlook.SupportedLanguages;
-using MicrosoftGraphSdk.Users.Item.Outlook.SupportedTimeZones;
-using MicrosoftGraphSdk.Users.Item.Outlook.SupportedTimeZonesWithTimeZoneStandard;
-using MicrosoftGraphSdk.Users.Item.Outlook.TaskFolders;
-using MicrosoftGraphSdk.Users.Item.Outlook.TaskGroups;
-using MicrosoftGraphSdk.Users.Item.Outlook.Tasks;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Outlook {
+namespace Microsoft.Graph.Beta.Users.Item.Outlook {
     /// <summary>Provides operations to manage the outlook property of the microsoft.graph.user entity.</summary>
     public class OutlookRequestBuilder {
         /// <summary>The masterCategories property</summary>

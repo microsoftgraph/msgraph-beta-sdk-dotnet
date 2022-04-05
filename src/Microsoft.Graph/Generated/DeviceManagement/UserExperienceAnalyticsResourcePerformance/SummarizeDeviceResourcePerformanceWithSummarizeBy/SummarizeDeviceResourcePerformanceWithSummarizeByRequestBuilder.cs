@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsResourcePerformance.SummarizeDeviceResourcePerformanceWithSummarizeBy {
+namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourcePerformance.SummarizeDeviceResourcePerformanceWithSummarizeBy {
     /// <summary>Provides operations to call the summarizeDeviceResourcePerformance method.</summary>
     public class SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder {
         /// <summary>Path parameters for the request</summary>

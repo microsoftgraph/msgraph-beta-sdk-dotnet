@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods.Item.Device.UsageRights.Count;
+using Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods.Item.Device.UsageRights.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Authentication.MicrosoftAuthenticatorMethods.Item.Device.UsageRights.Count;
-using MicrosoftGraphSdk.Me.Authentication.MicrosoftAuthenticatorMethods.Item.Device.UsageRights.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Authentication.MicrosoftAuthenticatorMethods.Item.Device.UsageRights {
+namespace Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods.Item.Device.UsageRights {
     /// <summary>Provides operations to manage the usageRights property of the microsoft.graph.device entity.</summary>
     public class UsageRightsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.Authentication.MicrosoftAuthenticatorMethods.Item
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.authentication.microsoftAuthenticatorMethods.item.device.usageRights.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.authentication.microsoftAuthenticatorMethods.item.device.usageRights.item collection</summary>
         public UsageRightItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("usageRight_id", position);

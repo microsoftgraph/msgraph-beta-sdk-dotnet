@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.CalendarView.Item.Decline {
+namespace Microsoft.Graph.Beta.Me.CalendarView.Item.Decline {
     /// <summary>Provides operations to call the decline method.</summary>
     public class DeclineRequestBuilder {
         /// <summary>Path parameters for the request</summary>

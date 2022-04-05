@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Identity.ConditionalAccess.Policies.Count;
+using Microsoft.Graph.Beta.Identity.ConditionalAccess.Policies.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Identity.ConditionalAccess.Policies.Count;
-using MicrosoftGraphSdk.Identity.ConditionalAccess.Policies.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Identity.ConditionalAccess.Policies {
+namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Policies {
     /// <summary>Provides operations to manage the policies property of the microsoft.graph.conditionalAccessRoot entity.</summary>
     public class PoliciesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Identity.ConditionalAccess.Policies {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.identity.conditionalAccess.policies.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.identity.conditionalAccess.policies.item collection</summary>
         public ConditionalAccessPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("conditionalAccessPolicy_id", position);

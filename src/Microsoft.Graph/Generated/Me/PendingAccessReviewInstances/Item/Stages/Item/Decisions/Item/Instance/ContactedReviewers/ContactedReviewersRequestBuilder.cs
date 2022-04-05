@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ContactedReviewers.Count;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ContactedReviewers.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ContactedReviewers.Count;
-using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ContactedReviewers.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ContactedReviewers {
+namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ContactedReviewers {
     /// <summary>Provides operations to manage the contactedReviewers property of the microsoft.graph.accessReviewInstance entity.</summary>
     public class ContactedReviewersRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Stages.Item.Dec
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.pendingAccessReviewInstances.item.stages.item.decisions.item.instance.contactedReviewers.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.pendingAccessReviewInstances.item.stages.item.decisions.item.instance.contactedReviewers.item collection</summary>
         public AccessReviewReviewerItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewReviewer_id", position);

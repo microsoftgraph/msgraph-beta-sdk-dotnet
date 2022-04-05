@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementActions.Item.Apply {
+namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActions.Item.Apply {
     /// <summary>Provides operations to call the apply method.</summary>
     public class ApplyRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Me.Drives.Item.Items.Item.ListItem.CreateLink {
+namespace Microsoft.Graph.Beta.Me.Drives.Item.Items.Item.ListItem.CreateLink {
     /// <summary>Provides operations to call the createLink method.</summary>
     public class CreateLinkRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

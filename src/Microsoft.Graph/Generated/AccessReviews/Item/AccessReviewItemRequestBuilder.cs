@@ -1,22 +1,22 @@
+using Microsoft.Graph.Beta.AccessReviews.Item.ApplyDecisions;
+using Microsoft.Graph.Beta.AccessReviews.Item.Decisions;
+using Microsoft.Graph.Beta.AccessReviews.Item.Instances;
+using Microsoft.Graph.Beta.AccessReviews.Item.MyDecisions;
+using Microsoft.Graph.Beta.AccessReviews.Item.ResetDecisions;
+using Microsoft.Graph.Beta.AccessReviews.Item.Reviewers;
+using Microsoft.Graph.Beta.AccessReviews.Item.SendReminder;
+using Microsoft.Graph.Beta.AccessReviews.Item.Stop;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.AccessReviews.Item.ApplyDecisions;
-using MicrosoftGraphSdk.AccessReviews.Item.Decisions;
-using MicrosoftGraphSdk.AccessReviews.Item.Instances;
-using MicrosoftGraphSdk.AccessReviews.Item.MyDecisions;
-using MicrosoftGraphSdk.AccessReviews.Item.ResetDecisions;
-using MicrosoftGraphSdk.AccessReviews.Item.Reviewers;
-using MicrosoftGraphSdk.AccessReviews.Item.SendReminder;
-using MicrosoftGraphSdk.AccessReviews.Item.Stop;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.AccessReviews.Item {
+namespace Microsoft.Graph.Beta.AccessReviews.Item {
     /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class AccessReviewItemRequestBuilder {
         /// <summary>The applyDecisions property</summary>

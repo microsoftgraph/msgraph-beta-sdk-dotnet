@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Functions.Count;
+using Microsoft.Graph.Beta.Functions.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Functions.Count;
-using MicrosoftGraphSdk.Functions.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Functions {
+namespace Microsoft.Graph.Beta.Functions {
     /// <summary>Provides operations to manage the collection of attributeMappingFunctionSchema entities.</summary>
     public class FunctionsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Functions {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.functions.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.functions.item collection</summary>
         public AttributeMappingFunctionSchemaItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("attributeMappingFunctionSchema_id", position);

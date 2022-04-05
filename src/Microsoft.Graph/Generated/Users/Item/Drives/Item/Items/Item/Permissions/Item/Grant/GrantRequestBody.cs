@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Users.Item.Drives.Item.Items.Item.Permissions.Item.Grant {
+namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.Items.Item.Permissions.Item.Grant {
     /// <summary>Provides operations to call the grant method.</summary>
     public class GrantRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

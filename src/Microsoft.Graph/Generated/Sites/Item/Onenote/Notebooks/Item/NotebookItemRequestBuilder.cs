@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item.CopyNotebook;
+using Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item.SectionGroups;
+using Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item.Sections;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Sites.Item.Onenote.Notebooks.Item.CopyNotebook;
-using MicrosoftGraphSdk.Sites.Item.Onenote.Notebooks.Item.SectionGroups;
-using MicrosoftGraphSdk.Sites.Item.Onenote.Notebooks.Item.Sections;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Sites.Item.Onenote.Notebooks.Item {
+namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item {
     /// <summary>Provides operations to manage the notebooks property of the microsoft.graph.onenote entity.</summary>
     public class NotebookItemRequestBuilder {
         /// <summary>The copyNotebook property</summary>

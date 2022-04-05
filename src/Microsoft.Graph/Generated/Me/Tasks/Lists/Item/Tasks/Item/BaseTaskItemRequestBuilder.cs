@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.Me.Tasks.Lists.Item.Tasks.Item.ChecklistItems;
+using Microsoft.Graph.Beta.Me.Tasks.Lists.Item.Tasks.Item.Extensions;
+using Microsoft.Graph.Beta.Me.Tasks.Lists.Item.Tasks.Item.LinkedResources;
+using Microsoft.Graph.Beta.Me.Tasks.Lists.Item.Tasks.Item.Move;
+using Microsoft.Graph.Beta.Me.Tasks.Lists.Item.Tasks.Item.ParentList;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Tasks.Lists.Item.Tasks.Item.ChecklistItems;
-using MicrosoftGraphSdk.Me.Tasks.Lists.Item.Tasks.Item.Extensions;
-using MicrosoftGraphSdk.Me.Tasks.Lists.Item.Tasks.Item.LinkedResources;
-using MicrosoftGraphSdk.Me.Tasks.Lists.Item.Tasks.Item.Move;
-using MicrosoftGraphSdk.Me.Tasks.Lists.Item.Tasks.Item.ParentList;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Tasks.Lists.Item.Tasks.Item {
+namespace Microsoft.Graph.Beta.Me.Tasks.Lists.Item.Tasks.Item {
     /// <summary>Provides operations to manage the tasks property of the microsoft.graph.baseTaskList entity.</summary>
     public class BaseTaskItemRequestBuilder {
         /// <summary>The checklistItems property</summary>

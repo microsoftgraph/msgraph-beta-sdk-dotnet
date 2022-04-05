@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetOffice365ActiveUserDetailWithDate {
+namespace Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserDetailWithDate {
     /// <summary>Provides operations to call the getOffice365ActiveUserDetail method.</summary>
     public class GetOffice365ActiveUserDetailWithDateRequestBuilder {
         /// <summary>Path parameters for the request</summary>

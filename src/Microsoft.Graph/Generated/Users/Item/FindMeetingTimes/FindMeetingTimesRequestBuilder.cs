@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.FindMeetingTimes {
+namespace Microsoft.Graph.Beta.Users.Item.FindMeetingTimes {
     /// <summary>Provides operations to call the findMeetingTimes method.</summary>
     public class FindMeetingTimesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

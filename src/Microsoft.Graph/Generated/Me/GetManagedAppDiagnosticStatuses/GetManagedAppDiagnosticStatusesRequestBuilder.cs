@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.GetManagedAppDiagnosticStatuses {
+namespace Microsoft.Graph.Beta.Me.GetManagedAppDiagnosticStatuses {
     /// <summary>Provides operations to call the getManagedAppDiagnosticStatuses method.</summary>
     public class GetManagedAppDiagnosticStatusesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

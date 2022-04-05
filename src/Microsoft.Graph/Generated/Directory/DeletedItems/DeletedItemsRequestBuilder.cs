@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Directory.DeletedItems.Count;
+using Microsoft.Graph.Beta.Directory.DeletedItems.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Directory.DeletedItems.Count;
-using MicrosoftGraphSdk.Directory.DeletedItems.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Directory.DeletedItems {
+namespace Microsoft.Graph.Beta.Directory.DeletedItems {
     /// <summary>Provides operations to manage the deletedItems property of the microsoft.graph.directory entity.</summary>
     public class DeletedItemsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Directory.DeletedItems {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.directory.deletedItems.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.directory.deletedItems.item collection</summary>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryObject_id", position);

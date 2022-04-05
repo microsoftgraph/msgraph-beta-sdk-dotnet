@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Financials.Companies.Item.PaymentMethods.Count;
+using Microsoft.Graph.Beta.Financials.Companies.Item.PaymentMethods.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Financials.Companies.Item.PaymentMethods.Count;
-using MicrosoftGraphSdk.Financials.Companies.Item.PaymentMethods.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Financials.Companies.Item.PaymentMethods {
+namespace Microsoft.Graph.Beta.Financials.Companies.Item.PaymentMethods {
     /// <summary>Provides operations to manage the paymentMethods property of the microsoft.graph.company entity.</summary>
     public class PaymentMethodsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.PaymentMethods {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.financials.companies.item.paymentMethods.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.financials.companies.item.paymentMethods.item collection</summary>
         public PaymentMethodItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("paymentMethod_id", position);
@@ -83,7 +83,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.PaymentMethods {
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.PaymentMethod body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
+        public RequestInformation CreatePostRequestInformation(Microsoft.Graph.Beta.Models.PaymentMethod body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -119,14 +119,14 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.PaymentMethods {
         /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.PaymentMethod> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.PaymentMethod body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.PaymentMethod> PostAsync(Microsoft.Graph.Beta.Models.PaymentMethod body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.PaymentMethod>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.PaymentMethod.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PaymentMethod>(requestInfo, Microsoft.Graph.Beta.Models.PaymentMethod.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Get paymentMethods from financials</summary>
         public class GetQueryParameters : QueryParametersBase {

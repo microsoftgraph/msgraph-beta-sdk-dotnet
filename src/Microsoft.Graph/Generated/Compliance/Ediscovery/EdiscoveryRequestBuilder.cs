@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases;
+using Microsoft.Graph.Beta.Models.Ediscovery;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery {
     /// <summary>Provides operations to manage the ediscovery property of the microsoft.graph.compliance entity.</summary>
     public class EdiscoveryRequestBuilder {
         /// <summary>The cases property</summary>

@@ -1,24 +1,24 @@
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Close;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Reopen;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Settings;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollections;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags;
+using Microsoft.Graph.Beta.Models.Ediscovery;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Close;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Custodians;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.LegalHolds;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Operations;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Reopen;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.ReviewSets;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Settings;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Tags;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item {
     /// <summary>Provides operations to manage the cases property of the microsoft.graph.ediscovery.ediscoveryroot entity.</summary>
     public class CaseItemRequestBuilder {
         /// <summary>The close property</summary>

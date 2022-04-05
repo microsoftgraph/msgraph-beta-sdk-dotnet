@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Communications.CallRecords.Item.Sessions.Count;
+using Microsoft.Graph.Beta.Communications.CallRecords.Item.Sessions.Item;
+using Microsoft.Graph.Beta.Models.CallRecords;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Communications.CallRecords.Item.Sessions.Count;
-using MicrosoftGraphSdk.Communications.CallRecords.Item.Sessions.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Communications.CallRecords.Item.Sessions {
+namespace Microsoft.Graph.Beta.Communications.CallRecords.Item.Sessions {
     /// <summary>Provides operations to manage the sessions property of the microsoft.graph.callRecords.callRecord entity.</summary>
     public class SessionsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Communications.CallRecords.Item.Sessions {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.communications.callRecords.item.sessions.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.communications.callRecords.item.sessions.item collection</summary>
         public SessionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("session_id", position);

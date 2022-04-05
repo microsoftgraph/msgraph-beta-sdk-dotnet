@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Count;
+using Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Delta;
+using Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.Calendar.CalendarView.Count;
-using MicrosoftGraphSdk.Users.Item.Calendar.CalendarView.Delta;
-using MicrosoftGraphSdk.Users.Item.Calendar.CalendarView.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Calendar.CalendarView {
+namespace Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView {
     /// <summary>Provides operations to manage the calendarView property of the microsoft.graph.calendar entity.</summary>
     public class CalendarViewRequestBuilder {
         /// <summary>The count property</summary>
@@ -24,7 +24,7 @@ namespace MicrosoftGraphSdk.Users.Item.Calendar.CalendarView {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.calendar.calendarView.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.calendar.calendarView.item collection</summary>
         public EventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("event_id", position);

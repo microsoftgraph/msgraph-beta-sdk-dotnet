@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item.Categories;
+using Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item.CompareWithTemplateId;
+using Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item.CreateInstance;
+using Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item.Settings;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.Item.Categories;
-using MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.Item.CompareWithTemplateId;
-using MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.Item.CreateInstance;
-using MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.Item.Settings;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item {
     /// <summary>Provides operations to manage the migratableTo property of the microsoft.graph.deviceManagementTemplate entity.</summary>
     public class DeviceManagementTemplateItemRequestBuilder {
         /// <summary>The categories property</summary>

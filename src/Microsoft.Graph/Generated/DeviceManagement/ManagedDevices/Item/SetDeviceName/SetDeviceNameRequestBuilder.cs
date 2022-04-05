@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.SetDeviceName {
+namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SetDeviceName {
     /// <summary>Provides operations to call the setDeviceName method.</summary>
     public class SetDeviceNameRequestBuilder {
         /// <summary>Path parameters for the request</summary>

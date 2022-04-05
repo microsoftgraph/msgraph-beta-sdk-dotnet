@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Organization.Item.ActivateService {
+namespace Microsoft.Graph.Beta.Organization.Item.ActivateService {
     /// <summary>Provides operations to call the activateService method.</summary>
     public class ActivateServiceRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

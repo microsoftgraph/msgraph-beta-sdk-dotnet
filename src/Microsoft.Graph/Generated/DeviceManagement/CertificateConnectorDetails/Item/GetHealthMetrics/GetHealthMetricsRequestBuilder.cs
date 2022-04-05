@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.CertificateConnectorDetails.Item.GetHealthMetrics {
+namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item.GetHealthMetrics {
     /// <summary>Provides operations to call the getHealthMetrics method.</summary>
     public class GetHealthMetricsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

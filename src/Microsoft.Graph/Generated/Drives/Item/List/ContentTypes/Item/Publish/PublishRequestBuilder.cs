@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Drives.Item.List.ContentTypes.Item.Publish {
+namespace Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item.Publish {
     /// <summary>Provides operations to call the publish method.</summary>
     public class PublishRequestBuilder {
         /// <summary>Path parameters for the request</summary>

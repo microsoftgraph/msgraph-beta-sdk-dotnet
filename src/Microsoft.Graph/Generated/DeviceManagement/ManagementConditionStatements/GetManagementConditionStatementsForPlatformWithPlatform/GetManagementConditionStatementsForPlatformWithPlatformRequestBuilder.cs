@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.ManagementConditionStatements.GetManagementConditionStatementsForPlatformWithPlatform {
+namespace Microsoft.Graph.Beta.DeviceManagement.ManagementConditionStatements.GetManagementConditionStatementsForPlatformWithPlatform {
     /// <summary>Provides operations to call the getManagementConditionStatementsForPlatform method.</summary>
     public class GetManagementConditionStatementsForPlatformWithPlatformRequestBuilder {
         /// <summary>Path parameters for the request</summary>

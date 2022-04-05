@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Events.Item.Decline {
+namespace Microsoft.Graph.Beta.Groups.Item.Events.Item.Decline {
     /// <summary>Provides operations to call the decline method.</summary>
     public class DeclineRequestBuilder {
         /// <summary>Path parameters for the request</summary>

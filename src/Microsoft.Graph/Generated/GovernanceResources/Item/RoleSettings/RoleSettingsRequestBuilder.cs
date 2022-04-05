@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.GovernanceResources.Item.RoleSettings.Count;
+using Microsoft.Graph.Beta.GovernanceResources.Item.RoleSettings.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.GovernanceResources.Item.RoleSettings.Count;
-using MicrosoftGraphSdk.GovernanceResources.Item.RoleSettings.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.GovernanceResources.Item.RoleSettings {
+namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleSettings {
     /// <summary>Provides operations to manage the roleSettings property of the microsoft.graph.governanceResource entity.</summary>
     public class RoleSettingsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.GovernanceResources.Item.RoleSettings {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.governanceResources.item.roleSettings.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.governanceResources.item.roleSettings.item collection</summary>
         public GovernanceRoleSettingItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("governanceRoleSetting_id", position);

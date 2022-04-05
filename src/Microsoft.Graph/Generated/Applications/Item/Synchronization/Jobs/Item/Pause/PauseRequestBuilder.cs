@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item.Pause {
+namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Pause {
     /// <summary>Provides operations to call the pause method.</summary>
     public class PauseRequestBuilder {
         /// <summary>Path parameters for the request</summary>

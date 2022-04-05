@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.AuditEvents.GetAuditActivityTypes {
+namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents.GetAuditActivityTypes {
     /// <summary>Provides operations to call the getAuditActivityTypes method.</summary>
     public class GetAuditActivityTypesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

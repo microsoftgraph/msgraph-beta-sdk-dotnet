@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.CalendarView.Delta {
+namespace Microsoft.Graph.Beta.Groups.Item.CalendarView.Delta {
     /// <summary>Provides operations to call the delta method.</summary>
     public class DeltaRequestBuilder {
         /// <summary>Path parameters for the request</summary>

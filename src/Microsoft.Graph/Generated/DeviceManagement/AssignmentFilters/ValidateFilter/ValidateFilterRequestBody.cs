@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.ValidateFilter {
+namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.ValidateFilter {
     /// <summary>Provides operations to call the validateFilter method.</summary>
     public class ValidateFilterRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The deviceAndAppManagementAssignmentFilter property</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceAndAppManagementAssignmentFilter DeviceAndAppManagementAssignmentFilter { get; set; }
+        public Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter DeviceAndAppManagementAssignmentFilter { get; set; }
         /// <summary>
         /// Instantiates a new validateFilterRequestBody and sets the default values.
         /// </summary>
@@ -30,7 +30,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.ValidateFilter {
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"deviceAndAppManagementAssignmentFilter", (o,n) => { (o as ValidateFilterRequestBody).DeviceAndAppManagementAssignmentFilter = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceAndAppManagementAssignmentFilter>(MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceAndAppManagementAssignmentFilter.CreateFromDiscriminatorValue); } },
+                {"deviceAndAppManagementAssignmentFilter", (o,n) => { (o as ValidateFilterRequestBody).DeviceAndAppManagementAssignmentFilter = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter>(Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -39,7 +39,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.ValidateFilter {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceAndAppManagementAssignmentFilter>("deviceAndAppManagementAssignmentFilter", DeviceAndAppManagementAssignmentFilter);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter>("deviceAndAppManagementAssignmentFilter", DeviceAndAppManagementAssignmentFilter);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

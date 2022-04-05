@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.Item.Terms.Item.Children.Count;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.Item.Terms.Item.Children.Item;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models.TermStore;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Groups.Item.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.Item.Terms.Item.Children.Count;
-using MicrosoftGraphSdk.Groups.Item.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.Item.Terms.Item.Children.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.Item.Terms.Item.Children {
+namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.Item.Terms.Item.Children {
     /// <summary>Provides operations to manage the children property of the microsoft.graph.termStore.term entity.</summary>
     public class ChildrenRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,11 +23,11 @@ namespace MicrosoftGraphSdk.Groups.Item.Sites.Item.TermStore.Sets.Item.ParentGro
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.sites.item.termStore.sets.item.parentGroup.sets.item.terms.item.children.item collection</summary>
-        public MicrosoftGraphSdk.Groups.Item.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.Item.Terms.Item.Children.Item.TermItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.groups.item.sites.item.termStore.sets.item.parentGroup.sets.item.terms.item.children.item collection</summary>
+        public Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.Item.Terms.Item.Children.Item.TermItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("term_id1", position);
-            return new MicrosoftGraphSdk.Groups.Item.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.Item.Terms.Item.Children.Item.TermItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.Item.Terms.Item.Children.Item.TermItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ChildrenRequestBuilder and sets the default values.

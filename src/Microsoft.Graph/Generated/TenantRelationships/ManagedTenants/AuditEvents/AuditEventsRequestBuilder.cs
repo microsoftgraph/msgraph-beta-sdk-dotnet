@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models.ManagedTenants;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AuditEvents.Count;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AuditEvents.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.AuditEvents.Count;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.AuditEvents.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.AuditEvents {
+namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AuditEvents {
     /// <summary>Provides operations to manage the auditEvents property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
     public class AuditEventsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.AuditEvents {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.tenantRelationships.managedTenants.auditEvents.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.tenantRelationships.managedTenants.auditEvents.item collection</summary>
         public AuditEventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("auditEvent_id", position);

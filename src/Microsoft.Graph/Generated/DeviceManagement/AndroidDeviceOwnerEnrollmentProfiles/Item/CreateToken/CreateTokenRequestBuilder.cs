@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.AndroidDeviceOwnerEnrollmentProfiles.Item.CreateToken {
+namespace Microsoft.Graph.Beta.DeviceManagement.AndroidDeviceOwnerEnrollmentProfiles.Item.CreateToken {
     /// <summary>Provides operations to call the createToken method.</summary>
     public class CreateTokenRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Team.PrimaryChannel.RemoveEmail {
+namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.RemoveEmail {
     /// <summary>Provides operations to call the removeEmail method.</summary>
     public class RemoveEmailRequestBuilder {
         /// <summary>Path parameters for the request</summary>

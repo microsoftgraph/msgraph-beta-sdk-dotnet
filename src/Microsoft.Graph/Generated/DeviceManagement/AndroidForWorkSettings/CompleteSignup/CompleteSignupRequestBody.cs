@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceManagement.AndroidForWorkSettings.CompleteSignup {
+namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings.CompleteSignup {
     /// <summary>Provides operations to call the completeSignup method.</summary>
     public class CompleteSignupRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

@@ -1,22 +1,22 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Copy;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.MessageRules;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Move;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.MultiValueExtendedProperties;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.SingleValueExtendedProperties;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.UserConfigurations;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.Copy;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.MessageRules;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.Messages;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.Move;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.MultiValueExtendedProperties;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.SingleValueExtendedProperties;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.UserConfigurations;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.MailFolders.Item {
+namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item {
     /// <summary>Provides operations to manage the mailFolders property of the microsoft.graph.user entity.</summary>
     public class MailFolderItemRequestBuilder {
         /// <summary>The childFolders property</summary>

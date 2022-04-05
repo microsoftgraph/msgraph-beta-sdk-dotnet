@@ -1,20 +1,20 @@
+using Microsoft.Graph.Beta.Education.Me.Assignments.Item.Categories;
+using Microsoft.Graph.Beta.Education.Me.Assignments.Item.Publish;
+using Microsoft.Graph.Beta.Education.Me.Assignments.Item.Resources;
+using Microsoft.Graph.Beta.Education.Me.Assignments.Item.Rubric;
+using Microsoft.Graph.Beta.Education.Me.Assignments.Item.SetUpResourcesFolder;
+using Microsoft.Graph.Beta.Education.Me.Assignments.Item.Submissions;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Education.Me.Assignments.Item.Categories;
-using MicrosoftGraphSdk.Education.Me.Assignments.Item.Publish;
-using MicrosoftGraphSdk.Education.Me.Assignments.Item.Resources;
-using MicrosoftGraphSdk.Education.Me.Assignments.Item.Rubric;
-using MicrosoftGraphSdk.Education.Me.Assignments.Item.SetUpResourcesFolder;
-using MicrosoftGraphSdk.Education.Me.Assignments.Item.Submissions;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Education.Me.Assignments.Item {
+namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item {
     /// <summary>Provides operations to manage the assignments property of the microsoft.graph.educationUser entity.</summary>
     public class EducationAssignmentItemRequestBuilder {
         /// <summary>The categories property</summary>

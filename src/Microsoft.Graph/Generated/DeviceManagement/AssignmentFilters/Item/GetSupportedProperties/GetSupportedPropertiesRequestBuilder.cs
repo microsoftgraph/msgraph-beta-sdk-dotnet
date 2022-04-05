@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties {
+namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties {
     /// <summary>Provides operations to call the getSupportedProperties method.</summary>
     public class GetSupportedPropertiesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.AttendanceReports.Count;
+using Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.AttendanceReports.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Communications.OnlineMeetings.Item.AttendanceReports.Count;
-using MicrosoftGraphSdk.Communications.OnlineMeetings.Item.AttendanceReports.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Communications.OnlineMeetings.Item.AttendanceReports {
+namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.AttendanceReports {
     /// <summary>Provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeeting entity.</summary>
     public class AttendanceReportsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Communications.OnlineMeetings.Item.AttendanceReports
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.communications.onlineMeetings.item.attendanceReports.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.communications.onlineMeetings.item.attendanceReports.item collection</summary>
         public MeetingAttendanceReportItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("meetingAttendanceReport_id", position);
@@ -83,7 +83,7 @@ namespace MicrosoftGraphSdk.Communications.OnlineMeetings.Item.AttendanceReports
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.MeetingAttendanceReport body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
+        public RequestInformation CreatePostRequestInformation(Microsoft.Graph.Beta.Models.MeetingAttendanceReport body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -119,14 +119,14 @@ namespace MicrosoftGraphSdk.Communications.OnlineMeetings.Item.AttendanceReports
         /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.MeetingAttendanceReport> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.MeetingAttendanceReport body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.MeetingAttendanceReport> PostAsync(Microsoft.Graph.Beta.Models.MeetingAttendanceReport body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.MeetingAttendanceReport>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.MeetingAttendanceReport.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.MeetingAttendanceReport>(requestInfo, Microsoft.Graph.Beta.Models.MeetingAttendanceReport.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The attendance reports of an online meeting. Read-only.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.ActivateDeviceEsim {
+namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ActivateDeviceEsim {
     /// <summary>Provides operations to call the activateDeviceEsim method.</summary>
     public class ActivateDeviceEsimRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

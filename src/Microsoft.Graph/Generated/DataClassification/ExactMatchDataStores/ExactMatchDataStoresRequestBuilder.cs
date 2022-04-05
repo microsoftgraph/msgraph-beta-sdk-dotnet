@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Count;
+using Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DataClassification.ExactMatchDataStores.Count;
-using MicrosoftGraphSdk.DataClassification.ExactMatchDataStores.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DataClassification.ExactMatchDataStores {
+namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores {
     /// <summary>Provides operations to manage the exactMatchDataStores property of the microsoft.graph.dataClassificationService entity.</summary>
     public class ExactMatchDataStoresRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DataClassification.ExactMatchDataStores {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.dataClassification.exactMatchDataStores.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.dataClassification.exactMatchDataStores.item collection</summary>
         public ExactMatchDataStoreItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("exactMatchDataStore_id", position);

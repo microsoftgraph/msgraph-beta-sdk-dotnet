@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.JoinedTeams.Count;
+using Microsoft.Graph.Beta.Me.JoinedTeams.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.JoinedTeams.Count;
-using MicrosoftGraphSdk.Me.JoinedTeams.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.JoinedTeams {
+namespace Microsoft.Graph.Beta.Me.JoinedTeams {
     /// <summary>Provides operations to manage the joinedTeams property of the microsoft.graph.user entity.</summary>
     public class JoinedTeamsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.JoinedTeams {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.joinedTeams.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.joinedTeams.item collection</summary>
         public TeamItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("team_id", position);

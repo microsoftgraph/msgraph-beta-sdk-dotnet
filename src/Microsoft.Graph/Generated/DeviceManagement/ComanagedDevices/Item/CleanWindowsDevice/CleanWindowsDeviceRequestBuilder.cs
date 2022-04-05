@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.CleanWindowsDevice {
+namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.CleanWindowsDevice {
     /// <summary>Provides operations to call the cleanWindowsDevice method.</summary>
     public class CleanWindowsDeviceRequestBuilder {
         /// <summary>Path parameters for the request</summary>

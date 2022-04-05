@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Teams.Item.Unarchive {
+namespace Microsoft.Graph.Beta.Teams.Item.Unarchive {
     /// <summary>Provides operations to call the unarchive method.</summary>
     public class UnarchiveRequestBuilder {
         /// <summary>Path parameters for the request</summary>

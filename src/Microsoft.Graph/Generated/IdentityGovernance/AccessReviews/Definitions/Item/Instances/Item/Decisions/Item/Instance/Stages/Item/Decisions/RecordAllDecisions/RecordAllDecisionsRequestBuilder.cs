@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.Stages.Item.Decisions.RecordAllDecisions {
+namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.Stages.Item.Decisions.RecordAllDecisions {
     /// <summary>Provides operations to call the recordAllDecisions method.</summary>
     public class RecordAllDecisionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

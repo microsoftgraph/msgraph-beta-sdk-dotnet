@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.TrustFramework.Policies.Count;
+using Microsoft.Graph.Beta.TrustFramework.Policies.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.TrustFramework.Policies.Count;
-using MicrosoftGraphSdk.TrustFramework.Policies.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TrustFramework.Policies {
+namespace Microsoft.Graph.Beta.TrustFramework.Policies {
     /// <summary>Provides operations to manage the policies property of the microsoft.graph.trustFramework entity.</summary>
     public class PoliciesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.TrustFramework.Policies {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.trustFramework.policies.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.trustFramework.policies.item collection</summary>
         public TrustFrameworkPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("trustFrameworkPolicy_id", position);

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.SendMail {
+namespace Microsoft.Graph.Beta.Users.Item.SendMail {
     /// <summary>Provides operations to call the sendMail method.</summary>
     public class SendMailRequestBuilder {
         /// <summary>Path parameters for the request</summary>

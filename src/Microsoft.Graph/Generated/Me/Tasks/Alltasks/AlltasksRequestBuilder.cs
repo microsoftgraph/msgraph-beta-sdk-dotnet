@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Me.Tasks.Alltasks.Count;
+using Microsoft.Graph.Beta.Me.Tasks.Alltasks.Delta;
+using Microsoft.Graph.Beta.Me.Tasks.Alltasks.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Tasks.Alltasks.Count;
-using MicrosoftGraphSdk.Me.Tasks.Alltasks.Delta;
-using MicrosoftGraphSdk.Me.Tasks.Alltasks.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Tasks.Alltasks {
+namespace Microsoft.Graph.Beta.Me.Tasks.Alltasks {
     /// <summary>Provides operations to manage the alltasks property of the microsoft.graph.tasks entity.</summary>
     public class AlltasksRequestBuilder {
         /// <summary>The count property</summary>
@@ -24,7 +24,7 @@ namespace MicrosoftGraphSdk.Me.Tasks.Alltasks {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.tasks.alltasks.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.tasks.alltasks.item collection</summary>
         public BaseTaskItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("baseTask_id", position);

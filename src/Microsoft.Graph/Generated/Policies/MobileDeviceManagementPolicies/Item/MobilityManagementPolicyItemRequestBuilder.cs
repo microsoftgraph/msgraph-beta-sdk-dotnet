@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item.IncludedGroups;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Policies.MobileDeviceManagementPolicies.Item.IncludedGroups;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Policies.MobileDeviceManagementPolicies.Item {
+namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item {
     /// <summary>Provides operations to manage the mobileDeviceManagementPolicies property of the microsoft.graph.policyRoot entity.</summary>
     public class MobilityManagementPolicyItemRequestBuilder {
         /// <summary>The includedGroups property</summary>

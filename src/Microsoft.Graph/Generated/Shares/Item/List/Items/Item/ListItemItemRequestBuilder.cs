@@ -1,21 +1,21 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Shares.Item.List.Items.Item.Activities;
+using Microsoft.Graph.Beta.Shares.Item.List.Items.Item.Analytics;
+using Microsoft.Graph.Beta.Shares.Item.List.Items.Item.CreateLink;
+using Microsoft.Graph.Beta.Shares.Item.List.Items.Item.DriveItem;
+using Microsoft.Graph.Beta.Shares.Item.List.Items.Item.Fields;
+using Microsoft.Graph.Beta.Shares.Item.List.Items.Item.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval;
+using Microsoft.Graph.Beta.Shares.Item.List.Items.Item.Versions;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Shares.Item.List.Items.Item.Activities;
-using MicrosoftGraphSdk.Shares.Item.List.Items.Item.Analytics;
-using MicrosoftGraphSdk.Shares.Item.List.Items.Item.CreateLink;
-using MicrosoftGraphSdk.Shares.Item.List.Items.Item.DriveItem;
-using MicrosoftGraphSdk.Shares.Item.List.Items.Item.Fields;
-using MicrosoftGraphSdk.Shares.Item.List.Items.Item.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval;
-using MicrosoftGraphSdk.Shares.Item.List.Items.Item.Versions;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Shares.Item.List.Items.Item {
+namespace Microsoft.Graph.Beta.Shares.Item.List.Items.Item {
     /// <summary>Provides operations to manage the items property of the microsoft.graph.list entity.</summary>
     public class ListItemItemRequestBuilder {
         /// <summary>The activities property</summary>
@@ -117,7 +117,7 @@ namespace MicrosoftGraphSdk.Shares.Item.List.Items.Item {
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreatePatchRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.ListItem body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
+        public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.ListItem body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -164,13 +164,13 @@ namespace MicrosoftGraphSdk.Shares.Item.List.Items.Item {
         /// <param name="queryParameters">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ListItem> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.ListItem> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(queryParameters, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ListItem>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ListItem.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ListItem>(requestInfo, Microsoft.Graph.Beta.Models.ListItem.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property items in shares
@@ -180,7 +180,7 @@ namespace MicrosoftGraphSdk.Shares.Item.List.Items.Item {
         /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.ListItem body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(Microsoft.Graph.Beta.Models.ListItem body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

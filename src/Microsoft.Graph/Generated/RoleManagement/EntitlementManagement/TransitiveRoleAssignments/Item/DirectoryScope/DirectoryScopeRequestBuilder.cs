@@ -1,14 +1,14 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement.TransitiveRoleAssignments.Item.DirectoryScope {
+namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.TransitiveRoleAssignments.Item.DirectoryScope {
     /// <summary>Provides operations to manage the directoryScope property of the microsoft.graph.unifiedRoleAssignment entity.</summary>
     public class DirectoryScopeRequestBuilder {
         /// <summary>Path parameters for the request</summary>

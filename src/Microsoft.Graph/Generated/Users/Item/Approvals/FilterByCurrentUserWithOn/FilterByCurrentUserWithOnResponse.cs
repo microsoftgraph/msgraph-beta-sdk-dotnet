@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Users.Item.Approvals.FilterByCurrentUserWithOn {
+namespace Microsoft.Graph.Beta.Users.Item.Approvals.FilterByCurrentUserWithOn {
     /// <summary>Provides operations to call the filterByCurrentUser method.</summary>
     public class FilterByCurrentUserWithOnResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The value property</summary>
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Approval> Value { get; set; }
+        public List<Microsoft.Graph.Beta.Models.Approval> Value { get; set; }
         /// <summary>
         /// Instantiates a new filterByCurrentUserWithOnResponse and sets the default values.
         /// </summary>
@@ -30,7 +30,7 @@ namespace MicrosoftGraphSdk.Users.Item.Approvals.FilterByCurrentUserWithOn {
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"value", (o,n) => { (o as FilterByCurrentUserWithOnResponse).Value = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Approval>(MicrosoftGraphSdk.Models.Microsoft.Graph.Approval.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", (o,n) => { (o as FilterByCurrentUserWithOnResponse).Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Approval>(Microsoft.Graph.Beta.Models.Approval.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>
@@ -39,7 +39,7 @@ namespace MicrosoftGraphSdk.Users.Item.Approvals.FilterByCurrentUserWithOn {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Approval>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Approval>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

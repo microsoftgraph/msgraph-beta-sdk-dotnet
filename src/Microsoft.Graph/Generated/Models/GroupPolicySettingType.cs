@@ -1,0 +1,33 @@
+namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    public enum GroupPolicySettingType {
+        Unknown,
+        Policy,
+        Account,
+        SecurityOptions,
+        UserRightsAssignment,
+        AuditSetting,
+        WindowsFirewallSettings,
+        AppLockerRuleCollection,
+        DataSourcesSettings,
+        DevicesSettings,
+        DriveMapSettings,
+        EnvironmentVariables,
+        FilesSettings,
+        FolderOptions,
+        Folders,
+        IniFiles,
+        InternetOptions,
+        LocalUsersAndGroups,
+        NetworkOptions,
+        NetworkShares,
+        NtServices,
+        PowerOptions,
+        Printers,
+        RegionalOptionsSettings,
+        RegistrySettings,
+        ScheduledTasks,
+        ShortcutSettings,
+        StartMenuSettings,
+    }
+}

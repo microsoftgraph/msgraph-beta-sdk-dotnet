@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResources.Item.AgentGroups.Item.Agents.Item.AgentGroups.Count;
+using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResources.Item.AgentGroups.Item.Agents.Item.AgentGroups.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.PublishedResources.Item.AgentGroups.Item.Agents.Item.AgentGroups.Count;
-using MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.PublishedResources.Item.AgentGroups.Item.Agents.Item.AgentGroups.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.PublishedResources.Item.AgentGroups.Item.Agents.Item.AgentGroups {
+namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResources.Item.AgentGroups.Item.Agents.Item.AgentGroups {
     /// <summary>Provides operations to manage the agentGroups property of the microsoft.graph.onPremisesAgent entity.</summary>
     public class AgentGroupsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,11 +23,11 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.PublishedResources
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.onPremisesPublishingProfiles.item.publishedResources.item.agentGroups.item.agents.item.agentGroups.item collection</summary>
-        public MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.PublishedResources.Item.AgentGroups.Item.Agents.Item.AgentGroups.Item.OnPremisesAgentGroupItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.onPremisesPublishingProfiles.item.publishedResources.item.agentGroups.item.agents.item.agentGroups.item collection</summary>
+        public Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResources.Item.AgentGroups.Item.Agents.Item.AgentGroups.Item.OnPremisesAgentGroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("onPremisesAgentGroup_id1", position);
-            return new MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.PublishedResources.Item.AgentGroups.Item.Agents.Item.AgentGroups.Item.OnPremisesAgentGroupItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResources.Item.AgentGroups.Item.Agents.Item.AgentGroups.Item.OnPremisesAgentGroupItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AgentGroupsRequestBuilder and sets the default values.

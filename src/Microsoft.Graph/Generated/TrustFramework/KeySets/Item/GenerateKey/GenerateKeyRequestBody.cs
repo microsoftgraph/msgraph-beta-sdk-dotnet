@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.TrustFramework.KeySets.Item.GenerateKey {
+namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GenerateKey {
     /// <summary>Provides operations to call the generateKey method.</summary>
     public class GenerateKeyRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

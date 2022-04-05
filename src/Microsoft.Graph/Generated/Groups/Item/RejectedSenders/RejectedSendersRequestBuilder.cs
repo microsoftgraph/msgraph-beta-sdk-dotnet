@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Groups.Item.RejectedSenders.Count;
+using Microsoft.Graph.Beta.Groups.Item.RejectedSenders.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Groups.Item.RejectedSenders.Count;
-using MicrosoftGraphSdk.Groups.Item.RejectedSenders.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.RejectedSenders {
+namespace Microsoft.Graph.Beta.Groups.Item.RejectedSenders {
     /// <summary>Provides operations to manage the rejectedSenders property of the microsoft.graph.group entity.</summary>
     public class RejectedSendersRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Groups.Item.RejectedSenders {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.rejectedSenders.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.groups.item.rejectedSenders.item collection</summary>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryObject_id", position);

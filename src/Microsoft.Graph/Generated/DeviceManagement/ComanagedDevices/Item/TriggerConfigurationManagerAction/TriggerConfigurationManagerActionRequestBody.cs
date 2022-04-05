@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.TriggerConfigurationManagerAction {
+namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.TriggerConfigurationManagerAction {
     /// <summary>Provides operations to call the triggerConfigurationManagerAction method.</summary>
     public class TriggerConfigurationManagerActionRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Parameter for action triggerConfigurationManagerAction</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.ConfigurationManagerAction ConfigurationManagerAction { get; set; }
+        public Microsoft.Graph.Beta.Models.ConfigurationManagerAction ConfigurationManagerAction { get; set; }
         /// <summary>
         /// Instantiates a new triggerConfigurationManagerActionRequestBody and sets the default values.
         /// </summary>
@@ -30,7 +30,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.TriggerConfig
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"configurationManagerAction", (o,n) => { (o as TriggerConfigurationManagerActionRequestBody).ConfigurationManagerAction = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ConfigurationManagerAction>(MicrosoftGraphSdk.Models.Microsoft.Graph.ConfigurationManagerAction.CreateFromDiscriminatorValue); } },
+                {"configurationManagerAction", (o,n) => { (o as TriggerConfigurationManagerActionRequestBody).ConfigurationManagerAction = n.GetObjectValue<Microsoft.Graph.Beta.Models.ConfigurationManagerAction>(Microsoft.Graph.Beta.Models.ConfigurationManagerAction.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -39,7 +39,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.TriggerConfig
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ConfigurationManagerAction>("configurationManagerAction", ConfigurationManagerAction);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ConfigurationManagerAction>("configurationManagerAction", ConfigurationManagerAction);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

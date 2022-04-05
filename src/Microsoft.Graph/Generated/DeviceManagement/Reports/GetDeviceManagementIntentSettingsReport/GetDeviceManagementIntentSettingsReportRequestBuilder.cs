@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetDeviceManagementIntentSettingsReport {
+namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceManagementIntentSettingsReport {
     /// <summary>Provides operations to call the getDeviceManagementIntentSettingsReport method.</summary>
     public class GetDeviceManagementIntentSettingsReportRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.BookingBusinesses.Item.CalendarView.Count;
+using Microsoft.Graph.Beta.BookingBusinesses.Item.CalendarView.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.BookingBusinesses.Item.CalendarView.Count;
-using MicrosoftGraphSdk.BookingBusinesses.Item.CalendarView.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.BookingBusinesses.Item.CalendarView {
+namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CalendarView {
     /// <summary>Provides operations to manage the calendarView property of the microsoft.graph.bookingBusiness entity.</summary>
     public class CalendarViewRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.BookingBusinesses.Item.CalendarView {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.bookingBusinesses.item.calendarView.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.bookingBusinesses.item.calendarView.item collection</summary>
         public BookingAppointmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("bookingAppointment_id", position);

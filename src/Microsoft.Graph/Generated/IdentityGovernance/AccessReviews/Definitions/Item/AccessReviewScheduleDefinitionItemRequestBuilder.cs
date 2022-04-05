@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item.Instances;
+using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item.Stop;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Definitions.Item.Instances;
-using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Definitions.Item.Stop;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Definitions.Item {
+namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item {
     /// <summary>Provides operations to manage the definitions property of the microsoft.graph.accessReviewSet entity.</summary>
     public class AccessReviewScheduleDefinitionItemRequestBuilder {
         /// <summary>The instances property</summary>

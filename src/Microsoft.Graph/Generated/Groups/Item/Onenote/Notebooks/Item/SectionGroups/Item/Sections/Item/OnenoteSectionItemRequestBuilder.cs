@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.Groups.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.CopyToNotebook;
+using Microsoft.Graph.Beta.Groups.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.CopyToSectionGroup;
+using Microsoft.Graph.Beta.Groups.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.Pages;
+using Microsoft.Graph.Beta.Groups.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.ParentNotebook;
+using Microsoft.Graph.Beta.Groups.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.ParentSectionGroup;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Groups.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.CopyToNotebook;
-using MicrosoftGraphSdk.Groups.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.CopyToSectionGroup;
-using MicrosoftGraphSdk.Groups.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.Pages;
-using MicrosoftGraphSdk.Groups.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.ParentNotebook;
-using MicrosoftGraphSdk.Groups.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.ParentSectionGroup;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item {
+namespace Microsoft.Graph.Beta.Groups.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item {
     /// <summary>Provides operations to manage the sections property of the microsoft.graph.sectionGroup entity.</summary>
     public class OnenoteSectionItemRequestBuilder {
         /// <summary>The copyToNotebook property</summary>

@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models.WindowsUpdates;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.UnenrollAssetsById {
+namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.UnenrollAssetsById {
     /// <summary>Provides operations to call the unenrollAssetsById method.</summary>
     public class UnenrollAssetsByIdRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -14,7 +14,7 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Excl
         /// <summary>The memberEntityType property</summary>
         public string MemberEntityType { get; set; }
         /// <summary>The updateCategory property</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates.UpdateCategory? UpdateCategory { get; set; }
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateCategory? UpdateCategory { get; set; }
         /// <summary>
         /// Instantiates a new unenrollAssetsByIdRequestBody and sets the default values.
         /// </summary>

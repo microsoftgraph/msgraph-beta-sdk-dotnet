@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Groups.Item.Drives.Item.Root.Permissions.Item.Grant {
+namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.Permissions.Item.Grant {
     /// <summary>Provides operations to call the grant method.</summary>
     public class GrantResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The value property</summary>
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Permission> Value { get; set; }
+        public List<Microsoft.Graph.Beta.Models.Permission> Value { get; set; }
         /// <summary>
         /// Instantiates a new grantResponse and sets the default values.
         /// </summary>
@@ -30,7 +30,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Drives.Item.Root.Permissions.Item.Grant 
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"value", (o,n) => { (o as GrantResponse).Value = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Permission>(MicrosoftGraphSdk.Models.Microsoft.Graph.Permission.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", (o,n) => { (o as GrantResponse).Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Permission>(Microsoft.Graph.Beta.Models.Permission.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>
@@ -39,7 +39,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Drives.Item.Root.Permissions.Item.Grant 
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Permission>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Permission>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

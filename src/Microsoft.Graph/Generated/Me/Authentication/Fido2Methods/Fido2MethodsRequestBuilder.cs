@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.Authentication.Fido2Methods.Count;
+using Microsoft.Graph.Beta.Me.Authentication.Fido2Methods.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Authentication.Fido2Methods.Count;
-using MicrosoftGraphSdk.Me.Authentication.Fido2Methods.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Authentication.Fido2Methods {
+namespace Microsoft.Graph.Beta.Me.Authentication.Fido2Methods {
     /// <summary>Provides operations to manage the fido2Methods property of the microsoft.graph.authentication entity.</summary>
     public class Fido2MethodsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.Authentication.Fido2Methods {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.authentication.fido2Methods.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.authentication.fido2Methods.item collection</summary>
         public Fido2AuthenticationMethodItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("fido2AuthenticationMethod_id", position);

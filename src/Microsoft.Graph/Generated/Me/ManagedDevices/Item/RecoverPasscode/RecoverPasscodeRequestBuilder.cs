@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.RecoverPasscode {
+namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.RecoverPasscode {
     /// <summary>Provides operations to call the recoverPasscode method.</summary>
     public class RecoverPasscodeRequestBuilder {
         /// <summary>Path parameters for the request</summary>

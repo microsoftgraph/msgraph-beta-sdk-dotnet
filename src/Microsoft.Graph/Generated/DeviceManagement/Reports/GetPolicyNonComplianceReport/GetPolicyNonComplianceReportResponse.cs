@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetPolicyNonComplianceReport {
+namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetPolicyNonComplianceReport {
     /// <summary>Provides operations to call the getPolicyNonComplianceReport method.</summary>
     public class GetPolicyNonComplianceReportResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

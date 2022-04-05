@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.RemoveLanguageFiles {
+namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.RemoveLanguageFiles {
     /// <summary>Provides operations to call the removeLanguageFiles method.</summary>
     public class RemoveLanguageFilesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

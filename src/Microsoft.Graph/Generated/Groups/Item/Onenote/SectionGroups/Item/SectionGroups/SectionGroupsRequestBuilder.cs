@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Groups.Item.Onenote.SectionGroups.Item.SectionGroups.Count;
+using Microsoft.Graph.Beta.Groups.Item.Onenote.SectionGroups.Item.SectionGroups.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Groups.Item.Onenote.SectionGroups.Item.SectionGroups.Count;
-using MicrosoftGraphSdk.Groups.Item.Onenote.SectionGroups.Item.SectionGroups.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Onenote.SectionGroups.Item.SectionGroups {
+namespace Microsoft.Graph.Beta.Groups.Item.Onenote.SectionGroups.Item.SectionGroups {
     /// <summary>Provides operations to manage the sectionGroups property of the microsoft.graph.sectionGroup entity.</summary>
     public class SectionGroupsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,11 +23,11 @@ namespace MicrosoftGraphSdk.Groups.Item.Onenote.SectionGroups.Item.SectionGroups
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.onenote.sectionGroups.item.sectionGroups.item collection</summary>
-        public MicrosoftGraphSdk.Groups.Item.Onenote.SectionGroups.Item.SectionGroups.Item.SectionGroupItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.groups.item.onenote.sectionGroups.item.sectionGroups.item collection</summary>
+        public Microsoft.Graph.Beta.Groups.Item.Onenote.SectionGroups.Item.SectionGroups.Item.SectionGroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("sectionGroup_id1", position);
-            return new MicrosoftGraphSdk.Groups.Item.Onenote.SectionGroups.Item.SectionGroups.Item.SectionGroupItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new Microsoft.Graph.Beta.Groups.Item.Onenote.SectionGroups.Item.SectionGroups.Item.SectionGroupItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SectionGroupsRequestBuilder and sets the default values.

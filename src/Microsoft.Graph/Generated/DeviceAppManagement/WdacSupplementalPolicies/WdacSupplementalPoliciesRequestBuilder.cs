@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.Count;
+using Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Count;
-using MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies {
     /// <summary>Provides operations to manage the wdacSupplementalPolicies property of the microsoft.graph.deviceAppManagement entity.</summary>
     public class WdacSupplementalPoliciesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.wdacSupplementalPolicies.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceAppManagement.wdacSupplementalPolicies.item collection</summary>
         public WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsDefenderApplicationControlSupplementalPolicy_id", position);

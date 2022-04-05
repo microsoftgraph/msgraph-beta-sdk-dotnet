@@ -1,14 +1,14 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.RoleManagement.Directory.RoleAssignmentScheduleInstances.Item.ActivatedUsing {
+namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleAssignmentScheduleInstances.Item.ActivatedUsing {
     /// <summary>Provides operations to manage the activatedUsing property of the microsoft.graph.unifiedRoleAssignmentScheduleInstance entity.</summary>
     public class ActivatedUsingRequestBuilder {
         /// <summary>Path parameters for the request</summary>

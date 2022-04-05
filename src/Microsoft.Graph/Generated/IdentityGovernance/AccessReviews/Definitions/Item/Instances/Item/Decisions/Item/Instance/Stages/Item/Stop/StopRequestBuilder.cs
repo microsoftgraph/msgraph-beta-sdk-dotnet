@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.Stages.Item.Stop {
+namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.Stages.Item.Stop {
     /// <summary>Provides operations to call the stop method.</summary>
     public class StopRequestBuilder {
         /// <summary>Path parameters for the request</summary>

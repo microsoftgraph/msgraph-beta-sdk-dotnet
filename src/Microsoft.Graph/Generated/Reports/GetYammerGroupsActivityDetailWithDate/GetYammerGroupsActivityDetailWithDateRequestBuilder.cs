@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetYammerGroupsActivityDetailWithDate {
+namespace Microsoft.Graph.Beta.Reports.GetYammerGroupsActivityDetailWithDate {
     /// <summary>Provides operations to call the getYammerGroupsActivityDetail method.</summary>
     public class GetYammerGroupsActivityDetailWithDateRequestBuilder {
         /// <summary>Path parameters for the request</summary>

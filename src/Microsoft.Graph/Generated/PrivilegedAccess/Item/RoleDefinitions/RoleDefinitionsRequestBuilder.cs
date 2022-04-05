@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleDefinitions.Count;
+using Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleDefinitions.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.PrivilegedAccess.Item.RoleDefinitions.Count;
-using MicrosoftGraphSdk.PrivilegedAccess.Item.RoleDefinitions.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.PrivilegedAccess.Item.RoleDefinitions {
+namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleDefinitions {
     /// <summary>Provides operations to manage the roleDefinitions property of the microsoft.graph.privilegedAccess entity.</summary>
     public class RoleDefinitionsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.PrivilegedAccess.Item.RoleDefinitions {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.privilegedAccess.item.roleDefinitions.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.privilegedAccess.item.roleDefinitions.item collection</summary>
         public GovernanceRoleDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("governanceRoleDefinition_id", position);

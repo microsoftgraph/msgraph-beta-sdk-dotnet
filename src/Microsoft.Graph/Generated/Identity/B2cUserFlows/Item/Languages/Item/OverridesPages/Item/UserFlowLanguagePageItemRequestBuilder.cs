@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.Languages.Item.OverridesPages.Item.Value;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Identity.B2cUserFlows.Item.Languages.Item.OverridesPages.Item.Value;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Identity.B2cUserFlows.Item.Languages.Item.OverridesPages.Item {
+namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.Languages.Item.OverridesPages.Item {
     /// <summary>Provides operations to manage the overridesPages property of the microsoft.graph.userFlowLanguageConfiguration entity.</summary>
     public class UserFlowLanguagePageItemRequestBuilder {
         /// <summary>The Content property</summary>

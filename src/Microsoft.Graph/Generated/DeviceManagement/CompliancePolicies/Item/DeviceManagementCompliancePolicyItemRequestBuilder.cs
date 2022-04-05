@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.Assign;
+using Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.Assignments;
+using Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.ScheduledActionsForRule;
+using Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.SetScheduledActions;
+using Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.Settings;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.CompliancePolicies.Item.Assign;
-using MicrosoftGraphSdk.DeviceManagement.CompliancePolicies.Item.Assignments;
-using MicrosoftGraphSdk.DeviceManagement.CompliancePolicies.Item.ScheduledActionsForRule;
-using MicrosoftGraphSdk.DeviceManagement.CompliancePolicies.Item.SetScheduledActions;
-using MicrosoftGraphSdk.DeviceManagement.CompliancePolicies.Item.Settings;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.CompliancePolicies.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item {
     /// <summary>Provides operations to manage the compliancePolicies property of the microsoft.graph.deviceManagement entity.</summary>
     public class DeviceManagementCompliancePolicyItemRequestBuilder {
         /// <summary>The assign property</summary>

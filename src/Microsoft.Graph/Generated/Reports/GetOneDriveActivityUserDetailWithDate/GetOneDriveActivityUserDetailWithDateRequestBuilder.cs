@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetOneDriveActivityUserDetailWithDate {
+namespace Microsoft.Graph.Beta.Reports.GetOneDriveActivityUserDetailWithDate {
     /// <summary>Provides operations to call the getOneDriveActivityUserDetail method.</summary>
     public class GetOneDriveActivityUserDetailWithDateRequestBuilder {
         /// <summary>Path parameters for the request</summary>

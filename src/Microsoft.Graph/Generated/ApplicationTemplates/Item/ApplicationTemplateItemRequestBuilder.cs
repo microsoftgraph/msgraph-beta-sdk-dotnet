@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.ApplicationTemplates.Item.Instantiate;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.ApplicationTemplates.Item.Instantiate;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.ApplicationTemplates.Item {
+namespace Microsoft.Graph.Beta.ApplicationTemplates.Item {
     /// <summary>Provides operations to manage the collection of applicationTemplate entities.</summary>
     public class ApplicationTemplateItemRequestBuilder {
         /// <summary>The instantiate property</summary>

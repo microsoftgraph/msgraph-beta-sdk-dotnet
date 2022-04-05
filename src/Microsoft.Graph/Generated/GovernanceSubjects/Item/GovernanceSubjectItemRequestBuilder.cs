@@ -1,14 +1,14 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.GovernanceSubjects.Item {
+namespace Microsoft.Graph.Beta.GovernanceSubjects.Item {
     /// <summary>Provides operations to manage the collection of governanceSubject entities.</summary>
     public class GovernanceSubjectItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

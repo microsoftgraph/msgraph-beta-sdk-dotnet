@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.ApplyHold {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.ApplyHold {
     /// <summary>Provides operations to call the applyHold method.</summary>
     public class ApplyHoldRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

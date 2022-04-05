@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.Profile.Names.Count;
+using Microsoft.Graph.Beta.Users.Item.Profile.Names.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.Profile.Names.Count;
-using MicrosoftGraphSdk.Users.Item.Profile.Names.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Profile.Names {
+namespace Microsoft.Graph.Beta.Users.Item.Profile.Names {
     /// <summary>Provides operations to manage the names property of the microsoft.graph.profile entity.</summary>
     public class NamesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Users.Item.Profile.Names {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.profile.names.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.profile.names.item collection</summary>
         public PersonNameItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("personName_id", position);

@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions.Item.DimensionValues;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Financials.Companies.Item.Dimensions.Item.DimensionValues;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Financials.Companies.Item.Dimensions.Item {
+namespace Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions.Item {
     /// <summary>Provides operations to manage the dimensions property of the microsoft.graph.company entity.</summary>
     public class DimensionItemRequestBuilder {
         /// <summary>The dimensionValues property</summary>

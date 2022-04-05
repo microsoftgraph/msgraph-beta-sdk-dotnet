@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Planner.Buckets.Item.Tasks;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Planner.Buckets.Item.Tasks;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Planner.Buckets.Item {
+namespace Microsoft.Graph.Beta.Planner.Buckets.Item {
     /// <summary>Provides operations to manage the buckets property of the microsoft.graph.planner entity.</summary>
     public class PlannerBucketItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

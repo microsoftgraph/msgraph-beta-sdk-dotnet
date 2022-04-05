@@ -1,24 +1,24 @@
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.Cancel;
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.CancelAndSend;
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.Currency;
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.Customer;
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.PaymentTerm;
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.Post;
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.PostAndSend;
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.SalesInvoiceLines;
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.Send;
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.ShipmentMethod;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesInvoices.Item.Cancel;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesInvoices.Item.CancelAndSend;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesInvoices.Item.Currency;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesInvoices.Item.Customer;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesInvoices.Item.PaymentTerm;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesInvoices.Item.Post;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesInvoices.Item.PostAndSend;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesInvoices.Item.SalesInvoiceLines;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesInvoices.Item.Send;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesInvoices.Item.ShipmentMethod;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesInvoices.Item {
+namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item {
     /// <summary>Provides operations to manage the salesInvoices property of the microsoft.graph.company entity.</summary>
     public class SalesInvoiceItemRequestBuilder {
         /// <summary>The cancel property</summary>

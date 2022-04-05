@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.AddCopy;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.AddCopyFromContentTypeHub;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.Count;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.GetCompatibleHubContentTypes;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Groups.Item.Sites.Item.ContentTypes.AddCopy;
-using MicrosoftGraphSdk.Groups.Item.Sites.Item.ContentTypes.AddCopyFromContentTypeHub;
-using MicrosoftGraphSdk.Groups.Item.Sites.Item.ContentTypes.Count;
-using MicrosoftGraphSdk.Groups.Item.Sites.Item.ContentTypes.GetCompatibleHubContentTypes;
-using MicrosoftGraphSdk.Groups.Item.Sites.Item.ContentTypes.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Sites.Item.ContentTypes {
+namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes {
     /// <summary>Provides operations to manage the contentTypes property of the microsoft.graph.site entity.</summary>
     public class ContentTypesRequestBuilder {
         /// <summary>The addCopy property</summary>
@@ -34,7 +34,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Sites.Item.ContentTypes {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.sites.item.contentTypes.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.groups.item.sites.item.contentTypes.item collection</summary>
         public ContentTypeItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("contentType_id", position);

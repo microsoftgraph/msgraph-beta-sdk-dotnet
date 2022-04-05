@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets.Item.RemoveMembersById {
+namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item.RemoveMembersById {
     /// <summary>Provides operations to call the removeMembersById method.</summary>
     public class RemoveMembersByIdRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

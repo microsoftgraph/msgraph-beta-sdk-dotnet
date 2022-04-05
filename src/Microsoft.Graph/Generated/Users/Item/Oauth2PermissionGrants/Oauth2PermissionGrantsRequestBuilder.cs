@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.Oauth2PermissionGrants.Count;
+using Microsoft.Graph.Beta.Users.Item.Oauth2PermissionGrants.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.Oauth2PermissionGrants.Count;
-using MicrosoftGraphSdk.Users.Item.Oauth2PermissionGrants.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Oauth2PermissionGrants {
+namespace Microsoft.Graph.Beta.Users.Item.Oauth2PermissionGrants {
     /// <summary>Provides operations to manage the oauth2PermissionGrants property of the microsoft.graph.user entity.</summary>
     public class Oauth2PermissionGrantsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Users.Item.Oauth2PermissionGrants {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.oauth2PermissionGrants.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.oauth2PermissionGrants.item collection</summary>
         public OAuth2PermissionGrantItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("oAuth2PermissionGrant_id", position);

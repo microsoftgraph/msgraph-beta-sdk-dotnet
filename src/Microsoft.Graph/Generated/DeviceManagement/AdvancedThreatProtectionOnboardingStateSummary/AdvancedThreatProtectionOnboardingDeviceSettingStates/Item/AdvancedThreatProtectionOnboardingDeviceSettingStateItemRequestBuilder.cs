@@ -1,14 +1,14 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.AdvancedThreatProtectionOnboardingStateSummary.AdvancedThreatProtectionOnboardingDeviceSettingStates.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.AdvancedThreatProtectionOnboardingStateSummary.AdvancedThreatProtectionOnboardingDeviceSettingStates.Item {
     /// <summary>Provides operations to manage the advancedThreatProtectionOnboardingDeviceSettingStates property of the microsoft.graph.advancedThreatProtectionOnboardingStateSummary entity.</summary>
     public class AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

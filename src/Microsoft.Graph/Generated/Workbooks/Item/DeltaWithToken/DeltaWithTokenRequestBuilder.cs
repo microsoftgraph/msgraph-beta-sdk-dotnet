@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Workbooks.Item.DeltaWithToken {
+namespace Microsoft.Graph.Beta.Workbooks.Item.DeltaWithToken {
     /// <summary>Provides operations to call the delta method.</summary>
     public class DeltaWithTokenRequestBuilder {
         /// <summary>Path parameters for the request</summary>

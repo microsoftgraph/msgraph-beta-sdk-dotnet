@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.Item.Resource;
+using Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.Item.RoleDefinition;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.PrivilegedAccess.Item.RoleSettings.Item.Resource;
-using MicrosoftGraphSdk.PrivilegedAccess.Item.RoleSettings.Item.RoleDefinition;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.PrivilegedAccess.Item.RoleSettings.Item {
+namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.Item {
     /// <summary>Provides operations to manage the roleSettings property of the microsoft.graph.privilegedAccess entity.</summary>
     public class GovernanceRoleSettingItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.IdentityProviders.AvailableProviderTypes;
+using Microsoft.Graph.Beta.IdentityProviders.Count;
+using Microsoft.Graph.Beta.IdentityProviders.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.IdentityProviders.AvailableProviderTypes;
-using MicrosoftGraphSdk.IdentityProviders.Count;
-using MicrosoftGraphSdk.IdentityProviders.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.IdentityProviders {
+namespace Microsoft.Graph.Beta.IdentityProviders {
     /// <summary>Provides operations to manage the collection of identityProvider entities.</summary>
     public class IdentityProvidersRequestBuilder {
         /// <summary>The count property</summary>
@@ -24,7 +24,7 @@ namespace MicrosoftGraphSdk.IdentityProviders {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.identityProviders.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.identityProviders.item collection</summary>
         public IdentityProviderItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("identityProvider_id", position);

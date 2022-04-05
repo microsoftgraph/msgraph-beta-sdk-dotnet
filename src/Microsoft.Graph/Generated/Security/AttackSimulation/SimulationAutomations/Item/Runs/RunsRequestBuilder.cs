@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Security.AttackSimulation.SimulationAutomations.Item.Runs.Count;
+using Microsoft.Graph.Beta.Security.AttackSimulation.SimulationAutomations.Item.Runs.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Security.AttackSimulation.SimulationAutomations.Item.Runs.Count;
-using MicrosoftGraphSdk.Security.AttackSimulation.SimulationAutomations.Item.Runs.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Security.AttackSimulation.SimulationAutomations.Item.Runs {
+namespace Microsoft.Graph.Beta.Security.AttackSimulation.SimulationAutomations.Item.Runs {
     /// <summary>Provides operations to manage the runs property of the microsoft.graph.simulationAutomation entity.</summary>
     public class RunsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Security.AttackSimulation.SimulationAutomations.Item
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.security.attackSimulation.simulationAutomations.item.runs.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.security.attackSimulation.simulationAutomations.item.runs.item collection</summary>
         public SimulationAutomationRunItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("simulationAutomationRun_id", position);

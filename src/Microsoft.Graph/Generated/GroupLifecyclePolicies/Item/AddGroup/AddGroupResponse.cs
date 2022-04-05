@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.GroupLifecyclePolicies.Item.AddGroup {
+namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.Item.AddGroup {
     /// <summary>Provides operations to call the addGroup method.</summary>
     public class AddGroupResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Communications.Calls.Item.Transfer {
+namespace Microsoft.Graph.Beta.Communications.Calls.Item.Transfer {
     /// <summary>Provides operations to call the transfer method.</summary>
     public class TransferRequestBuilder {
         /// <summary>Path parameters for the request</summary>

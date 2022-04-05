@@ -1,21 +1,21 @@
+using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Count;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetDevicesScheduledToRetire;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.HasPayloadLinks;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.RefreshDeviceComplianceReportSummarization;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.SetScheduledRetireState;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.ValidateComplianceScript;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.Count;
-using MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.GetDevicesScheduledToRetire;
-using MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.HasPayloadLinks;
-using MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.Item;
-using MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.RefreshDeviceComplianceReportSummarization;
-using MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.SetScheduledRetireState;
-using MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.ValidateComplianceScript;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies {
     /// <summary>Provides operations to manage the deviceCompliancePolicies property of the microsoft.graph.deviceManagement entity.</summary>
     public class DeviceCompliancePoliciesRequestBuilder {
         /// <summary>The count property</summary>
@@ -48,7 +48,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies {
         public ValidateComplianceScriptRequestBuilder ValidateComplianceScript { get =>
             new ValidateComplianceScriptRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.deviceCompliancePolicies.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.deviceCompliancePolicies.item collection</summary>
         public DeviceCompliancePolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceCompliancePolicy_id", position);

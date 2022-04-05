@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Security.AttackSimulation.SimulationAutomations.Count;
+using Microsoft.Graph.Beta.Security.AttackSimulation.SimulationAutomations.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Security.AttackSimulation.SimulationAutomations.Count;
-using MicrosoftGraphSdk.Security.AttackSimulation.SimulationAutomations.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Security.AttackSimulation.SimulationAutomations {
+namespace Microsoft.Graph.Beta.Security.AttackSimulation.SimulationAutomations {
     /// <summary>Provides operations to manage the simulationAutomations property of the microsoft.graph.attackSimulationRoot entity.</summary>
     public class SimulationAutomationsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Security.AttackSimulation.SimulationAutomations {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.security.attackSimulation.simulationAutomations.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.security.attackSimulation.simulationAutomations.item collection</summary>
         public SimulationAutomationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("simulationAutomation_id", position);

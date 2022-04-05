@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.CreatedObjects.Count;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.CreatedObjects.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.ServicePrincipals.Item.CreatedObjects.Count;
-using MicrosoftGraphSdk.ServicePrincipals.Item.CreatedObjects.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.ServicePrincipals.Item.CreatedObjects {
+namespace Microsoft.Graph.Beta.ServicePrincipals.Item.CreatedObjects {
     /// <summary>Provides operations to manage the createdObjects property of the microsoft.graph.servicePrincipal entity.</summary>
     public class CreatedObjectsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.CreatedObjects {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.servicePrincipals.item.createdObjects.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.servicePrincipals.item.createdObjects.item collection</summary>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryObject_id", position);

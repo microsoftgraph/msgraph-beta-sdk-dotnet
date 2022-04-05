@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.UploadNewVersion {
+namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.UploadNewVersion {
     /// <summary>Provides operations to call the uploadNewVersion method.</summary>
     public class UploadNewVersionRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.GetTargetedUsersAndDevices {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetTargetedUsersAndDevices {
     /// <summary>Provides operations to call the getTargetedUsersAndDevices method.</summary>
     public class GetTargetedUsersAndDevicesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

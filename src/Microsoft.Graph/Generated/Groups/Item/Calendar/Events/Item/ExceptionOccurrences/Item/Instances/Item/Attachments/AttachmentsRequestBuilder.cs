@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Groups.Item.Calendar.Events.Item.ExceptionOccurrences.Item.Instances.Item.Attachments.Count;
+using Microsoft.Graph.Beta.Groups.Item.Calendar.Events.Item.ExceptionOccurrences.Item.Instances.Item.Attachments.CreateUploadSession;
+using Microsoft.Graph.Beta.Groups.Item.Calendar.Events.Item.ExceptionOccurrences.Item.Instances.Item.Attachments.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Groups.Item.Calendar.Events.Item.ExceptionOccurrences.Item.Instances.Item.Attachments.Count;
-using MicrosoftGraphSdk.Groups.Item.Calendar.Events.Item.ExceptionOccurrences.Item.Instances.Item.Attachments.CreateUploadSession;
-using MicrosoftGraphSdk.Groups.Item.Calendar.Events.Item.ExceptionOccurrences.Item.Instances.Item.Attachments.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Calendar.Events.Item.ExceptionOccurrences.Item.Instances.Item.Attachments {
+namespace Microsoft.Graph.Beta.Groups.Item.Calendar.Events.Item.ExceptionOccurrences.Item.Instances.Item.Attachments {
     /// <summary>Provides operations to manage the attachments property of the microsoft.graph.event entity.</summary>
     public class AttachmentsRequestBuilder {
         /// <summary>The count property</summary>
@@ -28,7 +28,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Calendar.Events.Item.ExceptionOccurrence
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.calendar.events.item.exceptionOccurrences.item.instances.item.attachments.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.groups.item.calendar.events.item.exceptionOccurrences.item.instances.item.attachments.item collection</summary>
         public AttachmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("attachment_id", position);

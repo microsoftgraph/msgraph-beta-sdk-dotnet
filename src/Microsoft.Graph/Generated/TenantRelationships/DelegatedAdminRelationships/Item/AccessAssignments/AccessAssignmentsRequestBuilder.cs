@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.Count;
+using Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.Count;
-using MicrosoftGraphSdk.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments {
+namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments {
     /// <summary>Provides operations to manage the accessAssignments property of the microsoft.graph.delegatedAdminRelationship entity.</summary>
     public class AccessAssignmentsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.DelegatedAdminRelationships.Item
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.tenantRelationships.delegatedAdminRelationships.item.accessAssignments.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.tenantRelationships.delegatedAdminRelationships.item.accessAssignments.item collection</summary>
         public DelegatedAdminAccessAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("delegatedAdminAccessAssignment_id", position);

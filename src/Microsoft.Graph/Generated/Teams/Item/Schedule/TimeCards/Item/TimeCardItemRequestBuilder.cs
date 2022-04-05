@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item.ClockOut;
+using Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item.Confirm;
+using Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item.EndBreak;
+using Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item.StartBreak;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Teams.Item.Schedule.TimeCards.Item.ClockOut;
-using MicrosoftGraphSdk.Teams.Item.Schedule.TimeCards.Item.Confirm;
-using MicrosoftGraphSdk.Teams.Item.Schedule.TimeCards.Item.EndBreak;
-using MicrosoftGraphSdk.Teams.Item.Schedule.TimeCards.Item.StartBreak;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Teams.Item.Schedule.TimeCards.Item {
+namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item {
     /// <summary>Provides operations to manage the timeCards property of the microsoft.graph.schedule entity.</summary>
     public class TimeCardItemRequestBuilder {
         /// <summary>The clockOut property</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DirectoryRoleTemplates.GetByIds {
+namespace Microsoft.Graph.Beta.DirectoryRoleTemplates.GetByIds {
     /// <summary>Provides operations to call the getByIds method.</summary>
     public class GetByIdsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

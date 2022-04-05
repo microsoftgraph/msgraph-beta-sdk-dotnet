@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Reports.GetOneDriveUsageStorageWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetOneDriveUsageStorageWithPeriod {
     /// <summary>Provides operations to call the getOneDriveUsageStorage method.</summary>
     public class GetOneDriveUsageStorageWithPeriodResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

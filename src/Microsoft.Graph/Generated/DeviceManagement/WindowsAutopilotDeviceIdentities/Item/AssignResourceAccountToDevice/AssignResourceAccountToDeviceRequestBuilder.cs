@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.AssignResourceAccountToDevice {
+namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.AssignResourceAccountToDevice {
     /// <summary>Provides operations to call the assignResourceAccountToDevice method.</summary>
     public class AssignResourceAccountToDeviceRequestBuilder {
         /// <summary>Path parameters for the request</summary>

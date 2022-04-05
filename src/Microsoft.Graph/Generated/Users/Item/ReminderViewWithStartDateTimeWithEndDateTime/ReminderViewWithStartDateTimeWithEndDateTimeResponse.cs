@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Users.Item.ReminderViewWithStartDateTimeWithEndDateTime {
+namespace Microsoft.Graph.Beta.Users.Item.ReminderViewWithStartDateTimeWithEndDateTime {
     /// <summary>Provides operations to call the reminderView method.</summary>
     public class ReminderViewWithStartDateTimeWithEndDateTimeResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

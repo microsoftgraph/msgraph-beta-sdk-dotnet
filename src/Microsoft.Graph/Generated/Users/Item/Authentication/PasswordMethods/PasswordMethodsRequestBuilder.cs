@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.Authentication.PasswordMethods.Count;
+using Microsoft.Graph.Beta.Users.Item.Authentication.PasswordMethods.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.Authentication.PasswordMethods.Count;
-using MicrosoftGraphSdk.Users.Item.Authentication.PasswordMethods.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Authentication.PasswordMethods {
+namespace Microsoft.Graph.Beta.Users.Item.Authentication.PasswordMethods {
     /// <summary>Provides operations to manage the passwordMethods property of the microsoft.graph.authentication entity.</summary>
     public class PasswordMethodsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.PasswordMethods {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.authentication.passwordMethods.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.authentication.passwordMethods.item collection</summary>
         public PasswordAuthenticationMethodItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("passwordAuthenticationMethod_id", position);

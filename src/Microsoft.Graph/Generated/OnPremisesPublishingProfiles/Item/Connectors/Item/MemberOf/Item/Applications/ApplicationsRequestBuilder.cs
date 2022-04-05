@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.Item.MemberOf.Item.Applications.Count;
+using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.Item.MemberOf.Item.Applications.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.Connectors.Item.MemberOf.Item.Applications.Count;
-using MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.Connectors.Item.MemberOf.Item.Applications.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.Connectors.Item.MemberOf.Item.Applications {
+namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.Item.MemberOf.Item.Applications {
     /// <summary>Provides operations to manage the applications property of the microsoft.graph.connectorGroup entity.</summary>
     public class ApplicationsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.Connectors.Item.Me
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.onPremisesPublishingProfiles.item.connectors.item.memberOf.item.applications.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.onPremisesPublishingProfiles.item.connectors.item.memberOf.item.applications.item collection</summary>
         public ApplicationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("application_id", position);

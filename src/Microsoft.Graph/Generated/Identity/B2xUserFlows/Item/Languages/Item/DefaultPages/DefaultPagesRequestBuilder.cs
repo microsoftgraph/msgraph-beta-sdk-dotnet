@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.Languages.Item.DefaultPages.Count;
+using Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.Languages.Item.DefaultPages.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Identity.B2xUserFlows.Item.Languages.Item.DefaultPages.Count;
-using MicrosoftGraphSdk.Identity.B2xUserFlows.Item.Languages.Item.DefaultPages.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Identity.B2xUserFlows.Item.Languages.Item.DefaultPages {
+namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.Languages.Item.DefaultPages {
     /// <summary>Provides operations to manage the defaultPages property of the microsoft.graph.userFlowLanguageConfiguration entity.</summary>
     public class DefaultPagesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Identity.B2xUserFlows.Item.Languages.Item.DefaultPag
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.identity.b2xUserFlows.item.languages.item.defaultPages.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.identity.b2xUserFlows.item.languages.item.defaultPages.item collection</summary>
         public UserFlowLanguagePageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userFlowLanguagePage_id", position);

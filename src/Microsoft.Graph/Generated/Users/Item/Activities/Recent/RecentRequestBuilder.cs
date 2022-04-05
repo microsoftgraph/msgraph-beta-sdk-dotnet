@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Activities.Recent {
+namespace Microsoft.Graph.Beta.Users.Item.Activities.Recent {
     /// <summary>Provides operations to call the recent method.</summary>
     public class RecentRequestBuilder {
         /// <summary>Path parameters for the request</summary>

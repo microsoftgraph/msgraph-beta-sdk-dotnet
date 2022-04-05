@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Education.Users.Count;
+using Microsoft.Graph.Beta.Education.Users.Delta;
+using Microsoft.Graph.Beta.Education.Users.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Education.Users.Count;
-using MicrosoftGraphSdk.Education.Users.Delta;
-using MicrosoftGraphSdk.Education.Users.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Education.Users {
+namespace Microsoft.Graph.Beta.Education.Users {
     /// <summary>Provides operations to manage the users property of the microsoft.graph.educationRoot entity.</summary>
     public class UsersRequestBuilder {
         /// <summary>The count property</summary>
@@ -24,7 +24,7 @@ namespace MicrosoftGraphSdk.Education.Users {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.education.users.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.education.users.item collection</summary>
         public EducationUserItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationUser_id", position);

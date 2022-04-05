@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Policies.RoleManagementPolicies.Item.EffectiveRules.Count;
+using Microsoft.Graph.Beta.Policies.RoleManagementPolicies.Item.EffectiveRules.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Policies.RoleManagementPolicies.Item.EffectiveRules.Count;
-using MicrosoftGraphSdk.Policies.RoleManagementPolicies.Item.EffectiveRules.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Policies.RoleManagementPolicies.Item.EffectiveRules {
+namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicies.Item.EffectiveRules {
     /// <summary>Provides operations to manage the effectiveRules property of the microsoft.graph.unifiedRoleManagementPolicy entity.</summary>
     public class EffectiveRulesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Policies.RoleManagementPolicies.Item.EffectiveRules 
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.policies.roleManagementPolicies.item.effectiveRules.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.policies.roleManagementPolicies.item.effectiveRules.item collection</summary>
         public UnifiedRoleManagementPolicyRuleItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleManagementPolicyRule_id", position);

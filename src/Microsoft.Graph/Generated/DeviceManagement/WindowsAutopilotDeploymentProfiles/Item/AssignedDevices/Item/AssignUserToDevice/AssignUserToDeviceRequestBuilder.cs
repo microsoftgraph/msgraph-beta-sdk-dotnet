@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeploymentProfiles.Item.AssignedDevices.Item.AssignUserToDevice {
+namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfiles.Item.AssignedDevices.Item.AssignUserToDevice {
     /// <summary>Provides operations to call the assignUserToDevice method.</summary>
     public class AssignUserToDeviceRequestBuilder {
         /// <summary>Path parameters for the request</summary>

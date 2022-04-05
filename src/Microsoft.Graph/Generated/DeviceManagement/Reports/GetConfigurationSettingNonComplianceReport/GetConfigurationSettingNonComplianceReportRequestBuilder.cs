@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetConfigurationSettingNonComplianceReport {
+namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationSettingNonComplianceReport {
     /// <summary>Provides operations to call the getConfigurationSettingNonComplianceReport method.</summary>
     public class GetConfigurationSettingNonComplianceReportRequestBuilder {
         /// <summary>Path parameters for the request</summary>

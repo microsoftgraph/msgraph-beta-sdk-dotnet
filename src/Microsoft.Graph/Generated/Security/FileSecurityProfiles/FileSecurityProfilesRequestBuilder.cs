@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Security.FileSecurityProfiles.Count;
+using Microsoft.Graph.Beta.Security.FileSecurityProfiles.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Security.FileSecurityProfiles.Count;
-using MicrosoftGraphSdk.Security.FileSecurityProfiles.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Security.FileSecurityProfiles {
+namespace Microsoft.Graph.Beta.Security.FileSecurityProfiles {
     /// <summary>Provides operations to manage the fileSecurityProfiles property of the microsoft.graph.security entity.</summary>
     public class FileSecurityProfilesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Security.FileSecurityProfiles {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.security.fileSecurityProfiles.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.security.fileSecurityProfiles.item collection</summary>
         public FileSecurityProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("fileSecurityProfile_id", position);

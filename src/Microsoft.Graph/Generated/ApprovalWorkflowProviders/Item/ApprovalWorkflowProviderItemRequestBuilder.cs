@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.BusinessFlows;
+using Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.BusinessFlowsWithRequestsAwaitingMyDecision;
+using Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.ApprovalWorkflowProviders.Item.BusinessFlows;
-using MicrosoftGraphSdk.ApprovalWorkflowProviders.Item.BusinessFlowsWithRequestsAwaitingMyDecision;
-using MicrosoftGraphSdk.ApprovalWorkflowProviders.Item.PolicyTemplates;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.ApprovalWorkflowProviders.Item {
+namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item {
     /// <summary>Provides operations to manage the collection of approvalWorkflowProvider entities.</summary>
     public class ApprovalWorkflowProviderItemRequestBuilder {
         /// <summary>The businessFlows property</summary>

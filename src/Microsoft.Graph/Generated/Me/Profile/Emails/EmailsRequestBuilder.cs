@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.Profile.Emails.Count;
+using Microsoft.Graph.Beta.Me.Profile.Emails.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Profile.Emails.Count;
-using MicrosoftGraphSdk.Me.Profile.Emails.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Profile.Emails {
+namespace Microsoft.Graph.Beta.Me.Profile.Emails {
     /// <summary>Provides operations to manage the emails property of the microsoft.graph.profile entity.</summary>
     public class EmailsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.Profile.Emails {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.profile.emails.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.profile.emails.item collection</summary>
         public ItemEmailItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("itemEmail_id", position);

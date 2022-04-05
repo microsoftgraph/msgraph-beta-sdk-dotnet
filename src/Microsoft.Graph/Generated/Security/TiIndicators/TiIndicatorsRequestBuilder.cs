@@ -1,20 +1,20 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Security.TiIndicators.Count;
+using Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicators;
+using Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicatorsByExternalId;
+using Microsoft.Graph.Beta.Security.TiIndicators.Item;
+using Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators;
+using Microsoft.Graph.Beta.Security.TiIndicators.UpdateTiIndicators;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Security.TiIndicators.Count;
-using MicrosoftGraphSdk.Security.TiIndicators.DeleteTiIndicators;
-using MicrosoftGraphSdk.Security.TiIndicators.DeleteTiIndicatorsByExternalId;
-using MicrosoftGraphSdk.Security.TiIndicators.Item;
-using MicrosoftGraphSdk.Security.TiIndicators.SubmitTiIndicators;
-using MicrosoftGraphSdk.Security.TiIndicators.UpdateTiIndicators;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Security.TiIndicators {
+namespace Microsoft.Graph.Beta.Security.TiIndicators {
     /// <summary>Provides operations to manage the tiIndicators property of the microsoft.graph.security entity.</summary>
     public class TiIndicatorsRequestBuilder {
         /// <summary>The count property</summary>
@@ -43,7 +43,7 @@ namespace MicrosoftGraphSdk.Security.TiIndicators {
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.security.tiIndicators.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.security.tiIndicators.item collection</summary>
         public TiIndicatorItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tiIndicator_id", position);

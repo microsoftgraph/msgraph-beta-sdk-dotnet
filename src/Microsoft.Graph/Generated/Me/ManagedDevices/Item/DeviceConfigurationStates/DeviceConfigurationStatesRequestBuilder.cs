@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.ManagedDevices.Item.DeviceConfigurationStates.Count;
+using Microsoft.Graph.Beta.Me.ManagedDevices.Item.DeviceConfigurationStates.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.ManagedDevices.Item.DeviceConfigurationStates.Count;
-using MicrosoftGraphSdk.Me.ManagedDevices.Item.DeviceConfigurationStates.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.DeviceConfigurationStates {
+namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.DeviceConfigurationStates {
     /// <summary>Provides operations to manage the deviceConfigurationStates property of the microsoft.graph.managedDevice entity.</summary>
     public class DeviceConfigurationStatesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.DeviceConfigurationStates {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.managedDevices.item.deviceConfigurationStates.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.managedDevices.item.deviceConfigurationStates.item collection</summary>
         public DeviceConfigurationStateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceConfigurationState_id", position);

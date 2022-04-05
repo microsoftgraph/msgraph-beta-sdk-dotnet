@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.RiskyUsers.Item.History.Count;
+using Microsoft.Graph.Beta.RiskyUsers.Item.History.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.RiskyUsers.Item.History.Count;
-using MicrosoftGraphSdk.RiskyUsers.Item.History.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.RiskyUsers.Item.History {
+namespace Microsoft.Graph.Beta.RiskyUsers.Item.History {
     /// <summary>Provides operations to manage the history property of the microsoft.graph.riskyUser entity.</summary>
     public class HistoryRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.RiskyUsers.Item.History {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.riskyUsers.item.history.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.riskyUsers.item.history.item collection</summary>
         public RiskyUserHistoryItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("riskyUserHistoryItem_id", position);

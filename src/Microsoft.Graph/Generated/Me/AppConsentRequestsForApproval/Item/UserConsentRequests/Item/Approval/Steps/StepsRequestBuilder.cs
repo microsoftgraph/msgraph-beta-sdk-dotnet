@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.AppConsentRequestsForApproval.Item.UserConsentRequests.Item.Approval.Steps.Count;
+using Microsoft.Graph.Beta.Me.AppConsentRequestsForApproval.Item.UserConsentRequests.Item.Approval.Steps.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.AppConsentRequestsForApproval.Item.UserConsentRequests.Item.Approval.Steps.Count;
-using MicrosoftGraphSdk.Me.AppConsentRequestsForApproval.Item.UserConsentRequests.Item.Approval.Steps.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.AppConsentRequestsForApproval.Item.UserConsentRequests.Item.Approval.Steps {
+namespace Microsoft.Graph.Beta.Me.AppConsentRequestsForApproval.Item.UserConsentRequests.Item.Approval.Steps {
     /// <summary>Provides operations to manage the steps property of the microsoft.graph.approval entity.</summary>
     public class StepsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.AppConsentRequestsForApproval.Item.UserConsentReq
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.appConsentRequestsForApproval.item.userConsentRequests.item.approval.steps.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.appConsentRequestsForApproval.item.userConsentRequests.item.approval.steps.item collection</summary>
         public ApprovalStepItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("approvalStep_id", position);

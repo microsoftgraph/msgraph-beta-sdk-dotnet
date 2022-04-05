@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Sites.Item.Lists.Item.Items.Delta {
+namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.Items.Delta {
     /// <summary>Provides operations to call the delta method.</summary>
     public class DeltaRequestBuilder {
         /// <summary>Path parameters for the request</summary>

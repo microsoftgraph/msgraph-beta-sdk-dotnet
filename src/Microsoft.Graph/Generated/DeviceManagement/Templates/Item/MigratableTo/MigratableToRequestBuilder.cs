@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Count;
+using Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.ImportOffice365DeviceConfigurationPolicies;
+using Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.Count;
-using MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.ImportOffice365DeviceConfigurationPolicies;
-using MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo {
+namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo {
     /// <summary>Provides operations to manage the migratableTo property of the microsoft.graph.deviceManagementTemplate entity.</summary>
     public class MigratableToRequestBuilder {
         /// <summary>The count property</summary>
@@ -28,11 +28,11 @@ namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.templates.item.migratableTo.item collection</summary>
-        public MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.Item.DeviceManagementTemplateItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.templates.item.migratableTo.item collection</summary>
+        public Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item.DeviceManagementTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementTemplate_id1", position);
-            return new MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.Item.DeviceManagementTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item.DeviceManagementTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MigratableToRequestBuilder and sets the default values.

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.Count;
+using Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.ProgramControls.Item.Program.Controls.Count;
-using MicrosoftGraphSdk.ProgramControls.Item.Program.Controls.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.ProgramControls.Item.Program.Controls {
+namespace Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls {
     /// <summary>Provides operations to manage the controls property of the microsoft.graph.program entity.</summary>
     public class ControlsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,11 +23,11 @@ namespace MicrosoftGraphSdk.ProgramControls.Item.Program.Controls {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.programControls.item.program.controls.item collection</summary>
-        public MicrosoftGraphSdk.ProgramControls.Item.Program.Controls.Item.ProgramControlItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.programControls.item.program.controls.item collection</summary>
+        public Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.Item.ProgramControlItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("programControl_id1", position);
-            return new MicrosoftGraphSdk.ProgramControls.Item.Program.Controls.Item.ProgramControlItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.Item.ProgramControlItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ControlsRequestBuilder and sets the default values.

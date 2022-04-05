@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Authentication.Methods.Item.EnableSmsSignIn {
+namespace Microsoft.Graph.Beta.Me.Authentication.Methods.Item.EnableSmsSignIn {
     /// <summary>Provides operations to call the enableSmsSignIn method.</summary>
     public class EnableSmsSignInRequestBuilder {
         /// <summary>Path parameters for the request</summary>

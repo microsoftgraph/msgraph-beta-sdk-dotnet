@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Groups.Item.Endpoints.Count;
+using Microsoft.Graph.Beta.Groups.Item.Endpoints.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Groups.Item.Endpoints.Count;
-using MicrosoftGraphSdk.Groups.Item.Endpoints.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Endpoints {
+namespace Microsoft.Graph.Beta.Groups.Item.Endpoints {
     /// <summary>Provides operations to manage the endpoints property of the microsoft.graph.group entity.</summary>
     public class EndpointsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Endpoints {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.endpoints.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.groups.item.endpoints.item collection</summary>
         public EndpointItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("endpoint_id", position);

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Team.Channels.Item.Messages.Item.Replies.Item.UndoSoftDelete {
+namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Messages.Item.Replies.Item.UndoSoftDelete {
     /// <summary>Provides operations to call the undoSoftDelete method.</summary>
     public class UndoSoftDeleteRequestBuilder {
         /// <summary>Path parameters for the request</summary>

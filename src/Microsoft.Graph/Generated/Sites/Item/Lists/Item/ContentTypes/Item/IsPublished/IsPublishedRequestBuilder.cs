@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.IsPublished {
+namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.ContentTypes.Item.IsPublished {
     /// <summary>Provides operations to call the isPublished method.</summary>
     public class IsPublishedRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetOneDriveUsageStorageWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetOneDriveUsageStorageWithPeriod {
     /// <summary>Provides operations to call the getOneDriveUsageStorage method.</summary>
     public class GetOneDriveUsageStorageWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.RemoteAssistancePartners.Item.BeginOnboarding {
+namespace Microsoft.Graph.Beta.DeviceManagement.RemoteAssistancePartners.Item.BeginOnboarding {
     /// <summary>Provides operations to call the beginOnboarding method.</summary>
     public class BeginOnboardingRequestBuilder {
         /// <summary>Path parameters for the request</summary>

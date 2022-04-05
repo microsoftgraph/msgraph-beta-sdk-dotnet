@@ -1,27 +1,27 @@
+using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Assign;
+using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Assignments;
+using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Categories;
+using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.CompareWithTemplateId;
+using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.CreateCopy;
+using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceSettingStateSummaries;
+using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceStates;
+using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceStateSummary;
+using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.MigrateToTemplate;
+using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Settings;
+using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.UpdateSettings;
+using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.UserStates;
+using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.UserStateSummary;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.Intents.Item.Assign;
-using MicrosoftGraphSdk.DeviceManagement.Intents.Item.Assignments;
-using MicrosoftGraphSdk.DeviceManagement.Intents.Item.Categories;
-using MicrosoftGraphSdk.DeviceManagement.Intents.Item.CompareWithTemplateId;
-using MicrosoftGraphSdk.DeviceManagement.Intents.Item.CreateCopy;
-using MicrosoftGraphSdk.DeviceManagement.Intents.Item.DeviceSettingStateSummaries;
-using MicrosoftGraphSdk.DeviceManagement.Intents.Item.DeviceStates;
-using MicrosoftGraphSdk.DeviceManagement.Intents.Item.DeviceStateSummary;
-using MicrosoftGraphSdk.DeviceManagement.Intents.Item.MigrateToTemplate;
-using MicrosoftGraphSdk.DeviceManagement.Intents.Item.Settings;
-using MicrosoftGraphSdk.DeviceManagement.Intents.Item.UpdateSettings;
-using MicrosoftGraphSdk.DeviceManagement.Intents.Item.UserStates;
-using MicrosoftGraphSdk.DeviceManagement.Intents.Item.UserStateSummary;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item {
     /// <summary>Provides operations to manage the intents property of the microsoft.graph.deviceManagement entity.</summary>
     public class DeviceManagementIntentItemRequestBuilder {
         /// <summary>The assign property</summary>

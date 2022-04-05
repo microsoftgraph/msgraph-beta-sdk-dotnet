@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.PrivilegedRoles.Item.SelfActivate {
+namespace Microsoft.Graph.Beta.PrivilegedRoles.Item.SelfActivate {
     /// <summary>Provides operations to call the selfActivate method.</summary>
     public class SelfActivateRequestBuilder {
         /// <summary>Path parameters for the request</summary>

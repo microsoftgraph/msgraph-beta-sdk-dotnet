@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.TrustFramework.KeySets.Count;
+using Microsoft.Graph.Beta.TrustFramework.KeySets.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.TrustFramework.KeySets.Count;
-using MicrosoftGraphSdk.TrustFramework.KeySets.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TrustFramework.KeySets {
+namespace Microsoft.Graph.Beta.TrustFramework.KeySets {
     /// <summary>Provides operations to manage the keySets property of the microsoft.graph.trustFramework entity.</summary>
     public class KeySetsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.TrustFramework.KeySets {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.trustFramework.keySets.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.trustFramework.keySets.item collection</summary>
         public TrustFrameworkKeySetItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("trustFrameworkKeySet_id", position);

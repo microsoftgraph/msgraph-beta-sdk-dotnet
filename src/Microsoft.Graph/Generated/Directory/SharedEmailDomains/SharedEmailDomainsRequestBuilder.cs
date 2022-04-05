@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Directory.SharedEmailDomains.Count;
+using Microsoft.Graph.Beta.Directory.SharedEmailDomains.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Directory.SharedEmailDomains.Count;
-using MicrosoftGraphSdk.Directory.SharedEmailDomains.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Directory.SharedEmailDomains {
+namespace Microsoft.Graph.Beta.Directory.SharedEmailDomains {
     /// <summary>Provides operations to manage the sharedEmailDomains property of the microsoft.graph.directory entity.</summary>
     public class SharedEmailDomainsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Directory.SharedEmailDomains {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.directory.sharedEmailDomains.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.directory.sharedEmailDomains.item collection</summary>
         public SharedEmailDomainItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("sharedEmailDomain_id", position);

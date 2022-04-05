@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.ApplyHold;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Count;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.RemoveHold;
+using Microsoft.Graph.Beta.Models.Ediscovery;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.ApplyHold;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Count;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.RemoveHold;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources {
     /// <summary>Provides operations to manage the noncustodialDataSources property of the microsoft.graph.ediscovery.case entity.</summary>
     public class NoncustodialDataSourcesRequestBuilder {
         /// <summary>The applyHold property</summary>
@@ -33,7 +33,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSou
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.compliance.ediscovery.cases.item.noncustodialDataSources.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.compliance.ediscovery.cases.item.noncustodialDataSources.item collection</summary>
         public NoncustodialDataSourceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("noncustodialDataSource_id", position);

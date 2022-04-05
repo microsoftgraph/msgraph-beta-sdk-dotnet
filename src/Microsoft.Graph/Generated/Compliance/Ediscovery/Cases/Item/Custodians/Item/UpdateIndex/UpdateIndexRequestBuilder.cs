@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Custodians.Item.UpdateIndex {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.UpdateIndex {
     /// <summary>Provides operations to call the updateIndex method.</summary>
     public class UpdateIndexRequestBuilder {
         /// <summary>Path parameters for the request</summary>

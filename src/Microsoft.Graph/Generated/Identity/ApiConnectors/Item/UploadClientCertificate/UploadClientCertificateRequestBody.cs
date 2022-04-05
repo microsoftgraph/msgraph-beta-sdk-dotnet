@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Identity.ApiConnectors.Item.UploadClientCertificate {
+namespace Microsoft.Graph.Beta.Identity.ApiConnectors.Item.UploadClientCertificate {
     /// <summary>Provides operations to call the uploadClientCertificate method.</summary>
     public class UploadClientCertificateRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

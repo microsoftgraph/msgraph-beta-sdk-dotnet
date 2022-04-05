@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceManagement.ConfigurationCategories.Count;
+using Microsoft.Graph.Beta.DeviceManagement.ConfigurationCategories.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.ConfigurationCategories.Count;
-using MicrosoftGraphSdk.DeviceManagement.ConfigurationCategories.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.ConfigurationCategories {
+namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationCategories {
     /// <summary>Provides operations to manage the configurationCategories property of the microsoft.graph.deviceManagement entity.</summary>
     public class ConfigurationCategoriesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ConfigurationCategories {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.configurationCategories.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.configurationCategories.item collection</summary>
         public DeviceManagementConfigurationCategoryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementConfigurationCategory_id", position);

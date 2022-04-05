@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Reports.GetYammerDeviceUsageUserDetailWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetYammerDeviceUsageUserDetailWithPeriod {
     /// <summary>Provides operations to call the getYammerDeviceUsageUserDetail method.</summary>
     public class GetYammerDeviceUsageUserDetailWithPeriodResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

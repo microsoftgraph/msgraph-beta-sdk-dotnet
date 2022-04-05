@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedAppPolicies.Item.TargetedManagedAppProtection.TargetApps {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppPolicies.Item.TargetedManagedAppProtection.TargetApps {
     /// <summary>Provides operations to call the targetApps method.</summary>
     public class TargetAppsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

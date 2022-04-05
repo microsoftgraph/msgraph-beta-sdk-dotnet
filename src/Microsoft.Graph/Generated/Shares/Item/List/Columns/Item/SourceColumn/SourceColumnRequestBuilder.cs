@@ -1,14 +1,14 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Shares.Item.List.Columns.Item.SourceColumn {
+namespace Microsoft.Graph.Beta.Shares.Item.List.Columns.Item.SourceColumn {
     /// <summary>Provides operations to manage the sourceColumn property of the microsoft.graph.columnDefinition entity.</summary>
     public class SourceColumnRequestBuilder {
         /// <summary>Path parameters for the request</summary>

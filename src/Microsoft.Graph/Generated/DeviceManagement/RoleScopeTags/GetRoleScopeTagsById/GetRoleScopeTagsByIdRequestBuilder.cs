@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.RoleScopeTags.GetRoleScopeTagsById {
+namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.GetRoleScopeTagsById {
     /// <summary>Provides operations to call the getRoleScopeTagsById method.</summary>
     public class GetRoleScopeTagsByIdRequestBuilder {
         /// <summary>Path parameters for the request</summary>

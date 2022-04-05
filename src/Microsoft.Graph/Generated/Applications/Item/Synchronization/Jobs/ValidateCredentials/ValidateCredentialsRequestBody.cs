@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.ValidateCredentials {
+namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.ValidateCredentials {
     /// <summary>Provides operations to call the validateCredentials method.</summary>
     public class ValidateCredentialsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

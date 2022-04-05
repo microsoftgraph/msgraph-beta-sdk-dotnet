@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetWindowsQualityUpdateAlertSummaryReport {
+namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateAlertSummaryReport {
     /// <summary>Provides operations to call the getWindowsQualityUpdateAlertSummaryReport method.</summary>
     public class GetWindowsQualityUpdateAlertSummaryReportRequestBuilder {
         /// <summary>Path parameters for the request</summary>

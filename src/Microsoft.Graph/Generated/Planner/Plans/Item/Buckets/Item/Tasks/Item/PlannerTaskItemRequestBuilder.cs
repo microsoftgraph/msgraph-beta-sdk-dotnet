@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Planner.Plans.Item.Buckets.Item.Tasks.Item.AssignedToTaskBoardFormat;
+using Microsoft.Graph.Beta.Planner.Plans.Item.Buckets.Item.Tasks.Item.BucketTaskBoardFormat;
+using Microsoft.Graph.Beta.Planner.Plans.Item.Buckets.Item.Tasks.Item.Details;
+using Microsoft.Graph.Beta.Planner.Plans.Item.Buckets.Item.Tasks.Item.ProgressTaskBoardFormat;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Planner.Plans.Item.Buckets.Item.Tasks.Item.AssignedToTaskBoardFormat;
-using MicrosoftGraphSdk.Planner.Plans.Item.Buckets.Item.Tasks.Item.BucketTaskBoardFormat;
-using MicrosoftGraphSdk.Planner.Plans.Item.Buckets.Item.Tasks.Item.Details;
-using MicrosoftGraphSdk.Planner.Plans.Item.Buckets.Item.Tasks.Item.ProgressTaskBoardFormat;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Planner.Plans.Item.Buckets.Item.Tasks.Item {
+namespace Microsoft.Graph.Beta.Planner.Plans.Item.Buckets.Item.Tasks.Item {
     /// <summary>Provides operations to manage the tasks property of the microsoft.graph.plannerBucket entity.</summary>
     public class PlannerTaskItemRequestBuilder {
         /// <summary>The assignedToTaskBoardFormat property</summary>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Messages.Item.Replies.Item.HostedContents.Count;
+using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Messages.Item.Replies.Item.HostedContents.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Messages.Item.Replies.Item.HostedContents.Count;
-using MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Messages.Item.Replies.Item.HostedContents.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Messages.Item.Replies.Item.HostedContents {
+namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Messages.Item.Replies.Item.HostedContents {
     /// <summary>Provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.</summary>
     public class HostedContentsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Messages.Item.Replies.Item
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.teams.item.primaryChannel.messages.item.replies.item.hostedContents.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.teams.item.primaryChannel.messages.item.replies.item.hostedContents.item collection</summary>
         public ChatMessageHostedContentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("chatMessageHostedContent_id", position);

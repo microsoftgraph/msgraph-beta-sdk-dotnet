@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.SubscribeByMail {
+namespace Microsoft.Graph.Beta.Groups.Item.SubscribeByMail {
     /// <summary>Provides operations to call the subscribeByMail method.</summary>
     public class SubscribeByMailRequestBuilder {
         /// <summary>Path parameters for the request</summary>

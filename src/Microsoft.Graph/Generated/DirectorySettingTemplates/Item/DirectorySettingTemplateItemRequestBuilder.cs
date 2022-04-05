@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.DirectorySettingTemplates.Item.CheckMemberGroups;
+using Microsoft.Graph.Beta.DirectorySettingTemplates.Item.CheckMemberObjects;
+using Microsoft.Graph.Beta.DirectorySettingTemplates.Item.GetMemberGroups;
+using Microsoft.Graph.Beta.DirectorySettingTemplates.Item.GetMemberObjects;
+using Microsoft.Graph.Beta.DirectorySettingTemplates.Item.Restore;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DirectorySettingTemplates.Item.CheckMemberGroups;
-using MicrosoftGraphSdk.DirectorySettingTemplates.Item.CheckMemberObjects;
-using MicrosoftGraphSdk.DirectorySettingTemplates.Item.GetMemberGroups;
-using MicrosoftGraphSdk.DirectorySettingTemplates.Item.GetMemberObjects;
-using MicrosoftGraphSdk.DirectorySettingTemplates.Item.Restore;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DirectorySettingTemplates.Item {
+namespace Microsoft.Graph.Beta.DirectorySettingTemplates.Item {
     /// <summary>Provides operations to manage the collection of directorySettingTemplate entities.</summary>
     public class DirectorySettingTemplateItemRequestBuilder {
         /// <summary>The checkMemberGroups property</summary>

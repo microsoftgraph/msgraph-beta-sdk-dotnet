@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.AgreementAcceptances.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.AgreementAcceptances.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.AgreementAcceptances {
+namespace Microsoft.Graph.Beta.AgreementAcceptances {
     /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
     public class AgreementAcceptancesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,7 +18,7 @@ namespace MicrosoftGraphSdk.AgreementAcceptances {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.agreementAcceptances.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.agreementAcceptances.item collection</summary>
         public AgreementAcceptanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("agreementAcceptance_id", position);

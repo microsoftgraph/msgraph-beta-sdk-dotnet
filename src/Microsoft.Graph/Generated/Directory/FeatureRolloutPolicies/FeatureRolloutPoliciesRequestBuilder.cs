@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Directory.FeatureRolloutPolicies.Count;
+using Microsoft.Graph.Beta.Directory.FeatureRolloutPolicies.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Directory.FeatureRolloutPolicies.Count;
-using MicrosoftGraphSdk.Directory.FeatureRolloutPolicies.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Directory.FeatureRolloutPolicies {
+namespace Microsoft.Graph.Beta.Directory.FeatureRolloutPolicies {
     /// <summary>Provides operations to manage the featureRolloutPolicies property of the microsoft.graph.directory entity.</summary>
     public class FeatureRolloutPoliciesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Directory.FeatureRolloutPolicies {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.directory.featureRolloutPolicies.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.directory.featureRolloutPolicies.item collection</summary>
         public FeatureRolloutPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("featureRolloutPolicy_id", position);

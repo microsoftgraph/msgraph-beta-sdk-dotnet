@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceManagement.RoleScopeTags.HasCustomRoleScopeTag {
+namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.HasCustomRoleScopeTag {
     /// <summary>Provides operations to call the hasCustomRoleScopeTag method.</summary>
     public class HasCustomRoleScopeTagResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

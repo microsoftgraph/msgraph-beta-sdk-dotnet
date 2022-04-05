@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetAzureADApplicationSignInSummaryWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetAzureADApplicationSignInSummaryWithPeriod {
     /// <summary>Provides operations to call the getAzureADApplicationSignInSummary method.</summary>
     public class GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

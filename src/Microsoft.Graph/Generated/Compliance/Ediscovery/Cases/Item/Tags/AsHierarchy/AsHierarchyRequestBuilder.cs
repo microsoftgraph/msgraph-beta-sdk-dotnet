@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Tags.AsHierarchy {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.AsHierarchy {
     /// <summary>Provides operations to call the asHierarchy method.</summary>
     public class AsHierarchyRequestBuilder {
         /// <summary>Path parameters for the request</summary>

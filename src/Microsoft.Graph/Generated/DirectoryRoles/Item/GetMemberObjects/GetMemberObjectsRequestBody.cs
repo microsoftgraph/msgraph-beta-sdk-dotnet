@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DirectoryRoles.Item.GetMemberObjects {
+namespace Microsoft.Graph.Beta.DirectoryRoles.Item.GetMemberObjects {
     /// <summary>Provides operations to call the getMemberObjects method.</summary>
     public class GetMemberObjectsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Drive.List.Items.Item.Activities.Item.DriveItem;
+using Microsoft.Graph.Beta.Drive.List.Items.Item.Activities.Item.ListItem;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Drive.List.Items.Item.Activities.Item.DriveItem;
-using MicrosoftGraphSdk.Drive.List.Items.Item.Activities.Item.ListItem;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Drive.List.Items.Item.Activities.Item {
+namespace Microsoft.Graph.Beta.Drive.List.Items.Item.Activities.Item {
     /// <summary>Provides operations to manage the activities property of the microsoft.graph.listItem entity.</summary>
     public class ItemActivityOLDItemRequestBuilder {
         /// <summary>The driveItem property</summary>

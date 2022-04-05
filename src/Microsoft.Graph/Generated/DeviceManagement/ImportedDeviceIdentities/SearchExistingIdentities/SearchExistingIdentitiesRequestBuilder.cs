@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.ImportedDeviceIdentities.SearchExistingIdentities {
+namespace Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.SearchExistingIdentities {
     /// <summary>Provides operations to call the searchExistingIdentities method.</summary>
     public class SearchExistingIdentitiesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

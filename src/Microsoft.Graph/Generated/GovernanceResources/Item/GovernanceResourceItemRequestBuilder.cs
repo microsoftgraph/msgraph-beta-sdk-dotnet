@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.GovernanceResources.Item.Parent;
+using Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignmentRequests;
+using Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments;
+using Microsoft.Graph.Beta.GovernanceResources.Item.RoleDefinitions;
+using Microsoft.Graph.Beta.GovernanceResources.Item.RoleSettings;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.GovernanceResources.Item.Parent;
-using MicrosoftGraphSdk.GovernanceResources.Item.RoleAssignmentRequests;
-using MicrosoftGraphSdk.GovernanceResources.Item.RoleAssignments;
-using MicrosoftGraphSdk.GovernanceResources.Item.RoleDefinitions;
-using MicrosoftGraphSdk.GovernanceResources.Item.RoleSettings;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.GovernanceResources.Item {
+namespace Microsoft.Graph.Beta.GovernanceResources.Item {
     /// <summary>Provides operations to manage the collection of governanceResource entities.</summary>
     public class GovernanceResourceItemRequestBuilder {
         /// <summary>The parent property</summary>

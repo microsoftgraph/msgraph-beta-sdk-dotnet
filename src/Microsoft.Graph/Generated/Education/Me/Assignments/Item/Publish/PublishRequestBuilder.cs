@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Education.Me.Assignments.Item.Publish {
+namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.Publish {
     /// <summary>Provides operations to call the publish method.</summary>
     public class PublishRequestBuilder {
         /// <summary>Path parameters for the request</summary>

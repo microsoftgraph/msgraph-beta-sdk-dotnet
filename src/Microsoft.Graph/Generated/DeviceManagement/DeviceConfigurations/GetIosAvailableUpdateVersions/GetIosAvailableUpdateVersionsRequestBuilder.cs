@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.GetIosAvailableUpdateVersions {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetIosAvailableUpdateVersions {
     /// <summary>Provides operations to call the getIosAvailableUpdateVersions method.</summary>
     public class GetIosAvailableUpdateVersionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

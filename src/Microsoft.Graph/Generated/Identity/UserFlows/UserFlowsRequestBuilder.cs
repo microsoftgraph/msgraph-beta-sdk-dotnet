@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Identity.UserFlows.Count;
+using Microsoft.Graph.Beta.Identity.UserFlows.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Identity.UserFlows.Count;
-using MicrosoftGraphSdk.Identity.UserFlows.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Identity.UserFlows {
+namespace Microsoft.Graph.Beta.Identity.UserFlows {
     /// <summary>Provides operations to manage the userFlows property of the microsoft.graph.identityContainer entity.</summary>
     public class UserFlowsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Identity.UserFlows {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.identity.userFlows.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.identity.userFlows.item collection</summary>
         public IdentityUserFlowItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("identityUserFlow_id", position);

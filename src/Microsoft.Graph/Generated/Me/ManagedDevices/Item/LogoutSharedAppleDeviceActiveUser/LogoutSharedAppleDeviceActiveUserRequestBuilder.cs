@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.LogoutSharedAppleDeviceActiveUser {
+namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.LogoutSharedAppleDeviceActiveUser {
     /// <summary>Provides operations to call the logoutSharedAppleDeviceActiveUser method.</summary>
     public class LogoutSharedAppleDeviceActiveUserRequestBuilder {
         /// <summary>Path parameters for the request</summary>

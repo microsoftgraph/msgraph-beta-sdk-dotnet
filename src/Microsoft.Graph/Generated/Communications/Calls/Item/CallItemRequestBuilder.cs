@@ -1,33 +1,33 @@
+using Microsoft.Graph.Beta.Communications.Calls.Item.AddLargeGalleryView;
+using Microsoft.Graph.Beta.Communications.Calls.Item.Answer;
+using Microsoft.Graph.Beta.Communications.Calls.Item.AudioRoutingGroups;
+using Microsoft.Graph.Beta.Communications.Calls.Item.CancelMediaProcessing;
+using Microsoft.Graph.Beta.Communications.Calls.Item.ChangeScreenSharingRole;
+using Microsoft.Graph.Beta.Communications.Calls.Item.ContentSharingSessions;
+using Microsoft.Graph.Beta.Communications.Calls.Item.KeepAlive;
+using Microsoft.Graph.Beta.Communications.Calls.Item.Mute;
+using Microsoft.Graph.Beta.Communications.Calls.Item.Operations;
+using Microsoft.Graph.Beta.Communications.Calls.Item.Participants;
+using Microsoft.Graph.Beta.Communications.Calls.Item.PlayPrompt;
+using Microsoft.Graph.Beta.Communications.Calls.Item.Record;
+using Microsoft.Graph.Beta.Communications.Calls.Item.RecordResponse;
+using Microsoft.Graph.Beta.Communications.Calls.Item.Redirect;
+using Microsoft.Graph.Beta.Communications.Calls.Item.Reject;
+using Microsoft.Graph.Beta.Communications.Calls.Item.SubscribeToTone;
+using Microsoft.Graph.Beta.Communications.Calls.Item.Transfer;
+using Microsoft.Graph.Beta.Communications.Calls.Item.Unmute;
+using Microsoft.Graph.Beta.Communications.Calls.Item.UpdateRecordingStatus;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Communications.Calls.Item.AddLargeGalleryView;
-using MicrosoftGraphSdk.Communications.Calls.Item.Answer;
-using MicrosoftGraphSdk.Communications.Calls.Item.AudioRoutingGroups;
-using MicrosoftGraphSdk.Communications.Calls.Item.CancelMediaProcessing;
-using MicrosoftGraphSdk.Communications.Calls.Item.ChangeScreenSharingRole;
-using MicrosoftGraphSdk.Communications.Calls.Item.ContentSharingSessions;
-using MicrosoftGraphSdk.Communications.Calls.Item.KeepAlive;
-using MicrosoftGraphSdk.Communications.Calls.Item.Mute;
-using MicrosoftGraphSdk.Communications.Calls.Item.Operations;
-using MicrosoftGraphSdk.Communications.Calls.Item.Participants;
-using MicrosoftGraphSdk.Communications.Calls.Item.PlayPrompt;
-using MicrosoftGraphSdk.Communications.Calls.Item.Record;
-using MicrosoftGraphSdk.Communications.Calls.Item.RecordResponse;
-using MicrosoftGraphSdk.Communications.Calls.Item.Redirect;
-using MicrosoftGraphSdk.Communications.Calls.Item.Reject;
-using MicrosoftGraphSdk.Communications.Calls.Item.SubscribeToTone;
-using MicrosoftGraphSdk.Communications.Calls.Item.Transfer;
-using MicrosoftGraphSdk.Communications.Calls.Item.Unmute;
-using MicrosoftGraphSdk.Communications.Calls.Item.UpdateRecordingStatus;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Communications.Calls.Item {
+namespace Microsoft.Graph.Beta.Communications.Calls.Item {
     /// <summary>Provides operations to manage the calls property of the microsoft.graph.cloudCommunications entity.</summary>
     public class CallItemRequestBuilder {
         /// <summary>The addLargeGalleryView property</summary>

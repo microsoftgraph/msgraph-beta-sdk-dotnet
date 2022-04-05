@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Applications.Item.HomeRealmDiscoveryPolicies.Count;
+using Microsoft.Graph.Beta.Applications.Item.HomeRealmDiscoveryPolicies.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Applications.Item.HomeRealmDiscoveryPolicies.Count;
-using MicrosoftGraphSdk.Applications.Item.HomeRealmDiscoveryPolicies.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Applications.Item.HomeRealmDiscoveryPolicies {
+namespace Microsoft.Graph.Beta.Applications.Item.HomeRealmDiscoveryPolicies {
     /// <summary>Provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.application entity.</summary>
     public class HomeRealmDiscoveryPoliciesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Applications.Item.HomeRealmDiscoveryPolicies {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.applications.item.homeRealmDiscoveryPolicies.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.applications.item.homeRealmDiscoveryPolicies.item collection</summary>
         public HomeRealmDiscoveryPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("homeRealmDiscoveryPolicy_id", position);

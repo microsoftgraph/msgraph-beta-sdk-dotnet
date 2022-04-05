@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.ClaimsMappingPolicies.Count;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.ClaimsMappingPolicies.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.ServicePrincipals.Item.ClaimsMappingPolicies.Count;
-using MicrosoftGraphSdk.ServicePrincipals.Item.ClaimsMappingPolicies.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.ServicePrincipals.Item.ClaimsMappingPolicies {
+namespace Microsoft.Graph.Beta.ServicePrincipals.Item.ClaimsMappingPolicies {
     /// <summary>Provides operations to manage the claimsMappingPolicies property of the microsoft.graph.servicePrincipal entity.</summary>
     public class ClaimsMappingPoliciesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.ClaimsMappingPolicies {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.servicePrincipals.item.claimsMappingPolicies.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.servicePrincipals.item.claimsMappingPolicies.item collection</summary>
         public ClaimsMappingPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("claimsMappingPolicy_id", position);

@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Drives.Item.List.Items.Item.CreateLink {
+namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.List.Items.Item.CreateLink {
     /// <summary>Provides operations to call the createLink method.</summary>
     public class CreateLinkRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -69,10 +69,10 @@ namespace MicrosoftGraphSdk.Groups.Item.Drives.Item.List.Items.Item.CreateLink {
         /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Permission> PostAsync(CreateLinkRequestBody body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Permission> PostAsync(CreateLinkRequestBody body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, headers, options);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Permission>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Permission.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Permission>(requestInfo, Microsoft.Graph.Beta.Models.Permission.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

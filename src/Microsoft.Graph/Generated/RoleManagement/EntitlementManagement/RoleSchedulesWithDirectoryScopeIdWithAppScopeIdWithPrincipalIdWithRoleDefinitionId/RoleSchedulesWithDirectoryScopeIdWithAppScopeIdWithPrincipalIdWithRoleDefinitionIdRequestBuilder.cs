@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId {
+namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId {
     /// <summary>Provides operations to call the roleSchedules method.</summary>
     public class RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder {
         /// <summary>Path parameters for the request</summary>

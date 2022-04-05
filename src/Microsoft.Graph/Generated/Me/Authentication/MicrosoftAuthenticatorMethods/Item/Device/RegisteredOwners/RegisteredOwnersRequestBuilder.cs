@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods.Item.Device.RegisteredOwners.Count;
+using Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods.Item.Device.RegisteredOwners.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Authentication.MicrosoftAuthenticatorMethods.Item.Device.RegisteredOwners.Count;
-using MicrosoftGraphSdk.Me.Authentication.MicrosoftAuthenticatorMethods.Item.Device.RegisteredOwners.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Authentication.MicrosoftAuthenticatorMethods.Item.Device.RegisteredOwners {
+namespace Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods.Item.Device.RegisteredOwners {
     /// <summary>Provides operations to manage the registeredOwners property of the microsoft.graph.device entity.</summary>
     public class RegisteredOwnersRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.Authentication.MicrosoftAuthenticatorMethods.Item
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.authentication.microsoftAuthenticatorMethods.item.device.registeredOwners.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.authentication.microsoftAuthenticatorMethods.item.device.registeredOwners.item collection</summary>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryObject_id", position);

@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.GovernanceResources.Count;
+using Microsoft.Graph.Beta.GovernanceResources.Item;
+using Microsoft.Graph.Beta.GovernanceResources.Register;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.GovernanceResources.Count;
-using MicrosoftGraphSdk.GovernanceResources.Item;
-using MicrosoftGraphSdk.GovernanceResources.Register;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.GovernanceResources {
+namespace Microsoft.Graph.Beta.GovernanceResources {
     /// <summary>Provides operations to manage the collection of governanceResource entities.</summary>
     public class GovernanceResourcesRequestBuilder {
         /// <summary>The count property</summary>
@@ -28,7 +28,7 @@ namespace MicrosoftGraphSdk.GovernanceResources {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.governanceResources.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.governanceResources.item collection</summary>
         public GovernanceResourceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("governanceResource_id", position);

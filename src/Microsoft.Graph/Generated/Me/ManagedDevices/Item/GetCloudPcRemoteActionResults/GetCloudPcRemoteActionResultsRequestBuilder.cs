@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.GetCloudPcRemoteActionResults {
+namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetCloudPcRemoteActionResults {
     /// <summary>Provides operations to call the getCloudPcRemoteActionResults method.</summary>
     public class GetCloudPcRemoteActionResultsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

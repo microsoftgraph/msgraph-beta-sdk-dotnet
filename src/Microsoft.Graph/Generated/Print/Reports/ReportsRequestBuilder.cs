@@ -1,26 +1,26 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Print.Reports.ApplicationSignInDetailedSummary;
+using Microsoft.Graph.Beta.Print.Reports.AuthenticationMethods;
+using Microsoft.Graph.Beta.Print.Reports.CredentialUserRegistrationDetails;
+using Microsoft.Graph.Beta.Print.Reports.DailyPrintUsageByPrinter;
+using Microsoft.Graph.Beta.Print.Reports.DailyPrintUsageByUser;
+using Microsoft.Graph.Beta.Print.Reports.DailyPrintUsageSummariesByPrinter;
+using Microsoft.Graph.Beta.Print.Reports.DailyPrintUsageSummariesByUser;
+using Microsoft.Graph.Beta.Print.Reports.MonthlyPrintUsageByPrinter;
+using Microsoft.Graph.Beta.Print.Reports.MonthlyPrintUsageByUser;
+using Microsoft.Graph.Beta.Print.Reports.MonthlyPrintUsageSummariesByPrinter;
+using Microsoft.Graph.Beta.Print.Reports.MonthlyPrintUsageSummariesByUser;
+using Microsoft.Graph.Beta.Print.Reports.UserCredentialUsageDetails;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Print.Reports.ApplicationSignInDetailedSummary;
-using MicrosoftGraphSdk.Print.Reports.AuthenticationMethods;
-using MicrosoftGraphSdk.Print.Reports.CredentialUserRegistrationDetails;
-using MicrosoftGraphSdk.Print.Reports.DailyPrintUsageByPrinter;
-using MicrosoftGraphSdk.Print.Reports.DailyPrintUsageByUser;
-using MicrosoftGraphSdk.Print.Reports.DailyPrintUsageSummariesByPrinter;
-using MicrosoftGraphSdk.Print.Reports.DailyPrintUsageSummariesByUser;
-using MicrosoftGraphSdk.Print.Reports.MonthlyPrintUsageByPrinter;
-using MicrosoftGraphSdk.Print.Reports.MonthlyPrintUsageByUser;
-using MicrosoftGraphSdk.Print.Reports.MonthlyPrintUsageSummariesByPrinter;
-using MicrosoftGraphSdk.Print.Reports.MonthlyPrintUsageSummariesByUser;
-using MicrosoftGraphSdk.Print.Reports.UserCredentialUsageDetails;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Print.Reports {
+namespace Microsoft.Graph.Beta.Print.Reports {
     /// <summary>Provides operations to manage the reports property of the microsoft.graph.print entity.</summary>
     public class ReportsRequestBuilder {
         /// <summary>The applicationSignInDetailedSummary property</summary>

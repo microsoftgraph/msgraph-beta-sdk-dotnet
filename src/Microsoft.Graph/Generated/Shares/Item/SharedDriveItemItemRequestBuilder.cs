@@ -1,21 +1,21 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Shares.Item.DriveItem;
+using Microsoft.Graph.Beta.Shares.Item.Items;
+using Microsoft.Graph.Beta.Shares.Item.List;
+using Microsoft.Graph.Beta.Shares.Item.ListItem;
+using Microsoft.Graph.Beta.Shares.Item.Permission;
+using Microsoft.Graph.Beta.Shares.Item.Root;
+using Microsoft.Graph.Beta.Shares.Item.Site;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Shares.Item.DriveItem;
-using MicrosoftGraphSdk.Shares.Item.Items;
-using MicrosoftGraphSdk.Shares.Item.List;
-using MicrosoftGraphSdk.Shares.Item.ListItem;
-using MicrosoftGraphSdk.Shares.Item.Permission;
-using MicrosoftGraphSdk.Shares.Item.Root;
-using MicrosoftGraphSdk.Shares.Item.Site;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Shares.Item {
+namespace Microsoft.Graph.Beta.Shares.Item {
     /// <summary>Provides operations to manage the collection of sharedDriveItem entities.</summary>
     public class SharedDriveItemItemRequestBuilder {
         /// <summary>The driveItem property</summary>

@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Me.Messages.Item.CreateReply {
+namespace Microsoft.Graph.Beta.Me.Messages.Item.CreateReply {
     /// <summary>Provides operations to call the createReply method.</summary>
     public class CreateReplyRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -12,7 +12,7 @@ namespace MicrosoftGraphSdk.Me.Messages.Item.CreateReply {
         /// <summary>The Comment property</summary>
         public string Comment { get; set; }
         /// <summary>The Message property</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Message Message { get; set; }
+        public Microsoft.Graph.Beta.Models.Message Message { get; set; }
         /// <summary>
         /// Instantiates a new createReplyRequestBody and sets the default values.
         /// </summary>
@@ -33,7 +33,7 @@ namespace MicrosoftGraphSdk.Me.Messages.Item.CreateReply {
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"comment", (o,n) => { (o as CreateReplyRequestBody).Comment = n.GetStringValue(); } },
-                {"message", (o,n) => { (o as CreateReplyRequestBody).Message = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Message>(MicrosoftGraphSdk.Models.Microsoft.Graph.Message.CreateFromDiscriminatorValue); } },
+                {"message", (o,n) => { (o as CreateReplyRequestBody).Message = n.GetObjectValue<Microsoft.Graph.Beta.Models.Message>(Microsoft.Graph.Beta.Models.Message.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace MicrosoftGraphSdk.Me.Messages.Item.CreateReply {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comment", Comment);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Message>("message", Message);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Message>("message", Message);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

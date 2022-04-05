@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.AssignedAccessMultiModeProfiles {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.AssignedAccessMultiModeProfiles {
     /// <summary>Provides operations to call the assignedAccessMultiModeProfiles method.</summary>
     public class AssignedAccessMultiModeProfilesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

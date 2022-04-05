@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.GetOemWarranty {
+namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetOemWarranty {
     /// <summary>Provides operations to call the getOemWarranty method.</summary>
     public class GetOemWarrantyRequestBuilder {
         /// <summary>Path parameters for the request</summary>

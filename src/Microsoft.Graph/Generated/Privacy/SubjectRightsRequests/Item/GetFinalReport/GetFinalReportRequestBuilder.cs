@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Privacy.SubjectRightsRequests.Item.GetFinalReport {
+namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.GetFinalReport {
     /// <summary>Provides operations to call the getFinalReport method.</summary>
     public class GetFinalReportRequestBuilder {
         /// <summary>Path parameters for the request</summary>

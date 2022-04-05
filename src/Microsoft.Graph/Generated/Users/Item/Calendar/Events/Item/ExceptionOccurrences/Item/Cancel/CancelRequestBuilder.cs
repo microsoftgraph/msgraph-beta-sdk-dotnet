@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Calendar.Events.Item.ExceptionOccurrences.Item.Cancel {
+namespace Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.ExceptionOccurrences.Item.Cancel {
     /// <summary>Provides operations to call the cancel method.</summary>
     public class CancelRequestBuilder {
         /// <summary>Path parameters for the request</summary>

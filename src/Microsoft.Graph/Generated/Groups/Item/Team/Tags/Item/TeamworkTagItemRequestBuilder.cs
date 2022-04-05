@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Groups.Item.Team.Tags.Item.Members;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Groups.Item.Team.Tags.Item.Members;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Team.Tags.Item {
+namespace Microsoft.Graph.Beta.Groups.Item.Team.Tags.Item {
     /// <summary>Provides operations to manage the tags property of the microsoft.graph.team entity.</summary>
     public class TeamworkTagItemRequestBuilder {
         /// <summary>The members property</summary>

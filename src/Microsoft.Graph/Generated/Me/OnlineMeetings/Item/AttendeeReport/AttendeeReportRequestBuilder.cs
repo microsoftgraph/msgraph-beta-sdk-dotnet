@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.OnlineMeetings.Item.AttendeeReport {
+namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.AttendeeReport {
     /// <summary>Provides operations to manage the media for the user entity.</summary>
     public class AttendeeReportRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,26 +1,26 @@
+using Microsoft.Graph.Beta.Groups.Item.Events.Item.Instances.Item.ExceptionOccurrences.Item.Accept;
+using Microsoft.Graph.Beta.Groups.Item.Events.Item.Instances.Item.ExceptionOccurrences.Item.Attachments;
+using Microsoft.Graph.Beta.Groups.Item.Events.Item.Instances.Item.ExceptionOccurrences.Item.Calendar;
+using Microsoft.Graph.Beta.Groups.Item.Events.Item.Instances.Item.ExceptionOccurrences.Item.Cancel;
+using Microsoft.Graph.Beta.Groups.Item.Events.Item.Instances.Item.ExceptionOccurrences.Item.Decline;
+using Microsoft.Graph.Beta.Groups.Item.Events.Item.Instances.Item.ExceptionOccurrences.Item.DismissReminder;
+using Microsoft.Graph.Beta.Groups.Item.Events.Item.Instances.Item.ExceptionOccurrences.Item.Extensions;
+using Microsoft.Graph.Beta.Groups.Item.Events.Item.Instances.Item.ExceptionOccurrences.Item.Forward;
+using Microsoft.Graph.Beta.Groups.Item.Events.Item.Instances.Item.ExceptionOccurrences.Item.MultiValueExtendedProperties;
+using Microsoft.Graph.Beta.Groups.Item.Events.Item.Instances.Item.ExceptionOccurrences.Item.SingleValueExtendedProperties;
+using Microsoft.Graph.Beta.Groups.Item.Events.Item.Instances.Item.ExceptionOccurrences.Item.SnoozeReminder;
+using Microsoft.Graph.Beta.Groups.Item.Events.Item.Instances.Item.ExceptionOccurrences.Item.TentativelyAccept;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Groups.Item.Events.Item.Instances.Item.ExceptionOccurrences.Item.Accept;
-using MicrosoftGraphSdk.Groups.Item.Events.Item.Instances.Item.ExceptionOccurrences.Item.Attachments;
-using MicrosoftGraphSdk.Groups.Item.Events.Item.Instances.Item.ExceptionOccurrences.Item.Calendar;
-using MicrosoftGraphSdk.Groups.Item.Events.Item.Instances.Item.ExceptionOccurrences.Item.Cancel;
-using MicrosoftGraphSdk.Groups.Item.Events.Item.Instances.Item.ExceptionOccurrences.Item.Decline;
-using MicrosoftGraphSdk.Groups.Item.Events.Item.Instances.Item.ExceptionOccurrences.Item.DismissReminder;
-using MicrosoftGraphSdk.Groups.Item.Events.Item.Instances.Item.ExceptionOccurrences.Item.Extensions;
-using MicrosoftGraphSdk.Groups.Item.Events.Item.Instances.Item.ExceptionOccurrences.Item.Forward;
-using MicrosoftGraphSdk.Groups.Item.Events.Item.Instances.Item.ExceptionOccurrences.Item.MultiValueExtendedProperties;
-using MicrosoftGraphSdk.Groups.Item.Events.Item.Instances.Item.ExceptionOccurrences.Item.SingleValueExtendedProperties;
-using MicrosoftGraphSdk.Groups.Item.Events.Item.Instances.Item.ExceptionOccurrences.Item.SnoozeReminder;
-using MicrosoftGraphSdk.Groups.Item.Events.Item.Instances.Item.ExceptionOccurrences.Item.TentativelyAccept;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Events.Item.Instances.Item.ExceptionOccurrences.Item {
+namespace Microsoft.Graph.Beta.Groups.Item.Events.Item.Instances.Item.ExceptionOccurrences.Item {
     /// <summary>Provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.</summary>
     public class EventItemRequestBuilder {
         /// <summary>The accept property</summary>

@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.PrivilegedRoleAssignments.Item.MakePermanent {
+namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakePermanent {
     /// <summary>Provides operations to call the makePermanent method.</summary>
     public class MakePermanentRequestBuilder {
         /// <summary>Path parameters for the request</summary>

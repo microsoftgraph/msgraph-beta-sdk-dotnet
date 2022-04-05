@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Templates.Item.Schema.Functions {
+namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Templates.Item.Schema.Functions {
     /// <summary>Provides operations to call the functions method.</summary>
     public class FunctionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

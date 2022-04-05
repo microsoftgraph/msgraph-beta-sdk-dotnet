@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Users.Item.Onenote.SectionGroups.Item.Sections.Item.Pages.Item.CopyToSection {
+namespace Microsoft.Graph.Beta.Users.Item.Onenote.SectionGroups.Item.Sections.Item.Pages.Item.CopyToSection {
     /// <summary>Provides operations to call the copyToSection method.</summary>
     public class CopyToSectionRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

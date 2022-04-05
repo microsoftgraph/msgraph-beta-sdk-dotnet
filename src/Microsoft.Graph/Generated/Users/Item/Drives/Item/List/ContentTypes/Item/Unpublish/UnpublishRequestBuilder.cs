@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Drives.Item.List.ContentTypes.Item.Unpublish {
+namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List.ContentTypes.Item.Unpublish {
     /// <summary>Provides operations to call the unpublish method.</summary>
     public class UnpublishRequestBuilder {
         /// <summary>Path parameters for the request</summary>

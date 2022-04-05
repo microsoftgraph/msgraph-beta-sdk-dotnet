@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicesWithoutCloudIdentity.Count;
+using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicesWithoutCloudIdentity.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsDevicesWithoutCloudIdentity.Count;
-using MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsDevicesWithoutCloudIdentity.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsDevicesWithoutCloudIdentity {
+namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicesWithoutCloudIdentity {
     /// <summary>Provides operations to manage the userExperienceAnalyticsDevicesWithoutCloudIdentity property of the microsoft.graph.deviceManagement entity.</summary>
     public class UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsDevicesWitho
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.userExperienceAnalyticsDevicesWithoutCloudIdentity.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.userExperienceAnalyticsDevicesWithoutCloudIdentity.item collection</summary>
         public UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userExperienceAnalyticsDeviceWithoutCloudIdentity_id", position);

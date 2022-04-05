@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Count;
+using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item;
+using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.ValidateCredentials;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Count;
-using MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item;
-using MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.ValidateCredentials;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs {
+namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs {
     /// <summary>Provides operations to manage the jobs property of the microsoft.graph.synchronization entity.</summary>
     public class JobsRequestBuilder {
         /// <summary>The count property</summary>
@@ -28,7 +28,7 @@ namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs {
         public ValidateCredentialsRequestBuilder ValidateCredentials { get =>
             new ValidateCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.applications.item.synchronization.jobs.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.applications.item.synchronization.jobs.item collection</summary>
         public SynchronizationJobItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("synchronizationJob_id", position);

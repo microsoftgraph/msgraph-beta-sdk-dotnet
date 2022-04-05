@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Commands.Item.Responsepayload;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Commands.Item.Responsepayload;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Commands.Item {
+namespace Microsoft.Graph.Beta.Commands.Item {
     /// <summary>Provides operations to manage the collection of command entities.</summary>
     public class CommandItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

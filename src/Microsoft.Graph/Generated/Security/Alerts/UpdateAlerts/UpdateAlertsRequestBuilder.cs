@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Security.Alerts.UpdateAlerts {
+namespace Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts {
     /// <summary>Provides operations to call the updateAlerts method.</summary>
     public class UpdateAlertsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

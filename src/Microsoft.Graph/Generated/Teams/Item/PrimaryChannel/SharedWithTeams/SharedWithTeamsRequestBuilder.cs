@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.SharedWithTeams.Count;
+using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.SharedWithTeams.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Teams.Item.PrimaryChannel.SharedWithTeams.Count;
-using MicrosoftGraphSdk.Teams.Item.PrimaryChannel.SharedWithTeams.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Teams.Item.PrimaryChannel.SharedWithTeams {
+namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.SharedWithTeams {
     /// <summary>Provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.</summary>
     public class SharedWithTeamsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Teams.Item.PrimaryChannel.SharedWithTeams {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.teams.item.primaryChannel.sharedWithTeams.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.teams.item.primaryChannel.sharedWithTeams.item collection</summary>
         public SharedWithChannelTeamInfoItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("sharedWithChannelTeamInfo_id", position);

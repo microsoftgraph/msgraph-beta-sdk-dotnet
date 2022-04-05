@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Education.SynchronizationProfiles.Item.Reset {
+namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Reset {
     /// <summary>Provides operations to call the reset method.</summary>
     public class ResetRequestBuilder {
         /// <summary>Path parameters for the request</summary>

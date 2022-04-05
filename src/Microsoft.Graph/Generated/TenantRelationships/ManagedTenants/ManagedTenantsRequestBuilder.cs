@@ -1,38 +1,38 @@
+using Microsoft.Graph.Beta.Models.ManagedTenants;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AggregatedPolicyCompliances;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AuditEvents;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnections;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcDevices;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcsOverview;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ConditionalAccessPolicyCoverages;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CredentialUserRegistrationsSummaries;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceCompliancePolicySettingStateSummaries;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceCompliances;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceComplianceTrends;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActions;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActionTenantDeploymentStatuses;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementIntents;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplates;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateSteps;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateStepVersions;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsDetailedInformation;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.WindowsDeviceMalwareStates;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.WindowsProtectionStates;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.AggregatedPolicyCompliances;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.AuditEvents;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.CloudPcConnections;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.CloudPcDevices;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.CloudPcsOverview;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ConditionalAccessPolicyCoverages;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.CredentialUserRegistrationsSummaries;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.DeviceCompliancePolicySettingStateSummaries;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagedDeviceCompliances;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagedDeviceComplianceTrends;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementActions;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementActionTenantDeploymentStatuses;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementIntents;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplateCollections;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplates;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplateSteps;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplateStepVersions;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantGroups;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.Tenants;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantsCustomizedInformation;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantsDetailedInformation;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantTags;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.WindowsDeviceMalwareStates;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.WindowsProtectionStates;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants {
+namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants {
     /// <summary>Provides operations to manage the managedTenants property of the microsoft.graph.tenantRelationship entity.</summary>
     public class ManagedTenantsRequestBuilder {
         /// <summary>The aggregatedPolicyCompliances property</summary>

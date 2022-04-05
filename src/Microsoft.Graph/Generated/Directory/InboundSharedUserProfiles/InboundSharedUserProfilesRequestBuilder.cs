@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Directory.InboundSharedUserProfiles.Count;
+using Microsoft.Graph.Beta.Directory.InboundSharedUserProfiles.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Directory.InboundSharedUserProfiles.Count;
-using MicrosoftGraphSdk.Directory.InboundSharedUserProfiles.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Directory.InboundSharedUserProfiles {
+namespace Microsoft.Graph.Beta.Directory.InboundSharedUserProfiles {
     /// <summary>Provides operations to manage the inboundSharedUserProfiles property of the microsoft.graph.directory entity.</summary>
     public class InboundSharedUserProfilesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Directory.InboundSharedUserProfiles {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.directory.inboundSharedUserProfiles.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.directory.inboundSharedUserProfiles.item collection</summary>
         public InboundSharedUserProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("inboundSharedUserProfile_userId", position);

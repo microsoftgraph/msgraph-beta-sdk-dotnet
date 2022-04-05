@@ -1,27 +1,27 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.Accept;
+using Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.Attachments;
+using Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.Calendar;
+using Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.Cancel;
+using Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.Decline;
+using Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.DismissReminder;
+using Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.ExceptionOccurrences;
+using Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.Extensions;
+using Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.Forward;
+using Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.MultiValueExtendedProperties;
+using Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.SingleValueExtendedProperties;
+using Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.SnoozeReminder;
+using Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.TentativelyAccept;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.Calendar.CalendarView.Item.Instances.Item.Accept;
-using MicrosoftGraphSdk.Users.Item.Calendar.CalendarView.Item.Instances.Item.Attachments;
-using MicrosoftGraphSdk.Users.Item.Calendar.CalendarView.Item.Instances.Item.Calendar;
-using MicrosoftGraphSdk.Users.Item.Calendar.CalendarView.Item.Instances.Item.Cancel;
-using MicrosoftGraphSdk.Users.Item.Calendar.CalendarView.Item.Instances.Item.Decline;
-using MicrosoftGraphSdk.Users.Item.Calendar.CalendarView.Item.Instances.Item.DismissReminder;
-using MicrosoftGraphSdk.Users.Item.Calendar.CalendarView.Item.Instances.Item.ExceptionOccurrences;
-using MicrosoftGraphSdk.Users.Item.Calendar.CalendarView.Item.Instances.Item.Extensions;
-using MicrosoftGraphSdk.Users.Item.Calendar.CalendarView.Item.Instances.Item.Forward;
-using MicrosoftGraphSdk.Users.Item.Calendar.CalendarView.Item.Instances.Item.MultiValueExtendedProperties;
-using MicrosoftGraphSdk.Users.Item.Calendar.CalendarView.Item.Instances.Item.SingleValueExtendedProperties;
-using MicrosoftGraphSdk.Users.Item.Calendar.CalendarView.Item.Instances.Item.SnoozeReminder;
-using MicrosoftGraphSdk.Users.Item.Calendar.CalendarView.Item.Instances.Item.TentativelyAccept;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Calendar.CalendarView.Item.Instances.Item {
+namespace Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item {
     /// <summary>Provides operations to manage the instances property of the microsoft.graph.event entity.</summary>
     public class EventItemRequestBuilder {
         /// <summary>The accept property</summary>
@@ -33,8 +33,8 @@ namespace MicrosoftGraphSdk.Users.Item.Calendar.CalendarView.Item.Instances.Item
             new AttachmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The calendar property</summary>
-        public MicrosoftGraphSdk.Users.Item.Calendar.CalendarView.Item.Instances.Item.Calendar.CalendarRequestBuilder Calendar { get =>
-            new MicrosoftGraphSdk.Users.Item.Calendar.CalendarView.Item.Instances.Item.Calendar.CalendarRequestBuilder(PathParameters, RequestAdapter);
+        public Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.Calendar.CalendarRequestBuilder Calendar { get =>
+            new Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.Calendar.CalendarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The cancel property</summary>
         public CancelRequestBuilder Cancel { get =>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Groups.Count;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Groups.Item;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models.TermStore;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Groups.Item.Sites.Item.TermStore.Groups.Count;
-using MicrosoftGraphSdk.Groups.Item.Sites.Item.TermStore.Groups.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Sites.Item.TermStore.Groups {
+namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Groups {
     /// <summary>Provides operations to manage the groups property of the microsoft.graph.termStore.store entity.</summary>
     public class GroupsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,11 +23,11 @@ namespace MicrosoftGraphSdk.Groups.Item.Sites.Item.TermStore.Groups {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.sites.item.termStore.groups.item collection</summary>
-        public MicrosoftGraphSdk.Groups.Item.Sites.Item.TermStore.Groups.Item.GroupItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.groups.item.sites.item.termStore.groups.item collection</summary>
+        public Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Groups.Item.GroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("group_id1", position);
-            return new MicrosoftGraphSdk.Groups.Item.Sites.Item.TermStore.Groups.Item.GroupItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Groups.Item.GroupItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new GroupsRequestBuilder and sets the default values.
@@ -83,7 +83,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Sites.Item.TermStore.Groups {
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Group body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
+        public RequestInformation CreatePostRequestInformation(Microsoft.Graph.Beta.Models.TermStore.Group body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -119,14 +119,14 @@ namespace MicrosoftGraphSdk.Groups.Item.Sites.Item.TermStore.Groups {
         /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Group> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Group body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.TermStore.Group> PostAsync(Microsoft.Graph.Beta.Models.TermStore.Group body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Group>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Group.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TermStore.Group>(requestInfo, Microsoft.Graph.Beta.Models.TermStore.Group.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Collection of all groups available in the term store.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.ExceptionOccurrences.Count;
+using Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.ExceptionOccurrences.Delta;
+using Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.ExceptionOccurrences.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.Calendar.CalendarView.Item.Instances.Item.ExceptionOccurrences.Count;
-using MicrosoftGraphSdk.Users.Item.Calendar.CalendarView.Item.Instances.Item.ExceptionOccurrences.Delta;
-using MicrosoftGraphSdk.Users.Item.Calendar.CalendarView.Item.Instances.Item.ExceptionOccurrences.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Calendar.CalendarView.Item.Instances.Item.ExceptionOccurrences {
+namespace Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.ExceptionOccurrences {
     /// <summary>Provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.</summary>
     public class ExceptionOccurrencesRequestBuilder {
         /// <summary>The count property</summary>
@@ -24,11 +24,11 @@ namespace MicrosoftGraphSdk.Users.Item.Calendar.CalendarView.Item.Instances.Item
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.calendar.calendarView.item.instances.item.exceptionOccurrences.item collection</summary>
-        public MicrosoftGraphSdk.Users.Item.Calendar.CalendarView.Item.Instances.Item.ExceptionOccurrences.Item.EventItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.calendar.calendarView.item.instances.item.exceptionOccurrences.item collection</summary>
+        public Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.ExceptionOccurrences.Item.EventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("event_id2", position);
-            return new MicrosoftGraphSdk.Users.Item.Calendar.CalendarView.Item.Instances.Item.ExceptionOccurrences.Item.EventItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.ExceptionOccurrences.Item.EventItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ExceptionOccurrencesRequestBuilder and sets the default values.

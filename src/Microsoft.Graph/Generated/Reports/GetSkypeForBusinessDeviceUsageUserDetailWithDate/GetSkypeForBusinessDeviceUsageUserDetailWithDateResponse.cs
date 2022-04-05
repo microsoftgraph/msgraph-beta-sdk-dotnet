@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Reports.GetSkypeForBusinessDeviceUsageUserDetailWithDate {
+namespace Microsoft.Graph.Beta.Reports.GetSkypeForBusinessDeviceUsageUserDetailWithDate {
     /// <summary>Provides operations to call the getSkypeForBusinessDeviceUsageUserDetail method.</summary>
     public class GetSkypeForBusinessDeviceUsageUserDetailWithDateResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

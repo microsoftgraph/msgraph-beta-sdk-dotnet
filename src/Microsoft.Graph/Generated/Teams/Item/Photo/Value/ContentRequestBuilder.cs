@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Teams.Item.Photo.Value {
+namespace Microsoft.Graph.Beta.Teams.Item.Photo.Value {
     /// <summary>Provides operations to manage the media for the team entity.</summary>
     public class ContentRequestBuilder {
         /// <summary>Path parameters for the request</summary>

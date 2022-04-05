@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Invitations.Count;
+using Microsoft.Graph.Beta.Invitations.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Invitations.Count;
-using MicrosoftGraphSdk.Invitations.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Invitations {
+namespace Microsoft.Graph.Beta.Invitations {
     /// <summary>Provides operations to manage the collection of invitation entities.</summary>
     public class InvitationsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Invitations {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.invitations.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.invitations.item collection</summary>
         public InvitationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("invitation_id", position);

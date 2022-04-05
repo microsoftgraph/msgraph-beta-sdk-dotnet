@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models.ManagedTenants;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Count;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Count;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplateCollections {
+namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections {
     /// <summary>Provides operations to manage the managementTemplateCollections property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
     public class ManagementTemplateCollectionsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplat
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.tenantRelationships.managedTenants.managementTemplateCollections.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.tenantRelationships.managedTenants.managementTemplateCollections.item collection</summary>
         public ManagementTemplateCollectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managementTemplateCollection_id", position);

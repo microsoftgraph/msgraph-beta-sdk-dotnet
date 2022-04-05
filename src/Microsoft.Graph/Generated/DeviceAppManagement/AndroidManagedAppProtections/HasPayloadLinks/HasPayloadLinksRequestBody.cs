@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceAppManagement.AndroidManagedAppProtections.HasPayloadLinks {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.HasPayloadLinks {
     /// <summary>Provides operations to call the hasPayloadLinks method.</summary>
     public class HasPayloadLinksRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

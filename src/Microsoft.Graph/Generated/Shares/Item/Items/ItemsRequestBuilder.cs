@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Shares.Item.Items.Count;
+using Microsoft.Graph.Beta.Shares.Item.Items.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Shares.Item.Items.Count;
-using MicrosoftGraphSdk.Shares.Item.Items.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Shares.Item.Items {
+namespace Microsoft.Graph.Beta.Shares.Item.Items {
     /// <summary>Provides operations to manage the items property of the microsoft.graph.sharedDriveItem entity.</summary>
     public class ItemsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Shares.Item.Items {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.shares.item.items.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.shares.item.items.item collection</summary>
         public DriveItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("driveItem_id", position);

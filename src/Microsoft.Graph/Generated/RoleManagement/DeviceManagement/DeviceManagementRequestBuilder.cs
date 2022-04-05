@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.RoleManagement.DeviceManagement.ResourceNamespaces;
+using Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments;
+using Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleDefinitions;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.RoleManagement.DeviceManagement.ResourceNamespaces;
-using MicrosoftGraphSdk.RoleManagement.DeviceManagement.RoleAssignments;
-using MicrosoftGraphSdk.RoleManagement.DeviceManagement.RoleDefinitions;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.RoleManagement.DeviceManagement {
+namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement {
     /// <summary>Provides operations to manage the deviceManagement property of the microsoft.graph.roleManagement entity.</summary>
     public class DeviceManagementRequestBuilder {
         /// <summary>Path parameters for the request</summary>

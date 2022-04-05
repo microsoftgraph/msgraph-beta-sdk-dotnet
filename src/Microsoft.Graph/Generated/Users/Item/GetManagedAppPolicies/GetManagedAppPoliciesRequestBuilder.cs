@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.GetManagedAppPolicies {
+namespace Microsoft.Graph.Beta.Users.Item.GetManagedAppPolicies {
     /// <summary>Provides operations to call the getManagedAppPolicies method.</summary>
     public class GetManagedAppPoliciesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

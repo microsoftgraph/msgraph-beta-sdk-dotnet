@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Reopen {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Reopen {
     /// <summary>Provides operations to call the reopen method.</summary>
     public class ReopenRequestBuilder {
         /// <summary>Path parameters for the request</summary>

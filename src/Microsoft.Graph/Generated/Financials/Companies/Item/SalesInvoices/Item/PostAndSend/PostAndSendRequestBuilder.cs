@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesInvoices.Item.PostAndSend {
+namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.PostAndSend {
     /// <summary>Provides operations to call the postAndSend method.</summary>
     public class PostAndSendRequestBuilder {
         /// <summary>Path parameters for the request</summary>

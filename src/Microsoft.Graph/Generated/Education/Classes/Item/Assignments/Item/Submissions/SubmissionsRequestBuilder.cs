@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions.Count;
+using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Education.Classes.Item.Assignments.Item.Submissions.Count;
-using MicrosoftGraphSdk.Education.Classes.Item.Assignments.Item.Submissions.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Education.Classes.Item.Assignments.Item.Submissions {
+namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions {
     /// <summary>Provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.</summary>
     public class SubmissionsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Education.Classes.Item.Assignments.Item.Submissions 
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.education.classes.item.assignments.item.submissions.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.education.classes.item.assignments.item.submissions.item collection</summary>
         public EducationSubmissionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationSubmission_id", position);

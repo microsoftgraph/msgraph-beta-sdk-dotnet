@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Organization.Item.Branding.BackgroundImage {
+namespace Microsoft.Graph.Beta.Organization.Item.Branding.BackgroundImage {
     /// <summary>Provides operations to manage the media for the organization entity.</summary>
     public class BackgroundImageRequestBuilder {
         /// <summary>Path parameters for the request</summary>

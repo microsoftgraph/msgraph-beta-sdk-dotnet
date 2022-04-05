@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers;
+using Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.TenantRelationships.DelegatedAdminCustomers;
-using MicrosoftGraphSdk.TenantRelationships.DelegatedAdminRelationships;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TenantRelationships {
+namespace Microsoft.Graph.Beta.TenantRelationships {
     /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class TenantRelationshipsRequestBuilder {
         /// <summary>The delegatedAdminCustomers property</summary>

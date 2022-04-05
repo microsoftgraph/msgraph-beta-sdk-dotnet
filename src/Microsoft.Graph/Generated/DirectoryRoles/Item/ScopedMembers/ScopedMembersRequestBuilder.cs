@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DirectoryRoles.Item.ScopedMembers.Count;
+using Microsoft.Graph.Beta.DirectoryRoles.Item.ScopedMembers.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DirectoryRoles.Item.ScopedMembers.Count;
-using MicrosoftGraphSdk.DirectoryRoles.Item.ScopedMembers.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DirectoryRoles.Item.ScopedMembers {
+namespace Microsoft.Graph.Beta.DirectoryRoles.Item.ScopedMembers {
     /// <summary>Provides operations to manage the scopedMembers property of the microsoft.graph.directoryRole entity.</summary>
     public class ScopedMembersRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DirectoryRoles.Item.ScopedMembers {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.directoryRoles.item.scopedMembers.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.directoryRoles.item.scopedMembers.item collection</summary>
         public ScopedRoleMembershipItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("scopedRoleMembership_id", position);

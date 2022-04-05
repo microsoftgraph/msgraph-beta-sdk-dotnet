@@ -1,20 +1,20 @@
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.Count;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.EnrollAssets;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.EnrollAssetsById;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.Item;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.UnenrollAssets;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.UnenrollAssetsById;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models.WindowsUpdates;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.Count;
-using MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.EnrollAssets;
-using MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.EnrollAssetsById;
-using MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.Item;
-using MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.UnenrollAssets;
-using MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.UnenrollAssetsById;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions {
+namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions {
     /// <summary>Provides operations to manage the exclusions property of the microsoft.graph.windowsUpdates.deploymentAudience entity.</summary>
     public class ExclusionsRequestBuilder {
         /// <summary>The count property</summary>
@@ -43,7 +43,7 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Excl
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.admin.windows.updates.deployments.item.audience.exclusions.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.admin.windows.updates.deployments.item.audience.exclusions.item collection</summary>
         public UpdatableAssetItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("updatableAsset_id", position);

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages {
+namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages {
     /// <summary>Provides operations to call the getSourceImages method.</summary>
     public class GetSourceImagesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

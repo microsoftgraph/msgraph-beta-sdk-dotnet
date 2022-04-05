@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item.Tasks.Item.Complete {
+namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item.Tasks.Item.Complete {
     /// <summary>Provides operations to call the complete method.</summary>
     public class CompleteRequestBuilder {
         /// <summary>Path parameters for the request</summary>

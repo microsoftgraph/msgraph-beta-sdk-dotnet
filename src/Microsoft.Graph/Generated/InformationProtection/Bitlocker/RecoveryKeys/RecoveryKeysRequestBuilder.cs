@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.InformationProtection.Bitlocker.RecoveryKeys.Count;
+using Microsoft.Graph.Beta.InformationProtection.Bitlocker.RecoveryKeys.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.InformationProtection.Bitlocker.RecoveryKeys.Count;
-using MicrosoftGraphSdk.InformationProtection.Bitlocker.RecoveryKeys.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.InformationProtection.Bitlocker.RecoveryKeys {
+namespace Microsoft.Graph.Beta.InformationProtection.Bitlocker.RecoveryKeys {
     /// <summary>Provides operations to manage the recoveryKeys property of the microsoft.graph.bitlocker entity.</summary>
     public class RecoveryKeysRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.InformationProtection.Bitlocker.RecoveryKeys {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.informationProtection.bitlocker.recoveryKeys.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.informationProtection.bitlocker.recoveryKeys.item collection</summary>
         public BitlockerRecoveryKeyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("bitlockerRecoveryKey_id", position);

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetOffice365ServicesUserCountsWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod {
     /// <summary>Provides operations to call the getOffice365ServicesUserCounts method.</summary>
     public class GetOffice365ServicesUserCountsWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

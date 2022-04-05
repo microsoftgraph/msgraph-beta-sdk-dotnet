@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.LogCollectionRequests.Item.CreateDownloadUrl;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.LogCollectionRequests.Item.CreateDownloadUrl;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.LogCollectionRequests.Item {
+namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.LogCollectionRequests.Item {
     /// <summary>Provides operations to manage the logCollectionRequests property of the microsoft.graph.managedDevice entity.</summary>
     public class DeviceLogCollectionResponseItemRequestBuilder {
         /// <summary>The createDownloadUrl property</summary>

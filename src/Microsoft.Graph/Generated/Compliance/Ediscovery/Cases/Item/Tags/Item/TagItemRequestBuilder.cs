@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildTags;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item.Parent;
+using Microsoft.Graph.Beta.Models.Ediscovery;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildTags;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Tags.Item.Parent;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Tags.Item {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item {
     /// <summary>Provides operations to manage the tags property of the microsoft.graph.ediscovery.case entity.</summary>
     public class TagItemRequestBuilder {
         /// <summary>The childTags property</summary>

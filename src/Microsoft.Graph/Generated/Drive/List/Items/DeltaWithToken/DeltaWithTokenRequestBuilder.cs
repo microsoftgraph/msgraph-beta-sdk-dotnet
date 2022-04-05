@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Drive.List.Items.DeltaWithToken {
+namespace Microsoft.Graph.Beta.Drive.List.Items.DeltaWithToken {
     /// <summary>Provides operations to call the delta method.</summary>
     public class DeltaWithTokenRequestBuilder {
         /// <summary>Path parameters for the request</summary>

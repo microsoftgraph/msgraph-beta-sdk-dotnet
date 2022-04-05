@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Users.Item.Drives.Item.List.ContentTypes.Item.AssociateWithHubSites {
+namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List.ContentTypes.Item.AssociateWithHubSites {
     /// <summary>Provides operations to call the associateWithHubSites method.</summary>
     public class AssociateWithHubSitesRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

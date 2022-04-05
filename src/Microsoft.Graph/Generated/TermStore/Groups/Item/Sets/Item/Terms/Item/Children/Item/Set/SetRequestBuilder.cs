@@ -1,14 +1,14 @@
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models.TermStore;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TermStore.Groups.Item.Sets.Item.Terms.Item.Children.Item.Set {
+namespace Microsoft.Graph.Beta.TermStore.Groups.Item.Sets.Item.Terms.Item.Children.Item.Set {
     /// <summary>Provides operations to manage the set property of the microsoft.graph.termStore.term entity.</summary>
     public class SetRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -73,13 +73,13 @@ namespace MicrosoftGraphSdk.TermStore.Groups.Item.Sets.Item.Terms.Item.Children.
         /// <param name="queryParameters">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Set> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.TermStore.Set> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(queryParameters, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Set>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Set.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TermStore.Set>(requestInfo, Microsoft.Graph.Beta.Models.TermStore.Set.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The [set] in which the term is created.</summary>
         public class GetQueryParameters : QueryParametersBase {

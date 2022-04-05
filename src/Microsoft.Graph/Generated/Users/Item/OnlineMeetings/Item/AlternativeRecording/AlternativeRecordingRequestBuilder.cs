@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.OnlineMeetings.Item.AlternativeRecording {
+namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.AlternativeRecording {
     /// <summary>Provides operations to manage the media for the user entity.</summary>
     public class AlternativeRecordingRequestBuilder {
         /// <summary>Path parameters for the request</summary>

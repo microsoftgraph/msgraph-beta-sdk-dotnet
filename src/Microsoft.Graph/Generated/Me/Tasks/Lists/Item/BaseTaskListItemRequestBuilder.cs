@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.Tasks.Lists.Item.Extensions;
+using Microsoft.Graph.Beta.Me.Tasks.Lists.Item.Tasks;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Tasks.Lists.Item.Extensions;
-using MicrosoftGraphSdk.Me.Tasks.Lists.Item.Tasks;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Tasks.Lists.Item {
+namespace Microsoft.Graph.Beta.Me.Tasks.Lists.Item {
     /// <summary>Provides operations to manage the lists property of the microsoft.graph.tasks entity.</summary>
     public class BaseTaskListItemRequestBuilder {
         /// <summary>The extensions property</summary>
@@ -22,8 +22,8 @@ namespace MicrosoftGraphSdk.Me.Tasks.Lists.Item {
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>The tasks property</summary>
-        public MicrosoftGraphSdk.Me.Tasks.Lists.Item.Tasks.TasksRequestBuilder Tasks { get =>
-            new MicrosoftGraphSdk.Me.Tasks.Lists.Item.Tasks.TasksRequestBuilder(PathParameters, RequestAdapter);
+        public Microsoft.Graph.Beta.Me.Tasks.Lists.Item.Tasks.TasksRequestBuilder Tasks { get =>
+            new Microsoft.Graph.Beta.Me.Tasks.Lists.Item.Tasks.TasksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }

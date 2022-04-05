@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.PrivilegedRoleAssignments.Item.MakePermanent {
+namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakePermanent {
     /// <summary>Provides operations to call the makePermanent method.</summary>
     public class MakePermanentRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

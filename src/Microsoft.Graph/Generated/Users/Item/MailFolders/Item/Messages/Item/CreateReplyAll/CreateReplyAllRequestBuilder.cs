@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.MailFolders.Item.Messages.Item.CreateReplyAll {
+namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Item.CreateReplyAll {
     /// <summary>Provides operations to call the createReplyAll method.</summary>
     public class CreateReplyAllRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.CreateCopy {
+namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.CreateCopy {
     /// <summary>Provides operations to call the createCopy method.</summary>
     public class CreateCopyRequestBuilder {
         /// <summary>Path parameters for the request</summary>

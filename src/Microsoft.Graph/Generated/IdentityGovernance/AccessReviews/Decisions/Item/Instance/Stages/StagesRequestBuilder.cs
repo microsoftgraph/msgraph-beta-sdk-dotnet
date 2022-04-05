@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Stages.Count;
+using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Stages.FilterByCurrentUserWithOn;
+using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Stages.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Stages.Count;
-using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Stages.FilterByCurrentUserWithOn;
-using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Stages.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Stages {
+namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Stages {
     /// <summary>Provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.</summary>
     public class StagesRequestBuilder {
         /// <summary>The count property</summary>
@@ -24,7 +24,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Decisions.Item.Inst
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.identityGovernance.accessReviews.decisions.item.instance.stages.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.identityGovernance.accessReviews.decisions.item.instance.stages.item collection</summary>
         public AccessReviewStageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewStage_id", position);

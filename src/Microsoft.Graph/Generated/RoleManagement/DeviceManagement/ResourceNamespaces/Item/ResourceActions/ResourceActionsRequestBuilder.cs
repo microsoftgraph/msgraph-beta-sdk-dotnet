@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.RoleManagement.DeviceManagement.ResourceNamespaces.Item.ResourceActions.Count;
+using Microsoft.Graph.Beta.RoleManagement.DeviceManagement.ResourceNamespaces.Item.ResourceActions.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.RoleManagement.DeviceManagement.ResourceNamespaces.Item.ResourceActions.Count;
-using MicrosoftGraphSdk.RoleManagement.DeviceManagement.ResourceNamespaces.Item.ResourceActions.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.RoleManagement.DeviceManagement.ResourceNamespaces.Item.ResourceActions {
+namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.ResourceNamespaces.Item.ResourceActions {
     /// <summary>Provides operations to manage the resourceActions property of the microsoft.graph.unifiedRbacResourceNamespace entity.</summary>
     public class ResourceActionsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.RoleManagement.DeviceManagement.ResourceNamespaces.I
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.roleManagement.deviceManagement.resourceNamespaces.item.resourceActions.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.roleManagement.deviceManagement.resourceNamespaces.item.resourceActions.item collection</summary>
         public UnifiedRbacResourceActionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRbacResourceAction_id", position);

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetTeamsDeviceUsageUserDetailWithDate {
+namespace Microsoft.Graph.Beta.Reports.GetTeamsDeviceUsageUserDetailWithDate {
     /// <summary>Provides operations to call the getTeamsDeviceUsageUserDetail method.</summary>
     public class GetTeamsDeviceUsageUserDetailWithDateRequestBuilder {
         /// <summary>Path parameters for the request</summary>

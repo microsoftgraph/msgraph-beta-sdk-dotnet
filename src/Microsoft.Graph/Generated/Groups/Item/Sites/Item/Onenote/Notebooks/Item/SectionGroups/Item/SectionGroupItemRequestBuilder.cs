@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.ParentNotebook;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.ParentSectionGroup;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroups;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.ParentNotebook;
-using MicrosoftGraphSdk.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.ParentSectionGroup;
-using MicrosoftGraphSdk.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroups;
-using MicrosoftGraphSdk.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item {
+namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item {
     /// <summary>Provides operations to manage the sectionGroups property of the microsoft.graph.notebook entity.</summary>
     public class SectionGroupItemRequestBuilder {
         /// <summary>The parentNotebook property</summary>
@@ -28,8 +28,8 @@ namespace MicrosoftGraphSdk.Groups.Item.Sites.Item.Onenote.Notebooks.Item.Sectio
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>The sectionGroups property</summary>
-        public MicrosoftGraphSdk.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroups.SectionGroupsRequestBuilder SectionGroups { get =>
-            new MicrosoftGraphSdk.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroups.SectionGroupsRequestBuilder(PathParameters, RequestAdapter);
+        public Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroups.SectionGroupsRequestBuilder SectionGroups { get =>
+            new Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroups.SectionGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sections property</summary>
         public SectionsRequestBuilder Sections { get =>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.GetOmaSettingPlainTextValueWithSecretReferenceValueId {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.GetOmaSettingPlainTextValueWithSecretReferenceValueId {
     /// <summary>Provides operations to call the getOmaSettingPlainTextValue method.</summary>
     public class GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder {
         /// <summary>Path parameters for the request</summary>

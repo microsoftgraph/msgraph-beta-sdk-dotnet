@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item.Assignments.Count;
+using Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item.Assignments.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.OfficeConfiguration.ClientConfigurations.Item.Assignments.Count;
-using MicrosoftGraphSdk.OfficeConfiguration.ClientConfigurations.Item.Assignments.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.OfficeConfiguration.ClientConfigurations.Item.Assignments {
+namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item.Assignments {
     /// <summary>Provides operations to manage the assignments property of the microsoft.graph.officeClientConfiguration entity.</summary>
     public class AssignmentsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.OfficeConfiguration.ClientConfigurations.Item.Assign
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.officeConfiguration.clientConfigurations.item.assignments.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.officeConfiguration.clientConfigurations.item.assignments.item collection</summary>
         public OfficeClientConfigurationAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("officeClientConfigurationAssignment_id", position);

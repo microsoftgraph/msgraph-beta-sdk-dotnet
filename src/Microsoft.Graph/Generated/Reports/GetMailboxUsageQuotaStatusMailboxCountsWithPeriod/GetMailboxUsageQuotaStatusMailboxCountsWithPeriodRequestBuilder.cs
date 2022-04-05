@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetMailboxUsageQuotaStatusMailboxCountsWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetMailboxUsageQuotaStatusMailboxCountsWithPeriod {
     /// <summary>Provides operations to call the getMailboxUsageQuotaStatusMailboxCounts method.</summary>
     public class GetMailboxUsageQuotaStatusMailboxCountsWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

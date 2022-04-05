@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.MoveDevicesToOU {
+namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.MoveDevicesToOU {
     /// <summary>Provides operations to call the moveDevicesToOU method.</summary>
     public class MoveDevicesToOURequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

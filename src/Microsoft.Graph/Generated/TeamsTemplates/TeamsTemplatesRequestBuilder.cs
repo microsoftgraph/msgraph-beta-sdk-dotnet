@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.TeamsTemplates.Count;
+using Microsoft.Graph.Beta.TeamsTemplates.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.TeamsTemplates.Count;
-using MicrosoftGraphSdk.TeamsTemplates.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TeamsTemplates {
+namespace Microsoft.Graph.Beta.TeamsTemplates {
     /// <summary>Provides operations to manage the collection of teamsTemplate entities.</summary>
     public class TeamsTemplatesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.TeamsTemplates {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.teamsTemplates.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.teamsTemplates.item collection</summary>
         public TeamsTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("teamsTemplate_id", position);

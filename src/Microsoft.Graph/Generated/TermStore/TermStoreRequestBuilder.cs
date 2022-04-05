@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models.TermStore;
+using Microsoft.Graph.Beta.TermStore.Groups;
+using Microsoft.Graph.Beta.TermStore.Sets;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore;
-using MicrosoftGraphSdk.TermStore.Groups;
-using MicrosoftGraphSdk.TermStore.Sets;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TermStore {
+namespace Microsoft.Graph.Beta.TermStore {
     /// <summary>Provides operations to manage the store singleton.</summary>
     public class TermStoreRequestBuilder {
         /// <summary>The groups property</summary>

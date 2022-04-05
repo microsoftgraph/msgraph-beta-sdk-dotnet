@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Groups.Item.Sets.Item.Terms.Item.Children.Item.Relations;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Groups.Item.Sets.Item.Terms.Item.Children.Item.Set;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models.TermStore;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Groups.Item.Sites.Item.TermStore.Groups.Item.Sets.Item.Terms.Item.Children.Item.Relations;
-using MicrosoftGraphSdk.Groups.Item.Sites.Item.TermStore.Groups.Item.Sets.Item.Terms.Item.Children.Item.Set;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Sites.Item.TermStore.Groups.Item.Sets.Item.Terms.Item.Children.Item {
+namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Groups.Item.Sets.Item.Terms.Item.Children.Item {
     /// <summary>Provides operations to manage the children property of the microsoft.graph.termStore.term entity.</summary>
     public class TermItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

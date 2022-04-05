@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Reports.GetOffice365GroupsActivityDetailWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityDetailWithPeriod {
     /// <summary>Provides operations to call the getOffice365GroupsActivityDetail method.</summary>
     public class GetOffice365GroupsActivityDetailWithPeriodResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

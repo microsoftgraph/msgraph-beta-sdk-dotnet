@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.Item.MemberOf.Item.Members.Count;
+using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.Item.MemberOf.Item.Members.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.Connectors.Item.MemberOf.Item.Members.Count;
-using MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.Connectors.Item.MemberOf.Item.Members.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.Connectors.Item.MemberOf.Item.Members {
+namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.Item.MemberOf.Item.Members {
     /// <summary>Provides operations to manage the members property of the microsoft.graph.connectorGroup entity.</summary>
     public class MembersRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,11 +23,11 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.Connectors.Item.Me
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.onPremisesPublishingProfiles.item.connectors.item.memberOf.item.members.item collection</summary>
-        public MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.Connectors.Item.MemberOf.Item.Members.Item.ConnectorItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.onPremisesPublishingProfiles.item.connectors.item.memberOf.item.members.item collection</summary>
+        public Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.Item.MemberOf.Item.Members.Item.ConnectorItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("connector_id1", position);
-            return new MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.Connectors.Item.MemberOf.Item.Members.Item.ConnectorItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.Item.MemberOf.Item.Members.Item.ConnectorItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MembersRequestBuilder and sets the default values.

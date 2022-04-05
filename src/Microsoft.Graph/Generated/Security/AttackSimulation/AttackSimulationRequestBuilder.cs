@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Security.AttackSimulation.SimulationAutomations;
+using Microsoft.Graph.Beta.Security.AttackSimulation.Simulations;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Security.AttackSimulation.SimulationAutomations;
-using MicrosoftGraphSdk.Security.AttackSimulation.Simulations;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Security.AttackSimulation {
+namespace Microsoft.Graph.Beta.Security.AttackSimulation {
     /// <summary>Provides operations to manage the attackSimulation property of the microsoft.graph.security entity.</summary>
     public class AttackSimulationRequestBuilder {
         /// <summary>Path parameters for the request</summary>

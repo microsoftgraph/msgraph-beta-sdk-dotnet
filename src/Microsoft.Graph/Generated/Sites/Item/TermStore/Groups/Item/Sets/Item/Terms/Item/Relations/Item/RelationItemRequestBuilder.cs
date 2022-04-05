@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models.TermStore;
+using Microsoft.Graph.Beta.Sites.Item.TermStore.Groups.Item.Sets.Item.Terms.Item.Relations.Item.FromTerm;
+using Microsoft.Graph.Beta.Sites.Item.TermStore.Groups.Item.Sets.Item.Terms.Item.Relations.Item.Set;
+using Microsoft.Graph.Beta.Sites.Item.TermStore.Groups.Item.Sets.Item.Terms.Item.Relations.Item.ToTerm;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore;
-using MicrosoftGraphSdk.Sites.Item.TermStore.Groups.Item.Sets.Item.Terms.Item.Relations.Item.FromTerm;
-using MicrosoftGraphSdk.Sites.Item.TermStore.Groups.Item.Sets.Item.Terms.Item.Relations.Item.Set;
-using MicrosoftGraphSdk.Sites.Item.TermStore.Groups.Item.Sets.Item.Terms.Item.Relations.Item.ToTerm;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Sites.Item.TermStore.Groups.Item.Sets.Item.Terms.Item.Relations.Item {
+namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Groups.Item.Sets.Item.Terms.Item.Relations.Item {
     /// <summary>Provides operations to manage the relations property of the microsoft.graph.termStore.term entity.</summary>
     public class RelationItemRequestBuilder {
         /// <summary>The fromTerm property</summary>

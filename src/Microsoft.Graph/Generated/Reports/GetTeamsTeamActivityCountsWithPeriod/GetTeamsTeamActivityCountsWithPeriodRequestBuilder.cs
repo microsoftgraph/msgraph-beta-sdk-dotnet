@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetTeamsTeamActivityCountsWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetTeamsTeamActivityCountsWithPeriod {
     /// <summary>Provides operations to call the getTeamsTeamActivityCounts method.</summary>
     public class GetTeamsTeamActivityCountsWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

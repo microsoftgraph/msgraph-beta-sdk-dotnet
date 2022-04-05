@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceManagement.Templates.Item.Categories.Item.RecommendedSettings.Count;
+using Microsoft.Graph.Beta.DeviceManagement.Templates.Item.Categories.Item.RecommendedSettings.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.Templates.Item.Categories.Item.RecommendedSettings.Count;
-using MicrosoftGraphSdk.DeviceManagement.Templates.Item.Categories.Item.RecommendedSettings.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.Categories.Item.RecommendedSettings {
+namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.Categories.Item.RecommendedSettings {
     /// <summary>Provides operations to manage the recommendedSettings property of the microsoft.graph.deviceManagementTemplateSettingCategory entity.</summary>
     public class RecommendedSettingsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.Categories.Item.Reco
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.templates.item.categories.item.recommendedSettings.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.templates.item.categories.item.recommendedSettings.item collection</summary>
         public DeviceManagementSettingInstanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementSettingInstance_id", position);

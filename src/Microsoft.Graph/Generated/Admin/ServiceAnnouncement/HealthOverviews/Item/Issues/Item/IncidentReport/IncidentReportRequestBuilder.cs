@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.HealthOverviews.Item.Issues.Item.IncidentReport {
+namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.HealthOverviews.Item.Issues.Item.IncidentReport {
     /// <summary>Provides operations to call the incidentReport method.</summary>
     public class IncidentReportRequestBuilder {
         /// <summary>Path parameters for the request</summary>

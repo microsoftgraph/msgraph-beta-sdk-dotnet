@@ -1,14 +1,14 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Identity.B2cUserFlows.Item.UserAttributeAssignments.Item.UserAttribute {
+namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignments.Item.UserAttribute {
     /// <summary>Provides operations to manage the userAttribute property of the microsoft.graph.identityUserFlowAttributeAssignment entity.</summary>
     public class UserAttributeRequestBuilder {
         /// <summary>Path parameters for the request</summary>

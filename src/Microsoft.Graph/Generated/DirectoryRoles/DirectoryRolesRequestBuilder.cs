@@ -1,20 +1,20 @@
+using Microsoft.Graph.Beta.DirectoryRoles.Count;
+using Microsoft.Graph.Beta.DirectoryRoles.Delta;
+using Microsoft.Graph.Beta.DirectoryRoles.GetByIds;
+using Microsoft.Graph.Beta.DirectoryRoles.GetUserOwnedObjects;
+using Microsoft.Graph.Beta.DirectoryRoles.Item;
+using Microsoft.Graph.Beta.DirectoryRoles.ValidateProperties;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DirectoryRoles.Count;
-using MicrosoftGraphSdk.DirectoryRoles.Delta;
-using MicrosoftGraphSdk.DirectoryRoles.GetByIds;
-using MicrosoftGraphSdk.DirectoryRoles.GetUserOwnedObjects;
-using MicrosoftGraphSdk.DirectoryRoles.Item;
-using MicrosoftGraphSdk.DirectoryRoles.ValidateProperties;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DirectoryRoles {
+namespace Microsoft.Graph.Beta.DirectoryRoles {
     /// <summary>Provides operations to manage the collection of directoryRole entities.</summary>
     public class DirectoryRolesRequestBuilder {
         /// <summary>The count property</summary>
@@ -39,7 +39,7 @@ namespace MicrosoftGraphSdk.DirectoryRoles {
         public ValidatePropertiesRequestBuilder ValidateProperties { get =>
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.directoryRoles.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.directoryRoles.item collection</summary>
         public DirectoryRoleItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryRole_id", position);

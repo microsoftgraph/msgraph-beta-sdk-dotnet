@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.AppLogCollectionRequests;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.MobileAppTroubleshootingEvents.Item.AppLogCollectionRequests;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.MobileAppTroubleshootingEvents.Item {
+namespace Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item {
     /// <summary>Provides operations to manage the mobileAppTroubleshootingEvents property of the microsoft.graph.user entity.</summary>
     public class MobileAppTroubleshootingEventItemRequestBuilder {
         /// <summary>The appLogCollectionRequests property</summary>

@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.Count;
+using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.FilterByCurrentUserWithOn;
+using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.Count;
-using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.FilterByCurrentUserWithOn;
-using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests {
+namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests {
     /// <summary>Provides operations to manage the roleAssignmentScheduleRequests property of the microsoft.graph.rbacApplication entity.</summary>
     public class RoleAssignmentScheduleRequestsRequestBuilder {
         /// <summary>The count property</summary>
@@ -24,7 +24,7 @@ namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignmentS
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.roleManagement.entitlementManagement.roleAssignmentScheduleRequests.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.roleManagement.entitlementManagement.roleAssignmentScheduleRequests.item collection</summary>
         public UnifiedRoleAssignmentScheduleRequestItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleAssignmentScheduleRequest_id", position);

@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Communications.Calls.Item.Participants.Item.Mute;
+using Microsoft.Graph.Beta.Communications.Calls.Item.Participants.Item.StartHoldMusic;
+using Microsoft.Graph.Beta.Communications.Calls.Item.Participants.Item.StopHoldMusic;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Communications.Calls.Item.Participants.Item.Mute;
-using MicrosoftGraphSdk.Communications.Calls.Item.Participants.Item.StartHoldMusic;
-using MicrosoftGraphSdk.Communications.Calls.Item.Participants.Item.StopHoldMusic;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Communications.Calls.Item.Participants.Item {
+namespace Microsoft.Graph.Beta.Communications.Calls.Item.Participants.Item {
     /// <summary>Provides operations to manage the participants property of the microsoft.graph.call entity.</summary>
     public class ParticipantItemRequestBuilder {
         /// <summary>The mute property</summary>

@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Categories.Item.Settings;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.Intents.Item.Categories.Item.Settings;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.Categories.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Categories.Item {
     /// <summary>Provides operations to manage the categories property of the microsoft.graph.deviceManagementIntent entity.</summary>
     public class DeviceManagementIntentSettingCategoryItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

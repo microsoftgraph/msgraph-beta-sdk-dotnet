@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleEligibilityScheduleInstances.Count;
+using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleEligibilityScheduleInstances.FilterByCurrentUserWithOn;
+using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleEligibilityScheduleInstances.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleEligibilityScheduleInstances.Count;
-using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleEligibilityScheduleInstances.FilterByCurrentUserWithOn;
-using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleEligibilityScheduleInstances.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleEligibilityScheduleInstances {
+namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleEligibilityScheduleInstances {
     /// <summary>Provides operations to manage the roleEligibilityScheduleInstances property of the microsoft.graph.rbacApplication entity.</summary>
     public class RoleEligibilityScheduleInstancesRequestBuilder {
         /// <summary>The count property</summary>
@@ -24,7 +24,7 @@ namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleEligibility
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.roleManagement.entitlementManagement.roleEligibilityScheduleInstances.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.roleManagement.entitlementManagement.roleEligibilityScheduleInstances.item collection</summary>
         public UnifiedRoleEligibilityScheduleInstanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleEligibilityScheduleInstance_id", position);

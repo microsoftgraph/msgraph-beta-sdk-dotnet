@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.GetSuggestedEnrollmentLimitWithEnrollmentType {
+namespace Microsoft.Graph.Beta.DeviceManagement.GetSuggestedEnrollmentLimitWithEnrollmentType {
     /// <summary>Provides operations to call the getSuggestedEnrollmentLimit method.</summary>
     public class GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder {
         /// <summary>Path parameters for the request</summary>

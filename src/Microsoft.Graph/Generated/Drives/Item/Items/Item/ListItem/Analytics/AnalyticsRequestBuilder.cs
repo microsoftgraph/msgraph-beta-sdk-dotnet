@@ -1,14 +1,14 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Drives.Item.Items.Item.ListItem.Analytics {
+namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.ListItem.Analytics {
     /// <summary>Provides operations to manage the analytics property of the microsoft.graph.listItem entity.</summary>
     public class AnalyticsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

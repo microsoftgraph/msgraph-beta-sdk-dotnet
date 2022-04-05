@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Sites.Remove {
+namespace Microsoft.Graph.Beta.Sites.Remove {
     /// <summary>Provides operations to call the remove method.</summary>
     public class RemoveRequestBuilder {
         /// <summary>Path parameters for the request</summary>

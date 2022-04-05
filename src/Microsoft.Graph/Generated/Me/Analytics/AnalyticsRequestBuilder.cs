@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Me.Analytics.ActivityStatistics;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Analytics.ActivityStatistics;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Analytics {
+namespace Microsoft.Graph.Beta.Me.Analytics {
     /// <summary>Provides operations to manage the analytics property of the microsoft.graph.user entity.</summary>
     public class AnalyticsRequestBuilder {
         /// <summary>The activityStatistics property</summary>

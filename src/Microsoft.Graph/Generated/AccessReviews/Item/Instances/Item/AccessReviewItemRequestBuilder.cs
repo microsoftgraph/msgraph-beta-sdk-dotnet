@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item.Decisions;
+using Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item.MyDecisions;
+using Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item.Reviewers;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.AccessReviews.Item.Instances.Item.Decisions;
-using MicrosoftGraphSdk.AccessReviews.Item.Instances.Item.MyDecisions;
-using MicrosoftGraphSdk.AccessReviews.Item.Instances.Item.Reviewers;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.AccessReviews.Item.Instances.Item {
+namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item {
     /// <summary>Provides operations to manage the instances property of the microsoft.graph.accessReview entity.</summary>
     public class AccessReviewItemRequestBuilder {
         /// <summary>The decisions property</summary>

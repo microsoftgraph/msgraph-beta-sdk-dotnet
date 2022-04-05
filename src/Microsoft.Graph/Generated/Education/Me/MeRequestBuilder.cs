@@ -1,20 +1,20 @@
+using Microsoft.Graph.Beta.Education.Me.Assignments;
+using Microsoft.Graph.Beta.Education.Me.Classes;
+using Microsoft.Graph.Beta.Education.Me.Rubrics;
+using Microsoft.Graph.Beta.Education.Me.Schools;
+using Microsoft.Graph.Beta.Education.Me.TaughtClasses;
+using Microsoft.Graph.Beta.Education.Me.User;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Education.Me.Assignments;
-using MicrosoftGraphSdk.Education.Me.Classes;
-using MicrosoftGraphSdk.Education.Me.Rubrics;
-using MicrosoftGraphSdk.Education.Me.Schools;
-using MicrosoftGraphSdk.Education.Me.TaughtClasses;
-using MicrosoftGraphSdk.Education.Me.User;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Education.Me {
+namespace Microsoft.Graph.Beta.Education.Me {
     /// <summary>Provides operations to manage the me property of the microsoft.graph.educationRoot entity.</summary>
     public class MeRequestBuilder {
         /// <summary>The assignments property</summary>

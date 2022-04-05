@@ -1,21 +1,21 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.Pause;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.ProvisionOnDemand;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.Restart;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.Schema;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.Start;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.Stop;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.ValidateCredentials;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.Item.Pause;
-using MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.Item.ProvisionOnDemand;
-using MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.Item.Restart;
-using MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.Item.Schema;
-using MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.Item.Start;
-using MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.Item.Stop;
-using MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.Item.ValidateCredentials;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.Item {
+namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item {
     /// <summary>Provides operations to manage the jobs property of the microsoft.graph.synchronization entity.</summary>
     public class SynchronizationJobItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Education.Me.Rubrics.Count;
+using Microsoft.Graph.Beta.Education.Me.Rubrics.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Education.Me.Rubrics.Count;
-using MicrosoftGraphSdk.Education.Me.Rubrics.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Education.Me.Rubrics {
+namespace Microsoft.Graph.Beta.Education.Me.Rubrics {
     /// <summary>Provides operations to manage the rubrics property of the microsoft.graph.educationUser entity.</summary>
     public class RubricsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Education.Me.Rubrics {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.education.me.rubrics.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.education.me.rubrics.item collection</summary>
         public EducationRubricItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationRubric_id", position);

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.GroupLifecyclePolicies.Item.RemoveGroup {
+namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.Item.RemoveGroup {
     /// <summary>Provides operations to call the removeGroup method.</summary>
     public class RemoveGroupRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

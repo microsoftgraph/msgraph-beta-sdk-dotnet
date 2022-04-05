@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Mentions.Count;
+using Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Mentions.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Mentions.Count;
-using MicrosoftGraphSdk.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Mentions.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Mentions {
+namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Mentions {
     /// <summary>Provides operations to manage the mentions property of the microsoft.graph.post entity.</summary>
     public class MentionsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Conversations.Item.Threads.Item.Posts.It
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.conversations.item.threads.item.posts.item.mentions.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.groups.item.conversations.item.threads.item.posts.item.mentions.item collection</summary>
         public MentionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mention_id", position);

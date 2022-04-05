@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.Drives.Item.List.ContentTypes.Item.Columns.Item.SourceColumn;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.Drives.Item.List.ContentTypes.Item.Columns.Item.SourceColumn;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Drives.Item.List.ContentTypes.Item.Columns.Item {
+namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List.ContentTypes.Item.Columns.Item {
     /// <summary>Provides operations to manage the columns property of the microsoft.graph.contentType entity.</summary>
     public class ColumnDefinitionItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Models.ManagedTenants;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups.Count;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups.Item;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups.TenantSearch;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantGroups.Count;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantGroups.Item;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantGroups.TenantSearch;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantGroups {
+namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups {
     /// <summary>Provides operations to manage the tenantGroups property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
     public class TenantGroupsRequestBuilder {
         /// <summary>The count property</summary>
@@ -28,7 +28,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantGroups {
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.tenantRelationships.managedTenants.tenantGroups.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.tenantRelationships.managedTenants.tenantGroups.item collection</summary>
         public TenantGroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tenantGroup_id", position);

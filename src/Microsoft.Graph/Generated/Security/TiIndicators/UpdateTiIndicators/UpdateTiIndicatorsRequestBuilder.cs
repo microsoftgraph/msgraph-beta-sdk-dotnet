@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Security.TiIndicators.UpdateTiIndicators {
+namespace Microsoft.Graph.Beta.Security.TiIndicators.UpdateTiIndicators {
     /// <summary>Provides operations to call the updateTiIndicators method.</summary>
     public class UpdateTiIndicatorsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

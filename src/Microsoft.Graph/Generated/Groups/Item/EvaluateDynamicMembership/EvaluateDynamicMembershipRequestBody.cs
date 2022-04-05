@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Groups.Item.EvaluateDynamicMembership {
+namespace Microsoft.Graph.Beta.Groups.Item.EvaluateDynamicMembership {
     /// <summary>Provides operations to call the evaluateDynamicMembership method.</summary>
     public class EvaluateDynamicMembershipRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextClassReferences.Count;
+using Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextClassReferences.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Identity.ConditionalAccess.AuthenticationContextClassReferences.Count;
-using MicrosoftGraphSdk.Identity.ConditionalAccess.AuthenticationContextClassReferences.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Identity.ConditionalAccess.AuthenticationContextClassReferences {
+namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextClassReferences {
     /// <summary>Provides operations to manage the authenticationContextClassReferences property of the microsoft.graph.conditionalAccessRoot entity.</summary>
     public class AuthenticationContextClassReferencesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Identity.ConditionalAccess.AuthenticationContextClas
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.identity.conditionalAccess.authenticationContextClassReferences.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.identity.conditionalAccess.authenticationContextClassReferences.item collection</summary>
         public AuthenticationContextClassReferenceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("authenticationContextClassReference_id", position);

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkEnrollmentProfiles.Count;
+using Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkEnrollmentProfiles.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.AndroidForWorkEnrollmentProfiles.Count;
-using MicrosoftGraphSdk.DeviceManagement.AndroidForWorkEnrollmentProfiles.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.AndroidForWorkEnrollmentProfiles {
+namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkEnrollmentProfiles {
     /// <summary>Provides operations to manage the androidForWorkEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.</summary>
     public class AndroidForWorkEnrollmentProfilesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AndroidForWorkEnrollmentProfiles {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.androidForWorkEnrollmentProfiles.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.androidForWorkEnrollmentProfiles.item collection</summary>
         public AndroidForWorkEnrollmentProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("androidForWorkEnrollmentProfile_id", position);

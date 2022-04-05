@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Security.SecureScoreControlProfiles.Count;
+using Microsoft.Graph.Beta.Security.SecureScoreControlProfiles.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Security.SecureScoreControlProfiles.Count;
-using MicrosoftGraphSdk.Security.SecureScoreControlProfiles.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Security.SecureScoreControlProfiles {
+namespace Microsoft.Graph.Beta.Security.SecureScoreControlProfiles {
     /// <summary>Provides operations to manage the secureScoreControlProfiles property of the microsoft.graph.security entity.</summary>
     public class SecureScoreControlProfilesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Security.SecureScoreControlProfiles {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.security.secureScoreControlProfiles.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.security.secureScoreControlProfiles.item collection</summary>
         public SecureScoreControlProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("secureScoreControlProfile_id", position);

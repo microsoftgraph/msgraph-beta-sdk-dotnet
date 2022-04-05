@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileAppConfigurations.Item.UserStatuses.Count;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileAppConfigurations.Item.UserStatuses.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileAppConfigurations.Item.UserStatuses.Count;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileAppConfigurations.Item.UserStatuses.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.MobileAppConfigurations.Item.UserStatuses {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileAppConfigurations.Item.UserStatuses {
     /// <summary>Provides operations to manage the userStatuses property of the microsoft.graph.managedDeviceMobileAppConfiguration entity.</summary>
     public class UserStatusesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileAppConfigurations.Item.Use
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.mobileAppConfigurations.item.userStatuses.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceAppManagement.mobileAppConfigurations.item.userStatuses.item collection</summary>
         public ManagedDeviceMobileAppConfigurationUserStatusItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedDeviceMobileAppConfigurationUserStatus_id", position);

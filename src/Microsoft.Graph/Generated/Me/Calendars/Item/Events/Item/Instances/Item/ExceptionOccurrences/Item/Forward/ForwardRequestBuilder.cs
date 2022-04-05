@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Calendars.Item.Events.Item.Instances.Item.ExceptionOccurrences.Item.Forward {
+namespace Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.Instances.Item.ExceptionOccurrences.Item.Forward {
     /// <summary>Provides operations to call the forward method.</summary>
     public class ForwardRequestBuilder {
         /// <summary>Path parameters for the request</summary>

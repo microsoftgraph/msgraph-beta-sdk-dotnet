@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Attachments.Count;
+using Microsoft.Graph.Beta.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Attachments.CreateUploadSession;
+using Microsoft.Graph.Beta.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Attachments.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Attachments.Count;
-using MicrosoftGraphSdk.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Attachments.CreateUploadSession;
-using MicrosoftGraphSdk.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Attachments.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Attachments {
+namespace Microsoft.Graph.Beta.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Attachments {
     /// <summary>Provides operations to manage the attachments property of the microsoft.graph.event entity.</summary>
     public class AttachmentsRequestBuilder {
         /// <summary>The count property</summary>
@@ -28,7 +28,7 @@ namespace MicrosoftGraphSdk.Me.CalendarGroups.Item.Calendars.Item.CalendarView.I
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.calendarGroups.item.calendars.item.calendarView.item.attachments.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.calendarGroups.item.calendars.item.calendarView.item.attachments.item collection</summary>
         public AttachmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("attachment_id", position);

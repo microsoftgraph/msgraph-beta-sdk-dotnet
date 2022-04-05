@@ -1,22 +1,22 @@
+using Microsoft.Graph.Beta.BookingBusinesses.Item.Appointments;
+using Microsoft.Graph.Beta.BookingBusinesses.Item.CalendarView;
+using Microsoft.Graph.Beta.BookingBusinesses.Item.Customers;
+using Microsoft.Graph.Beta.BookingBusinesses.Item.CustomQuestions;
+using Microsoft.Graph.Beta.BookingBusinesses.Item.Publish;
+using Microsoft.Graph.Beta.BookingBusinesses.Item.Services;
+using Microsoft.Graph.Beta.BookingBusinesses.Item.StaffMembers;
+using Microsoft.Graph.Beta.BookingBusinesses.Item.Unpublish;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.BookingBusinesses.Item.Appointments;
-using MicrosoftGraphSdk.BookingBusinesses.Item.CalendarView;
-using MicrosoftGraphSdk.BookingBusinesses.Item.Customers;
-using MicrosoftGraphSdk.BookingBusinesses.Item.CustomQuestions;
-using MicrosoftGraphSdk.BookingBusinesses.Item.Publish;
-using MicrosoftGraphSdk.BookingBusinesses.Item.Services;
-using MicrosoftGraphSdk.BookingBusinesses.Item.StaffMembers;
-using MicrosoftGraphSdk.BookingBusinesses.Item.Unpublish;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.BookingBusinesses.Item {
+namespace Microsoft.Graph.Beta.BookingBusinesses.Item {
     /// <summary>Provides operations to manage the collection of bookingBusiness entities.</summary>
     public class BookingBusinessItemRequestBuilder {
         /// <summary>The appointments property</summary>

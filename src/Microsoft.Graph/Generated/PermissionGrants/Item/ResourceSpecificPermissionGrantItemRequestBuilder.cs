@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.PermissionGrants.Item.CheckMemberGroups;
+using Microsoft.Graph.Beta.PermissionGrants.Item.CheckMemberObjects;
+using Microsoft.Graph.Beta.PermissionGrants.Item.GetMemberGroups;
+using Microsoft.Graph.Beta.PermissionGrants.Item.GetMemberObjects;
+using Microsoft.Graph.Beta.PermissionGrants.Item.Restore;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.PermissionGrants.Item.CheckMemberGroups;
-using MicrosoftGraphSdk.PermissionGrants.Item.CheckMemberObjects;
-using MicrosoftGraphSdk.PermissionGrants.Item.GetMemberGroups;
-using MicrosoftGraphSdk.PermissionGrants.Item.GetMemberObjects;
-using MicrosoftGraphSdk.PermissionGrants.Item.Restore;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.PermissionGrants.Item {
+namespace Microsoft.Graph.Beta.PermissionGrants.Item {
     /// <summary>Provides operations to manage the collection of resourceSpecificPermissionGrant entities.</summary>
     public class ResourceSpecificPermissionGrantItemRequestBuilder {
         /// <summary>The checkMemberGroups property</summary>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoiceLines.Item.Account;
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoiceLines.Item.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesInvoiceLines.Item.Account;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesInvoiceLines.Item.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesInvoiceLines.Item {
+namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoiceLines.Item {
     /// <summary>Provides operations to manage the salesInvoiceLines property of the microsoft.graph.company entity.</summary>
     public class SalesInvoiceLineItemRequestBuilder {
         /// <summary>The account property</summary>

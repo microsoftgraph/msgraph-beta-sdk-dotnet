@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Team.PrimaryChannel.CompleteMigration {
+namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.CompleteMigration {
     /// <summary>Provides operations to call the completeMigration method.</summary>
     public class CompleteMigrationRequestBuilder {
         /// <summary>Path parameters for the request</summary>

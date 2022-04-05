@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Default.ResetToSystemDefault;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Policies.CrossTenantAccessPolicy.Default.ResetToSystemDefault;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Policies.CrossTenantAccessPolicy.Default {
+namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Default {
     /// <summary>Provides operations to manage the default property of the microsoft.graph.crossTenantAccessPolicy entity.</summary>
     public class DefaultRequestBuilder {
         /// <summary>Path parameters for the request</summary>

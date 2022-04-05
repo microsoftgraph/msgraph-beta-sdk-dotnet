@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.SingleValueExtendedProperties.Count;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.SingleValueExtendedProperties.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.SingleValueExtendedProperties.Count;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.SingleValueExtendedProperties.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.SingleValueExtendedProperties {
+namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.SingleValueExtendedProperties {
     /// <summary>Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.mailFolder entity.</summary>
     public class SingleValueExtendedPropertiesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.Single
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.mailFolders.item.childFolders.item.singleValueExtendedProperties.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.mailFolders.item.childFolders.item.singleValueExtendedProperties.item collection</summary>
         public SingleValueLegacyExtendedPropertyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("singleValueLegacyExtendedProperty_id", position);

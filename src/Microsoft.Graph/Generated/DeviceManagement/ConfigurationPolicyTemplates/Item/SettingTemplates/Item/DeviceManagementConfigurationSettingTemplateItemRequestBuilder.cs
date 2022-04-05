@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicyTemplates.Item.SettingTemplates.Item.SettingDefinitions;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.ConfigurationPolicyTemplates.Item.SettingTemplates.Item.SettingDefinitions;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.ConfigurationPolicyTemplates.Item.SettingTemplates.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicyTemplates.Item.SettingTemplates.Item {
     /// <summary>Provides operations to manage the settingTemplates property of the microsoft.graph.deviceManagementConfigurationPolicyTemplate entity.</summary>
     public class DeviceManagementConfigurationSettingTemplateItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

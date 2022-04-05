@@ -1,20 +1,20 @@
+using Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Count;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.EnrollAssets;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.EnrollAssetsById;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.UnenrollAssets;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.UnenrollAssetsById;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models.WindowsUpdates;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets.Count;
-using MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets.EnrollAssets;
-using MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets.EnrollAssetsById;
-using MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets.Item;
-using MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets.UnenrollAssets;
-using MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets.UnenrollAssetsById;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets {
+namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets {
     /// <summary>Provides operations to manage the updatableAssets property of the microsoft.graph.windowsUpdates.updates entity.</summary>
     public class UpdatableAssetsRequestBuilder {
         /// <summary>The count property</summary>
@@ -43,7 +43,7 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets {
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.admin.windows.updates.updatableAssets.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.admin.windows.updates.updatableAssets.item collection</summary>
         public UpdatableAssetItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("updatableAsset_id", position);

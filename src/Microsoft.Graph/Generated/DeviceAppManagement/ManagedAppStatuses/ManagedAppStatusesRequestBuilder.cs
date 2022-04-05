@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppStatuses.Count;
+using Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppStatuses.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceAppManagement.ManagedAppStatuses.Count;
-using MicrosoftGraphSdk.DeviceAppManagement.ManagedAppStatuses.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedAppStatuses {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppStatuses {
     /// <summary>Provides operations to manage the managedAppStatuses property of the microsoft.graph.deviceAppManagement entity.</summary>
     public class ManagedAppStatusesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedAppStatuses {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.managedAppStatuses.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceAppManagement.managedAppStatuses.item collection</summary>
         public ManagedAppStatusItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedAppStatus_id", position);

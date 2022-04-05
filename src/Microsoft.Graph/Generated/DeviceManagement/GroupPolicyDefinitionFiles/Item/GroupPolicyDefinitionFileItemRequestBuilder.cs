@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitionFiles.Item.Definitions;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.GroupPolicyDefinitionFiles.Item.Definitions;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyDefinitionFiles.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitionFiles.Item {
     /// <summary>Provides operations to manage the groupPolicyDefinitionFiles property of the microsoft.graph.deviceManagement entity.</summary>
     public class GroupPolicyDefinitionFileItemRequestBuilder {
         /// <summary>The definitions property</summary>

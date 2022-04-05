@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetAttackSimulationRepeatOffenders {
+namespace Microsoft.Graph.Beta.Reports.GetAttackSimulationRepeatOffenders {
     /// <summary>Provides operations to call the getAttackSimulationRepeatOffenders method.</summary>
     public class GetAttackSimulationRepeatOffendersRequestBuilder {
         /// <summary>Path parameters for the request</summary>

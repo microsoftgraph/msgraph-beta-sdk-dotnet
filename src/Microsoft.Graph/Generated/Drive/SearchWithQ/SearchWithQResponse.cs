@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Drive.SearchWithQ {
+namespace Microsoft.Graph.Beta.Drive.SearchWithQ {
     /// <summary>Provides operations to call the search method.</summary>
     public class SearchWithQResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The value property</summary>
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem> Value { get; set; }
+        public List<Microsoft.Graph.Beta.Models.DriveItem> Value { get; set; }
         /// <summary>
         /// Instantiates a new searchWithQResponse and sets the default values.
         /// </summary>
@@ -30,7 +30,7 @@ namespace MicrosoftGraphSdk.Drive.SearchWithQ {
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"value", (o,n) => { (o as SearchWithQResponse).Value = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>(MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", (o,n) => { (o as SearchWithQResponse).Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DriveItem>(Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>
@@ -39,7 +39,7 @@ namespace MicrosoftGraphSdk.Drive.SearchWithQ {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DriveItem>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

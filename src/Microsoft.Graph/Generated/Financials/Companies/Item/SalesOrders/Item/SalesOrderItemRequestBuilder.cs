@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesOrders.Item.Currency;
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesOrders.Item.Customer;
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesOrders.Item.PaymentTerm;
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesOrders.Item.SalesOrderLines;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesOrders.Item.Currency;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesOrders.Item.Customer;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesOrders.Item.PaymentTerm;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesOrders.Item.SalesOrderLines;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesOrders.Item {
+namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesOrders.Item {
     /// <summary>Provides operations to manage the salesOrders property of the microsoft.graph.company entity.</summary>
     public class SalesOrderItemRequestBuilder {
         /// <summary>The currency property</summary>

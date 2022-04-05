@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Presence.SetUserPreferredPresence {
+namespace Microsoft.Graph.Beta.Me.Presence.SetUserPreferredPresence {
     /// <summary>Provides operations to call the setUserPreferredPresence method.</summary>
     public class SetUserPreferredPresenceRequestBuilder {
         /// <summary>Path parameters for the request</summary>

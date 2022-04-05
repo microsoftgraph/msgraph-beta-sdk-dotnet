@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.DeviceManagement.Templates.Item.Categories;
+using Microsoft.Graph.Beta.DeviceManagement.Templates.Item.CompareWithTemplateId;
+using Microsoft.Graph.Beta.DeviceManagement.Templates.Item.CreateInstance;
+using Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo;
+using Microsoft.Graph.Beta.DeviceManagement.Templates.Item.Settings;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.Templates.Item.Categories;
-using MicrosoftGraphSdk.DeviceManagement.Templates.Item.CompareWithTemplateId;
-using MicrosoftGraphSdk.DeviceManagement.Templates.Item.CreateInstance;
-using MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo;
-using MicrosoftGraphSdk.DeviceManagement.Templates.Item.Settings;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item {
     /// <summary>Provides operations to manage the templates property of the microsoft.graph.deviceManagement entity.</summary>
     public class DeviceManagementTemplateItemRequestBuilder {
         /// <summary>The categories property</summary>

@@ -1,14 +1,14 @@
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models.Search;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Search;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Search.Bookmarks.Item {
+namespace Microsoft.Graph.Beta.Search.Bookmarks.Item {
     /// <summary>Provides operations to manage the bookmarks property of the microsoft.graph.searchEntity entity.</summary>
     public class BookmarkItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

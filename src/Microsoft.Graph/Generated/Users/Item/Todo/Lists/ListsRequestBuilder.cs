@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.Todo.Lists.Count;
+using Microsoft.Graph.Beta.Users.Item.Todo.Lists.Delta;
+using Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.Todo.Lists.Count;
-using MicrosoftGraphSdk.Users.Item.Todo.Lists.Delta;
-using MicrosoftGraphSdk.Users.Item.Todo.Lists.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Todo.Lists {
+namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists {
     /// <summary>Provides operations to manage the lists property of the microsoft.graph.todo entity.</summary>
     public class ListsRequestBuilder {
         /// <summary>The count property</summary>
@@ -24,7 +24,7 @@ namespace MicrosoftGraphSdk.Users.Item.Todo.Lists {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.todo.lists.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.todo.lists.item collection</summary>
         public TodoTaskListItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("todoTaskList_id", position);

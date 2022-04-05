@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.DriverInventories.Count;
+using Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.DriverInventories.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item.DriverInventories.Count;
-using MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item.DriverInventories.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item.DriverInventories {
+namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.DriverInventories {
     /// <summary>Provides operations to manage the driverInventories property of the microsoft.graph.windowsDriverUpdateProfile entity.</summary>
     public class DriverInventoriesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item.Dr
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.windowsDriverUpdateProfiles.item.driverInventories.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.windowsDriverUpdateProfiles.item.driverInventories.item collection</summary>
         public WindowsDriverUpdateInventoryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsDriverUpdateInventory_id", position);

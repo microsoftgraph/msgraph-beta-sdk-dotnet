@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.TransitiveMemberOf.Count;
+using Microsoft.Graph.Beta.Users.Item.TransitiveMemberOf.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.TransitiveMemberOf.Count;
-using MicrosoftGraphSdk.Users.Item.TransitiveMemberOf.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.TransitiveMemberOf {
+namespace Microsoft.Graph.Beta.Users.Item.TransitiveMemberOf {
     /// <summary>Provides operations to manage the transitiveMemberOf property of the microsoft.graph.user entity.</summary>
     public class TransitiveMemberOfRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Users.Item.TransitiveMemberOf {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.transitiveMemberOf.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.transitiveMemberOf.item collection</summary>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryObject_id", position);

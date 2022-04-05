@@ -1,21 +1,21 @@
+using Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Errors;
+using Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Pause;
+using Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.ProfileStatus;
+using Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Reset;
+using Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Resume;
+using Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start;
+using Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.UploadUrl;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Education.SynchronizationProfiles.Item.Errors;
-using MicrosoftGraphSdk.Education.SynchronizationProfiles.Item.Pause;
-using MicrosoftGraphSdk.Education.SynchronizationProfiles.Item.ProfileStatus;
-using MicrosoftGraphSdk.Education.SynchronizationProfiles.Item.Reset;
-using MicrosoftGraphSdk.Education.SynchronizationProfiles.Item.Resume;
-using MicrosoftGraphSdk.Education.SynchronizationProfiles.Item.Start;
-using MicrosoftGraphSdk.Education.SynchronizationProfiles.Item.UploadUrl;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Education.SynchronizationProfiles.Item {
+namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
     /// <summary>Provides operations to manage the synchronizationProfiles property of the microsoft.graph.educationRoot entity.</summary>
     public class EducationSynchronizationProfileItemRequestBuilder {
         /// <summary>The errors property</summary>

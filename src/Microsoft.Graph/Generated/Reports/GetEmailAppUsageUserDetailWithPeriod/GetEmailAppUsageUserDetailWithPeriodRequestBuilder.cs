@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetEmailAppUsageUserDetailWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetEmailAppUsageUserDetailWithPeriod {
     /// <summary>Provides operations to call the getEmailAppUsageUserDetail method.</summary>
     public class GetEmailAppUsageUserDetailWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

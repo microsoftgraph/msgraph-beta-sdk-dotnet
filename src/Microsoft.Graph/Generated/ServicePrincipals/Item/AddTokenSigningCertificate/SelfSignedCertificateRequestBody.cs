@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.ServicePrincipals.Item.AddTokenSigningCertificate {
+namespace Microsoft.Graph.Beta.ServicePrincipals.Item.AddTokenSigningCertificate {
     /// <summary>Provides operations to call the addTokenSigningCertificate method.</summary>
     public class SelfSignedCertificateRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

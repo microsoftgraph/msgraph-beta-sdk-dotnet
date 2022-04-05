@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Messages.Item.Move {
+namespace Microsoft.Graph.Beta.Users.Item.Messages.Item.Move {
     /// <summary>Provides operations to call the move method.</summary>
     public class MoveRequestBuilder {
         /// <summary>Path parameters for the request</summary>

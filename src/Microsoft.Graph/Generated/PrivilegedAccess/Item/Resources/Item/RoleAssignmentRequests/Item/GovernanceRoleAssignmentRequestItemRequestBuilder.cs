@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignmentRequests.Item.Resource;
+using Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignmentRequests.Item.RoleDefinition;
+using Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignmentRequests.Item.Subject;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.PrivilegedAccess.Item.Resources.Item.RoleAssignmentRequests.Item.Resource;
-using MicrosoftGraphSdk.PrivilegedAccess.Item.Resources.Item.RoleAssignmentRequests.Item.RoleDefinition;
-using MicrosoftGraphSdk.PrivilegedAccess.Item.Resources.Item.RoleAssignmentRequests.Item.Subject;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.PrivilegedAccess.Item.Resources.Item.RoleAssignmentRequests.Item {
+namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignmentRequests.Item {
     /// <summary>Provides operations to manage the roleAssignmentRequests property of the microsoft.graph.governanceResource entity.</summary>
     public class GovernanceRoleAssignmentRequestItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

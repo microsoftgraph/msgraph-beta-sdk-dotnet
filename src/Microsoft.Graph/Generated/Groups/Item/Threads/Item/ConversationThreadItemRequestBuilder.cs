@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Groups.Item.Threads.Item.Posts;
+using Microsoft.Graph.Beta.Groups.Item.Threads.Item.Reply;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Groups.Item.Threads.Item.Posts;
-using MicrosoftGraphSdk.Groups.Item.Threads.Item.Reply;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Threads.Item {
+namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item {
     /// <summary>Provides operations to manage the threads property of the microsoft.graph.group entity.</summary>
     public class ConversationThreadItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

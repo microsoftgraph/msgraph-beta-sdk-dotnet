@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.AuditLogs.SignIns.Count;
+using Microsoft.Graph.Beta.AuditLogs.SignIns.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.AuditLogs.SignIns.Count;
-using MicrosoftGraphSdk.AuditLogs.SignIns.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.AuditLogs.SignIns {
+namespace Microsoft.Graph.Beta.AuditLogs.SignIns {
     /// <summary>Provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.</summary>
     public class SignInsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.AuditLogs.SignIns {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.auditLogs.signIns.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.auditLogs.signIns.item collection</summary>
         public SignInItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("signIn_id", position);

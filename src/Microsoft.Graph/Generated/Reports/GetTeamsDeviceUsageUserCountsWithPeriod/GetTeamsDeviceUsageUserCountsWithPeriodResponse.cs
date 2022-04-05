@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Reports.GetTeamsDeviceUsageUserCountsWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetTeamsDeviceUsageUserCountsWithPeriod {
     /// <summary>Provides operations to call the getTeamsDeviceUsageUserCounts method.</summary>
     public class GetTeamsDeviceUsageUserCountsWithPeriodResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

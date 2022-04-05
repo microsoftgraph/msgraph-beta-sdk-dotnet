@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.ManagedDeviceEnrollmentTopFailures {
+namespace Microsoft.Graph.Beta.Reports.ManagedDeviceEnrollmentTopFailures {
     /// <summary>Provides operations to call the managedDeviceEnrollmentTopFailures method.</summary>
     public class ManagedDeviceEnrollmentTopFailuresRequestBuilder {
         /// <summary>Path parameters for the request</summary>

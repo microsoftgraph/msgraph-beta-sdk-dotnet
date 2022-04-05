@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item.Reviewers.Count;
+using Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item.Reviewers.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.AccessReviews.Item.Instances.Item.Reviewers.Count;
-using MicrosoftGraphSdk.AccessReviews.Item.Instances.Item.Reviewers.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.AccessReviews.Item.Instances.Item.Reviewers {
+namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item.Reviewers {
     /// <summary>Provides operations to manage the reviewers property of the microsoft.graph.accessReview entity.</summary>
     public class ReviewersRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.AccessReviews.Item.Instances.Item.Reviewers {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.accessReviews.item.instances.item.reviewers.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.accessReviews.item.instances.item.reviewers.item collection</summary>
         public AccessReviewReviewerItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewReviewer_id", position);

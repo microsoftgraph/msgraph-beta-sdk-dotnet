@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.TranslateExchangeIds {
+namespace Microsoft.Graph.Beta.Users.Item.TranslateExchangeIds {
     /// <summary>Provides operations to call the translateExchangeIds method.</summary>
     public class TranslateExchangeIdsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,14 +1,14 @@
+using Microsoft.Graph.Beta.Models.Ediscovery;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.LegalHolds.Item.UserSources.Item {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds.Item.UserSources.Item {
     /// <summary>Provides operations to manage the userSources property of the microsoft.graph.ediscovery.legalHold entity.</summary>
     public class UserSourceItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetRemoteAssistanceSessionsReport {
+namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetRemoteAssistanceSessionsReport {
     /// <summary>Provides operations to call the getRemoteAssistanceSessionsReport method.</summary>
     public class GetRemoteAssistanceSessionsReportResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

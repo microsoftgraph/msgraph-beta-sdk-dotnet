@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Organization.Item.Branding.Localizations.Count;
+using Microsoft.Graph.Beta.Organization.Item.Branding.Localizations.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Organization.Item.Branding.Localizations.Count;
-using MicrosoftGraphSdk.Organization.Item.Branding.Localizations.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Organization.Item.Branding.Localizations {
+namespace Microsoft.Graph.Beta.Organization.Item.Branding.Localizations {
     /// <summary>Provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.</summary>
     public class LocalizationsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Organization.Item.Branding.Localizations {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.organization.item.branding.localizations.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.organization.item.branding.localizations.item collection</summary>
         public OrganizationalBrandingLocalizationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("organizationalBrandingLocalization_id", position);

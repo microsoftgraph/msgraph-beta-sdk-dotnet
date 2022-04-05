@@ -1,11 +1,11 @@
+using Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.AppliedPolicies.Item.WindowsInformationProtection.Assign;
 using Microsoft.Kiota.Abstractions;
-using MicrosoftGraphSdk.DeviceAppManagement.ManagedAppRegistrations.Item.AppliedPolicies.Item.WindowsInformationProtection.Assign;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedAppRegistrations.Item.AppliedPolicies.Item.WindowsInformationProtection {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.AppliedPolicies.Item.WindowsInformationProtection {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\{managedAppRegistration-id}\appliedPolicies\{managedAppPolicy-id}\microsoft.graph.windowsInformationProtection</summary>
     public class WindowsInformationProtectionRequestBuilder {
         /// <summary>The assign property</summary>

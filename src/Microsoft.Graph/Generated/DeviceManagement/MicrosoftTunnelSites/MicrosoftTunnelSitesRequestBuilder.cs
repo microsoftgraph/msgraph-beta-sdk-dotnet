@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Count;
+using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelSites.Count;
-using MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelSites.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelSites {
+namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites {
     /// <summary>Provides operations to manage the microsoftTunnelSites property of the microsoft.graph.deviceManagement entity.</summary>
     public class MicrosoftTunnelSitesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelSites {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.microsoftTunnelSites.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.microsoftTunnelSites.item collection</summary>
         public MicrosoftTunnelSiteItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("microsoftTunnelSite_id", position);

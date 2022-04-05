@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item.IncludedGroups.Count;
+using Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item.IncludedGroups.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Policies.MobileDeviceManagementPolicies.Item.IncludedGroups.Count;
-using MicrosoftGraphSdk.Policies.MobileDeviceManagementPolicies.Item.IncludedGroups.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Policies.MobileDeviceManagementPolicies.Item.IncludedGroups {
+namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item.IncludedGroups {
     /// <summary>Provides operations to manage the includedGroups property of the microsoft.graph.mobilityManagementPolicy entity.</summary>
     public class IncludedGroupsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Policies.MobileDeviceManagementPolicies.Item.Include
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.policies.mobileDeviceManagementPolicies.item.includedGroups.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.policies.mobileDeviceManagementPolicies.item.includedGroups.item collection</summary>
         public GroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("group_id", position);

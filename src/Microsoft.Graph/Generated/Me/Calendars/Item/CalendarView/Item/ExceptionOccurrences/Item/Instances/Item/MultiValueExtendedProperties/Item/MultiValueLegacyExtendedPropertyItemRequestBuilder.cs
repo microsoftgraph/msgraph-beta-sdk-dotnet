@@ -1,14 +1,14 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Calendars.Item.CalendarView.Item.ExceptionOccurrences.Item.Instances.Item.MultiValueExtendedProperties.Item {
+namespace Microsoft.Graph.Beta.Me.Calendars.Item.CalendarView.Item.ExceptionOccurrences.Item.Instances.Item.MultiValueExtendedProperties.Item {
     /// <summary>Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.event entity.</summary>
     public class MultiValueLegacyExtendedPropertyItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

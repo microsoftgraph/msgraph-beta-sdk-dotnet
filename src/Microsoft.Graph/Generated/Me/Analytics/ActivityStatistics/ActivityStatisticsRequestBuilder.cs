@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.Analytics.ActivityStatistics.Count;
+using Microsoft.Graph.Beta.Me.Analytics.ActivityStatistics.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Analytics.ActivityStatistics.Count;
-using MicrosoftGraphSdk.Me.Analytics.ActivityStatistics.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Analytics.ActivityStatistics {
+namespace Microsoft.Graph.Beta.Me.Analytics.ActivityStatistics {
     /// <summary>Provides operations to manage the activityStatistics property of the microsoft.graph.userAnalytics entity.</summary>
     public class ActivityStatisticsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.Analytics.ActivityStatistics {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.analytics.activityStatistics.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.analytics.activityStatistics.item collection</summary>
         public ActivityStatisticsItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("activityStatistics_id", position);
@@ -83,7 +83,7 @@ namespace MicrosoftGraphSdk.Me.Analytics.ActivityStatistics {
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.ActivityStatistics body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
+        public RequestInformation CreatePostRequestInformation(Microsoft.Graph.Beta.Models.ActivityStatistics body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -119,14 +119,14 @@ namespace MicrosoftGraphSdk.Me.Analytics.ActivityStatistics {
         /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ActivityStatistics> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.ActivityStatistics body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.ActivityStatistics> PostAsync(Microsoft.Graph.Beta.Models.ActivityStatistics body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ActivityStatistics>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ActivityStatistics.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ActivityStatistics>(requestInfo, Microsoft.Graph.Beta.Models.ActivityStatistics.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

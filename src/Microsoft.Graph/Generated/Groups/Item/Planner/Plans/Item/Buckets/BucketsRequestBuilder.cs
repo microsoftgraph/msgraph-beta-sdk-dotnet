@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Groups.Item.Planner.Plans.Item.Buckets.Count;
+using Microsoft.Graph.Beta.Groups.Item.Planner.Plans.Item.Buckets.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Groups.Item.Planner.Plans.Item.Buckets.Count;
-using MicrosoftGraphSdk.Groups.Item.Planner.Plans.Item.Buckets.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Planner.Plans.Item.Buckets {
+namespace Microsoft.Graph.Beta.Groups.Item.Planner.Plans.Item.Buckets {
     /// <summary>Provides operations to manage the buckets property of the microsoft.graph.plannerPlan entity.</summary>
     public class BucketsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Planner.Plans.Item.Buckets {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.planner.plans.item.buckets.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.groups.item.planner.plans.item.buckets.item collection</summary>
         public PlannerBucketItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("plannerBucket_id", position);

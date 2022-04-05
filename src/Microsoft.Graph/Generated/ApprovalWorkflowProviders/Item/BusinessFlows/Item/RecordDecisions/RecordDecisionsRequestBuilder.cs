@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.ApprovalWorkflowProviders.Item.BusinessFlows.Item.RecordDecisions {
+namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.BusinessFlows.Item.RecordDecisions {
     /// <summary>Provides operations to call the recordDecisions method.</summary>
     public class RecordDecisionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

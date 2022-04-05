@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.Decisions.Count;
+using Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.Decisions.FilterByCurrentUserWithOn;
+using Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.Decisions.Item;
+using Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.Decisions.RecordAllDecisions;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.Decisions.Count;
-using MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.Decisions.FilterByCurrentUserWithOn;
-using MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.Decisions.Item;
-using MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.Decisions.RecordAllDecisions;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.Decisions {
+namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.Decisions {
     /// <summary>Provides operations to manage the decisions property of the microsoft.graph.accessReviewStage entity.</summary>
     public class DecisionsRequestBuilder {
         /// <summary>The count property</summary>
@@ -29,11 +29,11 @@ namespace MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Decisio
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.pendingAccessReviewInstances.item.decisions.item.instance.stages.item.decisions.item collection</summary>
-        public MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.Decisions.Item.AccessReviewInstanceDecisionItemItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.pendingAccessReviewInstances.item.decisions.item.instance.stages.item.decisions.item collection</summary>
+        public Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.Decisions.Item.AccessReviewInstanceDecisionItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewInstanceDecisionItem_id1", position);
-            return new MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.Decisions.Item.AccessReviewInstanceDecisionItemItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.Decisions.Item.AccessReviewInstanceDecisionItemItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DecisionsRequestBuilder and sets the default values.

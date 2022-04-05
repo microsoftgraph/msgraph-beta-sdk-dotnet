@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.Item.HostedContents;
+using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.Item.Replies;
+using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.Item.SoftDelete;
+using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.Item.UndoSoftDelete;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Teams.Item.Channels.Item.Messages.Item.HostedContents;
-using MicrosoftGraphSdk.Teams.Item.Channels.Item.Messages.Item.Replies;
-using MicrosoftGraphSdk.Teams.Item.Channels.Item.Messages.Item.SoftDelete;
-using MicrosoftGraphSdk.Teams.Item.Channels.Item.Messages.Item.UndoSoftDelete;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Teams.Item.Channels.Item.Messages.Item {
+namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.Item {
     /// <summary>Provides operations to manage the messages property of the microsoft.graph.channel entity.</summary>
     public class ChatMessageItemRequestBuilder {
         /// <summary>The hostedContents property</summary>

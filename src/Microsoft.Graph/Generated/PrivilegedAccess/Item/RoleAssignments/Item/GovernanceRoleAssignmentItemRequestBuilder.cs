@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignments.Item.LinkedEligibleRoleAssignment;
+using Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignments.Item.Resource;
+using Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignments.Item.RoleDefinition;
+using Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignments.Item.Subject;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.PrivilegedAccess.Item.RoleAssignments.Item.LinkedEligibleRoleAssignment;
-using MicrosoftGraphSdk.PrivilegedAccess.Item.RoleAssignments.Item.Resource;
-using MicrosoftGraphSdk.PrivilegedAccess.Item.RoleAssignments.Item.RoleDefinition;
-using MicrosoftGraphSdk.PrivilegedAccess.Item.RoleAssignments.Item.Subject;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.PrivilegedAccess.Item.RoleAssignments.Item {
+namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignments.Item {
     /// <summary>Provides operations to manage the roleAssignments property of the microsoft.graph.privilegedAccess entity.</summary>
     public class GovernanceRoleAssignmentItemRequestBuilder {
         /// <summary>The linkedEligibleRoleAssignment property</summary>

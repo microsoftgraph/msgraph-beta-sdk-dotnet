@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.AuthenticationMethodConfigurations.Count;
+using Microsoft.Graph.Beta.AuthenticationMethodConfigurations.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.AuthenticationMethodConfigurations.Count;
-using MicrosoftGraphSdk.AuthenticationMethodConfigurations.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.AuthenticationMethodConfigurations {
+namespace Microsoft.Graph.Beta.AuthenticationMethodConfigurations {
     /// <summary>Provides operations to manage the collection of authenticationMethodConfiguration entities.</summary>
     public class AuthenticationMethodConfigurationsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.AuthenticationMethodConfigurations {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.authenticationMethodConfigurations.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.authenticationMethodConfigurations.item collection</summary>
         public AuthenticationMethodConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("authenticationMethodConfiguration_id", position);

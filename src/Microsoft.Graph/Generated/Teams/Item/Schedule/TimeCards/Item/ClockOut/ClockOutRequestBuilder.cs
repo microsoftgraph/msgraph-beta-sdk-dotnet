@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Teams.Item.Schedule.TimeCards.Item.ClockOut {
+namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item.ClockOut {
     /// <summary>Provides operations to call the clockOut method.</summary>
     public class ClockOutRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetFailedMobileAppsReport {
+namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetFailedMobileAppsReport {
     /// <summary>Provides operations to call the getFailedMobileAppsReport method.</summary>
     public class GetFailedMobileAppsReportRequestBuilder {
         /// <summary>Path parameters for the request</summary>

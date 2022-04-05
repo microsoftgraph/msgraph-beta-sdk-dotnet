@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetM365AppUserCountsWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetM365AppUserCountsWithPeriod {
     /// <summary>Provides operations to call the getM365AppUserCounts method.</summary>
     public class GetM365AppUserCountsWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

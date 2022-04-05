@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.Remove {
+namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.Remove {
     /// <summary>Provides operations to call the remove method.</summary>
     public class RemoveRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.Count;
+using Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.HasPayloadLinks;
+using Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceAppManagement.AndroidManagedAppProtections.Count;
-using MicrosoftGraphSdk.DeviceAppManagement.AndroidManagedAppProtections.HasPayloadLinks;
-using MicrosoftGraphSdk.DeviceAppManagement.AndroidManagedAppProtections.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.AndroidManagedAppProtections {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections {
     /// <summary>Provides operations to manage the androidManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.</summary>
     public class AndroidManagedAppProtectionsRequestBuilder {
         /// <summary>The count property</summary>
@@ -28,7 +28,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.AndroidManagedAppProtections {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.androidManagedAppProtections.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceAppManagement.androidManagedAppProtections.item collection</summary>
         public AndroidManagedAppProtectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("androidManagedAppProtection_id", position);

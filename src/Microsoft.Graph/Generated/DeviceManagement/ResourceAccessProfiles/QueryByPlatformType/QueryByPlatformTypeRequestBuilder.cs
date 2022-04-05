@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.ResourceAccessProfiles.QueryByPlatformType {
+namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPlatformType {
     /// <summary>Provides operations to call the queryByPlatformType method.</summary>
     public class QueryByPlatformTypeRequestBuilder {
         /// <summary>Path parameters for the request</summary>

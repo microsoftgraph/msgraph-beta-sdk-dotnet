@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Policies.AuthorizationPolicy.Item.DefaultUserRoleOverrides.Count;
+using Microsoft.Graph.Beta.Policies.AuthorizationPolicy.Item.DefaultUserRoleOverrides.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Policies.AuthorizationPolicy.Item.DefaultUserRoleOverrides.Count;
-using MicrosoftGraphSdk.Policies.AuthorizationPolicy.Item.DefaultUserRoleOverrides.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Policies.AuthorizationPolicy.Item.DefaultUserRoleOverrides {
+namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy.Item.DefaultUserRoleOverrides {
     /// <summary>Provides operations to manage the defaultUserRoleOverrides property of the microsoft.graph.authorizationPolicy entity.</summary>
     public class DefaultUserRoleOverridesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Policies.AuthorizationPolicy.Item.DefaultUserRoleOve
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.policies.authorizationPolicy.item.defaultUserRoleOverrides.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.policies.authorizationPolicy.item.defaultUserRoleOverrides.item collection</summary>
         public DefaultUserRoleOverrideItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("defaultUserRoleOverride_id", position);

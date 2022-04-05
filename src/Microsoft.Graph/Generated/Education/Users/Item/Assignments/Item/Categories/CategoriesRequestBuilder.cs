@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Categories.Count;
+using Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Categories.Delta;
+using Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Categories.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Education.Users.Item.Assignments.Item.Categories.Count;
-using MicrosoftGraphSdk.Education.Users.Item.Assignments.Item.Categories.Delta;
-using MicrosoftGraphSdk.Education.Users.Item.Assignments.Item.Categories.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Education.Users.Item.Assignments.Item.Categories {
+namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Categories {
     /// <summary>Provides operations to manage the categories property of the microsoft.graph.educationAssignment entity.</summary>
     public class CategoriesRequestBuilder {
         /// <summary>The count property</summary>
@@ -24,7 +24,7 @@ namespace MicrosoftGraphSdk.Education.Users.Item.Assignments.Item.Categories {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.education.users.item.assignments.item.categories.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.education.users.item.assignments.item.categories.item collection</summary>
         public EducationCategoryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationCategory_id", position);

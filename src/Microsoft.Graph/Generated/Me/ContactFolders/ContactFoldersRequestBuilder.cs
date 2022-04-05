@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Me.ContactFolders.Count;
+using Microsoft.Graph.Beta.Me.ContactFolders.Delta;
+using Microsoft.Graph.Beta.Me.ContactFolders.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.ContactFolders.Count;
-using MicrosoftGraphSdk.Me.ContactFolders.Delta;
-using MicrosoftGraphSdk.Me.ContactFolders.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.ContactFolders {
+namespace Microsoft.Graph.Beta.Me.ContactFolders {
     /// <summary>Provides operations to manage the contactFolders property of the microsoft.graph.user entity.</summary>
     public class ContactFoldersRequestBuilder {
         /// <summary>The count property</summary>
@@ -24,7 +24,7 @@ namespace MicrosoftGraphSdk.Me.ContactFolders {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.contactFolders.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.contactFolders.item collection</summary>
         public ContactFolderItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("contactFolder_id", position);

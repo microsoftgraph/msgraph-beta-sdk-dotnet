@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.OnPremisesConnections.Item.UpdateAdDomainPassword {
+namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnections.Item.UpdateAdDomainPassword {
     /// <summary>Provides operations to call the updateAdDomainPassword method.</summary>
     public class UpdateAdDomainPasswordRequestBuilder {
         /// <summary>Path parameters for the request</summary>

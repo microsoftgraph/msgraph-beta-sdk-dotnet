@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Sites.Add {
+namespace Microsoft.Graph.Beta.Sites.Add {
     /// <summary>Provides operations to call the add method.</summary>
     public class AddRequestBuilder {
         /// <summary>Path parameters for the request</summary>

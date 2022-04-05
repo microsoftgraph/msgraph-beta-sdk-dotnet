@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Assignments;
+using Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Items;
+using Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Update;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item.Assignments;
-using MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item.Items;
-using MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item.Update;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item {
     /// <summary>Provides operations to manage the policySets property of the microsoft.graph.deviceAppManagement entity.</summary>
     public class PolicySetItemRequestBuilder {
         /// <summary>The assignments property</summary>

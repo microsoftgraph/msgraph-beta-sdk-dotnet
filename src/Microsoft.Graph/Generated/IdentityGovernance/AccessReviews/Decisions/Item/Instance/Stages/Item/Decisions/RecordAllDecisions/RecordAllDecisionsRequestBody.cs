@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Stages.Item.Decisions.RecordAllDecisions {
+namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Stages.Item.Decisions.RecordAllDecisions {
     /// <summary>Provides operations to call the recordAllDecisions method.</summary>
     public class RecordAllDecisionsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

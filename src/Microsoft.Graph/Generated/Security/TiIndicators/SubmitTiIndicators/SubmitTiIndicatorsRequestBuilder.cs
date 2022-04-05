@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Security.TiIndicators.SubmitTiIndicators {
+namespace Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators {
     /// <summary>Provides operations to call the submitTiIndicators method.</summary>
     public class SubmitTiIndicatorsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

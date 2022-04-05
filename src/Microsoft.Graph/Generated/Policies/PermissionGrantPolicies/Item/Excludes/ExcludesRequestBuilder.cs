@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.Item.Excludes.Count;
+using Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.Item.Excludes.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Policies.PermissionGrantPolicies.Item.Excludes.Count;
-using MicrosoftGraphSdk.Policies.PermissionGrantPolicies.Item.Excludes.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Policies.PermissionGrantPolicies.Item.Excludes {
+namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.Item.Excludes {
     /// <summary>Provides operations to manage the excludes property of the microsoft.graph.permissionGrantPolicy entity.</summary>
     public class ExcludesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Policies.PermissionGrantPolicies.Item.Excludes {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.policies.permissionGrantPolicies.item.excludes.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.policies.permissionGrantPolicies.item.excludes.item collection</summary>
         public PermissionGrantConditionSetItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("permissionGrantConditionSet_id", position);

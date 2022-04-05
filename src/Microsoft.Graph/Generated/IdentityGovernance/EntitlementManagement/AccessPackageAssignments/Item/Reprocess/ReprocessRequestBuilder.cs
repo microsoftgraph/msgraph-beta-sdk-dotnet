@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.Reprocess {
+namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.Reprocess {
     /// <summary>Provides operations to call the reprocess method.</summary>
     public class ReprocessRequestBuilder {
         /// <summary>Path parameters for the request</summary>

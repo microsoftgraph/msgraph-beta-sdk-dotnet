@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthDevicePerformanceDetails.Count;
+using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthDevicePerformanceDetails.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsAppHealthDevicePerformanceDetails.Count;
-using MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsAppHealthDevicePerformanceDetails.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsAppHealthDevicePerformanceDetails {
+namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthDevicePerformanceDetails {
     /// <summary>Provides operations to manage the userExperienceAnalyticsAppHealthDevicePerformanceDetails property of the microsoft.graph.deviceManagement entity.</summary>
     public class UserExperienceAnalyticsAppHealthDevicePerformanceDetailsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsAppHealthDev
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.userExperienceAnalyticsAppHealthDevicePerformanceDetails.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.userExperienceAnalyticsAppHealthDevicePerformanceDetails.item collection</summary>
         public UserExperienceAnalyticsAppHealthDevicePerformanceDetailsItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userExperienceAnalyticsAppHealthDevicePerformanceDetails_id", position);
@@ -83,7 +83,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsAppHealthDev
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsAppHealthDevicePerformanceDetails body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
+        public RequestInformation CreatePostRequestInformation(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformanceDetails body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -119,14 +119,14 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsAppHealthDev
         /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsAppHealthDevicePerformanceDetails> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsAppHealthDevicePerformanceDetails body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformanceDetails> PostAsync(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformanceDetails body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsAppHealthDevicePerformanceDetails>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsAppHealthDevicePerformanceDetails.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformanceDetails>(requestInfo, Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformanceDetails.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>User experience analytics device performance details</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Security.Alerts.Count;
+using Microsoft.Graph.Beta.Security.Alerts.Item;
+using Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Security.Alerts.Count;
-using MicrosoftGraphSdk.Security.Alerts.Item;
-using MicrosoftGraphSdk.Security.Alerts.UpdateAlerts;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Security.Alerts {
+namespace Microsoft.Graph.Beta.Security.Alerts {
     /// <summary>Provides operations to manage the alerts property of the microsoft.graph.security entity.</summary>
     public class AlertsRequestBuilder {
         /// <summary>The count property</summary>
@@ -28,7 +28,7 @@ namespace MicrosoftGraphSdk.Security.Alerts {
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.security.alerts.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.security.alerts.item collection</summary>
         public AlertItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("alert_id", position);

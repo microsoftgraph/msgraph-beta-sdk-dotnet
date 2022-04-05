@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item.DeviceRunStates.Item.ManagedDevice;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.DeviceCustomAttributeShellScripts.Item.DeviceRunStates.Item.ManagedDevice;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.DeviceCustomAttributeShellScripts.Item.DeviceRunStates.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item.DeviceRunStates.Item {
     /// <summary>Provides operations to manage the deviceRunStates property of the microsoft.graph.deviceCustomAttributeShellScript entity.</summary>
     public class DeviceManagementScriptDeviceStateItemRequestBuilder {
         /// <summary>The managedDevice property</summary>

@@ -1,14 +1,14 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.App.Calls.Item.AudioRoutingGroups.Item {
+namespace Microsoft.Graph.Beta.App.Calls.Item.AudioRoutingGroups.Item {
     /// <summary>Provides operations to manage the audioRoutingGroups property of the microsoft.graph.call entity.</summary>
     public class AudioRoutingGroupItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

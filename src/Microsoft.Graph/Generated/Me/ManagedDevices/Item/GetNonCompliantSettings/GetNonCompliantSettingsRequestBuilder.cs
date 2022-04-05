@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.GetNonCompliantSettings {
+namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings {
     /// <summary>Provides operations to call the getNonCompliantSettings method.</summary>
     public class GetNonCompliantSettingsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

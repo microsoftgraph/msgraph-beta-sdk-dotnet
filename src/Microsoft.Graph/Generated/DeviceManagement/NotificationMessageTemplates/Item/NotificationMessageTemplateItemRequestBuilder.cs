@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceManagement.NotificationMessageTemplates.Item.LocalizedNotificationMessages;
+using Microsoft.Graph.Beta.DeviceManagement.NotificationMessageTemplates.Item.SendTestMessage;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.NotificationMessageTemplates.Item.LocalizedNotificationMessages;
-using MicrosoftGraphSdk.DeviceManagement.NotificationMessageTemplates.Item.SendTestMessage;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.NotificationMessageTemplates.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.NotificationMessageTemplates.Item {
     /// <summary>Provides operations to manage the notificationMessageTemplates property of the microsoft.graph.deviceManagement entity.</summary>
     public class NotificationMessageTemplateItemRequestBuilder {
         /// <summary>The localizedNotificationMessages property</summary>

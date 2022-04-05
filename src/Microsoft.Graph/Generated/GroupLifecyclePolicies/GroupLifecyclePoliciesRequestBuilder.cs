@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.GroupLifecyclePolicies.Count;
+using Microsoft.Graph.Beta.GroupLifecyclePolicies.Item;
+using Microsoft.Graph.Beta.GroupLifecyclePolicies.RenewGroup;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.GroupLifecyclePolicies.Count;
-using MicrosoftGraphSdk.GroupLifecyclePolicies.Item;
-using MicrosoftGraphSdk.GroupLifecyclePolicies.RenewGroup;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.GroupLifecyclePolicies {
+namespace Microsoft.Graph.Beta.GroupLifecyclePolicies {
     /// <summary>Provides operations to manage the collection of groupLifecyclePolicy entities.</summary>
     public class GroupLifecyclePoliciesRequestBuilder {
         /// <summary>The count property</summary>
@@ -28,7 +28,7 @@ namespace MicrosoftGraphSdk.GroupLifecyclePolicies {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.groupLifecyclePolicies.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.groupLifecyclePolicies.item collection</summary>
         public GroupLifecyclePolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("groupLifecyclePolicy_id", position);

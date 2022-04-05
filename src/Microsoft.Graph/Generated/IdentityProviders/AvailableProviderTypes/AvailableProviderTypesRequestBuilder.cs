@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.IdentityProviders.AvailableProviderTypes {
+namespace Microsoft.Graph.Beta.IdentityProviders.AvailableProviderTypes {
     /// <summary>Provides operations to call the availableProviderTypes method.</summary>
     public class AvailableProviderTypesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

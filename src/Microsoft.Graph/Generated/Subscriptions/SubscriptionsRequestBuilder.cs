@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Subscriptions.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Subscriptions.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Subscriptions {
+namespace Microsoft.Graph.Beta.Subscriptions {
     /// <summary>Provides operations to manage the collection of subscription entities.</summary>
     public class SubscriptionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,7 +18,7 @@ namespace MicrosoftGraphSdk.Subscriptions {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.subscriptions.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.subscriptions.item collection</summary>
         public SubscriptionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("subscription_id", position);

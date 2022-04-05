@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.DirectorySettingTemplates.Count;
+using Microsoft.Graph.Beta.DirectorySettingTemplates.GetByIds;
+using Microsoft.Graph.Beta.DirectorySettingTemplates.GetUserOwnedObjects;
+using Microsoft.Graph.Beta.DirectorySettingTemplates.Item;
+using Microsoft.Graph.Beta.DirectorySettingTemplates.ValidateProperties;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DirectorySettingTemplates.Count;
-using MicrosoftGraphSdk.DirectorySettingTemplates.GetByIds;
-using MicrosoftGraphSdk.DirectorySettingTemplates.GetUserOwnedObjects;
-using MicrosoftGraphSdk.DirectorySettingTemplates.Item;
-using MicrosoftGraphSdk.DirectorySettingTemplates.ValidateProperties;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DirectorySettingTemplates {
+namespace Microsoft.Graph.Beta.DirectorySettingTemplates {
     /// <summary>Provides operations to manage the collection of directorySettingTemplate entities.</summary>
     public class DirectorySettingTemplatesRequestBuilder {
         /// <summary>The count property</summary>
@@ -38,7 +38,7 @@ namespace MicrosoftGraphSdk.DirectorySettingTemplates {
         public ValidatePropertiesRequestBuilder ValidateProperties { get =>
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.directorySettingTemplates.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.directorySettingTemplates.item collection</summary>
         public DirectorySettingTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directorySettingTemplate_id", position);

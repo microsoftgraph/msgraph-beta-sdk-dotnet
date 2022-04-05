@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Education.SynchronizationProfiles.Item.Start {
+namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start {
     /// <summary>Provides operations to call the start method.</summary>
     public class StartRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Domains.Item.DomainNameReferences.Count;
+using Microsoft.Graph.Beta.Domains.Item.DomainNameReferences.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Domains.Item.DomainNameReferences.Count;
-using MicrosoftGraphSdk.Domains.Item.DomainNameReferences.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Domains.Item.DomainNameReferences {
+namespace Microsoft.Graph.Beta.Domains.Item.DomainNameReferences {
     /// <summary>Provides operations to manage the domainNameReferences property of the microsoft.graph.domain entity.</summary>
     public class DomainNameReferencesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Domains.Item.DomainNameReferences {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.domains.item.domainNameReferences.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.domains.item.domainNameReferences.item collection</summary>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryObject_id", position);

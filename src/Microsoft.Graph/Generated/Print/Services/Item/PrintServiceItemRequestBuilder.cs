@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Print.Services.Item.Endpoints;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Print.Services.Item.Endpoints;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Print.Services.Item {
+namespace Microsoft.Graph.Beta.Print.Services.Item {
     /// <summary>Provides operations to manage the services property of the microsoft.graph.print entity.</summary>
     public class PrintServiceItemRequestBuilder {
         /// <summary>The endpoints property</summary>

@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Me.CalendarGroups.Item.Calendars;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.CalendarGroups.Item.Calendars;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.CalendarGroups.Item {
+namespace Microsoft.Graph.Beta.Me.CalendarGroups.Item {
     /// <summary>Provides operations to manage the calendarGroups property of the microsoft.graph.user entity.</summary>
     public class CalendarGroupItemRequestBuilder {
         /// <summary>The calendars property</summary>

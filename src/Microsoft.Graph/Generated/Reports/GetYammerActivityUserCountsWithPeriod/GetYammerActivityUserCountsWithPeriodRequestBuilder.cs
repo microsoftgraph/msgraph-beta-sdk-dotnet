@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetYammerActivityUserCountsWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetYammerActivityUserCountsWithPeriod {
     /// <summary>Provides operations to call the getYammerActivityUserCounts method.</summary>
     public class GetYammerActivityUserCountsWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

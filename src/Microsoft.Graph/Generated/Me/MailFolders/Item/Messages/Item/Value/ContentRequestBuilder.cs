@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.MailFolders.Item.Messages.Item.Value {
+namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.Value {
     /// <summary>Provides operations to manage the media for the user entity.</summary>
     public class ContentRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,14 +1,14 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.DeviceStatuses.Item.App {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.DeviceStatuses.Item.App {
     /// <summary>Provides operations to manage the app property of the microsoft.graph.mobileAppInstallStatus entity.</summary>
     public class AppRequestBuilder {
         /// <summary>Path parameters for the request</summary>

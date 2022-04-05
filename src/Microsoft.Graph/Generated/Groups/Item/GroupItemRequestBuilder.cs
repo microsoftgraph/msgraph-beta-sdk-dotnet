@@ -1,57 +1,57 @@
+using Microsoft.Graph.Beta.Groups.Item.AcceptedSenders;
+using Microsoft.Graph.Beta.Groups.Item.AddFavorite;
+using Microsoft.Graph.Beta.Groups.Item.AppRoleAssignments;
+using Microsoft.Graph.Beta.Groups.Item.AssignLicense;
+using Microsoft.Graph.Beta.Groups.Item.Calendar;
+using Microsoft.Graph.Beta.Groups.Item.CalendarView;
+using Microsoft.Graph.Beta.Groups.Item.CheckGrantedPermissionsForApp;
+using Microsoft.Graph.Beta.Groups.Item.CheckMemberGroups;
+using Microsoft.Graph.Beta.Groups.Item.CheckMemberObjects;
+using Microsoft.Graph.Beta.Groups.Item.Conversations;
+using Microsoft.Graph.Beta.Groups.Item.CreatedOnBehalfOf;
+using Microsoft.Graph.Beta.Groups.Item.Drive;
+using Microsoft.Graph.Beta.Groups.Item.Drives;
+using Microsoft.Graph.Beta.Groups.Item.Endpoints;
+using Microsoft.Graph.Beta.Groups.Item.EvaluateDynamicMembership;
+using Microsoft.Graph.Beta.Groups.Item.Events;
+using Microsoft.Graph.Beta.Groups.Item.Extensions;
+using Microsoft.Graph.Beta.Groups.Item.GetMemberGroups;
+using Microsoft.Graph.Beta.Groups.Item.GetMemberObjects;
+using Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies;
+using Microsoft.Graph.Beta.Groups.Item.MemberOf;
+using Microsoft.Graph.Beta.Groups.Item.Members;
+using Microsoft.Graph.Beta.Groups.Item.MembersWithLicenseErrors;
+using Microsoft.Graph.Beta.Groups.Item.Onenote;
+using Microsoft.Graph.Beta.Groups.Item.Owners;
+using Microsoft.Graph.Beta.Groups.Item.PermissionGrants;
+using Microsoft.Graph.Beta.Groups.Item.Photo;
+using Microsoft.Graph.Beta.Groups.Item.Photos;
+using Microsoft.Graph.Beta.Groups.Item.Planner;
+using Microsoft.Graph.Beta.Groups.Item.RejectedSenders;
+using Microsoft.Graph.Beta.Groups.Item.RemoveFavorite;
+using Microsoft.Graph.Beta.Groups.Item.Renew;
+using Microsoft.Graph.Beta.Groups.Item.ResetUnseenCount;
+using Microsoft.Graph.Beta.Groups.Item.Restore;
+using Microsoft.Graph.Beta.Groups.Item.Settings;
+using Microsoft.Graph.Beta.Groups.Item.Sites;
+using Microsoft.Graph.Beta.Groups.Item.SubscribeByMail;
+using Microsoft.Graph.Beta.Groups.Item.Team;
+using Microsoft.Graph.Beta.Groups.Item.Threads;
+using Microsoft.Graph.Beta.Groups.Item.TransitiveMemberOf;
+using Microsoft.Graph.Beta.Groups.Item.TransitiveMembers;
+using Microsoft.Graph.Beta.Groups.Item.UnsubscribeByMail;
+using Microsoft.Graph.Beta.Groups.Item.ValidateProperties;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Groups.Item.AcceptedSenders;
-using MicrosoftGraphSdk.Groups.Item.AddFavorite;
-using MicrosoftGraphSdk.Groups.Item.AppRoleAssignments;
-using MicrosoftGraphSdk.Groups.Item.AssignLicense;
-using MicrosoftGraphSdk.Groups.Item.Calendar;
-using MicrosoftGraphSdk.Groups.Item.CalendarView;
-using MicrosoftGraphSdk.Groups.Item.CheckGrantedPermissionsForApp;
-using MicrosoftGraphSdk.Groups.Item.CheckMemberGroups;
-using MicrosoftGraphSdk.Groups.Item.CheckMemberObjects;
-using MicrosoftGraphSdk.Groups.Item.Conversations;
-using MicrosoftGraphSdk.Groups.Item.CreatedOnBehalfOf;
-using MicrosoftGraphSdk.Groups.Item.Drive;
-using MicrosoftGraphSdk.Groups.Item.Drives;
-using MicrosoftGraphSdk.Groups.Item.Endpoints;
-using MicrosoftGraphSdk.Groups.Item.EvaluateDynamicMembership;
-using MicrosoftGraphSdk.Groups.Item.Events;
-using MicrosoftGraphSdk.Groups.Item.Extensions;
-using MicrosoftGraphSdk.Groups.Item.GetMemberGroups;
-using MicrosoftGraphSdk.Groups.Item.GetMemberObjects;
-using MicrosoftGraphSdk.Groups.Item.GroupLifecyclePolicies;
-using MicrosoftGraphSdk.Groups.Item.MemberOf;
-using MicrosoftGraphSdk.Groups.Item.Members;
-using MicrosoftGraphSdk.Groups.Item.MembersWithLicenseErrors;
-using MicrosoftGraphSdk.Groups.Item.Onenote;
-using MicrosoftGraphSdk.Groups.Item.Owners;
-using MicrosoftGraphSdk.Groups.Item.PermissionGrants;
-using MicrosoftGraphSdk.Groups.Item.Photo;
-using MicrosoftGraphSdk.Groups.Item.Photos;
-using MicrosoftGraphSdk.Groups.Item.Planner;
-using MicrosoftGraphSdk.Groups.Item.RejectedSenders;
-using MicrosoftGraphSdk.Groups.Item.RemoveFavorite;
-using MicrosoftGraphSdk.Groups.Item.Renew;
-using MicrosoftGraphSdk.Groups.Item.ResetUnseenCount;
-using MicrosoftGraphSdk.Groups.Item.Restore;
-using MicrosoftGraphSdk.Groups.Item.Settings;
-using MicrosoftGraphSdk.Groups.Item.Sites;
-using MicrosoftGraphSdk.Groups.Item.SubscribeByMail;
-using MicrosoftGraphSdk.Groups.Item.Team;
-using MicrosoftGraphSdk.Groups.Item.Threads;
-using MicrosoftGraphSdk.Groups.Item.TransitiveMemberOf;
-using MicrosoftGraphSdk.Groups.Item.TransitiveMembers;
-using MicrosoftGraphSdk.Groups.Item.UnsubscribeByMail;
-using MicrosoftGraphSdk.Groups.Item.ValidateProperties;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item {
+namespace Microsoft.Graph.Beta.Groups.Item {
     /// <summary>Provides operations to manage the collection of group entities.</summary>
     public class GroupItemRequestBuilder {
         /// <summary>The acceptedSenders property</summary>
@@ -301,7 +301,7 @@ namespace MicrosoftGraphSdk.Groups.Item {
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreatePatchRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.Group body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
+        public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.Group body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -336,13 +336,13 @@ namespace MicrosoftGraphSdk.Groups.Item {
         /// <param name="queryParameters">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Group> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Group> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(queryParameters, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Group>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Group.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Group>(requestInfo, Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update entity in groups
@@ -352,7 +352,7 @@ namespace MicrosoftGraphSdk.Groups.Item {
         /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Group body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(Microsoft.Graph.Beta.Models.Group body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

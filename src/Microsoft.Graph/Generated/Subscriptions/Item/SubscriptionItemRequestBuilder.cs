@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Subscriptions.Item.Reauthorize;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Subscriptions.Item.Reauthorize;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Subscriptions.Item {
+namespace Microsoft.Graph.Beta.Subscriptions.Item {
     /// <summary>Provides operations to manage the collection of subscription entities.</summary>
     public class SubscriptionItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,32 +1,32 @@
+using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Attachments;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.CalendarSharingMessage;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Copy;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.CreateForward;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.CreateReply;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.CreateReplyAll;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.EventMessageRequest;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Extensions;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Forward;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Mentions;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Move;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.MultiValueExtendedProperties;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Reply;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.ReplyAll;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Send;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.SingleValueExtendedProperties;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Unsubscribe;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Value;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Attachments;
-using MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.CalendarSharingMessage;
-using MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Copy;
-using MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.CreateForward;
-using MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.CreateReply;
-using MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.CreateReplyAll;
-using MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.EventMessageRequest;
-using MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Extensions;
-using MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Forward;
-using MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Mentions;
-using MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Move;
-using MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.MultiValueExtendedProperties;
-using MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Reply;
-using MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.ReplyAll;
-using MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Send;
-using MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.SingleValueExtendedProperties;
-using MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Unsubscribe;
-using MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Value;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages.Item {
+namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item {
     /// <summary>Provides operations to manage the messages property of the microsoft.graph.mailFolder entity.</summary>
     public class MessageItemRequestBuilder {
         /// <summary>The attachments property</summary>

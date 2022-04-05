@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.PrivilegedSignupStatus.CompleteSetup {
+namespace Microsoft.Graph.Beta.PrivilegedSignupStatus.CompleteSetup {
     /// <summary>Provides operations to call the completeSetup method.</summary>
     public class CompleteSetupResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

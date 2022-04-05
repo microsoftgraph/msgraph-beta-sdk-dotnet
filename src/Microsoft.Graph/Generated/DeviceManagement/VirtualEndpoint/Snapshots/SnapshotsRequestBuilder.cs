@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.Count;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.Snapshots.Count;
-using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.Snapshots.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.Snapshots {
+namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots {
     /// <summary>Provides operations to manage the snapshots property of the microsoft.graph.virtualEndpoint entity.</summary>
     public class SnapshotsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.Snapshots {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.virtualEndpoint.snapshots.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.virtualEndpoint.snapshots.item collection</summary>
         public CloudPcSnapshotItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudPcSnapshot_id", position);

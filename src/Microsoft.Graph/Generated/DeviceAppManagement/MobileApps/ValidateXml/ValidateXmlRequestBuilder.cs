@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.ValidateXml {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.ValidateXml {
     /// <summary>Provides operations to call the validateXml method.</summary>
     public class ValidateXmlRequestBuilder {
         /// <summary>Path parameters for the request</summary>

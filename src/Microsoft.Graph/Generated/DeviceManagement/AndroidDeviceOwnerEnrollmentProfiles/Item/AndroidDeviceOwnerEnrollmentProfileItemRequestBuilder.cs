@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceManagement.AndroidDeviceOwnerEnrollmentProfiles.Item.CreateToken;
+using Microsoft.Graph.Beta.DeviceManagement.AndroidDeviceOwnerEnrollmentProfiles.Item.RevokeToken;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.AndroidDeviceOwnerEnrollmentProfiles.Item.CreateToken;
-using MicrosoftGraphSdk.DeviceManagement.AndroidDeviceOwnerEnrollmentProfiles.Item.RevokeToken;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.AndroidDeviceOwnerEnrollmentProfiles.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.AndroidDeviceOwnerEnrollmentProfiles.Item {
     /// <summary>Provides operations to manage the androidDeviceOwnerEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.</summary>
     public class AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder {
         /// <summary>The createToken property</summary>

@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionDeviceRegistrations.Item.Wipe;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceAppManagement.WindowsInformationProtectionDeviceRegistrations.Item.Wipe;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.WindowsInformationProtectionDeviceRegistrations.Item {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionDeviceRegistrations.Item {
     /// <summary>Provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.deviceAppManagement entity.</summary>
     public class WindowsInformationProtectionDeviceRegistrationItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

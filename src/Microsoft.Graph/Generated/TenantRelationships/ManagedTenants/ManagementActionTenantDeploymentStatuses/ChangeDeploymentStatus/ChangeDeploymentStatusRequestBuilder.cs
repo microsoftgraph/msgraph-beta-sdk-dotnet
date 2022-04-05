@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models.ManagedTenants;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementActionTenantDeploymentStatuses.ChangeDeploymentStatus {
+namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActionTenantDeploymentStatuses.ChangeDeploymentStatus {
     /// <summary>Provides operations to call the changeDeploymentStatus method.</summary>
     public class ChangeDeploymentStatusRequestBuilder {
         /// <summary>Path parameters for the request</summary>

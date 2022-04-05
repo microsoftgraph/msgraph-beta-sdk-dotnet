@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.InformationProtection.Policy.Labels.EvaluateClassificationResults {
+namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy.Labels.EvaluateClassificationResults {
     /// <summary>Provides operations to call the evaluateClassificationResults method.</summary>
     public class EvaluateClassificationResultsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

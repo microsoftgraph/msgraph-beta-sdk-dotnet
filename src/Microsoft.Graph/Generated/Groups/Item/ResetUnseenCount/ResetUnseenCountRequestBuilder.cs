@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.ResetUnseenCount {
+namespace Microsoft.Graph.Beta.Groups.Item.ResetUnseenCount {
     /// <summary>Provides operations to call the resetUnseenCount method.</summary>
     public class ResetUnseenCountRequestBuilder {
         /// <summary>Path parameters for the request</summary>

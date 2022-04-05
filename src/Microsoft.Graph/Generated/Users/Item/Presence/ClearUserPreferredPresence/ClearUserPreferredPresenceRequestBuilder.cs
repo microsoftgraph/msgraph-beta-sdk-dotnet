@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Presence.ClearUserPreferredPresence {
+namespace Microsoft.Graph.Beta.Users.Item.Presence.ClearUserPreferredPresence {
     /// <summary>Provides operations to call the clearUserPreferredPresence method.</summary>
     public class ClearUserPreferredPresenceRequestBuilder {
         /// <summary>Path parameters for the request</summary>

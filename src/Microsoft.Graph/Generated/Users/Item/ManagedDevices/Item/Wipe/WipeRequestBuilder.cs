@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.Wipe {
+namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.Wipe {
     /// <summary>Provides operations to call the wipe method.</summary>
     public class WipeRequestBuilder {
         /// <summary>Path parameters for the request</summary>

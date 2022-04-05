@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.GetEffectivePermissionsWithScope {
+namespace Microsoft.Graph.Beta.DeviceManagement.GetEffectivePermissionsWithScope {
     /// <summary>Provides operations to call the getEffectivePermissions method.</summary>
     public class GetEffectivePermissionsWithScopeRequestBuilder {
         /// <summary>Path parameters for the request</summary>

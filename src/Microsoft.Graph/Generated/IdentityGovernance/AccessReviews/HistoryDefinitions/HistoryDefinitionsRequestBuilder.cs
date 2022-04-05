@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.HistoryDefinitions.Count;
+using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.HistoryDefinitions.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.HistoryDefinitions.Count;
-using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.HistoryDefinitions.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.HistoryDefinitions {
+namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.HistoryDefinitions {
     /// <summary>Provides operations to manage the historyDefinitions property of the microsoft.graph.accessReviewSet entity.</summary>
     public class HistoryDefinitionsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.HistoryDefinitions 
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.identityGovernance.accessReviews.historyDefinitions.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.identityGovernance.accessReviews.historyDefinitions.item collection</summary>
         public AccessReviewHistoryDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewHistoryDefinition_id", position);

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.IdentityProtection.RiskyServicePrincipals.Dismiss {
+namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Dismiss {
     /// <summary>Provides operations to call the dismiss method.</summary>
     public class DismissRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,28 +1,28 @@
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models.Security;
+using Microsoft.Graph.Beta.Security.Alerts;
+using Microsoft.Graph.Beta.Security.AttackSimulation;
+using Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles;
+using Microsoft.Graph.Beta.Security.DomainSecurityProfiles;
+using Microsoft.Graph.Beta.Security.FileSecurityProfiles;
+using Microsoft.Graph.Beta.Security.HostSecurityProfiles;
+using Microsoft.Graph.Beta.Security.InformationProtection;
+using Microsoft.Graph.Beta.Security.IpSecurityProfiles;
+using Microsoft.Graph.Beta.Security.ProviderTenantSettings;
+using Microsoft.Graph.Beta.Security.SecureScoreControlProfiles;
+using Microsoft.Graph.Beta.Security.SecureScores;
+using Microsoft.Graph.Beta.Security.SecurityActions;
+using Microsoft.Graph.Beta.Security.TiIndicators;
+using Microsoft.Graph.Beta.Security.UserSecurityProfiles;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Security;
-using MicrosoftGraphSdk.Security.Alerts;
-using MicrosoftGraphSdk.Security.AttackSimulation;
-using MicrosoftGraphSdk.Security.CloudAppSecurityProfiles;
-using MicrosoftGraphSdk.Security.DomainSecurityProfiles;
-using MicrosoftGraphSdk.Security.FileSecurityProfiles;
-using MicrosoftGraphSdk.Security.HostSecurityProfiles;
-using MicrosoftGraphSdk.Security.InformationProtection;
-using MicrosoftGraphSdk.Security.IpSecurityProfiles;
-using MicrosoftGraphSdk.Security.ProviderTenantSettings;
-using MicrosoftGraphSdk.Security.SecureScoreControlProfiles;
-using MicrosoftGraphSdk.Security.SecureScores;
-using MicrosoftGraphSdk.Security.SecurityActions;
-using MicrosoftGraphSdk.Security.TiIndicators;
-using MicrosoftGraphSdk.Security.UserSecurityProfiles;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Security {
+namespace Microsoft.Graph.Beta.Security {
     /// <summary>Provides operations to manage the security singleton.</summary>
     public class SecurityRequestBuilder {
         /// <summary>The alerts property</summary>
@@ -141,7 +141,7 @@ namespace MicrosoftGraphSdk.Security {
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreatePatchRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.Security.Security body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
+        public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.Security.Security body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -161,13 +161,13 @@ namespace MicrosoftGraphSdk.Security {
         /// <param name="queryParameters">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Security.Security> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Security.Security> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(queryParameters, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Security.Security>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Security.Security.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.Security>(requestInfo, Microsoft.Graph.Beta.Models.Security.Security.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update security
@@ -177,7 +177,7 @@ namespace MicrosoftGraphSdk.Security {
         /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Security.Security body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(Microsoft.Graph.Beta.Models.Security.Security body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

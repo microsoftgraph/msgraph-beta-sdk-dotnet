@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item.UserRunStates.Count;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item.UserRunStates.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.DeviceCustomAttributeShellScripts.Item.UserRunStates.Count;
-using MicrosoftGraphSdk.DeviceManagement.DeviceCustomAttributeShellScripts.Item.UserRunStates.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.DeviceCustomAttributeShellScripts.Item.UserRunStates {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item.UserRunStates {
     /// <summary>Provides operations to manage the userRunStates property of the microsoft.graph.deviceCustomAttributeShellScript entity.</summary>
     public class UserRunStatesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceCustomAttributeShellScripts.I
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.deviceCustomAttributeShellScripts.item.userRunStates.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.deviceCustomAttributeShellScripts.item.userRunStates.item collection</summary>
         public DeviceManagementScriptUserStateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementScriptUserState_id", position);

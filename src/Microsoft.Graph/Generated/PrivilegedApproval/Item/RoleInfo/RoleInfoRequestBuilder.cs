@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.Assignments;
+using Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.Settings;
+using Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.Summary;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.PrivilegedApproval.Item.RoleInfo.Assignments;
-using MicrosoftGraphSdk.PrivilegedApproval.Item.RoleInfo.Settings;
-using MicrosoftGraphSdk.PrivilegedApproval.Item.RoleInfo.Summary;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.PrivilegedApproval.Item.RoleInfo {
+namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo {
     /// <summary>Provides operations to manage the roleInfo property of the microsoft.graph.privilegedApproval entity.</summary>
     public class RoleInfoRequestBuilder {
         /// <summary>The assignments property</summary>

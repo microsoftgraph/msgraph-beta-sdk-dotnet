@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Count;
+using Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Policies.CrossTenantAccessPolicy.Partners.Count;
-using MicrosoftGraphSdk.Policies.CrossTenantAccessPolicy.Partners.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Policies.CrossTenantAccessPolicy.Partners {
+namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners {
     /// <summary>Provides operations to manage the partners property of the microsoft.graph.crossTenantAccessPolicy entity.</summary>
     public class PartnersRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Policies.CrossTenantAccessPolicy.Partners {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.policies.crossTenantAccessPolicy.partners.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.policies.crossTenantAccessPolicy.partners.item collection</summary>
         public CrossTenantAccessPolicyConfigurationPartnerItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("crossTenantAccessPolicyConfigurationPartner_tenantId", position);

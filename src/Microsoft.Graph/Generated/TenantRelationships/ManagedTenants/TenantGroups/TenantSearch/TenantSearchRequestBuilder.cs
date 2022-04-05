@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantGroups.TenantSearch {
+namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups.TenantSearch {
     /// <summary>Provides operations to call the tenantSearch method.</summary>
     public class TenantSearchRequestBuilder {
         /// <summary>Path parameters for the request</summary>

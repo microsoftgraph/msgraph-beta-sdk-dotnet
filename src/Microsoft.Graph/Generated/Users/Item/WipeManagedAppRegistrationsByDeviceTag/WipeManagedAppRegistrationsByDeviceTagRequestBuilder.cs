@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.WipeManagedAppRegistrationsByDeviceTag {
+namespace Microsoft.Graph.Beta.Users.Item.WipeManagedAppRegistrationsByDeviceTag {
     /// <summary>Provides operations to call the wipeManagedAppRegistrationsByDeviceTag method.</summary>
     public class WipeManagedAppRegistrationsByDeviceTagRequestBuilder {
         /// <summary>Path parameters for the request</summary>

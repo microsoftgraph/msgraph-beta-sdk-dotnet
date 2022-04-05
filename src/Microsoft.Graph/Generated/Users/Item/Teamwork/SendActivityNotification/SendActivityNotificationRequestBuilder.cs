@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Teamwork.SendActivityNotification {
+namespace Microsoft.Graph.Beta.Users.Item.Teamwork.SendActivityNotification {
     /// <summary>Provides operations to call the sendActivityNotification method.</summary>
     public class SendActivityNotificationRequestBuilder {
         /// <summary>Path parameters for the request</summary>

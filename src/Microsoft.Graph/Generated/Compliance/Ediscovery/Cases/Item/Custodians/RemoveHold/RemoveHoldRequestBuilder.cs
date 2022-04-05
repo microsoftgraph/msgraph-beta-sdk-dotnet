@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Custodians.RemoveHold {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.RemoveHold {
     /// <summary>Provides operations to call the removeHold method.</summary>
     public class RemoveHoldRequestBuilder {
         /// <summary>Path parameters for the request</summary>

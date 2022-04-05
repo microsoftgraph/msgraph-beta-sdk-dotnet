@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Print.Printers.Create {
+namespace Microsoft.Graph.Beta.Print.Printers.Create {
     /// <summary>Provides operations to call the create method.</summary>
     public class CreateRequestBuilder {
         /// <summary>Path parameters for the request</summary>

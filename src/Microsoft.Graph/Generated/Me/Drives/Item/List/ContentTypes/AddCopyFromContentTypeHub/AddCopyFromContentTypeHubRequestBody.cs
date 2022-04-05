@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Me.Drives.Item.List.ContentTypes.AddCopyFromContentTypeHub {
+namespace Microsoft.Graph.Beta.Me.Drives.Item.List.ContentTypes.AddCopyFromContentTypeHub {
     /// <summary>Provides operations to call the addCopyFromContentTypeHub method.</summary>
     public class AddCopyFromContentTypeHubRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

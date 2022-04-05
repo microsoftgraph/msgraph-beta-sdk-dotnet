@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.DataClassification.SensitivityLabels.Count;
+using Microsoft.Graph.Beta.DataClassification.SensitivityLabels.Evaluate;
+using Microsoft.Graph.Beta.DataClassification.SensitivityLabels.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DataClassification.SensitivityLabels.Count;
-using MicrosoftGraphSdk.DataClassification.SensitivityLabels.Evaluate;
-using MicrosoftGraphSdk.DataClassification.SensitivityLabels.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DataClassification.SensitivityLabels {
+namespace Microsoft.Graph.Beta.DataClassification.SensitivityLabels {
     /// <summary>Provides operations to manage the sensitivityLabels property of the microsoft.graph.dataClassificationService entity.</summary>
     public class SensitivityLabelsRequestBuilder {
         /// <summary>The count property</summary>
@@ -28,7 +28,7 @@ namespace MicrosoftGraphSdk.DataClassification.SensitivityLabels {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.dataClassification.sensitivityLabels.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.dataClassification.sensitivityLabels.item collection</summary>
         public SensitivityLabelItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("sensitivityLabel_id", position);

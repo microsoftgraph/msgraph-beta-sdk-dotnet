@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnections.Count;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnections.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.OnPremisesConnections.Count;
-using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.OnPremisesConnections.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.OnPremisesConnections {
+namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnections {
     /// <summary>Provides operations to manage the onPremisesConnections property of the microsoft.graph.virtualEndpoint entity.</summary>
     public class OnPremisesConnectionsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.OnPremisesConnectio
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.virtualEndpoint.onPremisesConnections.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.virtualEndpoint.onPremisesConnections.item collection</summary>
         public CloudPcOnPremisesConnectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudPcOnPremisesConnection_id", position);

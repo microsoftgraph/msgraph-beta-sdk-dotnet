@@ -1,22 +1,22 @@
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.Activate;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.ApplyHold;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.Release;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.RemoveHold;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.SiteSources;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.UnifiedGroupSources;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.UpdateIndex;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.UserSources;
+using Microsoft.Graph.Beta.Models.Ediscovery;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Custodians.Item.Activate;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Custodians.Item.ApplyHold;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Custodians.Item.Release;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Custodians.Item.RemoveHold;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Custodians.Item.SiteSources;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Custodians.Item.UnifiedGroupSources;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Custodians.Item.UpdateIndex;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Custodians.Item.UserSources;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Custodians.Item {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item {
     /// <summary>Provides operations to manage the custodians property of the microsoft.graph.ediscovery.case entity.</summary>
     public class CustodianItemRequestBuilder {
         /// <summary>The activate property</summary>

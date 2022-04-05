@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.EnableUnlicensedAdminstrators {
+namespace Microsoft.Graph.Beta.DeviceManagement.EnableUnlicensedAdminstrators {
     /// <summary>Provides operations to call the enableUnlicensedAdminstrators method.</summary>
     public class EnableUnlicensedAdminstratorsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

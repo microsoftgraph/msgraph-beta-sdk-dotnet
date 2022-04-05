@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Users.ValidatePassword {
+namespace Microsoft.Graph.Beta.Users.ValidatePassword {
     /// <summary>Provides operations to call the validatePassword method.</summary>
     public class ValidatePasswordRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

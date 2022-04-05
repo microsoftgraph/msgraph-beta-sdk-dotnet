@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Teams.Item.Members.Add {
+namespace Microsoft.Graph.Beta.Teams.Item.Members.Add {
     /// <summary>Provides operations to call the add method.</summary>
     public class AddRequestBuilder {
         /// <summary>Path parameters for the request</summary>

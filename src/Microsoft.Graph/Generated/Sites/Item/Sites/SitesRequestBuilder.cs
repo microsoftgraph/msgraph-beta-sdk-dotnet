@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Sites.Item.Sites.Count;
+using Microsoft.Graph.Beta.Sites.Item.Sites.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Sites.Item.Sites.Count;
-using MicrosoftGraphSdk.Sites.Item.Sites.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Sites.Item.Sites {
+namespace Microsoft.Graph.Beta.Sites.Item.Sites {
     /// <summary>Provides operations to manage the sites property of the microsoft.graph.site entity.</summary>
     public class SitesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,11 +23,11 @@ namespace MicrosoftGraphSdk.Sites.Item.Sites {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.sites.item.sites.item collection</summary>
-        public MicrosoftGraphSdk.Sites.Item.Sites.Item.SiteItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.sites.item.sites.item collection</summary>
+        public Microsoft.Graph.Beta.Sites.Item.Sites.Item.SiteItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("site_id1", position);
-            return new MicrosoftGraphSdk.Sites.Item.Sites.Item.SiteItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new Microsoft.Graph.Beta.Sites.Item.Sites.Item.SiteItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SitesRequestBuilder and sets the default values.

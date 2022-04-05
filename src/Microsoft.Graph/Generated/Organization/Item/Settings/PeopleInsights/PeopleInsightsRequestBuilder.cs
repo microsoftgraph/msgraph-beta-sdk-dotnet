@@ -1,14 +1,14 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Organization.Item.Settings.PeopleInsights {
+namespace Microsoft.Graph.Beta.Organization.Item.Settings.PeopleInsights {
     /// <summary>Provides operations to manage the peopleInsights property of the microsoft.graph.organizationSettings entity.</summary>
     public class PeopleInsightsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

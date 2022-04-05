@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CompleteSignup {
+namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CompleteSignup {
     /// <summary>Provides operations to call the completeSignup method.</summary>
     public class CompleteSignupRequestBuilder {
         /// <summary>Path parameters for the request</summary>

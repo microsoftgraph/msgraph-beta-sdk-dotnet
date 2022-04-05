@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.TokenLifetimePolicies.Count;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.TokenLifetimePolicies.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.ServicePrincipals.Item.TokenLifetimePolicies.Count;
-using MicrosoftGraphSdk.ServicePrincipals.Item.TokenLifetimePolicies.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.ServicePrincipals.Item.TokenLifetimePolicies {
+namespace Microsoft.Graph.Beta.ServicePrincipals.Item.TokenLifetimePolicies {
     /// <summary>Provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.servicePrincipal entity.</summary>
     public class TokenLifetimePoliciesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.TokenLifetimePolicies {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.servicePrincipals.item.tokenLifetimePolicies.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.servicePrincipals.item.tokenLifetimePolicies.item collection</summary>
         public TokenLifetimePolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tokenLifetimePolicy_id", position);

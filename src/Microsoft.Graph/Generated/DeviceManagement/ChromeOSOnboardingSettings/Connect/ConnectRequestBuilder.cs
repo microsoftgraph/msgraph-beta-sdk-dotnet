@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.ChromeOSOnboardingSettings.Connect {
+namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.Connect {
     /// <summary>Provides operations to call the connect method.</summary>
     public class ConnectRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -79,7 +79,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ChromeOSOnboardingSettings.Connect 
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type chromeOSOnboardingStatus</summary>
-            public MicrosoftGraphSdk.Models.Microsoft.Graph.ChromeOSOnboardingStatus? ChromeOSOnboardingStatus { get; set; }
+            public Microsoft.Graph.Beta.Models.ChromeOSOnboardingStatus? ChromeOSOnboardingStatus { get; set; }
             /// <summary>
             /// Instantiates a new connectResponse and sets the default values.
             /// </summary>

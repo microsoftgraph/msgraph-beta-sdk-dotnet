@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.Assignments.Count;
+using Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.Assignments.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.PrivilegedRoleAssignments.Item.RoleInfo.Assignments.Count;
-using MicrosoftGraphSdk.PrivilegedRoleAssignments.Item.RoleInfo.Assignments.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.PrivilegedRoleAssignments.Item.RoleInfo.Assignments {
+namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.Assignments {
     /// <summary>Provides operations to manage the assignments property of the microsoft.graph.privilegedRole entity.</summary>
     public class AssignmentsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,11 +23,11 @@ namespace MicrosoftGraphSdk.PrivilegedRoleAssignments.Item.RoleInfo.Assignments 
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.privilegedRoleAssignments.item.roleInfo.assignments.item collection</summary>
-        public MicrosoftGraphSdk.PrivilegedRoleAssignments.Item.RoleInfo.Assignments.Item.PrivilegedRoleAssignmentItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.privilegedRoleAssignments.item.roleInfo.assignments.item collection</summary>
+        public Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.Assignments.Item.PrivilegedRoleAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("privilegedRoleAssignment_id1", position);
-            return new MicrosoftGraphSdk.PrivilegedRoleAssignments.Item.RoleInfo.Assignments.Item.PrivilegedRoleAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.Assignments.Item.PrivilegedRoleAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AssignmentsRequestBuilder and sets the default values.

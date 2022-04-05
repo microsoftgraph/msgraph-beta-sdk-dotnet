@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Me.ExportPersonalData {
+namespace Microsoft.Graph.Beta.Me.ExportPersonalData {
     /// <summary>Provides operations to call the exportPersonalData method.</summary>
     public class ExportPersonalDataRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

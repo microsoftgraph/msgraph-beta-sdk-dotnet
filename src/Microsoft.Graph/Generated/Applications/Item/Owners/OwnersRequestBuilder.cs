@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Applications.Item.Owners.Count;
+using Microsoft.Graph.Beta.Applications.Item.Owners.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Applications.Item.Owners.Count;
-using MicrosoftGraphSdk.Applications.Item.Owners.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Applications.Item.Owners {
+namespace Microsoft.Graph.Beta.Applications.Item.Owners {
     /// <summary>Provides operations to manage the owners property of the microsoft.graph.application entity.</summary>
     public class OwnersRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Applications.Item.Owners {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.applications.item.owners.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.applications.item.owners.item collection</summary>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryObject_id", position);

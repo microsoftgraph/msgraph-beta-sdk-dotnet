@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Drive.List.ContentTypes.AddCopyFromContentTypeHub {
+namespace Microsoft.Graph.Beta.Drive.List.ContentTypes.AddCopyFromContentTypeHub {
     /// <summary>Provides operations to call the addCopyFromContentTypeHub method.</summary>
     public class AddCopyFromContentTypeHubRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Chats.Item.Members.Add {
+namespace Microsoft.Graph.Beta.Me.Chats.Item.Members.Add {
     /// <summary>Provides operations to call the add method.</summary>
     public class AddRequestBuilder {
         /// <summary>Path parameters for the request</summary>

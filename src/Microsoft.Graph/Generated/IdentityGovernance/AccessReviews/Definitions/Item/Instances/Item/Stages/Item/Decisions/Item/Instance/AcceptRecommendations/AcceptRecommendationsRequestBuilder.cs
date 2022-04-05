@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Stages.Item.Decisions.Item.Instance.AcceptRecommendations {
+namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Stages.Item.Decisions.Item.Instance.AcceptRecommendations {
     /// <summary>Provides operations to call the acceptRecommendations method.</summary>
     public class AcceptRecommendationsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

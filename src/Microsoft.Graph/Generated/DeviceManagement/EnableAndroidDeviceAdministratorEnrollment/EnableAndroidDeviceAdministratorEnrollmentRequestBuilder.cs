@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.EnableAndroidDeviceAdministratorEnrollment {
+namespace Microsoft.Graph.Beta.DeviceManagement.EnableAndroidDeviceAdministratorEnrollment {
     /// <summary>Provides operations to call the enableAndroidDeviceAdministratorEnrollment method.</summary>
     public class EnableAndroidDeviceAdministratorEnrollmentRequestBuilder {
         /// <summary>Path parameters for the request</summary>

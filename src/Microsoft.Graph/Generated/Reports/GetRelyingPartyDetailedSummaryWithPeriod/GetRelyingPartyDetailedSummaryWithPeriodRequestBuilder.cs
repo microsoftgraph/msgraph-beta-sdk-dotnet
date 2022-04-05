@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetRelyingPartyDetailedSummaryWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetRelyingPartyDetailedSummaryWithPeriod {
     /// <summary>Provides operations to call the getRelyingPartyDetailedSummary method.</summary>
     public class GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

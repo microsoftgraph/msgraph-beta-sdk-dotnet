@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleDefinitions.Item.InheritsPermissionsFrom;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleDefinitions.Item.InheritsPermissionsFrom;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleDefinitions.Item {
+namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleDefinitions.Item {
     /// <summary>Provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplication entity.</summary>
     public class UnifiedRoleDefinitionItemRequestBuilder {
         /// <summary>The inheritsPermissionsFrom property</summary>

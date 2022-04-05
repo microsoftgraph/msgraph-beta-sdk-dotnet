@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Settings.ResetToDefault;
+using Microsoft.Graph.Beta.Models.Ediscovery;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Settings.ResetToDefault;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Settings {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Settings {
     /// <summary>Provides operations to manage the settings property of the microsoft.graph.ediscovery.case entity.</summary>
     public class SettingsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

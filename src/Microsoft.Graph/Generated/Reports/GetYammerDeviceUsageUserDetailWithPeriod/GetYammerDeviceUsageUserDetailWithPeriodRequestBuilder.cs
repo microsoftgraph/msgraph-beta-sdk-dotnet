@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetYammerDeviceUsageUserDetailWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetYammerDeviceUsageUserDetailWithPeriod {
     /// <summary>Provides operations to call the getYammerDeviceUsageUserDetail method.</summary>
     public class GetYammerDeviceUsageUserDetailWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

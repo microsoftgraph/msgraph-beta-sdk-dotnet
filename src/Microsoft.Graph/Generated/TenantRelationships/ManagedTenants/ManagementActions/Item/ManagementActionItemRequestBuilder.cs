@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Models.ManagedTenants;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActions.Item.Apply;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementActions.Item.Apply;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementActions.Item {
+namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActions.Item {
     /// <summary>Provides operations to manage the managementActions property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
     public class ManagementActionItemRequestBuilder {
         /// <summary>The apply property</summary>

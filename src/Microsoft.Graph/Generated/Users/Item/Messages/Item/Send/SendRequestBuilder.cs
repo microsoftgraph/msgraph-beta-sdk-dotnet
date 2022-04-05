@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Messages.Item.Send {
+namespace Microsoft.Graph.Beta.Users.Item.Messages.Item.Send {
     /// <summary>Provides operations to call the send method.</summary>
     public class SendRequestBuilder {
         /// <summary>Path parameters for the request</summary>

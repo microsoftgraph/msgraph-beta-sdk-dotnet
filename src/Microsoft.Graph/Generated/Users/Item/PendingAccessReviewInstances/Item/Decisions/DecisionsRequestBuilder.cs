@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Decisions.Count;
+using Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Decisions.FilterByCurrentUserWithOn;
+using Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item;
+using Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Decisions.RecordAllDecisions;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Decisions.Count;
-using MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Decisions.FilterByCurrentUserWithOn;
-using MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item;
-using MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Decisions.RecordAllDecisions;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Decisions {
+namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Decisions {
     /// <summary>Provides operations to manage the decisions property of the microsoft.graph.accessReviewInstance entity.</summary>
     public class DecisionsRequestBuilder {
         /// <summary>The count property</summary>
@@ -29,7 +29,7 @@ namespace MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Decisio
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.pendingAccessReviewInstances.item.decisions.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.pendingAccessReviewInstances.item.decisions.item collection</summary>
         public AccessReviewInstanceDecisionItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewInstanceDecisionItem_id", position);

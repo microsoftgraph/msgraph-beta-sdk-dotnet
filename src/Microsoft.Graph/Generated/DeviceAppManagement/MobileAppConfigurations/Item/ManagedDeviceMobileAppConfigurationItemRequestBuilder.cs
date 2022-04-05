@@ -1,20 +1,20 @@
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileAppConfigurations.Item.Assign;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileAppConfigurations.Item.Assignments;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileAppConfigurations.Item.DeviceStatuses;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileAppConfigurations.Item.DeviceStatusSummary;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileAppConfigurations.Item.UserStatuses;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileAppConfigurations.Item.UserStatusSummary;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileAppConfigurations.Item.Assign;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileAppConfigurations.Item.Assignments;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileAppConfigurations.Item.DeviceStatuses;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileAppConfigurations.Item.DeviceStatusSummary;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileAppConfigurations.Item.UserStatuses;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileAppConfigurations.Item.UserStatusSummary;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.MobileAppConfigurations.Item {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileAppConfigurations.Item {
     /// <summary>Provides operations to manage the mobileAppConfigurations property of the microsoft.graph.deviceAppManagement entity.</summary>
     public class ManagedDeviceMobileAppConfigurationItemRequestBuilder {
         /// <summary>The assign property</summary>

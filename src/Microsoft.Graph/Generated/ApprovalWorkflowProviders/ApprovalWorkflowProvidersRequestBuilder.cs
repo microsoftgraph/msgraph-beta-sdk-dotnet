@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.ApprovalWorkflowProviders.Count;
+using Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.ApprovalWorkflowProviders.Count;
-using MicrosoftGraphSdk.ApprovalWorkflowProviders.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.ApprovalWorkflowProviders {
+namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders {
     /// <summary>Provides operations to manage the collection of approvalWorkflowProvider entities.</summary>
     public class ApprovalWorkflowProvidersRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.ApprovalWorkflowProviders {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.approvalWorkflowProviders.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.approvalWorkflowProviders.item collection</summary>
         public ApprovalWorkflowProviderItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("approvalWorkflowProvider_id", position);

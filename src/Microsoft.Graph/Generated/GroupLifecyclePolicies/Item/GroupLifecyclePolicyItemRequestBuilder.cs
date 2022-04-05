@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.GroupLifecyclePolicies.Item.AddGroup;
+using Microsoft.Graph.Beta.GroupLifecyclePolicies.Item.RemoveGroup;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.GroupLifecyclePolicies.Item.AddGroup;
-using MicrosoftGraphSdk.GroupLifecyclePolicies.Item.RemoveGroup;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.GroupLifecyclePolicies.Item {
+namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.Item {
     /// <summary>Provides operations to manage the collection of groupLifecyclePolicy entities.</summary>
     public class GroupLifecyclePolicyItemRequestBuilder {
         /// <summary>The addGroup property</summary>

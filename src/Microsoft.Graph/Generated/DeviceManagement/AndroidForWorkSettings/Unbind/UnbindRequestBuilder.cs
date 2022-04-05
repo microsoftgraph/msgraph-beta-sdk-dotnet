@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.AndroidForWorkSettings.Unbind {
+namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings.Unbind {
     /// <summary>Provides operations to call the unbind method.</summary>
     public class UnbindRequestBuilder {
         /// <summary>Path parameters for the request</summary>

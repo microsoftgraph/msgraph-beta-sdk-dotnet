@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.InformationProtection.VerifySignature {
+namespace Microsoft.Graph.Beta.InformationProtection.VerifySignature {
     /// <summary>Provides operations to call the verifySignature method.</summary>
     public class VerifySignatureRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

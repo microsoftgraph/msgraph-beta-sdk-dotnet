@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.AppliedPolicies.Count;
+using Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.AppliedPolicies.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceAppManagement.ManagedAppRegistrations.Item.AppliedPolicies.Count;
-using MicrosoftGraphSdk.DeviceAppManagement.ManagedAppRegistrations.Item.AppliedPolicies.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedAppRegistrations.Item.AppliedPolicies {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.AppliedPolicies {
     /// <summary>Provides operations to manage the appliedPolicies property of the microsoft.graph.managedAppRegistration entity.</summary>
     public class AppliedPoliciesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedAppRegistrations.Item.App
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.managedAppRegistrations.item.appliedPolicies.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceAppManagement.managedAppRegistrations.item.appliedPolicies.item collection</summary>
         public ManagedAppPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedAppPolicy_id", position);

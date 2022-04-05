@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Drives.Item.List.Items.Item.Versions.Item.RestoreVersion {
+namespace Microsoft.Graph.Beta.Me.Drives.Item.List.Items.Item.Versions.Item.RestoreVersion {
     /// <summary>Provides operations to call the restoreVersion method.</summary>
     public class RestoreVersionRequestBuilder {
         /// <summary>Path parameters for the request</summary>

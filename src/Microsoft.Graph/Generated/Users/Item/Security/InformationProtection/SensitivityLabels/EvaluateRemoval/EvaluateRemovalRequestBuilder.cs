@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Security.InformationProtection.SensitivityLabels.EvaluateRemoval {
+namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.EvaluateRemoval {
     /// <summary>Provides operations to call the evaluateRemoval method.</summary>
     public class EvaluateRemovalRequestBuilder {
         /// <summary>Path parameters for the request</summary>

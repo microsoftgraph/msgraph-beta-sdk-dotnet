@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models.WindowsUpdates;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item {
+namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item {
     /// <summary>Provides operations to manage the deployments property of the microsoft.graph.windowsUpdates.updates entity.</summary>
     public class DeploymentItemRequestBuilder {
         /// <summary>The audience property</summary>

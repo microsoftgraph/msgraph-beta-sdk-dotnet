@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Me.IsManagedAppUserBlocked {
+namespace Microsoft.Graph.Beta.Me.IsManagedAppUserBlocked {
     /// <summary>Provides operations to call the isManagedAppUserBlocked method.</summary>
     public class IsManagedAppUserBlockedResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

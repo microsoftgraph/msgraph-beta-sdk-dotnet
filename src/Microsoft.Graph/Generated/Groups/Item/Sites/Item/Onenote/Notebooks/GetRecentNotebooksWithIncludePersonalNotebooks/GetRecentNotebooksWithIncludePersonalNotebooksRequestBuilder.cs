@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Sites.Item.Onenote.Notebooks.GetRecentNotebooksWithIncludePersonalNotebooks {
+namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Notebooks.GetRecentNotebooksWithIncludePersonalNotebooks {
     /// <summary>Provides operations to call the getRecentNotebooks method.</summary>
     public class GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder {
         /// <summary>Path parameters for the request</summary>

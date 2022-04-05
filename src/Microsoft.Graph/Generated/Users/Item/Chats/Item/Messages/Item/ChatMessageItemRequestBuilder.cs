@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.Chats.Item.Messages.Item.HostedContents;
+using Microsoft.Graph.Beta.Users.Item.Chats.Item.Messages.Item.Replies;
+using Microsoft.Graph.Beta.Users.Item.Chats.Item.Messages.Item.SoftDelete;
+using Microsoft.Graph.Beta.Users.Item.Chats.Item.Messages.Item.UndoSoftDelete;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.Chats.Item.Messages.Item.HostedContents;
-using MicrosoftGraphSdk.Users.Item.Chats.Item.Messages.Item.Replies;
-using MicrosoftGraphSdk.Users.Item.Chats.Item.Messages.Item.SoftDelete;
-using MicrosoftGraphSdk.Users.Item.Chats.Item.Messages.Item.UndoSoftDelete;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Chats.Item.Messages.Item {
+namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.Messages.Item {
     /// <summary>Provides operations to manage the messages property of the microsoft.graph.chat entity.</summary>
     public class ChatMessageItemRequestBuilder {
         /// <summary>The hostedContents property</summary>

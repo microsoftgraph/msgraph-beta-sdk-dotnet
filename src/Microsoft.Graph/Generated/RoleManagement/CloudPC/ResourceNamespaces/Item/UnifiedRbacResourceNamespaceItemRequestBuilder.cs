@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.RoleManagement.CloudPC.ResourceNamespaces.Item.ImportResourceActions;
+using Microsoft.Graph.Beta.RoleManagement.CloudPC.ResourceNamespaces.Item.ResourceActions;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.RoleManagement.CloudPC.ResourceNamespaces.Item.ImportResourceActions;
-using MicrosoftGraphSdk.RoleManagement.CloudPC.ResourceNamespaces.Item.ResourceActions;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.RoleManagement.CloudPC.ResourceNamespaces.Item {
+namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.ResourceNamespaces.Item {
     /// <summary>Provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplicationMultiple entity.</summary>
     public class UnifiedRbacResourceNamespaceItemRequestBuilder {
         /// <summary>The importResourceActions property</summary>

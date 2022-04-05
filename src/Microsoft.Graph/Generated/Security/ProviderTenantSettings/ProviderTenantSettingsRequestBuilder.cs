@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Security.ProviderTenantSettings.Count;
+using Microsoft.Graph.Beta.Security.ProviderTenantSettings.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Security.ProviderTenantSettings.Count;
-using MicrosoftGraphSdk.Security.ProviderTenantSettings.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Security.ProviderTenantSettings {
+namespace Microsoft.Graph.Beta.Security.ProviderTenantSettings {
     /// <summary>Provides operations to manage the providerTenantSettings property of the microsoft.graph.security entity.</summary>
     public class ProviderTenantSettingsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Security.ProviderTenantSettings {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.security.providerTenantSettings.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.security.providerTenantSettings.item collection</summary>
         public ProviderTenantSettingItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("providerTenantSetting_id", position);

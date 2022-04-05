@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Drive.Items.Item.Versions.Count;
+using Microsoft.Graph.Beta.Drive.Items.Item.Versions.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Drive.Items.Item.Versions.Count;
-using MicrosoftGraphSdk.Drive.Items.Item.Versions.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Drive.Items.Item.Versions {
+namespace Microsoft.Graph.Beta.Drive.Items.Item.Versions {
     /// <summary>Provides operations to manage the versions property of the microsoft.graph.driveItem entity.</summary>
     public class VersionsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Drive.Items.Item.Versions {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.drive.items.item.versions.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.drive.items.item.versions.item collection</summary>
         public DriveItemVersionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("driveItemVersion_id", position);

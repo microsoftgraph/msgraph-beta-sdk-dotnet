@@ -1,14 +1,14 @@
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Security;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Security.InformationProtection.SensitivityLabels.Item.Parent {
+namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.Item.Parent {
     /// <summary>Provides operations to manage the parent property of the microsoft.graph.security.sensitivityLabel entity.</summary>
     public class ParentRequestBuilder {
         /// <summary>Path parameters for the request</summary>

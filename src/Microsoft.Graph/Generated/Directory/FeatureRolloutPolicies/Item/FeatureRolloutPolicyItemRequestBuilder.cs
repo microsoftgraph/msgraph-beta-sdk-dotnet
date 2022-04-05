@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Directory.FeatureRolloutPolicies.Item.AppliesTo;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Directory.FeatureRolloutPolicies.Item.AppliesTo;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Directory.FeatureRolloutPolicies.Item {
+namespace Microsoft.Graph.Beta.Directory.FeatureRolloutPolicies.Item {
     /// <summary>Provides operations to manage the featureRolloutPolicies property of the microsoft.graph.directory entity.</summary>
     public class FeatureRolloutPolicyItemRequestBuilder {
         /// <summary>The appliesTo property</summary>

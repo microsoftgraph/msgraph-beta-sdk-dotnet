@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.Outlook.TaskGroups.Count;
+using Microsoft.Graph.Beta.Me.Outlook.TaskGroups.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Outlook.TaskGroups.Count;
-using MicrosoftGraphSdk.Me.Outlook.TaskGroups.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Outlook.TaskGroups {
+namespace Microsoft.Graph.Beta.Me.Outlook.TaskGroups {
     /// <summary>Provides operations to manage the taskGroups property of the microsoft.graph.outlookUser entity.</summary>
     public class TaskGroupsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.Outlook.TaskGroups {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.outlook.taskGroups.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.outlook.taskGroups.item collection</summary>
         public OutlookTaskGroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("outlookTaskGroup_id", position);

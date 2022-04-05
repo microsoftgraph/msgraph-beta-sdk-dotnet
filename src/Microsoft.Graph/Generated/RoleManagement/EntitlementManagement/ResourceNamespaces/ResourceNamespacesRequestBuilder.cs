@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceNamespaces.Count;
+using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceNamespaces.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.ResourceNamespaces.Count;
-using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.ResourceNamespaces.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement.ResourceNamespaces {
+namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceNamespaces {
     /// <summary>Provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplication entity.</summary>
     public class ResourceNamespacesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement.ResourceNamespa
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.roleManagement.entitlementManagement.resourceNamespaces.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.roleManagement.entitlementManagement.resourceNamespaces.item collection</summary>
         public UnifiedRbacResourceNamespaceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRbacResourceNamespace_id", position);

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignments.Count;
+using Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignments.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.PrivilegedAccess.Item.Resources.Item.RoleAssignments.Count;
-using MicrosoftGraphSdk.PrivilegedAccess.Item.Resources.Item.RoleAssignments.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.PrivilegedAccess.Item.Resources.Item.RoleAssignments {
+namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignments {
     /// <summary>Provides operations to manage the roleAssignments property of the microsoft.graph.governanceResource entity.</summary>
     public class RoleAssignmentsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.PrivilegedAccess.Item.Resources.Item.RoleAssignments
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.privilegedAccess.item.resources.item.roleAssignments.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.privilegedAccess.item.resources.item.roleAssignments.item collection</summary>
         public GovernanceRoleAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("governanceRoleAssignment_id", position);

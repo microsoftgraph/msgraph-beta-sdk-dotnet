@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyMigrationReports.CreateMigrationReport {
+namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.CreateMigrationReport {
     /// <summary>Provides operations to call the createMigrationReport method.</summary>
     public class CreateMigrationReportRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The groupPolicyObjectFile property</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.GroupPolicyObjectFile GroupPolicyObjectFile { get; set; }
+        public Microsoft.Graph.Beta.Models.GroupPolicyObjectFile GroupPolicyObjectFile { get; set; }
         /// <summary>
         /// Instantiates a new createMigrationReportRequestBody and sets the default values.
         /// </summary>
@@ -30,7 +30,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyMigrationReports.CreateM
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"groupPolicyObjectFile", (o,n) => { (o as CreateMigrationReportRequestBody).GroupPolicyObjectFile = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.GroupPolicyObjectFile>(MicrosoftGraphSdk.Models.Microsoft.Graph.GroupPolicyObjectFile.CreateFromDiscriminatorValue); } },
+                {"groupPolicyObjectFile", (o,n) => { (o as CreateMigrationReportRequestBody).GroupPolicyObjectFile = n.GetObjectValue<Microsoft.Graph.Beta.Models.GroupPolicyObjectFile>(Microsoft.Graph.Beta.Models.GroupPolicyObjectFile.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -39,7 +39,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyMigrationReports.CreateM
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.GroupPolicyObjectFile>("groupPolicyObjectFile", GroupPolicyObjectFile);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.GroupPolicyObjectFile>("groupPolicyObjectFile", GroupPolicyObjectFile);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

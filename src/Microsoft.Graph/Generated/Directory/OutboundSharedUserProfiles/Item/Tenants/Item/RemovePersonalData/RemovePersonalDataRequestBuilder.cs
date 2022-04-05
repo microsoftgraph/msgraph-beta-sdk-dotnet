@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Directory.OutboundSharedUserProfiles.Item.Tenants.Item.RemovePersonalData {
+namespace Microsoft.Graph.Beta.Directory.OutboundSharedUserProfiles.Item.Tenants.Item.RemovePersonalData {
     /// <summary>Provides operations to call the removePersonalData method.</summary>
     public class RemovePersonalDataRequestBuilder {
         /// <summary>Path parameters for the request</summary>

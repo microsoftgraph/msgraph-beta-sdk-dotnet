@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.ManagedDevices.Item.LogCollectionRequests.Count;
+using Microsoft.Graph.Beta.Me.ManagedDevices.Item.LogCollectionRequests.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.ManagedDevices.Item.LogCollectionRequests.Count;
-using MicrosoftGraphSdk.Me.ManagedDevices.Item.LogCollectionRequests.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.LogCollectionRequests {
+namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.LogCollectionRequests {
     /// <summary>Provides operations to manage the logCollectionRequests property of the microsoft.graph.managedDevice entity.</summary>
     public class LogCollectionRequestsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.LogCollectionRequests {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.managedDevices.item.logCollectionRequests.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.managedDevices.item.logCollectionRequests.item collection</summary>
         public DeviceLogCollectionResponseItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceLogCollectionResponse_id", position);

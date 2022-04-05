@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetAzureADLicenseUsageWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetAzureADLicenseUsageWithPeriod {
     /// <summary>Provides operations to call the getAzureADLicenseUsage method.</summary>
     public class GetAzureADLicenseUsageWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

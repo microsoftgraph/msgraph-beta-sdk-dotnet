@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members.Add;
+using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members.Count;
+using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Teams.Item.Channels.Item.Members.Add;
-using MicrosoftGraphSdk.Teams.Item.Channels.Item.Members.Count;
-using MicrosoftGraphSdk.Teams.Item.Channels.Item.Members.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Teams.Item.Channels.Item.Members {
+namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members {
     /// <summary>Provides operations to manage the members property of the microsoft.graph.channel entity.</summary>
     public class MembersRequestBuilder {
         /// <summary>The add property</summary>
@@ -28,7 +28,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Channels.Item.Members {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.teams.item.channels.item.members.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.teams.item.channels.item.members.item collection</summary>
         public ConversationMemberItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("conversationMember_id", position);

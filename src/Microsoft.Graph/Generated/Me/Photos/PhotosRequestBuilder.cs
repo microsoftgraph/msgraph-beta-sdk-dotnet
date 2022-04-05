@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.Photos.Count;
+using Microsoft.Graph.Beta.Me.Photos.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Photos.Count;
-using MicrosoftGraphSdk.Me.Photos.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Photos {
+namespace Microsoft.Graph.Beta.Me.Photos {
     /// <summary>Provides operations to manage the photos property of the microsoft.graph.user entity.</summary>
     public class PhotosRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.Photos {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.photos.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.photos.item collection</summary>
         public ProfilePhotoItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("profilePhoto_id", position);

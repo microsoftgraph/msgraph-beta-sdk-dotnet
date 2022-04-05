@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.WindowsUpdateForBusinessConfiguration.ExtendQualityUpdatesPause {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.WindowsUpdateForBusinessConfiguration.ExtendQualityUpdatesPause {
     /// <summary>Provides operations to call the extendQualityUpdatesPause method.</summary>
     public class ExtendQualityUpdatesPauseRequestBuilder {
         /// <summary>Path parameters for the request</summary>

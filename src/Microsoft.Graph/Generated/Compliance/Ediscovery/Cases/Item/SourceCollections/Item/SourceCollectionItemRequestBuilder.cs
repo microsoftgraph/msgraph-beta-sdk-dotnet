@@ -1,21 +1,21 @@
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.AdditionalSources;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.AddToReviewSetOperation;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.CustodianSources;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.EstimateStatistics;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.LastEstimateStatisticsOperation;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.NoncustodialSources;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.PurgeData;
+using Microsoft.Graph.Beta.Models.Ediscovery;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.AdditionalSources;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.AddToReviewSetOperation;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.CustodianSources;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.EstimateStatistics;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.LastEstimateStatisticsOperation;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.NoncustodialSources;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.PurgeData;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollections.Item {
     /// <summary>Provides operations to manage the sourceCollections property of the microsoft.graph.ediscovery.case entity.</summary>
     public class SourceCollectionItemRequestBuilder {
         /// <summary>The additionalSources property</summary>

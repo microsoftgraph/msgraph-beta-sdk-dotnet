@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Groups.Item.Calendar.Events.Count;
+using Microsoft.Graph.Beta.Groups.Item.Calendar.Events.Delta;
+using Microsoft.Graph.Beta.Groups.Item.Calendar.Events.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Groups.Item.Calendar.Events.Count;
-using MicrosoftGraphSdk.Groups.Item.Calendar.Events.Delta;
-using MicrosoftGraphSdk.Groups.Item.Calendar.Events.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Calendar.Events {
+namespace Microsoft.Graph.Beta.Groups.Item.Calendar.Events {
     /// <summary>Provides operations to manage the events property of the microsoft.graph.calendar entity.</summary>
     public class EventsRequestBuilder {
         /// <summary>The count property</summary>
@@ -24,7 +24,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Calendar.Events {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.calendar.events.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.groups.item.calendar.events.item collection</summary>
         public EventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("event_id", position);

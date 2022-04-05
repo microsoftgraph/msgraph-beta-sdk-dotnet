@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Count;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.FilterByCurrentUserWithOn;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Count;
-using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.FilterByCurrentUserWithOn;
-using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.PendingAccessReviewInstances {
+namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances {
     /// <summary>Provides operations to manage the pendingAccessReviewInstances property of the microsoft.graph.user entity.</summary>
     public class PendingAccessReviewInstancesRequestBuilder {
         /// <summary>The count property</summary>
@@ -24,7 +24,7 @@ namespace MicrosoftGraphSdk.Me.PendingAccessReviewInstances {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.pendingAccessReviewInstances.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.pendingAccessReviewInstances.item collection</summary>
         public AccessReviewInstanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewInstance_id", position);

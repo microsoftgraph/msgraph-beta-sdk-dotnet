@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignmentRequests.Item.AccessPackage;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignmentRequests.Item.AccessPackageAssignment;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignmentRequests.Item.Cancel;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignmentRequests.Item.Reprocess;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignmentRequests.Item.Requestor;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageAssignmentRequests.Item.AccessPackage;
-using MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageAssignmentRequests.Item.AccessPackageAssignment;
-using MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageAssignmentRequests.Item.Cancel;
-using MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageAssignmentRequests.Item.Reprocess;
-using MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageAssignmentRequests.Item.Requestor;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageAssignmentRequests.Item {
+namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignmentRequests.Item {
     /// <summary>Provides operations to manage the accessPackageAssignmentRequests property of the microsoft.graph.entitlementManagement entity.</summary>
     public class AccessPackageAssignmentRequestItemRequestBuilder {
         /// <summary>The accessPackage property</summary>

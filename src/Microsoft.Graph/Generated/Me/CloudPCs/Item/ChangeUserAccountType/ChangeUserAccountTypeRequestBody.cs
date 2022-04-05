@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Me.CloudPCs.Item.ChangeUserAccountType {
+namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.ChangeUserAccountType {
     /// <summary>Provides operations to call the changeUserAccountType method.</summary>
     public class ChangeUserAccountTypeRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

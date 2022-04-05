@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.RoleScopeTags.HasCustomRoleScopeTag {
+namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.HasCustomRoleScopeTag {
     /// <summary>Provides operations to call the hasCustomRoleScopeTag method.</summary>
     public class HasCustomRoleScopeTagRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceManagement.RoleAssignments.Item.RoleScopeTags.Count;
+using Microsoft.Graph.Beta.DeviceManagement.RoleAssignments.Item.RoleScopeTags.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.RoleAssignments.Item.RoleScopeTags.Count;
-using MicrosoftGraphSdk.DeviceManagement.RoleAssignments.Item.RoleScopeTags.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.RoleAssignments.Item.RoleScopeTags {
+namespace Microsoft.Graph.Beta.DeviceManagement.RoleAssignments.Item.RoleScopeTags {
     /// <summary>Provides operations to manage the roleScopeTags property of the microsoft.graph.deviceAndAppManagementRoleAssignment entity.</summary>
     public class RoleScopeTagsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.RoleAssignments.Item.RoleScopeTags 
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.roleAssignments.item.roleScopeTags.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.roleAssignments.item.roleScopeTags.item collection</summary>
         public RoleScopeTagItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("roleScopeTag_id", position);

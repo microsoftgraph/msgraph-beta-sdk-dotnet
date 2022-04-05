@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups;
+using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Agents;
+using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups;
+using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors;
+using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResources;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.AgentGroups;
-using MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.Agents;
-using MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.ConnectorGroups;
-using MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.Connectors;
-using MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.PublishedResources;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item {
+namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item {
     /// <summary>Provides operations to manage the collection of onPremisesPublishingProfile entities.</summary>
     public class OnPremisesPublishingProfileItemRequestBuilder {
         /// <summary>The agentGroups property</summary>

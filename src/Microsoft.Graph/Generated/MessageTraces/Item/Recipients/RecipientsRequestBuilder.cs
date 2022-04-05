@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.MessageTraces.Item.Recipients.Count;
+using Microsoft.Graph.Beta.MessageTraces.Item.Recipients.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.MessageTraces.Item.Recipients.Count;
-using MicrosoftGraphSdk.MessageTraces.Item.Recipients.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.MessageTraces.Item.Recipients {
+namespace Microsoft.Graph.Beta.MessageTraces.Item.Recipients {
     /// <summary>Provides operations to manage the recipients property of the microsoft.graph.messageTrace entity.</summary>
     public class RecipientsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.MessageTraces.Item.Recipients {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.messageTraces.item.recipients.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.messageTraces.item.recipients.item collection</summary>
         public MessageRecipientItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("messageRecipient_id", position);

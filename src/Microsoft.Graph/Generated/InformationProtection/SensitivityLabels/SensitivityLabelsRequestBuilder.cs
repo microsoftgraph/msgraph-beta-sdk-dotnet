@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.InformationProtection.SensitivityLabels.Count;
+using Microsoft.Graph.Beta.InformationProtection.SensitivityLabels.Evaluate;
+using Microsoft.Graph.Beta.InformationProtection.SensitivityLabels.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.InformationProtection.SensitivityLabels.Count;
-using MicrosoftGraphSdk.InformationProtection.SensitivityLabels.Evaluate;
-using MicrosoftGraphSdk.InformationProtection.SensitivityLabels.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.InformationProtection.SensitivityLabels {
+namespace Microsoft.Graph.Beta.InformationProtection.SensitivityLabels {
     /// <summary>Provides operations to manage the sensitivityLabels property of the microsoft.graph.informationProtection entity.</summary>
     public class SensitivityLabelsRequestBuilder {
         /// <summary>The count property</summary>
@@ -28,7 +28,7 @@ namespace MicrosoftGraphSdk.InformationProtection.SensitivityLabels {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.informationProtection.sensitivityLabels.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.informationProtection.sensitivityLabels.item collection</summary>
         public SensitivityLabelItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("sensitivityLabel_id", position);

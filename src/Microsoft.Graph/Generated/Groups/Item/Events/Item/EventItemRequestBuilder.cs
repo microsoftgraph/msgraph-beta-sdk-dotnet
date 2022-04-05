@@ -1,28 +1,28 @@
+using Microsoft.Graph.Beta.Groups.Item.Events.Item.Accept;
+using Microsoft.Graph.Beta.Groups.Item.Events.Item.Attachments;
+using Microsoft.Graph.Beta.Groups.Item.Events.Item.Calendar;
+using Microsoft.Graph.Beta.Groups.Item.Events.Item.Cancel;
+using Microsoft.Graph.Beta.Groups.Item.Events.Item.Decline;
+using Microsoft.Graph.Beta.Groups.Item.Events.Item.DismissReminder;
+using Microsoft.Graph.Beta.Groups.Item.Events.Item.ExceptionOccurrences;
+using Microsoft.Graph.Beta.Groups.Item.Events.Item.Extensions;
+using Microsoft.Graph.Beta.Groups.Item.Events.Item.Forward;
+using Microsoft.Graph.Beta.Groups.Item.Events.Item.Instances;
+using Microsoft.Graph.Beta.Groups.Item.Events.Item.MultiValueExtendedProperties;
+using Microsoft.Graph.Beta.Groups.Item.Events.Item.SingleValueExtendedProperties;
+using Microsoft.Graph.Beta.Groups.Item.Events.Item.SnoozeReminder;
+using Microsoft.Graph.Beta.Groups.Item.Events.Item.TentativelyAccept;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Groups.Item.Events.Item.Accept;
-using MicrosoftGraphSdk.Groups.Item.Events.Item.Attachments;
-using MicrosoftGraphSdk.Groups.Item.Events.Item.Calendar;
-using MicrosoftGraphSdk.Groups.Item.Events.Item.Cancel;
-using MicrosoftGraphSdk.Groups.Item.Events.Item.Decline;
-using MicrosoftGraphSdk.Groups.Item.Events.Item.DismissReminder;
-using MicrosoftGraphSdk.Groups.Item.Events.Item.ExceptionOccurrences;
-using MicrosoftGraphSdk.Groups.Item.Events.Item.Extensions;
-using MicrosoftGraphSdk.Groups.Item.Events.Item.Forward;
-using MicrosoftGraphSdk.Groups.Item.Events.Item.Instances;
-using MicrosoftGraphSdk.Groups.Item.Events.Item.MultiValueExtendedProperties;
-using MicrosoftGraphSdk.Groups.Item.Events.Item.SingleValueExtendedProperties;
-using MicrosoftGraphSdk.Groups.Item.Events.Item.SnoozeReminder;
-using MicrosoftGraphSdk.Groups.Item.Events.Item.TentativelyAccept;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Events.Item {
+namespace Microsoft.Graph.Beta.Groups.Item.Events.Item {
     /// <summary>Provides operations to manage the events property of the microsoft.graph.group entity.</summary>
     public class EventItemRequestBuilder {
         /// <summary>The accept property</summary>

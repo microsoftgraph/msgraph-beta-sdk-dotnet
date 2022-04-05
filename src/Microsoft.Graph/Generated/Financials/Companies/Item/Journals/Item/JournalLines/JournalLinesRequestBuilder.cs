@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Financials.Companies.Item.Journals.Item.JournalLines.Count;
+using Microsoft.Graph.Beta.Financials.Companies.Item.Journals.Item.JournalLines.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Financials.Companies.Item.Journals.Item.JournalLines.Count;
-using MicrosoftGraphSdk.Financials.Companies.Item.Journals.Item.JournalLines.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Financials.Companies.Item.Journals.Item.JournalLines {
+namespace Microsoft.Graph.Beta.Financials.Companies.Item.Journals.Item.JournalLines {
     /// <summary>Provides operations to manage the journalLines property of the microsoft.graph.journal entity.</summary>
     public class JournalLinesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.Journals.Item.JournalLines
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.financials.companies.item.journals.item.journalLines.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.financials.companies.item.journals.item.journalLines.item collection</summary>
         public JournalLineItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("journalLine_id", position);

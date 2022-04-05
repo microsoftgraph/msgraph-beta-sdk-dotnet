@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.RoleManagement.Directory.RoleAssignments.Item.AppScope;
+using Microsoft.Graph.Beta.RoleManagement.Directory.RoleAssignments.Item.DirectoryScope;
+using Microsoft.Graph.Beta.RoleManagement.Directory.RoleAssignments.Item.Principal;
+using Microsoft.Graph.Beta.RoleManagement.Directory.RoleAssignments.Item.RoleDefinition;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.RoleManagement.Directory.RoleAssignments.Item.AppScope;
-using MicrosoftGraphSdk.RoleManagement.Directory.RoleAssignments.Item.DirectoryScope;
-using MicrosoftGraphSdk.RoleManagement.Directory.RoleAssignments.Item.Principal;
-using MicrosoftGraphSdk.RoleManagement.Directory.RoleAssignments.Item.RoleDefinition;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.RoleManagement.Directory.RoleAssignments.Item {
+namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleAssignments.Item {
     /// <summary>Provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplication entity.</summary>
     public class UnifiedRoleAssignmentItemRequestBuilder {
         /// <summary>The appScope property</summary>

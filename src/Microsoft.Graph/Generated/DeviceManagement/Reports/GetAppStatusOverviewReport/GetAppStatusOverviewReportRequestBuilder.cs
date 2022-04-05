@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetAppStatusOverviewReport {
+namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetAppStatusOverviewReport {
     /// <summary>Provides operations to call the getAppStatusOverviewReport method.</summary>
     public class GetAppStatusOverviewReportRequestBuilder {
         /// <summary>Path parameters for the request</summary>

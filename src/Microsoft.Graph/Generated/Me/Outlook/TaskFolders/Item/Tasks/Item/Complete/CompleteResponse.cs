@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Me.Outlook.TaskFolders.Item.Tasks.Item.Complete {
+namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders.Item.Tasks.Item.Complete {
     /// <summary>Provides operations to call the complete method.</summary>
     public class CompleteResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

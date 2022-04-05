@@ -1,24 +1,24 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.AssociateWithHubSites;
+using Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.Base;
+using Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.BaseTypes;
+using Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.ColumnLinks;
+using Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.ColumnPositions;
+using Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.Columns;
+using Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.CopyToDefaultContentLocation;
+using Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.IsPublished;
+using Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.Publish;
+using Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.Unpublish;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Sites.Item.ContentTypes.Item.AssociateWithHubSites;
-using MicrosoftGraphSdk.Sites.Item.ContentTypes.Item.Base;
-using MicrosoftGraphSdk.Sites.Item.ContentTypes.Item.BaseTypes;
-using MicrosoftGraphSdk.Sites.Item.ContentTypes.Item.ColumnLinks;
-using MicrosoftGraphSdk.Sites.Item.ContentTypes.Item.ColumnPositions;
-using MicrosoftGraphSdk.Sites.Item.ContentTypes.Item.Columns;
-using MicrosoftGraphSdk.Sites.Item.ContentTypes.Item.CopyToDefaultContentLocation;
-using MicrosoftGraphSdk.Sites.Item.ContentTypes.Item.IsPublished;
-using MicrosoftGraphSdk.Sites.Item.ContentTypes.Item.Publish;
-using MicrosoftGraphSdk.Sites.Item.ContentTypes.Item.Unpublish;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Sites.Item.ContentTypes.Item {
+namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item {
     /// <summary>Provides operations to manage the contentTypes property of the microsoft.graph.site entity.</summary>
     public class ContentTypeItemRequestBuilder {
         /// <summary>The associateWithHubSites property</summary>

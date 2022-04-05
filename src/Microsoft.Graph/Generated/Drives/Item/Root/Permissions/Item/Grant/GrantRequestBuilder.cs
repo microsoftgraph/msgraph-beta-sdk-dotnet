@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Drives.Item.Root.Permissions.Item.Grant {
+namespace Microsoft.Graph.Beta.Drives.Item.Root.Permissions.Item.Grant {
     /// <summary>Provides operations to call the grant method.</summary>
     public class GrantRequestBuilder {
         /// <summary>Path parameters for the request</summary>

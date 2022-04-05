@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.AuditEvents.GetAuditActivityTypes {
+namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents.GetAuditActivityTypes {
     /// <summary>Provides operations to call the getAuditActivityTypes method.</summary>
     public class GetAuditActivityTypesResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

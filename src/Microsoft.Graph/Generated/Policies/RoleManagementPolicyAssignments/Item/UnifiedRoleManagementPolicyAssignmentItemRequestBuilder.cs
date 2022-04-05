@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Policies.RoleManagementPolicyAssignments.Item.Policy;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Policies.RoleManagementPolicyAssignments.Item.Policy;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Policies.RoleManagementPolicyAssignments.Item {
+namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicyAssignments.Item {
     /// <summary>Provides operations to manage the roleManagementPolicyAssignments property of the microsoft.graph.policyRoot entity.</summary>
     public class UnifiedRoleManagementPolicyAssignmentItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

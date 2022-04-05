@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Commands.Count;
+using Microsoft.Graph.Beta.Commands.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Commands.Count;
-using MicrosoftGraphSdk.Commands.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Commands {
+namespace Microsoft.Graph.Beta.Commands {
     /// <summary>Provides operations to manage the collection of command entities.</summary>
     public class CommandsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Commands {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.commands.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.commands.item collection</summary>
         public CommandItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("command_id", position);

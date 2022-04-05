@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Devices.Item.RegisteredOwners.Count;
+using Microsoft.Graph.Beta.Devices.Item.RegisteredOwners.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Devices.Item.RegisteredOwners.Count;
-using MicrosoftGraphSdk.Devices.Item.RegisteredOwners.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Devices.Item.RegisteredOwners {
+namespace Microsoft.Graph.Beta.Devices.Item.RegisteredOwners {
     /// <summary>Provides operations to manage the registeredOwners property of the microsoft.graph.device entity.</summary>
     public class RegisteredOwnersRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Devices.Item.RegisteredOwners {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.devices.item.registeredOwners.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.devices.item.registeredOwners.item collection</summary>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryObject_id", position);

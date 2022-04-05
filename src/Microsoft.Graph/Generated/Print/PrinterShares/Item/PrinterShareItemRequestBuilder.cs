@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedGroups;
+using Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers;
+using Microsoft.Graph.Beta.Print.PrinterShares.Item.Printer;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Print.PrinterShares.Item.AllowedGroups;
-using MicrosoftGraphSdk.Print.PrinterShares.Item.AllowedUsers;
-using MicrosoftGraphSdk.Print.PrinterShares.Item.Printer;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Print.PrinterShares.Item {
+namespace Microsoft.Graph.Beta.Print.PrinterShares.Item {
     /// <summary>Provides operations to manage the printerShares property of the microsoft.graph.print entity.</summary>
     public class PrinterShareItemRequestBuilder {
         /// <summary>The allowedGroups property</summary>

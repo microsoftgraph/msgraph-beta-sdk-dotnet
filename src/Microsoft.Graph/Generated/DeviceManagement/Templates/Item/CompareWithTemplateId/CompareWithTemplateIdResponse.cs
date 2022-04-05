@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.CompareWithTemplateId {
+namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.CompareWithTemplateId {
     /// <summary>Provides operations to call the compare method.</summary>
     public class CompareWithTemplateIdResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

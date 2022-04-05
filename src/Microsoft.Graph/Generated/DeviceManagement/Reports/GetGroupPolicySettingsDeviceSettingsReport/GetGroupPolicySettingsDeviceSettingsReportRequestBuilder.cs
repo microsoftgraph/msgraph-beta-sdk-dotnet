@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetGroupPolicySettingsDeviceSettingsReport {
+namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetGroupPolicySettingsDeviceSettingsReport {
     /// <summary>Provides operations to call the getGroupPolicySettingsDeviceSettingsReport method.</summary>
     public class GetGroupPolicySettingsDeviceSettingsReportRequestBuilder {
         /// <summary>Path parameters for the request</summary>

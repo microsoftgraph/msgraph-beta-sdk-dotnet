@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models.Ediscovery;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Queries.Item.ApplyTags {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Queries.Item.ApplyTags {
     /// <summary>Provides operations to call the applyTags method.</summary>
     public class ApplyTagsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

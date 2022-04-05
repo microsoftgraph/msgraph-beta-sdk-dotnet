@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetEnrollmentConfigurationPoliciesByDevice {
+namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetEnrollmentConfigurationPoliciesByDevice {
     /// <summary>Provides operations to call the getEnrollmentConfigurationPoliciesByDevice method.</summary>
     public class GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder {
         /// <summary>Path parameters for the request</summary>

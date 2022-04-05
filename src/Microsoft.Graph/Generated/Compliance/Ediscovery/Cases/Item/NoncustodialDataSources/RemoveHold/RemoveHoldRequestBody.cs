@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.RemoveHold {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.RemoveHold {
     /// <summary>Provides operations to call the removeHold method.</summary>
     public class RemoveHoldRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

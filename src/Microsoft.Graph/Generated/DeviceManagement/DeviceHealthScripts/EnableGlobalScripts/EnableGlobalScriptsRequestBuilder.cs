@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.EnableGlobalScripts {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.EnableGlobalScripts {
     /// <summary>Provides operations to call the enableGlobalScripts method.</summary>
     public class EnableGlobalScriptsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

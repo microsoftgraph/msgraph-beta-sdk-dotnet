@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.CalendarGroups.Item.Calendars.Item.AllowedCalendarSharingRolesWithUser {
+namespace Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.AllowedCalendarSharingRolesWithUser {
     /// <summary>Provides operations to call the allowedCalendarSharingRoles method.</summary>
     public class AllowedCalendarSharingRolesWithUserRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models.Search;
+using Microsoft.Graph.Beta.Search.Bookmarks.Count;
+using Microsoft.Graph.Beta.Search.Bookmarks.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Search;
-using MicrosoftGraphSdk.Search.Bookmarks.Count;
-using MicrosoftGraphSdk.Search.Bookmarks.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Search.Bookmarks {
+namespace Microsoft.Graph.Beta.Search.Bookmarks {
     /// <summary>Provides operations to manage the bookmarks property of the microsoft.graph.searchEntity entity.</summary>
     public class BookmarksRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Search.Bookmarks {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.search.bookmarks.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.search.bookmarks.item collection</summary>
         public BookmarkItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("bookmark_id", position);

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Workbooks.Item.Invite {
+namespace Microsoft.Graph.Beta.Workbooks.Item.Invite {
     /// <summary>Provides operations to call the invite method.</summary>
     public class InviteRequestBuilder {
         /// <summary>Path parameters for the request</summary>

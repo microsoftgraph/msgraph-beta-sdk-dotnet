@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams;
+using Microsoft.Graph.Beta.Users.Item.Teamwork.InstalledApps;
+using Microsoft.Graph.Beta.Users.Item.Teamwork.SendActivityNotification;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.Teamwork.AssociatedTeams;
-using MicrosoftGraphSdk.Users.Item.Teamwork.InstalledApps;
-using MicrosoftGraphSdk.Users.Item.Teamwork.SendActivityNotification;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Teamwork {
+namespace Microsoft.Graph.Beta.Users.Item.Teamwork {
     /// <summary>Provides operations to manage the teamwork property of the microsoft.graph.user entity.</summary>
     public class TeamworkRequestBuilder {
         /// <summary>The associatedTeams property</summary>

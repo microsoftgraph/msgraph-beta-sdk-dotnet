@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.AppConsentRequestsForApproval.Item.UserConsentRequests.FilterByCurrentUserWithOn {
+namespace Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.Item.UserConsentRequests.FilterByCurrentUserWithOn {
     /// <summary>Provides operations to call the filterByCurrentUser method.</summary>
     public class FilterByCurrentUserWithOnRequestBuilder {
         /// <summary>Path parameters for the request</summary>

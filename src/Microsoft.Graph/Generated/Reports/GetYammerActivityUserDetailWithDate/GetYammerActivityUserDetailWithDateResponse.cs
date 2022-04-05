@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Reports.GetYammerActivityUserDetailWithDate {
+namespace Microsoft.Graph.Beta.Reports.GetYammerActivityUserDetailWithDate {
     /// <summary>Provides operations to call the getYammerActivityUserDetail method.</summary>
     public class GetYammerActivityUserDetailWithDateResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

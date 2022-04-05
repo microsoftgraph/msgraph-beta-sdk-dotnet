@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Admin.ServiceAnnouncement.HealthOverviews.Item.Issues.Count;
+using Microsoft.Graph.Beta.Admin.ServiceAnnouncement.HealthOverviews.Item.Issues.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Admin.ServiceAnnouncement.HealthOverviews.Item.Issues.Count;
-using MicrosoftGraphSdk.Admin.ServiceAnnouncement.HealthOverviews.Item.Issues.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.HealthOverviews.Item.Issues {
+namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.HealthOverviews.Item.Issues {
     /// <summary>Provides operations to manage the issues property of the microsoft.graph.serviceHealth entity.</summary>
     public class IssuesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.HealthOverviews.Item.Issue
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.admin.serviceAnnouncement.healthOverviews.item.issues.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.admin.serviceAnnouncement.healthOverviews.item.issues.item collection</summary>
         public ServiceHealthIssueItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("serviceHealthIssue_id", position);

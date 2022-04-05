@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.ResizeCloudPc {
+namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ResizeCloudPc {
     /// <summary>Provides operations to call the resizeCloudPc method.</summary>
     public class ResizeCloudPcRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

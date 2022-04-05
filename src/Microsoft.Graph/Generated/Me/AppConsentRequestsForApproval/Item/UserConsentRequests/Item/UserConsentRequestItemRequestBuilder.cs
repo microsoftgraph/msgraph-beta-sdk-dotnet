@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Me.AppConsentRequestsForApproval.Item.UserConsentRequests.Item.Approval;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.AppConsentRequestsForApproval.Item.UserConsentRequests.Item.Approval;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.AppConsentRequestsForApproval.Item.UserConsentRequests.Item {
+namespace Microsoft.Graph.Beta.Me.AppConsentRequestsForApproval.Item.UserConsentRequests.Item {
     /// <summary>Provides operations to manage the userConsentRequests property of the microsoft.graph.appConsentRequest entity.</summary>
     public class UserConsentRequestItemRequestBuilder {
         /// <summary>The approval property</summary>

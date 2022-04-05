@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.Currency;
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.Customer;
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.PaymentTerm;
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.SalesCreditMemoLines;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesCreditMemos.Item.Currency;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesCreditMemos.Item.Customer;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesCreditMemos.Item.PaymentTerm;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesCreditMemos.Item.SalesCreditMemoLines;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesCreditMemos.Item {
+namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item {
     /// <summary>Provides operations to manage the salesCreditMemos property of the microsoft.graph.company entity.</summary>
     public class SalesCreditMemoItemRequestBuilder {
         /// <summary>The currency property</summary>

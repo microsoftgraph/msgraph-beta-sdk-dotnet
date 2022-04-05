@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackages.Item.GetApplicablePolicyRequirements {
+namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackages.Item.GetApplicablePolicyRequirements {
     /// <summary>Provides operations to call the getApplicablePolicyRequirements method.</summary>
     public class GetApplicablePolicyRequirementsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

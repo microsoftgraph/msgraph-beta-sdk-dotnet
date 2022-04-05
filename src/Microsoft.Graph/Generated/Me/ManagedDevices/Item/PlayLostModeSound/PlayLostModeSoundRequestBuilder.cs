@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.PlayLostModeSound {
+namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.PlayLostModeSound {
     /// <summary>Provides operations to call the playLostModeSound method.</summary>
     public class PlayLostModeSoundRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.AddToReviewSet {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.AddToReviewSet {
     /// <summary>Provides operations to call the addToReviewSet method.</summary>
     public class AddToReviewSetRequestBuilder {
         /// <summary>Path parameters for the request</summary>

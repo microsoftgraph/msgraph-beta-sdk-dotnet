@@ -1,23 +1,23 @@
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackageAssignmentResourceRoles.Item.AccessPackageAssignments;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackageAssignmentResourceRoles.Item.AccessPackageResourceRole;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackageAssignmentResourceRoles.Item.AccessPackageResourceScope;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackageAssignmentResourceRoles.Item.AccessPackageSubject;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackageAssignmentResourceRoles.Item.AccessPackageAssignments;
-using MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackageAssignmentResourceRoles.Item.AccessPackageResourceRole;
-using MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackageAssignmentResourceRoles.Item.AccessPackageResourceScope;
-using MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackageAssignmentResourceRoles.Item.AccessPackageSubject;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackageAssignmentResourceRoles.Item {
+namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackageAssignmentResourceRoles.Item {
     /// <summary>Provides operations to manage the accessPackageAssignmentResourceRoles property of the microsoft.graph.accessPackageAssignment entity.</summary>
     public class AccessPackageAssignmentResourceRoleItemRequestBuilder {
         /// <summary>The accessPackageAssignments property</summary>
-        public MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackageAssignmentResourceRoles.Item.AccessPackageAssignments.AccessPackageAssignmentsRequestBuilder AccessPackageAssignments { get =>
-            new MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackageAssignmentResourceRoles.Item.AccessPackageAssignments.AccessPackageAssignmentsRequestBuilder(PathParameters, RequestAdapter);
+        public Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackageAssignmentResourceRoles.Item.AccessPackageAssignments.AccessPackageAssignmentsRequestBuilder AccessPackageAssignments { get =>
+            new Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackageAssignmentResourceRoles.Item.AccessPackageAssignments.AccessPackageAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The accessPackageResourceRole property</summary>
         public AccessPackageResourceRoleRequestBuilder AccessPackageResourceRole { get =>

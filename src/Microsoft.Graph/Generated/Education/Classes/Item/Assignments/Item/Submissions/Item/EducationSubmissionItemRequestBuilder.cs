@@ -1,22 +1,22 @@
+using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions.Item.Outcomes;
+using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions.Item.Reassign;
+using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions.Item.Resources;
+using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions.Item.Return;
+using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions.Item.SetUpResourcesFolder;
+using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions.Item.Submit;
+using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions.Item.SubmittedResources;
+using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions.Item.Unsubmit;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Education.Classes.Item.Assignments.Item.Submissions.Item.Outcomes;
-using MicrosoftGraphSdk.Education.Classes.Item.Assignments.Item.Submissions.Item.Reassign;
-using MicrosoftGraphSdk.Education.Classes.Item.Assignments.Item.Submissions.Item.Resources;
-using MicrosoftGraphSdk.Education.Classes.Item.Assignments.Item.Submissions.Item.Return;
-using MicrosoftGraphSdk.Education.Classes.Item.Assignments.Item.Submissions.Item.SetUpResourcesFolder;
-using MicrosoftGraphSdk.Education.Classes.Item.Assignments.Item.Submissions.Item.Submit;
-using MicrosoftGraphSdk.Education.Classes.Item.Assignments.Item.Submissions.Item.SubmittedResources;
-using MicrosoftGraphSdk.Education.Classes.Item.Assignments.Item.Submissions.Item.Unsubmit;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Education.Classes.Item.Assignments.Item.Submissions.Item {
+namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions.Item {
     /// <summary>Provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.</summary>
     public class EducationSubmissionItemRequestBuilder {
         /// <summary>The outcomes property</summary>

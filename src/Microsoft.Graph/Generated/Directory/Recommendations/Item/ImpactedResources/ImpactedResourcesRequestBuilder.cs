@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Directory.Recommendations.Item.ImpactedResources.Count;
+using Microsoft.Graph.Beta.Directory.Recommendations.Item.ImpactedResources.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Directory.Recommendations.Item.ImpactedResources.Count;
-using MicrosoftGraphSdk.Directory.Recommendations.Item.ImpactedResources.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Directory.Recommendations.Item.ImpactedResources {
+namespace Microsoft.Graph.Beta.Directory.Recommendations.Item.ImpactedResources {
     /// <summary>Provides operations to manage the impactedResources property of the microsoft.graph.recommendation entity.</summary>
     public class ImpactedResourcesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Directory.Recommendations.Item.ImpactedResources {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.directory.recommendations.item.impactedResources.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.directory.recommendations.item.impactedResources.item collection</summary>
         public RecommendationResourceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("recommendationResource_id", position);

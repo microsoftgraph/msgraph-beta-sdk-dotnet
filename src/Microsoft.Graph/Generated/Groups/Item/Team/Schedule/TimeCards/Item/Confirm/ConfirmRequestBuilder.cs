@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Team.Schedule.TimeCards.Item.Confirm {
+namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.Confirm {
     /// <summary>Provides operations to call the confirm method.</summary>
     public class ConfirmRequestBuilder {
         /// <summary>Path parameters for the request</summary>

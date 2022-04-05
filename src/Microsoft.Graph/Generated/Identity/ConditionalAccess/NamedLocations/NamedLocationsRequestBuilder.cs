@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations.Count;
+using Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Identity.ConditionalAccess.NamedLocations.Count;
-using MicrosoftGraphSdk.Identity.ConditionalAccess.NamedLocations.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Identity.ConditionalAccess.NamedLocations {
+namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations {
     /// <summary>Provides operations to manage the namedLocations property of the microsoft.graph.conditionalAccessRoot entity.</summary>
     public class NamedLocationsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Identity.ConditionalAccess.NamedLocations {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.identity.conditionalAccess.namedLocations.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.identity.conditionalAccess.namedLocations.item collection</summary>
         public NamedLocationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("namedLocation_id", position);

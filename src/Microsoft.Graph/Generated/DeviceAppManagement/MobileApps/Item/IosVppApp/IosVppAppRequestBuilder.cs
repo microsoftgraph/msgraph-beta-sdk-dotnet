@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.IosVppApp.RevokeAllLicenses;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.IosVppApp.RevokeDeviceLicense;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.IosVppApp.RevokeUserLicense;
 using Microsoft.Kiota.Abstractions;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.IosVppApp.RevokeAllLicenses;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.IosVppApp.RevokeDeviceLicense;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.IosVppApp.RevokeUserLicense;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.IosVppApp {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.IosVppApp {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\microsoft.graph.iosVppApp</summary>
     public class IosVppAppRequestBuilder {
         /// <summary>Path parameters for the request</summary>

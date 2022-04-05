@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.GetMemberGroups {
+namespace Microsoft.Graph.Beta.Me.GetMemberGroups {
     /// <summary>Provides operations to call the getMemberGroups method.</summary>
     public class GetMemberGroupsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

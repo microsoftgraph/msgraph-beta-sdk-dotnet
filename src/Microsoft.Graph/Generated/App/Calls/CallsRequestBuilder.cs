@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.App.Calls.Count;
+using Microsoft.Graph.Beta.App.Calls.Item;
+using Microsoft.Graph.Beta.App.Calls.LogTeleconferenceDeviceQuality;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.App.Calls.Count;
-using MicrosoftGraphSdk.App.Calls.Item;
-using MicrosoftGraphSdk.App.Calls.LogTeleconferenceDeviceQuality;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.App.Calls {
+namespace Microsoft.Graph.Beta.App.Calls {
     /// <summary>Provides operations to manage the calls property of the microsoft.graph.commsApplication entity.</summary>
     public class CallsRequestBuilder {
         /// <summary>The count property</summary>
@@ -28,7 +28,7 @@ namespace MicrosoftGraphSdk.App.Calls {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.app.calls.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.app.calls.item collection</summary>
         public CallItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("call_id", position);

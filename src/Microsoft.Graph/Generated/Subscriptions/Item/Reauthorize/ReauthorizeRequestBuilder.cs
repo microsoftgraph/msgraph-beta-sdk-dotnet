@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Subscriptions.Item.Reauthorize {
+namespace Microsoft.Graph.Beta.Subscriptions.Item.Reauthorize {
     /// <summary>Provides operations to call the reauthorize method.</summary>
     public class ReauthorizeRequestBuilder {
         /// <summary>Path parameters for the request</summary>

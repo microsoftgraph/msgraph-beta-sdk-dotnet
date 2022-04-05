@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.SyncMicrosoftStoreForBusinessApps {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.SyncMicrosoftStoreForBusinessApps {
     /// <summary>Provides operations to call the syncMicrosoftStoreForBusinessApps method.</summary>
     public class SyncMicrosoftStoreForBusinessAppsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

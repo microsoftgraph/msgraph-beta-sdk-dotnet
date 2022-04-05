@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.Communications.CallRecords;
+using Microsoft.Graph.Beta.Communications.Calls;
+using Microsoft.Graph.Beta.Communications.GetPresencesByUserId;
+using Microsoft.Graph.Beta.Communications.OnlineMeetings;
+using Microsoft.Graph.Beta.Communications.Presences;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Communications.CallRecords;
-using MicrosoftGraphSdk.Communications.Calls;
-using MicrosoftGraphSdk.Communications.GetPresencesByUserId;
-using MicrosoftGraphSdk.Communications.OnlineMeetings;
-using MicrosoftGraphSdk.Communications.Presences;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Communications {
+namespace Microsoft.Graph.Beta.Communications {
     /// <summary>Provides operations to manage the cloudCommunications singleton.</summary>
     public class CommunicationsRequestBuilder {
         /// <summary>The callRecords property</summary>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Versions.Item.Content;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Versions.Item.RestoreVersion;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Drives.Item.Items.Item.Versions.Item.Content;
-using MicrosoftGraphSdk.Drives.Item.Items.Item.Versions.Item.RestoreVersion;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Drives.Item.Items.Item.Versions.Item {
+namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Versions.Item {
     /// <summary>Provides operations to manage the versions property of the microsoft.graph.driveItem entity.</summary>
     public class DriveItemVersionItemRequestBuilder {
         /// <summary>The content property</summary>

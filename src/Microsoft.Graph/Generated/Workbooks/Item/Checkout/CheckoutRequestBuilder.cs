@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Workbooks.Item.Checkout {
+namespace Microsoft.Graph.Beta.Workbooks.Item.Checkout {
     /// <summary>Provides operations to call the checkout method.</summary>
     public class CheckoutRequestBuilder {
         /// <summary>Path parameters for the request</summary>

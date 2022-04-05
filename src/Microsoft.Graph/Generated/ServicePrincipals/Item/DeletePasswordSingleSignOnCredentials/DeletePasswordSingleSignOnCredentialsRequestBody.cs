@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.ServicePrincipals.Item.DeletePasswordSingleSignOnCredentials {
+namespace Microsoft.Graph.Beta.ServicePrincipals.Item.DeletePasswordSingleSignOnCredentials {
     /// <summary>Provides operations to call the deletePasswordSingleSignOnCredentials method.</summary>
     public class DeletePasswordSingleSignOnCredentialsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

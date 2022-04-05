@@ -1,20 +1,20 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.Planner.All;
+using Microsoft.Graph.Beta.Users.Item.Planner.FavoritePlans;
+using Microsoft.Graph.Beta.Users.Item.Planner.Plans;
+using Microsoft.Graph.Beta.Users.Item.Planner.RecentPlans;
+using Microsoft.Graph.Beta.Users.Item.Planner.RosterPlans;
+using Microsoft.Graph.Beta.Users.Item.Planner.Tasks;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.Planner.All;
-using MicrosoftGraphSdk.Users.Item.Planner.FavoritePlans;
-using MicrosoftGraphSdk.Users.Item.Planner.Plans;
-using MicrosoftGraphSdk.Users.Item.Planner.RecentPlans;
-using MicrosoftGraphSdk.Users.Item.Planner.RosterPlans;
-using MicrosoftGraphSdk.Users.Item.Planner.Tasks;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Planner {
+namespace Microsoft.Graph.Beta.Users.Item.Planner {
     /// <summary>Provides operations to manage the planner property of the microsoft.graph.user entity.</summary>
     public class PlannerRequestBuilder {
         /// <summary>The all property</summary>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.Profile.WebAccounts.Count;
+using Microsoft.Graph.Beta.Me.Profile.WebAccounts.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Profile.WebAccounts.Count;
-using MicrosoftGraphSdk.Me.Profile.WebAccounts.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Profile.WebAccounts {
+namespace Microsoft.Graph.Beta.Me.Profile.WebAccounts {
     /// <summary>Provides operations to manage the webAccounts property of the microsoft.graph.profile entity.</summary>
     public class WebAccountsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.Profile.WebAccounts {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.profile.webAccounts.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.profile.webAccounts.item collection</summary>
         public WebAccountItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("webAccount_id", position);

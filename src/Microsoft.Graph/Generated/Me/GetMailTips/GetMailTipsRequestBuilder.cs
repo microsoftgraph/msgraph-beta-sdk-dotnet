@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.GetMailTips {
+namespace Microsoft.Graph.Beta.Me.GetMailTips {
     /// <summary>Provides operations to call the getMailTips method.</summary>
     public class GetMailTipsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

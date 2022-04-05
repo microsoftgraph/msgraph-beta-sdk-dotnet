@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Chats.Item.HideForUser {
+namespace Microsoft.Graph.Beta.Chats.Item.HideForUser {
     /// <summary>Provides operations to call the hideForUser method.</summary>
     public class HideForUserRequestBuilder {
         /// <summary>Path parameters for the request</summary>

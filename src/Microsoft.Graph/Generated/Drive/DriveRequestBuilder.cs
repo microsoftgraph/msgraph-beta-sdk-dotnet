@@ -1,24 +1,24 @@
+using Microsoft.Graph.Beta.Drive.Activities;
+using Microsoft.Graph.Beta.Drive.Bundles;
+using Microsoft.Graph.Beta.Drive.Following;
+using Microsoft.Graph.Beta.Drive.Items;
+using Microsoft.Graph.Beta.Drive.List;
+using Microsoft.Graph.Beta.Drive.Recent;
+using Microsoft.Graph.Beta.Drive.Root;
+using Microsoft.Graph.Beta.Drive.SearchWithQ;
+using Microsoft.Graph.Beta.Drive.SharedWithMe;
+using Microsoft.Graph.Beta.Drive.Special;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Drive.Activities;
-using MicrosoftGraphSdk.Drive.Bundles;
-using MicrosoftGraphSdk.Drive.Following;
-using MicrosoftGraphSdk.Drive.Items;
-using MicrosoftGraphSdk.Drive.List;
-using MicrosoftGraphSdk.Drive.Recent;
-using MicrosoftGraphSdk.Drive.Root;
-using MicrosoftGraphSdk.Drive.SearchWithQ;
-using MicrosoftGraphSdk.Drive.SharedWithMe;
-using MicrosoftGraphSdk.Drive.Special;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Drive {
+namespace Microsoft.Graph.Beta.Drive {
     /// <summary>Provides operations to manage the drive singleton.</summary>
     public class DriveRequestBuilder {
         /// <summary>The activities property</summary>
@@ -109,7 +109,7 @@ namespace MicrosoftGraphSdk.Drive {
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreatePatchRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.Drive body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
+        public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.Drive body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -129,13 +129,13 @@ namespace MicrosoftGraphSdk.Drive {
         /// <param name="queryParameters">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Drive> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(queryParameters, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Drive.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Drive>(requestInfo, Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update drive
@@ -145,7 +145,7 @@ namespace MicrosoftGraphSdk.Drive {
         /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Drive body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(Microsoft.Graph.Beta.Models.Drive body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

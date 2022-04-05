@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.EnableLegacyPcManagement {
+namespace Microsoft.Graph.Beta.DeviceManagement.EnableLegacyPcManagement {
     /// <summary>Provides operations to call the enableLegacyPcManagement method.</summary>
     public class EnableLegacyPcManagementRequestBuilder {
         /// <summary>Path parameters for the request</summary>

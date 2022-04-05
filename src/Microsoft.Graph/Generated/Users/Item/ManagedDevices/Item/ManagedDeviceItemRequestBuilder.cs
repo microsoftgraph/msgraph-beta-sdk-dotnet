@@ -1,63 +1,63 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ActivateDeviceEsim;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.AssignmentFilterEvaluationStatusDetails;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.BypassActivationLock;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.CleanWindowsDevice;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.CreateDeviceLogCollectionRequest;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DeleteUserFromSharedAppleDevice;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.Deprovision;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DeviceCategory;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DeviceCompliancePolicyStates;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DeviceConfigurationStates;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.Disable;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DisableLostMode;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.EnableLostMode;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetCloudPcRemoteActionResults;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetFileVaultKey;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetNonCompliantSettings;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetOemWarranty;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.LocateDevice;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.LogCollectionRequests;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.LogoutSharedAppleDeviceActiveUser;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ManagedDeviceMobileAppConfigurationStates;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.OverrideComplianceState;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.PlayLostModeSound;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RebootNow;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RecoverPasscode;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.Reenable;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RemoteLock;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ReprovisionCloudPc;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RequestRemoteAssistance;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ResetPasscode;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ResizeCloudPc;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RestoreCloudPc;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.Retire;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RevokeAppleVppLicenses;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RotateBitLockerKeys;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RotateFileVaultKey;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SecurityBaselineStates;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SendCustomNotificationToCompanyPortal;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SetDeviceName;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ShutDown;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SyncDevice;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.TriggerConfigurationManagerAction;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.UpdateWindowsDeviceAccount;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.Users;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.WindowsDefenderScan;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.WindowsDefenderUpdateSignatures;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.WindowsProtectionState;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.Wipe;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.ActivateDeviceEsim;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.AssignmentFilterEvaluationStatusDetails;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.BypassActivationLock;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.CleanWindowsDevice;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.CreateDeviceLogCollectionRequest;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.DeleteUserFromSharedAppleDevice;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.Deprovision;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.DetectedApps;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.DeviceCategory;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.DeviceCompliancePolicyStates;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.DeviceConfigurationStates;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.Disable;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.DisableLostMode;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.EnableLostMode;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.GetCloudPcRemoteActionResults;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.GetFileVaultKey;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.GetNonCompliantSettings;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.GetOemWarranty;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.LocateDevice;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.LogCollectionRequests;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.LogoutSharedAppleDeviceActiveUser;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.ManagedDeviceMobileAppConfigurationStates;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.OverrideComplianceState;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.PlayLostModeSound;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.RebootNow;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.RecoverPasscode;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.Reenable;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.RemoteLock;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.ReprovisionCloudPc;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.RequestRemoteAssistance;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.ResetPasscode;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.ResizeCloudPc;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.RestoreCloudPc;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.Retire;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.RevokeAppleVppLicenses;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.RotateBitLockerKeys;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.RotateFileVaultKey;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.SecurityBaselineStates;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.SendCustomNotificationToCompanyPortal;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.SetDeviceName;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.ShutDown;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.SyncDevice;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.TriggerConfigurationManagerAction;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.UpdateWindowsDeviceAccount;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.Users;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.WindowsDefenderScan;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.WindowsDefenderUpdateSignatures;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.WindowsProtectionState;
-using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.Wipe;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.ManagedDevices.Item {
+namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item {
     /// <summary>Provides operations to manage the managedDevices property of the microsoft.graph.user entity.</summary>
     public class ManagedDeviceItemRequestBuilder {
         /// <summary>The activateDeviceEsim property</summary>
@@ -227,8 +227,8 @@ namespace MicrosoftGraphSdk.Users.Item.ManagedDevices.Item {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>The users property</summary>
-        public MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.Users.UsersRequestBuilder Users { get =>
-            new MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
+        public Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.Users.UsersRequestBuilder Users { get =>
+            new Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The windowsDefenderScan property</summary>
         public WindowsDefenderScanRequestBuilder WindowsDefenderScan { get =>
@@ -315,7 +315,7 @@ namespace MicrosoftGraphSdk.Users.Item.ManagedDevices.Item {
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreatePatchRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
+        public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.ManagedDevice body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -350,13 +350,13 @@ namespace MicrosoftGraphSdk.Users.Item.ManagedDevices.Item {
         /// <param name="queryParameters">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.ManagedDevice> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(queryParameters, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ManagedDevice>(requestInfo, Microsoft.Graph.Beta.Models.ManagedDevice.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Provides operations to call the getCloudPcRemoteActionResults method.
@@ -390,7 +390,7 @@ namespace MicrosoftGraphSdk.Users.Item.ManagedDevices.Item {
         /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(Microsoft.Graph.Beta.Models.ManagedDevice body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

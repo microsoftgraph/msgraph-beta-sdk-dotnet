@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyConfigurations.Item.UpdateDefinitionValues {
+namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.UpdateDefinitionValues {
     /// <summary>Provides operations to call the updateDefinitionValues method.</summary>
     public class UpdateDefinitionValuesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

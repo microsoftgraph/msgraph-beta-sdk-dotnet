@@ -1,20 +1,20 @@
+using Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.Item.Assign;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.Item.Assignments;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.Item.GroupAssignments;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.Item.RunSummary;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.Item.UserRunStates;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.Assign;
-using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.Assignments;
-using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates;
-using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.GroupAssignments;
-using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.RunSummary;
-using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.UserRunStates;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.Item {
     /// <summary>Provides operations to manage the deviceManagementScripts property of the microsoft.graph.deviceManagement entity.</summary>
     public class DeviceManagementScriptItemRequestBuilder {
         /// <summary>The assign property</summary>

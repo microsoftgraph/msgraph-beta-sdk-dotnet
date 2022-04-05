@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.CalendarView.Item.Instances.Item.SnoozeReminder {
+namespace Microsoft.Graph.Beta.Groups.Item.CalendarView.Item.Instances.Item.SnoozeReminder {
     /// <summary>Provides operations to call the snoozeReminder method.</summary>
     public class SnoozeReminderRequestBuilder {
         /// <summary>Path parameters for the request</summary>

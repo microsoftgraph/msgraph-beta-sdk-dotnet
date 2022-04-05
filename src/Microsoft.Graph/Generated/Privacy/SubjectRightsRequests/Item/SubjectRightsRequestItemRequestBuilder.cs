@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.GetFinalAttachment;
+using Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.GetFinalReport;
+using Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes;
+using Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Team;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Privacy.SubjectRightsRequests.Item.GetFinalAttachment;
-using MicrosoftGraphSdk.Privacy.SubjectRightsRequests.Item.GetFinalReport;
-using MicrosoftGraphSdk.Privacy.SubjectRightsRequests.Item.Notes;
-using MicrosoftGraphSdk.Privacy.SubjectRightsRequests.Item.Team;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Privacy.SubjectRightsRequests.Item {
+namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item {
     /// <summary>Provides operations to manage the subjectRightsRequests property of the microsoft.graph.privacy entity.</summary>
     public class SubjectRightsRequestItemRequestBuilder {
         /// <summary>The notes property</summary>

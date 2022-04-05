@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models.Ediscovery;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Export {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Export {
     /// <summary>Provides operations to call the export method.</summary>
     public class ExportRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -16,7 +16,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Exp
         /// <summary>The description property</summary>
         public string Description { get; set; }
         /// <summary>The exportOptions property</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery.ExportOptions? ExportOptions { get; set; }
+        public Microsoft.Graph.Beta.Models.Ediscovery.ExportOptions? ExportOptions { get; set; }
         /// <summary>The exportStructure property</summary>
         public ExportFileStructure? ExportStructure { get; set; }
         /// <summary>The outputName property</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.WindowsDefenderUpdateSignatures {
+namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.WindowsDefenderUpdateSignatures {
     /// <summary>Provides operations to call the windowsDefenderUpdateSignatures method.</summary>
     public class WindowsDefenderUpdateSignaturesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

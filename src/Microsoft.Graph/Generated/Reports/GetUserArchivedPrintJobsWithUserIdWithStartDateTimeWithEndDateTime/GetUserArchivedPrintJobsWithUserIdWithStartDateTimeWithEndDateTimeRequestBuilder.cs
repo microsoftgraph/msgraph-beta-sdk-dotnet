@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime {
+namespace Microsoft.Graph.Beta.Reports.GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime {
     /// <summary>Provides operations to call the getUserArchivedPrintJobs method.</summary>
     public class GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder {
         /// <summary>Path parameters for the request</summary>

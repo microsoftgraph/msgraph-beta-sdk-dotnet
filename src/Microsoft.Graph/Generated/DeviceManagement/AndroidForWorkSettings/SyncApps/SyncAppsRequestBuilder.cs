@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.AndroidForWorkSettings.SyncApps {
+namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings.SyncApps {
     /// <summary>Provides operations to call the syncApps method.</summary>
     public class SyncAppsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

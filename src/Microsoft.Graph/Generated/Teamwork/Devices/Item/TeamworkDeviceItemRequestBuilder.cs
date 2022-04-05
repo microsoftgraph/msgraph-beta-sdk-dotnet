@@ -1,21 +1,21 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Teamwork.Devices.Item.Activity;
+using Microsoft.Graph.Beta.Teamwork.Devices.Item.Configuration;
+using Microsoft.Graph.Beta.Teamwork.Devices.Item.Health;
+using Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations;
+using Microsoft.Graph.Beta.Teamwork.Devices.Item.Restart;
+using Microsoft.Graph.Beta.Teamwork.Devices.Item.RunDiagnostics;
+using Microsoft.Graph.Beta.Teamwork.Devices.Item.UpdateSoftware;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Teamwork.Devices.Item.Activity;
-using MicrosoftGraphSdk.Teamwork.Devices.Item.Configuration;
-using MicrosoftGraphSdk.Teamwork.Devices.Item.Health;
-using MicrosoftGraphSdk.Teamwork.Devices.Item.Operations;
-using MicrosoftGraphSdk.Teamwork.Devices.Item.Restart;
-using MicrosoftGraphSdk.Teamwork.Devices.Item.RunDiagnostics;
-using MicrosoftGraphSdk.Teamwork.Devices.Item.UpdateSoftware;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Teamwork.Devices.Item {
+namespace Microsoft.Graph.Beta.Teamwork.Devices.Item {
     /// <summary>Provides operations to manage the devices property of the microsoft.graph.teamwork entity.</summary>
     public class TeamworkDeviceItemRequestBuilder {
         /// <summary>The activity property</summary>

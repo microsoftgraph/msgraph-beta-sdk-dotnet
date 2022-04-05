@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Security;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Security.InformationProtection.SensitivityLabels.EvaluateRemoval {
+namespace Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.EvaluateRemoval {
     /// <summary>Provides operations to call the evaluateRemoval method.</summary>
     public class EvaluateRemovalRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The contentInfo property</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Security.ContentInfo ContentInfo { get; set; }
+        public Microsoft.Graph.Beta.Models.Security.ContentInfo ContentInfo { get; set; }
         /// <summary>The downgradeJustification property</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Security.DowngradeJustification DowngradeJustification { get; set; }
+        public Microsoft.Graph.Beta.Models.Security.DowngradeJustification DowngradeJustification { get; set; }
         /// <summary>
         /// Instantiates a new evaluateRemovalRequestBody and sets the default values.
         /// </summary>
@@ -32,8 +32,8 @@ namespace MicrosoftGraphSdk.Security.InformationProtection.SensitivityLabels.Eva
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"contentInfo", (o,n) => { (o as EvaluateRemovalRequestBody).ContentInfo = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Security.ContentInfo>(MicrosoftGraphSdk.Models.Microsoft.Graph.Security.ContentInfo.CreateFromDiscriminatorValue); } },
-                {"downgradeJustification", (o,n) => { (o as EvaluateRemovalRequestBody).DowngradeJustification = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Security.DowngradeJustification>(MicrosoftGraphSdk.Models.Microsoft.Graph.Security.DowngradeJustification.CreateFromDiscriminatorValue); } },
+                {"contentInfo", (o,n) => { (o as EvaluateRemovalRequestBody).ContentInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.ContentInfo>(Microsoft.Graph.Beta.Models.Security.ContentInfo.CreateFromDiscriminatorValue); } },
+                {"downgradeJustification", (o,n) => { (o as EvaluateRemovalRequestBody).DowngradeJustification = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.DowngradeJustification>(Microsoft.Graph.Beta.Models.Security.DowngradeJustification.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -42,8 +42,8 @@ namespace MicrosoftGraphSdk.Security.InformationProtection.SensitivityLabels.Eva
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Security.ContentInfo>("contentInfo", ContentInfo);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Security.DowngradeJustification>("downgradeJustification", DowngradeJustification);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.ContentInfo>("contentInfo", ContentInfo);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.DowngradeJustification>("downgradeJustification", DowngradeJustification);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

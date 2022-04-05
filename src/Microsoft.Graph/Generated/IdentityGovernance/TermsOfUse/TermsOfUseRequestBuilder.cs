@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.AgreementAcceptances;
+using Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.IdentityGovernance.TermsOfUse.AgreementAcceptances;
-using MicrosoftGraphSdk.IdentityGovernance.TermsOfUse.Agreements;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.IdentityGovernance.TermsOfUse {
+namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse {
     /// <summary>Provides operations to manage the termsOfUse property of the microsoft.graph.identityGovernance entity.</summary>
     public class TermsOfUseRequestBuilder {
         /// <summary>The agreementAcceptances property</summary>

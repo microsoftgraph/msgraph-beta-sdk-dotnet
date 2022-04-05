@@ -1,24 +1,24 @@
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.AcceptRecommendations;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.ApplyDecisions;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.BatchRecordDecisions;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.ContactedReviewers;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Definition;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.ResetDecisions;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.SendReminder;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Stages;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Stop;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.AcceptRecommendations;
-using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.ApplyDecisions;
-using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.BatchRecordDecisions;
-using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.ContactedReviewers;
-using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Decisions;
-using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Definition;
-using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.ResetDecisions;
-using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.SendReminder;
-using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Stages;
-using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Stop;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item {
+namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item {
     /// <summary>Provides operations to manage the pendingAccessReviewInstances property of the microsoft.graph.user entity.</summary>
     public class AccessReviewInstanceItemRequestBuilder {
         /// <summary>The acceptRecommendations property</summary>

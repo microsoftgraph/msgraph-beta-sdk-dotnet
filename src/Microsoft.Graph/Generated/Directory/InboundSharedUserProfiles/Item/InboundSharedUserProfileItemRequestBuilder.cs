@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Directory.InboundSharedUserProfiles.Item.ExportPersonalData;
+using Microsoft.Graph.Beta.Directory.InboundSharedUserProfiles.Item.RemovePersonalData;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Directory.InboundSharedUserProfiles.Item.ExportPersonalData;
-using MicrosoftGraphSdk.Directory.InboundSharedUserProfiles.Item.RemovePersonalData;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Directory.InboundSharedUserProfiles.Item {
+namespace Microsoft.Graph.Beta.Directory.InboundSharedUserProfiles.Item {
     /// <summary>Provides operations to manage the inboundSharedUserProfiles property of the microsoft.graph.directory entity.</summary>
     public class InboundSharedUserProfileItemRequestBuilder {
         /// <summary>The exportPersonalData property</summary>
