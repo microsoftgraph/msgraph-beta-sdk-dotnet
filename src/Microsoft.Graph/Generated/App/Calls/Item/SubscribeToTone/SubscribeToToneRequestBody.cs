@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.App.Calls.Item.SubscribeToTone {
+namespace Microsoft.Graph.Beta.App.Calls.Item.SubscribeToTone {
     /// <summary>Provides operations to call the subscribeToTone method.</summary>
     public class SubscribeToToneRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

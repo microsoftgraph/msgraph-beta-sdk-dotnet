@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.SubscribedSkus.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.SubscribedSkus.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.SubscribedSkus {
+namespace Microsoft.Graph.Beta.SubscribedSkus {
     /// <summary>Provides operations to manage the collection of subscribedSku entities.</summary>
     public class SubscribedSkusRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,7 +18,7 @@ namespace MicrosoftGraphSdk.SubscribedSkus {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.subscribedSkus.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.subscribedSkus.item collection</summary>
         public SubscribedSkuItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("subscribedSku_id", position);

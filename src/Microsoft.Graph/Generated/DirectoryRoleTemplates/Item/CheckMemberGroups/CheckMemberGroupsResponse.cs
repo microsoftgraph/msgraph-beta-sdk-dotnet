@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DirectoryRoleTemplates.Item.CheckMemberGroups {
+namespace Microsoft.Graph.Beta.DirectoryRoleTemplates.Item.CheckMemberGroups {
     /// <summary>Provides operations to call the checkMemberGroups method.</summary>
     public class CheckMemberGroupsResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

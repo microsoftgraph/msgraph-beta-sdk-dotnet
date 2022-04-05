@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.InformationProtection.SensitivityLabels.Evaluate {
+namespace Microsoft.Graph.Beta.InformationProtection.SensitivityLabels.Evaluate {
     /// <summary>Provides operations to call the evaluate method.</summary>
     public class EvaluateRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The currentLabel property</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.CurrentLabel CurrentLabel { get; set; }
+        public Microsoft.Graph.Beta.Models.CurrentLabel CurrentLabel { get; set; }
         /// <summary>The discoveredSensitiveTypes property</summary>
         public List<DiscoveredSensitiveType> DiscoveredSensitiveTypes { get; set; }
         /// <summary>
@@ -32,7 +32,7 @@ namespace MicrosoftGraphSdk.InformationProtection.SensitivityLabels.Evaluate {
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"currentLabel", (o,n) => { (o as EvaluateRequestBody).CurrentLabel = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.CurrentLabel>(MicrosoftGraphSdk.Models.Microsoft.Graph.CurrentLabel.CreateFromDiscriminatorValue); } },
+                {"currentLabel", (o,n) => { (o as EvaluateRequestBody).CurrentLabel = n.GetObjectValue<Microsoft.Graph.Beta.Models.CurrentLabel>(Microsoft.Graph.Beta.Models.CurrentLabel.CreateFromDiscriminatorValue); } },
                 {"discoveredSensitiveTypes", (o,n) => { (o as EvaluateRequestBody).DiscoveredSensitiveTypes = n.GetCollectionOfObjectValues<DiscoveredSensitiveType>(DiscoveredSensitiveType.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
@@ -42,7 +42,7 @@ namespace MicrosoftGraphSdk.InformationProtection.SensitivityLabels.Evaluate {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.CurrentLabel>("currentLabel", CurrentLabel);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CurrentLabel>("currentLabel", CurrentLabel);
             writer.WriteCollectionOfObjectValues<DiscoveredSensitiveType>("discoveredSensitiveTypes", DiscoveredSensitiveTypes);
             writer.WriteAdditionalData(AdditionalData);
         }

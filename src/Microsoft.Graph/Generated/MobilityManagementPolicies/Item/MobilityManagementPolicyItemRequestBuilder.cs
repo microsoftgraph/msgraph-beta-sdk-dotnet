@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.MobilityManagementPolicies.Item.IncludedGroups;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.MobilityManagementPolicies.Item.IncludedGroups;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.MobilityManagementPolicies.Item {
+namespace Microsoft.Graph.Beta.MobilityManagementPolicies.Item {
     /// <summary>Provides operations to manage the collection of mobilityManagementPolicy entities.</summary>
     public class MobilityManagementPolicyItemRequestBuilder {
         /// <summary>The includedGroups property</summary>

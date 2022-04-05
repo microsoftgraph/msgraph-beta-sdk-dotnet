@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelSites.Item.RequestUpgrade {
+namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.RequestUpgrade {
     /// <summary>Provides operations to call the requestUpgrade method.</summary>
     public class RequestUpgradeRequestBuilder {
         /// <summary>Path parameters for the request</summary>

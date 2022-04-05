@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.Templates.ImportOffice365DeviceConfigurationPolicies {
+namespace Microsoft.Graph.Beta.DeviceManagement.Templates.ImportOffice365DeviceConfigurationPolicies {
     /// <summary>Provides operations to call the importOffice365DeviceConfigurationPolicies method.</summary>
     public class ImportOffice365DeviceConfigurationPoliciesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,27 +1,27 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.RoleManagement.Directory.ResourceNamespaces;
+using Microsoft.Graph.Beta.RoleManagement.Directory.RoleAssignmentApprovals;
+using Microsoft.Graph.Beta.RoleManagement.Directory.RoleAssignments;
+using Microsoft.Graph.Beta.RoleManagement.Directory.RoleAssignmentScheduleInstances;
+using Microsoft.Graph.Beta.RoleManagement.Directory.RoleAssignmentScheduleRequests;
+using Microsoft.Graph.Beta.RoleManagement.Directory.RoleAssignmentSchedules;
+using Microsoft.Graph.Beta.RoleManagement.Directory.RoleDefinitions;
+using Microsoft.Graph.Beta.RoleManagement.Directory.RoleEligibilityScheduleInstances;
+using Microsoft.Graph.Beta.RoleManagement.Directory.RoleEligibilityScheduleRequests;
+using Microsoft.Graph.Beta.RoleManagement.Directory.RoleEligibilitySchedules;
+using Microsoft.Graph.Beta.RoleManagement.Directory.RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId;
+using Microsoft.Graph.Beta.RoleManagement.Directory.RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId;
+using Microsoft.Graph.Beta.RoleManagement.Directory.TransitiveRoleAssignments;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.RoleManagement.Directory.ResourceNamespaces;
-using MicrosoftGraphSdk.RoleManagement.Directory.RoleAssignmentApprovals;
-using MicrosoftGraphSdk.RoleManagement.Directory.RoleAssignments;
-using MicrosoftGraphSdk.RoleManagement.Directory.RoleAssignmentScheduleInstances;
-using MicrosoftGraphSdk.RoleManagement.Directory.RoleAssignmentScheduleRequests;
-using MicrosoftGraphSdk.RoleManagement.Directory.RoleAssignmentSchedules;
-using MicrosoftGraphSdk.RoleManagement.Directory.RoleDefinitions;
-using MicrosoftGraphSdk.RoleManagement.Directory.RoleEligibilityScheduleInstances;
-using MicrosoftGraphSdk.RoleManagement.Directory.RoleEligibilityScheduleRequests;
-using MicrosoftGraphSdk.RoleManagement.Directory.RoleEligibilitySchedules;
-using MicrosoftGraphSdk.RoleManagement.Directory.RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId;
-using MicrosoftGraphSdk.RoleManagement.Directory.RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId;
-using MicrosoftGraphSdk.RoleManagement.Directory.TransitiveRoleAssignments;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.RoleManagement.Directory {
+namespace Microsoft.Graph.Beta.RoleManagement.Directory {
     /// <summary>Provides operations to manage the directory property of the microsoft.graph.roleManagement entity.</summary>
     public class DirectoryRequestBuilder {
         /// <summary>Path parameters for the request</summary>

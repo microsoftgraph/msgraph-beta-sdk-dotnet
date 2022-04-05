@@ -1,0 +1,31 @@
+namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
+    public enum WindowsDefenderProductStatus {
+        NoStatus,
+        ServiceNotRunning,
+        ServiceStartedWithoutMalwareProtection,
+        PendingFullScanDueToThreatAction,
+        PendingRebootDueToThreatAction,
+        PendingManualStepsDueToThreatAction,
+        AvSignaturesOutOfDate,
+        AsSignaturesOutOfDate,
+        NoQuickScanHappenedForSpecifiedPeriod,
+        NoFullScanHappenedForSpecifiedPeriod,
+        SystemInitiatedScanInProgress,
+        SystemInitiatedCleanInProgress,
+        SamplesPendingSubmission,
+        ProductRunningInEvaluationMode,
+        ProductRunningInNonGenuineMode,
+        ProductExpired,
+        OfflineScanRequired,
+        ServiceShutdownAsPartOfSystemShutdown,
+        ThreatRemediationFailedCritically,
+        ThreatRemediationFailedNonCritically,
+        NoStatusFlagsSet,
+        PlatformOutOfDate,
+        PlatformUpdateInProgress,
+        PlatformAboutToBeOutdated,
+        SignatureOrPlatformEndOfLifeIsPastOrIsImpending,
+        WindowsSModeSignaturesInUseOnNonWin10SInstall,
+    }
+}

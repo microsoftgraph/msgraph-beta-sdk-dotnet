@@ -1,36 +1,36 @@
+using Microsoft.Graph.Beta.Applications.Item.AddKey;
+using Microsoft.Graph.Beta.Applications.Item.AddPassword;
+using Microsoft.Graph.Beta.Applications.Item.AppManagementPolicies;
+using Microsoft.Graph.Beta.Applications.Item.CheckMemberGroups;
+using Microsoft.Graph.Beta.Applications.Item.CheckMemberObjects;
+using Microsoft.Graph.Beta.Applications.Item.ConnectorGroup;
+using Microsoft.Graph.Beta.Applications.Item.CreatedOnBehalfOf;
+using Microsoft.Graph.Beta.Applications.Item.ExtensionProperties;
+using Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials;
+using Microsoft.Graph.Beta.Applications.Item.GetMemberGroups;
+using Microsoft.Graph.Beta.Applications.Item.GetMemberObjects;
+using Microsoft.Graph.Beta.Applications.Item.HomeRealmDiscoveryPolicies;
+using Microsoft.Graph.Beta.Applications.Item.Logo;
+using Microsoft.Graph.Beta.Applications.Item.Owners;
+using Microsoft.Graph.Beta.Applications.Item.RemoveKey;
+using Microsoft.Graph.Beta.Applications.Item.RemovePassword;
+using Microsoft.Graph.Beta.Applications.Item.Restore;
+using Microsoft.Graph.Beta.Applications.Item.SetVerifiedPublisher;
+using Microsoft.Graph.Beta.Applications.Item.Synchronization;
+using Microsoft.Graph.Beta.Applications.Item.TokenIssuancePolicies;
+using Microsoft.Graph.Beta.Applications.Item.TokenLifetimePolicies;
+using Microsoft.Graph.Beta.Applications.Item.UnsetVerifiedPublisher;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Applications.Item.AddKey;
-using MicrosoftGraphSdk.Applications.Item.AddPassword;
-using MicrosoftGraphSdk.Applications.Item.AppManagementPolicies;
-using MicrosoftGraphSdk.Applications.Item.CheckMemberGroups;
-using MicrosoftGraphSdk.Applications.Item.CheckMemberObjects;
-using MicrosoftGraphSdk.Applications.Item.ConnectorGroup;
-using MicrosoftGraphSdk.Applications.Item.CreatedOnBehalfOf;
-using MicrosoftGraphSdk.Applications.Item.ExtensionProperties;
-using MicrosoftGraphSdk.Applications.Item.FederatedIdentityCredentials;
-using MicrosoftGraphSdk.Applications.Item.GetMemberGroups;
-using MicrosoftGraphSdk.Applications.Item.GetMemberObjects;
-using MicrosoftGraphSdk.Applications.Item.HomeRealmDiscoveryPolicies;
-using MicrosoftGraphSdk.Applications.Item.Logo;
-using MicrosoftGraphSdk.Applications.Item.Owners;
-using MicrosoftGraphSdk.Applications.Item.RemoveKey;
-using MicrosoftGraphSdk.Applications.Item.RemovePassword;
-using MicrosoftGraphSdk.Applications.Item.Restore;
-using MicrosoftGraphSdk.Applications.Item.SetVerifiedPublisher;
-using MicrosoftGraphSdk.Applications.Item.Synchronization;
-using MicrosoftGraphSdk.Applications.Item.TokenIssuancePolicies;
-using MicrosoftGraphSdk.Applications.Item.TokenLifetimePolicies;
-using MicrosoftGraphSdk.Applications.Item.UnsetVerifiedPublisher;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Applications.Item {
+namespace Microsoft.Graph.Beta.Applications.Item {
     /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class ApplicationItemRequestBuilder {
         /// <summary>The addKey property</summary>

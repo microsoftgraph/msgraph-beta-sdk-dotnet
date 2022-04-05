@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.DeviceImages.Item.Reupload {
+namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item.Reupload {
     /// <summary>Provides operations to call the reupload method.</summary>
     public class ReuploadRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.App.Calls.Item.Redirect {
+namespace Microsoft.Graph.Beta.App.Calls.Item.Redirect {
     /// <summary>Provides operations to call the redirect method.</summary>
     public class RedirectRequestBuilder {
         /// <summary>Path parameters for the request</summary>

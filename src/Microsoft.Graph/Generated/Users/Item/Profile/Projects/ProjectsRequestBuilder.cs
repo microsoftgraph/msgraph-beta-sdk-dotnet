@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.Profile.Projects.Count;
+using Microsoft.Graph.Beta.Users.Item.Profile.Projects.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.Profile.Projects.Count;
-using MicrosoftGraphSdk.Users.Item.Profile.Projects.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Profile.Projects {
+namespace Microsoft.Graph.Beta.Users.Item.Profile.Projects {
     /// <summary>Provides operations to manage the projects property of the microsoft.graph.profile entity.</summary>
     public class ProjectsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Users.Item.Profile.Projects {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.profile.projects.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.profile.projects.item collection</summary>
         public ProjectParticipationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("projectParticipation_id", position);

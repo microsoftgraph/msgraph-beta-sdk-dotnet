@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Print.Reports.AuthenticationMethods.UsersRegisteredByMethod {
+namespace Microsoft.Graph.Beta.Print.Reports.AuthenticationMethods.UsersRegisteredByMethod {
     /// <summary>Provides operations to call the usersRegisteredByMethod method.</summary>
     public class UsersRegisteredByMethodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

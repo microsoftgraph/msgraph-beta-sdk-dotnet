@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.Decisions.Item.Insights;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.Decisions.Item.Insights;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.Decisions.Item {
+namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages.Item.Decisions.Item {
     /// <summary>Provides operations to manage the decisions property of the microsoft.graph.accessReviewStage entity.</summary>
     public class AccessReviewInstanceDecisionItemItemRequestBuilder {
         /// <summary>The insights property</summary>

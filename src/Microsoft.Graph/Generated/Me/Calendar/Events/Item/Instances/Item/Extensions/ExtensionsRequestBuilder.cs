@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.Calendar.Events.Item.Instances.Item.Extensions.Count;
+using Microsoft.Graph.Beta.Me.Calendar.Events.Item.Instances.Item.Extensions.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Calendar.Events.Item.Instances.Item.Extensions.Count;
-using MicrosoftGraphSdk.Me.Calendar.Events.Item.Instances.Item.Extensions.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Calendar.Events.Item.Instances.Item.Extensions {
+namespace Microsoft.Graph.Beta.Me.Calendar.Events.Item.Instances.Item.Extensions {
     /// <summary>Provides operations to manage the extensions property of the microsoft.graph.event entity.</summary>
     public class ExtensionsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.Calendar.Events.Item.Instances.Item.Extensions {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.calendar.events.item.instances.item.extensions.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.calendar.events.item.instances.item.extensions.item collection</summary>
         public ExtensionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("extension_id", position);

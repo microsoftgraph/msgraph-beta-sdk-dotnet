@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Applications.Item.TokenIssuancePolicies.Count;
+using Microsoft.Graph.Beta.Applications.Item.TokenIssuancePolicies.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Applications.Item.TokenIssuancePolicies.Count;
-using MicrosoftGraphSdk.Applications.Item.TokenIssuancePolicies.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Applications.Item.TokenIssuancePolicies {
+namespace Microsoft.Graph.Beta.Applications.Item.TokenIssuancePolicies {
     /// <summary>Provides operations to manage the tokenIssuancePolicies property of the microsoft.graph.application entity.</summary>
     public class TokenIssuancePoliciesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Applications.Item.TokenIssuancePolicies {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.applications.item.tokenIssuancePolicies.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.applications.item.tokenIssuancePolicies.item collection</summary>
         public TokenIssuancePolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tokenIssuancePolicy_id", position);

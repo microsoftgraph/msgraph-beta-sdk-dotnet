@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.DataClassification.SensitivityLabels.Item.Sublabels;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DataClassification.SensitivityLabels.Item.Sublabels;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DataClassification.SensitivityLabels.Item {
+namespace Microsoft.Graph.Beta.DataClassification.SensitivityLabels.Item {
     /// <summary>Provides operations to manage the sensitivityLabels property of the microsoft.graph.dataClassificationService entity.</summary>
     public class SensitivityLabelItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

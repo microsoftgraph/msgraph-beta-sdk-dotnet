@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item.Cancel;
+using Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item.Resource;
+using Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item.RoleDefinition;
+using Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item.Subject;
+using Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item.UpdateRequest;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.GovernanceRoleAssignmentRequests.Item.Cancel;
-using MicrosoftGraphSdk.GovernanceRoleAssignmentRequests.Item.Resource;
-using MicrosoftGraphSdk.GovernanceRoleAssignmentRequests.Item.RoleDefinition;
-using MicrosoftGraphSdk.GovernanceRoleAssignmentRequests.Item.Subject;
-using MicrosoftGraphSdk.GovernanceRoleAssignmentRequests.Item.UpdateRequest;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.GovernanceRoleAssignmentRequests.Item {
+namespace Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item {
     /// <summary>Provides operations to manage the collection of governanceRoleAssignmentRequest entities.</summary>
     public class GovernanceRoleAssignmentRequestItemRequestBuilder {
         /// <summary>The cancel property</summary>

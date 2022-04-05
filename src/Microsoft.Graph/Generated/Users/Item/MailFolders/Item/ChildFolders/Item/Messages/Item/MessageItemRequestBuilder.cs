@@ -1,32 +1,32 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.Attachments;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.CalendarSharingMessage;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.Copy;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.CreateForward;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.CreateReply;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.CreateReplyAll;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.EventMessageRequest;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.Extensions;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.Forward;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.Mentions;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.Move;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.MultiValueExtendedProperties;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.Reply;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.ReplyAll;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.Send;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.SingleValueExtendedProperties;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.Unsubscribe;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.Value;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.Attachments;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.CalendarSharingMessage;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.Copy;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.CreateForward;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.CreateReply;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.CreateReplyAll;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.EventMessageRequest;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.Extensions;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.Forward;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.Mentions;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.Move;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.MultiValueExtendedProperties;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.Reply;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.ReplyAll;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.Send;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.SingleValueExtendedProperties;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.Unsubscribe;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.Value;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item {
+namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item {
     /// <summary>Provides operations to manage the messages property of the microsoft.graph.mailFolder entity.</summary>
     public class MessageItemRequestBuilder {
         /// <summary>The attachments property</summary>

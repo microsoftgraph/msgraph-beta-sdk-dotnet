@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.ApplicationTemplates.Item.Instantiate {
+namespace Microsoft.Graph.Beta.ApplicationTemplates.Item.Instantiate {
     /// <summary>Provides operations to call the instantiate method.</summary>
     public class InstantiateRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

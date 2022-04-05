@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Groups.Item.Team.Schedule.TimeCards.ClockIn {
+namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.ClockIn {
     /// <summary>Provides operations to call the clockIn method.</summary>
     public class ClockInRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

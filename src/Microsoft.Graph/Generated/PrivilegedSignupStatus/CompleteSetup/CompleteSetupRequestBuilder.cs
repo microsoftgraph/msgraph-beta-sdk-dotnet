@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.PrivilegedSignupStatus.CompleteSetup {
+namespace Microsoft.Graph.Beta.PrivilegedSignupStatus.CompleteSetup {
     /// <summary>Provides operations to call the completeSetup method.</summary>
     public class CompleteSetupRequestBuilder {
         /// <summary>Path parameters for the request</summary>

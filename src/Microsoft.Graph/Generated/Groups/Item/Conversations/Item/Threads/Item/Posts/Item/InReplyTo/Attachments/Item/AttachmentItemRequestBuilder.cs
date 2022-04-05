@@ -1,14 +1,14 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.InReplyTo.Attachments.Item {
+namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.InReplyTo.Attachments.Item {
     /// <summary>Provides operations to manage the attachments property of the microsoft.graph.post entity.</summary>
     public class AttachmentItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

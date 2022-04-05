@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item.Extensions;
+using Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item.Tasks;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.Todo.Lists.Item.Extensions;
-using MicrosoftGraphSdk.Users.Item.Todo.Lists.Item.Tasks;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Todo.Lists.Item {
+namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item {
     /// <summary>Provides operations to manage the lists property of the microsoft.graph.todo entity.</summary>
     public class TodoTaskListItemRequestBuilder {
         /// <summary>The extensions property</summary>

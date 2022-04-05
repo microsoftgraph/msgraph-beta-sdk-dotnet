@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Reports.GetYammerActivityCountsWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetYammerActivityCountsWithPeriod {
     /// <summary>Provides operations to call the getYammerActivityCounts method.</summary>
     public class GetYammerActivityCountsWithPeriodResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

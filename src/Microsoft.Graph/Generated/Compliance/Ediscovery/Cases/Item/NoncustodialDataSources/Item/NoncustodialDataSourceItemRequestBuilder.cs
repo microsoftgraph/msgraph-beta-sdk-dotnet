@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item.ApplyHold;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item.DataSource;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item.Release;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item.RemoveHold;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item.UpdateIndex;
+using Microsoft.Graph.Beta.Models.Ediscovery;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item.ApplyHold;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item.DataSource;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item.Release;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item.RemoveHold;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item.UpdateIndex;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item {
     /// <summary>Provides operations to manage the noncustodialDataSources property of the microsoft.graph.ediscovery.case entity.</summary>
     public class NoncustodialDataSourceItemRequestBuilder {
         /// <summary>The applyHold property</summary>

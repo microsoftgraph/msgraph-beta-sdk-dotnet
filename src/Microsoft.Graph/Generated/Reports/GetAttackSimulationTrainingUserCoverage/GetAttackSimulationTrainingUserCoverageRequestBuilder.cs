@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetAttackSimulationTrainingUserCoverage {
+namespace Microsoft.Graph.Beta.Reports.GetAttackSimulationTrainingUserCoverage {
     /// <summary>Provides operations to call the getAttackSimulationTrainingUserCoverage method.</summary>
     public class GetAttackSimulationTrainingUserCoverageRequestBuilder {
         /// <summary>Path parameters for the request</summary>

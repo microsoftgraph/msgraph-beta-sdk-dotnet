@@ -1,20 +1,20 @@
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models.Security;
+using Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.Count;
+using Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.EvaluateApplication;
+using Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.EvaluateClassificationResults;
+using Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.EvaluateRemoval;
+using Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.ExtractContentLabel;
+using Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Security;
-using MicrosoftGraphSdk.Users.Item.Security.InformationProtection.SensitivityLabels.Count;
-using MicrosoftGraphSdk.Users.Item.Security.InformationProtection.SensitivityLabels.EvaluateApplication;
-using MicrosoftGraphSdk.Users.Item.Security.InformationProtection.SensitivityLabels.EvaluateClassificationResults;
-using MicrosoftGraphSdk.Users.Item.Security.InformationProtection.SensitivityLabels.EvaluateRemoval;
-using MicrosoftGraphSdk.Users.Item.Security.InformationProtection.SensitivityLabels.ExtractContentLabel;
-using MicrosoftGraphSdk.Users.Item.Security.InformationProtection.SensitivityLabels.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Security.InformationProtection.SensitivityLabels {
+namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels {
     /// <summary>Provides operations to manage the sensitivityLabels property of the microsoft.graph.security.informationProtection entity.</summary>
     public class SensitivityLabelsRequestBuilder {
         /// <summary>The count property</summary>
@@ -43,7 +43,7 @@ namespace MicrosoftGraphSdk.Users.Item.Security.InformationProtection.Sensitivit
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.security.informationProtection.sensitivityLabels.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.security.informationProtection.sensitivityLabels.item collection</summary>
         public SensitivityLabelItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("sensitivityLabel_id", position);

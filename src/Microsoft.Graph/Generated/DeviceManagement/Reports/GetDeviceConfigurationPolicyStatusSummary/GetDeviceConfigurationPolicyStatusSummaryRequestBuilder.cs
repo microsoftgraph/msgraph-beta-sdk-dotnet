@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetDeviceConfigurationPolicyStatusSummary {
+namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceConfigurationPolicyStatusSummary {
     /// <summary>Provides operations to call the getDeviceConfigurationPolicyStatusSummary method.</summary>
     public class GetDeviceConfigurationPolicyStatusSummaryRequestBuilder {
         /// <summary>Path parameters for the request</summary>

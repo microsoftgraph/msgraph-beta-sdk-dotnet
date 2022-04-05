@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.DirectoryObjects.Item.CheckMemberGroups;
+using Microsoft.Graph.Beta.DirectoryObjects.Item.CheckMemberObjects;
+using Microsoft.Graph.Beta.DirectoryObjects.Item.GetMemberGroups;
+using Microsoft.Graph.Beta.DirectoryObjects.Item.GetMemberObjects;
+using Microsoft.Graph.Beta.DirectoryObjects.Item.Restore;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DirectoryObjects.Item.CheckMemberGroups;
-using MicrosoftGraphSdk.DirectoryObjects.Item.CheckMemberObjects;
-using MicrosoftGraphSdk.DirectoryObjects.Item.GetMemberGroups;
-using MicrosoftGraphSdk.DirectoryObjects.Item.GetMemberObjects;
-using MicrosoftGraphSdk.DirectoryObjects.Item.Restore;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DirectoryObjects.Item {
+namespace Microsoft.Graph.Beta.DirectoryObjects.Item {
     /// <summary>Provides operations to manage the collection of directoryObject entities.</summary>
     public class DirectoryObjectItemRequestBuilder {
         /// <summary>The checkMemberGroups property</summary>

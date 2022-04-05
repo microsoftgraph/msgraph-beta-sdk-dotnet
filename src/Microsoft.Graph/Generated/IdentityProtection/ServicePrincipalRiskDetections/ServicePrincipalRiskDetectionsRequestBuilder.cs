@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.IdentityProtection.ServicePrincipalRiskDetections.Count;
+using Microsoft.Graph.Beta.IdentityProtection.ServicePrincipalRiskDetections.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.IdentityProtection.ServicePrincipalRiskDetections.Count;
-using MicrosoftGraphSdk.IdentityProtection.ServicePrincipalRiskDetections.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.IdentityProtection.ServicePrincipalRiskDetections {
+namespace Microsoft.Graph.Beta.IdentityProtection.ServicePrincipalRiskDetections {
     /// <summary>Provides operations to manage the servicePrincipalRiskDetections property of the microsoft.graph.identityProtectionRoot entity.</summary>
     public class ServicePrincipalRiskDetectionsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.IdentityProtection.ServicePrincipalRiskDetections {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.identityProtection.servicePrincipalRiskDetections.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.identityProtection.servicePrincipalRiskDetections.item collection</summary>
         public ServicePrincipalRiskDetectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("servicePrincipalRiskDetection_id", position);

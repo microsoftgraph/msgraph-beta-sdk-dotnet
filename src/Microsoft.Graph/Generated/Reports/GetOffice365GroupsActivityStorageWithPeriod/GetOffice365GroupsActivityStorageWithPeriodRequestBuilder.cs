@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetOffice365GroupsActivityStorageWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityStorageWithPeriod {
     /// <summary>Provides operations to call the getOffice365GroupsActivityStorage method.</summary>
     public class GetOffice365GroupsActivityStorageWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.SalesInvoiceLines.Count;
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.SalesInvoiceLines.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesInvoices.Item.SalesInvoiceLines.Count;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesInvoices.Item.SalesInvoiceLines.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesInvoices.Item.SalesInvoiceLines {
+namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.SalesInvoiceLines {
     /// <summary>Provides operations to manage the salesInvoiceLines property of the microsoft.graph.salesInvoice entity.</summary>
     public class SalesInvoiceLinesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesInvoices.Item.SalesIn
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.financials.companies.item.salesInvoices.item.salesInvoiceLines.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.financials.companies.item.salesInvoices.item.salesInvoiceLines.item collection</summary>
         public SalesInvoiceLineItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("salesInvoiceLine_id", position);

@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.NextVersionDefinition.PreviousVersionDefinition.Category;
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.NextVersionDefinition.PreviousVersionDefinition.DefinitionFile;
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.NextVersionDefinition.PreviousVersionDefinition.Presentations;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.GroupPolicyDefinitions.Item.NextVersionDefinition.PreviousVersionDefinition.Category;
-using MicrosoftGraphSdk.DeviceManagement.GroupPolicyDefinitions.Item.NextVersionDefinition.PreviousVersionDefinition.DefinitionFile;
-using MicrosoftGraphSdk.DeviceManagement.GroupPolicyDefinitions.Item.NextVersionDefinition.PreviousVersionDefinition.Presentations;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyDefinitions.Item.NextVersionDefinition.PreviousVersionDefinition {
+namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.NextVersionDefinition.PreviousVersionDefinition {
     /// <summary>Provides operations to manage the previousVersionDefinition property of the microsoft.graph.groupPolicyDefinition entity.</summary>
     public class PreviousVersionDefinitionRequestBuilder {
         /// <summary>The category property</summary>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds.Count;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds.Item;
+using Microsoft.Graph.Beta.Models.Ediscovery;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.LegalHolds.Count;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.LegalHolds.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.LegalHolds {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds {
     /// <summary>Provides operations to manage the legalHolds property of the microsoft.graph.ediscovery.case entity.</summary>
     public class LegalHoldsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.LegalHolds {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.compliance.ediscovery.cases.item.legalHolds.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.compliance.ediscovery.cases.item.legalHolds.item collection</summary>
         public LegalHoldItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("legalHold_id", position);

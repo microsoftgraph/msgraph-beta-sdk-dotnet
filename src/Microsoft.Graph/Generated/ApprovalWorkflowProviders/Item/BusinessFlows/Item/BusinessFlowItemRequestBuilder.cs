@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.BusinessFlows.Item.RecordDecisions;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.ApprovalWorkflowProviders.Item.BusinessFlows.Item.RecordDecisions;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.ApprovalWorkflowProviders.Item.BusinessFlows.Item {
+namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.BusinessFlows.Item {
     /// <summary>Provides operations to manage the businessFlows property of the microsoft.graph.approvalWorkflowProvider entity.</summary>
     public class BusinessFlowItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

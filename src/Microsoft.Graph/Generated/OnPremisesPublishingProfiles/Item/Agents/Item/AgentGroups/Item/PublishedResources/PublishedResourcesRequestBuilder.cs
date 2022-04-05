@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Agents.Item.AgentGroups.Item.PublishedResources.Count;
+using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Agents.Item.AgentGroups.Item.PublishedResources.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.Agents.Item.AgentGroups.Item.PublishedResources.Count;
-using MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.Agents.Item.AgentGroups.Item.PublishedResources.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.Agents.Item.AgentGroups.Item.PublishedResources {
+namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Agents.Item.AgentGroups.Item.PublishedResources {
     /// <summary>Provides operations to manage the publishedResources property of the microsoft.graph.onPremisesAgentGroup entity.</summary>
     public class PublishedResourcesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.Agents.Item.AgentG
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.onPremisesPublishingProfiles.item.agents.item.agentGroups.item.publishedResources.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.onPremisesPublishingProfiles.item.agents.item.agentGroups.item.publishedResources.item collection</summary>
         public PublishedResourceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("publishedResource_id", position);

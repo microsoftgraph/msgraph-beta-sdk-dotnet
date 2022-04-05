@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.CloudPCs.Item.Reboot {
+namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.Reboot {
     /// <summary>Provides operations to call the reboot method.</summary>
     public class RebootRequestBuilder {
         /// <summary>Path parameters for the request</summary>

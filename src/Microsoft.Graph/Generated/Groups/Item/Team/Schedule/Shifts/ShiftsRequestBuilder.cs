@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Groups.Item.Team.Schedule.Shifts.Count;
+using Microsoft.Graph.Beta.Groups.Item.Team.Schedule.Shifts.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Groups.Item.Team.Schedule.Shifts.Count;
-using MicrosoftGraphSdk.Groups.Item.Team.Schedule.Shifts.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Team.Schedule.Shifts {
+namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.Shifts {
     /// <summary>Provides operations to manage the shifts property of the microsoft.graph.schedule entity.</summary>
     public class ShiftsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Team.Schedule.Shifts {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.team.schedule.shifts.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.groups.item.team.schedule.shifts.item collection</summary>
         public ShiftItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("shift_id", position);

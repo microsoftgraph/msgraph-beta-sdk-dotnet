@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetSharePointActivityFileCountsWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetSharePointActivityFileCountsWithPeriod {
     /// <summary>Provides operations to call the getSharePointActivityFileCounts method.</summary>
     public class GetSharePointActivityFileCountsWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetOffice365GroupsActivityDetailWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityDetailWithPeriod {
     /// <summary>Provides operations to call the getOffice365GroupsActivityDetail method.</summary>
     public class GetOffice365GroupsActivityDetailWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

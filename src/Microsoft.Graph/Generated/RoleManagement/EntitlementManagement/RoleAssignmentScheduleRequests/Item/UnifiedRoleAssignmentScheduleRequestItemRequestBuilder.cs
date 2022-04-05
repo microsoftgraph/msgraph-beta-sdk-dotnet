@@ -1,21 +1,21 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.Item.ActivatedUsing;
+using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.Item.AppScope;
+using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.Item.Cancel;
+using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.Item.DirectoryScope;
+using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.Item.Principal;
+using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.Item.RoleDefinition;
+using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.Item.TargetSchedule;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.Item.ActivatedUsing;
-using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.Item.AppScope;
-using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.Item.Cancel;
-using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.Item.DirectoryScope;
-using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.Item.Principal;
-using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.Item.RoleDefinition;
-using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.Item.TargetSchedule;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.Item {
+namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.Item {
     /// <summary>Provides operations to manage the roleAssignmentScheduleRequests property of the microsoft.graph.rbacApplication entity.</summary>
     public class UnifiedRoleAssignmentScheduleRequestItemRequestBuilder {
         /// <summary>The activatedUsing property</summary>

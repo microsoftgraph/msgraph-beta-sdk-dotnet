@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Sites.Item.Onenote.Pages.Item.Content {
+namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Pages.Item.Content {
     /// <summary>Provides operations to manage the media for the site entity.</summary>
     public class ContentRequestBuilder {
         /// <summary>Path parameters for the request</summary>

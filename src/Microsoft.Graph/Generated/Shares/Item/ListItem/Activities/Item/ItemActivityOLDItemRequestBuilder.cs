@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Shares.Item.ListItem.Activities.Item.DriveItem;
+using Microsoft.Graph.Beta.Shares.Item.ListItem.Activities.Item.ListItem;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Shares.Item.ListItem.Activities.Item.DriveItem;
-using MicrosoftGraphSdk.Shares.Item.ListItem.Activities.Item.ListItem;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Shares.Item.ListItem.Activities.Item {
+namespace Microsoft.Graph.Beta.Shares.Item.ListItem.Activities.Item {
     /// <summary>Provides operations to manage the activities property of the microsoft.graph.listItem entity.</summary>
     public class ItemActivityOLDItemRequestBuilder {
         /// <summary>The driveItem property</summary>
@@ -18,8 +18,8 @@ namespace MicrosoftGraphSdk.Shares.Item.ListItem.Activities.Item {
             new DriveItemRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The listItem property</summary>
-        public MicrosoftGraphSdk.Shares.Item.ListItem.Activities.Item.ListItem.ListItemRequestBuilder ListItem { get =>
-            new MicrosoftGraphSdk.Shares.Item.ListItem.Activities.Item.ListItem.ListItemRequestBuilder(PathParameters, RequestAdapter);
+        public Microsoft.Graph.Beta.Shares.Item.ListItem.Activities.Item.ListItem.ListItemRequestBuilder ListItem { get =>
+            new Microsoft.Graph.Beta.Shares.Item.ListItem.Activities.Item.ListItem.ListItemRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

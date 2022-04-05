@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetSharePointActivityUserCountsWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetSharePointActivityUserCountsWithPeriod {
     /// <summary>Provides operations to call the getSharePointActivityUserCounts method.</summary>
     public class GetSharePointActivityUserCountsWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

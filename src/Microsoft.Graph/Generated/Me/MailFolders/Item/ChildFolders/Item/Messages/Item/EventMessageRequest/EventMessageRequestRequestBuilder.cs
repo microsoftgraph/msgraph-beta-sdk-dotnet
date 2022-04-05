@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.EventMessageRequest.Accept;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.EventMessageRequest.Decline;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.EventMessageRequest.TentativelyAccept;
 using Microsoft.Kiota.Abstractions;
-using MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.EventMessageRequest.Accept;
-using MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.EventMessageRequest.Decline;
-using MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.EventMessageRequest.TentativelyAccept;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.EventMessageRequest {
+namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.EventMessageRequest {
     /// <summary>Builds and executes requests for operations under \me\mailFolders\{mailFolder-id}\childFolders\{mailFolder-id1}\messages\{message-id}\microsoft.graph.eventMessageRequest</summary>
     public class EventMessageRequestRequestBuilder {
         /// <summary>The accept property</summary>

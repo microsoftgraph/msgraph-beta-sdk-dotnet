@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DirectoryObjects.Item.CheckMemberObjects {
+namespace Microsoft.Graph.Beta.DirectoryObjects.Item.CheckMemberObjects {
     /// <summary>Provides operations to call the checkMemberObjects method.</summary>
     public class CheckMemberObjectsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

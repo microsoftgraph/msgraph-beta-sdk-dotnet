@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.ApplicationTemplates.Count;
+using Microsoft.Graph.Beta.ApplicationTemplates.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.ApplicationTemplates.Count;
-using MicrosoftGraphSdk.ApplicationTemplates.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.ApplicationTemplates {
+namespace Microsoft.Graph.Beta.ApplicationTemplates {
     /// <summary>Provides operations to manage the collection of applicationTemplate entities.</summary>
     public class ApplicationTemplatesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.ApplicationTemplates {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.applicationTemplates.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.applicationTemplates.item collection</summary>
         public ApplicationTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("applicationTemplate_id", position);

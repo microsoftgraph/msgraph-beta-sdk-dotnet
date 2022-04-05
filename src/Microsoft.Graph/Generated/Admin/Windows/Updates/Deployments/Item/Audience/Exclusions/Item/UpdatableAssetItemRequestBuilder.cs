@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.Item.AddMembers;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.Item.AddMembersById;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.Item.RemoveMembers;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.Item.RemoveMembersById;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models.WindowsUpdates;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.Item.AddMembers;
-using MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.Item.AddMembersById;
-using MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.Item.RemoveMembers;
-using MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.Item.RemoveMembersById;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.Item {
+namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.Item {
     /// <summary>Provides operations to manage the exclusions property of the microsoft.graph.windowsUpdates.deploymentAudience entity.</summary>
     public class UpdatableAssetItemRequestBuilder {
         /// <summary>The addMembers property</summary>

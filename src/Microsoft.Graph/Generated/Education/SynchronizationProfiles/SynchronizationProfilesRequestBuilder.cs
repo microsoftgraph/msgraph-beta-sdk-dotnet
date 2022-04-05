@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Education.SynchronizationProfiles.Count;
+using Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Education.SynchronizationProfiles.Count;
-using MicrosoftGraphSdk.Education.SynchronizationProfiles.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Education.SynchronizationProfiles {
+namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles {
     /// <summary>Provides operations to manage the synchronizationProfiles property of the microsoft.graph.educationRoot entity.</summary>
     public class SynchronizationProfilesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Education.SynchronizationProfiles {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.education.synchronizationProfiles.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.education.synchronizationProfiles.item collection</summary>
         public EducationSynchronizationProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationSynchronizationProfile_id", position);

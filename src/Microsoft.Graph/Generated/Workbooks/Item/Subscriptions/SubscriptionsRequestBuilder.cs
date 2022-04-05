@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Workbooks.Item.Subscriptions.Count;
+using Microsoft.Graph.Beta.Workbooks.Item.Subscriptions.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Workbooks.Item.Subscriptions.Count;
-using MicrosoftGraphSdk.Workbooks.Item.Subscriptions.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Workbooks.Item.Subscriptions {
+namespace Microsoft.Graph.Beta.Workbooks.Item.Subscriptions {
     /// <summary>Provides operations to manage the subscriptions property of the microsoft.graph.driveItem entity.</summary>
     public class SubscriptionsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Subscriptions {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.workbooks.item.subscriptions.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.workbooks.item.subscriptions.item collection</summary>
         public SubscriptionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("subscription_id", position);

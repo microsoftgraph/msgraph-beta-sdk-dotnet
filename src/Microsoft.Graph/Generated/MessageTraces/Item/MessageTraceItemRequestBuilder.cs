@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.MessageTraces.Item.Recipients;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.MessageTraces.Item.Recipients;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.MessageTraces.Item {
+namespace Microsoft.Graph.Beta.MessageTraces.Item {
     /// <summary>Provides operations to manage the collection of messageTrace entities.</summary>
     public class MessageTraceItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

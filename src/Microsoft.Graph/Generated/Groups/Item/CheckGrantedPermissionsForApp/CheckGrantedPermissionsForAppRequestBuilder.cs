@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.CheckGrantedPermissionsForApp {
+namespace Microsoft.Graph.Beta.Groups.Item.CheckGrantedPermissionsForApp {
     /// <summary>Provides operations to call the checkGrantedPermissionsForApp method.</summary>
     public class CheckGrantedPermissionsForAppRequestBuilder {
         /// <summary>Path parameters for the request</summary>

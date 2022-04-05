@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakeEligible;
+using Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakePermanent;
+using Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.PrivilegedRoleAssignments.Item.MakeEligible;
-using MicrosoftGraphSdk.PrivilegedRoleAssignments.Item.MakePermanent;
-using MicrosoftGraphSdk.PrivilegedRoleAssignments.Item.RoleInfo;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.PrivilegedRoleAssignments.Item {
+namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item {
     /// <summary>Provides operations to manage the collection of privilegedRoleAssignment entities.</summary>
     public class PrivilegedRoleAssignmentItemRequestBuilder {
         /// <summary>The makeEligible property</summary>

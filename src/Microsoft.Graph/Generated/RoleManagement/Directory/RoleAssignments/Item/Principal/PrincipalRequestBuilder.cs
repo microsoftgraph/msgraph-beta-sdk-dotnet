@@ -1,14 +1,14 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.RoleManagement.Directory.RoleAssignments.Item.Principal {
+namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleAssignments.Item.Principal {
     /// <summary>Provides operations to manage the principal property of the microsoft.graph.unifiedRoleAssignment entity.</summary>
     public class PrincipalRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.TransitiveReports.Count;
+using Microsoft.Graph.Beta.Me.TransitiveReports.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.TransitiveReports.Count;
-using MicrosoftGraphSdk.Me.TransitiveReports.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.TransitiveReports {
+namespace Microsoft.Graph.Beta.Me.TransitiveReports {
     /// <summary>Provides operations to manage the transitiveReports property of the microsoft.graph.user entity.</summary>
     public class TransitiveReportsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.TransitiveReports {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.transitiveReports.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.transitiveReports.item collection</summary>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryObject_id", position);

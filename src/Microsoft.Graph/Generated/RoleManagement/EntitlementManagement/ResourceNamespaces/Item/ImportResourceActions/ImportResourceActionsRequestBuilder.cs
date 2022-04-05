@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement.ResourceNamespaces.Item.ImportResourceActions {
+namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceNamespaces.Item.ImportResourceActions {
     /// <summary>Provides operations to call the importResourceActions method.</summary>
     public class ImportResourceActionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

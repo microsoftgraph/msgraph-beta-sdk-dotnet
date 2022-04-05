@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Teams.Item.InstalledApps.Item.Upgrade {
+namespace Microsoft.Graph.Beta.Teams.Item.InstalledApps.Item.Upgrade {
     /// <summary>Provides operations to call the upgrade method.</summary>
     public class UpgradeRequestBuilder {
         /// <summary>Path parameters for the request</summary>

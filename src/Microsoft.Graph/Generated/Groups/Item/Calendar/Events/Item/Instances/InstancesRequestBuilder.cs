@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Groups.Item.Calendar.Events.Item.Instances.Count;
+using Microsoft.Graph.Beta.Groups.Item.Calendar.Events.Item.Instances.Delta;
+using Microsoft.Graph.Beta.Groups.Item.Calendar.Events.Item.Instances.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Groups.Item.Calendar.Events.Item.Instances.Count;
-using MicrosoftGraphSdk.Groups.Item.Calendar.Events.Item.Instances.Delta;
-using MicrosoftGraphSdk.Groups.Item.Calendar.Events.Item.Instances.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Calendar.Events.Item.Instances {
+namespace Microsoft.Graph.Beta.Groups.Item.Calendar.Events.Item.Instances {
     /// <summary>Provides operations to manage the instances property of the microsoft.graph.event entity.</summary>
     public class InstancesRequestBuilder {
         /// <summary>The count property</summary>
@@ -24,11 +24,11 @@ namespace MicrosoftGraphSdk.Groups.Item.Calendar.Events.Item.Instances {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.calendar.events.item.instances.item collection</summary>
-        public MicrosoftGraphSdk.Groups.Item.Calendar.Events.Item.Instances.Item.EventItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.groups.item.calendar.events.item.instances.item collection</summary>
+        public Microsoft.Graph.Beta.Groups.Item.Calendar.Events.Item.Instances.Item.EventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("event_id1", position);
-            return new MicrosoftGraphSdk.Groups.Item.Calendar.Events.Item.Instances.Item.EventItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new Microsoft.Graph.Beta.Groups.Item.Calendar.Events.Item.Instances.Item.EventItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new InstancesRequestBuilder and sets the default values.

@@ -1,23 +1,23 @@
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.AcceptRecommendations;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.ApplyDecisions;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.BatchRecordDecisions;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.ContactedReviewers;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Definition;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.ResetDecisions;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.SendReminder;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stop;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.AcceptRecommendations;
-using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.ApplyDecisions;
-using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.BatchRecordDecisions;
-using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.ContactedReviewers;
-using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Definition;
-using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.ResetDecisions;
-using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.SendReminder;
-using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages;
-using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stop;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance {
+namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance {
     /// <summary>Provides operations to manage the instance property of the microsoft.graph.accessReviewInstanceDecisionItem entity.</summary>
     public class InstanceRequestBuilder {
         /// <summary>The acceptRecommendations property</summary>

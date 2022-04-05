@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleDefinitions.Item.InheritsPermissionsFrom.Count;
+using Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleDefinitions.Item.InheritsPermissionsFrom.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.RoleManagement.DeviceManagement.RoleDefinitions.Item.InheritsPermissionsFrom.Count;
-using MicrosoftGraphSdk.RoleManagement.DeviceManagement.RoleDefinitions.Item.InheritsPermissionsFrom.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.RoleManagement.DeviceManagement.RoleDefinitions.Item.InheritsPermissionsFrom {
+namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleDefinitions.Item.InheritsPermissionsFrom {
     /// <summary>Provides operations to manage the inheritsPermissionsFrom property of the microsoft.graph.unifiedRoleDefinition entity.</summary>
     public class InheritsPermissionsFromRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,11 +23,11 @@ namespace MicrosoftGraphSdk.RoleManagement.DeviceManagement.RoleDefinitions.Item
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.roleManagement.deviceManagement.roleDefinitions.item.inheritsPermissionsFrom.item collection</summary>
-        public MicrosoftGraphSdk.RoleManagement.DeviceManagement.RoleDefinitions.Item.InheritsPermissionsFrom.Item.UnifiedRoleDefinitionItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.roleManagement.deviceManagement.roleDefinitions.item.inheritsPermissionsFrom.item collection</summary>
+        public Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleDefinitions.Item.InheritsPermissionsFrom.Item.UnifiedRoleDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleDefinition_id1", position);
-            return new MicrosoftGraphSdk.RoleManagement.DeviceManagement.RoleDefinitions.Item.InheritsPermissionsFrom.Item.UnifiedRoleDefinitionItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleDefinitions.Item.InheritsPermissionsFrom.Item.UnifiedRoleDefinitionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new InheritsPermissionsFromRequestBuilder and sets the default values.

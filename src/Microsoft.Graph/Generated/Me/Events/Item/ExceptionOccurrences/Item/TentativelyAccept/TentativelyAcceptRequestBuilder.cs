@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Events.Item.ExceptionOccurrences.Item.TentativelyAccept {
+namespace Microsoft.Graph.Beta.Me.Events.Item.ExceptionOccurrences.Item.TentativelyAccept {
     /// <summary>Provides operations to call the tentativelyAccept method.</summary>
     public class TentativelyAcceptRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.Drives.Item.Items.Item.Children.Count;
+using Microsoft.Graph.Beta.Users.Item.Drives.Item.Items.Item.Children.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.Drives.Item.Items.Item.Children.Count;
-using MicrosoftGraphSdk.Users.Item.Drives.Item.Items.Item.Children.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Drives.Item.Items.Item.Children {
+namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.Items.Item.Children {
     /// <summary>Provides operations to manage the children property of the microsoft.graph.driveItem entity.</summary>
     public class ChildrenRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,11 +23,11 @@ namespace MicrosoftGraphSdk.Users.Item.Drives.Item.Items.Item.Children {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.drives.item.items.item.children.item collection</summary>
-        public MicrosoftGraphSdk.Users.Item.Drives.Item.Items.Item.Children.Item.DriveItemItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.drives.item.items.item.children.item collection</summary>
+        public Microsoft.Graph.Beta.Users.Item.Drives.Item.Items.Item.Children.Item.DriveItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("driveItem_id1", position);
-            return new MicrosoftGraphSdk.Users.Item.Drives.Item.Items.Item.Children.Item.DriveItemItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new Microsoft.Graph.Beta.Users.Item.Drives.Item.Items.Item.Children.Item.DriveItemItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ChildrenRequestBuilder and sets the default values.

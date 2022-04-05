@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Reports.GetOneDriveActivityUserDetailWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetOneDriveActivityUserDetailWithPeriod {
     /// <summary>Provides operations to call the getOneDriveActivityUserDetail method.</summary>
     public class GetOneDriveActivityUserDetailWithPeriodResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

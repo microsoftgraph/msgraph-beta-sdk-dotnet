@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.Schema.Directories.Item.Discover;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.Item.Schema.Directories.Item.Discover;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.Item.Schema.Directories.Item {
+namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.Schema.Directories.Item {
     /// <summary>Provides operations to manage the directories property of the microsoft.graph.synchronizationSchema entity.</summary>
     public class DirectoryDefinitionItemRequestBuilder {
         /// <summary>The discover property</summary>

@@ -1,14 +1,14 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Education.Schools.Item.Users.Item {
+namespace Microsoft.Graph.Beta.Education.Schools.Item.Users.Item {
     /// <summary>Provides operations to manage the users property of the microsoft.graph.educationSchool entity.</summary>
     public class EducationUserItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.Authentication.SoftwareOathMethods.Count;
+using Microsoft.Graph.Beta.Users.Item.Authentication.SoftwareOathMethods.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.Authentication.SoftwareOathMethods.Count;
-using MicrosoftGraphSdk.Users.Item.Authentication.SoftwareOathMethods.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Authentication.SoftwareOathMethods {
+namespace Microsoft.Graph.Beta.Users.Item.Authentication.SoftwareOathMethods {
     /// <summary>Provides operations to manage the softwareOathMethods property of the microsoft.graph.authentication entity.</summary>
     public class SoftwareOathMethodsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.SoftwareOathMethods {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.authentication.softwareOathMethods.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.authentication.softwareOathMethods.item collection</summary>
         public SoftwareOathAuthenticationMethodItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("softwareOathAuthenticationMethod_id", position);

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.ScopedRoleMemberships.Count;
+using Microsoft.Graph.Beta.ScopedRoleMemberships.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.ScopedRoleMemberships.Count;
-using MicrosoftGraphSdk.ScopedRoleMemberships.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.ScopedRoleMemberships {
+namespace Microsoft.Graph.Beta.ScopedRoleMemberships {
     /// <summary>Provides operations to manage the collection of scopedRoleMembership entities.</summary>
     public class ScopedRoleMembershipsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.ScopedRoleMemberships {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.scopedRoleMemberships.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.scopedRoleMemberships.item collection</summary>
         public ScopedRoleMembershipItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("scopedRoleMembership_id", position);

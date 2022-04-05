@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Unarchive {
+namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Unarchive {
     /// <summary>Provides operations to call the unarchive method.</summary>
     public class UnarchiveRequestBuilder {
         /// <summary>Path parameters for the request</summary>

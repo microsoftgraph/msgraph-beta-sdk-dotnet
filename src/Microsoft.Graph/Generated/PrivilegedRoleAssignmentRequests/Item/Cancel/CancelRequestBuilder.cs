@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.PrivilegedRoleAssignmentRequests.Item.Cancel {
+namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.Item.Cancel {
     /// <summary>Provides operations to call the cancel method.</summary>
     public class CancelRequestBuilder {
         /// <summary>Path parameters for the request</summary>

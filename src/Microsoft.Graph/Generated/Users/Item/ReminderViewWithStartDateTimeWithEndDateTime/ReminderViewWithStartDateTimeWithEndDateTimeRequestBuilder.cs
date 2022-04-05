@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.ReminderViewWithStartDateTimeWithEndDateTime {
+namespace Microsoft.Graph.Beta.Users.Item.ReminderViewWithStartDateTimeWithEndDateTime {
     /// <summary>Provides operations to call the reminderView method.</summary>
     public class ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder {
         /// <summary>Path parameters for the request</summary>

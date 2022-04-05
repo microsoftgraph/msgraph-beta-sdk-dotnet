@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.GovernanceResources.Register {
+namespace Microsoft.Graph.Beta.GovernanceResources.Register {
     /// <summary>Provides operations to call the register method.</summary>
     public class RegisterRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

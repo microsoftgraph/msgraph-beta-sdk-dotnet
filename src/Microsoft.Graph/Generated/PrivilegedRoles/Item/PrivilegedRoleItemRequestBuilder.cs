@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.PrivilegedRoles.Item.Assignments;
+using Microsoft.Graph.Beta.PrivilegedRoles.Item.SelfActivate;
+using Microsoft.Graph.Beta.PrivilegedRoles.Item.SelfDeactivate;
+using Microsoft.Graph.Beta.PrivilegedRoles.Item.Settings;
+using Microsoft.Graph.Beta.PrivilegedRoles.Item.Summary;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.PrivilegedRoles.Item.Assignments;
-using MicrosoftGraphSdk.PrivilegedRoles.Item.SelfActivate;
-using MicrosoftGraphSdk.PrivilegedRoles.Item.SelfDeactivate;
-using MicrosoftGraphSdk.PrivilegedRoles.Item.Settings;
-using MicrosoftGraphSdk.PrivilegedRoles.Item.Summary;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.PrivilegedRoles.Item {
+namespace Microsoft.Graph.Beta.PrivilegedRoles.Item {
     /// <summary>Provides operations to manage the collection of privilegedRole entities.</summary>
     public class PrivilegedRoleItemRequestBuilder {
         /// <summary>The assignments property</summary>

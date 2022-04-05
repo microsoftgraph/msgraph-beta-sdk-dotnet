@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetReportFilters {
+namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetReportFilters {
     /// <summary>Provides operations to call the getReportFilters method.</summary>
     public class GetReportFiltersRequestBuilder {
         /// <summary>Path parameters for the request</summary>

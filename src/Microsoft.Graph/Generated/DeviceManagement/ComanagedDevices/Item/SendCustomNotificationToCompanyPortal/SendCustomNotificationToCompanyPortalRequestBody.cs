@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.SendCustomNotificationToCompanyPortal {
+namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SendCustomNotificationToCompanyPortal {
     /// <summary>Provides operations to call the sendCustomNotificationToCompanyPortal method.</summary>
     public class SendCustomNotificationToCompanyPortalRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

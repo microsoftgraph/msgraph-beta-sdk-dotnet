@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.UserAttributeAssignments.Count;
+using Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.UserAttributeAssignments.GetOrder;
+using Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.UserAttributeAssignments.Item;
+using Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.UserAttributeAssignments.SetOrder;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Identity.B2xUserFlows.Item.UserAttributeAssignments.Count;
-using MicrosoftGraphSdk.Identity.B2xUserFlows.Item.UserAttributeAssignments.GetOrder;
-using MicrosoftGraphSdk.Identity.B2xUserFlows.Item.UserAttributeAssignments.Item;
-using MicrosoftGraphSdk.Identity.B2xUserFlows.Item.UserAttributeAssignments.SetOrder;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Identity.B2xUserFlows.Item.UserAttributeAssignments {
+namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.UserAttributeAssignments {
     /// <summary>Provides operations to manage the userAttributeAssignments property of the microsoft.graph.b2xIdentityUserFlow entity.</summary>
     public class UserAttributeAssignmentsRequestBuilder {
         /// <summary>The count property</summary>
@@ -29,7 +29,7 @@ namespace MicrosoftGraphSdk.Identity.B2xUserFlows.Item.UserAttributeAssignments 
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.identity.b2xUserFlows.item.userAttributeAssignments.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.identity.b2xUserFlows.item.userAttributeAssignments.item collection</summary>
         public IdentityUserFlowAttributeAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("identityUserFlowAttributeAssignment_id", position);

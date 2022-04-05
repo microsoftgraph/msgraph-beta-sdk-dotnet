@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Item.History;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.IdentityProtection.RiskyServicePrincipals.Item.History;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.IdentityProtection.RiskyServicePrincipals.Item {
+namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Item {
     /// <summary>Provides operations to manage the riskyServicePrincipals property of the microsoft.graph.identityProtectionRoot entity.</summary>
     public class RiskyServicePrincipalItemRequestBuilder {
         /// <summary>The history property</summary>

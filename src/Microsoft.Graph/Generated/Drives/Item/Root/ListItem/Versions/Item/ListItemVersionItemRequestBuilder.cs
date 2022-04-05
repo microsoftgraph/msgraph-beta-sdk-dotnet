@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Drives.Item.Root.ListItem.Versions.Item.Fields;
+using Microsoft.Graph.Beta.Drives.Item.Root.ListItem.Versions.Item.RestoreVersion;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Drives.Item.Root.ListItem.Versions.Item.Fields;
-using MicrosoftGraphSdk.Drives.Item.Root.ListItem.Versions.Item.RestoreVersion;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Drives.Item.Root.ListItem.Versions.Item {
+namespace Microsoft.Graph.Beta.Drives.Item.Root.ListItem.Versions.Item {
     /// <summary>Provides operations to manage the versions property of the microsoft.graph.listItem entity.</summary>
     public class ListItemVersionItemRequestBuilder {
         /// <summary>The fields property</summary>

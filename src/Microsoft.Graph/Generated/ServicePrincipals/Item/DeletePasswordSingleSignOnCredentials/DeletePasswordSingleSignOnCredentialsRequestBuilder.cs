@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.ServicePrincipals.Item.DeletePasswordSingleSignOnCredentials {
+namespace Microsoft.Graph.Beta.ServicePrincipals.Item.DeletePasswordSingleSignOnCredentials {
     /// <summary>Provides operations to call the deletePasswordSingleSignOnCredentials method.</summary>
     public class DeletePasswordSingleSignOnCredentialsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,0 +1,64 @@
+using Microsoft.Kiota.Abstractions.Serialization;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+namespace Microsoft.Graph.Beta.Models {
+    public class UriClickSecurityState : IAdditionalDataHolder, IParsable {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The clickAction property</summary>
+        public string ClickAction { get; set; }
+        /// <summary>The clickDateTime property</summary>
+        public DateTimeOffset? ClickDateTime { get; set; }
+        /// <summary>The id property</summary>
+        public string Id { get; set; }
+        /// <summary>The sourceId property</summary>
+        public string SourceId { get; set; }
+        /// <summary>The uriDomain property</summary>
+        public string UriDomain { get; set; }
+        /// <summary>The verdict property</summary>
+        public string Verdict { get; set; }
+        /// <summary>
+        /// Instantiates a new uriClickSecurityState and sets the default values.
+        /// </summary>
+        public UriClickSecurityState() {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static UriClickSecurityState CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new UriClickSecurityState();
+        }
+        /// <summary>
+        /// The deserialization information for the current model
+        /// </summary>
+        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
+            return new Dictionary<string, Action<T, IParseNode>> {
+                {"clickAction", (o,n) => { (o as UriClickSecurityState).ClickAction = n.GetStringValue(); } },
+                {"clickDateTime", (o,n) => { (o as UriClickSecurityState).ClickDateTime = n.GetDateTimeOffsetValue(); } },
+                {"id", (o,n) => { (o as UriClickSecurityState).Id = n.GetStringValue(); } },
+                {"sourceId", (o,n) => { (o as UriClickSecurityState).SourceId = n.GetStringValue(); } },
+                {"uriDomain", (o,n) => { (o as UriClickSecurityState).UriDomain = n.GetStringValue(); } },
+                {"verdict", (o,n) => { (o as UriClickSecurityState).Verdict = n.GetStringValue(); } },
+            };
+        }
+        /// <summary>
+        /// Serializes information the current object
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
+        /// </summary>
+        public void Serialize(ISerializationWriter writer) {
+            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("clickAction", ClickAction);
+            writer.WriteDateTimeOffsetValue("clickDateTime", ClickDateTime);
+            writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("sourceId", SourceId);
+            writer.WriteStringValue("uriDomain", UriDomain);
+            writer.WriteStringValue("verdict", Verdict);
+            writer.WriteAdditionalData(AdditionalData);
+        }
+    }
+}

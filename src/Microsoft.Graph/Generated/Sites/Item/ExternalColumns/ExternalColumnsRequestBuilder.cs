@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Sites.Item.ExternalColumns.Count;
+using Microsoft.Graph.Beta.Sites.Item.ExternalColumns.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Sites.Item.ExternalColumns.Count;
-using MicrosoftGraphSdk.Sites.Item.ExternalColumns.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Sites.Item.ExternalColumns {
+namespace Microsoft.Graph.Beta.Sites.Item.ExternalColumns {
     /// <summary>Provides operations to manage the externalColumns property of the microsoft.graph.site entity.</summary>
     public class ExternalColumnsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Sites.Item.ExternalColumns {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.sites.item.externalColumns.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.sites.item.externalColumns.item collection</summary>
         public ColumnDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("columnDefinition_id", position);

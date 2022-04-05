@@ -1,33 +1,33 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Teams.Item.AllChannels;
+using Microsoft.Graph.Beta.Teams.Item.Archive;
+using Microsoft.Graph.Beta.Teams.Item.Channels;
+using Microsoft.Graph.Beta.Teams.Item.Clone;
+using Microsoft.Graph.Beta.Teams.Item.CompleteMigration;
+using Microsoft.Graph.Beta.Teams.Item.Group;
+using Microsoft.Graph.Beta.Teams.Item.IncomingChannels;
+using Microsoft.Graph.Beta.Teams.Item.InstalledApps;
+using Microsoft.Graph.Beta.Teams.Item.Members;
+using Microsoft.Graph.Beta.Teams.Item.Operations;
+using Microsoft.Graph.Beta.Teams.Item.Owners;
+using Microsoft.Graph.Beta.Teams.Item.PermissionGrants;
+using Microsoft.Graph.Beta.Teams.Item.Photo;
+using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel;
+using Microsoft.Graph.Beta.Teams.Item.Schedule;
+using Microsoft.Graph.Beta.Teams.Item.SendActivityNotification;
+using Microsoft.Graph.Beta.Teams.Item.Tags;
+using Microsoft.Graph.Beta.Teams.Item.Template;
+using Microsoft.Graph.Beta.Teams.Item.Unarchive;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Teams.Item.AllChannels;
-using MicrosoftGraphSdk.Teams.Item.Archive;
-using MicrosoftGraphSdk.Teams.Item.Channels;
-using MicrosoftGraphSdk.Teams.Item.Clone;
-using MicrosoftGraphSdk.Teams.Item.CompleteMigration;
-using MicrosoftGraphSdk.Teams.Item.Group;
-using MicrosoftGraphSdk.Teams.Item.IncomingChannels;
-using MicrosoftGraphSdk.Teams.Item.InstalledApps;
-using MicrosoftGraphSdk.Teams.Item.Members;
-using MicrosoftGraphSdk.Teams.Item.Operations;
-using MicrosoftGraphSdk.Teams.Item.Owners;
-using MicrosoftGraphSdk.Teams.Item.PermissionGrants;
-using MicrosoftGraphSdk.Teams.Item.Photo;
-using MicrosoftGraphSdk.Teams.Item.PrimaryChannel;
-using MicrosoftGraphSdk.Teams.Item.Schedule;
-using MicrosoftGraphSdk.Teams.Item.SendActivityNotification;
-using MicrosoftGraphSdk.Teams.Item.Tags;
-using MicrosoftGraphSdk.Teams.Item.Template;
-using MicrosoftGraphSdk.Teams.Item.Unarchive;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Teams.Item {
+namespace Microsoft.Graph.Beta.Teams.Item {
     /// <summary>Provides operations to manage the collection of team entities.</summary>
     public class TeamItemRequestBuilder {
         /// <summary>The allChannels property</summary>
@@ -181,7 +181,7 @@ namespace MicrosoftGraphSdk.Teams.Item {
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreatePatchRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.Team body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
+        public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.Team body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -216,13 +216,13 @@ namespace MicrosoftGraphSdk.Teams.Item {
         /// <param name="queryParameters">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Team> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Team> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(queryParameters, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Team>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Team.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Team>(requestInfo, Microsoft.Graph.Beta.Models.Team.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update entity in teams
@@ -232,7 +232,7 @@ namespace MicrosoftGraphSdk.Teams.Item {
         /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Team body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(Microsoft.Graph.Beta.Models.Team body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

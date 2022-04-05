@@ -1,0 +1,124 @@
+using Microsoft.Kiota.Abstractions.Serialization;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+namespace Microsoft.Graph.Beta.Models {
+    public class Customer : Entity, IParsable {
+        /// <summary>The address property</summary>
+        public PostalAddressType Address { get; set; }
+        /// <summary>The blocked property</summary>
+        public string Blocked { get; set; }
+        /// <summary>The currency property</summary>
+        public Microsoft.Graph.Beta.Models.Currency Currency { get; set; }
+        /// <summary>The currencyCode property</summary>
+        public string CurrencyCode { get; set; }
+        /// <summary>The currencyId property</summary>
+        public string CurrencyId { get; set; }
+        /// <summary>The displayName property</summary>
+        public string DisplayName { get; set; }
+        /// <summary>The email property</summary>
+        public string Email { get; set; }
+        /// <summary>The lastModifiedDateTime property</summary>
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        /// <summary>The number property</summary>
+        public string Number { get; set; }
+        /// <summary>The paymentMethod property</summary>
+        public Microsoft.Graph.Beta.Models.PaymentMethod PaymentMethod { get; set; }
+        /// <summary>The paymentMethodId property</summary>
+        public string PaymentMethodId { get; set; }
+        /// <summary>The paymentTerm property</summary>
+        public Microsoft.Graph.Beta.Models.PaymentTerm PaymentTerm { get; set; }
+        /// <summary>The paymentTermsId property</summary>
+        public string PaymentTermsId { get; set; }
+        /// <summary>The phoneNumber property</summary>
+        public string PhoneNumber { get; set; }
+        /// <summary>The picture property</summary>
+        public List<Microsoft.Graph.Beta.Models.Picture> Picture { get; set; }
+        /// <summary>The shipmentMethod property</summary>
+        public Microsoft.Graph.Beta.Models.ShipmentMethod ShipmentMethod { get; set; }
+        /// <summary>The shipmentMethodId property</summary>
+        public string ShipmentMethodId { get; set; }
+        /// <summary>The taxAreaDisplayName property</summary>
+        public string TaxAreaDisplayName { get; set; }
+        /// <summary>The taxAreaId property</summary>
+        public string TaxAreaId { get; set; }
+        /// <summary>The taxLiable property</summary>
+        public bool? TaxLiable { get; set; }
+        /// <summary>The taxRegistrationNumber property</summary>
+        public string TaxRegistrationNumber { get; set; }
+        /// <summary>The type property</summary>
+        public string Type { get; set; }
+        /// <summary>The website property</summary>
+        public string Website { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new Customer CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Customer();
+        }
+        /// <summary>
+        /// The deserialization information for the current model
+        /// </summary>
+        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
+            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
+                {"address", (o,n) => { (o as Customer).Address = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
+                {"blocked", (o,n) => { (o as Customer).Blocked = n.GetStringValue(); } },
+                {"currency", (o,n) => { (o as Customer).Currency = n.GetObjectValue<Microsoft.Graph.Beta.Models.Currency>(Microsoft.Graph.Beta.Models.Currency.CreateFromDiscriminatorValue); } },
+                {"currencyCode", (o,n) => { (o as Customer).CurrencyCode = n.GetStringValue(); } },
+                {"currencyId", (o,n) => { (o as Customer).CurrencyId = n.GetStringValue(); } },
+                {"displayName", (o,n) => { (o as Customer).DisplayName = n.GetStringValue(); } },
+                {"email", (o,n) => { (o as Customer).Email = n.GetStringValue(); } },
+                {"lastModifiedDateTime", (o,n) => { (o as Customer).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"number", (o,n) => { (o as Customer).Number = n.GetStringValue(); } },
+                {"paymentMethod", (o,n) => { (o as Customer).PaymentMethod = n.GetObjectValue<Microsoft.Graph.Beta.Models.PaymentMethod>(Microsoft.Graph.Beta.Models.PaymentMethod.CreateFromDiscriminatorValue); } },
+                {"paymentMethodId", (o,n) => { (o as Customer).PaymentMethodId = n.GetStringValue(); } },
+                {"paymentTerm", (o,n) => { (o as Customer).PaymentTerm = n.GetObjectValue<Microsoft.Graph.Beta.Models.PaymentTerm>(Microsoft.Graph.Beta.Models.PaymentTerm.CreateFromDiscriminatorValue); } },
+                {"paymentTermsId", (o,n) => { (o as Customer).PaymentTermsId = n.GetStringValue(); } },
+                {"phoneNumber", (o,n) => { (o as Customer).PhoneNumber = n.GetStringValue(); } },
+                {"picture", (o,n) => { (o as Customer).Picture = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Picture>(Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue).ToList(); } },
+                {"shipmentMethod", (o,n) => { (o as Customer).ShipmentMethod = n.GetObjectValue<Microsoft.Graph.Beta.Models.ShipmentMethod>(Microsoft.Graph.Beta.Models.ShipmentMethod.CreateFromDiscriminatorValue); } },
+                {"shipmentMethodId", (o,n) => { (o as Customer).ShipmentMethodId = n.GetStringValue(); } },
+                {"taxAreaDisplayName", (o,n) => { (o as Customer).TaxAreaDisplayName = n.GetStringValue(); } },
+                {"taxAreaId", (o,n) => { (o as Customer).TaxAreaId = n.GetStringValue(); } },
+                {"taxLiable", (o,n) => { (o as Customer).TaxLiable = n.GetBoolValue(); } },
+                {"taxRegistrationNumber", (o,n) => { (o as Customer).TaxRegistrationNumber = n.GetStringValue(); } },
+                {"type", (o,n) => { (o as Customer).Type = n.GetStringValue(); } },
+                {"website", (o,n) => { (o as Customer).Website = n.GetStringValue(); } },
+            };
+        }
+        /// <summary>
+        /// Serializes information the current object
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
+        /// </summary>
+        public new void Serialize(ISerializationWriter writer) {
+            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            base.Serialize(writer);
+            writer.WriteObjectValue<PostalAddressType>("address", Address);
+            writer.WriteStringValue("blocked", Blocked);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Currency>("currency", Currency);
+            writer.WriteStringValue("currencyCode", CurrencyCode);
+            writer.WriteStringValue("currencyId", CurrencyId);
+            writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteStringValue("email", Email);
+            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteStringValue("number", Number);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PaymentMethod>("paymentMethod", PaymentMethod);
+            writer.WriteStringValue("paymentMethodId", PaymentMethodId);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PaymentTerm>("paymentTerm", PaymentTerm);
+            writer.WriteStringValue("paymentTermsId", PaymentTermsId);
+            writer.WriteStringValue("phoneNumber", PhoneNumber);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Picture>("picture", Picture);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ShipmentMethod>("shipmentMethod", ShipmentMethod);
+            writer.WriteStringValue("shipmentMethodId", ShipmentMethodId);
+            writer.WriteStringValue("taxAreaDisplayName", TaxAreaDisplayName);
+            writer.WriteStringValue("taxAreaId", TaxAreaId);
+            writer.WriteBoolValue("taxLiable", TaxLiable);
+            writer.WriteStringValue("taxRegistrationNumber", TaxRegistrationNumber);
+            writer.WriteStringValue("type", Type);
+            writer.WriteStringValue("website", Website);
+        }
+    }
+}

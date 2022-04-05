@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.MoveDevicesToOU {
+namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.MoveDevicesToOU {
     /// <summary>Provides operations to call the moveDevicesToOU method.</summary>
     public class MoveDevicesToOURequestBuilder {
         /// <summary>Path parameters for the request</summary>

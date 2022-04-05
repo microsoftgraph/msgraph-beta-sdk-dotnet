@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetOffice365GroupsActivityFileCountsWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityFileCountsWithPeriod {
     /// <summary>Provides operations to call the getOffice365GroupsActivityFileCounts method.</summary>
     public class GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

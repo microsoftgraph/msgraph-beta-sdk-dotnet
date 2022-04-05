@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Education.SynchronizationProfiles.Item.UploadUrl {
+namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.UploadUrl {
     /// <summary>Provides operations to call the uploadUrl method.</summary>
     public class UploadUrlResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

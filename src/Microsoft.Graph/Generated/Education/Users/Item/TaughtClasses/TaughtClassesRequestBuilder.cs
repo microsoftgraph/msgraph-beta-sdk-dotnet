@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Education.Users.Item.TaughtClasses.Count;
+using Microsoft.Graph.Beta.Education.Users.Item.TaughtClasses.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Education.Users.Item.TaughtClasses.Count;
-using MicrosoftGraphSdk.Education.Users.Item.TaughtClasses.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Education.Users.Item.TaughtClasses {
+namespace Microsoft.Graph.Beta.Education.Users.Item.TaughtClasses {
     /// <summary>Provides operations to manage the taughtClasses property of the microsoft.graph.educationUser entity.</summary>
     public class TaughtClassesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Education.Users.Item.TaughtClasses {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.education.users.item.taughtClasses.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.education.users.item.taughtClasses.item collection</summary>
         public EducationClassItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationClass_id", position);

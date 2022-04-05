@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Count;
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.CreateMigrationReport;
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.GroupPolicyMigrationReports.Count;
-using MicrosoftGraphSdk.DeviceManagement.GroupPolicyMigrationReports.CreateMigrationReport;
-using MicrosoftGraphSdk.DeviceManagement.GroupPolicyMigrationReports.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyMigrationReports {
+namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports {
     /// <summary>Provides operations to manage the groupPolicyMigrationReports property of the microsoft.graph.deviceManagement entity.</summary>
     public class GroupPolicyMigrationReportsRequestBuilder {
         /// <summary>The count property</summary>
@@ -28,7 +28,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyMigrationReports {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.groupPolicyMigrationReports.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.groupPolicyMigrationReports.item collection</summary>
         public GroupPolicyMigrationReportItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("groupPolicyMigrationReport_id", position);

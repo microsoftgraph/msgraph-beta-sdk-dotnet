@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.DataClassification.SensitivityLabels.Item.Sublabels.Count;
+using Microsoft.Graph.Beta.DataClassification.SensitivityLabels.Item.Sublabels.Evaluate;
+using Microsoft.Graph.Beta.DataClassification.SensitivityLabels.Item.Sublabels.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DataClassification.SensitivityLabels.Item.Sublabels.Count;
-using MicrosoftGraphSdk.DataClassification.SensitivityLabels.Item.Sublabels.Evaluate;
-using MicrosoftGraphSdk.DataClassification.SensitivityLabels.Item.Sublabels.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DataClassification.SensitivityLabels.Item.Sublabels {
+namespace Microsoft.Graph.Beta.DataClassification.SensitivityLabels.Item.Sublabels {
     /// <summary>Provides operations to manage the sublabels property of the microsoft.graph.sensitivityLabel entity.</summary>
     public class SublabelsRequestBuilder {
         /// <summary>The count property</summary>
@@ -28,11 +28,11 @@ namespace MicrosoftGraphSdk.DataClassification.SensitivityLabels.Item.Sublabels 
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.dataClassification.sensitivityLabels.item.sublabels.item collection</summary>
-        public MicrosoftGraphSdk.DataClassification.SensitivityLabels.Item.Sublabels.Item.SensitivityLabelItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.dataClassification.sensitivityLabels.item.sublabels.item collection</summary>
+        public Microsoft.Graph.Beta.DataClassification.SensitivityLabels.Item.Sublabels.Item.SensitivityLabelItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("sensitivityLabel_id1", position);
-            return new MicrosoftGraphSdk.DataClassification.SensitivityLabels.Item.Sublabels.Item.SensitivityLabelItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new Microsoft.Graph.Beta.DataClassification.SensitivityLabels.Item.Sublabels.Item.SensitivityLabelItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SublabelsRequestBuilder and sets the default values.

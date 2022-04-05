@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.InformationProtection.ThreatAssessmentRequests.Item.Results.Count;
+using Microsoft.Graph.Beta.InformationProtection.ThreatAssessmentRequests.Item.Results.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.InformationProtection.ThreatAssessmentRequests.Item.Results.Count;
-using MicrosoftGraphSdk.InformationProtection.ThreatAssessmentRequests.Item.Results.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.InformationProtection.ThreatAssessmentRequests.Item.Results {
+namespace Microsoft.Graph.Beta.InformationProtection.ThreatAssessmentRequests.Item.Results {
     /// <summary>Provides operations to manage the results property of the microsoft.graph.threatAssessmentRequest entity.</summary>
     public class ResultsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.InformationProtection.ThreatAssessmentRequests.Item.
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.informationProtection.threatAssessmentRequests.item.results.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.informationProtection.threatAssessmentRequests.item.results.item collection</summary>
         public ThreatAssessmentResultItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("threatAssessmentResult_id", position);

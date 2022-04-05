@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.Item.Replies.Count;
+using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.Item.Replies.Delta;
+using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.Item.Replies.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Teams.Item.Channels.Item.Messages.Item.Replies.Count;
-using MicrosoftGraphSdk.Teams.Item.Channels.Item.Messages.Item.Replies.Delta;
-using MicrosoftGraphSdk.Teams.Item.Channels.Item.Messages.Item.Replies.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Teams.Item.Channels.Item.Messages.Item.Replies {
+namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.Item.Replies {
     /// <summary>Provides operations to manage the replies property of the microsoft.graph.chatMessage entity.</summary>
     public class RepliesRequestBuilder {
         /// <summary>The count property</summary>
@@ -24,11 +24,11 @@ namespace MicrosoftGraphSdk.Teams.Item.Channels.Item.Messages.Item.Replies {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.teams.item.channels.item.messages.item.replies.item collection</summary>
-        public MicrosoftGraphSdk.Teams.Item.Channels.Item.Messages.Item.Replies.Item.ChatMessageItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.teams.item.channels.item.messages.item.replies.item collection</summary>
+        public Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.Item.Replies.Item.ChatMessageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("chatMessage_id1", position);
-            return new MicrosoftGraphSdk.Teams.Item.Channels.Item.Messages.Item.Replies.Item.ChatMessageItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.Item.Replies.Item.ChatMessageItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RepliesRequestBuilder and sets the default values.

@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.Assignments;
+using Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.Settings;
+using Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.Summary;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.PrivilegedRoleAssignments.Item.RoleInfo.Assignments;
-using MicrosoftGraphSdk.PrivilegedRoleAssignments.Item.RoleInfo.Settings;
-using MicrosoftGraphSdk.PrivilegedRoleAssignments.Item.RoleInfo.Summary;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.PrivilegedRoleAssignments.Item.RoleInfo {
+namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo {
     /// <summary>Provides operations to manage the roleInfo property of the microsoft.graph.privilegedRoleAssignment entity.</summary>
     public class RoleInfoRequestBuilder {
         /// <summary>The assignments property</summary>

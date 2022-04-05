@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceManagement.WindowsInformationProtectionNetworkLearningSummaries.Count;
+using Microsoft.Graph.Beta.DeviceManagement.WindowsInformationProtectionNetworkLearningSummaries.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.WindowsInformationProtectionNetworkLearningSummaries.Count;
-using MicrosoftGraphSdk.DeviceManagement.WindowsInformationProtectionNetworkLearningSummaries.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.WindowsInformationProtectionNetworkLearningSummaries {
+namespace Microsoft.Graph.Beta.DeviceManagement.WindowsInformationProtectionNetworkLearningSummaries {
     /// <summary>Provides operations to manage the windowsInformationProtectionNetworkLearningSummaries property of the microsoft.graph.deviceManagement entity.</summary>
     public class WindowsInformationProtectionNetworkLearningSummariesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsInformationProtectionNetwork
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.windowsInformationProtectionNetworkLearningSummaries.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.windowsInformationProtectionNetworkLearningSummaries.item collection</summary>
         public WindowsInformationProtectionNetworkLearningSummaryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsInformationProtectionNetworkLearningSummary_id", position);

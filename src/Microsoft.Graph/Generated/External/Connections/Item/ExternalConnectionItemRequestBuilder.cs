@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.External.Connections.Item.Groups;
+using Microsoft.Graph.Beta.External.Connections.Item.Items;
+using Microsoft.Graph.Beta.External.Connections.Item.Operations;
+using Microsoft.Graph.Beta.External.Connections.Item.Quota;
+using Microsoft.Graph.Beta.External.Connections.Item.Schema;
+using Microsoft.Graph.Beta.Models.ExternalConnectors;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.External.Connections.Item.Groups;
-using MicrosoftGraphSdk.External.Connections.Item.Items;
-using MicrosoftGraphSdk.External.Connections.Item.Operations;
-using MicrosoftGraphSdk.External.Connections.Item.Quota;
-using MicrosoftGraphSdk.External.Connections.Item.Schema;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.External.Connections.Item {
+namespace Microsoft.Graph.Beta.External.Connections.Item {
     /// <summary>Provides operations to manage the connections property of the microsoft.graph.externalConnectors.external entity.</summary>
     public class ExternalConnectionItemRequestBuilder {
         /// <summary>The groups property</summary>

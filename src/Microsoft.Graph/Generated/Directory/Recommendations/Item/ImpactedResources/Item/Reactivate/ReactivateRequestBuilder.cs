@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Directory.Recommendations.Item.ImpactedResources.Item.Reactivate {
+namespace Microsoft.Graph.Beta.Directory.Recommendations.Item.ImpactedResources.Item.Reactivate {
     /// <summary>Provides operations to call the reactivate method.</summary>
     public class ReactivateRequestBuilder {
         /// <summary>Path parameters for the request</summary>

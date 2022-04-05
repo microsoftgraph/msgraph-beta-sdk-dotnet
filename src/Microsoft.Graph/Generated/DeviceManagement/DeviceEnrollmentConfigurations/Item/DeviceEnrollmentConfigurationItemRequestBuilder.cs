@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.Item.Assign;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.Item.Assignments;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.Item.SetPriority;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.DeviceEnrollmentConfigurations.Item.Assign;
-using MicrosoftGraphSdk.DeviceManagement.DeviceEnrollmentConfigurations.Item.Assignments;
-using MicrosoftGraphSdk.DeviceManagement.DeviceEnrollmentConfigurations.Item.SetPriority;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.DeviceEnrollmentConfigurations.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.Item {
     /// <summary>Provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.deviceManagement entity.</summary>
     public class DeviceEnrollmentConfigurationItemRequestBuilder {
         /// <summary>The assign property</summary>

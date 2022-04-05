@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Sites.Item.Pages.Item.Publish;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Sites.Item.Pages.Item.Publish;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Sites.Item.Pages.Item {
+namespace Microsoft.Graph.Beta.Sites.Item.Pages.Item {
     /// <summary>Provides operations to manage the pages property of the microsoft.graph.site entity.</summary>
     public class SitePageItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

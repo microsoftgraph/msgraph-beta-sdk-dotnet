@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceManagement.Templates.ImportOffice365DeviceConfigurationPolicies {
+namespace Microsoft.Graph.Beta.DeviceManagement.Templates.ImportOffice365DeviceConfigurationPolicies {
     /// <summary>Provides operations to call the importOffice365DeviceConfigurationPolicies method.</summary>
     public class ImportOffice365DeviceConfigurationPoliciesResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

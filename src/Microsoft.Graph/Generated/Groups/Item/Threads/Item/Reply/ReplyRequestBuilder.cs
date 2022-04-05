@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Threads.Item.Reply {
+namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item.Reply {
     /// <summary>Provides operations to call the reply method.</summary>
     public class ReplyRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Groups.Item.Team.PrimaryChannel.DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalName {
+namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalName {
     /// <summary>Provides operations to call the doesUserHaveAccess method.</summary>
     public class DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

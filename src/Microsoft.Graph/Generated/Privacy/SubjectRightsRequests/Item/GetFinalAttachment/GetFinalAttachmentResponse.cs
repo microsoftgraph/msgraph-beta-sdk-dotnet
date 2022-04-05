@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Privacy.SubjectRightsRequests.Item.GetFinalAttachment {
+namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.GetFinalAttachment {
     /// <summary>Provides operations to call the getFinalAttachment method.</summary>
     public class GetFinalAttachmentResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

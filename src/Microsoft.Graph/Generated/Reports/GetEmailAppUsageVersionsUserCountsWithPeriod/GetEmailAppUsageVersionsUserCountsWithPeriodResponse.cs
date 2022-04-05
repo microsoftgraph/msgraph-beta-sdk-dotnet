@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Reports.GetEmailAppUsageVersionsUserCountsWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetEmailAppUsageVersionsUserCountsWithPeriod {
     /// <summary>Provides operations to call the getEmailAppUsageVersionsUserCounts method.</summary>
     public class GetEmailAppUsageVersionsUserCountsWithPeriodResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

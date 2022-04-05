@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models.WindowsUpdates;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.UpdateAudience {
+namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.UpdateAudience {
     /// <summary>Provides operations to call the updateAudience method.</summary>
     public class UpdateAudienceRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>The addExclusions property</summary>

@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Me.Messages.Item.EventMessageRequest.Accept;
+using Microsoft.Graph.Beta.Me.Messages.Item.EventMessageRequest.Decline;
+using Microsoft.Graph.Beta.Me.Messages.Item.EventMessageRequest.TentativelyAccept;
 using Microsoft.Kiota.Abstractions;
-using MicrosoftGraphSdk.Me.Messages.Item.EventMessageRequest.Accept;
-using MicrosoftGraphSdk.Me.Messages.Item.EventMessageRequest.Decline;
-using MicrosoftGraphSdk.Me.Messages.Item.EventMessageRequest.TentativelyAccept;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Messages.Item.EventMessageRequest {
+namespace Microsoft.Graph.Beta.Me.Messages.Item.EventMessageRequest {
     /// <summary>Builds and executes requests for operations under \me\messages\{message-id}\microsoft.graph.eventMessageRequest</summary>
     public class EventMessageRequestRequestBuilder {
         /// <summary>The accept property</summary>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.ProgramControlTypes.Count;
+using Microsoft.Graph.Beta.ProgramControlTypes.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.ProgramControlTypes.Count;
-using MicrosoftGraphSdk.ProgramControlTypes.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.ProgramControlTypes {
+namespace Microsoft.Graph.Beta.ProgramControlTypes {
     /// <summary>Provides operations to manage the collection of programControlType entities.</summary>
     public class ProgramControlTypesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.ProgramControlTypes {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.programControlTypes.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.programControlTypes.item collection</summary>
         public ProgramControlTypeItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("programControlType_id", position);

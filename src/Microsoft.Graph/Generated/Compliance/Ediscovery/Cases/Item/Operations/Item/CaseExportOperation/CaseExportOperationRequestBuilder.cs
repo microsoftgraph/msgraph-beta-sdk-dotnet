@@ -1,11 +1,11 @@
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.Item.CaseExportOperation.GetDownloadUrl;
 using Microsoft.Kiota.Abstractions;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Operations.Item.CaseExportOperation.GetDownloadUrl;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Operations.Item.CaseExportOperation {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.Item.CaseExportOperation {
     /// <summary>Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\operations\{caseOperation-id}\microsoft.graph.ediscovery.caseExportOperation</summary>
     public class CaseExportOperationRequestBuilder {
         /// <summary>Path parameters for the request</summary>

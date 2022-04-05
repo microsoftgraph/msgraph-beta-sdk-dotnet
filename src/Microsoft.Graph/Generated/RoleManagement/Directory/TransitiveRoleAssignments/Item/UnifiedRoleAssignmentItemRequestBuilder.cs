@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.RoleManagement.Directory.TransitiveRoleAssignments.Item.AppScope;
+using Microsoft.Graph.Beta.RoleManagement.Directory.TransitiveRoleAssignments.Item.DirectoryScope;
+using Microsoft.Graph.Beta.RoleManagement.Directory.TransitiveRoleAssignments.Item.Principal;
+using Microsoft.Graph.Beta.RoleManagement.Directory.TransitiveRoleAssignments.Item.RoleDefinition;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.RoleManagement.Directory.TransitiveRoleAssignments.Item.AppScope;
-using MicrosoftGraphSdk.RoleManagement.Directory.TransitiveRoleAssignments.Item.DirectoryScope;
-using MicrosoftGraphSdk.RoleManagement.Directory.TransitiveRoleAssignments.Item.Principal;
-using MicrosoftGraphSdk.RoleManagement.Directory.TransitiveRoleAssignments.Item.RoleDefinition;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.RoleManagement.Directory.TransitiveRoleAssignments.Item {
+namespace Microsoft.Graph.Beta.RoleManagement.Directory.TransitiveRoleAssignments.Item {
     /// <summary>Provides operations to manage the transitiveRoleAssignments property of the microsoft.graph.rbacApplication entity.</summary>
     public class UnifiedRoleAssignmentItemRequestBuilder {
         /// <summary>The appScope property</summary>

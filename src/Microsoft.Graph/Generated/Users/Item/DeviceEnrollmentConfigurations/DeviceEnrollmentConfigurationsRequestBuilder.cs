@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.Count;
+using Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.HasPayloadLinks;
+using Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.DeviceEnrollmentConfigurations.Count;
-using MicrosoftGraphSdk.Users.Item.DeviceEnrollmentConfigurations.HasPayloadLinks;
-using MicrosoftGraphSdk.Users.Item.DeviceEnrollmentConfigurations.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.DeviceEnrollmentConfigurations {
+namespace Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations {
     /// <summary>Provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.user entity.</summary>
     public class DeviceEnrollmentConfigurationsRequestBuilder {
         /// <summary>The count property</summary>
@@ -28,7 +28,7 @@ namespace MicrosoftGraphSdk.Users.Item.DeviceEnrollmentConfigurations {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.deviceEnrollmentConfigurations.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.deviceEnrollmentConfigurations.item collection</summary>
         public DeviceEnrollmentConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceEnrollmentConfiguration_id", position);

@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Communications.Calls.Item.Participants.Invite {
+namespace Microsoft.Graph.Beta.Communications.Calls.Item.Participants.Invite {
     /// <summary>Provides operations to call the invite method.</summary>
     public class InviteRequestBuilder {
         /// <summary>Path parameters for the request</summary>

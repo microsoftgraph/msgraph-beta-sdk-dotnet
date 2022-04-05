@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.GetLoggedOnManagedDevices {
+namespace Microsoft.Graph.Beta.Users.Item.GetLoggedOnManagedDevices {
     /// <summary>Provides operations to call the getLoggedOnManagedDevices method.</summary>
     public class GetLoggedOnManagedDevicesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

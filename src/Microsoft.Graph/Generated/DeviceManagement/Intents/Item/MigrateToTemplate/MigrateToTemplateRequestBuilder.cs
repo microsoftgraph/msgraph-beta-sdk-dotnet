@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.MigrateToTemplate {
+namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.MigrateToTemplate {
     /// <summary>Provides operations to call the migrateToTemplate method.</summary>
     public class MigrateToTemplateRequestBuilder {
         /// <summary>Path parameters for the request</summary>

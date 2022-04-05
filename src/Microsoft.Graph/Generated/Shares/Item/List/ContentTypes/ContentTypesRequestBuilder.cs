@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.AddCopy;
+using Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.AddCopyFromContentTypeHub;
+using Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Count;
+using Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.GetCompatibleHubContentTypes;
+using Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Shares.Item.List.ContentTypes.AddCopy;
-using MicrosoftGraphSdk.Shares.Item.List.ContentTypes.AddCopyFromContentTypeHub;
-using MicrosoftGraphSdk.Shares.Item.List.ContentTypes.Count;
-using MicrosoftGraphSdk.Shares.Item.List.ContentTypes.GetCompatibleHubContentTypes;
-using MicrosoftGraphSdk.Shares.Item.List.ContentTypes.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Shares.Item.List.ContentTypes {
+namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes {
     /// <summary>Provides operations to manage the contentTypes property of the microsoft.graph.list entity.</summary>
     public class ContentTypesRequestBuilder {
         /// <summary>The addCopy property</summary>
@@ -34,7 +34,7 @@ namespace MicrosoftGraphSdk.Shares.Item.List.ContentTypes {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.shares.item.list.contentTypes.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.shares.item.list.contentTypes.item collection</summary>
         public ContentTypeItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("contentType_id", position);

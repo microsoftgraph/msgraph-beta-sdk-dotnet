@@ -1,20 +1,20 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.RoleManagement.Directory.RoleEligibilityScheduleRequests.Item.AppScope;
+using Microsoft.Graph.Beta.RoleManagement.Directory.RoleEligibilityScheduleRequests.Item.Cancel;
+using Microsoft.Graph.Beta.RoleManagement.Directory.RoleEligibilityScheduleRequests.Item.DirectoryScope;
+using Microsoft.Graph.Beta.RoleManagement.Directory.RoleEligibilityScheduleRequests.Item.Principal;
+using Microsoft.Graph.Beta.RoleManagement.Directory.RoleEligibilityScheduleRequests.Item.RoleDefinition;
+using Microsoft.Graph.Beta.RoleManagement.Directory.RoleEligibilityScheduleRequests.Item.TargetSchedule;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.RoleManagement.Directory.RoleEligibilityScheduleRequests.Item.AppScope;
-using MicrosoftGraphSdk.RoleManagement.Directory.RoleEligibilityScheduleRequests.Item.Cancel;
-using MicrosoftGraphSdk.RoleManagement.Directory.RoleEligibilityScheduleRequests.Item.DirectoryScope;
-using MicrosoftGraphSdk.RoleManagement.Directory.RoleEligibilityScheduleRequests.Item.Principal;
-using MicrosoftGraphSdk.RoleManagement.Directory.RoleEligibilityScheduleRequests.Item.RoleDefinition;
-using MicrosoftGraphSdk.RoleManagement.Directory.RoleEligibilityScheduleRequests.Item.TargetSchedule;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.RoleManagement.Directory.RoleEligibilityScheduleRequests.Item {
+namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleEligibilityScheduleRequests.Item {
     /// <summary>Provides operations to manage the roleEligibilityScheduleRequests property of the microsoft.graph.rbacApplication entity.</summary>
     public class UnifiedRoleEligibilityScheduleRequestItemRequestBuilder {
         /// <summary>The appScope property</summary>

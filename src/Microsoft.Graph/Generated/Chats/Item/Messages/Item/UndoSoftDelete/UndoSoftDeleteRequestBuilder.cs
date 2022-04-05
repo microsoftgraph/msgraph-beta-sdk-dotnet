@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Chats.Item.Messages.Item.UndoSoftDelete {
+namespace Microsoft.Graph.Beta.Chats.Item.Messages.Item.UndoSoftDelete {
     /// <summary>Provides operations to call the undoSoftDelete method.</summary>
     public class UndoSoftDeleteRequestBuilder {
         /// <summary>Path parameters for the request</summary>

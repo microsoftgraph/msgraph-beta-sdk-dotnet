@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Communications.Calls.LogTeleconferenceDeviceQuality {
+namespace Microsoft.Graph.Beta.Communications.Calls.LogTeleconferenceDeviceQuality {
     /// <summary>Provides operations to call the logTeleconferenceDeviceQuality method.</summary>
     public class LogTeleconferenceDeviceQualityRequestBuilder {
         /// <summary>Path parameters for the request</summary>

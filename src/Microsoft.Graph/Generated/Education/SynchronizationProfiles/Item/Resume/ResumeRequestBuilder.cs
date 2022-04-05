@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Education.SynchronizationProfiles.Item.Resume {
+namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Resume {
     /// <summary>Provides operations to call the resume method.</summary>
     public class ResumeRequestBuilder {
         /// <summary>Path parameters for the request</summary>

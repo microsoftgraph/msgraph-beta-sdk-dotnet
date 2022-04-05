@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Sites.Item.Lists.Item.Operations.Count;
+using Microsoft.Graph.Beta.Sites.Item.Lists.Item.Operations.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Sites.Item.Lists.Item.Operations.Count;
-using MicrosoftGraphSdk.Sites.Item.Lists.Item.Operations.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.Operations {
+namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Operations {
     /// <summary>Provides operations to manage the operations property of the microsoft.graph.list entity.</summary>
     public class OperationsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.Operations {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.sites.item.lists.item.operations.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.sites.item.lists.item.operations.item collection</summary>
         public RichLongRunningOperationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("richLongRunningOperation_id", position);

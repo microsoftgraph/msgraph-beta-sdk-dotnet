@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Reports.GetOneDriveUsageAccountCountsWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetOneDriveUsageAccountCountsWithPeriod {
     /// <summary>Provides operations to call the getOneDriveUsageAccountCounts method.</summary>
     public class GetOneDriveUsageAccountCountsWithPeriodResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.BusinessFlowsWithRequestsAwaitingMyDecision.Count;
+using Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.BusinessFlowsWithRequestsAwaitingMyDecision.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.ApprovalWorkflowProviders.Item.BusinessFlowsWithRequestsAwaitingMyDecision.Count;
-using MicrosoftGraphSdk.ApprovalWorkflowProviders.Item.BusinessFlowsWithRequestsAwaitingMyDecision.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.ApprovalWorkflowProviders.Item.BusinessFlowsWithRequestsAwaitingMyDecision {
+namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.BusinessFlowsWithRequestsAwaitingMyDecision {
     /// <summary>Provides operations to manage the businessFlowsWithRequestsAwaitingMyDecision property of the microsoft.graph.approvalWorkflowProvider entity.</summary>
     public class BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.ApprovalWorkflowProviders.Item.BusinessFlowsWithRequ
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.approvalWorkflowProviders.item.businessFlowsWithRequestsAwaitingMyDecision.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.approvalWorkflowProviders.item.businessFlowsWithRequestsAwaitingMyDecision.item collection</summary>
         public BusinessFlowItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("businessFlow_id", position);

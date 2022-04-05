@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions.Item.GroupAssignments.Item.TermsAndConditions;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.TermsAndConditions.Item.GroupAssignments.Item.TermsAndConditions;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.TermsAndConditions.Item.GroupAssignments.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions.Item.GroupAssignments.Item {
     /// <summary>Provides operations to manage the groupAssignments property of the microsoft.graph.termsAndConditions entity.</summary>
     public class TermsAndConditionsGroupAssignmentItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,8 +17,8 @@ namespace MicrosoftGraphSdk.DeviceManagement.TermsAndConditions.Item.GroupAssign
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>The termsAndConditions property</summary>
-        public MicrosoftGraphSdk.DeviceManagement.TermsAndConditions.Item.GroupAssignments.Item.TermsAndConditions.TermsAndConditionsRequestBuilder TermsAndConditions { get =>
-            new MicrosoftGraphSdk.DeviceManagement.TermsAndConditions.Item.GroupAssignments.Item.TermsAndConditions.TermsAndConditionsRequestBuilder(PathParameters, RequestAdapter);
+        public Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions.Item.GroupAssignments.Item.TermsAndConditions.TermsAndConditionsRequestBuilder TermsAndConditions { get =>
+            new Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions.Item.GroupAssignments.Item.TermsAndConditions.TermsAndConditionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }

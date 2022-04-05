@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item.AddMembers;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item.AddMembersById;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item.RemoveMembers;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item.RemoveMembersById;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models.WindowsUpdates;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets.Item.AddMembers;
-using MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets.Item.AddMembersById;
-using MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets.Item.RemoveMembers;
-using MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets.Item.RemoveMembersById;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets.Item {
+namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item {
     /// <summary>Provides operations to manage the updatableAssets property of the microsoft.graph.windowsUpdates.updates entity.</summary>
     public class UpdatableAssetItemRequestBuilder {
         /// <summary>The addMembers property</summary>

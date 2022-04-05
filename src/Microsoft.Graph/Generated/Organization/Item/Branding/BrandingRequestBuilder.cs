@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Organization.Item.Branding.BackgroundImage;
+using Microsoft.Graph.Beta.Organization.Item.Branding.BannerLogo;
+using Microsoft.Graph.Beta.Organization.Item.Branding.Favicon;
+using Microsoft.Graph.Beta.Organization.Item.Branding.Localizations;
+using Microsoft.Graph.Beta.Organization.Item.Branding.SquareLogo;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Organization.Item.Branding.BackgroundImage;
-using MicrosoftGraphSdk.Organization.Item.Branding.BannerLogo;
-using MicrosoftGraphSdk.Organization.Item.Branding.Favicon;
-using MicrosoftGraphSdk.Organization.Item.Branding.Localizations;
-using MicrosoftGraphSdk.Organization.Item.Branding.SquareLogo;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Organization.Item.Branding {
+namespace Microsoft.Graph.Beta.Organization.Item.Branding {
     /// <summary>Provides operations to manage the branding property of the microsoft.graph.organization entity.</summary>
     public class BrandingRequestBuilder {
         /// <summary>The backgroundImage property</summary>

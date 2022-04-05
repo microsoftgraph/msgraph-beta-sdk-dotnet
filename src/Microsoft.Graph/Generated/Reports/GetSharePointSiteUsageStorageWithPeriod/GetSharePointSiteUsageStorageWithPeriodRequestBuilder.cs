@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetSharePointSiteUsageStorageWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetSharePointSiteUsageStorageWithPeriod {
     /// <summary>Provides operations to call the getSharePointSiteUsageStorage method.</summary>
     public class GetSharePointSiteUsageStorageWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Models.ManagedTenants;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item.ManagementTemplates;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item.ManagementTemplates;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item {
+namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item {
     /// <summary>Provides operations to manage the managementTemplateCollections property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
     public class ManagementTemplateCollectionItemRequestBuilder {
         /// <summary>The managementTemplates property</summary>

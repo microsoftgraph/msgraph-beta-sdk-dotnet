@@ -1,21 +1,21 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Print.Printers.Item.Connectors;
+using Microsoft.Graph.Beta.Print.Printers.Item.GetCapabilities;
+using Microsoft.Graph.Beta.Print.Printers.Item.ResetDefaults;
+using Microsoft.Graph.Beta.Print.Printers.Item.RestoreFactoryDefaults;
+using Microsoft.Graph.Beta.Print.Printers.Item.Share;
+using Microsoft.Graph.Beta.Print.Printers.Item.Shares;
+using Microsoft.Graph.Beta.Print.Printers.Item.TaskTriggers;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Print.Printers.Item.Connectors;
-using MicrosoftGraphSdk.Print.Printers.Item.GetCapabilities;
-using MicrosoftGraphSdk.Print.Printers.Item.ResetDefaults;
-using MicrosoftGraphSdk.Print.Printers.Item.RestoreFactoryDefaults;
-using MicrosoftGraphSdk.Print.Printers.Item.Share;
-using MicrosoftGraphSdk.Print.Printers.Item.Shares;
-using MicrosoftGraphSdk.Print.Printers.Item.TaskTriggers;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Print.Printers.Item {
+namespace Microsoft.Graph.Beta.Print.Printers.Item {
     /// <summary>Provides operations to manage the printers property of the microsoft.graph.print entity.</summary>
     public class PrinterItemRequestBuilder {
         /// <summary>The connectors property</summary>
@@ -117,7 +117,7 @@ namespace MicrosoftGraphSdk.Print.Printers.Item {
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreatePatchRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.Printer body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
+        public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.Printer body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -152,13 +152,13 @@ namespace MicrosoftGraphSdk.Print.Printers.Item {
         /// <param name="queryParameters">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Printer> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Printer> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(queryParameters, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Printer>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Printer.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Printer>(requestInfo, Microsoft.Graph.Beta.Models.Printer.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Provides operations to call the getCapabilities method.
@@ -174,7 +174,7 @@ namespace MicrosoftGraphSdk.Print.Printers.Item {
         /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Printer body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(Microsoft.Graph.Beta.Models.Printer body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

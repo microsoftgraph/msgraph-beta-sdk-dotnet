@@ -1,27 +1,27 @@
+using Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Accept;
+using Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Attachments;
+using Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Calendar;
+using Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Cancel;
+using Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Decline;
+using Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.DismissReminder;
+using Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Extensions;
+using Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Forward;
+using Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances;
+using Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.MultiValueExtendedProperties;
+using Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.SingleValueExtendedProperties;
+using Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.SnoozeReminder;
+using Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.TentativelyAccept;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Accept;
-using MicrosoftGraphSdk.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Attachments;
-using MicrosoftGraphSdk.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Calendar;
-using MicrosoftGraphSdk.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Cancel;
-using MicrosoftGraphSdk.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Decline;
-using MicrosoftGraphSdk.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.DismissReminder;
-using MicrosoftGraphSdk.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Extensions;
-using MicrosoftGraphSdk.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Forward;
-using MicrosoftGraphSdk.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances;
-using MicrosoftGraphSdk.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.MultiValueExtendedProperties;
-using MicrosoftGraphSdk.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.SingleValueExtendedProperties;
-using MicrosoftGraphSdk.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.SnoozeReminder;
-using MicrosoftGraphSdk.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.TentativelyAccept;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item {
+namespace Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item {
     /// <summary>Provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.</summary>
     public class EventItemRequestBuilder {
         /// <summary>The accept property</summary>

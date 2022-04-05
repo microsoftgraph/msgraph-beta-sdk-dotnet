@@ -1,31 +1,31 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Sites.Item.Analytics;
+using Microsoft.Graph.Beta.Sites.Item.Columns;
+using Microsoft.Graph.Beta.Sites.Item.ContentTypes;
+using Microsoft.Graph.Beta.Sites.Item.Drive;
+using Microsoft.Graph.Beta.Sites.Item.Drives;
+using Microsoft.Graph.Beta.Sites.Item.ExternalColumns;
+using Microsoft.Graph.Beta.Sites.Item.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval;
+using Microsoft.Graph.Beta.Sites.Item.GetApplicableContentTypesForListWithListId;
+using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath;
+using Microsoft.Graph.Beta.Sites.Item.Items;
+using Microsoft.Graph.Beta.Sites.Item.Lists;
+using Microsoft.Graph.Beta.Sites.Item.Onenote;
+using Microsoft.Graph.Beta.Sites.Item.Operations;
+using Microsoft.Graph.Beta.Sites.Item.Pages;
+using Microsoft.Graph.Beta.Sites.Item.Permissions;
+using Microsoft.Graph.Beta.Sites.Item.Sites;
+using Microsoft.Graph.Beta.Sites.Item.TermStore;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Sites.Item.Analytics;
-using MicrosoftGraphSdk.Sites.Item.Columns;
-using MicrosoftGraphSdk.Sites.Item.ContentTypes;
-using MicrosoftGraphSdk.Sites.Item.Drive;
-using MicrosoftGraphSdk.Sites.Item.Drives;
-using MicrosoftGraphSdk.Sites.Item.ExternalColumns;
-using MicrosoftGraphSdk.Sites.Item.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval;
-using MicrosoftGraphSdk.Sites.Item.GetApplicableContentTypesForListWithListId;
-using MicrosoftGraphSdk.Sites.Item.GetByPathWithPath;
-using MicrosoftGraphSdk.Sites.Item.Items;
-using MicrosoftGraphSdk.Sites.Item.Lists;
-using MicrosoftGraphSdk.Sites.Item.Onenote;
-using MicrosoftGraphSdk.Sites.Item.Operations;
-using MicrosoftGraphSdk.Sites.Item.Pages;
-using MicrosoftGraphSdk.Sites.Item.Permissions;
-using MicrosoftGraphSdk.Sites.Item.Sites;
-using MicrosoftGraphSdk.Sites.Item.TermStore;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Sites.Item {
+namespace Microsoft.Graph.Beta.Sites.Item {
     /// <summary>Provides operations to manage the collection of site entities.</summary>
     public class SiteItemRequestBuilder {
         /// <summary>The analytics property</summary>
@@ -81,8 +81,8 @@ namespace MicrosoftGraphSdk.Sites.Item {
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>The sites property</summary>
-        public MicrosoftGraphSdk.Sites.Item.Sites.SitesRequestBuilder Sites { get =>
-            new MicrosoftGraphSdk.Sites.Item.Sites.SitesRequestBuilder(PathParameters, RequestAdapter);
+        public Microsoft.Graph.Beta.Sites.Item.Sites.SitesRequestBuilder Sites { get =>
+            new Microsoft.Graph.Beta.Sites.Item.Sites.SitesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The termStore property</summary>
         public TermStoreRequestBuilder TermStore { get =>
@@ -159,7 +159,7 @@ namespace MicrosoftGraphSdk.Sites.Item {
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreatePatchRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.Site body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
+        public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.Site body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -214,13 +214,13 @@ namespace MicrosoftGraphSdk.Sites.Item {
         /// <param name="queryParameters">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Site> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Site> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(queryParameters, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Site>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Site.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Site>(requestInfo, Microsoft.Graph.Beta.Models.Site.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Provides operations to call the getByPath method.
@@ -238,7 +238,7 @@ namespace MicrosoftGraphSdk.Sites.Item {
         /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Site body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(Microsoft.Graph.Beta.Models.Site body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Communications.GetPresencesByUserId {
+namespace Microsoft.Graph.Beta.Communications.GetPresencesByUserId {
     /// <summary>Provides operations to call the getPresencesByUserId method.</summary>
     public class GetPresencesByUserIdResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The value property</summary>
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Presence> Value { get; set; }
+        public List<Microsoft.Graph.Beta.Models.Presence> Value { get; set; }
         /// <summary>
         /// Instantiates a new getPresencesByUserIdResponse and sets the default values.
         /// </summary>
@@ -30,7 +30,7 @@ namespace MicrosoftGraphSdk.Communications.GetPresencesByUserId {
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"value", (o,n) => { (o as GetPresencesByUserIdResponse).Value = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Presence>(MicrosoftGraphSdk.Models.Microsoft.Graph.Presence.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", (o,n) => { (o as GetPresencesByUserIdResponse).Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Presence>(Microsoft.Graph.Beta.Models.Presence.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>
@@ -39,7 +39,7 @@ namespace MicrosoftGraphSdk.Communications.GetPresencesByUserId {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Presence>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Presence>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

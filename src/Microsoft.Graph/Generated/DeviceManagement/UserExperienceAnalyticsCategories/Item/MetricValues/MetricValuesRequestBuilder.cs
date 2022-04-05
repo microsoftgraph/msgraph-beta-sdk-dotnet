@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsCategories.Item.MetricValues.Count;
+using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsCategories.Item.MetricValues.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsCategories.Item.MetricValues.Count;
-using MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsCategories.Item.MetricValues.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsCategories.Item.MetricValues {
+namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsCategories.Item.MetricValues {
     /// <summary>Provides operations to manage the metricValues property of the microsoft.graph.userExperienceAnalyticsCategory entity.</summary>
     public class MetricValuesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsCategories.I
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.userExperienceAnalyticsCategories.item.metricValues.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.userExperienceAnalyticsCategories.item.metricValues.item collection</summary>
         public UserExperienceAnalyticsMetricItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userExperienceAnalyticsMetric_id", position);

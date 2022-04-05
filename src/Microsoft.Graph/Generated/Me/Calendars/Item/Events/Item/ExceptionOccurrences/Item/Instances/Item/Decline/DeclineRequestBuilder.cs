@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Decline {
+namespace Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.Decline {
     /// <summary>Provides operations to call the decline method.</summary>
     public class DeclineRequestBuilder {
         /// <summary>Path parameters for the request</summary>

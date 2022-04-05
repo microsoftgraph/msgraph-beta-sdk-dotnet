@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Me.Outlook.Tasks.Item.Attachments;
+using Microsoft.Graph.Beta.Me.Outlook.Tasks.Item.Complete;
+using Microsoft.Graph.Beta.Me.Outlook.Tasks.Item.MultiValueExtendedProperties;
+using Microsoft.Graph.Beta.Me.Outlook.Tasks.Item.SingleValueExtendedProperties;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Outlook.Tasks.Item.Attachments;
-using MicrosoftGraphSdk.Me.Outlook.Tasks.Item.Complete;
-using MicrosoftGraphSdk.Me.Outlook.Tasks.Item.MultiValueExtendedProperties;
-using MicrosoftGraphSdk.Me.Outlook.Tasks.Item.SingleValueExtendedProperties;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Outlook.Tasks.Item {
+namespace Microsoft.Graph.Beta.Me.Outlook.Tasks.Item {
     /// <summary>Provides operations to manage the tasks property of the microsoft.graph.outlookUser entity.</summary>
     public class OutlookTaskItemRequestBuilder {
         /// <summary>The attachments property</summary>

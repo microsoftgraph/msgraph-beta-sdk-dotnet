@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReport {
+namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReport {
     /// <summary>Provides operations to call the getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport method.</summary>
     public class GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder {
         /// <summary>Path parameters for the request</summary>

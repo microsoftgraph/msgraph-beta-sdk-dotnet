@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetSkypeForBusinessActivityUserDetailWithDate {
+namespace Microsoft.Graph.Beta.Reports.GetSkypeForBusinessActivityUserDetailWithDate {
     /// <summary>Provides operations to call the getSkypeForBusinessActivityUserDetail method.</summary>
     public class GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder {
         /// <summary>Path parameters for the request</summary>

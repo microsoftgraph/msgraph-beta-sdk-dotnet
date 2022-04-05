@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.LogCollectionRequests.Item.CreateDownloadUrl {
+namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.LogCollectionRequests.Item.CreateDownloadUrl {
     /// <summary>Provides operations to call the createDownloadUrl method.</summary>
     public class CreateDownloadUrlResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

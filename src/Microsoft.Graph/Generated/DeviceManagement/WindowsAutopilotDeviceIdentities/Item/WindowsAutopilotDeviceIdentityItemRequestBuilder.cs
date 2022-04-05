@@ -1,21 +1,21 @@
+using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.AssignResourceAccountToDevice;
+using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.AssignUserToDevice;
+using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.DeploymentProfile;
+using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.IntendedDeploymentProfile;
+using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.UnassignResourceAccountFromDevice;
+using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.UnassignUserFromDevice;
+using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.UpdateDeviceProperties;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.AssignResourceAccountToDevice;
-using MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.AssignUserToDevice;
-using MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.DeploymentProfile;
-using MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.IntendedDeploymentProfile;
-using MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.UnassignResourceAccountFromDevice;
-using MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.UnassignUserFromDevice;
-using MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.UpdateDeviceProperties;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeviceIdentities.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities.Item {
     /// <summary>Provides operations to manage the windowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.</summary>
     public class WindowsAutopilotDeviceIdentityItemRequestBuilder {
         /// <summary>The assignResourceAccountToDevice property</summary>

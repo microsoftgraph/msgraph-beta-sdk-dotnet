@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Models.Ediscovery;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.AddToReviewSet {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.AddToReviewSet {
     /// <summary>Provides operations to call the addToReviewSet method.</summary>
     public class AddToReviewSetRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The additionalDataOptions property</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery.AdditionalDataOptions? AdditionalDataOptions { get; set; }
+        public Microsoft.Graph.Beta.Models.Ediscovery.AdditionalDataOptions? AdditionalDataOptions { get; set; }
         /// <summary>The sourceCollection property</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery.SourceCollection SourceCollection { get; set; }
+        public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection SourceCollection { get; set; }
         /// <summary>
         /// Instantiates a new addToReviewSetRequestBody and sets the default values.
         /// </summary>
@@ -33,7 +33,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Add
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"additionalDataOptions", (o,n) => { (o as AddToReviewSetRequestBody).AdditionalDataOptions = n.GetEnumValue<AdditionalDataOptions>(); } },
-                {"sourceCollection", (o,n) => { (o as AddToReviewSetRequestBody).SourceCollection = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery.SourceCollection>(MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery.SourceCollection.CreateFromDiscriminatorValue); } },
+                {"sourceCollection", (o,n) => { (o as AddToReviewSetRequestBody).SourceCollection = n.GetObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>(Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Add
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<AdditionalDataOptions>("additionalDataOptions", AdditionalDataOptions);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery.SourceCollection>("sourceCollection", SourceCollection);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>("sourceCollection", SourceCollection);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

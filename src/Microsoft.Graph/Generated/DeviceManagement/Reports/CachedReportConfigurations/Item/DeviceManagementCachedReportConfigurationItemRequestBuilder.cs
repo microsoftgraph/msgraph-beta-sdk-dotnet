@@ -1,14 +1,14 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.Reports.CachedReportConfigurations.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.Reports.CachedReportConfigurations.Item {
     /// <summary>Provides operations to manage the cachedReportConfigurations property of the microsoft.graph.deviceManagementReports entity.</summary>
     public class DeviceManagementCachedReportConfigurationItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

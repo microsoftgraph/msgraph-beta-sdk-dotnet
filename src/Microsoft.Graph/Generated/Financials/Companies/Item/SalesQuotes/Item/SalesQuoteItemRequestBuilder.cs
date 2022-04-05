@@ -1,21 +1,21 @@
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item.Currency;
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item.Customer;
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item.MakeInvoice;
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item.PaymentTerm;
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item.SalesQuoteLines;
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item.Send;
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item.ShipmentMethod;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesQuotes.Item.Currency;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesQuotes.Item.Customer;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesQuotes.Item.MakeInvoice;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesQuotes.Item.PaymentTerm;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesQuotes.Item.SalesQuoteLines;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesQuotes.Item.Send;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesQuotes.Item.ShipmentMethod;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesQuotes.Item {
+namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item {
     /// <summary>Provides operations to manage the salesQuotes property of the microsoft.graph.company entity.</summary>
     public class SalesQuoteItemRequestBuilder {
         /// <summary>The currency property</summary>

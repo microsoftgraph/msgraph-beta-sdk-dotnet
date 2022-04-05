@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.IsManagedAppUserBlocked {
+namespace Microsoft.Graph.Beta.Me.IsManagedAppUserBlocked {
     /// <summary>Provides operations to call the isManagedAppUserBlocked method.</summary>
     public class IsManagedAppUserBlockedRequestBuilder {
         /// <summary>Path parameters for the request</summary>

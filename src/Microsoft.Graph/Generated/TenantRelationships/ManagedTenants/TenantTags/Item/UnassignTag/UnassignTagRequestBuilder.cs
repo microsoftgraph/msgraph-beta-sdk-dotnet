@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models.ManagedTenants;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantTags.Item.UnassignTag {
+namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Item.UnassignTag {
     /// <summary>Provides operations to call the unassignTag method.</summary>
     public class UnassignTagRequestBuilder {
         /// <summary>Path parameters for the request</summary>

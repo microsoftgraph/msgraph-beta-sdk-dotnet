@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.GroupLifecyclePolicies.RenewGroup {
+namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.RenewGroup {
     /// <summary>Provides operations to call the renewGroup method.</summary>
     public class RenewGroupRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

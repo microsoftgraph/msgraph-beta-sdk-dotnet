@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.DeviceStatuses.Count;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.DeviceStatuses.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.DeviceStatuses.Count;
-using MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.DeviceStatuses.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.DeviceStatuses {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.DeviceStatuses {
     /// <summary>Provides operations to manage the deviceStatuses property of the microsoft.graph.deviceConfiguration entity.</summary>
     public class DeviceStatusesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.DeviceSta
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.deviceConfigurations.item.deviceStatuses.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.deviceConfigurations.item.deviceStatuses.item collection</summary>
         public DeviceConfigurationDeviceStatusItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceConfigurationDeviceStatus_id", position);

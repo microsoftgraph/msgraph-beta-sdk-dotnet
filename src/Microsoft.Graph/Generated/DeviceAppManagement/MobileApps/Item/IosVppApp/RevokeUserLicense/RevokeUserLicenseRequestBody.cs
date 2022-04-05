@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.IosVppApp.RevokeUserLicense {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.IosVppApp.RevokeUserLicense {
     /// <summary>Provides operations to call the revokeUserLicense method.</summary>
     public class RevokeUserLicenseRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

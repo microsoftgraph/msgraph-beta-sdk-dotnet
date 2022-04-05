@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.ServicePrincipals.Item.CheckMemberObjects {
+namespace Microsoft.Graph.Beta.ServicePrincipals.Item.CheckMemberObjects {
     /// <summary>Provides operations to call the checkMemberObjects method.</summary>
     public class CheckMemberObjectsResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

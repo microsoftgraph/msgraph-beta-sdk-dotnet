@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceManagement.ManagementConditionStatements.GetManagementConditionStatementsForPlatformWithPlatform {
+namespace Microsoft.Graph.Beta.DeviceManagement.ManagementConditionStatements.GetManagementConditionStatementsForPlatformWithPlatform {
     /// <summary>Provides operations to call the getManagementConditionStatementsForPlatform method.</summary>
     public class GetManagementConditionStatementsForPlatformWithPlatformResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

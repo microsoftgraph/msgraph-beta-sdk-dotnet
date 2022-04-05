@@ -1,28 +1,28 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Accept;
+using Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Attachments;
+using Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Calendar;
+using Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Cancel;
+using Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Decline;
+using Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.DismissReminder;
+using Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.ExceptionOccurrences;
+using Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Extensions;
+using Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Forward;
+using Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Instances;
+using Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.MultiValueExtendedProperties;
+using Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.SingleValueExtendedProperties;
+using Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.SnoozeReminder;
+using Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.TentativelyAccept;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Accept;
-using MicrosoftGraphSdk.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Attachments;
-using MicrosoftGraphSdk.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Calendar;
-using MicrosoftGraphSdk.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Cancel;
-using MicrosoftGraphSdk.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Decline;
-using MicrosoftGraphSdk.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.DismissReminder;
-using MicrosoftGraphSdk.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.ExceptionOccurrences;
-using MicrosoftGraphSdk.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Extensions;
-using MicrosoftGraphSdk.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Forward;
-using MicrosoftGraphSdk.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Instances;
-using MicrosoftGraphSdk.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.MultiValueExtendedProperties;
-using MicrosoftGraphSdk.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.SingleValueExtendedProperties;
-using MicrosoftGraphSdk.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.SnoozeReminder;
-using MicrosoftGraphSdk.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.TentativelyAccept;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item {
+namespace Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item {
     /// <summary>Provides operations to manage the events property of the microsoft.graph.calendar entity.</summary>
     public class EventItemRequestBuilder {
         /// <summary>The accept property</summary>

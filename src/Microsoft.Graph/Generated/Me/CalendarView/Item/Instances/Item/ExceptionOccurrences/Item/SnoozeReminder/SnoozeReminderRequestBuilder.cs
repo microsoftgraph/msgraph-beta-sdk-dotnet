@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.CalendarView.Item.Instances.Item.ExceptionOccurrences.Item.SnoozeReminder {
+namespace Microsoft.Graph.Beta.Me.CalendarView.Item.Instances.Item.ExceptionOccurrences.Item.SnoozeReminder {
     /// <summary>Provides operations to call the snoozeReminder method.</summary>
     public class SnoozeReminderRequestBuilder {
         /// <summary>Path parameters for the request</summary>

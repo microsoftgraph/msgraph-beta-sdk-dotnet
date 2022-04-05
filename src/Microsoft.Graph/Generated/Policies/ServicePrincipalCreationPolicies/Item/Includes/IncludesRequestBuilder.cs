@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item.Includes.Count;
+using Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item.Includes.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Policies.ServicePrincipalCreationPolicies.Item.Includes.Count;
-using MicrosoftGraphSdk.Policies.ServicePrincipalCreationPolicies.Item.Includes.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Policies.ServicePrincipalCreationPolicies.Item.Includes {
+namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item.Includes {
     /// <summary>Provides operations to manage the includes property of the microsoft.graph.servicePrincipalCreationPolicy entity.</summary>
     public class IncludesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Policies.ServicePrincipalCreationPolicies.Item.Inclu
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.policies.servicePrincipalCreationPolicies.item.includes.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.policies.servicePrincipalCreationPolicies.item.includes.item collection</summary>
         public ServicePrincipalCreationConditionSetItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("servicePrincipalCreationConditionSet_id", position);

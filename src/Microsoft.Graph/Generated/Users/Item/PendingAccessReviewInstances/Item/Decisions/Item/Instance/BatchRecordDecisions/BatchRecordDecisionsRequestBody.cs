@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.BatchRecordDecisions {
+namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.BatchRecordDecisions {
     /// <summary>Provides operations to call the batchRecordDecisions method.</summary>
     public class BatchRecordDecisionsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

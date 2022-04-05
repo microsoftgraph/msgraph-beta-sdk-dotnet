@@ -1,14 +1,14 @@
+using Microsoft.Graph.Beta.Models.ManagedTenants;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplates.Item.ManagementTemplateSteps.Item {
+namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplates.Item.ManagementTemplateSteps.Item {
     /// <summary>Provides operations to manage the managementTemplateSteps property of the microsoft.graph.managedTenants.managementTemplate entity.</summary>
     public class ManagementTemplateStepItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements.Item.File.Localizations.Item.Versions;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.IdentityGovernance.TermsOfUse.Agreements.Item.File.Localizations.Item.Versions;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.IdentityGovernance.TermsOfUse.Agreements.Item.File.Localizations.Item {
+namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements.Item.File.Localizations.Item {
     /// <summary>Provides operations to manage the localizations property of the microsoft.graph.agreementFile entity.</summary>
     public class AgreementFileLocalizationItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

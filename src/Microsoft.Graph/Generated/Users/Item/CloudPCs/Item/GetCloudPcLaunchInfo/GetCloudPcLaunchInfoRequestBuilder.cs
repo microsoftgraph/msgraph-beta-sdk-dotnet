@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.CloudPCs.Item.GetCloudPcLaunchInfo {
+namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.GetCloudPcLaunchInfo {
     /// <summary>Provides operations to call the getCloudPcLaunchInfo method.</summary>
     public class GetCloudPcLaunchInfoRequestBuilder {
         /// <summary>Path parameters for the request</summary>

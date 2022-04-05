@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.GetDevicesScheduledToRetire {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetDevicesScheduledToRetire {
     /// <summary>Provides operations to call the getDevicesScheduledToRetire method.</summary>
     public class GetDevicesScheduledToRetireRequestBuilder {
         /// <summary>Path parameters for the request</summary>

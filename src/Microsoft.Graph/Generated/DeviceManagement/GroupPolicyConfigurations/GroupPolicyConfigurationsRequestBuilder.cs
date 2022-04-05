@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Count;
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.GroupPolicyConfigurations.Count;
-using MicrosoftGraphSdk.DeviceManagement.GroupPolicyConfigurations.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyConfigurations {
+namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations {
     /// <summary>Provides operations to manage the groupPolicyConfigurations property of the microsoft.graph.deviceManagement entity.</summary>
     public class GroupPolicyConfigurationsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyConfigurations {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.groupPolicyConfigurations.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.groupPolicyConfigurations.item collection</summary>
         public GroupPolicyConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("groupPolicyConfiguration_id", position);

@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Directory.Recommendations.Item.ImpactedResources.Item.Complete;
+using Microsoft.Graph.Beta.Directory.Recommendations.Item.ImpactedResources.Item.Dismiss;
+using Microsoft.Graph.Beta.Directory.Recommendations.Item.ImpactedResources.Item.Postpone;
+using Microsoft.Graph.Beta.Directory.Recommendations.Item.ImpactedResources.Item.Reactivate;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Directory.Recommendations.Item.ImpactedResources.Item.Complete;
-using MicrosoftGraphSdk.Directory.Recommendations.Item.ImpactedResources.Item.Dismiss;
-using MicrosoftGraphSdk.Directory.Recommendations.Item.ImpactedResources.Item.Postpone;
-using MicrosoftGraphSdk.Directory.Recommendations.Item.ImpactedResources.Item.Reactivate;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Directory.Recommendations.Item.ImpactedResources.Item {
+namespace Microsoft.Graph.Beta.Directory.Recommendations.Item.ImpactedResources.Item {
     /// <summary>Provides operations to manage the impactedResources property of the microsoft.graph.recommendation entity.</summary>
     public class RecommendationResourceItemRequestBuilder {
         /// <summary>The complete property</summary>

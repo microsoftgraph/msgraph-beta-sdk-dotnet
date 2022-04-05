@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.PrivilegedRoleAssignmentRequests.My {
+namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.My {
     /// <summary>Provides operations to call the my method.</summary>
     public class MyRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,14 +1,14 @@
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models.TermStore;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TermStore.Sets.Item.ParentGroup.Sets.Item.Children.Item.Children.Item.Relations.Item.ToTerm {
+namespace Microsoft.Graph.Beta.TermStore.Sets.Item.ParentGroup.Sets.Item.Children.Item.Children.Item.Relations.Item.ToTerm {
     /// <summary>Provides operations to manage the toTerm property of the microsoft.graph.termStore.relation entity.</summary>
     public class ToTermRequestBuilder {
         /// <summary>Path parameters for the request</summary>

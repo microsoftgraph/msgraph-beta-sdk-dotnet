@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.ColumnLinks.Count;
+using Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.ColumnLinks.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Sites.Item.ContentTypes.Item.ColumnLinks.Count;
-using MicrosoftGraphSdk.Sites.Item.ContentTypes.Item.ColumnLinks.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Sites.Item.ContentTypes.Item.ColumnLinks {
+namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.ColumnLinks {
     /// <summary>Provides operations to manage the columnLinks property of the microsoft.graph.contentType entity.</summary>
     public class ColumnLinksRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Sites.Item.ContentTypes.Item.ColumnLinks {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.sites.item.contentTypes.item.columnLinks.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.sites.item.contentTypes.item.columnLinks.item collection</summary>
         public ColumnLinkItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("columnLink_id", position);

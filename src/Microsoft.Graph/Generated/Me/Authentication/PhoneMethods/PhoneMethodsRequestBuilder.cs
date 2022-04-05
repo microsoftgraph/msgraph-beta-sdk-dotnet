@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.Authentication.PhoneMethods.Count;
+using Microsoft.Graph.Beta.Me.Authentication.PhoneMethods.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Authentication.PhoneMethods.Count;
-using MicrosoftGraphSdk.Me.Authentication.PhoneMethods.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Authentication.PhoneMethods {
+namespace Microsoft.Graph.Beta.Me.Authentication.PhoneMethods {
     /// <summary>Provides operations to manage the phoneMethods property of the microsoft.graph.authentication entity.</summary>
     public class PhoneMethodsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.Authentication.PhoneMethods {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.authentication.phoneMethods.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.authentication.phoneMethods.item collection</summary>
         public PhoneAuthenticationMethodItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("phoneAuthenticationMethod_id", position);

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item.Start {
+namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Start {
     /// <summary>Provides operations to call the start method.</summary>
     public class StartRequestBuilder {
         /// <summary>Path parameters for the request</summary>

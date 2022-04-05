@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item.Definition;
+using Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item.Trigger;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Print.TaskDefinitions.Item.Tasks.Item.Definition;
-using MicrosoftGraphSdk.Print.TaskDefinitions.Item.Tasks.Item.Trigger;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Print.TaskDefinitions.Item.Tasks.Item {
+namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item {
     /// <summary>Provides operations to manage the tasks property of the microsoft.graph.printTaskDefinition entity.</summary>
     public class PrintTaskItemRequestBuilder {
         /// <summary>The definition property</summary>

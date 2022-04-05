@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.ValidatePassword {
+namespace Microsoft.Graph.Beta.Users.ValidatePassword {
     /// <summary>Provides operations to call the validatePassword method.</summary>
     public class ValidatePasswordRequestBuilder {
         /// <summary>Path parameters for the request</summary>

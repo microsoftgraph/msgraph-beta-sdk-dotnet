@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Applications.Item.UnsetVerifiedPublisher {
+namespace Microsoft.Graph.Beta.Applications.Item.UnsetVerifiedPublisher {
     /// <summary>Provides operations to call the unsetVerifiedPublisher method.</summary>
     public class UnsetVerifiedPublisherRequestBuilder {
         /// <summary>Path parameters for the request</summary>

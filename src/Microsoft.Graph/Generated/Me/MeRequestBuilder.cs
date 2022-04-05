@@ -1,112 +1,112 @@
+using Microsoft.Graph.Beta.Me.ActivateServicePlan;
+using Microsoft.Graph.Beta.Me.Activities;
+using Microsoft.Graph.Beta.Me.AgreementAcceptances;
+using Microsoft.Graph.Beta.Me.Analytics;
+using Microsoft.Graph.Beta.Me.AppConsentRequestsForApproval;
+using Microsoft.Graph.Beta.Me.AppRoleAssignments;
+using Microsoft.Graph.Beta.Me.Approvals;
+using Microsoft.Graph.Beta.Me.AssignLicense;
+using Microsoft.Graph.Beta.Me.Authentication;
+using Microsoft.Graph.Beta.Me.Calendar;
+using Microsoft.Graph.Beta.Me.CalendarGroups;
+using Microsoft.Graph.Beta.Me.Calendars;
+using Microsoft.Graph.Beta.Me.CalendarView;
+using Microsoft.Graph.Beta.Me.ChangePassword;
+using Microsoft.Graph.Beta.Me.Chats;
+using Microsoft.Graph.Beta.Me.CheckMemberGroups;
+using Microsoft.Graph.Beta.Me.CheckMemberObjects;
+using Microsoft.Graph.Beta.Me.CloudPCs;
+using Microsoft.Graph.Beta.Me.ContactFolders;
+using Microsoft.Graph.Beta.Me.Contacts;
+using Microsoft.Graph.Beta.Me.CreatedObjects;
+using Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations;
+using Microsoft.Graph.Beta.Me.DeviceManagementTroubleshootingEvents;
+using Microsoft.Graph.Beta.Me.Devices;
+using Microsoft.Graph.Beta.Me.DirectReports;
+using Microsoft.Graph.Beta.Me.Drive;
+using Microsoft.Graph.Beta.Me.Drives;
+using Microsoft.Graph.Beta.Me.Events;
+using Microsoft.Graph.Beta.Me.ExportDeviceAndAppManagementData;
+using Microsoft.Graph.Beta.Me.ExportDeviceAndAppManagementDataWithSkipWithTop;
+using Microsoft.Graph.Beta.Me.ExportPersonalData;
+using Microsoft.Graph.Beta.Me.Extensions;
+using Microsoft.Graph.Beta.Me.FindMeetingTimes;
+using Microsoft.Graph.Beta.Me.FindRoomLists;
+using Microsoft.Graph.Beta.Me.FindRooms;
+using Microsoft.Graph.Beta.Me.FindRoomsWithRoomList;
+using Microsoft.Graph.Beta.Me.FollowedSites;
+using Microsoft.Graph.Beta.Me.GetEffectiveDeviceEnrollmentConfigurations;
+using Microsoft.Graph.Beta.Me.GetLoggedOnManagedDevices;
+using Microsoft.Graph.Beta.Me.GetMailTips;
+using Microsoft.Graph.Beta.Me.GetManagedAppDiagnosticStatuses;
+using Microsoft.Graph.Beta.Me.GetManagedAppPolicies;
+using Microsoft.Graph.Beta.Me.GetManagedDevicesWithAppFailures;
+using Microsoft.Graph.Beta.Me.GetManagedDevicesWithFailedOrPendingApps;
+using Microsoft.Graph.Beta.Me.GetMemberGroups;
+using Microsoft.Graph.Beta.Me.GetMemberObjects;
+using Microsoft.Graph.Beta.Me.InferenceClassification;
+using Microsoft.Graph.Beta.Me.InformationProtection;
+using Microsoft.Graph.Beta.Me.Insights;
+using Microsoft.Graph.Beta.Me.InvalidateAllRefreshTokens;
+using Microsoft.Graph.Beta.Me.IsManagedAppUserBlocked;
+using Microsoft.Graph.Beta.Me.JoinedGroups;
+using Microsoft.Graph.Beta.Me.JoinedTeams;
+using Microsoft.Graph.Beta.Me.LicenseDetails;
+using Microsoft.Graph.Beta.Me.MailFolders;
+using Microsoft.Graph.Beta.Me.ManagedAppRegistrations;
+using Microsoft.Graph.Beta.Me.ManagedDevices;
+using Microsoft.Graph.Beta.Me.Manager;
+using Microsoft.Graph.Beta.Me.MemberOf;
+using Microsoft.Graph.Beta.Me.Messages;
+using Microsoft.Graph.Beta.Me.MobileAppIntentAndStates;
+using Microsoft.Graph.Beta.Me.MobileAppTroubleshootingEvents;
+using Microsoft.Graph.Beta.Me.Notifications;
+using Microsoft.Graph.Beta.Me.Oauth2PermissionGrants;
+using Microsoft.Graph.Beta.Me.Onenote;
+using Microsoft.Graph.Beta.Me.OnlineMeetings;
+using Microsoft.Graph.Beta.Me.Outlook;
+using Microsoft.Graph.Beta.Me.OwnedDevices;
+using Microsoft.Graph.Beta.Me.OwnedObjects;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances;
+using Microsoft.Graph.Beta.Me.People;
+using Microsoft.Graph.Beta.Me.Photo;
+using Microsoft.Graph.Beta.Me.Photos;
+using Microsoft.Graph.Beta.Me.Planner;
+using Microsoft.Graph.Beta.Me.Presence;
+using Microsoft.Graph.Beta.Me.Profile;
+using Microsoft.Graph.Beta.Me.RegisteredDevices;
+using Microsoft.Graph.Beta.Me.ReminderViewWithStartDateTimeWithEndDateTime;
+using Microsoft.Graph.Beta.Me.RemoveAllDevicesFromManagement;
+using Microsoft.Graph.Beta.Me.ReprocessLicenseAssignment;
+using Microsoft.Graph.Beta.Me.Restore;
+using Microsoft.Graph.Beta.Me.RevokeSignInSessions;
+using Microsoft.Graph.Beta.Me.ScopedRoleMemberOf;
+using Microsoft.Graph.Beta.Me.Security;
+using Microsoft.Graph.Beta.Me.SendMail;
+using Microsoft.Graph.Beta.Me.Settings;
+using Microsoft.Graph.Beta.Me.Tasks;
+using Microsoft.Graph.Beta.Me.Teamwork;
+using Microsoft.Graph.Beta.Me.Todo;
+using Microsoft.Graph.Beta.Me.TransitiveMemberOf;
+using Microsoft.Graph.Beta.Me.TransitiveReports;
+using Microsoft.Graph.Beta.Me.TranslateExchangeIds;
+using Microsoft.Graph.Beta.Me.UnblockManagedApps;
+using Microsoft.Graph.Beta.Me.UsageRights;
+using Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistrations;
+using Microsoft.Graph.Beta.Me.WipeAndBlockManagedApps;
+using Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationByDeviceTag;
+using Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationsByDeviceTag;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.ActivateServicePlan;
-using MicrosoftGraphSdk.Me.Activities;
-using MicrosoftGraphSdk.Me.AgreementAcceptances;
-using MicrosoftGraphSdk.Me.Analytics;
-using MicrosoftGraphSdk.Me.AppConsentRequestsForApproval;
-using MicrosoftGraphSdk.Me.AppRoleAssignments;
-using MicrosoftGraphSdk.Me.Approvals;
-using MicrosoftGraphSdk.Me.AssignLicense;
-using MicrosoftGraphSdk.Me.Authentication;
-using MicrosoftGraphSdk.Me.Calendar;
-using MicrosoftGraphSdk.Me.CalendarGroups;
-using MicrosoftGraphSdk.Me.Calendars;
-using MicrosoftGraphSdk.Me.CalendarView;
-using MicrosoftGraphSdk.Me.ChangePassword;
-using MicrosoftGraphSdk.Me.Chats;
-using MicrosoftGraphSdk.Me.CheckMemberGroups;
-using MicrosoftGraphSdk.Me.CheckMemberObjects;
-using MicrosoftGraphSdk.Me.CloudPCs;
-using MicrosoftGraphSdk.Me.ContactFolders;
-using MicrosoftGraphSdk.Me.Contacts;
-using MicrosoftGraphSdk.Me.CreatedObjects;
-using MicrosoftGraphSdk.Me.DeviceEnrollmentConfigurations;
-using MicrosoftGraphSdk.Me.DeviceManagementTroubleshootingEvents;
-using MicrosoftGraphSdk.Me.Devices;
-using MicrosoftGraphSdk.Me.DirectReports;
-using MicrosoftGraphSdk.Me.Drive;
-using MicrosoftGraphSdk.Me.Drives;
-using MicrosoftGraphSdk.Me.Events;
-using MicrosoftGraphSdk.Me.ExportDeviceAndAppManagementData;
-using MicrosoftGraphSdk.Me.ExportDeviceAndAppManagementDataWithSkipWithTop;
-using MicrosoftGraphSdk.Me.ExportPersonalData;
-using MicrosoftGraphSdk.Me.Extensions;
-using MicrosoftGraphSdk.Me.FindMeetingTimes;
-using MicrosoftGraphSdk.Me.FindRoomLists;
-using MicrosoftGraphSdk.Me.FindRooms;
-using MicrosoftGraphSdk.Me.FindRoomsWithRoomList;
-using MicrosoftGraphSdk.Me.FollowedSites;
-using MicrosoftGraphSdk.Me.GetEffectiveDeviceEnrollmentConfigurations;
-using MicrosoftGraphSdk.Me.GetLoggedOnManagedDevices;
-using MicrosoftGraphSdk.Me.GetMailTips;
-using MicrosoftGraphSdk.Me.GetManagedAppDiagnosticStatuses;
-using MicrosoftGraphSdk.Me.GetManagedAppPolicies;
-using MicrosoftGraphSdk.Me.GetManagedDevicesWithAppFailures;
-using MicrosoftGraphSdk.Me.GetManagedDevicesWithFailedOrPendingApps;
-using MicrosoftGraphSdk.Me.GetMemberGroups;
-using MicrosoftGraphSdk.Me.GetMemberObjects;
-using MicrosoftGraphSdk.Me.InferenceClassification;
-using MicrosoftGraphSdk.Me.InformationProtection;
-using MicrosoftGraphSdk.Me.Insights;
-using MicrosoftGraphSdk.Me.InvalidateAllRefreshTokens;
-using MicrosoftGraphSdk.Me.IsManagedAppUserBlocked;
-using MicrosoftGraphSdk.Me.JoinedGroups;
-using MicrosoftGraphSdk.Me.JoinedTeams;
-using MicrosoftGraphSdk.Me.LicenseDetails;
-using MicrosoftGraphSdk.Me.MailFolders;
-using MicrosoftGraphSdk.Me.ManagedAppRegistrations;
-using MicrosoftGraphSdk.Me.ManagedDevices;
-using MicrosoftGraphSdk.Me.Manager;
-using MicrosoftGraphSdk.Me.MemberOf;
-using MicrosoftGraphSdk.Me.Messages;
-using MicrosoftGraphSdk.Me.MobileAppIntentAndStates;
-using MicrosoftGraphSdk.Me.MobileAppTroubleshootingEvents;
-using MicrosoftGraphSdk.Me.Notifications;
-using MicrosoftGraphSdk.Me.Oauth2PermissionGrants;
-using MicrosoftGraphSdk.Me.Onenote;
-using MicrosoftGraphSdk.Me.OnlineMeetings;
-using MicrosoftGraphSdk.Me.Outlook;
-using MicrosoftGraphSdk.Me.OwnedDevices;
-using MicrosoftGraphSdk.Me.OwnedObjects;
-using MicrosoftGraphSdk.Me.PendingAccessReviewInstances;
-using MicrosoftGraphSdk.Me.People;
-using MicrosoftGraphSdk.Me.Photo;
-using MicrosoftGraphSdk.Me.Photos;
-using MicrosoftGraphSdk.Me.Planner;
-using MicrosoftGraphSdk.Me.Presence;
-using MicrosoftGraphSdk.Me.Profile;
-using MicrosoftGraphSdk.Me.RegisteredDevices;
-using MicrosoftGraphSdk.Me.ReminderViewWithStartDateTimeWithEndDateTime;
-using MicrosoftGraphSdk.Me.RemoveAllDevicesFromManagement;
-using MicrosoftGraphSdk.Me.ReprocessLicenseAssignment;
-using MicrosoftGraphSdk.Me.Restore;
-using MicrosoftGraphSdk.Me.RevokeSignInSessions;
-using MicrosoftGraphSdk.Me.ScopedRoleMemberOf;
-using MicrosoftGraphSdk.Me.Security;
-using MicrosoftGraphSdk.Me.SendMail;
-using MicrosoftGraphSdk.Me.Settings;
-using MicrosoftGraphSdk.Me.Tasks;
-using MicrosoftGraphSdk.Me.Teamwork;
-using MicrosoftGraphSdk.Me.Todo;
-using MicrosoftGraphSdk.Me.TransitiveMemberOf;
-using MicrosoftGraphSdk.Me.TransitiveReports;
-using MicrosoftGraphSdk.Me.TranslateExchangeIds;
-using MicrosoftGraphSdk.Me.UnblockManagedApps;
-using MicrosoftGraphSdk.Me.UsageRights;
-using MicrosoftGraphSdk.Me.WindowsInformationProtectionDeviceRegistrations;
-using MicrosoftGraphSdk.Me.WipeAndBlockManagedApps;
-using MicrosoftGraphSdk.Me.WipeManagedAppRegistrationByDeviceTag;
-using MicrosoftGraphSdk.Me.WipeManagedAppRegistrationsByDeviceTag;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me {
+namespace Microsoft.Graph.Beta.Me {
     /// <summary>Provides operations to manage the user singleton.</summary>
     public class MeRequestBuilder {
         /// <summary>The activateServicePlan property</summary>
@@ -509,7 +509,7 @@ namespace MicrosoftGraphSdk.Me {
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreatePatchRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.User body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
+        public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.User body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -565,13 +565,13 @@ namespace MicrosoftGraphSdk.Me {
         /// <param name="queryParameters">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.User> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.User> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(queryParameters, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.User>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.User.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.User>(requestInfo, Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Provides operations to call the getEffectiveDeviceEnrollmentConfigurations method.
@@ -623,7 +623,7 @@ namespace MicrosoftGraphSdk.Me {
         /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.User body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(Microsoft.Graph.Beta.Models.User body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

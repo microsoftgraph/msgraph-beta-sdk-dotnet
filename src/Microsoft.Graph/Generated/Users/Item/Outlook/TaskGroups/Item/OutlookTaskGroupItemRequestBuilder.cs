@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups.Item.TaskFolders;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.Outlook.TaskGroups.Item.TaskFolders;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Outlook.TaskGroups.Item {
+namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups.Item {
     /// <summary>Provides operations to manage the taskGroups property of the microsoft.graph.outlookUser entity.</summary>
     public class OutlookTaskGroupItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

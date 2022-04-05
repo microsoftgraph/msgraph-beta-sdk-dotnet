@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.AddToReviewSet;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Export;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Queries;
+using Microsoft.Graph.Beta.Models.Ediscovery;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.AddToReviewSet;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Export;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Queries;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.ReviewSets.Item {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item {
     /// <summary>Provides operations to manage the reviewSets property of the microsoft.graph.ediscovery.case entity.</summary>
     public class ReviewSetItemRequestBuilder {
         /// <summary>The addToReviewSet property</summary>

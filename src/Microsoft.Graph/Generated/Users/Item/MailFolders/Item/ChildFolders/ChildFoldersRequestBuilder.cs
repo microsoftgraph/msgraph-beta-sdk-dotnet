@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Count;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Delta;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Count;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Delta;
-using MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders {
+namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders {
     /// <summary>Provides operations to manage the childFolders property of the microsoft.graph.mailFolder entity.</summary>
     public class ChildFoldersRequestBuilder {
         /// <summary>The count property</summary>
@@ -24,11 +24,11 @@ namespace MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.mailFolders.item.childFolders.item collection</summary>
-        public MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.MailFolderItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.mailFolders.item.childFolders.item collection</summary>
+        public Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.MailFolderItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mailFolder_id1", position);
-            return new MicrosoftGraphSdk.Users.Item.MailFolders.Item.ChildFolders.Item.MailFolderItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.MailFolderItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ChildFoldersRequestBuilder and sets the default values.

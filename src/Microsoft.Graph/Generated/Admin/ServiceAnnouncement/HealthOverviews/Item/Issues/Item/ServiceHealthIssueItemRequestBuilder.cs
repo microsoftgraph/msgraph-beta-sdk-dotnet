@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Admin.ServiceAnnouncement.HealthOverviews.Item.Issues.Item.IncidentReport;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Admin.ServiceAnnouncement.HealthOverviews.Item.Issues.Item.IncidentReport;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.HealthOverviews.Item.Issues.Item {
+namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.HealthOverviews.Item.Issues.Item {
     /// <summary>Provides operations to manage the issues property of the microsoft.graph.serviceHealth entity.</summary>
     public class ServiceHealthIssueItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Connections.Item.Groups.Count;
+using Microsoft.Graph.Beta.Connections.Item.Groups.Item;
+using Microsoft.Graph.Beta.Models.ExternalConnectors;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Connections.Item.Groups.Count;
-using MicrosoftGraphSdk.Connections.Item.Groups.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Connections.Item.Groups {
+namespace Microsoft.Graph.Beta.Connections.Item.Groups {
     /// <summary>Provides operations to manage the groups property of the microsoft.graph.externalConnectors.externalConnection entity.</summary>
     public class GroupsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Connections.Item.Groups {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.connections.item.groups.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.connections.item.groups.item collection</summary>
         public ExternalGroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("externalGroup_id", position);

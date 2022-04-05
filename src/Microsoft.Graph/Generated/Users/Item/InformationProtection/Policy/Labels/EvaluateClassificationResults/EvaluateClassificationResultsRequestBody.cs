@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Users.Item.InformationProtection.Policy.Labels.EvaluateClassificationResults {
+namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy.Labels.EvaluateClassificationResults {
     /// <summary>Provides operations to call the evaluateClassificationResults method.</summary>
     public class EvaluateClassificationResultsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -12,7 +12,7 @@ namespace MicrosoftGraphSdk.Users.Item.InformationProtection.Policy.Labels.Evalu
         /// <summary>The classificationResults property</summary>
         public List<ClassificationResult> ClassificationResults { get; set; }
         /// <summary>The contentInfo property</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.ContentInfo ContentInfo { get; set; }
+        public Microsoft.Graph.Beta.Models.ContentInfo ContentInfo { get; set; }
         /// <summary>
         /// Instantiates a new evaluateClassificationResultsRequestBody and sets the default values.
         /// </summary>
@@ -33,7 +33,7 @@ namespace MicrosoftGraphSdk.Users.Item.InformationProtection.Policy.Labels.Evalu
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"classificationResults", (o,n) => { (o as EvaluateClassificationResultsRequestBody).ClassificationResults = n.GetCollectionOfObjectValues<ClassificationResult>(ClassificationResult.CreateFromDiscriminatorValue).ToList(); } },
-                {"contentInfo", (o,n) => { (o as EvaluateClassificationResultsRequestBody).ContentInfo = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ContentInfo>(MicrosoftGraphSdk.Models.Microsoft.Graph.ContentInfo.CreateFromDiscriminatorValue); } },
+                {"contentInfo", (o,n) => { (o as EvaluateClassificationResultsRequestBody).ContentInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ContentInfo>(Microsoft.Graph.Beta.Models.ContentInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace MicrosoftGraphSdk.Users.Item.InformationProtection.Policy.Labels.Evalu
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<ClassificationResult>("classificationResults", ClassificationResults);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ContentInfo>("contentInfo", ContentInfo);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ContentInfo>("contentInfo", ContentInfo);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

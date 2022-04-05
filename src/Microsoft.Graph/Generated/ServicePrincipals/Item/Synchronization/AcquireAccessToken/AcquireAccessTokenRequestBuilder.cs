@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.AcquireAccessToken {
+namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.AcquireAccessToken {
     /// <summary>Provides operations to call the acquireAccessToken method.</summary>
     public class AcquireAccessTokenRequestBuilder {
         /// <summary>Path parameters for the request</summary>

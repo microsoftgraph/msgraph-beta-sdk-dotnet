@@ -1,20 +1,20 @@
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models.Security;
+using Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.Count;
+using Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.EvaluateApplication;
+using Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.EvaluateClassificationResults;
+using Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.EvaluateRemoval;
+using Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.ExtractContentLabel;
+using Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Security;
-using MicrosoftGraphSdk.Security.InformationProtection.SensitivityLabels.Count;
-using MicrosoftGraphSdk.Security.InformationProtection.SensitivityLabels.EvaluateApplication;
-using MicrosoftGraphSdk.Security.InformationProtection.SensitivityLabels.EvaluateClassificationResults;
-using MicrosoftGraphSdk.Security.InformationProtection.SensitivityLabels.EvaluateRemoval;
-using MicrosoftGraphSdk.Security.InformationProtection.SensitivityLabels.ExtractContentLabel;
-using MicrosoftGraphSdk.Security.InformationProtection.SensitivityLabels.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Security.InformationProtection.SensitivityLabels {
+namespace Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels {
     /// <summary>Provides operations to manage the sensitivityLabels property of the microsoft.graph.security.informationProtection entity.</summary>
     public class SensitivityLabelsRequestBuilder {
         /// <summary>The count property</summary>
@@ -43,7 +43,7 @@ namespace MicrosoftGraphSdk.Security.InformationProtection.SensitivityLabels {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.security.informationProtection.sensitivityLabels.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.security.informationProtection.sensitivityLabels.item collection</summary>
         public SensitivityLabelItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("sensitivityLabel_id", position);

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Policies.RoleManagementPolicies.Item.EffectiveRules;
+using Microsoft.Graph.Beta.Policies.RoleManagementPolicies.Item.Rules;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Policies.RoleManagementPolicies.Item.EffectiveRules;
-using MicrosoftGraphSdk.Policies.RoleManagementPolicies.Item.Rules;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Policies.RoleManagementPolicies.Item {
+namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicies.Item {
     /// <summary>Provides operations to manage the roleManagementPolicies property of the microsoft.graph.policyRoot entity.</summary>
     public class UnifiedRoleManagementPolicyItemRequestBuilder {
         /// <summary>The effectiveRules property</summary>

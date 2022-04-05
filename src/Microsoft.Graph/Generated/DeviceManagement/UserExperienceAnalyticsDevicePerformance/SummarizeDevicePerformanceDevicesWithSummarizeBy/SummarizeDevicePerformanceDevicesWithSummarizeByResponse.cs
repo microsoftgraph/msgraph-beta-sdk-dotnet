@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy {
+namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy {
     /// <summary>Provides operations to call the summarizeDevicePerformanceDevices method.</summary>
     public class SummarizeDevicePerformanceDevicesWithSummarizeByResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The value property</summary>
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsDevicePerformance> Value { get; set; }
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance> Value { get; set; }
         /// <summary>
         /// Instantiates a new summarizeDevicePerformanceDevicesWithSummarizeByResponse and sets the default values.
         /// </summary>
@@ -30,7 +30,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsDevicePerfor
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"value", (o,n) => { (o as SummarizeDevicePerformanceDevicesWithSummarizeByResponse).Value = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsDevicePerformance>(MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsDevicePerformance.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", (o,n) => { (o as SummarizeDevicePerformanceDevicesWithSummarizeByResponse).Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>
@@ -39,7 +39,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsDevicePerfor
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsDevicePerformance>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

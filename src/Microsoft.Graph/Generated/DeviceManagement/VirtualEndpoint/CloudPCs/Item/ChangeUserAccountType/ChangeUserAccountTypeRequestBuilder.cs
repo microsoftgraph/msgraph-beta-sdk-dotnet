@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.CloudPCs.Item.ChangeUserAccountType {
+namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.ChangeUserAccountType {
     /// <summary>Provides operations to call the changeUserAccountType method.</summary>
     public class ChangeUserAccountTypeRequestBuilder {
         /// <summary>Path parameters for the request</summary>

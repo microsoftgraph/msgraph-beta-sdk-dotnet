@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Count;
+using Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.Outlook.TaskFolders.Count;
-using MicrosoftGraphSdk.Users.Item.Outlook.TaskFolders.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Outlook.TaskFolders {
+namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders {
     /// <summary>Provides operations to manage the taskFolders property of the microsoft.graph.outlookUser entity.</summary>
     public class TaskFoldersRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Users.Item.Outlook.TaskFolders {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.outlook.taskFolders.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.outlook.taskFolders.item collection</summary>
         public OutlookTaskFolderItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("outlookTaskFolder_id", position);

@@ -1,24 +1,24 @@
+using Microsoft.Graph.Beta.Groups.Item.Drives.Item.List.ContentTypes.Item.AssociateWithHubSites;
+using Microsoft.Graph.Beta.Groups.Item.Drives.Item.List.ContentTypes.Item.Base;
+using Microsoft.Graph.Beta.Groups.Item.Drives.Item.List.ContentTypes.Item.BaseTypes;
+using Microsoft.Graph.Beta.Groups.Item.Drives.Item.List.ContentTypes.Item.ColumnLinks;
+using Microsoft.Graph.Beta.Groups.Item.Drives.Item.List.ContentTypes.Item.ColumnPositions;
+using Microsoft.Graph.Beta.Groups.Item.Drives.Item.List.ContentTypes.Item.Columns;
+using Microsoft.Graph.Beta.Groups.Item.Drives.Item.List.ContentTypes.Item.CopyToDefaultContentLocation;
+using Microsoft.Graph.Beta.Groups.Item.Drives.Item.List.ContentTypes.Item.IsPublished;
+using Microsoft.Graph.Beta.Groups.Item.Drives.Item.List.ContentTypes.Item.Publish;
+using Microsoft.Graph.Beta.Groups.Item.Drives.Item.List.ContentTypes.Item.Unpublish;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Groups.Item.Drives.Item.List.ContentTypes.Item.AssociateWithHubSites;
-using MicrosoftGraphSdk.Groups.Item.Drives.Item.List.ContentTypes.Item.Base;
-using MicrosoftGraphSdk.Groups.Item.Drives.Item.List.ContentTypes.Item.BaseTypes;
-using MicrosoftGraphSdk.Groups.Item.Drives.Item.List.ContentTypes.Item.ColumnLinks;
-using MicrosoftGraphSdk.Groups.Item.Drives.Item.List.ContentTypes.Item.ColumnPositions;
-using MicrosoftGraphSdk.Groups.Item.Drives.Item.List.ContentTypes.Item.Columns;
-using MicrosoftGraphSdk.Groups.Item.Drives.Item.List.ContentTypes.Item.CopyToDefaultContentLocation;
-using MicrosoftGraphSdk.Groups.Item.Drives.Item.List.ContentTypes.Item.IsPublished;
-using MicrosoftGraphSdk.Groups.Item.Drives.Item.List.ContentTypes.Item.Publish;
-using MicrosoftGraphSdk.Groups.Item.Drives.Item.List.ContentTypes.Item.Unpublish;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Drives.Item.List.ContentTypes.Item {
+namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.List.ContentTypes.Item {
     /// <summary>Provides operations to manage the contentTypes property of the microsoft.graph.list entity.</summary>
     public class ContentTypeItemRequestBuilder {
         /// <summary>The associateWithHubSites property</summary>

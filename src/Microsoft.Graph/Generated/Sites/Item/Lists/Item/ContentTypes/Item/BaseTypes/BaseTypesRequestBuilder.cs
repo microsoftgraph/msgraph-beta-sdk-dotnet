@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Sites.Item.Lists.Item.ContentTypes.Item.BaseTypes.Count;
+using Microsoft.Graph.Beta.Sites.Item.Lists.Item.ContentTypes.Item.BaseTypes.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.BaseTypes.Count;
-using MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.BaseTypes.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.BaseTypes {
+namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.ContentTypes.Item.BaseTypes {
     /// <summary>Provides operations to manage the baseTypes property of the microsoft.graph.contentType entity.</summary>
     public class BaseTypesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,11 +23,11 @@ namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.BaseTypes {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.sites.item.lists.item.contentTypes.item.baseTypes.item collection</summary>
-        public MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.BaseTypes.Item.ContentTypeItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.sites.item.lists.item.contentTypes.item.baseTypes.item collection</summary>
+        public Microsoft.Graph.Beta.Sites.Item.Lists.Item.ContentTypes.Item.BaseTypes.Item.ContentTypeItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("contentType_id1", position);
-            return new MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.BaseTypes.Item.ContentTypeItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new Microsoft.Graph.Beta.Sites.Item.Lists.Item.ContentTypes.Item.BaseTypes.Item.ContentTypeItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new BaseTypesRequestBuilder and sets the default values.

@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Tabs.Item.TeamsApp;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Teams.Item.Channels.Item.Tabs.Item.TeamsApp;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Teams.Item.Channels.Item.Tabs.Item {
+namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Tabs.Item {
     /// <summary>Provides operations to manage the tabs property of the microsoft.graph.channel entity.</summary>
     public class TeamsTabItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

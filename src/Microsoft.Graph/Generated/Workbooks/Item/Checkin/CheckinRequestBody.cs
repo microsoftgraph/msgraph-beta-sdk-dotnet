@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Workbooks.Item.Checkin {
+namespace Microsoft.Graph.Beta.Workbooks.Item.Checkin {
     /// <summary>Provides operations to call the checkin method.</summary>
     public class CheckinRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

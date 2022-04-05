@@ -1,14 +1,14 @@
+using Microsoft.Graph.Beta.Models.CallRecords;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Communications.CallRecords.Item.Sessions.Item.Segments.Item {
+namespace Microsoft.Graph.Beta.Communications.CallRecords.Item.Sessions.Item.Segments.Item {
     /// <summary>Provides operations to manage the segments property of the microsoft.graph.callRecords.session entity.</summary>
     public class SegmentItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

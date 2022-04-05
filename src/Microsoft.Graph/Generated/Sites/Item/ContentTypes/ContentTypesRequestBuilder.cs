@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Sites.Item.ContentTypes.AddCopy;
+using Microsoft.Graph.Beta.Sites.Item.ContentTypes.AddCopyFromContentTypeHub;
+using Microsoft.Graph.Beta.Sites.Item.ContentTypes.Count;
+using Microsoft.Graph.Beta.Sites.Item.ContentTypes.GetCompatibleHubContentTypes;
+using Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Sites.Item.ContentTypes.AddCopy;
-using MicrosoftGraphSdk.Sites.Item.ContentTypes.AddCopyFromContentTypeHub;
-using MicrosoftGraphSdk.Sites.Item.ContentTypes.Count;
-using MicrosoftGraphSdk.Sites.Item.ContentTypes.GetCompatibleHubContentTypes;
-using MicrosoftGraphSdk.Sites.Item.ContentTypes.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Sites.Item.ContentTypes {
+namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes {
     /// <summary>Provides operations to manage the contentTypes property of the microsoft.graph.site entity.</summary>
     public class ContentTypesRequestBuilder {
         /// <summary>The addCopy property</summary>
@@ -34,7 +34,7 @@ namespace MicrosoftGraphSdk.Sites.Item.ContentTypes {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.sites.item.contentTypes.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.sites.item.contentTypes.item collection</summary>
         public ContentTypeItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("contentType_id", position);

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Reports.GetTeamsTeamActivityDistributionCountsWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetTeamsTeamActivityDistributionCountsWithPeriod {
     /// <summary>Provides operations to call the getTeamsTeamActivityDistributionCounts method.</summary>
     public class GetTeamsTeamActivityDistributionCountsWithPeriodResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

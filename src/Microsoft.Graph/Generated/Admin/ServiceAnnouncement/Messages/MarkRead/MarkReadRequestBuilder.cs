@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.MarkRead {
+namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.MarkRead {
     /// <summary>Provides operations to call the markRead method.</summary>
     public class MarkReadRequestBuilder {
         /// <summary>Path parameters for the request</summary>

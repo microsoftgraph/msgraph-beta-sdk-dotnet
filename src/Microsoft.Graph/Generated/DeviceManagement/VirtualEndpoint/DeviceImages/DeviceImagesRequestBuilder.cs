@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Count;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.DeviceImages.Count;
-using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages;
-using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.DeviceImages.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.DeviceImages {
+namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages {
     /// <summary>Provides operations to manage the deviceImages property of the microsoft.graph.virtualEndpoint entity.</summary>
     public class DeviceImagesRequestBuilder {
         /// <summary>The count property</summary>
@@ -24,7 +24,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.DeviceImages {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.virtualEndpoint.deviceImages.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.virtualEndpoint.deviceImages.item collection</summary>
         public CloudPcDeviceImageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudPcDeviceImage_id", position);

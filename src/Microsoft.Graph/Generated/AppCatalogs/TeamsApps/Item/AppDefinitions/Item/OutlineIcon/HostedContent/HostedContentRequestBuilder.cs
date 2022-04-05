@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.OutlineIcon.HostedContent.Value;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.OutlineIcon.HostedContent.Value;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.OutlineIcon.HostedContent {
+namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.OutlineIcon.HostedContent {
     /// <summary>Provides operations to manage the hostedContent property of the microsoft.graph.teamsAppIcon entity.</summary>
     public class HostedContentRequestBuilder {
         /// <summary>The Content property</summary>

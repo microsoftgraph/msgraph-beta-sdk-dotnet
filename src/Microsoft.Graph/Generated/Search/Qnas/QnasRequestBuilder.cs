@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models.Search;
+using Microsoft.Graph.Beta.Search.Qnas.Count;
+using Microsoft.Graph.Beta.Search.Qnas.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Search;
-using MicrosoftGraphSdk.Search.Qnas.Count;
-using MicrosoftGraphSdk.Search.Qnas.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Search.Qnas {
+namespace Microsoft.Graph.Beta.Search.Qnas {
     /// <summary>Provides operations to manage the qnas property of the microsoft.graph.searchEntity entity.</summary>
     public class QnasRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Search.Qnas {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.search.qnas.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.search.qnas.item collection</summary>
         public QnaItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("qna_id", position);

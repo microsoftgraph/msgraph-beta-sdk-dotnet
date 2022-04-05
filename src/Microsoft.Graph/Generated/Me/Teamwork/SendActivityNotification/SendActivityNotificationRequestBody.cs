@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Me.Teamwork.SendActivityNotification {
+namespace Microsoft.Graph.Beta.Me.Teamwork.SendActivityNotification {
     /// <summary>Provides operations to call the sendActivityNotification method.</summary>
     public class SendActivityNotificationRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>The activityType property</summary>
@@ -16,7 +16,7 @@ namespace MicrosoftGraphSdk.Me.Teamwork.SendActivityNotification {
         /// <summary>The previewText property</summary>
         public ItemBody PreviewText { get; set; }
         /// <summary>The templateParameters property</summary>
-        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.KeyValuePair> TemplateParameters { get; set; }
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair> TemplateParameters { get; set; }
         /// <summary>The topic property</summary>
         public TeamworkActivityTopic Topic { get; set; }
         /// <summary>
@@ -41,7 +41,7 @@ namespace MicrosoftGraphSdk.Me.Teamwork.SendActivityNotification {
                 {"activityType", (o,n) => { (o as SendActivityNotificationRequestBody).ActivityType = n.GetStringValue(); } },
                 {"chainId", (o,n) => { (o as SendActivityNotificationRequestBody).ChainId = n.GetLongValue(); } },
                 {"previewText", (o,n) => { (o as SendActivityNotificationRequestBody).PreviewText = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
-                {"templateParameters", (o,n) => { (o as SendActivityNotificationRequestBody).TemplateParameters = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.KeyValuePair>(MicrosoftGraphSdk.Models.Microsoft.Graph.KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"templateParameters", (o,n) => { (o as SendActivityNotificationRequestBody).TemplateParameters = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>(Microsoft.Graph.Beta.Models.KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
                 {"topic", (o,n) => { (o as SendActivityNotificationRequestBody).Topic = n.GetObjectValue<TeamworkActivityTopic>(TeamworkActivityTopic.CreateFromDiscriminatorValue); } },
             };
         }
@@ -54,7 +54,7 @@ namespace MicrosoftGraphSdk.Me.Teamwork.SendActivityNotification {
             writer.WriteStringValue("activityType", ActivityType);
             writer.WriteLongValue("chainId", ChainId);
             writer.WriteObjectValue<ItemBody>("previewText", PreviewText);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.KeyValuePair>("templateParameters", TemplateParameters);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>("templateParameters", TemplateParameters);
             writer.WriteObjectValue<TeamworkActivityTopic>("topic", Topic);
             writer.WriteAdditionalData(AdditionalData);
         }

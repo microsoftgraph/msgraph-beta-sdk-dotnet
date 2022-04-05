@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TenantRelationships.DelegatedAdminCustomers.Item {
+namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers.Item {
     /// <summary>Provides operations to manage the delegatedAdminCustomers property of the microsoft.graph.tenantRelationship entity.</summary>
     public class DelegatedAdminCustomerItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

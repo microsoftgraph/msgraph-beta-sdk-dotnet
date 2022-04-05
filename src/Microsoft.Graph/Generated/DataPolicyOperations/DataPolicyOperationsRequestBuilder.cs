@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DataPolicyOperations.Count;
+using Microsoft.Graph.Beta.DataPolicyOperations.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DataPolicyOperations.Count;
-using MicrosoftGraphSdk.DataPolicyOperations.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DataPolicyOperations {
+namespace Microsoft.Graph.Beta.DataPolicyOperations {
     /// <summary>Provides operations to manage the collection of dataPolicyOperation entities.</summary>
     public class DataPolicyOperationsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DataPolicyOperations {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.dataPolicyOperations.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.dataPolicyOperations.item collection</summary>
         public DataPolicyOperationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("dataPolicyOperation_id", position);

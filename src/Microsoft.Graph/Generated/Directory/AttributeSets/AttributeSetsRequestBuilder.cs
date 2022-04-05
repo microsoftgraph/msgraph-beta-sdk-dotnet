@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Directory.AttributeSets.Count;
+using Microsoft.Graph.Beta.Directory.AttributeSets.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Directory.AttributeSets.Count;
-using MicrosoftGraphSdk.Directory.AttributeSets.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Directory.AttributeSets {
+namespace Microsoft.Graph.Beta.Directory.AttributeSets {
     /// <summary>Provides operations to manage the attributeSets property of the microsoft.graph.directory entity.</summary>
     public class AttributeSetsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Directory.AttributeSets {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.directory.attributeSets.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.directory.attributeSets.item collection</summary>
         public AttributeSetItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("attributeSet_id", position);

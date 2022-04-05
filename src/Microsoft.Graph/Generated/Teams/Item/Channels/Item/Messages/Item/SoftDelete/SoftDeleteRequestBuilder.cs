@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Teams.Item.Channels.Item.Messages.Item.SoftDelete {
+namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.Item.SoftDelete {
     /// <summary>Provides operations to call the softDelete method.</summary>
     public class SoftDeleteRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.ValidateCredentials {
+namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.ValidateCredentials {
     /// <summary>Provides operations to call the validateCredentials method.</summary>
     public class ValidateCredentialsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.GetTopMobileAppsWithStatusWithCount {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.GetTopMobileAppsWithStatusWithCount {
     /// <summary>Provides operations to call the getTopMobileApps method.</summary>
     public class GetTopMobileAppsWithStatusWithCountRequestBuilder {
         /// <summary>Path parameters for the request</summary>

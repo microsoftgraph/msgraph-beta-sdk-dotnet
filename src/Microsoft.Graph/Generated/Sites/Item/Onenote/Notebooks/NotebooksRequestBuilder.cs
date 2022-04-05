@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Count;
+using Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.GetNotebookFromWebUrl;
+using Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.GetRecentNotebooksWithIncludePersonalNotebooks;
+using Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Sites.Item.Onenote.Notebooks.Count;
-using MicrosoftGraphSdk.Sites.Item.Onenote.Notebooks.GetNotebookFromWebUrl;
-using MicrosoftGraphSdk.Sites.Item.Onenote.Notebooks.GetRecentNotebooksWithIncludePersonalNotebooks;
-using MicrosoftGraphSdk.Sites.Item.Onenote.Notebooks.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Sites.Item.Onenote.Notebooks {
+namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks {
     /// <summary>Provides operations to manage the notebooks property of the microsoft.graph.onenote entity.</summary>
     public class NotebooksRequestBuilder {
         /// <summary>The count property</summary>
@@ -29,7 +29,7 @@ namespace MicrosoftGraphSdk.Sites.Item.Onenote.Notebooks {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.sites.item.onenote.notebooks.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.sites.item.onenote.notebooks.item collection</summary>
         public NotebookItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("notebook_id", position);

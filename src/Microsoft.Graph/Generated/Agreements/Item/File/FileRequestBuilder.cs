@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Agreements.Item.File.Localizations;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Agreements.Item.File.Localizations;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Agreements.Item.File {
+namespace Microsoft.Graph.Beta.Agreements.Item.File {
     /// <summary>Provides operations to manage the file property of the microsoft.graph.agreement entity.</summary>
     public class FileRequestBuilder {
         /// <summary>The localizations property</summary>

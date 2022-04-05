@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Items.Count;
+using Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Items.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item.Items.Count;
-using MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item.Items.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item.Items {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Items {
     /// <summary>Provides operations to manage the items property of the microsoft.graph.policySet entity.</summary>
     public class ItemsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item.Items {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.policySets.item.items.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceAppManagement.policySets.item.items.item collection</summary>
         public PolicySetItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("policySetItem_id", position);

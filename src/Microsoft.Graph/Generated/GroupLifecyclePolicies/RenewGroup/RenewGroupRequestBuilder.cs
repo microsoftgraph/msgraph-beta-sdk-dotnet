@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.GroupLifecyclePolicies.RenewGroup {
+namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.RenewGroup {
     /// <summary>Provides operations to call the renewGroup method.</summary>
     public class RenewGroupRequestBuilder {
         /// <summary>Path parameters for the request</summary>

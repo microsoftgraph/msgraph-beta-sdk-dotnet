@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.CreateDeviceLogCollectionRequest {
+namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.CreateDeviceLogCollectionRequest {
     /// <summary>Provides operations to call the createDeviceLogCollectionRequest method.</summary>
     public class CreateDeviceLogCollectionRequestRequestBuilder {
         /// <summary>Path parameters for the request</summary>

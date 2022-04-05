@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.IdentityProtection.RiskyUsers.Item.History.Count;
+using Microsoft.Graph.Beta.IdentityProtection.RiskyUsers.Item.History.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.IdentityProtection.RiskyUsers.Item.History.Count;
-using MicrosoftGraphSdk.IdentityProtection.RiskyUsers.Item.History.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.IdentityProtection.RiskyUsers.Item.History {
+namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers.Item.History {
     /// <summary>Provides operations to manage the history property of the microsoft.graph.riskyUser entity.</summary>
     public class HistoryRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.IdentityProtection.RiskyUsers.Item.History {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.identityProtection.riskyUsers.item.history.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.identityProtection.riskyUsers.item.history.item collection</summary>
         public RiskyUserHistoryItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("riskyUserHistoryItem_id", position);

@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.ConfirmCompromised;
+using Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Count;
+using Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Dismiss;
+using Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.IdentityProtection.RiskyServicePrincipals.ConfirmCompromised;
-using MicrosoftGraphSdk.IdentityProtection.RiskyServicePrincipals.Count;
-using MicrosoftGraphSdk.IdentityProtection.RiskyServicePrincipals.Dismiss;
-using MicrosoftGraphSdk.IdentityProtection.RiskyServicePrincipals.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.IdentityProtection.RiskyServicePrincipals {
+namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals {
     /// <summary>Provides operations to manage the riskyServicePrincipals property of the microsoft.graph.identityProtectionRoot entity.</summary>
     public class RiskyServicePrincipalsRequestBuilder {
         /// <summary>The confirmCompromised property</summary>
@@ -33,7 +33,7 @@ namespace MicrosoftGraphSdk.IdentityProtection.RiskyServicePrincipals {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.identityProtection.riskyServicePrincipals.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.identityProtection.riskyServicePrincipals.item collection</summary>
         public RiskyServicePrincipalItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("riskyServicePrincipal_id", position);

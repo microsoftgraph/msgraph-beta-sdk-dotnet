@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.UpdateLanguageFiles {
+namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.UpdateLanguageFiles {
     /// <summary>Provides operations to call the updateLanguageFiles method.</summary>
     public class UpdateLanguageFilesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

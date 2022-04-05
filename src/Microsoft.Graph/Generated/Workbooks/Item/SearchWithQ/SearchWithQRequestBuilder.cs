@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Workbooks.Item.SearchWithQ {
+namespace Microsoft.Graph.Beta.Workbooks.Item.SearchWithQ {
     /// <summary>Provides operations to call the search method.</summary>
     public class SearchWithQRequestBuilder {
         /// <summary>Path parameters for the request</summary>

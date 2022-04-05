@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.TrustFramework.Policies.Item.Value;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.TrustFramework.Policies.Item.Value;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TrustFramework.Policies.Item {
+namespace Microsoft.Graph.Beta.TrustFramework.Policies.Item {
     /// <summary>Provides operations to manage the policies property of the microsoft.graph.trustFramework entity.</summary>
     public class TrustFrameworkPolicyItemRequestBuilder {
         /// <summary>The Content property</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetMailboxUsageDetailWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetMailboxUsageDetailWithPeriod {
     /// <summary>Provides operations to call the getMailboxUsageDetail method.</summary>
     public class GetMailboxUsageDetailWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

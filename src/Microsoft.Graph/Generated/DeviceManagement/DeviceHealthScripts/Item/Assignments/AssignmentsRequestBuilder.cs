@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.Assignments.Count;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.Assignments.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.Item.Assignments.Count;
-using MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.Item.Assignments.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.Item.Assignments {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.Assignments {
     /// <summary>Provides operations to manage the assignments property of the microsoft.graph.deviceHealthScript entity.</summary>
     public class AssignmentsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.Item.Assignment
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.deviceHealthScripts.item.assignments.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.deviceHealthScripts.item.assignments.item collection</summary>
         public DeviceHealthScriptAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceHealthScriptAssignment_id", position);

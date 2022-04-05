@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Domains.Item.ForceDelete {
+namespace Microsoft.Graph.Beta.Domains.Item.ForceDelete {
     /// <summary>Provides operations to call the forceDelete method.</summary>
     public class ForceDeleteRequestBuilder {
         /// <summary>Path parameters for the request</summary>

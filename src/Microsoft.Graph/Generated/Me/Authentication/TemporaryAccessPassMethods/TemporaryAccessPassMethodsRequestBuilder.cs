@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.Authentication.TemporaryAccessPassMethods.Count;
+using Microsoft.Graph.Beta.Me.Authentication.TemporaryAccessPassMethods.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Authentication.TemporaryAccessPassMethods.Count;
-using MicrosoftGraphSdk.Me.Authentication.TemporaryAccessPassMethods.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Authentication.TemporaryAccessPassMethods {
+namespace Microsoft.Graph.Beta.Me.Authentication.TemporaryAccessPassMethods {
     /// <summary>Provides operations to manage the temporaryAccessPassMethods property of the microsoft.graph.authentication entity.</summary>
     public class TemporaryAccessPassMethodsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.Authentication.TemporaryAccessPassMethods {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.authentication.temporaryAccessPassMethods.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.authentication.temporaryAccessPassMethods.item collection</summary>
         public TemporaryAccessPassAuthenticationMethodItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("temporaryAccessPassAuthenticationMethod_id", position);

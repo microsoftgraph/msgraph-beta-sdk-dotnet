@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals.Count;
+using Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Financials.Companies.Item.CustomerPaymentJournals.Count;
-using MicrosoftGraphSdk.Financials.Companies.Item.CustomerPaymentJournals.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Financials.Companies.Item.CustomerPaymentJournals {
+namespace Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals {
     /// <summary>Provides operations to manage the customerPaymentJournals property of the microsoft.graph.company entity.</summary>
     public class CustomerPaymentJournalsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.CustomerPaymentJournals {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.financials.companies.item.customerPaymentJournals.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.financials.companies.item.customerPaymentJournals.item collection</summary>
         public CustomerPaymentJournalItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("customerPaymentJournal_id", position);

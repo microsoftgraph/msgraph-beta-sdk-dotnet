@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicyTemplates.Item.SettingTemplates.Item.SettingDefinitions.Count;
+using Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicyTemplates.Item.SettingTemplates.Item.SettingDefinitions.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.ConfigurationPolicyTemplates.Item.SettingTemplates.Item.SettingDefinitions.Count;
-using MicrosoftGraphSdk.DeviceManagement.ConfigurationPolicyTemplates.Item.SettingTemplates.Item.SettingDefinitions.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.ConfigurationPolicyTemplates.Item.SettingTemplates.Item.SettingDefinitions {
+namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicyTemplates.Item.SettingTemplates.Item.SettingDefinitions {
     /// <summary>Provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementConfigurationSettingTemplate entity.</summary>
     public class SettingDefinitionsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ConfigurationPolicyTemplates.Item.S
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.configurationPolicyTemplates.item.settingTemplates.item.settingDefinitions.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.configurationPolicyTemplates.item.settingTemplates.item.settingDefinitions.item collection</summary>
         public DeviceManagementConfigurationSettingDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementConfigurationSettingDefinition_id", position);

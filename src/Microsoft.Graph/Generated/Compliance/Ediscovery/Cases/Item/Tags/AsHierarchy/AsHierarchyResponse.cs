@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models.Ediscovery;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Tags.AsHierarchy {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.AsHierarchy {
     /// <summary>Provides operations to call the asHierarchy method.</summary>
     public class AsHierarchyResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetBrowserUserDetailWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetBrowserUserDetailWithPeriod {
     /// <summary>Provides operations to call the getBrowserUserDetail method.</summary>
     public class GetBrowserUserDetailWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

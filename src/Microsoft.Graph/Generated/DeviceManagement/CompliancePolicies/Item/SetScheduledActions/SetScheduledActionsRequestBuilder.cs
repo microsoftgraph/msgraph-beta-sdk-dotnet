@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.CompliancePolicies.Item.SetScheduledActions {
+namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.SetScheduledActions {
     /// <summary>Provides operations to call the setScheduledActions method.</summary>
     public class SetScheduledActionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

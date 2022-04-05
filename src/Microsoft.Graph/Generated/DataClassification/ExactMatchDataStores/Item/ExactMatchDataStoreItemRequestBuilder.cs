@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup;
+using Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DataClassification.ExactMatchDataStores.Item.Lookup;
-using MicrosoftGraphSdk.DataClassification.ExactMatchDataStores.Item.Sessions;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DataClassification.ExactMatchDataStores.Item {
+namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item {
     /// <summary>Provides operations to manage the exactMatchDataStores property of the microsoft.graph.dataClassificationService entity.</summary>
     public class ExactMatchDataStoreItemRequestBuilder {
         /// <summary>The lookup property</summary>

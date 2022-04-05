@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.InformationProtection.ThreatAssessmentRequests.Item.Results.Count;
+using Microsoft.Graph.Beta.Users.Item.InformationProtection.ThreatAssessmentRequests.Item.Results.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.InformationProtection.ThreatAssessmentRequests.Item.Results.Count;
-using MicrosoftGraphSdk.Users.Item.InformationProtection.ThreatAssessmentRequests.Item.Results.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.InformationProtection.ThreatAssessmentRequests.Item.Results {
+namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.ThreatAssessmentRequests.Item.Results {
     /// <summary>Provides operations to manage the results property of the microsoft.graph.threatAssessmentRequest entity.</summary>
     public class ResultsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Users.Item.InformationProtection.ThreatAssessmentReq
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.informationProtection.threatAssessmentRequests.item.results.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.informationProtection.threatAssessmentRequests.item.results.item collection</summary>
         public ThreatAssessmentResultItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("threatAssessmentResult_id", position);

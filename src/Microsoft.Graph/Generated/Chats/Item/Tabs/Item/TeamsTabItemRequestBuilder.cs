@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Chats.Item.Tabs.Item.TeamsApp;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Chats.Item.Tabs.Item.TeamsApp;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Chats.Item.Tabs.Item {
+namespace Microsoft.Graph.Beta.Chats.Item.Tabs.Item {
     /// <summary>Provides operations to manage the tabs property of the microsoft.graph.chat entity.</summary>
     public class TeamsTabItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

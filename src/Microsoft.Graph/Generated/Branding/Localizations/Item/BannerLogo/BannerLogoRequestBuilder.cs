@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Branding.Localizations.Item.BannerLogo {
+namespace Microsoft.Graph.Beta.Branding.Localizations.Item.BannerLogo {
     /// <summary>Provides operations to manage the media for the organizationalBranding entity.</summary>
     public class BannerLogoRequestBuilder {
         /// <summary>Path parameters for the request</summary>

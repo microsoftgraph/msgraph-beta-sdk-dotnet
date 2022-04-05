@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.MessageRecipients.Item.Events;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.MessageRecipients.Item.Events;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.MessageRecipients.Item {
+namespace Microsoft.Graph.Beta.MessageRecipients.Item {
     /// <summary>Provides operations to manage the collection of messageRecipient entities.</summary>
     public class MessageRecipientItemRequestBuilder {
         /// <summary>The events property</summary>

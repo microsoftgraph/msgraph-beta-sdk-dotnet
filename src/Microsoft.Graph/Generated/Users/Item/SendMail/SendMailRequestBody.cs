@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Users.Item.SendMail {
+namespace Microsoft.Graph.Beta.Users.Item.SendMail {
     /// <summary>Provides operations to call the sendMail method.</summary>
     public class SendMailRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Message property</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Message Message { get; set; }
+        public Microsoft.Graph.Beta.Models.Message Message { get; set; }
         /// <summary>The SaveToSentItems property</summary>
         public bool? SaveToSentItems { get; set; }
         /// <summary>
@@ -32,7 +32,7 @@ namespace MicrosoftGraphSdk.Users.Item.SendMail {
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"message", (o,n) => { (o as SendMailRequestBody).Message = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Message>(MicrosoftGraphSdk.Models.Microsoft.Graph.Message.CreateFromDiscriminatorValue); } },
+                {"message", (o,n) => { (o as SendMailRequestBody).Message = n.GetObjectValue<Microsoft.Graph.Beta.Models.Message>(Microsoft.Graph.Beta.Models.Message.CreateFromDiscriminatorValue); } },
                 {"saveToSentItems", (o,n) => { (o as SendMailRequestBody).SaveToSentItems = n.GetBoolValue(); } },
             };
         }
@@ -42,7 +42,7 @@ namespace MicrosoftGraphSdk.Users.Item.SendMail {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Message>("message", Message);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Message>("message", Message);
             writer.WriteBoolValue("saveToSentItems", SaveToSentItems);
             writer.WriteAdditionalData(AdditionalData);
         }

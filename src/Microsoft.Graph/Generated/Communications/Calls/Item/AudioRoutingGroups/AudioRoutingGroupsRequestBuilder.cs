@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Communications.Calls.Item.AudioRoutingGroups.Count;
+using Microsoft.Graph.Beta.Communications.Calls.Item.AudioRoutingGroups.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Communications.Calls.Item.AudioRoutingGroups.Count;
-using MicrosoftGraphSdk.Communications.Calls.Item.AudioRoutingGroups.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Communications.Calls.Item.AudioRoutingGroups {
+namespace Microsoft.Graph.Beta.Communications.Calls.Item.AudioRoutingGroups {
     /// <summary>Provides operations to manage the audioRoutingGroups property of the microsoft.graph.call entity.</summary>
     public class AudioRoutingGroupsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.AudioRoutingGroups {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.communications.calls.item.audioRoutingGroups.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.communications.calls.item.audioRoutingGroups.item collection</summary>
         public AudioRoutingGroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("audioRoutingGroup_id", position);

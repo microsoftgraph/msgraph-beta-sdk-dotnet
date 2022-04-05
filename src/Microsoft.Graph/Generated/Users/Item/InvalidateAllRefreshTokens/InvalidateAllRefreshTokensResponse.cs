@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Users.Item.InvalidateAllRefreshTokens {
+namespace Microsoft.Graph.Beta.Users.Item.InvalidateAllRefreshTokens {
     /// <summary>Provides operations to call the invalidateAllRefreshTokens method.</summary>
     public class InvalidateAllRefreshTokensResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

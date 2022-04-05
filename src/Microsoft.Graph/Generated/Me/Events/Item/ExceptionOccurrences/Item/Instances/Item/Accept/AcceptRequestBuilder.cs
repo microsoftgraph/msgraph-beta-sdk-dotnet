@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Events.Item.ExceptionOccurrences.Item.Instances.Item.Accept {
+namespace Microsoft.Graph.Beta.Me.Events.Item.ExceptionOccurrences.Item.Instances.Item.Accept {
     /// <summary>Provides operations to call the accept method.</summary>
     public class AcceptRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetOneDriveUsageAccountDetailWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetOneDriveUsageAccountDetailWithPeriod {
     /// <summary>Provides operations to call the getOneDriveUsageAccountDetail method.</summary>
     public class GetOneDriveUsageAccountDetailWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

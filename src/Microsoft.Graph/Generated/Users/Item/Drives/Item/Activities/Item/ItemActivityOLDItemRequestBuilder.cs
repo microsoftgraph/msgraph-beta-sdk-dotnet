@@ -1,21 +1,21 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.Drives.Item.Activities.Item.DriveItem;
+using Microsoft.Graph.Beta.Users.Item.Drives.Item.Activities.Item.ListItem;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.Drives.Item.Activities.Item.DriveItem;
-using MicrosoftGraphSdk.Users.Item.Drives.Item.Activities.Item.ListItem;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Drives.Item.Activities.Item {
+namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.Activities.Item {
     /// <summary>Provides operations to manage the activities property of the microsoft.graph.drive entity.</summary>
     public class ItemActivityOLDItemRequestBuilder {
         /// <summary>The driveItem property</summary>
-        public MicrosoftGraphSdk.Users.Item.Drives.Item.Activities.Item.DriveItem.DriveItemRequestBuilder DriveItem { get =>
-            new MicrosoftGraphSdk.Users.Item.Drives.Item.Activities.Item.DriveItem.DriveItemRequestBuilder(PathParameters, RequestAdapter);
+        public Microsoft.Graph.Beta.Users.Item.Drives.Item.Activities.Item.DriveItem.DriveItemRequestBuilder DriveItem { get =>
+            new Microsoft.Graph.Beta.Users.Item.Drives.Item.Activities.Item.DriveItem.DriveItemRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The listItem property</summary>
         public ListItemRequestBuilder ListItem { get =>

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Communications.Calls.Item.AddLargeGalleryView {
+namespace Microsoft.Graph.Beta.Communications.Calls.Item.AddLargeGalleryView {
     /// <summary>Provides operations to call the addLargeGalleryView method.</summary>
     public class AddLargeGalleryViewRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

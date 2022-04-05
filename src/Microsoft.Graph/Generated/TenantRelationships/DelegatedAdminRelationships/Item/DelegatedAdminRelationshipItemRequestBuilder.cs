@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments;
+using Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.Item.Operations;
+using Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.Item.Requests;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments;
-using MicrosoftGraphSdk.TenantRelationships.DelegatedAdminRelationships.Item.Operations;
-using MicrosoftGraphSdk.TenantRelationships.DelegatedAdminRelationships.Item.Requests;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TenantRelationships.DelegatedAdminRelationships.Item {
+namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.Item {
     /// <summary>Provides operations to manage the delegatedAdminRelationships property of the microsoft.graph.tenantRelationship entity.</summary>
     public class DelegatedAdminRelationshipItemRequestBuilder {
         /// <summary>The accessAssignments property</summary>

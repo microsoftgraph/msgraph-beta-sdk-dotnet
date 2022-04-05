@@ -1,25 +1,25 @@
+using Microsoft.Graph.Beta.Me.Drives.Item.Items.Item.ListItem.Activities.Item.DriveItem;
+using Microsoft.Graph.Beta.Me.Drives.Item.Items.Item.ListItem.Activities.Item.ListItem;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Drives.Item.Items.Item.ListItem.Activities.Item.DriveItem;
-using MicrosoftGraphSdk.Me.Drives.Item.Items.Item.ListItem.Activities.Item.ListItem;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Drives.Item.Items.Item.ListItem.Activities.Item {
+namespace Microsoft.Graph.Beta.Me.Drives.Item.Items.Item.ListItem.Activities.Item {
     /// <summary>Provides operations to manage the activities property of the microsoft.graph.listItem entity.</summary>
     public class ItemActivityOLDItemRequestBuilder {
         /// <summary>The driveItem property</summary>
-        public MicrosoftGraphSdk.Me.Drives.Item.Items.Item.ListItem.Activities.Item.DriveItem.DriveItemRequestBuilder DriveItem { get =>
-            new MicrosoftGraphSdk.Me.Drives.Item.Items.Item.ListItem.Activities.Item.DriveItem.DriveItemRequestBuilder(PathParameters, RequestAdapter);
+        public Microsoft.Graph.Beta.Me.Drives.Item.Items.Item.ListItem.Activities.Item.DriveItem.DriveItemRequestBuilder DriveItem { get =>
+            new Microsoft.Graph.Beta.Me.Drives.Item.Items.Item.ListItem.Activities.Item.DriveItem.DriveItemRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The listItem property</summary>
-        public MicrosoftGraphSdk.Me.Drives.Item.Items.Item.ListItem.Activities.Item.ListItem.ListItemRequestBuilder ListItem { get =>
-            new MicrosoftGraphSdk.Me.Drives.Item.Items.Item.ListItem.Activities.Item.ListItem.ListItemRequestBuilder(PathParameters, RequestAdapter);
+        public Microsoft.Graph.Beta.Me.Drives.Item.Items.Item.ListItem.Activities.Item.ListItem.ListItemRequestBuilder ListItem { get =>
+            new Microsoft.Graph.Beta.Me.Drives.Item.Items.Item.ListItem.Activities.Item.ListItem.ListItemRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

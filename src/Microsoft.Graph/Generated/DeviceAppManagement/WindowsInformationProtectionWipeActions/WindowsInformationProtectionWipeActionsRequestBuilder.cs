@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionWipeActions.Count;
+using Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionWipeActions.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceAppManagement.WindowsInformationProtectionWipeActions.Count;
-using MicrosoftGraphSdk.DeviceAppManagement.WindowsInformationProtectionWipeActions.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.WindowsInformationProtectionWipeActions {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionWipeActions {
     /// <summary>Provides operations to manage the windowsInformationProtectionWipeActions property of the microsoft.graph.deviceAppManagement entity.</summary>
     public class WindowsInformationProtectionWipeActionsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.WindowsInformationProtectionWipe
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.windowsInformationProtectionWipeActions.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceAppManagement.windowsInformationProtectionWipeActions.item collection</summary>
         public WindowsInformationProtectionWipeActionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsInformationProtectionWipeAction_id", position);

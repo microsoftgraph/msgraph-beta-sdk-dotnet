@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item.Update {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Update {
     /// <summary>Provides operations to call the update method.</summary>
     public class UpdateRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>The addedPolicySetItems property</summary>

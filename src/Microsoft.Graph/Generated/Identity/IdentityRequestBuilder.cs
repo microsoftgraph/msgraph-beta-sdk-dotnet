@@ -1,22 +1,22 @@
+using Microsoft.Graph.Beta.Identity.ApiConnectors;
+using Microsoft.Graph.Beta.Identity.B2cUserFlows;
+using Microsoft.Graph.Beta.Identity.B2xUserFlows;
+using Microsoft.Graph.Beta.Identity.ConditionalAccess;
+using Microsoft.Graph.Beta.Identity.ContinuousAccessEvaluationPolicy;
+using Microsoft.Graph.Beta.Identity.IdentityProviders;
+using Microsoft.Graph.Beta.Identity.UserFlowAttributes;
+using Microsoft.Graph.Beta.Identity.UserFlows;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Identity.ApiConnectors;
-using MicrosoftGraphSdk.Identity.B2cUserFlows;
-using MicrosoftGraphSdk.Identity.B2xUserFlows;
-using MicrosoftGraphSdk.Identity.ConditionalAccess;
-using MicrosoftGraphSdk.Identity.ContinuousAccessEvaluationPolicy;
-using MicrosoftGraphSdk.Identity.IdentityProviders;
-using MicrosoftGraphSdk.Identity.UserFlowAttributes;
-using MicrosoftGraphSdk.Identity.UserFlows;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Identity {
+namespace Microsoft.Graph.Beta.Identity {
     /// <summary>Provides operations to manage the identityContainer singleton.</summary>
     public class IdentityRequestBuilder {
         /// <summary>The apiConnectors property</summary>

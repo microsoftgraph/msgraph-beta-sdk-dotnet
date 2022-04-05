@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Directory.ImpactedResources.Item.Complete;
+using Microsoft.Graph.Beta.Directory.ImpactedResources.Item.Dismiss;
+using Microsoft.Graph.Beta.Directory.ImpactedResources.Item.Postpone;
+using Microsoft.Graph.Beta.Directory.ImpactedResources.Item.Reactivate;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Directory.ImpactedResources.Item.Complete;
-using MicrosoftGraphSdk.Directory.ImpactedResources.Item.Dismiss;
-using MicrosoftGraphSdk.Directory.ImpactedResources.Item.Postpone;
-using MicrosoftGraphSdk.Directory.ImpactedResources.Item.Reactivate;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Directory.ImpactedResources.Item {
+namespace Microsoft.Graph.Beta.Directory.ImpactedResources.Item {
     /// <summary>Provides operations to manage the impactedResources property of the microsoft.graph.directory entity.</summary>
     public class RecommendationResourceItemRequestBuilder {
         /// <summary>The complete property</summary>

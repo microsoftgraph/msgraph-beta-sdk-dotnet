@@ -1,14 +1,14 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Calendar.Events.Item.Instances.Item.ExceptionOccurrences.Item.Extensions.Item {
+namespace Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.Instances.Item.ExceptionOccurrences.Item.Extensions.Item {
     /// <summary>Provides operations to manage the extensions property of the microsoft.graph.event entity.</summary>
     public class ExtensionItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

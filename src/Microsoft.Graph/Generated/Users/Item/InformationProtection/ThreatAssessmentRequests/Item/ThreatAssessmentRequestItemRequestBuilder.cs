@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.InformationProtection.ThreatAssessmentRequests.Item.Results;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.InformationProtection.ThreatAssessmentRequests.Item.Results;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.InformationProtection.ThreatAssessmentRequests.Item {
+namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.ThreatAssessmentRequests.Item {
     /// <summary>Provides operations to manage the threatAssessmentRequests property of the microsoft.graph.informationProtection entity.</summary>
     public class ThreatAssessmentRequestItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

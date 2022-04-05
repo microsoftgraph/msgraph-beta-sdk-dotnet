@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Reports.GetSkypeForBusinessParticipantActivityUserCountsWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetSkypeForBusinessParticipantActivityUserCountsWithPeriod {
     /// <summary>Provides operations to call the getSkypeForBusinessParticipantActivityUserCounts method.</summary>
     public class GetSkypeForBusinessParticipantActivityUserCountsWithPeriodResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Me.Activities.Item.HistoryItems.Item.Activity;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Activities.Item.HistoryItems.Item.Activity;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Activities.Item.HistoryItems.Item {
+namespace Microsoft.Graph.Beta.Me.Activities.Item.HistoryItems.Item {
     /// <summary>Provides operations to manage the historyItems property of the microsoft.graph.userActivity entity.</summary>
     public class ActivityHistoryItemItemRequestBuilder {
         /// <summary>The activity property</summary>

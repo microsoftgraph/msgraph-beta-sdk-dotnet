@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Security.UserSecurityProfiles.Count;
+using Microsoft.Graph.Beta.Security.UserSecurityProfiles.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Security.UserSecurityProfiles.Count;
-using MicrosoftGraphSdk.Security.UserSecurityProfiles.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Security.UserSecurityProfiles {
+namespace Microsoft.Graph.Beta.Security.UserSecurityProfiles {
     /// <summary>Provides operations to manage the userSecurityProfiles property of the microsoft.graph.security entity.</summary>
     public class UserSecurityProfilesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Security.UserSecurityProfiles {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.security.userSecurityProfiles.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.security.userSecurityProfiles.item collection</summary>
         public UserSecurityProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userSecurityProfile_id", position);

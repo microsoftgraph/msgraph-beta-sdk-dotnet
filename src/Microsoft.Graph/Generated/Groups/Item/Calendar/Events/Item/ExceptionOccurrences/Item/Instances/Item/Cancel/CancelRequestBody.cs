@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Groups.Item.Calendar.Events.Item.ExceptionOccurrences.Item.Instances.Item.Cancel {
+namespace Microsoft.Graph.Beta.Groups.Item.Calendar.Events.Item.ExceptionOccurrences.Item.Instances.Item.Cancel {
     /// <summary>Provides operations to call the cancel method.</summary>
     public class CancelRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Ping {
+namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Ping {
     /// <summary>Provides operations to call the Ping method.</summary>
     public class PingRequestBuilder {
         /// <summary>Path parameters for the request</summary>

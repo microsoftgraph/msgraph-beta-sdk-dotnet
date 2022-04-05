@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.FilterOperators.Count;
+using Microsoft.Graph.Beta.FilterOperators.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.FilterOperators.Count;
-using MicrosoftGraphSdk.FilterOperators.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.FilterOperators {
+namespace Microsoft.Graph.Beta.FilterOperators {
     /// <summary>Provides operations to manage the collection of filterOperatorSchema entities.</summary>
     public class FilterOperatorsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.FilterOperators {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.filterOperators.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.filterOperators.item collection</summary>
         public FilterOperatorSchemaItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("filterOperatorSchema_id", position);

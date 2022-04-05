@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.GetManagedDevicesWithFailedOrPendingApps {
+namespace Microsoft.Graph.Beta.Users.Item.GetManagedDevicesWithFailedOrPendingApps {
     /// <summary>Provides operations to call the getManagedDevicesWithFailedOrPendingApps method.</summary>
     public class GetManagedDevicesWithFailedOrPendingAppsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

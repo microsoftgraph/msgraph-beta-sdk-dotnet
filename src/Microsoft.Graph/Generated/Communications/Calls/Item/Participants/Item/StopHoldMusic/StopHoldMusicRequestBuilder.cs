@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Communications.Calls.Item.Participants.Item.StopHoldMusic {
+namespace Microsoft.Graph.Beta.Communications.Calls.Item.Participants.Item.StopHoldMusic {
     /// <summary>Provides operations to call the stopHoldMusic method.</summary>
     public class StopHoldMusicRequestBuilder {
         /// <summary>Path parameters for the request</summary>

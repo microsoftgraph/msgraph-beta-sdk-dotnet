@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models.ManagedTenants;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementActions.Item.Apply {
+namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActions.Item.Apply {
     /// <summary>Provides operations to call the apply method.</summary>
     public class ApplyRequestBuilder {
         /// <summary>Path parameters for the request</summary>

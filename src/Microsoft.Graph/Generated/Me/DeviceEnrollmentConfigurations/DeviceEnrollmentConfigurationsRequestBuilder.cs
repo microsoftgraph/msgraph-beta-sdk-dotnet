@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.Count;
+using Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.HasPayloadLinks;
+using Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.DeviceEnrollmentConfigurations.Count;
-using MicrosoftGraphSdk.Me.DeviceEnrollmentConfigurations.HasPayloadLinks;
-using MicrosoftGraphSdk.Me.DeviceEnrollmentConfigurations.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.DeviceEnrollmentConfigurations {
+namespace Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations {
     /// <summary>Provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.user entity.</summary>
     public class DeviceEnrollmentConfigurationsRequestBuilder {
         /// <summary>The count property</summary>
@@ -28,7 +28,7 @@ namespace MicrosoftGraphSdk.Me.DeviceEnrollmentConfigurations {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.deviceEnrollmentConfigurations.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.deviceEnrollmentConfigurations.item collection</summary>
         public DeviceEnrollmentConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceEnrollmentConfiguration_id", position);

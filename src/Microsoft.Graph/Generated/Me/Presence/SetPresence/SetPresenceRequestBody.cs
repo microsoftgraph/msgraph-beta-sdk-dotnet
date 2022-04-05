@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Me.Presence.SetPresence {
+namespace Microsoft.Graph.Beta.Me.Presence.SetPresence {
     /// <summary>Provides operations to call the setPresence method.</summary>
     public class SetPresenceRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>The activity property</summary>

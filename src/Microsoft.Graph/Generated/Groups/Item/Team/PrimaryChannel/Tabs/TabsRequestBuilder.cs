@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Tabs.Count;
+using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Tabs.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Groups.Item.Team.PrimaryChannel.Tabs.Count;
-using MicrosoftGraphSdk.Groups.Item.Team.PrimaryChannel.Tabs.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Team.PrimaryChannel.Tabs {
+namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Tabs {
     /// <summary>Provides operations to manage the tabs property of the microsoft.graph.channel entity.</summary>
     public class TabsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Team.PrimaryChannel.Tabs {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.team.primaryChannel.tabs.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.groups.item.team.primaryChannel.tabs.item collection</summary>
         public TeamsTabItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("teamsTab_id", position);

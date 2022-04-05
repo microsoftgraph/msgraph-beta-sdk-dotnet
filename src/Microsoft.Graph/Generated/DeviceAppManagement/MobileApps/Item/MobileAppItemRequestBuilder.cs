@@ -1,24 +1,24 @@
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Assign;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Assignments;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Categories;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.DeviceStatuses;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GetRelatedAppStatesWithUserPrincipalNameWithDeviceId;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.InstallSummary;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.IosVppApp;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Relationships;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UpdateRelationships;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UserStatuses;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.Assign;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.Assignments;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.Categories;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.DeviceStatuses;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.GetRelatedAppStatesWithUserPrincipalNameWithDeviceId;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.InstallSummary;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.IosVppApp;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.Relationships;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UpdateRelationships;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item {
     /// <summary>Provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.</summary>
     public class MobileAppItemRequestBuilder {
         /// <summary>The assign property</summary>

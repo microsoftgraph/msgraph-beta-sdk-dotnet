@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Team.Schedule.Share {
+namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.Share {
     /// <summary>Provides operations to call the share method.</summary>
     public class ShareRequestBuilder {
         /// <summary>Path parameters for the request</summary>

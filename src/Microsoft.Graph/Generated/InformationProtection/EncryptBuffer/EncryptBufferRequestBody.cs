@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.InformationProtection.EncryptBuffer {
+namespace Microsoft.Graph.Beta.InformationProtection.EncryptBuffer {
     /// <summary>Provides operations to call the encryptBuffer method.</summary>
     public class EncryptBufferRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

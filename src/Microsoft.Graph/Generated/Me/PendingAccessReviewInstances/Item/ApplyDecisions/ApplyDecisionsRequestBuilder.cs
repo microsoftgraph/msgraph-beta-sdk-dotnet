@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.ApplyDecisions {
+namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.ApplyDecisions {
     /// <summary>Provides operations to call the applyDecisions method.</summary>
     public class ApplyDecisionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

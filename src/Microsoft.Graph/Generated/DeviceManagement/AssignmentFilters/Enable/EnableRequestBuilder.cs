@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.Enable {
+namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Enable {
     /// <summary>Provides operations to call the enable method.</summary>
     public class EnableRequestBuilder {
         /// <summary>Path parameters for the request</summary>

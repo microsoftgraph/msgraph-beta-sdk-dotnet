@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.Assignments.Count;
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.Assignments.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.GroupPolicyConfigurations.Item.Assignments.Count;
-using MicrosoftGraphSdk.DeviceManagement.GroupPolicyConfigurations.Item.Assignments.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyConfigurations.Item.Assignments {
+namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.Assignments {
     /// <summary>Provides operations to manage the assignments property of the microsoft.graph.groupPolicyConfiguration entity.</summary>
     public class AssignmentsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyConfigurations.Item.Assi
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.groupPolicyConfigurations.item.assignments.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.groupPolicyConfigurations.item.assignments.item collection</summary>
         public GroupPolicyConfigurationAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("groupPolicyConfigurationAssignment_id", position);

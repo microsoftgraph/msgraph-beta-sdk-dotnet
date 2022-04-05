@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Count;
+using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.FilterByCurrentUserWithOn;
+using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item;
+using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.RecordAllDecisions;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Decisions.Count;
-using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Decisions.FilterByCurrentUserWithOn;
-using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Decisions.Item;
-using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Decisions.RecordAllDecisions;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Decisions {
+namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions {
     /// <summary>Provides operations to manage the decisions property of the microsoft.graph.accessReviewSet entity.</summary>
     public class DecisionsRequestBuilder {
         /// <summary>The count property</summary>
@@ -29,7 +29,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Decisions {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.identityGovernance.accessReviews.decisions.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.identityGovernance.accessReviews.decisions.item collection</summary>
         public AccessReviewInstanceDecisionItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewInstanceDecisionItem_id", position);

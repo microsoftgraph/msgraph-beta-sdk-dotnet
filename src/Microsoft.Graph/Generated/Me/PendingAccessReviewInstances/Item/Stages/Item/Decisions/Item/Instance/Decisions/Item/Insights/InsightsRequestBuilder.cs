@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.Decisions.Item.Insights.Count;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.Decisions.Item.Insights.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.Decisions.Item.Insights.Count;
-using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.Decisions.Item.Insights.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.Decisions.Item.Insights {
+namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.Decisions.Item.Insights {
     /// <summary>Provides operations to manage the insights property of the microsoft.graph.accessReviewInstanceDecisionItem entity.</summary>
     public class InsightsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Stages.Item.Dec
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.pendingAccessReviewInstances.item.stages.item.decisions.item.instance.decisions.item.insights.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.pendingAccessReviewInstances.item.stages.item.decisions.item.instance.decisions.item.insights.item collection</summary>
         public GovernanceInsightItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("governanceInsight_id", position);

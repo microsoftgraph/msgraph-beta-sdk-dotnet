@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Chats.Item.Messages.Item.Replies.Item.HostedContents;
+using Microsoft.Graph.Beta.Chats.Item.Messages.Item.Replies.Item.SoftDelete;
+using Microsoft.Graph.Beta.Chats.Item.Messages.Item.Replies.Item.UndoSoftDelete;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Chats.Item.Messages.Item.Replies.Item.HostedContents;
-using MicrosoftGraphSdk.Chats.Item.Messages.Item.Replies.Item.SoftDelete;
-using MicrosoftGraphSdk.Chats.Item.Messages.Item.Replies.Item.UndoSoftDelete;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Chats.Item.Messages.Item.Replies.Item {
+namespace Microsoft.Graph.Beta.Chats.Item.Messages.Item.Replies.Item {
     /// <summary>Provides operations to manage the replies property of the microsoft.graph.chatMessage entity.</summary>
     public class ChatMessageItemRequestBuilder {
         /// <summary>The hostedContents property</summary>

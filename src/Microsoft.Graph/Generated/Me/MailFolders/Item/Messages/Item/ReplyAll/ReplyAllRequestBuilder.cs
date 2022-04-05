@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.MailFolders.Item.Messages.Item.ReplyAll {
+namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.ReplyAll {
     /// <summary>Provides operations to call the replyAll method.</summary>
     public class ReplyAllRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.SalesCreditMemoLines.Item.Account;
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.SalesCreditMemoLines.Item.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesCreditMemos.Item.SalesCreditMemoLines.Item.Account;
-using MicrosoftGraphSdk.Financials.Companies.Item.SalesCreditMemos.Item.SalesCreditMemoLines.Item.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesCreditMemos.Item.SalesCreditMemoLines.Item {
+namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.SalesCreditMemoLines.Item {
     /// <summary>Provides operations to manage the salesCreditMemoLines property of the microsoft.graph.salesCreditMemo entity.</summary>
     public class SalesCreditMemoLineItemRequestBuilder {
         /// <summary>The account property</summary>

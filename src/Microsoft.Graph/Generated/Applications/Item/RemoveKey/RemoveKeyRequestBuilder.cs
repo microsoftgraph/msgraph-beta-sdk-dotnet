@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Applications.Item.RemoveKey {
+namespace Microsoft.Graph.Beta.Applications.Item.RemoveKey {
     /// <summary>Provides operations to call the removeKey method.</summary>
     public class RemoveKeyRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.PermissionGrants.GetByIds;
+using Microsoft.Graph.Beta.PermissionGrants.GetUserOwnedObjects;
+using Microsoft.Graph.Beta.PermissionGrants.Item;
+using Microsoft.Graph.Beta.PermissionGrants.ValidateProperties;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.PermissionGrants.GetByIds;
-using MicrosoftGraphSdk.PermissionGrants.GetUserOwnedObjects;
-using MicrosoftGraphSdk.PermissionGrants.Item;
-using MicrosoftGraphSdk.PermissionGrants.ValidateProperties;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.PermissionGrants {
+namespace Microsoft.Graph.Beta.PermissionGrants {
     /// <summary>Provides operations to manage the collection of resourceSpecificPermissionGrant entities.</summary>
     public class PermissionGrantsRequestBuilder {
         /// <summary>The getByIds property</summary>
@@ -33,7 +33,7 @@ namespace MicrosoftGraphSdk.PermissionGrants {
         public ValidatePropertiesRequestBuilder ValidateProperties { get =>
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.permissionGrants.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.permissionGrants.item collection</summary>
         public ResourceSpecificPermissionGrantItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("resourceSpecificPermissionGrant_id", position);

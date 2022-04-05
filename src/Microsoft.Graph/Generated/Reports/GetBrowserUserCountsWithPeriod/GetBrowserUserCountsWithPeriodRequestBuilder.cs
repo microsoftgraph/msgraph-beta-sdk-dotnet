@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetBrowserUserCountsWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetBrowserUserCountsWithPeriod {
     /// <summary>Provides operations to call the getBrowserUserCounts method.</summary>
     public class GetBrowserUserCountsWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

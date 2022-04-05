@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Reports.GetMailboxUsageMailboxCountsWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetMailboxUsageMailboxCountsWithPeriod {
     /// <summary>Provides operations to call the getMailboxUsageMailboxCounts method.</summary>
     public class GetMailboxUsageMailboxCountsWithPeriodResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

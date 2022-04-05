@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.OemWarrantyInformationOnboarding.Item.Enable {
+namespace Microsoft.Graph.Beta.DeviceManagement.OemWarrantyInformationOnboarding.Item.Enable {
     /// <summary>Provides operations to call the enable method.</summary>
     public class EnableRequestBuilder {
         /// <summary>Path parameters for the request</summary>

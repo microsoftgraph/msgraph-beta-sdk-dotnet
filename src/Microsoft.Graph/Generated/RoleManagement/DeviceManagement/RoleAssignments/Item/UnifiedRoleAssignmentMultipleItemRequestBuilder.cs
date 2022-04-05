@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.Item.AppScopes;
+using Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.Item.DirectoryScopes;
+using Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.Item.Principals;
+using Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.Item.RoleDefinition;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.RoleManagement.DeviceManagement.RoleAssignments.Item.AppScopes;
-using MicrosoftGraphSdk.RoleManagement.DeviceManagement.RoleAssignments.Item.DirectoryScopes;
-using MicrosoftGraphSdk.RoleManagement.DeviceManagement.RoleAssignments.Item.Principals;
-using MicrosoftGraphSdk.RoleManagement.DeviceManagement.RoleAssignments.Item.RoleDefinition;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.RoleManagement.DeviceManagement.RoleAssignments.Item {
+namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.Item {
     /// <summary>Provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplicationMultiple entity.</summary>
     public class UnifiedRoleAssignmentMultipleItemRequestBuilder {
         /// <summary>The appScopes property</summary>

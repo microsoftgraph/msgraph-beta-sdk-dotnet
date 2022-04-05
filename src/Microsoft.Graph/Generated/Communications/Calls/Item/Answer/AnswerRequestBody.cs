@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Communications.Calls.Item.Answer {
+namespace Microsoft.Graph.Beta.Communications.Calls.Item.Answer {
     /// <summary>Provides operations to call the answer method.</summary>
     public class AnswerRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>The acceptedModalities property</summary>
@@ -16,7 +16,7 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.Answer {
         /// <summary>The callOptions property</summary>
         public IncomingCallOptions CallOptions { get; set; }
         /// <summary>The mediaConfig property</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.MediaConfig MediaConfig { get; set; }
+        public Microsoft.Graph.Beta.Models.MediaConfig MediaConfig { get; set; }
         /// <summary>The participantCapacity property</summary>
         public int? ParticipantCapacity { get; set; }
         /// <summary>
@@ -41,7 +41,7 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.Answer {
                 {"acceptedModalities", (o,n) => { (o as AnswerRequestBody).AcceptedModalities = n.GetCollectionOfEnumValues<Modality>().ToList(); } },
                 {"callbackUri", (o,n) => { (o as AnswerRequestBody).CallbackUri = n.GetStringValue(); } },
                 {"callOptions", (o,n) => { (o as AnswerRequestBody).CallOptions = n.GetObjectValue<IncomingCallOptions>(IncomingCallOptions.CreateFromDiscriminatorValue); } },
-                {"mediaConfig", (o,n) => { (o as AnswerRequestBody).MediaConfig = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.MediaConfig>(MicrosoftGraphSdk.Models.Microsoft.Graph.MediaConfig.CreateFromDiscriminatorValue); } },
+                {"mediaConfig", (o,n) => { (o as AnswerRequestBody).MediaConfig = n.GetObjectValue<Microsoft.Graph.Beta.Models.MediaConfig>(Microsoft.Graph.Beta.Models.MediaConfig.CreateFromDiscriminatorValue); } },
                 {"participantCapacity", (o,n) => { (o as AnswerRequestBody).ParticipantCapacity = n.GetIntValue(); } },
             };
         }
@@ -54,7 +54,7 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.Answer {
             writer.WriteCollectionOfEnumValues<Modality>("acceptedModalities", AcceptedModalities);
             writer.WriteStringValue("callbackUri", CallbackUri);
             writer.WriteObjectValue<IncomingCallOptions>("callOptions", CallOptions);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.MediaConfig>("mediaConfig", MediaConfig);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MediaConfig>("mediaConfig", MediaConfig);
             writer.WriteIntValue("participantCapacity", ParticipantCapacity);
             writer.WriteAdditionalData(AdditionalData);
         }

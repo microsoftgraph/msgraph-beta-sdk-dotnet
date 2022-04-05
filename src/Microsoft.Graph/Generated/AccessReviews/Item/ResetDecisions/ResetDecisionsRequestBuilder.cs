@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.AccessReviews.Item.ResetDecisions {
+namespace Microsoft.Graph.Beta.AccessReviews.Item.ResetDecisions {
     /// <summary>Provides operations to call the resetDecisions method.</summary>
     public class ResetDecisionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

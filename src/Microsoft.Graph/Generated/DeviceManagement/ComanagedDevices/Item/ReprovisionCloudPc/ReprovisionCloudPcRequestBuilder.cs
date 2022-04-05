@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.ReprovisionCloudPc {
+namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ReprovisionCloudPc {
     /// <summary>Provides operations to call the reprovisionCloudPc method.</summary>
     public class ReprovisionCloudPcRequestBuilder {
         /// <summary>Path parameters for the request</summary>

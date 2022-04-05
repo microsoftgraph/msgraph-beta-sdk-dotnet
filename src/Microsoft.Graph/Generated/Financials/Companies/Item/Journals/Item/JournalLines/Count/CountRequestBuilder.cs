@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Financials.Companies.Item.Journals.Item.JournalLines.Count {
+namespace Microsoft.Graph.Beta.Financials.Companies.Item.Journals.Item.JournalLines.Count {
     /// <summary>Provides operations to count the resources in the collection.</summary>
     public class CountRequestBuilder {
         /// <summary>Path parameters for the request</summary>

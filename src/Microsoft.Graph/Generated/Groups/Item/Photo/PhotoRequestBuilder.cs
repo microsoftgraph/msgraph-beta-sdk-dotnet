@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Groups.Item.Photo.Value;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Groups.Item.Photo.Value;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Photo {
+namespace Microsoft.Graph.Beta.Groups.Item.Photo {
     /// <summary>Provides operations to manage the photo property of the microsoft.graph.group entity.</summary>
     public class PhotoRequestBuilder {
         /// <summary>The Content property</summary>

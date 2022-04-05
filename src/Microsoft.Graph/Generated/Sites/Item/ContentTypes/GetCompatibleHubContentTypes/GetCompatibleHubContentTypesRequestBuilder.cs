@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Sites.Item.ContentTypes.GetCompatibleHubContentTypes {
+namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes.GetCompatibleHubContentTypes {
     /// <summary>Provides operations to call the getCompatibleHubContentTypes method.</summary>
     public class GetCompatibleHubContentTypesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DataClassification.ExactMatchDataStores.Item.Lookup {
+namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup {
     /// <summary>Provides operations to call the lookup method.</summary>
     public class LookupRequestBuilder {
         /// <summary>Path parameters for the request</summary>

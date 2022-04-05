@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Team.PrimaryChannel.DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalName {
+namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalName {
     /// <summary>Provides operations to call the doesUserHaveAccess method.</summary>
     public class DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameRequestBuilder {
         /// <summary>Path parameters for the request</summary>

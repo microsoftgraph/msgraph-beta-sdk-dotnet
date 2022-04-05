@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedAppPolicies.Item.WindowsInformationProtection.Assign {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppPolicies.Item.WindowsInformationProtection.Assign {
     /// <summary>Provides operations to call the assign method.</summary>
     public class AssignRequestBuilder {
         /// <summary>Path parameters for the request</summary>

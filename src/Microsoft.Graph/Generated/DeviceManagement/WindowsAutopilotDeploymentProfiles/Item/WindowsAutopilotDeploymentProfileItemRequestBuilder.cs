@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfiles.Item.Assign;
+using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfiles.Item.AssignedDevices;
+using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfiles.Item.Assignments;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeploymentProfiles.Item.Assign;
-using MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeploymentProfiles.Item.AssignedDevices;
-using MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeploymentProfiles.Item.Assignments;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeploymentProfiles.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfiles.Item {
     /// <summary>Provides operations to manage the windowsAutopilotDeploymentProfiles property of the microsoft.graph.deviceManagement entity.</summary>
     public class WindowsAutopilotDeploymentProfileItemRequestBuilder {
         /// <summary>The assign property</summary>

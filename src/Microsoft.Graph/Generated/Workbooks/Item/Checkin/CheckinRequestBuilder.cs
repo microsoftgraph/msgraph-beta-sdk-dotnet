@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Workbooks.Item.Checkin {
+namespace Microsoft.Graph.Beta.Workbooks.Item.Checkin {
     /// <summary>Provides operations to call the checkin method.</summary>
     public class CheckinRequestBuilder {
         /// <summary>Path parameters for the request</summary>

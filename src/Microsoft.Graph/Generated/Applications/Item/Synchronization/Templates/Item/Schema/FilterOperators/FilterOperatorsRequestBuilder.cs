@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators {
+namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators {
     /// <summary>Provides operations to call the filterOperators method.</summary>
     public class FilterOperatorsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

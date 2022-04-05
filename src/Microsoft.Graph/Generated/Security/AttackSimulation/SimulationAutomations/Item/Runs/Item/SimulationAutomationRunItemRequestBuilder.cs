@@ -1,14 +1,14 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Security.AttackSimulation.SimulationAutomations.Item.Runs.Item {
+namespace Microsoft.Graph.Beta.Security.AttackSimulation.SimulationAutomations.Item.Runs.Item {
     /// <summary>Provides operations to manage the runs property of the microsoft.graph.simulationAutomation entity.</summary>
     public class SimulationAutomationRunItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

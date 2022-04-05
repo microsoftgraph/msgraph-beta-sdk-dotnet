@@ -1,14 +1,14 @@
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Security;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Security.InformationProtection.LabelPolicySettings {
+namespace Microsoft.Graph.Beta.Security.InformationProtection.LabelPolicySettings {
     /// <summary>Provides operations to manage the labelPolicySettings property of the microsoft.graph.security.informationProtection entity.</summary>
     public class LabelPolicySettingsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

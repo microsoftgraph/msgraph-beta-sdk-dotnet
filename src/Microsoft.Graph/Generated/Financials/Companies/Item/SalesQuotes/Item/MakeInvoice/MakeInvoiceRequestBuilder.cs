@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesQuotes.Item.MakeInvoice {
+namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item.MakeInvoice {
     /// <summary>Provides operations to call the makeInvoice method.</summary>
     public class MakeInvoiceRequestBuilder {
         /// <summary>Path parameters for the request</summary>

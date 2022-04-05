@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.RemoveAllDevicesFromManagement {
+namespace Microsoft.Graph.Beta.Users.Item.RemoveAllDevicesFromManagement {
     /// <summary>Provides operations to call the removeAllDevicesFromManagement method.</summary>
     public class RemoveAllDevicesFromManagementRequestBuilder {
         /// <summary>Path parameters for the request</summary>

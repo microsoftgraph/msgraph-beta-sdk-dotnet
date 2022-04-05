@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups.Item.PublishedResources.Item.AgentGroups.Item.Agents.Count;
+using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups.Item.PublishedResources.Item.AgentGroups.Item.Agents.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.AgentGroups.Item.PublishedResources.Item.AgentGroups.Item.Agents.Count;
-using MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.AgentGroups.Item.PublishedResources.Item.AgentGroups.Item.Agents.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.AgentGroups.Item.PublishedResources.Item.AgentGroups.Item.Agents {
+namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups.Item.PublishedResources.Item.AgentGroups.Item.Agents {
     /// <summary>Provides operations to manage the agents property of the microsoft.graph.onPremisesAgentGroup entity.</summary>
     public class AgentsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.AgentGroups.Item.P
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.onPremisesPublishingProfiles.item.agentGroups.item.publishedResources.item.agentGroups.item.agents.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.onPremisesPublishingProfiles.item.agentGroups.item.publishedResources.item.agentGroups.item.agents.item collection</summary>
         public OnPremisesAgentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("onPremisesAgent_id", position);

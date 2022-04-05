@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schema.Directories;
+using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schema.FilterOperators;
+using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schema.Functions;
+using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schema.ParseExpression;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item.Schema.Directories;
-using MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item.Schema.FilterOperators;
-using MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item.Schema.Functions;
-using MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item.Schema.ParseExpression;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item.Schema {
+namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schema {
     /// <summary>Provides operations to manage the schema property of the microsoft.graph.synchronizationJob entity.</summary>
     public class SchemaRequestBuilder {
         /// <summary>The directories property</summary>

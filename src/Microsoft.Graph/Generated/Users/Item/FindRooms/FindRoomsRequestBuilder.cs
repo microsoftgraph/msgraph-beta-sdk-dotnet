@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.FindRooms {
+namespace Microsoft.Graph.Beta.Users.Item.FindRooms {
     /// <summary>Provides operations to call the findRooms method.</summary>
     public class FindRoomsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

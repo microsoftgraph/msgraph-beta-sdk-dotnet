@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Applications.Item.AddPassword {
+namespace Microsoft.Graph.Beta.Applications.Item.AddPassword {
     /// <summary>Provides operations to call the addPassword method.</summary>
     public class PasswordCredentialRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The passwordCredential property</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.PasswordCredential PasswordCredential { get; set; }
+        public Microsoft.Graph.Beta.Models.PasswordCredential PasswordCredential { get; set; }
         /// <summary>
         /// Instantiates a new PasswordCredentialRequestBody and sets the default values.
         /// </summary>
@@ -30,7 +30,7 @@ namespace MicrosoftGraphSdk.Applications.Item.AddPassword {
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"passwordCredential", (o,n) => { (o as PasswordCredentialRequestBody).PasswordCredential = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PasswordCredential>(MicrosoftGraphSdk.Models.Microsoft.Graph.PasswordCredential.CreateFromDiscriminatorValue); } },
+                {"passwordCredential", (o,n) => { (o as PasswordCredentialRequestBody).PasswordCredential = n.GetObjectValue<Microsoft.Graph.Beta.Models.PasswordCredential>(Microsoft.Graph.Beta.Models.PasswordCredential.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -39,7 +39,7 @@ namespace MicrosoftGraphSdk.Applications.Item.AddPassword {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PasswordCredential>("passwordCredential", PasswordCredential);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PasswordCredential>("passwordCredential", PasswordCredential);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

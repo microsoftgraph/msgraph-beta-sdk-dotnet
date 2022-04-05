@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.App.Calls.Item.Mute {
+namespace Microsoft.Graph.Beta.App.Calls.Item.Mute {
     /// <summary>Provides operations to call the mute method.</summary>
     public class MuteRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

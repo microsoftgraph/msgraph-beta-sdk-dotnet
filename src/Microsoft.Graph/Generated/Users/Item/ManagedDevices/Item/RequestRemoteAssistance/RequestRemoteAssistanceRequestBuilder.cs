@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.RequestRemoteAssistance {
+namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RequestRemoteAssistance {
     /// <summary>Provides operations to call the requestRemoteAssistance method.</summary>
     public class RequestRemoteAssistanceRequestBuilder {
         /// <summary>Path parameters for the request</summary>

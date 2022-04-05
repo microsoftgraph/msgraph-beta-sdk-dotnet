@@ -1,32 +1,32 @@
+using Microsoft.Graph.Beta.Me.Messages.Item.Attachments;
+using Microsoft.Graph.Beta.Me.Messages.Item.CalendarSharingMessage;
+using Microsoft.Graph.Beta.Me.Messages.Item.Copy;
+using Microsoft.Graph.Beta.Me.Messages.Item.CreateForward;
+using Microsoft.Graph.Beta.Me.Messages.Item.CreateReply;
+using Microsoft.Graph.Beta.Me.Messages.Item.CreateReplyAll;
+using Microsoft.Graph.Beta.Me.Messages.Item.EventMessageRequest;
+using Microsoft.Graph.Beta.Me.Messages.Item.Extensions;
+using Microsoft.Graph.Beta.Me.Messages.Item.Forward;
+using Microsoft.Graph.Beta.Me.Messages.Item.Mentions;
+using Microsoft.Graph.Beta.Me.Messages.Item.Move;
+using Microsoft.Graph.Beta.Me.Messages.Item.MultiValueExtendedProperties;
+using Microsoft.Graph.Beta.Me.Messages.Item.Reply;
+using Microsoft.Graph.Beta.Me.Messages.Item.ReplyAll;
+using Microsoft.Graph.Beta.Me.Messages.Item.Send;
+using Microsoft.Graph.Beta.Me.Messages.Item.SingleValueExtendedProperties;
+using Microsoft.Graph.Beta.Me.Messages.Item.Unsubscribe;
+using Microsoft.Graph.Beta.Me.Messages.Item.Value;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Messages.Item.Attachments;
-using MicrosoftGraphSdk.Me.Messages.Item.CalendarSharingMessage;
-using MicrosoftGraphSdk.Me.Messages.Item.Copy;
-using MicrosoftGraphSdk.Me.Messages.Item.CreateForward;
-using MicrosoftGraphSdk.Me.Messages.Item.CreateReply;
-using MicrosoftGraphSdk.Me.Messages.Item.CreateReplyAll;
-using MicrosoftGraphSdk.Me.Messages.Item.EventMessageRequest;
-using MicrosoftGraphSdk.Me.Messages.Item.Extensions;
-using MicrosoftGraphSdk.Me.Messages.Item.Forward;
-using MicrosoftGraphSdk.Me.Messages.Item.Mentions;
-using MicrosoftGraphSdk.Me.Messages.Item.Move;
-using MicrosoftGraphSdk.Me.Messages.Item.MultiValueExtendedProperties;
-using MicrosoftGraphSdk.Me.Messages.Item.Reply;
-using MicrosoftGraphSdk.Me.Messages.Item.ReplyAll;
-using MicrosoftGraphSdk.Me.Messages.Item.Send;
-using MicrosoftGraphSdk.Me.Messages.Item.SingleValueExtendedProperties;
-using MicrosoftGraphSdk.Me.Messages.Item.Unsubscribe;
-using MicrosoftGraphSdk.Me.Messages.Item.Value;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Messages.Item {
+namespace Microsoft.Graph.Beta.Me.Messages.Item {
     /// <summary>Provides operations to manage the messages property of the microsoft.graph.user entity.</summary>
     public class MessageItemRequestBuilder {
         /// <summary>The attachments property</summary>

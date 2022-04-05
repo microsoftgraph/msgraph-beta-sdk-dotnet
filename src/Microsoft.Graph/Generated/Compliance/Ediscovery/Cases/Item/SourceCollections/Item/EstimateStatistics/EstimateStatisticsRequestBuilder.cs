@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.EstimateStatistics {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.EstimateStatistics {
     /// <summary>Provides operations to call the estimateStatistics method.</summary>
     public class EstimateStatisticsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,28 +1,28 @@
+using Microsoft.Graph.Beta.Me.Calendar.Events.Item.Accept;
+using Microsoft.Graph.Beta.Me.Calendar.Events.Item.Attachments;
+using Microsoft.Graph.Beta.Me.Calendar.Events.Item.Calendar;
+using Microsoft.Graph.Beta.Me.Calendar.Events.Item.Cancel;
+using Microsoft.Graph.Beta.Me.Calendar.Events.Item.Decline;
+using Microsoft.Graph.Beta.Me.Calendar.Events.Item.DismissReminder;
+using Microsoft.Graph.Beta.Me.Calendar.Events.Item.ExceptionOccurrences;
+using Microsoft.Graph.Beta.Me.Calendar.Events.Item.Extensions;
+using Microsoft.Graph.Beta.Me.Calendar.Events.Item.Forward;
+using Microsoft.Graph.Beta.Me.Calendar.Events.Item.Instances;
+using Microsoft.Graph.Beta.Me.Calendar.Events.Item.MultiValueExtendedProperties;
+using Microsoft.Graph.Beta.Me.Calendar.Events.Item.SingleValueExtendedProperties;
+using Microsoft.Graph.Beta.Me.Calendar.Events.Item.SnoozeReminder;
+using Microsoft.Graph.Beta.Me.Calendar.Events.Item.TentativelyAccept;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Calendar.Events.Item.Accept;
-using MicrosoftGraphSdk.Me.Calendar.Events.Item.Attachments;
-using MicrosoftGraphSdk.Me.Calendar.Events.Item.Calendar;
-using MicrosoftGraphSdk.Me.Calendar.Events.Item.Cancel;
-using MicrosoftGraphSdk.Me.Calendar.Events.Item.Decline;
-using MicrosoftGraphSdk.Me.Calendar.Events.Item.DismissReminder;
-using MicrosoftGraphSdk.Me.Calendar.Events.Item.ExceptionOccurrences;
-using MicrosoftGraphSdk.Me.Calendar.Events.Item.Extensions;
-using MicrosoftGraphSdk.Me.Calendar.Events.Item.Forward;
-using MicrosoftGraphSdk.Me.Calendar.Events.Item.Instances;
-using MicrosoftGraphSdk.Me.Calendar.Events.Item.MultiValueExtendedProperties;
-using MicrosoftGraphSdk.Me.Calendar.Events.Item.SingleValueExtendedProperties;
-using MicrosoftGraphSdk.Me.Calendar.Events.Item.SnoozeReminder;
-using MicrosoftGraphSdk.Me.Calendar.Events.Item.TentativelyAccept;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Calendar.Events.Item {
+namespace Microsoft.Graph.Beta.Me.Calendar.Events.Item {
     /// <summary>Provides operations to manage the events property of the microsoft.graph.calendar entity.</summary>
     public class EventItemRequestBuilder {
         /// <summary>The accept property</summary>
@@ -34,8 +34,8 @@ namespace MicrosoftGraphSdk.Me.Calendar.Events.Item {
             new AttachmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The calendar property</summary>
-        public MicrosoftGraphSdk.Me.Calendar.Events.Item.Calendar.CalendarRequestBuilder Calendar { get =>
-            new MicrosoftGraphSdk.Me.Calendar.Events.Item.Calendar.CalendarRequestBuilder(PathParameters, RequestAdapter);
+        public Microsoft.Graph.Beta.Me.Calendar.Events.Item.Calendar.CalendarRequestBuilder Calendar { get =>
+            new Microsoft.Graph.Beta.Me.Calendar.Events.Item.Calendar.CalendarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The cancel property</summary>
         public CancelRequestBuilder Cancel { get =>

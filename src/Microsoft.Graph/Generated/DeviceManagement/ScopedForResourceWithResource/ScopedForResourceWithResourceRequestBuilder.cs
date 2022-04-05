@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.ScopedForResourceWithResource {
+namespace Microsoft.Graph.Beta.DeviceManagement.ScopedForResourceWithResource {
     /// <summary>Provides operations to call the scopedForResource method.</summary>
     public class ScopedForResourceWithResourceRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Unarchive {
+namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Unarchive {
     /// <summary>Provides operations to call the unarchive method.</summary>
     public class UnarchiveRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

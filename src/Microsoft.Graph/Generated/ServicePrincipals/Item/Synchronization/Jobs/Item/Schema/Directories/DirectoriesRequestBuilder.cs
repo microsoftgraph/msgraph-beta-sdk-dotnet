@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.Schema.Directories.Count;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.Schema.Directories.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.Item.Schema.Directories.Count;
-using MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.Item.Schema.Directories.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.Item.Schema.Directories {
+namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.Schema.Directories {
     /// <summary>Provides operations to manage the directories property of the microsoft.graph.synchronizationSchema entity.</summary>
     public class DirectoriesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.Item.Sch
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.servicePrincipals.item.synchronization.jobs.item.schema.directories.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.servicePrincipals.item.synchronization.jobs.item.schema.directories.item collection</summary>
         public DirectoryDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryDefinition_id", position);

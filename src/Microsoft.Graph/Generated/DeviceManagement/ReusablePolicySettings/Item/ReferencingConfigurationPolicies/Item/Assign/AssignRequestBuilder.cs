@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.ReusablePolicySettings.Item.ReferencingConfigurationPolicies.Item.Assign {
+namespace Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item.ReferencingConfigurationPolicies.Item.Assign {
     /// <summary>Provides operations to call the assign method.</summary>
     public class AssignRequestBuilder {
         /// <summary>Path parameters for the request</summary>

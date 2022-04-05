@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Communications.Calls.Item.RecordResponse {
+namespace Microsoft.Graph.Beta.Communications.Calls.Item.RecordResponse {
     /// <summary>Provides operations to call the recordResponse method.</summary>
     public class RecordResponseRequestBuilder {
         /// <summary>Path parameters for the request</summary>

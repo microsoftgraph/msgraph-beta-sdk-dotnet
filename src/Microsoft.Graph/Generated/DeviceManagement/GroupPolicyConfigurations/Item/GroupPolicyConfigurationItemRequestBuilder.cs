@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.Assign;
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.Assignments;
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.DefinitionValues;
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.UpdateDefinitionValues;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.GroupPolicyConfigurations.Item.Assign;
-using MicrosoftGraphSdk.DeviceManagement.GroupPolicyConfigurations.Item.Assignments;
-using MicrosoftGraphSdk.DeviceManagement.GroupPolicyConfigurations.Item.DefinitionValues;
-using MicrosoftGraphSdk.DeviceManagement.GroupPolicyConfigurations.Item.UpdateDefinitionValues;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyConfigurations.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item {
     /// <summary>Provides operations to manage the groupPolicyConfigurations property of the microsoft.graph.deviceManagement entity.</summary>
     public class GroupPolicyConfigurationItemRequestBuilder {
         /// <summary>The assign property</summary>

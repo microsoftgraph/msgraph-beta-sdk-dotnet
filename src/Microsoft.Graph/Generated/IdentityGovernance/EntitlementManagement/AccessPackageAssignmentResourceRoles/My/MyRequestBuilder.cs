@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageAssignmentResourceRoles.My {
+namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignmentResourceRoles.My {
     /// <summary>Provides operations to call the My method.</summary>
     public class MyRequestBuilder {
         /// <summary>Path parameters for the request</summary>

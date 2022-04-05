@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.GetMobileAppCountWithStatus {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.GetMobileAppCountWithStatus {
     /// <summary>Provides operations to call the getMobileAppCount method.</summary>
     public class GetMobileAppCountWithStatusRequestBuilder {
         /// <summary>Path parameters for the request</summary>

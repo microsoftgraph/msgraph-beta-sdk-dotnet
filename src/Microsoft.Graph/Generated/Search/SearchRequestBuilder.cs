@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Search.Acronyms;
+using Microsoft.Graph.Beta.Search.Bookmarks;
+using Microsoft.Graph.Beta.Search.Qnas;
+using Microsoft.Graph.Beta.Search.Query;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Search.Acronyms;
-using MicrosoftGraphSdk.Search.Bookmarks;
-using MicrosoftGraphSdk.Search.Qnas;
-using MicrosoftGraphSdk.Search.Query;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Search {
+namespace Microsoft.Graph.Beta.Search {
     /// <summary>Provides operations to manage the searchEntity singleton.</summary>
     public class SearchRequestBuilder {
         /// <summary>The acronyms property</summary>

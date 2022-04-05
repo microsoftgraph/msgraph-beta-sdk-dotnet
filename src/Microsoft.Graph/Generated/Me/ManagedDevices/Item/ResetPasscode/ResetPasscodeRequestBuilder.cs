@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.ResetPasscode {
+namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.ResetPasscode {
     /// <summary>Provides operations to call the resetPasscode method.</summary>
     public class ResetPasscodeRequestBuilder {
         /// <summary>Path parameters for the request</summary>

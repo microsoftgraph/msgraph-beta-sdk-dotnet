@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.GetPlatformSupportedPropertiesWithPlatform {
+namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.GetPlatformSupportedPropertiesWithPlatform {
     /// <summary>Provides operations to call the getPlatformSupportedProperties method.</summary>
     public class GetPlatformSupportedPropertiesWithPlatformRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.DeviceEnrollmentConfigurations.Item.Assign {
+namespace Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.Item.Assign {
     /// <summary>Provides operations to call the assign method.</summary>
     public class AssignRequestBuilder {
         /// <summary>Path parameters for the request</summary>

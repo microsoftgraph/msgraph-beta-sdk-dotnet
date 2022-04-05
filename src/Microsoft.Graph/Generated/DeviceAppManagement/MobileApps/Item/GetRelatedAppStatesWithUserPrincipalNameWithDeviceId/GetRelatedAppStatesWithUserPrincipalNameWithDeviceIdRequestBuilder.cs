@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.GetRelatedAppStatesWithUserPrincipalNameWithDeviceId {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GetRelatedAppStatesWithUserPrincipalNameWithDeviceId {
     /// <summary>Provides operations to call the getRelatedAppStates method.</summary>
     public class GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder {
         /// <summary>Path parameters for the request</summary>

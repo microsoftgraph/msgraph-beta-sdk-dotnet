@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models.TermStore;
+using Microsoft.Graph.Beta.TermStore.Sets.Item.Relations.Count;
+using Microsoft.Graph.Beta.TermStore.Sets.Item.Relations.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore;
-using MicrosoftGraphSdk.TermStore.Sets.Item.Relations.Count;
-using MicrosoftGraphSdk.TermStore.Sets.Item.Relations.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TermStore.Sets.Item.Relations {
+namespace Microsoft.Graph.Beta.TermStore.Sets.Item.Relations {
     /// <summary>Provides operations to manage the relations property of the microsoft.graph.termStore.set entity.</summary>
     public class RelationsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.TermStore.Sets.Item.Relations {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.termStore.sets.item.relations.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.termStore.sets.item.relations.item collection</summary>
         public RelationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("relation_id", position);

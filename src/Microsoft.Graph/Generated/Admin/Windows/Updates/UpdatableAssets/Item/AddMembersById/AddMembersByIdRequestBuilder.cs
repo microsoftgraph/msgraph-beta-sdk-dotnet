@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets.Item.AddMembersById {
+namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item.AddMembersById {
     /// <summary>Provides operations to call the addMembersById method.</summary>
     public class AddMembersByIdRequestBuilder {
         /// <summary>Path parameters for the request</summary>

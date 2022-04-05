@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Custodians.Item.Release {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.Release {
     /// <summary>Provides operations to call the release method.</summary>
     public class ReleaseRequestBuilder {
         /// <summary>Path parameters for the request</summary>

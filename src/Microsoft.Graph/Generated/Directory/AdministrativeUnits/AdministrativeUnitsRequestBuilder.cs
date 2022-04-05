@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Directory.AdministrativeUnits.Count;
+using Microsoft.Graph.Beta.Directory.AdministrativeUnits.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Directory.AdministrativeUnits.Count;
-using MicrosoftGraphSdk.Directory.AdministrativeUnits.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Directory.AdministrativeUnits {
+namespace Microsoft.Graph.Beta.Directory.AdministrativeUnits {
     /// <summary>Provides operations to manage the administrativeUnits property of the microsoft.graph.directory entity.</summary>
     public class AdministrativeUnitsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Directory.AdministrativeUnits {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.directory.administrativeUnits.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.directory.administrativeUnits.item collection</summary>
         public AdministrativeUnitItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("administrativeUnit_id", position);
@@ -83,7 +83,7 @@ namespace MicrosoftGraphSdk.Directory.AdministrativeUnits {
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.AdministrativeUnit body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
+        public RequestInformation CreatePostRequestInformation(Microsoft.Graph.Beta.Models.AdministrativeUnit body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -119,14 +119,14 @@ namespace MicrosoftGraphSdk.Directory.AdministrativeUnits {
         /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.AdministrativeUnit> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.AdministrativeUnit body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.AdministrativeUnit> PostAsync(Microsoft.Graph.Beta.Models.AdministrativeUnit body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AdministrativeUnit>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.AdministrativeUnit.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AdministrativeUnit>(requestInfo, Microsoft.Graph.Beta.Models.AdministrativeUnit.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Conceptual container for user and group directory objects.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Me.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.CopyToNotebook {
+namespace Microsoft.Graph.Beta.Me.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.CopyToNotebook {
     /// <summary>Provides operations to call the copyToNotebook method.</summary>
     public class CopyToNotebookRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

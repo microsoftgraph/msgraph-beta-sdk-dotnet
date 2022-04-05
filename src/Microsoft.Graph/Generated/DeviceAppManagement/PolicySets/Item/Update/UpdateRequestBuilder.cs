@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item.Update {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Update {
     /// <summary>Provides operations to call the update method.</summary>
     public class UpdateRequestBuilder {
         /// <summary>Path parameters for the request</summary>

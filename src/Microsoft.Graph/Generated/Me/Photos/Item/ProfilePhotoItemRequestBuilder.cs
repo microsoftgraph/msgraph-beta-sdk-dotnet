@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Me.Photos.Item.Value;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Photos.Item.Value;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Photos.Item {
+namespace Microsoft.Graph.Beta.Me.Photos.Item {
     /// <summary>Provides operations to manage the photos property of the microsoft.graph.user entity.</summary>
     public class ProfilePhotoItemRequestBuilder {
         /// <summary>The Content property</summary>

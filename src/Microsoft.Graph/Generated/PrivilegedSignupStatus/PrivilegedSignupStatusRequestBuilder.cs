@@ -1,20 +1,20 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.PrivilegedSignupStatus.CanSignUp;
+using Microsoft.Graph.Beta.PrivilegedSignupStatus.CompleteSetup;
+using Microsoft.Graph.Beta.PrivilegedSignupStatus.Count;
+using Microsoft.Graph.Beta.PrivilegedSignupStatus.IsSignedUp;
+using Microsoft.Graph.Beta.PrivilegedSignupStatus.Item;
+using Microsoft.Graph.Beta.PrivilegedSignupStatus.SignUp;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.PrivilegedSignupStatus.CanSignUp;
-using MicrosoftGraphSdk.PrivilegedSignupStatus.CompleteSetup;
-using MicrosoftGraphSdk.PrivilegedSignupStatus.Count;
-using MicrosoftGraphSdk.PrivilegedSignupStatus.IsSignedUp;
-using MicrosoftGraphSdk.PrivilegedSignupStatus.Item;
-using MicrosoftGraphSdk.PrivilegedSignupStatus.SignUp;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.PrivilegedSignupStatus {
+namespace Microsoft.Graph.Beta.PrivilegedSignupStatus {
     /// <summary>Provides operations to manage the collection of privilegedSignupStatus entities.</summary>
     public class PrivilegedSignupStatusRequestBuilder {
         /// <summary>The completeSetup property</summary>
@@ -35,7 +35,7 @@ namespace MicrosoftGraphSdk.PrivilegedSignupStatus {
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.privilegedSignupStatus.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.privilegedSignupStatus.item collection</summary>
         public PrivilegedSignupStatusItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("privilegedSignupStatus_id", position);
@@ -101,7 +101,7 @@ namespace MicrosoftGraphSdk.PrivilegedSignupStatus {
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
+        public RequestInformation CreatePostRequestInformation(Microsoft.Graph.Beta.Models.PrivilegedSignupStatus body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -143,14 +143,14 @@ namespace MicrosoftGraphSdk.PrivilegedSignupStatus {
         /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.PrivilegedSignupStatus> PostAsync(Microsoft.Graph.Beta.Models.PrivilegedSignupStatus body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PrivilegedSignupStatus>(requestInfo, Microsoft.Graph.Beta.Models.PrivilegedSignupStatus.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Get entities from privilegedSignupStatus</summary>
         public class GetQueryParameters : QueryParametersBase {

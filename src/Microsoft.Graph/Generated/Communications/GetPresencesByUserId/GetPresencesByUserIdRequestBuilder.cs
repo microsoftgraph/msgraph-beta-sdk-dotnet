@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Communications.GetPresencesByUserId {
+namespace Microsoft.Graph.Beta.Communications.GetPresencesByUserId {
     /// <summary>Provides operations to call the getPresencesByUserId method.</summary>
     public class GetPresencesByUserIdRequestBuilder {
         /// <summary>Path parameters for the request</summary>

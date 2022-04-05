@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetM365AppUserDetailWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetM365AppUserDetailWithPeriod {
     /// <summary>Provides operations to call the getM365AppUserDetail method.</summary>
     public class GetM365AppUserDetailWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

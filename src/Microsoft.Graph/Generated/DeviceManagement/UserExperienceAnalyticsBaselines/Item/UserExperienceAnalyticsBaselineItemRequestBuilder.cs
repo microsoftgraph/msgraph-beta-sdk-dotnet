@@ -1,21 +1,21 @@
+using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines.Item.AppHealthMetrics;
+using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines.Item.BatteryHealthMetrics;
+using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines.Item.BestPracticesMetrics;
+using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines.Item.DeviceBootPerformanceMetrics;
+using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines.Item.RebootAnalyticsMetrics;
+using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines.Item.ResourcePerformanceMetrics;
+using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines.Item.WorkFromAnywhereMetrics;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsBaselines.Item.AppHealthMetrics;
-using MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsBaselines.Item.BatteryHealthMetrics;
-using MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsBaselines.Item.BestPracticesMetrics;
-using MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsBaselines.Item.DeviceBootPerformanceMetrics;
-using MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsBaselines.Item.RebootAnalyticsMetrics;
-using MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsBaselines.Item.ResourcePerformanceMetrics;
-using MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsBaselines.Item.WorkFromAnywhereMetrics;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsBaselines.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines.Item {
     /// <summary>Provides operations to manage the userExperienceAnalyticsBaselines property of the microsoft.graph.deviceManagement entity.</summary>
     public class UserExperienceAnalyticsBaselineItemRequestBuilder {
         /// <summary>The appHealthMetrics property</summary>

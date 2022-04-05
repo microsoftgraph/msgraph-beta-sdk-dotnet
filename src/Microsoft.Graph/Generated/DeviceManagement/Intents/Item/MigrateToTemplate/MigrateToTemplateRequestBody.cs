@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.MigrateToTemplate {
+namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.MigrateToTemplate {
     /// <summary>Provides operations to call the migrateToTemplate method.</summary>
     public class MigrateToTemplateRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

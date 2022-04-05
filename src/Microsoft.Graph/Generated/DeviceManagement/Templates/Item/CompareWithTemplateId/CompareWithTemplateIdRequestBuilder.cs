@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.CompareWithTemplateId {
+namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.CompareWithTemplateId {
     /// <summary>Provides operations to call the compare method.</summary>
     public class CompareWithTemplateIdRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Sites.Item.Onenote.SectionGroups.Item.Sections.Item.CopyToSectionGroup {
+namespace Microsoft.Graph.Beta.Sites.Item.Onenote.SectionGroups.Item.Sections.Item.CopyToSectionGroup {
     /// <summary>Provides operations to call the copyToSectionGroup method.</summary>
     public class CopyToSectionGroupRequestBuilder {
         /// <summary>Path parameters for the request</summary>

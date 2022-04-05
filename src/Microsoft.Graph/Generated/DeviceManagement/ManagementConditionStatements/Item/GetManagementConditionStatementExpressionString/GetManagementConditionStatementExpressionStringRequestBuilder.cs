@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.ManagementConditionStatements.Item.GetManagementConditionStatementExpressionString {
+namespace Microsoft.Graph.Beta.DeviceManagement.ManagementConditionStatements.Item.GetManagementConditionStatementExpressionString {
     /// <summary>Provides operations to call the getManagementConditionStatementExpressionString method.</summary>
     public class GetManagementConditionStatementExpressionStringRequestBuilder {
         /// <summary>Path parameters for the request</summary>

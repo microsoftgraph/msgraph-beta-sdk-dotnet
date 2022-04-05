@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Groups.Item.CalendarView.Item.ExceptionOccurrences.Item.Accept {
+namespace Microsoft.Graph.Beta.Groups.Item.CalendarView.Item.ExceptionOccurrences.Item.Accept {
     /// <summary>Provides operations to call the accept method.</summary>
     public class AcceptRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

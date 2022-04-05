@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents.Count;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents.GetAuditActivityTypes;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.AuditEvents.Count;
-using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.AuditEvents.GetAuditActivityTypes;
-using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.AuditEvents.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.AuditEvents {
+namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents {
     /// <summary>Provides operations to manage the auditEvents property of the microsoft.graph.virtualEndpoint entity.</summary>
     public class AuditEventsRequestBuilder {
         /// <summary>The count property</summary>
@@ -24,7 +24,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.AuditEvents {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.virtualEndpoint.auditEvents.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.virtualEndpoint.auditEvents.item collection</summary>
         public CloudPcAuditEventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudPcAuditEvent_id", position);

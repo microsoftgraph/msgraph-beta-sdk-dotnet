@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models.ManagedTenants;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item.OffboardTenant;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item.ResetTenantOnboardingStatus;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.Tenants.Item.OffboardTenant;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.Tenants.Item.ResetTenantOnboardingStatus;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.Tenants.Item {
+namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item {
     /// <summary>Provides operations to manage the tenants property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
     public class TenantItemRequestBuilder {
         /// <summary>The offboardTenant property</summary>

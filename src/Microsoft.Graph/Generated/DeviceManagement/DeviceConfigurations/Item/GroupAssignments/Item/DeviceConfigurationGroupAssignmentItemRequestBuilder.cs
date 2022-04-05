@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.GroupAssignments.Item.DeviceConfiguration;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.GroupAssignments.Item.DeviceConfiguration;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.GroupAssignments.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.GroupAssignments.Item {
     /// <summary>Provides operations to manage the groupAssignments property of the microsoft.graph.deviceConfiguration entity.</summary>
     public class DeviceConfigurationGroupAssignmentItemRequestBuilder {
         /// <summary>The deviceConfiguration property</summary>

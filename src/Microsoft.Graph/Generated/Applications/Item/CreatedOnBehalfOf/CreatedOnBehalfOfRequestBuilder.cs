@@ -1,14 +1,14 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Applications.Item.CreatedOnBehalfOf {
+namespace Microsoft.Graph.Beta.Applications.Item.CreatedOnBehalfOf {
     /// <summary>Provides operations to manage the createdOnBehalfOf property of the microsoft.graph.application entity.</summary>
     public class CreatedOnBehalfOfRequestBuilder {
         /// <summary>Path parameters for the request</summary>

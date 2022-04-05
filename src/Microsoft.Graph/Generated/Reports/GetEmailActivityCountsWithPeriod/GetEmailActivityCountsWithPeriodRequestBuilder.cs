@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetEmailActivityCountsWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetEmailActivityCountsWithPeriod {
     /// <summary>Provides operations to call the getEmailActivityCounts method.</summary>
     public class GetEmailActivityCountsWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

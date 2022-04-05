@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DataClassification.ExactMatchDataStores.Item.Sessions.Item.Commit {
+namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions.Item.Commit {
     /// <summary>Provides operations to call the commit method.</summary>
     public class CommitRequestBuilder {
         /// <summary>Path parameters for the request</summary>

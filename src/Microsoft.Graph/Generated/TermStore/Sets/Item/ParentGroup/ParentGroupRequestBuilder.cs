@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models.TermStore;
+using Microsoft.Graph.Beta.TermStore.Sets.Item.ParentGroup.Sets;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore;
-using MicrosoftGraphSdk.TermStore.Sets.Item.ParentGroup.Sets;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TermStore.Sets.Item.ParentGroup {
+namespace Microsoft.Graph.Beta.TermStore.Sets.Item.ParentGroup {
     /// <summary>Provides operations to manage the parentGroup property of the microsoft.graph.termStore.set entity.</summary>
     public class ParentGroupRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,8 +17,8 @@ namespace MicrosoftGraphSdk.TermStore.Sets.Item.ParentGroup {
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>The sets property</summary>
-        public MicrosoftGraphSdk.TermStore.Sets.Item.ParentGroup.Sets.SetsRequestBuilder Sets { get =>
-            new MicrosoftGraphSdk.TermStore.Sets.Item.ParentGroup.Sets.SetsRequestBuilder(PathParameters, RequestAdapter);
+        public Microsoft.Graph.Beta.TermStore.Sets.Item.ParentGroup.Sets.SetsRequestBuilder Sets { get =>
+            new Microsoft.Graph.Beta.TermStore.Sets.Item.ParentGroup.Sets.SetsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
@@ -91,7 +91,7 @@ namespace MicrosoftGraphSdk.TermStore.Sets.Item.ParentGroup {
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreatePatchRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Group body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
+        public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.TermStore.Group body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -126,13 +126,13 @@ namespace MicrosoftGraphSdk.TermStore.Sets.Item.ParentGroup {
         /// <param name="queryParameters">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Group> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.TermStore.Group> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(queryParameters, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Group>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Group.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TermStore.Group>(requestInfo, Microsoft.Graph.Beta.Models.TermStore.Group.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property parentGroup in termStore
@@ -142,7 +142,7 @@ namespace MicrosoftGraphSdk.TermStore.Sets.Item.ParentGroup {
         /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Group body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(Microsoft.Graph.Beta.Models.TermStore.Group body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

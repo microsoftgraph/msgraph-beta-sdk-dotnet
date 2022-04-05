@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.Item.AddMembers {
+namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.Item.AddMembers {
     /// <summary>Provides operations to call the addMembers method.</summary>
     public class AddMembersRequestBuilder {
         /// <summary>Path parameters for the request</summary>

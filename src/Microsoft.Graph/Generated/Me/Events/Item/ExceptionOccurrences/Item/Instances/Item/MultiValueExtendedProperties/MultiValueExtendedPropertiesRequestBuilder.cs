@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.Events.Item.ExceptionOccurrences.Item.Instances.Item.MultiValueExtendedProperties.Count;
+using Microsoft.Graph.Beta.Me.Events.Item.ExceptionOccurrences.Item.Instances.Item.MultiValueExtendedProperties.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Events.Item.ExceptionOccurrences.Item.Instances.Item.MultiValueExtendedProperties.Count;
-using MicrosoftGraphSdk.Me.Events.Item.ExceptionOccurrences.Item.Instances.Item.MultiValueExtendedProperties.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Events.Item.ExceptionOccurrences.Item.Instances.Item.MultiValueExtendedProperties {
+namespace Microsoft.Graph.Beta.Me.Events.Item.ExceptionOccurrences.Item.Instances.Item.MultiValueExtendedProperties {
     /// <summary>Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.event entity.</summary>
     public class MultiValueExtendedPropertiesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.Events.Item.ExceptionOccurrences.Item.Instances.I
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.events.item.exceptionOccurrences.item.instances.item.multiValueExtendedProperties.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.events.item.exceptionOccurrences.item.instances.item.multiValueExtendedProperties.item collection</summary>
         public MultiValueLegacyExtendedPropertyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("multiValueLegacyExtendedProperty_id", position);

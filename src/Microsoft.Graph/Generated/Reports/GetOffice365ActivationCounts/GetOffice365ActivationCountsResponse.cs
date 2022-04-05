@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Reports.GetOffice365ActivationCounts {
+namespace Microsoft.Graph.Beta.Reports.GetOffice365ActivationCounts {
     /// <summary>Provides operations to call the getOffice365ActivationCounts method.</summary>
     public class GetOffice365ActivationCountsResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

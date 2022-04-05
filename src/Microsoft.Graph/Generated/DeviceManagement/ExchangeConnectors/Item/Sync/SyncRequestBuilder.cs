@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.ExchangeConnectors.Item.Sync {
+namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeConnectors.Item.Sync {
     /// <summary>Provides operations to call the sync method.</summary>
     public class SyncRequestBuilder {
         /// <summary>Path parameters for the request</summary>

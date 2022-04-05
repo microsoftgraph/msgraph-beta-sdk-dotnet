@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Count;
+using Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId;
+using Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Item;
+using Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.SyncLicenseCounts;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceAppManagement.VppTokens.Count;
-using MicrosoftGraphSdk.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId;
-using MicrosoftGraphSdk.DeviceAppManagement.VppTokens.Item;
-using MicrosoftGraphSdk.DeviceAppManagement.VppTokens.SyncLicenseCounts;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.VppTokens {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens {
     /// <summary>Provides operations to manage the vppTokens property of the microsoft.graph.deviceAppManagement entity.</summary>
     public class VppTokensRequestBuilder {
         /// <summary>The count property</summary>
@@ -29,7 +29,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.VppTokens {
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.vppTokens.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceAppManagement.vppTokens.item collection</summary>
         public VppTokenItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("vppToken_id", position);

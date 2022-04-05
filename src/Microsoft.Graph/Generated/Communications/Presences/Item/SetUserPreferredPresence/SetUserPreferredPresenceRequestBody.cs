@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Communications.Presences.Item.SetUserPreferredPresence {
+namespace Microsoft.Graph.Beta.Communications.Presences.Item.SetUserPreferredPresence {
     /// <summary>Provides operations to call the setUserPreferredPresence method.</summary>
     public class SetUserPreferredPresenceRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>The activity property</summary>

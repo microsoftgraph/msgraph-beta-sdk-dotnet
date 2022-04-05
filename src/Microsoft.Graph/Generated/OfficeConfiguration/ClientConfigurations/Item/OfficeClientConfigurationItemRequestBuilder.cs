@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item.Assign;
+using Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item.Assignments;
+using Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item.PolicyPayload;
+using Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item.UserPreferencePayload;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.OfficeConfiguration.ClientConfigurations.Item.Assign;
-using MicrosoftGraphSdk.OfficeConfiguration.ClientConfigurations.Item.Assignments;
-using MicrosoftGraphSdk.OfficeConfiguration.ClientConfigurations.Item.PolicyPayload;
-using MicrosoftGraphSdk.OfficeConfiguration.ClientConfigurations.Item.UserPreferencePayload;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.OfficeConfiguration.ClientConfigurations.Item {
+namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item {
     /// <summary>Provides operations to manage the clientConfigurations property of the microsoft.graph.officeConfiguration entity.</summary>
     public class OfficeClientConfigurationItemRequestBuilder {
         /// <summary>The assign property</summary>

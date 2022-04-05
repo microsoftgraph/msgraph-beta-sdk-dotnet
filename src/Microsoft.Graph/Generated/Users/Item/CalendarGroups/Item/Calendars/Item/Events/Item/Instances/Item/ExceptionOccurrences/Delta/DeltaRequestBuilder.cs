@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Instances.Item.ExceptionOccurrences.Delta {
+namespace Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Instances.Item.ExceptionOccurrences.Delta {
     /// <summary>Provides operations to call the delta method.</summary>
     public class DeltaRequestBuilder {
         /// <summary>Path parameters for the request</summary>

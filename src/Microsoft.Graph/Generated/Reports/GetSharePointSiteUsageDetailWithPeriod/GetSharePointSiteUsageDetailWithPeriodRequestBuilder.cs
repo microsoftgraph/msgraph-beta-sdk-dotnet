@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetSharePointSiteUsageDetailWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetSharePointSiteUsageDetailWithPeriod {
     /// <summary>Provides operations to call the getSharePointSiteUsageDetail method.</summary>
     public class GetSharePointSiteUsageDetailWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

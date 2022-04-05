@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.MailFolders.Item.Messages.Item.Forward {
+namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Item.Forward {
     /// <summary>Provides operations to call the forward method.</summary>
     public class ForwardRequestBuilder {
         /// <summary>Path parameters for the request</summary>

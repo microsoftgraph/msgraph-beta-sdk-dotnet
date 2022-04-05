@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.DeviceRunStates.Item.ManagedDevice;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.DeviceComplianceScripts.Item.DeviceRunStates.Item.ManagedDevice;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.DeviceComplianceScripts.Item.DeviceRunStates.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.DeviceRunStates.Item {
     /// <summary>Provides operations to manage the deviceRunStates property of the microsoft.graph.deviceComplianceScript entity.</summary>
     public class DeviceComplianceScriptDeviceStateItemRequestBuilder {
         /// <summary>The managedDevice property</summary>

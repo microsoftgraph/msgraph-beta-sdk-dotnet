@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Contacts.Item.DirectReports.Count;
+using Microsoft.Graph.Beta.Contacts.Item.DirectReports.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Contacts.Item.DirectReports.Count;
-using MicrosoftGraphSdk.Contacts.Item.DirectReports.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Contacts.Item.DirectReports {
+namespace Microsoft.Graph.Beta.Contacts.Item.DirectReports {
     /// <summary>Provides operations to manage the directReports property of the microsoft.graph.orgContact entity.</summary>
     public class DirectReportsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Contacts.Item.DirectReports {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.contacts.item.directReports.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.contacts.item.directReports.item collection</summary>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryObject_id", position);

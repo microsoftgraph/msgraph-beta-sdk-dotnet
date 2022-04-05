@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Communications.CallRecords.Item.Sessions.Item.Segments;
+using Microsoft.Graph.Beta.Models.CallRecords;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Communications.CallRecords.Item.Sessions.Item.Segments;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Communications.CallRecords.Item.Sessions.Item {
+namespace Microsoft.Graph.Beta.Communications.CallRecords.Item.Sessions.Item {
     /// <summary>Provides operations to manage the sessions property of the microsoft.graph.callRecords.callRecord entity.</summary>
     public class SessionItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

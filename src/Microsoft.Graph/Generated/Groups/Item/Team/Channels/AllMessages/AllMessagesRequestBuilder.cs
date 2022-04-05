@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Team.Channels.AllMessages {
+namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.AllMessages {
     /// <summary>Provides operations to call the allMessages method.</summary>
     public class AllMessagesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

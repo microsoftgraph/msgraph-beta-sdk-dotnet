@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.Assign;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.Assignments;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.DeviceRunStates;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.RunSummary;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.DeviceComplianceScripts.Item.Assign;
-using MicrosoftGraphSdk.DeviceManagement.DeviceComplianceScripts.Item.Assignments;
-using MicrosoftGraphSdk.DeviceManagement.DeviceComplianceScripts.Item.DeviceRunStates;
-using MicrosoftGraphSdk.DeviceManagement.DeviceComplianceScripts.Item.RunSummary;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.DeviceComplianceScripts.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item {
     /// <summary>Provides operations to manage the deviceComplianceScripts property of the microsoft.graph.deviceManagement entity.</summary>
     public class DeviceComplianceScriptItemRequestBuilder {
         /// <summary>The assign property</summary>

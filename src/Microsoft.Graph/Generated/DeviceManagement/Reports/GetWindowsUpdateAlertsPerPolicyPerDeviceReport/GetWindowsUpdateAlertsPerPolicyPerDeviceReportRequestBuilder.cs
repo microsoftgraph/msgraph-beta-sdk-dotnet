@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetWindowsUpdateAlertsPerPolicyPerDeviceReport {
+namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertsPerPolicyPerDeviceReport {
     /// <summary>Provides operations to call the getWindowsUpdateAlertsPerPolicyPerDeviceReport method.</summary>
     public class GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder {
         /// <summary>Path parameters for the request</summary>

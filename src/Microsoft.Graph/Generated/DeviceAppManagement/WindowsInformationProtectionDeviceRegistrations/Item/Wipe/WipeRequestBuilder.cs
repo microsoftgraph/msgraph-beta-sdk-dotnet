@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.WindowsInformationProtectionDeviceRegistrations.Item.Wipe {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionDeviceRegistrations.Item.Wipe {
     /// <summary>Provides operations to call the wipe method.</summary>
     public class WipeRequestBuilder {
         /// <summary>Path parameters for the request</summary>

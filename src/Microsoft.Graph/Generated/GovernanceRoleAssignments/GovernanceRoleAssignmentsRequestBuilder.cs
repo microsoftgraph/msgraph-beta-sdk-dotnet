@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.GovernanceRoleAssignments.Count;
+using Microsoft.Graph.Beta.GovernanceRoleAssignments.Export;
+using Microsoft.Graph.Beta.GovernanceRoleAssignments.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.GovernanceRoleAssignments.Count;
-using MicrosoftGraphSdk.GovernanceRoleAssignments.Export;
-using MicrosoftGraphSdk.GovernanceRoleAssignments.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.GovernanceRoleAssignments {
+namespace Microsoft.Graph.Beta.GovernanceRoleAssignments {
     /// <summary>Provides operations to manage the collection of governanceRoleAssignment entities.</summary>
     public class GovernanceRoleAssignmentsRequestBuilder {
         /// <summary>The count property</summary>
@@ -24,7 +24,7 @@ namespace MicrosoftGraphSdk.GovernanceRoleAssignments {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.governanceRoleAssignments.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.governanceRoleAssignments.item collection</summary>
         public GovernanceRoleAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("governanceRoleAssignment_id", position);

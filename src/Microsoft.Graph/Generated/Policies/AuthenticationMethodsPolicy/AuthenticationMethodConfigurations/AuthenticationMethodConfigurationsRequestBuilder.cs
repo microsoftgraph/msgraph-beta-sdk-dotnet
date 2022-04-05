@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Policies.AuthenticationMethodsPolicy.AuthenticationMethodConfigurations.Count;
+using Microsoft.Graph.Beta.Policies.AuthenticationMethodsPolicy.AuthenticationMethodConfigurations.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Policies.AuthenticationMethodsPolicy.AuthenticationMethodConfigurations.Count;
-using MicrosoftGraphSdk.Policies.AuthenticationMethodsPolicy.AuthenticationMethodConfigurations.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Policies.AuthenticationMethodsPolicy.AuthenticationMethodConfigurations {
+namespace Microsoft.Graph.Beta.Policies.AuthenticationMethodsPolicy.AuthenticationMethodConfigurations {
     /// <summary>Provides operations to manage the authenticationMethodConfigurations property of the microsoft.graph.authenticationMethodsPolicy entity.</summary>
     public class AuthenticationMethodConfigurationsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Policies.AuthenticationMethodsPolicy.AuthenticationM
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.policies.authenticationMethodsPolicy.authenticationMethodConfigurations.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.policies.authenticationMethodsPolicy.authenticationMethodConfigurations.item collection</summary>
         public AuthenticationMethodConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("authenticationMethodConfiguration_id", position);

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.TargetedManagedAppConfigurations.HasPayloadLinks {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.HasPayloadLinks {
     /// <summary>Provides operations to call the hasPayloadLinks method.</summary>
     public class HasPayloadLinksRequestBuilder {
         /// <summary>Path parameters for the request</summary>

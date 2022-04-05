@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Communications.Calls.Item.Reject {
+namespace Microsoft.Graph.Beta.Communications.Calls.Item.Reject {
     /// <summary>Provides operations to call the reject method.</summary>
     public class RejectRequestBuilder {
         /// <summary>Path parameters for the request</summary>

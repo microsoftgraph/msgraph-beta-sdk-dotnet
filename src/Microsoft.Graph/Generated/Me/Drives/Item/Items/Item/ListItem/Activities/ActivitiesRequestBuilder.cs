@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.Drives.Item.Items.Item.ListItem.Activities.Count;
+using Microsoft.Graph.Beta.Me.Drives.Item.Items.Item.ListItem.Activities.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Drives.Item.Items.Item.ListItem.Activities.Count;
-using MicrosoftGraphSdk.Me.Drives.Item.Items.Item.ListItem.Activities.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Drives.Item.Items.Item.ListItem.Activities {
+namespace Microsoft.Graph.Beta.Me.Drives.Item.Items.Item.ListItem.Activities {
     /// <summary>Provides operations to manage the activities property of the microsoft.graph.listItem entity.</summary>
     public class ActivitiesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.Drives.Item.Items.Item.ListItem.Activities {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.drives.item.items.item.listItem.activities.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.drives.item.items.item.listItem.activities.item collection</summary>
         public ItemActivityOLDItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("itemActivityOLD_id", position);

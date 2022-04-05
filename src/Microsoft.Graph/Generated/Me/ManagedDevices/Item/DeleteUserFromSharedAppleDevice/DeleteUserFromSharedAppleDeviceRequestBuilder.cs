@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.DeleteUserFromSharedAppleDevice {
+namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.DeleteUserFromSharedAppleDevice {
     /// <summary>Provides operations to call the deleteUserFromSharedAppleDevice method.</summary>
     public class DeleteUserFromSharedAppleDeviceRequestBuilder {
         /// <summary>Path parameters for the request</summary>

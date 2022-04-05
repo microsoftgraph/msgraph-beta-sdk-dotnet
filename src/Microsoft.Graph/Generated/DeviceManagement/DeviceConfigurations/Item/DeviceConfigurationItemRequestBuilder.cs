@@ -1,26 +1,26 @@
+using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.Assign;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.AssignedAccessMultiModeProfiles;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.Assignments;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.DeviceSettingStateSummaries;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.DeviceStatuses;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.DeviceStatusOverview;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.GetOmaSettingPlainTextValueWithSecretReferenceValueId;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.GroupAssignments;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.UserStatuses;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.UserStatusOverview;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.WindowsPrivacyAccessControls;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.WindowsUpdateForBusinessConfiguration;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.Assign;
-using MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.AssignedAccessMultiModeProfiles;
-using MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.Assignments;
-using MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.DeviceSettingStateSummaries;
-using MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.DeviceStatuses;
-using MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.DeviceStatusOverview;
-using MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.GetOmaSettingPlainTextValueWithSecretReferenceValueId;
-using MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.GroupAssignments;
-using MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.UserStatuses;
-using MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.UserStatusOverview;
-using MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.WindowsPrivacyAccessControls;
-using MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.WindowsUpdateForBusinessConfiguration;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item {
     /// <summary>Provides operations to manage the deviceConfigurations property of the microsoft.graph.deviceManagement entity.</summary>
     public class DeviceConfigurationItemRequestBuilder {
         /// <summary>The assign property</summary>
@@ -142,7 +142,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item {
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreatePatchRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceConfiguration body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
+        public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.DeviceConfiguration body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -177,13 +177,13 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item {
         /// <param name="queryParameters">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceConfiguration> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.DeviceConfiguration> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(queryParameters, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceConfiguration>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceConfiguration.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceConfiguration>(requestInfo, Microsoft.Graph.Beta.Models.DeviceConfiguration.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Provides operations to call the getOmaSettingPlainTextValue method.
@@ -201,7 +201,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item {
         /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceConfiguration body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(Microsoft.Graph.Beta.Models.DeviceConfiguration body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

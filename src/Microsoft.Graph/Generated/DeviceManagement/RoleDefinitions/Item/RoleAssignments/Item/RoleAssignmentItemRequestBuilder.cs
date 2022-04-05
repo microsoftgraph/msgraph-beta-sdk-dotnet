@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.DeviceManagement.RoleDefinitions.Item.RoleAssignments.Item.RoleDefinition;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.RoleDefinitions.Item.RoleAssignments.Item.RoleDefinition;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.RoleDefinitions.Item.RoleAssignments.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.RoleDefinitions.Item.RoleAssignments.Item {
     /// <summary>Provides operations to manage the roleAssignments property of the microsoft.graph.roleDefinition entity.</summary>
     public class RoleAssignmentItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

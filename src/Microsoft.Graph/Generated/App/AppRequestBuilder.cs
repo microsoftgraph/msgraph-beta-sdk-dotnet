@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.App.Calls;
+using Microsoft.Graph.Beta.App.OnlineMeetings;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.App.Calls;
-using MicrosoftGraphSdk.App.OnlineMeetings;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.App {
+namespace Microsoft.Graph.Beta.App {
     /// <summary>Provides operations to manage the commsApplication singleton.</summary>
     public class AppRequestBuilder {
         /// <summary>The calls property</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.RiskyUsers.Dismiss {
+namespace Microsoft.Graph.Beta.RiskyUsers.Dismiss {
     /// <summary>Provides operations to call the dismiss method.</summary>
     public class DismissRequestBuilder {
         /// <summary>Path parameters for the request</summary>

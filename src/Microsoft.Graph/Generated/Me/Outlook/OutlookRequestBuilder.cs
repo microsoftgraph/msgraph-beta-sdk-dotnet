@@ -1,21 +1,21 @@
+using Microsoft.Graph.Beta.Me.Outlook.MasterCategories;
+using Microsoft.Graph.Beta.Me.Outlook.SupportedLanguages;
+using Microsoft.Graph.Beta.Me.Outlook.SupportedTimeZones;
+using Microsoft.Graph.Beta.Me.Outlook.SupportedTimeZonesWithTimeZoneStandard;
+using Microsoft.Graph.Beta.Me.Outlook.TaskFolders;
+using Microsoft.Graph.Beta.Me.Outlook.TaskGroups;
+using Microsoft.Graph.Beta.Me.Outlook.Tasks;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Outlook.MasterCategories;
-using MicrosoftGraphSdk.Me.Outlook.SupportedLanguages;
-using MicrosoftGraphSdk.Me.Outlook.SupportedTimeZones;
-using MicrosoftGraphSdk.Me.Outlook.SupportedTimeZonesWithTimeZoneStandard;
-using MicrosoftGraphSdk.Me.Outlook.TaskFolders;
-using MicrosoftGraphSdk.Me.Outlook.TaskGroups;
-using MicrosoftGraphSdk.Me.Outlook.Tasks;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Outlook {
+namespace Microsoft.Graph.Beta.Me.Outlook {
     /// <summary>Provides operations to manage the outlook property of the microsoft.graph.user entity.</summary>
     public class OutlookRequestBuilder {
         /// <summary>The masterCategories property</summary>

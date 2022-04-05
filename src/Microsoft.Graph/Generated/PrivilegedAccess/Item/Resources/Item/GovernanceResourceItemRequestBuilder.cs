@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.Parent;
+using Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignmentRequests;
+using Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignments;
+using Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleDefinitions;
+using Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleSettings;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.PrivilegedAccess.Item.Resources.Item.Parent;
-using MicrosoftGraphSdk.PrivilegedAccess.Item.Resources.Item.RoleAssignmentRequests;
-using MicrosoftGraphSdk.PrivilegedAccess.Item.Resources.Item.RoleAssignments;
-using MicrosoftGraphSdk.PrivilegedAccess.Item.Resources.Item.RoleDefinitions;
-using MicrosoftGraphSdk.PrivilegedAccess.Item.Resources.Item.RoleSettings;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.PrivilegedAccess.Item.Resources.Item {
+namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item {
     /// <summary>Provides operations to manage the resources property of the microsoft.graph.privilegedAccess entity.</summary>
     public class GovernanceResourceItemRequestBuilder {
         /// <summary>The parent property</summary>

@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfiles.Count;
+using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfiles.HasPayloadLinks;
+using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfiles.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeploymentProfiles.Count;
-using MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeploymentProfiles.HasPayloadLinks;
-using MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeploymentProfiles.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeploymentProfiles {
+namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfiles {
     /// <summary>Provides operations to manage the windowsAutopilotDeploymentProfiles property of the microsoft.graph.deviceManagement entity.</summary>
     public class WindowsAutopilotDeploymentProfilesRequestBuilder {
         /// <summary>The count property</summary>
@@ -28,7 +28,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeploymentProfiles 
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.windowsAutopilotDeploymentProfiles.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.windowsAutopilotDeploymentProfiles.item collection</summary>
         public WindowsAutopilotDeploymentProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsAutopilotDeploymentProfile_id", position);

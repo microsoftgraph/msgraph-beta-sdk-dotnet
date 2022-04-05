@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.Planner.RosterPlans.Count;
+using Microsoft.Graph.Beta.Me.Planner.RosterPlans.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Planner.RosterPlans.Count;
-using MicrosoftGraphSdk.Me.Planner.RosterPlans.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Planner.RosterPlans {
+namespace Microsoft.Graph.Beta.Me.Planner.RosterPlans {
     /// <summary>Provides operations to manage the rosterPlans property of the microsoft.graph.plannerUser entity.</summary>
     public class RosterPlansRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.Planner.RosterPlans {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.planner.rosterPlans.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.planner.rosterPlans.item collection</summary>
         public PlannerPlanItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("plannerPlan_id", position);

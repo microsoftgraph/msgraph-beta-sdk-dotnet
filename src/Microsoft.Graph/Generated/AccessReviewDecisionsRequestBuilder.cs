@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.AccessReviewDecisions.Count;
+using Microsoft.Graph.Beta.AccessReviewDecisions.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.AccessReviewDecisions.Count;
-using MicrosoftGraphSdk.AccessReviewDecisions.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.AccessReviewDecisions {
+namespace Microsoft.Graph.Beta.AccessReviewDecisions {
     /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class AccessReviewDecisionsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.AccessReviewDecisions {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.accessReviewDecisions.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.accessReviewDecisions.item collection</summary>
         public AccessReviewDecisionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewDecision_id", position);

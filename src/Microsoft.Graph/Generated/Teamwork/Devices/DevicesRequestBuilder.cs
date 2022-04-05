@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Teamwork.Devices.Count;
+using Microsoft.Graph.Beta.Teamwork.Devices.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Teamwork.Devices.Count;
-using MicrosoftGraphSdk.Teamwork.Devices.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Teamwork.Devices {
+namespace Microsoft.Graph.Beta.Teamwork.Devices {
     /// <summary>Provides operations to manage the devices property of the microsoft.graph.teamwork entity.</summary>
     public class DevicesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Teamwork.Devices {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.teamwork.devices.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.teamwork.devices.item collection</summary>
         public TeamworkDeviceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("teamworkDevice_id", position);

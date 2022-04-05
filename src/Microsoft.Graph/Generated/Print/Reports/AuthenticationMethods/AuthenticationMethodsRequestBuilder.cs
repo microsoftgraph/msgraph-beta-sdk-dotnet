@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Print.Reports.AuthenticationMethods.UserRegistrationDetails;
+using Microsoft.Graph.Beta.Print.Reports.AuthenticationMethods.UsersRegisteredByFeature;
+using Microsoft.Graph.Beta.Print.Reports.AuthenticationMethods.UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRoles;
+using Microsoft.Graph.Beta.Print.Reports.AuthenticationMethods.UsersRegisteredByMethod;
+using Microsoft.Graph.Beta.Print.Reports.AuthenticationMethods.UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRoles;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Print.Reports.AuthenticationMethods.UserRegistrationDetails;
-using MicrosoftGraphSdk.Print.Reports.AuthenticationMethods.UsersRegisteredByFeature;
-using MicrosoftGraphSdk.Print.Reports.AuthenticationMethods.UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRoles;
-using MicrosoftGraphSdk.Print.Reports.AuthenticationMethods.UsersRegisteredByMethod;
-using MicrosoftGraphSdk.Print.Reports.AuthenticationMethods.UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRoles;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Print.Reports.AuthenticationMethods {
+namespace Microsoft.Graph.Beta.Print.Reports.AuthenticationMethods {
     /// <summary>Provides operations to manage the authenticationMethods property of the microsoft.graph.reportRoot entity.</summary>
     public class AuthenticationMethodsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

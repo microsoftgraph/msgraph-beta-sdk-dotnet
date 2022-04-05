@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetDeviceNonComplianceReport {
+namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceNonComplianceReport {
     /// <summary>Provides operations to call the getDeviceNonComplianceReport method.</summary>
     public class GetDeviceNonComplianceReportRequestBuilder {
         /// <summary>Path parameters for the request</summary>

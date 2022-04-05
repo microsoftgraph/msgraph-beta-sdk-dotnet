@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.AndroidForWorkSettings.RequestSignupUrl {
+namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings.RequestSignupUrl {
     /// <summary>Provides operations to call the requestSignupUrl method.</summary>
     public class RequestSignupUrlRequestBuilder {
         /// <summary>Path parameters for the request</summary>

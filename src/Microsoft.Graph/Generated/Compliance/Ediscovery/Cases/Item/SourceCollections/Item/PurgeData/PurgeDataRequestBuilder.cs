@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.PurgeData {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.PurgeData {
     /// <summary>Provides operations to call the purgeData method.</summary>
     public class PurgeDataRequestBuilder {
         /// <summary>Path parameters for the request</summary>

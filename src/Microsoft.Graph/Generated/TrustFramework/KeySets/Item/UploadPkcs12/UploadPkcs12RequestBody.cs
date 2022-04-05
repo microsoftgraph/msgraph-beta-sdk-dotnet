@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.TrustFramework.KeySets.Item.UploadPkcs12 {
+namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadPkcs12 {
     /// <summary>Provides operations to call the uploadPkcs12 method.</summary>
     public class UploadPkcs12RequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Close {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Close {
     /// <summary>Provides operations to call the close method.</summary>
     public class CloseRequestBuilder {
         /// <summary>Path parameters for the request</summary>

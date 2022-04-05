@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.GetRoleScopeTagsByResourceWithResource {
+namespace Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource {
     /// <summary>Provides operations to call the getRoleScopeTagsByResource method.</summary>
     public class GetRoleScopeTagsByResourceWithResourceRequestBuilder {
         /// <summary>Path parameters for the request</summary>

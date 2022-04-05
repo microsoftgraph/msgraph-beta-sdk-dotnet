@@ -1,21 +1,21 @@
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.ListItem.Activities;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.ListItem.Analytics;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.ListItem.CreateLink;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.ListItem.DriveItem;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.ListItem.Fields;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.ListItem.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.ListItem.Versions;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Drives.Item.Items.Item.ListItem.Activities;
-using MicrosoftGraphSdk.Drives.Item.Items.Item.ListItem.Analytics;
-using MicrosoftGraphSdk.Drives.Item.Items.Item.ListItem.CreateLink;
-using MicrosoftGraphSdk.Drives.Item.Items.Item.ListItem.DriveItem;
-using MicrosoftGraphSdk.Drives.Item.Items.Item.ListItem.Fields;
-using MicrosoftGraphSdk.Drives.Item.Items.Item.ListItem.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval;
-using MicrosoftGraphSdk.Drives.Item.Items.Item.ListItem.Versions;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Drives.Item.Items.Item.ListItem {
+namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.ListItem {
     /// <summary>Provides operations to manage the listItem property of the microsoft.graph.driveItem entity.</summary>
     public class ListItemRequestBuilder {
         /// <summary>The activities property</summary>
@@ -31,8 +31,8 @@ namespace MicrosoftGraphSdk.Drives.Item.Items.Item.ListItem {
             new CreateLinkRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The driveItem property</summary>
-        public MicrosoftGraphSdk.Drives.Item.Items.Item.ListItem.DriveItem.DriveItemRequestBuilder DriveItem { get =>
-            new MicrosoftGraphSdk.Drives.Item.Items.Item.ListItem.DriveItem.DriveItemRequestBuilder(PathParameters, RequestAdapter);
+        public Microsoft.Graph.Beta.Drives.Item.Items.Item.ListItem.DriveItem.DriveItemRequestBuilder DriveItem { get =>
+            new Microsoft.Graph.Beta.Drives.Item.Items.Item.ListItem.DriveItem.DriveItemRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The fields property</summary>
         public FieldsRequestBuilder Fields { get =>
@@ -117,7 +117,7 @@ namespace MicrosoftGraphSdk.Drives.Item.Items.Item.ListItem {
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// </summary>
-        public RequestInformation CreatePatchRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.ListItem body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
+        public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.ListItem body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -164,13 +164,13 @@ namespace MicrosoftGraphSdk.Drives.Item.Items.Item.ListItem {
         /// <param name="queryParameters">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ListItem> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.ListItem> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(queryParameters, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ListItem>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ListItem.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ListItem>(requestInfo, Microsoft.Graph.Beta.Models.ListItem.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property listItem in drives
@@ -180,7 +180,7 @@ namespace MicrosoftGraphSdk.Drives.Item.Items.Item.ListItem {
         /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.ListItem body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(Microsoft.Graph.Beta.Models.ListItem body, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, headers, options);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Directory.Recommendations.Item.Dismiss {
+namespace Microsoft.Graph.Beta.Directory.Recommendations.Item.Dismiss {
     /// <summary>Provides operations to call the dismiss method.</summary>
     public class DismissRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.InformationProtection.DataLossPreventionPolicies.Count;
+using Microsoft.Graph.Beta.Users.Item.InformationProtection.DataLossPreventionPolicies.Evaluate;
+using Microsoft.Graph.Beta.Users.Item.InformationProtection.DataLossPreventionPolicies.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.InformationProtection.DataLossPreventionPolicies.Count;
-using MicrosoftGraphSdk.Users.Item.InformationProtection.DataLossPreventionPolicies.Evaluate;
-using MicrosoftGraphSdk.Users.Item.InformationProtection.DataLossPreventionPolicies.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.InformationProtection.DataLossPreventionPolicies {
+namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.DataLossPreventionPolicies {
     /// <summary>Provides operations to manage the dataLossPreventionPolicies property of the microsoft.graph.informationProtection entity.</summary>
     public class DataLossPreventionPoliciesRequestBuilder {
         /// <summary>The count property</summary>
@@ -28,7 +28,7 @@ namespace MicrosoftGraphSdk.Users.Item.InformationProtection.DataLossPreventionP
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.informationProtection.dataLossPreventionPolicies.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.informationProtection.dataLossPreventionPolicies.item collection</summary>
         public DataLossPreventionPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("dataLossPreventionPolicy_id", position);

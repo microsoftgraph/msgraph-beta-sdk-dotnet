@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.UnassignUserFromDevice {
+namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.UnassignUserFromDevice {
     /// <summary>Provides operations to call the unassignUserFromDevice method.</summary>
     public class UnassignUserFromDeviceRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsRegressionSummary.SummarizeDeviceRegressionPerformanceWithSummarizeBy {
+namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRegressionSummary.SummarizeDeviceRegressionPerformanceWithSummarizeBy {
     /// <summary>Provides operations to call the summarizeDeviceRegressionPerformance method.</summary>
     public class SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -67,9 +67,9 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsRegressionSu
         /// <param name="options">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsRegressionSummary> GetAsync(Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRegressionSummary> GetAsync(Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(headers, options);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsRegressionSummary>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsRegressionSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRegressionSummary>(requestInfo, Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRegressionSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

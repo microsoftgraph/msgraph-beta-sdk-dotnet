@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.Retire {
+namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.Retire {
     /// <summary>Provides operations to call the retire method.</summary>
     public class RetireRequestBuilder {
         /// <summary>Path parameters for the request</summary>

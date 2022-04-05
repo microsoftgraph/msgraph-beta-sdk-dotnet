@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Models.ManagedTenants;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateSteps.Item.AcceptedVersion;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateSteps.Item.ManagementTemplate;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateSteps.Item.Versions;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplateSteps.Item.AcceptedVersion;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplateSteps.Item.ManagementTemplate;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplateSteps.Item.Versions;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplateSteps.Item {
+namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateSteps.Item {
     /// <summary>Provides operations to manage the managementTemplateSteps property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
     public class ManagementTemplateStepItemRequestBuilder {
         /// <summary>The acceptedVersion property</summary>

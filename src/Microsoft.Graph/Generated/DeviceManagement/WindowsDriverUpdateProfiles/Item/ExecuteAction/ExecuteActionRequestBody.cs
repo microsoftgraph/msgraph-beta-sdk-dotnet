@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item.ExecuteAction {
+namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.ExecuteAction {
     /// <summary>Provides operations to call the executeAction method.</summary>
     public class ExecuteActionRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>The actionName property</summary>

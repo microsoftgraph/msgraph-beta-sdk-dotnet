@@ -1,20 +1,20 @@
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Count;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.GetMobileAppCountWithStatus;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.GetTopMobileAppsWithStatusWithCount;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.HasPayloadLinks;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.ValidateXml;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Count;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.GetMobileAppCountWithStatus;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.GetTopMobileAppsWithStatusWithCount;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.HasPayloadLinks;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item;
-using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.ValidateXml;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps {
     /// <summary>Provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.</summary>
     public class MobileAppsRequestBuilder {
         /// <summary>The count property</summary>
@@ -35,7 +35,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps {
         public ValidateXmlRequestBuilder ValidateXml { get =>
             new ValidateXmlRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.mobileApps.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceAppManagement.mobileApps.item collection</summary>
         public MobileAppItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mobileApp_id", position);

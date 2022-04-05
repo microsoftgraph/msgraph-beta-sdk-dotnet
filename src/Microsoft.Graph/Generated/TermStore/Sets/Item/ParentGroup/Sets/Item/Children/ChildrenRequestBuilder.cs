@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models.TermStore;
+using Microsoft.Graph.Beta.TermStore.Sets.Item.ParentGroup.Sets.Item.Children.Count;
+using Microsoft.Graph.Beta.TermStore.Sets.Item.ParentGroup.Sets.Item.Children.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore;
-using MicrosoftGraphSdk.TermStore.Sets.Item.ParentGroup.Sets.Item.Children.Count;
-using MicrosoftGraphSdk.TermStore.Sets.Item.ParentGroup.Sets.Item.Children.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TermStore.Sets.Item.ParentGroup.Sets.Item.Children {
+namespace Microsoft.Graph.Beta.TermStore.Sets.Item.ParentGroup.Sets.Item.Children {
     /// <summary>Provides operations to manage the children property of the microsoft.graph.termStore.set entity.</summary>
     public class ChildrenRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.TermStore.Sets.Item.ParentGroup.Sets.Item.Children {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.termStore.sets.item.parentGroup.sets.item.children.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.termStore.sets.item.parentGroup.sets.item.children.item collection</summary>
         public TermItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("term_id", position);

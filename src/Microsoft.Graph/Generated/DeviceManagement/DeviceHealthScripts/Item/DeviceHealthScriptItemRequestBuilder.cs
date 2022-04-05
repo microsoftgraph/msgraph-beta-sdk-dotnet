@@ -1,21 +1,21 @@
+using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.Assign;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.Assignments;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.DeviceRunStates;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.GetGlobalScriptHighestAvailableVersion;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.GetRemediationHistory;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.RunSummary;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.UpdateGlobalScript;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.Item.Assign;
-using MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.Item.Assignments;
-using MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.Item.DeviceRunStates;
-using MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.Item.GetGlobalScriptHighestAvailableVersion;
-using MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.Item.GetRemediationHistory;
-using MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.Item.RunSummary;
-using MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.Item.UpdateGlobalScript;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item {
     /// <summary>Provides operations to manage the deviceHealthScripts property of the microsoft.graph.deviceManagement entity.</summary>
     public class DeviceHealthScriptItemRequestBuilder {
         /// <summary>The assign property</summary>

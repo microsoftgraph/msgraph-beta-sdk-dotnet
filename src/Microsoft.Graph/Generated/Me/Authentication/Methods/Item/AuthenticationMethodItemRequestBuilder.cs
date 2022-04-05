@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Me.Authentication.Methods.Item.DisableSmsSignIn;
+using Microsoft.Graph.Beta.Me.Authentication.Methods.Item.EnableSmsSignIn;
+using Microsoft.Graph.Beta.Me.Authentication.Methods.Item.ResetPassword;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Authentication.Methods.Item.DisableSmsSignIn;
-using MicrosoftGraphSdk.Me.Authentication.Methods.Item.EnableSmsSignIn;
-using MicrosoftGraphSdk.Me.Authentication.Methods.Item.ResetPassword;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Authentication.Methods.Item {
+namespace Microsoft.Graph.Beta.Me.Authentication.Methods.Item {
     /// <summary>Provides operations to manage the methods property of the microsoft.graph.authentication entity.</summary>
     public class AuthenticationMethodItemRequestBuilder {
         /// <summary>The disableSmsSignIn property</summary>

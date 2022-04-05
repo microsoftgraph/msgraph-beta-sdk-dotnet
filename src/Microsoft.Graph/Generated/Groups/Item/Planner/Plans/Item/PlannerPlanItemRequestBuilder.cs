@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Groups.Item.Planner.Plans.Item.Buckets;
+using Microsoft.Graph.Beta.Groups.Item.Planner.Plans.Item.Details;
+using Microsoft.Graph.Beta.Groups.Item.Planner.Plans.Item.Tasks;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Groups.Item.Planner.Plans.Item.Buckets;
-using MicrosoftGraphSdk.Groups.Item.Planner.Plans.Item.Details;
-using MicrosoftGraphSdk.Groups.Item.Planner.Plans.Item.Tasks;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Planner.Plans.Item {
+namespace Microsoft.Graph.Beta.Groups.Item.Planner.Plans.Item {
     /// <summary>Provides operations to manage the plans property of the microsoft.graph.plannerGroup entity.</summary>
     public class PlannerPlanItemRequestBuilder {
         /// <summary>The buckets property</summary>

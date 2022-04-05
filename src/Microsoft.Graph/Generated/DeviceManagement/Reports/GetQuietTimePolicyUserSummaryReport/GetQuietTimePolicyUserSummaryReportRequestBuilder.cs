@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetQuietTimePolicyUserSummaryReport {
+namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetQuietTimePolicyUserSummaryReport {
     /// <summary>Provides operations to call the getQuietTimePolicyUserSummaryReport method.</summary>
     public class GetQuietTimePolicyUserSummaryReportRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Count;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Delta;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages.Count;
-using MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages.Delta;
-using MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages {
+namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages {
     /// <summary>Provides operations to manage the messages property of the microsoft.graph.mailFolder entity.</summary>
     public class MessagesRequestBuilder {
         /// <summary>The count property</summary>
@@ -24,7 +24,7 @@ namespace MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.mailFolders.item.childFolders.item.messages.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.mailFolders.item.childFolders.item.messages.item collection</summary>
         public MessageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("message_id", position);

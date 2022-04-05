@@ -1,0 +1,30 @@
+namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to call the validateComplianceScript method.</summary>
+    public enum Operator {
+        None,
+        And,
+        Or,
+        IsEquals,
+        NotEquals,
+        GreaterThan,
+        LessThan,
+        Between,
+        NotBetween,
+        GreaterEquals,
+        LessEquals,
+        DayTimeBetween,
+        BeginsWith,
+        NotBeginsWith,
+        EndsWith,
+        NotEndsWith,
+        Contains,
+        NotContains,
+        AllOf,
+        OneOf,
+        NoneOf,
+        SetEquals,
+        OrderedSetEquals,
+        SubsetOf,
+        ExcludesAll,
+    }
+}

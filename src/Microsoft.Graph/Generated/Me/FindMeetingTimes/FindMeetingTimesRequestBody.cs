@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Me.FindMeetingTimes {
+namespace Microsoft.Graph.Beta.Me.FindMeetingTimes {
     /// <summary>Provides operations to call the findMeetingTimes method.</summary>
     public class FindMeetingTimesRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -14,7 +14,7 @@ namespace MicrosoftGraphSdk.Me.FindMeetingTimes {
         /// <summary>The isOrganizerOptional property</summary>
         public bool? IsOrganizerOptional { get; set; }
         /// <summary>The locationConstraint property</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.LocationConstraint LocationConstraint { get; set; }
+        public Microsoft.Graph.Beta.Models.LocationConstraint LocationConstraint { get; set; }
         /// <summary>The maxCandidates property</summary>
         public int? MaxCandidates { get; set; }
         /// <summary>The meetingDuration property</summary>
@@ -24,7 +24,7 @@ namespace MicrosoftGraphSdk.Me.FindMeetingTimes {
         /// <summary>The returnSuggestionReasons property</summary>
         public bool? ReturnSuggestionReasons { get; set; }
         /// <summary>The timeConstraint property</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.TimeConstraint TimeConstraint { get; set; }
+        public Microsoft.Graph.Beta.Models.TimeConstraint TimeConstraint { get; set; }
         /// <summary>
         /// Instantiates a new findMeetingTimesRequestBody and sets the default values.
         /// </summary>
@@ -46,12 +46,12 @@ namespace MicrosoftGraphSdk.Me.FindMeetingTimes {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"attendees", (o,n) => { (o as FindMeetingTimesRequestBody).Attendees = n.GetCollectionOfObjectValues<AttendeeBase>(AttendeeBase.CreateFromDiscriminatorValue).ToList(); } },
                 {"isOrganizerOptional", (o,n) => { (o as FindMeetingTimesRequestBody).IsOrganizerOptional = n.GetBoolValue(); } },
-                {"locationConstraint", (o,n) => { (o as FindMeetingTimesRequestBody).LocationConstraint = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.LocationConstraint>(MicrosoftGraphSdk.Models.Microsoft.Graph.LocationConstraint.CreateFromDiscriminatorValue); } },
+                {"locationConstraint", (o,n) => { (o as FindMeetingTimesRequestBody).LocationConstraint = n.GetObjectValue<Microsoft.Graph.Beta.Models.LocationConstraint>(Microsoft.Graph.Beta.Models.LocationConstraint.CreateFromDiscriminatorValue); } },
                 {"maxCandidates", (o,n) => { (o as FindMeetingTimesRequestBody).MaxCandidates = n.GetIntValue(); } },
                 {"meetingDuration", (o,n) => { (o as FindMeetingTimesRequestBody).MeetingDuration = n.GetTimeSpanValue(); } },
                 {"minimumAttendeePercentage", (o,n) => { (o as FindMeetingTimesRequestBody).MinimumAttendeePercentage = n.GetDoubleValue(); } },
                 {"returnSuggestionReasons", (o,n) => { (o as FindMeetingTimesRequestBody).ReturnSuggestionReasons = n.GetBoolValue(); } },
-                {"timeConstraint", (o,n) => { (o as FindMeetingTimesRequestBody).TimeConstraint = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.TimeConstraint>(MicrosoftGraphSdk.Models.Microsoft.Graph.TimeConstraint.CreateFromDiscriminatorValue); } },
+                {"timeConstraint", (o,n) => { (o as FindMeetingTimesRequestBody).TimeConstraint = n.GetObjectValue<Microsoft.Graph.Beta.Models.TimeConstraint>(Microsoft.Graph.Beta.Models.TimeConstraint.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,12 +62,12 @@ namespace MicrosoftGraphSdk.Me.FindMeetingTimes {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<AttendeeBase>("attendees", Attendees);
             writer.WriteBoolValue("isOrganizerOptional", IsOrganizerOptional);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.LocationConstraint>("locationConstraint", LocationConstraint);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.LocationConstraint>("locationConstraint", LocationConstraint);
             writer.WriteIntValue("maxCandidates", MaxCandidates);
             writer.WriteTimeSpanValue("meetingDuration", MeetingDuration);
             writer.WriteDoubleValue("minimumAttendeePercentage", MinimumAttendeePercentage);
             writer.WriteBoolValue("returnSuggestionReasons", ReturnSuggestionReasons);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.TimeConstraint>("timeConstraint", TimeConstraint);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TimeConstraint>("timeConstraint", TimeConstraint);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

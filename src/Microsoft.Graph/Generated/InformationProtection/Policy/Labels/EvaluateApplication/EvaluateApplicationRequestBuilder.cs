@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.InformationProtection.Policy.Labels.EvaluateApplication {
+namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels.EvaluateApplication {
     /// <summary>Provides operations to call the evaluateApplication method.</summary>
     public class EvaluateApplicationRequestBuilder {
         /// <summary>Path parameters for the request</summary>

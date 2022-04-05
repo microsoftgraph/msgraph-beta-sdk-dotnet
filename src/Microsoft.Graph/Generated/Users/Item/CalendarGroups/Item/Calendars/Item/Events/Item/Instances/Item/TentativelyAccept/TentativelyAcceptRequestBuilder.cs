@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Instances.Item.TentativelyAccept {
+namespace Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Instances.Item.TentativelyAccept {
     /// <summary>Provides operations to call the tentativelyAccept method.</summary>
     public class TentativelyAcceptRequestBuilder {
         /// <summary>Path parameters for the request</summary>

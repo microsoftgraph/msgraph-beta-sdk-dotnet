@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.MobilityManagementPolicies.Item.IncludedGroups.Count;
+using Microsoft.Graph.Beta.MobilityManagementPolicies.Item.IncludedGroups.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.MobilityManagementPolicies.Item.IncludedGroups.Count;
-using MicrosoftGraphSdk.MobilityManagementPolicies.Item.IncludedGroups.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.MobilityManagementPolicies.Item.IncludedGroups {
+namespace Microsoft.Graph.Beta.MobilityManagementPolicies.Item.IncludedGroups {
     /// <summary>Provides operations to manage the includedGroups property of the microsoft.graph.mobilityManagementPolicy entity.</summary>
     public class IncludedGroupsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.MobilityManagementPolicies.Item.IncludedGroups {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.mobilityManagementPolicies.item.includedGroups.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.mobilityManagementPolicies.item.includedGroups.item collection</summary>
         public GroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("group_id", position);

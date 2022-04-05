@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Me.Chats.Item.InstalledApps.Item.TeamsApp;
+using Microsoft.Graph.Beta.Me.Chats.Item.InstalledApps.Item.TeamsAppDefinition;
+using Microsoft.Graph.Beta.Me.Chats.Item.InstalledApps.Item.Upgrade;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Chats.Item.InstalledApps.Item.TeamsApp;
-using MicrosoftGraphSdk.Me.Chats.Item.InstalledApps.Item.TeamsAppDefinition;
-using MicrosoftGraphSdk.Me.Chats.Item.InstalledApps.Item.Upgrade;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Chats.Item.InstalledApps.Item {
+namespace Microsoft.Graph.Beta.Me.Chats.Item.InstalledApps.Item {
     /// <summary>Provides operations to manage the installedApps property of the microsoft.graph.chat entity.</summary>
     public class TeamsAppInstallationItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

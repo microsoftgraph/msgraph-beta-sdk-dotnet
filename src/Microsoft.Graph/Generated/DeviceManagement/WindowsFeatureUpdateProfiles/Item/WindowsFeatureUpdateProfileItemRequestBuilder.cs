@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Item.Assign;
+using Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Item.Assignments;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.WindowsFeatureUpdateProfiles.Item.Assign;
-using MicrosoftGraphSdk.DeviceManagement.WindowsFeatureUpdateProfiles.Item.Assignments;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.WindowsFeatureUpdateProfiles.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Item {
     /// <summary>Provides operations to manage the windowsFeatureUpdateProfiles property of the microsoft.graph.deviceManagement entity.</summary>
     public class WindowsFeatureUpdateProfileItemRequestBuilder {
         /// <summary>The assign property</summary>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DomainDnsRecords.Count;
+using Microsoft.Graph.Beta.DomainDnsRecords.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DomainDnsRecords.Count;
-using MicrosoftGraphSdk.DomainDnsRecords.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DomainDnsRecords {
+namespace Microsoft.Graph.Beta.DomainDnsRecords {
     /// <summary>Provides operations to manage the collection of domainDnsRecord entities.</summary>
     public class DomainDnsRecordsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DomainDnsRecords {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.domainDnsRecords.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.domainDnsRecords.item collection</summary>
         public DomainDnsRecordItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("domainDnsRecord_id", position);

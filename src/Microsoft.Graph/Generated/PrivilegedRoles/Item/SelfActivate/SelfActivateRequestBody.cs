@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.PrivilegedRoles.Item.SelfActivate {
+namespace Microsoft.Graph.Beta.PrivilegedRoles.Item.SelfActivate {
     /// <summary>Provides operations to call the selfActivate method.</summary>
     public class SelfActivateRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

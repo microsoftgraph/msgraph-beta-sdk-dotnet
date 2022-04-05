@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.TriggerConfigurationManagerAction {
+namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.TriggerConfigurationManagerAction {
     /// <summary>Provides operations to call the triggerConfigurationManagerAction method.</summary>
     public class TriggerConfigurationManagerActionRequestBuilder {
         /// <summary>Path parameters for the request</summary>

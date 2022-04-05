@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.OnlineMeetings.Item.Recording {
+namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Recording {
     /// <summary>Provides operations to manage the media for the user entity.</summary>
     public class RecordingRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.CalendarView.Item.Instances.Item.DismissReminder {
+namespace Microsoft.Graph.Beta.Users.Item.CalendarView.Item.Instances.Item.DismissReminder {
     /// <summary>Provides operations to call the dismissReminder method.</summary>
     public class DismissReminderRequestBuilder {
         /// <summary>Path parameters for the request</summary>

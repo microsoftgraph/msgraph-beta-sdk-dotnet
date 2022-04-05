@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.Item.Schema.Functions {
+namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.Schema.Functions {
     /// <summary>Provides operations to call the functions method.</summary>
     public class FunctionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

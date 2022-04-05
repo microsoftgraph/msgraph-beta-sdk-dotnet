@@ -1,20 +1,20 @@
+using Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item.Assign;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item.Assignments;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item.DeviceRunStates;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item.GroupAssignments;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item.RunSummary;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item.UserRunStates;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.DeviceCustomAttributeShellScripts.Item.Assign;
-using MicrosoftGraphSdk.DeviceManagement.DeviceCustomAttributeShellScripts.Item.Assignments;
-using MicrosoftGraphSdk.DeviceManagement.DeviceCustomAttributeShellScripts.Item.DeviceRunStates;
-using MicrosoftGraphSdk.DeviceManagement.DeviceCustomAttributeShellScripts.Item.GroupAssignments;
-using MicrosoftGraphSdk.DeviceManagement.DeviceCustomAttributeShellScripts.Item.RunSummary;
-using MicrosoftGraphSdk.DeviceManagement.DeviceCustomAttributeShellScripts.Item.UserRunStates;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.DeviceCustomAttributeShellScripts.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item {
     /// <summary>Provides operations to manage the deviceCustomAttributeShellScripts property of the microsoft.graph.deviceManagement entity.</summary>
     public class DeviceCustomAttributeShellScriptItemRequestBuilder {
         /// <summary>The assign property</summary>

@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item.ReferencingConfigurationPolicies.Item.Assign;
+using Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item.ReferencingConfigurationPolicies.Item.Assignments;
+using Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item.ReferencingConfigurationPolicies.Item.CreateCopy;
+using Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item.ReferencingConfigurationPolicies.Item.Settings;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.ReusablePolicySettings.Item.ReferencingConfigurationPolicies.Item.Assign;
-using MicrosoftGraphSdk.DeviceManagement.ReusablePolicySettings.Item.ReferencingConfigurationPolicies.Item.Assignments;
-using MicrosoftGraphSdk.DeviceManagement.ReusablePolicySettings.Item.ReferencingConfigurationPolicies.Item.CreateCopy;
-using MicrosoftGraphSdk.DeviceManagement.ReusablePolicySettings.Item.ReferencingConfigurationPolicies.Item.Settings;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.ReusablePolicySettings.Item.ReferencingConfigurationPolicies.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item.ReferencingConfigurationPolicies.Item {
     /// <summary>Provides operations to manage the referencingConfigurationPolicies property of the microsoft.graph.deviceManagementReusablePolicySetting entity.</summary>
     public class DeviceManagementConfigurationPolicyItemRequestBuilder {
         /// <summary>The assign property</summary>

@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.Item.Assign;
+using Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.Item.Assignments;
+using Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.Item.DeploySummary;
+using Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.Item.DeviceStatuses;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item.Assign;
-using MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item.Assignments;
-using MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item.DeploySummary;
-using MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item.DeviceStatuses;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.Item {
     /// <summary>Provides operations to manage the wdacSupplementalPolicies property of the microsoft.graph.deviceAppManagement entity.</summary>
     public class WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder {
         /// <summary>The assign property</summary>

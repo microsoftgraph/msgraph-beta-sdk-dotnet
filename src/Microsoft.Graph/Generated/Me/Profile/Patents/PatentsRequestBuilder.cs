@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.Profile.Patents.Count;
+using Microsoft.Graph.Beta.Me.Profile.Patents.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Profile.Patents.Count;
-using MicrosoftGraphSdk.Me.Profile.Patents.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Profile.Patents {
+namespace Microsoft.Graph.Beta.Me.Profile.Patents {
     /// <summary>Provides operations to manage the patents property of the microsoft.graph.profile entity.</summary>
     public class PatentsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.Profile.Patents {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.profile.patents.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.profile.patents.item collection</summary>
         public ItemPatentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("itemPatent_id", position);

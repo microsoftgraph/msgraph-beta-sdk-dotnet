@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdateProfiles.Item.Assign;
+using Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdateProfiles.Item.Assignments;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.WindowsQualityUpdateProfiles.Item.Assign;
-using MicrosoftGraphSdk.DeviceManagement.WindowsQualityUpdateProfiles.Item.Assignments;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.WindowsQualityUpdateProfiles.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdateProfiles.Item {
     /// <summary>Provides operations to manage the windowsQualityUpdateProfiles property of the microsoft.graph.deviceManagement entity.</summary>
     public class WindowsQualityUpdateProfileItemRequestBuilder {
         /// <summary>The assign property</summary>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.Count;
+using Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.Count;
-using MicrosoftGraphSdk.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails {
+namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails {
     /// <summary>Provides operations to manage the serviceManagementDetails property of the microsoft.graph.delegatedAdminCustomer entity.</summary>
     public class ServiceManagementDetailsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.DelegatedAdminCustomers.Item.Ser
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.tenantRelationships.delegatedAdminCustomers.item.serviceManagementDetails.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.tenantRelationships.delegatedAdminCustomers.item.serviceManagementDetails.item collection</summary>
         public DelegatedAdminServiceManagementDetailItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("delegatedAdminServiceManagementDetail_id", position);

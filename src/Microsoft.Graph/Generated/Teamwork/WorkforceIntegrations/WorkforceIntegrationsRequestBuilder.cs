@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Teamwork.WorkforceIntegrations.Count;
+using Microsoft.Graph.Beta.Teamwork.WorkforceIntegrations.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Teamwork.WorkforceIntegrations.Count;
-using MicrosoftGraphSdk.Teamwork.WorkforceIntegrations.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Teamwork.WorkforceIntegrations {
+namespace Microsoft.Graph.Beta.Teamwork.WorkforceIntegrations {
     /// <summary>Provides operations to manage the workforceIntegrations property of the microsoft.graph.teamwork entity.</summary>
     public class WorkforceIntegrationsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Teamwork.WorkforceIntegrations {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.teamwork.workforceIntegrations.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.teamwork.workforceIntegrations.item collection</summary>
         public WorkforceIntegrationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workforceIntegration_id", position);

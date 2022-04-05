@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriod {
     /// <summary>Provides operations to call the getSkypeForBusinessOrganizerActivityMinuteCounts method.</summary>
     public class GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

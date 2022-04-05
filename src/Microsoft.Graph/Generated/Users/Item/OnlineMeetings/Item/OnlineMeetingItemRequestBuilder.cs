@@ -1,20 +1,20 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.AlternativeRecording;
+using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.AttendanceReports;
+using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.AttendeeReport;
+using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.MeetingAttendanceReport;
+using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Recording;
+using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.OnlineMeetings.Item.AlternativeRecording;
-using MicrosoftGraphSdk.Users.Item.OnlineMeetings.Item.AttendanceReports;
-using MicrosoftGraphSdk.Users.Item.OnlineMeetings.Item.AttendeeReport;
-using MicrosoftGraphSdk.Users.Item.OnlineMeetings.Item.MeetingAttendanceReport;
-using MicrosoftGraphSdk.Users.Item.OnlineMeetings.Item.Recording;
-using MicrosoftGraphSdk.Users.Item.OnlineMeetings.Item.Registration;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.OnlineMeetings.Item {
+namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item {
     /// <summary>Provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.</summary>
     public class OnlineMeetingItemRequestBuilder {
         /// <summary>The alternativeRecording property</summary>

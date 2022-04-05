@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.MailFolders.Item.Messages.Item.Reply {
+namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.Reply {
     /// <summary>Provides operations to call the reply method.</summary>
     public class ReplyRequestBuilder {
         /// <summary>Path parameters for the request</summary>

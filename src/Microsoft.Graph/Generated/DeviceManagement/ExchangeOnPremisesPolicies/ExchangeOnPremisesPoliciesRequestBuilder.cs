@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicies.Count;
+using Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicies.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.ExchangeOnPremisesPolicies.Count;
-using MicrosoftGraphSdk.DeviceManagement.ExchangeOnPremisesPolicies.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.ExchangeOnPremisesPolicies {
+namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicies {
     /// <summary>Provides operations to manage the exchangeOnPremisesPolicies property of the microsoft.graph.deviceManagement entity.</summary>
     public class ExchangeOnPremisesPoliciesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ExchangeOnPremisesPolicies {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.exchangeOnPremisesPolicies.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.exchangeOnPremisesPolicies.item collection</summary>
         public DeviceManagementExchangeOnPremisesPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementExchangeOnPremisesPolicy_id", position);

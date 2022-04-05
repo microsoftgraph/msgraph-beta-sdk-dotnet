@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBaselineStates.Item.SettingStates.Count;
+using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBaselineStates.Item.SettingStates.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.SecurityBaselineStates.Item.SettingStates.Count;
-using MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.SecurityBaselineStates.Item.SettingStates.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.SecurityBaselineStates.Item.SettingStates {
+namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBaselineStates.Item.SettingStates {
     /// <summary>Provides operations to manage the settingStates property of the microsoft.graph.securityBaselineState entity.</summary>
     public class SettingStatesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.SecurityBaselin
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.managedDevices.item.securityBaselineStates.item.settingStates.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.managedDevices.item.securityBaselineStates.item.settingStates.item collection</summary>
         public SecurityBaselineSettingStateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("securityBaselineSettingState_id", position);

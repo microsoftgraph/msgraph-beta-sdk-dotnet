@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Applications.Item.GetMemberObjects {
+namespace Microsoft.Graph.Beta.Applications.Item.GetMemberObjects {
     /// <summary>Provides operations to call the getMemberObjects method.</summary>
     public class GetMemberObjectsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

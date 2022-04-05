@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.Item.Apps;
+using Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.Item.Assign;
+using Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.Item.Assignments;
+using Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.Item.DeploymentSummary;
+using Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.Item.TargetApps;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceAppManagement.TargetedManagedAppConfigurations.Item.Apps;
-using MicrosoftGraphSdk.DeviceAppManagement.TargetedManagedAppConfigurations.Item.Assign;
-using MicrosoftGraphSdk.DeviceAppManagement.TargetedManagedAppConfigurations.Item.Assignments;
-using MicrosoftGraphSdk.DeviceAppManagement.TargetedManagedAppConfigurations.Item.DeploymentSummary;
-using MicrosoftGraphSdk.DeviceAppManagement.TargetedManagedAppConfigurations.Item.TargetApps;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.TargetedManagedAppConfigurations.Item {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.Item {
     /// <summary>Provides operations to manage the targetedManagedAppConfigurations property of the microsoft.graph.deviceAppManagement entity.</summary>
     public class TargetedManagedAppConfigurationItemRequestBuilder {
         /// <summary>The apps property</summary>

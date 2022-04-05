@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.EventMessageRequest.Accept {
+namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.EventMessageRequest.Accept {
     /// <summary>Provides operations to call the accept method.</summary>
     public class AcceptRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DataClassification.EvaluateLabelJobs.Count;
+using Microsoft.Graph.Beta.DataClassification.EvaluateLabelJobs.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DataClassification.EvaluateLabelJobs.Count;
-using MicrosoftGraphSdk.DataClassification.EvaluateLabelJobs.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DataClassification.EvaluateLabelJobs {
+namespace Microsoft.Graph.Beta.DataClassification.EvaluateLabelJobs {
     /// <summary>Provides operations to manage the evaluateLabelJobs property of the microsoft.graph.dataClassificationService entity.</summary>
     public class EvaluateLabelJobsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DataClassification.EvaluateLabelJobs {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.dataClassification.evaluateLabelJobs.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.dataClassification.evaluateLabelJobs.item collection</summary>
         public JobResponseBaseItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("jobResponseBase_id", position);

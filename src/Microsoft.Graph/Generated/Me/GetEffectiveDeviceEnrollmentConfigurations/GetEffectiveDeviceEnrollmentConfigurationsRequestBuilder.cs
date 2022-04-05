@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.GetEffectiveDeviceEnrollmentConfigurations {
+namespace Microsoft.Graph.Beta.Me.GetEffectiveDeviceEnrollmentConfigurations {
     /// <summary>Provides operations to call the getEffectiveDeviceEnrollmentConfigurations method.</summary>
     public class GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

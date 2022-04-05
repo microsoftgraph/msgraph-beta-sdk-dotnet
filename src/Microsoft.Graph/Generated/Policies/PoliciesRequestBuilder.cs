@@ -1,39 +1,39 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Policies.AccessReviewPolicy;
+using Microsoft.Graph.Beta.Policies.ActivityBasedTimeoutPolicies;
+using Microsoft.Graph.Beta.Policies.AdminConsentRequestPolicy;
+using Microsoft.Graph.Beta.Policies.AppManagementPolicies;
+using Microsoft.Graph.Beta.Policies.AuthenticationFlowsPolicy;
+using Microsoft.Graph.Beta.Policies.AuthenticationMethodsPolicy;
+using Microsoft.Graph.Beta.Policies.AuthorizationPolicy;
+using Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy;
+using Microsoft.Graph.Beta.Policies.ClaimsMappingPolicies;
+using Microsoft.Graph.Beta.Policies.ConditionalAccessPolicies;
+using Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy;
+using Microsoft.Graph.Beta.Policies.DefaultAppManagementPolicy;
+using Microsoft.Graph.Beta.Policies.DirectoryRoleAccessReviewPolicy;
+using Microsoft.Graph.Beta.Policies.ExternalIdentitiesPolicy;
+using Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies;
+using Microsoft.Graph.Beta.Policies.HomeRealmDiscoveryPolicies;
+using Microsoft.Graph.Beta.Policies.IdentitySecurityDefaultsEnforcementPolicy;
+using Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies;
+using Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies;
+using Microsoft.Graph.Beta.Policies.PermissionGrantPolicies;
+using Microsoft.Graph.Beta.Policies.RoleManagementPolicies;
+using Microsoft.Graph.Beta.Policies.RoleManagementPolicyAssignments;
+using Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies;
+using Microsoft.Graph.Beta.Policies.TokenIssuancePolicies;
+using Microsoft.Graph.Beta.Policies.TokenLifetimePolicies;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Policies.AccessReviewPolicy;
-using MicrosoftGraphSdk.Policies.ActivityBasedTimeoutPolicies;
-using MicrosoftGraphSdk.Policies.AdminConsentRequestPolicy;
-using MicrosoftGraphSdk.Policies.AppManagementPolicies;
-using MicrosoftGraphSdk.Policies.AuthenticationFlowsPolicy;
-using MicrosoftGraphSdk.Policies.AuthenticationMethodsPolicy;
-using MicrosoftGraphSdk.Policies.AuthorizationPolicy;
-using MicrosoftGraphSdk.Policies.B2cAuthenticationMethodsPolicy;
-using MicrosoftGraphSdk.Policies.ClaimsMappingPolicies;
-using MicrosoftGraphSdk.Policies.ConditionalAccessPolicies;
-using MicrosoftGraphSdk.Policies.CrossTenantAccessPolicy;
-using MicrosoftGraphSdk.Policies.DefaultAppManagementPolicy;
-using MicrosoftGraphSdk.Policies.DirectoryRoleAccessReviewPolicy;
-using MicrosoftGraphSdk.Policies.ExternalIdentitiesPolicy;
-using MicrosoftGraphSdk.Policies.FeatureRolloutPolicies;
-using MicrosoftGraphSdk.Policies.HomeRealmDiscoveryPolicies;
-using MicrosoftGraphSdk.Policies.IdentitySecurityDefaultsEnforcementPolicy;
-using MicrosoftGraphSdk.Policies.MobileAppManagementPolicies;
-using MicrosoftGraphSdk.Policies.MobileDeviceManagementPolicies;
-using MicrosoftGraphSdk.Policies.PermissionGrantPolicies;
-using MicrosoftGraphSdk.Policies.RoleManagementPolicies;
-using MicrosoftGraphSdk.Policies.RoleManagementPolicyAssignments;
-using MicrosoftGraphSdk.Policies.ServicePrincipalCreationPolicies;
-using MicrosoftGraphSdk.Policies.TokenIssuancePolicies;
-using MicrosoftGraphSdk.Policies.TokenLifetimePolicies;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Policies {
+namespace Microsoft.Graph.Beta.Policies {
     /// <summary>Provides operations to manage the policyRoot singleton.</summary>
     public class PoliciesRequestBuilder {
         /// <summary>The accessReviewPolicy property</summary>

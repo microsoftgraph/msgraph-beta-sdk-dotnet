@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Me.AppConsentRequestsForApproval.Count;
+using Microsoft.Graph.Beta.Me.AppConsentRequestsForApproval.FilterByCurrentUserWithOn;
+using Microsoft.Graph.Beta.Me.AppConsentRequestsForApproval.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.AppConsentRequestsForApproval.Count;
-using MicrosoftGraphSdk.Me.AppConsentRequestsForApproval.FilterByCurrentUserWithOn;
-using MicrosoftGraphSdk.Me.AppConsentRequestsForApproval.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.AppConsentRequestsForApproval {
+namespace Microsoft.Graph.Beta.Me.AppConsentRequestsForApproval {
     /// <summary>Provides operations to manage the appConsentRequestsForApproval property of the microsoft.graph.user entity.</summary>
     public class AppConsentRequestsForApprovalRequestBuilder {
         /// <summary>The count property</summary>
@@ -24,7 +24,7 @@ namespace MicrosoftGraphSdk.Me.AppConsentRequestsForApproval {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.appConsentRequestsForApproval.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.appConsentRequestsForApproval.item collection</summary>
         public AppConsentRequestItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("appConsentRequest_id", position);

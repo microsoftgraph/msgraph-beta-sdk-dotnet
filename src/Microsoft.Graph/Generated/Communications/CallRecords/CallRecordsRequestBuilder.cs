@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Communications.CallRecords.Count;
+using Microsoft.Graph.Beta.Communications.CallRecords.Item;
+using Microsoft.Graph.Beta.Models.CallRecords;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Communications.CallRecords.Count;
-using MicrosoftGraphSdk.Communications.CallRecords.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Communications.CallRecords {
+namespace Microsoft.Graph.Beta.Communications.CallRecords {
     /// <summary>Provides operations to manage the callRecords property of the microsoft.graph.cloudCommunications entity.</summary>
     public class CallRecordsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Communications.CallRecords {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.communications.callRecords.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.communications.callRecords.item collection</summary>
         public CallRecordItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("callRecord_id", position);

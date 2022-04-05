@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Item.AccessPackages.Search {
+namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Item.AccessPackages.Search {
     /// <summary>Provides operations to call the Search method.</summary>
     public class SearchRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppPolicies.Item.ManagedAppProtection;
+using Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppPolicies.Item.TargetApps;
+using Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppPolicies.Item.TargetedManagedAppProtection;
+using Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppPolicies.Item.WindowsInformationProtection;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceAppManagement.ManagedAppPolicies.Item.ManagedAppProtection;
-using MicrosoftGraphSdk.DeviceAppManagement.ManagedAppPolicies.Item.TargetApps;
-using MicrosoftGraphSdk.DeviceAppManagement.ManagedAppPolicies.Item.TargetedManagedAppProtection;
-using MicrosoftGraphSdk.DeviceAppManagement.ManagedAppPolicies.Item.WindowsInformationProtection;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedAppPolicies.Item {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppPolicies.Item {
     /// <summary>Provides operations to manage the managedAppPolicies property of the microsoft.graph.deviceAppManagement entity.</summary>
     public class ManagedAppPolicyItemRequestBuilder {
         /// <summary>The managedAppProtection property</summary>

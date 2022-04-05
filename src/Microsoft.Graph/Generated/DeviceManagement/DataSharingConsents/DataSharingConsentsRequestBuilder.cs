@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceManagement.DataSharingConsents.Count;
+using Microsoft.Graph.Beta.DeviceManagement.DataSharingConsents.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.DataSharingConsents.Count;
-using MicrosoftGraphSdk.DeviceManagement.DataSharingConsents.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.DataSharingConsents {
+namespace Microsoft.Graph.Beta.DeviceManagement.DataSharingConsents {
     /// <summary>Provides operations to manage the dataSharingConsents property of the microsoft.graph.deviceManagement entity.</summary>
     public class DataSharingConsentsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DataSharingConsents {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.dataSharingConsents.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.dataSharingConsents.item collection</summary>
         public DataSharingConsentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("dataSharingConsent_id", position);

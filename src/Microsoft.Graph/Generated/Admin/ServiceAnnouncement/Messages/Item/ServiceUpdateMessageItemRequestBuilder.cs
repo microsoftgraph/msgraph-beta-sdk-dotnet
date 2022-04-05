@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Item.Attachments;
+using Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Item.AttachmentsArchive;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Item.Attachments;
-using MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Item.AttachmentsArchive;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Item {
+namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Item {
     /// <summary>Provides operations to manage the messages property of the microsoft.graph.serviceAnnouncement entity.</summary>
     public class ServiceUpdateMessageItemRequestBuilder {
         /// <summary>The attachments property</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Members.EnrollAssets {
+namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members.EnrollAssets {
     /// <summary>Provides operations to call the enrollAssets method.</summary>
     public class EnrollAssetsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

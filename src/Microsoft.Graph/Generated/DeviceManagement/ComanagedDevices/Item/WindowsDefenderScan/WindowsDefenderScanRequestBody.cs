@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.WindowsDefenderScan {
+namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.WindowsDefenderScan {
     /// <summary>Provides operations to call the windowsDefenderScan method.</summary>
     public class WindowsDefenderScanRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

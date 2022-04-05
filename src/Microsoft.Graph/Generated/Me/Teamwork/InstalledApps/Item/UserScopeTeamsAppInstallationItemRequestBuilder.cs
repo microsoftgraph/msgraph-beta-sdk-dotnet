@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Me.Teamwork.InstalledApps.Item.Chat;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Teamwork.InstalledApps.Item.Chat;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Teamwork.InstalledApps.Item {
+namespace Microsoft.Graph.Beta.Me.Teamwork.InstalledApps.Item {
     /// <summary>Provides operations to manage the installedApps property of the microsoft.graph.userTeamwork entity.</summary>
     public class UserScopeTeamsAppInstallationItemRequestBuilder {
         /// <summary>The chat property</summary>

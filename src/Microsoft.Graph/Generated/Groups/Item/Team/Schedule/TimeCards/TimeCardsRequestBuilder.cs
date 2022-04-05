@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.ClockIn;
+using Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Count;
+using Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Groups.Item.Team.Schedule.TimeCards.ClockIn;
-using MicrosoftGraphSdk.Groups.Item.Team.Schedule.TimeCards.Count;
-using MicrosoftGraphSdk.Groups.Item.Team.Schedule.TimeCards.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Team.Schedule.TimeCards {
+namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards {
     /// <summary>Provides operations to manage the timeCards property of the microsoft.graph.schedule entity.</summary>
     public class TimeCardsRequestBuilder {
         /// <summary>The clockIn property</summary>
@@ -28,7 +28,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Team.Schedule.TimeCards {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.team.schedule.timeCards.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.groups.item.team.schedule.timeCards.item collection</summary>
         public TimeCardItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("timeCard_id", position);

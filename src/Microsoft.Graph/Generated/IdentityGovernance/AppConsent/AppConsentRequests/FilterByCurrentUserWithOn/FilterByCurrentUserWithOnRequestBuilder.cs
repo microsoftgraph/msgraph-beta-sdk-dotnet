@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.IdentityGovernance.AppConsent.AppConsentRequests.FilterByCurrentUserWithOn {
+namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.FilterByCurrentUserWithOn {
     /// <summary>Provides operations to call the filterByCurrentUser method.</summary>
     public class FilterByCurrentUserWithOnRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,22 +1,22 @@
+using Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Archive;
+using Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Count;
+using Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Favorite;
+using Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Item;
+using Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.MarkRead;
+using Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.MarkUnread;
+using Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Unarchive;
+using Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Unfavorite;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Archive;
-using MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Count;
-using MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Favorite;
-using MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Item;
-using MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.MarkRead;
-using MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.MarkUnread;
-using MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Unarchive;
-using MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Unfavorite;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages {
+namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages {
     /// <summary>Provides operations to manage the messages property of the microsoft.graph.serviceAnnouncement entity.</summary>
     public class MessagesRequestBuilder {
         /// <summary>The archive property</summary>
@@ -53,7 +53,7 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages {
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.admin.serviceAnnouncement.messages.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.admin.serviceAnnouncement.messages.item collection</summary>
         public ServiceUpdateMessageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("serviceUpdateMessage_id", position);

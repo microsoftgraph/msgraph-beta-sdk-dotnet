@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Sites.Item.GetApplicableContentTypesForListWithListId {
+namespace Microsoft.Graph.Beta.Sites.Item.GetApplicableContentTypesForListWithListId {
     /// <summary>Provides operations to call the getApplicableContentTypesForList method.</summary>
     public class GetApplicableContentTypesForListWithListIdRequestBuilder {
         /// <summary>Path parameters for the request</summary>

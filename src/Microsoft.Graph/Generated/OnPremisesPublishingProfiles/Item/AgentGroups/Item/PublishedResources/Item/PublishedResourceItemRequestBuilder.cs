@@ -1,20 +1,20 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups.Item.PublishedResources.Item.AgentGroups;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.AgentGroups.Item.PublishedResources.Item.AgentGroups;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.AgentGroups.Item.PublishedResources.Item {
+namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups.Item.PublishedResources.Item {
     /// <summary>Provides operations to manage the publishedResources property of the microsoft.graph.onPremisesAgentGroup entity.</summary>
     public class PublishedResourceItemRequestBuilder {
         /// <summary>The agentGroups property</summary>
-        public MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.AgentGroups.Item.PublishedResources.Item.AgentGroups.AgentGroupsRequestBuilder AgentGroups { get =>
-            new MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.AgentGroups.Item.PublishedResources.Item.AgentGroups.AgentGroupsRequestBuilder(PathParameters, RequestAdapter);
+        public Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups.Item.PublishedResources.Item.AgentGroups.AgentGroupsRequestBuilder AgentGroups { get =>
+            new Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups.Item.PublishedResources.Item.AgentGroups.AgentGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

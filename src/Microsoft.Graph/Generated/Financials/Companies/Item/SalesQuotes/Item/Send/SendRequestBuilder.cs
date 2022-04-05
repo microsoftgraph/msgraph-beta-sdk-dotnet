@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesQuotes.Item.Send {
+namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item.Send {
     /// <summary>Provides operations to call the send method.</summary>
     public class SendRequestBuilder {
         /// <summary>Path parameters for the request</summary>

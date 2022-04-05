@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatusDetails.Count;
+using Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatusDetails.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.AutopilotEvents.Item.PolicyStatusDetails.Count;
-using MicrosoftGraphSdk.DeviceManagement.AutopilotEvents.Item.PolicyStatusDetails.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.AutopilotEvents.Item.PolicyStatusDetails {
+namespace Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatusDetails {
     /// <summary>Provides operations to manage the policyStatusDetails property of the microsoft.graph.deviceManagementAutopilotEvent entity.</summary>
     public class PolicyStatusDetailsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AutopilotEvents.Item.PolicyStatusDe
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.autopilotEvents.item.policyStatusDetails.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.autopilotEvents.item.policyStatusDetails.item collection</summary>
         public DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementAutopilotPolicyStatusDetail_id", position);

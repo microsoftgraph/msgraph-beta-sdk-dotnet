@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetCredentialUsageSummaryWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetCredentialUsageSummaryWithPeriod {
     /// <summary>Provides operations to call the getCredentialUsageSummary method.</summary>
     public class GetCredentialUsageSummaryWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

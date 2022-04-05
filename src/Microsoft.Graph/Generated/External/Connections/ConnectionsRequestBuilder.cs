@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.External.Connections.Count;
+using Microsoft.Graph.Beta.External.Connections.Item;
+using Microsoft.Graph.Beta.Models.ExternalConnectors;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.External.Connections.Count;
-using MicrosoftGraphSdk.External.Connections.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.External.Connections {
+namespace Microsoft.Graph.Beta.External.Connections {
     /// <summary>Provides operations to manage the connections property of the microsoft.graph.externalConnectors.external entity.</summary>
     public class ConnectionsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.External.Connections {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.external.connections.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.external.connections.item collection</summary>
         public ExternalConnectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("externalConnection_id", position);

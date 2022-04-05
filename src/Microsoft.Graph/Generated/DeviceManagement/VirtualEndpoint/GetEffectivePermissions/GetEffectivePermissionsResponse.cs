@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.GetEffectivePermissions {
+namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GetEffectivePermissions {
     /// <summary>Provides operations to call the getEffectivePermissions method.</summary>
     public class GetEffectivePermissionsResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.MessageEvents.Count;
+using Microsoft.Graph.Beta.MessageEvents.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.MessageEvents.Count;
-using MicrosoftGraphSdk.MessageEvents.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.MessageEvents {
+namespace Microsoft.Graph.Beta.MessageEvents {
     /// <summary>Provides operations to manage the collection of messageEvent entities.</summary>
     public class MessageEventsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.MessageEvents {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.messageEvents.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.messageEvents.item collection</summary>
         public MessageEventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("messageEvent_id", position);

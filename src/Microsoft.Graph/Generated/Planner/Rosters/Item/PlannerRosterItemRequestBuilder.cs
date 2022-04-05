@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Planner.Rosters.Item.Members;
+using Microsoft.Graph.Beta.Planner.Rosters.Item.Plans;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Planner.Rosters.Item.Members;
-using MicrosoftGraphSdk.Planner.Rosters.Item.Plans;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Planner.Rosters.Item {
+namespace Microsoft.Graph.Beta.Planner.Rosters.Item {
     /// <summary>Provides operations to manage the rosters property of the microsoft.graph.planner entity.</summary>
     public class PlannerRosterItemRequestBuilder {
         /// <summary>The members property</summary>

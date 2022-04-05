@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.GetState {
+namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.GetState {
     /// <summary>Provides operations to call the getState method.</summary>
     public class GetStateRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedAppRegistrations.GetUserIdsWithFlaggedAppRegistration {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.GetUserIdsWithFlaggedAppRegistration {
     /// <summary>Provides operations to call the getUserIdsWithFlaggedAppRegistration method.</summary>
     public class GetUserIdsWithFlaggedAppRegistrationRequestBuilder {
         /// <summary>Path parameters for the request</summary>

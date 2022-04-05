@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetWindowsUpdateAlertSummaryReport {
+namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertSummaryReport {
     /// <summary>Provides operations to call the getWindowsUpdateAlertSummaryReport method.</summary>
     public class GetWindowsUpdateAlertSummaryReportRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.GovernanceRoleSettings.Item.RoleDefinition.Resource;
+using Microsoft.Graph.Beta.GovernanceRoleSettings.Item.RoleDefinition.RoleSetting;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.GovernanceRoleSettings.Item.RoleDefinition.Resource;
-using MicrosoftGraphSdk.GovernanceRoleSettings.Item.RoleDefinition.RoleSetting;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.GovernanceRoleSettings.Item.RoleDefinition {
+namespace Microsoft.Graph.Beta.GovernanceRoleSettings.Item.RoleDefinition {
     /// <summary>Provides operations to manage the roleDefinition property of the microsoft.graph.governanceRoleSetting entity.</summary>
     public class RoleDefinitionRequestBuilder {
         /// <summary>Path parameters for the request</summary>

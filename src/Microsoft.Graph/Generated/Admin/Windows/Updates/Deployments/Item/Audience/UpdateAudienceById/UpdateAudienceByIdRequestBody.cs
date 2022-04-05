@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.UpdateAudienceById {
+namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.UpdateAudienceById {
     /// <summary>Provides operations to call the updateAudienceById method.</summary>
     public class UpdateAudienceByIdRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>The addExclusions property</summary>

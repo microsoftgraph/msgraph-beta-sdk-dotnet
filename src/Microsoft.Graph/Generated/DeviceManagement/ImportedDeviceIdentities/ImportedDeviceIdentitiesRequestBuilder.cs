@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.Count;
+using Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.ImportDeviceIdentityList;
+using Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.Item;
+using Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.SearchExistingIdentities;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.ImportedDeviceIdentities.Count;
-using MicrosoftGraphSdk.DeviceManagement.ImportedDeviceIdentities.ImportDeviceIdentityList;
-using MicrosoftGraphSdk.DeviceManagement.ImportedDeviceIdentities.Item;
-using MicrosoftGraphSdk.DeviceManagement.ImportedDeviceIdentities.SearchExistingIdentities;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.ImportedDeviceIdentities {
+namespace Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities {
     /// <summary>Provides operations to manage the importedDeviceIdentities property of the microsoft.graph.deviceManagement entity.</summary>
     public class ImportedDeviceIdentitiesRequestBuilder {
         /// <summary>The count property</summary>
@@ -33,7 +33,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ImportedDeviceIdentities {
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.importedDeviceIdentities.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.importedDeviceIdentities.item collection</summary>
         public ImportedDeviceIdentityItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("importedDeviceIdentity_id", position);

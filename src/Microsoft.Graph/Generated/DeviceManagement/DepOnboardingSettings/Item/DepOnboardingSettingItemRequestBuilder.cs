@@ -1,24 +1,24 @@
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultIosEnrollmentProfile;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultMacOsEnrollmentProfile;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.GenerateEncryptionPublicKey;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.GetEncryptionPublicKey;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ShareForSchoolDataSyncService;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.SyncWithAppleDeviceEnrollmentProgram;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.UnshareForSchoolDataSyncService;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.UploadDepToken;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.DefaultIosEnrollmentProfile;
-using MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.DefaultMacOsEnrollmentProfile;
-using MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles;
-using MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.GenerateEncryptionPublicKey;
-using MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.GetEncryptionPublicKey;
-using MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities;
-using MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.ShareForSchoolDataSyncService;
-using MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.SyncWithAppleDeviceEnrollmentProgram;
-using MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.UnshareForSchoolDataSyncService;
-using MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.UploadDepToken;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item {
     /// <summary>Provides operations to manage the depOnboardingSettings property of the microsoft.graph.deviceManagement entity.</summary>
     public class DepOnboardingSettingItemRequestBuilder {
         /// <summary>The defaultIosEnrollmentProfile property</summary>

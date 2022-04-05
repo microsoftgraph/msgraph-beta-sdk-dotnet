@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.PrivilegedSignupStatus.CompleteSetup {
+namespace Microsoft.Graph.Beta.PrivilegedSignupStatus.CompleteSetup {
     /// <summary>Provides operations to call the completeSetup method.</summary>
     public class CompleteSetupRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The tenantSetupInfo property</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.TenantSetupInfo TenantSetupInfo { get; set; }
+        public Microsoft.Graph.Beta.Models.TenantSetupInfo TenantSetupInfo { get; set; }
         /// <summary>
         /// Instantiates a new completeSetupRequestBody and sets the default values.
         /// </summary>
@@ -30,7 +30,7 @@ namespace MicrosoftGraphSdk.PrivilegedSignupStatus.CompleteSetup {
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"tenantSetupInfo", (o,n) => { (o as CompleteSetupRequestBody).TenantSetupInfo = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.TenantSetupInfo>(MicrosoftGraphSdk.Models.Microsoft.Graph.TenantSetupInfo.CreateFromDiscriminatorValue); } },
+                {"tenantSetupInfo", (o,n) => { (o as CompleteSetupRequestBody).TenantSetupInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.TenantSetupInfo>(Microsoft.Graph.Beta.Models.TenantSetupInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -39,7 +39,7 @@ namespace MicrosoftGraphSdk.PrivilegedSignupStatus.CompleteSetup {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.TenantSetupInfo>("tenantSetupInfo", TenantSetupInfo);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TenantSetupInfo>("tenantSetupInfo", TenantSetupInfo);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

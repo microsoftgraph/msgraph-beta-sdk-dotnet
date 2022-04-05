@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Outlook.SupportedLanguages {
+namespace Microsoft.Graph.Beta.Users.Item.Outlook.SupportedLanguages {
     /// <summary>Provides operations to call the supportedLanguages method.</summary>
     public class SupportedLanguagesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

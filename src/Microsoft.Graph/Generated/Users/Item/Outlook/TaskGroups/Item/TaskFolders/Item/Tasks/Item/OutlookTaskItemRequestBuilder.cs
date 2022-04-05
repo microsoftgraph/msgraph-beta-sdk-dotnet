@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item.Tasks.Item.Attachments;
+using Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item.Tasks.Item.Complete;
+using Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item.Tasks.Item.MultiValueExtendedProperties;
+using Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item.Tasks.Item.SingleValueExtendedProperties;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item.Tasks.Item.Attachments;
-using MicrosoftGraphSdk.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item.Tasks.Item.Complete;
-using MicrosoftGraphSdk.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item.Tasks.Item.MultiValueExtendedProperties;
-using MicrosoftGraphSdk.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item.Tasks.Item.SingleValueExtendedProperties;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item.Tasks.Item {
+namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item.Tasks.Item {
     /// <summary>Provides operations to manage the tasks property of the microsoft.graph.outlookTaskFolder entity.</summary>
     public class OutlookTaskItemRequestBuilder {
         /// <summary>The attachments property</summary>

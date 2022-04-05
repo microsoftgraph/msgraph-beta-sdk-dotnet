@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GenerateKey;
+using Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GetActiveKey;
+using Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadCertificate;
+using Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadPkcs12;
+using Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadSecret;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.TrustFramework.KeySets.Item.GenerateKey;
-using MicrosoftGraphSdk.TrustFramework.KeySets.Item.GetActiveKey;
-using MicrosoftGraphSdk.TrustFramework.KeySets.Item.UploadCertificate;
-using MicrosoftGraphSdk.TrustFramework.KeySets.Item.UploadPkcs12;
-using MicrosoftGraphSdk.TrustFramework.KeySets.Item.UploadSecret;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TrustFramework.KeySets.Item {
+namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
     /// <summary>Provides operations to manage the keySets property of the microsoft.graph.trustFramework entity.</summary>
     public class TrustFrameworkKeySetItemRequestBuilder {
         /// <summary>The generateKey property</summary>

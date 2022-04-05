@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAuthenticatorMethods.Item.Device.Commands.Item.Responsepayload;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.Authentication.PasswordlessMicrosoftAuthenticatorMethods.Item.Device.Commands.Item.Responsepayload;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Authentication.PasswordlessMicrosoftAuthenticatorMethods.Item.Device.Commands.Item {
+namespace Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAuthenticatorMethods.Item.Device.Commands.Item {
     /// <summary>Provides operations to manage the commands property of the microsoft.graph.device entity.</summary>
     public class CommandItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

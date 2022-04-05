@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.Me.Tasks.Alltasks.Item.ChecklistItems;
+using Microsoft.Graph.Beta.Me.Tasks.Alltasks.Item.Extensions;
+using Microsoft.Graph.Beta.Me.Tasks.Alltasks.Item.LinkedResources;
+using Microsoft.Graph.Beta.Me.Tasks.Alltasks.Item.Move;
+using Microsoft.Graph.Beta.Me.Tasks.Alltasks.Item.ParentList;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Tasks.Alltasks.Item.ChecklistItems;
-using MicrosoftGraphSdk.Me.Tasks.Alltasks.Item.Extensions;
-using MicrosoftGraphSdk.Me.Tasks.Alltasks.Item.LinkedResources;
-using MicrosoftGraphSdk.Me.Tasks.Alltasks.Item.Move;
-using MicrosoftGraphSdk.Me.Tasks.Alltasks.Item.ParentList;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Tasks.Alltasks.Item {
+namespace Microsoft.Graph.Beta.Me.Tasks.Alltasks.Item {
     /// <summary>Provides operations to manage the alltasks property of the microsoft.graph.tasks entity.</summary>
     public class BaseTaskItemRequestBuilder {
         /// <summary>The checklistItems property</summary>

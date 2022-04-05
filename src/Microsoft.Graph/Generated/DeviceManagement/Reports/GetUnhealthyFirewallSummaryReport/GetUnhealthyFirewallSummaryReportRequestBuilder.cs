@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetUnhealthyFirewallSummaryReport {
+namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetUnhealthyFirewallSummaryReport {
     /// <summary>Provides operations to call the getUnhealthyFirewallSummaryReport method.</summary>
     public class GetUnhealthyFirewallSummaryReportRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.CloudPCs.Item.Troubleshoot {
+namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Troubleshoot {
     /// <summary>Provides operations to call the troubleshoot method.</summary>
     public class TroubleshootRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines.Count;
+using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsBaselines.Count;
-using MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsBaselines.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsBaselines {
+namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines {
     /// <summary>Provides operations to manage the userExperienceAnalyticsBaselines property of the microsoft.graph.deviceManagement entity.</summary>
     public class UserExperienceAnalyticsBaselinesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsBaselines {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.userExperienceAnalyticsBaselines.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.userExperienceAnalyticsBaselines.item collection</summary>
         public UserExperienceAnalyticsBaselineItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userExperienceAnalyticsBaseline_id", position);

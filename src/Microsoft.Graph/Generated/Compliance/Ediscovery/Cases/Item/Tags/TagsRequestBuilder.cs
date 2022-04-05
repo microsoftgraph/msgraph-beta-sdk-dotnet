@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.AsHierarchy;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Count;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item;
+using Microsoft.Graph.Beta.Models.Ediscovery;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Tags.AsHierarchy;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Tags.Count;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Tags.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Tags {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags {
     /// <summary>Provides operations to manage the tags property of the microsoft.graph.ediscovery.case entity.</summary>
     public class TagsRequestBuilder {
         /// <summary>The count property</summary>
@@ -24,7 +24,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Tags {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.compliance.ediscovery.cases.item.tags.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.compliance.ediscovery.cases.item.tags.item collection</summary>
         public TagItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tag_id", position);

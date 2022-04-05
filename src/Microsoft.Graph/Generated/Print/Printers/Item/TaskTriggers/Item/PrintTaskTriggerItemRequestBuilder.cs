@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Print.Printers.Item.TaskTriggers.Item.Definition;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Print.Printers.Item.TaskTriggers.Item.Definition;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Print.Printers.Item.TaskTriggers.Item {
+namespace Microsoft.Graph.Beta.Print.Printers.Item.TaskTriggers.Item {
     /// <summary>Provides operations to manage the taskTriggers property of the microsoft.graph.printer entity.</summary>
     public class PrintTaskTriggerItemRequestBuilder {
         /// <summary>The definition property</summary>

@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.AgreementAcceptances.Count;
+using Microsoft.Graph.Beta.Me.AgreementAcceptances.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.AgreementAcceptances.Count;
-using MicrosoftGraphSdk.Me.AgreementAcceptances.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.AgreementAcceptances {
+namespace Microsoft.Graph.Beta.Me.AgreementAcceptances {
     /// <summary>Provides operations to manage the agreementAcceptances property of the microsoft.graph.user entity.</summary>
     public class AgreementAcceptancesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.AgreementAcceptances {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.agreementAcceptances.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.agreementAcceptances.item collection</summary>
         public AgreementAcceptanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("agreementAcceptance_id", position);

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId {
     /// <summary>Provides operations to call the getLicensesForApp method.</summary>
     public class GetLicensesForAppWithBundleIdRequestBuilder {
         /// <summary>Path parameters for the request</summary>

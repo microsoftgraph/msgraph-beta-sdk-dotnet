@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.PolicySets.GetPolicySets {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.GetPolicySets {
     /// <summary>Provides operations to call the getPolicySets method.</summary>
     public class GetPolicySetsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

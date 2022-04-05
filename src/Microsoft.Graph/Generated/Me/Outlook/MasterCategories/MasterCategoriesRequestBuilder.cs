@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.Outlook.MasterCategories.Count;
+using Microsoft.Graph.Beta.Me.Outlook.MasterCategories.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Outlook.MasterCategories.Count;
-using MicrosoftGraphSdk.Me.Outlook.MasterCategories.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Outlook.MasterCategories {
+namespace Microsoft.Graph.Beta.Me.Outlook.MasterCategories {
     /// <summary>Provides operations to manage the masterCategories property of the microsoft.graph.outlookUser entity.</summary>
     public class MasterCategoriesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.Outlook.MasterCategories {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.outlook.masterCategories.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.outlook.masterCategories.item collection</summary>
         public OutlookCategoryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("outlookCategory_id", position);

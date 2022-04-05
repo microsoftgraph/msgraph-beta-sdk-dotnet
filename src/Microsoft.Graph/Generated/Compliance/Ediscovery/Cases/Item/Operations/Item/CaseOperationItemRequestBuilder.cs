@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.Item.CaseExportOperation;
+using Microsoft.Graph.Beta.Models.Ediscovery;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Operations.Item.CaseExportOperation;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Operations.Item {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.Item {
     /// <summary>Provides operations to manage the operations property of the microsoft.graph.ediscovery.case entity.</summary>
     public class CaseOperationItemRequestBuilder {
         /// <summary>The caseExportOperation property</summary>

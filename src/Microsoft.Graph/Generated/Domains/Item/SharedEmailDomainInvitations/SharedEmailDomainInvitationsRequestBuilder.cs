@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.Count;
+using Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Domains.Item.SharedEmailDomainInvitations.Count;
-using MicrosoftGraphSdk.Domains.Item.SharedEmailDomainInvitations.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Domains.Item.SharedEmailDomainInvitations {
+namespace Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations {
     /// <summary>Provides operations to manage the sharedEmailDomainInvitations property of the microsoft.graph.domain entity.</summary>
     public class SharedEmailDomainInvitationsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Domains.Item.SharedEmailDomainInvitations {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.domains.item.sharedEmailDomainInvitations.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.domains.item.sharedEmailDomainInvitations.item collection</summary>
         public SharedEmailDomainInvitationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("sharedEmailDomainInvitation_id", position);

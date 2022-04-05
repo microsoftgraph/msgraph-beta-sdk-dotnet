@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.Directory.Recommendations.Item.Complete;
+using Microsoft.Graph.Beta.Directory.Recommendations.Item.Dismiss;
+using Microsoft.Graph.Beta.Directory.Recommendations.Item.ImpactedResources;
+using Microsoft.Graph.Beta.Directory.Recommendations.Item.Postpone;
+using Microsoft.Graph.Beta.Directory.Recommendations.Item.Reactivate;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Directory.Recommendations.Item.Complete;
-using MicrosoftGraphSdk.Directory.Recommendations.Item.Dismiss;
-using MicrosoftGraphSdk.Directory.Recommendations.Item.ImpactedResources;
-using MicrosoftGraphSdk.Directory.Recommendations.Item.Postpone;
-using MicrosoftGraphSdk.Directory.Recommendations.Item.Reactivate;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Directory.Recommendations.Item {
+namespace Microsoft.Graph.Beta.Directory.Recommendations.Item {
     /// <summary>Provides operations to manage the recommendations property of the microsoft.graph.directory entity.</summary>
     public class RecommendationItemRequestBuilder {
         /// <summary>The complete property</summary>

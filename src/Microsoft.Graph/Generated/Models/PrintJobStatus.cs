@@ -1,0 +1,68 @@
+using Microsoft.Kiota.Abstractions.Serialization;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+namespace Microsoft.Graph.Beta.Models {
+    public class PrintJobStatus : IAdditionalDataHolder, IParsable {
+        /// <summary>The acquiredByPrinter property</summary>
+        public bool? AcquiredByPrinter { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>A human-readable description of the print job&apos;s current processing state. Read-only.</summary>
+        public string Description { get; set; }
+        /// <summary>Additional details for print job state. Valid values are described in the following table. Read-only.</summary>
+        public List<PrintJobStateDetail?> Details { get; set; }
+        /// <summary>True if the job was acknowledged by a printer; false otherwise. Read-only.</summary>
+        public bool? IsAcquiredByPrinter { get; set; }
+        /// <summary>The processingState property</summary>
+        public PrintJobProcessingState? ProcessingState { get; set; }
+        /// <summary>The processingStateDescription property</summary>
+        public string ProcessingStateDescription { get; set; }
+        /// <summary>The print job&apos;s current processing state. Valid values are described in the following table. Read-only.</summary>
+        public PrintJobProcessingState? State { get; set; }
+        /// <summary>
+        /// Instantiates a new printJobStatus and sets the default values.
+        /// </summary>
+        public PrintJobStatus() {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static PrintJobStatus CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new PrintJobStatus();
+        }
+        /// <summary>
+        /// The deserialization information for the current model
+        /// </summary>
+        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
+            return new Dictionary<string, Action<T, IParseNode>> {
+                {"acquiredByPrinter", (o,n) => { (o as PrintJobStatus).AcquiredByPrinter = n.GetBoolValue(); } },
+                {"description", (o,n) => { (o as PrintJobStatus).Description = n.GetStringValue(); } },
+                {"details", (o,n) => { (o as PrintJobStatus).Details = n.GetCollectionOfEnumValues<PrintJobStateDetail>().ToList(); } },
+                {"isAcquiredByPrinter", (o,n) => { (o as PrintJobStatus).IsAcquiredByPrinter = n.GetBoolValue(); } },
+                {"processingState", (o,n) => { (o as PrintJobStatus).ProcessingState = n.GetEnumValue<PrintJobProcessingState>(); } },
+                {"processingStateDescription", (o,n) => { (o as PrintJobStatus).ProcessingStateDescription = n.GetStringValue(); } },
+                {"state", (o,n) => { (o as PrintJobStatus).State = n.GetEnumValue<PrintJobProcessingState>(); } },
+            };
+        }
+        /// <summary>
+        /// Serializes information the current object
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
+        /// </summary>
+        public void Serialize(ISerializationWriter writer) {
+            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("acquiredByPrinter", AcquiredByPrinter);
+            writer.WriteStringValue("description", Description);
+            writer.WriteCollectionOfEnumValues<PrintJobStateDetail>("details", Details);
+            writer.WriteBoolValue("isAcquiredByPrinter", IsAcquiredByPrinter);
+            writer.WriteEnumValue<PrintJobProcessingState>("processingState", ProcessingState);
+            writer.WriteStringValue("processingStateDescription", ProcessingStateDescription);
+            writer.WriteEnumValue<PrintJobProcessingState>("state", State);
+            writer.WriteAdditionalData(AdditionalData);
+        }
+    }
+}

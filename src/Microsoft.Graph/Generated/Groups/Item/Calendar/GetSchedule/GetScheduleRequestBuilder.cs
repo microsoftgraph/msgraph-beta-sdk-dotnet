@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Calendar.GetSchedule {
+namespace Microsoft.Graph.Beta.Groups.Item.Calendar.GetSchedule {
     /// <summary>Provides operations to call the getSchedule method.</summary>
     public class GetScheduleRequestBuilder {
         /// <summary>Path parameters for the request</summary>

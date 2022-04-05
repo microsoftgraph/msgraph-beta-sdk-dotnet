@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Print.TaskDefinitions.Item.Tasks;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Print.TaskDefinitions.Item {
+namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item {
     /// <summary>Provides operations to manage the taskDefinitions property of the microsoft.graph.print entity.</summary>
     public class PrintTaskDefinitionItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

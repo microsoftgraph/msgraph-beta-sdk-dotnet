@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.Teamwork.AssociatedTeams.Count;
+using Microsoft.Graph.Beta.Me.Teamwork.AssociatedTeams.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Teamwork.AssociatedTeams.Count;
-using MicrosoftGraphSdk.Me.Teamwork.AssociatedTeams.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Teamwork.AssociatedTeams {
+namespace Microsoft.Graph.Beta.Me.Teamwork.AssociatedTeams {
     /// <summary>Provides operations to manage the associatedTeams property of the microsoft.graph.userTeamwork entity.</summary>
     public class AssociatedTeamsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.Teamwork.AssociatedTeams {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.teamwork.associatedTeams.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.teamwork.associatedTeams.item collection</summary>
         public AssociatedTeamInfoItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("associatedTeamInfo_id", position);

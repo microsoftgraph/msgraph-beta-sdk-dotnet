@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Outlook.SupportedTimeZonesWithTimeZoneStandard {
+namespace Microsoft.Graph.Beta.Me.Outlook.SupportedTimeZonesWithTimeZoneStandard {
     /// <summary>Provides operations to call the supportedTimeZones method.</summary>
     public class SupportedTimeZonesWithTimeZoneStandardRequestBuilder {
         /// <summary>Path parameters for the request</summary>

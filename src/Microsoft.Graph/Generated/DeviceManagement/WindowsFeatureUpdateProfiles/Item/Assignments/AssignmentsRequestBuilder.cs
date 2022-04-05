@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Item.Assignments.Count;
+using Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Item.Assignments.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.WindowsFeatureUpdateProfiles.Item.Assignments.Count;
-using MicrosoftGraphSdk.DeviceManagement.WindowsFeatureUpdateProfiles.Item.Assignments.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.WindowsFeatureUpdateProfiles.Item.Assignments {
+namespace Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles.Item.Assignments {
     /// <summary>Provides operations to manage the assignments property of the microsoft.graph.windowsFeatureUpdateProfile entity.</summary>
     public class AssignmentsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsFeatureUpdateProfiles.Item.A
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.windowsFeatureUpdateProfiles.item.assignments.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.windowsFeatureUpdateProfiles.item.assignments.item collection</summary>
         public WindowsFeatureUpdateProfileAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsFeatureUpdateProfileAssignment_id", position);

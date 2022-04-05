@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.Enable {
+namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Enable {
     /// <summary>Provides operations to call the enable method.</summary>
     public class EnableRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

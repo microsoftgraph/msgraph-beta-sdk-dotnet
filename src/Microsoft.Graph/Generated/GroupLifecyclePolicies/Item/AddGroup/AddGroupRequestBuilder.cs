@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.GroupLifecyclePolicies.Item.AddGroup {
+namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.Item.AddGroup {
     /// <summary>Provides operations to call the addGroup method.</summary>
     public class AddGroupRequestBuilder {
         /// <summary>Path parameters for the request</summary>

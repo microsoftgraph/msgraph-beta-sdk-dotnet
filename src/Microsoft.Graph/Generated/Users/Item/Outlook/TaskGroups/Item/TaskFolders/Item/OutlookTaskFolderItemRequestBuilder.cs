@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item.MultiValueExtendedProperties;
+using Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item.SingleValueExtendedProperties;
+using Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item.Tasks;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item.MultiValueExtendedProperties;
-using MicrosoftGraphSdk.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item.SingleValueExtendedProperties;
-using MicrosoftGraphSdk.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item.Tasks;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item {
+namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item {
     /// <summary>Provides operations to manage the taskFolders property of the microsoft.graph.outlookTaskGroup entity.</summary>
     public class OutlookTaskFolderItemRequestBuilder {
         /// <summary>The multiValueExtendedProperties property</summary>

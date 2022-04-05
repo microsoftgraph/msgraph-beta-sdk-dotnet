@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.ValidateComplianceScript {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.ValidateComplianceScript {
     /// <summary>Provides operations to call the validateComplianceScript method.</summary>
     public class ValidateComplianceScriptRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The deviceCompliancePolicyScript property</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceCompliancePolicyScript DeviceCompliancePolicyScript { get; set; }
+        public Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript DeviceCompliancePolicyScript { get; set; }
         /// <summary>
         /// Instantiates a new validateComplianceScriptRequestBody and sets the default values.
         /// </summary>
@@ -30,7 +30,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.ValidateCo
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"deviceCompliancePolicyScript", (o,n) => { (o as ValidateComplianceScriptRequestBody).DeviceCompliancePolicyScript = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceCompliancePolicyScript>(MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceCompliancePolicyScript.CreateFromDiscriminatorValue); } },
+                {"deviceCompliancePolicyScript", (o,n) => { (o as ValidateComplianceScriptRequestBody).DeviceCompliancePolicyScript = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript>(Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -39,7 +39,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.ValidateCo
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceCompliancePolicyScript>("deviceCompliancePolicyScript", DeviceCompliancePolicyScript);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript>("deviceCompliancePolicyScript", DeviceCompliancePolicyScript);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

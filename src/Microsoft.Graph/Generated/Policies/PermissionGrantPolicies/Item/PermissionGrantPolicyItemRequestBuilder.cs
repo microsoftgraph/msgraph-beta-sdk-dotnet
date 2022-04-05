@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.Item.Excludes;
+using Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.Item.Includes;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Policies.PermissionGrantPolicies.Item.Excludes;
-using MicrosoftGraphSdk.Policies.PermissionGrantPolicies.Item.Includes;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Policies.PermissionGrantPolicies.Item {
+namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.Item {
     /// <summary>Provides operations to manage the permissionGrantPolicies property of the microsoft.graph.policyRoot entity.</summary>
     public class PermissionGrantPolicyItemRequestBuilder {
         /// <summary>The excludes property</summary>

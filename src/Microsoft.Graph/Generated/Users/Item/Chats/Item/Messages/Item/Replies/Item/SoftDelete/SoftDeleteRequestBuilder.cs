@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.Chats.Item.Messages.Item.Replies.Item.SoftDelete {
+namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.Messages.Item.Replies.Item.SoftDelete {
     /// <summary>Provides operations to call the softDelete method.</summary>
     public class SoftDeleteRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Me.Contacts.Count;
+using Microsoft.Graph.Beta.Me.Contacts.Delta;
+using Microsoft.Graph.Beta.Me.Contacts.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Contacts.Count;
-using MicrosoftGraphSdk.Me.Contacts.Delta;
-using MicrosoftGraphSdk.Me.Contacts.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Contacts {
+namespace Microsoft.Graph.Beta.Me.Contacts {
     /// <summary>Provides operations to manage the contacts property of the microsoft.graph.user entity.</summary>
     public class ContactsRequestBuilder {
         /// <summary>The count property</summary>
@@ -24,7 +24,7 @@ namespace MicrosoftGraphSdk.Me.Contacts {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.contacts.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.contacts.item collection</summary>
         public ContactItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("contact_id", position);

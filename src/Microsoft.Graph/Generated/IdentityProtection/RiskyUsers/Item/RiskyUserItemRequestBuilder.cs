@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.IdentityProtection.RiskyUsers.Item.History;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.IdentityProtection.RiskyUsers.Item.History;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.IdentityProtection.RiskyUsers.Item {
+namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers.Item {
     /// <summary>Provides operations to manage the riskyUsers property of the microsoft.graph.identityProtectionRoot entity.</summary>
     public class RiskyUserItemRequestBuilder {
         /// <summary>The history property</summary>

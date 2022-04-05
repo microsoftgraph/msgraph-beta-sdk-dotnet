@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Reports.GetTeamsDeviceUsageUserDetailWithDate {
+namespace Microsoft.Graph.Beta.Reports.GetTeamsDeviceUsageUserDetailWithDate {
     /// <summary>Provides operations to call the getTeamsDeviceUsageUserDetail method.</summary>
     public class GetTeamsDeviceUsageUserDetailWithDateResponse : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

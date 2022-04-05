@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Communications.Calls.Item.KeepAlive {
+namespace Microsoft.Graph.Beta.Communications.Calls.Item.KeepAlive {
     /// <summary>Provides operations to call the keepAlive method.</summary>
     public class KeepAliveRequestBuilder {
         /// <summary>Path parameters for the request</summary>

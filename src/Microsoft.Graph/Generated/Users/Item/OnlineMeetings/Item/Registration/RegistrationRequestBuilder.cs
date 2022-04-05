@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.CustomQuestions;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Users.Item.OnlineMeetings.Item.Registration.CustomQuestions;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Users.Item.OnlineMeetings.Item.Registration {
+namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration {
     /// <summary>Provides operations to manage the registration property of the microsoft.graph.onlineMeeting entity.</summary>
     public class RegistrationRequestBuilder {
         /// <summary>The customQuestions property</summary>

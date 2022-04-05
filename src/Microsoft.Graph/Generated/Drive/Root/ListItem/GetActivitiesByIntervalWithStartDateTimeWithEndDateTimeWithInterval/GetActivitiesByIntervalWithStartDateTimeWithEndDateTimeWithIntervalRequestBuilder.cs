@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Drive.Root.ListItem.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval {
+namespace Microsoft.Graph.Beta.Drive.Root.ListItem.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval {
     /// <summary>Provides operations to call the getActivitiesByInterval method.</summary>
     public class GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder {
         /// <summary>Path parameters for the request</summary>

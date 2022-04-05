@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Security;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Security.InformationProtection.SensitivityLabels.EvaluateClassificationResults {
+namespace Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.EvaluateClassificationResults {
     /// <summary>Provides operations to call the evaluateClassificationResults method.</summary>
     public class EvaluateClassificationResultsRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -12,7 +12,7 @@ namespace MicrosoftGraphSdk.Security.InformationProtection.SensitivityLabels.Eva
         /// <summary>The classificationResults property</summary>
         public List<ClassificationResult> ClassificationResults { get; set; }
         /// <summary>The contentInfo property</summary>
-        public MicrosoftGraphSdk.Models.Microsoft.Graph.Security.ContentInfo ContentInfo { get; set; }
+        public Microsoft.Graph.Beta.Models.Security.ContentInfo ContentInfo { get; set; }
         /// <summary>
         /// Instantiates a new evaluateClassificationResultsRequestBody and sets the default values.
         /// </summary>
@@ -33,7 +33,7 @@ namespace MicrosoftGraphSdk.Security.InformationProtection.SensitivityLabels.Eva
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"classificationResults", (o,n) => { (o as EvaluateClassificationResultsRequestBody).ClassificationResults = n.GetCollectionOfObjectValues<ClassificationResult>(ClassificationResult.CreateFromDiscriminatorValue).ToList(); } },
-                {"contentInfo", (o,n) => { (o as EvaluateClassificationResultsRequestBody).ContentInfo = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Security.ContentInfo>(MicrosoftGraphSdk.Models.Microsoft.Graph.Security.ContentInfo.CreateFromDiscriminatorValue); } },
+                {"contentInfo", (o,n) => { (o as EvaluateClassificationResultsRequestBody).ContentInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.ContentInfo>(Microsoft.Graph.Beta.Models.Security.ContentInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace MicrosoftGraphSdk.Security.InformationProtection.SensitivityLabels.Eva
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<ClassificationResult>("classificationResults", ClassificationResults);
-            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Security.ContentInfo>("contentInfo", ContentInfo);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.ContentInfo>("contentInfo", ContentInfo);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

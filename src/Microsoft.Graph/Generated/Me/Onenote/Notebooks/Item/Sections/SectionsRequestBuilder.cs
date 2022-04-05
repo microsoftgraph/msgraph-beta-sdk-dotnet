@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.Onenote.Notebooks.Item.Sections.Count;
+using Microsoft.Graph.Beta.Me.Onenote.Notebooks.Item.Sections.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.Onenote.Notebooks.Item.Sections.Count;
-using MicrosoftGraphSdk.Me.Onenote.Notebooks.Item.Sections.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Onenote.Notebooks.Item.Sections {
+namespace Microsoft.Graph.Beta.Me.Onenote.Notebooks.Item.Sections {
     /// <summary>Provides operations to manage the sections property of the microsoft.graph.notebook entity.</summary>
     public class SectionsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.Onenote.Notebooks.Item.Sections {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.onenote.notebooks.item.sections.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.onenote.notebooks.item.sections.item collection</summary>
         public OnenoteSectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("onenoteSection_id", position);

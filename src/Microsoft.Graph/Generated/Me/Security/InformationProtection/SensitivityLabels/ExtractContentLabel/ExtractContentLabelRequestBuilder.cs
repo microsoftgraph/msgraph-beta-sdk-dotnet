@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Security;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.Security.InformationProtection.SensitivityLabels.ExtractContentLabel {
+namespace Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabels.ExtractContentLabel {
     /// <summary>Provides operations to call the extractContentLabel method.</summary>
     public class ExtractContentLabelRequestBuilder {
         /// <summary>Path parameters for the request</summary>

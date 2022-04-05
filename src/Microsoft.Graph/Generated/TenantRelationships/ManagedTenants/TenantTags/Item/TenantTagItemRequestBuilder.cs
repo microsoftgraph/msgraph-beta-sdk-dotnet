@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models.ManagedTenants;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Item.AssignTag;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Item.UnassignTag;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantTags.Item.AssignTag;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantTags.Item.UnassignTag;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantTags.Item {
+namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Item {
     /// <summary>Provides operations to manage the tenantTags property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
     public class TenantTagItemRequestBuilder {
         /// <summary>The assignTag property</summary>

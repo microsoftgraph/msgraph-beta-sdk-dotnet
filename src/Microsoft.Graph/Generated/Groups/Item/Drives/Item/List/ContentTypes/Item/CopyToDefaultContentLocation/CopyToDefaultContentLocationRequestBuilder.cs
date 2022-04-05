@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Groups.Item.Drives.Item.List.ContentTypes.Item.CopyToDefaultContentLocation {
+namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.List.ContentTypes.Item.CopyToDefaultContentLocation {
     /// <summary>Provides operations to call the copyToDefaultContentLocation method.</summary>
     public class CopyToDefaultContentLocationRequestBuilder {
         /// <summary>Path parameters for the request</summary>

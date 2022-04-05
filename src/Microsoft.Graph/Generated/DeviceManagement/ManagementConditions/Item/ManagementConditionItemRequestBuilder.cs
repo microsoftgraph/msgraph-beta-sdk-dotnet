@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.DeviceManagement.ManagementConditions.Item.ManagementConditionStatements;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.ManagementConditions.Item.ManagementConditionStatements;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.ManagementConditions.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.ManagementConditions.Item {
     /// <summary>Provides operations to manage the managementConditions property of the microsoft.graph.deviceManagement entity.</summary>
     public class ManagementConditionItemRequestBuilder {
         /// <summary>The managementConditionStatements property</summary>

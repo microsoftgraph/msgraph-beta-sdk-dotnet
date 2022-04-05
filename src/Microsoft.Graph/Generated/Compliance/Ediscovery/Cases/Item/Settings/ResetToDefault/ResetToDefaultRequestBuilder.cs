@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Settings.ResetToDefault {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Settings.ResetToDefault {
     /// <summary>Provides operations to call the resetToDefault method.</summary>
     public class ResetToDefaultRequestBuilder {
         /// <summary>Path parameters for the request</summary>

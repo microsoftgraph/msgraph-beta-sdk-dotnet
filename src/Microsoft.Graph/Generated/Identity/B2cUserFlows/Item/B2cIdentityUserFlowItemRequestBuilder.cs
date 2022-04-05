@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders;
+using Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.Languages;
+using Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignments;
+using Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserFlowIdentityProviders;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Identity.B2cUserFlows.Item.IdentityProviders;
-using MicrosoftGraphSdk.Identity.B2cUserFlows.Item.Languages;
-using MicrosoftGraphSdk.Identity.B2cUserFlows.Item.UserAttributeAssignments;
-using MicrosoftGraphSdk.Identity.B2cUserFlows.Item.UserFlowIdentityProviders;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Identity.B2cUserFlows.Item {
+namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item {
     /// <summary>Provides operations to manage the b2cUserFlows property of the microsoft.graph.identityContainer entity.</summary>
     public class B2cIdentityUserFlowItemRequestBuilder {
         /// <summary>The identityProviders property</summary>

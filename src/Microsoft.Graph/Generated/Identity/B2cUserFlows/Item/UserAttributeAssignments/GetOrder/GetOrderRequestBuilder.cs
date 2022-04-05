@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Identity.B2cUserFlows.Item.UserAttributeAssignments.GetOrder {
+namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignments.GetOrder {
     /// <summary>Provides operations to call the getOrder method.</summary>
     public class GetOrderRequestBuilder {
         /// <summary>Path parameters for the request</summary>

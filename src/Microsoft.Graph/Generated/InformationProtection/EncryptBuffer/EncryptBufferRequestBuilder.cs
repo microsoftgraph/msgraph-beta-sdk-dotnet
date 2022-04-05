@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.InformationProtection.EncryptBuffer {
+namespace Microsoft.Graph.Beta.InformationProtection.EncryptBuffer {
     /// <summary>Provides operations to call the encryptBuffer method.</summary>
     public class EncryptBufferRequestBuilder {
         /// <summary>Path parameters for the request</summary>

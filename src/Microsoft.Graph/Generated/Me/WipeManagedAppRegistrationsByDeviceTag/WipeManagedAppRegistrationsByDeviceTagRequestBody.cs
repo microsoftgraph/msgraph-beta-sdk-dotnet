@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraphSdk.Me.WipeManagedAppRegistrationsByDeviceTag {
+namespace Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationsByDeviceTag {
     /// <summary>Provides operations to call the wipeManagedAppRegistrationsByDeviceTag method.</summary>
     public class WipeManagedAppRegistrationsByDeviceTagRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

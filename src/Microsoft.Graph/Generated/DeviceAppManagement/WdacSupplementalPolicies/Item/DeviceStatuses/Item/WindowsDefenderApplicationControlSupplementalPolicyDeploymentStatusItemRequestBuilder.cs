@@ -1,15 +1,15 @@
+using Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.Item.DeviceStatuses.Item.Policy;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item.DeviceStatuses.Item.Policy;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item.DeviceStatuses.Item {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.Item.DeviceStatuses.Item {
     /// <summary>Provides operations to manage the deviceStatuses property of the microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy entity.</summary>
     public class WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>

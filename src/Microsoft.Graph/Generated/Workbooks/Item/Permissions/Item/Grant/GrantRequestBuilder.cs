@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Workbooks.Item.Permissions.Item.Grant {
+namespace Microsoft.Graph.Beta.Workbooks.Item.Permissions.Item.Grant {
     /// <summary>Provides operations to call the grant method.</summary>
     public class GrantRequestBuilder {
         /// <summary>Path parameters for the request</summary>

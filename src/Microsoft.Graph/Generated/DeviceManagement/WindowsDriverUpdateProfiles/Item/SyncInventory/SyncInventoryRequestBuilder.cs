@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item.SyncInventory {
+namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.SyncInventory {
     /// <summary>Provides operations to call the syncInventory method.</summary>
     public class SyncInventoryRequestBuilder {
         /// <summary>Path parameters for the request</summary>

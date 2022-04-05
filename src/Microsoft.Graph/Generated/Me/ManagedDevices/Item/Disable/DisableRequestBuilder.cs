@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.Disable {
+namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.Disable {
     /// <summary>Provides operations to call the disable method.</summary>
     public class DisableRequestBuilder {
         /// <summary>Path parameters for the request</summary>

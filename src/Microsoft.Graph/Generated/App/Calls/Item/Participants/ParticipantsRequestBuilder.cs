@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.App.Calls.Item.Participants.Count;
+using Microsoft.Graph.Beta.App.Calls.Item.Participants.Invite;
+using Microsoft.Graph.Beta.App.Calls.Item.Participants.Item;
+using Microsoft.Graph.Beta.App.Calls.Item.Participants.MuteAll;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.App.Calls.Item.Participants.Count;
-using MicrosoftGraphSdk.App.Calls.Item.Participants.Invite;
-using MicrosoftGraphSdk.App.Calls.Item.Participants.Item;
-using MicrosoftGraphSdk.App.Calls.Item.Participants.MuteAll;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.App.Calls.Item.Participants {
+namespace Microsoft.Graph.Beta.App.Calls.Item.Participants {
     /// <summary>Provides operations to manage the participants property of the microsoft.graph.call entity.</summary>
     public class ParticipantsRequestBuilder {
         /// <summary>The count property</summary>
@@ -33,7 +33,7 @@ namespace MicrosoftGraphSdk.App.Calls.Item.Participants {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.app.calls.item.participants.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.app.calls.item.participants.item collection</summary>
         public ParticipantItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("participant_id", position);

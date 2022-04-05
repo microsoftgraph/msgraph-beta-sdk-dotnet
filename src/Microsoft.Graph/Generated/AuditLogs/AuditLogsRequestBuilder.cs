@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.AuditLogs.DirectoryAudits;
+using Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning;
+using Microsoft.Graph.Beta.AuditLogs.Provisioning;
+using Microsoft.Graph.Beta.AuditLogs.RestrictedSignIns;
+using Microsoft.Graph.Beta.AuditLogs.SignIns;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.AuditLogs.DirectoryAudits;
-using MicrosoftGraphSdk.AuditLogs.DirectoryProvisioning;
-using MicrosoftGraphSdk.AuditLogs.Provisioning;
-using MicrosoftGraphSdk.AuditLogs.RestrictedSignIns;
-using MicrosoftGraphSdk.AuditLogs.SignIns;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.AuditLogs {
+namespace Microsoft.Graph.Beta.AuditLogs {
     /// <summary>Provides operations to manage the auditLogRoot singleton.</summary>
     public class AuditLogsRequestBuilder {
         /// <summary>The directoryAudits property</summary>

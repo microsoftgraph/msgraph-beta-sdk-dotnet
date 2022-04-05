@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models.ManagedTenants;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item.ManagementTemplates.Count;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item.ManagementTemplates.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item.ManagementTemplates.Count;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item.ManagementTemplates.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item.ManagementTemplates {
+namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item.ManagementTemplates {
     /// <summary>Provides operations to manage the managementTemplates property of the microsoft.graph.managedTenants.managementTemplateCollection entity.</summary>
     public class ManagementTemplatesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplat
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.tenantRelationships.managedTenants.managementTemplateCollections.item.managementTemplates.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.tenantRelationships.managedTenants.managementTemplateCollections.item.managementTemplates.item collection</summary>
         public ManagementTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managementTemplate_id", position);

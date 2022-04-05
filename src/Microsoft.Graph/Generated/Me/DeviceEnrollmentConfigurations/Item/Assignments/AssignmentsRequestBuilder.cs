@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.Item.Assignments.Count;
+using Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.Item.Assignments.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.DeviceEnrollmentConfigurations.Item.Assignments.Count;
-using MicrosoftGraphSdk.Me.DeviceEnrollmentConfigurations.Item.Assignments.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.DeviceEnrollmentConfigurations.Item.Assignments {
+namespace Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.Item.Assignments {
     /// <summary>Provides operations to manage the assignments property of the microsoft.graph.deviceEnrollmentConfiguration entity.</summary>
     public class AssignmentsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.DeviceEnrollmentConfigurations.Item.Assignments {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.deviceEnrollmentConfigurations.item.assignments.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.deviceEnrollmentConfigurations.item.assignments.item collection</summary>
         public EnrollmentConfigurationAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("enrollmentConfigurationAssignment_id", position);

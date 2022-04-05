@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Messages.Count;
+using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Messages.Delta;
+using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Messages.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Messages.Count;
-using MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Messages.Delta;
-using MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Messages.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Messages {
+namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Messages {
     /// <summary>Provides operations to manage the messages property of the microsoft.graph.channel entity.</summary>
     public class MessagesRequestBuilder {
         /// <summary>The count property</summary>
@@ -24,7 +24,7 @@ namespace MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Messages {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.teams.item.primaryChannel.messages.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.teams.item.primaryChannel.messages.item collection</summary>
         public ChatMessageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("chatMessage_id", position);

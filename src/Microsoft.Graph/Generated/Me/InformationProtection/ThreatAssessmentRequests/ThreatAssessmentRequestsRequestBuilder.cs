@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Me.InformationProtection.ThreatAssessmentRequests.Count;
+using Microsoft.Graph.Beta.Me.InformationProtection.ThreatAssessmentRequests.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Me.InformationProtection.ThreatAssessmentRequests.Count;
-using MicrosoftGraphSdk.Me.InformationProtection.ThreatAssessmentRequests.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.InformationProtection.ThreatAssessmentRequests {
+namespace Microsoft.Graph.Beta.Me.InformationProtection.ThreatAssessmentRequests {
     /// <summary>Provides operations to manage the threatAssessmentRequests property of the microsoft.graph.informationProtection entity.</summary>
     public class ThreatAssessmentRequestsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Me.InformationProtection.ThreatAssessmentRequests {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.me.informationProtection.threatAssessmentRequests.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.informationProtection.threatAssessmentRequests.item collection</summary>
         public ThreatAssessmentRequestItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("threatAssessmentRequest_id", position);

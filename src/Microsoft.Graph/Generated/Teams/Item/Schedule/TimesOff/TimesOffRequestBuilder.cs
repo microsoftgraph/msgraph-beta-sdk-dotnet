@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Teams.Item.Schedule.TimesOff.Count;
+using Microsoft.Graph.Beta.Teams.Item.Schedule.TimesOff.Item;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
-using MicrosoftGraphSdk.Teams.Item.Schedule.TimesOff.Count;
-using MicrosoftGraphSdk.Teams.Item.Schedule.TimesOff.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Teams.Item.Schedule.TimesOff {
+namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimesOff {
     /// <summary>Provides operations to manage the timesOff property of the microsoft.graph.schedule entity.</summary>
     public class TimesOffRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.TimesOff {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.teams.item.schedule.timesOff.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.teams.item.schedule.timesOff.item collection</summary>
         public TimeOffItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("timeOff_id", position);

@@ -1,18 +1,18 @@
+using Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Item.LinkedEligibleRoleAssignment;
+using Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Item.Resource;
+using Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Item.RoleDefinition;
+using Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Item.Subject;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.GovernanceResources.Item.RoleAssignments.Item.LinkedEligibleRoleAssignment;
-using MicrosoftGraphSdk.GovernanceResources.Item.RoleAssignments.Item.Resource;
-using MicrosoftGraphSdk.GovernanceResources.Item.RoleAssignments.Item.RoleDefinition;
-using MicrosoftGraphSdk.GovernanceResources.Item.RoleAssignments.Item.Subject;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.GovernanceResources.Item.RoleAssignments.Item {
+namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Item {
     /// <summary>Provides operations to manage the roleAssignments property of the microsoft.graph.governanceResource entity.</summary>
     public class GovernanceRoleAssignmentItemRequestBuilder {
         /// <summary>The linkedEligibleRoleAssignment property</summary>

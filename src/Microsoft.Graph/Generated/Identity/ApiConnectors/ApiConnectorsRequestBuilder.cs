@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Identity.ApiConnectors.Count;
+using Microsoft.Graph.Beta.Identity.ApiConnectors.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Identity.ApiConnectors.Count;
-using MicrosoftGraphSdk.Identity.ApiConnectors.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Identity.ApiConnectors {
+namespace Microsoft.Graph.Beta.Identity.ApiConnectors {
     /// <summary>Provides operations to manage the apiConnectors property of the microsoft.graph.identityContainer entity.</summary>
     public class ApiConnectorsRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Identity.ApiConnectors {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.identity.apiConnectors.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.identity.apiConnectors.item collection</summary>
         public IdentityApiConnectorItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("identityApiConnector_id", position);

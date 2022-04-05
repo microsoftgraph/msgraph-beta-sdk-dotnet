@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.OfficeConfiguration.ClientConfigurations.UpdatePriorities {
+namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.UpdatePriorities {
     /// <summary>Provides operations to call the updatePriorities method.</summary>
     public class UpdatePrioritiesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

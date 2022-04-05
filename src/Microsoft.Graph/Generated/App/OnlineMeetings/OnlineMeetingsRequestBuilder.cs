@@ -1,17 +1,17 @@
+using Microsoft.Graph.Beta.App.OnlineMeetings.Count;
+using Microsoft.Graph.Beta.App.OnlineMeetings.CreateOrGet;
+using Microsoft.Graph.Beta.App.OnlineMeetings.Item;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.App.OnlineMeetings.Count;
-using MicrosoftGraphSdk.App.OnlineMeetings.CreateOrGet;
-using MicrosoftGraphSdk.App.OnlineMeetings.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.App.OnlineMeetings {
+namespace Microsoft.Graph.Beta.App.OnlineMeetings {
     /// <summary>Provides operations to manage the onlineMeetings property of the microsoft.graph.commsApplication entity.</summary>
     public class OnlineMeetingsRequestBuilder {
         /// <summary>The count property</summary>
@@ -28,7 +28,7 @@ namespace MicrosoftGraphSdk.App.OnlineMeetings {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.app.onlineMeetings.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.app.onlineMeetings.item collection</summary>
         public OnlineMeetingItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("onlineMeeting_id", position);

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.RoleManagement.Directory.RoleAssignmentSchedules.FilterByCurrentUserWithOn {
+namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleAssignmentSchedules.FilterByCurrentUserWithOn {
     /// <summary>Provides operations to call the filterByCurrentUser method.</summary>
     public class FilterByCurrentUserWithOnRequestBuilder {
         /// <summary>Path parameters for the request</summary>

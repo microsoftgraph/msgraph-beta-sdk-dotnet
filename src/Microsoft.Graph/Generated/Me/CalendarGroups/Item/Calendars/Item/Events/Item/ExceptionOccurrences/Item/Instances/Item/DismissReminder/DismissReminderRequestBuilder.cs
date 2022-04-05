@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Me.CalendarGroups.Item.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.DismissReminder {
+namespace Microsoft.Graph.Beta.Me.CalendarGroups.Item.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Instances.Item.DismissReminder {
     /// <summary>Provides operations to call the dismissReminder method.</summary>
     public class DismissReminderRequestBuilder {
         /// <summary>Path parameters for the request</summary>

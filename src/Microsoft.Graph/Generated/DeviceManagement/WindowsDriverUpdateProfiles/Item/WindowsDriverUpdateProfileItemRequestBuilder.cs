@@ -1,19 +1,19 @@
+using Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.Assign;
+using Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.Assignments;
+using Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.DriverInventories;
+using Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.ExecuteAction;
+using Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.SyncInventory;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item.Assign;
-using MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item.Assignments;
-using MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item.DriverInventories;
-using MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item.ExecuteAction;
-using MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item.SyncInventory;
-using MicrosoftGraphSdk.Models.Microsoft.Graph;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item {
+namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item {
     /// <summary>Provides operations to manage the windowsDriverUpdateProfiles property of the microsoft.graph.deviceManagement entity.</summary>
     public class WindowsDriverUpdateProfileItemRequestBuilder {
         /// <summary>The assign property</summary>

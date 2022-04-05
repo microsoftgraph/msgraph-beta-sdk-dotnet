@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Reports.GetAzureADUserFeatureUsage {
+namespace Microsoft.Graph.Beta.Reports.GetAzureADUserFeatureUsage {
     /// <summary>Provides operations to call the getAzureADUserFeatureUsage method.</summary>
     public class GetAzureADUserFeatureUsageRequestBuilder {
         /// <summary>Path parameters for the request</summary>

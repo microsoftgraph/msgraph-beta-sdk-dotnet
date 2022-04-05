@@ -1,16 +1,16 @@
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.NoncustodialSources.Count;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.NoncustodialSources.Item;
+using Microsoft.Graph.Beta.Models.Ediscovery;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.NoncustodialSources.Count;
-using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.NoncustodialSources.Item;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
-using MicrosoftGraphSdk.Models.Microsoft.Graph.ODataErrors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.NoncustodialSources {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.NoncustodialSources {
     /// <summary>Provides operations to manage the noncustodialSources property of the microsoft.graph.ediscovery.sourceCollection entity.</summary>
     public class NoncustodialSourcesRequestBuilder {
         /// <summary>The count property</summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.I
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraphSdk.compliance.ediscovery.cases.item.sourceCollections.item.noncustodialSources.item collection</summary>
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.compliance.ediscovery.cases.item.sourceCollections.item.noncustodialSources.item collection</summary>
         public NoncustodialDataSourceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("noncustodialDataSource_id", position);
