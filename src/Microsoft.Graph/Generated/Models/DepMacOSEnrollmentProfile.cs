@@ -7,6 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DepMacOSEnrollmentProfile : DepEnrollmentBaseProfile, IParsable {
         /// <summary>Indicates if Accessibility screen is disabled</summary>
         public bool? AccessibilityScreenDisabled { get; set; }
+        /// <summary>Indicates if UnlockWithWatch screen is disabled</summary>
+        public bool? AutoUnlockWithWatchDisabled { get; set; }
         /// <summary>Indicates if iCloud Documents and Desktop screen is disabled</summary>
         public bool? ChooseYourLockScreenDisabled { get; set; }
         /// <summary>Indicates if file vault is disabled</summary>
@@ -35,6 +37,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"accessibilityScreenDisabled", (o,n) => { (o as DepMacOSEnrollmentProfile).AccessibilityScreenDisabled = n.GetBoolValue(); } },
+                {"autoUnlockWithWatchDisabled", (o,n) => { (o as DepMacOSEnrollmentProfile).AutoUnlockWithWatchDisabled = n.GetBoolValue(); } },
                 {"chooseYourLockScreenDisabled", (o,n) => { (o as DepMacOSEnrollmentProfile).ChooseYourLockScreenDisabled = n.GetBoolValue(); } },
                 {"fileVaultDisabled", (o,n) => { (o as DepMacOSEnrollmentProfile).FileVaultDisabled = n.GetBoolValue(); } },
                 {"iCloudDiagnosticsDisabled", (o,n) => { (o as DepMacOSEnrollmentProfile).ICloudDiagnosticsDisabled = n.GetBoolValue(); } },
@@ -52,6 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("accessibilityScreenDisabled", AccessibilityScreenDisabled);
+            writer.WriteBoolValue("autoUnlockWithWatchDisabled", AutoUnlockWithWatchDisabled);
             writer.WriteBoolValue("chooseYourLockScreenDisabled", ChooseYourLockScreenDisabled);
             writer.WriteBoolValue("fileVaultDisabled", FileVaultDisabled);
             writer.WriteBoolValue("iCloudDiagnosticsDisabled", ICloudDiagnosticsDisabled);

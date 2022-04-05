@@ -5,13 +5,13 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DelegatedAdminRelationshipRequest : Entity, IParsable {
-        /// <summary>The action property</summary>
+        /// <summary>The action to be performed on the delegated admin relationship.</summary>
         public DelegatedAdminRelationshipRequestAction? Action { get; set; }
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time in ISO 8601 format and in UTC time when the relationship request was created. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>The date and time in ISO 8601 format and UTC time when this relationship request was last modified. Read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
-        /// <summary>The status property</summary>
+        /// <summary>The status of the request. Read-only. The possible values are: created, pending, complete, failed, unknownFutureValue.</summary>
         public DelegatedAdminRelationshipRequestStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

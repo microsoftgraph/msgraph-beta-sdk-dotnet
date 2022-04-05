@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageAssignmentPolicy : Entity, IParsable {
-        /// <summary>The access package with this policy. Read-only. Nullable. Supports $expand.</summary>
+        /// <summary>Access package containing this policy. Read-only.</summary>
         public Microsoft.Graph.Beta.Models.AccessPackage AccessPackage { get; set; }
         /// <summary>The accessPackageCatalog property</summary>
         public Microsoft.Graph.Beta.Models.AccessPackageCatalog AccessPackageCatalog { get; set; }
@@ -17,13 +17,13 @@ namespace Microsoft.Graph.Beta.Models {
         public bool? CanExtend { get; set; }
         /// <summary>Read-only.</summary>
         public string CreatedBy { get; set; }
-        /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.</summary>
         public List<CustomExtensionHandler> CustomExtensionHandlers { get; set; }
         /// <summary>The description of the policy.</summary>
         public string Description { get; set; }
-        /// <summary>The display name of the policy. Supports $filter (eq).</summary>
+        /// <summary>The display name of the policy.</summary>
         public string DisplayName { get; set; }
         /// <summary>The number of days in which assignments from this policy last until they are expired.</summary>
         public int? DurationInDays { get; set; }
@@ -31,13 +31,13 @@ namespace Microsoft.Graph.Beta.Models {
         public DateTimeOffset? ExpirationDateTime { get; set; }
         /// <summary>Read-only.</summary>
         public string ModifiedBy { get; set; }
-        /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ModifiedDateTime { get; set; }
         /// <summary>Questions that are posed to the  requestor.</summary>
         public List<AccessPackageQuestion> Questions { get; set; }
-        /// <summary>Who must approve requests for access package in this policy.</summary>
+        /// <summary>Specifies the settings for approval of requests for an access package assignment through this policy. For example, if approval is required for new requests.</summary>
         public ApprovalSettings RequestApprovalSettings { get; set; }
-        /// <summary>Who can request this access package from this policy.</summary>
+        /// <summary>Provides additional settings to select who can create a request for an access package assignment through this policy, and what they can include in their request.</summary>
         public Microsoft.Graph.Beta.Models.RequestorSettings RequestorSettings { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -111,6 +111,7 @@ using Microsoft.Graph.Beta.DeviceManagement.SoftwareUpdateStatusSummary;
 using Microsoft.Graph.Beta.DeviceManagement.TelecomExpenseManagementPartners;
 using Microsoft.Graph.Beta.DeviceManagement.Templates;
 using Microsoft.Graph.Beta.DeviceManagement.TemplateSettings;
+using Microsoft.Graph.Beta.DeviceManagement.TenantAttachRBAC;
 using Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions;
 using Microsoft.Graph.Beta.DeviceManagement.TroubleshootingEvents;
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformance;
@@ -598,6 +599,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         /// <summary>The templateSettings property</summary>
         public TemplateSettingsRequestBuilder TemplateSettings { get =>
             new TemplateSettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The tenantAttachRBAC property</summary>
+        public TenantAttachRBACRequestBuilder TenantAttachRBAC { get =>
+            new TenantAttachRBACRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The termsAndConditions property</summary>
         public TermsAndConditionsRequestBuilder TermsAndConditions { get =>

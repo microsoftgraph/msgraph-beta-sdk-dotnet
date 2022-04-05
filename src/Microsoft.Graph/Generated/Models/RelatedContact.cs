@@ -11,13 +11,13 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Name of the contact. Required.</summary>
         public string DisplayName { get; set; }
-        /// <summary>Primary email address of the contact.</summary>
+        /// <summary>Primary email address of the contact. Required.</summary>
         public string EmailAddress { get; set; }
-        /// <summary>Identity of the contact within Azure Active Directory.</summary>
+        /// <summary>The id property</summary>
         public string Id { get; set; }
         /// <summary>Mobile phone number of the contact.</summary>
         public string MobilePhone { get; set; }
-        /// <summary>Relationship to the user. Possible values are parent, relative, aide, doctor, guardian, child, other, unknownFutureValue.</summary>
+        /// <summary>Relationship to the user. Possible values are: parent, relative, aide, doctor, guardian, child, other, unknownFutureValue.</summary>
         public ContactRelationship? Relationship { get; set; }
         /// <summary>
         /// Instantiates a new relatedContact and sets the default values.

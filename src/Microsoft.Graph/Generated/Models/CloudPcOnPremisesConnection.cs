@@ -11,13 +11,13 @@ namespace Microsoft.Graph.Beta.Models {
         public string AdDomainPassword { get; set; }
         /// <summary>The username of an Active Directory account (user or service account) that has permissions to create computer objects in Active Directory. Required format: admin@contoso.com. Optional.</summary>
         public string AdDomainUsername { get; set; }
-        /// <summary>The display name for the on-premises connection.</summary>
+        /// <summary>The display name for the Azure network connection.</summary>
         public string DisplayName { get; set; }
-        /// <summary>The status of the most recent health check done on the on-premises connection. For example, if status is &apos;passed&apos;, the on-premises connection has passed all checks run by the service. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.</summary>
+        /// <summary>The status of the most recent health check done on the Azure network connection. For example, if status is &apos;passed&apos;, the Azure network connection has passed all checks run by the service. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.</summary>
         public CloudPcOnPremisesConnectionStatus? HealthCheckStatus { get; set; }
-        /// <summary>The details of the connection&apos;s health checks and the corresponding results. Returned only on $select.For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an on-premises connection, including healthCheckStatusDetails. Read-only.</summary>
+        /// <summary>The details of the connection&apos;s health checks and the corresponding results. Returned only on $select.For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.</summary>
         public CloudPcOnPremisesConnectionStatusDetails HealthCheckStatusDetails { get; set; }
-        /// <summary>When true, the on-premises connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an on-premises connection, including healthCheckStatusDetails. Read-only.</summary>
+        /// <summary>When true, the Azure network connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.</summary>
         public bool? InUse { get; set; }
         /// <summary>Specifies which services manage the on-premises connection. Possible values are: windows365, devBox and unknownFutureValue. Read-only.</summary>
         public CloudPcManagementService? ManagedBy { get; set; }

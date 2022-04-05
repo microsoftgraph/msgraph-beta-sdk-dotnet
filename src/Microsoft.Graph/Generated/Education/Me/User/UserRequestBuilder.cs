@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Education.Me.User {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The directory user corresponding to this user.
+        /// The directory user that corresponds to this user.
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// <param name="queryParameters">Request query parameters</param>
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Education.Me.User {
             return requestInfo;
         }
         /// <summary>
-        /// The directory user corresponding to this user.
+        /// The directory user that corresponds to this user.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Education.Me.User {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.User>(requestInfo, Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>The directory user corresponding to this user.</summary>
+        /// <summary>The directory user that corresponds to this user.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
             public string[] Expand { get; set; }

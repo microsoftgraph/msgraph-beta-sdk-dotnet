@@ -11,6 +11,7 @@ using Microsoft.Graph.Beta.Workbooks.Item.CreateLink;
 using Microsoft.Graph.Beta.Workbooks.Item.CreateUploadSession;
 using Microsoft.Graph.Beta.Workbooks.Item.Delta;
 using Microsoft.Graph.Beta.Workbooks.Item.DeltaWithToken;
+using Microsoft.Graph.Beta.Workbooks.Item.ExtractSensitivityLabels;
 using Microsoft.Graph.Beta.Workbooks.Item.Follow;
 using Microsoft.Graph.Beta.Workbooks.Item.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval;
 using Microsoft.Graph.Beta.Workbooks.Item.Invite;
@@ -70,6 +71,10 @@ namespace Microsoft.Graph.Beta.Workbooks.Item {
         /// <summary>The createUploadSession property</summary>
         public CreateUploadSessionRequestBuilder CreateUploadSession { get =>
             new CreateUploadSessionRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The extractSensitivityLabels property</summary>
+        public ExtractSensitivityLabelsRequestBuilder ExtractSensitivityLabels { get =>
+            new ExtractSensitivityLabelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The follow property</summary>
         public FollowRequestBuilder Follow { get =>

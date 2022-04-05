@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Beta.Models {
         public string SerialNumber { get; set; }
         /// <summary>Device sku family</summary>
         public string SkuFamily { get; set; }
-        /// <summary>Device sku number, see also: GetProductInfo function. Valid values 0 to 2147483647. This property is read-only.</summary>
+        /// <summary>Device sku number, see also: GetProductInfo function (sysinfoapi.h). Valid values 0 to 2147483647. This property is read-only.</summary>
         public int? SkuNumber { get; set; }
         /// <summary>Specification version. This property is read-only.</summary>
         public string SpecificationVersion { get; set; }

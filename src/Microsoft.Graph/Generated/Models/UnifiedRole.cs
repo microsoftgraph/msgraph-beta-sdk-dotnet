@@ -7,7 +7,7 @@ namespace Microsoft.Graph.Beta.Models {
     public class UnifiedRole : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The roleDefinitionId property</summary>
+        /// <summary>The unified role definition ID of the directory role. Refer to unifiedRoleDefinition resource.</summary>
         public string RoleDefinitionId { get; set; }
         /// <summary>
         /// Instantiates a new unifiedRole and sets the default values.

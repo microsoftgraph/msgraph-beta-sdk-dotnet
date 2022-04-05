@@ -7,9 +7,9 @@ namespace Microsoft.Graph.Beta.Models {
     public class DelegatedAdminRelationshipCustomerParticipant : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the customer tenant as set by Azure AD. Read only</summary>
         public string DisplayName { get; set; }
-        /// <summary>The tenantId property</summary>
+        /// <summary>The Azure AD-assigned tenant ID of the customer tenant.</summary>
         public string TenantId { get; set; }
         /// <summary>
         /// Instantiates a new delegatedAdminRelationshipCustomerParticipant and sets the default values.

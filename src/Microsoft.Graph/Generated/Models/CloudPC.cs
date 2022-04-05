@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         public string ManagedDeviceId { get; set; }
         /// <summary>The Intune device name of the Cloud PC.</summary>
         public string ManagedDeviceName { get; set; }
-        /// <summary>The on-premises connection that is applied during the provisioning of Cloud PCs.</summary>
+        /// <summary>The Azure network connection that is applied during the provisioning of Cloud PCs.</summary>
         public string OnPremisesConnectionName { get; set; }
         /// <summary>The version of the operating system (OS) to provision on Cloud PCs. Possible values are: windows10, windows11, and unknownFutureValue.</summary>
         public CloudPcOperatingSystem? OsVersion { get; set; }

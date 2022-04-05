@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
         public List<Permission> Permissions { get; set; }
         /// <summary>If present, indicates that this is the root site in the site collection. Read-only.</summary>
         public Microsoft.Graph.Beta.Models.Root Root { get; set; }
-        /// <summary>The settings property</summary>
+        /// <summary>The settings on this site. Returned only on $select. Read-only.</summary>
         public SiteSettings Settings { get; set; }
         /// <summary>Returns identifiers useful for SharePoint REST compatibility. Read-only.</summary>
         public Microsoft.Graph.Beta.Models.SharepointIds SharepointIds { get; set; }

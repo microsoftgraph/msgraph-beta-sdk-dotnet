@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Endpoint : DirectoryObject, IParsable {
-        /// <summary>Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.)  Not nullable. Read-only.</summary>
+        /// <summary>Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.) Not nullable. Read-only.</summary>
         public string Capability { get; set; }
         /// <summary>Application id of the publishing underlying service. Not nullable. Read-only.</summary>
         public string ProviderId { get; set; }

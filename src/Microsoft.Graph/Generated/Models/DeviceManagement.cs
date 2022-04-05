@@ -170,7 +170,7 @@ namespace Microsoft.Graph.Beta.Models {
         public List<ManagementCondition> ManagementConditions { get; set; }
         /// <summary>The management condition statements associated with device management of the company.</summary>
         public List<ManagementConditionStatement> ManagementConditionStatements { get; set; }
-        /// <summary>Maximum number of dep tokens allowed per-tenant.</summary>
+        /// <summary>Maximum number of DEP tokens allowed per-tenant.</summary>
         public int? MaximumDepTokens { get; set; }
         /// <summary>Collection of MicrosoftTunnelConfiguration settings associated with account.</summary>
         public List<MicrosoftTunnelConfiguration> MicrosoftTunnelConfigurations { get; set; }
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceManagementSettings Settings { get; set; }
         /// <summary>The software update status summary.</summary>
         public Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary SoftwareUpdateStatusSummary { get; set; }
-        /// <summary>Tenant&apos;s Subscription.</summary>
+        /// <summary>Tenant&apos;s Subscription. Possible values are: none, intune, office365, intunePremium, intune_EDU, intune_SMB.</summary>
         public DeviceManagementSubscriptions? Subscriptions { get; set; }
         /// <summary>Tenant mobile device management subscription state. Possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.</summary>
         public DeviceManagementSubscriptionState? SubscriptionState { get; set; }
@@ -228,6 +228,8 @@ namespace Microsoft.Graph.Beta.Models {
         public List<DeviceManagementTemplate> Templates { get; set; }
         /// <summary>List of all TemplateSettings</summary>
         public List<DeviceManagementConfigurationSettingTemplate> TemplateSettings { get; set; }
+        /// <summary>TenantAttach RBAC Enablement</summary>
+        public Microsoft.Graph.Beta.Models.TenantAttachRBAC TenantAttachRBAC { get; set; }
         /// <summary>The terms and conditions associated with device management of the company.</summary>
         public List<Microsoft.Graph.Beta.Models.TermsAndConditions> TermsAndConditions { get; set; }
         /// <summary>The list of troubleshooting events for the tenant.</summary>
@@ -464,6 +466,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"telecomExpenseManagementPartners", (o,n) => { (o as DeviceManagement).TelecomExpenseManagementPartners = n.GetCollectionOfObjectValues<TelecomExpenseManagementPartner>(TelecomExpenseManagementPartner.CreateFromDiscriminatorValue).ToList(); } },
                 {"templates", (o,n) => { (o as DeviceManagement).Templates = n.GetCollectionOfObjectValues<DeviceManagementTemplate>(DeviceManagementTemplate.CreateFromDiscriminatorValue).ToList(); } },
                 {"templateSettings", (o,n) => { (o as DeviceManagement).TemplateSettings = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingTemplate>(DeviceManagementConfigurationSettingTemplate.CreateFromDiscriminatorValue).ToList(); } },
+                {"tenantAttachRBAC", (o,n) => { (o as DeviceManagement).TenantAttachRBAC = n.GetObjectValue<Microsoft.Graph.Beta.Models.TenantAttachRBAC>(Microsoft.Graph.Beta.Models.TenantAttachRBAC.CreateFromDiscriminatorValue); } },
                 {"termsAndConditions", (o,n) => { (o as DeviceManagement).TermsAndConditions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TermsAndConditions>(Microsoft.Graph.Beta.Models.TermsAndConditions.CreateFromDiscriminatorValue).ToList(); } },
                 {"troubleshootingEvents", (o,n) => { (o as DeviceManagement).TroubleshootingEvents = n.GetCollectionOfObjectValues<DeviceManagementTroubleshootingEvent>(DeviceManagementTroubleshootingEvent.CreateFromDiscriminatorValue).ToList(); } },
                 {"unlicensedAdminstratorsEnabled", (o,n) => { (o as DeviceManagement).UnlicensedAdminstratorsEnabled = n.GetBoolValue(); } },
@@ -640,6 +643,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<TelecomExpenseManagementPartner>("telecomExpenseManagementPartners", TelecomExpenseManagementPartners);
             writer.WriteCollectionOfObjectValues<DeviceManagementTemplate>("templates", Templates);
             writer.WriteCollectionOfObjectValues<DeviceManagementConfigurationSettingTemplate>("templateSettings", TemplateSettings);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TenantAttachRBAC>("tenantAttachRBAC", TenantAttachRBAC);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TermsAndConditions>("termsAndConditions", TermsAndConditions);
             writer.WriteCollectionOfObjectValues<DeviceManagementTroubleshootingEvent>("troubleshootingEvents", TroubleshootingEvents);
             writer.WriteBoolValue("unlicensedAdminstratorsEnabled", UnlicensedAdminstratorsEnabled);

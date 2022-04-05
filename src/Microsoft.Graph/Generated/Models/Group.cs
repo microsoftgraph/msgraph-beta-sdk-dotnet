@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         public List<Extension> Extensions { get; set; }
         /// <summary>The collection of lifecycle policies for this group. Read-only. Nullable.</summary>
         public List<GroupLifecyclePolicy> GroupLifecyclePolicies { get; set; }
-        /// <summary>Specifies the group type and its membership.  If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it&apos;s either a security group or distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static.  Returned by default. Supports $filter (eq, not).</summary>
+        /// <summary>Specifies the group type and its membership. If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it&apos;s either a security group or distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static. Returned by default. Supports $filter (eq, not).</summary>
         public List<string> GroupTypes { get; set; }
         /// <summary>Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true). See an example. Supports $filter (eq).</summary>
         public bool? HasMembersWithLicenseErrors { get; set; }
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         public bool? HideFromOutlookClients { get; set; }
         /// <summary>Identifies the info segments assigned to the group. Returned by default. Supports $filter (eq, not, ge, le, startsWith).</summary>
         public List<string> InfoCatalogs { get; set; }
-        /// <summary>The isArchived property</summary>
+        /// <summary>When a group is associated with a team this property deternunes whether the team is in read-only mode.</summary>
         public bool? IsArchived { get; set; }
         /// <summary>Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global administrator and Privileged role administrator roles can set this property. The caller must be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).</summary>
         public bool? IsAssignableToRole { get; set; }
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
         public string MdmAppId { get; set; }
         /// <summary>Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.</summary>
         public List<DirectoryObject> MemberOf { get; set; }
-        /// <summary>UMembers of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,&apos;Role&apos;)&amp;$select=id,displayName&amp;$expand=members($select=id,userPrincipalName,displayName).</summary>
+        /// <summary>The members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,&apos;Role&apos;)&amp;$select=id,displayName&amp;$expand=members($select=id,userPrincipalName,displayName).</summary>
         public List<DirectoryObject> Members { get; set; }
         /// <summary>The rule that determines members for this group if the group is a dynamic group (groupTypes contains DynamicMembership). For more information about the syntax of the membership rule, see Membership Rules syntax. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).</summary>
         public string MembershipRule { get; set; }
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.Models {
         public List<OnPremisesProvisioningError> OnPremisesProvisioningErrors { get; set; }
         /// <summary>Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.</summary>
         public string OnPremisesSamAccountName { get; set; }
-        /// <summary>Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Supports $filter on null values. Read-only.</summary>
+        /// <summary>Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.</summary>
         public string OnPremisesSecurityIdentifier { get; set; }
         /// <summary>true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).</summary>
         public bool? OnPremisesSyncEnabled { get; set; }
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Models {
         public List<ProfilePhoto> Photos { get; set; }
         /// <summary>Entry-point to Planner resource that might exist for a Unified Group.</summary>
         public PlannerGroup Planner { get; set; }
-        /// <summary>The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator&apos;s preferred data location. To set this property, the calling user must be assigned one of the following Azure AD roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see  OneDrive Online Multi-Geo. Nullable. Returned by default.</summary>
+        /// <summary>The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator&apos;s preferred data location. To set this property, the calling user must be assigned one of the following Azure AD roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.</summary>
         public string PreferredDataLocation { get; set; }
         /// <summary>The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
         public string PreferredLanguage { get; set; }
