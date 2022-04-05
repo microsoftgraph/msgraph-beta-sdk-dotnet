@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers.Item.
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get serviceManagementDetails from tenantRelationships
+        /// Contains the management details of a service in the customer tenant that&apos;s managed by delegated administration.
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// <param name="queryParameters">Request query parameters</param>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers.Item.
             return requestInfo;
         }
         /// <summary>
-        /// Get serviceManagementDetails from tenantRelationships
+        /// Contains the management details of a service in the customer tenant that&apos;s managed by delegated administration.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers.Item.
             };
             return await RequestAdapter.SendAsync<DelegatedAdminServiceManagementDetail>(requestInfo, DelegatedAdminServiceManagementDetail.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get serviceManagementDetails from tenantRelationships</summary>
+        /// <summary>Contains the management details of a service in the customer tenant that&apos;s managed by delegated administration.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
             public bool? Count { get; set; }

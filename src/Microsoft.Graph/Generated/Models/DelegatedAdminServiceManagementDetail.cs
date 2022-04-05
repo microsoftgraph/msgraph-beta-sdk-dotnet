@@ -7,9 +7,9 @@ namespace Microsoft.Graph.Beta.Models {
     public class DelegatedAdminServiceManagementDetail : Entity, IParsable {
         /// <summary>The serviceId property</summary>
         public string ServiceId { get; set; }
-        /// <summary>The serviceManagementUrl property</summary>
+        /// <summary>The URL of the management portal for the managed service. Read-only.</summary>
         public string ServiceManagementUrl { get; set; }
-        /// <summary>The serviceName property</summary>
+        /// <summary>The name of a managed service. Read-only.</summary>
         public string ServiceName { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

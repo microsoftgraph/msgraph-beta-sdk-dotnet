@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
         public string ErrorMessage { get; set; }
         /// <summary>Most recent date and time when membership of a dynamic group was updated.  Optional. Read-only.</summary>
         public DateTimeOffset? LastMembershipUpdated { get; set; }
-        /// <summary>Current status of a dynamic group processing. Possible values are: NotStarted, Running, Succeeded, Failed, and UnknownFutureValue.   Required. Read-only.</summary>
+        /// <summary>Current status of a dynamic group processing. Possible values are: NotStarted, Running, Succeeded, Failed, and UnknownFutureValue.  Required. Read-only.</summary>
         public MembershipRuleProcessingStatusDetails? Status { get; set; }
         /// <summary>
         /// Instantiates a new membershipRuleProcessingStatus and sets the default values.

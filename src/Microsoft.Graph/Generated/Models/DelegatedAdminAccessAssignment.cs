@@ -9,11 +9,11 @@ namespace Microsoft.Graph.Beta.Models {
         public DelegatedAdminAccessContainer AccessContainer { get; set; }
         /// <summary>The accessDetails property</summary>
         public DelegatedAdminAccessDetails AccessDetails { get; set; }
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time in ISO 8601 format and in UTC time when the access assignment was created. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>The date and time in ISO 8601 and in UTC time when this access assignment was last modified. Read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
-        /// <summary>The status property</summary>
+        /// <summary>The status of the access assignment. Read-only. The possible values are: pending, active, deleting, deleted, error, unknownFutureValue.</summary>
         public DelegatedAdminAccessAssignmentStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

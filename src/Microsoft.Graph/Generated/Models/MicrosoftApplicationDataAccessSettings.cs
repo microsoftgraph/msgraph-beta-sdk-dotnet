@@ -5,9 +5,9 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class MicrosoftApplicationDataAccessSettings : Entity, IParsable {
-        /// <summary>The disabledForGroup property</summary>
+        /// <summary>The ID of an Azure Active Directory (Azure AD) security group for which the members are allowed to access Microsoft 365 data using only Microsoft 365 apps, but not other Microsoft apps such as Edge.  This is only applicable if isEnabledForAllMicrosoftApplications is set to true.</summary>
         public string DisabledForGroup { get; set; }
-        /// <summary>The isEnabledForAllMicrosoftApplications property</summary>
+        /// <summary>When set to true, all users in the organization can access in a Microsoft app any Microsoft 365 data that the user has been authorized to access. The Microsoft app can be a Microsoft 365 app (for example, Excel, Outlook) or non-Microsoft 365 app (for example, Edge). The default is true.  It is possible to disable this access for a subset of users in an Azure AD security group, by specifying the group in the disabledForGroup property.  When set to false, all users can access authorized Microsoft 365 data only in a Microsoft 365 app.</summary>
         public bool? IsEnabledForAllMicrosoftApplications { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

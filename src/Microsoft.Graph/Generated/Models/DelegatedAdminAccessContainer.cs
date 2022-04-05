@@ -5,9 +5,9 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DelegatedAdminAccessContainer : IAdditionalDataHolder, IParsable {
-        /// <summary>The accessContainerId property</summary>
+        /// <summary>The identifier of the access container (for example, a security group). For &apos;securityGroup&apos; access containers, this must be a valid ID of an Azure AD security group in the Microsoft partner&apos;s tenant.</summary>
         public string AccessContainerId { get; set; }
-        /// <summary>The accessContainerType property</summary>
+        /// <summary>The type of access container (for example, security group) that will be assigned one or more roles through a delegated admin relationship. The possible values are: securityGroup, unknownFutureValue.</summary>
         public DelegatedAdminAccessContainerType? AccessContainerType { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

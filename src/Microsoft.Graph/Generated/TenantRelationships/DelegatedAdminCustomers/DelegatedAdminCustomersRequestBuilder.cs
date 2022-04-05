@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get delegatedAdminCustomers from tenantRelationships
+        /// The customer who has a delegated admin relationship with a Microsoft partner.
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// <param name="queryParameters">Request query parameters</param>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers {
             return requestInfo;
         }
         /// <summary>
-        /// Get delegatedAdminCustomers from tenantRelationships
+        /// The customer who has a delegated admin relationship with a Microsoft partner.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers {
             };
             return await RequestAdapter.SendAsync<DelegatedAdminCustomer>(requestInfo, DelegatedAdminCustomer.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get delegatedAdminCustomers from tenantRelationships</summary>
+        /// <summary>The customer who has a delegated admin relationship with a Microsoft partner.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
             public bool? Count { get; set; }

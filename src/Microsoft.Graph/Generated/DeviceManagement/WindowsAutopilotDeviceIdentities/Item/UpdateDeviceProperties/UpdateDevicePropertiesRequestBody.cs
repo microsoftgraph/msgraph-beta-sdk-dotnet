@@ -10,6 +10,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The addressableUserName property</summary>
         public string AddressableUserName { get; set; }
+        /// <summary>The deviceAccountPassword property</summary>
+        public string DeviceAccountPassword { get; set; }
+        /// <summary>The deviceAccountUpn property</summary>
+        public string DeviceAccountUpn { get; set; }
+        /// <summary>The deviceFriendlyName property</summary>
+        public string DeviceFriendlyName { get; set; }
         /// <summary>The displayName property</summary>
         public string DisplayName { get; set; }
         /// <summary>The groupTag property</summary>
@@ -36,6 +42,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"addressableUserName", (o,n) => { (o as UpdateDevicePropertiesRequestBody).AddressableUserName = n.GetStringValue(); } },
+                {"deviceAccountPassword", (o,n) => { (o as UpdateDevicePropertiesRequestBody).DeviceAccountPassword = n.GetStringValue(); } },
+                {"deviceAccountUpn", (o,n) => { (o as UpdateDevicePropertiesRequestBody).DeviceAccountUpn = n.GetStringValue(); } },
+                {"deviceFriendlyName", (o,n) => { (o as UpdateDevicePropertiesRequestBody).DeviceFriendlyName = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as UpdateDevicePropertiesRequestBody).DisplayName = n.GetStringValue(); } },
                 {"groupTag", (o,n) => { (o as UpdateDevicePropertiesRequestBody).GroupTag = n.GetStringValue(); } },
                 {"userPrincipalName", (o,n) => { (o as UpdateDevicePropertiesRequestBody).UserPrincipalName = n.GetStringValue(); } },
@@ -48,6 +57,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("addressableUserName", AddressableUserName);
+            writer.WriteStringValue("deviceAccountPassword", DeviceAccountPassword);
+            writer.WriteStringValue("deviceAccountUpn", DeviceAccountUpn);
+            writer.WriteStringValue("deviceFriendlyName", DeviceFriendlyName);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("groupTag", GroupTag);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);

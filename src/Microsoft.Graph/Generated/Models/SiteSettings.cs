@@ -7,9 +7,9 @@ namespace Microsoft.Graph.Beta.Models {
     public class SiteSettings : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The languageTag property</summary>
+        /// <summary>The language tag for the language used on this site.</summary>
         public string LanguageTag { get; set; }
-        /// <summary>The timeZone property</summary>
+        /// <summary>Indicates the time offset for the time zone of the site from Coordinated Universal Time (UTC).</summary>
         public string TimeZone { get; set; }
         /// <summary>
         /// Instantiates a new siteSettings and sets the default values.

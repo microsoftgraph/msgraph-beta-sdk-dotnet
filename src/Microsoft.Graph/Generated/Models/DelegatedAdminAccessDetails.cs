@@ -7,7 +7,7 @@ namespace Microsoft.Graph.Beta.Models {
     public class DelegatedAdminAccessDetails : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The unifiedRoles property</summary>
+        /// <summary>The directory roles that the Microsoft partner is assigned in the customer tenant.</summary>
         public List<UnifiedRole> UnifiedRoles { get; set; }
         /// <summary>
         /// Instantiates a new delegatedAdminAccessDetails and sets the default values.

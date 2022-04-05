@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
     public class CaseOperation : Entity, IParsable {
-        /// <summary>The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics</summary>
+        /// <summary>The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData</summary>
         public CaseAction? Action { get; set; }
         /// <summary>The date and time the operation was completed.</summary>
         public DateTimeOffset? CompletedDateTime { get; set; }

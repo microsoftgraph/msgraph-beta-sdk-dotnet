@@ -21,6 +21,8 @@ namespace Microsoft.Graph.Beta.Models {
         public string DisplayName { get; set; }
         /// <summary>Driver inventories for this profile.</summary>
         public List<WindowsDriverUpdateInventory> DriverInventories { get; set; }
+        /// <summary>Driver inventory sync status for this profile.</summary>
+        public WindowsDriverUpdateProfileInventorySyncStatus InventorySyncStatus { get; set; }
         /// <summary>The date time that the profile was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
         /// <summary>Number of new driver updates available for this profile.</summary>
@@ -48,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"deviceReporting", (o,n) => { (o as WindowsDriverUpdateProfile).DeviceReporting = n.GetIntValue(); } },
                 {"displayName", (o,n) => { (o as WindowsDriverUpdateProfile).DisplayName = n.GetStringValue(); } },
                 {"driverInventories", (o,n) => { (o as WindowsDriverUpdateProfile).DriverInventories = n.GetCollectionOfObjectValues<WindowsDriverUpdateInventory>(WindowsDriverUpdateInventory.CreateFromDiscriminatorValue).ToList(); } },
+                {"inventorySyncStatus", (o,n) => { (o as WindowsDriverUpdateProfile).InventorySyncStatus = n.GetObjectValue<WindowsDriverUpdateProfileInventorySyncStatus>(WindowsDriverUpdateProfileInventorySyncStatus.CreateFromDiscriminatorValue); } },
                 {"lastModifiedDateTime", (o,n) => { (o as WindowsDriverUpdateProfile).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"newUpdates", (o,n) => { (o as WindowsDriverUpdateProfile).NewUpdates = n.GetIntValue(); } },
                 {"roleScopeTagIds", (o,n) => { (o as WindowsDriverUpdateProfile).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
@@ -68,6 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteIntValue("deviceReporting", DeviceReporting);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfObjectValues<WindowsDriverUpdateInventory>("driverInventories", DriverInventories);
+            writer.WriteObjectValue<WindowsDriverUpdateProfileInventorySyncStatus>("inventorySyncStatus", InventorySyncStatus);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteIntValue("newUpdates", NewUpdates);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);

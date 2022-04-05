@@ -5,15 +5,15 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DelegatedAdminRelationshipOperation : Entity, IParsable {
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The time in ISO 8601 format and in UTC time when the long-running operation was created. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
-        /// <summary>The data property</summary>
+        /// <summary>The data (payload) for the operation. Read-only.</summary>
         public string Data { get; set; }
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>The time in ISO 8601 format and in UTC time when the long-running operation was last modified. Read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
-        /// <summary>The operationType property</summary>
+        /// <summary>The type of long-running operation. The possible values are: delegatedAdminAccessAssignmentUpdate, unknownFutureValue. Read-only.</summary>
         public DelegatedAdminRelationshipOperationType? OperationType { get; set; }
-        /// <summary>The status property</summary>
+        /// <summary>The status of the operation. Read-only. The possible values are: notStarted, running, complete, failed, unknownFutureValue. Read-only. Supports $orderBy.</summary>
         public DelegatedAdminRelationshipOperationStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

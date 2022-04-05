@@ -2,6 +2,7 @@ using Microsoft.Graph.Beta.BookingBusinesses.Item.Appointments;
 using Microsoft.Graph.Beta.BookingBusinesses.Item.CalendarView;
 using Microsoft.Graph.Beta.BookingBusinesses.Item.Customers;
 using Microsoft.Graph.Beta.BookingBusinesses.Item.CustomQuestions;
+using Microsoft.Graph.Beta.BookingBusinesses.Item.GetStaffAvailability;
 using Microsoft.Graph.Beta.BookingBusinesses.Item.Publish;
 using Microsoft.Graph.Beta.BookingBusinesses.Item.Services;
 using Microsoft.Graph.Beta.BookingBusinesses.Item.StaffMembers;
@@ -34,6 +35,10 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item {
         /// <summary>The customQuestions property</summary>
         public CustomQuestionsRequestBuilder CustomQuestions { get =>
             new CustomQuestionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The getStaffAvailability property</summary>
+        public GetStaffAvailabilityRequestBuilder GetStaffAvailability { get =>
+            new GetStaffAvailabilityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

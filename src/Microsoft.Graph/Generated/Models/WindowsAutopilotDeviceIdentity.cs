@@ -19,6 +19,12 @@ namespace Microsoft.Graph.Beta.Models {
         public WindowsAutopilotProfileAssignmentDetailedStatus? DeploymentProfileAssignmentDetailedStatus { get; set; }
         /// <summary>Profile assignment status of the Windows autopilot device. Possible values are: unknown, assignedInSync, assignedOutOfSync, assignedUnkownSyncState, notAssigned, pending, failed.</summary>
         public WindowsAutopilotProfileAssignmentStatus? DeploymentProfileAssignmentStatus { get; set; }
+        /// <summary>Surface Hub Device Account Password</summary>
+        public string DeviceAccountPassword { get; set; }
+        /// <summary>Surface Hub Device Account Upn</summary>
+        public string DeviceAccountUpn { get; set; }
+        /// <summary>Surface Hub Device Friendly Name</summary>
+        public string DeviceFriendlyName { get; set; }
         /// <summary>Display Name</summary>
         public string DisplayName { get; set; }
         /// <summary>Intune enrollment state of the Windows autopilot device. Possible values are: unknown, enrolled, pendingReset, failed, notContacted.</summary>
@@ -69,6 +75,9 @@ namespace Microsoft.Graph.Beta.Models {
                 {"deploymentProfileAssignedDateTime", (o,n) => { (o as WindowsAutopilotDeviceIdentity).DeploymentProfileAssignedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"deploymentProfileAssignmentDetailedStatus", (o,n) => { (o as WindowsAutopilotDeviceIdentity).DeploymentProfileAssignmentDetailedStatus = n.GetEnumValue<WindowsAutopilotProfileAssignmentDetailedStatus>(); } },
                 {"deploymentProfileAssignmentStatus", (o,n) => { (o as WindowsAutopilotDeviceIdentity).DeploymentProfileAssignmentStatus = n.GetEnumValue<WindowsAutopilotProfileAssignmentStatus>(); } },
+                {"deviceAccountPassword", (o,n) => { (o as WindowsAutopilotDeviceIdentity).DeviceAccountPassword = n.GetStringValue(); } },
+                {"deviceAccountUpn", (o,n) => { (o as WindowsAutopilotDeviceIdentity).DeviceAccountUpn = n.GetStringValue(); } },
+                {"deviceFriendlyName", (o,n) => { (o as WindowsAutopilotDeviceIdentity).DeviceFriendlyName = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as WindowsAutopilotDeviceIdentity).DisplayName = n.GetStringValue(); } },
                 {"enrollmentState", (o,n) => { (o as WindowsAutopilotDeviceIdentity).EnrollmentState = n.GetEnumValue<EnrollmentState>(); } },
                 {"groupTag", (o,n) => { (o as WindowsAutopilotDeviceIdentity).GroupTag = n.GetStringValue(); } },
@@ -100,6 +109,9 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("deploymentProfileAssignedDateTime", DeploymentProfileAssignedDateTime);
             writer.WriteEnumValue<WindowsAutopilotProfileAssignmentDetailedStatus>("deploymentProfileAssignmentDetailedStatus", DeploymentProfileAssignmentDetailedStatus);
             writer.WriteEnumValue<WindowsAutopilotProfileAssignmentStatus>("deploymentProfileAssignmentStatus", DeploymentProfileAssignmentStatus);
+            writer.WriteStringValue("deviceAccountPassword", DeviceAccountPassword);
+            writer.WriteStringValue("deviceAccountUpn", DeviceAccountUpn);
+            writer.WriteStringValue("deviceFriendlyName", DeviceFriendlyName);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteEnumValue<EnrollmentState>("enrollmentState", EnrollmentState);
             writer.WriteStringValue("groupTag", GroupTag);

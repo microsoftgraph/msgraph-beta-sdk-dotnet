@@ -190,7 +190,7 @@ namespace Microsoft.Graph.Beta.Models {
         public List<OnPremisesProvisioningError> OnPremisesProvisioningErrors { get; set; }
         /// <summary>Contains the on-premises samAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).</summary>
         public string OnPremisesSamAccountName { get; set; }
-        /// <summary>Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq) on null values only.</summary>
+        /// <summary>Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select.  Supports $filter (eq including on null values).</summary>
         public string OnPremisesSecurityIdentifier { get; set; }
         /// <summary>true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).</summary>
         public bool? OnPremisesSyncEnabled { get; set; }

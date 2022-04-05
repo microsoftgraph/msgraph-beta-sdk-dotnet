@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
         public bool? ScreenTimeScreenDisabled { get; set; }
         /// <summary>Indicates if siri setup pane is disabled</summary>
         public bool? SiriDisabled { get; set; }
-        /// <summary>Supervised mode, True to enable, false otherwise. See https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.</summary>
+        /// <summary>Supervised mode, True to enable, false otherwise. See Enroll devices in Microsoft Intune for additional information.</summary>
         public bool? SupervisedModeEnabled { get; set; }
         /// <summary>Support department information</summary>
         public string SupportDepartment { get; set; }
