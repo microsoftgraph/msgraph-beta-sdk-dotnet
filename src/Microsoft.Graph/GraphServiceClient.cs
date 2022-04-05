@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk
     using System.Collections.Generic;
     using System.Linq;
     using Microsoft.Graph;
+    using Microsoft.Graph.Beta;
     using Microsoft.Graph.Core.Requests;
     using Microsoft.Kiota.Abstractions.Authentication;
     using Microsoft.Kiota.Authentication.Azure;
