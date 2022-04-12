@@ -41,20 +41,20 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"displayName", (o,n) => { (o as CloudPcGalleryImage).DisplayName = n.GetStringValue(); } },
-                {"endDate", (o,n) => { (o as CloudPcGalleryImage).EndDate = n.GetDateValue(); } },
-                {"expirationDate", (o,n) => { (o as CloudPcGalleryImage).ExpirationDate = n.GetDateValue(); } },
-                {"offer", (o,n) => { (o as CloudPcGalleryImage).Offer = n.GetStringValue(); } },
-                {"offerDisplayName", (o,n) => { (o as CloudPcGalleryImage).OfferDisplayName = n.GetStringValue(); } },
-                {"publisher", (o,n) => { (o as CloudPcGalleryImage).Publisher = n.GetStringValue(); } },
-                {"recommendedSku", (o,n) => { (o as CloudPcGalleryImage).RecommendedSku = n.GetStringValue(); } },
-                {"sizeInGB", (o,n) => { (o as CloudPcGalleryImage).SizeInGB = n.GetIntValue(); } },
-                {"sku", (o,n) => { (o as CloudPcGalleryImage).Sku = n.GetStringValue(); } },
-                {"skuDisplayName", (o,n) => { (o as CloudPcGalleryImage).SkuDisplayName = n.GetStringValue(); } },
-                {"startDate", (o,n) => { (o as CloudPcGalleryImage).StartDate = n.GetDateValue(); } },
-                {"status", (o,n) => { (o as CloudPcGalleryImage).Status = n.GetEnumValue<CloudPcGalleryImageStatus>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"endDate", n => { EndDate = n.GetDateValue(); } },
+                {"expirationDate", n => { ExpirationDate = n.GetDateValue(); } },
+                {"offer", n => { Offer = n.GetStringValue(); } },
+                {"offerDisplayName", n => { OfferDisplayName = n.GetStringValue(); } },
+                {"publisher", n => { Publisher = n.GetStringValue(); } },
+                {"recommendedSku", n => { RecommendedSku = n.GetStringValue(); } },
+                {"sizeInGB", n => { SizeInGB = n.GetIntValue(); } },
+                {"sku", n => { Sku = n.GetStringValue(); } },
+                {"skuDisplayName", n => { SkuDisplayName = n.GetStringValue(); } },
+                {"startDate", n => { StartDate = n.GetDateValue(); } },
+                {"status", n => { Status = n.GetEnumValue<CloudPcGalleryImageStatus>(); } },
             };
         }
         /// <summary>

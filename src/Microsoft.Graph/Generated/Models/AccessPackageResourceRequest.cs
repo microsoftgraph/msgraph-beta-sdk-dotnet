@@ -36,18 +36,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessPackageResource", (o,n) => { (o as AccessPackageResourceRequest).AccessPackageResource = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageResource>(Microsoft.Graph.Beta.Models.AccessPackageResource.CreateFromDiscriminatorValue); } },
-                {"catalogId", (o,n) => { (o as AccessPackageResourceRequest).CatalogId = n.GetStringValue(); } },
-                {"executeImmediately", (o,n) => { (o as AccessPackageResourceRequest).ExecuteImmediately = n.GetBoolValue(); } },
-                {"expirationDateTime", (o,n) => { (o as AccessPackageResourceRequest).ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"isValidationOnly", (o,n) => { (o as AccessPackageResourceRequest).IsValidationOnly = n.GetBoolValue(); } },
-                {"justification", (o,n) => { (o as AccessPackageResourceRequest).Justification = n.GetStringValue(); } },
-                {"requestor", (o,n) => { (o as AccessPackageResourceRequest).Requestor = n.GetObjectValue<AccessPackageSubject>(AccessPackageSubject.CreateFromDiscriminatorValue); } },
-                {"requestState", (o,n) => { (o as AccessPackageResourceRequest).RequestState = n.GetStringValue(); } },
-                {"requestStatus", (o,n) => { (o as AccessPackageResourceRequest).RequestStatus = n.GetStringValue(); } },
-                {"requestType", (o,n) => { (o as AccessPackageResourceRequest).RequestType = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"accessPackageResource", n => { AccessPackageResource = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageResource>(Microsoft.Graph.Beta.Models.AccessPackageResource.CreateFromDiscriminatorValue); } },
+                {"catalogId", n => { CatalogId = n.GetStringValue(); } },
+                {"executeImmediately", n => { ExecuteImmediately = n.GetBoolValue(); } },
+                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"isValidationOnly", n => { IsValidationOnly = n.GetBoolValue(); } },
+                {"justification", n => { Justification = n.GetStringValue(); } },
+                {"requestor", n => { Requestor = n.GetObjectValue<AccessPackageSubject>(AccessPackageSubject.CreateFromDiscriminatorValue); } },
+                {"requestState", n => { RequestState = n.GetStringValue(); } },
+                {"requestStatus", n => { RequestStatus = n.GetStringValue(); } },
+                {"requestType", n => { RequestType = n.GetStringValue(); } },
             };
         }
         /// <summary>

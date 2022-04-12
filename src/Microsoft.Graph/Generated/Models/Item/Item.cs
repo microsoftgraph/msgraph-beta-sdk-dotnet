@@ -50,25 +50,25 @@ namespace Microsoft.Graph.Beta.Models.Item {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"baseUnitOfMeasureId", (o,n) => { (o as Item).BaseUnitOfMeasureId = n.GetStringValue(); } },
-                {"blocked", (o,n) => { (o as Item).Blocked = n.GetBoolValue(); } },
-                {"displayName", (o,n) => { (o as Item).DisplayName = n.GetStringValue(); } },
-                {"gtin", (o,n) => { (o as Item).Gtin = n.GetStringValue(); } },
-                {"inventory", (o,n) => { (o as Item).Inventory = n.GetDecimalValue(); } },
-                {"itemCategory", (o,n) => { (o as Item).ItemCategory = n.GetObjectValue<Microsoft.Graph.Beta.Models.ItemCategory>(Microsoft.Graph.Beta.Models.ItemCategory.CreateFromDiscriminatorValue); } },
-                {"itemCategoryCode", (o,n) => { (o as Item).ItemCategoryCode = n.GetStringValue(); } },
-                {"itemCategoryId", (o,n) => { (o as Item).ItemCategoryId = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as Item).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"number", (o,n) => { (o as Item).Number = n.GetStringValue(); } },
-                {"picture", (o,n) => { (o as Item).Picture = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Picture>(Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue).ToList(); } },
-                {"priceIncludesTax", (o,n) => { (o as Item).PriceIncludesTax = n.GetBoolValue(); } },
-                {"taxGroupCode", (o,n) => { (o as Item).TaxGroupCode = n.GetStringValue(); } },
-                {"taxGroupId", (o,n) => { (o as Item).TaxGroupId = n.GetStringValue(); } },
-                {"type", (o,n) => { (o as Item).Type = n.GetStringValue(); } },
-                {"unitCost", (o,n) => { (o as Item).UnitCost = n.GetDecimalValue(); } },
-                {"unitPrice", (o,n) => { (o as Item).UnitPrice = n.GetDecimalValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"baseUnitOfMeasureId", n => { BaseUnitOfMeasureId = n.GetStringValue(); } },
+                {"blocked", n => { Blocked = n.GetBoolValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"gtin", n => { Gtin = n.GetStringValue(); } },
+                {"inventory", n => { Inventory = n.GetDecimalValue(); } },
+                {"itemCategory", n => { ItemCategory = n.GetObjectValue<Microsoft.Graph.Beta.Models.ItemCategory>(Microsoft.Graph.Beta.Models.ItemCategory.CreateFromDiscriminatorValue); } },
+                {"itemCategoryCode", n => { ItemCategoryCode = n.GetStringValue(); } },
+                {"itemCategoryId", n => { ItemCategoryId = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"number", n => { Number = n.GetStringValue(); } },
+                {"picture", n => { Picture = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Picture>(Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue).ToList(); } },
+                {"priceIncludesTax", n => { PriceIncludesTax = n.GetBoolValue(); } },
+                {"taxGroupCode", n => { TaxGroupCode = n.GetStringValue(); } },
+                {"taxGroupId", n => { TaxGroupId = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
+                {"unitCost", n => { UnitCost = n.GetDecimalValue(); } },
+                {"unitPrice", n => { UnitPrice = n.GetDecimalValue(); } },
             };
         }
         /// <summary>

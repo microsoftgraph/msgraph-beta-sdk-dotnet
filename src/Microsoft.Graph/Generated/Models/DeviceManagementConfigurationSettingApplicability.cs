@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"description", (o,n) => { (o as DeviceManagementConfigurationSettingApplicability).Description = n.GetStringValue(); } },
-                {"deviceMode", (o,n) => { (o as DeviceManagementConfigurationSettingApplicability).DeviceMode = n.GetEnumValue<DeviceManagementConfigurationDeviceMode>(); } },
-                {"platform", (o,n) => { (o as DeviceManagementConfigurationSettingApplicability).Platform = n.GetEnumValue<DeviceManagementConfigurationPlatforms>(); } },
-                {"technologies", (o,n) => { (o as DeviceManagementConfigurationSettingApplicability).Technologies = n.GetEnumValue<DeviceManagementConfigurationTechnologies>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"deviceMode", n => { DeviceMode = n.GetEnumValue<DeviceManagementConfigurationDeviceMode>(); } },
+                {"platform", n => { Platform = n.GetEnumValue<DeviceManagementConfigurationPlatforms>(); } },
+                {"technologies", n => { Technologies = n.GetEnumValue<DeviceManagementConfigurationTechnologies>(); } },
             };
         }
         /// <summary>

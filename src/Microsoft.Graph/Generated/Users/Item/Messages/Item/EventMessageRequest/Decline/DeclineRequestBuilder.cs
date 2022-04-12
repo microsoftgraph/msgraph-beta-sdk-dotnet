@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Messages.Item.EventMessageRequest.Decl
         public DeclineRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/messages/{message_id}/microsoft.graph.eventMessageRequest/microsoft.graph.decline";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/messages/{message%2Did}/microsoft.graph.eventMessageRequest/microsoft.graph.decline";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Messages.Item.EventMessageRequest.Decl
         public DeclineRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/messages/{message_id}/microsoft.graph.eventMessageRequest/microsoft.graph.decline";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/messages/{message%2Did}/microsoft.graph.eventMessageRequest/microsoft.graph.decline";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

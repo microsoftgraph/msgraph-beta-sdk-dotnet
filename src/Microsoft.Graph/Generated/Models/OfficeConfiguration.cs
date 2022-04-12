@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"clientConfigurations", (o,n) => { (o as OfficeConfiguration).ClientConfigurations = n.GetCollectionOfObjectValues<OfficeClientConfiguration>(OfficeClientConfiguration.CreateFromDiscriminatorValue).ToList(); } },
-                {"tenantCheckinStatuses", (o,n) => { (o as OfficeConfiguration).TenantCheckinStatuses = n.GetCollectionOfObjectValues<OfficeClientCheckinStatus>(OfficeClientCheckinStatus.CreateFromDiscriminatorValue).ToList(); } },
-                {"tenantUserCheckinSummary", (o,n) => { (o as OfficeConfiguration).TenantUserCheckinSummary = n.GetObjectValue<OfficeUserCheckinSummary>(OfficeUserCheckinSummary.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"clientConfigurations", n => { ClientConfigurations = n.GetCollectionOfObjectValues<OfficeClientConfiguration>(OfficeClientConfiguration.CreateFromDiscriminatorValue).ToList(); } },
+                {"tenantCheckinStatuses", n => { TenantCheckinStatuses = n.GetCollectionOfObjectValues<OfficeClientCheckinStatus>(OfficeClientCheckinStatus.CreateFromDiscriminatorValue).ToList(); } },
+                {"tenantUserCheckinSummary", n => { TenantUserCheckinSummary = n.GetObjectValue<OfficeUserCheckinSummary>(OfficeUserCheckinSummary.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

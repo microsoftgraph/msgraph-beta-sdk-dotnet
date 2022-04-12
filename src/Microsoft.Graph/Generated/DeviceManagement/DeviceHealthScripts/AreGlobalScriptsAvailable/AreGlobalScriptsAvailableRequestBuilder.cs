@@ -88,9 +88,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.AreGlobalScr
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
-            public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-                return new Dictionary<string, Action<T, IParseNode>> {
-                    {"globalDeviceHealthScriptState", (o,n) => { (o as AreGlobalScriptsAvailableResponse).GlobalDeviceHealthScriptState = n.GetEnumValue<GlobalDeviceHealthScriptState>(); } },
+            public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+                return new Dictionary<string, Action<IParseNode>> {
+                    {"globalDeviceHealthScriptState", n => { GlobalDeviceHealthScriptState = n.GetEnumValue<GlobalDeviceHealthScriptState>(); } },
                 };
             }
             /// <summary>

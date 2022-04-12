@@ -40,20 +40,20 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdDateTime", (o,n) => { (o as UserPFXCertificate).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"encryptedPfxBlob", (o,n) => { (o as UserPFXCertificate).EncryptedPfxBlob = n.GetByteArrayValue(); } },
-                {"encryptedPfxPassword", (o,n) => { (o as UserPFXCertificate).EncryptedPfxPassword = n.GetStringValue(); } },
-                {"expirationDateTime", (o,n) => { (o as UserPFXCertificate).ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"intendedPurpose", (o,n) => { (o as UserPFXCertificate).IntendedPurpose = n.GetEnumValue<UserPfxIntendedPurpose>(); } },
-                {"keyName", (o,n) => { (o as UserPFXCertificate).KeyName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as UserPFXCertificate).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"paddingScheme", (o,n) => { (o as UserPFXCertificate).PaddingScheme = n.GetEnumValue<UserPfxPaddingScheme>(); } },
-                {"providerName", (o,n) => { (o as UserPFXCertificate).ProviderName = n.GetStringValue(); } },
-                {"startDateTime", (o,n) => { (o as UserPFXCertificate).StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"thumbprint", (o,n) => { (o as UserPFXCertificate).Thumbprint = n.GetStringValue(); } },
-                {"userPrincipalName", (o,n) => { (o as UserPFXCertificate).UserPrincipalName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"encryptedPfxBlob", n => { EncryptedPfxBlob = n.GetByteArrayValue(); } },
+                {"encryptedPfxPassword", n => { EncryptedPfxPassword = n.GetStringValue(); } },
+                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"intendedPurpose", n => { IntendedPurpose = n.GetEnumValue<UserPfxIntendedPurpose>(); } },
+                {"keyName", n => { KeyName = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"paddingScheme", n => { PaddingScheme = n.GetEnumValue<UserPfxPaddingScheme>(); } },
+                {"providerName", n => { ProviderName = n.GetStringValue(); } },
+                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                {"thumbprint", n => { Thumbprint = n.GetStringValue(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

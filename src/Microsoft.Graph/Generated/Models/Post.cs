@@ -46,23 +46,23 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"attachments", (o,n) => { (o as Post).Attachments = n.GetCollectionOfObjectValues<Attachment>(Attachment.CreateFromDiscriminatorValue).ToList(); } },
-                {"body", (o,n) => { (o as Post).Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
-                {"conversationId", (o,n) => { (o as Post).ConversationId = n.GetStringValue(); } },
-                {"conversationThreadId", (o,n) => { (o as Post).ConversationThreadId = n.GetStringValue(); } },
-                {"extensions", (o,n) => { (o as Post).Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue).ToList(); } },
-                {"from", (o,n) => { (o as Post).From = n.GetObjectValue<Recipient>(Recipient.CreateFromDiscriminatorValue); } },
-                {"hasAttachments", (o,n) => { (o as Post).HasAttachments = n.GetBoolValue(); } },
-                {"importance", (o,n) => { (o as Post).Importance = n.GetEnumValue<Importance>(); } },
-                {"inReplyTo", (o,n) => { (o as Post).InReplyTo = n.GetObjectValue<Post>(Post.CreateFromDiscriminatorValue); } },
-                {"mentions", (o,n) => { (o as Post).Mentions = n.GetCollectionOfObjectValues<Mention>(Mention.CreateFromDiscriminatorValue).ToList(); } },
-                {"multiValueExtendedProperties", (o,n) => { (o as Post).MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue).ToList(); } },
-                {"newParticipants", (o,n) => { (o as Post).NewParticipants = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue).ToList(); } },
-                {"receivedDateTime", (o,n) => { (o as Post).ReceivedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"sender", (o,n) => { (o as Post).Sender = n.GetObjectValue<Recipient>(Recipient.CreateFromDiscriminatorValue); } },
-                {"singleValueExtendedProperties", (o,n) => { (o as Post).SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"attachments", n => { Attachments = n.GetCollectionOfObjectValues<Attachment>(Attachment.CreateFromDiscriminatorValue).ToList(); } },
+                {"body", n => { Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                {"conversationId", n => { ConversationId = n.GetStringValue(); } },
+                {"conversationThreadId", n => { ConversationThreadId = n.GetStringValue(); } },
+                {"extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue).ToList(); } },
+                {"from", n => { From = n.GetObjectValue<Recipient>(Recipient.CreateFromDiscriminatorValue); } },
+                {"hasAttachments", n => { HasAttachments = n.GetBoolValue(); } },
+                {"importance", n => { Importance = n.GetEnumValue<Importance>(); } },
+                {"inReplyTo", n => { InReplyTo = n.GetObjectValue<Post>(Post.CreateFromDiscriminatorValue); } },
+                {"mentions", n => { Mentions = n.GetCollectionOfObjectValues<Mention>(Mention.CreateFromDiscriminatorValue).ToList(); } },
+                {"multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue).ToList(); } },
+                {"newParticipants", n => { NewParticipants = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue).ToList(); } },
+                {"receivedDateTime", n => { ReceivedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"sender", n => { Sender = n.GetObjectValue<Recipient>(Recipient.CreateFromDiscriminatorValue); } },
+                {"singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

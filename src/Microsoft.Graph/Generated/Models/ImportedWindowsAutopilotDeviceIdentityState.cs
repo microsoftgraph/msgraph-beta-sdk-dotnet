@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"deviceErrorCode", (o,n) => { (o as ImportedWindowsAutopilotDeviceIdentityState).DeviceErrorCode = n.GetIntValue(); } },
-                {"deviceErrorName", (o,n) => { (o as ImportedWindowsAutopilotDeviceIdentityState).DeviceErrorName = n.GetStringValue(); } },
-                {"deviceImportStatus", (o,n) => { (o as ImportedWindowsAutopilotDeviceIdentityState).DeviceImportStatus = n.GetEnumValue<ImportedWindowsAutopilotDeviceIdentityImportStatus>(); } },
-                {"deviceRegistrationId", (o,n) => { (o as ImportedWindowsAutopilotDeviceIdentityState).DeviceRegistrationId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"deviceErrorCode", n => { DeviceErrorCode = n.GetIntValue(); } },
+                {"deviceErrorName", n => { DeviceErrorName = n.GetStringValue(); } },
+                {"deviceImportStatus", n => { DeviceImportStatus = n.GetEnumValue<ImportedWindowsAutopilotDeviceIdentityImportStatus>(); } },
+                {"deviceRegistrationId", n => { DeviceRegistrationId = n.GetStringValue(); } },
             };
         }
         /// <summary>

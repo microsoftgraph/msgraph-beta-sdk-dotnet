@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"autoPilotProfileAssigned", (o,n) => { (o as UserExperienceAnalyticsNotAutopilotReadyDevice).AutoPilotProfileAssigned = n.GetBoolValue(); } },
-                {"autoPilotRegistered", (o,n) => { (o as UserExperienceAnalyticsNotAutopilotReadyDevice).AutoPilotRegistered = n.GetBoolValue(); } },
-                {"azureAdJoinType", (o,n) => { (o as UserExperienceAnalyticsNotAutopilotReadyDevice).AzureAdJoinType = n.GetStringValue(); } },
-                {"azureAdRegistered", (o,n) => { (o as UserExperienceAnalyticsNotAutopilotReadyDevice).AzureAdRegistered = n.GetBoolValue(); } },
-                {"deviceName", (o,n) => { (o as UserExperienceAnalyticsNotAutopilotReadyDevice).DeviceName = n.GetStringValue(); } },
-                {"managedBy", (o,n) => { (o as UserExperienceAnalyticsNotAutopilotReadyDevice).ManagedBy = n.GetStringValue(); } },
-                {"manufacturer", (o,n) => { (o as UserExperienceAnalyticsNotAutopilotReadyDevice).Manufacturer = n.GetStringValue(); } },
-                {"model", (o,n) => { (o as UserExperienceAnalyticsNotAutopilotReadyDevice).Model = n.GetStringValue(); } },
-                {"serialNumber", (o,n) => { (o as UserExperienceAnalyticsNotAutopilotReadyDevice).SerialNumber = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"autoPilotProfileAssigned", n => { AutoPilotProfileAssigned = n.GetBoolValue(); } },
+                {"autoPilotRegistered", n => { AutoPilotRegistered = n.GetBoolValue(); } },
+                {"azureAdJoinType", n => { AzureAdJoinType = n.GetStringValue(); } },
+                {"azureAdRegistered", n => { AzureAdRegistered = n.GetBoolValue(); } },
+                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
+                {"managedBy", n => { ManagedBy = n.GetStringValue(); } },
+                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                {"model", n => { Model = n.GetStringValue(); } },
+                {"serialNumber", n => { SerialNumber = n.GetStringValue(); } },
             };
         }
         /// <summary>

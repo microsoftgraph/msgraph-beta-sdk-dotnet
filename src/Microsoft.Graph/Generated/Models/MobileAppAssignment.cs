@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"intent", (o,n) => { (o as MobileAppAssignment).Intent = n.GetEnumValue<InstallIntent>(); } },
-                {"settings", (o,n) => { (o as MobileAppAssignment).Settings = n.GetObjectValue<MobileAppAssignmentSettings>(MobileAppAssignmentSettings.CreateFromDiscriminatorValue); } },
-                {"source", (o,n) => { (o as MobileAppAssignment).Source = n.GetEnumValue<DeviceAndAppManagementAssignmentSource>(); } },
-                {"sourceId", (o,n) => { (o as MobileAppAssignment).SourceId = n.GetStringValue(); } },
-                {"target", (o,n) => { (o as MobileAppAssignment).Target = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"intent", n => { Intent = n.GetEnumValue<InstallIntent>(); } },
+                {"settings", n => { Settings = n.GetObjectValue<MobileAppAssignmentSettings>(MobileAppAssignmentSettings.CreateFromDiscriminatorValue); } },
+                {"source", n => { Source = n.GetEnumValue<DeviceAndAppManagementAssignmentSource>(); } },
+                {"sourceId", n => { SourceId = n.GetStringValue(); } },
+                {"target", n => { Target = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

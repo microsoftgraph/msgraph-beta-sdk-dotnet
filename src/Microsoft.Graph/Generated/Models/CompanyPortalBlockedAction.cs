@@ -31,11 +31,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"action", (o,n) => { (o as CompanyPortalBlockedAction).Action = n.GetEnumValue<CompanyPortalAction>(); } },
-                {"ownerType", (o,n) => { (o as CompanyPortalBlockedAction).OwnerType = n.GetEnumValue<OwnerType>(); } },
-                {"platform", (o,n) => { (o as CompanyPortalBlockedAction).Platform = n.GetEnumValue<DevicePlatformType>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"action", n => { Action = n.GetEnumValue<CompanyPortalAction>(); } },
+                {"ownerType", n => { OwnerType = n.GetEnumValue<OwnerType>(); } },
+                {"platform", n => { Platform = n.GetEnumValue<DevicePlatformType>(); } },
             };
         }
         /// <summary>

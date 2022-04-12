@@ -38,19 +38,19 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicy).Assignments = n.GetCollectionOfObjectValues<WindowsDefenderApplicationControlSupplementalPolicyAssignment>(WindowsDefenderApplicationControlSupplementalPolicyAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"content", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicy).Content = n.GetByteArrayValue(); } },
-                {"contentFileName", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicy).ContentFileName = n.GetStringValue(); } },
-                {"creationDateTime", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicy).CreationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deploySummary", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicy).DeploySummary = n.GetObjectValue<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>(WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
-                {"description", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicy).Description = n.GetStringValue(); } },
-                {"deviceStatuses", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicy).DeviceStatuses = n.GetCollectionOfObjectValues<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>(WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus.CreateFromDiscriminatorValue).ToList(); } },
-                {"displayName", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicy).DisplayName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicy).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"roleScopeTagIds", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicy).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"version", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicy).Version = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<WindowsDefenderApplicationControlSupplementalPolicyAssignment>(WindowsDefenderApplicationControlSupplementalPolicyAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"content", n => { Content = n.GetByteArrayValue(); } },
+                {"contentFileName", n => { ContentFileName = n.GetStringValue(); } },
+                {"creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"deploySummary", n => { DeploySummary = n.GetObjectValue<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>(WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"deviceStatuses", n => { DeviceStatuses = n.GetCollectionOfObjectValues<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>(WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus.CreateFromDiscriminatorValue).ToList(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

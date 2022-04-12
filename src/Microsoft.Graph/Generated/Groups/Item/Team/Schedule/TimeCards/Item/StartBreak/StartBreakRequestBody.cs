@@ -30,10 +30,10 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.StartBre
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"atApprovedLocation", (o,n) => { (o as StartBreakRequestBody).AtApprovedLocation = n.GetBoolValue(); } },
-                {"notes", (o,n) => { (o as StartBreakRequestBody).Notes = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"atApprovedLocation", n => { AtApprovedLocation = n.GetBoolValue(); } },
+                {"notes", n => { Notes = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

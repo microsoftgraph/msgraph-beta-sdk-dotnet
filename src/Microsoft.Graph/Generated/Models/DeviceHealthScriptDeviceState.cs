@@ -40,20 +40,20 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignmentFilterIds", (o,n) => { (o as DeviceHealthScriptDeviceState).AssignmentFilterIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"detectionState", (o,n) => { (o as DeviceHealthScriptDeviceState).DetectionState = n.GetEnumValue<RunState>(); } },
-                {"expectedStateUpdateDateTime", (o,n) => { (o as DeviceHealthScriptDeviceState).ExpectedStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastStateUpdateDateTime", (o,n) => { (o as DeviceHealthScriptDeviceState).LastStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastSyncDateTime", (o,n) => { (o as DeviceHealthScriptDeviceState).LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managedDevice", (o,n) => { (o as DeviceHealthScriptDeviceState).ManagedDevice = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedDevice>(Microsoft.Graph.Beta.Models.ManagedDevice.CreateFromDiscriminatorValue); } },
-                {"postRemediationDetectionScriptError", (o,n) => { (o as DeviceHealthScriptDeviceState).PostRemediationDetectionScriptError = n.GetStringValue(); } },
-                {"postRemediationDetectionScriptOutput", (o,n) => { (o as DeviceHealthScriptDeviceState).PostRemediationDetectionScriptOutput = n.GetStringValue(); } },
-                {"preRemediationDetectionScriptError", (o,n) => { (o as DeviceHealthScriptDeviceState).PreRemediationDetectionScriptError = n.GetStringValue(); } },
-                {"preRemediationDetectionScriptOutput", (o,n) => { (o as DeviceHealthScriptDeviceState).PreRemediationDetectionScriptOutput = n.GetStringValue(); } },
-                {"remediationScriptError", (o,n) => { (o as DeviceHealthScriptDeviceState).RemediationScriptError = n.GetStringValue(); } },
-                {"remediationState", (o,n) => { (o as DeviceHealthScriptDeviceState).RemediationState = n.GetEnumValue<RemediationState>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"assignmentFilterIds", n => { AssignmentFilterIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"detectionState", n => { DetectionState = n.GetEnumValue<RunState>(); } },
+                {"expectedStateUpdateDateTime", n => { ExpectedStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastStateUpdateDateTime", n => { LastStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                {"managedDevice", n => { ManagedDevice = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedDevice>(Microsoft.Graph.Beta.Models.ManagedDevice.CreateFromDiscriminatorValue); } },
+                {"postRemediationDetectionScriptError", n => { PostRemediationDetectionScriptError = n.GetStringValue(); } },
+                {"postRemediationDetectionScriptOutput", n => { PostRemediationDetectionScriptOutput = n.GetStringValue(); } },
+                {"preRemediationDetectionScriptError", n => { PreRemediationDetectionScriptError = n.GetStringValue(); } },
+                {"preRemediationDetectionScriptOutput", n => { PreRemediationDetectionScriptOutput = n.GetStringValue(); } },
+                {"remediationScriptError", n => { RemediationScriptError = n.GetStringValue(); } },
+                {"remediationState", n => { RemediationState = n.GetEnumValue<RemediationState>(); } },
             };
         }
         /// <summary>

@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"cloudPcId", (o,n) => { (o as CloudPcLaunchInfo).CloudPcId = n.GetStringValue(); } },
-                {"cloudPcLaunchUrl", (o,n) => { (o as CloudPcLaunchInfo).CloudPcLaunchUrl = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"cloudPcId", n => { CloudPcId = n.GetStringValue(); } },
+                {"cloudPcLaunchUrl", n => { CloudPcLaunchUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.RemoveEmail {
         public RemoveEmailRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/teams/{team_id}/primaryChannel/microsoft.graph.removeEmail";
+            UrlTemplate = "{+baseurl}/teams/{team%2Did}/primaryChannel/microsoft.graph.removeEmail";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.RemoveEmail {
         public RemoveEmailRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/teams/{team_id}/primaryChannel/microsoft.graph.removeEmail";
+            UrlTemplate = "{+baseurl}/teams/{team%2Did}/primaryChannel/microsoft.graph.removeEmail";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

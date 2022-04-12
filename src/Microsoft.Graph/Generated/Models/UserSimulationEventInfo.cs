@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"browser", (o,n) => { (o as UserSimulationEventInfo).Browser = n.GetStringValue(); } },
-                {"eventDateTime", (o,n) => { (o as UserSimulationEventInfo).EventDateTime = n.GetDateTimeOffsetValue(); } },
-                {"eventName", (o,n) => { (o as UserSimulationEventInfo).EventName = n.GetStringValue(); } },
-                {"ipAddress", (o,n) => { (o as UserSimulationEventInfo).IpAddress = n.GetStringValue(); } },
-                {"osPlatformDeviceDetails", (o,n) => { (o as UserSimulationEventInfo).OsPlatformDeviceDetails = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"browser", n => { Browser = n.GetStringValue(); } },
+                {"eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
+                {"eventName", n => { EventName = n.GetStringValue(); } },
+                {"ipAddress", n => { IpAddress = n.GetStringValue(); } },
+                {"osPlatformDeviceDetails", n => { OsPlatformDeviceDetails = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Print.Reports.DailyPrintUsageSummariesByUser.Item
         public PrintUsageByUserItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/print/reports/dailyPrintUsageSummariesByUser/{printUsageByUser_id}{?select,expand}";
+            UrlTemplate = "{+baseurl}/print/reports/dailyPrintUsageSummariesByUser/{printUsageByUser%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Print.Reports.DailyPrintUsageSummariesByUser.Item
         public PrintUsageByUserItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/print/reports/dailyPrintUsageSummariesByUser/{printUsageByUser_id}{?select,expand}";
+            UrlTemplate = "{+baseurl}/print/reports/dailyPrintUsageSummariesByUser/{printUsageByUser%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -149,8 +149,10 @@ namespace Microsoft.Graph.Beta.Print.Reports.DailyPrintUsageSummariesByUser.Item
         /// <summary>Get dailyPrintUsageSummariesByUser from print</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
     }

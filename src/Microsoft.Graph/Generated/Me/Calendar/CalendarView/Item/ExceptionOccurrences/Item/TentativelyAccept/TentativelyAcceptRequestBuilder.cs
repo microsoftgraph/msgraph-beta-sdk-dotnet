@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Me.Calendar.CalendarView.Item.ExceptionOccurrence
         public TentativelyAcceptRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/calendar/calendarView/{event_id}/exceptionOccurrences/{event_id1}/microsoft.graph.tentativelyAccept";
+            UrlTemplate = "{+baseurl}/me/calendar/calendarView/{event%2Did}/exceptionOccurrences/{event%2Did1}/microsoft.graph.tentativelyAccept";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Me.Calendar.CalendarView.Item.ExceptionOccurrence
         public TentativelyAcceptRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/calendar/calendarView/{event_id}/exceptionOccurrences/{event_id1}/microsoft.graph.tentativelyAccept";
+            UrlTemplate = "{+baseurl}/me/calendar/calendarView/{event%2Did}/exceptionOccurrences/{event%2Did1}/microsoft.graph.tentativelyAccept";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

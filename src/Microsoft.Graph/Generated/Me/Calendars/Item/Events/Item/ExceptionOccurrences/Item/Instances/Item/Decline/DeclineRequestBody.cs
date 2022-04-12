@@ -32,11 +32,11 @@ namespace Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrence
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"comment", (o,n) => { (o as DeclineRequestBody).Comment = n.GetStringValue(); } },
-                {"proposedNewTime", (o,n) => { (o as DeclineRequestBody).ProposedNewTime = n.GetObjectValue<TimeSlot>(TimeSlot.CreateFromDiscriminatorValue); } },
-                {"sendResponse", (o,n) => { (o as DeclineRequestBody).SendResponse = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"comment", n => { Comment = n.GetStringValue(); } },
+                {"proposedNewTime", n => { ProposedNewTime = n.GetObjectValue<TimeSlot>(TimeSlot.CreateFromDiscriminatorValue); } },
+                {"sendResponse", n => { SendResponse = n.GetBoolValue(); } },
             };
         }
         /// <summary>

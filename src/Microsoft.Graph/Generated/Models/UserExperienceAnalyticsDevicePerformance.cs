@@ -56,28 +56,28 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"averageBlueScreens", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).AverageBlueScreens = n.GetDoubleValue(); } },
-                {"averageRestarts", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).AverageRestarts = n.GetDoubleValue(); } },
-                {"blueScreenCount", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).BlueScreenCount = n.GetIntValue(); } },
-                {"bootScore", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).BootScore = n.GetIntValue(); } },
-                {"coreBootTimeInMs", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).CoreBootTimeInMs = n.GetIntValue(); } },
-                {"coreLoginTimeInMs", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).CoreLoginTimeInMs = n.GetIntValue(); } },
-                {"deviceCount", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).DeviceCount = n.GetLongValue(); } },
-                {"deviceName", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).DeviceName = n.GetStringValue(); } },
-                {"diskType", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).DiskType = n.GetEnumValue<DiskType>(); } },
-                {"groupPolicyBootTimeInMs", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).GroupPolicyBootTimeInMs = n.GetIntValue(); } },
-                {"groupPolicyLoginTimeInMs", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).GroupPolicyLoginTimeInMs = n.GetIntValue(); } },
-                {"healthStatus", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
-                {"loginScore", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).LoginScore = n.GetIntValue(); } },
-                {"manufacturer", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).Manufacturer = n.GetStringValue(); } },
-                {"model", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).Model = n.GetStringValue(); } },
-                {"modelStartupPerformanceScore", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).ModelStartupPerformanceScore = n.GetDoubleValue(); } },
-                {"operatingSystemVersion", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).OperatingSystemVersion = n.GetStringValue(); } },
-                {"responsiveDesktopTimeInMs", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).ResponsiveDesktopTimeInMs = n.GetIntValue(); } },
-                {"restartCount", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).RestartCount = n.GetIntValue(); } },
-                {"startupPerformanceScore", (o,n) => { (o as UserExperienceAnalyticsDevicePerformance).StartupPerformanceScore = n.GetDoubleValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"averageBlueScreens", n => { AverageBlueScreens = n.GetDoubleValue(); } },
+                {"averageRestarts", n => { AverageRestarts = n.GetDoubleValue(); } },
+                {"blueScreenCount", n => { BlueScreenCount = n.GetIntValue(); } },
+                {"bootScore", n => { BootScore = n.GetIntValue(); } },
+                {"coreBootTimeInMs", n => { CoreBootTimeInMs = n.GetIntValue(); } },
+                {"coreLoginTimeInMs", n => { CoreLoginTimeInMs = n.GetIntValue(); } },
+                {"deviceCount", n => { DeviceCount = n.GetLongValue(); } },
+                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
+                {"diskType", n => { DiskType = n.GetEnumValue<DiskType>(); } },
+                {"groupPolicyBootTimeInMs", n => { GroupPolicyBootTimeInMs = n.GetIntValue(); } },
+                {"groupPolicyLoginTimeInMs", n => { GroupPolicyLoginTimeInMs = n.GetIntValue(); } },
+                {"healthStatus", n => { HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
+                {"loginScore", n => { LoginScore = n.GetIntValue(); } },
+                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                {"model", n => { Model = n.GetStringValue(); } },
+                {"modelStartupPerformanceScore", n => { ModelStartupPerformanceScore = n.GetDoubleValue(); } },
+                {"operatingSystemVersion", n => { OperatingSystemVersion = n.GetStringValue(); } },
+                {"responsiveDesktopTimeInMs", n => { ResponsiveDesktopTimeInMs = n.GetIntValue(); } },
+                {"restartCount", n => { RestartCount = n.GetIntValue(); } },
+                {"startupPerformanceScore", n => { StartupPerformanceScore = n.GetDoubleValue(); } },
             };
         }
         /// <summary>

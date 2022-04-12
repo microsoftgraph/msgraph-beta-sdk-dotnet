@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"issuerUri", (o,n) => { (o as SamlOrWsFedProvider).IssuerUri = n.GetStringValue(); } },
-                {"metadataExchangeUri", (o,n) => { (o as SamlOrWsFedProvider).MetadataExchangeUri = n.GetStringValue(); } },
-                {"passiveSignInUri", (o,n) => { (o as SamlOrWsFedProvider).PassiveSignInUri = n.GetStringValue(); } },
-                {"preferredAuthenticationProtocol", (o,n) => { (o as SamlOrWsFedProvider).PreferredAuthenticationProtocol = n.GetEnumValue<AuthenticationProtocol>(); } },
-                {"signingCertificate", (o,n) => { (o as SamlOrWsFedProvider).SigningCertificate = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"issuerUri", n => { IssuerUri = n.GetStringValue(); } },
+                {"metadataExchangeUri", n => { MetadataExchangeUri = n.GetStringValue(); } },
+                {"passiveSignInUri", n => { PassiveSignInUri = n.GetStringValue(); } },
+                {"preferredAuthenticationProtocol", n => { PreferredAuthenticationProtocol = n.GetEnumValue<AuthenticationProtocol>(); } },
+                {"signingCertificate", n => { SigningCertificate = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"originalQueryString", (o,n) => { (o as AlterationResponse).OriginalQueryString = n.GetStringValue(); } },
-                {"queryAlteration", (o,n) => { (o as AlterationResponse).QueryAlteration = n.GetObjectValue<SearchAlteration>(SearchAlteration.CreateFromDiscriminatorValue); } },
-                {"queryAlterationType", (o,n) => { (o as AlterationResponse).QueryAlterationType = n.GetEnumValue<SearchAlterationType>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"originalQueryString", n => { OriginalQueryString = n.GetStringValue(); } },
+                {"queryAlteration", n => { QueryAlteration = n.GetObjectValue<SearchAlteration>(SearchAlteration.CreateFromDiscriminatorValue); } },
+                {"queryAlterationType", n => { QueryAlterationType = n.GetEnumValue<SearchAlterationType>(); } },
             };
         }
         /// <summary>

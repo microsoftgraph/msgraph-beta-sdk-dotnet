@@ -50,25 +50,25 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"allowPartnerToCollectIOSApplicationMetadata", (o,n) => { (o as MobileThreatDefenseConnector).AllowPartnerToCollectIOSApplicationMetadata = n.GetBoolValue(); } },
-                {"allowPartnerToCollectIOSPersonalApplicationMetadata", (o,n) => { (o as MobileThreatDefenseConnector).AllowPartnerToCollectIOSPersonalApplicationMetadata = n.GetBoolValue(); } },
-                {"androidDeviceBlockedOnMissingPartnerData", (o,n) => { (o as MobileThreatDefenseConnector).AndroidDeviceBlockedOnMissingPartnerData = n.GetBoolValue(); } },
-                {"androidEnabled", (o,n) => { (o as MobileThreatDefenseConnector).AndroidEnabled = n.GetBoolValue(); } },
-                {"androidMobileApplicationManagementEnabled", (o,n) => { (o as MobileThreatDefenseConnector).AndroidMobileApplicationManagementEnabled = n.GetBoolValue(); } },
-                {"iosDeviceBlockedOnMissingPartnerData", (o,n) => { (o as MobileThreatDefenseConnector).IosDeviceBlockedOnMissingPartnerData = n.GetBoolValue(); } },
-                {"iosEnabled", (o,n) => { (o as MobileThreatDefenseConnector).IosEnabled = n.GetBoolValue(); } },
-                {"iosMobileApplicationManagementEnabled", (o,n) => { (o as MobileThreatDefenseConnector).IosMobileApplicationManagementEnabled = n.GetBoolValue(); } },
-                {"lastHeartbeatDateTime", (o,n) => { (o as MobileThreatDefenseConnector).LastHeartbeatDateTime = n.GetDateTimeOffsetValue(); } },
-                {"macDeviceBlockedOnMissingPartnerData", (o,n) => { (o as MobileThreatDefenseConnector).MacDeviceBlockedOnMissingPartnerData = n.GetBoolValue(); } },
-                {"macEnabled", (o,n) => { (o as MobileThreatDefenseConnector).MacEnabled = n.GetBoolValue(); } },
-                {"microsoftDefenderForEndpointAttachEnabled", (o,n) => { (o as MobileThreatDefenseConnector).MicrosoftDefenderForEndpointAttachEnabled = n.GetBoolValue(); } },
-                {"partnerState", (o,n) => { (o as MobileThreatDefenseConnector).PartnerState = n.GetEnumValue<MobileThreatPartnerTenantState>(); } },
-                {"partnerUnresponsivenessThresholdInDays", (o,n) => { (o as MobileThreatDefenseConnector).PartnerUnresponsivenessThresholdInDays = n.GetIntValue(); } },
-                {"partnerUnsupportedOsVersionBlocked", (o,n) => { (o as MobileThreatDefenseConnector).PartnerUnsupportedOsVersionBlocked = n.GetBoolValue(); } },
-                {"windowsDeviceBlockedOnMissingPartnerData", (o,n) => { (o as MobileThreatDefenseConnector).WindowsDeviceBlockedOnMissingPartnerData = n.GetBoolValue(); } },
-                {"windowsEnabled", (o,n) => { (o as MobileThreatDefenseConnector).WindowsEnabled = n.GetBoolValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"allowPartnerToCollectIOSApplicationMetadata", n => { AllowPartnerToCollectIOSApplicationMetadata = n.GetBoolValue(); } },
+                {"allowPartnerToCollectIOSPersonalApplicationMetadata", n => { AllowPartnerToCollectIOSPersonalApplicationMetadata = n.GetBoolValue(); } },
+                {"androidDeviceBlockedOnMissingPartnerData", n => { AndroidDeviceBlockedOnMissingPartnerData = n.GetBoolValue(); } },
+                {"androidEnabled", n => { AndroidEnabled = n.GetBoolValue(); } },
+                {"androidMobileApplicationManagementEnabled", n => { AndroidMobileApplicationManagementEnabled = n.GetBoolValue(); } },
+                {"iosDeviceBlockedOnMissingPartnerData", n => { IosDeviceBlockedOnMissingPartnerData = n.GetBoolValue(); } },
+                {"iosEnabled", n => { IosEnabled = n.GetBoolValue(); } },
+                {"iosMobileApplicationManagementEnabled", n => { IosMobileApplicationManagementEnabled = n.GetBoolValue(); } },
+                {"lastHeartbeatDateTime", n => { LastHeartbeatDateTime = n.GetDateTimeOffsetValue(); } },
+                {"macDeviceBlockedOnMissingPartnerData", n => { MacDeviceBlockedOnMissingPartnerData = n.GetBoolValue(); } },
+                {"macEnabled", n => { MacEnabled = n.GetBoolValue(); } },
+                {"microsoftDefenderForEndpointAttachEnabled", n => { MicrosoftDefenderForEndpointAttachEnabled = n.GetBoolValue(); } },
+                {"partnerState", n => { PartnerState = n.GetEnumValue<MobileThreatPartnerTenantState>(); } },
+                {"partnerUnresponsivenessThresholdInDays", n => { PartnerUnresponsivenessThresholdInDays = n.GetIntValue(); } },
+                {"partnerUnsupportedOsVersionBlocked", n => { PartnerUnsupportedOsVersionBlocked = n.GetBoolValue(); } },
+                {"windowsDeviceBlockedOnMissingPartnerData", n => { WindowsDeviceBlockedOnMissingPartnerData = n.GetBoolValue(); } },
+                {"windowsEnabled", n => { WindowsEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

@@ -34,12 +34,12 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Valid
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"applicationIdentifier", (o,n) => { (o as ValidateCredentialsRequestBody).ApplicationIdentifier = n.GetStringValue(); } },
-                {"credentials", (o,n) => { (o as ValidateCredentialsRequestBody).Credentials = n.GetCollectionOfObjectValues<SynchronizationSecretKeyStringValuePair>(SynchronizationSecretKeyStringValuePair.CreateFromDiscriminatorValue).ToList(); } },
-                {"templateId", (o,n) => { (o as ValidateCredentialsRequestBody).TemplateId = n.GetStringValue(); } },
-                {"useSavedCredentials", (o,n) => { (o as ValidateCredentialsRequestBody).UseSavedCredentials = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"applicationIdentifier", n => { ApplicationIdentifier = n.GetStringValue(); } },
+                {"credentials", n => { Credentials = n.GetCollectionOfObjectValues<SynchronizationSecretKeyStringValuePair>(SynchronizationSecretKeyStringValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"templateId", n => { TemplateId = n.GetStringValue(); } },
+                {"useSavedCredentials", n => { UseSavedCredentials = n.GetBoolValue(); } },
             };
         }
         /// <summary>

@@ -56,28 +56,28 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activity", (o,n) => { (o as ServicePrincipalRiskDetection).Activity = n.GetEnumValue<ActivityType>(); } },
-                {"activityDateTime", (o,n) => { (o as ServicePrincipalRiskDetection).ActivityDateTime = n.GetDateTimeOffsetValue(); } },
-                {"additionalInfo", (o,n) => { (o as ServicePrincipalRiskDetection).AdditionalInfo = n.GetStringValue(); } },
-                {"appId", (o,n) => { (o as ServicePrincipalRiskDetection).AppId = n.GetStringValue(); } },
-                {"correlationId", (o,n) => { (o as ServicePrincipalRiskDetection).CorrelationId = n.GetStringValue(); } },
-                {"detectedDateTime", (o,n) => { (o as ServicePrincipalRiskDetection).DetectedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"detectionTimingType", (o,n) => { (o as ServicePrincipalRiskDetection).DetectionTimingType = n.GetEnumValue<RiskDetectionTimingType>(); } },
-                {"ipAddress", (o,n) => { (o as ServicePrincipalRiskDetection).IpAddress = n.GetStringValue(); } },
-                {"keyIds", (o,n) => { (o as ServicePrincipalRiskDetection).KeyIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"lastUpdatedDateTime", (o,n) => { (o as ServicePrincipalRiskDetection).LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"location", (o,n) => { (o as ServicePrincipalRiskDetection).Location = n.GetObjectValue<SignInLocation>(SignInLocation.CreateFromDiscriminatorValue); } },
-                {"requestId", (o,n) => { (o as ServicePrincipalRiskDetection).RequestId = n.GetStringValue(); } },
-                {"riskDetail", (o,n) => { (o as ServicePrincipalRiskDetection).RiskDetail = n.GetEnumValue<RiskDetail>(); } },
-                {"riskEventType", (o,n) => { (o as ServicePrincipalRiskDetection).RiskEventType = n.GetStringValue(); } },
-                {"riskLevel", (o,n) => { (o as ServicePrincipalRiskDetection).RiskLevel = n.GetEnumValue<RiskLevel>(); } },
-                {"riskState", (o,n) => { (o as ServicePrincipalRiskDetection).RiskState = n.GetEnumValue<RiskState>(); } },
-                {"servicePrincipalDisplayName", (o,n) => { (o as ServicePrincipalRiskDetection).ServicePrincipalDisplayName = n.GetStringValue(); } },
-                {"servicePrincipalId", (o,n) => { (o as ServicePrincipalRiskDetection).ServicePrincipalId = n.GetStringValue(); } },
-                {"source", (o,n) => { (o as ServicePrincipalRiskDetection).Source = n.GetStringValue(); } },
-                {"tokenIssuerType", (o,n) => { (o as ServicePrincipalRiskDetection).TokenIssuerType = n.GetEnumValue<TokenIssuerType>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activity", n => { Activity = n.GetEnumValue<ActivityType>(); } },
+                {"activityDateTime", n => { ActivityDateTime = n.GetDateTimeOffsetValue(); } },
+                {"additionalInfo", n => { AdditionalInfo = n.GetStringValue(); } },
+                {"appId", n => { AppId = n.GetStringValue(); } },
+                {"correlationId", n => { CorrelationId = n.GetStringValue(); } },
+                {"detectedDateTime", n => { DetectedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"detectionTimingType", n => { DetectionTimingType = n.GetEnumValue<RiskDetectionTimingType>(); } },
+                {"ipAddress", n => { IpAddress = n.GetStringValue(); } },
+                {"keyIds", n => { KeyIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"location", n => { Location = n.GetObjectValue<SignInLocation>(SignInLocation.CreateFromDiscriminatorValue); } },
+                {"requestId", n => { RequestId = n.GetStringValue(); } },
+                {"riskDetail", n => { RiskDetail = n.GetEnumValue<RiskDetail>(); } },
+                {"riskEventType", n => { RiskEventType = n.GetStringValue(); } },
+                {"riskLevel", n => { RiskLevel = n.GetEnumValue<RiskLevel>(); } },
+                {"riskState", n => { RiskState = n.GetEnumValue<RiskState>(); } },
+                {"servicePrincipalDisplayName", n => { ServicePrincipalDisplayName = n.GetStringValue(); } },
+                {"servicePrincipalId", n => { ServicePrincipalId = n.GetStringValue(); } },
+                {"source", n => { Source = n.GetStringValue(); } },
+                {"tokenIssuerType", n => { TokenIssuerType = n.GetEnumValue<TokenIssuerType>(); } },
             };
         }
         /// <summary>

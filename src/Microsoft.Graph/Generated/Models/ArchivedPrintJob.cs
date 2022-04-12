@@ -52,22 +52,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"acquiredByPrinter", (o,n) => { (o as ArchivedPrintJob).AcquiredByPrinter = n.GetBoolValue(); } },
-                {"acquiredDateTime", (o,n) => { (o as ArchivedPrintJob).AcquiredDateTime = n.GetDateTimeOffsetValue(); } },
-                {"blackAndWhitePageCount", (o,n) => { (o as ArchivedPrintJob).BlackAndWhitePageCount = n.GetIntValue(); } },
-                {"colorPageCount", (o,n) => { (o as ArchivedPrintJob).ColorPageCount = n.GetIntValue(); } },
-                {"completionDateTime", (o,n) => { (o as ArchivedPrintJob).CompletionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"copiesPrinted", (o,n) => { (o as ArchivedPrintJob).CopiesPrinted = n.GetIntValue(); } },
-                {"createdBy", (o,n) => { (o as ArchivedPrintJob).CreatedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", (o,n) => { (o as ArchivedPrintJob).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"duplexPageCount", (o,n) => { (o as ArchivedPrintJob).DuplexPageCount = n.GetIntValue(); } },
-                {"id", (o,n) => { (o as ArchivedPrintJob).Id = n.GetStringValue(); } },
-                {"pageCount", (o,n) => { (o as ArchivedPrintJob).PageCount = n.GetIntValue(); } },
-                {"printerId", (o,n) => { (o as ArchivedPrintJob).PrinterId = n.GetStringValue(); } },
-                {"processingState", (o,n) => { (o as ArchivedPrintJob).ProcessingState = n.GetEnumValue<PrintJobProcessingState>(); } },
-                {"simplexPageCount", (o,n) => { (o as ArchivedPrintJob).SimplexPageCount = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"acquiredByPrinter", n => { AcquiredByPrinter = n.GetBoolValue(); } },
+                {"acquiredDateTime", n => { AcquiredDateTime = n.GetDateTimeOffsetValue(); } },
+                {"blackAndWhitePageCount", n => { BlackAndWhitePageCount = n.GetIntValue(); } },
+                {"colorPageCount", n => { ColorPageCount = n.GetIntValue(); } },
+                {"completionDateTime", n => { CompletionDateTime = n.GetDateTimeOffsetValue(); } },
+                {"copiesPrinted", n => { CopiesPrinted = n.GetIntValue(); } },
+                {"createdBy", n => { CreatedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"duplexPageCount", n => { DuplexPageCount = n.GetIntValue(); } },
+                {"id", n => { Id = n.GetStringValue(); } },
+                {"pageCount", n => { PageCount = n.GetIntValue(); } },
+                {"printerId", n => { PrinterId = n.GetStringValue(); } },
+                {"processingState", n => { ProcessingState = n.GetEnumValue<PrintJobProcessingState>(); } },
+                {"simplexPageCount", n => { SimplexPageCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

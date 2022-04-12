@@ -34,12 +34,12 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item.UpdateReque
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"assignmentState", (o,n) => { (o as UpdateRequestRequestBody).AssignmentState = n.GetStringValue(); } },
-                {"decision", (o,n) => { (o as UpdateRequestRequestBody).Decision = n.GetStringValue(); } },
-                {"reason", (o,n) => { (o as UpdateRequestRequestBody).Reason = n.GetStringValue(); } },
-                {"schedule", (o,n) => { (o as UpdateRequestRequestBody).Schedule = n.GetObjectValue<GovernanceSchedule>(GovernanceSchedule.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"assignmentState", n => { AssignmentState = n.GetStringValue(); } },
+                {"decision", n => { Decision = n.GetStringValue(); } },
+                {"reason", n => { Reason = n.GetStringValue(); } },
+                {"schedule", n => { Schedule = n.GetObjectValue<GovernanceSchedule>(GovernanceSchedule.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

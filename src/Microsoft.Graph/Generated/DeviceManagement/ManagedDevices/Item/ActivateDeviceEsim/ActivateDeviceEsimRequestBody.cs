@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ActivateDevi
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"carrierUrl", (o,n) => { (o as ActivateDeviceEsimRequestBody).CarrierUrl = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"carrierUrl", n => { CarrierUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

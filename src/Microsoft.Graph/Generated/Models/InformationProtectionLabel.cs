@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"color", (o,n) => { (o as InformationProtectionLabel).Color = n.GetStringValue(); } },
-                {"description", (o,n) => { (o as InformationProtectionLabel).Description = n.GetStringValue(); } },
-                {"isActive", (o,n) => { (o as InformationProtectionLabel).IsActive = n.GetBoolValue(); } },
-                {"name", (o,n) => { (o as InformationProtectionLabel).Name = n.GetStringValue(); } },
-                {"parent", (o,n) => { (o as InformationProtectionLabel).Parent = n.GetObjectValue<ParentLabelDetails>(ParentLabelDetails.CreateFromDiscriminatorValue); } },
-                {"sensitivity", (o,n) => { (o as InformationProtectionLabel).Sensitivity = n.GetIntValue(); } },
-                {"tooltip", (o,n) => { (o as InformationProtectionLabel).Tooltip = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"color", n => { Color = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"isActive", n => { IsActive = n.GetBoolValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"parent", n => { Parent = n.GetObjectValue<ParentLabelDetails>(ParentLabelDetails.CreateFromDiscriminatorValue); } },
+                {"sensitivity", n => { Sensitivity = n.GetIntValue(); } },
+                {"tooltip", n => { Tooltip = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Register {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"externalId", (o,n) => { (o as RegisterRequestBody).ExternalId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"externalId", n => { ExternalId = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Messages.Item.Send {
         public SendRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/messages/{message_id}/microsoft.graph.send";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/messages/{message%2Did}/microsoft.graph.send";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Messages.Item.Send {
         public SendRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/messages/{message_id}/microsoft.graph.send";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/messages/{message%2Did}/microsoft.graph.send";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

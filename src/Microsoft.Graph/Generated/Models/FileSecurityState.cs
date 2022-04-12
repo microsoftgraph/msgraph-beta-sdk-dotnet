@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"fileHash", (o,n) => { (o as FileSecurityState).FileHash = n.GetObjectValue<Microsoft.Graph.Beta.Models.FileHash>(Microsoft.Graph.Beta.Models.FileHash.CreateFromDiscriminatorValue); } },
-                {"name", (o,n) => { (o as FileSecurityState).Name = n.GetStringValue(); } },
-                {"path", (o,n) => { (o as FileSecurityState).Path = n.GetStringValue(); } },
-                {"riskScore", (o,n) => { (o as FileSecurityState).RiskScore = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"fileHash", n => { FileHash = n.GetObjectValue<Microsoft.Graph.Beta.Models.FileHash>(Microsoft.Graph.Beta.Models.FileHash.CreateFromDiscriminatorValue); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"path", n => { Path = n.GetStringValue(); } },
+                {"riskScore", n => { RiskScore = n.GetStringValue(); } },
             };
         }
         /// <summary>

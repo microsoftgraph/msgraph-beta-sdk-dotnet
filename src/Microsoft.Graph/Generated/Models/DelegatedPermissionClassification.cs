@@ -22,11 +22,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"classification", (o,n) => { (o as DelegatedPermissionClassification).Classification = n.GetEnumValue<PermissionClassificationType>(); } },
-                {"permissionId", (o,n) => { (o as DelegatedPermissionClassification).PermissionId = n.GetStringValue(); } },
-                {"permissionName", (o,n) => { (o as DelegatedPermissionClassification).PermissionName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"classification", n => { Classification = n.GetEnumValue<PermissionClassificationType>(); } },
+                {"permissionId", n => { PermissionId = n.GetStringValue(); } },
+                {"permissionName", n => { PermissionName = n.GetStringValue(); } },
             };
         }
         /// <summary>

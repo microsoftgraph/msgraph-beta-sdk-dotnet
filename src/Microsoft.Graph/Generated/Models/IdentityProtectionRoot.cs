@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"riskDetections", (o,n) => { (o as IdentityProtectionRoot).RiskDetections = n.GetCollectionOfObjectValues<RiskDetection>(RiskDetection.CreateFromDiscriminatorValue).ToList(); } },
-                {"riskyServicePrincipals", (o,n) => { (o as IdentityProtectionRoot).RiskyServicePrincipals = n.GetCollectionOfObjectValues<RiskyServicePrincipal>(RiskyServicePrincipal.CreateFromDiscriminatorValue).ToList(); } },
-                {"riskyUsers", (o,n) => { (o as IdentityProtectionRoot).RiskyUsers = n.GetCollectionOfObjectValues<RiskyUser>(RiskyUser.CreateFromDiscriminatorValue).ToList(); } },
-                {"servicePrincipalRiskDetections", (o,n) => { (o as IdentityProtectionRoot).ServicePrincipalRiskDetections = n.GetCollectionOfObjectValues<ServicePrincipalRiskDetection>(ServicePrincipalRiskDetection.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"riskDetections", n => { RiskDetections = n.GetCollectionOfObjectValues<RiskDetection>(RiskDetection.CreateFromDiscriminatorValue).ToList(); } },
+                {"riskyServicePrincipals", n => { RiskyServicePrincipals = n.GetCollectionOfObjectValues<RiskyServicePrincipal>(RiskyServicePrincipal.CreateFromDiscriminatorValue).ToList(); } },
+                {"riskyUsers", n => { RiskyUsers = n.GetCollectionOfObjectValues<RiskyUser>(RiskyUser.CreateFromDiscriminatorValue).ToList(); } },
+                {"servicePrincipalRiskDetections", n => { ServicePrincipalRiskDetections = n.GetCollectionOfObjectValues<ServicePrincipalRiskDetection>(ServicePrincipalRiskDetection.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

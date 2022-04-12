@@ -18,9 +18,9 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"cases", (o,n) => { (o as Ediscoveryroot).Cases = n.GetCollectionOfObjectValues<Case>(Case.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"cases", n => { Cases = n.GetCollectionOfObjectValues<Case>(Case.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

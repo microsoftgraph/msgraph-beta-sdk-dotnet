@@ -48,20 +48,20 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"accountName", (o,n) => { (o as Process).AccountName = n.GetStringValue(); } },
-                {"commandLine", (o,n) => { (o as Process).CommandLine = n.GetStringValue(); } },
-                {"createdDateTime", (o,n) => { (o as Process).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"fileHash", (o,n) => { (o as Process).FileHash = n.GetObjectValue<Microsoft.Graph.Beta.Models.FileHash>(Microsoft.Graph.Beta.Models.FileHash.CreateFromDiscriminatorValue); } },
-                {"integrityLevel", (o,n) => { (o as Process).IntegrityLevel = n.GetEnumValue<ProcessIntegrityLevel>(); } },
-                {"isElevated", (o,n) => { (o as Process).IsElevated = n.GetBoolValue(); } },
-                {"name", (o,n) => { (o as Process).Name = n.GetStringValue(); } },
-                {"parentProcessCreatedDateTime", (o,n) => { (o as Process).ParentProcessCreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"parentProcessId", (o,n) => { (o as Process).ParentProcessId = n.GetIntValue(); } },
-                {"parentProcessName", (o,n) => { (o as Process).ParentProcessName = n.GetStringValue(); } },
-                {"path", (o,n) => { (o as Process).Path = n.GetStringValue(); } },
-                {"processId", (o,n) => { (o as Process).ProcessId = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"accountName", n => { AccountName = n.GetStringValue(); } },
+                {"commandLine", n => { CommandLine = n.GetStringValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"fileHash", n => { FileHash = n.GetObjectValue<Microsoft.Graph.Beta.Models.FileHash>(Microsoft.Graph.Beta.Models.FileHash.CreateFromDiscriminatorValue); } },
+                {"integrityLevel", n => { IntegrityLevel = n.GetEnumValue<ProcessIntegrityLevel>(); } },
+                {"isElevated", n => { IsElevated = n.GetBoolValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"parentProcessCreatedDateTime", n => { ParentProcessCreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"parentProcessId", n => { ParentProcessId = n.GetIntValue(); } },
+                {"parentProcessName", n => { ParentProcessName = n.GetStringValue(); } },
+                {"path", n => { Path = n.GetStringValue(); } },
+                {"processId", n => { ProcessId = n.GetIntValue(); } },
             };
         }
         /// <summary>

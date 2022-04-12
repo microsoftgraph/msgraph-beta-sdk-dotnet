@@ -54,27 +54,27 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appleIdDisabled", (o,n) => { (o as DepEnrollmentBaseProfile).AppleIdDisabled = n.GetBoolValue(); } },
-                {"applePayDisabled", (o,n) => { (o as DepEnrollmentBaseProfile).ApplePayDisabled = n.GetBoolValue(); } },
-                {"configurationWebUrl", (o,n) => { (o as DepEnrollmentBaseProfile).ConfigurationWebUrl = n.GetBoolValue(); } },
-                {"deviceNameTemplate", (o,n) => { (o as DepEnrollmentBaseProfile).DeviceNameTemplate = n.GetStringValue(); } },
-                {"diagnosticsDisabled", (o,n) => { (o as DepEnrollmentBaseProfile).DiagnosticsDisabled = n.GetBoolValue(); } },
-                {"displayToneSetupDisabled", (o,n) => { (o as DepEnrollmentBaseProfile).DisplayToneSetupDisabled = n.GetBoolValue(); } },
-                {"isDefault", (o,n) => { (o as DepEnrollmentBaseProfile).IsDefault = n.GetBoolValue(); } },
-                {"isMandatory", (o,n) => { (o as DepEnrollmentBaseProfile).IsMandatory = n.GetBoolValue(); } },
-                {"locationDisabled", (o,n) => { (o as DepEnrollmentBaseProfile).LocationDisabled = n.GetBoolValue(); } },
-                {"privacyPaneDisabled", (o,n) => { (o as DepEnrollmentBaseProfile).PrivacyPaneDisabled = n.GetBoolValue(); } },
-                {"profileRemovalDisabled", (o,n) => { (o as DepEnrollmentBaseProfile).ProfileRemovalDisabled = n.GetBoolValue(); } },
-                {"restoreBlocked", (o,n) => { (o as DepEnrollmentBaseProfile).RestoreBlocked = n.GetBoolValue(); } },
-                {"screenTimeScreenDisabled", (o,n) => { (o as DepEnrollmentBaseProfile).ScreenTimeScreenDisabled = n.GetBoolValue(); } },
-                {"siriDisabled", (o,n) => { (o as DepEnrollmentBaseProfile).SiriDisabled = n.GetBoolValue(); } },
-                {"supervisedModeEnabled", (o,n) => { (o as DepEnrollmentBaseProfile).SupervisedModeEnabled = n.GetBoolValue(); } },
-                {"supportDepartment", (o,n) => { (o as DepEnrollmentBaseProfile).SupportDepartment = n.GetStringValue(); } },
-                {"supportPhoneNumber", (o,n) => { (o as DepEnrollmentBaseProfile).SupportPhoneNumber = n.GetStringValue(); } },
-                {"termsAndConditionsDisabled", (o,n) => { (o as DepEnrollmentBaseProfile).TermsAndConditionsDisabled = n.GetBoolValue(); } },
-                {"touchIdDisabled", (o,n) => { (o as DepEnrollmentBaseProfile).TouchIdDisabled = n.GetBoolValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"appleIdDisabled", n => { AppleIdDisabled = n.GetBoolValue(); } },
+                {"applePayDisabled", n => { ApplePayDisabled = n.GetBoolValue(); } },
+                {"configurationWebUrl", n => { ConfigurationWebUrl = n.GetBoolValue(); } },
+                {"deviceNameTemplate", n => { DeviceNameTemplate = n.GetStringValue(); } },
+                {"diagnosticsDisabled", n => { DiagnosticsDisabled = n.GetBoolValue(); } },
+                {"displayToneSetupDisabled", n => { DisplayToneSetupDisabled = n.GetBoolValue(); } },
+                {"isDefault", n => { IsDefault = n.GetBoolValue(); } },
+                {"isMandatory", n => { IsMandatory = n.GetBoolValue(); } },
+                {"locationDisabled", n => { LocationDisabled = n.GetBoolValue(); } },
+                {"privacyPaneDisabled", n => { PrivacyPaneDisabled = n.GetBoolValue(); } },
+                {"profileRemovalDisabled", n => { ProfileRemovalDisabled = n.GetBoolValue(); } },
+                {"restoreBlocked", n => { RestoreBlocked = n.GetBoolValue(); } },
+                {"screenTimeScreenDisabled", n => { ScreenTimeScreenDisabled = n.GetBoolValue(); } },
+                {"siriDisabled", n => { SiriDisabled = n.GetBoolValue(); } },
+                {"supervisedModeEnabled", n => { SupervisedModeEnabled = n.GetBoolValue(); } },
+                {"supportDepartment", n => { SupportDepartment = n.GetStringValue(); } },
+                {"supportPhoneNumber", n => { SupportPhoneNumber = n.GetStringValue(); } },
+                {"termsAndConditionsDisabled", n => { TermsAndConditionsDisabled = n.GetBoolValue(); } },
+                {"touchIdDisabled", n => { TouchIdDisabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

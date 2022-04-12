@@ -36,13 +36,13 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Answer {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"acceptedModalities", (o,n) => { (o as AnswerRequestBody).AcceptedModalities = n.GetCollectionOfEnumValues<Modality>().ToList(); } },
-                {"callbackUri", (o,n) => { (o as AnswerRequestBody).CallbackUri = n.GetStringValue(); } },
-                {"callOptions", (o,n) => { (o as AnswerRequestBody).CallOptions = n.GetObjectValue<IncomingCallOptions>(IncomingCallOptions.CreateFromDiscriminatorValue); } },
-                {"mediaConfig", (o,n) => { (o as AnswerRequestBody).MediaConfig = n.GetObjectValue<Microsoft.Graph.Beta.Models.MediaConfig>(Microsoft.Graph.Beta.Models.MediaConfig.CreateFromDiscriminatorValue); } },
-                {"participantCapacity", (o,n) => { (o as AnswerRequestBody).ParticipantCapacity = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"acceptedModalities", n => { AcceptedModalities = n.GetCollectionOfEnumValues<Modality>().ToList(); } },
+                {"callbackUri", n => { CallbackUri = n.GetStringValue(); } },
+                {"callOptions", n => { CallOptions = n.GetObjectValue<IncomingCallOptions>(IncomingCallOptions.CreateFromDiscriminatorValue); } },
+                {"mediaConfig", n => { MediaConfig = n.GetObjectValue<Microsoft.Graph.Beta.Models.MediaConfig>(Microsoft.Graph.Beta.Models.MediaConfig.CreateFromDiscriminatorValue); } },
+                {"participantCapacity", n => { ParticipantCapacity = n.GetIntValue(); } },
             };
         }
         /// <summary>

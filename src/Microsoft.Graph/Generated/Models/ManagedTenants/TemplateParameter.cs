@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"description", (o,n) => { (o as TemplateParameter).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as TemplateParameter).DisplayName = n.GetStringValue(); } },
-                {"jsonAllowedValues", (o,n) => { (o as TemplateParameter).JsonAllowedValues = n.GetStringValue(); } },
-                {"jsonDefaultValue", (o,n) => { (o as TemplateParameter).JsonDefaultValue = n.GetStringValue(); } },
-                {"valueType", (o,n) => { (o as TemplateParameter).ValueType = n.GetEnumValue<ManagementParameterValueType>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"jsonAllowedValues", n => { JsonAllowedValues = n.GetStringValue(); } },
+                {"jsonDefaultValue", n => { JsonDefaultValue = n.GetStringValue(); } },
+                {"valueType", n => { ValueType = n.GetEnumValue<ManagementParameterValueType>(); } },
             };
         }
         /// <summary>

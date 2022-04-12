@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"featureUsageDetails", (o,n) => { (o as AzureADUserFeatureUsage).FeatureUsageDetails = n.GetCollectionOfObjectValues<FeatureUsageDetail>(FeatureUsageDetail.CreateFromDiscriminatorValue).ToList(); } },
-                {"lastUpdatedDateTime", (o,n) => { (o as AzureADUserFeatureUsage).LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"licenseAssigned", (o,n) => { (o as AzureADUserFeatureUsage).LicenseAssigned = n.GetEnumValue<AzureADLicenseType>(); } },
-                {"licenseRecommended", (o,n) => { (o as AzureADUserFeatureUsage).LicenseRecommended = n.GetEnumValue<AzureADLicenseType>(); } },
-                {"userDisplayName", (o,n) => { (o as AzureADUserFeatureUsage).UserDisplayName = n.GetStringValue(); } },
-                {"userId", (o,n) => { (o as AzureADUserFeatureUsage).UserId = n.GetStringValue(); } },
-                {"userPrincipalName", (o,n) => { (o as AzureADUserFeatureUsage).UserPrincipalName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"featureUsageDetails", n => { FeatureUsageDetails = n.GetCollectionOfObjectValues<FeatureUsageDetail>(FeatureUsageDetail.CreateFromDiscriminatorValue).ToList(); } },
+                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"licenseAssigned", n => { LicenseAssigned = n.GetEnumValue<AzureADLicenseType>(); } },
+                {"licenseRecommended", n => { LicenseRecommended = n.GetEnumValue<AzureADLicenseType>(); } },
+                {"userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
+                {"userId", n => { UserId = n.GetStringValue(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

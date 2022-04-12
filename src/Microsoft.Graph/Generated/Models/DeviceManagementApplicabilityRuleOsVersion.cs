@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"maxOSVersion", (o,n) => { (o as DeviceManagementApplicabilityRuleOsVersion).MaxOSVersion = n.GetStringValue(); } },
-                {"minOSVersion", (o,n) => { (o as DeviceManagementApplicabilityRuleOsVersion).MinOSVersion = n.GetStringValue(); } },
-                {"name", (o,n) => { (o as DeviceManagementApplicabilityRuleOsVersion).Name = n.GetStringValue(); } },
-                {"ruleType", (o,n) => { (o as DeviceManagementApplicabilityRuleOsVersion).RuleType = n.GetEnumValue<DeviceManagementApplicabilityRuleType>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"maxOSVersion", n => { MaxOSVersion = n.GetStringValue(); } },
+                {"minOSVersion", n => { MinOSVersion = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"ruleType", n => { RuleType = n.GetEnumValue<DeviceManagementApplicabilityRuleType>(); } },
             };
         }
         /// <summary>

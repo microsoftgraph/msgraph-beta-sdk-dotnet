@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Reports.GetSkypeForBusinessPeerToPeerActivityMinu
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/reports/microsoft.graph.getSkypeForBusinessPeerToPeerActivityMinuteCounts(period='{period}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("period", period);
+            urlTplParams.Add("", period);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"attackSimulationUser", (o,n) => { (o as AttackSimulationSimulationUserCoverage).AttackSimulationUser = n.GetObjectValue<Microsoft.Graph.Beta.Models.AttackSimulationUser>(Microsoft.Graph.Beta.Models.AttackSimulationUser.CreateFromDiscriminatorValue); } },
-                {"clickCount", (o,n) => { (o as AttackSimulationSimulationUserCoverage).ClickCount = n.GetIntValue(); } },
-                {"compromisedCount", (o,n) => { (o as AttackSimulationSimulationUserCoverage).CompromisedCount = n.GetIntValue(); } },
-                {"latestSimulationDateTime", (o,n) => { (o as AttackSimulationSimulationUserCoverage).LatestSimulationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"simulationCount", (o,n) => { (o as AttackSimulationSimulationUserCoverage).SimulationCount = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"attackSimulationUser", n => { AttackSimulationUser = n.GetObjectValue<Microsoft.Graph.Beta.Models.AttackSimulationUser>(Microsoft.Graph.Beta.Models.AttackSimulationUser.CreateFromDiscriminatorValue); } },
+                {"clickCount", n => { ClickCount = n.GetIntValue(); } },
+                {"compromisedCount", n => { CompromisedCount = n.GetIntValue(); } },
+                {"latestSimulationDateTime", n => { LatestSimulationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"simulationCount", n => { SimulationCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

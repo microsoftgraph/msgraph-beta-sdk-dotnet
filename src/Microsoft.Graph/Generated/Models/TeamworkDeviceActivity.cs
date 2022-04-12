@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activePeripherals", (o,n) => { (o as TeamworkDeviceActivity).ActivePeripherals = n.GetObjectValue<TeamworkActivePeripherals>(TeamworkActivePeripherals.CreateFromDiscriminatorValue); } },
-                {"createdBy", (o,n) => { (o as TeamworkDeviceActivity).CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", (o,n) => { (o as TeamworkDeviceActivity).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastModifiedBy", (o,n) => { (o as TeamworkDeviceActivity).LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", (o,n) => { (o as TeamworkDeviceActivity).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activePeripherals", n => { ActivePeripherals = n.GetObjectValue<TeamworkActivePeripherals>(TeamworkActivePeripherals.CreateFromDiscriminatorValue); } },
+                {"createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

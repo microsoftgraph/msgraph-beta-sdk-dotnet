@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"format", (o,n) => { (o as WorkbookChartTitle).Format = n.GetObjectValue<WorkbookChartTitleFormat>(WorkbookChartTitleFormat.CreateFromDiscriminatorValue); } },
-                {"overlay", (o,n) => { (o as WorkbookChartTitle).Overlay = n.GetBoolValue(); } },
-                {"text", (o,n) => { (o as WorkbookChartTitle).Text = n.GetStringValue(); } },
-                {"visible", (o,n) => { (o as WorkbookChartTitle).Visible = n.GetBoolValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"format", n => { Format = n.GetObjectValue<WorkbookChartTitleFormat>(WorkbookChartTitleFormat.CreateFromDiscriminatorValue); } },
+                {"overlay", n => { Overlay = n.GetBoolValue(); } },
+                {"text", n => { Text = n.GetStringValue(); } },
+                {"visible", n => { Visible = n.GetBoolValue(); } },
             };
         }
         /// <summary>

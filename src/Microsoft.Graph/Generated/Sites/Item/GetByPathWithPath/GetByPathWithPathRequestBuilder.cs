@@ -25,9 +25,9 @@ namespace Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath {
         public GetByPathWithPathRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string path = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/sites/{site_id}/microsoft.graph.getByPath(path='{path}')";
+            UrlTemplate = "{+baseurl}/sites/{site%2Did}/microsoft.graph.getByPath(path='{path}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("path", path);
+            urlTplParams.Add("", path);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath {
         public GetByPathWithPathRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/sites/{site_id}/microsoft.graph.getByPath(path='{path}')";
+            UrlTemplate = "{+baseurl}/sites/{site%2Did}/microsoft.graph.getByPath(path='{path}')";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

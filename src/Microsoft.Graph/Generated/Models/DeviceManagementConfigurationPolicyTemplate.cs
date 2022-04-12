@@ -40,20 +40,20 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"allowUnmanagedSettings", (o,n) => { (o as DeviceManagementConfigurationPolicyTemplate).AllowUnmanagedSettings = n.GetBoolValue(); } },
-                {"baseId", (o,n) => { (o as DeviceManagementConfigurationPolicyTemplate).BaseId = n.GetStringValue(); } },
-                {"description", (o,n) => { (o as DeviceManagementConfigurationPolicyTemplate).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as DeviceManagementConfigurationPolicyTemplate).DisplayName = n.GetStringValue(); } },
-                {"displayVersion", (o,n) => { (o as DeviceManagementConfigurationPolicyTemplate).DisplayVersion = n.GetStringValue(); } },
-                {"lifecycleState", (o,n) => { (o as DeviceManagementConfigurationPolicyTemplate).LifecycleState = n.GetEnumValue<DeviceManagementTemplateLifecycleState>(); } },
-                {"platforms", (o,n) => { (o as DeviceManagementConfigurationPolicyTemplate).Platforms = n.GetEnumValue<DeviceManagementConfigurationPlatforms>(); } },
-                {"settingTemplateCount", (o,n) => { (o as DeviceManagementConfigurationPolicyTemplate).SettingTemplateCount = n.GetIntValue(); } },
-                {"settingTemplates", (o,n) => { (o as DeviceManagementConfigurationPolicyTemplate).SettingTemplates = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingTemplate>(DeviceManagementConfigurationSettingTemplate.CreateFromDiscriminatorValue).ToList(); } },
-                {"technologies", (o,n) => { (o as DeviceManagementConfigurationPolicyTemplate).Technologies = n.GetEnumValue<DeviceManagementConfigurationTechnologies>(); } },
-                {"templateFamily", (o,n) => { (o as DeviceManagementConfigurationPolicyTemplate).TemplateFamily = n.GetEnumValue<DeviceManagementConfigurationTemplateFamily>(); } },
-                {"version", (o,n) => { (o as DeviceManagementConfigurationPolicyTemplate).Version = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"allowUnmanagedSettings", n => { AllowUnmanagedSettings = n.GetBoolValue(); } },
+                {"baseId", n => { BaseId = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"displayVersion", n => { DisplayVersion = n.GetStringValue(); } },
+                {"lifecycleState", n => { LifecycleState = n.GetEnumValue<DeviceManagementTemplateLifecycleState>(); } },
+                {"platforms", n => { Platforms = n.GetEnumValue<DeviceManagementConfigurationPlatforms>(); } },
+                {"settingTemplateCount", n => { SettingTemplateCount = n.GetIntValue(); } },
+                {"settingTemplates", n => { SettingTemplates = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingTemplate>(DeviceManagementConfigurationSettingTemplate.CreateFromDiscriminatorValue).ToList(); } },
+                {"technologies", n => { Technologies = n.GetEnumValue<DeviceManagementConfigurationTechnologies>(); } },
+                {"templateFamily", n => { TemplateFamily = n.GetEnumValue<DeviceManagementConfigurationTemplateFamily>(); } },
+                {"version", n => { Version = n.GetIntValue(); } },
             };
         }
         /// <summary>

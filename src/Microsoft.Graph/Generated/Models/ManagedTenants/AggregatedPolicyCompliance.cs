@@ -38,19 +38,19 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"compliancePolicyId", (o,n) => { (o as AggregatedPolicyCompliance).CompliancePolicyId = n.GetStringValue(); } },
-                {"compliancePolicyName", (o,n) => { (o as AggregatedPolicyCompliance).CompliancePolicyName = n.GetStringValue(); } },
-                {"compliancePolicyPlatform", (o,n) => { (o as AggregatedPolicyCompliance).CompliancePolicyPlatform = n.GetStringValue(); } },
-                {"compliancePolicyType", (o,n) => { (o as AggregatedPolicyCompliance).CompliancePolicyType = n.GetStringValue(); } },
-                {"lastRefreshedDateTime", (o,n) => { (o as AggregatedPolicyCompliance).LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"numberOfCompliantDevices", (o,n) => { (o as AggregatedPolicyCompliance).NumberOfCompliantDevices = n.GetLongValue(); } },
-                {"numberOfErrorDevices", (o,n) => { (o as AggregatedPolicyCompliance).NumberOfErrorDevices = n.GetLongValue(); } },
-                {"numberOfNonCompliantDevices", (o,n) => { (o as AggregatedPolicyCompliance).NumberOfNonCompliantDevices = n.GetLongValue(); } },
-                {"policyModifiedDateTime", (o,n) => { (o as AggregatedPolicyCompliance).PolicyModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"tenantDisplayName", (o,n) => { (o as AggregatedPolicyCompliance).TenantDisplayName = n.GetStringValue(); } },
-                {"tenantId", (o,n) => { (o as AggregatedPolicyCompliance).TenantId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"compliancePolicyId", n => { CompliancePolicyId = n.GetStringValue(); } },
+                {"compliancePolicyName", n => { CompliancePolicyName = n.GetStringValue(); } },
+                {"compliancePolicyPlatform", n => { CompliancePolicyPlatform = n.GetStringValue(); } },
+                {"compliancePolicyType", n => { CompliancePolicyType = n.GetStringValue(); } },
+                {"lastRefreshedDateTime", n => { LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"numberOfCompliantDevices", n => { NumberOfCompliantDevices = n.GetLongValue(); } },
+                {"numberOfErrorDevices", n => { NumberOfErrorDevices = n.GetLongValue(); } },
+                {"numberOfNonCompliantDevices", n => { NumberOfNonCompliantDevices = n.GetLongValue(); } },
+                {"policyModifiedDateTime", n => { PolicyModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"tenantDisplayName", n => { TenantDisplayName = n.GetStringValue(); } },
+                {"tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
         /// <summary>

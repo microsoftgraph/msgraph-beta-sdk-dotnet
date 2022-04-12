@@ -46,23 +46,23 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"actionSteps", (o,n) => { (o as Recommendation).ActionSteps = n.GetCollectionOfObjectValues<ActionStep>(ActionStep.CreateFromDiscriminatorValue).ToList(); } },
-                {"benefits", (o,n) => { (o as Recommendation).Benefits = n.GetStringValue(); } },
-                {"category", (o,n) => { (o as Recommendation).Category = n.GetEnumValue<RecommendationCategory>(); } },
-                {"createdDateTime", (o,n) => { (o as Recommendation).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", (o,n) => { (o as Recommendation).DisplayName = n.GetStringValue(); } },
-                {"impactedResources", (o,n) => { (o as Recommendation).ImpactedResources = n.GetCollectionOfObjectValues<RecommendationResource>(RecommendationResource.CreateFromDiscriminatorValue).ToList(); } },
-                {"impactStartDateTime", (o,n) => { (o as Recommendation).ImpactStartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"impactType", (o,n) => { (o as Recommendation).ImpactType = n.GetStringValue(); } },
-                {"insights", (o,n) => { (o as Recommendation).Insights = n.GetStringValue(); } },
-                {"lastCheckedDateTime", (o,n) => { (o as Recommendation).LastCheckedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastModifiedBy", (o,n) => { (o as Recommendation).LastModifiedBy = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as Recommendation).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"postponeUntilDateTime", (o,n) => { (o as Recommendation).PostponeUntilDateTime = n.GetDateTimeOffsetValue(); } },
-                {"priority", (o,n) => { (o as Recommendation).Priority = n.GetEnumValue<RecommendationPriority>(); } },
-                {"status", (o,n) => { (o as Recommendation).Status = n.GetEnumValue<RecommendationStatus>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"actionSteps", n => { ActionSteps = n.GetCollectionOfObjectValues<ActionStep>(ActionStep.CreateFromDiscriminatorValue).ToList(); } },
+                {"benefits", n => { Benefits = n.GetStringValue(); } },
+                {"category", n => { Category = n.GetEnumValue<RecommendationCategory>(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"impactedResources", n => { ImpactedResources = n.GetCollectionOfObjectValues<RecommendationResource>(RecommendationResource.CreateFromDiscriminatorValue).ToList(); } },
+                {"impactStartDateTime", n => { ImpactStartDateTime = n.GetDateTimeOffsetValue(); } },
+                {"impactType", n => { ImpactType = n.GetStringValue(); } },
+                {"insights", n => { Insights = n.GetStringValue(); } },
+                {"lastCheckedDateTime", n => { LastCheckedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastModifiedBy", n => { LastModifiedBy = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"postponeUntilDateTime", n => { PostponeUntilDateTime = n.GetDateTimeOffsetValue(); } },
+                {"priority", n => { Priority = n.GetEnumValue<RecommendationPriority>(); } },
+                {"status", n => { Status = n.GetEnumValue<RecommendationStatus>(); } },
             };
         }
         /// <summary>

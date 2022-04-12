@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"crc32Hash", (o,n) => { (o as Hashes).Crc32Hash = n.GetStringValue(); } },
-                {"quickXorHash", (o,n) => { (o as Hashes).QuickXorHash = n.GetStringValue(); } },
-                {"sha1Hash", (o,n) => { (o as Hashes).Sha1Hash = n.GetStringValue(); } },
-                {"sha256Hash", (o,n) => { (o as Hashes).Sha256Hash = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"crc32Hash", n => { Crc32Hash = n.GetStringValue(); } },
+                {"quickXorHash", n => { QuickXorHash = n.GetStringValue(); } },
+                {"sha1Hash", n => { Sha1Hash = n.GetStringValue(); } },
+                {"sha256Hash", n => { Sha256Hash = n.GetStringValue(); } },
             };
         }
         /// <summary>

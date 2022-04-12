@@ -42,21 +42,21 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activity", (o,n) => { (o as AuditEvent).Activity = n.GetStringValue(); } },
-                {"activityDateTime", (o,n) => { (o as AuditEvent).ActivityDateTime = n.GetDateTimeOffsetValue(); } },
-                {"activityId", (o,n) => { (o as AuditEvent).ActivityId = n.GetStringValue(); } },
-                {"category", (o,n) => { (o as AuditEvent).Category = n.GetStringValue(); } },
-                {"httpVerb", (o,n) => { (o as AuditEvent).HttpVerb = n.GetStringValue(); } },
-                {"initiatedByAppId", (o,n) => { (o as AuditEvent).InitiatedByAppId = n.GetStringValue(); } },
-                {"initiatedByUpn", (o,n) => { (o as AuditEvent).InitiatedByUpn = n.GetStringValue(); } },
-                {"initiatedByUserId", (o,n) => { (o as AuditEvent).InitiatedByUserId = n.GetStringValue(); } },
-                {"ipAddress", (o,n) => { (o as AuditEvent).IpAddress = n.GetStringValue(); } },
-                {"requestBody", (o,n) => { (o as AuditEvent).RequestBody = n.GetStringValue(); } },
-                {"requestUrl", (o,n) => { (o as AuditEvent).RequestUrl = n.GetStringValue(); } },
-                {"tenantIds", (o,n) => { (o as AuditEvent).TenantIds = n.GetStringValue(); } },
-                {"tenantNames", (o,n) => { (o as AuditEvent).TenantNames = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activity", n => { Activity = n.GetStringValue(); } },
+                {"activityDateTime", n => { ActivityDateTime = n.GetDateTimeOffsetValue(); } },
+                {"activityId", n => { ActivityId = n.GetStringValue(); } },
+                {"category", n => { Category = n.GetStringValue(); } },
+                {"httpVerb", n => { HttpVerb = n.GetStringValue(); } },
+                {"initiatedByAppId", n => { InitiatedByAppId = n.GetStringValue(); } },
+                {"initiatedByUpn", n => { InitiatedByUpn = n.GetStringValue(); } },
+                {"initiatedByUserId", n => { InitiatedByUserId = n.GetStringValue(); } },
+                {"ipAddress", n => { IpAddress = n.GetStringValue(); } },
+                {"requestBody", n => { RequestBody = n.GetStringValue(); } },
+                {"requestUrl", n => { RequestUrl = n.GetStringValue(); } },
+                {"tenantIds", n => { TenantIds = n.GetStringValue(); } },
+                {"tenantNames", n => { TenantNames = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"operation", (o,n) => { (o as PropertyRule).Operation = n.GetEnumValue<RuleOperation>(); } },
-                {"property", (o,n) => { (o as PropertyRule).Property = n.GetStringValue(); } },
-                {"values", (o,n) => { (o as PropertyRule).Values = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"valuesJoinedBy", (o,n) => { (o as PropertyRule).ValuesJoinedBy = n.GetEnumValue<BinaryOperator>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"operation", n => { Operation = n.GetEnumValue<RuleOperation>(); } },
+                {"property", n => { Property = n.GetStringValue(); } },
+                {"values", n => { Values = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"valuesJoinedBy", n => { ValuesJoinedBy = n.GetEnumValue<BinaryOperator>(); } },
             };
         }
         /// <summary>

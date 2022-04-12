@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"hasAttachments", (o,n) => { (o as Conversation).HasAttachments = n.GetBoolValue(); } },
-                {"lastDeliveredDateTime", (o,n) => { (o as Conversation).LastDeliveredDateTime = n.GetDateTimeOffsetValue(); } },
-                {"preview", (o,n) => { (o as Conversation).Preview = n.GetStringValue(); } },
-                {"threads", (o,n) => { (o as Conversation).Threads = n.GetCollectionOfObjectValues<ConversationThread>(ConversationThread.CreateFromDiscriminatorValue).ToList(); } },
-                {"topic", (o,n) => { (o as Conversation).Topic = n.GetStringValue(); } },
-                {"uniqueSenders", (o,n) => { (o as Conversation).UniqueSenders = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"hasAttachments", n => { HasAttachments = n.GetBoolValue(); } },
+                {"lastDeliveredDateTime", n => { LastDeliveredDateTime = n.GetDateTimeOffsetValue(); } },
+                {"preview", n => { Preview = n.GetStringValue(); } },
+                {"threads", n => { Threads = n.GetCollectionOfObjectValues<ConversationThread>(ConversationThread.CreateFromDiscriminatorValue).ToList(); } },
+                {"topic", n => { Topic = n.GetStringValue(); } },
+                {"uniqueSenders", n => { UniqueSenders = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

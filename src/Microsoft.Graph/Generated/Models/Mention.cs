@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"application", (o,n) => { (o as Mention).Application = n.GetStringValue(); } },
-                {"clientReference", (o,n) => { (o as Mention).ClientReference = n.GetStringValue(); } },
-                {"createdBy", (o,n) => { (o as Mention).CreatedBy = n.GetObjectValue<EmailAddress>(EmailAddress.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", (o,n) => { (o as Mention).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deepLink", (o,n) => { (o as Mention).DeepLink = n.GetStringValue(); } },
-                {"mentioned", (o,n) => { (o as Mention).Mentioned = n.GetObjectValue<EmailAddress>(EmailAddress.CreateFromDiscriminatorValue); } },
-                {"mentionText", (o,n) => { (o as Mention).MentionText = n.GetStringValue(); } },
-                {"serverCreatedDateTime", (o,n) => { (o as Mention).ServerCreatedDateTime = n.GetDateTimeOffsetValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"application", n => { Application = n.GetStringValue(); } },
+                {"clientReference", n => { ClientReference = n.GetStringValue(); } },
+                {"createdBy", n => { CreatedBy = n.GetObjectValue<EmailAddress>(EmailAddress.CreateFromDiscriminatorValue); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"deepLink", n => { DeepLink = n.GetStringValue(); } },
+                {"mentioned", n => { Mentioned = n.GetObjectValue<EmailAddress>(EmailAddress.CreateFromDiscriminatorValue); } },
+                {"mentionText", n => { MentionText = n.GetStringValue(); } },
+                {"serverCreatedDateTime", n => { ServerCreatedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

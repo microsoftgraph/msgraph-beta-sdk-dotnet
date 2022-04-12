@@ -37,14 +37,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"applicationId", (o,n) => { (o as MobileAppIntentAndStateDetail).ApplicationId = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as MobileAppIntentAndStateDetail).DisplayName = n.GetStringValue(); } },
-                {"displayVersion", (o,n) => { (o as MobileAppIntentAndStateDetail).DisplayVersion = n.GetStringValue(); } },
-                {"installState", (o,n) => { (o as MobileAppIntentAndStateDetail).InstallState = n.GetEnumValue<ResultantAppState>(); } },
-                {"mobileAppIntent", (o,n) => { (o as MobileAppIntentAndStateDetail).MobileAppIntent = n.GetEnumValue<MobileAppIntent>(); } },
-                {"supportedDeviceTypes", (o,n) => { (o as MobileAppIntentAndStateDetail).SupportedDeviceTypes = n.GetCollectionOfObjectValues<MobileAppSupportedDeviceType>(MobileAppSupportedDeviceType.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"applicationId", n => { ApplicationId = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"displayVersion", n => { DisplayVersion = n.GetStringValue(); } },
+                {"installState", n => { InstallState = n.GetEnumValue<ResultantAppState>(); } },
+                {"mobileAppIntent", n => { MobileAppIntent = n.GetEnumValue<MobileAppIntent>(); } },
+                {"supportedDeviceTypes", n => { SupportedDeviceTypes = n.GetCollectionOfObjectValues<MobileAppSupportedDeviceType>(MobileAppSupportedDeviceType.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

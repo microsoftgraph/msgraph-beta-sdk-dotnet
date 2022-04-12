@@ -32,11 +32,11 @@ namespace Microsoft.Graph.Beta.Users.Item.Messages.Item.CreateForward {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"comment", (o,n) => { (o as CreateForwardRequestBody).Comment = n.GetStringValue(); } },
-                {"message", (o,n) => { (o as CreateForwardRequestBody).Message = n.GetObjectValue<Microsoft.Graph.Beta.Models.Message>(Microsoft.Graph.Beta.Models.Message.CreateFromDiscriminatorValue); } },
-                {"toRecipients", (o,n) => { (o as CreateForwardRequestBody).ToRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"comment", n => { Comment = n.GetStringValue(); } },
+                {"message", n => { Message = n.GetObjectValue<Microsoft.Graph.Beta.Models.Message>(Microsoft.Graph.Beta.Models.Message.CreateFromDiscriminatorValue); } },
+                {"toRecipients", n => { ToRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

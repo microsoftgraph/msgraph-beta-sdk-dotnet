@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.Verify {
         public VerifyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/domains/{domain_id}/microsoft.graph.verify";
+            UrlTemplate = "{+baseurl}/domains/{domain%2Did}/microsoft.graph.verify";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.Verify {
         public VerifyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/domains/{domain_id}/microsoft.graph.verify";
+            UrlTemplate = "{+baseurl}/domains/{domain%2Did}/microsoft.graph.verify";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

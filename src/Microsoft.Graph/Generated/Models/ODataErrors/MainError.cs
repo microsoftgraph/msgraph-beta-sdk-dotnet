@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models.ODataErrors {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"code", (o,n) => { (o as MainError).Code = n.GetStringValue(); } },
-                {"details", (o,n) => { (o as MainError).Details = n.GetCollectionOfObjectValues<ErrorDetails>(ErrorDetails.CreateFromDiscriminatorValue).ToList(); } },
-                {"innererror", (o,n) => { (o as MainError).Innererror = n.GetObjectValue<Microsoft.Graph.Beta.Models.ODataErrors.InnerError>(Microsoft.Graph.Beta.Models.ODataErrors.InnerError.CreateFromDiscriminatorValue); } },
-                {"message", (o,n) => { (o as MainError).Message = n.GetStringValue(); } },
-                {"target", (o,n) => { (o as MainError).Target = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"code", n => { Code = n.GetStringValue(); } },
+                {"details", n => { Details = n.GetCollectionOfObjectValues<ErrorDetails>(ErrorDetails.CreateFromDiscriminatorValue).ToList(); } },
+                {"innererror", n => { Innererror = n.GetObjectValue<Microsoft.Graph.Beta.Models.ODataErrors.InnerError>(Microsoft.Graph.Beta.Models.ODataErrors.InnerError.CreateFromDiscriminatorValue); } },
+                {"message", n => { Message = n.GetStringValue(); } },
+                {"target", n => { Target = n.GetStringValue(); } },
             };
         }
         /// <summary>

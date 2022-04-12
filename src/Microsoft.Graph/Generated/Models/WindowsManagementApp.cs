@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"availableVersion", (o,n) => { (o as WindowsManagementApp).AvailableVersion = n.GetStringValue(); } },
-                {"healthStates", (o,n) => { (o as WindowsManagementApp).HealthStates = n.GetCollectionOfObjectValues<WindowsManagementAppHealthState>(WindowsManagementAppHealthState.CreateFromDiscriminatorValue).ToList(); } },
-                {"managedInstaller", (o,n) => { (o as WindowsManagementApp).ManagedInstaller = n.GetEnumValue<ManagedInstallerStatus>(); } },
-                {"managedInstallerConfiguredDateTime", (o,n) => { (o as WindowsManagementApp).ManagedInstallerConfiguredDateTime = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"availableVersion", n => { AvailableVersion = n.GetStringValue(); } },
+                {"healthStates", n => { HealthStates = n.GetCollectionOfObjectValues<WindowsManagementAppHealthState>(WindowsManagementAppHealthState.CreateFromDiscriminatorValue).ToList(); } },
+                {"managedInstaller", n => { ManagedInstaller = n.GetEnumValue<ManagedInstallerStatus>(); } },
+                {"managedInstallerConfiguredDateTime", n => { ManagedInstallerConfiguredDateTime = n.GetStringValue(); } },
             };
         }
         /// <summary>

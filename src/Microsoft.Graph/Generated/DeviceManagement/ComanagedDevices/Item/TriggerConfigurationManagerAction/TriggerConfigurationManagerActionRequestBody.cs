@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.TriggerCon
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"configurationManagerAction", (o,n) => { (o as TriggerConfigurationManagerActionRequestBody).ConfigurationManagerAction = n.GetObjectValue<Microsoft.Graph.Beta.Models.ConfigurationManagerAction>(Microsoft.Graph.Beta.Models.ConfigurationManagerAction.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"configurationManagerAction", n => { ConfigurationManagerAction = n.GetObjectValue<Microsoft.Graph.Beta.Models.ConfigurationManagerAction>(Microsoft.Graph.Beta.Models.ConfigurationManagerAction.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

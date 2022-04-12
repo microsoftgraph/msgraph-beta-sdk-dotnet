@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.Applications.ValidateProperties {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"displayName", (o,n) => { (o as ValidatePropertiesRequestBody).DisplayName = n.GetStringValue(); } },
-                {"entityType", (o,n) => { (o as ValidatePropertiesRequestBody).EntityType = n.GetStringValue(); } },
-                {"mailNickname", (o,n) => { (o as ValidatePropertiesRequestBody).MailNickname = n.GetStringValue(); } },
-                {"onBehalfOfUserId", (o,n) => { (o as ValidatePropertiesRequestBody).OnBehalfOfUserId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"entityType", n => { EntityType = n.GetStringValue(); } },
+                {"mailNickname", n => { MailNickname = n.GetStringValue(); } },
+                {"onBehalfOfUserId", n => { OnBehalfOfUserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

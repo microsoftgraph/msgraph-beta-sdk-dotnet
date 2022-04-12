@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"clickAction", (o,n) => { (o as UriClickSecurityState).ClickAction = n.GetStringValue(); } },
-                {"clickDateTime", (o,n) => { (o as UriClickSecurityState).ClickDateTime = n.GetDateTimeOffsetValue(); } },
-                {"id", (o,n) => { (o as UriClickSecurityState).Id = n.GetStringValue(); } },
-                {"sourceId", (o,n) => { (o as UriClickSecurityState).SourceId = n.GetStringValue(); } },
-                {"uriDomain", (o,n) => { (o as UriClickSecurityState).UriDomain = n.GetStringValue(); } },
-                {"verdict", (o,n) => { (o as UriClickSecurityState).Verdict = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"clickAction", n => { ClickAction = n.GetStringValue(); } },
+                {"clickDateTime", n => { ClickDateTime = n.GetDateTimeOffsetValue(); } },
+                {"id", n => { Id = n.GetStringValue(); } },
+                {"sourceId", n => { SourceId = n.GetStringValue(); } },
+                {"uriDomain", n => { UriDomain = n.GetStringValue(); } },
+                {"verdict", n => { Verdict = n.GetStringValue(); } },
             };
         }
         /// <summary>

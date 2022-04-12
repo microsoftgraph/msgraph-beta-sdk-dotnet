@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence.SetPresence {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"activity", (o,n) => { (o as SetPresenceRequestBody).Activity = n.GetStringValue(); } },
-                {"availability", (o,n) => { (o as SetPresenceRequestBody).Availability = n.GetStringValue(); } },
-                {"expirationDuration", (o,n) => { (o as SetPresenceRequestBody).ExpirationDuration = n.GetTimeSpanValue(); } },
-                {"sessionId", (o,n) => { (o as SetPresenceRequestBody).SessionId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"activity", n => { Activity = n.GetStringValue(); } },
+                {"availability", n => { Availability = n.GetStringValue(); } },
+                {"expirationDuration", n => { ExpirationDuration = n.GetTimeSpanValue(); } },
+                {"sessionId", n => { SessionId = n.GetStringValue(); } },
             };
         }
         /// <summary>

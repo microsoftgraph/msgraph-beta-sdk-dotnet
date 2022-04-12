@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"actionType", (o,n) => { (o as DeviceComplianceActionItem).ActionType = n.GetEnumValue<DeviceComplianceActionType>(); } },
-                {"gracePeriodHours", (o,n) => { (o as DeviceComplianceActionItem).GracePeriodHours = n.GetIntValue(); } },
-                {"notificationMessageCCList", (o,n) => { (o as DeviceComplianceActionItem).NotificationMessageCCList = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"notificationTemplateId", (o,n) => { (o as DeviceComplianceActionItem).NotificationTemplateId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"actionType", n => { ActionType = n.GetEnumValue<DeviceComplianceActionType>(); } },
+                {"gracePeriodHours", n => { GracePeriodHours = n.GetIntValue(); } },
+                {"notificationMessageCCList", n => { NotificationMessageCCList = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"notificationTemplateId", n => { NotificationTemplateId = n.GetStringValue(); } },
             };
         }
         /// <summary>

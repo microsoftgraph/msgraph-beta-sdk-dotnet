@@ -56,24 +56,24 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"album", (o,n) => { (o as Audio).Album = n.GetStringValue(); } },
-                {"albumArtist", (o,n) => { (o as Audio).AlbumArtist = n.GetStringValue(); } },
-                {"artist", (o,n) => { (o as Audio).Artist = n.GetStringValue(); } },
-                {"bitrate", (o,n) => { (o as Audio).Bitrate = n.GetLongValue(); } },
-                {"composers", (o,n) => { (o as Audio).Composers = n.GetStringValue(); } },
-                {"copyright", (o,n) => { (o as Audio).Copyright = n.GetStringValue(); } },
-                {"disc", (o,n) => { (o as Audio).Disc = n.GetIntValue(); } },
-                {"discCount", (o,n) => { (o as Audio).DiscCount = n.GetIntValue(); } },
-                {"duration", (o,n) => { (o as Audio).Duration = n.GetLongValue(); } },
-                {"genre", (o,n) => { (o as Audio).Genre = n.GetStringValue(); } },
-                {"hasDrm", (o,n) => { (o as Audio).HasDrm = n.GetBoolValue(); } },
-                {"isVariableBitrate", (o,n) => { (o as Audio).IsVariableBitrate = n.GetBoolValue(); } },
-                {"title", (o,n) => { (o as Audio).Title = n.GetStringValue(); } },
-                {"track", (o,n) => { (o as Audio).Track = n.GetIntValue(); } },
-                {"trackCount", (o,n) => { (o as Audio).TrackCount = n.GetIntValue(); } },
-                {"year", (o,n) => { (o as Audio).Year = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"album", n => { Album = n.GetStringValue(); } },
+                {"albumArtist", n => { AlbumArtist = n.GetStringValue(); } },
+                {"artist", n => { Artist = n.GetStringValue(); } },
+                {"bitrate", n => { Bitrate = n.GetLongValue(); } },
+                {"composers", n => { Composers = n.GetStringValue(); } },
+                {"copyright", n => { Copyright = n.GetStringValue(); } },
+                {"disc", n => { Disc = n.GetIntValue(); } },
+                {"discCount", n => { DiscCount = n.GetIntValue(); } },
+                {"duration", n => { Duration = n.GetLongValue(); } },
+                {"genre", n => { Genre = n.GetStringValue(); } },
+                {"hasDrm", n => { HasDrm = n.GetBoolValue(); } },
+                {"isVariableBitrate", n => { IsVariableBitrate = n.GetBoolValue(); } },
+                {"title", n => { Title = n.GetStringValue(); } },
+                {"track", n => { Track = n.GetIntValue(); } },
+                {"trackCount", n => { TrackCount = n.GetIntValue(); } },
+                {"year", n => { Year = n.GetIntValue(); } },
             };
         }
         /// <summary>

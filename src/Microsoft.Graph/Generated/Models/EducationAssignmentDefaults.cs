@@ -25,12 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"addedStudentAction", (o,n) => { (o as EducationAssignmentDefaults).AddedStudentAction = n.GetEnumValue<EducationAddedStudentAction>(); } },
-                {"addToCalendarAction", (o,n) => { (o as EducationAssignmentDefaults).AddToCalendarAction = n.GetEnumValue<EducationAddToCalendarOptions>(); } },
-                {"dueTime", (o,n) => { (o as EducationAssignmentDefaults).DueTime = n.GetTimeValue(); } },
-                {"notificationChannelUrl", (o,n) => { (o as EducationAssignmentDefaults).NotificationChannelUrl = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"addedStudentAction", n => { AddedStudentAction = n.GetEnumValue<EducationAddedStudentAction>(); } },
+                {"addToCalendarAction", n => { AddToCalendarAction = n.GetEnumValue<EducationAddToCalendarOptions>(); } },
+                {"dueTime", n => { DueTime = n.GetTimeValue(); } },
+                {"notificationChannelUrl", n => { NotificationChannelUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

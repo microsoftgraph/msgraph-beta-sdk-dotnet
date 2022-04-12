@@ -20,10 +20,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activityStatistics", (o,n) => { (o as UserAnalytics).ActivityStatistics = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ActivityStatistics>(Microsoft.Graph.Beta.Models.ActivityStatistics.CreateFromDiscriminatorValue).ToList(); } },
-                {"settings", (o,n) => { (o as UserAnalytics).Settings = n.GetObjectValue<Microsoft.Graph.Beta.Models.Settings>(Microsoft.Graph.Beta.Models.Settings.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activityStatistics", n => { ActivityStatistics = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ActivityStatistics>(Microsoft.Graph.Beta.Models.ActivityStatistics.CreateFromDiscriminatorValue).ToList(); } },
+                {"settings", n => { Settings = n.GetObjectValue<Microsoft.Graph.Beta.Models.Settings>(Microsoft.Graph.Beta.Models.Settings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

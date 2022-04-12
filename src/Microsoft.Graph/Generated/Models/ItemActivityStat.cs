@@ -36,18 +36,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"access", (o,n) => { (o as ItemActivityStat).Access = n.GetObjectValue<ItemActionStat>(ItemActionStat.CreateFromDiscriminatorValue); } },
-                {"activities", (o,n) => { (o as ItemActivityStat).Activities = n.GetCollectionOfObjectValues<ItemActivity>(ItemActivity.CreateFromDiscriminatorValue).ToList(); } },
-                {"create", (o,n) => { (o as ItemActivityStat).Create = n.GetObjectValue<ItemActionStat>(ItemActionStat.CreateFromDiscriminatorValue); } },
-                {"delete", (o,n) => { (o as ItemActivityStat).Delete = n.GetObjectValue<ItemActionStat>(ItemActionStat.CreateFromDiscriminatorValue); } },
-                {"edit", (o,n) => { (o as ItemActivityStat).Edit = n.GetObjectValue<ItemActionStat>(ItemActionStat.CreateFromDiscriminatorValue); } },
-                {"endDateTime", (o,n) => { (o as ItemActivityStat).EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"incompleteData", (o,n) => { (o as ItemActivityStat).IncompleteData = n.GetObjectValue<Microsoft.Graph.Beta.Models.IncompleteData>(Microsoft.Graph.Beta.Models.IncompleteData.CreateFromDiscriminatorValue); } },
-                {"isTrending", (o,n) => { (o as ItemActivityStat).IsTrending = n.GetBoolValue(); } },
-                {"move", (o,n) => { (o as ItemActivityStat).Move = n.GetObjectValue<ItemActionStat>(ItemActionStat.CreateFromDiscriminatorValue); } },
-                {"startDateTime", (o,n) => { (o as ItemActivityStat).StartDateTime = n.GetDateTimeOffsetValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"access", n => { Access = n.GetObjectValue<ItemActionStat>(ItemActionStat.CreateFromDiscriminatorValue); } },
+                {"activities", n => { Activities = n.GetCollectionOfObjectValues<ItemActivity>(ItemActivity.CreateFromDiscriminatorValue).ToList(); } },
+                {"create", n => { Create = n.GetObjectValue<ItemActionStat>(ItemActionStat.CreateFromDiscriminatorValue); } },
+                {"delete", n => { Delete = n.GetObjectValue<ItemActionStat>(ItemActionStat.CreateFromDiscriminatorValue); } },
+                {"edit", n => { Edit = n.GetObjectValue<ItemActionStat>(ItemActionStat.CreateFromDiscriminatorValue); } },
+                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"incompleteData", n => { IncompleteData = n.GetObjectValue<Microsoft.Graph.Beta.Models.IncompleteData>(Microsoft.Graph.Beta.Models.IncompleteData.CreateFromDiscriminatorValue); } },
+                {"isTrending", n => { IsTrending = n.GetBoolValue(); } },
+                {"move", n => { Move = n.GetObjectValue<ItemActionStat>(ItemActionStat.CreateFromDiscriminatorValue); } },
+                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

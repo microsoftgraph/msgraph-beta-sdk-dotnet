@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"availabilityView", (o,n) => { (o as ScheduleInformation).AvailabilityView = n.GetStringValue(); } },
-                {"error", (o,n) => { (o as ScheduleInformation).Error = n.GetObjectValue<FreeBusyError>(FreeBusyError.CreateFromDiscriminatorValue); } },
-                {"scheduleId", (o,n) => { (o as ScheduleInformation).ScheduleId = n.GetStringValue(); } },
-                {"scheduleItems", (o,n) => { (o as ScheduleInformation).ScheduleItems = n.GetCollectionOfObjectValues<ScheduleItem>(ScheduleItem.CreateFromDiscriminatorValue).ToList(); } },
-                {"workingHours", (o,n) => { (o as ScheduleInformation).WorkingHours = n.GetObjectValue<Microsoft.Graph.Beta.Models.WorkingHours>(Microsoft.Graph.Beta.Models.WorkingHours.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"availabilityView", n => { AvailabilityView = n.GetStringValue(); } },
+                {"error", n => { Error = n.GetObjectValue<FreeBusyError>(FreeBusyError.CreateFromDiscriminatorValue); } },
+                {"scheduleId", n => { ScheduleId = n.GetStringValue(); } },
+                {"scheduleItems", n => { ScheduleItems = n.GetCollectionOfObjectValues<ScheduleItem>(ScheduleItem.CreateFromDiscriminatorValue).ToList(); } },
+                {"workingHours", n => { WorkingHours = n.GetObjectValue<Microsoft.Graph.Beta.Models.WorkingHours>(Microsoft.Graph.Beta.Models.WorkingHours.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

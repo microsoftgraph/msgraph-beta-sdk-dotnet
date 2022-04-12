@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Reports.GetSharePointActivityFileCountsWithPeriod
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/reports/microsoft.graph.getSharePointActivityFileCounts(period='{period}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("period", period);
+            urlTplParams.Add("", period);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

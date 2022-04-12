@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"checksum", (o,n) => { (o as ExactMatchSession).Checksum = n.GetStringValue(); } },
-                {"dataUploadURI", (o,n) => { (o as ExactMatchSession).DataUploadURI = n.GetStringValue(); } },
-                {"fields", (o,n) => { (o as ExactMatchSession).Fields = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"fileName", (o,n) => { (o as ExactMatchSession).FileName = n.GetStringValue(); } },
-                {"rowsPerBlock", (o,n) => { (o as ExactMatchSession).RowsPerBlock = n.GetIntValue(); } },
-                {"salt", (o,n) => { (o as ExactMatchSession).Salt = n.GetStringValue(); } },
-                {"uploadAgent", (o,n) => { (o as ExactMatchSession).UploadAgent = n.GetObjectValue<ExactMatchUploadAgent>(ExactMatchUploadAgent.CreateFromDiscriminatorValue); } },
-                {"uploadAgentId", (o,n) => { (o as ExactMatchSession).UploadAgentId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"checksum", n => { Checksum = n.GetStringValue(); } },
+                {"dataUploadURI", n => { DataUploadURI = n.GetStringValue(); } },
+                {"fields", n => { Fields = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"fileName", n => { FileName = n.GetStringValue(); } },
+                {"rowsPerBlock", n => { RowsPerBlock = n.GetIntValue(); } },
+                {"salt", n => { Salt = n.GetStringValue(); } },
+                {"uploadAgent", n => { UploadAgent = n.GetObjectValue<ExactMatchUploadAgent>(ExactMatchUploadAgent.CreateFromDiscriminatorValue); } },
+                {"uploadAgentId", n => { UploadAgentId = n.GetStringValue(); } },
             };
         }
         /// <summary>

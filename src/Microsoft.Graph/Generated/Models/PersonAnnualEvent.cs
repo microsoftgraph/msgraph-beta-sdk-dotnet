@@ -23,11 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"date", (o,n) => { (o as PersonAnnualEvent).Date = n.GetDateValue(); } },
-                {"displayName", (o,n) => { (o as PersonAnnualEvent).DisplayName = n.GetStringValue(); } },
-                {"type", (o,n) => { (o as PersonAnnualEvent).Type = n.GetEnumValue<PersonAnnualEventType>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"date", n => { Date = n.GetDateValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetEnumValue<PersonAnnualEventType>(); } },
             };
         }
         /// <summary>

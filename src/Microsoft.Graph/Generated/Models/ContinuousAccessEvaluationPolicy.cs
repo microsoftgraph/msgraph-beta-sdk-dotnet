@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"description", (o,n) => { (o as ContinuousAccessEvaluationPolicy).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as ContinuousAccessEvaluationPolicy).DisplayName = n.GetStringValue(); } },
-                {"groups", (o,n) => { (o as ContinuousAccessEvaluationPolicy).Groups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"isEnabled", (o,n) => { (o as ContinuousAccessEvaluationPolicy).IsEnabled = n.GetBoolValue(); } },
-                {"migrate", (o,n) => { (o as ContinuousAccessEvaluationPolicy).Migrate = n.GetBoolValue(); } },
-                {"users", (o,n) => { (o as ContinuousAccessEvaluationPolicy).Users = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"groups", n => { Groups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                {"migrate", n => { Migrate = n.GetBoolValue(); } },
+                {"users", n => { Users = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"name", (o,n) => { (o as PlannerBucket).Name = n.GetStringValue(); } },
-                {"orderHint", (o,n) => { (o as PlannerBucket).OrderHint = n.GetStringValue(); } },
-                {"planId", (o,n) => { (o as PlannerBucket).PlanId = n.GetStringValue(); } },
-                {"tasks", (o,n) => { (o as PlannerBucket).Tasks = n.GetCollectionOfObjectValues<PlannerTask>(PlannerTask.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"orderHint", n => { OrderHint = n.GetStringValue(); } },
+                {"planId", n => { PlanId = n.GetStringValue(); } },
+                {"tasks", n => { Tasks = n.GetCollectionOfObjectValues<PlannerTask>(PlannerTask.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

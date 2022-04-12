@@ -44,18 +44,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"hive", (o,n) => { (o as RegistryKeyState).Hive = n.GetEnumValue<RegistryHive>(); } },
-                {"key", (o,n) => { (o as RegistryKeyState).Key = n.GetStringValue(); } },
-                {"oldKey", (o,n) => { (o as RegistryKeyState).OldKey = n.GetStringValue(); } },
-                {"oldValueData", (o,n) => { (o as RegistryKeyState).OldValueData = n.GetStringValue(); } },
-                {"oldValueName", (o,n) => { (o as RegistryKeyState).OldValueName = n.GetStringValue(); } },
-                {"operation", (o,n) => { (o as RegistryKeyState).Operation = n.GetEnumValue<RegistryOperation>(); } },
-                {"processId", (o,n) => { (o as RegistryKeyState).ProcessId = n.GetIntValue(); } },
-                {"valueData", (o,n) => { (o as RegistryKeyState).ValueData = n.GetStringValue(); } },
-                {"valueName", (o,n) => { (o as RegistryKeyState).ValueName = n.GetStringValue(); } },
-                {"valueType", (o,n) => { (o as RegistryKeyState).ValueType = n.GetEnumValue<RegistryValueType>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"hive", n => { Hive = n.GetEnumValue<RegistryHive>(); } },
+                {"key", n => { Key = n.GetStringValue(); } },
+                {"oldKey", n => { OldKey = n.GetStringValue(); } },
+                {"oldValueData", n => { OldValueData = n.GetStringValue(); } },
+                {"oldValueName", n => { OldValueName = n.GetStringValue(); } },
+                {"operation", n => { Operation = n.GetEnumValue<RegistryOperation>(); } },
+                {"processId", n => { ProcessId = n.GetIntValue(); } },
+                {"valueData", n => { ValueData = n.GetStringValue(); } },
+                {"valueName", n => { ValueName = n.GetStringValue(); } },
+                {"valueType", n => { ValueType = n.GetEnumValue<RegistryValueType>(); } },
             };
         }
         /// <summary>

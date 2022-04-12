@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"allowedValues", (o,n) => { (o as CustomSecurityAttributeDefinition).AllowedValues = n.GetCollectionOfObjectValues<AllowedValue>(AllowedValue.CreateFromDiscriminatorValue).ToList(); } },
-                {"attributeSet", (o,n) => { (o as CustomSecurityAttributeDefinition).AttributeSet = n.GetStringValue(); } },
-                {"description", (o,n) => { (o as CustomSecurityAttributeDefinition).Description = n.GetStringValue(); } },
-                {"isCollection", (o,n) => { (o as CustomSecurityAttributeDefinition).IsCollection = n.GetBoolValue(); } },
-                {"isSearchable", (o,n) => { (o as CustomSecurityAttributeDefinition).IsSearchable = n.GetBoolValue(); } },
-                {"name", (o,n) => { (o as CustomSecurityAttributeDefinition).Name = n.GetStringValue(); } },
-                {"status", (o,n) => { (o as CustomSecurityAttributeDefinition).Status = n.GetStringValue(); } },
-                {"type", (o,n) => { (o as CustomSecurityAttributeDefinition).Type = n.GetStringValue(); } },
-                {"usePreDefinedValuesOnly", (o,n) => { (o as CustomSecurityAttributeDefinition).UsePreDefinedValuesOnly = n.GetBoolValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"allowedValues", n => { AllowedValues = n.GetCollectionOfObjectValues<AllowedValue>(AllowedValue.CreateFromDiscriminatorValue).ToList(); } },
+                {"attributeSet", n => { AttributeSet = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"isCollection", n => { IsCollection = n.GetBoolValue(); } },
+                {"isSearchable", n => { IsSearchable = n.GetBoolValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"status", n => { Status = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
+                {"usePreDefinedValuesOnly", n => { UsePreDefinedValuesOnly = n.GetBoolValue(); } },
             };
         }
         /// <summary>

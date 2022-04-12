@@ -40,20 +40,20 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdBy", (o,n) => { (o as AccessReviewHistoryDefinition).CreatedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", (o,n) => { (o as AccessReviewHistoryDefinition).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"decisions", (o,n) => { (o as AccessReviewHistoryDefinition).Decisions = n.GetCollectionOfEnumValues<AccessReviewHistoryDecisionFilter>().ToList(); } },
-                {"displayName", (o,n) => { (o as AccessReviewHistoryDefinition).DisplayName = n.GetStringValue(); } },
-                {"downloadUri", (o,n) => { (o as AccessReviewHistoryDefinition).DownloadUri = n.GetStringValue(); } },
-                {"fulfilledDateTime", (o,n) => { (o as AccessReviewHistoryDefinition).FulfilledDateTime = n.GetDateTimeOffsetValue(); } },
-                {"instances", (o,n) => { (o as AccessReviewHistoryDefinition).Instances = n.GetCollectionOfObjectValues<AccessReviewHistoryInstance>(AccessReviewHistoryInstance.CreateFromDiscriminatorValue).ToList(); } },
-                {"reviewHistoryPeriodEndDateTime", (o,n) => { (o as AccessReviewHistoryDefinition).ReviewHistoryPeriodEndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"reviewHistoryPeriodStartDateTime", (o,n) => { (o as AccessReviewHistoryDefinition).ReviewHistoryPeriodStartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"scheduleSettings", (o,n) => { (o as AccessReviewHistoryDefinition).ScheduleSettings = n.GetObjectValue<AccessReviewHistoryScheduleSettings>(AccessReviewHistoryScheduleSettings.CreateFromDiscriminatorValue); } },
-                {"scopes", (o,n) => { (o as AccessReviewHistoryDefinition).Scopes = n.GetCollectionOfObjectValues<AccessReviewScope>(AccessReviewScope.CreateFromDiscriminatorValue).ToList(); } },
-                {"status", (o,n) => { (o as AccessReviewHistoryDefinition).Status = n.GetEnumValue<AccessReviewHistoryStatus>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"createdBy", n => { CreatedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"decisions", n => { Decisions = n.GetCollectionOfEnumValues<AccessReviewHistoryDecisionFilter>().ToList(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"downloadUri", n => { DownloadUri = n.GetStringValue(); } },
+                {"fulfilledDateTime", n => { FulfilledDateTime = n.GetDateTimeOffsetValue(); } },
+                {"instances", n => { Instances = n.GetCollectionOfObjectValues<AccessReviewHistoryInstance>(AccessReviewHistoryInstance.CreateFromDiscriminatorValue).ToList(); } },
+                {"reviewHistoryPeriodEndDateTime", n => { ReviewHistoryPeriodEndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"reviewHistoryPeriodStartDateTime", n => { ReviewHistoryPeriodStartDateTime = n.GetDateTimeOffsetValue(); } },
+                {"scheduleSettings", n => { ScheduleSettings = n.GetObjectValue<AccessReviewHistoryScheduleSettings>(AccessReviewHistoryScheduleSettings.CreateFromDiscriminatorValue); } },
+                {"scopes", n => { Scopes = n.GetCollectionOfObjectValues<AccessReviewScope>(AccessReviewScope.CreateFromDiscriminatorValue).ToList(); } },
+                {"status", n => { Status = n.GetEnumValue<AccessReviewHistoryStatus>(); } },
             };
         }
         /// <summary>

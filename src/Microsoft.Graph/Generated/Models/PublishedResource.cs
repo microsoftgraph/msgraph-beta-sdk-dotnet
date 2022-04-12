@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"agentGroups", (o,n) => { (o as PublishedResource).AgentGroups = n.GetCollectionOfObjectValues<OnPremisesAgentGroup>(OnPremisesAgentGroup.CreateFromDiscriminatorValue).ToList(); } },
-                {"displayName", (o,n) => { (o as PublishedResource).DisplayName = n.GetStringValue(); } },
-                {"publishingType", (o,n) => { (o as PublishedResource).PublishingType = n.GetEnumValue<OnPremisesPublishingType>(); } },
-                {"resourceName", (o,n) => { (o as PublishedResource).ResourceName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"agentGroups", n => { AgentGroups = n.GetCollectionOfObjectValues<OnPremisesAgentGroup>(OnPremisesAgentGroup.CreateFromDiscriminatorValue).ToList(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"publishingType", n => { PublishingType = n.GetEnumValue<OnPremisesPublishingType>(); } },
+                {"resourceName", n => { ResourceName = n.GetStringValue(); } },
             };
         }
         /// <summary>

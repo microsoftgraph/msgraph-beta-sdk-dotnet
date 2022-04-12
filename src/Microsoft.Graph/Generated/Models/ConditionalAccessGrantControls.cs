@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"builtInControls", (o,n) => { (o as ConditionalAccessGrantControls).BuiltInControls = n.GetCollectionOfEnumValues<ConditionalAccessGrantControl>().ToList(); } },
-                {"customAuthenticationFactors", (o,n) => { (o as ConditionalAccessGrantControls).CustomAuthenticationFactors = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"operator", (o,n) => { (o as ConditionalAccessGrantControls).Operator = n.GetStringValue(); } },
-                {"termsOfUse", (o,n) => { (o as ConditionalAccessGrantControls).TermsOfUse = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"builtInControls", n => { BuiltInControls = n.GetCollectionOfEnumValues<ConditionalAccessGrantControl>().ToList(); } },
+                {"customAuthenticationFactors", n => { CustomAuthenticationFactors = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"operator", n => { Operator = n.GetStringValue(); } },
+                {"termsOfUse", n => { TermsOfUse = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

@@ -24,9 +24,9 @@ namespace Microsoft.Graph.Beta.Sites.Item.GetApplicableContentTypesForListWithLi
         public GetApplicableContentTypesForListWithListIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string listId = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/sites/{site_id}/microsoft.graph.getApplicableContentTypesForList(listId='{listId}')";
+            UrlTemplate = "{+baseurl}/sites/{site%2Did}/microsoft.graph.getApplicableContentTypesForList(listId='{listId}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("listId", listId);
+            urlTplParams.Add("", listId);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.GetApplicableContentTypesForListWithLi
         public GetApplicableContentTypesForListWithListIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/sites/{site_id}/microsoft.graph.getApplicableContentTypesForList(listId='{listId}')";
+            UrlTemplate = "{+baseurl}/sites/{site%2Did}/microsoft.graph.getApplicableContentTypesForList(listId='{listId}')";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

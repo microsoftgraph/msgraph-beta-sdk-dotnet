@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appDisplayName", (o,n) => { (o as UserExperienceAnalyticsBatteryHealthDeviceAppImpact).AppDisplayName = n.GetStringValue(); } },
-                {"appName", (o,n) => { (o as UserExperienceAnalyticsBatteryHealthDeviceAppImpact).AppName = n.GetStringValue(); } },
-                {"appPublisher", (o,n) => { (o as UserExperienceAnalyticsBatteryHealthDeviceAppImpact).AppPublisher = n.GetStringValue(); } },
-                {"batteryUsagePercentage", (o,n) => { (o as UserExperienceAnalyticsBatteryHealthDeviceAppImpact).BatteryUsagePercentage = n.GetDoubleValue(); } },
-                {"deviceId", (o,n) => { (o as UserExperienceAnalyticsBatteryHealthDeviceAppImpact).DeviceId = n.GetStringValue(); } },
-                {"isForegroundApp", (o,n) => { (o as UserExperienceAnalyticsBatteryHealthDeviceAppImpact).IsForegroundApp = n.GetBoolValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
+                {"appName", n => { AppName = n.GetStringValue(); } },
+                {"appPublisher", n => { AppPublisher = n.GetStringValue(); } },
+                {"batteryUsagePercentage", n => { BatteryUsagePercentage = n.GetDoubleValue(); } },
+                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
+                {"isForegroundApp", n => { IsForegroundApp = n.GetBoolValue(); } },
             };
         }
         /// <summary>

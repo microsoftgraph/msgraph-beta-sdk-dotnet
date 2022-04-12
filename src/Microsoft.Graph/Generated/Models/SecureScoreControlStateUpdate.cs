@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"assignedTo", (o,n) => { (o as SecureScoreControlStateUpdate).AssignedTo = n.GetStringValue(); } },
-                {"comment", (o,n) => { (o as SecureScoreControlStateUpdate).Comment = n.GetStringValue(); } },
-                {"state", (o,n) => { (o as SecureScoreControlStateUpdate).State = n.GetStringValue(); } },
-                {"updatedBy", (o,n) => { (o as SecureScoreControlStateUpdate).UpdatedBy = n.GetStringValue(); } },
-                {"updatedDateTime", (o,n) => { (o as SecureScoreControlStateUpdate).UpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"assignedTo", n => { AssignedTo = n.GetStringValue(); } },
+                {"comment", n => { Comment = n.GetStringValue(); } },
+                {"state", n => { State = n.GetStringValue(); } },
+                {"updatedBy", n => { UpdatedBy = n.GetStringValue(); } },
+                {"updatedDateTime", n => { UpdatedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

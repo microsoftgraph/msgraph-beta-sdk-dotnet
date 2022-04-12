@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"onPremisesConnectionId", (o,n) => { (o as CloudPcDomainJoinConfiguration).OnPremisesConnectionId = n.GetStringValue(); } },
-                {"regionName", (o,n) => { (o as CloudPcDomainJoinConfiguration).RegionName = n.GetStringValue(); } },
-                {"type", (o,n) => { (o as CloudPcDomainJoinConfiguration).Type = n.GetEnumValue<CloudPcDomainJoinType>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"onPremisesConnectionId", n => { OnPremisesConnectionId = n.GetStringValue(); } },
+                {"regionName", n => { RegionName = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetEnumValue<CloudPcDomainJoinType>(); } },
             };
         }
         /// <summary>

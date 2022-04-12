@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"categories", (o,n) => { (o as ApplicationTemplate).Categories = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"description", (o,n) => { (o as ApplicationTemplate).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as ApplicationTemplate).DisplayName = n.GetStringValue(); } },
-                {"homePageUrl", (o,n) => { (o as ApplicationTemplate).HomePageUrl = n.GetStringValue(); } },
-                {"informationalUrls", (o,n) => { (o as ApplicationTemplate).InformationalUrls = n.GetObjectValue<Microsoft.Graph.Beta.Models.InformationalUrls>(Microsoft.Graph.Beta.Models.InformationalUrls.CreateFromDiscriminatorValue); } },
-                {"logoUrl", (o,n) => { (o as ApplicationTemplate).LogoUrl = n.GetStringValue(); } },
-                {"publisher", (o,n) => { (o as ApplicationTemplate).Publisher = n.GetStringValue(); } },
-                {"supportedProvisioningTypes", (o,n) => { (o as ApplicationTemplate).SupportedProvisioningTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"supportedSingleSignOnModes", (o,n) => { (o as ApplicationTemplate).SupportedSingleSignOnModes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"homePageUrl", n => { HomePageUrl = n.GetStringValue(); } },
+                {"informationalUrls", n => { InformationalUrls = n.GetObjectValue<Microsoft.Graph.Beta.Models.InformationalUrls>(Microsoft.Graph.Beta.Models.InformationalUrls.CreateFromDiscriminatorValue); } },
+                {"logoUrl", n => { LogoUrl = n.GetStringValue(); } },
+                {"publisher", n => { Publisher = n.GetStringValue(); } },
+                {"supportedProvisioningTypes", n => { SupportedProvisioningTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"supportedSingleSignOnModes", n => { SupportedSingleSignOnModes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

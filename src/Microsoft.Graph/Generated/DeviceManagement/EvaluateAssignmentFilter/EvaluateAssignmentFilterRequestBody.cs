@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EvaluateAssignmentFilter {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"data", (o,n) => { (o as EvaluateAssignmentFilterRequestBody).Data = n.GetObjectValue<AssignmentFilterEvaluateRequest>(AssignmentFilterEvaluateRequest.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"data", n => { Data = n.GetObjectValue<AssignmentFilterEvaluateRequest>(AssignmentFilterEvaluateRequest.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

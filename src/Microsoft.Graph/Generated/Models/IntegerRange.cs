@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"end", (o,n) => { (o as IntegerRange).End = n.GetLongValue(); } },
-                {"maximum", (o,n) => { (o as IntegerRange).Maximum = n.GetLongValue(); } },
-                {"minimum", (o,n) => { (o as IntegerRange).Minimum = n.GetLongValue(); } },
-                {"start", (o,n) => { (o as IntegerRange).Start = n.GetLongValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"end", n => { End = n.GetLongValue(); } },
+                {"maximum", n => { Maximum = n.GetLongValue(); } },
+                {"minimum", n => { Minimum = n.GetLongValue(); } },
+                {"start", n => { Start = n.GetLongValue(); } },
             };
         }
         /// <summary>

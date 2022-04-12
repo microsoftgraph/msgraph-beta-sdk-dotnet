@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"cloudPcId", (o,n) => { (o as CloudPcSnapshot).CloudPcId = n.GetStringValue(); } },
-                {"createdDateTime", (o,n) => { (o as CloudPcSnapshot).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastRestoredDateTime", (o,n) => { (o as CloudPcSnapshot).LastRestoredDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", (o,n) => { (o as CloudPcSnapshot).Status = n.GetEnumValue<CloudPcSnapshotStatus>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"cloudPcId", n => { CloudPcId = n.GetStringValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastRestoredDateTime", n => { LastRestoredDateTime = n.GetDateTimeOffsetValue(); } },
+                {"status", n => { Status = n.GetEnumValue<CloudPcSnapshotStatus>(); } },
             };
         }
         /// <summary>

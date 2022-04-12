@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"description", (o,n) => { (o as ResponsibleSensitiveType).Description = n.GetStringValue(); } },
-                {"id", (o,n) => { (o as ResponsibleSensitiveType).Id = n.GetStringValue(); } },
-                {"name", (o,n) => { (o as ResponsibleSensitiveType).Name = n.GetStringValue(); } },
-                {"publisherName", (o,n) => { (o as ResponsibleSensitiveType).PublisherName = n.GetStringValue(); } },
-                {"rulePackageId", (o,n) => { (o as ResponsibleSensitiveType).RulePackageId = n.GetStringValue(); } },
-                {"rulePackageType", (o,n) => { (o as ResponsibleSensitiveType).RulePackageType = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"publisherName", n => { PublisherName = n.GetStringValue(); } },
+                {"rulePackageId", n => { RulePackageId = n.GetStringValue(); } },
+                {"rulePackageType", n => { RulePackageType = n.GetStringValue(); } },
             };
         }
         /// <summary>

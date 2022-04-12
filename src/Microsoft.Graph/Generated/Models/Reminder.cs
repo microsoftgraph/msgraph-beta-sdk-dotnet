@@ -40,16 +40,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"changeKey", (o,n) => { (o as Reminder).ChangeKey = n.GetStringValue(); } },
-                {"eventEndTime", (o,n) => { (o as Reminder).EventEndTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"eventId", (o,n) => { (o as Reminder).EventId = n.GetStringValue(); } },
-                {"eventLocation", (o,n) => { (o as Reminder).EventLocation = n.GetObjectValue<Location>(Location.CreateFromDiscriminatorValue); } },
-                {"eventStartTime", (o,n) => { (o as Reminder).EventStartTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"eventSubject", (o,n) => { (o as Reminder).EventSubject = n.GetStringValue(); } },
-                {"eventWebLink", (o,n) => { (o as Reminder).EventWebLink = n.GetStringValue(); } },
-                {"reminderFireTime", (o,n) => { (o as Reminder).ReminderFireTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"changeKey", n => { ChangeKey = n.GetStringValue(); } },
+                {"eventEndTime", n => { EventEndTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                {"eventId", n => { EventId = n.GetStringValue(); } },
+                {"eventLocation", n => { EventLocation = n.GetObjectValue<Location>(Location.CreateFromDiscriminatorValue); } },
+                {"eventStartTime", n => { EventStartTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                {"eventSubject", n => { EventSubject = n.GetStringValue(); } },
+                {"eventWebLink", n => { EventWebLink = n.GetStringValue(); } },
+                {"reminderFireTime", n => { ReminderFireTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

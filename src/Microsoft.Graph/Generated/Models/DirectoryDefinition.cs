@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"discoverabilities", (o,n) => { (o as DirectoryDefinition).Discoverabilities = n.GetEnumValue<DirectoryDefinitionDiscoverabilities>(); } },
-                {"discoveryDateTime", (o,n) => { (o as DirectoryDefinition).DiscoveryDateTime = n.GetDateTimeOffsetValue(); } },
-                {"name", (o,n) => { (o as DirectoryDefinition).Name = n.GetStringValue(); } },
-                {"objects", (o,n) => { (o as DirectoryDefinition).Objects = n.GetCollectionOfObjectValues<ObjectDefinition>(ObjectDefinition.CreateFromDiscriminatorValue).ToList(); } },
-                {"readOnly", (o,n) => { (o as DirectoryDefinition).ReadOnly = n.GetBoolValue(); } },
-                {"version", (o,n) => { (o as DirectoryDefinition).Version = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"discoverabilities", n => { Discoverabilities = n.GetEnumValue<DirectoryDefinitionDiscoverabilities>(); } },
+                {"discoveryDateTime", n => { DiscoveryDateTime = n.GetDateTimeOffsetValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"objects", n => { Objects = n.GetCollectionOfObjectValues<ObjectDefinition>(ObjectDefinition.CreateFromDiscriminatorValue).ToList(); } },
+                {"readOnly", n => { ReadOnly = n.GetBoolValue(); } },
+                {"version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

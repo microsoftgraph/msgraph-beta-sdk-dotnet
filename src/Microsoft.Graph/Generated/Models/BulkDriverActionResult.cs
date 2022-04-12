@@ -31,11 +31,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"failedDriverIds", (o,n) => { (o as BulkDriverActionResult).FailedDriverIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"notFoundDriverIds", (o,n) => { (o as BulkDriverActionResult).NotFoundDriverIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"successfulDriverIds", (o,n) => { (o as BulkDriverActionResult).SuccessfulDriverIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"failedDriverIds", n => { FailedDriverIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"notFoundDriverIds", n => { NotFoundDriverIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"successfulDriverIds", n => { SuccessfulDriverIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

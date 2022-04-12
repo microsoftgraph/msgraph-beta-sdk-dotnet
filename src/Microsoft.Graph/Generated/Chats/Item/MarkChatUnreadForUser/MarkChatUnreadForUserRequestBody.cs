@@ -32,11 +32,11 @@ namespace Microsoft.Graph.Beta.Chats.Item.MarkChatUnreadForUser {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"lastMessageReadDateTime", (o,n) => { (o as MarkChatUnreadForUserRequestBody).LastMessageReadDateTime = n.GetDateTimeOffsetValue(); } },
-                {"tenantId", (o,n) => { (o as MarkChatUnreadForUserRequestBody).TenantId = n.GetStringValue(); } },
-                {"user", (o,n) => { (o as MarkChatUnreadForUserRequestBody).User = n.GetObjectValue<TeamworkUserIdentity>(TeamworkUserIdentity.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"lastMessageReadDateTime", n => { LastMessageReadDateTime = n.GetDateTimeOffsetValue(); } },
+                {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                {"user", n => { User = n.GetObjectValue<TeamworkUserIdentity>(TeamworkUserIdentity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

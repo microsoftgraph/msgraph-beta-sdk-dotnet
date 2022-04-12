@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"actionName", (o,n) => { (o as DeviceActionResult).ActionName = n.GetStringValue(); } },
-                {"actionState", (o,n) => { (o as DeviceActionResult).ActionState = n.GetEnumValue<ActionState>(); } },
-                {"lastUpdatedDateTime", (o,n) => { (o as DeviceActionResult).LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"startDateTime", (o,n) => { (o as DeviceActionResult).StartDateTime = n.GetDateTimeOffsetValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"actionName", n => { ActionName = n.GetStringValue(); } },
+                {"actionState", n => { ActionState = n.GetEnumValue<ActionState>(); } },
+                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

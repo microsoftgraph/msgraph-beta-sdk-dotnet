@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"keyCredentials", (o,n) => { (o as AppManagementConfiguration).KeyCredentials = n.GetCollectionOfObjectValues<KeyCredentialConfiguration>(KeyCredentialConfiguration.CreateFromDiscriminatorValue).ToList(); } },
-                {"passwordCredentials", (o,n) => { (o as AppManagementConfiguration).PasswordCredentials = n.GetCollectionOfObjectValues<PasswordCredentialConfiguration>(PasswordCredentialConfiguration.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"keyCredentials", n => { KeyCredentials = n.GetCollectionOfObjectValues<KeyCredentialConfiguration>(KeyCredentialConfiguration.CreateFromDiscriminatorValue).ToList(); } },
+                {"passwordCredentials", n => { PasswordCredentials = n.GetCollectionOfObjectValues<PasswordCredentialConfiguration>(PasswordCredentialConfiguration.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

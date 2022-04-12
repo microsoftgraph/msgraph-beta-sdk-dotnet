@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"content", (o,n) => { (o as DeviceAndAppManagementData).Content = n.GetByteArrayValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"content", n => { Content = n.GetByteArrayValue(); } },
             };
         }
         /// <summary>

@@ -42,17 +42,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"cameraMake", (o,n) => { (o as Photo).CameraMake = n.GetStringValue(); } },
-                {"cameraModel", (o,n) => { (o as Photo).CameraModel = n.GetStringValue(); } },
-                {"exposureDenominator", (o,n) => { (o as Photo).ExposureDenominator = n.GetDoubleValue(); } },
-                {"exposureNumerator", (o,n) => { (o as Photo).ExposureNumerator = n.GetDoubleValue(); } },
-                {"fNumber", (o,n) => { (o as Photo).FNumber = n.GetDoubleValue(); } },
-                {"focalLength", (o,n) => { (o as Photo).FocalLength = n.GetDoubleValue(); } },
-                {"iso", (o,n) => { (o as Photo).Iso = n.GetIntValue(); } },
-                {"orientation", (o,n) => { (o as Photo).Orientation = n.GetIntValue(); } },
-                {"takenDateTime", (o,n) => { (o as Photo).TakenDateTime = n.GetDateTimeOffsetValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"cameraMake", n => { CameraMake = n.GetStringValue(); } },
+                {"cameraModel", n => { CameraModel = n.GetStringValue(); } },
+                {"exposureDenominator", n => { ExposureDenominator = n.GetDoubleValue(); } },
+                {"exposureNumerator", n => { ExposureNumerator = n.GetDoubleValue(); } },
+                {"fNumber", n => { FNumber = n.GetDoubleValue(); } },
+                {"focalLength", n => { FocalLength = n.GetDoubleValue(); } },
+                {"iso", n => { Iso = n.GetIntValue(); } },
+                {"orientation", n => { Orientation = n.GetIntValue(); } },
+                {"takenDateTime", n => { TakenDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

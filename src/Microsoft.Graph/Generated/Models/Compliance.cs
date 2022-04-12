@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"ediscovery", (o,n) => { (o as Compliance).Ediscovery = n.GetObjectValue<Ediscoveryroot>(Ediscoveryroot.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"ediscovery", n => { Ediscovery = n.GetObjectValue<Ediscoveryroot>(Ediscoveryroot.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

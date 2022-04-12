@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"allowNewMessageFromBots", (o,n) => { (o as ChannelModerationSettings).AllowNewMessageFromBots = n.GetBoolValue(); } },
-                {"allowNewMessageFromConnectors", (o,n) => { (o as ChannelModerationSettings).AllowNewMessageFromConnectors = n.GetBoolValue(); } },
-                {"replyRestriction", (o,n) => { (o as ChannelModerationSettings).ReplyRestriction = n.GetEnumValue<ReplyRestriction>(); } },
-                {"userNewMessageRestriction", (o,n) => { (o as ChannelModerationSettings).UserNewMessageRestriction = n.GetEnumValue<UserNewMessageRestriction>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"allowNewMessageFromBots", n => { AllowNewMessageFromBots = n.GetBoolValue(); } },
+                {"allowNewMessageFromConnectors", n => { AllowNewMessageFromConnectors = n.GetBoolValue(); } },
+                {"replyRestriction", n => { ReplyRestriction = n.GetEnumValue<ReplyRestriction>(); } },
+                {"userNewMessageRestriction", n => { UserNewMessageRestriction = n.GetEnumValue<UserNewMessageRestriction>(); } },
             };
         }
         /// <summary>

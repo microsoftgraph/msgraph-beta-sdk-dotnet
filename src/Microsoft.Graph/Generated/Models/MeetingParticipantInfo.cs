@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"identity", (o,n) => { (o as MeetingParticipantInfo).Identity = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"role", (o,n) => { (o as MeetingParticipantInfo).Role = n.GetEnumValue<OnlineMeetingRole>(); } },
-                {"upn", (o,n) => { (o as MeetingParticipantInfo).Upn = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"identity", n => { Identity = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"role", n => { Role = n.GetEnumValue<OnlineMeetingRole>(); } },
+                {"upn", n => { Upn = n.GetStringValue(); } },
             };
         }
         /// <summary>

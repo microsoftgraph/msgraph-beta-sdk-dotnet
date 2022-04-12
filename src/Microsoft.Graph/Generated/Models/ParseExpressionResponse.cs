@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"error", (o,n) => { (o as ParseExpressionResponse).Error = n.GetObjectValue<PublicError>(PublicError.CreateFromDiscriminatorValue); } },
-                {"evaluationResult", (o,n) => { (o as ParseExpressionResponse).EvaluationResult = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"evaluationSucceeded", (o,n) => { (o as ParseExpressionResponse).EvaluationSucceeded = n.GetBoolValue(); } },
-                {"parsedExpression", (o,n) => { (o as ParseExpressionResponse).ParsedExpression = n.GetObjectValue<AttributeMappingSource>(AttributeMappingSource.CreateFromDiscriminatorValue); } },
-                {"parsingSucceeded", (o,n) => { (o as ParseExpressionResponse).ParsingSucceeded = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"error", n => { Error = n.GetObjectValue<PublicError>(PublicError.CreateFromDiscriminatorValue); } },
+                {"evaluationResult", n => { EvaluationResult = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"evaluationSucceeded", n => { EvaluationSucceeded = n.GetBoolValue(); } },
+                {"parsedExpression", n => { ParsedExpression = n.GetObjectValue<AttributeMappingSource>(AttributeMappingSource.CreateFromDiscriminatorValue); } },
+                {"parsingSucceeded", n => { ParsingSucceeded = n.GetBoolValue(); } },
             };
         }
         /// <summary>

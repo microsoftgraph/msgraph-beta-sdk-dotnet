@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"city", (o,n) => { (o as PostalAddressType).City = n.GetStringValue(); } },
-                {"countryLetterCode", (o,n) => { (o as PostalAddressType).CountryLetterCode = n.GetStringValue(); } },
-                {"postalCode", (o,n) => { (o as PostalAddressType).PostalCode = n.GetStringValue(); } },
-                {"state", (o,n) => { (o as PostalAddressType).State = n.GetStringValue(); } },
-                {"street", (o,n) => { (o as PostalAddressType).Street = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"city", n => { City = n.GetStringValue(); } },
+                {"countryLetterCode", n => { CountryLetterCode = n.GetStringValue(); } },
+                {"postalCode", n => { PostalCode = n.GetStringValue(); } },
+                {"state", n => { State = n.GetStringValue(); } },
+                {"street", n => { Street = n.GetStringValue(); } },
             };
         }
         /// <summary>

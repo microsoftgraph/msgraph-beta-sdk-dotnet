@@ -42,21 +42,21 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"averageSpikeTimeScore", (o,n) => { (o as UserExperienceAnalyticsResourcePerformance).AverageSpikeTimeScore = n.GetIntValue(); } },
-                {"cpuSpikeTimePercentage", (o,n) => { (o as UserExperienceAnalyticsResourcePerformance).CpuSpikeTimePercentage = n.GetDoubleValue(); } },
-                {"cpuSpikeTimePercentageThreshold", (o,n) => { (o as UserExperienceAnalyticsResourcePerformance).CpuSpikeTimePercentageThreshold = n.GetDoubleValue(); } },
-                {"cpuSpikeTimeScore", (o,n) => { (o as UserExperienceAnalyticsResourcePerformance).CpuSpikeTimeScore = n.GetIntValue(); } },
-                {"deviceCount", (o,n) => { (o as UserExperienceAnalyticsResourcePerformance).DeviceCount = n.GetLongValue(); } },
-                {"deviceId", (o,n) => { (o as UserExperienceAnalyticsResourcePerformance).DeviceId = n.GetStringValue(); } },
-                {"deviceName", (o,n) => { (o as UserExperienceAnalyticsResourcePerformance).DeviceName = n.GetStringValue(); } },
-                {"deviceResourcePerformanceScore", (o,n) => { (o as UserExperienceAnalyticsResourcePerformance).DeviceResourcePerformanceScore = n.GetIntValue(); } },
-                {"manufacturer", (o,n) => { (o as UserExperienceAnalyticsResourcePerformance).Manufacturer = n.GetStringValue(); } },
-                {"model", (o,n) => { (o as UserExperienceAnalyticsResourcePerformance).Model = n.GetStringValue(); } },
-                {"ramSpikeTimePercentage", (o,n) => { (o as UserExperienceAnalyticsResourcePerformance).RamSpikeTimePercentage = n.GetDoubleValue(); } },
-                {"ramSpikeTimePercentageThreshold", (o,n) => { (o as UserExperienceAnalyticsResourcePerformance).RamSpikeTimePercentageThreshold = n.GetDoubleValue(); } },
-                {"ramSpikeTimeScore", (o,n) => { (o as UserExperienceAnalyticsResourcePerformance).RamSpikeTimeScore = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"averageSpikeTimeScore", n => { AverageSpikeTimeScore = n.GetIntValue(); } },
+                {"cpuSpikeTimePercentage", n => { CpuSpikeTimePercentage = n.GetDoubleValue(); } },
+                {"cpuSpikeTimePercentageThreshold", n => { CpuSpikeTimePercentageThreshold = n.GetDoubleValue(); } },
+                {"cpuSpikeTimeScore", n => { CpuSpikeTimeScore = n.GetIntValue(); } },
+                {"deviceCount", n => { DeviceCount = n.GetLongValue(); } },
+                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
+                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
+                {"deviceResourcePerformanceScore", n => { DeviceResourcePerformanceScore = n.GetIntValue(); } },
+                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                {"model", n => { Model = n.GetStringValue(); } },
+                {"ramSpikeTimePercentage", n => { RamSpikeTimePercentage = n.GetDoubleValue(); } },
+                {"ramSpikeTimePercentageThreshold", n => { RamSpikeTimePercentageThreshold = n.GetDoubleValue(); } },
+                {"ramSpikeTimeScore", n => { RamSpikeTimeScore = n.GetIntValue(); } },
             };
         }
         /// <summary>

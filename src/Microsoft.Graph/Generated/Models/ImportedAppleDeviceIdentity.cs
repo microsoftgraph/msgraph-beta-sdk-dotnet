@@ -38,19 +38,19 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdDateTime", (o,n) => { (o as ImportedAppleDeviceIdentity).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as ImportedAppleDeviceIdentity).Description = n.GetStringValue(); } },
-                {"discoverySource", (o,n) => { (o as ImportedAppleDeviceIdentity).DiscoverySource = n.GetEnumValue<DiscoverySource>(); } },
-                {"enrollmentState", (o,n) => { (o as ImportedAppleDeviceIdentity).EnrollmentState = n.GetEnumValue<EnrollmentState>(); } },
-                {"isDeleted", (o,n) => { (o as ImportedAppleDeviceIdentity).IsDeleted = n.GetBoolValue(); } },
-                {"isSupervised", (o,n) => { (o as ImportedAppleDeviceIdentity).IsSupervised = n.GetBoolValue(); } },
-                {"lastContactedDateTime", (o,n) => { (o as ImportedAppleDeviceIdentity).LastContactedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"platform", (o,n) => { (o as ImportedAppleDeviceIdentity).Platform = n.GetEnumValue<Platform>(); } },
-                {"requestedEnrollmentProfileAssignmentDateTime", (o,n) => { (o as ImportedAppleDeviceIdentity).RequestedEnrollmentProfileAssignmentDateTime = n.GetDateTimeOffsetValue(); } },
-                {"requestedEnrollmentProfileId", (o,n) => { (o as ImportedAppleDeviceIdentity).RequestedEnrollmentProfileId = n.GetStringValue(); } },
-                {"serialNumber", (o,n) => { (o as ImportedAppleDeviceIdentity).SerialNumber = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"discoverySource", n => { DiscoverySource = n.GetEnumValue<DiscoverySource>(); } },
+                {"enrollmentState", n => { EnrollmentState = n.GetEnumValue<EnrollmentState>(); } },
+                {"isDeleted", n => { IsDeleted = n.GetBoolValue(); } },
+                {"isSupervised", n => { IsSupervised = n.GetBoolValue(); } },
+                {"lastContactedDateTime", n => { LastContactedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"platform", n => { Platform = n.GetEnumValue<Platform>(); } },
+                {"requestedEnrollmentProfileAssignmentDateTime", n => { RequestedEnrollmentProfileAssignmentDateTime = n.GetDateTimeOffsetValue(); } },
+                {"requestedEnrollmentProfileId", n => { RequestedEnrollmentProfileId = n.GetStringValue(); } },
+                {"serialNumber", n => { SerialNumber = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -26,11 +26,11 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.ListItem.GetActiviti
         public GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string endDateTime = default, string interval = default, string startDateTime = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/groups/{group_id}/drives/{drive_id}/root/listItem/microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')";
+            UrlTemplate = "{+baseurl}/groups/{group%2Did}/drives/{drive%2Did}/root/listItem/microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("endDateTime", endDateTime);
-            urlTplParams.Add("interval", interval);
-            urlTplParams.Add("startDateTime", startDateTime);
+            urlTplParams.Add("", endDateTime);
+            urlTplParams.Add("", interval);
+            urlTplParams.Add("", startDateTime);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.ListItem.GetActiviti
         public GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/groups/{group_id}/drives/{drive_id}/root/listItem/microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')";
+            UrlTemplate = "{+baseurl}/groups/{group%2Did}/drives/{drive%2Did}/root/listItem/microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

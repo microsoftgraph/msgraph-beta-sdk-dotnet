@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"assignedDateTime", (o,n) => { (o as AssignedPlan).AssignedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"capabilityStatus", (o,n) => { (o as AssignedPlan).CapabilityStatus = n.GetStringValue(); } },
-                {"service", (o,n) => { (o as AssignedPlan).Service = n.GetStringValue(); } },
-                {"servicePlanId", (o,n) => { (o as AssignedPlan).ServicePlanId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"assignedDateTime", n => { AssignedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"capabilityStatus", n => { CapabilityStatus = n.GetStringValue(); } },
+                {"service", n => { Service = n.GetStringValue(); } },
+                {"servicePlanId", n => { ServicePlanId = n.GetStringValue(); } },
             };
         }
         /// <summary>

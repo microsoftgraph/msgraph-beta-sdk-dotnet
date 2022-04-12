@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdDateTime", (o,n) => { (o as EmbeddedSIMDeviceState).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deviceName", (o,n) => { (o as EmbeddedSIMDeviceState).DeviceName = n.GetStringValue(); } },
-                {"lastSyncDateTime", (o,n) => { (o as EmbeddedSIMDeviceState).LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"modifiedDateTime", (o,n) => { (o as EmbeddedSIMDeviceState).ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"state", (o,n) => { (o as EmbeddedSIMDeviceState).State = n.GetEnumValue<EmbeddedSIMDeviceStateValue>(); } },
-                {"stateDetails", (o,n) => { (o as EmbeddedSIMDeviceState).StateDetails = n.GetStringValue(); } },
-                {"universalIntegratedCircuitCardIdentifier", (o,n) => { (o as EmbeddedSIMDeviceState).UniversalIntegratedCircuitCardIdentifier = n.GetStringValue(); } },
-                {"userName", (o,n) => { (o as EmbeddedSIMDeviceState).UserName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
+                {"lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                {"modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"state", n => { State = n.GetEnumValue<EmbeddedSIMDeviceStateValue>(); } },
+                {"stateDetails", n => { StateDetails = n.GetStringValue(); } },
+                {"universalIntegratedCircuitCardIdentifier", n => { UniversalIntegratedCircuitCardIdentifier = n.GetStringValue(); } },
+                {"userName", n => { UserName = n.GetStringValue(); } },
             };
         }
         /// <summary>

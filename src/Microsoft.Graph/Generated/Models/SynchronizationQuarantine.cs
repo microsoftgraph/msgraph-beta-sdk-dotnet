@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"currentBegan", (o,n) => { (o as SynchronizationQuarantine).CurrentBegan = n.GetDateTimeOffsetValue(); } },
-                {"error", (o,n) => { (o as SynchronizationQuarantine).Error = n.GetObjectValue<SynchronizationError>(SynchronizationError.CreateFromDiscriminatorValue); } },
-                {"nextAttempt", (o,n) => { (o as SynchronizationQuarantine).NextAttempt = n.GetDateTimeOffsetValue(); } },
-                {"reason", (o,n) => { (o as SynchronizationQuarantine).Reason = n.GetEnumValue<QuarantineReason>(); } },
-                {"seriesBegan", (o,n) => { (o as SynchronizationQuarantine).SeriesBegan = n.GetDateTimeOffsetValue(); } },
-                {"seriesCount", (o,n) => { (o as SynchronizationQuarantine).SeriesCount = n.GetLongValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"currentBegan", n => { CurrentBegan = n.GetDateTimeOffsetValue(); } },
+                {"error", n => { Error = n.GetObjectValue<SynchronizationError>(SynchronizationError.CreateFromDiscriminatorValue); } },
+                {"nextAttempt", n => { NextAttempt = n.GetDateTimeOffsetValue(); } },
+                {"reason", n => { Reason = n.GetEnumValue<QuarantineReason>(); } },
+                {"seriesBegan", n => { SeriesBegan = n.GetDateTimeOffsetValue(); } },
+                {"seriesCount", n => { SeriesCount = n.GetLongValue(); } },
             };
         }
         /// <summary>

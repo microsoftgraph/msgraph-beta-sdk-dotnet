@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Enable {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"enable", (o,n) => { (o as EnableRequestBody).Enable = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"enable", n => { Enable = n.GetBoolValue(); } },
             };
         }
         /// <summary>

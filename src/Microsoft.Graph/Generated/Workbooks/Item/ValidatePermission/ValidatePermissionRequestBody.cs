@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.Workbooks.Item.ValidatePermission {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"challengeToken", (o,n) => { (o as ValidatePermissionRequestBody).ChallengeToken = n.GetStringValue(); } },
-                {"password", (o,n) => { (o as ValidatePermissionRequestBody).Password = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"challengeToken", n => { ChallengeToken = n.GetStringValue(); } },
+                {"password", n => { Password = n.GetStringValue(); } },
             };
         }
         /// <summary>

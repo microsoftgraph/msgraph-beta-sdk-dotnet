@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.UpdatePr
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"officeConfigurationPolicyIds", (o,n) => { (o as UpdatePrioritiesRequestBody).OfficeConfigurationPolicyIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"officeConfigurationPriorities", (o,n) => { (o as UpdatePrioritiesRequestBody).OfficeConfigurationPriorities = n.GetCollectionOfPrimitiveValues<int?>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"officeConfigurationPolicyIds", n => { OfficeConfigurationPolicyIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"officeConfigurationPriorities", n => { OfficeConfigurationPriorities = n.GetCollectionOfPrimitiveValues<int?>().ToList(); } },
             };
         }
         /// <summary>

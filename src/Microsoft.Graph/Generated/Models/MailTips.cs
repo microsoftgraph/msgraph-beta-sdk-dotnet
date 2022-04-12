@@ -48,20 +48,20 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"automaticReplies", (o,n) => { (o as MailTips).AutomaticReplies = n.GetObjectValue<AutomaticRepliesMailTips>(AutomaticRepliesMailTips.CreateFromDiscriminatorValue); } },
-                {"customMailTip", (o,n) => { (o as MailTips).CustomMailTip = n.GetStringValue(); } },
-                {"deliveryRestricted", (o,n) => { (o as MailTips).DeliveryRestricted = n.GetBoolValue(); } },
-                {"emailAddress", (o,n) => { (o as MailTips).EmailAddress = n.GetObjectValue<Microsoft.Graph.Beta.Models.EmailAddress>(Microsoft.Graph.Beta.Models.EmailAddress.CreateFromDiscriminatorValue); } },
-                {"error", (o,n) => { (o as MailTips).Error = n.GetObjectValue<MailTipsError>(MailTipsError.CreateFromDiscriminatorValue); } },
-                {"externalMemberCount", (o,n) => { (o as MailTips).ExternalMemberCount = n.GetIntValue(); } },
-                {"isModerated", (o,n) => { (o as MailTips).IsModerated = n.GetBoolValue(); } },
-                {"mailboxFull", (o,n) => { (o as MailTips).MailboxFull = n.GetBoolValue(); } },
-                {"maxMessageSize", (o,n) => { (o as MailTips).MaxMessageSize = n.GetIntValue(); } },
-                {"recipientScope", (o,n) => { (o as MailTips).RecipientScope = n.GetEnumValue<RecipientScopeType>(); } },
-                {"recipientSuggestions", (o,n) => { (o as MailTips).RecipientSuggestions = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue).ToList(); } },
-                {"totalMemberCount", (o,n) => { (o as MailTips).TotalMemberCount = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"automaticReplies", n => { AutomaticReplies = n.GetObjectValue<AutomaticRepliesMailTips>(AutomaticRepliesMailTips.CreateFromDiscriminatorValue); } },
+                {"customMailTip", n => { CustomMailTip = n.GetStringValue(); } },
+                {"deliveryRestricted", n => { DeliveryRestricted = n.GetBoolValue(); } },
+                {"emailAddress", n => { EmailAddress = n.GetObjectValue<Microsoft.Graph.Beta.Models.EmailAddress>(Microsoft.Graph.Beta.Models.EmailAddress.CreateFromDiscriminatorValue); } },
+                {"error", n => { Error = n.GetObjectValue<MailTipsError>(MailTipsError.CreateFromDiscriminatorValue); } },
+                {"externalMemberCount", n => { ExternalMemberCount = n.GetIntValue(); } },
+                {"isModerated", n => { IsModerated = n.GetBoolValue(); } },
+                {"mailboxFull", n => { MailboxFull = n.GetBoolValue(); } },
+                {"maxMessageSize", n => { MaxMessageSize = n.GetIntValue(); } },
+                {"recipientScope", n => { RecipientScope = n.GetEnumValue<RecipientScopeType>(); } },
+                {"recipientSuggestions", n => { RecipientSuggestions = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue).ToList(); } },
+                {"totalMemberCount", n => { TotalMemberCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

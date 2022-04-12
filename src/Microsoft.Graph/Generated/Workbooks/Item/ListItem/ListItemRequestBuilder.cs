@@ -3,6 +3,7 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Workbooks.Item.ListItem.Activities;
 using Microsoft.Graph.Beta.Workbooks.Item.ListItem.Analytics;
 using Microsoft.Graph.Beta.Workbooks.Item.ListItem.CreateLink;
+using Microsoft.Graph.Beta.Workbooks.Item.ListItem.DocumentSetVersions;
 using Microsoft.Graph.Beta.Workbooks.Item.ListItem.DriveItem;
 using Microsoft.Graph.Beta.Workbooks.Item.ListItem.Fields;
 using Microsoft.Graph.Beta.Workbooks.Item.ListItem.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval;
@@ -30,6 +31,10 @@ namespace Microsoft.Graph.Beta.Workbooks.Item.ListItem {
         public CreateLinkRequestBuilder CreateLink { get =>
             new CreateLinkRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The documentSetVersions property</summary>
+        public DocumentSetVersionsRequestBuilder DocumentSetVersions { get =>
+            new DocumentSetVersionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The driveItem property</summary>
         public DriveItemRequestBuilder DriveItem { get =>
             new DriveItemRequestBuilder(PathParameters, RequestAdapter);
@@ -56,7 +61,7 @@ namespace Microsoft.Graph.Beta.Workbooks.Item.ListItem {
         public ListItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/workbooks/{driveItem_id}/listItem{?select,expand}";
+            UrlTemplate = "{+baseurl}/workbooks/{driveItem%2Did}/listItem{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -69,7 +74,7 @@ namespace Microsoft.Graph.Beta.Workbooks.Item.ListItem {
         public ListItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/workbooks/{driveItem_id}/listItem{?select,expand}";
+            UrlTemplate = "{+baseurl}/workbooks/{driveItem%2Did}/listItem{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -192,8 +197,10 @@ namespace Microsoft.Graph.Beta.Workbooks.Item.ListItem {
         /// <summary>For drives in SharePoint, the associated document library list item. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
     }

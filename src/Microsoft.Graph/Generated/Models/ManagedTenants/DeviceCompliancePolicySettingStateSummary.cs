@@ -42,21 +42,21 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"conflictDeviceCount", (o,n) => { (o as DeviceCompliancePolicySettingStateSummary).ConflictDeviceCount = n.GetIntValue(); } },
-                {"errorDeviceCount", (o,n) => { (o as DeviceCompliancePolicySettingStateSummary).ErrorDeviceCount = n.GetIntValue(); } },
-                {"failedDeviceCount", (o,n) => { (o as DeviceCompliancePolicySettingStateSummary).FailedDeviceCount = n.GetIntValue(); } },
-                {"intuneAccountId", (o,n) => { (o as DeviceCompliancePolicySettingStateSummary).IntuneAccountId = n.GetStringValue(); } },
-                {"intuneSettingId", (o,n) => { (o as DeviceCompliancePolicySettingStateSummary).IntuneSettingId = n.GetStringValue(); } },
-                {"lastRefreshedDateTime", (o,n) => { (o as DeviceCompliancePolicySettingStateSummary).LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"notApplicableDeviceCount", (o,n) => { (o as DeviceCompliancePolicySettingStateSummary).NotApplicableDeviceCount = n.GetIntValue(); } },
-                {"pendingDeviceCount", (o,n) => { (o as DeviceCompliancePolicySettingStateSummary).PendingDeviceCount = n.GetIntValue(); } },
-                {"policyType", (o,n) => { (o as DeviceCompliancePolicySettingStateSummary).PolicyType = n.GetStringValue(); } },
-                {"settingName", (o,n) => { (o as DeviceCompliancePolicySettingStateSummary).SettingName = n.GetStringValue(); } },
-                {"succeededDeviceCount", (o,n) => { (o as DeviceCompliancePolicySettingStateSummary).SucceededDeviceCount = n.GetIntValue(); } },
-                {"tenantDisplayName", (o,n) => { (o as DeviceCompliancePolicySettingStateSummary).TenantDisplayName = n.GetStringValue(); } },
-                {"tenantId", (o,n) => { (o as DeviceCompliancePolicySettingStateSummary).TenantId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"conflictDeviceCount", n => { ConflictDeviceCount = n.GetIntValue(); } },
+                {"errorDeviceCount", n => { ErrorDeviceCount = n.GetIntValue(); } },
+                {"failedDeviceCount", n => { FailedDeviceCount = n.GetIntValue(); } },
+                {"intuneAccountId", n => { IntuneAccountId = n.GetStringValue(); } },
+                {"intuneSettingId", n => { IntuneSettingId = n.GetStringValue(); } },
+                {"lastRefreshedDateTime", n => { LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"notApplicableDeviceCount", n => { NotApplicableDeviceCount = n.GetIntValue(); } },
+                {"pendingDeviceCount", n => { PendingDeviceCount = n.GetIntValue(); } },
+                {"policyType", n => { PolicyType = n.GetStringValue(); } },
+                {"settingName", n => { SettingName = n.GetStringValue(); } },
+                {"succeededDeviceCount", n => { SucceededDeviceCount = n.GetIntValue(); } },
+                {"tenantDisplayName", n => { TenantDisplayName = n.GetStringValue(); } },
+                {"tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
         /// <summary>

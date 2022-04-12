@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"error", (o,n) => { (o as OnenoteOperation).Error = n.GetObjectValue<OnenoteOperationError>(OnenoteOperationError.CreateFromDiscriminatorValue); } },
-                {"percentComplete", (o,n) => { (o as OnenoteOperation).PercentComplete = n.GetStringValue(); } },
-                {"resourceId", (o,n) => { (o as OnenoteOperation).ResourceId = n.GetStringValue(); } },
-                {"resourceLocation", (o,n) => { (o as OnenoteOperation).ResourceLocation = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"error", n => { Error = n.GetObjectValue<OnenoteOperationError>(OnenoteOperationError.CreateFromDiscriminatorValue); } },
+                {"percentComplete", n => { PercentComplete = n.GetStringValue(); } },
+                {"resourceId", n => { ResourceId = n.GetStringValue(); } },
+                {"resourceLocation", n => { ResourceLocation = n.GetStringValue(); } },
             };
         }
         /// <summary>

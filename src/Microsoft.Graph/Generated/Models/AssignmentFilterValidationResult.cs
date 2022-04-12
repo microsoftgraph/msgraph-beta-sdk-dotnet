@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"isValidRule", (o,n) => { (o as AssignmentFilterValidationResult).IsValidRule = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"isValidRule", n => { IsValidRule = n.GetBoolValue(); } },
             };
         }
         /// <summary>

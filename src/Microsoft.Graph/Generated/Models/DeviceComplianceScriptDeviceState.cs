@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"detectionState", (o,n) => { (o as DeviceComplianceScriptDeviceState).DetectionState = n.GetEnumValue<RunState>(); } },
-                {"expectedStateUpdateDateTime", (o,n) => { (o as DeviceComplianceScriptDeviceState).ExpectedStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastStateUpdateDateTime", (o,n) => { (o as DeviceComplianceScriptDeviceState).LastStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastSyncDateTime", (o,n) => { (o as DeviceComplianceScriptDeviceState).LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managedDevice", (o,n) => { (o as DeviceComplianceScriptDeviceState).ManagedDevice = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedDevice>(Microsoft.Graph.Beta.Models.ManagedDevice.CreateFromDiscriminatorValue); } },
-                {"scriptError", (o,n) => { (o as DeviceComplianceScriptDeviceState).ScriptError = n.GetStringValue(); } },
-                {"scriptOutput", (o,n) => { (o as DeviceComplianceScriptDeviceState).ScriptOutput = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"detectionState", n => { DetectionState = n.GetEnumValue<RunState>(); } },
+                {"expectedStateUpdateDateTime", n => { ExpectedStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastStateUpdateDateTime", n => { LastStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                {"managedDevice", n => { ManagedDevice = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedDevice>(Microsoft.Graph.Beta.Models.ManagedDevice.CreateFromDiscriminatorValue); } },
+                {"scriptError", n => { ScriptError = n.GetStringValue(); } },
+                {"scriptOutput", n => { ScriptOutput = n.GetStringValue(); } },
             };
         }
         /// <summary>

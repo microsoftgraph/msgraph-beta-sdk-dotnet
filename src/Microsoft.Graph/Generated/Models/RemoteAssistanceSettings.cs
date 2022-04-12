@@ -20,10 +20,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"allowSessionsToUnenrolledDevices", (o,n) => { (o as RemoteAssistanceSettings).AllowSessionsToUnenrolledDevices = n.GetBoolValue(); } },
-                {"remoteAssistanceState", (o,n) => { (o as RemoteAssistanceSettings).RemoteAssistanceState = n.GetEnumValue<RemoteAssistanceState>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"allowSessionsToUnenrolledDevices", n => { AllowSessionsToUnenrolledDevices = n.GetBoolValue(); } },
+                {"remoteAssistanceState", n => { RemoteAssistanceState = n.GetEnumValue<RemoteAssistanceState>(); } },
             };
         }
         /// <summary>

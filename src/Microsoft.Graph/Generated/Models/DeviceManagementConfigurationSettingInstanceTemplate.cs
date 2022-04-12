@@ -31,11 +31,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"isRequired", (o,n) => { (o as DeviceManagementConfigurationSettingInstanceTemplate).IsRequired = n.GetBoolValue(); } },
-                {"settingDefinitionId", (o,n) => { (o as DeviceManagementConfigurationSettingInstanceTemplate).SettingDefinitionId = n.GetStringValue(); } },
-                {"settingInstanceTemplateId", (o,n) => { (o as DeviceManagementConfigurationSettingInstanceTemplate).SettingInstanceTemplateId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"isRequired", n => { IsRequired = n.GetBoolValue(); } },
+                {"settingDefinitionId", n => { SettingDefinitionId = n.GetStringValue(); } },
+                {"settingInstanceTemplateId", n => { SettingInstanceTemplateId = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Item.SyncLicenses {
         public SyncLicensesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceAppManagement/vppTokens/{vppToken_id}/microsoft.graph.syncLicenses";
+            UrlTemplate = "{+baseurl}/deviceAppManagement/vppTokens/{vppToken%2Did}/microsoft.graph.syncLicenses";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Item.SyncLicenses {
         public SyncLicensesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceAppManagement/vppTokens/{vppToken_id}/microsoft.graph.syncLicenses";
+            UrlTemplate = "{+baseurl}/deviceAppManagement/vppTokens/{vppToken%2Did}/microsoft.graph.syncLicenses";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

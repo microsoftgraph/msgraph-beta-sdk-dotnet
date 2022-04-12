@@ -3,6 +3,7 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.Activities;
 using Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.Analytics;
 using Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.CreateLink;
+using Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.DocumentSetVersions;
 using Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.DriveItem;
 using Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.Fields;
 using Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval;
@@ -30,6 +31,10 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item {
         public CreateLinkRequestBuilder CreateLink { get =>
             new CreateLinkRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The documentSetVersions property</summary>
+        public DocumentSetVersionsRequestBuilder DocumentSetVersions { get =>
+            new DocumentSetVersionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The driveItem property</summary>
         public DriveItemRequestBuilder DriveItem { get =>
             new DriveItemRequestBuilder(PathParameters, RequestAdapter);
@@ -56,7 +61,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item {
         public ListItemItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/sites/{site_id}/lists/{list_id}/items/{listItem_id}{?select,expand}";
+            UrlTemplate = "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/items/{listItem%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -69,7 +74,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item {
         public ListItemItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/sites/{site_id}/lists/{list_id}/items/{listItem_id}{?select,expand}";
+            UrlTemplate = "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/items/{listItem%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -192,8 +197,10 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item {
         /// <summary>All items contained in the list.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
     }

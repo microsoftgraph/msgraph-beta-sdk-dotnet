@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"hasGraphMailbox", (o,n) => { (o as Settings).HasGraphMailbox = n.GetBoolValue(); } },
-                {"hasLicense", (o,n) => { (o as Settings).HasLicense = n.GetBoolValue(); } },
-                {"hasOptedOut", (o,n) => { (o as Settings).HasOptedOut = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"hasGraphMailbox", n => { HasGraphMailbox = n.GetBoolValue(); } },
+                {"hasLicense", n => { HasLicense = n.GetBoolValue(); } },
+                {"hasOptedOut", n => { HasOptedOut = n.GetBoolValue(); } },
             };
         }
         /// <summary>

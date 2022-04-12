@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Provi
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"parameters", (o,n) => { (o as StringKeyStringValuePairRequestBody).Parameters = n.GetCollectionOfObjectValues<SynchronizationJobApplicationParameters>(SynchronizationJobApplicationParameters.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"parameters", n => { Parameters = n.GetCollectionOfObjectValues<SynchronizationJobApplicationParameters>(SynchronizationJobApplicationParameters.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

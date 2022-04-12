@@ -40,20 +40,20 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignmentState", (o,n) => { (o as PrivilegedRoleAssignmentRequest).AssignmentState = n.GetStringValue(); } },
-                {"duration", (o,n) => { (o as PrivilegedRoleAssignmentRequest).Duration = n.GetStringValue(); } },
-                {"reason", (o,n) => { (o as PrivilegedRoleAssignmentRequest).Reason = n.GetStringValue(); } },
-                {"requestedDateTime", (o,n) => { (o as PrivilegedRoleAssignmentRequest).RequestedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"roleId", (o,n) => { (o as PrivilegedRoleAssignmentRequest).RoleId = n.GetStringValue(); } },
-                {"roleInfo", (o,n) => { (o as PrivilegedRoleAssignmentRequest).RoleInfo = n.GetObjectValue<PrivilegedRole>(PrivilegedRole.CreateFromDiscriminatorValue); } },
-                {"schedule", (o,n) => { (o as PrivilegedRoleAssignmentRequest).Schedule = n.GetObjectValue<GovernanceSchedule>(GovernanceSchedule.CreateFromDiscriminatorValue); } },
-                {"status", (o,n) => { (o as PrivilegedRoleAssignmentRequest).Status = n.GetStringValue(); } },
-                {"ticketNumber", (o,n) => { (o as PrivilegedRoleAssignmentRequest).TicketNumber = n.GetStringValue(); } },
-                {"ticketSystem", (o,n) => { (o as PrivilegedRoleAssignmentRequest).TicketSystem = n.GetStringValue(); } },
-                {"type", (o,n) => { (o as PrivilegedRoleAssignmentRequest).Type = n.GetStringValue(); } },
-                {"userId", (o,n) => { (o as PrivilegedRoleAssignmentRequest).UserId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"assignmentState", n => { AssignmentState = n.GetStringValue(); } },
+                {"duration", n => { Duration = n.GetStringValue(); } },
+                {"reason", n => { Reason = n.GetStringValue(); } },
+                {"requestedDateTime", n => { RequestedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"roleId", n => { RoleId = n.GetStringValue(); } },
+                {"roleInfo", n => { RoleInfo = n.GetObjectValue<PrivilegedRole>(PrivilegedRole.CreateFromDiscriminatorValue); } },
+                {"schedule", n => { Schedule = n.GetObjectValue<GovernanceSchedule>(GovernanceSchedule.CreateFromDiscriminatorValue); } },
+                {"status", n => { Status = n.GetStringValue(); } },
+                {"ticketNumber", n => { TicketNumber = n.GetStringValue(); } },
+                {"ticketSystem", n => { TicketSystem = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
+                {"userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

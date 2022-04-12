@@ -22,11 +22,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"jobs", (o,n) => { (o as Synchronization).Jobs = n.GetCollectionOfObjectValues<SynchronizationJob>(SynchronizationJob.CreateFromDiscriminatorValue).ToList(); } },
-                {"secrets", (o,n) => { (o as Synchronization).Secrets = n.GetCollectionOfObjectValues<SynchronizationSecretKeyStringValuePair>(SynchronizationSecretKeyStringValuePair.CreateFromDiscriminatorValue).ToList(); } },
-                {"templates", (o,n) => { (o as Synchronization).Templates = n.GetCollectionOfObjectValues<SynchronizationTemplate>(SynchronizationTemplate.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"jobs", n => { Jobs = n.GetCollectionOfObjectValues<SynchronizationJob>(SynchronizationJob.CreateFromDiscriminatorValue).ToList(); } },
+                {"secrets", n => { Secrets = n.GetCollectionOfObjectValues<SynchronizationSecretKeyStringValuePair>(SynchronizationSecretKeyStringValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"templates", n => { Templates = n.GetCollectionOfObjectValues<SynchronizationTemplate>(SynchronizationTemplate.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

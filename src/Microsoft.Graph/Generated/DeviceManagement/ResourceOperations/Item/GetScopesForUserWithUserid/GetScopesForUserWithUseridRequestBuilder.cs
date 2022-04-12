@@ -24,9 +24,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item.GetScope
         public GetScopesForUserWithUseridRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string userid = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/resourceOperations/{resourceOperation_id}/microsoft.graph.getScopesForUser(userid='{userid}')";
+            UrlTemplate = "{+baseurl}/deviceManagement/resourceOperations/{resourceOperation%2Did}/microsoft.graph.getScopesForUser(userid='{userid}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("userid", userid);
+            urlTplParams.Add("", userid);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item.GetScope
         public GetScopesForUserWithUseridRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/resourceOperations/{resourceOperation_id}/microsoft.graph.getScopesForUser(userid='{userid}')";
+            UrlTemplate = "{+baseurl}/deviceManagement/resourceOperations/{resourceOperation%2Did}/microsoft.graph.getScopesForUser(userid='{userid}')";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

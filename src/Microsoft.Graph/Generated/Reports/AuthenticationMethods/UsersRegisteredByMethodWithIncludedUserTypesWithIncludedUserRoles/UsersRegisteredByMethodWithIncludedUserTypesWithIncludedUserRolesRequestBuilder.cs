@@ -28,8 +28,8 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods.UsersRegisteredByMe
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/reports/authenticationMethods/microsoft.graph.usersRegisteredByMethod(includedUserTypes='{includedUserTypes}',includedUserRoles='{includedUserRoles}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("includedUserRoles", includedUserRoles);
-            urlTplParams.Add("includedUserTypes", includedUserTypes);
+            urlTplParams.Add("", includedUserRoles);
+            urlTplParams.Add("", includedUserTypes);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

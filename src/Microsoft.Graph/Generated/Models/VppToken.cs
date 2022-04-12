@@ -50,25 +50,25 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appleId", (o,n) => { (o as VppToken).AppleId = n.GetStringValue(); } },
-                {"automaticallyUpdateApps", (o,n) => { (o as VppToken).AutomaticallyUpdateApps = n.GetBoolValue(); } },
-                {"claimTokenManagementFromExternalMdm", (o,n) => { (o as VppToken).ClaimTokenManagementFromExternalMdm = n.GetBoolValue(); } },
-                {"countryOrRegion", (o,n) => { (o as VppToken).CountryOrRegion = n.GetStringValue(); } },
-                {"dataSharingConsentGranted", (o,n) => { (o as VppToken).DataSharingConsentGranted = n.GetBoolValue(); } },
-                {"displayName", (o,n) => { (o as VppToken).DisplayName = n.GetStringValue(); } },
-                {"expirationDateTime", (o,n) => { (o as VppToken).ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as VppToken).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastSyncDateTime", (o,n) => { (o as VppToken).LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastSyncStatus", (o,n) => { (o as VppToken).LastSyncStatus = n.GetEnumValue<VppTokenSyncStatus>(); } },
-                {"locationName", (o,n) => { (o as VppToken).LocationName = n.GetStringValue(); } },
-                {"organizationName", (o,n) => { (o as VppToken).OrganizationName = n.GetStringValue(); } },
-                {"roleScopeTagIds", (o,n) => { (o as VppToken).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"state", (o,n) => { (o as VppToken).State = n.GetEnumValue<VppTokenState>(); } },
-                {"token", (o,n) => { (o as VppToken).Token = n.GetStringValue(); } },
-                {"tokenActionResults", (o,n) => { (o as VppToken).TokenActionResults = n.GetCollectionOfObjectValues<VppTokenActionResult>(VppTokenActionResult.CreateFromDiscriminatorValue).ToList(); } },
-                {"vppTokenAccountType", (o,n) => { (o as VppToken).VppTokenAccountType = n.GetEnumValue<VppTokenAccountType>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"appleId", n => { AppleId = n.GetStringValue(); } },
+                {"automaticallyUpdateApps", n => { AutomaticallyUpdateApps = n.GetBoolValue(); } },
+                {"claimTokenManagementFromExternalMdm", n => { ClaimTokenManagementFromExternalMdm = n.GetBoolValue(); } },
+                {"countryOrRegion", n => { CountryOrRegion = n.GetStringValue(); } },
+                {"dataSharingConsentGranted", n => { DataSharingConsentGranted = n.GetBoolValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastSyncStatus", n => { LastSyncStatus = n.GetEnumValue<VppTokenSyncStatus>(); } },
+                {"locationName", n => { LocationName = n.GetStringValue(); } },
+                {"organizationName", n => { OrganizationName = n.GetStringValue(); } },
+                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"state", n => { State = n.GetEnumValue<VppTokenState>(); } },
+                {"token", n => { Token = n.GetStringValue(); } },
+                {"tokenActionResults", n => { TokenActionResults = n.GetCollectionOfObjectValues<VppTokenActionResult>(VppTokenActionResult.CreateFromDiscriminatorValue).ToList(); } },
+                {"vppTokenAccountType", n => { VppTokenAccountType = n.GetEnumValue<VppTokenAccountType>(); } },
             };
         }
         /// <summary>

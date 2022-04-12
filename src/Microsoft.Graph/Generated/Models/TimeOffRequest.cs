@@ -22,11 +22,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"endDateTime", (o,n) => { (o as TimeOffRequest).EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"startDateTime", (o,n) => { (o as TimeOffRequest).StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"timeOffReasonId", (o,n) => { (o as TimeOffRequest).TimeOffReasonId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                {"timeOffReasonId", n => { TimeOffReasonId = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appReliabilityScore", (o,n) => { (o as UserExperienceAnalyticsDeviceScores).AppReliabilityScore = n.GetDoubleValue(); } },
-                {"deviceName", (o,n) => { (o as UserExperienceAnalyticsDeviceScores).DeviceName = n.GetStringValue(); } },
-                {"endpointAnalyticsScore", (o,n) => { (o as UserExperienceAnalyticsDeviceScores).EndpointAnalyticsScore = n.GetDoubleValue(); } },
-                {"healthStatus", (o,n) => { (o as UserExperienceAnalyticsDeviceScores).HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
-                {"manufacturer", (o,n) => { (o as UserExperienceAnalyticsDeviceScores).Manufacturer = n.GetStringValue(); } },
-                {"model", (o,n) => { (o as UserExperienceAnalyticsDeviceScores).Model = n.GetStringValue(); } },
-                {"startupPerformanceScore", (o,n) => { (o as UserExperienceAnalyticsDeviceScores).StartupPerformanceScore = n.GetDoubleValue(); } },
-                {"workFromAnywhereScore", (o,n) => { (o as UserExperienceAnalyticsDeviceScores).WorkFromAnywhereScore = n.GetDoubleValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"appReliabilityScore", n => { AppReliabilityScore = n.GetDoubleValue(); } },
+                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
+                {"endpointAnalyticsScore", n => { EndpointAnalyticsScore = n.GetDoubleValue(); } },
+                {"healthStatus", n => { HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
+                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                {"model", n => { Model = n.GetStringValue(); } },
+                {"startupPerformanceScore", n => { StartupPerformanceScore = n.GetDoubleValue(); } },
+                {"workFromAnywhereScore", n => { WorkFromAnywhereScore = n.GetDoubleValue(); } },
             };
         }
         /// <summary>

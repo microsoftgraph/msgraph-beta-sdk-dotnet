@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"errorCode", (o,n) => { (o as DeviceLogCollectionResponse).ErrorCode = n.GetLongValue(); } },
-                {"expirationDateTimeUTC", (o,n) => { (o as DeviceLogCollectionResponse).ExpirationDateTimeUTC = n.GetDateTimeOffsetValue(); } },
-                {"initiatedByUserPrincipalName", (o,n) => { (o as DeviceLogCollectionResponse).InitiatedByUserPrincipalName = n.GetStringValue(); } },
-                {"managedDeviceId", (o,n) => { (o as DeviceLogCollectionResponse).ManagedDeviceId = n.GetStringValue(); } },
-                {"receivedDateTimeUTC", (o,n) => { (o as DeviceLogCollectionResponse).ReceivedDateTimeUTC = n.GetDateTimeOffsetValue(); } },
-                {"requestedDateTimeUTC", (o,n) => { (o as DeviceLogCollectionResponse).RequestedDateTimeUTC = n.GetDateTimeOffsetValue(); } },
-                {"size", (o,n) => { (o as DeviceLogCollectionResponse).Size = n.GetDoubleValue(); } },
-                {"status", (o,n) => { (o as DeviceLogCollectionResponse).Status = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"errorCode", n => { ErrorCode = n.GetLongValue(); } },
+                {"expirationDateTimeUTC", n => { ExpirationDateTimeUTC = n.GetDateTimeOffsetValue(); } },
+                {"initiatedByUserPrincipalName", n => { InitiatedByUserPrincipalName = n.GetStringValue(); } },
+                {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
+                {"receivedDateTimeUTC", n => { ReceivedDateTimeUTC = n.GetDateTimeOffsetValue(); } },
+                {"requestedDateTimeUTC", n => { RequestedDateTimeUTC = n.GetDateTimeOffsetValue(); } },
+                {"size", n => { Size = n.GetDoubleValue(); } },
+                {"status", n => { Status = n.GetStringValue(); } },
             };
         }
         /// <summary>

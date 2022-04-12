@@ -30,10 +30,10 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.Invite {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"clientContext", (o,n) => { (o as InviteRequestBody).ClientContext = n.GetStringValue(); } },
-                {"participants", (o,n) => { (o as InviteRequestBody).Participants = n.GetCollectionOfObjectValues<InvitationParticipantInfo>(InvitationParticipantInfo.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"clientContext", n => { ClientContext = n.GetStringValue(); } },
+                {"participants", n => { Participants = n.GetCollectionOfObjectValues<InvitationParticipantInfo>(InvitationParticipantInfo.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

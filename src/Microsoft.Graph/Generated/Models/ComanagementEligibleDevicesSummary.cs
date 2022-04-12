@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"comanagedCount", (o,n) => { (o as ComanagementEligibleDevicesSummary).ComanagedCount = n.GetIntValue(); } },
-                {"eligibleButNotAzureAdJoinedCount", (o,n) => { (o as ComanagementEligibleDevicesSummary).EligibleButNotAzureAdJoinedCount = n.GetIntValue(); } },
-                {"eligibleCount", (o,n) => { (o as ComanagementEligibleDevicesSummary).EligibleCount = n.GetIntValue(); } },
-                {"ineligibleCount", (o,n) => { (o as ComanagementEligibleDevicesSummary).IneligibleCount = n.GetIntValue(); } },
-                {"needsOsUpdateCount", (o,n) => { (o as ComanagementEligibleDevicesSummary).NeedsOsUpdateCount = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"comanagedCount", n => { ComanagedCount = n.GetIntValue(); } },
+                {"eligibleButNotAzureAdJoinedCount", n => { EligibleButNotAzureAdJoinedCount = n.GetIntValue(); } },
+                {"eligibleCount", n => { EligibleCount = n.GetIntValue(); } },
+                {"ineligibleCount", n => { IneligibleCount = n.GetIntValue(); } },
+                {"needsOsUpdateCount", n => { NeedsOsUpdateCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

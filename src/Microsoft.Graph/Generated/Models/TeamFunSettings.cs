@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"allowCustomMemes", (o,n) => { (o as TeamFunSettings).AllowCustomMemes = n.GetBoolValue(); } },
-                {"allowGiphy", (o,n) => { (o as TeamFunSettings).AllowGiphy = n.GetBoolValue(); } },
-                {"allowStickersAndMemes", (o,n) => { (o as TeamFunSettings).AllowStickersAndMemes = n.GetBoolValue(); } },
-                {"giphyContentRating", (o,n) => { (o as TeamFunSettings).GiphyContentRating = n.GetEnumValue<GiphyRatingType>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"allowCustomMemes", n => { AllowCustomMemes = n.GetBoolValue(); } },
+                {"allowGiphy", n => { AllowGiphy = n.GetBoolValue(); } },
+                {"allowStickersAndMemes", n => { AllowStickersAndMemes = n.GetBoolValue(); } },
+                {"giphyContentRating", n => { GiphyContentRating = n.GetEnumValue<GiphyRatingType>(); } },
             };
         }
         /// <summary>

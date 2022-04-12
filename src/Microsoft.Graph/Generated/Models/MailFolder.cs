@@ -42,21 +42,21 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"childFolderCount", (o,n) => { (o as MailFolder).ChildFolderCount = n.GetIntValue(); } },
-                {"childFolders", (o,n) => { (o as MailFolder).ChildFolders = n.GetCollectionOfObjectValues<MailFolder>(MailFolder.CreateFromDiscriminatorValue).ToList(); } },
-                {"displayName", (o,n) => { (o as MailFolder).DisplayName = n.GetStringValue(); } },
-                {"isHidden", (o,n) => { (o as MailFolder).IsHidden = n.GetBoolValue(); } },
-                {"messageRules", (o,n) => { (o as MailFolder).MessageRules = n.GetCollectionOfObjectValues<MessageRule>(MessageRule.CreateFromDiscriminatorValue).ToList(); } },
-                {"messages", (o,n) => { (o as MailFolder).Messages = n.GetCollectionOfObjectValues<Message>(Message.CreateFromDiscriminatorValue).ToList(); } },
-                {"multiValueExtendedProperties", (o,n) => { (o as MailFolder).MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue).ToList(); } },
-                {"parentFolderId", (o,n) => { (o as MailFolder).ParentFolderId = n.GetStringValue(); } },
-                {"singleValueExtendedProperties", (o,n) => { (o as MailFolder).SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue).ToList(); } },
-                {"totalItemCount", (o,n) => { (o as MailFolder).TotalItemCount = n.GetIntValue(); } },
-                {"unreadItemCount", (o,n) => { (o as MailFolder).UnreadItemCount = n.GetIntValue(); } },
-                {"userConfigurations", (o,n) => { (o as MailFolder).UserConfigurations = n.GetCollectionOfObjectValues<UserConfiguration>(UserConfiguration.CreateFromDiscriminatorValue).ToList(); } },
-                {"wellKnownName", (o,n) => { (o as MailFolder).WellKnownName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"childFolderCount", n => { ChildFolderCount = n.GetIntValue(); } },
+                {"childFolders", n => { ChildFolders = n.GetCollectionOfObjectValues<MailFolder>(MailFolder.CreateFromDiscriminatorValue).ToList(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"isHidden", n => { IsHidden = n.GetBoolValue(); } },
+                {"messageRules", n => { MessageRules = n.GetCollectionOfObjectValues<MessageRule>(MessageRule.CreateFromDiscriminatorValue).ToList(); } },
+                {"messages", n => { Messages = n.GetCollectionOfObjectValues<Message>(Message.CreateFromDiscriminatorValue).ToList(); } },
+                {"multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue).ToList(); } },
+                {"parentFolderId", n => { ParentFolderId = n.GetStringValue(); } },
+                {"singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue).ToList(); } },
+                {"totalItemCount", n => { TotalItemCount = n.GetIntValue(); } },
+                {"unreadItemCount", n => { UnreadItemCount = n.GetIntValue(); } },
+                {"userConfigurations", n => { UserConfigurations = n.GetCollectionOfObjectValues<UserConfiguration>(UserConfiguration.CreateFromDiscriminatorValue).ToList(); } },
+                {"wellKnownName", n => { WellKnownName = n.GetStringValue(); } },
             };
         }
         /// <summary>

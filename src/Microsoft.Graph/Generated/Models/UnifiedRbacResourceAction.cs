@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"actionVerb", (o,n) => { (o as UnifiedRbacResourceAction).ActionVerb = n.GetStringValue(); } },
-                {"description", (o,n) => { (o as UnifiedRbacResourceAction).Description = n.GetStringValue(); } },
-                {"name", (o,n) => { (o as UnifiedRbacResourceAction).Name = n.GetStringValue(); } },
-                {"resourceScope", (o,n) => { (o as UnifiedRbacResourceAction).ResourceScope = n.GetObjectValue<UnifiedRbacResourceScope>(UnifiedRbacResourceScope.CreateFromDiscriminatorValue); } },
-                {"resourceScopeId", (o,n) => { (o as UnifiedRbacResourceAction).ResourceScopeId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"actionVerb", n => { ActionVerb = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"resourceScope", n => { ResourceScope = n.GetObjectValue<UnifiedRbacResourceScope>(UnifiedRbacResourceScope.CreateFromDiscriminatorValue); } },
+                {"resourceScopeId", n => { ResourceScopeId = n.GetStringValue(); } },
             };
         }
         /// <summary>

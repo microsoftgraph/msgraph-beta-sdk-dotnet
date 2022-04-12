@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"comment", (o,n) => { (o as WorkbookNamedItem).Comment = n.GetStringValue(); } },
-                {"name", (o,n) => { (o as WorkbookNamedItem).Name = n.GetStringValue(); } },
-                {"scope", (o,n) => { (o as WorkbookNamedItem).Scope = n.GetStringValue(); } },
-                {"type", (o,n) => { (o as WorkbookNamedItem).Type = n.GetStringValue(); } },
-                {"value", (o,n) => { (o as WorkbookNamedItem).Value = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"visible", (o,n) => { (o as WorkbookNamedItem).Visible = n.GetBoolValue(); } },
-                {"worksheet", (o,n) => { (o as WorkbookNamedItem).Worksheet = n.GetObjectValue<WorkbookWorksheet>(WorkbookWorksheet.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"comment", n => { Comment = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"scope", n => { Scope = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
+                {"value", n => { Value = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"visible", n => { Visible = n.GetBoolValue(); } },
+                {"worksheet", n => { Worksheet = n.GetObjectValue<WorkbookWorksheet>(WorkbookWorksheet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

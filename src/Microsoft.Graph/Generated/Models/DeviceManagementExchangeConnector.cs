@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"connectorServerName", (o,n) => { (o as DeviceManagementExchangeConnector).ConnectorServerName = n.GetStringValue(); } },
-                {"exchangeAlias", (o,n) => { (o as DeviceManagementExchangeConnector).ExchangeAlias = n.GetStringValue(); } },
-                {"exchangeConnectorType", (o,n) => { (o as DeviceManagementExchangeConnector).ExchangeConnectorType = n.GetEnumValue<DeviceManagementExchangeConnectorType>(); } },
-                {"exchangeOrganization", (o,n) => { (o as DeviceManagementExchangeConnector).ExchangeOrganization = n.GetStringValue(); } },
-                {"lastSyncDateTime", (o,n) => { (o as DeviceManagementExchangeConnector).LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"primarySmtpAddress", (o,n) => { (o as DeviceManagementExchangeConnector).PrimarySmtpAddress = n.GetStringValue(); } },
-                {"serverName", (o,n) => { (o as DeviceManagementExchangeConnector).ServerName = n.GetStringValue(); } },
-                {"status", (o,n) => { (o as DeviceManagementExchangeConnector).Status = n.GetEnumValue<DeviceManagementExchangeConnectorStatus>(); } },
-                {"version", (o,n) => { (o as DeviceManagementExchangeConnector).Version = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"connectorServerName", n => { ConnectorServerName = n.GetStringValue(); } },
+                {"exchangeAlias", n => { ExchangeAlias = n.GetStringValue(); } },
+                {"exchangeConnectorType", n => { ExchangeConnectorType = n.GetEnumValue<DeviceManagementExchangeConnectorType>(); } },
+                {"exchangeOrganization", n => { ExchangeOrganization = n.GetStringValue(); } },
+                {"lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                {"primarySmtpAddress", n => { PrimarySmtpAddress = n.GetStringValue(); } },
+                {"serverName", n => { ServerName = n.GetStringValue(); } },
+                {"status", n => { Status = n.GetEnumValue<DeviceManagementExchangeConnectorStatus>(); } },
+                {"version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

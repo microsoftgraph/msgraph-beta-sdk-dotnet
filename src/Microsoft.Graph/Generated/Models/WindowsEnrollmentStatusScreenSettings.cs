@@ -39,15 +39,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"allowDeviceUseBeforeProfileAndAppInstallComplete", (o,n) => { (o as WindowsEnrollmentStatusScreenSettings).AllowDeviceUseBeforeProfileAndAppInstallComplete = n.GetBoolValue(); } },
-                {"allowDeviceUseOnInstallFailure", (o,n) => { (o as WindowsEnrollmentStatusScreenSettings).AllowDeviceUseOnInstallFailure = n.GetBoolValue(); } },
-                {"allowLogCollectionOnInstallFailure", (o,n) => { (o as WindowsEnrollmentStatusScreenSettings).AllowLogCollectionOnInstallFailure = n.GetBoolValue(); } },
-                {"blockDeviceSetupRetryByUser", (o,n) => { (o as WindowsEnrollmentStatusScreenSettings).BlockDeviceSetupRetryByUser = n.GetBoolValue(); } },
-                {"customErrorMessage", (o,n) => { (o as WindowsEnrollmentStatusScreenSettings).CustomErrorMessage = n.GetStringValue(); } },
-                {"hideInstallationProgress", (o,n) => { (o as WindowsEnrollmentStatusScreenSettings).HideInstallationProgress = n.GetBoolValue(); } },
-                {"installProgressTimeoutInMinutes", (o,n) => { (o as WindowsEnrollmentStatusScreenSettings).InstallProgressTimeoutInMinutes = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"allowDeviceUseBeforeProfileAndAppInstallComplete", n => { AllowDeviceUseBeforeProfileAndAppInstallComplete = n.GetBoolValue(); } },
+                {"allowDeviceUseOnInstallFailure", n => { AllowDeviceUseOnInstallFailure = n.GetBoolValue(); } },
+                {"allowLogCollectionOnInstallFailure", n => { AllowLogCollectionOnInstallFailure = n.GetBoolValue(); } },
+                {"blockDeviceSetupRetryByUser", n => { BlockDeviceSetupRetryByUser = n.GetBoolValue(); } },
+                {"customErrorMessage", n => { CustomErrorMessage = n.GetStringValue(); } },
+                {"hideInstallationProgress", n => { HideInstallationProgress = n.GetBoolValue(); } },
+                {"installProgressTimeoutInMinutes", n => { InstallProgressTimeoutInMinutes = n.GetIntValue(); } },
             };
         }
         /// <summary>

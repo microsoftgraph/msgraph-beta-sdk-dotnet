@@ -72,32 +72,32 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"bandwidthLowEventRatio", (o,n) => { (o as NetworkInfo).BandwidthLowEventRatio = n.GetFloatValue(); } },
-                {"basicServiceSetIdentifier", (o,n) => { (o as NetworkInfo).BasicServiceSetIdentifier = n.GetStringValue(); } },
-                {"connectionType", (o,n) => { (o as NetworkInfo).ConnectionType = n.GetEnumValue<NetworkConnectionType>(); } },
-                {"delayEventRatio", (o,n) => { (o as NetworkInfo).DelayEventRatio = n.GetFloatValue(); } },
-                {"dnsSuffix", (o,n) => { (o as NetworkInfo).DnsSuffix = n.GetStringValue(); } },
-                {"ipAddress", (o,n) => { (o as NetworkInfo).IpAddress = n.GetStringValue(); } },
-                {"linkSpeed", (o,n) => { (o as NetworkInfo).LinkSpeed = n.GetLongValue(); } },
-                {"macAddress", (o,n) => { (o as NetworkInfo).MacAddress = n.GetStringValue(); } },
-                {"port", (o,n) => { (o as NetworkInfo).Port = n.GetIntValue(); } },
-                {"receivedQualityEventRatio", (o,n) => { (o as NetworkInfo).ReceivedQualityEventRatio = n.GetFloatValue(); } },
-                {"reflexiveIPAddress", (o,n) => { (o as NetworkInfo).ReflexiveIPAddress = n.GetStringValue(); } },
-                {"relayIPAddress", (o,n) => { (o as NetworkInfo).RelayIPAddress = n.GetStringValue(); } },
-                {"relayPort", (o,n) => { (o as NetworkInfo).RelayPort = n.GetIntValue(); } },
-                {"sentQualityEventRatio", (o,n) => { (o as NetworkInfo).SentQualityEventRatio = n.GetFloatValue(); } },
-                {"subnet", (o,n) => { (o as NetworkInfo).Subnet = n.GetStringValue(); } },
-                {"wifiBand", (o,n) => { (o as NetworkInfo).WifiBand = n.GetEnumValue<WifiBand>(); } },
-                {"wifiBatteryCharge", (o,n) => { (o as NetworkInfo).WifiBatteryCharge = n.GetIntValue(); } },
-                {"wifiChannel", (o,n) => { (o as NetworkInfo).WifiChannel = n.GetIntValue(); } },
-                {"wifiMicrosoftDriver", (o,n) => { (o as NetworkInfo).WifiMicrosoftDriver = n.GetStringValue(); } },
-                {"wifiMicrosoftDriverVersion", (o,n) => { (o as NetworkInfo).WifiMicrosoftDriverVersion = n.GetStringValue(); } },
-                {"wifiRadioType", (o,n) => { (o as NetworkInfo).WifiRadioType = n.GetEnumValue<WifiRadioType>(); } },
-                {"wifiSignalStrength", (o,n) => { (o as NetworkInfo).WifiSignalStrength = n.GetIntValue(); } },
-                {"wifiVendorDriver", (o,n) => { (o as NetworkInfo).WifiVendorDriver = n.GetStringValue(); } },
-                {"wifiVendorDriverVersion", (o,n) => { (o as NetworkInfo).WifiVendorDriverVersion = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"bandwidthLowEventRatio", n => { BandwidthLowEventRatio = n.GetFloatValue(); } },
+                {"basicServiceSetIdentifier", n => { BasicServiceSetIdentifier = n.GetStringValue(); } },
+                {"connectionType", n => { ConnectionType = n.GetEnumValue<NetworkConnectionType>(); } },
+                {"delayEventRatio", n => { DelayEventRatio = n.GetFloatValue(); } },
+                {"dnsSuffix", n => { DnsSuffix = n.GetStringValue(); } },
+                {"ipAddress", n => { IpAddress = n.GetStringValue(); } },
+                {"linkSpeed", n => { LinkSpeed = n.GetLongValue(); } },
+                {"macAddress", n => { MacAddress = n.GetStringValue(); } },
+                {"port", n => { Port = n.GetIntValue(); } },
+                {"receivedQualityEventRatio", n => { ReceivedQualityEventRatio = n.GetFloatValue(); } },
+                {"reflexiveIPAddress", n => { ReflexiveIPAddress = n.GetStringValue(); } },
+                {"relayIPAddress", n => { RelayIPAddress = n.GetStringValue(); } },
+                {"relayPort", n => { RelayPort = n.GetIntValue(); } },
+                {"sentQualityEventRatio", n => { SentQualityEventRatio = n.GetFloatValue(); } },
+                {"subnet", n => { Subnet = n.GetStringValue(); } },
+                {"wifiBand", n => { WifiBand = n.GetEnumValue<WifiBand>(); } },
+                {"wifiBatteryCharge", n => { WifiBatteryCharge = n.GetIntValue(); } },
+                {"wifiChannel", n => { WifiChannel = n.GetIntValue(); } },
+                {"wifiMicrosoftDriver", n => { WifiMicrosoftDriver = n.GetStringValue(); } },
+                {"wifiMicrosoftDriverVersion", n => { WifiMicrosoftDriverVersion = n.GetStringValue(); } },
+                {"wifiRadioType", n => { WifiRadioType = n.GetEnumValue<WifiRadioType>(); } },
+                {"wifiSignalStrength", n => { WifiSignalStrength = n.GetIntValue(); } },
+                {"wifiVendorDriver", n => { WifiVendorDriver = n.GetStringValue(); } },
+                {"wifiVendorDriverVersion", n => { WifiVendorDriverVersion = n.GetStringValue(); } },
             };
         }
         /// <summary>

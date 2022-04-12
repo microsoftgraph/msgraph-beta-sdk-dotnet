@@ -26,9 +26,9 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"monitoringRules", (o,n) => { (o as MonitoringSettings).MonitoringRules = n.GetCollectionOfObjectValues<MonitoringRule>(MonitoringRule.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"monitoringRules", n => { MonitoringRules = n.GetCollectionOfObjectValues<MonitoringRule>(MonitoringRule.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

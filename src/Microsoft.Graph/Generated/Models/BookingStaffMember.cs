@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"availabilityIsAffectedByPersonalCalendar", (o,n) => { (o as BookingStaffMember).AvailabilityIsAffectedByPersonalCalendar = n.GetBoolValue(); } },
-                {"colorIndex", (o,n) => { (o as BookingStaffMember).ColorIndex = n.GetIntValue(); } },
-                {"role", (o,n) => { (o as BookingStaffMember).Role = n.GetEnumValue<BookingStaffRole>(); } },
-                {"timeZone", (o,n) => { (o as BookingStaffMember).TimeZone = n.GetStringValue(); } },
-                {"useBusinessHours", (o,n) => { (o as BookingStaffMember).UseBusinessHours = n.GetBoolValue(); } },
-                {"workingHours", (o,n) => { (o as BookingStaffMember).WorkingHours = n.GetCollectionOfObjectValues<BookingWorkHours>(BookingWorkHours.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"availabilityIsAffectedByPersonalCalendar", n => { AvailabilityIsAffectedByPersonalCalendar = n.GetBoolValue(); } },
+                {"colorIndex", n => { ColorIndex = n.GetIntValue(); } },
+                {"role", n => { Role = n.GetEnumValue<BookingStaffRole>(); } },
+                {"timeZone", n => { TimeZone = n.GetStringValue(); } },
+                {"useBusinessHours", n => { UseBusinessHours = n.GetBoolValue(); } },
+                {"workingHours", n => { WorkingHours = n.GetCollectionOfObjectValues<BookingWorkHours>(BookingWorkHours.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

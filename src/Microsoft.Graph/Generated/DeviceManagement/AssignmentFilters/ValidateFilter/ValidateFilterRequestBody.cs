@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.ValidateFilter
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"deviceAndAppManagementAssignmentFilter", (o,n) => { (o as ValidateFilterRequestBody).DeviceAndAppManagementAssignmentFilter = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter>(Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"deviceAndAppManagementAssignmentFilter", n => { DeviceAndAppManagementAssignmentFilter = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter>(Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -18,9 +18,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"steps", (o,n) => { (o as Approval).Steps = n.GetCollectionOfObjectValues<ApprovalStep>(ApprovalStep.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"steps", n => { Steps = n.GetCollectionOfObjectValues<ApprovalStep>(ApprovalStep.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

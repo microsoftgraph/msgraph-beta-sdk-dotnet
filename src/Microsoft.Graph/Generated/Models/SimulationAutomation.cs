@@ -36,18 +36,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdBy", (o,n) => { (o as SimulationAutomation).CreatedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", (o,n) => { (o as SimulationAutomation).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as SimulationAutomation).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as SimulationAutomation).DisplayName = n.GetStringValue(); } },
-                {"lastModifiedBy", (o,n) => { (o as SimulationAutomation).LastModifiedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", (o,n) => { (o as SimulationAutomation).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastRunDateTime", (o,n) => { (o as SimulationAutomation).LastRunDateTime = n.GetDateTimeOffsetValue(); } },
-                {"nextRunDateTime", (o,n) => { (o as SimulationAutomation).NextRunDateTime = n.GetDateTimeOffsetValue(); } },
-                {"runs", (o,n) => { (o as SimulationAutomation).Runs = n.GetCollectionOfObjectValues<SimulationAutomationRun>(SimulationAutomationRun.CreateFromDiscriminatorValue).ToList(); } },
-                {"status", (o,n) => { (o as SimulationAutomation).Status = n.GetEnumValue<SimulationAutomationStatus>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"createdBy", n => { CreatedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastRunDateTime", n => { LastRunDateTime = n.GetDateTimeOffsetValue(); } },
+                {"nextRunDateTime", n => { NextRunDateTime = n.GetDateTimeOffsetValue(); } },
+                {"runs", n => { Runs = n.GetCollectionOfObjectValues<SimulationAutomationRun>(SimulationAutomationRun.CreateFromDiscriminatorValue).ToList(); } },
+                {"status", n => { Status = n.GetEnumValue<SimulationAutomationStatus>(); } },
             };
         }
         /// <summary>

@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"atApprovedLocation", (o,n) => { (o as TimeCardEvent).AtApprovedLocation = n.GetBoolValue(); } },
-                {"dateTime", (o,n) => { (o as TimeCardEvent).DateTime = n.GetDateTimeOffsetValue(); } },
-                {"notes", (o,n) => { (o as TimeCardEvent).Notes = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"atApprovedLocation", n => { AtApprovedLocation = n.GetBoolValue(); } },
+                {"dateTime", n => { DateTime = n.GetDateTimeOffsetValue(); } },
+                {"notes", n => { Notes = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

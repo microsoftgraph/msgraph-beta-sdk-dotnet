@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"deviceCount", (o,n) => { (o as DeviceManagementIntentUserState).DeviceCount = n.GetIntValue(); } },
-                {"lastReportedDateTime", (o,n) => { (o as DeviceManagementIntentUserState).LastReportedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"state", (o,n) => { (o as DeviceManagementIntentUserState).State = n.GetEnumValue<ComplianceStatus>(); } },
-                {"userName", (o,n) => { (o as DeviceManagementIntentUserState).UserName = n.GetStringValue(); } },
-                {"userPrincipalName", (o,n) => { (o as DeviceManagementIntentUserState).UserPrincipalName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"deviceCount", n => { DeviceCount = n.GetIntValue(); } },
+                {"lastReportedDateTime", n => { LastReportedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"state", n => { State = n.GetEnumValue<ComplianceStatus>(); } },
+                {"userName", n => { UserName = n.GetStringValue(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

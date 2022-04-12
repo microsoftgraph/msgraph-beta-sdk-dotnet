@@ -36,18 +36,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"expirationDateTime", (o,n) => { (o as DeviceManagementExportJob).ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"filter", (o,n) => { (o as DeviceManagementExportJob).Filter = n.GetStringValue(); } },
-                {"format", (o,n) => { (o as DeviceManagementExportJob).Format = n.GetEnumValue<DeviceManagementReportFileFormat>(); } },
-                {"localizationType", (o,n) => { (o as DeviceManagementExportJob).LocalizationType = n.GetEnumValue<DeviceManagementExportJobLocalizationType>(); } },
-                {"reportName", (o,n) => { (o as DeviceManagementExportJob).ReportName = n.GetStringValue(); } },
-                {"requestDateTime", (o,n) => { (o as DeviceManagementExportJob).RequestDateTime = n.GetDateTimeOffsetValue(); } },
-                {"select", (o,n) => { (o as DeviceManagementExportJob).Select = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"snapshotId", (o,n) => { (o as DeviceManagementExportJob).SnapshotId = n.GetStringValue(); } },
-                {"status", (o,n) => { (o as DeviceManagementExportJob).Status = n.GetEnumValue<DeviceManagementReportStatus>(); } },
-                {"url", (o,n) => { (o as DeviceManagementExportJob).Url = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"filter", n => { Filter = n.GetStringValue(); } },
+                {"format", n => { Format = n.GetEnumValue<DeviceManagementReportFileFormat>(); } },
+                {"localizationType", n => { LocalizationType = n.GetEnumValue<DeviceManagementExportJobLocalizationType>(); } },
+                {"reportName", n => { ReportName = n.GetStringValue(); } },
+                {"requestDateTime", n => { RequestDateTime = n.GetDateTimeOffsetValue(); } },
+                {"select", n => { Select = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"snapshotId", n => { SnapshotId = n.GetStringValue(); } },
+                {"status", n => { Status = n.GetEnumValue<DeviceManagementReportStatus>(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

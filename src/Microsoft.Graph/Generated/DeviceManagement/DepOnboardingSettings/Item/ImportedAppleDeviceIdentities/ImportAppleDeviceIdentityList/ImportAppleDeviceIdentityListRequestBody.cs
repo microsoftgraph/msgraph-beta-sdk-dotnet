@@ -30,10 +30,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Impor
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"importedAppleDeviceIdentities", (o,n) => { (o as ImportAppleDeviceIdentityListRequestBody).ImportedAppleDeviceIdentities = n.GetCollectionOfObjectValues<ImportedAppleDeviceIdentity>(ImportedAppleDeviceIdentity.CreateFromDiscriminatorValue).ToList(); } },
-                {"overwriteImportedDeviceIdentities", (o,n) => { (o as ImportAppleDeviceIdentityListRequestBody).OverwriteImportedDeviceIdentities = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"importedAppleDeviceIdentities", n => { ImportedAppleDeviceIdentities = n.GetCollectionOfObjectValues<ImportedAppleDeviceIdentity>(ImportedAppleDeviceIdentity.CreateFromDiscriminatorValue).ToList(); } },
+                {"overwriteImportedDeviceIdentities", n => { OverwriteImportedDeviceIdentities = n.GetBoolValue(); } },
             };
         }
         /// <summary>

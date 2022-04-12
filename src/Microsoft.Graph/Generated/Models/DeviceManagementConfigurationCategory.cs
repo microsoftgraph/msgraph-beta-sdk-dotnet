@@ -38,19 +38,19 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"categoryDescription", (o,n) => { (o as DeviceManagementConfigurationCategory).CategoryDescription = n.GetStringValue(); } },
-                {"childCategoryIds", (o,n) => { (o as DeviceManagementConfigurationCategory).ChildCategoryIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"description", (o,n) => { (o as DeviceManagementConfigurationCategory).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as DeviceManagementConfigurationCategory).DisplayName = n.GetStringValue(); } },
-                {"helpText", (o,n) => { (o as DeviceManagementConfigurationCategory).HelpText = n.GetStringValue(); } },
-                {"name", (o,n) => { (o as DeviceManagementConfigurationCategory).Name = n.GetStringValue(); } },
-                {"parentCategoryId", (o,n) => { (o as DeviceManagementConfigurationCategory).ParentCategoryId = n.GetStringValue(); } },
-                {"platforms", (o,n) => { (o as DeviceManagementConfigurationCategory).Platforms = n.GetEnumValue<DeviceManagementConfigurationPlatforms>(); } },
-                {"rootCategoryId", (o,n) => { (o as DeviceManagementConfigurationCategory).RootCategoryId = n.GetStringValue(); } },
-                {"settingUsage", (o,n) => { (o as DeviceManagementConfigurationCategory).SettingUsage = n.GetEnumValue<DeviceManagementConfigurationSettingUsage>(); } },
-                {"technologies", (o,n) => { (o as DeviceManagementConfigurationCategory).Technologies = n.GetEnumValue<DeviceManagementConfigurationTechnologies>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"categoryDescription", n => { CategoryDescription = n.GetStringValue(); } },
+                {"childCategoryIds", n => { ChildCategoryIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"helpText", n => { HelpText = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"parentCategoryId", n => { ParentCategoryId = n.GetStringValue(); } },
+                {"platforms", n => { Platforms = n.GetEnumValue<DeviceManagementConfigurationPlatforms>(); } },
+                {"rootCategoryId", n => { RootCategoryId = n.GetStringValue(); } },
+                {"settingUsage", n => { SettingUsage = n.GetEnumValue<DeviceManagementConfigurationSettingUsage>(); } },
+                {"technologies", n => { Technologies = n.GetEnumValue<DeviceManagementConfigurationTechnologies>(); } },
             };
         }
         /// <summary>

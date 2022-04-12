@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"completedUnits", (o,n) => { (o as SynchronizationProgress).CompletedUnits = n.GetLongValue(); } },
-                {"progressObservationDateTime", (o,n) => { (o as SynchronizationProgress).ProgressObservationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"totalUnits", (o,n) => { (o as SynchronizationProgress).TotalUnits = n.GetLongValue(); } },
-                {"units", (o,n) => { (o as SynchronizationProgress).Units = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"completedUnits", n => { CompletedUnits = n.GetLongValue(); } },
+                {"progressObservationDateTime", n => { ProgressObservationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"totalUnits", n => { TotalUnits = n.GetLongValue(); } },
+                {"units", n => { Units = n.GetStringValue(); } },
             };
         }
         /// <summary>

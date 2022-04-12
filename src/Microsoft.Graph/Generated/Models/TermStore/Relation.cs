@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"fromTerm", (o,n) => { (o as Relation).FromTerm = n.GetObjectValue<Term>(Term.CreateFromDiscriminatorValue); } },
-                {"relationship", (o,n) => { (o as Relation).Relationship = n.GetEnumValue<RelationType>(); } },
-                {"set", (o,n) => { (o as Relation).Set = n.GetObjectValue<Microsoft.Graph.Beta.Models.TermStore.Set>(Microsoft.Graph.Beta.Models.TermStore.Set.CreateFromDiscriminatorValue); } },
-                {"toTerm", (o,n) => { (o as Relation).ToTerm = n.GetObjectValue<Term>(Term.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"fromTerm", n => { FromTerm = n.GetObjectValue<Term>(Term.CreateFromDiscriminatorValue); } },
+                {"relationship", n => { Relationship = n.GetEnumValue<RelationType>(); } },
+                {"set", n => { Set = n.GetObjectValue<Microsoft.Graph.Beta.Models.TermStore.Set>(Microsoft.Graph.Beta.Models.TermStore.Set.CreateFromDiscriminatorValue); } },
+                {"toTerm", n => { ToTerm = n.GetObjectValue<Term>(Term.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

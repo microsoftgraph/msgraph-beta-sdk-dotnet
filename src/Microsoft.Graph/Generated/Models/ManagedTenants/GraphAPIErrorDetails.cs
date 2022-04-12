@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"code", (o,n) => { (o as GraphAPIErrorDetails).Code = n.GetStringValue(); } },
-                {"message", (o,n) => { (o as GraphAPIErrorDetails).Message = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"code", n => { Code = n.GetStringValue(); } },
+                {"message", n => { Message = n.GetStringValue(); } },
             };
         }
         /// <summary>

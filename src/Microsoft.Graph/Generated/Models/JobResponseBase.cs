@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"creationDateTime", (o,n) => { (o as JobResponseBase).CreationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"endDateTime", (o,n) => { (o as JobResponseBase).EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"error", (o,n) => { (o as JobResponseBase).Error = n.GetObjectValue<ClassificationError>(ClassificationError.CreateFromDiscriminatorValue); } },
-                {"startDateTime", (o,n) => { (o as JobResponseBase).StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", (o,n) => { (o as JobResponseBase).Status = n.GetStringValue(); } },
-                {"tenantId", (o,n) => { (o as JobResponseBase).TenantId = n.GetStringValue(); } },
-                {"type", (o,n) => { (o as JobResponseBase).Type = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"error", n => { Error = n.GetObjectValue<ClassificationError>(ClassificationError.CreateFromDiscriminatorValue); } },
+                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                {"status", n => { Status = n.GetStringValue(); } },
+                {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"isDowngradeJustified", (o,n) => { (o as DowngradeJustification).IsDowngradeJustified = n.GetBoolValue(); } },
-                {"justificationMessage", (o,n) => { (o as DowngradeJustification).JustificationMessage = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"isDowngradeJustified", n => { IsDowngradeJustified = n.GetBoolValue(); } },
+                {"justificationMessage", n => { JustificationMessage = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"action", (o,n) => { (o as RemoteActionAudit).Action = n.GetEnumValue<RemoteAction>(); } },
-                {"actionState", (o,n) => { (o as RemoteActionAudit).ActionState = n.GetEnumValue<ActionState>(); } },
-                {"deviceDisplayName", (o,n) => { (o as RemoteActionAudit).DeviceDisplayName = n.GetStringValue(); } },
-                {"deviceIMEI", (o,n) => { (o as RemoteActionAudit).DeviceIMEI = n.GetStringValue(); } },
-                {"deviceOwnerUserPrincipalName", (o,n) => { (o as RemoteActionAudit).DeviceOwnerUserPrincipalName = n.GetStringValue(); } },
-                {"initiatedByUserPrincipalName", (o,n) => { (o as RemoteActionAudit).InitiatedByUserPrincipalName = n.GetStringValue(); } },
-                {"managedDeviceId", (o,n) => { (o as RemoteActionAudit).ManagedDeviceId = n.GetStringValue(); } },
-                {"requestDateTime", (o,n) => { (o as RemoteActionAudit).RequestDateTime = n.GetDateTimeOffsetValue(); } },
-                {"userName", (o,n) => { (o as RemoteActionAudit).UserName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"action", n => { Action = n.GetEnumValue<RemoteAction>(); } },
+                {"actionState", n => { ActionState = n.GetEnumValue<ActionState>(); } },
+                {"deviceDisplayName", n => { DeviceDisplayName = n.GetStringValue(); } },
+                {"deviceIMEI", n => { DeviceIMEI = n.GetStringValue(); } },
+                {"deviceOwnerUserPrincipalName", n => { DeviceOwnerUserPrincipalName = n.GetStringValue(); } },
+                {"initiatedByUserPrincipalName", n => { InitiatedByUserPrincipalName = n.GetStringValue(); } },
+                {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
+                {"requestDateTime", n => { RequestDateTime = n.GetDateTimeOffsetValue(); } },
+                {"userName", n => { UserName = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"format", (o,n) => { (o as WorkbookChartDataLabels).Format = n.GetObjectValue<WorkbookChartDataLabelFormat>(WorkbookChartDataLabelFormat.CreateFromDiscriminatorValue); } },
-                {"position", (o,n) => { (o as WorkbookChartDataLabels).Position = n.GetStringValue(); } },
-                {"separator", (o,n) => { (o as WorkbookChartDataLabels).Separator = n.GetStringValue(); } },
-                {"showBubbleSize", (o,n) => { (o as WorkbookChartDataLabels).ShowBubbleSize = n.GetBoolValue(); } },
-                {"showCategoryName", (o,n) => { (o as WorkbookChartDataLabels).ShowCategoryName = n.GetBoolValue(); } },
-                {"showLegendKey", (o,n) => { (o as WorkbookChartDataLabels).ShowLegendKey = n.GetBoolValue(); } },
-                {"showPercentage", (o,n) => { (o as WorkbookChartDataLabels).ShowPercentage = n.GetBoolValue(); } },
-                {"showSeriesName", (o,n) => { (o as WorkbookChartDataLabels).ShowSeriesName = n.GetBoolValue(); } },
-                {"showValue", (o,n) => { (o as WorkbookChartDataLabels).ShowValue = n.GetBoolValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"format", n => { Format = n.GetObjectValue<WorkbookChartDataLabelFormat>(WorkbookChartDataLabelFormat.CreateFromDiscriminatorValue); } },
+                {"position", n => { Position = n.GetStringValue(); } },
+                {"separator", n => { Separator = n.GetStringValue(); } },
+                {"showBubbleSize", n => { ShowBubbleSize = n.GetBoolValue(); } },
+                {"showCategoryName", n => { ShowCategoryName = n.GetBoolValue(); } },
+                {"showLegendKey", n => { ShowLegendKey = n.GetBoolValue(); } },
+                {"showPercentage", n => { ShowPercentage = n.GetBoolValue(); } },
+                {"showSeriesName", n => { ShowSeriesName = n.GetBoolValue(); } },
+                {"showValue", n => { ShowValue = n.GetBoolValue(); } },
             };
         }
         /// <summary>

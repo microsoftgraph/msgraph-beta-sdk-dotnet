@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"deviceDisplayName", (o,n) => { (o as DeviceManagementIntentDeviceState).DeviceDisplayName = n.GetStringValue(); } },
-                {"deviceId", (o,n) => { (o as DeviceManagementIntentDeviceState).DeviceId = n.GetStringValue(); } },
-                {"lastReportedDateTime", (o,n) => { (o as DeviceManagementIntentDeviceState).LastReportedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"state", (o,n) => { (o as DeviceManagementIntentDeviceState).State = n.GetEnumValue<ComplianceStatus>(); } },
-                {"userName", (o,n) => { (o as DeviceManagementIntentDeviceState).UserName = n.GetStringValue(); } },
-                {"userPrincipalName", (o,n) => { (o as DeviceManagementIntentDeviceState).UserPrincipalName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"deviceDisplayName", n => { DeviceDisplayName = n.GetStringValue(); } },
+                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
+                {"lastReportedDateTime", n => { LastReportedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"state", n => { State = n.GetEnumValue<ComplianceStatus>(); } },
+                {"userName", n => { UserName = n.GetStringValue(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

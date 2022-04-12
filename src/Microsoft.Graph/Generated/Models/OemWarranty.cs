@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"additionalWarranties", (o,n) => { (o as OemWarranty).AdditionalWarranties = n.GetCollectionOfObjectValues<WarrantyOffer>(WarrantyOffer.CreateFromDiscriminatorValue).ToList(); } },
-                {"baseWarranties", (o,n) => { (o as OemWarranty).BaseWarranties = n.GetCollectionOfObjectValues<WarrantyOffer>(WarrantyOffer.CreateFromDiscriminatorValue).ToList(); } },
-                {"deviceConfigurationUrl", (o,n) => { (o as OemWarranty).DeviceConfigurationUrl = n.GetStringValue(); } },
-                {"deviceWarrantyUrl", (o,n) => { (o as OemWarranty).DeviceWarrantyUrl = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"additionalWarranties", n => { AdditionalWarranties = n.GetCollectionOfObjectValues<WarrantyOffer>(WarrantyOffer.CreateFromDiscriminatorValue).ToList(); } },
+                {"baseWarranties", n => { BaseWarranties = n.GetCollectionOfObjectValues<WarrantyOffer>(WarrantyOffer.CreateFromDiscriminatorValue).ToList(); } },
+                {"deviceConfigurationUrl", n => { DeviceConfigurationUrl = n.GetStringValue(); } },
+                {"deviceWarrantyUrl", n => { DeviceWarrantyUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

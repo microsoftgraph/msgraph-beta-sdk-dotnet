@@ -48,24 +48,24 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"action", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).Action = n.GetStringValue(); } },
-                {"activatedUsing", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).ActivatedUsing = n.GetObjectValue<UnifiedRoleEligibilitySchedule>(UnifiedRoleEligibilitySchedule.CreateFromDiscriminatorValue); } },
-                {"appScope", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).AppScope = n.GetObjectValue<Microsoft.Graph.Beta.Models.AppScope>(Microsoft.Graph.Beta.Models.AppScope.CreateFromDiscriminatorValue); } },
-                {"appScopeId", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).AppScopeId = n.GetStringValue(); } },
-                {"directoryScope", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).DirectoryScope = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
-                {"directoryScopeId", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).DirectoryScopeId = n.GetStringValue(); } },
-                {"isValidationOnly", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).IsValidationOnly = n.GetBoolValue(); } },
-                {"justification", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).Justification = n.GetStringValue(); } },
-                {"principal", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).Principal = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
-                {"principalId", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).PrincipalId = n.GetStringValue(); } },
-                {"roleDefinition", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).RoleDefinition = n.GetObjectValue<UnifiedRoleDefinition>(UnifiedRoleDefinition.CreateFromDiscriminatorValue); } },
-                {"roleDefinitionId", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).RoleDefinitionId = n.GetStringValue(); } },
-                {"scheduleInfo", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).ScheduleInfo = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
-                {"targetSchedule", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).TargetSchedule = n.GetObjectValue<UnifiedRoleAssignmentSchedule>(UnifiedRoleAssignmentSchedule.CreateFromDiscriminatorValue); } },
-                {"targetScheduleId", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).TargetScheduleId = n.GetStringValue(); } },
-                {"ticketInfo", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).TicketInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.TicketInfo>(Microsoft.Graph.Beta.Models.TicketInfo.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"action", n => { Action = n.GetStringValue(); } },
+                {"activatedUsing", n => { ActivatedUsing = n.GetObjectValue<UnifiedRoleEligibilitySchedule>(UnifiedRoleEligibilitySchedule.CreateFromDiscriminatorValue); } },
+                {"appScope", n => { AppScope = n.GetObjectValue<Microsoft.Graph.Beta.Models.AppScope>(Microsoft.Graph.Beta.Models.AppScope.CreateFromDiscriminatorValue); } },
+                {"appScopeId", n => { AppScopeId = n.GetStringValue(); } },
+                {"directoryScope", n => { DirectoryScope = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
+                {"directoryScopeId", n => { DirectoryScopeId = n.GetStringValue(); } },
+                {"isValidationOnly", n => { IsValidationOnly = n.GetBoolValue(); } },
+                {"justification", n => { Justification = n.GetStringValue(); } },
+                {"principal", n => { Principal = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
+                {"principalId", n => { PrincipalId = n.GetStringValue(); } },
+                {"roleDefinition", n => { RoleDefinition = n.GetObjectValue<UnifiedRoleDefinition>(UnifiedRoleDefinition.CreateFromDiscriminatorValue); } },
+                {"roleDefinitionId", n => { RoleDefinitionId = n.GetStringValue(); } },
+                {"scheduleInfo", n => { ScheduleInfo = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
+                {"targetSchedule", n => { TargetSchedule = n.GetObjectValue<UnifiedRoleAssignmentSchedule>(UnifiedRoleAssignmentSchedule.CreateFromDiscriminatorValue); } },
+                {"targetScheduleId", n => { TargetScheduleId = n.GetStringValue(); } },
+                {"ticketInfo", n => { TicketInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.TicketInfo>(Microsoft.Graph.Beta.Models.TicketInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

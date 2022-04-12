@@ -36,18 +36,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"deploymentStatus", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus).DeploymentStatus = n.GetEnumValue<WindowsDefenderApplicationControlSupplementalPolicyStatuses>(); } },
-                {"deviceId", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus).DeviceId = n.GetStringValue(); } },
-                {"deviceName", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus).DeviceName = n.GetStringValue(); } },
-                {"lastSyncDateTime", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus).LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"osDescription", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus).OsDescription = n.GetStringValue(); } },
-                {"osVersion", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus).OsVersion = n.GetStringValue(); } },
-                {"policy", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus).Policy = n.GetObjectValue<WindowsDefenderApplicationControlSupplementalPolicy>(WindowsDefenderApplicationControlSupplementalPolicy.CreateFromDiscriminatorValue); } },
-                {"policyVersion", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus).PolicyVersion = n.GetStringValue(); } },
-                {"userName", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus).UserName = n.GetStringValue(); } },
-                {"userPrincipalName", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus).UserPrincipalName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"deploymentStatus", n => { DeploymentStatus = n.GetEnumValue<WindowsDefenderApplicationControlSupplementalPolicyStatuses>(); } },
+                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
+                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
+                {"lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                {"osDescription", n => { OsDescription = n.GetStringValue(); } },
+                {"osVersion", n => { OsVersion = n.GetStringValue(); } },
+                {"policy", n => { Policy = n.GetObjectValue<WindowsDefenderApplicationControlSupplementalPolicy>(WindowsDefenderApplicationControlSupplementalPolicy.CreateFromDiscriminatorValue); } },
+                {"policyVersion", n => { PolicyVersion = n.GetStringValue(); } },
+                {"userName", n => { UserName = n.GetStringValue(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -38,14 +38,14 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.CreateOrGet {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"chatInfo", (o,n) => { (o as CreateOrGetRequestBody).ChatInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ChatInfo>(Microsoft.Graph.Beta.Models.ChatInfo.CreateFromDiscriminatorValue); } },
-                {"endDateTime", (o,n) => { (o as CreateOrGetRequestBody).EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"externalId", (o,n) => { (o as CreateOrGetRequestBody).ExternalId = n.GetStringValue(); } },
-                {"participants", (o,n) => { (o as CreateOrGetRequestBody).Participants = n.GetObjectValue<MeetingParticipants>(MeetingParticipants.CreateFromDiscriminatorValue); } },
-                {"startDateTime", (o,n) => { (o as CreateOrGetRequestBody).StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"subject", (o,n) => { (o as CreateOrGetRequestBody).Subject = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"chatInfo", n => { ChatInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ChatInfo>(Microsoft.Graph.Beta.Models.ChatInfo.CreateFromDiscriminatorValue); } },
+                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"externalId", n => { ExternalId = n.GetStringValue(); } },
+                {"participants", n => { Participants = n.GetObjectValue<MeetingParticipants>(MeetingParticipants.CreateFromDiscriminatorValue); } },
+                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                {"subject", n => { Subject = n.GetStringValue(); } },
             };
         }
         /// <summary>

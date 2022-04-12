@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appAuthorized", (o,n) => { (o as TelecomExpenseManagementPartner).AppAuthorized = n.GetBoolValue(); } },
-                {"displayName", (o,n) => { (o as TelecomExpenseManagementPartner).DisplayName = n.GetStringValue(); } },
-                {"enabled", (o,n) => { (o as TelecomExpenseManagementPartner).Enabled = n.GetBoolValue(); } },
-                {"lastConnectionDateTime", (o,n) => { (o as TelecomExpenseManagementPartner).LastConnectionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"url", (o,n) => { (o as TelecomExpenseManagementPartner).Url = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"appAuthorized", n => { AppAuthorized = n.GetBoolValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"enabled", n => { Enabled = n.GetBoolValue(); } },
+                {"lastConnectionDateTime", n => { LastConnectionDateTime = n.GetDateTimeOffsetValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

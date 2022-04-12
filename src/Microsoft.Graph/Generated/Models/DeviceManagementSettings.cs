@@ -50,21 +50,21 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"androidDeviceAdministratorEnrollmentEnabled", (o,n) => { (o as DeviceManagementSettings).AndroidDeviceAdministratorEnrollmentEnabled = n.GetBoolValue(); } },
-                {"derivedCredentialProvider", (o,n) => { (o as DeviceManagementSettings).DerivedCredentialProvider = n.GetEnumValue<DerivedCredentialProviderType>(); } },
-                {"derivedCredentialUrl", (o,n) => { (o as DeviceManagementSettings).DerivedCredentialUrl = n.GetStringValue(); } },
-                {"deviceComplianceCheckinThresholdDays", (o,n) => { (o as DeviceManagementSettings).DeviceComplianceCheckinThresholdDays = n.GetIntValue(); } },
-                {"deviceInactivityBeforeRetirementInDay", (o,n) => { (o as DeviceManagementSettings).DeviceInactivityBeforeRetirementInDay = n.GetIntValue(); } },
-                {"enableAutopilotDiagnostics", (o,n) => { (o as DeviceManagementSettings).EnableAutopilotDiagnostics = n.GetBoolValue(); } },
-                {"enableDeviceGroupMembershipReport", (o,n) => { (o as DeviceManagementSettings).EnableDeviceGroupMembershipReport = n.GetBoolValue(); } },
-                {"enableEnhancedTroubleshootingExperience", (o,n) => { (o as DeviceManagementSettings).EnableEnhancedTroubleshootingExperience = n.GetBoolValue(); } },
-                {"enableLogCollection", (o,n) => { (o as DeviceManagementSettings).EnableLogCollection = n.GetBoolValue(); } },
-                {"enhancedJailBreak", (o,n) => { (o as DeviceManagementSettings).EnhancedJailBreak = n.GetBoolValue(); } },
-                {"ignoreDevicesForUnsupportedSettingsEnabled", (o,n) => { (o as DeviceManagementSettings).IgnoreDevicesForUnsupportedSettingsEnabled = n.GetBoolValue(); } },
-                {"isScheduledActionEnabled", (o,n) => { (o as DeviceManagementSettings).IsScheduledActionEnabled = n.GetBoolValue(); } },
-                {"secureByDefault", (o,n) => { (o as DeviceManagementSettings).SecureByDefault = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"androidDeviceAdministratorEnrollmentEnabled", n => { AndroidDeviceAdministratorEnrollmentEnabled = n.GetBoolValue(); } },
+                {"derivedCredentialProvider", n => { DerivedCredentialProvider = n.GetEnumValue<DerivedCredentialProviderType>(); } },
+                {"derivedCredentialUrl", n => { DerivedCredentialUrl = n.GetStringValue(); } },
+                {"deviceComplianceCheckinThresholdDays", n => { DeviceComplianceCheckinThresholdDays = n.GetIntValue(); } },
+                {"deviceInactivityBeforeRetirementInDay", n => { DeviceInactivityBeforeRetirementInDay = n.GetIntValue(); } },
+                {"enableAutopilotDiagnostics", n => { EnableAutopilotDiagnostics = n.GetBoolValue(); } },
+                {"enableDeviceGroupMembershipReport", n => { EnableDeviceGroupMembershipReport = n.GetBoolValue(); } },
+                {"enableEnhancedTroubleshootingExperience", n => { EnableEnhancedTroubleshootingExperience = n.GetBoolValue(); } },
+                {"enableLogCollection", n => { EnableLogCollection = n.GetBoolValue(); } },
+                {"enhancedJailBreak", n => { EnhancedJailBreak = n.GetBoolValue(); } },
+                {"ignoreDevicesForUnsupportedSettingsEnabled", n => { IgnoreDevicesForUnsupportedSettingsEnabled = n.GetBoolValue(); } },
+                {"isScheduledActionEnabled", n => { IsScheduledActionEnabled = n.GetBoolValue(); } },
+                {"secureByDefault", n => { SecureByDefault = n.GetBoolValue(); } },
             };
         }
         /// <summary>

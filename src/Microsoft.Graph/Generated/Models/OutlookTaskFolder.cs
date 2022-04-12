@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"changeKey", (o,n) => { (o as OutlookTaskFolder).ChangeKey = n.GetStringValue(); } },
-                {"isDefaultFolder", (o,n) => { (o as OutlookTaskFolder).IsDefaultFolder = n.GetBoolValue(); } },
-                {"multiValueExtendedProperties", (o,n) => { (o as OutlookTaskFolder).MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue).ToList(); } },
-                {"name", (o,n) => { (o as OutlookTaskFolder).Name = n.GetStringValue(); } },
-                {"parentGroupKey", (o,n) => { (o as OutlookTaskFolder).ParentGroupKey = n.GetStringValue(); } },
-                {"singleValueExtendedProperties", (o,n) => { (o as OutlookTaskFolder).SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue).ToList(); } },
-                {"tasks", (o,n) => { (o as OutlookTaskFolder).Tasks = n.GetCollectionOfObjectValues<OutlookTask>(OutlookTask.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"changeKey", n => { ChangeKey = n.GetStringValue(); } },
+                {"isDefaultFolder", n => { IsDefaultFolder = n.GetBoolValue(); } },
+                {"multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue).ToList(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"parentGroupKey", n => { ParentGroupKey = n.GetStringValue(); } },
+                {"singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue).ToList(); } },
+                {"tasks", n => { Tasks = n.GetCollectionOfObjectValues<OutlookTask>(OutlookTask.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

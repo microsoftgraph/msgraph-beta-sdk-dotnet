@@ -38,15 +38,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"actionId", (o,n) => { (o as WorkloadAction).ActionId = n.GetStringValue(); } },
-                {"category", (o,n) => { (o as WorkloadAction).Category = n.GetEnumValue<WorkloadActionCategory>(); } },
-                {"description", (o,n) => { (o as WorkloadAction).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as WorkloadAction).DisplayName = n.GetStringValue(); } },
-                {"licenses", (o,n) => { (o as WorkloadAction).Licenses = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"service", (o,n) => { (o as WorkloadAction).Service = n.GetStringValue(); } },
-                {"settings", (o,n) => { (o as WorkloadAction).Settings = n.GetCollectionOfObjectValues<Setting>(Setting.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"actionId", n => { ActionId = n.GetStringValue(); } },
+                {"category", n => { Category = n.GetEnumValue<WorkloadActionCategory>(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"licenses", n => { Licenses = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"service", n => { Service = n.GetStringValue(); } },
+                {"settings", n => { Settings = n.GetCollectionOfObjectValues<Setting>(Setting.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

@@ -44,22 +44,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"actionReason", (o,n) => { (o as SecurityAction).ActionReason = n.GetStringValue(); } },
-                {"appId", (o,n) => { (o as SecurityAction).AppId = n.GetStringValue(); } },
-                {"azureTenantId", (o,n) => { (o as SecurityAction).AzureTenantId = n.GetStringValue(); } },
-                {"clientContext", (o,n) => { (o as SecurityAction).ClientContext = n.GetStringValue(); } },
-                {"completedDateTime", (o,n) => { (o as SecurityAction).CompletedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"createdDateTime", (o,n) => { (o as SecurityAction).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"errorInfo", (o,n) => { (o as SecurityAction).ErrorInfo = n.GetObjectValue<ResultInfo>(ResultInfo.CreateFromDiscriminatorValue); } },
-                {"lastActionDateTime", (o,n) => { (o as SecurityAction).LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"name", (o,n) => { (o as SecurityAction).Name = n.GetStringValue(); } },
-                {"parameters", (o,n) => { (o as SecurityAction).Parameters = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
-                {"states", (o,n) => { (o as SecurityAction).States = n.GetCollectionOfObjectValues<SecurityActionState>(SecurityActionState.CreateFromDiscriminatorValue).ToList(); } },
-                {"status", (o,n) => { (o as SecurityAction).Status = n.GetEnumValue<OperationStatus>(); } },
-                {"user", (o,n) => { (o as SecurityAction).User = n.GetStringValue(); } },
-                {"vendorInformation", (o,n) => { (o as SecurityAction).VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"actionReason", n => { ActionReason = n.GetStringValue(); } },
+                {"appId", n => { AppId = n.GetStringValue(); } },
+                {"azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
+                {"clientContext", n => { ClientContext = n.GetStringValue(); } },
+                {"completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"errorInfo", n => { ErrorInfo = n.GetObjectValue<ResultInfo>(ResultInfo.CreateFromDiscriminatorValue); } },
+                {"lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"parameters", n => { Parameters = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"states", n => { States = n.GetCollectionOfObjectValues<SecurityActionState>(SecurityActionState.CreateFromDiscriminatorValue).ToList(); } },
+                {"status", n => { Status = n.GetEnumValue<OperationStatus>(); } },
+                {"user", n => { User = n.GetStringValue(); } },
+                {"vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

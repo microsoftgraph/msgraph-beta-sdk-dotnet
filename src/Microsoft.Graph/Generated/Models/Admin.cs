@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"serviceAnnouncement", (o,n) => { (o as Admin).ServiceAnnouncement = n.GetObjectValue<Microsoft.Graph.Beta.Models.ServiceAnnouncement>(Microsoft.Graph.Beta.Models.ServiceAnnouncement.CreateFromDiscriminatorValue); } },
-                {"windows", (o,n) => { (o as Admin).Windows = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.Windows>(Microsoft.Graph.Beta.Models.WindowsUpdates.Windows.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"serviceAnnouncement", n => { ServiceAnnouncement = n.GetObjectValue<Microsoft.Graph.Beta.Models.ServiceAnnouncement>(Microsoft.Graph.Beta.Models.ServiceAnnouncement.CreateFromDiscriminatorValue); } },
+                {"windows", n => { Windows = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.Windows>(Microsoft.Graph.Beta.Models.WindowsUpdates.Windows.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

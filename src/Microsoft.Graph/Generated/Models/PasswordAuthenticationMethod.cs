@@ -22,11 +22,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdDateTime", (o,n) => { (o as PasswordAuthenticationMethod).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"creationDateTime", (o,n) => { (o as PasswordAuthenticationMethod).CreationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"password", (o,n) => { (o as PasswordAuthenticationMethod).Password = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"password", n => { Password = n.GetStringValue(); } },
             };
         }
         /// <summary>

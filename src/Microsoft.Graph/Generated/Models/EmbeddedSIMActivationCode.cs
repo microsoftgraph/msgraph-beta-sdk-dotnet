@@ -31,11 +31,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"integratedCircuitCardIdentifier", (o,n) => { (o as EmbeddedSIMActivationCode).IntegratedCircuitCardIdentifier = n.GetStringValue(); } },
-                {"matchingIdentifier", (o,n) => { (o as EmbeddedSIMActivationCode).MatchingIdentifier = n.GetStringValue(); } },
-                {"smdpPlusServerAddress", (o,n) => { (o as EmbeddedSIMActivationCode).SmdpPlusServerAddress = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"integratedCircuitCardIdentifier", n => { IntegratedCircuitCardIdentifier = n.GetStringValue(); } },
+                {"matchingIdentifier", n => { MatchingIdentifier = n.GetStringValue(); } },
+                {"smdpPlusServerAddress", n => { SmdpPlusServerAddress = n.GetStringValue(); } },
             };
         }
         /// <summary>

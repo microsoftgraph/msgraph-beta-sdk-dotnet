@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"isDialInBypassEnabled", (o,n) => { (o as LobbyBypassSettings).IsDialInBypassEnabled = n.GetBoolValue(); } },
-                {"scope", (o,n) => { (o as LobbyBypassSettings).Scope = n.GetEnumValue<LobbyBypassScope>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"isDialInBypassEnabled", n => { IsDialInBypassEnabled = n.GetBoolValue(); } },
+                {"scope", n => { Scope = n.GetEnumValue<LobbyBypassScope>(); } },
             };
         }
         /// <summary>

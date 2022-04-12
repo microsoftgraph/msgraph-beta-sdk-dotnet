@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"ccRecipients", (o,n) => { (o as InvitedUserMessageInfo).CcRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue).ToList(); } },
-                {"customizedMessageBody", (o,n) => { (o as InvitedUserMessageInfo).CustomizedMessageBody = n.GetStringValue(); } },
-                {"messageLanguage", (o,n) => { (o as InvitedUserMessageInfo).MessageLanguage = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"ccRecipients", n => { CcRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue).ToList(); } },
+                {"customizedMessageBody", n => { CustomizedMessageBody = n.GetStringValue(); } },
+                {"messageLanguage", n => { MessageLanguage = n.GetStringValue(); } },
             };
         }
         /// <summary>

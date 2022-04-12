@@ -30,10 +30,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.ImportD
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"importedDeviceIdentities", (o,n) => { (o as ImportDeviceIdentityListRequestBody).ImportedDeviceIdentities = n.GetCollectionOfObjectValues<ImportedDeviceIdentity>(ImportedDeviceIdentity.CreateFromDiscriminatorValue).ToList(); } },
-                {"overwriteImportedDeviceIdentities", (o,n) => { (o as ImportDeviceIdentityListRequestBody).OverwriteImportedDeviceIdentities = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"importedDeviceIdentities", n => { ImportedDeviceIdentities = n.GetCollectionOfObjectValues<ImportedDeviceIdentity>(ImportedDeviceIdentity.CreateFromDiscriminatorValue).ToList(); } },
+                {"overwriteImportedDeviceIdentities", n => { OverwriteImportedDeviceIdentities = n.GetBoolValue(); } },
             };
         }
         /// <summary>

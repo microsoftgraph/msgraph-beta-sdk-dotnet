@@ -32,11 +32,11 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"expression", (o,n) => { (o as ParseExpressionRequestBody).Expression = n.GetStringValue(); } },
-                {"targetAttributeDefinition", (o,n) => { (o as ParseExpressionRequestBody).TargetAttributeDefinition = n.GetObjectValue<AttributeDefinition>(AttributeDefinition.CreateFromDiscriminatorValue); } },
-                {"testInputObject", (o,n) => { (o as ParseExpressionRequestBody).TestInputObject = n.GetObjectValue<ExpressionInputObject>(ExpressionInputObject.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"expression", n => { Expression = n.GetStringValue(); } },
+                {"targetAttributeDefinition", n => { TargetAttributeDefinition = n.GetObjectValue<AttributeDefinition>(AttributeDefinition.CreateFromDiscriminatorValue); } },
+                {"testInputObject", n => { TestInputObject = n.GetObjectValue<ExpressionInputObject>(ExpressionInputObject.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

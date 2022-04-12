@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"assignedDateTime", (o,n) => { (o as UserTrainingStatusInfo).AssignedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"completionDateTime", (o,n) => { (o as UserTrainingStatusInfo).CompletionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", (o,n) => { (o as UserTrainingStatusInfo).DisplayName = n.GetStringValue(); } },
-                {"trainingStatus", (o,n) => { (o as UserTrainingStatusInfo).TrainingStatus = n.GetEnumValue<TrainingStatus>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"assignedDateTime", n => { AssignedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"completionDateTime", n => { CompletionDateTime = n.GetDateTimeOffsetValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"trainingStatus", n => { TrainingStatus = n.GetEnumValue<TrainingStatus>(); } },
             };
         }
         /// <summary>

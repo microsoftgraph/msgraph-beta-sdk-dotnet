@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetSuggestedEnrollmentLimitWithE
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/microsoft.graph.getSuggestedEnrollmentLimit(enrollmentType='{enrollmentType}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("enrollmentType", enrollmentType);
+            urlTplParams.Add("", enrollmentType);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

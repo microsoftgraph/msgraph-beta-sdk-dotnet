@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"criteria", (o,n) => { (o as RubricQuality).Criteria = n.GetCollectionOfObjectValues<RubricCriterion>(RubricCriterion.CreateFromDiscriminatorValue).ToList(); } },
-                {"description", (o,n) => { (o as RubricQuality).Description = n.GetObjectValue<EducationItemBody>(EducationItemBody.CreateFromDiscriminatorValue); } },
-                {"displayName", (o,n) => { (o as RubricQuality).DisplayName = n.GetStringValue(); } },
-                {"qualityId", (o,n) => { (o as RubricQuality).QualityId = n.GetStringValue(); } },
-                {"weight", (o,n) => { (o as RubricQuality).Weight = n.GetFloatValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"criteria", n => { Criteria = n.GetCollectionOfObjectValues<RubricCriterion>(RubricCriterion.CreateFromDiscriminatorValue).ToList(); } },
+                {"description", n => { Description = n.GetObjectValue<EducationItemBody>(EducationItemBody.CreateFromDiscriminatorValue); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"qualityId", n => { QualityId = n.GetStringValue(); } },
+                {"weight", n => { Weight = n.GetFloatValue(); } },
             };
         }
         /// <summary>

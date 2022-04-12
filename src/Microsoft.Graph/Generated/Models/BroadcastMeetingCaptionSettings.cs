@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"isCaptionEnabled", (o,n) => { (o as BroadcastMeetingCaptionSettings).IsCaptionEnabled = n.GetBoolValue(); } },
-                {"spokenLanguage", (o,n) => { (o as BroadcastMeetingCaptionSettings).SpokenLanguage = n.GetStringValue(); } },
-                {"translationLanguages", (o,n) => { (o as BroadcastMeetingCaptionSettings).TranslationLanguages = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"isCaptionEnabled", n => { IsCaptionEnabled = n.GetBoolValue(); } },
+                {"spokenLanguage", n => { SpokenLanguage = n.GetStringValue(); } },
+                {"translationLanguages", n => { TranslationLanguages = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

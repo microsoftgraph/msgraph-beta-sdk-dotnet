@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"acceptingJobs", (o,n) => { (o as Printer).AcceptingJobs = n.GetBoolValue(); } },
-                {"connectors", (o,n) => { (o as Printer).Connectors = n.GetCollectionOfObjectValues<PrintConnector>(PrintConnector.CreateFromDiscriminatorValue).ToList(); } },
-                {"hasPhysicalDevice", (o,n) => { (o as Printer).HasPhysicalDevice = n.GetBoolValue(); } },
-                {"isShared", (o,n) => { (o as Printer).IsShared = n.GetBoolValue(); } },
-                {"lastSeenDateTime", (o,n) => { (o as Printer).LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"registeredDateTime", (o,n) => { (o as Printer).RegisteredDateTime = n.GetDateTimeOffsetValue(); } },
-                {"share", (o,n) => { (o as Printer).Share = n.GetObjectValue<PrinterShare>(PrinterShare.CreateFromDiscriminatorValue); } },
-                {"shares", (o,n) => { (o as Printer).Shares = n.GetCollectionOfObjectValues<PrinterShare>(PrinterShare.CreateFromDiscriminatorValue).ToList(); } },
-                {"taskTriggers", (o,n) => { (o as Printer).TaskTriggers = n.GetCollectionOfObjectValues<PrintTaskTrigger>(PrintTaskTrigger.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"acceptingJobs", n => { AcceptingJobs = n.GetBoolValue(); } },
+                {"connectors", n => { Connectors = n.GetCollectionOfObjectValues<PrintConnector>(PrintConnector.CreateFromDiscriminatorValue).ToList(); } },
+                {"hasPhysicalDevice", n => { HasPhysicalDevice = n.GetBoolValue(); } },
+                {"isShared", n => { IsShared = n.GetBoolValue(); } },
+                {"lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                {"registeredDateTime", n => { RegisteredDateTime = n.GetDateTimeOffsetValue(); } },
+                {"share", n => { Share = n.GetObjectValue<PrinterShare>(PrinterShare.CreateFromDiscriminatorValue); } },
+                {"shares", n => { Shares = n.GetCollectionOfObjectValues<PrinterShare>(PrinterShare.CreateFromDiscriminatorValue).ToList(); } },
+                {"taskTriggers", n => { TaskTriggers = n.GetCollectionOfObjectValues<PrintTaskTrigger>(PrintTaskTrigger.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

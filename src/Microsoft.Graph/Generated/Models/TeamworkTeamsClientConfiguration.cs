@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"accountConfiguration", (o,n) => { (o as TeamworkTeamsClientConfiguration).AccountConfiguration = n.GetObjectValue<TeamworkAccountConfiguration>(TeamworkAccountConfiguration.CreateFromDiscriminatorValue); } },
-                {"featuresConfiguration", (o,n) => { (o as TeamworkTeamsClientConfiguration).FeaturesConfiguration = n.GetObjectValue<TeamworkFeaturesConfiguration>(TeamworkFeaturesConfiguration.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"accountConfiguration", n => { AccountConfiguration = n.GetObjectValue<TeamworkAccountConfiguration>(TeamworkAccountConfiguration.CreateFromDiscriminatorValue); } },
+                {"featuresConfiguration", n => { FeaturesConfiguration = n.GetObjectValue<TeamworkFeaturesConfiguration>(TeamworkFeaturesConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

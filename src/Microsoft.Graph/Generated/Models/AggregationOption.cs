@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"bucketDefinition", (o,n) => { (o as AggregationOption).BucketDefinition = n.GetObjectValue<BucketAggregationDefinition>(BucketAggregationDefinition.CreateFromDiscriminatorValue); } },
-                {"field", (o,n) => { (o as AggregationOption).Field = n.GetStringValue(); } },
-                {"size", (o,n) => { (o as AggregationOption).Size = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"bucketDefinition", n => { BucketDefinition = n.GetObjectValue<BucketAggregationDefinition>(BucketAggregationDefinition.CreateFromDiscriminatorValue); } },
+                {"field", n => { Field = n.GetStringValue(); } },
+                {"size", n => { Size = n.GetIntValue(); } },
             };
         }
         /// <summary>

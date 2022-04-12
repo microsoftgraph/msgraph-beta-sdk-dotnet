@@ -22,11 +22,11 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"acl", (o,n) => { (o as ExternalItem).Acl = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExternalConnectors.Acl>(Microsoft.Graph.Beta.Models.ExternalConnectors.Acl.CreateFromDiscriminatorValue).ToList(); } },
-                {"content", (o,n) => { (o as ExternalItem).Content = n.GetObjectValue<ExternalItemContent>(ExternalItemContent.CreateFromDiscriminatorValue); } },
-                {"properties", (o,n) => { (o as ExternalItem).Properties = n.GetObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.Properties>(Microsoft.Graph.Beta.Models.ExternalConnectors.Properties.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"acl", n => { Acl = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExternalConnectors.Acl>(Microsoft.Graph.Beta.Models.ExternalConnectors.Acl.CreateFromDiscriminatorValue).ToList(); } },
+                {"content", n => { Content = n.GetObjectValue<ExternalItemContent>(ExternalItemContent.CreateFromDiscriminatorValue); } },
+                {"properties", n => { Properties = n.GetObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.Properties>(Microsoft.Graph.Beta.Models.ExternalConnectors.Properties.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

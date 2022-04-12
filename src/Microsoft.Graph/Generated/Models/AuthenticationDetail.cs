@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"authenticationMethod", (o,n) => { (o as AuthenticationDetail).AuthenticationMethod = n.GetStringValue(); } },
-                {"authenticationMethodDetail", (o,n) => { (o as AuthenticationDetail).AuthenticationMethodDetail = n.GetStringValue(); } },
-                {"authenticationStepDateTime", (o,n) => { (o as AuthenticationDetail).AuthenticationStepDateTime = n.GetDateTimeOffsetValue(); } },
-                {"authenticationStepRequirement", (o,n) => { (o as AuthenticationDetail).AuthenticationStepRequirement = n.GetStringValue(); } },
-                {"authenticationStepResultDetail", (o,n) => { (o as AuthenticationDetail).AuthenticationStepResultDetail = n.GetStringValue(); } },
-                {"succeeded", (o,n) => { (o as AuthenticationDetail).Succeeded = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"authenticationMethod", n => { AuthenticationMethod = n.GetStringValue(); } },
+                {"authenticationMethodDetail", n => { AuthenticationMethodDetail = n.GetStringValue(); } },
+                {"authenticationStepDateTime", n => { AuthenticationStepDateTime = n.GetDateTimeOffsetValue(); } },
+                {"authenticationStepRequirement", n => { AuthenticationStepRequirement = n.GetStringValue(); } },
+                {"authenticationStepResultDetail", n => { AuthenticationStepResultDetail = n.GetStringValue(); } },
+                {"succeeded", n => { Succeeded = n.GetBoolValue(); } },
             };
         }
         /// <summary>

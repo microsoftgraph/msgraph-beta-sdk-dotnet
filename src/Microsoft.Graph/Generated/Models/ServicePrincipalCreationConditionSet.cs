@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"applicationIds", (o,n) => { (o as ServicePrincipalCreationConditionSet).ApplicationIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"applicationPublisherIds", (o,n) => { (o as ServicePrincipalCreationConditionSet).ApplicationPublisherIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"applicationsFromVerifiedPublisherOnly", (o,n) => { (o as ServicePrincipalCreationConditionSet).ApplicationsFromVerifiedPublisherOnly = n.GetBoolValue(); } },
-                {"applicationTenantIds", (o,n) => { (o as ServicePrincipalCreationConditionSet).ApplicationTenantIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"certifiedApplicationsOnly", (o,n) => { (o as ServicePrincipalCreationConditionSet).CertifiedApplicationsOnly = n.GetBoolValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"applicationIds", n => { ApplicationIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"applicationPublisherIds", n => { ApplicationPublisherIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"applicationsFromVerifiedPublisherOnly", n => { ApplicationsFromVerifiedPublisherOnly = n.GetBoolValue(); } },
+                {"applicationTenantIds", n => { ApplicationTenantIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"certifiedApplicationsOnly", n => { CertifiedApplicationsOnly = n.GetBoolValue(); } },
             };
         }
         /// <summary>

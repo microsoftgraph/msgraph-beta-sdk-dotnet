@@ -24,9 +24,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.CompareWithTempla
         public CompareWithTemplateIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string templateId = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate_id}/microsoft.graph.compare(templateId='{templateId}')";
+            UrlTemplate = "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/microsoft.graph.compare(templateId='{templateId}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("templateId", templateId);
+            urlTplParams.Add("", templateId);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.CompareWithTempla
         public CompareWithTemplateIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate_id}/microsoft.graph.compare(templateId='{templateId}')";
+            UrlTemplate = "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/microsoft.graph.compare(templateId='{templateId}')";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

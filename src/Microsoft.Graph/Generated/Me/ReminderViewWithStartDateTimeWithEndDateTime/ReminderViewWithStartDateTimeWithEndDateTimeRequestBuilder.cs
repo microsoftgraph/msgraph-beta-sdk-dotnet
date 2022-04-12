@@ -27,8 +27,8 @@ namespace Microsoft.Graph.Beta.Me.ReminderViewWithStartDateTimeWithEndDateTime {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/me/microsoft.graph.reminderView(StartDateTime='{StartDateTime}',EndDateTime='{EndDateTime}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("EndDateTime", endDateTime);
-            urlTplParams.Add("StartDateTime", startDateTime);
+            urlTplParams.Add("", endDateTime);
+            urlTplParams.Add("", startDateTime);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

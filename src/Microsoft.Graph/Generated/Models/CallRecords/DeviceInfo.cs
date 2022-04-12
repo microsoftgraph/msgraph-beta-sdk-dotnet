@@ -66,29 +66,29 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"captureDeviceDriver", (o,n) => { (o as DeviceInfo).CaptureDeviceDriver = n.GetStringValue(); } },
-                {"captureDeviceName", (o,n) => { (o as DeviceInfo).CaptureDeviceName = n.GetStringValue(); } },
-                {"captureNotFunctioningEventRatio", (o,n) => { (o as DeviceInfo).CaptureNotFunctioningEventRatio = n.GetFloatValue(); } },
-                {"cpuInsufficentEventRatio", (o,n) => { (o as DeviceInfo).CpuInsufficentEventRatio = n.GetFloatValue(); } },
-                {"deviceClippingEventRatio", (o,n) => { (o as DeviceInfo).DeviceClippingEventRatio = n.GetFloatValue(); } },
-                {"deviceGlitchEventRatio", (o,n) => { (o as DeviceInfo).DeviceGlitchEventRatio = n.GetFloatValue(); } },
-                {"howlingEventCount", (o,n) => { (o as DeviceInfo).HowlingEventCount = n.GetIntValue(); } },
-                {"initialSignalLevelRootMeanSquare", (o,n) => { (o as DeviceInfo).InitialSignalLevelRootMeanSquare = n.GetFloatValue(); } },
-                {"lowSpeechLevelEventRatio", (o,n) => { (o as DeviceInfo).LowSpeechLevelEventRatio = n.GetFloatValue(); } },
-                {"lowSpeechToNoiseEventRatio", (o,n) => { (o as DeviceInfo).LowSpeechToNoiseEventRatio = n.GetFloatValue(); } },
-                {"micGlitchRate", (o,n) => { (o as DeviceInfo).MicGlitchRate = n.GetFloatValue(); } },
-                {"receivedNoiseLevel", (o,n) => { (o as DeviceInfo).ReceivedNoiseLevel = n.GetIntValue(); } },
-                {"receivedSignalLevel", (o,n) => { (o as DeviceInfo).ReceivedSignalLevel = n.GetIntValue(); } },
-                {"renderDeviceDriver", (o,n) => { (o as DeviceInfo).RenderDeviceDriver = n.GetStringValue(); } },
-                {"renderDeviceName", (o,n) => { (o as DeviceInfo).RenderDeviceName = n.GetStringValue(); } },
-                {"renderMuteEventRatio", (o,n) => { (o as DeviceInfo).RenderMuteEventRatio = n.GetFloatValue(); } },
-                {"renderNotFunctioningEventRatio", (o,n) => { (o as DeviceInfo).RenderNotFunctioningEventRatio = n.GetFloatValue(); } },
-                {"renderZeroVolumeEventRatio", (o,n) => { (o as DeviceInfo).RenderZeroVolumeEventRatio = n.GetFloatValue(); } },
-                {"sentNoiseLevel", (o,n) => { (o as DeviceInfo).SentNoiseLevel = n.GetIntValue(); } },
-                {"sentSignalLevel", (o,n) => { (o as DeviceInfo).SentSignalLevel = n.GetIntValue(); } },
-                {"speakerGlitchRate", (o,n) => { (o as DeviceInfo).SpeakerGlitchRate = n.GetFloatValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"captureDeviceDriver", n => { CaptureDeviceDriver = n.GetStringValue(); } },
+                {"captureDeviceName", n => { CaptureDeviceName = n.GetStringValue(); } },
+                {"captureNotFunctioningEventRatio", n => { CaptureNotFunctioningEventRatio = n.GetFloatValue(); } },
+                {"cpuInsufficentEventRatio", n => { CpuInsufficentEventRatio = n.GetFloatValue(); } },
+                {"deviceClippingEventRatio", n => { DeviceClippingEventRatio = n.GetFloatValue(); } },
+                {"deviceGlitchEventRatio", n => { DeviceGlitchEventRatio = n.GetFloatValue(); } },
+                {"howlingEventCount", n => { HowlingEventCount = n.GetIntValue(); } },
+                {"initialSignalLevelRootMeanSquare", n => { InitialSignalLevelRootMeanSquare = n.GetFloatValue(); } },
+                {"lowSpeechLevelEventRatio", n => { LowSpeechLevelEventRatio = n.GetFloatValue(); } },
+                {"lowSpeechToNoiseEventRatio", n => { LowSpeechToNoiseEventRatio = n.GetFloatValue(); } },
+                {"micGlitchRate", n => { MicGlitchRate = n.GetFloatValue(); } },
+                {"receivedNoiseLevel", n => { ReceivedNoiseLevel = n.GetIntValue(); } },
+                {"receivedSignalLevel", n => { ReceivedSignalLevel = n.GetIntValue(); } },
+                {"renderDeviceDriver", n => { RenderDeviceDriver = n.GetStringValue(); } },
+                {"renderDeviceName", n => { RenderDeviceName = n.GetStringValue(); } },
+                {"renderMuteEventRatio", n => { RenderMuteEventRatio = n.GetFloatValue(); } },
+                {"renderNotFunctioningEventRatio", n => { RenderNotFunctioningEventRatio = n.GetFloatValue(); } },
+                {"renderZeroVolumeEventRatio", n => { RenderZeroVolumeEventRatio = n.GetFloatValue(); } },
+                {"sentNoiseLevel", n => { SentNoiseLevel = n.GetIntValue(); } },
+                {"sentSignalLevel", n => { SentSignalLevel = n.GetIntValue(); } },
+                {"speakerGlitchRate", n => { SpeakerGlitchRate = n.GetFloatValue(); } },
             };
         }
         /// <summary>

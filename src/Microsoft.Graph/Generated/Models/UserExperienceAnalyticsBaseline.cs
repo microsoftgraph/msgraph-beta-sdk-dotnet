@@ -36,18 +36,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appHealthMetrics", (o,n) => { (o as UserExperienceAnalyticsBaseline).AppHealthMetrics = n.GetObjectValue<UserExperienceAnalyticsCategory>(UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
-                {"batteryHealthMetrics", (o,n) => { (o as UserExperienceAnalyticsBaseline).BatteryHealthMetrics = n.GetObjectValue<UserExperienceAnalyticsCategory>(UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
-                {"bestPracticesMetrics", (o,n) => { (o as UserExperienceAnalyticsBaseline).BestPracticesMetrics = n.GetObjectValue<UserExperienceAnalyticsCategory>(UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", (o,n) => { (o as UserExperienceAnalyticsBaseline).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deviceBootPerformanceMetrics", (o,n) => { (o as UserExperienceAnalyticsBaseline).DeviceBootPerformanceMetrics = n.GetObjectValue<UserExperienceAnalyticsCategory>(UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
-                {"displayName", (o,n) => { (o as UserExperienceAnalyticsBaseline).DisplayName = n.GetStringValue(); } },
-                {"isBuiltIn", (o,n) => { (o as UserExperienceAnalyticsBaseline).IsBuiltIn = n.GetBoolValue(); } },
-                {"rebootAnalyticsMetrics", (o,n) => { (o as UserExperienceAnalyticsBaseline).RebootAnalyticsMetrics = n.GetObjectValue<UserExperienceAnalyticsCategory>(UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
-                {"resourcePerformanceMetrics", (o,n) => { (o as UserExperienceAnalyticsBaseline).ResourcePerformanceMetrics = n.GetObjectValue<UserExperienceAnalyticsCategory>(UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
-                {"workFromAnywhereMetrics", (o,n) => { (o as UserExperienceAnalyticsBaseline).WorkFromAnywhereMetrics = n.GetObjectValue<UserExperienceAnalyticsCategory>(UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"appHealthMetrics", n => { AppHealthMetrics = n.GetObjectValue<UserExperienceAnalyticsCategory>(UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
+                {"batteryHealthMetrics", n => { BatteryHealthMetrics = n.GetObjectValue<UserExperienceAnalyticsCategory>(UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
+                {"bestPracticesMetrics", n => { BestPracticesMetrics = n.GetObjectValue<UserExperienceAnalyticsCategory>(UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"deviceBootPerformanceMetrics", n => { DeviceBootPerformanceMetrics = n.GetObjectValue<UserExperienceAnalyticsCategory>(UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"isBuiltIn", n => { IsBuiltIn = n.GetBoolValue(); } },
+                {"rebootAnalyticsMetrics", n => { RebootAnalyticsMetrics = n.GetObjectValue<UserExperienceAnalyticsCategory>(UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
+                {"resourcePerformanceMetrics", n => { ResourcePerformanceMetrics = n.GetObjectValue<UserExperienceAnalyticsCategory>(UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
+                {"workFromAnywhereMetrics", n => { WorkFromAnywhereMetrics = n.GetObjectValue<UserExperienceAnalyticsCategory>(UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

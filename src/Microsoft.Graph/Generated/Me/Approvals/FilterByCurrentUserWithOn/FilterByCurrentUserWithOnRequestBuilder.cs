@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Me.Approvals.FilterByCurrentUserWithOn {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/me/approvals/microsoft.graph.filterByCurrentUser(on='{on}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("on", on);
+            urlTplParams.Add("", on);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

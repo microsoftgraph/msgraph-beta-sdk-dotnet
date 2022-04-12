@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"isEnabled", (o,n) => { (o as RedundancyDetectionSettings).IsEnabled = n.GetBoolValue(); } },
-                {"maxWords", (o,n) => { (o as RedundancyDetectionSettings).MaxWords = n.GetIntValue(); } },
-                {"minWords", (o,n) => { (o as RedundancyDetectionSettings).MinWords = n.GetIntValue(); } },
-                {"similarityThreshold", (o,n) => { (o as RedundancyDetectionSettings).SimilarityThreshold = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                {"maxWords", n => { MaxWords = n.GetIntValue(); } },
+                {"minWords", n => { MinWords = n.GetIntValue(); } },
+                {"similarityThreshold", n => { SimilarityThreshold = n.GetIntValue(); } },
             };
         }
         /// <summary>

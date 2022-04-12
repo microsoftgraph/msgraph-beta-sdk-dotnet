@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.Shifts.Item {
         public ShiftItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/groups/{group_id}/team/schedule/shifts/{shift_id}{?select}";
+            UrlTemplate = "{+baseurl}/groups/{group%2Did}/team/schedule/shifts/{shift%2Did}{?%24select}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.Shifts.Item {
         public ShiftItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/groups/{group_id}/team/schedule/shifts/{shift_id}{?select}";
+            UrlTemplate = "{+baseurl}/groups/{group%2Did}/team/schedule/shifts/{shift%2Did}{?%24select}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -149,6 +149,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.Shifts.Item {
         /// <summary>The shifts in the schedule.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
     }

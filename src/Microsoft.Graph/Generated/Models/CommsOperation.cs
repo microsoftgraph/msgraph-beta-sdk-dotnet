@@ -22,11 +22,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"clientContext", (o,n) => { (o as CommsOperation).ClientContext = n.GetStringValue(); } },
-                {"resultInfo", (o,n) => { (o as CommsOperation).ResultInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ResultInfo>(Microsoft.Graph.Beta.Models.ResultInfo.CreateFromDiscriminatorValue); } },
-                {"status", (o,n) => { (o as CommsOperation).Status = n.GetEnumValue<OperationStatus>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"clientContext", n => { ClientContext = n.GetStringValue(); } },
+                {"resultInfo", n => { ResultInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ResultInfo>(Microsoft.Graph.Beta.Models.ResultInfo.CreateFromDiscriminatorValue); } },
+                {"status", n => { Status = n.GetEnumValue<OperationStatus>(); } },
             };
         }
         /// <summary>

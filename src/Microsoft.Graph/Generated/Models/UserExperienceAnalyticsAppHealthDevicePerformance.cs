@@ -40,20 +40,20 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appCrashCount", (o,n) => { (o as UserExperienceAnalyticsAppHealthDevicePerformance).AppCrashCount = n.GetIntValue(); } },
-                {"appHangCount", (o,n) => { (o as UserExperienceAnalyticsAppHealthDevicePerformance).AppHangCount = n.GetIntValue(); } },
-                {"crashedAppCount", (o,n) => { (o as UserExperienceAnalyticsAppHealthDevicePerformance).CrashedAppCount = n.GetIntValue(); } },
-                {"deviceAppHealthScore", (o,n) => { (o as UserExperienceAnalyticsAppHealthDevicePerformance).DeviceAppHealthScore = n.GetDoubleValue(); } },
-                {"deviceAppHealthStatus", (o,n) => { (o as UserExperienceAnalyticsAppHealthDevicePerformance).DeviceAppHealthStatus = n.GetStringValue(); } },
-                {"deviceDisplayName", (o,n) => { (o as UserExperienceAnalyticsAppHealthDevicePerformance).DeviceDisplayName = n.GetStringValue(); } },
-                {"deviceId", (o,n) => { (o as UserExperienceAnalyticsAppHealthDevicePerformance).DeviceId = n.GetStringValue(); } },
-                {"deviceManufacturer", (o,n) => { (o as UserExperienceAnalyticsAppHealthDevicePerformance).DeviceManufacturer = n.GetStringValue(); } },
-                {"deviceModel", (o,n) => { (o as UserExperienceAnalyticsAppHealthDevicePerformance).DeviceModel = n.GetStringValue(); } },
-                {"healthStatus", (o,n) => { (o as UserExperienceAnalyticsAppHealthDevicePerformance).HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
-                {"meanTimeToFailureInMinutes", (o,n) => { (o as UserExperienceAnalyticsAppHealthDevicePerformance).MeanTimeToFailureInMinutes = n.GetIntValue(); } },
-                {"processedDateTime", (o,n) => { (o as UserExperienceAnalyticsAppHealthDevicePerformance).ProcessedDateTime = n.GetDateTimeOffsetValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"appCrashCount", n => { AppCrashCount = n.GetIntValue(); } },
+                {"appHangCount", n => { AppHangCount = n.GetIntValue(); } },
+                {"crashedAppCount", n => { CrashedAppCount = n.GetIntValue(); } },
+                {"deviceAppHealthScore", n => { DeviceAppHealthScore = n.GetDoubleValue(); } },
+                {"deviceAppHealthStatus", n => { DeviceAppHealthStatus = n.GetStringValue(); } },
+                {"deviceDisplayName", n => { DeviceDisplayName = n.GetStringValue(); } },
+                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
+                {"deviceManufacturer", n => { DeviceManufacturer = n.GetStringValue(); } },
+                {"deviceModel", n => { DeviceModel = n.GetStringValue(); } },
+                {"healthStatus", n => { HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
+                {"meanTimeToFailureInMinutes", n => { MeanTimeToFailureInMinutes = n.GetIntValue(); } },
+                {"processedDateTime", n => { ProcessedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

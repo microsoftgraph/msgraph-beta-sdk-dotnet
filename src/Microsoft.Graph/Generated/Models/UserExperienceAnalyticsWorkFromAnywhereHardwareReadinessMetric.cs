@@ -38,19 +38,19 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"osCheckFailedPercentage", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric).OsCheckFailedPercentage = n.GetDoubleValue(); } },
-                {"processor64BitCheckFailedPercentage", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric).Processor64BitCheckFailedPercentage = n.GetDoubleValue(); } },
-                {"processorCoreCountCheckFailedPercentage", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric).ProcessorCoreCountCheckFailedPercentage = n.GetDoubleValue(); } },
-                {"processorFamilyCheckFailedPercentage", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric).ProcessorFamilyCheckFailedPercentage = n.GetDoubleValue(); } },
-                {"processorSpeedCheckFailedPercentage", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric).ProcessorSpeedCheckFailedPercentage = n.GetDoubleValue(); } },
-                {"ramCheckFailedPercentage", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric).RamCheckFailedPercentage = n.GetDoubleValue(); } },
-                {"secureBootCheckFailedPercentage", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric).SecureBootCheckFailedPercentage = n.GetDoubleValue(); } },
-                {"storageCheckFailedPercentage", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric).StorageCheckFailedPercentage = n.GetDoubleValue(); } },
-                {"totalDeviceCount", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric).TotalDeviceCount = n.GetIntValue(); } },
-                {"tpmCheckFailedPercentage", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric).TpmCheckFailedPercentage = n.GetDoubleValue(); } },
-                {"upgradeEligibleDeviceCount", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric).UpgradeEligibleDeviceCount = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"osCheckFailedPercentage", n => { OsCheckFailedPercentage = n.GetDoubleValue(); } },
+                {"processor64BitCheckFailedPercentage", n => { Processor64BitCheckFailedPercentage = n.GetDoubleValue(); } },
+                {"processorCoreCountCheckFailedPercentage", n => { ProcessorCoreCountCheckFailedPercentage = n.GetDoubleValue(); } },
+                {"processorFamilyCheckFailedPercentage", n => { ProcessorFamilyCheckFailedPercentage = n.GetDoubleValue(); } },
+                {"processorSpeedCheckFailedPercentage", n => { ProcessorSpeedCheckFailedPercentage = n.GetDoubleValue(); } },
+                {"ramCheckFailedPercentage", n => { RamCheckFailedPercentage = n.GetDoubleValue(); } },
+                {"secureBootCheckFailedPercentage", n => { SecureBootCheckFailedPercentage = n.GetDoubleValue(); } },
+                {"storageCheckFailedPercentage", n => { StorageCheckFailedPercentage = n.GetDoubleValue(); } },
+                {"totalDeviceCount", n => { TotalDeviceCount = n.GetIntValue(); } },
+                {"tpmCheckFailedPercentage", n => { TpmCheckFailedPercentage = n.GetDoubleValue(); } },
+                {"upgradeEligibleDeviceCount", n => { UpgradeEligibleDeviceCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

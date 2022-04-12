@@ -51,21 +51,21 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"currentValue", (o,n) => { (o as DeviceConfigurationSettingState).CurrentValue = n.GetStringValue(); } },
-                {"errorCode", (o,n) => { (o as DeviceConfigurationSettingState).ErrorCode = n.GetLongValue(); } },
-                {"errorDescription", (o,n) => { (o as DeviceConfigurationSettingState).ErrorDescription = n.GetStringValue(); } },
-                {"instanceDisplayName", (o,n) => { (o as DeviceConfigurationSettingState).InstanceDisplayName = n.GetStringValue(); } },
-                {"setting", (o,n) => { (o as DeviceConfigurationSettingState).Setting = n.GetStringValue(); } },
-                {"settingInstanceId", (o,n) => { (o as DeviceConfigurationSettingState).SettingInstanceId = n.GetStringValue(); } },
-                {"settingName", (o,n) => { (o as DeviceConfigurationSettingState).SettingName = n.GetStringValue(); } },
-                {"sources", (o,n) => { (o as DeviceConfigurationSettingState).Sources = n.GetCollectionOfObjectValues<SettingSource>(SettingSource.CreateFromDiscriminatorValue).ToList(); } },
-                {"state", (o,n) => { (o as DeviceConfigurationSettingState).State = n.GetEnumValue<ComplianceStatus>(); } },
-                {"userEmail", (o,n) => { (o as DeviceConfigurationSettingState).UserEmail = n.GetStringValue(); } },
-                {"userId", (o,n) => { (o as DeviceConfigurationSettingState).UserId = n.GetStringValue(); } },
-                {"userName", (o,n) => { (o as DeviceConfigurationSettingState).UserName = n.GetStringValue(); } },
-                {"userPrincipalName", (o,n) => { (o as DeviceConfigurationSettingState).UserPrincipalName = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"currentValue", n => { CurrentValue = n.GetStringValue(); } },
+                {"errorCode", n => { ErrorCode = n.GetLongValue(); } },
+                {"errorDescription", n => { ErrorDescription = n.GetStringValue(); } },
+                {"instanceDisplayName", n => { InstanceDisplayName = n.GetStringValue(); } },
+                {"setting", n => { Setting = n.GetStringValue(); } },
+                {"settingInstanceId", n => { SettingInstanceId = n.GetStringValue(); } },
+                {"settingName", n => { SettingName = n.GetStringValue(); } },
+                {"sources", n => { Sources = n.GetCollectionOfObjectValues<SettingSource>(SettingSource.CreateFromDiscriminatorValue).ToList(); } },
+                {"state", n => { State = n.GetEnumValue<ComplianceStatus>(); } },
+                {"userEmail", n => { UserEmail = n.GetStringValue(); } },
+                {"userId", n => { UserId = n.GetStringValue(); } },
+                {"userName", n => { UserName = n.GetStringValue(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

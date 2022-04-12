@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"address", (o,n) => { (o as Website).Address = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as Website).DisplayName = n.GetStringValue(); } },
-                {"type", (o,n) => { (o as Website).Type = n.GetEnumValue<WebsiteType>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"address", n => { Address = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetEnumValue<WebsiteType>(); } },
             };
         }
         /// <summary>

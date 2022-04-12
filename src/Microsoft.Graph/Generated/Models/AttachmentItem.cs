@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"attachmentType", (o,n) => { (o as AttachmentItem).AttachmentType = n.GetEnumValue<AttachmentType>(); } },
-                {"contentId", (o,n) => { (o as AttachmentItem).ContentId = n.GetStringValue(); } },
-                {"contentType", (o,n) => { (o as AttachmentItem).ContentType = n.GetStringValue(); } },
-                {"isInline", (o,n) => { (o as AttachmentItem).IsInline = n.GetBoolValue(); } },
-                {"name", (o,n) => { (o as AttachmentItem).Name = n.GetStringValue(); } },
-                {"size", (o,n) => { (o as AttachmentItem).Size = n.GetLongValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"attachmentType", n => { AttachmentType = n.GetEnumValue<AttachmentType>(); } },
+                {"contentId", n => { ContentId = n.GetStringValue(); } },
+                {"contentType", n => { ContentType = n.GetStringValue(); } },
+                {"isInline", n => { IsInline = n.GetBoolValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"size", n => { Size = n.GetLongValue(); } },
             };
         }
         /// <summary>

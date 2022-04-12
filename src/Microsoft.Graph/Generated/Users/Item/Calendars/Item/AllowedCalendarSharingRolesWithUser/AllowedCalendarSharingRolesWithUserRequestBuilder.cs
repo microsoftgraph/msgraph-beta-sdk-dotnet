@@ -24,9 +24,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendars.Item.AllowedCalendarSharingR
         public AllowedCalendarSharingRolesWithUserRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string user = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/calendars/{calendar_id}/microsoft.graph.allowedCalendarSharingRoles(User='{User}')";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/microsoft.graph.allowedCalendarSharingRoles(User='{User}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("User", user);
+            urlTplParams.Add("", user);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendars.Item.AllowedCalendarSharingR
         public AllowedCalendarSharingRolesWithUserRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/calendars/{calendar_id}/microsoft.graph.allowedCalendarSharingRoles(User='{User}')";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/microsoft.graph.allowedCalendarSharingRoles(User='{User}')";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

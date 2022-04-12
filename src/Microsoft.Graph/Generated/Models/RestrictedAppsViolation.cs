@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"deviceConfigurationId", (o,n) => { (o as RestrictedAppsViolation).DeviceConfigurationId = n.GetStringValue(); } },
-                {"deviceConfigurationName", (o,n) => { (o as RestrictedAppsViolation).DeviceConfigurationName = n.GetStringValue(); } },
-                {"deviceName", (o,n) => { (o as RestrictedAppsViolation).DeviceName = n.GetStringValue(); } },
-                {"managedDeviceId", (o,n) => { (o as RestrictedAppsViolation).ManagedDeviceId = n.GetStringValue(); } },
-                {"platformType", (o,n) => { (o as RestrictedAppsViolation).PlatformType = n.GetEnumValue<PolicyPlatformType>(); } },
-                {"restrictedApps", (o,n) => { (o as RestrictedAppsViolation).RestrictedApps = n.GetCollectionOfObjectValues<ManagedDeviceReportedApp>(ManagedDeviceReportedApp.CreateFromDiscriminatorValue).ToList(); } },
-                {"restrictedAppsState", (o,n) => { (o as RestrictedAppsViolation).RestrictedAppsState = n.GetEnumValue<RestrictedAppsState>(); } },
-                {"userId", (o,n) => { (o as RestrictedAppsViolation).UserId = n.GetStringValue(); } },
-                {"userName", (o,n) => { (o as RestrictedAppsViolation).UserName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"deviceConfigurationId", n => { DeviceConfigurationId = n.GetStringValue(); } },
+                {"deviceConfigurationName", n => { DeviceConfigurationName = n.GetStringValue(); } },
+                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
+                {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
+                {"platformType", n => { PlatformType = n.GetEnumValue<PolicyPlatformType>(); } },
+                {"restrictedApps", n => { RestrictedApps = n.GetCollectionOfObjectValues<ManagedDeviceReportedApp>(ManagedDeviceReportedApp.CreateFromDiscriminatorValue).ToList(); } },
+                {"restrictedAppsState", n => { RestrictedAppsState = n.GetEnumValue<RestrictedAppsState>(); } },
+                {"userId", n => { UserId = n.GetStringValue(); } },
+                {"userName", n => { UserName = n.GetStringValue(); } },
             };
         }
         /// <summary>

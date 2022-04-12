@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendars.Item.Events.Item.Instances.I
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"comment", (o,n) => { (o as AcceptRequestBody).Comment = n.GetStringValue(); } },
-                {"sendResponse", (o,n) => { (o as AcceptRequestBody).SendResponse = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"comment", n => { Comment = n.GetStringValue(); } },
+                {"sendResponse", n => { SendResponse = n.GetBoolValue(); } },
             };
         }
         /// <summary>

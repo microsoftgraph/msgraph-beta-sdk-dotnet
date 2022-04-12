@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.BatchRecordD
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"decision", (o,n) => { (o as BatchRecordDecisionsRequestBody).Decision = n.GetStringValue(); } },
-                {"justification", (o,n) => { (o as BatchRecordDecisionsRequestBody).Justification = n.GetStringValue(); } },
-                {"principalId", (o,n) => { (o as BatchRecordDecisionsRequestBody).PrincipalId = n.GetStringValue(); } },
-                {"resourceId", (o,n) => { (o as BatchRecordDecisionsRequestBody).ResourceId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"decision", n => { Decision = n.GetStringValue(); } },
+                {"justification", n => { Justification = n.GetStringValue(); } },
+                {"principalId", n => { PrincipalId = n.GetStringValue(); } },
+                {"resourceId", n => { ResourceId = n.GetStringValue(); } },
             };
         }
         /// <summary>

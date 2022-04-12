@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"dataType", (o,n) => { (o as DeviceComplianceScriptRule).DataType = n.GetEnumValue<DataType>(); } },
-                {"deviceComplianceScriptRuleDataType", (o,n) => { (o as DeviceComplianceScriptRule).DeviceComplianceScriptRuleDataType = n.GetEnumValue<DeviceComplianceScriptRuleDataType>(); } },
-                {"deviceComplianceScriptRulOperator", (o,n) => { (o as DeviceComplianceScriptRule).DeviceComplianceScriptRulOperator = n.GetEnumValue<DeviceComplianceScriptRulOperator>(); } },
-                {"operand", (o,n) => { (o as DeviceComplianceScriptRule).Operand = n.GetStringValue(); } },
-                {"operator", (o,n) => { (o as DeviceComplianceScriptRule).Operator = n.GetEnumValue<Operator>(); } },
-                {"settingName", (o,n) => { (o as DeviceComplianceScriptRule).SettingName = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"dataType", n => { DataType = n.GetEnumValue<DataType>(); } },
+                {"deviceComplianceScriptRuleDataType", n => { DeviceComplianceScriptRuleDataType = n.GetEnumValue<DeviceComplianceScriptRuleDataType>(); } },
+                {"deviceComplianceScriptRulOperator", n => { DeviceComplianceScriptRulOperator = n.GetEnumValue<DeviceComplianceScriptRulOperator>(); } },
+                {"operand", n => { Operand = n.GetStringValue(); } },
+                {"operator", n => { Operator = n.GetEnumValue<Operator>(); } },
+                {"settingName", n => { SettingName = n.GetStringValue(); } },
             };
         }
         /// <summary>

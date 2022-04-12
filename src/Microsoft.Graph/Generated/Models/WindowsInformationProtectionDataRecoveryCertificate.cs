@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"certificate", (o,n) => { (o as WindowsInformationProtectionDataRecoveryCertificate).Certificate = n.GetByteArrayValue(); } },
-                {"description", (o,n) => { (o as WindowsInformationProtectionDataRecoveryCertificate).Description = n.GetStringValue(); } },
-                {"expirationDateTime", (o,n) => { (o as WindowsInformationProtectionDataRecoveryCertificate).ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"subjectName", (o,n) => { (o as WindowsInformationProtectionDataRecoveryCertificate).SubjectName = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"certificate", n => { Certificate = n.GetByteArrayValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"subjectName", n => { SubjectName = n.GetStringValue(); } },
             };
         }
         /// <summary>

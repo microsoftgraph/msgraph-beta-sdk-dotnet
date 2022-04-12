@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"displayName", (o,n) => { (o as TodoTaskList).DisplayName = n.GetStringValue(); } },
-                {"extensions", (o,n) => { (o as TodoTaskList).Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue).ToList(); } },
-                {"isOwner", (o,n) => { (o as TodoTaskList).IsOwner = n.GetBoolValue(); } },
-                {"isShared", (o,n) => { (o as TodoTaskList).IsShared = n.GetBoolValue(); } },
-                {"tasks", (o,n) => { (o as TodoTaskList).Tasks = n.GetCollectionOfObjectValues<TodoTask>(TodoTask.CreateFromDiscriminatorValue).ToList(); } },
-                {"wellknownListName", (o,n) => { (o as TodoTaskList).WellknownListName = n.GetEnumValue<WellknownListName>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue).ToList(); } },
+                {"isOwner", n => { IsOwner = n.GetBoolValue(); } },
+                {"isShared", n => { IsShared = n.GetBoolValue(); } },
+                {"tasks", n => { Tasks = n.GetCollectionOfObjectValues<TodoTask>(TodoTask.CreateFromDiscriminatorValue).ToList(); } },
+                {"wellknownListName", n => { WellknownListName = n.GetEnumValue<WellknownListName>(); } },
             };
         }
         /// <summary>

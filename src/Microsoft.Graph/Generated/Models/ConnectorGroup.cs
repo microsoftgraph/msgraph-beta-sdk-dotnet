@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"applications", (o,n) => { (o as ConnectorGroup).Applications = n.GetCollectionOfObjectValues<Application>(Application.CreateFromDiscriminatorValue).ToList(); } },
-                {"connectorGroupType", (o,n) => { (o as ConnectorGroup).ConnectorGroupType = n.GetEnumValue<ConnectorGroupType>(); } },
-                {"isDefault", (o,n) => { (o as ConnectorGroup).IsDefault = n.GetBoolValue(); } },
-                {"members", (o,n) => { (o as ConnectorGroup).Members = n.GetCollectionOfObjectValues<Connector>(Connector.CreateFromDiscriminatorValue).ToList(); } },
-                {"name", (o,n) => { (o as ConnectorGroup).Name = n.GetStringValue(); } },
-                {"region", (o,n) => { (o as ConnectorGroup).Region = n.GetEnumValue<ConnectorGroupRegion>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"applications", n => { Applications = n.GetCollectionOfObjectValues<Application>(Application.CreateFromDiscriminatorValue).ToList(); } },
+                {"connectorGroupType", n => { ConnectorGroupType = n.GetEnumValue<ConnectorGroupType>(); } },
+                {"isDefault", n => { IsDefault = n.GetBoolValue(); } },
+                {"members", n => { Members = n.GetCollectionOfObjectValues<Connector>(Connector.CreateFromDiscriminatorValue).ToList(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"region", n => { Region = n.GetEnumValue<ConnectorGroupRegion>(); } },
             };
         }
         /// <summary>

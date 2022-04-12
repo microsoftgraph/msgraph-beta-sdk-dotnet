@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagementConditionStatements.It
         public ManagementConditionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/managementConditionStatements/{managementConditionStatement_id}/managementConditions/{managementCondition_id}{?select,expand}";
+            UrlTemplate = "{+baseurl}/deviceManagement/managementConditionStatements/{managementConditionStatement%2Did}/managementConditions/{managementCondition%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagementConditionStatements.It
         public ManagementConditionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/managementConditionStatements/{managementConditionStatement_id}/managementConditions/{managementCondition_id}{?select,expand}";
+            UrlTemplate = "{+baseurl}/deviceManagement/managementConditionStatements/{managementConditionStatement%2Did}/managementConditions/{managementCondition%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -84,8 +84,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagementConditionStatements.It
         /// <summary>The management conditions associated to the management condition statement.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
     }

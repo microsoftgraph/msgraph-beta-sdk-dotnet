@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdByUserId", (o,n) => { (o as ManagementTemplateCollection).CreatedByUserId = n.GetStringValue(); } },
-                {"createdDateTime", (o,n) => { (o as ManagementTemplateCollection).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as ManagementTemplateCollection).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as ManagementTemplateCollection).DisplayName = n.GetStringValue(); } },
-                {"lastActionByUserId", (o,n) => { (o as ManagementTemplateCollection).LastActionByUserId = n.GetStringValue(); } },
-                {"lastActionDateTime", (o,n) => { (o as ManagementTemplateCollection).LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managementTemplates", (o,n) => { (o as ManagementTemplateCollection).ManagementTemplates = n.GetCollectionOfObjectValues<ManagementTemplate>(ManagementTemplate.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"lastActionByUserId", n => { LastActionByUserId = n.GetStringValue(); } },
+                {"lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
+                {"managementTemplates", n => { ManagementTemplates = n.GetCollectionOfObjectValues<ManagementTemplate>(ManagementTemplate.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"configurationVersion", (o,n) => { (o as DeviceConfigurationUserOverview).ConfigurationVersion = n.GetIntValue(); } },
-                {"conflictCount", (o,n) => { (o as DeviceConfigurationUserOverview).ConflictCount = n.GetIntValue(); } },
-                {"errorCount", (o,n) => { (o as DeviceConfigurationUserOverview).ErrorCount = n.GetIntValue(); } },
-                {"failedCount", (o,n) => { (o as DeviceConfigurationUserOverview).FailedCount = n.GetIntValue(); } },
-                {"lastUpdateDateTime", (o,n) => { (o as DeviceConfigurationUserOverview).LastUpdateDateTime = n.GetDateTimeOffsetValue(); } },
-                {"notApplicableCount", (o,n) => { (o as DeviceConfigurationUserOverview).NotApplicableCount = n.GetIntValue(); } },
-                {"pendingCount", (o,n) => { (o as DeviceConfigurationUserOverview).PendingCount = n.GetIntValue(); } },
-                {"successCount", (o,n) => { (o as DeviceConfigurationUserOverview).SuccessCount = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"configurationVersion", n => { ConfigurationVersion = n.GetIntValue(); } },
+                {"conflictCount", n => { ConflictCount = n.GetIntValue(); } },
+                {"errorCount", n => { ErrorCount = n.GetIntValue(); } },
+                {"failedCount", n => { FailedCount = n.GetIntValue(); } },
+                {"lastUpdateDateTime", n => { LastUpdateDateTime = n.GetDateTimeOffsetValue(); } },
+                {"notApplicableCount", n => { NotApplicableCount = n.GetIntValue(); } },
+                {"pendingCount", n => { PendingCount = n.GetIntValue(); } },
+                {"successCount", n => { SuccessCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appDisplayName", (o,n) => { (o as ApplicationSignInSummary).AppDisplayName = n.GetStringValue(); } },
-                {"failedSignInCount", (o,n) => { (o as ApplicationSignInSummary).FailedSignInCount = n.GetLongValue(); } },
-                {"successfulSignInCount", (o,n) => { (o as ApplicationSignInSummary).SuccessfulSignInCount = n.GetLongValue(); } },
-                {"successPercentage", (o,n) => { (o as ApplicationSignInSummary).SuccessPercentage = n.GetDoubleValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
+                {"failedSignInCount", n => { FailedSignInCount = n.GetLongValue(); } },
+                {"successfulSignInCount", n => { SuccessfulSignInCount = n.GetLongValue(); } },
+                {"successPercentage", n => { SuccessPercentage = n.GetDoubleValue(); } },
             };
         }
         /// <summary>

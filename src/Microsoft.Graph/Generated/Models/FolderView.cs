@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"sortBy", (o,n) => { (o as FolderView).SortBy = n.GetStringValue(); } },
-                {"sortOrder", (o,n) => { (o as FolderView).SortOrder = n.GetStringValue(); } },
-                {"viewType", (o,n) => { (o as FolderView).ViewType = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"sortBy", n => { SortBy = n.GetStringValue(); } },
+                {"sortOrder", n => { SortOrder = n.GetStringValue(); } },
+                {"viewType", n => { ViewType = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosManagedAppProtections.HasP
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"payloadIds", (o,n) => { (o as HasPayloadLinksRequestBody).PayloadIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"payloadIds", n => { PayloadIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

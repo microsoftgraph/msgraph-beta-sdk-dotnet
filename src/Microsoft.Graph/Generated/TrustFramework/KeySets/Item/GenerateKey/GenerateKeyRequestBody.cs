@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GenerateKey {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"exp", (o,n) => { (o as GenerateKeyRequestBody).Exp = n.GetLongValue(); } },
-                {"kty", (o,n) => { (o as GenerateKeyRequestBody).Kty = n.GetStringValue(); } },
-                {"nbf", (o,n) => { (o as GenerateKeyRequestBody).Nbf = n.GetLongValue(); } },
-                {"use", (o,n) => { (o as GenerateKeyRequestBody).Use = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"exp", n => { Exp = n.GetLongValue(); } },
+                {"kty", n => { Kty = n.GetStringValue(); } },
+                {"nbf", n => { Nbf = n.GetLongValue(); } },
+                {"use", n => { Use = n.GetStringValue(); } },
             };
         }
         /// <summary>

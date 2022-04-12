@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"dataStoreId", (o,n) => { (o as ExactMatchSessionBase).DataStoreId = n.GetStringValue(); } },
-                {"processingCompletionDateTime", (o,n) => { (o as ExactMatchSessionBase).ProcessingCompletionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"remainingBlockCount", (o,n) => { (o as ExactMatchSessionBase).RemainingBlockCount = n.GetIntValue(); } },
-                {"remainingJobCount", (o,n) => { (o as ExactMatchSessionBase).RemainingJobCount = n.GetIntValue(); } },
-                {"state", (o,n) => { (o as ExactMatchSessionBase).State = n.GetStringValue(); } },
-                {"totalBlockCount", (o,n) => { (o as ExactMatchSessionBase).TotalBlockCount = n.GetIntValue(); } },
-                {"totalJobCount", (o,n) => { (o as ExactMatchSessionBase).TotalJobCount = n.GetIntValue(); } },
-                {"uploadCompletionDateTime", (o,n) => { (o as ExactMatchSessionBase).UploadCompletionDateTime = n.GetDateTimeOffsetValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"dataStoreId", n => { DataStoreId = n.GetStringValue(); } },
+                {"processingCompletionDateTime", n => { ProcessingCompletionDateTime = n.GetDateTimeOffsetValue(); } },
+                {"remainingBlockCount", n => { RemainingBlockCount = n.GetIntValue(); } },
+                {"remainingJobCount", n => { RemainingJobCount = n.GetIntValue(); } },
+                {"state", n => { State = n.GetStringValue(); } },
+                {"totalBlockCount", n => { TotalBlockCount = n.GetIntValue(); } },
+                {"totalJobCount", n => { TotalJobCount = n.GetIntValue(); } },
+                {"uploadCompletionDateTime", n => { UploadCompletionDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

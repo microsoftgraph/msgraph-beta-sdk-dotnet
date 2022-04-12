@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"actionName", (o,n) => { (o as ResourceOperation).ActionName = n.GetStringValue(); } },
-                {"description", (o,n) => { (o as ResourceOperation).Description = n.GetStringValue(); } },
-                {"enabledForScopeValidation", (o,n) => { (o as ResourceOperation).EnabledForScopeValidation = n.GetBoolValue(); } },
-                {"resource", (o,n) => { (o as ResourceOperation).Resource = n.GetStringValue(); } },
-                {"resourceName", (o,n) => { (o as ResourceOperation).ResourceName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"actionName", n => { ActionName = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"enabledForScopeValidation", n => { EnabledForScopeValidation = n.GetBoolValue(); } },
+                {"resource", n => { Resource = n.GetStringValue(); } },
+                {"resourceName", n => { ResourceName = n.GetStringValue(); } },
             };
         }
         /// <summary>

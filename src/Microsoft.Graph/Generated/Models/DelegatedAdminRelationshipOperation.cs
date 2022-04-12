@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdDateTime", (o,n) => { (o as DelegatedAdminRelationshipOperation).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"data", (o,n) => { (o as DelegatedAdminRelationshipOperation).Data = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as DelegatedAdminRelationshipOperation).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"operationType", (o,n) => { (o as DelegatedAdminRelationshipOperation).OperationType = n.GetEnumValue<DelegatedAdminRelationshipOperationType>(); } },
-                {"status", (o,n) => { (o as DelegatedAdminRelationshipOperation).Status = n.GetEnumValue<DelegatedAdminRelationshipOperationStatus>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"data", n => { Data = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"operationType", n => { OperationType = n.GetEnumValue<DelegatedAdminRelationshipOperationType>(); } },
+                {"status", n => { Status = n.GetEnumValue<DelegatedAdminRelationshipOperationStatus>(); } },
             };
         }
         /// <summary>

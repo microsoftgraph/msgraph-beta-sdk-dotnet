@@ -32,11 +32,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"actionName", (o,n) => { (o as ExecuteActionRequestBody).ActionName = n.GetEnumValue<DriverApprovalAction>(); } },
-                {"deploymentDate", (o,n) => { (o as ExecuteActionRequestBody).DeploymentDate = n.GetDateTimeOffsetValue(); } },
-                {"driverIds", (o,n) => { (o as ExecuteActionRequestBody).DriverIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"actionName", n => { ActionName = n.GetEnumValue<DriverApprovalAction>(); } },
+                {"deploymentDate", n => { DeploymentDate = n.GetDateTimeOffsetValue(); } },
+                {"driverIds", n => { DriverIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

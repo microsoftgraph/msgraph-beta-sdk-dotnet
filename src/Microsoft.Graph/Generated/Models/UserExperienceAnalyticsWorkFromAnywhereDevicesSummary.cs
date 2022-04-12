@@ -53,22 +53,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"autopilotDevicesSummary", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).AutopilotDevicesSummary = n.GetObjectValue<UserExperienceAnalyticsAutopilotDevicesSummary>(UserExperienceAnalyticsAutopilotDevicesSummary.CreateFromDiscriminatorValue); } },
-                {"cloudIdentityDevicesSummary", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).CloudIdentityDevicesSummary = n.GetObjectValue<UserExperienceAnalyticsCloudIdentityDevicesSummary>(UserExperienceAnalyticsCloudIdentityDevicesSummary.CreateFromDiscriminatorValue); } },
-                {"cloudManagementDevicesSummary", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).CloudManagementDevicesSummary = n.GetObjectValue<UserExperienceAnalyticsCloudManagementDevicesSummary>(UserExperienceAnalyticsCloudManagementDevicesSummary.CreateFromDiscriminatorValue); } },
-                {"coManagedDevices", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).CoManagedDevices = n.GetIntValue(); } },
-                {"devicesNotAutopilotRegistered", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).DevicesNotAutopilotRegistered = n.GetIntValue(); } },
-                {"devicesWithoutAutopilotProfileAssigned", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).DevicesWithoutAutopilotProfileAssigned = n.GetIntValue(); } },
-                {"devicesWithoutCloudIdentity", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).DevicesWithoutCloudIdentity = n.GetIntValue(); } },
-                {"intuneDevices", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).IntuneDevices = n.GetIntValue(); } },
-                {"tenantAttachDevices", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).TenantAttachDevices = n.GetIntValue(); } },
-                {"totalDevices", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).TotalDevices = n.GetIntValue(); } },
-                {"unsupportedOSversionDevices", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).UnsupportedOSversionDevices = n.GetIntValue(); } },
-                {"windows10Devices", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).Windows10Devices = n.GetIntValue(); } },
-                {"windows10DevicesSummary", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).Windows10DevicesSummary = n.GetObjectValue<UserExperienceAnalyticsWindows10DevicesSummary>(UserExperienceAnalyticsWindows10DevicesSummary.CreateFromDiscriminatorValue); } },
-                {"windows10DevicesWithoutTenantAttach", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereDevicesSummary).Windows10DevicesWithoutTenantAttach = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"autopilotDevicesSummary", n => { AutopilotDevicesSummary = n.GetObjectValue<UserExperienceAnalyticsAutopilotDevicesSummary>(UserExperienceAnalyticsAutopilotDevicesSummary.CreateFromDiscriminatorValue); } },
+                {"cloudIdentityDevicesSummary", n => { CloudIdentityDevicesSummary = n.GetObjectValue<UserExperienceAnalyticsCloudIdentityDevicesSummary>(UserExperienceAnalyticsCloudIdentityDevicesSummary.CreateFromDiscriminatorValue); } },
+                {"cloudManagementDevicesSummary", n => { CloudManagementDevicesSummary = n.GetObjectValue<UserExperienceAnalyticsCloudManagementDevicesSummary>(UserExperienceAnalyticsCloudManagementDevicesSummary.CreateFromDiscriminatorValue); } },
+                {"coManagedDevices", n => { CoManagedDevices = n.GetIntValue(); } },
+                {"devicesNotAutopilotRegistered", n => { DevicesNotAutopilotRegistered = n.GetIntValue(); } },
+                {"devicesWithoutAutopilotProfileAssigned", n => { DevicesWithoutAutopilotProfileAssigned = n.GetIntValue(); } },
+                {"devicesWithoutCloudIdentity", n => { DevicesWithoutCloudIdentity = n.GetIntValue(); } },
+                {"intuneDevices", n => { IntuneDevices = n.GetIntValue(); } },
+                {"tenantAttachDevices", n => { TenantAttachDevices = n.GetIntValue(); } },
+                {"totalDevices", n => { TotalDevices = n.GetIntValue(); } },
+                {"unsupportedOSversionDevices", n => { UnsupportedOSversionDevices = n.GetIntValue(); } },
+                {"windows10Devices", n => { Windows10Devices = n.GetIntValue(); } },
+                {"windows10DevicesSummary", n => { Windows10DevicesSummary = n.GetObjectValue<UserExperienceAnalyticsWindows10DevicesSummary>(UserExperienceAnalyticsWindows10DevicesSummary.CreateFromDiscriminatorValue); } },
+                {"windows10DevicesWithoutTenantAttach", n => { Windows10DevicesWithoutTenantAttach = n.GetIntValue(); } },
             };
         }
         /// <summary>

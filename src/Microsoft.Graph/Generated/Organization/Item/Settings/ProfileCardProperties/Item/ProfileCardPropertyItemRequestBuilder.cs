@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ProfileCardProperties.
         public ProfileCardPropertyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/organization/{organization_id}/settings/profileCardProperties/{profileCardProperty_id}{?select,expand}";
+            UrlTemplate = "{+baseurl}/organization/{organization%2Did}/settings/profileCardProperties/{profileCardProperty%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ProfileCardProperties.
         public ProfileCardPropertyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/organization/{organization_id}/settings/profileCardProperties/{profileCardProperty_id}{?select,expand}";
+            UrlTemplate = "{+baseurl}/organization/{organization%2Did}/settings/profileCardProperties/{profileCardProperty%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -149,8 +149,10 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ProfileCardProperties.
         /// <summary>Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
     }

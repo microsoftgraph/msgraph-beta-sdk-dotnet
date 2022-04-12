@@ -37,18 +37,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"exchange", (o,n) => { (o as Office365ActiveUserCounts).Exchange = n.GetLongValue(); } },
-                {"office365", (o,n) => { (o as Office365ActiveUserCounts).Office365 = n.GetLongValue(); } },
-                {"oneDrive", (o,n) => { (o as Office365ActiveUserCounts).OneDrive = n.GetLongValue(); } },
-                {"reportDate", (o,n) => { (o as Office365ActiveUserCounts).ReportDate = n.GetDateValue(); } },
-                {"reportPeriod", (o,n) => { (o as Office365ActiveUserCounts).ReportPeriod = n.GetStringValue(); } },
-                {"reportRefreshDate", (o,n) => { (o as Office365ActiveUserCounts).ReportRefreshDate = n.GetDateValue(); } },
-                {"sharePoint", (o,n) => { (o as Office365ActiveUserCounts).SharePoint = n.GetLongValue(); } },
-                {"skypeForBusiness", (o,n) => { (o as Office365ActiveUserCounts).SkypeForBusiness = n.GetLongValue(); } },
-                {"teams", (o,n) => { (o as Office365ActiveUserCounts).Teams = n.GetLongValue(); } },
-                {"yammer", (o,n) => { (o as Office365ActiveUserCounts).Yammer = n.GetLongValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"exchange", n => { Exchange = n.GetLongValue(); } },
+                {"office365", n => { Office365 = n.GetLongValue(); } },
+                {"oneDrive", n => { OneDrive = n.GetLongValue(); } },
+                {"reportDate", n => { ReportDate = n.GetDateValue(); } },
+                {"reportPeriod", n => { ReportPeriod = n.GetStringValue(); } },
+                {"reportRefreshDate", n => { ReportRefreshDate = n.GetDateValue(); } },
+                {"sharePoint", n => { SharePoint = n.GetLongValue(); } },
+                {"skypeForBusiness", n => { SkypeForBusiness = n.GetLongValue(); } },
+                {"teams", n => { Teams = n.GetLongValue(); } },
+                {"yammer", n => { Yammer = n.GetLongValue(); } },
             };
         }
         /// <summary>

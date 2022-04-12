@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activationCodeCount", (o,n) => { (o as EmbeddedSIMActivationCodePool).ActivationCodeCount = n.GetIntValue(); } },
-                {"activationCodes", (o,n) => { (o as EmbeddedSIMActivationCodePool).ActivationCodes = n.GetCollectionOfObjectValues<EmbeddedSIMActivationCode>(EmbeddedSIMActivationCode.CreateFromDiscriminatorValue).ToList(); } },
-                {"assignments", (o,n) => { (o as EmbeddedSIMActivationCodePool).Assignments = n.GetCollectionOfObjectValues<EmbeddedSIMActivationCodePoolAssignment>(EmbeddedSIMActivationCodePoolAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"createdDateTime", (o,n) => { (o as EmbeddedSIMActivationCodePool).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deviceStates", (o,n) => { (o as EmbeddedSIMActivationCodePool).DeviceStates = n.GetCollectionOfObjectValues<EmbeddedSIMDeviceState>(EmbeddedSIMDeviceState.CreateFromDiscriminatorValue).ToList(); } },
-                {"displayName", (o,n) => { (o as EmbeddedSIMActivationCodePool).DisplayName = n.GetStringValue(); } },
-                {"modifiedDateTime", (o,n) => { (o as EmbeddedSIMActivationCodePool).ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activationCodeCount", n => { ActivationCodeCount = n.GetIntValue(); } },
+                {"activationCodes", n => { ActivationCodes = n.GetCollectionOfObjectValues<EmbeddedSIMActivationCode>(EmbeddedSIMActivationCode.CreateFromDiscriminatorValue).ToList(); } },
+                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<EmbeddedSIMActivationCodePoolAssignment>(EmbeddedSIMActivationCodePoolAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"deviceStates", n => { DeviceStates = n.GetCollectionOfObjectValues<EmbeddedSIMDeviceState>(EmbeddedSIMDeviceState.CreateFromDiscriminatorValue).ToList(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

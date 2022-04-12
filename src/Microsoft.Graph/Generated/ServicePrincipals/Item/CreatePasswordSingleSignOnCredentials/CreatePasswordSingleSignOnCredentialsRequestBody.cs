@@ -30,10 +30,10 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.CreatePasswordSingleSignOn
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"credentials", (o,n) => { (o as CreatePasswordSingleSignOnCredentialsRequestBody).Credentials = n.GetCollectionOfObjectValues<Credential>(Credential.CreateFromDiscriminatorValue).ToList(); } },
-                {"id", (o,n) => { (o as CreatePasswordSingleSignOnCredentialsRequestBody).Id = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"credentials", n => { Credentials = n.GetCollectionOfObjectValues<Credential>(Credential.CreateFromDiscriminatorValue).ToList(); } },
+                {"id", n => { Id = n.GetStringValue(); } },
             };
         }
         /// <summary>

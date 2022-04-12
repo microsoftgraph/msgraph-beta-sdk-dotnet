@@ -41,20 +41,20 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"account", (o,n) => { (o as JournalLine).Account = n.GetObjectValue<Microsoft.Graph.Beta.Models.Account>(Microsoft.Graph.Beta.Models.Account.CreateFromDiscriminatorValue); } },
-                {"accountId", (o,n) => { (o as JournalLine).AccountId = n.GetStringValue(); } },
-                {"accountNumber", (o,n) => { (o as JournalLine).AccountNumber = n.GetStringValue(); } },
-                {"amount", (o,n) => { (o as JournalLine).Amount = n.GetDecimalValue(); } },
-                {"comment", (o,n) => { (o as JournalLine).Comment = n.GetStringValue(); } },
-                {"description", (o,n) => { (o as JournalLine).Description = n.GetStringValue(); } },
-                {"documentNumber", (o,n) => { (o as JournalLine).DocumentNumber = n.GetStringValue(); } },
-                {"externalDocumentNumber", (o,n) => { (o as JournalLine).ExternalDocumentNumber = n.GetStringValue(); } },
-                {"journalDisplayName", (o,n) => { (o as JournalLine).JournalDisplayName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as JournalLine).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lineNumber", (o,n) => { (o as JournalLine).LineNumber = n.GetIntValue(); } },
-                {"postingDate", (o,n) => { (o as JournalLine).PostingDate = n.GetDateValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"account", n => { Account = n.GetObjectValue<Microsoft.Graph.Beta.Models.Account>(Microsoft.Graph.Beta.Models.Account.CreateFromDiscriminatorValue); } },
+                {"accountId", n => { AccountId = n.GetStringValue(); } },
+                {"accountNumber", n => { AccountNumber = n.GetStringValue(); } },
+                {"amount", n => { Amount = n.GetDecimalValue(); } },
+                {"comment", n => { Comment = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"documentNumber", n => { DocumentNumber = n.GetStringValue(); } },
+                {"externalDocumentNumber", n => { ExternalDocumentNumber = n.GetStringValue(); } },
+                {"journalDisplayName", n => { JournalDisplayName = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lineNumber", n => { LineNumber = n.GetIntValue(); } },
+                {"postingDate", n => { PostingDate = n.GetDateValue(); } },
             };
         }
         /// <summary>

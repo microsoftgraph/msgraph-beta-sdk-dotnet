@@ -47,23 +47,23 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"amount", (o,n) => { (o as CustomerPayment).Amount = n.GetDecimalValue(); } },
-                {"appliesToInvoiceId", (o,n) => { (o as CustomerPayment).AppliesToInvoiceId = n.GetStringValue(); } },
-                {"appliesToInvoiceNumber", (o,n) => { (o as CustomerPayment).AppliesToInvoiceNumber = n.GetStringValue(); } },
-                {"comment", (o,n) => { (o as CustomerPayment).Comment = n.GetStringValue(); } },
-                {"contactId", (o,n) => { (o as CustomerPayment).ContactId = n.GetStringValue(); } },
-                {"customer", (o,n) => { (o as CustomerPayment).Customer = n.GetObjectValue<Microsoft.Graph.Beta.Models.Customer>(Microsoft.Graph.Beta.Models.Customer.CreateFromDiscriminatorValue); } },
-                {"customerId", (o,n) => { (o as CustomerPayment).CustomerId = n.GetStringValue(); } },
-                {"customerNumber", (o,n) => { (o as CustomerPayment).CustomerNumber = n.GetStringValue(); } },
-                {"description", (o,n) => { (o as CustomerPayment).Description = n.GetStringValue(); } },
-                {"documentNumber", (o,n) => { (o as CustomerPayment).DocumentNumber = n.GetStringValue(); } },
-                {"externalDocumentNumber", (o,n) => { (o as CustomerPayment).ExternalDocumentNumber = n.GetStringValue(); } },
-                {"journalDisplayName", (o,n) => { (o as CustomerPayment).JournalDisplayName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as CustomerPayment).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lineNumber", (o,n) => { (o as CustomerPayment).LineNumber = n.GetIntValue(); } },
-                {"postingDate", (o,n) => { (o as CustomerPayment).PostingDate = n.GetDateValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"amount", n => { Amount = n.GetDecimalValue(); } },
+                {"appliesToInvoiceId", n => { AppliesToInvoiceId = n.GetStringValue(); } },
+                {"appliesToInvoiceNumber", n => { AppliesToInvoiceNumber = n.GetStringValue(); } },
+                {"comment", n => { Comment = n.GetStringValue(); } },
+                {"contactId", n => { ContactId = n.GetStringValue(); } },
+                {"customer", n => { Customer = n.GetObjectValue<Microsoft.Graph.Beta.Models.Customer>(Microsoft.Graph.Beta.Models.Customer.CreateFromDiscriminatorValue); } },
+                {"customerId", n => { CustomerId = n.GetStringValue(); } },
+                {"customerNumber", n => { CustomerNumber = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"documentNumber", n => { DocumentNumber = n.GetStringValue(); } },
+                {"externalDocumentNumber", n => { ExternalDocumentNumber = n.GetStringValue(); } },
+                {"journalDisplayName", n => { JournalDisplayName = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lineNumber", n => { LineNumber = n.GetIntValue(); } },
+                {"postingDate", n => { PostingDate = n.GetDateValue(); } },
             };
         }
         /// <summary>

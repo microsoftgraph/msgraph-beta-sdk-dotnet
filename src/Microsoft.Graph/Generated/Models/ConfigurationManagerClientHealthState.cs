@@ -31,11 +31,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"errorCode", (o,n) => { (o as ConfigurationManagerClientHealthState).ErrorCode = n.GetIntValue(); } },
-                {"lastSyncDateTime", (o,n) => { (o as ConfigurationManagerClientHealthState).LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"state", (o,n) => { (o as ConfigurationManagerClientHealthState).State = n.GetEnumValue<ConfigurationManagerClientState>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"errorCode", n => { ErrorCode = n.GetIntValue(); } },
+                {"lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                {"state", n => { State = n.GetEnumValue<ConfigurationManagerClientState>(); } },
             };
         }
         /// <summary>

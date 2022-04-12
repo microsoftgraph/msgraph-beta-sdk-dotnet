@@ -35,13 +35,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"denied", (o,n) => { (o as WindowsInformationProtectionApp).Denied = n.GetBoolValue(); } },
-                {"description", (o,n) => { (o as WindowsInformationProtectionApp).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as WindowsInformationProtectionApp).DisplayName = n.GetStringValue(); } },
-                {"productName", (o,n) => { (o as WindowsInformationProtectionApp).ProductName = n.GetStringValue(); } },
-                {"publisherName", (o,n) => { (o as WindowsInformationProtectionApp).PublisherName = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"denied", n => { Denied = n.GetBoolValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"productName", n => { ProductName = n.GetStringValue(); } },
+                {"publisherName", n => { PublisherName = n.GetStringValue(); } },
             };
         }
         /// <summary>

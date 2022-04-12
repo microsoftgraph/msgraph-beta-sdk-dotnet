@@ -34,12 +34,12 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyExactMatches {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"contentClassifications", (o,n) => { (o as ClassifyExactMatchesRequestBody).ContentClassifications = n.GetCollectionOfObjectValues<ContentClassification>(ContentClassification.CreateFromDiscriminatorValue).ToList(); } },
-                {"sensitiveTypeIds", (o,n) => { (o as ClassifyExactMatchesRequestBody).SensitiveTypeIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"text", (o,n) => { (o as ClassifyExactMatchesRequestBody).Text = n.GetStringValue(); } },
-                {"timeoutInMs", (o,n) => { (o as ClassifyExactMatchesRequestBody).TimeoutInMs = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"contentClassifications", n => { ContentClassifications = n.GetCollectionOfObjectValues<ContentClassification>(ContentClassification.CreateFromDiscriminatorValue).ToList(); } },
+                {"sensitiveTypeIds", n => { SensitiveTypeIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"text", n => { Text = n.GetStringValue(); } },
+                {"timeoutInMs", n => { TimeoutInMs = n.GetStringValue(); } },
             };
         }
         /// <summary>

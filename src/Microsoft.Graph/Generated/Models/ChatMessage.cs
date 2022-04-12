@@ -64,32 +64,32 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"attachments", (o,n) => { (o as ChatMessage).Attachments = n.GetCollectionOfObjectValues<ChatMessageAttachment>(ChatMessageAttachment.CreateFromDiscriminatorValue).ToList(); } },
-                {"body", (o,n) => { (o as ChatMessage).Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
-                {"channelIdentity", (o,n) => { (o as ChatMessage).ChannelIdentity = n.GetObjectValue<Microsoft.Graph.Beta.Models.ChannelIdentity>(Microsoft.Graph.Beta.Models.ChannelIdentity.CreateFromDiscriminatorValue); } },
-                {"chatId", (o,n) => { (o as ChatMessage).ChatId = n.GetStringValue(); } },
-                {"createdDateTime", (o,n) => { (o as ChatMessage).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deletedDateTime", (o,n) => { (o as ChatMessage).DeletedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"etag", (o,n) => { (o as ChatMessage).Etag = n.GetStringValue(); } },
-                {"eventDetail", (o,n) => { (o as ChatMessage).EventDetail = n.GetObjectValue<EventMessageDetail>(EventMessageDetail.CreateFromDiscriminatorValue); } },
-                {"from", (o,n) => { (o as ChatMessage).From = n.GetObjectValue<ChatMessageFromIdentitySet>(ChatMessageFromIdentitySet.CreateFromDiscriminatorValue); } },
-                {"hostedContents", (o,n) => { (o as ChatMessage).HostedContents = n.GetCollectionOfObjectValues<ChatMessageHostedContent>(ChatMessageHostedContent.CreateFromDiscriminatorValue).ToList(); } },
-                {"importance", (o,n) => { (o as ChatMessage).Importance = n.GetEnumValue<ChatMessageImportance>(); } },
-                {"lastEditedDateTime", (o,n) => { (o as ChatMessage).LastEditedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as ChatMessage).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"locale", (o,n) => { (o as ChatMessage).Locale = n.GetStringValue(); } },
-                {"mentions", (o,n) => { (o as ChatMessage).Mentions = n.GetCollectionOfObjectValues<ChatMessageMention>(ChatMessageMention.CreateFromDiscriminatorValue).ToList(); } },
-                {"messageType", (o,n) => { (o as ChatMessage).MessageType = n.GetEnumValue<ChatMessageType>(); } },
-                {"onBehalfOf", (o,n) => { (o as ChatMessage).OnBehalfOf = n.GetObjectValue<ChatMessageFromIdentitySet>(ChatMessageFromIdentitySet.CreateFromDiscriminatorValue); } },
-                {"policyViolation", (o,n) => { (o as ChatMessage).PolicyViolation = n.GetObjectValue<ChatMessagePolicyViolation>(ChatMessagePolicyViolation.CreateFromDiscriminatorValue); } },
-                {"reactions", (o,n) => { (o as ChatMessage).Reactions = n.GetCollectionOfObjectValues<ChatMessageReaction>(ChatMessageReaction.CreateFromDiscriminatorValue).ToList(); } },
-                {"replies", (o,n) => { (o as ChatMessage).Replies = n.GetCollectionOfObjectValues<ChatMessage>(ChatMessage.CreateFromDiscriminatorValue).ToList(); } },
-                {"replyToId", (o,n) => { (o as ChatMessage).ReplyToId = n.GetStringValue(); } },
-                {"subject", (o,n) => { (o as ChatMessage).Subject = n.GetStringValue(); } },
-                {"summary", (o,n) => { (o as ChatMessage).Summary = n.GetStringValue(); } },
-                {"webUrl", (o,n) => { (o as ChatMessage).WebUrl = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"attachments", n => { Attachments = n.GetCollectionOfObjectValues<ChatMessageAttachment>(ChatMessageAttachment.CreateFromDiscriminatorValue).ToList(); } },
+                {"body", n => { Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                {"channelIdentity", n => { ChannelIdentity = n.GetObjectValue<Microsoft.Graph.Beta.Models.ChannelIdentity>(Microsoft.Graph.Beta.Models.ChannelIdentity.CreateFromDiscriminatorValue); } },
+                {"chatId", n => { ChatId = n.GetStringValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"deletedDateTime", n => { DeletedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"etag", n => { Etag = n.GetStringValue(); } },
+                {"eventDetail", n => { EventDetail = n.GetObjectValue<EventMessageDetail>(EventMessageDetail.CreateFromDiscriminatorValue); } },
+                {"from", n => { From = n.GetObjectValue<ChatMessageFromIdentitySet>(ChatMessageFromIdentitySet.CreateFromDiscriminatorValue); } },
+                {"hostedContents", n => { HostedContents = n.GetCollectionOfObjectValues<ChatMessageHostedContent>(ChatMessageHostedContent.CreateFromDiscriminatorValue).ToList(); } },
+                {"importance", n => { Importance = n.GetEnumValue<ChatMessageImportance>(); } },
+                {"lastEditedDateTime", n => { LastEditedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"locale", n => { Locale = n.GetStringValue(); } },
+                {"mentions", n => { Mentions = n.GetCollectionOfObjectValues<ChatMessageMention>(ChatMessageMention.CreateFromDiscriminatorValue).ToList(); } },
+                {"messageType", n => { MessageType = n.GetEnumValue<ChatMessageType>(); } },
+                {"onBehalfOf", n => { OnBehalfOf = n.GetObjectValue<ChatMessageFromIdentitySet>(ChatMessageFromIdentitySet.CreateFromDiscriminatorValue); } },
+                {"policyViolation", n => { PolicyViolation = n.GetObjectValue<ChatMessagePolicyViolation>(ChatMessagePolicyViolation.CreateFromDiscriminatorValue); } },
+                {"reactions", n => { Reactions = n.GetCollectionOfObjectValues<ChatMessageReaction>(ChatMessageReaction.CreateFromDiscriminatorValue).ToList(); } },
+                {"replies", n => { Replies = n.GetCollectionOfObjectValues<ChatMessage>(ChatMessage.CreateFromDiscriminatorValue).ToList(); } },
+                {"replyToId", n => { ReplyToId = n.GetStringValue(); } },
+                {"subject", n => { Subject = n.GetStringValue(); } },
+                {"summary", n => { Summary = n.GetStringValue(); } },
+                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

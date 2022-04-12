@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.ValidateXml {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"officeConfigurationXml", (o,n) => { (o as ValidateXmlRequestBody).OfficeConfigurationXml = n.GetByteArrayValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"officeConfigurationXml", n => { OfficeConfigurationXml = n.GetByteArrayValue(); } },
             };
         }
         /// <summary>

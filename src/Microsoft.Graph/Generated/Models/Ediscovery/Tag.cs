@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"childSelectability", (o,n) => { (o as Tag).ChildSelectability = n.GetEnumValue<ChildSelectability>(); } },
-                {"childTags", (o,n) => { (o as Tag).ChildTags = n.GetCollectionOfObjectValues<Tag>(Tag.CreateFromDiscriminatorValue).ToList(); } },
-                {"createdBy", (o,n) => { (o as Tag).CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
-                {"description", (o,n) => { (o as Tag).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as Tag).DisplayName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as Tag).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"parent", (o,n) => { (o as Tag).Parent = n.GetObjectValue<Tag>(Tag.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"childSelectability", n => { ChildSelectability = n.GetEnumValue<ChildSelectability>(); } },
+                {"childTags", n => { ChildTags = n.GetCollectionOfObjectValues<Tag>(Tag.CreateFromDiscriminatorValue).ToList(); } },
+                {"createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"parent", n => { Parent = n.GetObjectValue<Tag>(Tag.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

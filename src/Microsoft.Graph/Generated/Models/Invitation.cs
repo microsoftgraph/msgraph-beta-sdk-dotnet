@@ -36,18 +36,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"invitedUser", (o,n) => { (o as Invitation).InvitedUser = n.GetObjectValue<User>(User.CreateFromDiscriminatorValue); } },
-                {"invitedUserDisplayName", (o,n) => { (o as Invitation).InvitedUserDisplayName = n.GetStringValue(); } },
-                {"invitedUserEmailAddress", (o,n) => { (o as Invitation).InvitedUserEmailAddress = n.GetStringValue(); } },
-                {"invitedUserMessageInfo", (o,n) => { (o as Invitation).InvitedUserMessageInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.InvitedUserMessageInfo>(Microsoft.Graph.Beta.Models.InvitedUserMessageInfo.CreateFromDiscriminatorValue); } },
-                {"invitedUserType", (o,n) => { (o as Invitation).InvitedUserType = n.GetStringValue(); } },
-                {"inviteRedeemUrl", (o,n) => { (o as Invitation).InviteRedeemUrl = n.GetStringValue(); } },
-                {"inviteRedirectUrl", (o,n) => { (o as Invitation).InviteRedirectUrl = n.GetStringValue(); } },
-                {"resetRedemption", (o,n) => { (o as Invitation).ResetRedemption = n.GetBoolValue(); } },
-                {"sendInvitationMessage", (o,n) => { (o as Invitation).SendInvitationMessage = n.GetBoolValue(); } },
-                {"status", (o,n) => { (o as Invitation).Status = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"invitedUser", n => { InvitedUser = n.GetObjectValue<User>(User.CreateFromDiscriminatorValue); } },
+                {"invitedUserDisplayName", n => { InvitedUserDisplayName = n.GetStringValue(); } },
+                {"invitedUserEmailAddress", n => { InvitedUserEmailAddress = n.GetStringValue(); } },
+                {"invitedUserMessageInfo", n => { InvitedUserMessageInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.InvitedUserMessageInfo>(Microsoft.Graph.Beta.Models.InvitedUserMessageInfo.CreateFromDiscriminatorValue); } },
+                {"invitedUserType", n => { InvitedUserType = n.GetStringValue(); } },
+                {"inviteRedeemUrl", n => { InviteRedeemUrl = n.GetStringValue(); } },
+                {"inviteRedirectUrl", n => { InviteRedirectUrl = n.GetStringValue(); } },
+                {"resetRedemption", n => { ResetRedemption = n.GetBoolValue(); } },
+                {"sendInvitationMessage", n => { SendInvitationMessage = n.GetBoolValue(); } },
+                {"status", n => { Status = n.GetStringValue(); } },
             };
         }
         /// <summary>

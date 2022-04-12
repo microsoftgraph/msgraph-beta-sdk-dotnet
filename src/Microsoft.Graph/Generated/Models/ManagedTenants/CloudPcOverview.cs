@@ -56,28 +56,28 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"lastRefreshedDateTime", (o,n) => { (o as CloudPcOverview).LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"numberOfCloudPcConnectionStatusFailed", (o,n) => { (o as CloudPcOverview).NumberOfCloudPcConnectionStatusFailed = n.GetIntValue(); } },
-                {"numberOfCloudPcConnectionStatusPassed", (o,n) => { (o as CloudPcOverview).NumberOfCloudPcConnectionStatusPassed = n.GetIntValue(); } },
-                {"numberOfCloudPcConnectionStatusPending", (o,n) => { (o as CloudPcOverview).NumberOfCloudPcConnectionStatusPending = n.GetIntValue(); } },
-                {"numberOfCloudPcConnectionStatusRunning", (o,n) => { (o as CloudPcOverview).NumberOfCloudPcConnectionStatusRunning = n.GetIntValue(); } },
-                {"numberOfCloudPcConnectionStatusUnkownFutureValue", (o,n) => { (o as CloudPcOverview).NumberOfCloudPcConnectionStatusUnkownFutureValue = n.GetIntValue(); } },
-                {"numberOfCloudPcStatusDeprovisioning", (o,n) => { (o as CloudPcOverview).NumberOfCloudPcStatusDeprovisioning = n.GetIntValue(); } },
-                {"numberOfCloudPcStatusFailed", (o,n) => { (o as CloudPcOverview).NumberOfCloudPcStatusFailed = n.GetIntValue(); } },
-                {"numberOfCloudPcStatusInGracePeriod", (o,n) => { (o as CloudPcOverview).NumberOfCloudPcStatusInGracePeriod = n.GetIntValue(); } },
-                {"numberOfCloudPcStatusNotProvisioned", (o,n) => { (o as CloudPcOverview).NumberOfCloudPcStatusNotProvisioned = n.GetIntValue(); } },
-                {"numberOfCloudPcStatusProvisioned", (o,n) => { (o as CloudPcOverview).NumberOfCloudPcStatusProvisioned = n.GetIntValue(); } },
-                {"numberOfCloudPcStatusProvisioning", (o,n) => { (o as CloudPcOverview).NumberOfCloudPcStatusProvisioning = n.GetIntValue(); } },
-                {"numberOfCloudPcStatusUnknown", (o,n) => { (o as CloudPcOverview).NumberOfCloudPcStatusUnknown = n.GetIntValue(); } },
-                {"numberOfCloudPcStatusUpgrading", (o,n) => { (o as CloudPcOverview).NumberOfCloudPcStatusUpgrading = n.GetIntValue(); } },
-                {"tenantDisplayName", (o,n) => { (o as CloudPcOverview).TenantDisplayName = n.GetStringValue(); } },
-                {"tenantId", (o,n) => { (o as CloudPcOverview).TenantId = n.GetStringValue(); } },
-                {"totalBusinessLicenses", (o,n) => { (o as CloudPcOverview).TotalBusinessLicenses = n.GetIntValue(); } },
-                {"totalCloudPcConnectionStatus", (o,n) => { (o as CloudPcOverview).TotalCloudPcConnectionStatus = n.GetIntValue(); } },
-                {"totalCloudPcStatus", (o,n) => { (o as CloudPcOverview).TotalCloudPcStatus = n.GetIntValue(); } },
-                {"totalEnterpriseLicenses", (o,n) => { (o as CloudPcOverview).TotalEnterpriseLicenses = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"lastRefreshedDateTime", n => { LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"numberOfCloudPcConnectionStatusFailed", n => { NumberOfCloudPcConnectionStatusFailed = n.GetIntValue(); } },
+                {"numberOfCloudPcConnectionStatusPassed", n => { NumberOfCloudPcConnectionStatusPassed = n.GetIntValue(); } },
+                {"numberOfCloudPcConnectionStatusPending", n => { NumberOfCloudPcConnectionStatusPending = n.GetIntValue(); } },
+                {"numberOfCloudPcConnectionStatusRunning", n => { NumberOfCloudPcConnectionStatusRunning = n.GetIntValue(); } },
+                {"numberOfCloudPcConnectionStatusUnkownFutureValue", n => { NumberOfCloudPcConnectionStatusUnkownFutureValue = n.GetIntValue(); } },
+                {"numberOfCloudPcStatusDeprovisioning", n => { NumberOfCloudPcStatusDeprovisioning = n.GetIntValue(); } },
+                {"numberOfCloudPcStatusFailed", n => { NumberOfCloudPcStatusFailed = n.GetIntValue(); } },
+                {"numberOfCloudPcStatusInGracePeriod", n => { NumberOfCloudPcStatusInGracePeriod = n.GetIntValue(); } },
+                {"numberOfCloudPcStatusNotProvisioned", n => { NumberOfCloudPcStatusNotProvisioned = n.GetIntValue(); } },
+                {"numberOfCloudPcStatusProvisioned", n => { NumberOfCloudPcStatusProvisioned = n.GetIntValue(); } },
+                {"numberOfCloudPcStatusProvisioning", n => { NumberOfCloudPcStatusProvisioning = n.GetIntValue(); } },
+                {"numberOfCloudPcStatusUnknown", n => { NumberOfCloudPcStatusUnknown = n.GetIntValue(); } },
+                {"numberOfCloudPcStatusUpgrading", n => { NumberOfCloudPcStatusUpgrading = n.GetIntValue(); } },
+                {"tenantDisplayName", n => { TenantDisplayName = n.GetStringValue(); } },
+                {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                {"totalBusinessLicenses", n => { TotalBusinessLicenses = n.GetIntValue(); } },
+                {"totalCloudPcConnectionStatus", n => { TotalCloudPcConnectionStatus = n.GetIntValue(); } },
+                {"totalCloudPcStatus", n => { TotalCloudPcStatus = n.GetIntValue(); } },
+                {"totalEnterpriseLicenses", n => { TotalEnterpriseLicenses = n.GetIntValue(); } },
             };
         }
         /// <summary>

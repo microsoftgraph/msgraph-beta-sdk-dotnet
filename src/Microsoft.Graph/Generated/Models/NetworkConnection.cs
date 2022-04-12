@@ -64,28 +64,28 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"applicationName", (o,n) => { (o as NetworkConnection).ApplicationName = n.GetStringValue(); } },
-                {"destinationAddress", (o,n) => { (o as NetworkConnection).DestinationAddress = n.GetStringValue(); } },
-                {"destinationDomain", (o,n) => { (o as NetworkConnection).DestinationDomain = n.GetStringValue(); } },
-                {"destinationLocation", (o,n) => { (o as NetworkConnection).DestinationLocation = n.GetStringValue(); } },
-                {"destinationPort", (o,n) => { (o as NetworkConnection).DestinationPort = n.GetStringValue(); } },
-                {"destinationUrl", (o,n) => { (o as NetworkConnection).DestinationUrl = n.GetStringValue(); } },
-                {"direction", (o,n) => { (o as NetworkConnection).Direction = n.GetEnumValue<ConnectionDirection>(); } },
-                {"domainRegisteredDateTime", (o,n) => { (o as NetworkConnection).DomainRegisteredDateTime = n.GetDateTimeOffsetValue(); } },
-                {"localDnsName", (o,n) => { (o as NetworkConnection).LocalDnsName = n.GetStringValue(); } },
-                {"natDestinationAddress", (o,n) => { (o as NetworkConnection).NatDestinationAddress = n.GetStringValue(); } },
-                {"natDestinationPort", (o,n) => { (o as NetworkConnection).NatDestinationPort = n.GetStringValue(); } },
-                {"natSourceAddress", (o,n) => { (o as NetworkConnection).NatSourceAddress = n.GetStringValue(); } },
-                {"natSourcePort", (o,n) => { (o as NetworkConnection).NatSourcePort = n.GetStringValue(); } },
-                {"protocol", (o,n) => { (o as NetworkConnection).Protocol = n.GetEnumValue<SecurityNetworkProtocol>(); } },
-                {"riskScore", (o,n) => { (o as NetworkConnection).RiskScore = n.GetStringValue(); } },
-                {"sourceAddress", (o,n) => { (o as NetworkConnection).SourceAddress = n.GetStringValue(); } },
-                {"sourceLocation", (o,n) => { (o as NetworkConnection).SourceLocation = n.GetStringValue(); } },
-                {"sourcePort", (o,n) => { (o as NetworkConnection).SourcePort = n.GetStringValue(); } },
-                {"status", (o,n) => { (o as NetworkConnection).Status = n.GetEnumValue<ConnectionStatus>(); } },
-                {"urlParameters", (o,n) => { (o as NetworkConnection).UrlParameters = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"applicationName", n => { ApplicationName = n.GetStringValue(); } },
+                {"destinationAddress", n => { DestinationAddress = n.GetStringValue(); } },
+                {"destinationDomain", n => { DestinationDomain = n.GetStringValue(); } },
+                {"destinationLocation", n => { DestinationLocation = n.GetStringValue(); } },
+                {"destinationPort", n => { DestinationPort = n.GetStringValue(); } },
+                {"destinationUrl", n => { DestinationUrl = n.GetStringValue(); } },
+                {"direction", n => { Direction = n.GetEnumValue<ConnectionDirection>(); } },
+                {"domainRegisteredDateTime", n => { DomainRegisteredDateTime = n.GetDateTimeOffsetValue(); } },
+                {"localDnsName", n => { LocalDnsName = n.GetStringValue(); } },
+                {"natDestinationAddress", n => { NatDestinationAddress = n.GetStringValue(); } },
+                {"natDestinationPort", n => { NatDestinationPort = n.GetStringValue(); } },
+                {"natSourceAddress", n => { NatSourceAddress = n.GetStringValue(); } },
+                {"natSourcePort", n => { NatSourcePort = n.GetStringValue(); } },
+                {"protocol", n => { Protocol = n.GetEnumValue<SecurityNetworkProtocol>(); } },
+                {"riskScore", n => { RiskScore = n.GetStringValue(); } },
+                {"sourceAddress", n => { SourceAddress = n.GetStringValue(); } },
+                {"sourceLocation", n => { SourceLocation = n.GetStringValue(); } },
+                {"sourcePort", n => { SourcePort = n.GetStringValue(); } },
+                {"status", n => { Status = n.GetEnumValue<ConnectionStatus>(); } },
+                {"urlParameters", n => { UrlParameters = n.GetStringValue(); } },
             };
         }
         /// <summary>

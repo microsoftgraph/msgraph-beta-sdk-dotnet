@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"acknowledgedDateTime", (o,n) => { (o as Custodian).AcknowledgedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"applyHoldToSources", (o,n) => { (o as Custodian).ApplyHoldToSources = n.GetBoolValue(); } },
-                {"email", (o,n) => { (o as Custodian).Email = n.GetStringValue(); } },
-                {"siteSources", (o,n) => { (o as Custodian).SiteSources = n.GetCollectionOfObjectValues<SiteSource>(SiteSource.CreateFromDiscriminatorValue).ToList(); } },
-                {"unifiedGroupSources", (o,n) => { (o as Custodian).UnifiedGroupSources = n.GetCollectionOfObjectValues<UnifiedGroupSource>(UnifiedGroupSource.CreateFromDiscriminatorValue).ToList(); } },
-                {"userSources", (o,n) => { (o as Custodian).UserSources = n.GetCollectionOfObjectValues<UserSource>(UserSource.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"acknowledgedDateTime", n => { AcknowledgedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"applyHoldToSources", n => { ApplyHoldToSources = n.GetBoolValue(); } },
+                {"email", n => { Email = n.GetStringValue(); } },
+                {"siteSources", n => { SiteSources = n.GetCollectionOfObjectValues<SiteSource>(SiteSource.CreateFromDiscriminatorValue).ToList(); } },
+                {"unifiedGroupSources", n => { UnifiedGroupSources = n.GetCollectionOfObjectValues<UnifiedGroupSource>(UnifiedGroupSource.CreateFromDiscriminatorValue).ToList(); } },
+                {"userSources", n => { UserSources = n.GetCollectionOfObjectValues<UserSource>(UserSource.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

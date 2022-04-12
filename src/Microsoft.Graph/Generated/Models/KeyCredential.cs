@@ -40,16 +40,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"customKeyIdentifier", (o,n) => { (o as KeyCredential).CustomKeyIdentifier = n.GetByteArrayValue(); } },
-                {"displayName", (o,n) => { (o as KeyCredential).DisplayName = n.GetStringValue(); } },
-                {"endDateTime", (o,n) => { (o as KeyCredential).EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"key", (o,n) => { (o as KeyCredential).Key = n.GetByteArrayValue(); } },
-                {"keyId", (o,n) => { (o as KeyCredential).KeyId = n.GetStringValue(); } },
-                {"startDateTime", (o,n) => { (o as KeyCredential).StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"type", (o,n) => { (o as KeyCredential).Type = n.GetStringValue(); } },
-                {"usage", (o,n) => { (o as KeyCredential).Usage = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"customKeyIdentifier", n => { CustomKeyIdentifier = n.GetByteArrayValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"key", n => { Key = n.GetByteArrayValue(); } },
+                {"keyId", n => { KeyId = n.GetStringValue(); } },
+                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
+                {"usage", n => { Usage = n.GetStringValue(); } },
             };
         }
         /// <summary>

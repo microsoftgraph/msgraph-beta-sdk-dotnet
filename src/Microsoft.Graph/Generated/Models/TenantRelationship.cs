@@ -24,11 +24,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"delegatedAdminCustomers", (o,n) => { (o as TenantRelationship).DelegatedAdminCustomers = n.GetCollectionOfObjectValues<DelegatedAdminCustomer>(DelegatedAdminCustomer.CreateFromDiscriminatorValue).ToList(); } },
-                {"delegatedAdminRelationships", (o,n) => { (o as TenantRelationship).DelegatedAdminRelationships = n.GetCollectionOfObjectValues<DelegatedAdminRelationship>(DelegatedAdminRelationship.CreateFromDiscriminatorValue).ToList(); } },
-                {"managedTenants", (o,n) => { (o as TenantRelationship).ManagedTenants = n.GetObjectValue<ManagedTenant>(ManagedTenant.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"delegatedAdminCustomers", n => { DelegatedAdminCustomers = n.GetCollectionOfObjectValues<DelegatedAdminCustomer>(DelegatedAdminCustomer.CreateFromDiscriminatorValue).ToList(); } },
+                {"delegatedAdminRelationships", n => { DelegatedAdminRelationships = n.GetCollectionOfObjectValues<DelegatedAdminRelationship>(DelegatedAdminRelationship.CreateFromDiscriminatorValue).ToList(); } },
+                {"managedTenants", n => { ManagedTenants = n.GetObjectValue<ManagedTenant>(ManagedTenant.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

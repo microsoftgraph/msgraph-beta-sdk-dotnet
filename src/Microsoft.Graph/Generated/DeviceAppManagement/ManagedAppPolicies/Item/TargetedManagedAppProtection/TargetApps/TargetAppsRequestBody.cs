@@ -30,10 +30,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppPolicies.Item.Targe
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"appGroupType", (o,n) => { (o as TargetAppsRequestBody).AppGroupType = n.GetEnumValue<TargetedManagedAppGroupType>(); } },
-                {"apps", (o,n) => { (o as TargetAppsRequestBody).Apps = n.GetCollectionOfObjectValues<ManagedMobileApp>(ManagedMobileApp.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"appGroupType", n => { AppGroupType = n.GetEnumValue<TargetedManagedAppGroupType>(); } },
+                {"apps", n => { Apps = n.GetCollectionOfObjectValues<ManagedMobileApp>(ManagedMobileApp.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

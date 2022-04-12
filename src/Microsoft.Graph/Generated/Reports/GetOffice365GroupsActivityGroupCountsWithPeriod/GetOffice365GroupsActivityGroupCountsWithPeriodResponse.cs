@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityGroupCountsWith
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"value", (o,n) => { (o as GetOffice365GroupsActivityGroupCountsWithPeriodResponse).Value = n.GetCollectionOfObjectValues<Office365GroupsActivityGroupCounts>(Office365GroupsActivityGroupCounts.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"value", n => { Value = n.GetCollectionOfObjectValues<Office365GroupsActivityGroupCounts>(Office365GroupsActivityGroupCounts.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

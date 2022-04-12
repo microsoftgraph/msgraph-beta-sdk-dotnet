@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"domain", (o,n) => { (o as TeamworkOnPremisesCalendarSyncConfiguration).Domain = n.GetStringValue(); } },
-                {"domainUserName", (o,n) => { (o as TeamworkOnPremisesCalendarSyncConfiguration).DomainUserName = n.GetStringValue(); } },
-                {"smtpAddress", (o,n) => { (o as TeamworkOnPremisesCalendarSyncConfiguration).SmtpAddress = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"domain", n => { Domain = n.GetStringValue(); } },
+                {"domainUserName", n => { DomainUserName = n.GetStringValue(); } },
+                {"smtpAddress", n => { SmtpAddress = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -35,13 +35,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"appleId", (o,n) => { (o as VppTokenLicenseSummary).AppleId = n.GetStringValue(); } },
-                {"availableLicenseCount", (o,n) => { (o as VppTokenLicenseSummary).AvailableLicenseCount = n.GetIntValue(); } },
-                {"organizationName", (o,n) => { (o as VppTokenLicenseSummary).OrganizationName = n.GetStringValue(); } },
-                {"usedLicenseCount", (o,n) => { (o as VppTokenLicenseSummary).UsedLicenseCount = n.GetIntValue(); } },
-                {"vppTokenId", (o,n) => { (o as VppTokenLicenseSummary).VppTokenId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"appleId", n => { AppleId = n.GetStringValue(); } },
+                {"availableLicenseCount", n => { AvailableLicenseCount = n.GetIntValue(); } },
+                {"organizationName", n => { OrganizationName = n.GetStringValue(); } },
+                {"usedLicenseCount", n => { UsedLicenseCount = n.GetIntValue(); } },
+                {"vppTokenId", n => { VppTokenId = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"settingInstanceTemplateId", (o,n) => { (o as DeviceManagementConfigurationSettingInstanceTemplateReference).SettingInstanceTemplateId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"settingInstanceTemplateId", n => { SettingInstanceTemplateId = n.GetStringValue(); } },
             };
         }
         /// <summary>

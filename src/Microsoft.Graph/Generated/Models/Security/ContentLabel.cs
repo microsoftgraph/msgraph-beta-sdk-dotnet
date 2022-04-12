@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"assignmentMethod", (o,n) => { (o as ContentLabel).AssignmentMethod = n.GetEnumValue<AssignmentMethod>(); } },
-                {"createdDateTime", (o,n) => { (o as ContentLabel).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"sensitivityLabelId", (o,n) => { (o as ContentLabel).SensitivityLabelId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"assignmentMethod", n => { AssignmentMethod = n.GetEnumValue<AssignmentMethod>(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"sensitivityLabelId", n => { SensitivityLabelId = n.GetStringValue(); } },
             };
         }
         /// <summary>

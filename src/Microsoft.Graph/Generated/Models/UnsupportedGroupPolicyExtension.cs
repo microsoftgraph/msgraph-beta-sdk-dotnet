@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"extensionType", (o,n) => { (o as UnsupportedGroupPolicyExtension).ExtensionType = n.GetStringValue(); } },
-                {"namespaceUrl", (o,n) => { (o as UnsupportedGroupPolicyExtension).NamespaceUrl = n.GetStringValue(); } },
-                {"nodeName", (o,n) => { (o as UnsupportedGroupPolicyExtension).NodeName = n.GetStringValue(); } },
-                {"settingScope", (o,n) => { (o as UnsupportedGroupPolicyExtension).SettingScope = n.GetEnumValue<GroupPolicySettingScope>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"extensionType", n => { ExtensionType = n.GetStringValue(); } },
+                {"namespaceUrl", n => { NamespaceUrl = n.GetStringValue(); } },
+                {"nodeName", n => { NodeName = n.GetStringValue(); } },
+                {"settingScope", n => { SettingScope = n.GetEnumValue<GroupPolicySettingScope>(); } },
             };
         }
         /// <summary>

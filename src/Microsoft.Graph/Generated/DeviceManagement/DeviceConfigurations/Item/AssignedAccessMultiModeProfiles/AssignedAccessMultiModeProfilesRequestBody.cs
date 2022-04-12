@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.Assign
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"assignedAccessMultiModeProfiles", (o,n) => { (o as AssignedAccessMultiModeProfilesRequestBody).AssignedAccessMultiModeProfiles = n.GetCollectionOfObjectValues<WindowsAssignedAccessProfile>(WindowsAssignedAccessProfile.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"assignedAccessMultiModeProfiles", n => { AssignedAccessMultiModeProfiles = n.GetCollectionOfObjectValues<WindowsAssignedAccessProfile>(WindowsAssignedAccessProfile.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

@@ -44,22 +44,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessPackage", (o,n) => { (o as AccessPackageAssignment).AccessPackage = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackage>(Microsoft.Graph.Beta.Models.AccessPackage.CreateFromDiscriminatorValue); } },
-                {"accessPackageAssignmentPolicy", (o,n) => { (o as AccessPackageAssignment).AccessPackageAssignmentPolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageAssignmentPolicy>(Microsoft.Graph.Beta.Models.AccessPackageAssignmentPolicy.CreateFromDiscriminatorValue); } },
-                {"accessPackageAssignmentRequests", (o,n) => { (o as AccessPackageAssignment).AccessPackageAssignmentRequests = n.GetCollectionOfObjectValues<AccessPackageAssignmentRequest>(AccessPackageAssignmentRequest.CreateFromDiscriminatorValue).ToList(); } },
-                {"accessPackageAssignmentResourceRoles", (o,n) => { (o as AccessPackageAssignment).AccessPackageAssignmentResourceRoles = n.GetCollectionOfObjectValues<AccessPackageAssignmentResourceRole>(AccessPackageAssignmentResourceRole.CreateFromDiscriminatorValue).ToList(); } },
-                {"accessPackageId", (o,n) => { (o as AccessPackageAssignment).AccessPackageId = n.GetStringValue(); } },
-                {"assignmentPolicyId", (o,n) => { (o as AccessPackageAssignment).AssignmentPolicyId = n.GetStringValue(); } },
-                {"assignmentState", (o,n) => { (o as AccessPackageAssignment).AssignmentState = n.GetStringValue(); } },
-                {"assignmentStatus", (o,n) => { (o as AccessPackageAssignment).AssignmentStatus = n.GetStringValue(); } },
-                {"catalogId", (o,n) => { (o as AccessPackageAssignment).CatalogId = n.GetStringValue(); } },
-                {"expiredDateTime", (o,n) => { (o as AccessPackageAssignment).ExpiredDateTime = n.GetDateTimeOffsetValue(); } },
-                {"isExtended", (o,n) => { (o as AccessPackageAssignment).IsExtended = n.GetBoolValue(); } },
-                {"schedule", (o,n) => { (o as AccessPackageAssignment).Schedule = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
-                {"target", (o,n) => { (o as AccessPackageAssignment).Target = n.GetObjectValue<AccessPackageSubject>(AccessPackageSubject.CreateFromDiscriminatorValue); } },
-                {"targetId", (o,n) => { (o as AccessPackageAssignment).TargetId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"accessPackage", n => { AccessPackage = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackage>(Microsoft.Graph.Beta.Models.AccessPackage.CreateFromDiscriminatorValue); } },
+                {"accessPackageAssignmentPolicy", n => { AccessPackageAssignmentPolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageAssignmentPolicy>(Microsoft.Graph.Beta.Models.AccessPackageAssignmentPolicy.CreateFromDiscriminatorValue); } },
+                {"accessPackageAssignmentRequests", n => { AccessPackageAssignmentRequests = n.GetCollectionOfObjectValues<AccessPackageAssignmentRequest>(AccessPackageAssignmentRequest.CreateFromDiscriminatorValue).ToList(); } },
+                {"accessPackageAssignmentResourceRoles", n => { AccessPackageAssignmentResourceRoles = n.GetCollectionOfObjectValues<AccessPackageAssignmentResourceRole>(AccessPackageAssignmentResourceRole.CreateFromDiscriminatorValue).ToList(); } },
+                {"accessPackageId", n => { AccessPackageId = n.GetStringValue(); } },
+                {"assignmentPolicyId", n => { AssignmentPolicyId = n.GetStringValue(); } },
+                {"assignmentState", n => { AssignmentState = n.GetStringValue(); } },
+                {"assignmentStatus", n => { AssignmentStatus = n.GetStringValue(); } },
+                {"catalogId", n => { CatalogId = n.GetStringValue(); } },
+                {"expiredDateTime", n => { ExpiredDateTime = n.GetDateTimeOffsetValue(); } },
+                {"isExtended", n => { IsExtended = n.GetBoolValue(); } },
+                {"schedule", n => { Schedule = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
+                {"target", n => { Target = n.GetObjectValue<AccessPackageSubject>(AccessPackageSubject.CreateFromDiscriminatorValue); } },
+                {"targetId", n => { TargetId = n.GetStringValue(); } },
             };
         }
         /// <summary>

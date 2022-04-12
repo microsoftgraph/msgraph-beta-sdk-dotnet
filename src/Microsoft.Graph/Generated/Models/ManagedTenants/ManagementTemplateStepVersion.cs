@@ -38,19 +38,19 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"acceptedFor", (o,n) => { (o as ManagementTemplateStepVersion).AcceptedFor = n.GetObjectValue<ManagementTemplateStep>(ManagementTemplateStep.CreateFromDiscriminatorValue); } },
-                {"contentMarkdown", (o,n) => { (o as ManagementTemplateStepVersion).ContentMarkdown = n.GetStringValue(); } },
-                {"createdByUserId", (o,n) => { (o as ManagementTemplateStepVersion).CreatedByUserId = n.GetStringValue(); } },
-                {"createdDateTime", (o,n) => { (o as ManagementTemplateStepVersion).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deployments", (o,n) => { (o as ManagementTemplateStepVersion).Deployments = n.GetCollectionOfObjectValues<ManagementTemplateStepDeployment>(ManagementTemplateStepDeployment.CreateFromDiscriminatorValue).ToList(); } },
-                {"lastActionByUserId", (o,n) => { (o as ManagementTemplateStepVersion).LastActionByUserId = n.GetStringValue(); } },
-                {"lastActionDateTime", (o,n) => { (o as ManagementTemplateStepVersion).LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"name", (o,n) => { (o as ManagementTemplateStepVersion).Name = n.GetStringValue(); } },
-                {"templateStep", (o,n) => { (o as ManagementTemplateStepVersion).TemplateStep = n.GetObjectValue<ManagementTemplateStep>(ManagementTemplateStep.CreateFromDiscriminatorValue); } },
-                {"version", (o,n) => { (o as ManagementTemplateStepVersion).Version = n.GetIntValue(); } },
-                {"versionInformation", (o,n) => { (o as ManagementTemplateStepVersion).VersionInformation = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"acceptedFor", n => { AcceptedFor = n.GetObjectValue<ManagementTemplateStep>(ManagementTemplateStep.CreateFromDiscriminatorValue); } },
+                {"contentMarkdown", n => { ContentMarkdown = n.GetStringValue(); } },
+                {"createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"deployments", n => { Deployments = n.GetCollectionOfObjectValues<ManagementTemplateStepDeployment>(ManagementTemplateStepDeployment.CreateFromDiscriminatorValue).ToList(); } },
+                {"lastActionByUserId", n => { LastActionByUserId = n.GetStringValue(); } },
+                {"lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"templateStep", n => { TemplateStep = n.GetObjectValue<ManagementTemplateStep>(ManagementTemplateStep.CreateFromDiscriminatorValue); } },
+                {"version", n => { Version = n.GetIntValue(); } },
+                {"versionInformation", n => { VersionInformation = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -31,11 +31,11 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"managementTemplateStepId", (o,n) => { (o as ChangeDeploymentStatusRequestBody).ManagementTemplateStepId = n.GetStringValue(); } },
-                {"status", (o,n) => { (o as ChangeDeploymentStatusRequestBody).Status = n.GetStringValue(); } },
-                {"tenantId", (o,n) => { (o as ChangeDeploymentStatusRequestBody).TenantId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"managementTemplateStepId", n => { ManagementTemplateStepId = n.GetStringValue(); } },
+                {"status", n => { Status = n.GetStringValue(); } },
+                {"tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
         /// <summary>

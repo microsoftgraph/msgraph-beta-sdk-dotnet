@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessPackageResource", (o,n) => { (o as AccessPackageResourceRole).AccessPackageResource = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageResource>(Microsoft.Graph.Beta.Models.AccessPackageResource.CreateFromDiscriminatorValue); } },
-                {"description", (o,n) => { (o as AccessPackageResourceRole).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as AccessPackageResourceRole).DisplayName = n.GetStringValue(); } },
-                {"originId", (o,n) => { (o as AccessPackageResourceRole).OriginId = n.GetStringValue(); } },
-                {"originSystem", (o,n) => { (o as AccessPackageResourceRole).OriginSystem = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"accessPackageResource", n => { AccessPackageResource = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageResource>(Microsoft.Graph.Beta.Models.AccessPackageResource.CreateFromDiscriminatorValue); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"originId", n => { OriginId = n.GetStringValue(); } },
+                {"originSystem", n => { OriginSystem = n.GetStringValue(); } },
             };
         }
         /// <summary>

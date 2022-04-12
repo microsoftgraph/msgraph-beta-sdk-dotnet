@@ -42,21 +42,21 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"allowedInstallationScopes", (o,n) => { (o as TeamsAppDefinition).AllowedInstallationScopes = n.GetEnumValue<TeamsAppInstallationScopes>(); } },
-                {"azureADAppId", (o,n) => { (o as TeamsAppDefinition).AzureADAppId = n.GetStringValue(); } },
-                {"bot", (o,n) => { (o as TeamsAppDefinition).Bot = n.GetObjectValue<TeamworkBot>(TeamworkBot.CreateFromDiscriminatorValue); } },
-                {"colorIcon", (o,n) => { (o as TeamsAppDefinition).ColorIcon = n.GetObjectValue<TeamsAppIcon>(TeamsAppIcon.CreateFromDiscriminatorValue); } },
-                {"createdBy", (o,n) => { (o as TeamsAppDefinition).CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"description", (o,n) => { (o as TeamsAppDefinition).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as TeamsAppDefinition).DisplayName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as TeamsAppDefinition).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"outlineIcon", (o,n) => { (o as TeamsAppDefinition).OutlineIcon = n.GetObjectValue<TeamsAppIcon>(TeamsAppIcon.CreateFromDiscriminatorValue); } },
-                {"publishingState", (o,n) => { (o as TeamsAppDefinition).PublishingState = n.GetEnumValue<TeamsAppPublishingState>(); } },
-                {"shortdescription", (o,n) => { (o as TeamsAppDefinition).Shortdescription = n.GetStringValue(); } },
-                {"teamsAppId", (o,n) => { (o as TeamsAppDefinition).TeamsAppId = n.GetStringValue(); } },
-                {"version", (o,n) => { (o as TeamsAppDefinition).Version = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"allowedInstallationScopes", n => { AllowedInstallationScopes = n.GetEnumValue<TeamsAppInstallationScopes>(); } },
+                {"azureADAppId", n => { AzureADAppId = n.GetStringValue(); } },
+                {"bot", n => { Bot = n.GetObjectValue<TeamworkBot>(TeamworkBot.CreateFromDiscriminatorValue); } },
+                {"colorIcon", n => { ColorIcon = n.GetObjectValue<TeamsAppIcon>(TeamsAppIcon.CreateFromDiscriminatorValue); } },
+                {"createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"outlineIcon", n => { OutlineIcon = n.GetObjectValue<TeamsAppIcon>(TeamsAppIcon.CreateFromDiscriminatorValue); } },
+                {"publishingState", n => { PublishingState = n.GetEnumValue<TeamsAppPublishingState>(); } },
+                {"shortdescription", n => { Shortdescription = n.GetStringValue(); } },
+                {"teamsAppId", n => { TeamsAppId = n.GetStringValue(); } },
+                {"version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

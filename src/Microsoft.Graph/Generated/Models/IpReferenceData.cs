@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"asn", (o,n) => { (o as IpReferenceData).Asn = n.GetLongValue(); } },
-                {"city", (o,n) => { (o as IpReferenceData).City = n.GetStringValue(); } },
-                {"countryOrRegionCode", (o,n) => { (o as IpReferenceData).CountryOrRegionCode = n.GetStringValue(); } },
-                {"organization", (o,n) => { (o as IpReferenceData).Organization = n.GetStringValue(); } },
-                {"state", (o,n) => { (o as IpReferenceData).State = n.GetStringValue(); } },
-                {"vendor", (o,n) => { (o as IpReferenceData).Vendor = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"asn", n => { Asn = n.GetLongValue(); } },
+                {"city", n => { City = n.GetStringValue(); } },
+                {"countryOrRegionCode", n => { CountryOrRegionCode = n.GetStringValue(); } },
+                {"organization", n => { Organization = n.GetStringValue(); } },
+                {"state", n => { State = n.GetStringValue(); } },
+                {"vendor", n => { Vendor = n.GetStringValue(); } },
             };
         }
         /// <summary>

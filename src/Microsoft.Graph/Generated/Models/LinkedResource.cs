@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"applicationName", (o,n) => { (o as LinkedResource).ApplicationName = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as LinkedResource).DisplayName = n.GetStringValue(); } },
-                {"externalId", (o,n) => { (o as LinkedResource).ExternalId = n.GetStringValue(); } },
-                {"webUrl", (o,n) => { (o as LinkedResource).WebUrl = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"applicationName", n => { ApplicationName = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"externalId", n => { ExternalId = n.GetStringValue(); } },
+                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

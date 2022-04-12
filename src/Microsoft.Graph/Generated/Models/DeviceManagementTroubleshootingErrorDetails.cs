@@ -35,13 +35,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"context", (o,n) => { (o as DeviceManagementTroubleshootingErrorDetails).Context = n.GetStringValue(); } },
-                {"failure", (o,n) => { (o as DeviceManagementTroubleshootingErrorDetails).Failure = n.GetStringValue(); } },
-                {"failureDetails", (o,n) => { (o as DeviceManagementTroubleshootingErrorDetails).FailureDetails = n.GetStringValue(); } },
-                {"remediation", (o,n) => { (o as DeviceManagementTroubleshootingErrorDetails).Remediation = n.GetStringValue(); } },
-                {"resources", (o,n) => { (o as DeviceManagementTroubleshootingErrorDetails).Resources = n.GetCollectionOfObjectValues<DeviceManagementTroubleshootingErrorResource>(DeviceManagementTroubleshootingErrorResource.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"context", n => { Context = n.GetStringValue(); } },
+                {"failure", n => { Failure = n.GetStringValue(); } },
+                {"failureDetails", n => { FailureDetails = n.GetStringValue(); } },
+                {"remediation", n => { Remediation = n.GetStringValue(); } },
+                {"resources", n => { Resources = n.GetCollectionOfObjectValues<DeviceManagementTroubleshootingErrorResource>(DeviceManagementTroubleshootingErrorResource.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

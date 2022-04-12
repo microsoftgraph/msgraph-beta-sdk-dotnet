@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"detail", (o,n) => { (o as RiskServicePrincipalActivity).Detail = n.GetEnumValue<RiskDetail>(); } },
-                {"riskEventTypes", (o,n) => { (o as RiskServicePrincipalActivity).RiskEventTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"detail", n => { Detail = n.GetEnumValue<RiskDetail>(); } },
+                {"riskEventTypes", n => { RiskEventTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

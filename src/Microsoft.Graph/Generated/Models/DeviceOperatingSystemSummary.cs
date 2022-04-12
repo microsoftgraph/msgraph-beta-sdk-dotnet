@@ -57,24 +57,24 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"androidCorporateWorkProfileCount", (o,n) => { (o as DeviceOperatingSystemSummary).AndroidCorporateWorkProfileCount = n.GetIntValue(); } },
-                {"androidCount", (o,n) => { (o as DeviceOperatingSystemSummary).AndroidCount = n.GetIntValue(); } },
-                {"androidDedicatedCount", (o,n) => { (o as DeviceOperatingSystemSummary).AndroidDedicatedCount = n.GetIntValue(); } },
-                {"androidDeviceAdminCount", (o,n) => { (o as DeviceOperatingSystemSummary).AndroidDeviceAdminCount = n.GetIntValue(); } },
-                {"androidFullyManagedCount", (o,n) => { (o as DeviceOperatingSystemSummary).AndroidFullyManagedCount = n.GetIntValue(); } },
-                {"androidWorkProfileCount", (o,n) => { (o as DeviceOperatingSystemSummary).AndroidWorkProfileCount = n.GetIntValue(); } },
-                {"aospUserAssociatedCount", (o,n) => { (o as DeviceOperatingSystemSummary).AospUserAssociatedCount = n.GetIntValue(); } },
-                {"aospUserlessCount", (o,n) => { (o as DeviceOperatingSystemSummary).AospUserlessCount = n.GetIntValue(); } },
-                {"chromeOSCount", (o,n) => { (o as DeviceOperatingSystemSummary).ChromeOSCount = n.GetIntValue(); } },
-                {"configMgrDeviceCount", (o,n) => { (o as DeviceOperatingSystemSummary).ConfigMgrDeviceCount = n.GetIntValue(); } },
-                {"iosCount", (o,n) => { (o as DeviceOperatingSystemSummary).IosCount = n.GetIntValue(); } },
-                {"linuxCount", (o,n) => { (o as DeviceOperatingSystemSummary).LinuxCount = n.GetIntValue(); } },
-                {"macOSCount", (o,n) => { (o as DeviceOperatingSystemSummary).MacOSCount = n.GetIntValue(); } },
-                {"unknownCount", (o,n) => { (o as DeviceOperatingSystemSummary).UnknownCount = n.GetIntValue(); } },
-                {"windowsCount", (o,n) => { (o as DeviceOperatingSystemSummary).WindowsCount = n.GetIntValue(); } },
-                {"windowsMobileCount", (o,n) => { (o as DeviceOperatingSystemSummary).WindowsMobileCount = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"androidCorporateWorkProfileCount", n => { AndroidCorporateWorkProfileCount = n.GetIntValue(); } },
+                {"androidCount", n => { AndroidCount = n.GetIntValue(); } },
+                {"androidDedicatedCount", n => { AndroidDedicatedCount = n.GetIntValue(); } },
+                {"androidDeviceAdminCount", n => { AndroidDeviceAdminCount = n.GetIntValue(); } },
+                {"androidFullyManagedCount", n => { AndroidFullyManagedCount = n.GetIntValue(); } },
+                {"androidWorkProfileCount", n => { AndroidWorkProfileCount = n.GetIntValue(); } },
+                {"aospUserAssociatedCount", n => { AospUserAssociatedCount = n.GetIntValue(); } },
+                {"aospUserlessCount", n => { AospUserlessCount = n.GetIntValue(); } },
+                {"chromeOSCount", n => { ChromeOSCount = n.GetIntValue(); } },
+                {"configMgrDeviceCount", n => { ConfigMgrDeviceCount = n.GetIntValue(); } },
+                {"iosCount", n => { IosCount = n.GetIntValue(); } },
+                {"linuxCount", n => { LinuxCount = n.GetIntValue(); } },
+                {"macOSCount", n => { MacOSCount = n.GetIntValue(); } },
+                {"unknownCount", n => { UnknownCount = n.GetIntValue(); } },
+                {"windowsCount", n => { WindowsCount = n.GetIntValue(); } },
+                {"windowsMobileCount", n => { WindowsMobileCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"allowMultipleLines", (o,n) => { (o as TextColumn).AllowMultipleLines = n.GetBoolValue(); } },
-                {"appendChangesToExistingText", (o,n) => { (o as TextColumn).AppendChangesToExistingText = n.GetBoolValue(); } },
-                {"linesForEditing", (o,n) => { (o as TextColumn).LinesForEditing = n.GetIntValue(); } },
-                {"maxLength", (o,n) => { (o as TextColumn).MaxLength = n.GetIntValue(); } },
-                {"textType", (o,n) => { (o as TextColumn).TextType = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"allowMultipleLines", n => { AllowMultipleLines = n.GetBoolValue(); } },
+                {"appendChangesToExistingText", n => { AppendChangesToExistingText = n.GetBoolValue(); } },
+                {"linesForEditing", n => { LinesForEditing = n.GetIntValue(); } },
+                {"maxLength", n => { MaxLength = n.GetIntValue(); } },
+                {"textType", n => { TextType = n.GetStringValue(); } },
             };
         }
         /// <summary>

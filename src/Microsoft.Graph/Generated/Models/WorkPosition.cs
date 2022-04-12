@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"categories", (o,n) => { (o as WorkPosition).Categories = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"colleagues", (o,n) => { (o as WorkPosition).Colleagues = n.GetCollectionOfObjectValues<RelatedPerson>(RelatedPerson.CreateFromDiscriminatorValue).ToList(); } },
-                {"detail", (o,n) => { (o as WorkPosition).Detail = n.GetObjectValue<PositionDetail>(PositionDetail.CreateFromDiscriminatorValue); } },
-                {"isCurrent", (o,n) => { (o as WorkPosition).IsCurrent = n.GetBoolValue(); } },
-                {"manager", (o,n) => { (o as WorkPosition).Manager = n.GetObjectValue<RelatedPerson>(RelatedPerson.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"colleagues", n => { Colleagues = n.GetCollectionOfObjectValues<RelatedPerson>(RelatedPerson.CreateFromDiscriminatorValue).ToList(); } },
+                {"detail", n => { Detail = n.GetObjectValue<PositionDetail>(PositionDetail.CreateFromDiscriminatorValue); } },
+                {"isCurrent", n => { IsCurrent = n.GetBoolValue(); } },
+                {"manager", n => { Manager = n.GetObjectValue<RelatedPerson>(RelatedPerson.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

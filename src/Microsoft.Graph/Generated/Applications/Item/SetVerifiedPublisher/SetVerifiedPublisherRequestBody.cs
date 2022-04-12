@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.Applications.Item.SetVerifiedPublisher {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"verifiedPublisherId", (o,n) => { (o as SetVerifiedPublisherRequestBody).VerifiedPublisherId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"verifiedPublisherId", n => { VerifiedPublisherId = n.GetStringValue(); } },
             };
         }
         /// <summary>

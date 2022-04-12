@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.InformationProtection.EncryptBuffer {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"buffer", (o,n) => { (o as EncryptBufferRequestBody).Buffer = n.GetByteArrayValue(); } },
-                {"labelId", (o,n) => { (o as EncryptBufferRequestBody).LabelId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"buffer", n => { Buffer = n.GetByteArrayValue(); } },
+                {"labelId", n => { LabelId = n.GetStringValue(); } },
             };
         }
         /// <summary>

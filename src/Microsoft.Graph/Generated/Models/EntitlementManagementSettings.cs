@@ -20,10 +20,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"daysUntilExternalUserDeletedAfterBlocked", (o,n) => { (o as EntitlementManagementSettings).DaysUntilExternalUserDeletedAfterBlocked = n.GetIntValue(); } },
-                {"externalUserLifecycleAction", (o,n) => { (o as EntitlementManagementSettings).ExternalUserLifecycleAction = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"daysUntilExternalUserDeletedAfterBlocked", n => { DaysUntilExternalUserDeletedAfterBlocked = n.GetIntValue(); } },
+                {"externalUserLifecycleAction", n => { ExternalUserLifecycleAction = n.GetStringValue(); } },
             };
         }
         /// <summary>

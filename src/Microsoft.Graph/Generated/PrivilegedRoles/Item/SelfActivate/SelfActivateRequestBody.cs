@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.PrivilegedRoles.Item.SelfActivate {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"duration", (o,n) => { (o as SelfActivateRequestBody).Duration = n.GetStringValue(); } },
-                {"reason", (o,n) => { (o as SelfActivateRequestBody).Reason = n.GetStringValue(); } },
-                {"ticketNumber", (o,n) => { (o as SelfActivateRequestBody).TicketNumber = n.GetStringValue(); } },
-                {"ticketSystem", (o,n) => { (o as SelfActivateRequestBody).TicketSystem = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"duration", n => { Duration = n.GetStringValue(); } },
+                {"reason", n => { Reason = n.GetStringValue(); } },
+                {"ticketNumber", n => { TicketNumber = n.GetStringValue(); } },
+                {"ticketSystem", n => { TicketSystem = n.GetStringValue(); } },
             };
         }
         /// <summary>

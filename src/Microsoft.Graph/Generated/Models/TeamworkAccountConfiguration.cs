@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"onPremisesCalendarSyncConfiguration", (o,n) => { (o as TeamworkAccountConfiguration).OnPremisesCalendarSyncConfiguration = n.GetObjectValue<TeamworkOnPremisesCalendarSyncConfiguration>(TeamworkOnPremisesCalendarSyncConfiguration.CreateFromDiscriminatorValue); } },
-                {"supportedClient", (o,n) => { (o as TeamworkAccountConfiguration).SupportedClient = n.GetEnumValue<TeamworkSupportedClient>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"onPremisesCalendarSyncConfiguration", n => { OnPremisesCalendarSyncConfiguration = n.GetObjectValue<TeamworkOnPremisesCalendarSyncConfiguration>(TeamworkOnPremisesCalendarSyncConfiguration.CreateFromDiscriminatorValue); } },
+                {"supportedClient", n => { SupportedClient = n.GetEnumValue<TeamworkSupportedClient>(); } },
             };
         }
         /// <summary>

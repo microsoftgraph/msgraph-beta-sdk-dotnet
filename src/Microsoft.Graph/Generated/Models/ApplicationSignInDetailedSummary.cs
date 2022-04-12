@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"aggregatedEventDateTime", (o,n) => { (o as ApplicationSignInDetailedSummary).AggregatedEventDateTime = n.GetDateTimeOffsetValue(); } },
-                {"appDisplayName", (o,n) => { (o as ApplicationSignInDetailedSummary).AppDisplayName = n.GetStringValue(); } },
-                {"appId", (o,n) => { (o as ApplicationSignInDetailedSummary).AppId = n.GetStringValue(); } },
-                {"signInCount", (o,n) => { (o as ApplicationSignInDetailedSummary).SignInCount = n.GetLongValue(); } },
-                {"status", (o,n) => { (o as ApplicationSignInDetailedSummary).Status = n.GetObjectValue<SignInStatus>(SignInStatus.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"aggregatedEventDateTime", n => { AggregatedEventDateTime = n.GetDateTimeOffsetValue(); } },
+                {"appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
+                {"appId", n => { AppId = n.GetStringValue(); } },
+                {"signInCount", n => { SignInCount = n.GetLongValue(); } },
+                {"status", n => { Status = n.GetObjectValue<SignInStatus>(SignInStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

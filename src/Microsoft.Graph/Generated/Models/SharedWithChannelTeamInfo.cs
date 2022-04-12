@@ -5,9 +5,9 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class SharedWithChannelTeamInfo : TeamInfo, IParsable {
-        /// <summary>The allowedMembers property</summary>
+        /// <summary>A collection of team members who have access to the shared channel.</summary>
         public List<ConversationMember> AllowedMembers { get; set; }
-        /// <summary>The isHostTeam property</summary>
+        /// <summary>Indicates whether the team is the host of the channel.</summary>
         public bool? IsHostTeam { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -20,10 +20,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"allowedMembers", (o,n) => { (o as SharedWithChannelTeamInfo).AllowedMembers = n.GetCollectionOfObjectValues<ConversationMember>(ConversationMember.CreateFromDiscriminatorValue).ToList(); } },
-                {"isHostTeam", (o,n) => { (o as SharedWithChannelTeamInfo).IsHostTeam = n.GetBoolValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"allowedMembers", n => { AllowedMembers = n.GetCollectionOfObjectValues<ConversationMember>(ConversationMember.CreateFromDiscriminatorValue).ToList(); } },
+                {"isHostTeam", n => { IsHostTeam = n.GetBoolValue(); } },
             };
         }
         /// <summary>

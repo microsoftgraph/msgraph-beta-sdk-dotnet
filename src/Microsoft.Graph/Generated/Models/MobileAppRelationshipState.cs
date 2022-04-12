@@ -41,16 +41,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"deviceId", (o,n) => { (o as MobileAppRelationshipState).DeviceId = n.GetStringValue(); } },
-                {"errorCode", (o,n) => { (o as MobileAppRelationshipState).ErrorCode = n.GetIntValue(); } },
-                {"installState", (o,n) => { (o as MobileAppRelationshipState).InstallState = n.GetEnumValue<ResultantAppState>(); } },
-                {"installStateDetail", (o,n) => { (o as MobileAppRelationshipState).InstallStateDetail = n.GetEnumValue<ResultantAppStateDetail>(); } },
-                {"sourceIds", (o,n) => { (o as MobileAppRelationshipState).SourceIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"targetDisplayName", (o,n) => { (o as MobileAppRelationshipState).TargetDisplayName = n.GetStringValue(); } },
-                {"targetId", (o,n) => { (o as MobileAppRelationshipState).TargetId = n.GetStringValue(); } },
-                {"targetLastSyncDateTime", (o,n) => { (o as MobileAppRelationshipState).TargetLastSyncDateTime = n.GetDateTimeOffsetValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
+                {"errorCode", n => { ErrorCode = n.GetIntValue(); } },
+                {"installState", n => { InstallState = n.GetEnumValue<ResultantAppState>(); } },
+                {"installStateDetail", n => { InstallStateDetail = n.GetEnumValue<ResultantAppStateDetail>(); } },
+                {"sourceIds", n => { SourceIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"targetDisplayName", n => { TargetDisplayName = n.GetStringValue(); } },
+                {"targetId", n => { TargetId = n.GetStringValue(); } },
+                {"targetLastSyncDateTime", n => { TargetLastSyncDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

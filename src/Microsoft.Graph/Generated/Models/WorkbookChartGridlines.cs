@@ -20,10 +20,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"format", (o,n) => { (o as WorkbookChartGridlines).Format = n.GetObjectValue<WorkbookChartGridlinesFormat>(WorkbookChartGridlinesFormat.CreateFromDiscriminatorValue); } },
-                {"visible", (o,n) => { (o as WorkbookChartGridlines).Visible = n.GetBoolValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"format", n => { Format = n.GetObjectValue<WorkbookChartGridlinesFormat>(WorkbookChartGridlinesFormat.CreateFromDiscriminatorValue); } },
+                {"visible", n => { Visible = n.GetBoolValue(); } },
             };
         }
         /// <summary>

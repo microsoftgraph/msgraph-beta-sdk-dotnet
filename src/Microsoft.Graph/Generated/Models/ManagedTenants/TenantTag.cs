@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdByUserId", (o,n) => { (o as TenantTag).CreatedByUserId = n.GetStringValue(); } },
-                {"createdDateTime", (o,n) => { (o as TenantTag).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deletedDateTime", (o,n) => { (o as TenantTag).DeletedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as TenantTag).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as TenantTag).DisplayName = n.GetStringValue(); } },
-                {"lastActionByUserId", (o,n) => { (o as TenantTag).LastActionByUserId = n.GetStringValue(); } },
-                {"lastActionDateTime", (o,n) => { (o as TenantTag).LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"tenants", (o,n) => { (o as TenantTag).Tenants = n.GetCollectionOfObjectValues<TenantInfo>(TenantInfo.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"deletedDateTime", n => { DeletedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"lastActionByUserId", n => { LastActionByUserId = n.GetStringValue(); } },
+                {"lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
+                {"tenants", n => { Tenants = n.GetCollectionOfObjectValues<TenantInfo>(TenantInfo.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

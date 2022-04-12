@@ -38,15 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"calendar", (o,n) => { (o as RegionalFormatOverrides).Calendar = n.GetStringValue(); } },
-                {"firstDayOfWeek", (o,n) => { (o as RegionalFormatOverrides).FirstDayOfWeek = n.GetStringValue(); } },
-                {"longDateFormat", (o,n) => { (o as RegionalFormatOverrides).LongDateFormat = n.GetStringValue(); } },
-                {"longTimeFormat", (o,n) => { (o as RegionalFormatOverrides).LongTimeFormat = n.GetStringValue(); } },
-                {"shortDateFormat", (o,n) => { (o as RegionalFormatOverrides).ShortDateFormat = n.GetStringValue(); } },
-                {"shortTimeFormat", (o,n) => { (o as RegionalFormatOverrides).ShortTimeFormat = n.GetStringValue(); } },
-                {"timeZone", (o,n) => { (o as RegionalFormatOverrides).TimeZone = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"calendar", n => { Calendar = n.GetStringValue(); } },
+                {"firstDayOfWeek", n => { FirstDayOfWeek = n.GetStringValue(); } },
+                {"longDateFormat", n => { LongDateFormat = n.GetStringValue(); } },
+                {"longTimeFormat", n => { LongTimeFormat = n.GetStringValue(); } },
+                {"shortDateFormat", n => { ShortDateFormat = n.GetStringValue(); } },
+                {"shortTimeFormat", n => { ShortTimeFormat = n.GetStringValue(); } },
+                {"timeZone", n => { TimeZone = n.GetStringValue(); } },
             };
         }
         /// <summary>

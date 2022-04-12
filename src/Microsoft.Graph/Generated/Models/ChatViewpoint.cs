@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"isHidden", (o,n) => { (o as ChatViewpoint).IsHidden = n.GetBoolValue(); } },
-                {"lastMessageReadDateTime", (o,n) => { (o as ChatViewpoint).LastMessageReadDateTime = n.GetDateTimeOffsetValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"isHidden", n => { IsHidden = n.GetBoolValue(); } },
+                {"lastMessageReadDateTime", n => { LastMessageReadDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

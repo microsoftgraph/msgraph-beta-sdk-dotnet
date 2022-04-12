@@ -48,19 +48,19 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.ExecuteAction {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"actionName", (o,n) => { (o as ExecuteActionRequestBody).ActionName = n.GetEnumValue<ManagedDeviceRemoteAction>(); } },
-                {"carrierUrl", (o,n) => { (o as ExecuteActionRequestBody).CarrierUrl = n.GetStringValue(); } },
-                {"deprovisionReason", (o,n) => { (o as ExecuteActionRequestBody).DeprovisionReason = n.GetStringValue(); } },
-                {"deviceIds", (o,n) => { (o as ExecuteActionRequestBody).DeviceIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"deviceName", (o,n) => { (o as ExecuteActionRequestBody).DeviceName = n.GetStringValue(); } },
-                {"keepEnrollmentData", (o,n) => { (o as ExecuteActionRequestBody).KeepEnrollmentData = n.GetBoolValue(); } },
-                {"keepUserData", (o,n) => { (o as ExecuteActionRequestBody).KeepUserData = n.GetBoolValue(); } },
-                {"notificationBody", (o,n) => { (o as ExecuteActionRequestBody).NotificationBody = n.GetStringValue(); } },
-                {"notificationTitle", (o,n) => { (o as ExecuteActionRequestBody).NotificationTitle = n.GetStringValue(); } },
-                {"organizationalUnitPath", (o,n) => { (o as ExecuteActionRequestBody).OrganizationalUnitPath = n.GetStringValue(); } },
-                {"persistEsimDataPlan", (o,n) => { (o as ExecuteActionRequestBody).PersistEsimDataPlan = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"actionName", n => { ActionName = n.GetEnumValue<ManagedDeviceRemoteAction>(); } },
+                {"carrierUrl", n => { CarrierUrl = n.GetStringValue(); } },
+                {"deprovisionReason", n => { DeprovisionReason = n.GetStringValue(); } },
+                {"deviceIds", n => { DeviceIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
+                {"keepEnrollmentData", n => { KeepEnrollmentData = n.GetBoolValue(); } },
+                {"keepUserData", n => { KeepUserData = n.GetBoolValue(); } },
+                {"notificationBody", n => { NotificationBody = n.GetStringValue(); } },
+                {"notificationTitle", n => { NotificationTitle = n.GetStringValue(); } },
+                {"organizationalUnitPath", n => { OrganizationalUnitPath = n.GetStringValue(); } },
+                {"persistEsimDataPlan", n => { PersistEsimDataPlan = n.GetBoolValue(); } },
             };
         }
         /// <summary>

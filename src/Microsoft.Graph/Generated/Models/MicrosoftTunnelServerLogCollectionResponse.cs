@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"endDateTime", (o,n) => { (o as MicrosoftTunnelServerLogCollectionResponse).EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"expiryDateTime", (o,n) => { (o as MicrosoftTunnelServerLogCollectionResponse).ExpiryDateTime = n.GetDateTimeOffsetValue(); } },
-                {"requestDateTime", (o,n) => { (o as MicrosoftTunnelServerLogCollectionResponse).RequestDateTime = n.GetDateTimeOffsetValue(); } },
-                {"serverId", (o,n) => { (o as MicrosoftTunnelServerLogCollectionResponse).ServerId = n.GetStringValue(); } },
-                {"sizeInBytes", (o,n) => { (o as MicrosoftTunnelServerLogCollectionResponse).SizeInBytes = n.GetLongValue(); } },
-                {"startDateTime", (o,n) => { (o as MicrosoftTunnelServerLogCollectionResponse).StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", (o,n) => { (o as MicrosoftTunnelServerLogCollectionResponse).Status = n.GetEnumValue<MicrosoftTunnelLogCollectionStatus>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"expiryDateTime", n => { ExpiryDateTime = n.GetDateTimeOffsetValue(); } },
+                {"requestDateTime", n => { RequestDateTime = n.GetDateTimeOffsetValue(); } },
+                {"serverId", n => { ServerId = n.GetStringValue(); } },
+                {"sizeInBytes", n => { SizeInBytes = n.GetLongValue(); } },
+                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                {"status", n => { Status = n.GetEnumValue<MicrosoftTunnelLogCollectionStatus>(); } },
             };
         }
         /// <summary>

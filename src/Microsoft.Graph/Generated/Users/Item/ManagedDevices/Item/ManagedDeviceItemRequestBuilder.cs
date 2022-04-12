@@ -15,6 +15,7 @@ using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.Disable;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DisableLostMode;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.EnableLostMode;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetCloudPcRemoteActionResults;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetCloudPcReviewStatus;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetFileVaultKey;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetNonCompliantSettings;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetOemWarranty;
@@ -39,6 +40,7 @@ using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RotateBitLockerKeys;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RotateFileVaultKey;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SecurityBaselineStates;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SendCustomNotificationToCompanyPortal;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SetCloudPcReviewStatus;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SetDeviceName;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ShutDown;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SyncDevice;
@@ -204,6 +206,10 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item {
         public SendCustomNotificationToCompanyPortalRequestBuilder SendCustomNotificationToCompanyPortal { get =>
             new SendCustomNotificationToCompanyPortalRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The setCloudPcReviewStatus property</summary>
+        public SetCloudPcReviewStatusRequestBuilder SetCloudPcReviewStatus { get =>
+            new SetCloudPcReviewStatusRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The setDeviceName property</summary>
         public SetDeviceNameRequestBuilder SetDeviceName { get =>
             new SetDeviceNameRequestBuilder(PathParameters, RequestAdapter);
@@ -254,7 +260,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item {
         public ManagedDeviceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/managedDevices/{managedDevice_id}{?select,expand}";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/managedDevices/{managedDevice%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -267,7 +273,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item {
         public ManagedDeviceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/managedDevices/{managedDevice_id}{?select,expand}";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/managedDevices/{managedDevice%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -365,6 +371,12 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item {
             return new GetCloudPcRemoteActionResultsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
+        /// Provides operations to call the getCloudPcReviewStatus method.
+        /// </summary>
+        public GetCloudPcReviewStatusRequestBuilder GetCloudPcReviewStatus() {
+            return new GetCloudPcReviewStatusRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>
         /// Provides operations to call the getFileVaultKey method.
         /// </summary>
         public GetFileVaultKeyRequestBuilder GetFileVaultKey() {
@@ -402,8 +414,10 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item {
         /// <summary>The managed devices associated with the user.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
     }

@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.Models.ODataErrors {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"error", (o,n) => { (o as ODataError).Error = n.GetObjectValue<MainError>(MainError.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"error", n => { Error = n.GetObjectValue<MainError>(MainError.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

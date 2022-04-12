@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.AttendanceReports.Item.At
         public CountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/app/onlineMeetings/{onlineMeeting_id}/attendanceReports/{meetingAttendanceReport_id}/attendanceRecords/$count";
+            UrlTemplate = "{+baseurl}/app/onlineMeetings/{onlineMeeting%2Did}/attendanceReports/{meetingAttendanceReport%2Did}/attendanceRecords/$count";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.AttendanceReports.Item.At
         public CountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/app/onlineMeetings/{onlineMeeting_id}/attendanceReports/{meetingAttendanceReport_id}/attendanceRecords/$count";
+            UrlTemplate = "{+baseurl}/app/onlineMeetings/{onlineMeeting%2Did}/attendanceReports/{meetingAttendanceReport%2Did}/attendanceRecords/$count";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

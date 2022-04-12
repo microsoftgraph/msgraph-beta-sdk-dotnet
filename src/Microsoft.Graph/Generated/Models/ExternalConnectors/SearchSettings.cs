@@ -26,9 +26,9 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"searchResultTemplates", (o,n) => { (o as SearchSettings).SearchResultTemplates = n.GetCollectionOfObjectValues<DisplayTemplate>(DisplayTemplate.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"searchResultTemplates", n => { SearchResultTemplates = n.GetCollectionOfObjectValues<DisplayTemplate>(DisplayTemplate.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

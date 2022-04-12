@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"reason", (o,n) => { (o as FailureInfo).Reason = n.GetStringValue(); } },
-                {"stage", (o,n) => { (o as FailureInfo).Stage = n.GetEnumValue<FailureStage>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"reason", n => { Reason = n.GetStringValue(); } },
+                {"stage", n => { Stage = n.GetEnumValue<FailureStage>(); } },
             };
         }
         /// <summary>

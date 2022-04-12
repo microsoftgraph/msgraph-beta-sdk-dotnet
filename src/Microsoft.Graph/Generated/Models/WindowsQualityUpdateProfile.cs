@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as WindowsQualityUpdateProfile).Assignments = n.GetCollectionOfObjectValues<WindowsQualityUpdateProfileAssignment>(WindowsQualityUpdateProfileAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"createdDateTime", (o,n) => { (o as WindowsQualityUpdateProfile).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deployableContentDisplayName", (o,n) => { (o as WindowsQualityUpdateProfile).DeployableContentDisplayName = n.GetStringValue(); } },
-                {"description", (o,n) => { (o as WindowsQualityUpdateProfile).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as WindowsQualityUpdateProfile).DisplayName = n.GetStringValue(); } },
-                {"expeditedUpdateSettings", (o,n) => { (o as WindowsQualityUpdateProfile).ExpeditedUpdateSettings = n.GetObjectValue<ExpeditedWindowsQualityUpdateSettings>(ExpeditedWindowsQualityUpdateSettings.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", (o,n) => { (o as WindowsQualityUpdateProfile).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"releaseDateDisplayName", (o,n) => { (o as WindowsQualityUpdateProfile).ReleaseDateDisplayName = n.GetStringValue(); } },
-                {"roleScopeTagIds", (o,n) => { (o as WindowsQualityUpdateProfile).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<WindowsQualityUpdateProfileAssignment>(WindowsQualityUpdateProfileAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"deployableContentDisplayName", n => { DeployableContentDisplayName = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"expeditedUpdateSettings", n => { ExpeditedUpdateSettings = n.GetObjectValue<ExpeditedWindowsQualityUpdateSettings>(ExpeditedWindowsQualityUpdateSettings.CreateFromDiscriminatorValue); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"releaseDateDisplayName", n => { ReleaseDateDisplayName = n.GetStringValue(); } },
+                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

@@ -20,10 +20,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"otherLabel", (o,n) => { (o as TypedEmailAddress).OtherLabel = n.GetStringValue(); } },
-                {"type", (o,n) => { (o as TypedEmailAddress).Type = n.GetEnumValue<EmailType>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"otherLabel", n => { OtherLabel = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetEnumValue<EmailType>(); } },
             };
         }
         /// <summary>

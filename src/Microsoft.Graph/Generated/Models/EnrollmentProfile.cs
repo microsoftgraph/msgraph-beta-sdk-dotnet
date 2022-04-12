@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"configurationEndpointUrl", (o,n) => { (o as EnrollmentProfile).ConfigurationEndpointUrl = n.GetStringValue(); } },
-                {"description", (o,n) => { (o as EnrollmentProfile).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as EnrollmentProfile).DisplayName = n.GetStringValue(); } },
-                {"enableAuthenticationViaCompanyPortal", (o,n) => { (o as EnrollmentProfile).EnableAuthenticationViaCompanyPortal = n.GetBoolValue(); } },
-                {"requireCompanyPortalOnSetupAssistantEnrolledDevices", (o,n) => { (o as EnrollmentProfile).RequireCompanyPortalOnSetupAssistantEnrolledDevices = n.GetBoolValue(); } },
-                {"requiresUserAuthentication", (o,n) => { (o as EnrollmentProfile).RequiresUserAuthentication = n.GetBoolValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"configurationEndpointUrl", n => { ConfigurationEndpointUrl = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"enableAuthenticationViaCompanyPortal", n => { EnableAuthenticationViaCompanyPortal = n.GetBoolValue(); } },
+                {"requireCompanyPortalOnSetupAssistantEnrolledDevices", n => { RequireCompanyPortalOnSetupAssistantEnrolledDevices = n.GetBoolValue(); } },
+                {"requiresUserAuthentication", n => { RequiresUserAuthentication = n.GetBoolValue(); } },
             };
         }
         /// <summary>

@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"deviceName", (o,n) => { (o as WindowsManagementAppHealthState).DeviceName = n.GetStringValue(); } },
-                {"deviceOSVersion", (o,n) => { (o as WindowsManagementAppHealthState).DeviceOSVersion = n.GetStringValue(); } },
-                {"healthState", (o,n) => { (o as WindowsManagementAppHealthState).HealthState = n.GetEnumValue<HealthState>(); } },
-                {"installedVersion", (o,n) => { (o as WindowsManagementAppHealthState).InstalledVersion = n.GetStringValue(); } },
-                {"lastCheckInDateTime", (o,n) => { (o as WindowsManagementAppHealthState).LastCheckInDateTime = n.GetDateTimeOffsetValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
+                {"deviceOSVersion", n => { DeviceOSVersion = n.GetStringValue(); } },
+                {"healthState", n => { HealthState = n.GetEnumValue<HealthState>(); } },
+                {"installedVersion", n => { InstalledVersion = n.GetStringValue(); } },
+                {"lastCheckInDateTime", n => { LastCheckInDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

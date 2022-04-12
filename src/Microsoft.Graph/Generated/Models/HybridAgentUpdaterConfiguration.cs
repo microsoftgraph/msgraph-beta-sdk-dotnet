@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"allowUpdateConfigurationOverride", (o,n) => { (o as HybridAgentUpdaterConfiguration).AllowUpdateConfigurationOverride = n.GetBoolValue(); } },
-                {"deferUpdateDateTime", (o,n) => { (o as HybridAgentUpdaterConfiguration).DeferUpdateDateTime = n.GetDateTimeOffsetValue(); } },
-                {"updateWindow", (o,n) => { (o as HybridAgentUpdaterConfiguration).UpdateWindow = n.GetObjectValue<Microsoft.Graph.Beta.Models.UpdateWindow>(Microsoft.Graph.Beta.Models.UpdateWindow.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"allowUpdateConfigurationOverride", n => { AllowUpdateConfigurationOverride = n.GetBoolValue(); } },
+                {"deferUpdateDateTime", n => { DeferUpdateDateTime = n.GetDateTimeOffsetValue(); } },
+                {"updateWindow", n => { UpdateWindow = n.GetObjectValue<Microsoft.Graph.Beta.Models.UpdateWindow>(Microsoft.Graph.Beta.Models.UpdateWindow.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

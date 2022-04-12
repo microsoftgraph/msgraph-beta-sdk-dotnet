@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.Instances.Item.ExceptionOccurrence
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"attachmentItem", (o,n) => { (o as CreateUploadSessionRequestBody).AttachmentItem = n.GetObjectValue<Microsoft.Graph.Beta.Models.AttachmentItem>(Microsoft.Graph.Beta.Models.AttachmentItem.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"attachmentItem", n => { AttachmentItem = n.GetObjectValue<Microsoft.Graph.Beta.Models.AttachmentItem>(Microsoft.Graph.Beta.Models.AttachmentItem.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

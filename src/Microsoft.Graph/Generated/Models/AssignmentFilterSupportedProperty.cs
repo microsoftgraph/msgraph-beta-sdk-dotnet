@@ -37,14 +37,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"dataType", (o,n) => { (o as AssignmentFilterSupportedProperty).DataType = n.GetStringValue(); } },
-                {"isCollection", (o,n) => { (o as AssignmentFilterSupportedProperty).IsCollection = n.GetBoolValue(); } },
-                {"name", (o,n) => { (o as AssignmentFilterSupportedProperty).Name = n.GetStringValue(); } },
-                {"propertyRegexConstraint", (o,n) => { (o as AssignmentFilterSupportedProperty).PropertyRegexConstraint = n.GetStringValue(); } },
-                {"supportedOperators", (o,n) => { (o as AssignmentFilterSupportedProperty).SupportedOperators = n.GetCollectionOfEnumValues<AssignmentFilterOperator>().ToList(); } },
-                {"supportedValues", (o,n) => { (o as AssignmentFilterSupportedProperty).SupportedValues = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"dataType", n => { DataType = n.GetStringValue(); } },
+                {"isCollection", n => { IsCollection = n.GetBoolValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"propertyRegexConstraint", n => { PropertyRegexConstraint = n.GetStringValue(); } },
+                {"supportedOperators", n => { SupportedOperators = n.GetCollectionOfEnumValues<AssignmentFilterOperator>().ToList(); } },
+                {"supportedValues", n => { SupportedValues = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

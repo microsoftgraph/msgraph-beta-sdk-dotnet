@@ -42,21 +42,21 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"app", (o,n) => { (o as MobileAppInstallStatus).App = n.GetObjectValue<MobileApp>(MobileApp.CreateFromDiscriminatorValue); } },
-                {"deviceId", (o,n) => { (o as MobileAppInstallStatus).DeviceId = n.GetStringValue(); } },
-                {"deviceName", (o,n) => { (o as MobileAppInstallStatus).DeviceName = n.GetStringValue(); } },
-                {"displayVersion", (o,n) => { (o as MobileAppInstallStatus).DisplayVersion = n.GetStringValue(); } },
-                {"errorCode", (o,n) => { (o as MobileAppInstallStatus).ErrorCode = n.GetIntValue(); } },
-                {"installState", (o,n) => { (o as MobileAppInstallStatus).InstallState = n.GetEnumValue<ResultantAppState>(); } },
-                {"installStateDetail", (o,n) => { (o as MobileAppInstallStatus).InstallStateDetail = n.GetEnumValue<ResultantAppStateDetail>(); } },
-                {"lastSyncDateTime", (o,n) => { (o as MobileAppInstallStatus).LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"mobileAppInstallStatusValue", (o,n) => { (o as MobileAppInstallStatus).MobileAppInstallStatusValue = n.GetEnumValue<ResultantAppState>(); } },
-                {"osDescription", (o,n) => { (o as MobileAppInstallStatus).OsDescription = n.GetStringValue(); } },
-                {"osVersion", (o,n) => { (o as MobileAppInstallStatus).OsVersion = n.GetStringValue(); } },
-                {"userName", (o,n) => { (o as MobileAppInstallStatus).UserName = n.GetStringValue(); } },
-                {"userPrincipalName", (o,n) => { (o as MobileAppInstallStatus).UserPrincipalName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"app", n => { App = n.GetObjectValue<MobileApp>(MobileApp.CreateFromDiscriminatorValue); } },
+                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
+                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
+                {"displayVersion", n => { DisplayVersion = n.GetStringValue(); } },
+                {"errorCode", n => { ErrorCode = n.GetIntValue(); } },
+                {"installState", n => { InstallState = n.GetEnumValue<ResultantAppState>(); } },
+                {"installStateDetail", n => { InstallStateDetail = n.GetEnumValue<ResultantAppStateDetail>(); } },
+                {"lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                {"mobileAppInstallStatusValue", n => { MobileAppInstallStatusValue = n.GetEnumValue<ResultantAppState>(); } },
+                {"osDescription", n => { OsDescription = n.GetStringValue(); } },
+                {"osVersion", n => { OsVersion = n.GetStringValue(); } },
+                {"userName", n => { UserName = n.GetStringValue(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -42,17 +42,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"permanentFail", (o,n) => { (o as RoleSuccessStatistics).PermanentFail = n.GetLongValue(); } },
-                {"permanentSuccess", (o,n) => { (o as RoleSuccessStatistics).PermanentSuccess = n.GetLongValue(); } },
-                {"removeFail", (o,n) => { (o as RoleSuccessStatistics).RemoveFail = n.GetLongValue(); } },
-                {"removeSuccess", (o,n) => { (o as RoleSuccessStatistics).RemoveSuccess = n.GetLongValue(); } },
-                {"roleId", (o,n) => { (o as RoleSuccessStatistics).RoleId = n.GetStringValue(); } },
-                {"roleName", (o,n) => { (o as RoleSuccessStatistics).RoleName = n.GetStringValue(); } },
-                {"temporaryFail", (o,n) => { (o as RoleSuccessStatistics).TemporaryFail = n.GetLongValue(); } },
-                {"temporarySuccess", (o,n) => { (o as RoleSuccessStatistics).TemporarySuccess = n.GetLongValue(); } },
-                {"unknownFail", (o,n) => { (o as RoleSuccessStatistics).UnknownFail = n.GetLongValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"permanentFail", n => { PermanentFail = n.GetLongValue(); } },
+                {"permanentSuccess", n => { PermanentSuccess = n.GetLongValue(); } },
+                {"removeFail", n => { RemoveFail = n.GetLongValue(); } },
+                {"removeSuccess", n => { RemoveSuccess = n.GetLongValue(); } },
+                {"roleId", n => { RoleId = n.GetStringValue(); } },
+                {"roleName", n => { RoleName = n.GetStringValue(); } },
+                {"temporaryFail", n => { TemporaryFail = n.GetLongValue(); } },
+                {"temporarySuccess", n => { TemporarySuccess = n.GetLongValue(); } },
+                {"unknownFail", n => { UnknownFail = n.GetLongValue(); } },
             };
         }
         /// <summary>

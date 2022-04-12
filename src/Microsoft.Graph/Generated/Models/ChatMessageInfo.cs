@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"body", (o,n) => { (o as ChatMessageInfo).Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", (o,n) => { (o as ChatMessageInfo).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"eventDetail", (o,n) => { (o as ChatMessageInfo).EventDetail = n.GetObjectValue<EventMessageDetail>(EventMessageDetail.CreateFromDiscriminatorValue); } },
-                {"from", (o,n) => { (o as ChatMessageInfo).From = n.GetObjectValue<ChatMessageFromIdentitySet>(ChatMessageFromIdentitySet.CreateFromDiscriminatorValue); } },
-                {"isDeleted", (o,n) => { (o as ChatMessageInfo).IsDeleted = n.GetBoolValue(); } },
-                {"messageType", (o,n) => { (o as ChatMessageInfo).MessageType = n.GetEnumValue<ChatMessageType>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"body", n => { Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"eventDetail", n => { EventDetail = n.GetObjectValue<EventMessageDetail>(EventMessageDetail.CreateFromDiscriminatorValue); } },
+                {"from", n => { From = n.GetObjectValue<ChatMessageFromIdentitySet>(ChatMessageFromIdentitySet.CreateFromDiscriminatorValue); } },
+                {"isDeleted", n => { IsDeleted = n.GetBoolValue(); } },
+                {"messageType", n => { MessageType = n.GetEnumValue<ChatMessageType>(); } },
             };
         }
         /// <summary>

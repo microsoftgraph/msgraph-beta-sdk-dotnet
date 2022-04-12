@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"defaultMicrophone", (o,n) => { (o as TeamworkMicrophoneConfiguration).DefaultMicrophone = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
-                {"isMicrophoneOptional", (o,n) => { (o as TeamworkMicrophoneConfiguration).IsMicrophoneOptional = n.GetBoolValue(); } },
-                {"microphones", (o,n) => { (o as TeamworkMicrophoneConfiguration).Microphones = n.GetCollectionOfObjectValues<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"defaultMicrophone", n => { DefaultMicrophone = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
+                {"isMicrophoneOptional", n => { IsMicrophoneOptional = n.GetBoolValue(); } },
+                {"microphones", n => { Microphones = n.GetCollectionOfObjectValues<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

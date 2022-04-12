@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"isTranscriptionShown", (o,n) => { (o as Media).IsTranscriptionShown = n.GetBoolValue(); } },
-                {"mediaSource", (o,n) => { (o as Media).MediaSource = n.GetObjectValue<Microsoft.Graph.Beta.Models.MediaSource>(Microsoft.Graph.Beta.Models.MediaSource.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"isTranscriptionShown", n => { IsTranscriptionShown = n.GetBoolValue(); } },
+                {"mediaSource", n => { MediaSource = n.GetObjectValue<Microsoft.Graph.Beta.Models.MediaSource>(Microsoft.Graph.Beta.Models.MediaSource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

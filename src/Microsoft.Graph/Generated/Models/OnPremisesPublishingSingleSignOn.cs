@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"kerberosSignOnSettings", (o,n) => { (o as OnPremisesPublishingSingleSignOn).KerberosSignOnSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.KerberosSignOnSettings>(Microsoft.Graph.Beta.Models.KerberosSignOnSettings.CreateFromDiscriminatorValue); } },
-                {"singleSignOnMode", (o,n) => { (o as OnPremisesPublishingSingleSignOn).SingleSignOnMode = n.GetEnumValue<SingleSignOnMode>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"kerberosSignOnSettings", n => { KerberosSignOnSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.KerberosSignOnSettings>(Microsoft.Graph.Beta.Models.KerberosSignOnSettings.CreateFromDiscriminatorValue); } },
+                {"singleSignOnMode", n => { SingleSignOnMode = n.GetEnumValue<SingleSignOnMode>(); } },
             };
         }
         /// <summary>

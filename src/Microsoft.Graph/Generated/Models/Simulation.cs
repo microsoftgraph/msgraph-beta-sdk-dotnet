@@ -46,23 +46,23 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"attackTechnique", (o,n) => { (o as Simulation).AttackTechnique = n.GetEnumValue<SimulationAttackTechnique>(); } },
-                {"attackType", (o,n) => { (o as Simulation).AttackType = n.GetEnumValue<SimulationAttackType>(); } },
-                {"automationId", (o,n) => { (o as Simulation).AutomationId = n.GetStringValue(); } },
-                {"completionDateTime", (o,n) => { (o as Simulation).CompletionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"createdBy", (o,n) => { (o as Simulation).CreatedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", (o,n) => { (o as Simulation).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as Simulation).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as Simulation).DisplayName = n.GetStringValue(); } },
-                {"isAutomated", (o,n) => { (o as Simulation).IsAutomated = n.GetBoolValue(); } },
-                {"lastModifiedBy", (o,n) => { (o as Simulation).LastModifiedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", (o,n) => { (o as Simulation).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"launchDateTime", (o,n) => { (o as Simulation).LaunchDateTime = n.GetDateTimeOffsetValue(); } },
-                {"payloadDeliveryPlatform", (o,n) => { (o as Simulation).PayloadDeliveryPlatform = n.GetEnumValue<PayloadDeliveryPlatform>(); } },
-                {"report", (o,n) => { (o as Simulation).Report = n.GetObjectValue<SimulationReport>(SimulationReport.CreateFromDiscriminatorValue); } },
-                {"status", (o,n) => { (o as Simulation).Status = n.GetEnumValue<SimulationStatus>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"attackTechnique", n => { AttackTechnique = n.GetEnumValue<SimulationAttackTechnique>(); } },
+                {"attackType", n => { AttackType = n.GetEnumValue<SimulationAttackType>(); } },
+                {"automationId", n => { AutomationId = n.GetStringValue(); } },
+                {"completionDateTime", n => { CompletionDateTime = n.GetDateTimeOffsetValue(); } },
+                {"createdBy", n => { CreatedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"isAutomated", n => { IsAutomated = n.GetBoolValue(); } },
+                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"launchDateTime", n => { LaunchDateTime = n.GetDateTimeOffsetValue(); } },
+                {"payloadDeliveryPlatform", n => { PayloadDeliveryPlatform = n.GetEnumValue<PayloadDeliveryPlatform>(); } },
+                {"report", n => { Report = n.GetObjectValue<SimulationReport>(SimulationReport.CreateFromDiscriminatorValue); } },
+                {"status", n => { Status = n.GetEnumValue<SimulationStatus>(); } },
             };
         }
         /// <summary>

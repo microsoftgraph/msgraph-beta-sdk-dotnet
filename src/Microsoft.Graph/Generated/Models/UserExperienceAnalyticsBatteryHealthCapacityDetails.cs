@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activeDevices", (o,n) => { (o as UserExperienceAnalyticsBatteryHealthCapacityDetails).ActiveDevices = n.GetIntValue(); } },
-                {"batteryCapacityFair", (o,n) => { (o as UserExperienceAnalyticsBatteryHealthCapacityDetails).BatteryCapacityFair = n.GetIntValue(); } },
-                {"batteryCapacityGood", (o,n) => { (o as UserExperienceAnalyticsBatteryHealthCapacityDetails).BatteryCapacityGood = n.GetIntValue(); } },
-                {"batteryCapacityPoor", (o,n) => { (o as UserExperienceAnalyticsBatteryHealthCapacityDetails).BatteryCapacityPoor = n.GetIntValue(); } },
-                {"lastRefreshedDateTime", (o,n) => { (o as UserExperienceAnalyticsBatteryHealthCapacityDetails).LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activeDevices", n => { ActiveDevices = n.GetIntValue(); } },
+                {"batteryCapacityFair", n => { BatteryCapacityFair = n.GetIntValue(); } },
+                {"batteryCapacityGood", n => { BatteryCapacityGood = n.GetIntValue(); } },
+                {"batteryCapacityPoor", n => { BatteryCapacityPoor = n.GetIntValue(); } },
+                {"lastRefreshedDateTime", n => { LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

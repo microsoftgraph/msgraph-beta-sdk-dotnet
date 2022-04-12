@@ -22,11 +22,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"alternateNotificationEmails", (o,n) => { (o as GroupLifecyclePolicy).AlternateNotificationEmails = n.GetStringValue(); } },
-                {"groupLifetimeInDays", (o,n) => { (o as GroupLifecyclePolicy).GroupLifetimeInDays = n.GetIntValue(); } },
-                {"managedGroupTypes", (o,n) => { (o as GroupLifecyclePolicy).ManagedGroupTypes = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"alternateNotificationEmails", n => { AlternateNotificationEmails = n.GetStringValue(); } },
+                {"groupLifetimeInDays", n => { GroupLifetimeInDays = n.GetIntValue(); } },
+                {"managedGroupTypes", n => { ManagedGroupTypes = n.GetStringValue(); } },
             };
         }
         /// <summary>

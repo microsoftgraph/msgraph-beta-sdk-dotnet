@@ -40,16 +40,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"color", (o,n) => { (o as WorkbookFilterCriteria).Color = n.GetStringValue(); } },
-                {"criterion1", (o,n) => { (o as WorkbookFilterCriteria).Criterion1 = n.GetStringValue(); } },
-                {"criterion2", (o,n) => { (o as WorkbookFilterCriteria).Criterion2 = n.GetStringValue(); } },
-                {"dynamicCriteria", (o,n) => { (o as WorkbookFilterCriteria).DynamicCriteria = n.GetStringValue(); } },
-                {"filterOn", (o,n) => { (o as WorkbookFilterCriteria).FilterOn = n.GetStringValue(); } },
-                {"icon", (o,n) => { (o as WorkbookFilterCriteria).Icon = n.GetObjectValue<WorkbookIcon>(WorkbookIcon.CreateFromDiscriminatorValue); } },
-                {"operator", (o,n) => { (o as WorkbookFilterCriteria).Operator = n.GetStringValue(); } },
-                {"values", (o,n) => { (o as WorkbookFilterCriteria).Values = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"color", n => { Color = n.GetStringValue(); } },
+                {"criterion1", n => { Criterion1 = n.GetStringValue(); } },
+                {"criterion2", n => { Criterion2 = n.GetStringValue(); } },
+                {"dynamicCriteria", n => { DynamicCriteria = n.GetStringValue(); } },
+                {"filterOn", n => { FilterOn = n.GetStringValue(); } },
+                {"icon", n => { Icon = n.GetObjectValue<WorkbookIcon>(WorkbookIcon.CreateFromDiscriminatorValue); } },
+                {"operator", n => { Operator = n.GetStringValue(); } },
+                {"values", n => { Values = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

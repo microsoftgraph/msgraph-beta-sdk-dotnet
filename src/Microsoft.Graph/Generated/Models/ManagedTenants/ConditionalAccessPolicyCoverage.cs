@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"conditionalAccessPolicyState", (o,n) => { (o as ConditionalAccessPolicyCoverage).ConditionalAccessPolicyState = n.GetStringValue(); } },
-                {"latestPolicyModifiedDateTime", (o,n) => { (o as ConditionalAccessPolicyCoverage).LatestPolicyModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"requiresDeviceCompliance", (o,n) => { (o as ConditionalAccessPolicyCoverage).RequiresDeviceCompliance = n.GetBoolValue(); } },
-                {"tenantDisplayName", (o,n) => { (o as ConditionalAccessPolicyCoverage).TenantDisplayName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"conditionalAccessPolicyState", n => { ConditionalAccessPolicyState = n.GetStringValue(); } },
+                {"latestPolicyModifiedDateTime", n => { LatestPolicyModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"requiresDeviceCompliance", n => { RequiresDeviceCompliance = n.GetBoolValue(); } },
+                {"tenantDisplayName", n => { TenantDisplayName = n.GetStringValue(); } },
             };
         }
         /// <summary>

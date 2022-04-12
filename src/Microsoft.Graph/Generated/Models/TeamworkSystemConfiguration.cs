@@ -48,20 +48,20 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"dateTimeConfiguration", (o,n) => { (o as TeamworkSystemConfiguration).DateTimeConfiguration = n.GetObjectValue<TeamworkDateTimeConfiguration>(TeamworkDateTimeConfiguration.CreateFromDiscriminatorValue); } },
-                {"defaultPassword", (o,n) => { (o as TeamworkSystemConfiguration).DefaultPassword = n.GetStringValue(); } },
-                {"deviceLockTimeout", (o,n) => { (o as TeamworkSystemConfiguration).DeviceLockTimeout = n.GetTimeSpanValue(); } },
-                {"isDeviceLockEnabled", (o,n) => { (o as TeamworkSystemConfiguration).IsDeviceLockEnabled = n.GetBoolValue(); } },
-                {"isLoggingEnabled", (o,n) => { (o as TeamworkSystemConfiguration).IsLoggingEnabled = n.GetBoolValue(); } },
-                {"isPowerSavingEnabled", (o,n) => { (o as TeamworkSystemConfiguration).IsPowerSavingEnabled = n.GetBoolValue(); } },
-                {"isScreenCaptureEnabled", (o,n) => { (o as TeamworkSystemConfiguration).IsScreenCaptureEnabled = n.GetBoolValue(); } },
-                {"isSilentModeEnabled", (o,n) => { (o as TeamworkSystemConfiguration).IsSilentModeEnabled = n.GetBoolValue(); } },
-                {"language", (o,n) => { (o as TeamworkSystemConfiguration).Language = n.GetStringValue(); } },
-                {"lockPin", (o,n) => { (o as TeamworkSystemConfiguration).LockPin = n.GetStringValue(); } },
-                {"loggingLevel", (o,n) => { (o as TeamworkSystemConfiguration).LoggingLevel = n.GetStringValue(); } },
-                {"networkConfiguration", (o,n) => { (o as TeamworkSystemConfiguration).NetworkConfiguration = n.GetObjectValue<TeamworkNetworkConfiguration>(TeamworkNetworkConfiguration.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"dateTimeConfiguration", n => { DateTimeConfiguration = n.GetObjectValue<TeamworkDateTimeConfiguration>(TeamworkDateTimeConfiguration.CreateFromDiscriminatorValue); } },
+                {"defaultPassword", n => { DefaultPassword = n.GetStringValue(); } },
+                {"deviceLockTimeout", n => { DeviceLockTimeout = n.GetTimeSpanValue(); } },
+                {"isDeviceLockEnabled", n => { IsDeviceLockEnabled = n.GetBoolValue(); } },
+                {"isLoggingEnabled", n => { IsLoggingEnabled = n.GetBoolValue(); } },
+                {"isPowerSavingEnabled", n => { IsPowerSavingEnabled = n.GetBoolValue(); } },
+                {"isScreenCaptureEnabled", n => { IsScreenCaptureEnabled = n.GetBoolValue(); } },
+                {"isSilentModeEnabled", n => { IsSilentModeEnabled = n.GetBoolValue(); } },
+                {"language", n => { Language = n.GetStringValue(); } },
+                {"lockPin", n => { LockPin = n.GetStringValue(); } },
+                {"loggingLevel", n => { LoggingLevel = n.GetStringValue(); } },
+                {"networkConfiguration", n => { NetworkConfiguration = n.GetObjectValue<TeamworkNetworkConfiguration>(TeamworkNetworkConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

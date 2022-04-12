@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as DeviceManagementResourceAccessProfileBase).Assignments = n.GetCollectionOfObjectValues<DeviceManagementResourceAccessProfileAssignment>(DeviceManagementResourceAccessProfileAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"creationDateTime", (o,n) => { (o as DeviceManagementResourceAccessProfileBase).CreationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as DeviceManagementResourceAccessProfileBase).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as DeviceManagementResourceAccessProfileBase).DisplayName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as DeviceManagementResourceAccessProfileBase).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"roleScopeTagIds", (o,n) => { (o as DeviceManagementResourceAccessProfileBase).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"version", (o,n) => { (o as DeviceManagementResourceAccessProfileBase).Version = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<DeviceManagementResourceAccessProfileAssignment>(DeviceManagementResourceAccessProfileAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"version", n => { Version = n.GetIntValue(); } },
             };
         }
         /// <summary>

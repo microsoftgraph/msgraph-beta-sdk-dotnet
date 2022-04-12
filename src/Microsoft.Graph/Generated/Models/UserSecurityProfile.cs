@@ -36,18 +36,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accounts", (o,n) => { (o as UserSecurityProfile).Accounts = n.GetCollectionOfObjectValues<UserAccount>(UserAccount.CreateFromDiscriminatorValue).ToList(); } },
-                {"azureSubscriptionId", (o,n) => { (o as UserSecurityProfile).AzureSubscriptionId = n.GetStringValue(); } },
-                {"azureTenantId", (o,n) => { (o as UserSecurityProfile).AzureTenantId = n.GetStringValue(); } },
-                {"createdDateTime", (o,n) => { (o as UserSecurityProfile).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", (o,n) => { (o as UserSecurityProfile).DisplayName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as UserSecurityProfile).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"riskScore", (o,n) => { (o as UserSecurityProfile).RiskScore = n.GetStringValue(); } },
-                {"tags", (o,n) => { (o as UserSecurityProfile).Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"userPrincipalName", (o,n) => { (o as UserSecurityProfile).UserPrincipalName = n.GetStringValue(); } },
-                {"vendorInformation", (o,n) => { (o as UserSecurityProfile).VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"accounts", n => { Accounts = n.GetCollectionOfObjectValues<UserAccount>(UserAccount.CreateFromDiscriminatorValue).ToList(); } },
+                {"azureSubscriptionId", n => { AzureSubscriptionId = n.GetStringValue(); } },
+                {"azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"riskScore", n => { RiskScore = n.GetStringValue(); } },
+                {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                {"vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

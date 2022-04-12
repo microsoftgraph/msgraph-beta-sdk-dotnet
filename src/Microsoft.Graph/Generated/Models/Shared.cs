@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"owner", (o,n) => { (o as Shared).Owner = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"scope", (o,n) => { (o as Shared).Scope = n.GetStringValue(); } },
-                {"sharedBy", (o,n) => { (o as Shared).SharedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"sharedDateTime", (o,n) => { (o as Shared).SharedDateTime = n.GetDateTimeOffsetValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"owner", n => { Owner = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"scope", n => { Scope = n.GetStringValue(); } },
+                {"sharedBy", n => { SharedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"sharedDateTime", n => { SharedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

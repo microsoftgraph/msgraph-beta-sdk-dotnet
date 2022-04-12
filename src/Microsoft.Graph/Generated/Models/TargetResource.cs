@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"displayName", (o,n) => { (o as TargetResource).DisplayName = n.GetStringValue(); } },
-                {"groupType", (o,n) => { (o as TargetResource).GroupType = n.GetEnumValue<GroupType>(); } },
-                {"id", (o,n) => { (o as TargetResource).Id = n.GetStringValue(); } },
-                {"modifiedProperties", (o,n) => { (o as TargetResource).ModifiedProperties = n.GetCollectionOfObjectValues<ModifiedProperty>(ModifiedProperty.CreateFromDiscriminatorValue).ToList(); } },
-                {"type", (o,n) => { (o as TargetResource).Type = n.GetStringValue(); } },
-                {"userPrincipalName", (o,n) => { (o as TargetResource).UserPrincipalName = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"groupType", n => { GroupType = n.GetEnumValue<GroupType>(); } },
+                {"id", n => { Id = n.GetStringValue(); } },
+                {"modifiedProperties", n => { ModifiedProperties = n.GetCollectionOfObjectValues<ModifiedProperty>(ModifiedProperty.CreateFromDiscriminatorValue).ToList(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"expirationDateTime", (o,n) => { (o as DeviceManagementCachedReportConfiguration).ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"filter", (o,n) => { (o as DeviceManagementCachedReportConfiguration).Filter = n.GetStringValue(); } },
-                {"lastRefreshDateTime", (o,n) => { (o as DeviceManagementCachedReportConfiguration).LastRefreshDateTime = n.GetDateTimeOffsetValue(); } },
-                {"metadata", (o,n) => { (o as DeviceManagementCachedReportConfiguration).Metadata = n.GetStringValue(); } },
-                {"orderBy", (o,n) => { (o as DeviceManagementCachedReportConfiguration).OrderBy = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"reportName", (o,n) => { (o as DeviceManagementCachedReportConfiguration).ReportName = n.GetStringValue(); } },
-                {"select", (o,n) => { (o as DeviceManagementCachedReportConfiguration).Select = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"status", (o,n) => { (o as DeviceManagementCachedReportConfiguration).Status = n.GetEnumValue<DeviceManagementReportStatus>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"filter", n => { Filter = n.GetStringValue(); } },
+                {"lastRefreshDateTime", n => { LastRefreshDateTime = n.GetDateTimeOffsetValue(); } },
+                {"metadata", n => { Metadata = n.GetStringValue(); } },
+                {"orderBy", n => { OrderBy = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"reportName", n => { ReportName = n.GetStringValue(); } },
+                {"select", n => { Select = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"status", n => { Status = n.GetEnumValue<DeviceManagementReportStatus>(); } },
             };
         }
         /// <summary>

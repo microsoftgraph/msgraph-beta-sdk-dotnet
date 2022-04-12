@@ -52,26 +52,26 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessTypes", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).AccessTypes = n.GetEnumValue<DeviceManagementConfigurationSettingAccessTypes>(); } },
-                {"applicability", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).Applicability = n.GetObjectValue<DeviceManagementConfigurationSettingApplicability>(DeviceManagementConfigurationSettingApplicability.CreateFromDiscriminatorValue); } },
-                {"baseUri", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).BaseUri = n.GetStringValue(); } },
-                {"categoryId", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).CategoryId = n.GetStringValue(); } },
-                {"description", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).DisplayName = n.GetStringValue(); } },
-                {"helpText", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).HelpText = n.GetStringValue(); } },
-                {"infoUrls", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).InfoUrls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"keywords", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).Keywords = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"name", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).Name = n.GetStringValue(); } },
-                {"occurrence", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).Occurrence = n.GetObjectValue<DeviceManagementConfigurationSettingOccurrence>(DeviceManagementConfigurationSettingOccurrence.CreateFromDiscriminatorValue); } },
-                {"offsetUri", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).OffsetUri = n.GetStringValue(); } },
-                {"referredSettingInformationList", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).ReferredSettingInformationList = n.GetCollectionOfObjectValues<DeviceManagementConfigurationReferredSettingInformation>(DeviceManagementConfigurationReferredSettingInformation.CreateFromDiscriminatorValue).ToList(); } },
-                {"rootDefinitionId", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).RootDefinitionId = n.GetStringValue(); } },
-                {"settingUsage", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).SettingUsage = n.GetEnumValue<DeviceManagementConfigurationSettingUsage>(); } },
-                {"uxBehavior", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).UxBehavior = n.GetEnumValue<DeviceManagementConfigurationControlType>(); } },
-                {"version", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).Version = n.GetStringValue(); } },
-                {"visibility", (o,n) => { (o as DeviceManagementConfigurationSettingDefinition).Visibility = n.GetEnumValue<DeviceManagementConfigurationSettingVisibility>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"accessTypes", n => { AccessTypes = n.GetEnumValue<DeviceManagementConfigurationSettingAccessTypes>(); } },
+                {"applicability", n => { Applicability = n.GetObjectValue<DeviceManagementConfigurationSettingApplicability>(DeviceManagementConfigurationSettingApplicability.CreateFromDiscriminatorValue); } },
+                {"baseUri", n => { BaseUri = n.GetStringValue(); } },
+                {"categoryId", n => { CategoryId = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"helpText", n => { HelpText = n.GetStringValue(); } },
+                {"infoUrls", n => { InfoUrls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"occurrence", n => { Occurrence = n.GetObjectValue<DeviceManagementConfigurationSettingOccurrence>(DeviceManagementConfigurationSettingOccurrence.CreateFromDiscriminatorValue); } },
+                {"offsetUri", n => { OffsetUri = n.GetStringValue(); } },
+                {"referredSettingInformationList", n => { ReferredSettingInformationList = n.GetCollectionOfObjectValues<DeviceManagementConfigurationReferredSettingInformation>(DeviceManagementConfigurationReferredSettingInformation.CreateFromDiscriminatorValue).ToList(); } },
+                {"rootDefinitionId", n => { RootDefinitionId = n.GetStringValue(); } },
+                {"settingUsage", n => { SettingUsage = n.GetEnumValue<DeviceManagementConfigurationSettingUsage>(); } },
+                {"uxBehavior", n => { UxBehavior = n.GetEnumValue<DeviceManagementConfigurationControlType>(); } },
+                {"version", n => { Version = n.GetStringValue(); } },
+                {"visibility", n => { Visibility = n.GetEnumValue<DeviceManagementConfigurationSettingVisibility>(); } },
             };
         }
         /// <summary>

@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activeDurationSeconds", (o,n) => { (o as ActivityHistoryItem).ActiveDurationSeconds = n.GetIntValue(); } },
-                {"activity", (o,n) => { (o as ActivityHistoryItem).Activity = n.GetObjectValue<UserActivity>(UserActivity.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", (o,n) => { (o as ActivityHistoryItem).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"expirationDateTime", (o,n) => { (o as ActivityHistoryItem).ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastActiveDateTime", (o,n) => { (o as ActivityHistoryItem).LastActiveDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as ActivityHistoryItem).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"startedDateTime", (o,n) => { (o as ActivityHistoryItem).StartedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", (o,n) => { (o as ActivityHistoryItem).Status = n.GetEnumValue<Status>(); } },
-                {"userTimezone", (o,n) => { (o as ActivityHistoryItem).UserTimezone = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activeDurationSeconds", n => { ActiveDurationSeconds = n.GetIntValue(); } },
+                {"activity", n => { Activity = n.GetObjectValue<UserActivity>(UserActivity.CreateFromDiscriminatorValue); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastActiveDateTime", n => { LastActiveDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"status", n => { Status = n.GetEnumValue<Status>(); } },
+                {"userTimezone", n => { UserTimezone = n.GetStringValue(); } },
             };
         }
         /// <summary>

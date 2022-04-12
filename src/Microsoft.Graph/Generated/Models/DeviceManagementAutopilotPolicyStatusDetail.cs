@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"complianceStatus", (o,n) => { (o as DeviceManagementAutopilotPolicyStatusDetail).ComplianceStatus = n.GetEnumValue<DeviceManagementAutopilotPolicyComplianceStatus>(); } },
-                {"displayName", (o,n) => { (o as DeviceManagementAutopilotPolicyStatusDetail).DisplayName = n.GetStringValue(); } },
-                {"errorCode", (o,n) => { (o as DeviceManagementAutopilotPolicyStatusDetail).ErrorCode = n.GetIntValue(); } },
-                {"lastReportedDateTime", (o,n) => { (o as DeviceManagementAutopilotPolicyStatusDetail).LastReportedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"policyType", (o,n) => { (o as DeviceManagementAutopilotPolicyStatusDetail).PolicyType = n.GetEnumValue<DeviceManagementAutopilotPolicyType>(); } },
-                {"trackedOnEnrollmentStatus", (o,n) => { (o as DeviceManagementAutopilotPolicyStatusDetail).TrackedOnEnrollmentStatus = n.GetBoolValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"complianceStatus", n => { ComplianceStatus = n.GetEnumValue<DeviceManagementAutopilotPolicyComplianceStatus>(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"errorCode", n => { ErrorCode = n.GetIntValue(); } },
+                {"lastReportedDateTime", n => { LastReportedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"policyType", n => { PolicyType = n.GetEnumValue<DeviceManagementAutopilotPolicyType>(); } },
+                {"trackedOnEnrollmentStatus", n => { TrackedOnEnrollmentStatus = n.GetBoolValue(); } },
             };
         }
         /// <summary>

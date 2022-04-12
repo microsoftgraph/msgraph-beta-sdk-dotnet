@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"attendanceRecords", (o,n) => { (o as MeetingAttendanceReport).AttendanceRecords = n.GetCollectionOfObjectValues<AttendanceRecord>(AttendanceRecord.CreateFromDiscriminatorValue).ToList(); } },
-                {"meetingEndDateTime", (o,n) => { (o as MeetingAttendanceReport).MeetingEndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"meetingStartDateTime", (o,n) => { (o as MeetingAttendanceReport).MeetingStartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"totalParticipantCount", (o,n) => { (o as MeetingAttendanceReport).TotalParticipantCount = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"attendanceRecords", n => { AttendanceRecords = n.GetCollectionOfObjectValues<AttendanceRecord>(AttendanceRecord.CreateFromDiscriminatorValue).ToList(); } },
+                {"meetingEndDateTime", n => { MeetingEndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"meetingStartDateTime", n => { MeetingStartDateTime = n.GetDateTimeOffsetValue(); } },
+                {"totalParticipantCount", n => { TotalParticipantCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

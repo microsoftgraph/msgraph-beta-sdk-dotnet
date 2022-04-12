@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appDisplayName", (o,n) => { (o as UserExperienceAnalyticsAppHealthDevicePerformanceDetails).AppDisplayName = n.GetStringValue(); } },
-                {"appPublisher", (o,n) => { (o as UserExperienceAnalyticsAppHealthDevicePerformanceDetails).AppPublisher = n.GetStringValue(); } },
-                {"appVersion", (o,n) => { (o as UserExperienceAnalyticsAppHealthDevicePerformanceDetails).AppVersion = n.GetStringValue(); } },
-                {"deviceDisplayName", (o,n) => { (o as UserExperienceAnalyticsAppHealthDevicePerformanceDetails).DeviceDisplayName = n.GetStringValue(); } },
-                {"deviceId", (o,n) => { (o as UserExperienceAnalyticsAppHealthDevicePerformanceDetails).DeviceId = n.GetStringValue(); } },
-                {"eventDateTime", (o,n) => { (o as UserExperienceAnalyticsAppHealthDevicePerformanceDetails).EventDateTime = n.GetDateTimeOffsetValue(); } },
-                {"eventType", (o,n) => { (o as UserExperienceAnalyticsAppHealthDevicePerformanceDetails).EventType = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
+                {"appPublisher", n => { AppPublisher = n.GetStringValue(); } },
+                {"appVersion", n => { AppVersion = n.GetStringValue(); } },
+                {"deviceDisplayName", n => { DeviceDisplayName = n.GetStringValue(); } },
+                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
+                {"eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
+                {"eventType", n => { EventType = n.GetStringValue(); } },
             };
         }
         /// <summary>

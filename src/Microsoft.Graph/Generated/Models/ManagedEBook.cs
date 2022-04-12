@@ -44,22 +44,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as ManagedEBook).Assignments = n.GetCollectionOfObjectValues<ManagedEBookAssignment>(ManagedEBookAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"categories", (o,n) => { (o as ManagedEBook).Categories = n.GetCollectionOfObjectValues<ManagedEBookCategory>(ManagedEBookCategory.CreateFromDiscriminatorValue).ToList(); } },
-                {"createdDateTime", (o,n) => { (o as ManagedEBook).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as ManagedEBook).Description = n.GetStringValue(); } },
-                {"deviceStates", (o,n) => { (o as ManagedEBook).DeviceStates = n.GetCollectionOfObjectValues<DeviceInstallState>(DeviceInstallState.CreateFromDiscriminatorValue).ToList(); } },
-                {"displayName", (o,n) => { (o as ManagedEBook).DisplayName = n.GetStringValue(); } },
-                {"informationUrl", (o,n) => { (o as ManagedEBook).InformationUrl = n.GetStringValue(); } },
-                {"installSummary", (o,n) => { (o as ManagedEBook).InstallSummary = n.GetObjectValue<EBookInstallSummary>(EBookInstallSummary.CreateFromDiscriminatorValue); } },
-                {"largeCover", (o,n) => { (o as ManagedEBook).LargeCover = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", (o,n) => { (o as ManagedEBook).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"privacyInformationUrl", (o,n) => { (o as ManagedEBook).PrivacyInformationUrl = n.GetStringValue(); } },
-                {"publishedDateTime", (o,n) => { (o as ManagedEBook).PublishedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"publisher", (o,n) => { (o as ManagedEBook).Publisher = n.GetStringValue(); } },
-                {"userStateSummary", (o,n) => { (o as ManagedEBook).UserStateSummary = n.GetCollectionOfObjectValues<UserInstallStateSummary>(UserInstallStateSummary.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<ManagedEBookAssignment>(ManagedEBookAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"categories", n => { Categories = n.GetCollectionOfObjectValues<ManagedEBookCategory>(ManagedEBookCategory.CreateFromDiscriminatorValue).ToList(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"deviceStates", n => { DeviceStates = n.GetCollectionOfObjectValues<DeviceInstallState>(DeviceInstallState.CreateFromDiscriminatorValue).ToList(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"informationUrl", n => { InformationUrl = n.GetStringValue(); } },
+                {"installSummary", n => { InstallSummary = n.GetObjectValue<EBookInstallSummary>(EBookInstallSummary.CreateFromDiscriminatorValue); } },
+                {"largeCover", n => { LargeCover = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"privacyInformationUrl", n => { PrivacyInformationUrl = n.GetStringValue(); } },
+                {"publishedDateTime", n => { PublishedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"publisher", n => { Publisher = n.GetStringValue(); } },
+                {"userStateSummary", n => { UserStateSummary = n.GetCollectionOfObjectValues<UserInstallStateSummary>(UserInstallStateSummary.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

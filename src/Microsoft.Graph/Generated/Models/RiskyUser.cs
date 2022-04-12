@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"history", (o,n) => { (o as RiskyUser).History = n.GetCollectionOfObjectValues<RiskyUserHistoryItem>(RiskyUserHistoryItem.CreateFromDiscriminatorValue).ToList(); } },
-                {"isDeleted", (o,n) => { (o as RiskyUser).IsDeleted = n.GetBoolValue(); } },
-                {"isProcessing", (o,n) => { (o as RiskyUser).IsProcessing = n.GetBoolValue(); } },
-                {"riskDetail", (o,n) => { (o as RiskyUser).RiskDetail = n.GetEnumValue<RiskDetail>(); } },
-                {"riskLastUpdatedDateTime", (o,n) => { (o as RiskyUser).RiskLastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"riskLevel", (o,n) => { (o as RiskyUser).RiskLevel = n.GetEnumValue<RiskLevel>(); } },
-                {"riskState", (o,n) => { (o as RiskyUser).RiskState = n.GetEnumValue<RiskState>(); } },
-                {"userDisplayName", (o,n) => { (o as RiskyUser).UserDisplayName = n.GetStringValue(); } },
-                {"userPrincipalName", (o,n) => { (o as RiskyUser).UserPrincipalName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"history", n => { History = n.GetCollectionOfObjectValues<RiskyUserHistoryItem>(RiskyUserHistoryItem.CreateFromDiscriminatorValue).ToList(); } },
+                {"isDeleted", n => { IsDeleted = n.GetBoolValue(); } },
+                {"isProcessing", n => { IsProcessing = n.GetBoolValue(); } },
+                {"riskDetail", n => { RiskDetail = n.GetEnumValue<RiskDetail>(); } },
+                {"riskLastUpdatedDateTime", n => { RiskLastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"riskLevel", n => { RiskLevel = n.GetEnumValue<RiskLevel>(); } },
+                {"riskState", n => { RiskState = n.GetEnumValue<RiskState>(); } },
+                {"userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

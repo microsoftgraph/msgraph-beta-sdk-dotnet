@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"managedDeviceId", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupProcess).ManagedDeviceId = n.GetStringValue(); } },
-                {"processName", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupProcess).ProcessName = n.GetStringValue(); } },
-                {"productName", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupProcess).ProductName = n.GetStringValue(); } },
-                {"publisher", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupProcess).Publisher = n.GetStringValue(); } },
-                {"startupImpactInMs", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupProcess).StartupImpactInMs = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
+                {"processName", n => { ProcessName = n.GetStringValue(); } },
+                {"productName", n => { ProductName = n.GetStringValue(); } },
+                {"publisher", n => { Publisher = n.GetStringValue(); } },
+                {"startupImpactInMs", n => { StartupImpactInMs = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"contentUrl", (o,n) => { (o as TeamsTabConfiguration).ContentUrl = n.GetStringValue(); } },
-                {"entityId", (o,n) => { (o as TeamsTabConfiguration).EntityId = n.GetStringValue(); } },
-                {"removeUrl", (o,n) => { (o as TeamsTabConfiguration).RemoveUrl = n.GetStringValue(); } },
-                {"websiteUrl", (o,n) => { (o as TeamsTabConfiguration).WebsiteUrl = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"contentUrl", n => { ContentUrl = n.GetStringValue(); } },
+                {"entityId", n => { EntityId = n.GetStringValue(); } },
+                {"removeUrl", n => { RemoveUrl = n.GetStringValue(); } },
+                {"websiteUrl", n => { WebsiteUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

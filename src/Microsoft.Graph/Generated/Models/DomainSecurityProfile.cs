@@ -44,22 +44,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activityGroupNames", (o,n) => { (o as DomainSecurityProfile).ActivityGroupNames = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"azureSubscriptionId", (o,n) => { (o as DomainSecurityProfile).AzureSubscriptionId = n.GetStringValue(); } },
-                {"azureTenantId", (o,n) => { (o as DomainSecurityProfile).AzureTenantId = n.GetStringValue(); } },
-                {"countHits", (o,n) => { (o as DomainSecurityProfile).CountHits = n.GetIntValue(); } },
-                {"countInOrg", (o,n) => { (o as DomainSecurityProfile).CountInOrg = n.GetIntValue(); } },
-                {"domainCategories", (o,n) => { (o as DomainSecurityProfile).DomainCategories = n.GetCollectionOfObjectValues<ReputationCategory>(ReputationCategory.CreateFromDiscriminatorValue).ToList(); } },
-                {"domainRegisteredDateTime", (o,n) => { (o as DomainSecurityProfile).DomainRegisteredDateTime = n.GetDateTimeOffsetValue(); } },
-                {"firstSeenDateTime", (o,n) => { (o as DomainSecurityProfile).FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastSeenDateTime", (o,n) => { (o as DomainSecurityProfile).LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"name", (o,n) => { (o as DomainSecurityProfile).Name = n.GetStringValue(); } },
-                {"registrant", (o,n) => { (o as DomainSecurityProfile).Registrant = n.GetObjectValue<DomainRegistrant>(DomainRegistrant.CreateFromDiscriminatorValue); } },
-                {"riskScore", (o,n) => { (o as DomainSecurityProfile).RiskScore = n.GetStringValue(); } },
-                {"tags", (o,n) => { (o as DomainSecurityProfile).Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"vendorInformation", (o,n) => { (o as DomainSecurityProfile).VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activityGroupNames", n => { ActivityGroupNames = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"azureSubscriptionId", n => { AzureSubscriptionId = n.GetStringValue(); } },
+                {"azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
+                {"countHits", n => { CountHits = n.GetIntValue(); } },
+                {"countInOrg", n => { CountInOrg = n.GetIntValue(); } },
+                {"domainCategories", n => { DomainCategories = n.GetCollectionOfObjectValues<ReputationCategory>(ReputationCategory.CreateFromDiscriminatorValue).ToList(); } },
+                {"domainRegisteredDateTime", n => { DomainRegisteredDateTime = n.GetDateTimeOffsetValue(); } },
+                {"firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"registrant", n => { Registrant = n.GetObjectValue<DomainRegistrant>(DomainRegistrant.CreateFromDiscriminatorValue); } },
+                {"riskScore", n => { RiskScore = n.GetStringValue(); } },
+                {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

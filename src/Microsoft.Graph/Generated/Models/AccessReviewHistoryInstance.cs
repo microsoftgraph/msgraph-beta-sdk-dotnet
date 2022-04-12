@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"downloadUri", (o,n) => { (o as AccessReviewHistoryInstance).DownloadUri = n.GetStringValue(); } },
-                {"expirationDateTime", (o,n) => { (o as AccessReviewHistoryInstance).ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"fulfilledDateTime", (o,n) => { (o as AccessReviewHistoryInstance).FulfilledDateTime = n.GetDateTimeOffsetValue(); } },
-                {"reviewHistoryPeriodEndDateTime", (o,n) => { (o as AccessReviewHistoryInstance).ReviewHistoryPeriodEndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"reviewHistoryPeriodStartDateTime", (o,n) => { (o as AccessReviewHistoryInstance).ReviewHistoryPeriodStartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"runDateTime", (o,n) => { (o as AccessReviewHistoryInstance).RunDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", (o,n) => { (o as AccessReviewHistoryInstance).Status = n.GetEnumValue<AccessReviewHistoryStatus>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"downloadUri", n => { DownloadUri = n.GetStringValue(); } },
+                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"fulfilledDateTime", n => { FulfilledDateTime = n.GetDateTimeOffsetValue(); } },
+                {"reviewHistoryPeriodEndDateTime", n => { ReviewHistoryPeriodEndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"reviewHistoryPeriodStartDateTime", n => { ReviewHistoryPeriodStartDateTime = n.GetDateTimeOffsetValue(); } },
+                {"runDateTime", n => { RunDateTime = n.GetDateTimeOffsetValue(); } },
+                {"status", n => { Status = n.GetEnumValue<AccessReviewHistoryStatus>(); } },
             };
         }
         /// <summary>

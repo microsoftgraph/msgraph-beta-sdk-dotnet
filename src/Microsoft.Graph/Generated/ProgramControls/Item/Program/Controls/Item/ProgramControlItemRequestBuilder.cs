@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.Item {
         public ProgramControlItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/programControls/{programControl_id}/program/controls/{programControl_id1}{?select,expand}";
+            UrlTemplate = "{+baseurl}/programControls/{programControl%2Did}/program/controls/{programControl%2Did1}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.Item {
         public ProgramControlItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/programControls/{programControl_id}/program/controls/{programControl_id1}{?select,expand}";
+            UrlTemplate = "{+baseurl}/programControls/{programControl%2Did}/program/controls/{programControl%2Did1}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -149,8 +149,10 @@ namespace Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls.Item {
         /// <summary>Controls associated with the program.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
     }

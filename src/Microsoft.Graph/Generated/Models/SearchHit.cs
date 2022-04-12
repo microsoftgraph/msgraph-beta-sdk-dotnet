@@ -44,18 +44,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"_id", (o,n) => { (o as SearchHit)._id = n.GetStringValue(); } },
-                {"_score", (o,n) => { (o as SearchHit)._score = n.GetIntValue(); } },
-                {"_source", (o,n) => { (o as SearchHit)._source = n.GetObjectValue<Entity>(Entity.CreateFromDiscriminatorValue); } },
-                {"_summary", (o,n) => { (o as SearchHit)._summary = n.GetStringValue(); } },
-                {"contentSource", (o,n) => { (o as SearchHit).ContentSource = n.GetStringValue(); } },
-                {"hitId", (o,n) => { (o as SearchHit).HitId = n.GetStringValue(); } },
-                {"rank", (o,n) => { (o as SearchHit).Rank = n.GetIntValue(); } },
-                {"resource", (o,n) => { (o as SearchHit).Resource = n.GetObjectValue<Entity>(Entity.CreateFromDiscriminatorValue); } },
-                {"resultTemplateId", (o,n) => { (o as SearchHit).ResultTemplateId = n.GetStringValue(); } },
-                {"summary", (o,n) => { (o as SearchHit).Summary = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"_id", n => { _id = n.GetStringValue(); } },
+                {"_score", n => { _score = n.GetIntValue(); } },
+                {"_source", n => { _source = n.GetObjectValue<Entity>(Entity.CreateFromDiscriminatorValue); } },
+                {"_summary", n => { _summary = n.GetStringValue(); } },
+                {"contentSource", n => { ContentSource = n.GetStringValue(); } },
+                {"hitId", n => { HitId = n.GetStringValue(); } },
+                {"rank", n => { Rank = n.GetIntValue(); } },
+                {"resource", n => { Resource = n.GetObjectValue<Entity>(Entity.CreateFromDiscriminatorValue); } },
+                {"resultTemplateId", n => { ResultTemplateId = n.GetStringValue(); } },
+                {"summary", n => { Summary = n.GetStringValue(); } },
             };
         }
         /// <summary>

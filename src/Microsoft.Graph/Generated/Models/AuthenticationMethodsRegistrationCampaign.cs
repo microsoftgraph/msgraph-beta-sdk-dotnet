@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"excludeTargets", (o,n) => { (o as AuthenticationMethodsRegistrationCampaign).ExcludeTargets = n.GetCollectionOfObjectValues<ExcludeTarget>(ExcludeTarget.CreateFromDiscriminatorValue).ToList(); } },
-                {"includeTargets", (o,n) => { (o as AuthenticationMethodsRegistrationCampaign).IncludeTargets = n.GetCollectionOfObjectValues<AuthenticationMethodsRegistrationCampaignIncludeTarget>(AuthenticationMethodsRegistrationCampaignIncludeTarget.CreateFromDiscriminatorValue).ToList(); } },
-                {"snoozeDurationInDays", (o,n) => { (o as AuthenticationMethodsRegistrationCampaign).SnoozeDurationInDays = n.GetIntValue(); } },
-                {"state", (o,n) => { (o as AuthenticationMethodsRegistrationCampaign).State = n.GetEnumValue<AdvancedConfigState>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"excludeTargets", n => { ExcludeTargets = n.GetCollectionOfObjectValues<ExcludeTarget>(ExcludeTarget.CreateFromDiscriminatorValue).ToList(); } },
+                {"includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<AuthenticationMethodsRegistrationCampaignIncludeTarget>(AuthenticationMethodsRegistrationCampaignIncludeTarget.CreateFromDiscriminatorValue).ToList(); } },
+                {"snoozeDurationInDays", n => { SnoozeDurationInDays = n.GetIntValue(); } },
+                {"state", n => { State = n.GetEnumValue<AdvancedConfigState>(); } },
             };
         }
         /// <summary>

@@ -38,15 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"accountDomain", (o,n) => { (o as LogonUser).AccountDomain = n.GetStringValue(); } },
-                {"accountName", (o,n) => { (o as LogonUser).AccountName = n.GetStringValue(); } },
-                {"accountType", (o,n) => { (o as LogonUser).AccountType = n.GetEnumValue<UserAccountSecurityType>(); } },
-                {"firstSeenDateTime", (o,n) => { (o as LogonUser).FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastSeenDateTime", (o,n) => { (o as LogonUser).LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"logonId", (o,n) => { (o as LogonUser).LogonId = n.GetStringValue(); } },
-                {"logonTypes", (o,n) => { (o as LogonUser).LogonTypes = n.GetCollectionOfEnumValues<LogonType>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"accountDomain", n => { AccountDomain = n.GetStringValue(); } },
+                {"accountName", n => { AccountName = n.GetStringValue(); } },
+                {"accountType", n => { AccountType = n.GetEnumValue<UserAccountSecurityType>(); } },
+                {"firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                {"logonId", n => { LogonId = n.GetStringValue(); } },
+                {"logonTypes", n => { LogonTypes = n.GetCollectionOfEnumValues<LogonType>().ToList(); } },
             };
         }
         /// <summary>

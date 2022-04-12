@@ -36,18 +36,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"addedDateTime", (o,n) => { (o as RecommendationResource).AddedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"additionalDetails", (o,n) => { (o as RecommendationResource).AdditionalDetails = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue).ToList(); } },
-                {"apiUrl", (o,n) => { (o as RecommendationResource).ApiUrl = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as RecommendationResource).DisplayName = n.GetStringValue(); } },
-                {"owner", (o,n) => { (o as RecommendationResource).Owner = n.GetStringValue(); } },
-                {"portalUrl", (o,n) => { (o as RecommendationResource).PortalUrl = n.GetStringValue(); } },
-                {"rank", (o,n) => { (o as RecommendationResource).Rank = n.GetIntValue(); } },
-                {"recommendationId", (o,n) => { (o as RecommendationResource).RecommendationId = n.GetStringValue(); } },
-                {"resourceType", (o,n) => { (o as RecommendationResource).ResourceType = n.GetStringValue(); } },
-                {"status", (o,n) => { (o as RecommendationResource).Status = n.GetEnumValue<RecommendationStatus>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"addedDateTime", n => { AddedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"additionalDetails", n => { AdditionalDetails = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue).ToList(); } },
+                {"apiUrl", n => { ApiUrl = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"owner", n => { Owner = n.GetStringValue(); } },
+                {"portalUrl", n => { PortalUrl = n.GetStringValue(); } },
+                {"rank", n => { Rank = n.GetIntValue(); } },
+                {"recommendationId", n => { RecommendationId = n.GetStringValue(); } },
+                {"resourceType", n => { ResourceType = n.GetStringValue(); } },
+                {"status", n => { Status = n.GetEnumValue<RecommendationStatus>(); } },
             };
         }
         /// <summary>

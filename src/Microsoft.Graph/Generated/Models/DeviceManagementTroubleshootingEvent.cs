@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"additionalInformation", (o,n) => { (o as DeviceManagementTroubleshootingEvent).AdditionalInformation = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
-                {"correlationId", (o,n) => { (o as DeviceManagementTroubleshootingEvent).CorrelationId = n.GetStringValue(); } },
-                {"eventDateTime", (o,n) => { (o as DeviceManagementTroubleshootingEvent).EventDateTime = n.GetDateTimeOffsetValue(); } },
-                {"eventName", (o,n) => { (o as DeviceManagementTroubleshootingEvent).EventName = n.GetStringValue(); } },
-                {"troubleshootingErrorDetails", (o,n) => { (o as DeviceManagementTroubleshootingEvent).TroubleshootingErrorDetails = n.GetObjectValue<DeviceManagementTroubleshootingErrorDetails>(DeviceManagementTroubleshootingErrorDetails.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"additionalInformation", n => { AdditionalInformation = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"correlationId", n => { CorrelationId = n.GetStringValue(); } },
+                {"eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
+                {"eventName", n => { EventName = n.GetStringValue(); } },
+                {"troubleshootingErrorDetails", n => { TroubleshootingErrorDetails = n.GetObjectValue<DeviceManagementTroubleshootingErrorDetails>(DeviceManagementTroubleshootingErrorDetails.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

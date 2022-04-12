@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"applicationId", (o,n) => { (o as SynchronizationTemplate).ApplicationId = n.GetStringValue(); } },
-                {"default", (o,n) => { (o as SynchronizationTemplate).Default = n.GetBoolValue(); } },
-                {"description", (o,n) => { (o as SynchronizationTemplate).Description = n.GetStringValue(); } },
-                {"discoverable", (o,n) => { (o as SynchronizationTemplate).Discoverable = n.GetBoolValue(); } },
-                {"factoryTag", (o,n) => { (o as SynchronizationTemplate).FactoryTag = n.GetStringValue(); } },
-                {"metadata", (o,n) => { (o as SynchronizationTemplate).Metadata = n.GetCollectionOfObjectValues<MetadataEntry>(MetadataEntry.CreateFromDiscriminatorValue).ToList(); } },
-                {"schema", (o,n) => { (o as SynchronizationTemplate).Schema = n.GetObjectValue<SynchronizationSchema>(SynchronizationSchema.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"applicationId", n => { ApplicationId = n.GetStringValue(); } },
+                {"default", n => { Default = n.GetBoolValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"discoverable", n => { Discoverable = n.GetBoolValue(); } },
+                {"factoryTag", n => { FactoryTag = n.GetStringValue(); } },
+                {"metadata", n => { Metadata = n.GetCollectionOfObjectValues<MetadataEntry>(MetadataEntry.CreateFromDiscriminatorValue).ToList(); } },
+                {"schema", n => { Schema = n.GetObjectValue<SynchronizationSchema>(SynchronizationSchema.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

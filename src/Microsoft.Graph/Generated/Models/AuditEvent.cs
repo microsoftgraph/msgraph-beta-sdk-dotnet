@@ -38,19 +38,19 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activity", (o,n) => { (o as AuditEvent).Activity = n.GetStringValue(); } },
-                {"activityDateTime", (o,n) => { (o as AuditEvent).ActivityDateTime = n.GetDateTimeOffsetValue(); } },
-                {"activityOperationType", (o,n) => { (o as AuditEvent).ActivityOperationType = n.GetStringValue(); } },
-                {"activityResult", (o,n) => { (o as AuditEvent).ActivityResult = n.GetStringValue(); } },
-                {"activityType", (o,n) => { (o as AuditEvent).ActivityType = n.GetStringValue(); } },
-                {"actor", (o,n) => { (o as AuditEvent).Actor = n.GetObjectValue<AuditActor>(AuditActor.CreateFromDiscriminatorValue); } },
-                {"category", (o,n) => { (o as AuditEvent).Category = n.GetStringValue(); } },
-                {"componentName", (o,n) => { (o as AuditEvent).ComponentName = n.GetStringValue(); } },
-                {"correlationId", (o,n) => { (o as AuditEvent).CorrelationId = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as AuditEvent).DisplayName = n.GetStringValue(); } },
-                {"resources", (o,n) => { (o as AuditEvent).Resources = n.GetCollectionOfObjectValues<AuditResource>(AuditResource.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activity", n => { Activity = n.GetStringValue(); } },
+                {"activityDateTime", n => { ActivityDateTime = n.GetDateTimeOffsetValue(); } },
+                {"activityOperationType", n => { ActivityOperationType = n.GetStringValue(); } },
+                {"activityResult", n => { ActivityResult = n.GetStringValue(); } },
+                {"activityType", n => { ActivityType = n.GetStringValue(); } },
+                {"actor", n => { Actor = n.GetObjectValue<AuditActor>(AuditActor.CreateFromDiscriminatorValue); } },
+                {"category", n => { Category = n.GetStringValue(); } },
+                {"componentName", n => { ComponentName = n.GetStringValue(); } },
+                {"correlationId", n => { CorrelationId = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"resources", n => { Resources = n.GetCollectionOfObjectValues<AuditResource>(AuditResource.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

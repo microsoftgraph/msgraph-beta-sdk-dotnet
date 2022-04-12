@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"category", (o,n) => { (o as ManagementAction).Category = n.GetEnumValue<ManagementCategory>(); } },
-                {"description", (o,n) => { (o as ManagementAction).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as ManagementAction).DisplayName = n.GetStringValue(); } },
-                {"referenceTemplateId", (o,n) => { (o as ManagementAction).ReferenceTemplateId = n.GetStringValue(); } },
-                {"referenceTemplateVersion", (o,n) => { (o as ManagementAction).ReferenceTemplateVersion = n.GetIntValue(); } },
-                {"workloadActions", (o,n) => { (o as ManagementAction).WorkloadActions = n.GetCollectionOfObjectValues<WorkloadAction>(WorkloadAction.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"category", n => { Category = n.GetEnumValue<ManagementCategory>(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"referenceTemplateId", n => { ReferenceTemplateId = n.GetStringValue(); } },
+                {"referenceTemplateVersion", n => { ReferenceTemplateVersion = n.GetIntValue(); } },
+                {"workloadActions", n => { WorkloadActions = n.GetCollectionOfObjectValues<WorkloadAction>(WorkloadAction.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

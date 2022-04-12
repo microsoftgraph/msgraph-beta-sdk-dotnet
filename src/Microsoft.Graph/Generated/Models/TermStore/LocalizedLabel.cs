@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"isDefault", (o,n) => { (o as LocalizedLabel).IsDefault = n.GetBoolValue(); } },
-                {"languageTag", (o,n) => { (o as LocalizedLabel).LanguageTag = n.GetStringValue(); } },
-                {"name", (o,n) => { (o as LocalizedLabel).Name = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"isDefault", n => { IsDefault = n.GetBoolValue(); } },
+                {"languageTag", n => { LanguageTag = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>

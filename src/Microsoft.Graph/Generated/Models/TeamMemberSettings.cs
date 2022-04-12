@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"allowAddRemoveApps", (o,n) => { (o as TeamMemberSettings).AllowAddRemoveApps = n.GetBoolValue(); } },
-                {"allowCreatePrivateChannels", (o,n) => { (o as TeamMemberSettings).AllowCreatePrivateChannels = n.GetBoolValue(); } },
-                {"allowCreateUpdateChannels", (o,n) => { (o as TeamMemberSettings).AllowCreateUpdateChannels = n.GetBoolValue(); } },
-                {"allowCreateUpdateRemoveConnectors", (o,n) => { (o as TeamMemberSettings).AllowCreateUpdateRemoveConnectors = n.GetBoolValue(); } },
-                {"allowCreateUpdateRemoveTabs", (o,n) => { (o as TeamMemberSettings).AllowCreateUpdateRemoveTabs = n.GetBoolValue(); } },
-                {"allowDeleteChannels", (o,n) => { (o as TeamMemberSettings).AllowDeleteChannels = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"allowAddRemoveApps", n => { AllowAddRemoveApps = n.GetBoolValue(); } },
+                {"allowCreatePrivateChannels", n => { AllowCreatePrivateChannels = n.GetBoolValue(); } },
+                {"allowCreateUpdateChannels", n => { AllowCreateUpdateChannels = n.GetBoolValue(); } },
+                {"allowCreateUpdateRemoveConnectors", n => { AllowCreateUpdateRemoveConnectors = n.GetBoolValue(); } },
+                {"allowCreateUpdateRemoveTabs", n => { AllowCreateUpdateRemoveTabs = n.GetBoolValue(); } },
+                {"allowDeleteChannels", n => { AllowDeleteChannels = n.GetBoolValue(); } },
             };
         }
         /// <summary>

@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"missingDataBeforeDateTime", (o,n) => { (o as IncompleteData).MissingDataBeforeDateTime = n.GetDateTimeOffsetValue(); } },
-                {"wasThrottled", (o,n) => { (o as IncompleteData).WasThrottled = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"missingDataBeforeDateTime", n => { MissingDataBeforeDateTime = n.GetDateTimeOffsetValue(); } },
+                {"wasThrottled", n => { WasThrottled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

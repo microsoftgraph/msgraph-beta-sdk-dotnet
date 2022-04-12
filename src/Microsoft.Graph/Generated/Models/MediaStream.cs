@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"direction", (o,n) => { (o as MediaStream).Direction = n.GetEnumValue<MediaDirection>(); } },
-                {"label", (o,n) => { (o as MediaStream).Label = n.GetStringValue(); } },
-                {"mediaType", (o,n) => { (o as MediaStream).MediaType = n.GetEnumValue<Modality>(); } },
-                {"serverMuted", (o,n) => { (o as MediaStream).ServerMuted = n.GetBoolValue(); } },
-                {"sourceId", (o,n) => { (o as MediaStream).SourceId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"direction", n => { Direction = n.GetEnumValue<MediaDirection>(); } },
+                {"label", n => { Label = n.GetStringValue(); } },
+                {"mediaType", n => { MediaType = n.GetEnumValue<Modality>(); } },
+                {"serverMuted", n => { ServerMuted = n.GetBoolValue(); } },
+                {"sourceId", n => { SourceId = n.GetStringValue(); } },
             };
         }
         /// <summary>

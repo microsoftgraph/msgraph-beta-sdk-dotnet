@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.AddCopyFromCo
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"contentTypeId", (o,n) => { (o as AddCopyFromContentTypeHubRequestBody).ContentTypeId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"contentTypeId", n => { ContentTypeId = n.GetStringValue(); } },
             };
         }
         /// <summary>

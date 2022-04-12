@@ -31,11 +31,11 @@ namespace Microsoft.Graph.Beta.Communications.Presences.Item.SetUserPreferredPre
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"activity", (o,n) => { (o as SetUserPreferredPresenceRequestBody).Activity = n.GetStringValue(); } },
-                {"availability", (o,n) => { (o as SetUserPreferredPresenceRequestBody).Availability = n.GetStringValue(); } },
-                {"expirationDuration", (o,n) => { (o as SetUserPreferredPresenceRequestBody).ExpirationDuration = n.GetTimeSpanValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"activity", n => { Activity = n.GetStringValue(); } },
+                {"availability", n => { Availability = n.GetStringValue(); } },
+                {"expirationDuration", n => { ExpirationDuration = n.GetTimeSpanValue(); } },
             };
         }
         /// <summary>

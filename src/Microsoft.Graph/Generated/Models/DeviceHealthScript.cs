@@ -54,27 +54,27 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as DeviceHealthScript).Assignments = n.GetCollectionOfObjectValues<DeviceHealthScriptAssignment>(DeviceHealthScriptAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"createdDateTime", (o,n) => { (o as DeviceHealthScript).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as DeviceHealthScript).Description = n.GetStringValue(); } },
-                {"detectionScriptContent", (o,n) => { (o as DeviceHealthScript).DetectionScriptContent = n.GetByteArrayValue(); } },
-                {"detectionScriptParameters", (o,n) => { (o as DeviceHealthScript).DetectionScriptParameters = n.GetCollectionOfObjectValues<DeviceHealthScriptParameter>(DeviceHealthScriptParameter.CreateFromDiscriminatorValue).ToList(); } },
-                {"deviceRunStates", (o,n) => { (o as DeviceHealthScript).DeviceRunStates = n.GetCollectionOfObjectValues<DeviceHealthScriptDeviceState>(DeviceHealthScriptDeviceState.CreateFromDiscriminatorValue).ToList(); } },
-                {"displayName", (o,n) => { (o as DeviceHealthScript).DisplayName = n.GetStringValue(); } },
-                {"enforceSignatureCheck", (o,n) => { (o as DeviceHealthScript).EnforceSignatureCheck = n.GetBoolValue(); } },
-                {"highestAvailableVersion", (o,n) => { (o as DeviceHealthScript).HighestAvailableVersion = n.GetStringValue(); } },
-                {"isGlobalScript", (o,n) => { (o as DeviceHealthScript).IsGlobalScript = n.GetBoolValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as DeviceHealthScript).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"publisher", (o,n) => { (o as DeviceHealthScript).Publisher = n.GetStringValue(); } },
-                {"remediationScriptContent", (o,n) => { (o as DeviceHealthScript).RemediationScriptContent = n.GetByteArrayValue(); } },
-                {"remediationScriptParameters", (o,n) => { (o as DeviceHealthScript).RemediationScriptParameters = n.GetCollectionOfObjectValues<DeviceHealthScriptParameter>(DeviceHealthScriptParameter.CreateFromDiscriminatorValue).ToList(); } },
-                {"roleScopeTagIds", (o,n) => { (o as DeviceHealthScript).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"runAs32Bit", (o,n) => { (o as DeviceHealthScript).RunAs32Bit = n.GetBoolValue(); } },
-                {"runAsAccount", (o,n) => { (o as DeviceHealthScript).RunAsAccount = n.GetEnumValue<RunAsAccountType>(); } },
-                {"runSummary", (o,n) => { (o as DeviceHealthScript).RunSummary = n.GetObjectValue<DeviceHealthScriptRunSummary>(DeviceHealthScriptRunSummary.CreateFromDiscriminatorValue); } },
-                {"version", (o,n) => { (o as DeviceHealthScript).Version = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<DeviceHealthScriptAssignment>(DeviceHealthScriptAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"detectionScriptContent", n => { DetectionScriptContent = n.GetByteArrayValue(); } },
+                {"detectionScriptParameters", n => { DetectionScriptParameters = n.GetCollectionOfObjectValues<DeviceHealthScriptParameter>(DeviceHealthScriptParameter.CreateFromDiscriminatorValue).ToList(); } },
+                {"deviceRunStates", n => { DeviceRunStates = n.GetCollectionOfObjectValues<DeviceHealthScriptDeviceState>(DeviceHealthScriptDeviceState.CreateFromDiscriminatorValue).ToList(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"enforceSignatureCheck", n => { EnforceSignatureCheck = n.GetBoolValue(); } },
+                {"highestAvailableVersion", n => { HighestAvailableVersion = n.GetStringValue(); } },
+                {"isGlobalScript", n => { IsGlobalScript = n.GetBoolValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"publisher", n => { Publisher = n.GetStringValue(); } },
+                {"remediationScriptContent", n => { RemediationScriptContent = n.GetByteArrayValue(); } },
+                {"remediationScriptParameters", n => { RemediationScriptParameters = n.GetCollectionOfObjectValues<DeviceHealthScriptParameter>(DeviceHealthScriptParameter.CreateFromDiscriminatorValue).ToList(); } },
+                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"runAs32Bit", n => { RunAs32Bit = n.GetBoolValue(); } },
+                {"runAsAccount", n => { RunAsAccount = n.GetEnumValue<RunAsAccountType>(); } },
+                {"runSummary", n => { RunSummary = n.GetObjectValue<DeviceHealthScriptRunSummary>(DeviceHealthScriptRunSummary.CreateFromDiscriminatorValue); } },
+                {"version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

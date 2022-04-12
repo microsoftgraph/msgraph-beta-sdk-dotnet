@@ -31,11 +31,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"maximumOperatingSystemVersion", (o,n) => { (o as MobileAppSupportedDeviceType).MaximumOperatingSystemVersion = n.GetStringValue(); } },
-                {"minimumOperatingSystemVersion", (o,n) => { (o as MobileAppSupportedDeviceType).MinimumOperatingSystemVersion = n.GetStringValue(); } },
-                {"type", (o,n) => { (o as MobileAppSupportedDeviceType).Type = n.GetEnumValue<DeviceType>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"maximumOperatingSystemVersion", n => { MaximumOperatingSystemVersion = n.GetStringValue(); } },
+                {"minimumOperatingSystemVersion", n => { MinimumOperatingSystemVersion = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetEnumValue<DeviceType>(); } },
             };
         }
         /// <summary>

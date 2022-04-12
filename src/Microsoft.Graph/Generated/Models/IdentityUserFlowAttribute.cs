@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"dataType", (o,n) => { (o as IdentityUserFlowAttribute).DataType = n.GetEnumValue<IdentityUserFlowAttributeDataType>(); } },
-                {"description", (o,n) => { (o as IdentityUserFlowAttribute).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as IdentityUserFlowAttribute).DisplayName = n.GetStringValue(); } },
-                {"userFlowAttributeType", (o,n) => { (o as IdentityUserFlowAttribute).UserFlowAttributeType = n.GetEnumValue<IdentityUserFlowAttributeType>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"dataType", n => { DataType = n.GetEnumValue<IdentityUserFlowAttributeDataType>(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"userFlowAttributeType", n => { UserFlowAttributeType = n.GetEnumValue<IdentityUserFlowAttributeType>(); } },
             };
         }
         /// <summary>

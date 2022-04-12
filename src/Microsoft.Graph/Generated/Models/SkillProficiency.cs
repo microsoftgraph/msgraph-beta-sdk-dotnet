@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"categories", (o,n) => { (o as SkillProficiency).Categories = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"collaborationTags", (o,n) => { (o as SkillProficiency).CollaborationTags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"displayName", (o,n) => { (o as SkillProficiency).DisplayName = n.GetStringValue(); } },
-                {"proficiency", (o,n) => { (o as SkillProficiency).Proficiency = n.GetEnumValue<SkillProficiencyLevel>(); } },
-                {"thumbnailUrl", (o,n) => { (o as SkillProficiency).ThumbnailUrl = n.GetStringValue(); } },
-                {"webUrl", (o,n) => { (o as SkillProficiency).WebUrl = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"collaborationTags", n => { CollaborationTags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"proficiency", n => { Proficiency = n.GetEnumValue<SkillProficiencyLevel>(); } },
+                {"thumbnailUrl", n => { ThumbnailUrl = n.GetStringValue(); } },
+                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

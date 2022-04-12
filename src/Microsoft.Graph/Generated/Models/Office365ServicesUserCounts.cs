@@ -49,24 +49,24 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"exchangeActive", (o,n) => { (o as Office365ServicesUserCounts).ExchangeActive = n.GetLongValue(); } },
-                {"exchangeInactive", (o,n) => { (o as Office365ServicesUserCounts).ExchangeInactive = n.GetLongValue(); } },
-                {"office365Active", (o,n) => { (o as Office365ServicesUserCounts).Office365Active = n.GetLongValue(); } },
-                {"office365Inactive", (o,n) => { (o as Office365ServicesUserCounts).Office365Inactive = n.GetLongValue(); } },
-                {"oneDriveActive", (o,n) => { (o as Office365ServicesUserCounts).OneDriveActive = n.GetLongValue(); } },
-                {"oneDriveInactive", (o,n) => { (o as Office365ServicesUserCounts).OneDriveInactive = n.GetLongValue(); } },
-                {"reportPeriod", (o,n) => { (o as Office365ServicesUserCounts).ReportPeriod = n.GetStringValue(); } },
-                {"reportRefreshDate", (o,n) => { (o as Office365ServicesUserCounts).ReportRefreshDate = n.GetDateValue(); } },
-                {"sharePointActive", (o,n) => { (o as Office365ServicesUserCounts).SharePointActive = n.GetLongValue(); } },
-                {"sharePointInactive", (o,n) => { (o as Office365ServicesUserCounts).SharePointInactive = n.GetLongValue(); } },
-                {"skypeForBusinessActive", (o,n) => { (o as Office365ServicesUserCounts).SkypeForBusinessActive = n.GetLongValue(); } },
-                {"skypeForBusinessInactive", (o,n) => { (o as Office365ServicesUserCounts).SkypeForBusinessInactive = n.GetLongValue(); } },
-                {"teamsActive", (o,n) => { (o as Office365ServicesUserCounts).TeamsActive = n.GetLongValue(); } },
-                {"teamsInactive", (o,n) => { (o as Office365ServicesUserCounts).TeamsInactive = n.GetLongValue(); } },
-                {"yammerActive", (o,n) => { (o as Office365ServicesUserCounts).YammerActive = n.GetLongValue(); } },
-                {"yammerInactive", (o,n) => { (o as Office365ServicesUserCounts).YammerInactive = n.GetLongValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"exchangeActive", n => { ExchangeActive = n.GetLongValue(); } },
+                {"exchangeInactive", n => { ExchangeInactive = n.GetLongValue(); } },
+                {"office365Active", n => { Office365Active = n.GetLongValue(); } },
+                {"office365Inactive", n => { Office365Inactive = n.GetLongValue(); } },
+                {"oneDriveActive", n => { OneDriveActive = n.GetLongValue(); } },
+                {"oneDriveInactive", n => { OneDriveInactive = n.GetLongValue(); } },
+                {"reportPeriod", n => { ReportPeriod = n.GetStringValue(); } },
+                {"reportRefreshDate", n => { ReportRefreshDate = n.GetDateValue(); } },
+                {"sharePointActive", n => { SharePointActive = n.GetLongValue(); } },
+                {"sharePointInactive", n => { SharePointInactive = n.GetLongValue(); } },
+                {"skypeForBusinessActive", n => { SkypeForBusinessActive = n.GetLongValue(); } },
+                {"skypeForBusinessInactive", n => { SkypeForBusinessInactive = n.GetLongValue(); } },
+                {"teamsActive", n => { TeamsActive = n.GetLongValue(); } },
+                {"teamsInactive", n => { TeamsInactive = n.GetLongValue(); } },
+                {"yammerActive", n => { YammerActive = n.GetLongValue(); } },
+                {"yammerInactive", n => { YammerInactive = n.GetLongValue(); } },
             };
         }
         /// <summary>

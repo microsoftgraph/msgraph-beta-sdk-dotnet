@@ -36,18 +36,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"approvalOnElevation", (o,n) => { (o as PrivilegedRoleSettings).ApprovalOnElevation = n.GetBoolValue(); } },
-                {"approverIds", (o,n) => { (o as PrivilegedRoleSettings).ApproverIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"elevationDuration", (o,n) => { (o as PrivilegedRoleSettings).ElevationDuration = n.GetTimeSpanValue(); } },
-                {"isMfaOnElevationConfigurable", (o,n) => { (o as PrivilegedRoleSettings).IsMfaOnElevationConfigurable = n.GetBoolValue(); } },
-                {"lastGlobalAdmin", (o,n) => { (o as PrivilegedRoleSettings).LastGlobalAdmin = n.GetBoolValue(); } },
-                {"maxElavationDuration", (o,n) => { (o as PrivilegedRoleSettings).MaxElavationDuration = n.GetTimeSpanValue(); } },
-                {"mfaOnElevation", (o,n) => { (o as PrivilegedRoleSettings).MfaOnElevation = n.GetBoolValue(); } },
-                {"minElevationDuration", (o,n) => { (o as PrivilegedRoleSettings).MinElevationDuration = n.GetTimeSpanValue(); } },
-                {"notificationToUserOnElevation", (o,n) => { (o as PrivilegedRoleSettings).NotificationToUserOnElevation = n.GetBoolValue(); } },
-                {"ticketingInfoOnElevation", (o,n) => { (o as PrivilegedRoleSettings).TicketingInfoOnElevation = n.GetBoolValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"approvalOnElevation", n => { ApprovalOnElevation = n.GetBoolValue(); } },
+                {"approverIds", n => { ApproverIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"elevationDuration", n => { ElevationDuration = n.GetTimeSpanValue(); } },
+                {"isMfaOnElevationConfigurable", n => { IsMfaOnElevationConfigurable = n.GetBoolValue(); } },
+                {"lastGlobalAdmin", n => { LastGlobalAdmin = n.GetBoolValue(); } },
+                {"maxElavationDuration", n => { MaxElavationDuration = n.GetTimeSpanValue(); } },
+                {"mfaOnElevation", n => { MfaOnElevation = n.GetBoolValue(); } },
+                {"minElevationDuration", n => { MinElevationDuration = n.GetTimeSpanValue(); } },
+                {"notificationToUserOnElevation", n => { NotificationToUserOnElevation = n.GetBoolValue(); } },
+                {"ticketingInfoOnElevation", n => { TicketingInfoOnElevation = n.GetBoolValue(); } },
             };
         }
         /// <summary>

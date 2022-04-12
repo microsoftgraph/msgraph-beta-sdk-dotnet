@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.IosVppApp.Rev
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"managedDeviceId", (o,n) => { (o as RevokeDeviceLicenseRequestBody).ManagedDeviceId = n.GetStringValue(); } },
-                {"notifyManagedDevices", (o,n) => { (o as RevokeDeviceLicenseRequestBody).NotifyManagedDevices = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
+                {"notifyManagedDevices", n => { NotifyManagedDevices = n.GetBoolValue(); } },
             };
         }
         /// <summary>

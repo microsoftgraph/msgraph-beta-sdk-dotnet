@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appCrashCount", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId).AppCrashCount = n.GetIntValue(); } },
-                {"appDisplayName", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId).AppDisplayName = n.GetStringValue(); } },
-                {"appName", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId).AppName = n.GetStringValue(); } },
-                {"appPublisher", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId).AppPublisher = n.GetStringValue(); } },
-                {"appVersion", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId).AppVersion = n.GetStringValue(); } },
-                {"deviceDisplayName", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId).DeviceDisplayName = n.GetStringValue(); } },
-                {"deviceId", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId).DeviceId = n.GetStringValue(); } },
-                {"processedDateTime", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId).ProcessedDateTime = n.GetDateTimeOffsetValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"appCrashCount", n => { AppCrashCount = n.GetIntValue(); } },
+                {"appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
+                {"appName", n => { AppName = n.GetStringValue(); } },
+                {"appPublisher", n => { AppPublisher = n.GetStringValue(); } },
+                {"appVersion", n => { AppVersion = n.GetStringValue(); } },
+                {"deviceDisplayName", n => { DeviceDisplayName = n.GetStringValue(); } },
+                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
+                {"processedDateTime", n => { ProcessedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

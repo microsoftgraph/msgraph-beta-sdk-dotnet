@@ -35,13 +35,13 @@ namespace Microsoft.Graph.Beta.Workbooks.Item.Preview {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"allowEdit", (o,n) => { (o as PreviewRequestBody).AllowEdit = n.GetBoolValue(); } },
-                {"chromeless", (o,n) => { (o as PreviewRequestBody).Chromeless = n.GetBoolValue(); } },
-                {"page", (o,n) => { (o as PreviewRequestBody).Page = n.GetStringValue(); } },
-                {"viewer", (o,n) => { (o as PreviewRequestBody).Viewer = n.GetStringValue(); } },
-                {"zoom", (o,n) => { (o as PreviewRequestBody).Zoom = n.GetDoubleValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"allowEdit", n => { AllowEdit = n.GetBoolValue(); } },
+                {"chromeless", n => { Chromeless = n.GetBoolValue(); } },
+                {"page", n => { Page = n.GetStringValue(); } },
+                {"viewer", n => { Viewer = n.GetStringValue(); } },
+                {"zoom", n => { Zoom = n.GetDoubleValue(); } },
             };
         }
         /// <summary>

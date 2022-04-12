@@ -38,19 +38,19 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"displayName", (o,n) => { (o as PersonName).DisplayName = n.GetStringValue(); } },
-                {"first", (o,n) => { (o as PersonName).First = n.GetStringValue(); } },
-                {"initials", (o,n) => { (o as PersonName).Initials = n.GetStringValue(); } },
-                {"languageTag", (o,n) => { (o as PersonName).LanguageTag = n.GetStringValue(); } },
-                {"last", (o,n) => { (o as PersonName).Last = n.GetStringValue(); } },
-                {"maiden", (o,n) => { (o as PersonName).Maiden = n.GetStringValue(); } },
-                {"middle", (o,n) => { (o as PersonName).Middle = n.GetStringValue(); } },
-                {"nickname", (o,n) => { (o as PersonName).Nickname = n.GetStringValue(); } },
-                {"pronunciation", (o,n) => { (o as PersonName).Pronunciation = n.GetObjectValue<PersonNamePronounciation>(PersonNamePronounciation.CreateFromDiscriminatorValue); } },
-                {"suffix", (o,n) => { (o as PersonName).Suffix = n.GetStringValue(); } },
-                {"title", (o,n) => { (o as PersonName).Title = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"first", n => { First = n.GetStringValue(); } },
+                {"initials", n => { Initials = n.GetStringValue(); } },
+                {"languageTag", n => { LanguageTag = n.GetStringValue(); } },
+                {"last", n => { Last = n.GetStringValue(); } },
+                {"maiden", n => { Maiden = n.GetStringValue(); } },
+                {"middle", n => { Middle = n.GetStringValue(); } },
+                {"nickname", n => { Nickname = n.GetStringValue(); } },
+                {"pronunciation", n => { Pronunciation = n.GetObjectValue<PersonNamePronounciation>(PersonNamePronounciation.CreateFromDiscriminatorValue); } },
+                {"suffix", n => { Suffix = n.GetStringValue(); } },
+                {"title", n => { Title = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"clientIdentifier", (o,n) => { (o as ConfigurationManagerClientInformation).ClientIdentifier = n.GetStringValue(); } },
-                {"isBlocked", (o,n) => { (o as ConfigurationManagerClientInformation).IsBlocked = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"clientIdentifier", n => { ClientIdentifier = n.GetStringValue(); } },
+                {"isBlocked", n => { IsBlocked = n.GetBoolValue(); } },
             };
         }
         /// <summary>

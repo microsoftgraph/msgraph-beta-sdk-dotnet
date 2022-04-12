@@ -36,18 +36,18 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"color", (o,n) => { (o as SensitivityLabel).Color = n.GetStringValue(); } },
-                {"contentFormats", (o,n) => { (o as SensitivityLabel).ContentFormats = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"description", (o,n) => { (o as SensitivityLabel).Description = n.GetStringValue(); } },
-                {"hasProtection", (o,n) => { (o as SensitivityLabel).HasProtection = n.GetBoolValue(); } },
-                {"isActive", (o,n) => { (o as SensitivityLabel).IsActive = n.GetBoolValue(); } },
-                {"isAppliable", (o,n) => { (o as SensitivityLabel).IsAppliable = n.GetBoolValue(); } },
-                {"name", (o,n) => { (o as SensitivityLabel).Name = n.GetStringValue(); } },
-                {"parent", (o,n) => { (o as SensitivityLabel).Parent = n.GetObjectValue<SensitivityLabel>(SensitivityLabel.CreateFromDiscriminatorValue); } },
-                {"sensitivity", (o,n) => { (o as SensitivityLabel).Sensitivity = n.GetIntValue(); } },
-                {"tooltip", (o,n) => { (o as SensitivityLabel).Tooltip = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"color", n => { Color = n.GetStringValue(); } },
+                {"contentFormats", n => { ContentFormats = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"hasProtection", n => { HasProtection = n.GetBoolValue(); } },
+                {"isActive", n => { IsActive = n.GetBoolValue(); } },
+                {"isAppliable", n => { IsAppliable = n.GetBoolValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"parent", n => { Parent = n.GetObjectValue<SensitivityLabel>(SensitivityLabel.CreateFromDiscriminatorValue); } },
+                {"sensitivity", n => { Sensitivity = n.GetIntValue(); } },
+                {"tooltip", n => { Tooltip = n.GetStringValue(); } },
             };
         }
         /// <summary>

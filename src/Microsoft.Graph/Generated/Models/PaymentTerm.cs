@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"calculateDiscountOnCreditMemos", (o,n) => { (o as PaymentTerm).CalculateDiscountOnCreditMemos = n.GetBoolValue(); } },
-                {"code", (o,n) => { (o as PaymentTerm).Code = n.GetStringValue(); } },
-                {"discountDateCalculation", (o,n) => { (o as PaymentTerm).DiscountDateCalculation = n.GetStringValue(); } },
-                {"discountPercent", (o,n) => { (o as PaymentTerm).DiscountPercent = n.GetDecimalValue(); } },
-                {"displayName", (o,n) => { (o as PaymentTerm).DisplayName = n.GetStringValue(); } },
-                {"dueDateCalculation", (o,n) => { (o as PaymentTerm).DueDateCalculation = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as PaymentTerm).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"calculateDiscountOnCreditMemos", n => { CalculateDiscountOnCreditMemos = n.GetBoolValue(); } },
+                {"code", n => { Code = n.GetStringValue(); } },
+                {"discountDateCalculation", n => { DiscountDateCalculation = n.GetStringValue(); } },
+                {"discountPercent", n => { DiscountPercent = n.GetDecimalValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"dueDateCalculation", n => { DueDateCalculation = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

@@ -31,11 +31,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.Micros
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"endDateTime", (o,n) => { (o as GetHealthMetricTimeSeriesRequestBody).EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"metricName", (o,n) => { (o as GetHealthMetricTimeSeriesRequestBody).MetricName = n.GetStringValue(); } },
-                {"startDateTime", (o,n) => { (o as GetHealthMetricTimeSeriesRequestBody).StartDateTime = n.GetDateTimeOffsetValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"metricName", n => { MetricName = n.GetStringValue(); } },
+                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"allowChannelMentions", (o,n) => { (o as TeamMessagingSettings).AllowChannelMentions = n.GetBoolValue(); } },
-                {"allowOwnerDeleteMessages", (o,n) => { (o as TeamMessagingSettings).AllowOwnerDeleteMessages = n.GetBoolValue(); } },
-                {"allowTeamMentions", (o,n) => { (o as TeamMessagingSettings).AllowTeamMentions = n.GetBoolValue(); } },
-                {"allowUserDeleteMessages", (o,n) => { (o as TeamMessagingSettings).AllowUserDeleteMessages = n.GetBoolValue(); } },
-                {"allowUserEditMessages", (o,n) => { (o as TeamMessagingSettings).AllowUserEditMessages = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"allowChannelMentions", n => { AllowChannelMentions = n.GetBoolValue(); } },
+                {"allowOwnerDeleteMessages", n => { AllowOwnerDeleteMessages = n.GetBoolValue(); } },
+                {"allowTeamMentions", n => { AllowTeamMentions = n.GetBoolValue(); } },
+                {"allowUserDeleteMessages", n => { AllowUserDeleteMessages = n.GetBoolValue(); } },
+                {"allowUserEditMessages", n => { AllowUserEditMessages = n.GetBoolValue(); } },
             };
         }
         /// <summary>

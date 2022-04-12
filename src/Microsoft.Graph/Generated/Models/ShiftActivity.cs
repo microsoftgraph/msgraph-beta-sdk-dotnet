@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"code", (o,n) => { (o as ShiftActivity).Code = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as ShiftActivity).DisplayName = n.GetStringValue(); } },
-                {"endDateTime", (o,n) => { (o as ShiftActivity).EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"isPaid", (o,n) => { (o as ShiftActivity).IsPaid = n.GetBoolValue(); } },
-                {"startDateTime", (o,n) => { (o as ShiftActivity).StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"theme", (o,n) => { (o as ShiftActivity).Theme = n.GetEnumValue<ScheduleEntityTheme>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"code", n => { Code = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"isPaid", n => { IsPaid = n.GetBoolValue(); } },
+                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                {"theme", n => { Theme = n.GetEnumValue<ScheduleEntityTheme>(); } },
             };
         }
         /// <summary>

@@ -42,21 +42,21 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"advancedSettings", (o,n) => { (o as MicrosoftTunnelConfiguration).AdvancedSettings = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
-                {"defaultDomainSuffix", (o,n) => { (o as MicrosoftTunnelConfiguration).DefaultDomainSuffix = n.GetStringValue(); } },
-                {"description", (o,n) => { (o as MicrosoftTunnelConfiguration).Description = n.GetStringValue(); } },
-                {"disableUdpConnections", (o,n) => { (o as MicrosoftTunnelConfiguration).DisableUdpConnections = n.GetBoolValue(); } },
-                {"displayName", (o,n) => { (o as MicrosoftTunnelConfiguration).DisplayName = n.GetStringValue(); } },
-                {"dnsServers", (o,n) => { (o as MicrosoftTunnelConfiguration).DnsServers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"lastUpdateDateTime", (o,n) => { (o as MicrosoftTunnelConfiguration).LastUpdateDateTime = n.GetDateTimeOffsetValue(); } },
-                {"listenPort", (o,n) => { (o as MicrosoftTunnelConfiguration).ListenPort = n.GetIntValue(); } },
-                {"network", (o,n) => { (o as MicrosoftTunnelConfiguration).Network = n.GetStringValue(); } },
-                {"roleScopeTagIds", (o,n) => { (o as MicrosoftTunnelConfiguration).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"routesExclude", (o,n) => { (o as MicrosoftTunnelConfiguration).RoutesExclude = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"routesInclude", (o,n) => { (o as MicrosoftTunnelConfiguration).RoutesInclude = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"splitDNS", (o,n) => { (o as MicrosoftTunnelConfiguration).SplitDNS = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"advancedSettings", n => { AdvancedSettings = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"defaultDomainSuffix", n => { DefaultDomainSuffix = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"disableUdpConnections", n => { DisableUdpConnections = n.GetBoolValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"dnsServers", n => { DnsServers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"lastUpdateDateTime", n => { LastUpdateDateTime = n.GetDateTimeOffsetValue(); } },
+                {"listenPort", n => { ListenPort = n.GetIntValue(); } },
+                {"network", n => { Network = n.GetStringValue(); } },
+                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"routesExclude", n => { RoutesExclude = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"routesInclude", n => { RoutesInclude = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"splitDNS", n => { SplitDNS = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

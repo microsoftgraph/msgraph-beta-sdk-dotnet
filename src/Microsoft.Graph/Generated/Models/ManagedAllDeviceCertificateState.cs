@@ -40,20 +40,20 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"certificateExpirationDateTime", (o,n) => { (o as ManagedAllDeviceCertificateState).CertificateExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"certificateExtendedKeyUsages", (o,n) => { (o as ManagedAllDeviceCertificateState).CertificateExtendedKeyUsages = n.GetStringValue(); } },
-                {"certificateIssuanceDateTime", (o,n) => { (o as ManagedAllDeviceCertificateState).CertificateIssuanceDateTime = n.GetDateTimeOffsetValue(); } },
-                {"certificateIssuerName", (o,n) => { (o as ManagedAllDeviceCertificateState).CertificateIssuerName = n.GetStringValue(); } },
-                {"certificateKeyUsages", (o,n) => { (o as ManagedAllDeviceCertificateState).CertificateKeyUsages = n.GetIntValue(); } },
-                {"certificateRevokeStatus", (o,n) => { (o as ManagedAllDeviceCertificateState).CertificateRevokeStatus = n.GetEnumValue<CertificateRevocationStatus>(); } },
-                {"certificateRevokeStatusLastChangeDateTime", (o,n) => { (o as ManagedAllDeviceCertificateState).CertificateRevokeStatusLastChangeDateTime = n.GetDateTimeOffsetValue(); } },
-                {"certificateSerialNumber", (o,n) => { (o as ManagedAllDeviceCertificateState).CertificateSerialNumber = n.GetStringValue(); } },
-                {"certificateSubjectName", (o,n) => { (o as ManagedAllDeviceCertificateState).CertificateSubjectName = n.GetStringValue(); } },
-                {"certificateThumbprint", (o,n) => { (o as ManagedAllDeviceCertificateState).CertificateThumbprint = n.GetStringValue(); } },
-                {"managedDeviceDisplayName", (o,n) => { (o as ManagedAllDeviceCertificateState).ManagedDeviceDisplayName = n.GetStringValue(); } },
-                {"userPrincipalName", (o,n) => { (o as ManagedAllDeviceCertificateState).UserPrincipalName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"certificateExpirationDateTime", n => { CertificateExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"certificateExtendedKeyUsages", n => { CertificateExtendedKeyUsages = n.GetStringValue(); } },
+                {"certificateIssuanceDateTime", n => { CertificateIssuanceDateTime = n.GetDateTimeOffsetValue(); } },
+                {"certificateIssuerName", n => { CertificateIssuerName = n.GetStringValue(); } },
+                {"certificateKeyUsages", n => { CertificateKeyUsages = n.GetIntValue(); } },
+                {"certificateRevokeStatus", n => { CertificateRevokeStatus = n.GetEnumValue<CertificateRevocationStatus>(); } },
+                {"certificateRevokeStatusLastChangeDateTime", n => { CertificateRevokeStatusLastChangeDateTime = n.GetDateTimeOffsetValue(); } },
+                {"certificateSerialNumber", n => { CertificateSerialNumber = n.GetStringValue(); } },
+                {"certificateSubjectName", n => { CertificateSubjectName = n.GetStringValue(); } },
+                {"certificateThumbprint", n => { CertificateThumbprint = n.GetStringValue(); } },
+                {"managedDeviceDisplayName", n => { ManagedDeviceDisplayName = n.GetStringValue(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

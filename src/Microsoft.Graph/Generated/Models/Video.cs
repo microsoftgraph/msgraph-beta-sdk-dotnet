@@ -44,18 +44,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"audioBitsPerSample", (o,n) => { (o as Video).AudioBitsPerSample = n.GetIntValue(); } },
-                {"audioChannels", (o,n) => { (o as Video).AudioChannels = n.GetIntValue(); } },
-                {"audioFormat", (o,n) => { (o as Video).AudioFormat = n.GetStringValue(); } },
-                {"audioSamplesPerSecond", (o,n) => { (o as Video).AudioSamplesPerSecond = n.GetIntValue(); } },
-                {"bitrate", (o,n) => { (o as Video).Bitrate = n.GetIntValue(); } },
-                {"duration", (o,n) => { (o as Video).Duration = n.GetLongValue(); } },
-                {"fourCC", (o,n) => { (o as Video).FourCC = n.GetStringValue(); } },
-                {"frameRate", (o,n) => { (o as Video).FrameRate = n.GetDoubleValue(); } },
-                {"height", (o,n) => { (o as Video).Height = n.GetIntValue(); } },
-                {"width", (o,n) => { (o as Video).Width = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"audioBitsPerSample", n => { AudioBitsPerSample = n.GetIntValue(); } },
+                {"audioChannels", n => { AudioChannels = n.GetIntValue(); } },
+                {"audioFormat", n => { AudioFormat = n.GetStringValue(); } },
+                {"audioSamplesPerSecond", n => { AudioSamplesPerSecond = n.GetIntValue(); } },
+                {"bitrate", n => { Bitrate = n.GetIntValue(); } },
+                {"duration", n => { Duration = n.GetLongValue(); } },
+                {"fourCC", n => { FourCC = n.GetStringValue(); } },
+                {"frameRate", n => { FrameRate = n.GetDoubleValue(); } },
+                {"height", n => { Height = n.GetIntValue(); } },
+                {"width", n => { Width = n.GetIntValue(); } },
             };
         }
         /// <summary>

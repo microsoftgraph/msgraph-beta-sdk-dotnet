@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement {
         public EntitlementManagementRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/roleManagement/entitlementManagement{?select,expand}";
+            UrlTemplate = "{+baseurl}/roleManagement/entitlementManagement{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement {
         public EntitlementManagementRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/roleManagement/entitlementManagement{?select,expand}";
+            UrlTemplate = "{+baseurl}/roleManagement/entitlementManagement{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -205,37 +205,23 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement {
         }
         /// <summary>
         /// Provides operations to call the roleScheduleInstances method.
-        /// <param name="appScopeId">Usage: appScopeId=&apos;{appScopeId}&apos;</param>
-        /// <param name="directoryScopeId">Usage: directoryScopeId=&apos;{directoryScopeId}&apos;</param>
-        /// <param name="principalId">Usage: principalId=&apos;{principalId}&apos;</param>
-        /// <param name="roleDefinitionId">Usage: roleDefinitionId=&apos;{roleDefinitionId}&apos;</param>
         /// </summary>
-        public RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId(string appScopeId, string directoryScopeId, string principalId, string roleDefinitionId) {
-            if(string.IsNullOrEmpty(appScopeId)) throw new ArgumentNullException(nameof(appScopeId));
-            if(string.IsNullOrEmpty(directoryScopeId)) throw new ArgumentNullException(nameof(directoryScopeId));
-            if(string.IsNullOrEmpty(principalId)) throw new ArgumentNullException(nameof(principalId));
-            if(string.IsNullOrEmpty(roleDefinitionId)) throw new ArgumentNullException(nameof(roleDefinitionId));
-            return new RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder(PathParameters, RequestAdapter, appScopeId, directoryScopeId, principalId, roleDefinitionId);
+        public RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId() {
+            return new RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Provides operations to call the roleSchedules method.
-        /// <param name="appScopeId">Usage: appScopeId=&apos;{appScopeId}&apos;</param>
-        /// <param name="directoryScopeId">Usage: directoryScopeId=&apos;{directoryScopeId}&apos;</param>
-        /// <param name="principalId">Usage: principalId=&apos;{principalId}&apos;</param>
-        /// <param name="roleDefinitionId">Usage: roleDefinitionId=&apos;{roleDefinitionId}&apos;</param>
         /// </summary>
-        public RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId(string appScopeId, string directoryScopeId, string principalId, string roleDefinitionId) {
-            if(string.IsNullOrEmpty(appScopeId)) throw new ArgumentNullException(nameof(appScopeId));
-            if(string.IsNullOrEmpty(directoryScopeId)) throw new ArgumentNullException(nameof(directoryScopeId));
-            if(string.IsNullOrEmpty(principalId)) throw new ArgumentNullException(nameof(principalId));
-            if(string.IsNullOrEmpty(roleDefinitionId)) throw new ArgumentNullException(nameof(roleDefinitionId));
-            return new RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder(PathParameters, RequestAdapter, appScopeId, directoryScopeId, principalId, roleDefinitionId);
+        public RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId() {
+            return new RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Container for roles and assignments for entitlement management resources.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
     }

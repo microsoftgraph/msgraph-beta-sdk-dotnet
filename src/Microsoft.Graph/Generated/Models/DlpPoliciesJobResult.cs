@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"auditCorrelationId", (o,n) => { (o as DlpPoliciesJobResult).AuditCorrelationId = n.GetStringValue(); } },
-                {"evaluationDateTime", (o,n) => { (o as DlpPoliciesJobResult).EvaluationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"matchingRules", (o,n) => { (o as DlpPoliciesJobResult).MatchingRules = n.GetCollectionOfObjectValues<MatchingDlpRule>(MatchingDlpRule.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"auditCorrelationId", n => { AuditCorrelationId = n.GetStringValue(); } },
+                {"evaluationDateTime", n => { EvaluationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"matchingRules", n => { MatchingRules = n.GetCollectionOfObjectValues<MatchingDlpRule>(MatchingDlpRule.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

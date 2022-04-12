@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"capability", (o,n) => { (o as Endpoint).Capability = n.GetStringValue(); } },
-                {"providerId", (o,n) => { (o as Endpoint).ProviderId = n.GetStringValue(); } },
-                {"providerName", (o,n) => { (o as Endpoint).ProviderName = n.GetStringValue(); } },
-                {"providerResourceId", (o,n) => { (o as Endpoint).ProviderResourceId = n.GetStringValue(); } },
-                {"uri", (o,n) => { (o as Endpoint).Uri = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"capability", n => { Capability = n.GetStringValue(); } },
+                {"providerId", n => { ProviderId = n.GetStringValue(); } },
+                {"providerName", n => { ProviderName = n.GetStringValue(); } },
+                {"providerResourceId", n => { ProviderResourceId = n.GetStringValue(); } },
+                {"uri", n => { Uri = n.GetStringValue(); } },
             };
         }
         /// <summary>

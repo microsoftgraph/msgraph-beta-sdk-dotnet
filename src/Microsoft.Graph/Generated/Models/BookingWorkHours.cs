@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"day", (o,n) => { (o as BookingWorkHours).Day = n.GetEnumValue<DayOfWeek>(); } },
-                {"timeSlots", (o,n) => { (o as BookingWorkHours).TimeSlots = n.GetCollectionOfObjectValues<BookingWorkTimeSlot>(BookingWorkTimeSlot.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"day", n => { Day = n.GetEnumValue<DayOfWeek>(); } },
+                {"timeSlots", n => { TimeSlots = n.GetCollectionOfObjectValues<BookingWorkTimeSlot>(BookingWorkTimeSlot.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

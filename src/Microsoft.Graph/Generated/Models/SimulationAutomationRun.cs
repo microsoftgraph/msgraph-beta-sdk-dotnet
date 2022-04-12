@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"endDateTime", (o,n) => { (o as SimulationAutomationRun).EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"simulationId", (o,n) => { (o as SimulationAutomationRun).SimulationId = n.GetStringValue(); } },
-                {"startDateTime", (o,n) => { (o as SimulationAutomationRun).StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", (o,n) => { (o as SimulationAutomationRun).Status = n.GetEnumValue<SimulationAutomationRunStatus>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"simulationId", n => { SimulationId = n.GetStringValue(); } },
+                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                {"status", n => { Status = n.GetEnumValue<SimulationAutomationRunStatus>(); } },
             };
         }
         /// <summary>

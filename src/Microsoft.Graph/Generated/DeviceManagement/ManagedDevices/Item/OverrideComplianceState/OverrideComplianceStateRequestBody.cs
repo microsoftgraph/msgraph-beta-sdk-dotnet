@@ -30,10 +30,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.OverrideComp
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"complianceState", (o,n) => { (o as OverrideComplianceStateRequestBody).ComplianceState = n.GetEnumValue<AdministratorConfiguredDeviceComplianceState>(); } },
-                {"remediationUrl", (o,n) => { (o as OverrideComplianceStateRequestBody).RemediationUrl = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"complianceState", n => { ComplianceState = n.GetEnumValue<AdministratorConfiguredDeviceComplianceState>(); } },
+                {"remediationUrl", n => { RemediationUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"displayName", (o,n) => { (o as WorkloadStatus).DisplayName = n.GetStringValue(); } },
-                {"offboardedDateTime", (o,n) => { (o as WorkloadStatus).OffboardedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"onboardedDateTime", (o,n) => { (o as WorkloadStatus).OnboardedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"onboardingStatus", (o,n) => { (o as WorkloadStatus).OnboardingStatus = n.GetEnumValue<WorkloadOnboardingStatus>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"offboardedDateTime", n => { OffboardedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"onboardedDateTime", n => { OnboardedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<WorkloadOnboardingStatus>(); } },
             };
         }
         /// <summary>

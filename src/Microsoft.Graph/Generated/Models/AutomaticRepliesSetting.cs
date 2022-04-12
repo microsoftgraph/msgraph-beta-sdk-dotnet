@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"externalAudience", (o,n) => { (o as AutomaticRepliesSetting).ExternalAudience = n.GetEnumValue<ExternalAudienceScope>(); } },
-                {"externalReplyMessage", (o,n) => { (o as AutomaticRepliesSetting).ExternalReplyMessage = n.GetStringValue(); } },
-                {"internalReplyMessage", (o,n) => { (o as AutomaticRepliesSetting).InternalReplyMessage = n.GetStringValue(); } },
-                {"scheduledEndDateTime", (o,n) => { (o as AutomaticRepliesSetting).ScheduledEndDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"scheduledStartDateTime", (o,n) => { (o as AutomaticRepliesSetting).ScheduledStartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"status", (o,n) => { (o as AutomaticRepliesSetting).Status = n.GetEnumValue<AutomaticRepliesStatus>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"externalAudience", n => { ExternalAudience = n.GetEnumValue<ExternalAudienceScope>(); } },
+                {"externalReplyMessage", n => { ExternalReplyMessage = n.GetStringValue(); } },
+                {"internalReplyMessage", n => { InternalReplyMessage = n.GetStringValue(); } },
+                {"scheduledEndDateTime", n => { ScheduledEndDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                {"scheduledStartDateTime", n => { ScheduledStartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                {"status", n => { Status = n.GetEnumValue<AutomaticRepliesStatus>(); } },
             };
         }
         /// <summary>

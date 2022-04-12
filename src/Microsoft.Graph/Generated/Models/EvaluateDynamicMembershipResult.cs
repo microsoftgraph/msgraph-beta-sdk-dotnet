@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"membershipRule", (o,n) => { (o as EvaluateDynamicMembershipResult).MembershipRule = n.GetStringValue(); } },
-                {"membershipRuleEvaluationDetails", (o,n) => { (o as EvaluateDynamicMembershipResult).MembershipRuleEvaluationDetails = n.GetObjectValue<ExpressionEvaluationDetails>(ExpressionEvaluationDetails.CreateFromDiscriminatorValue); } },
-                {"membershipRuleEvaluationResult", (o,n) => { (o as EvaluateDynamicMembershipResult).MembershipRuleEvaluationResult = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"membershipRule", n => { MembershipRule = n.GetStringValue(); } },
+                {"membershipRuleEvaluationDetails", n => { MembershipRuleEvaluationDetails = n.GetObjectValue<ExpressionEvaluationDetails>(ExpressionEvaluationDetails.CreateFromDiscriminatorValue); } },
+                {"membershipRuleEvaluationResult", n => { MembershipRuleEvaluationResult = n.GetBoolValue(); } },
             };
         }
         /// <summary>

@@ -20,10 +20,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"totalUserCount", (o,n) => { (o as CredentialUserRegistrationCount).TotalUserCount = n.GetLongValue(); } },
-                {"userRegistrationCounts", (o,n) => { (o as CredentialUserRegistrationCount).UserRegistrationCounts = n.GetCollectionOfObjectValues<UserRegistrationCount>(UserRegistrationCount.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"totalUserCount", n => { TotalUserCount = n.GetLongValue(); } },
+                {"userRegistrationCounts", n => { UserRegistrationCounts = n.GetCollectionOfObjectValues<UserRegistrationCount>(UserRegistrationCount.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

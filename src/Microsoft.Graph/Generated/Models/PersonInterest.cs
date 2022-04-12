@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"categories", (o,n) => { (o as PersonInterest).Categories = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"collaborationTags", (o,n) => { (o as PersonInterest).CollaborationTags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"description", (o,n) => { (o as PersonInterest).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as PersonInterest).DisplayName = n.GetStringValue(); } },
-                {"thumbnailUrl", (o,n) => { (o as PersonInterest).ThumbnailUrl = n.GetStringValue(); } },
-                {"webUrl", (o,n) => { (o as PersonInterest).WebUrl = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"collaborationTags", n => { CollaborationTags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"thumbnailUrl", n => { ThumbnailUrl = n.GetStringValue(); } },
+                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

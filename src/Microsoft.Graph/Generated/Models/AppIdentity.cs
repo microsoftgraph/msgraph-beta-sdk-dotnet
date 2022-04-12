@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"appId", (o,n) => { (o as AppIdentity).AppId = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as AppIdentity).DisplayName = n.GetStringValue(); } },
-                {"servicePrincipalId", (o,n) => { (o as AppIdentity).ServicePrincipalId = n.GetStringValue(); } },
-                {"servicePrincipalName", (o,n) => { (o as AppIdentity).ServicePrincipalName = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"appId", n => { AppId = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"servicePrincipalId", n => { ServicePrincipalId = n.GetStringValue(); } },
+                {"servicePrincipalName", n => { ServicePrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

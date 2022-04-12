@@ -22,11 +22,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"deviceConfiguration", (o,n) => { (o as DeviceConfigurationGroupAssignment).DeviceConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceConfiguration>(Microsoft.Graph.Beta.Models.DeviceConfiguration.CreateFromDiscriminatorValue); } },
-                {"excludeGroup", (o,n) => { (o as DeviceConfigurationGroupAssignment).ExcludeGroup = n.GetBoolValue(); } },
-                {"targetGroupId", (o,n) => { (o as DeviceConfigurationGroupAssignment).TargetGroupId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"deviceConfiguration", n => { DeviceConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceConfiguration>(Microsoft.Graph.Beta.Models.DeviceConfiguration.CreateFromDiscriminatorValue); } },
+                {"excludeGroup", n => { ExcludeGroup = n.GetBoolValue(); } },
+                {"targetGroupId", n => { TargetGroupId = n.GetStringValue(); } },
             };
         }
         /// <summary>

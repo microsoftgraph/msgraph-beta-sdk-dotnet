@@ -5,11 +5,11 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TeamInfo : Entity, IParsable {
-        /// <summary>The displayName property</summary>
+        /// <summary>The name of the team.</summary>
         public string DisplayName { get; set; }
         /// <summary>The team property</summary>
         public Microsoft.Graph.Beta.Models.Team Team { get; set; }
-        /// <summary>The tenantId property</summary>
+        /// <summary>The ID of the Azure Active Directory tenant.</summary>
         public string TenantId { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -22,11 +22,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"displayName", (o,n) => { (o as TeamInfo).DisplayName = n.GetStringValue(); } },
-                {"team", (o,n) => { (o as TeamInfo).Team = n.GetObjectValue<Microsoft.Graph.Beta.Models.Team>(Microsoft.Graph.Beta.Models.Team.CreateFromDiscriminatorValue); } },
-                {"tenantId", (o,n) => { (o as TeamInfo).TenantId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"team", n => { Team = n.GetObjectValue<Microsoft.Graph.Beta.Models.Team>(Microsoft.Graph.Beta.Models.Team.CreateFromDiscriminatorValue); } },
+                {"tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
         /// <summary>

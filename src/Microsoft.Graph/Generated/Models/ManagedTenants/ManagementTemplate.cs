@@ -48,24 +48,24 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"category", (o,n) => { (o as ManagementTemplate).Category = n.GetEnumValue<ManagementCategory>(); } },
-                {"createdByUserId", (o,n) => { (o as ManagementTemplate).CreatedByUserId = n.GetStringValue(); } },
-                {"createdDateTime", (o,n) => { (o as ManagementTemplate).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as ManagementTemplate).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as ManagementTemplate).DisplayName = n.GetStringValue(); } },
-                {"informationLinks", (o,n) => { (o as ManagementTemplate).InformationLinks = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ActionUrl>(Microsoft.Graph.Beta.Models.ActionUrl.CreateFromDiscriminatorValue).ToList(); } },
-                {"lastActionByUserId", (o,n) => { (o as ManagementTemplate).LastActionByUserId = n.GetStringValue(); } },
-                {"lastActionDateTime", (o,n) => { (o as ManagementTemplate).LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managementTemplateCollections", (o,n) => { (o as ManagementTemplate).ManagementTemplateCollections = n.GetCollectionOfObjectValues<ManagementTemplateCollection>(ManagementTemplateCollection.CreateFromDiscriminatorValue).ToList(); } },
-                {"managementTemplateSteps", (o,n) => { (o as ManagementTemplate).ManagementTemplateSteps = n.GetCollectionOfObjectValues<ManagementTemplateStep>(ManagementTemplateStep.CreateFromDiscriminatorValue).ToList(); } },
-                {"parameters", (o,n) => { (o as ManagementTemplate).Parameters = n.GetCollectionOfObjectValues<TemplateParameter>(TemplateParameter.CreateFromDiscriminatorValue).ToList(); } },
-                {"priority", (o,n) => { (o as ManagementTemplate).Priority = n.GetIntValue(); } },
-                {"provider", (o,n) => { (o as ManagementTemplate).Provider = n.GetEnumValue<ManagementProvider>(); } },
-                {"userImpact", (o,n) => { (o as ManagementTemplate).UserImpact = n.GetStringValue(); } },
-                {"version", (o,n) => { (o as ManagementTemplate).Version = n.GetIntValue(); } },
-                {"workloadActions", (o,n) => { (o as ManagementTemplate).WorkloadActions = n.GetCollectionOfObjectValues<WorkloadAction>(WorkloadAction.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"category", n => { Category = n.GetEnumValue<ManagementCategory>(); } },
+                {"createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"informationLinks", n => { InformationLinks = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ActionUrl>(Microsoft.Graph.Beta.Models.ActionUrl.CreateFromDiscriminatorValue).ToList(); } },
+                {"lastActionByUserId", n => { LastActionByUserId = n.GetStringValue(); } },
+                {"lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
+                {"managementTemplateCollections", n => { ManagementTemplateCollections = n.GetCollectionOfObjectValues<ManagementTemplateCollection>(ManagementTemplateCollection.CreateFromDiscriminatorValue).ToList(); } },
+                {"managementTemplateSteps", n => { ManagementTemplateSteps = n.GetCollectionOfObjectValues<ManagementTemplateStep>(ManagementTemplateStep.CreateFromDiscriminatorValue).ToList(); } },
+                {"parameters", n => { Parameters = n.GetCollectionOfObjectValues<TemplateParameter>(TemplateParameter.CreateFromDiscriminatorValue).ToList(); } },
+                {"priority", n => { Priority = n.GetIntValue(); } },
+                {"provider", n => { Provider = n.GetEnumValue<ManagementProvider>(); } },
+                {"userImpact", n => { UserImpact = n.GetStringValue(); } },
+                {"version", n => { Version = n.GetIntValue(); } },
+                {"workloadActions", n => { WorkloadActions = n.GetCollectionOfObjectValues<WorkloadAction>(WorkloadAction.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

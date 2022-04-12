@@ -30,10 +30,10 @@ namespace Microsoft.Graph.Beta.Chats.Item.UnhideForUser {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"tenantId", (o,n) => { (o as UnhideForUserRequestBody).TenantId = n.GetStringValue(); } },
-                {"user", (o,n) => { (o as UnhideForUserRequestBody).User = n.GetObjectValue<TeamworkUserIdentity>(TeamworkUserIdentity.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                {"user", n => { User = n.GetObjectValue<TeamworkUserIdentity>(TeamworkUserIdentity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

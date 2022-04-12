@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleEligibilitySchedules
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/roleManagement/directory/roleEligibilitySchedules/microsoft.graph.filterByCurrentUser(on='{on}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("on", on);
+            urlTplParams.Add("", on);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

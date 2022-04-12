@@ -36,18 +36,18 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"endDateTime", (o,n) => { (o as CallRecord).EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"joinWebUrl", (o,n) => { (o as CallRecord).JoinWebUrl = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as CallRecord).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"modalities", (o,n) => { (o as CallRecord).Modalities = n.GetCollectionOfEnumValues<Modality>().ToList(); } },
-                {"organizer", (o,n) => { (o as CallRecord).Organizer = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
-                {"participants", (o,n) => { (o as CallRecord).Participants = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue).ToList(); } },
-                {"sessions", (o,n) => { (o as CallRecord).Sessions = n.GetCollectionOfObjectValues<Session>(Session.CreateFromDiscriminatorValue).ToList(); } },
-                {"startDateTime", (o,n) => { (o as CallRecord).StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"type", (o,n) => { (o as CallRecord).Type = n.GetEnumValue<CallType>(); } },
-                {"version", (o,n) => { (o as CallRecord).Version = n.GetLongValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"joinWebUrl", n => { JoinWebUrl = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"modalities", n => { Modalities = n.GetCollectionOfEnumValues<Modality>().ToList(); } },
+                {"organizer", n => { Organizer = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                {"participants", n => { Participants = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue).ToList(); } },
+                {"sessions", n => { Sessions = n.GetCollectionOfObjectValues<Session>(Session.CreateFromDiscriminatorValue).ToList(); } },
+                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                {"type", n => { Type = n.GetEnumValue<CallType>(); } },
+                {"version", n => { Version = n.GetLongValue(); } },
             };
         }
         /// <summary>

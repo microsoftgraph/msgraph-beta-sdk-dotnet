@@ -27,13 +27,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"active", (o,n) => { (o as Office365GroupsActivityFileCounts).Active = n.GetLongValue(); } },
-                {"reportDate", (o,n) => { (o as Office365GroupsActivityFileCounts).ReportDate = n.GetDateValue(); } },
-                {"reportPeriod", (o,n) => { (o as Office365GroupsActivityFileCounts).ReportPeriod = n.GetStringValue(); } },
-                {"reportRefreshDate", (o,n) => { (o as Office365GroupsActivityFileCounts).ReportRefreshDate = n.GetDateValue(); } },
-                {"total", (o,n) => { (o as Office365GroupsActivityFileCounts).Total = n.GetLongValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"active", n => { Active = n.GetLongValue(); } },
+                {"reportDate", n => { ReportDate = n.GetDateValue(); } },
+                {"reportPeriod", n => { ReportPeriod = n.GetStringValue(); } },
+                {"reportRefreshDate", n => { ReportRefreshDate = n.GetDateValue(); } },
+                {"total", n => { Total = n.GetLongValue(); } },
             };
         }
         /// <summary>

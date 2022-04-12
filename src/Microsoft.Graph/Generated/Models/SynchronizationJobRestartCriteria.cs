@@ -26,9 +26,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"resetScope", (o,n) => { (o as SynchronizationJobRestartCriteria).ResetScope = n.GetEnumValue<SynchronizationJobRestartScope>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"resetScope", n => { ResetScope = n.GetEnumValue<SynchronizationJobRestartScope>(); } },
             };
         }
         /// <summary>

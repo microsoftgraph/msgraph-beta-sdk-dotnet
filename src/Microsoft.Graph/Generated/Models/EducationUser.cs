@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
         public List<AssignedLicense> AssignedLicenses { get; set; }
         /// <summary>The plans that are assigned to the user. Read-only. Not nullable.</summary>
         public List<AssignedPlan> AssignedPlans { get; set; }
-        /// <summary>Assignments that belongs to the user.</summary>
+        /// <summary>Assignments belonging to the user.</summary>
         public List<EducationAssignment> Assignments { get; set; }
         /// <summary>The telephone numbers for the user. Note: Although this is a string collection, only one number can be set for this property.</summary>
         public List<string> BusinessPhones { get; set; }
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         public List<RelatedContact> RelatedContacts { get; set; }
         /// <summary>The address where the user lives.</summary>
         public PhysicalAddress ResidenceAddress { get; set; }
-        /// <summary>The rubrics property</summary>
+        /// <summary>When set, the grading rubric attached to the assignment.</summary>
         public List<EducationRubric> Rubrics { get; set; }
         /// <summary>Schools to which the user belongs. Nullable.</summary>
         public List<EducationSchool> Schools { get; set; }
@@ -92,46 +92,46 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accountEnabled", (o,n) => { (o as EducationUser).AccountEnabled = n.GetBoolValue(); } },
-                {"assignedLicenses", (o,n) => { (o as EducationUser).AssignedLicenses = n.GetCollectionOfObjectValues<AssignedLicense>(AssignedLicense.CreateFromDiscriminatorValue).ToList(); } },
-                {"assignedPlans", (o,n) => { (o as EducationUser).AssignedPlans = n.GetCollectionOfObjectValues<AssignedPlan>(AssignedPlan.CreateFromDiscriminatorValue).ToList(); } },
-                {"assignments", (o,n) => { (o as EducationUser).Assignments = n.GetCollectionOfObjectValues<EducationAssignment>(EducationAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"businessPhones", (o,n) => { (o as EducationUser).BusinessPhones = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"classes", (o,n) => { (o as EducationUser).Classes = n.GetCollectionOfObjectValues<EducationClass>(EducationClass.CreateFromDiscriminatorValue).ToList(); } },
-                {"createdBy", (o,n) => { (o as EducationUser).CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"department", (o,n) => { (o as EducationUser).Department = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as EducationUser).DisplayName = n.GetStringValue(); } },
-                {"externalSource", (o,n) => { (o as EducationUser).ExternalSource = n.GetEnumValue<EducationExternalSource>(); } },
-                {"externalSourceDetail", (o,n) => { (o as EducationUser).ExternalSourceDetail = n.GetStringValue(); } },
-                {"givenName", (o,n) => { (o as EducationUser).GivenName = n.GetStringValue(); } },
-                {"mail", (o,n) => { (o as EducationUser).Mail = n.GetStringValue(); } },
-                {"mailingAddress", (o,n) => { (o as EducationUser).MailingAddress = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
-                {"mailNickname", (o,n) => { (o as EducationUser).MailNickname = n.GetStringValue(); } },
-                {"middleName", (o,n) => { (o as EducationUser).MiddleName = n.GetStringValue(); } },
-                {"mobilePhone", (o,n) => { (o as EducationUser).MobilePhone = n.GetStringValue(); } },
-                {"officeLocation", (o,n) => { (o as EducationUser).OfficeLocation = n.GetStringValue(); } },
-                {"onPremisesInfo", (o,n) => { (o as EducationUser).OnPremisesInfo = n.GetObjectValue<EducationOnPremisesInfo>(EducationOnPremisesInfo.CreateFromDiscriminatorValue); } },
-                {"passwordPolicies", (o,n) => { (o as EducationUser).PasswordPolicies = n.GetStringValue(); } },
-                {"passwordProfile", (o,n) => { (o as EducationUser).PasswordProfile = n.GetObjectValue<Microsoft.Graph.Beta.Models.PasswordProfile>(Microsoft.Graph.Beta.Models.PasswordProfile.CreateFromDiscriminatorValue); } },
-                {"preferredLanguage", (o,n) => { (o as EducationUser).PreferredLanguage = n.GetStringValue(); } },
-                {"primaryRole", (o,n) => { (o as EducationUser).PrimaryRole = n.GetEnumValue<EducationUserRole>(); } },
-                {"provisionedPlans", (o,n) => { (o as EducationUser).ProvisionedPlans = n.GetCollectionOfObjectValues<ProvisionedPlan>(ProvisionedPlan.CreateFromDiscriminatorValue).ToList(); } },
-                {"refreshTokensValidFromDateTime", (o,n) => { (o as EducationUser).RefreshTokensValidFromDateTime = n.GetDateTimeOffsetValue(); } },
-                {"relatedContacts", (o,n) => { (o as EducationUser).RelatedContacts = n.GetCollectionOfObjectValues<RelatedContact>(RelatedContact.CreateFromDiscriminatorValue).ToList(); } },
-                {"residenceAddress", (o,n) => { (o as EducationUser).ResidenceAddress = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
-                {"rubrics", (o,n) => { (o as EducationUser).Rubrics = n.GetCollectionOfObjectValues<EducationRubric>(EducationRubric.CreateFromDiscriminatorValue).ToList(); } },
-                {"schools", (o,n) => { (o as EducationUser).Schools = n.GetCollectionOfObjectValues<EducationSchool>(EducationSchool.CreateFromDiscriminatorValue).ToList(); } },
-                {"showInAddressList", (o,n) => { (o as EducationUser).ShowInAddressList = n.GetBoolValue(); } },
-                {"student", (o,n) => { (o as EducationUser).Student = n.GetObjectValue<EducationStudent>(EducationStudent.CreateFromDiscriminatorValue); } },
-                {"surname", (o,n) => { (o as EducationUser).Surname = n.GetStringValue(); } },
-                {"taughtClasses", (o,n) => { (o as EducationUser).TaughtClasses = n.GetCollectionOfObjectValues<EducationClass>(EducationClass.CreateFromDiscriminatorValue).ToList(); } },
-                {"teacher", (o,n) => { (o as EducationUser).Teacher = n.GetObjectValue<EducationTeacher>(EducationTeacher.CreateFromDiscriminatorValue); } },
-                {"usageLocation", (o,n) => { (o as EducationUser).UsageLocation = n.GetStringValue(); } },
-                {"user", (o,n) => { (o as EducationUser).User = n.GetObjectValue<Microsoft.Graph.Beta.Models.User>(Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue); } },
-                {"userPrincipalName", (o,n) => { (o as EducationUser).UserPrincipalName = n.GetStringValue(); } },
-                {"userType", (o,n) => { (o as EducationUser).UserType = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"accountEnabled", n => { AccountEnabled = n.GetBoolValue(); } },
+                {"assignedLicenses", n => { AssignedLicenses = n.GetCollectionOfObjectValues<AssignedLicense>(AssignedLicense.CreateFromDiscriminatorValue).ToList(); } },
+                {"assignedPlans", n => { AssignedPlans = n.GetCollectionOfObjectValues<AssignedPlan>(AssignedPlan.CreateFromDiscriminatorValue).ToList(); } },
+                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<EducationAssignment>(EducationAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"businessPhones", n => { BusinessPhones = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"classes", n => { Classes = n.GetCollectionOfObjectValues<EducationClass>(EducationClass.CreateFromDiscriminatorValue).ToList(); } },
+                {"createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"department", n => { Department = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"externalSource", n => { ExternalSource = n.GetEnumValue<EducationExternalSource>(); } },
+                {"externalSourceDetail", n => { ExternalSourceDetail = n.GetStringValue(); } },
+                {"givenName", n => { GivenName = n.GetStringValue(); } },
+                {"mail", n => { Mail = n.GetStringValue(); } },
+                {"mailingAddress", n => { MailingAddress = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
+                {"mailNickname", n => { MailNickname = n.GetStringValue(); } },
+                {"middleName", n => { MiddleName = n.GetStringValue(); } },
+                {"mobilePhone", n => { MobilePhone = n.GetStringValue(); } },
+                {"officeLocation", n => { OfficeLocation = n.GetStringValue(); } },
+                {"onPremisesInfo", n => { OnPremisesInfo = n.GetObjectValue<EducationOnPremisesInfo>(EducationOnPremisesInfo.CreateFromDiscriminatorValue); } },
+                {"passwordPolicies", n => { PasswordPolicies = n.GetStringValue(); } },
+                {"passwordProfile", n => { PasswordProfile = n.GetObjectValue<Microsoft.Graph.Beta.Models.PasswordProfile>(Microsoft.Graph.Beta.Models.PasswordProfile.CreateFromDiscriminatorValue); } },
+                {"preferredLanguage", n => { PreferredLanguage = n.GetStringValue(); } },
+                {"primaryRole", n => { PrimaryRole = n.GetEnumValue<EducationUserRole>(); } },
+                {"provisionedPlans", n => { ProvisionedPlans = n.GetCollectionOfObjectValues<ProvisionedPlan>(ProvisionedPlan.CreateFromDiscriminatorValue).ToList(); } },
+                {"refreshTokensValidFromDateTime", n => { RefreshTokensValidFromDateTime = n.GetDateTimeOffsetValue(); } },
+                {"relatedContacts", n => { RelatedContacts = n.GetCollectionOfObjectValues<RelatedContact>(RelatedContact.CreateFromDiscriminatorValue).ToList(); } },
+                {"residenceAddress", n => { ResidenceAddress = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
+                {"rubrics", n => { Rubrics = n.GetCollectionOfObjectValues<EducationRubric>(EducationRubric.CreateFromDiscriminatorValue).ToList(); } },
+                {"schools", n => { Schools = n.GetCollectionOfObjectValues<EducationSchool>(EducationSchool.CreateFromDiscriminatorValue).ToList(); } },
+                {"showInAddressList", n => { ShowInAddressList = n.GetBoolValue(); } },
+                {"student", n => { Student = n.GetObjectValue<EducationStudent>(EducationStudent.CreateFromDiscriminatorValue); } },
+                {"surname", n => { Surname = n.GetStringValue(); } },
+                {"taughtClasses", n => { TaughtClasses = n.GetCollectionOfObjectValues<EducationClass>(EducationClass.CreateFromDiscriminatorValue).ToList(); } },
+                {"teacher", n => { Teacher = n.GetObjectValue<EducationTeacher>(EducationTeacher.CreateFromDiscriminatorValue); } },
+                {"usageLocation", n => { UsageLocation = n.GetStringValue(); } },
+                {"user", n => { User = n.GetObjectValue<Microsoft.Graph.Beta.Models.User>(Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                {"userType", n => { UserType = n.GetStringValue(); } },
             };
         }
         /// <summary>

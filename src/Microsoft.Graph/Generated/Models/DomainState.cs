@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"lastActionDateTime", (o,n) => { (o as DomainState).LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"operation", (o,n) => { (o as DomainState).Operation = n.GetStringValue(); } },
-                {"status", (o,n) => { (o as DomainState).Status = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
+                {"operation", n => { Operation = n.GetStringValue(); } },
+                {"status", n => { Status = n.GetStringValue(); } },
             };
         }
         /// <summary>

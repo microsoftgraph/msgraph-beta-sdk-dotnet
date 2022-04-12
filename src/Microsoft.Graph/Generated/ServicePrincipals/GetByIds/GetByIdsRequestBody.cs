@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.GetByIds {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"ids", (o,n) => { (o as GetByIdsRequestBody).Ids = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"types", (o,n) => { (o as GetByIdsRequestBody).Types = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"ids", n => { Ids = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"types", n => { Types = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

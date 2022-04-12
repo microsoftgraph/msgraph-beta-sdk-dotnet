@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appliesTo", (o,n) => { (o as MobilityManagementPolicy).AppliesTo = n.GetEnumValue<PolicyScope>(); } },
-                {"complianceUrl", (o,n) => { (o as MobilityManagementPolicy).ComplianceUrl = n.GetStringValue(); } },
-                {"description", (o,n) => { (o as MobilityManagementPolicy).Description = n.GetStringValue(); } },
-                {"discoveryUrl", (o,n) => { (o as MobilityManagementPolicy).DiscoveryUrl = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as MobilityManagementPolicy).DisplayName = n.GetStringValue(); } },
-                {"includedGroups", (o,n) => { (o as MobilityManagementPolicy).IncludedGroups = n.GetCollectionOfObjectValues<Group>(Group.CreateFromDiscriminatorValue).ToList(); } },
-                {"isValid", (o,n) => { (o as MobilityManagementPolicy).IsValid = n.GetBoolValue(); } },
-                {"termsOfUseUrl", (o,n) => { (o as MobilityManagementPolicy).TermsOfUseUrl = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"appliesTo", n => { AppliesTo = n.GetEnumValue<PolicyScope>(); } },
+                {"complianceUrl", n => { ComplianceUrl = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"discoveryUrl", n => { DiscoveryUrl = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"includedGroups", n => { IncludedGroups = n.GetCollectionOfObjectValues<Group>(Group.CreateFromDiscriminatorValue).ToList(); } },
+                {"isValid", n => { IsValid = n.GetBoolValue(); } },
+                {"termsOfUseUrl", n => { TermsOfUseUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

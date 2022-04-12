@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"targetDisplayName", (o,n) => { (o as MobileAppRelationship).TargetDisplayName = n.GetStringValue(); } },
-                {"targetDisplayVersion", (o,n) => { (o as MobileAppRelationship).TargetDisplayVersion = n.GetStringValue(); } },
-                {"targetId", (o,n) => { (o as MobileAppRelationship).TargetId = n.GetStringValue(); } },
-                {"targetPublisher", (o,n) => { (o as MobileAppRelationship).TargetPublisher = n.GetStringValue(); } },
-                {"targetType", (o,n) => { (o as MobileAppRelationship).TargetType = n.GetEnumValue<MobileAppRelationshipType>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"targetDisplayName", n => { TargetDisplayName = n.GetStringValue(); } },
+                {"targetDisplayVersion", n => { TargetDisplayVersion = n.GetStringValue(); } },
+                {"targetId", n => { TargetId = n.GetStringValue(); } },
+                {"targetPublisher", n => { TargetPublisher = n.GetStringValue(); } },
+                {"targetType", n => { TargetType = n.GetEnumValue<MobileAppRelationshipType>(); } },
             };
         }
         /// <summary>

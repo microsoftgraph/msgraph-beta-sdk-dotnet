@@ -47,19 +47,19 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"cleanDeviceCount", (o,n) => { (o as DeviceProtectionOverview).CleanDeviceCount = n.GetIntValue(); } },
-                {"criticalFailuresDeviceCount", (o,n) => { (o as DeviceProtectionOverview).CriticalFailuresDeviceCount = n.GetIntValue(); } },
-                {"inactiveThreatAgentDeviceCount", (o,n) => { (o as DeviceProtectionOverview).InactiveThreatAgentDeviceCount = n.GetIntValue(); } },
-                {"pendingFullScanDeviceCount", (o,n) => { (o as DeviceProtectionOverview).PendingFullScanDeviceCount = n.GetIntValue(); } },
-                {"pendingManualStepsDeviceCount", (o,n) => { (o as DeviceProtectionOverview).PendingManualStepsDeviceCount = n.GetIntValue(); } },
-                {"pendingOfflineScanDeviceCount", (o,n) => { (o as DeviceProtectionOverview).PendingOfflineScanDeviceCount = n.GetIntValue(); } },
-                {"pendingQuickScanDeviceCount", (o,n) => { (o as DeviceProtectionOverview).PendingQuickScanDeviceCount = n.GetIntValue(); } },
-                {"pendingRestartDeviceCount", (o,n) => { (o as DeviceProtectionOverview).PendingRestartDeviceCount = n.GetIntValue(); } },
-                {"pendingSignatureUpdateDeviceCount", (o,n) => { (o as DeviceProtectionOverview).PendingSignatureUpdateDeviceCount = n.GetIntValue(); } },
-                {"totalReportedDeviceCount", (o,n) => { (o as DeviceProtectionOverview).TotalReportedDeviceCount = n.GetIntValue(); } },
-                {"unknownStateThreatAgentDeviceCount", (o,n) => { (o as DeviceProtectionOverview).UnknownStateThreatAgentDeviceCount = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"cleanDeviceCount", n => { CleanDeviceCount = n.GetIntValue(); } },
+                {"criticalFailuresDeviceCount", n => { CriticalFailuresDeviceCount = n.GetIntValue(); } },
+                {"inactiveThreatAgentDeviceCount", n => { InactiveThreatAgentDeviceCount = n.GetIntValue(); } },
+                {"pendingFullScanDeviceCount", n => { PendingFullScanDeviceCount = n.GetIntValue(); } },
+                {"pendingManualStepsDeviceCount", n => { PendingManualStepsDeviceCount = n.GetIntValue(); } },
+                {"pendingOfflineScanDeviceCount", n => { PendingOfflineScanDeviceCount = n.GetIntValue(); } },
+                {"pendingQuickScanDeviceCount", n => { PendingQuickScanDeviceCount = n.GetIntValue(); } },
+                {"pendingRestartDeviceCount", n => { PendingRestartDeviceCount = n.GetIntValue(); } },
+                {"pendingSignatureUpdateDeviceCount", n => { PendingSignatureUpdateDeviceCount = n.GetIntValue(); } },
+                {"totalReportedDeviceCount", n => { TotalReportedDeviceCount = n.GetIntValue(); } },
+                {"unknownStateThreatAgentDeviceCount", n => { UnknownStateThreatAgentDeviceCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

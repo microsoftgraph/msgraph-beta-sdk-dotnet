@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"backlightBrightness", (o,n) => { (o as TeamworkDisplayScreenConfiguration).BacklightBrightness = n.GetIntValue(); } },
-                {"backlightTimeout", (o,n) => { (o as TeamworkDisplayScreenConfiguration).BacklightTimeout = n.GetTimeSpanValue(); } },
-                {"isHighContrastEnabled", (o,n) => { (o as TeamworkDisplayScreenConfiguration).IsHighContrastEnabled = n.GetBoolValue(); } },
-                {"isScreensaverEnabled", (o,n) => { (o as TeamworkDisplayScreenConfiguration).IsScreensaverEnabled = n.GetBoolValue(); } },
-                {"screensaverTimeout", (o,n) => { (o as TeamworkDisplayScreenConfiguration).ScreensaverTimeout = n.GetTimeSpanValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"backlightBrightness", n => { BacklightBrightness = n.GetIntValue(); } },
+                {"backlightTimeout", n => { BacklightTimeout = n.GetTimeSpanValue(); } },
+                {"isHighContrastEnabled", n => { IsHighContrastEnabled = n.GetBoolValue(); } },
+                {"isScreensaverEnabled", n => { IsScreensaverEnabled = n.GetBoolValue(); } },
+                {"screensaverTimeout", n => { ScreensaverTimeout = n.GetTimeSpanValue(); } },
             };
         }
         /// <summary>

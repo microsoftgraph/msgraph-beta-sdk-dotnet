@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"externalIp", (o,n) => { (o as Connector).ExternalIp = n.GetStringValue(); } },
-                {"machineName", (o,n) => { (o as Connector).MachineName = n.GetStringValue(); } },
-                {"memberOf", (o,n) => { (o as Connector).MemberOf = n.GetCollectionOfObjectValues<ConnectorGroup>(ConnectorGroup.CreateFromDiscriminatorValue).ToList(); } },
-                {"status", (o,n) => { (o as Connector).Status = n.GetEnumValue<ConnectorStatus>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"externalIp", n => { ExternalIp = n.GetStringValue(); } },
+                {"machineName", n => { MachineName = n.GetStringValue(); } },
+                {"memberOf", n => { MemberOf = n.GetCollectionOfObjectValues<ConnectorGroup>(ConnectorGroup.CreateFromDiscriminatorValue).ToList(); } },
+                {"status", n => { Status = n.GetEnumValue<ConnectorStatus>(); } },
             };
         }
         /// <summary>

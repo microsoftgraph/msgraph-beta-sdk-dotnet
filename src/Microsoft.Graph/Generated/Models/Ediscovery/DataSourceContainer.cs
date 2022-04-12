@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdDateTime", (o,n) => { (o as DataSourceContainer).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", (o,n) => { (o as DataSourceContainer).DisplayName = n.GetStringValue(); } },
-                {"holdStatus", (o,n) => { (o as DataSourceContainer).HoldStatus = n.GetEnumValue<DataSourceHoldStatus>(); } },
-                {"lastIndexOperation", (o,n) => { (o as DataSourceContainer).LastIndexOperation = n.GetObjectValue<CaseIndexOperation>(CaseIndexOperation.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", (o,n) => { (o as DataSourceContainer).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"releasedDateTime", (o,n) => { (o as DataSourceContainer).ReleasedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", (o,n) => { (o as DataSourceContainer).Status = n.GetEnumValue<DataSourceContainerStatus>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"holdStatus", n => { HoldStatus = n.GetEnumValue<DataSourceHoldStatus>(); } },
+                {"lastIndexOperation", n => { LastIndexOperation = n.GetObjectValue<CaseIndexOperation>(CaseIndexOperation.CreateFromDiscriminatorValue); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"releasedDateTime", n => { ReleasedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"status", n => { Status = n.GetEnumValue<DataSourceContainerStatus>(); } },
             };
         }
         /// <summary>

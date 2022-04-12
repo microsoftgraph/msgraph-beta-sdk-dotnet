@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"ascending", (o,n) => { (o as WorkbookSortField).Ascending = n.GetBoolValue(); } },
-                {"color", (o,n) => { (o as WorkbookSortField).Color = n.GetStringValue(); } },
-                {"dataOption", (o,n) => { (o as WorkbookSortField).DataOption = n.GetStringValue(); } },
-                {"icon", (o,n) => { (o as WorkbookSortField).Icon = n.GetObjectValue<WorkbookIcon>(WorkbookIcon.CreateFromDiscriminatorValue); } },
-                {"key", (o,n) => { (o as WorkbookSortField).Key = n.GetIntValue(); } },
-                {"sortOn", (o,n) => { (o as WorkbookSortField).SortOn = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"ascending", n => { Ascending = n.GetBoolValue(); } },
+                {"color", n => { Color = n.GetStringValue(); } },
+                {"dataOption", n => { DataOption = n.GetStringValue(); } },
+                {"icon", n => { Icon = n.GetObjectValue<WorkbookIcon>(WorkbookIcon.CreateFromDiscriminatorValue); } },
+                {"key", n => { Key = n.GetIntValue(); } },
+                {"sortOn", n => { SortOn = n.GetStringValue(); } },
             };
         }
         /// <summary>

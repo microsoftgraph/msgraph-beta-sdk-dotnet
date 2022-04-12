@@ -55,27 +55,27 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"exchangeMailboxStorageUsedInBytes", (o,n) => { (o as Office365GroupsActivityDetail).ExchangeMailboxStorageUsedInBytes = n.GetLongValue(); } },
-                {"exchangeMailboxTotalItemCount", (o,n) => { (o as Office365GroupsActivityDetail).ExchangeMailboxTotalItemCount = n.GetLongValue(); } },
-                {"exchangeReceivedEmailCount", (o,n) => { (o as Office365GroupsActivityDetail).ExchangeReceivedEmailCount = n.GetLongValue(); } },
-                {"externalMemberCount", (o,n) => { (o as Office365GroupsActivityDetail).ExternalMemberCount = n.GetLongValue(); } },
-                {"groupDisplayName", (o,n) => { (o as Office365GroupsActivityDetail).GroupDisplayName = n.GetStringValue(); } },
-                {"groupId", (o,n) => { (o as Office365GroupsActivityDetail).GroupId = n.GetStringValue(); } },
-                {"groupType", (o,n) => { (o as Office365GroupsActivityDetail).GroupType = n.GetStringValue(); } },
-                {"isDeleted", (o,n) => { (o as Office365GroupsActivityDetail).IsDeleted = n.GetBoolValue(); } },
-                {"lastActivityDate", (o,n) => { (o as Office365GroupsActivityDetail).LastActivityDate = n.GetDateValue(); } },
-                {"memberCount", (o,n) => { (o as Office365GroupsActivityDetail).MemberCount = n.GetLongValue(); } },
-                {"ownerPrincipalName", (o,n) => { (o as Office365GroupsActivityDetail).OwnerPrincipalName = n.GetStringValue(); } },
-                {"reportPeriod", (o,n) => { (o as Office365GroupsActivityDetail).ReportPeriod = n.GetStringValue(); } },
-                {"reportRefreshDate", (o,n) => { (o as Office365GroupsActivityDetail).ReportRefreshDate = n.GetDateValue(); } },
-                {"sharePointActiveFileCount", (o,n) => { (o as Office365GroupsActivityDetail).SharePointActiveFileCount = n.GetLongValue(); } },
-                {"sharePointSiteStorageUsedInBytes", (o,n) => { (o as Office365GroupsActivityDetail).SharePointSiteStorageUsedInBytes = n.GetLongValue(); } },
-                {"sharePointTotalFileCount", (o,n) => { (o as Office365GroupsActivityDetail).SharePointTotalFileCount = n.GetLongValue(); } },
-                {"yammerLikedMessageCount", (o,n) => { (o as Office365GroupsActivityDetail).YammerLikedMessageCount = n.GetLongValue(); } },
-                {"yammerPostedMessageCount", (o,n) => { (o as Office365GroupsActivityDetail).YammerPostedMessageCount = n.GetLongValue(); } },
-                {"yammerReadMessageCount", (o,n) => { (o as Office365GroupsActivityDetail).YammerReadMessageCount = n.GetLongValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"exchangeMailboxStorageUsedInBytes", n => { ExchangeMailboxStorageUsedInBytes = n.GetLongValue(); } },
+                {"exchangeMailboxTotalItemCount", n => { ExchangeMailboxTotalItemCount = n.GetLongValue(); } },
+                {"exchangeReceivedEmailCount", n => { ExchangeReceivedEmailCount = n.GetLongValue(); } },
+                {"externalMemberCount", n => { ExternalMemberCount = n.GetLongValue(); } },
+                {"groupDisplayName", n => { GroupDisplayName = n.GetStringValue(); } },
+                {"groupId", n => { GroupId = n.GetStringValue(); } },
+                {"groupType", n => { GroupType = n.GetStringValue(); } },
+                {"isDeleted", n => { IsDeleted = n.GetBoolValue(); } },
+                {"lastActivityDate", n => { LastActivityDate = n.GetDateValue(); } },
+                {"memberCount", n => { MemberCount = n.GetLongValue(); } },
+                {"ownerPrincipalName", n => { OwnerPrincipalName = n.GetStringValue(); } },
+                {"reportPeriod", n => { ReportPeriod = n.GetStringValue(); } },
+                {"reportRefreshDate", n => { ReportRefreshDate = n.GetDateValue(); } },
+                {"sharePointActiveFileCount", n => { SharePointActiveFileCount = n.GetLongValue(); } },
+                {"sharePointSiteStorageUsedInBytes", n => { SharePointSiteStorageUsedInBytes = n.GetLongValue(); } },
+                {"sharePointTotalFileCount", n => { SharePointTotalFileCount = n.GetLongValue(); } },
+                {"yammerLikedMessageCount", n => { YammerLikedMessageCount = n.GetLongValue(); } },
+                {"yammerPostedMessageCount", n => { YammerPostedMessageCount = n.GetLongValue(); } },
+                {"yammerReadMessageCount", n => { YammerReadMessageCount = n.GetLongValue(); } },
             };
         }
         /// <summary>

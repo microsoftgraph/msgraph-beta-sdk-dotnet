@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"macAddresses", (o,n) => { (o as TeamworkHardwareDetail).MacAddresses = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"manufacturer", (o,n) => { (o as TeamworkHardwareDetail).Manufacturer = n.GetStringValue(); } },
-                {"model", (o,n) => { (o as TeamworkHardwareDetail).Model = n.GetStringValue(); } },
-                {"serialNumber", (o,n) => { (o as TeamworkHardwareDetail).SerialNumber = n.GetStringValue(); } },
-                {"uniqueId", (o,n) => { (o as TeamworkHardwareDetail).UniqueId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"macAddresses", n => { MacAddresses = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                {"model", n => { Model = n.GetStringValue(); } },
+                {"serialNumber", n => { SerialNumber = n.GetStringValue(); } },
+                {"uniqueId", n => { UniqueId = n.GetStringValue(); } },
             };
         }
         /// <summary>

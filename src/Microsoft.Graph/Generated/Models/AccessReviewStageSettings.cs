@@ -42,17 +42,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"decisionsThatWillMoveToNextStage", (o,n) => { (o as AccessReviewStageSettings).DecisionsThatWillMoveToNextStage = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"dependsOn", (o,n) => { (o as AccessReviewStageSettings).DependsOn = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"durationInDays", (o,n) => { (o as AccessReviewStageSettings).DurationInDays = n.GetIntValue(); } },
-                {"fallbackReviewers", (o,n) => { (o as AccessReviewStageSettings).FallbackReviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue).ToList(); } },
-                {"recommendationInsightSettings", (o,n) => { (o as AccessReviewStageSettings).RecommendationInsightSettings = n.GetCollectionOfObjectValues<AccessReviewRecommendationInsightSetting>(AccessReviewRecommendationInsightSetting.CreateFromDiscriminatorValue).ToList(); } },
-                {"recommendationLookBackDuration", (o,n) => { (o as AccessReviewStageSettings).RecommendationLookBackDuration = n.GetTimeSpanValue(); } },
-                {"recommendationsEnabled", (o,n) => { (o as AccessReviewStageSettings).RecommendationsEnabled = n.GetBoolValue(); } },
-                {"reviewers", (o,n) => { (o as AccessReviewStageSettings).Reviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue).ToList(); } },
-                {"stageId", (o,n) => { (o as AccessReviewStageSettings).StageId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"decisionsThatWillMoveToNextStage", n => { DecisionsThatWillMoveToNextStage = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"dependsOn", n => { DependsOn = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"durationInDays", n => { DurationInDays = n.GetIntValue(); } },
+                {"fallbackReviewers", n => { FallbackReviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue).ToList(); } },
+                {"recommendationInsightSettings", n => { RecommendationInsightSettings = n.GetCollectionOfObjectValues<AccessReviewRecommendationInsightSetting>(AccessReviewRecommendationInsightSetting.CreateFromDiscriminatorValue).ToList(); } },
+                {"recommendationLookBackDuration", n => { RecommendationLookBackDuration = n.GetTimeSpanValue(); } },
+                {"recommendationsEnabled", n => { RecommendationsEnabled = n.GetBoolValue(); } },
+                {"reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue).ToList(); } },
+                {"stageId", n => { StageId = n.GetStringValue(); } },
             };
         }
         /// <summary>

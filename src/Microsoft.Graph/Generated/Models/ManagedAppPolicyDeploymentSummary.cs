@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"configurationDeployedUserCount", (o,n) => { (o as ManagedAppPolicyDeploymentSummary).ConfigurationDeployedUserCount = n.GetIntValue(); } },
-                {"configurationDeploymentSummaryPerApp", (o,n) => { (o as ManagedAppPolicyDeploymentSummary).ConfigurationDeploymentSummaryPerApp = n.GetCollectionOfObjectValues<ManagedAppPolicyDeploymentSummaryPerApp>(ManagedAppPolicyDeploymentSummaryPerApp.CreateFromDiscriminatorValue).ToList(); } },
-                {"displayName", (o,n) => { (o as ManagedAppPolicyDeploymentSummary).DisplayName = n.GetStringValue(); } },
-                {"lastRefreshTime", (o,n) => { (o as ManagedAppPolicyDeploymentSummary).LastRefreshTime = n.GetDateTimeOffsetValue(); } },
-                {"version", (o,n) => { (o as ManagedAppPolicyDeploymentSummary).Version = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"configurationDeployedUserCount", n => { ConfigurationDeployedUserCount = n.GetIntValue(); } },
+                {"configurationDeploymentSummaryPerApp", n => { ConfigurationDeploymentSummaryPerApp = n.GetCollectionOfObjectValues<ManagedAppPolicyDeploymentSummaryPerApp>(ManagedAppPolicyDeploymentSummaryPerApp.CreateFromDiscriminatorValue).ToList(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"lastRefreshTime", n => { LastRefreshTime = n.GetDateTimeOffsetValue(); } },
+                {"version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

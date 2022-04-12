@@ -42,17 +42,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"fqdn", (o,n) => { (o as HostSecurityState).Fqdn = n.GetStringValue(); } },
-                {"isAzureAdJoined", (o,n) => { (o as HostSecurityState).IsAzureAdJoined = n.GetBoolValue(); } },
-                {"isAzureAdRegistered", (o,n) => { (o as HostSecurityState).IsAzureAdRegistered = n.GetBoolValue(); } },
-                {"isHybridAzureDomainJoined", (o,n) => { (o as HostSecurityState).IsHybridAzureDomainJoined = n.GetBoolValue(); } },
-                {"netBiosName", (o,n) => { (o as HostSecurityState).NetBiosName = n.GetStringValue(); } },
-                {"os", (o,n) => { (o as HostSecurityState).Os = n.GetStringValue(); } },
-                {"privateIpAddress", (o,n) => { (o as HostSecurityState).PrivateIpAddress = n.GetStringValue(); } },
-                {"publicIpAddress", (o,n) => { (o as HostSecurityState).PublicIpAddress = n.GetStringValue(); } },
-                {"riskScore", (o,n) => { (o as HostSecurityState).RiskScore = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"fqdn", n => { Fqdn = n.GetStringValue(); } },
+                {"isAzureAdJoined", n => { IsAzureAdJoined = n.GetBoolValue(); } },
+                {"isAzureAdRegistered", n => { IsAzureAdRegistered = n.GetBoolValue(); } },
+                {"isHybridAzureDomainJoined", n => { IsHybridAzureDomainJoined = n.GetBoolValue(); } },
+                {"netBiosName", n => { NetBiosName = n.GetStringValue(); } },
+                {"os", n => { Os = n.GetStringValue(); } },
+                {"privateIpAddress", n => { PrivateIpAddress = n.GetStringValue(); } },
+                {"publicIpAddress", n => { PublicIpAddress = n.GetStringValue(); } },
+                {"riskScore", n => { RiskScore = n.GetStringValue(); } },
             };
         }
         /// <summary>

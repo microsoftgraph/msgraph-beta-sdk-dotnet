@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"acceptances", (o,n) => { (o as Agreement).Acceptances = n.GetCollectionOfObjectValues<AgreementAcceptance>(AgreementAcceptance.CreateFromDiscriminatorValue).ToList(); } },
-                {"displayName", (o,n) => { (o as Agreement).DisplayName = n.GetStringValue(); } },
-                {"file", (o,n) => { (o as Agreement).File = n.GetObjectValue<AgreementFile>(AgreementFile.CreateFromDiscriminatorValue); } },
-                {"files", (o,n) => { (o as Agreement).Files = n.GetCollectionOfObjectValues<AgreementFileLocalization>(AgreementFileLocalization.CreateFromDiscriminatorValue).ToList(); } },
-                {"isPerDeviceAcceptanceRequired", (o,n) => { (o as Agreement).IsPerDeviceAcceptanceRequired = n.GetBoolValue(); } },
-                {"isViewingBeforeAcceptanceRequired", (o,n) => { (o as Agreement).IsViewingBeforeAcceptanceRequired = n.GetBoolValue(); } },
-                {"termsExpiration", (o,n) => { (o as Agreement).TermsExpiration = n.GetObjectValue<Microsoft.Graph.Beta.Models.TermsExpiration>(Microsoft.Graph.Beta.Models.TermsExpiration.CreateFromDiscriminatorValue); } },
-                {"userReacceptRequiredFrequency", (o,n) => { (o as Agreement).UserReacceptRequiredFrequency = n.GetTimeSpanValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"acceptances", n => { Acceptances = n.GetCollectionOfObjectValues<AgreementAcceptance>(AgreementAcceptance.CreateFromDiscriminatorValue).ToList(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"file", n => { File = n.GetObjectValue<AgreementFile>(AgreementFile.CreateFromDiscriminatorValue); } },
+                {"files", n => { Files = n.GetCollectionOfObjectValues<AgreementFileLocalization>(AgreementFileLocalization.CreateFromDiscriminatorValue).ToList(); } },
+                {"isPerDeviceAcceptanceRequired", n => { IsPerDeviceAcceptanceRequired = n.GetBoolValue(); } },
+                {"isViewingBeforeAcceptanceRequired", n => { IsViewingBeforeAcceptanceRequired = n.GetBoolValue(); } },
+                {"termsExpiration", n => { TermsExpiration = n.GetObjectValue<Microsoft.Graph.Beta.Models.TermsExpiration>(Microsoft.Graph.Beta.Models.TermsExpiration.CreateFromDiscriminatorValue); } },
+                {"userReacceptRequiredFrequency", n => { UserReacceptRequiredFrequency = n.GetTimeSpanValue(); } },
             };
         }
         /// <summary>

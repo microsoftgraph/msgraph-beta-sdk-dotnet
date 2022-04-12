@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"id", (o,n) => { (o as AuthenticationMethodsRegistrationCampaignIncludeTarget).Id = n.GetStringValue(); } },
-                {"targetedAuthenticationMethod", (o,n) => { (o as AuthenticationMethodsRegistrationCampaignIncludeTarget).TargetedAuthenticationMethod = n.GetStringValue(); } },
-                {"targetType", (o,n) => { (o as AuthenticationMethodsRegistrationCampaignIncludeTarget).TargetType = n.GetEnumValue<AuthenticationMethodTargetType>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"id", n => { Id = n.GetStringValue(); } },
+                {"targetedAuthenticationMethod", n => { TargetedAuthenticationMethod = n.GetStringValue(); } },
+                {"targetType", n => { TargetType = n.GetEnumValue<AuthenticationMethodTargetType>(); } },
             };
         }
         /// <summary>

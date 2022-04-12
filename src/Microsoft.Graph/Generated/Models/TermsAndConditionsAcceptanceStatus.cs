@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"acceptedDateTime", (o,n) => { (o as TermsAndConditionsAcceptanceStatus).AcceptedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"acceptedVersion", (o,n) => { (o as TermsAndConditionsAcceptanceStatus).AcceptedVersion = n.GetIntValue(); } },
-                {"termsAndConditions", (o,n) => { (o as TermsAndConditionsAcceptanceStatus).TermsAndConditions = n.GetObjectValue<Microsoft.Graph.Beta.Models.TermsAndConditions>(Microsoft.Graph.Beta.Models.TermsAndConditions.CreateFromDiscriminatorValue); } },
-                {"userDisplayName", (o,n) => { (o as TermsAndConditionsAcceptanceStatus).UserDisplayName = n.GetStringValue(); } },
-                {"userPrincipalName", (o,n) => { (o as TermsAndConditionsAcceptanceStatus).UserPrincipalName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"acceptedDateTime", n => { AcceptedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"acceptedVersion", n => { AcceptedVersion = n.GetIntValue(); } },
+                {"termsAndConditions", n => { TermsAndConditions = n.GetObjectValue<Microsoft.Graph.Beta.Models.TermsAndConditions>(Microsoft.Graph.Beta.Models.TermsAndConditions.CreateFromDiscriminatorValue); } },
+                {"userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

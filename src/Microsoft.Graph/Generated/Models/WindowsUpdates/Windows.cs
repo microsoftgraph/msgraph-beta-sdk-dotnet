@@ -18,9 +18,9 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"updates", (o,n) => { (o as Windows).Updates = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.Updates>(Microsoft.Graph.Beta.Models.WindowsUpdates.Updates.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"updates", n => { Updates = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.Updates>(Microsoft.Graph.Beta.Models.WindowsUpdates.Updates.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

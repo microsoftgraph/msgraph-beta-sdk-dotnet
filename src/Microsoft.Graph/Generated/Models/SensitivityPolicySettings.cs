@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"applicableTo", (o,n) => { (o as SensitivityPolicySettings).ApplicableTo = n.GetEnumValue<SensitivityLabelTarget>(); } },
-                {"downgradeSensitivityRequiresJustification", (o,n) => { (o as SensitivityPolicySettings).DowngradeSensitivityRequiresJustification = n.GetBoolValue(); } },
-                {"helpWebUrl", (o,n) => { (o as SensitivityPolicySettings).HelpWebUrl = n.GetStringValue(); } },
-                {"isMandatory", (o,n) => { (o as SensitivityPolicySettings).IsMandatory = n.GetBoolValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"applicableTo", n => { ApplicableTo = n.GetEnumValue<SensitivityLabelTarget>(); } },
+                {"downgradeSensitivityRequiresJustification", n => { DowngradeSensitivityRequiresJustification = n.GetBoolValue(); } },
+                {"helpWebUrl", n => { HelpWebUrl = n.GetStringValue(); } },
+                {"isMandatory", n => { IsMandatory = n.GetBoolValue(); } },
             };
         }
         /// <summary>

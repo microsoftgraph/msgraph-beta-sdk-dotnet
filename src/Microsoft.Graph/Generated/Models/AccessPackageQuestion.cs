@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"id", (o,n) => { (o as AccessPackageQuestion).Id = n.GetStringValue(); } },
-                {"isAnswerEditable", (o,n) => { (o as AccessPackageQuestion).IsAnswerEditable = n.GetBoolValue(); } },
-                {"isRequired", (o,n) => { (o as AccessPackageQuestion).IsRequired = n.GetBoolValue(); } },
-                {"sequence", (o,n) => { (o as AccessPackageQuestion).Sequence = n.GetIntValue(); } },
-                {"text", (o,n) => { (o as AccessPackageQuestion).Text = n.GetObjectValue<AccessPackageLocalizedContent>(AccessPackageLocalizedContent.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"id", n => { Id = n.GetStringValue(); } },
+                {"isAnswerEditable", n => { IsAnswerEditable = n.GetBoolValue(); } },
+                {"isRequired", n => { IsRequired = n.GetBoolValue(); } },
+                {"sequence", n => { Sequence = n.GetIntValue(); } },
+                {"text", n => { Text = n.GetObjectValue<AccessPackageLocalizedContent>(AccessPackageLocalizedContent.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

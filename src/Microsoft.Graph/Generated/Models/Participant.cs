@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"info", (o,n) => { (o as Participant).Info = n.GetObjectValue<ParticipantInfo>(ParticipantInfo.CreateFromDiscriminatorValue); } },
-                {"isInLobby", (o,n) => { (o as Participant).IsInLobby = n.GetBoolValue(); } },
-                {"isMuted", (o,n) => { (o as Participant).IsMuted = n.GetBoolValue(); } },
-                {"mediaStreams", (o,n) => { (o as Participant).MediaStreams = n.GetCollectionOfObjectValues<MediaStream>(MediaStream.CreateFromDiscriminatorValue).ToList(); } },
-                {"metadata", (o,n) => { (o as Participant).Metadata = n.GetStringValue(); } },
-                {"recordingInfo", (o,n) => { (o as Participant).RecordingInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.RecordingInfo>(Microsoft.Graph.Beta.Models.RecordingInfo.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"info", n => { Info = n.GetObjectValue<ParticipantInfo>(ParticipantInfo.CreateFromDiscriminatorValue); } },
+                {"isInLobby", n => { IsInLobby = n.GetBoolValue(); } },
+                {"isMuted", n => { IsMuted = n.GetBoolValue(); } },
+                {"mediaStreams", n => { MediaStreams = n.GetCollectionOfObjectValues<MediaStream>(MediaStream.CreateFromDiscriminatorValue).ToList(); } },
+                {"metadata", n => { Metadata = n.GetStringValue(); } },
+                {"recordingInfo", n => { RecordingInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.RecordingInfo>(Microsoft.Graph.Beta.Models.RecordingInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

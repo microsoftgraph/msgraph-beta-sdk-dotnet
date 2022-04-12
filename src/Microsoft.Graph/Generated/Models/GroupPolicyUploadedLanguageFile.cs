@@ -35,13 +35,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"content", (o,n) => { (o as GroupPolicyUploadedLanguageFile).Content = n.GetByteArrayValue(); } },
-                {"fileName", (o,n) => { (o as GroupPolicyUploadedLanguageFile).FileName = n.GetStringValue(); } },
-                {"id", (o,n) => { (o as GroupPolicyUploadedLanguageFile).Id = n.GetStringValue(); } },
-                {"languageCode", (o,n) => { (o as GroupPolicyUploadedLanguageFile).LanguageCode = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as GroupPolicyUploadedLanguageFile).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"content", n => { Content = n.GetByteArrayValue(); } },
+                {"fileName", n => { FileName = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetStringValue(); } },
+                {"languageCode", n => { LanguageCode = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

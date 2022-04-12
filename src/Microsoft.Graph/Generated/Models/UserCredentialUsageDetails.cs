@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"authMethod", (o,n) => { (o as UserCredentialUsageDetails).AuthMethod = n.GetEnumValue<UsageAuthMethod>(); } },
-                {"eventDateTime", (o,n) => { (o as UserCredentialUsageDetails).EventDateTime = n.GetDateTimeOffsetValue(); } },
-                {"failureReason", (o,n) => { (o as UserCredentialUsageDetails).FailureReason = n.GetStringValue(); } },
-                {"feature", (o,n) => { (o as UserCredentialUsageDetails).Feature = n.GetEnumValue<FeatureType>(); } },
-                {"isSuccess", (o,n) => { (o as UserCredentialUsageDetails).IsSuccess = n.GetBoolValue(); } },
-                {"userDisplayName", (o,n) => { (o as UserCredentialUsageDetails).UserDisplayName = n.GetStringValue(); } },
-                {"userPrincipalName", (o,n) => { (o as UserCredentialUsageDetails).UserPrincipalName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"authMethod", n => { AuthMethod = n.GetEnumValue<UsageAuthMethod>(); } },
+                {"eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
+                {"failureReason", n => { FailureReason = n.GetStringValue(); } },
+                {"feature", n => { Feature = n.GetEnumValue<FeatureType>(); } },
+                {"isSuccess", n => { IsSuccess = n.GetBoolValue(); } },
+                {"userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

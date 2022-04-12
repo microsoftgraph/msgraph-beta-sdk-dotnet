@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdDateTime", (o,n) => { (o as Group).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as Group).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as Group).DisplayName = n.GetStringValue(); } },
-                {"parentSiteId", (o,n) => { (o as Group).ParentSiteId = n.GetStringValue(); } },
-                {"scope", (o,n) => { (o as Group).Scope = n.GetEnumValue<TermGroupScope>(); } },
-                {"sets", (o,n) => { (o as Group).Sets = n.GetCollectionOfObjectValues<Set>(Set.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"parentSiteId", n => { ParentSiteId = n.GetStringValue(); } },
+                {"scope", n => { Scope = n.GetEnumValue<TermGroupScope>(); } },
+                {"sets", n => { Sets = n.GetCollectionOfObjectValues<Set>(Set.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

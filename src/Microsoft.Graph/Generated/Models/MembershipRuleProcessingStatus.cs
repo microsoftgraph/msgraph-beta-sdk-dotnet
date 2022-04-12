@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"errorMessage", (o,n) => { (o as MembershipRuleProcessingStatus).ErrorMessage = n.GetStringValue(); } },
-                {"lastMembershipUpdated", (o,n) => { (o as MembershipRuleProcessingStatus).LastMembershipUpdated = n.GetDateTimeOffsetValue(); } },
-                {"status", (o,n) => { (o as MembershipRuleProcessingStatus).Status = n.GetEnumValue<MembershipRuleProcessingStatusDetails>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"errorMessage", n => { ErrorMessage = n.GetStringValue(); } },
+                {"lastMembershipUpdated", n => { LastMembershipUpdated = n.GetDateTimeOffsetValue(); } },
+                {"status", n => { Status = n.GetEnumValue<MembershipRuleProcessingStatusDetails>(); } },
             };
         }
         /// <summary>

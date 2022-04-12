@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"confidence", (o,n) => { (o as DetectedSensitiveContentBase).Confidence = n.GetIntValue(); } },
-                {"displayName", (o,n) => { (o as DetectedSensitiveContentBase).DisplayName = n.GetStringValue(); } },
-                {"id", (o,n) => { (o as DetectedSensitiveContentBase).Id = n.GetStringValue(); } },
-                {"recommendedConfidence", (o,n) => { (o as DetectedSensitiveContentBase).RecommendedConfidence = n.GetIntValue(); } },
-                {"uniqueCount", (o,n) => { (o as DetectedSensitiveContentBase).UniqueCount = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"confidence", n => { Confidence = n.GetIntValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetStringValue(); } },
+                {"recommendedConfidence", n => { RecommendedConfidence = n.GetIntValue(); } },
+                {"uniqueCount", n => { UniqueCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

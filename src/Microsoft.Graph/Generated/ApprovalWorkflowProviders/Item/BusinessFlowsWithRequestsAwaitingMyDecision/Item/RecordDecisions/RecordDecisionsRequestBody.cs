@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.BusinessFlowsWithR
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"justification", (o,n) => { (o as RecordDecisionsRequestBody).Justification = n.GetStringValue(); } },
-                {"reviewResult", (o,n) => { (o as RecordDecisionsRequestBody).ReviewResult = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"justification", n => { Justification = n.GetStringValue(); } },
+                {"reviewResult", n => { ReviewResult = n.GetStringValue(); } },
             };
         }
         /// <summary>

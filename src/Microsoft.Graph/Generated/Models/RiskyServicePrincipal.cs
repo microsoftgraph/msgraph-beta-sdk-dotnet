@@ -36,18 +36,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accountEnabled", (o,n) => { (o as RiskyServicePrincipal).AccountEnabled = n.GetBoolValue(); } },
-                {"appId", (o,n) => { (o as RiskyServicePrincipal).AppId = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as RiskyServicePrincipal).DisplayName = n.GetStringValue(); } },
-                {"history", (o,n) => { (o as RiskyServicePrincipal).History = n.GetCollectionOfObjectValues<RiskyServicePrincipalHistoryItem>(RiskyServicePrincipalHistoryItem.CreateFromDiscriminatorValue).ToList(); } },
-                {"isProcessing", (o,n) => { (o as RiskyServicePrincipal).IsProcessing = n.GetBoolValue(); } },
-                {"riskDetail", (o,n) => { (o as RiskyServicePrincipal).RiskDetail = n.GetEnumValue<RiskDetail>(); } },
-                {"riskLastUpdatedDateTime", (o,n) => { (o as RiskyServicePrincipal).RiskLastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"riskLevel", (o,n) => { (o as RiskyServicePrincipal).RiskLevel = n.GetEnumValue<RiskLevel>(); } },
-                {"riskState", (o,n) => { (o as RiskyServicePrincipal).RiskState = n.GetEnumValue<RiskState>(); } },
-                {"servicePrincipalType", (o,n) => { (o as RiskyServicePrincipal).ServicePrincipalType = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"accountEnabled", n => { AccountEnabled = n.GetBoolValue(); } },
+                {"appId", n => { AppId = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"history", n => { History = n.GetCollectionOfObjectValues<RiskyServicePrincipalHistoryItem>(RiskyServicePrincipalHistoryItem.CreateFromDiscriminatorValue).ToList(); } },
+                {"isProcessing", n => { IsProcessing = n.GetBoolValue(); } },
+                {"riskDetail", n => { RiskDetail = n.GetEnumValue<RiskDetail>(); } },
+                {"riskLastUpdatedDateTime", n => { RiskLastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"riskLevel", n => { RiskLevel = n.GetEnumValue<RiskLevel>(); } },
+                {"riskState", n => { RiskState = n.GetEnumValue<RiskState>(); } },
+                {"servicePrincipalType", n => { ServicePrincipalType = n.GetStringValue(); } },
             };
         }
         /// <summary>

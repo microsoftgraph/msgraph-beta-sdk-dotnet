@@ -54,27 +54,27 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"clientRegistrationStatus", (o,n) => { (o as ComanagementEligibleDevice).ClientRegistrationStatus = n.GetEnumValue<DeviceRegistrationState>(); } },
-                {"deviceName", (o,n) => { (o as ComanagementEligibleDevice).DeviceName = n.GetStringValue(); } },
-                {"deviceType", (o,n) => { (o as ComanagementEligibleDevice).DeviceType = n.GetEnumValue<DeviceType>(); } },
-                {"entitySource", (o,n) => { (o as ComanagementEligibleDevice).EntitySource = n.GetIntValue(); } },
-                {"managementAgents", (o,n) => { (o as ComanagementEligibleDevice).ManagementAgents = n.GetEnumValue<ManagementAgentType>(); } },
-                {"managementState", (o,n) => { (o as ComanagementEligibleDevice).ManagementState = n.GetEnumValue<ManagementState>(); } },
-                {"manufacturer", (o,n) => { (o as ComanagementEligibleDevice).Manufacturer = n.GetStringValue(); } },
-                {"mdmStatus", (o,n) => { (o as ComanagementEligibleDevice).MdmStatus = n.GetStringValue(); } },
-                {"model", (o,n) => { (o as ComanagementEligibleDevice).Model = n.GetStringValue(); } },
-                {"osDescription", (o,n) => { (o as ComanagementEligibleDevice).OsDescription = n.GetStringValue(); } },
-                {"osVersion", (o,n) => { (o as ComanagementEligibleDevice).OsVersion = n.GetStringValue(); } },
-                {"ownerType", (o,n) => { (o as ComanagementEligibleDevice).OwnerType = n.GetEnumValue<OwnerType>(); } },
-                {"referenceId", (o,n) => { (o as ComanagementEligibleDevice).ReferenceId = n.GetStringValue(); } },
-                {"serialNumber", (o,n) => { (o as ComanagementEligibleDevice).SerialNumber = n.GetStringValue(); } },
-                {"status", (o,n) => { (o as ComanagementEligibleDevice).Status = n.GetEnumValue<ComanagementEligibleType>(); } },
-                {"upn", (o,n) => { (o as ComanagementEligibleDevice).Upn = n.GetStringValue(); } },
-                {"userEmail", (o,n) => { (o as ComanagementEligibleDevice).UserEmail = n.GetStringValue(); } },
-                {"userId", (o,n) => { (o as ComanagementEligibleDevice).UserId = n.GetStringValue(); } },
-                {"userName", (o,n) => { (o as ComanagementEligibleDevice).UserName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"clientRegistrationStatus", n => { ClientRegistrationStatus = n.GetEnumValue<DeviceRegistrationState>(); } },
+                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
+                {"deviceType", n => { DeviceType = n.GetEnumValue<DeviceType>(); } },
+                {"entitySource", n => { EntitySource = n.GetIntValue(); } },
+                {"managementAgents", n => { ManagementAgents = n.GetEnumValue<ManagementAgentType>(); } },
+                {"managementState", n => { ManagementState = n.GetEnumValue<ManagementState>(); } },
+                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                {"mdmStatus", n => { MdmStatus = n.GetStringValue(); } },
+                {"model", n => { Model = n.GetStringValue(); } },
+                {"osDescription", n => { OsDescription = n.GetStringValue(); } },
+                {"osVersion", n => { OsVersion = n.GetStringValue(); } },
+                {"ownerType", n => { OwnerType = n.GetEnumValue<OwnerType>(); } },
+                {"referenceId", n => { ReferenceId = n.GetStringValue(); } },
+                {"serialNumber", n => { SerialNumber = n.GetStringValue(); } },
+                {"status", n => { Status = n.GetEnumValue<ComanagementEligibleType>(); } },
+                {"upn", n => { Upn = n.GetStringValue(); } },
+                {"userEmail", n => { UserEmail = n.GetStringValue(); } },
+                {"userId", n => { UserId = n.GetStringValue(); } },
+                {"userName", n => { UserName = n.GetStringValue(); } },
             };
         }
         /// <summary>

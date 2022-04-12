@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"compliantUserCount", (o,n) => { (o as DeviceConfigurationUserStateSummary).CompliantUserCount = n.GetIntValue(); } },
-                {"conflictUserCount", (o,n) => { (o as DeviceConfigurationUserStateSummary).ConflictUserCount = n.GetIntValue(); } },
-                {"errorUserCount", (o,n) => { (o as DeviceConfigurationUserStateSummary).ErrorUserCount = n.GetIntValue(); } },
-                {"nonCompliantUserCount", (o,n) => { (o as DeviceConfigurationUserStateSummary).NonCompliantUserCount = n.GetIntValue(); } },
-                {"notApplicableUserCount", (o,n) => { (o as DeviceConfigurationUserStateSummary).NotApplicableUserCount = n.GetIntValue(); } },
-                {"remediatedUserCount", (o,n) => { (o as DeviceConfigurationUserStateSummary).RemediatedUserCount = n.GetIntValue(); } },
-                {"unknownUserCount", (o,n) => { (o as DeviceConfigurationUserStateSummary).UnknownUserCount = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"compliantUserCount", n => { CompliantUserCount = n.GetIntValue(); } },
+                {"conflictUserCount", n => { ConflictUserCount = n.GetIntValue(); } },
+                {"errorUserCount", n => { ErrorUserCount = n.GetIntValue(); } },
+                {"nonCompliantUserCount", n => { NonCompliantUserCount = n.GetIntValue(); } },
+                {"notApplicableUserCount", n => { NotApplicableUserCount = n.GetIntValue(); } },
+                {"remediatedUserCount", n => { RemediatedUserCount = n.GetIntValue(); } },
+                {"unknownUserCount", n => { UnknownUserCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

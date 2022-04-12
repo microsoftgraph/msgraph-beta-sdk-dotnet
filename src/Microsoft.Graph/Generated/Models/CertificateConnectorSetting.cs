@@ -37,14 +37,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"certExpiryTime", (o,n) => { (o as CertificateConnectorSetting).CertExpiryTime = n.GetDateTimeOffsetValue(); } },
-                {"connectorVersion", (o,n) => { (o as CertificateConnectorSetting).ConnectorVersion = n.GetStringValue(); } },
-                {"enrollmentError", (o,n) => { (o as CertificateConnectorSetting).EnrollmentError = n.GetStringValue(); } },
-                {"lastConnectorConnectionTime", (o,n) => { (o as CertificateConnectorSetting).LastConnectorConnectionTime = n.GetDateTimeOffsetValue(); } },
-                {"lastUploadVersion", (o,n) => { (o as CertificateConnectorSetting).LastUploadVersion = n.GetLongValue(); } },
-                {"status", (o,n) => { (o as CertificateConnectorSetting).Status = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"certExpiryTime", n => { CertExpiryTime = n.GetDateTimeOffsetValue(); } },
+                {"connectorVersion", n => { ConnectorVersion = n.GetStringValue(); } },
+                {"enrollmentError", n => { EnrollmentError = n.GetStringValue(); } },
+                {"lastConnectorConnectionTime", n => { LastConnectorConnectionTime = n.GetDateTimeOffsetValue(); } },
+                {"lastUploadVersion", n => { LastUploadVersion = n.GetLongValue(); } },
+                {"status", n => { Status = n.GetIntValue(); } },
             };
         }
         /// <summary>

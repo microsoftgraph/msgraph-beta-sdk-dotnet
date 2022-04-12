@@ -39,15 +39,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetCachedReport {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"groupBy", (o,n) => { (o as GetCachedReportRequestBody).GroupBy = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"id", (o,n) => { (o as GetCachedReportRequestBody).Id = n.GetStringValue(); } },
-                {"orderBy", (o,n) => { (o as GetCachedReportRequestBody).OrderBy = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"search", (o,n) => { (o as GetCachedReportRequestBody).Search = n.GetStringValue(); } },
-                {"select", (o,n) => { (o as GetCachedReportRequestBody).Select = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"skip", (o,n) => { (o as GetCachedReportRequestBody).Skip = n.GetIntValue(); } },
-                {"top", (o,n) => { (o as GetCachedReportRequestBody).Top = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"groupBy", n => { GroupBy = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"id", n => { Id = n.GetStringValue(); } },
+                {"orderBy", n => { OrderBy = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"search", n => { Search = n.GetStringValue(); } },
+                {"select", n => { Select = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"skip", n => { Skip = n.GetIntValue(); } },
+                {"top", n => { Top = n.GetIntValue(); } },
             };
         }
         /// <summary>

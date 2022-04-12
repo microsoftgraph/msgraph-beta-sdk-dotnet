@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"classificationAttributes", (o,n) => { (o as DiscoveredSensitiveType).ClassificationAttributes = n.GetCollectionOfObjectValues<ClassificationAttribute>(ClassificationAttribute.CreateFromDiscriminatorValue).ToList(); } },
-                {"confidence", (o,n) => { (o as DiscoveredSensitiveType).Confidence = n.GetIntValue(); } },
-                {"count", (o,n) => { (o as DiscoveredSensitiveType).Count = n.GetIntValue(); } },
-                {"id", (o,n) => { (o as DiscoveredSensitiveType).Id = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"classificationAttributes", n => { ClassificationAttributes = n.GetCollectionOfObjectValues<ClassificationAttribute>(ClassificationAttribute.CreateFromDiscriminatorValue).ToList(); } },
+                {"confidence", n => { Confidence = n.GetIntValue(); } },
+                {"count", n => { Count = n.GetIntValue(); } },
+                {"id", n => { Id = n.GetStringValue(); } },
             };
         }
         /// <summary>

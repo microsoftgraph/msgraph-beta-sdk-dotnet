@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"approvalMode", (o,n) => { (o as ApprovalSettings).ApprovalMode = n.GetStringValue(); } },
-                {"approvalStages", (o,n) => { (o as ApprovalSettings).ApprovalStages = n.GetCollectionOfObjectValues<ApprovalStage>(ApprovalStage.CreateFromDiscriminatorValue).ToList(); } },
-                {"isApprovalRequired", (o,n) => { (o as ApprovalSettings).IsApprovalRequired = n.GetBoolValue(); } },
-                {"isApprovalRequiredForExtension", (o,n) => { (o as ApprovalSettings).IsApprovalRequiredForExtension = n.GetBoolValue(); } },
-                {"isRequestorJustificationRequired", (o,n) => { (o as ApprovalSettings).IsRequestorJustificationRequired = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"approvalMode", n => { ApprovalMode = n.GetStringValue(); } },
+                {"approvalStages", n => { ApprovalStages = n.GetCollectionOfObjectValues<ApprovalStage>(ApprovalStage.CreateFromDiscriminatorValue).ToList(); } },
+                {"isApprovalRequired", n => { IsApprovalRequired = n.GetBoolValue(); } },
+                {"isApprovalRequiredForExtension", n => { IsApprovalRequiredForExtension = n.GetBoolValue(); } },
+                {"isRequestorJustificationRequired", n => { IsRequestorJustificationRequired = n.GetBoolValue(); } },
             };
         }
         /// <summary>

@@ -20,10 +20,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"conversation", (o,n) => { (o as ChatMessageMentionedIdentitySet).Conversation = n.GetObjectValue<TeamworkConversationIdentity>(TeamworkConversationIdentity.CreateFromDiscriminatorValue); } },
-                {"tag", (o,n) => { (o as ChatMessageMentionedIdentitySet).Tag = n.GetObjectValue<TeamworkTagIdentity>(TeamworkTagIdentity.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"conversation", n => { Conversation = n.GetObjectValue<TeamworkConversationIdentity>(TeamworkConversationIdentity.CreateFromDiscriminatorValue); } },
+                {"tag", n => { Tag = n.GetObjectValue<TeamworkTagIdentity>(TeamworkTagIdentity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

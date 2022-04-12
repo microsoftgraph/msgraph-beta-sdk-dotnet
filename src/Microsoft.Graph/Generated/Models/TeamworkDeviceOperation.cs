@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"completedDateTime", (o,n) => { (o as TeamworkDeviceOperation).CompletedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"createdBy", (o,n) => { (o as TeamworkDeviceOperation).CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", (o,n) => { (o as TeamworkDeviceOperation).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"error", (o,n) => { (o as TeamworkDeviceOperation).Error = n.GetObjectValue<OperationError>(OperationError.CreateFromDiscriminatorValue); } },
-                {"lastActionBy", (o,n) => { (o as TeamworkDeviceOperation).LastActionBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"lastActionDateTime", (o,n) => { (o as TeamworkDeviceOperation).LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"operationType", (o,n) => { (o as TeamworkDeviceOperation).OperationType = n.GetEnumValue<TeamworkDeviceOperationType>(); } },
-                {"startedDateTime", (o,n) => { (o as TeamworkDeviceOperation).StartedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", (o,n) => { (o as TeamworkDeviceOperation).Status = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"error", n => { Error = n.GetObjectValue<OperationError>(OperationError.CreateFromDiscriminatorValue); } },
+                {"lastActionBy", n => { LastActionBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
+                {"operationType", n => { OperationType = n.GetEnumValue<TeamworkDeviceOperationType>(); } },
+                {"startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"status", n => { Status = n.GetStringValue(); } },
             };
         }
         /// <summary>

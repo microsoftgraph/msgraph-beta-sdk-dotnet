@@ -20,10 +20,10 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"applyHoldToSource", (o,n) => { (o as NoncustodialDataSource).ApplyHoldToSource = n.GetBoolValue(); } },
-                {"dataSource", (o,n) => { (o as NoncustodialDataSource).DataSource = n.GetObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.DataSource>(Microsoft.Graph.Beta.Models.Ediscovery.DataSource.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"applyHoldToSource", n => { ApplyHoldToSource = n.GetBoolValue(); } },
+                {"dataSource", n => { DataSource = n.GetObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.DataSource>(Microsoft.Graph.Beta.Models.Ediscovery.DataSource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

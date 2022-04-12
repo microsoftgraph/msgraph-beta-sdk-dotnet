@@ -42,17 +42,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"defaultGateway", (o,n) => { (o as TeamworkNetworkConfiguration).DefaultGateway = n.GetStringValue(); } },
-                {"domainName", (o,n) => { (o as TeamworkNetworkConfiguration).DomainName = n.GetStringValue(); } },
-                {"hostName", (o,n) => { (o as TeamworkNetworkConfiguration).HostName = n.GetStringValue(); } },
-                {"ipAddress", (o,n) => { (o as TeamworkNetworkConfiguration).IpAddress = n.GetStringValue(); } },
-                {"isDhcpEnabled", (o,n) => { (o as TeamworkNetworkConfiguration).IsDhcpEnabled = n.GetBoolValue(); } },
-                {"isPCPortEnabled", (o,n) => { (o as TeamworkNetworkConfiguration).IsPCPortEnabled = n.GetBoolValue(); } },
-                {"primaryDns", (o,n) => { (o as TeamworkNetworkConfiguration).PrimaryDns = n.GetStringValue(); } },
-                {"secondaryDns", (o,n) => { (o as TeamworkNetworkConfiguration).SecondaryDns = n.GetStringValue(); } },
-                {"subnetMask", (o,n) => { (o as TeamworkNetworkConfiguration).SubnetMask = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"defaultGateway", n => { DefaultGateway = n.GetStringValue(); } },
+                {"domainName", n => { DomainName = n.GetStringValue(); } },
+                {"hostName", n => { HostName = n.GetStringValue(); } },
+                {"ipAddress", n => { IpAddress = n.GetStringValue(); } },
+                {"isDhcpEnabled", n => { IsDhcpEnabled = n.GetBoolValue(); } },
+                {"isPCPortEnabled", n => { IsPCPortEnabled = n.GetBoolValue(); } },
+                {"primaryDns", n => { PrimaryDns = n.GetStringValue(); } },
+                {"secondaryDns", n => { SecondaryDns = n.GetStringValue(); } },
+                {"subnetMask", n => { SubnetMask = n.GetStringValue(); } },
             };
         }
         /// <summary>

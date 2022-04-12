@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"defaultLanguage", (o,n) => { (o as ColumnValidation).DefaultLanguage = n.GetStringValue(); } },
-                {"descriptions", (o,n) => { (o as ColumnValidation).Descriptions = n.GetCollectionOfObjectValues<DisplayNameLocalization>(DisplayNameLocalization.CreateFromDiscriminatorValue).ToList(); } },
-                {"formula", (o,n) => { (o as ColumnValidation).Formula = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"defaultLanguage", n => { DefaultLanguage = n.GetStringValue(); } },
+                {"descriptions", n => { Descriptions = n.GetCollectionOfObjectValues<DisplayNameLocalization>(DisplayNameLocalization.CreateFromDiscriminatorValue).ToList(); } },
+                {"formula", n => { Formula = n.GetStringValue(); } },
             };
         }
         /// <summary>

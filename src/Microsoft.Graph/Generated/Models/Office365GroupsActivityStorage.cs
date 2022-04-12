@@ -27,13 +27,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"mailboxStorageUsedInBytes", (o,n) => { (o as Office365GroupsActivityStorage).MailboxStorageUsedInBytes = n.GetLongValue(); } },
-                {"reportDate", (o,n) => { (o as Office365GroupsActivityStorage).ReportDate = n.GetDateValue(); } },
-                {"reportPeriod", (o,n) => { (o as Office365GroupsActivityStorage).ReportPeriod = n.GetStringValue(); } },
-                {"reportRefreshDate", (o,n) => { (o as Office365GroupsActivityStorage).ReportRefreshDate = n.GetDateValue(); } },
-                {"siteStorageUsedInBytes", (o,n) => { (o as Office365GroupsActivityStorage).SiteStorageUsedInBytes = n.GetLongValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"mailboxStorageUsedInBytes", n => { MailboxStorageUsedInBytes = n.GetLongValue(); } },
+                {"reportDate", n => { ReportDate = n.GetDateValue(); } },
+                {"reportPeriod", n => { ReportPeriod = n.GetStringValue(); } },
+                {"reportRefreshDate", n => { ReportRefreshDate = n.GetDateValue(); } },
+                {"siteStorageUsedInBytes", n => { SiteStorageUsedInBytes = n.GetLongValue(); } },
             };
         }
         /// <summary>

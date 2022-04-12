@@ -30,10 +30,10 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.UpdateRecordingStatus {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"clientContext", (o,n) => { (o as UpdateRecordingStatusRequestBody).ClientContext = n.GetStringValue(); } },
-                {"status", (o,n) => { (o as UpdateRecordingStatusRequestBody).Status = n.GetEnumValue<RecordingStatus>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"clientContext", n => { ClientContext = n.GetStringValue(); } },
+                {"status", n => { Status = n.GetEnumValue<RecordingStatus>(); } },
             };
         }
         /// <summary>

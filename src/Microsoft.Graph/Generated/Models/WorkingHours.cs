@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"daysOfWeek", (o,n) => { (o as WorkingHours).DaysOfWeek = n.GetCollectionOfEnumValues<DayOfWeek>().ToList(); } },
-                {"endTime", (o,n) => { (o as WorkingHours).EndTime = n.GetTimeValue(); } },
-                {"startTime", (o,n) => { (o as WorkingHours).StartTime = n.GetTimeValue(); } },
-                {"timeZone", (o,n) => { (o as WorkingHours).TimeZone = n.GetObjectValue<TimeZoneBase>(TimeZoneBase.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"daysOfWeek", n => { DaysOfWeek = n.GetCollectionOfEnumValues<DayOfWeek>().ToList(); } },
+                {"endTime", n => { EndTime = n.GetTimeValue(); } },
+                {"startTime", n => { StartTime = n.GetTimeValue(); } },
+                {"timeZone", n => { TimeZone = n.GetObjectValue<TimeZoneBase>(TimeZoneBase.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

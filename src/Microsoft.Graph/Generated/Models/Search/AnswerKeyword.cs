@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models.Search {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"keywords", (o,n) => { (o as AnswerKeyword).Keywords = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"matchSimilarKeywords", (o,n) => { (o as AnswerKeyword).MatchSimilarKeywords = n.GetBoolValue(); } },
-                {"reservedKeywords", (o,n) => { (o as AnswerKeyword).ReservedKeywords = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"matchSimilarKeywords", n => { MatchSimilarKeywords = n.GetBoolValue(); } },
+                {"reservedKeywords", n => { ReservedKeywords = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

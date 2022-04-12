@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"homePageUrl", (o,n) => { (o as WebApplication).HomePageUrl = n.GetStringValue(); } },
-                {"implicitGrantSettings", (o,n) => { (o as WebApplication).ImplicitGrantSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.ImplicitGrantSettings>(Microsoft.Graph.Beta.Models.ImplicitGrantSettings.CreateFromDiscriminatorValue); } },
-                {"logoutUrl", (o,n) => { (o as WebApplication).LogoutUrl = n.GetStringValue(); } },
-                {"oauth2AllowImplicitFlow", (o,n) => { (o as WebApplication).Oauth2AllowImplicitFlow = n.GetBoolValue(); } },
-                {"redirectUris", (o,n) => { (o as WebApplication).RedirectUris = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"redirectUriSettings", (o,n) => { (o as WebApplication).RedirectUriSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RedirectUriSettings>(Microsoft.Graph.Beta.Models.RedirectUriSettings.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"homePageUrl", n => { HomePageUrl = n.GetStringValue(); } },
+                {"implicitGrantSettings", n => { ImplicitGrantSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.ImplicitGrantSettings>(Microsoft.Graph.Beta.Models.ImplicitGrantSettings.CreateFromDiscriminatorValue); } },
+                {"logoutUrl", n => { LogoutUrl = n.GetStringValue(); } },
+                {"oauth2AllowImplicitFlow", n => { Oauth2AllowImplicitFlow = n.GetBoolValue(); } },
+                {"redirectUris", n => { RedirectUris = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"redirectUriSettings", n => { RedirectUriSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RedirectUriSettings>(Microsoft.Graph.Beta.Models.RedirectUriSettings.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

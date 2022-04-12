@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"content", (o,n) => { (o as GroupPolicyObjectFile).Content = n.GetStringValue(); } },
-                {"createdDateTime", (o,n) => { (o as GroupPolicyObjectFile).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"groupPolicyObjectId", (o,n) => { (o as GroupPolicyObjectFile).GroupPolicyObjectId = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as GroupPolicyObjectFile).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"ouDistinguishedName", (o,n) => { (o as GroupPolicyObjectFile).OuDistinguishedName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"content", n => { Content = n.GetStringValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"groupPolicyObjectId", n => { GroupPolicyObjectId = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"ouDistinguishedName", n => { OuDistinguishedName = n.GetStringValue(); } },
             };
         }
         /// <summary>

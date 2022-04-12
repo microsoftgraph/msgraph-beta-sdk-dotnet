@@ -32,11 +32,11 @@ namespace Microsoft.Graph.Beta.Me.TranslateExchangeIds {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"inputIds", (o,n) => { (o as TranslateExchangeIdsRequestBody).InputIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"sourceIdType", (o,n) => { (o as TranslateExchangeIdsRequestBody).SourceIdType = n.GetEnumValue<ExchangeIdFormat>(); } },
-                {"targetIdType", (o,n) => { (o as TranslateExchangeIdsRequestBody).TargetIdType = n.GetEnumValue<ExchangeIdFormat>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"inputIds", n => { InputIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"sourceIdType", n => { SourceIdType = n.GetEnumValue<ExchangeIdFormat>(); } },
+                {"targetIdType", n => { TargetIdType = n.GetEnumValue<ExchangeIdFormat>(); } },
             };
         }
         /// <summary>

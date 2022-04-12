@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"confidenceLevel", (o,n) => { (o as ClassificationResult).ConfidenceLevel = n.GetIntValue(); } },
-                {"count", (o,n) => { (o as ClassificationResult).Count = n.GetIntValue(); } },
-                {"sensitiveTypeId", (o,n) => { (o as ClassificationResult).SensitiveTypeId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"confidenceLevel", n => { ConfidenceLevel = n.GetIntValue(); } },
+                {"count", n => { Count = n.GetIntValue(); } },
+                {"sensitiveTypeId", n => { SensitiveTypeId = n.GetStringValue(); } },
             };
         }
         /// <summary>

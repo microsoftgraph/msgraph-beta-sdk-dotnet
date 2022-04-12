@@ -5,13 +5,13 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class EducationClass : Entity, IParsable {
-        /// <summary>The assignmentCategories property</summary>
+        /// <summary>All categories associated with this class. Nullable.</summary>
         public List<EducationCategory> AssignmentCategories { get; set; }
-        /// <summary>The assignmentDefaults property</summary>
+        /// <summary>Specifies class-level defaults respected by new assignments created in the class.</summary>
         public EducationAssignmentDefaults AssignmentDefaults { get; set; }
         /// <summary>All assignments associated with this class. Nullable.</summary>
         public List<EducationAssignment> Assignments { get; set; }
-        /// <summary>The assignmentSettings property</summary>
+        /// <summary>Specifies class-level assignments settings.</summary>
         public EducationAssignmentSettings AssignmentSettings { get; set; }
         /// <summary>Class code used by the school to identify the class.</summary>
         public string ClassCode { get; set; }
@@ -56,28 +56,28 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignmentCategories", (o,n) => { (o as EducationClass).AssignmentCategories = n.GetCollectionOfObjectValues<EducationCategory>(EducationCategory.CreateFromDiscriminatorValue).ToList(); } },
-                {"assignmentDefaults", (o,n) => { (o as EducationClass).AssignmentDefaults = n.GetObjectValue<EducationAssignmentDefaults>(EducationAssignmentDefaults.CreateFromDiscriminatorValue); } },
-                {"assignments", (o,n) => { (o as EducationClass).Assignments = n.GetCollectionOfObjectValues<EducationAssignment>(EducationAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"assignmentSettings", (o,n) => { (o as EducationClass).AssignmentSettings = n.GetObjectValue<EducationAssignmentSettings>(EducationAssignmentSettings.CreateFromDiscriminatorValue); } },
-                {"classCode", (o,n) => { (o as EducationClass).ClassCode = n.GetStringValue(); } },
-                {"course", (o,n) => { (o as EducationClass).Course = n.GetObjectValue<EducationCourse>(EducationCourse.CreateFromDiscriminatorValue); } },
-                {"createdBy", (o,n) => { (o as EducationClass).CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"description", (o,n) => { (o as EducationClass).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as EducationClass).DisplayName = n.GetStringValue(); } },
-                {"externalId", (o,n) => { (o as EducationClass).ExternalId = n.GetStringValue(); } },
-                {"externalName", (o,n) => { (o as EducationClass).ExternalName = n.GetStringValue(); } },
-                {"externalSource", (o,n) => { (o as EducationClass).ExternalSource = n.GetEnumValue<EducationExternalSource>(); } },
-                {"externalSourceDetail", (o,n) => { (o as EducationClass).ExternalSourceDetail = n.GetStringValue(); } },
-                {"grade", (o,n) => { (o as EducationClass).Grade = n.GetStringValue(); } },
-                {"group", (o,n) => { (o as EducationClass).Group = n.GetObjectValue<Microsoft.Graph.Beta.Models.Group>(Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue); } },
-                {"mailNickname", (o,n) => { (o as EducationClass).MailNickname = n.GetStringValue(); } },
-                {"members", (o,n) => { (o as EducationClass).Members = n.GetCollectionOfObjectValues<EducationUser>(EducationUser.CreateFromDiscriminatorValue).ToList(); } },
-                {"schools", (o,n) => { (o as EducationClass).Schools = n.GetCollectionOfObjectValues<EducationSchool>(EducationSchool.CreateFromDiscriminatorValue).ToList(); } },
-                {"teachers", (o,n) => { (o as EducationClass).Teachers = n.GetCollectionOfObjectValues<EducationUser>(EducationUser.CreateFromDiscriminatorValue).ToList(); } },
-                {"term", (o,n) => { (o as EducationClass).Term = n.GetObjectValue<EducationTerm>(EducationTerm.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"assignmentCategories", n => { AssignmentCategories = n.GetCollectionOfObjectValues<EducationCategory>(EducationCategory.CreateFromDiscriminatorValue).ToList(); } },
+                {"assignmentDefaults", n => { AssignmentDefaults = n.GetObjectValue<EducationAssignmentDefaults>(EducationAssignmentDefaults.CreateFromDiscriminatorValue); } },
+                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<EducationAssignment>(EducationAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"assignmentSettings", n => { AssignmentSettings = n.GetObjectValue<EducationAssignmentSettings>(EducationAssignmentSettings.CreateFromDiscriminatorValue); } },
+                {"classCode", n => { ClassCode = n.GetStringValue(); } },
+                {"course", n => { Course = n.GetObjectValue<EducationCourse>(EducationCourse.CreateFromDiscriminatorValue); } },
+                {"createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"externalId", n => { ExternalId = n.GetStringValue(); } },
+                {"externalName", n => { ExternalName = n.GetStringValue(); } },
+                {"externalSource", n => { ExternalSource = n.GetEnumValue<EducationExternalSource>(); } },
+                {"externalSourceDetail", n => { ExternalSourceDetail = n.GetStringValue(); } },
+                {"grade", n => { Grade = n.GetStringValue(); } },
+                {"group", n => { Group = n.GetObjectValue<Microsoft.Graph.Beta.Models.Group>(Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue); } },
+                {"mailNickname", n => { MailNickname = n.GetStringValue(); } },
+                {"members", n => { Members = n.GetCollectionOfObjectValues<EducationUser>(EducationUser.CreateFromDiscriminatorValue).ToList(); } },
+                {"schools", n => { Schools = n.GetCollectionOfObjectValues<EducationSchool>(EducationSchool.CreateFromDiscriminatorValue).ToList(); } },
+                {"teachers", n => { Teachers = n.GetCollectionOfObjectValues<EducationUser>(EducationUser.CreateFromDiscriminatorValue).ToList(); } },
+                {"term", n => { Term = n.GetObjectValue<EducationTerm>(EducationTerm.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

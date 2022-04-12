@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"category", (o,n) => { (o as ThreatAssessmentRequest).Category = n.GetEnumValue<ThreatCategory>(); } },
-                {"contentType", (o,n) => { (o as ThreatAssessmentRequest).ContentType = n.GetEnumValue<ThreatAssessmentContentType>(); } },
-                {"createdBy", (o,n) => { (o as ThreatAssessmentRequest).CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", (o,n) => { (o as ThreatAssessmentRequest).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"expectedAssessment", (o,n) => { (o as ThreatAssessmentRequest).ExpectedAssessment = n.GetEnumValue<ThreatExpectedAssessment>(); } },
-                {"requestSource", (o,n) => { (o as ThreatAssessmentRequest).RequestSource = n.GetEnumValue<ThreatAssessmentRequestSource>(); } },
-                {"results", (o,n) => { (o as ThreatAssessmentRequest).Results = n.GetCollectionOfObjectValues<ThreatAssessmentResult>(ThreatAssessmentResult.CreateFromDiscriminatorValue).ToList(); } },
-                {"status", (o,n) => { (o as ThreatAssessmentRequest).Status = n.GetEnumValue<ThreatAssessmentStatus>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"category", n => { Category = n.GetEnumValue<ThreatCategory>(); } },
+                {"contentType", n => { ContentType = n.GetEnumValue<ThreatAssessmentContentType>(); } },
+                {"createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"expectedAssessment", n => { ExpectedAssessment = n.GetEnumValue<ThreatExpectedAssessment>(); } },
+                {"requestSource", n => { RequestSource = n.GetEnumValue<ThreatAssessmentRequestSource>(); } },
+                {"results", n => { Results = n.GetCollectionOfObjectValues<ThreatAssessmentResult>(ThreatAssessmentResult.CreateFromDiscriminatorValue).ToList(); } },
+                {"status", n => { Status = n.GetEnumValue<ThreatAssessmentStatus>(); } },
             };
         }
         /// <summary>

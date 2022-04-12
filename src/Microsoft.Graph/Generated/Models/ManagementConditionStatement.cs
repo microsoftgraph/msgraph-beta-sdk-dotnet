@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"applicablePlatforms", (o,n) => { (o as ManagementConditionStatement).ApplicablePlatforms = n.GetCollectionOfEnumValues<DevicePlatformType>().ToList(); } },
-                {"createdDateTime", (o,n) => { (o as ManagementConditionStatement).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as ManagementConditionStatement).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as ManagementConditionStatement).DisplayName = n.GetStringValue(); } },
-                {"eTag", (o,n) => { (o as ManagementConditionStatement).ETag = n.GetStringValue(); } },
-                {"expression", (o,n) => { (o as ManagementConditionStatement).Expression = n.GetObjectValue<ManagementConditionExpression>(ManagementConditionExpression.CreateFromDiscriminatorValue); } },
-                {"managementConditions", (o,n) => { (o as ManagementConditionStatement).ManagementConditions = n.GetCollectionOfObjectValues<ManagementCondition>(ManagementCondition.CreateFromDiscriminatorValue).ToList(); } },
-                {"modifiedDateTime", (o,n) => { (o as ManagementConditionStatement).ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"applicablePlatforms", n => { ApplicablePlatforms = n.GetCollectionOfEnumValues<DevicePlatformType>().ToList(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"eTag", n => { ETag = n.GetStringValue(); } },
+                {"expression", n => { Expression = n.GetObjectValue<ManagementConditionExpression>(ManagementConditionExpression.CreateFromDiscriminatorValue); } },
+                {"managementConditions", n => { ManagementConditions = n.GetCollectionOfObjectValues<ManagementCondition>(ManagementCondition.CreateFromDiscriminatorValue).ToList(); } },
+                {"modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

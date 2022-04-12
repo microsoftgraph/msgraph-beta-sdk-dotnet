@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"displayName", (o,n) => { (o as IdentityUserFlowAttributeAssignment).DisplayName = n.GetStringValue(); } },
-                {"isOptional", (o,n) => { (o as IdentityUserFlowAttributeAssignment).IsOptional = n.GetBoolValue(); } },
-                {"requiresVerification", (o,n) => { (o as IdentityUserFlowAttributeAssignment).RequiresVerification = n.GetBoolValue(); } },
-                {"userAttribute", (o,n) => { (o as IdentityUserFlowAttributeAssignment).UserAttribute = n.GetObjectValue<IdentityUserFlowAttribute>(IdentityUserFlowAttribute.CreateFromDiscriminatorValue); } },
-                {"userAttributeValues", (o,n) => { (o as IdentityUserFlowAttributeAssignment).UserAttributeValues = n.GetCollectionOfObjectValues<UserAttributeValuesItem>(UserAttributeValuesItem.CreateFromDiscriminatorValue).ToList(); } },
-                {"userInputType", (o,n) => { (o as IdentityUserFlowAttributeAssignment).UserInputType = n.GetEnumValue<IdentityUserFlowAttributeInputType>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"isOptional", n => { IsOptional = n.GetBoolValue(); } },
+                {"requiresVerification", n => { RequiresVerification = n.GetBoolValue(); } },
+                {"userAttribute", n => { UserAttribute = n.GetObjectValue<IdentityUserFlowAttribute>(IdentityUserFlowAttribute.CreateFromDiscriminatorValue); } },
+                {"userAttributeValues", n => { UserAttributeValues = n.GetCollectionOfObjectValues<UserAttributeValuesItem>(UserAttributeValuesItem.CreateFromDiscriminatorValue).ToList(); } },
+                {"userInputType", n => { UserInputType = n.GetEnumValue<IdentityUserFlowAttributeInputType>(); } },
             };
         }
         /// <summary>

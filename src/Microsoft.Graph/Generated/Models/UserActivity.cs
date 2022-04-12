@@ -44,22 +44,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activationUrl", (o,n) => { (o as UserActivity).ActivationUrl = n.GetStringValue(); } },
-                {"activitySourceHost", (o,n) => { (o as UserActivity).ActivitySourceHost = n.GetStringValue(); } },
-                {"appActivityId", (o,n) => { (o as UserActivity).AppActivityId = n.GetStringValue(); } },
-                {"appDisplayName", (o,n) => { (o as UserActivity).AppDisplayName = n.GetStringValue(); } },
-                {"contentInfo", (o,n) => { (o as UserActivity).ContentInfo = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"contentUrl", (o,n) => { (o as UserActivity).ContentUrl = n.GetStringValue(); } },
-                {"createdDateTime", (o,n) => { (o as UserActivity).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"expirationDateTime", (o,n) => { (o as UserActivity).ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"fallbackUrl", (o,n) => { (o as UserActivity).FallbackUrl = n.GetStringValue(); } },
-                {"historyItems", (o,n) => { (o as UserActivity).HistoryItems = n.GetCollectionOfObjectValues<ActivityHistoryItem>(ActivityHistoryItem.CreateFromDiscriminatorValue).ToList(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as UserActivity).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", (o,n) => { (o as UserActivity).Status = n.GetEnumValue<Status>(); } },
-                {"userTimezone", (o,n) => { (o as UserActivity).UserTimezone = n.GetStringValue(); } },
-                {"visualElements", (o,n) => { (o as UserActivity).VisualElements = n.GetObjectValue<VisualInfo>(VisualInfo.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activationUrl", n => { ActivationUrl = n.GetStringValue(); } },
+                {"activitySourceHost", n => { ActivitySourceHost = n.GetStringValue(); } },
+                {"appActivityId", n => { AppActivityId = n.GetStringValue(); } },
+                {"appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
+                {"contentInfo", n => { ContentInfo = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"contentUrl", n => { ContentUrl = n.GetStringValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"fallbackUrl", n => { FallbackUrl = n.GetStringValue(); } },
+                {"historyItems", n => { HistoryItems = n.GetCollectionOfObjectValues<ActivityHistoryItem>(ActivityHistoryItem.CreateFromDiscriminatorValue).ToList(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"status", n => { Status = n.GetEnumValue<Status>(); } },
+                {"userTimezone", n => { UserTimezone = n.GetStringValue(); } },
+                {"visualElements", n => { VisualElements = n.GetObjectValue<VisualInfo>(VisualInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

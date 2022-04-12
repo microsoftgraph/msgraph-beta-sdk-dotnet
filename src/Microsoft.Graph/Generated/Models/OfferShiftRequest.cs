@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"recipientActionDateTime", (o,n) => { (o as OfferShiftRequest).RecipientActionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"recipientActionMessage", (o,n) => { (o as OfferShiftRequest).RecipientActionMessage = n.GetStringValue(); } },
-                {"recipientUserId", (o,n) => { (o as OfferShiftRequest).RecipientUserId = n.GetStringValue(); } },
-                {"senderShiftId", (o,n) => { (o as OfferShiftRequest).SenderShiftId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"recipientActionDateTime", n => { RecipientActionDateTime = n.GetDateTimeOffsetValue(); } },
+                {"recipientActionMessage", n => { RecipientActionMessage = n.GetStringValue(); } },
+                {"recipientUserId", n => { RecipientUserId = n.GetStringValue(); } },
+                {"senderShiftId", n => { SenderShiftId = n.GetStringValue(); } },
             };
         }
         /// <summary>

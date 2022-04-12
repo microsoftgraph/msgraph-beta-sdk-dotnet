@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.E
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"ids", (o,n) => { (o as AddMembersByIdRequestBody).Ids = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"memberEntityType", (o,n) => { (o as AddMembersByIdRequestBody).MemberEntityType = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"ids", n => { Ids = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"memberEntityType", n => { MemberEntityType = n.GetStringValue(); } },
             };
         }
         /// <summary>

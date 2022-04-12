@@ -65,32 +65,32 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignedProducts", (o,n) => { (o as Office365ActiveUserDetail).AssignedProducts = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"deletedDate", (o,n) => { (o as Office365ActiveUserDetail).DeletedDate = n.GetDateValue(); } },
-                {"displayName", (o,n) => { (o as Office365ActiveUserDetail).DisplayName = n.GetStringValue(); } },
-                {"exchangeLastActivityDate", (o,n) => { (o as Office365ActiveUserDetail).ExchangeLastActivityDate = n.GetDateValue(); } },
-                {"exchangeLicenseAssignDate", (o,n) => { (o as Office365ActiveUserDetail).ExchangeLicenseAssignDate = n.GetDateValue(); } },
-                {"hasExchangeLicense", (o,n) => { (o as Office365ActiveUserDetail).HasExchangeLicense = n.GetBoolValue(); } },
-                {"hasOneDriveLicense", (o,n) => { (o as Office365ActiveUserDetail).HasOneDriveLicense = n.GetBoolValue(); } },
-                {"hasSharePointLicense", (o,n) => { (o as Office365ActiveUserDetail).HasSharePointLicense = n.GetBoolValue(); } },
-                {"hasSkypeForBusinessLicense", (o,n) => { (o as Office365ActiveUserDetail).HasSkypeForBusinessLicense = n.GetBoolValue(); } },
-                {"hasTeamsLicense", (o,n) => { (o as Office365ActiveUserDetail).HasTeamsLicense = n.GetBoolValue(); } },
-                {"hasYammerLicense", (o,n) => { (o as Office365ActiveUserDetail).HasYammerLicense = n.GetBoolValue(); } },
-                {"isDeleted", (o,n) => { (o as Office365ActiveUserDetail).IsDeleted = n.GetBoolValue(); } },
-                {"oneDriveLastActivityDate", (o,n) => { (o as Office365ActiveUserDetail).OneDriveLastActivityDate = n.GetDateValue(); } },
-                {"oneDriveLicenseAssignDate", (o,n) => { (o as Office365ActiveUserDetail).OneDriveLicenseAssignDate = n.GetDateValue(); } },
-                {"reportRefreshDate", (o,n) => { (o as Office365ActiveUserDetail).ReportRefreshDate = n.GetDateValue(); } },
-                {"sharePointLastActivityDate", (o,n) => { (o as Office365ActiveUserDetail).SharePointLastActivityDate = n.GetDateValue(); } },
-                {"sharePointLicenseAssignDate", (o,n) => { (o as Office365ActiveUserDetail).SharePointLicenseAssignDate = n.GetDateValue(); } },
-                {"skypeForBusinessLastActivityDate", (o,n) => { (o as Office365ActiveUserDetail).SkypeForBusinessLastActivityDate = n.GetDateValue(); } },
-                {"skypeForBusinessLicenseAssignDate", (o,n) => { (o as Office365ActiveUserDetail).SkypeForBusinessLicenseAssignDate = n.GetDateValue(); } },
-                {"teamsLastActivityDate", (o,n) => { (o as Office365ActiveUserDetail).TeamsLastActivityDate = n.GetDateValue(); } },
-                {"teamsLicenseAssignDate", (o,n) => { (o as Office365ActiveUserDetail).TeamsLicenseAssignDate = n.GetDateValue(); } },
-                {"userPrincipalName", (o,n) => { (o as Office365ActiveUserDetail).UserPrincipalName = n.GetStringValue(); } },
-                {"yammerLastActivityDate", (o,n) => { (o as Office365ActiveUserDetail).YammerLastActivityDate = n.GetDateValue(); } },
-                {"yammerLicenseAssignDate", (o,n) => { (o as Office365ActiveUserDetail).YammerLicenseAssignDate = n.GetDateValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"assignedProducts", n => { AssignedProducts = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"deletedDate", n => { DeletedDate = n.GetDateValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"exchangeLastActivityDate", n => { ExchangeLastActivityDate = n.GetDateValue(); } },
+                {"exchangeLicenseAssignDate", n => { ExchangeLicenseAssignDate = n.GetDateValue(); } },
+                {"hasExchangeLicense", n => { HasExchangeLicense = n.GetBoolValue(); } },
+                {"hasOneDriveLicense", n => { HasOneDriveLicense = n.GetBoolValue(); } },
+                {"hasSharePointLicense", n => { HasSharePointLicense = n.GetBoolValue(); } },
+                {"hasSkypeForBusinessLicense", n => { HasSkypeForBusinessLicense = n.GetBoolValue(); } },
+                {"hasTeamsLicense", n => { HasTeamsLicense = n.GetBoolValue(); } },
+                {"hasYammerLicense", n => { HasYammerLicense = n.GetBoolValue(); } },
+                {"isDeleted", n => { IsDeleted = n.GetBoolValue(); } },
+                {"oneDriveLastActivityDate", n => { OneDriveLastActivityDate = n.GetDateValue(); } },
+                {"oneDriveLicenseAssignDate", n => { OneDriveLicenseAssignDate = n.GetDateValue(); } },
+                {"reportRefreshDate", n => { ReportRefreshDate = n.GetDateValue(); } },
+                {"sharePointLastActivityDate", n => { SharePointLastActivityDate = n.GetDateValue(); } },
+                {"sharePointLicenseAssignDate", n => { SharePointLicenseAssignDate = n.GetDateValue(); } },
+                {"skypeForBusinessLastActivityDate", n => { SkypeForBusinessLastActivityDate = n.GetDateValue(); } },
+                {"skypeForBusinessLicenseAssignDate", n => { SkypeForBusinessLicenseAssignDate = n.GetDateValue(); } },
+                {"teamsLastActivityDate", n => { TeamsLastActivityDate = n.GetDateValue(); } },
+                {"teamsLicenseAssignDate", n => { TeamsLicenseAssignDate = n.GetDateValue(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                {"yammerLastActivityDate", n => { YammerLastActivityDate = n.GetDateValue(); } },
+                {"yammerLicenseAssignDate", n => { YammerLicenseAssignDate = n.GetDateValue(); } },
             };
         }
         /// <summary>

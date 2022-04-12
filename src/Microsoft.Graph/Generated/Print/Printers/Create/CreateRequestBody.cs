@@ -40,15 +40,15 @@ namespace Microsoft.Graph.Beta.Print.Printers.Create {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"certificateSigningRequest", (o,n) => { (o as CreateRequestBody).CertificateSigningRequest = n.GetObjectValue<PrintCertificateSigningRequest>(PrintCertificateSigningRequest.CreateFromDiscriminatorValue); } },
-                {"connectorId", (o,n) => { (o as CreateRequestBody).ConnectorId = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as CreateRequestBody).DisplayName = n.GetStringValue(); } },
-                {"hasPhysicalDevice", (o,n) => { (o as CreateRequestBody).HasPhysicalDevice = n.GetBoolValue(); } },
-                {"manufacturer", (o,n) => { (o as CreateRequestBody).Manufacturer = n.GetStringValue(); } },
-                {"model", (o,n) => { (o as CreateRequestBody).Model = n.GetStringValue(); } },
-                {"physicalDeviceId", (o,n) => { (o as CreateRequestBody).PhysicalDeviceId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"certificateSigningRequest", n => { CertificateSigningRequest = n.GetObjectValue<PrintCertificateSigningRequest>(PrintCertificateSigningRequest.CreateFromDiscriminatorValue); } },
+                {"connectorId", n => { ConnectorId = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"hasPhysicalDevice", n => { HasPhysicalDevice = n.GetBoolValue(); } },
+                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                {"model", n => { Model = n.GetStringValue(); } },
+                {"physicalDeviceId", n => { PhysicalDeviceId = n.GetStringValue(); } },
             };
         }
         /// <summary>

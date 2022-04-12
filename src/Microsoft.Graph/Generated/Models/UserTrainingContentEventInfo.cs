@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"browser", (o,n) => { (o as UserTrainingContentEventInfo).Browser = n.GetStringValue(); } },
-                {"contentDateTime", (o,n) => { (o as UserTrainingContentEventInfo).ContentDateTime = n.GetDateTimeOffsetValue(); } },
-                {"ipAddress", (o,n) => { (o as UserTrainingContentEventInfo).IpAddress = n.GetStringValue(); } },
-                {"osPlatformDeviceDetails", (o,n) => { (o as UserTrainingContentEventInfo).OsPlatformDeviceDetails = n.GetStringValue(); } },
-                {"potentialScoreImpact", (o,n) => { (o as UserTrainingContentEventInfo).PotentialScoreImpact = n.GetDoubleValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"browser", n => { Browser = n.GetStringValue(); } },
+                {"contentDateTime", n => { ContentDateTime = n.GetDateTimeOffsetValue(); } },
+                {"ipAddress", n => { IpAddress = n.GetStringValue(); } },
+                {"osPlatformDeviceDetails", n => { OsPlatformDeviceDetails = n.GetStringValue(); } },
+                {"potentialScoreImpact", n => { PotentialScoreImpact = n.GetDoubleValue(); } },
             };
         }
         /// <summary>

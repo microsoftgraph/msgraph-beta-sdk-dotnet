@@ -52,22 +52,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"aggregationFilters", (o,n) => { (o as SearchRequest).AggregationFilters = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"aggregations", (o,n) => { (o as SearchRequest).Aggregations = n.GetCollectionOfObjectValues<AggregationOption>(AggregationOption.CreateFromDiscriminatorValue).ToList(); } },
-                {"contentSources", (o,n) => { (o as SearchRequest).ContentSources = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"enableTopResults", (o,n) => { (o as SearchRequest).EnableTopResults = n.GetBoolValue(); } },
-                {"entityTypes", (o,n) => { (o as SearchRequest).EntityTypes = n.GetCollectionOfEnumValues<EntityType>().ToList(); } },
-                {"fields", (o,n) => { (o as SearchRequest).Fields = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"from", (o,n) => { (o as SearchRequest).From = n.GetIntValue(); } },
-                {"query", (o,n) => { (o as SearchRequest).Query = n.GetObjectValue<SearchQuery>(SearchQuery.CreateFromDiscriminatorValue); } },
-                {"queryAlterationOptions", (o,n) => { (o as SearchRequest).QueryAlterationOptions = n.GetObjectValue<SearchAlterationOptions>(SearchAlterationOptions.CreateFromDiscriminatorValue); } },
-                {"resultTemplateOptions", (o,n) => { (o as SearchRequest).ResultTemplateOptions = n.GetObjectValue<ResultTemplateOption>(ResultTemplateOption.CreateFromDiscriminatorValue); } },
-                {"size", (o,n) => { (o as SearchRequest).Size = n.GetIntValue(); } },
-                {"sortProperties", (o,n) => { (o as SearchRequest).SortProperties = n.GetCollectionOfObjectValues<SortProperty>(SortProperty.CreateFromDiscriminatorValue).ToList(); } },
-                {"stored_fields", (o,n) => { (o as SearchRequest).Stored_fields = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"trimDuplicates", (o,n) => { (o as SearchRequest).TrimDuplicates = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"aggregationFilters", n => { AggregationFilters = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"aggregations", n => { Aggregations = n.GetCollectionOfObjectValues<AggregationOption>(AggregationOption.CreateFromDiscriminatorValue).ToList(); } },
+                {"contentSources", n => { ContentSources = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"enableTopResults", n => { EnableTopResults = n.GetBoolValue(); } },
+                {"entityTypes", n => { EntityTypes = n.GetCollectionOfEnumValues<EntityType>().ToList(); } },
+                {"fields", n => { Fields = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"from", n => { From = n.GetIntValue(); } },
+                {"query", n => { Query = n.GetObjectValue<SearchQuery>(SearchQuery.CreateFromDiscriminatorValue); } },
+                {"queryAlterationOptions", n => { QueryAlterationOptions = n.GetObjectValue<SearchAlterationOptions>(SearchAlterationOptions.CreateFromDiscriminatorValue); } },
+                {"resultTemplateOptions", n => { ResultTemplateOptions = n.GetObjectValue<ResultTemplateOption>(ResultTemplateOption.CreateFromDiscriminatorValue); } },
+                {"size", n => { Size = n.GetIntValue(); } },
+                {"sortProperties", n => { SortProperties = n.GetCollectionOfObjectValues<SortProperty>(SortProperty.CreateFromDiscriminatorValue).ToList(); } },
+                {"stored_fields", n => { Stored_fields = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"trimDuplicates", n => { TrimDuplicates = n.GetBoolValue(); } },
             };
         }
         /// <summary>

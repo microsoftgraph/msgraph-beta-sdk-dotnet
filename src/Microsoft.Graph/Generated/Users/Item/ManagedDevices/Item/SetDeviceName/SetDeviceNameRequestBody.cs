@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SetDeviceName {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"deviceName", (o,n) => { (o as SetDeviceNameRequestBody).DeviceName = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
             };
         }
         /// <summary>

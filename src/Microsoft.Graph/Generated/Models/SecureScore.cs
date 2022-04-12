@@ -36,18 +36,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activeUserCount", (o,n) => { (o as SecureScore).ActiveUserCount = n.GetIntValue(); } },
-                {"averageComparativeScores", (o,n) => { (o as SecureScore).AverageComparativeScores = n.GetCollectionOfObjectValues<AverageComparativeScore>(AverageComparativeScore.CreateFromDiscriminatorValue).ToList(); } },
-                {"azureTenantId", (o,n) => { (o as SecureScore).AzureTenantId = n.GetStringValue(); } },
-                {"controlScores", (o,n) => { (o as SecureScore).ControlScores = n.GetCollectionOfObjectValues<ControlScore>(ControlScore.CreateFromDiscriminatorValue).ToList(); } },
-                {"createdDateTime", (o,n) => { (o as SecureScore).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"currentScore", (o,n) => { (o as SecureScore).CurrentScore = n.GetDoubleValue(); } },
-                {"enabledServices", (o,n) => { (o as SecureScore).EnabledServices = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"licensedUserCount", (o,n) => { (o as SecureScore).LicensedUserCount = n.GetIntValue(); } },
-                {"maxScore", (o,n) => { (o as SecureScore).MaxScore = n.GetDoubleValue(); } },
-                {"vendorInformation", (o,n) => { (o as SecureScore).VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activeUserCount", n => { ActiveUserCount = n.GetIntValue(); } },
+                {"averageComparativeScores", n => { AverageComparativeScores = n.GetCollectionOfObjectValues<AverageComparativeScore>(AverageComparativeScore.CreateFromDiscriminatorValue).ToList(); } },
+                {"azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
+                {"controlScores", n => { ControlScores = n.GetCollectionOfObjectValues<ControlScore>(ControlScore.CreateFromDiscriminatorValue).ToList(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"currentScore", n => { CurrentScore = n.GetDoubleValue(); } },
+                {"enabledServices", n => { EnabledServices = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"licensedUserCount", n => { LicensedUserCount = n.GetIntValue(); } },
+                {"maxScore", n => { MaxScore = n.GetDoubleValue(); } },
+                {"vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

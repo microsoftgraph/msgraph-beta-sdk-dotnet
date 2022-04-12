@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.ContentTypes.It
         public CopyToDefaultContentLocationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/groups/{group_id}/sites/{site_id}/lists/{list_id}/contentTypes/{contentType_id}/microsoft.graph.copyToDefaultContentLocation";
+            UrlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/contentTypes/{contentType%2Did}/microsoft.graph.copyToDefaultContentLocation";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.ContentTypes.It
         public CopyToDefaultContentLocationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/groups/{group_id}/sites/{site_id}/lists/{list_id}/contentTypes/{contentType_id}/microsoft.graph.copyToDefaultContentLocation";
+            UrlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/contentTypes/{contentType%2Did}/microsoft.graph.copyToDefaultContentLocation";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

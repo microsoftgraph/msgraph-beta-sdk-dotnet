@@ -43,17 +43,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"compliancePolicyCount", (o,n) => { (o as ComanagedDevicesSummary).CompliancePolicyCount = n.GetIntValue(); } },
-                {"configurationSettingsCount", (o,n) => { (o as ComanagedDevicesSummary).ConfigurationSettingsCount = n.GetIntValue(); } },
-                {"endpointProtectionCount", (o,n) => { (o as ComanagedDevicesSummary).EndpointProtectionCount = n.GetIntValue(); } },
-                {"inventoryCount", (o,n) => { (o as ComanagedDevicesSummary).InventoryCount = n.GetIntValue(); } },
-                {"modernAppsCount", (o,n) => { (o as ComanagedDevicesSummary).ModernAppsCount = n.GetIntValue(); } },
-                {"officeAppsCount", (o,n) => { (o as ComanagedDevicesSummary).OfficeAppsCount = n.GetIntValue(); } },
-                {"resourceAccessCount", (o,n) => { (o as ComanagedDevicesSummary).ResourceAccessCount = n.GetIntValue(); } },
-                {"totalComanagedCount", (o,n) => { (o as ComanagedDevicesSummary).TotalComanagedCount = n.GetIntValue(); } },
-                {"windowsUpdateForBusinessCount", (o,n) => { (o as ComanagedDevicesSummary).WindowsUpdateForBusinessCount = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"compliancePolicyCount", n => { CompliancePolicyCount = n.GetIntValue(); } },
+                {"configurationSettingsCount", n => { ConfigurationSettingsCount = n.GetIntValue(); } },
+                {"endpointProtectionCount", n => { EndpointProtectionCount = n.GetIntValue(); } },
+                {"inventoryCount", n => { InventoryCount = n.GetIntValue(); } },
+                {"modernAppsCount", n => { ModernAppsCount = n.GetIntValue(); } },
+                {"officeAppsCount", n => { OfficeAppsCount = n.GetIntValue(); } },
+                {"resourceAccessCount", n => { ResourceAccessCount = n.GetIntValue(); } },
+                {"totalComanagedCount", n => { TotalComanagedCount = n.GetIntValue(); } },
+                {"windowsUpdateForBusinessCount", n => { WindowsUpdateForBusinessCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"failedDeviceCount", (o,n) => { (o as EBookInstallSummary).FailedDeviceCount = n.GetIntValue(); } },
-                {"failedUserCount", (o,n) => { (o as EBookInstallSummary).FailedUserCount = n.GetIntValue(); } },
-                {"installedDeviceCount", (o,n) => { (o as EBookInstallSummary).InstalledDeviceCount = n.GetIntValue(); } },
-                {"installedUserCount", (o,n) => { (o as EBookInstallSummary).InstalledUserCount = n.GetIntValue(); } },
-                {"notInstalledDeviceCount", (o,n) => { (o as EBookInstallSummary).NotInstalledDeviceCount = n.GetIntValue(); } },
-                {"notInstalledUserCount", (o,n) => { (o as EBookInstallSummary).NotInstalledUserCount = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"failedDeviceCount", n => { FailedDeviceCount = n.GetIntValue(); } },
+                {"failedUserCount", n => { FailedUserCount = n.GetIntValue(); } },
+                {"installedDeviceCount", n => { InstalledDeviceCount = n.GetIntValue(); } },
+                {"installedUserCount", n => { InstalledUserCount = n.GetIntValue(); } },
+                {"notInstalledDeviceCount", n => { NotInstalledDeviceCount = n.GetIntValue(); } },
+                {"notInstalledUserCount", n => { NotInstalledUserCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

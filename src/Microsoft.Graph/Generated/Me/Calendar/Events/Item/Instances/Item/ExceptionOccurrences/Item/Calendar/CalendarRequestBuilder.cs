@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Me.Calendar.Events.Item.Instances.Item.ExceptionO
         public CalendarRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/calendar/events/{event_id}/instances/{event_id1}/exceptionOccurrences/{event_id2}/calendar{?select}";
+            UrlTemplate = "{+baseurl}/me/calendar/events/{event%2Did}/instances/{event%2Did1}/exceptionOccurrences/{event%2Did2}/calendar{?%24select}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Me.Calendar.Events.Item.Instances.Item.ExceptionO
         public CalendarRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/calendar/events/{event_id}/instances/{event_id1}/exceptionOccurrences/{event_id2}/calendar{?select}";
+            UrlTemplate = "{+baseurl}/me/calendar/events/{event%2Did}/instances/{event%2Did1}/exceptionOccurrences/{event%2Did2}/calendar{?%24select}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -84,6 +84,7 @@ namespace Microsoft.Graph.Beta.Me.Calendar.Events.Item.Instances.Item.ExceptionO
         /// <summary>The calendar that contains the event. Navigation property. Read-only.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
     }

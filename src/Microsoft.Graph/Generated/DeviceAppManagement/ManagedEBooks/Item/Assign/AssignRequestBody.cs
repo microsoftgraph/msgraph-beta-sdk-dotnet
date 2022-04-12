@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item.Assign {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"managedEBookAssignments", (o,n) => { (o as AssignRequestBody).ManagedEBookAssignments = n.GetCollectionOfObjectValues<ManagedEBookAssignment>(ManagedEBookAssignment.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"managedEBookAssignments", n => { ManagedEBookAssignments = n.GetCollectionOfObjectValues<ManagedEBookAssignment>(ManagedEBookAssignment.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

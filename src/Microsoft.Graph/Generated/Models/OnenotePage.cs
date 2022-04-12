@@ -38,19 +38,19 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"content", (o,n) => { (o as OnenotePage).Content = n.GetByteArrayValue(); } },
-                {"contentUrl", (o,n) => { (o as OnenotePage).ContentUrl = n.GetStringValue(); } },
-                {"createdByAppId", (o,n) => { (o as OnenotePage).CreatedByAppId = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as OnenotePage).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"level", (o,n) => { (o as OnenotePage).Level = n.GetIntValue(); } },
-                {"links", (o,n) => { (o as OnenotePage).Links = n.GetObjectValue<PageLinks>(PageLinks.CreateFromDiscriminatorValue); } },
-                {"order", (o,n) => { (o as OnenotePage).Order = n.GetIntValue(); } },
-                {"parentNotebook", (o,n) => { (o as OnenotePage).ParentNotebook = n.GetObjectValue<Notebook>(Notebook.CreateFromDiscriminatorValue); } },
-                {"parentSection", (o,n) => { (o as OnenotePage).ParentSection = n.GetObjectValue<OnenoteSection>(OnenoteSection.CreateFromDiscriminatorValue); } },
-                {"title", (o,n) => { (o as OnenotePage).Title = n.GetStringValue(); } },
-                {"userTags", (o,n) => { (o as OnenotePage).UserTags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"content", n => { Content = n.GetByteArrayValue(); } },
+                {"contentUrl", n => { ContentUrl = n.GetStringValue(); } },
+                {"createdByAppId", n => { CreatedByAppId = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"level", n => { Level = n.GetIntValue(); } },
+                {"links", n => { Links = n.GetObjectValue<PageLinks>(PageLinks.CreateFromDiscriminatorValue); } },
+                {"order", n => { Order = n.GetIntValue(); } },
+                {"parentNotebook", n => { ParentNotebook = n.GetObjectValue<Notebook>(Notebook.CreateFromDiscriminatorValue); } },
+                {"parentSection", n => { ParentSection = n.GetObjectValue<OnenoteSection>(OnenoteSection.CreateFromDiscriminatorValue); } },
+                {"title", n => { Title = n.GetStringValue(); } },
+                {"userTags", n => { UserTags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

@@ -42,17 +42,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"connectingIP", (o,n) => { (o as MessageSecurityState).ConnectingIP = n.GetStringValue(); } },
-                {"deliveryAction", (o,n) => { (o as MessageSecurityState).DeliveryAction = n.GetStringValue(); } },
-                {"deliveryLocation", (o,n) => { (o as MessageSecurityState).DeliveryLocation = n.GetStringValue(); } },
-                {"directionality", (o,n) => { (o as MessageSecurityState).Directionality = n.GetStringValue(); } },
-                {"internetMessageId", (o,n) => { (o as MessageSecurityState).InternetMessageId = n.GetStringValue(); } },
-                {"messageFingerprint", (o,n) => { (o as MessageSecurityState).MessageFingerprint = n.GetStringValue(); } },
-                {"messageReceivedDateTime", (o,n) => { (o as MessageSecurityState).MessageReceivedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"messageSubject", (o,n) => { (o as MessageSecurityState).MessageSubject = n.GetStringValue(); } },
-                {"networkMessageId", (o,n) => { (o as MessageSecurityState).NetworkMessageId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"connectingIP", n => { ConnectingIP = n.GetStringValue(); } },
+                {"deliveryAction", n => { DeliveryAction = n.GetStringValue(); } },
+                {"deliveryLocation", n => { DeliveryLocation = n.GetStringValue(); } },
+                {"directionality", n => { Directionality = n.GetStringValue(); } },
+                {"internetMessageId", n => { InternetMessageId = n.GetStringValue(); } },
+                {"messageFingerprint", n => { MessageFingerprint = n.GetStringValue(); } },
+                {"messageReceivedDateTime", n => { MessageReceivedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"messageSubject", n => { MessageSubject = n.GetStringValue(); } },
+                {"networkMessageId", n => { NetworkMessageId = n.GetStringValue(); } },
             };
         }
         /// <summary>

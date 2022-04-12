@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"description", (o,n) => { (o as SideLoadingKey).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as SideLoadingKey).DisplayName = n.GetStringValue(); } },
-                {"lastUpdatedDateTime", (o,n) => { (o as SideLoadingKey).LastUpdatedDateTime = n.GetStringValue(); } },
-                {"totalActivation", (o,n) => { (o as SideLoadingKey).TotalActivation = n.GetIntValue(); } },
-                {"value", (o,n) => { (o as SideLoadingKey).Value = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetStringValue(); } },
+                {"totalActivation", n => { TotalActivation = n.GetIntValue(); } },
+                {"value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>

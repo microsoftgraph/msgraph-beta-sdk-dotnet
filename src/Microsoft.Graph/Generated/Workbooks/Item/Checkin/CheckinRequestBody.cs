@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.Workbooks.Item.Checkin {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"checkInAs", (o,n) => { (o as CheckinRequestBody).CheckInAs = n.GetStringValue(); } },
-                {"comment", (o,n) => { (o as CheckinRequestBody).Comment = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"checkInAs", n => { CheckInAs = n.GetStringValue(); } },
+                {"comment", n => { Comment = n.GetStringValue(); } },
             };
         }
         /// <summary>

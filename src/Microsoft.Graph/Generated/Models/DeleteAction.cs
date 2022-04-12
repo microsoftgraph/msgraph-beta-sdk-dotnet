@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"name", (o,n) => { (o as DeleteAction).Name = n.GetStringValue(); } },
-                {"objectType", (o,n) => { (o as DeleteAction).ObjectType = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"objectType", n => { ObjectType = n.GetStringValue(); } },
             };
         }
         /// <summary>

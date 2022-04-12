@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.SensitivityLabels.Item.Subl
         public CountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/informationProtection/sensitivityLabels/{sensitivityLabel_id}/sublabels/$count";
+            UrlTemplate = "{+baseurl}/informationProtection/sensitivityLabels/{sensitivityLabel%2Did}/sublabels/$count";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.SensitivityLabels.Item.Subl
         public CountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/informationProtection/sensitivityLabels/{sensitivityLabel_id}/sublabels/$count";
+            UrlTemplate = "{+baseurl}/informationProtection/sensitivityLabels/{sensitivityLabel%2Did}/sublabels/$count";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

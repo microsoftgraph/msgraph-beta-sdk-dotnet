@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Uploa
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"appleId", (o,n) => { (o as UploadDepTokenRequestBody).AppleId = n.GetStringValue(); } },
-                {"depToken", (o,n) => { (o as UploadDepTokenRequestBody).DepToken = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"appleId", n => { AppleId = n.GetStringValue(); } },
+                {"depToken", n => { DepToken = n.GetStringValue(); } },
             };
         }
         /// <summary>

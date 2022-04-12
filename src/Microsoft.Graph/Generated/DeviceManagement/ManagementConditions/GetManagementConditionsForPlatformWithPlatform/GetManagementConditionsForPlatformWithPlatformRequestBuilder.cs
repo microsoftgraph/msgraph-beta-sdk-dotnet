@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagementConditions.GetManageme
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/managementConditions/microsoft.graph.getManagementConditionsForPlatform(platform='{platform}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("platform", platform);
+            urlTplParams.Add("", platform);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

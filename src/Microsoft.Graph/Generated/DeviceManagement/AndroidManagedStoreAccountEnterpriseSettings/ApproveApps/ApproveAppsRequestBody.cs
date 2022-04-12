@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"approveAllPermissions", (o,n) => { (o as ApproveAppsRequestBody).ApproveAllPermissions = n.GetBoolValue(); } },
-                {"packageIds", (o,n) => { (o as ApproveAppsRequestBody).PackageIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"approveAllPermissions", n => { ApproveAllPermissions = n.GetBoolValue(); } },
+                {"packageIds", n => { PackageIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

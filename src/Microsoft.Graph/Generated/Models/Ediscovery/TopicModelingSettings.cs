@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"dynamicallyAdjustTopicCount", (o,n) => { (o as TopicModelingSettings).DynamicallyAdjustTopicCount = n.GetBoolValue(); } },
-                {"ignoreNumbers", (o,n) => { (o as TopicModelingSettings).IgnoreNumbers = n.GetBoolValue(); } },
-                {"isEnabled", (o,n) => { (o as TopicModelingSettings).IsEnabled = n.GetBoolValue(); } },
-                {"topicCount", (o,n) => { (o as TopicModelingSettings).TopicCount = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"dynamicallyAdjustTopicCount", n => { DynamicallyAdjustTopicCount = n.GetBoolValue(); } },
+                {"ignoreNumbers", n => { IgnoreNumbers = n.GetBoolValue(); } },
+                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                {"topicCount", n => { TopicCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

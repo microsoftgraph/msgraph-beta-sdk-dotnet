@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"callee", (o,n) => { (o as Session).Callee = n.GetObjectValue<Endpoint>(Endpoint.CreateFromDiscriminatorValue); } },
-                {"caller", (o,n) => { (o as Session).Caller = n.GetObjectValue<Endpoint>(Endpoint.CreateFromDiscriminatorValue); } },
-                {"endDateTime", (o,n) => { (o as Session).EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"failureInfo", (o,n) => { (o as Session).FailureInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.CallRecords.FailureInfo>(Microsoft.Graph.Beta.Models.CallRecords.FailureInfo.CreateFromDiscriminatorValue); } },
-                {"modalities", (o,n) => { (o as Session).Modalities = n.GetCollectionOfEnumValues<Modality>().ToList(); } },
-                {"segments", (o,n) => { (o as Session).Segments = n.GetCollectionOfObjectValues<Segment>(Segment.CreateFromDiscriminatorValue).ToList(); } },
-                {"startDateTime", (o,n) => { (o as Session).StartDateTime = n.GetDateTimeOffsetValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"callee", n => { Callee = n.GetObjectValue<Endpoint>(Endpoint.CreateFromDiscriminatorValue); } },
+                {"caller", n => { Caller = n.GetObjectValue<Endpoint>(Endpoint.CreateFromDiscriminatorValue); } },
+                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"failureInfo", n => { FailureInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.CallRecords.FailureInfo>(Microsoft.Graph.Beta.Models.CallRecords.FailureInfo.CreateFromDiscriminatorValue); } },
+                {"modalities", n => { Modalities = n.GetCollectionOfEnumValues<Modality>().ToList(); } },
+                {"segments", n => { Segments = n.GetCollectionOfObjectValues<Segment>(Segment.CreateFromDiscriminatorValue).ToList(); } },
+                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

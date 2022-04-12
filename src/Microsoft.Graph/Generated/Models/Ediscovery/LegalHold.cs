@@ -42,21 +42,21 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"contentQuery", (o,n) => { (o as LegalHold).ContentQuery = n.GetStringValue(); } },
-                {"createdBy", (o,n) => { (o as LegalHold).CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", (o,n) => { (o as LegalHold).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as LegalHold).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as LegalHold).DisplayName = n.GetStringValue(); } },
-                {"errors", (o,n) => { (o as LegalHold).Errors = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"isEnabled", (o,n) => { (o as LegalHold).IsEnabled = n.GetBoolValue(); } },
-                {"lastModifiedBy", (o,n) => { (o as LegalHold).LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", (o,n) => { (o as LegalHold).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"siteSources", (o,n) => { (o as LegalHold).SiteSources = n.GetCollectionOfObjectValues<SiteSource>(SiteSource.CreateFromDiscriminatorValue).ToList(); } },
-                {"status", (o,n) => { (o as LegalHold).Status = n.GetEnumValue<LegalHoldStatus>(); } },
-                {"unifiedGroupSources", (o,n) => { (o as LegalHold).UnifiedGroupSources = n.GetCollectionOfObjectValues<UnifiedGroupSource>(UnifiedGroupSource.CreateFromDiscriminatorValue).ToList(); } },
-                {"userSources", (o,n) => { (o as LegalHold).UserSources = n.GetCollectionOfObjectValues<UserSource>(UserSource.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"contentQuery", n => { ContentQuery = n.GetStringValue(); } },
+                {"createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"errors", n => { Errors = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"siteSources", n => { SiteSources = n.GetCollectionOfObjectValues<SiteSource>(SiteSource.CreateFromDiscriminatorValue).ToList(); } },
+                {"status", n => { Status = n.GetEnumValue<LegalHoldStatus>(); } },
+                {"unifiedGroupSources", n => { UnifiedGroupSources = n.GetCollectionOfObjectValues<UnifiedGroupSource>(UnifiedGroupSource.CreateFromDiscriminatorValue).ToList(); } },
+                {"userSources", n => { UserSources = n.GetCollectionOfObjectValues<UserSource>(UserSource.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

@@ -26,9 +26,9 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"userAgent", (o,n) => { (o as Endpoint).UserAgent = n.GetObjectValue<Microsoft.Graph.Beta.Models.CallRecords.UserAgent>(Microsoft.Graph.Beta.Models.CallRecords.UserAgent.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"userAgent", n => { UserAgent = n.GetObjectValue<Microsoft.Graph.Beta.Models.CallRecords.UserAgent>(Microsoft.Graph.Beta.Models.CallRecords.UserAgent.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

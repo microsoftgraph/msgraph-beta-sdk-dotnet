@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.Domains.Item.ForceDelete {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"disableUserAccounts", (o,n) => { (o as ForceDeleteRequestBody).DisableUserAccounts = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"disableUserAccounts", n => { DisableUserAccounts = n.GetBoolValue(); } },
             };
         }
         /// <summary>

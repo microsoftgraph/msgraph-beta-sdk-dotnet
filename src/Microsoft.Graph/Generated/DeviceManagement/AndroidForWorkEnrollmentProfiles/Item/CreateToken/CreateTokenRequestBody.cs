@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkEnrollmentProfiles
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"tokenValidityInSeconds", (o,n) => { (o as CreateTokenRequestBody).TokenValidityInSeconds = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"tokenValidityInSeconds", n => { TokenValidityInSeconds = n.GetIntValue(); } },
             };
         }
         /// <summary>

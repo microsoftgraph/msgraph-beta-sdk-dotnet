@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"classroomIds", (o,n) => { (o as CartToClassAssociation).ClassroomIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"createdDateTime", (o,n) => { (o as CartToClassAssociation).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as CartToClassAssociation).Description = n.GetStringValue(); } },
-                {"deviceCartIds", (o,n) => { (o as CartToClassAssociation).DeviceCartIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"displayName", (o,n) => { (o as CartToClassAssociation).DisplayName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as CartToClassAssociation).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"version", (o,n) => { (o as CartToClassAssociation).Version = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"classroomIds", n => { ClassroomIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"deviceCartIds", n => { DeviceCartIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"version", n => { Version = n.GetIntValue(); } },
             };
         }
         /// <summary>

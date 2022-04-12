@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"operatorName", (o,n) => { (o as FilterClause).OperatorName = n.GetStringValue(); } },
-                {"sourceOperandName", (o,n) => { (o as FilterClause).SourceOperandName = n.GetStringValue(); } },
-                {"targetOperand", (o,n) => { (o as FilterClause).TargetOperand = n.GetObjectValue<FilterOperand>(FilterOperand.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"operatorName", n => { OperatorName = n.GetStringValue(); } },
+                {"sourceOperandName", n => { SourceOperandName = n.GetStringValue(); } },
+                {"targetOperand", n => { TargetOperand = n.GetObjectValue<FilterOperand>(FilterOperand.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

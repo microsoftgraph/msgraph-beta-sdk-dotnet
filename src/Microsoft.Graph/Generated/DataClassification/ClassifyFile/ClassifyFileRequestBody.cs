@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyFile {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"file", (o,n) => { (o as ClassifyFileRequestBody).File = n.GetByteArrayValue(); } },
-                {"sensitiveTypeIds", (o,n) => { (o as ClassifyFileRequestBody).SensitiveTypeIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"file", n => { File = n.GetByteArrayValue(); } },
+                {"sensitiveTypeIds", n => { SensitiveTypeIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

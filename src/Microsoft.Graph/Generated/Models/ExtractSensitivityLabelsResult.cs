@@ -26,9 +26,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"labels", (o,n) => { (o as ExtractSensitivityLabelsResult).Labels = n.GetCollectionOfObjectValues<SensitivityLabelAssignment>(SensitivityLabelAssignment.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"labels", n => { Labels = n.GetCollectionOfObjectValues<SensitivityLabelAssignment>(SensitivityLabelAssignment.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"action", (o,n) => { (o as DelegatedAdminRelationshipRequest).Action = n.GetEnumValue<DelegatedAdminRelationshipRequestAction>(); } },
-                {"createdDateTime", (o,n) => { (o as DelegatedAdminRelationshipRequest).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as DelegatedAdminRelationshipRequest).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", (o,n) => { (o as DelegatedAdminRelationshipRequest).Status = n.GetEnumValue<DelegatedAdminRelationshipRequestStatus>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"action", n => { Action = n.GetEnumValue<DelegatedAdminRelationshipRequestAction>(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"status", n => { Status = n.GetEnumValue<DelegatedAdminRelationshipRequestStatus>(); } },
             };
         }
         /// <summary>

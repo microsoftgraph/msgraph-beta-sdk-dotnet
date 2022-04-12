@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions.Item.Dimensi
         public CountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/financials/companies/{company_id}/dimensions/{dimension_id}/dimensionValues/$count";
+            UrlTemplate = "{+baseurl}/financials/companies/{company%2Did}/dimensions/{dimension%2Did}/dimensionValues/$count";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions.Item.Dimensi
         public CountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/financials/companies/{company_id}/dimensions/{dimension_id}/dimensionValues/$count";
+            UrlTemplate = "{+baseurl}/financials/companies/{company%2Did}/dimensions/{dimension%2Did}/dimensionValues/$count";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

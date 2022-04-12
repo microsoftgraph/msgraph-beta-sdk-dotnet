@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"application", (o,n) => { (o as ApplicationServicePrincipal).Application = n.GetObjectValue<Microsoft.Graph.Beta.Models.Application>(Microsoft.Graph.Beta.Models.Application.CreateFromDiscriminatorValue); } },
-                {"servicePrincipal", (o,n) => { (o as ApplicationServicePrincipal).ServicePrincipal = n.GetObjectValue<Microsoft.Graph.Beta.Models.ServicePrincipal>(Microsoft.Graph.Beta.Models.ServicePrincipal.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"application", n => { Application = n.GetObjectValue<Microsoft.Graph.Beta.Models.Application>(Microsoft.Graph.Beta.Models.Application.CreateFromDiscriminatorValue); } },
+                {"servicePrincipal", n => { ServicePrincipal = n.GetObjectValue<Microsoft.Graph.Beta.Models.ServicePrincipal>(Microsoft.Graph.Beta.Models.ServicePrincipal.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

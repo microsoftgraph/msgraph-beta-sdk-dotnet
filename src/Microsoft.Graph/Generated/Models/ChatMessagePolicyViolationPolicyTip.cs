@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"complianceUrl", (o,n) => { (o as ChatMessagePolicyViolationPolicyTip).ComplianceUrl = n.GetStringValue(); } },
-                {"generalText", (o,n) => { (o as ChatMessagePolicyViolationPolicyTip).GeneralText = n.GetStringValue(); } },
-                {"matchedConditionDescriptions", (o,n) => { (o as ChatMessagePolicyViolationPolicyTip).MatchedConditionDescriptions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"complianceUrl", n => { ComplianceUrl = n.GetStringValue(); } },
+                {"generalText", n => { GeneralText = n.GetStringValue(); } },
+                {"matchedConditionDescriptions", n => { MatchedConditionDescriptions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

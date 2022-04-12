@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"excludeGroups", (o,n) => { (o as ConditionalAccessUsers).ExcludeGroups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"excludeRoles", (o,n) => { (o as ConditionalAccessUsers).ExcludeRoles = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"excludeUsers", (o,n) => { (o as ConditionalAccessUsers).ExcludeUsers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"includeGroups", (o,n) => { (o as ConditionalAccessUsers).IncludeGroups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"includeRoles", (o,n) => { (o as ConditionalAccessUsers).IncludeRoles = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"includeUsers", (o,n) => { (o as ConditionalAccessUsers).IncludeUsers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"excludeGroups", n => { ExcludeGroups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"excludeRoles", n => { ExcludeRoles = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"excludeUsers", n => { ExcludeUsers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"includeGroups", n => { IncludeGroups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"includeRoles", n => { IncludeRoles = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"includeUsers", n => { IncludeUsers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

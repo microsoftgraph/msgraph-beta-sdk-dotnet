@@ -42,21 +42,21 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as DeviceManagementCompliancePolicy).Assignments = n.GetCollectionOfObjectValues<DeviceManagementConfigurationPolicyAssignment>(DeviceManagementConfigurationPolicyAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"createdDateTime", (o,n) => { (o as DeviceManagementCompliancePolicy).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"creationSource", (o,n) => { (o as DeviceManagementCompliancePolicy).CreationSource = n.GetStringValue(); } },
-                {"description", (o,n) => { (o as DeviceManagementCompliancePolicy).Description = n.GetStringValue(); } },
-                {"isAssigned", (o,n) => { (o as DeviceManagementCompliancePolicy).IsAssigned = n.GetBoolValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as DeviceManagementCompliancePolicy).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"name", (o,n) => { (o as DeviceManagementCompliancePolicy).Name = n.GetStringValue(); } },
-                {"platforms", (o,n) => { (o as DeviceManagementCompliancePolicy).Platforms = n.GetEnumValue<DeviceManagementConfigurationPlatforms>(); } },
-                {"roleScopeTagIds", (o,n) => { (o as DeviceManagementCompliancePolicy).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"scheduledActionsForRule", (o,n) => { (o as DeviceManagementCompliancePolicy).ScheduledActionsForRule = n.GetCollectionOfObjectValues<DeviceManagementComplianceScheduledActionForRule>(DeviceManagementComplianceScheduledActionForRule.CreateFromDiscriminatorValue).ToList(); } },
-                {"settingCount", (o,n) => { (o as DeviceManagementCompliancePolicy).SettingCount = n.GetIntValue(); } },
-                {"settings", (o,n) => { (o as DeviceManagementCompliancePolicy).Settings = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSetting>(DeviceManagementConfigurationSetting.CreateFromDiscriminatorValue).ToList(); } },
-                {"technologies", (o,n) => { (o as DeviceManagementCompliancePolicy).Technologies = n.GetEnumValue<DeviceManagementConfigurationTechnologies>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<DeviceManagementConfigurationPolicyAssignment>(DeviceManagementConfigurationPolicyAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"creationSource", n => { CreationSource = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"isAssigned", n => { IsAssigned = n.GetBoolValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"platforms", n => { Platforms = n.GetEnumValue<DeviceManagementConfigurationPlatforms>(); } },
+                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"scheduledActionsForRule", n => { ScheduledActionsForRule = n.GetCollectionOfObjectValues<DeviceManagementComplianceScheduledActionForRule>(DeviceManagementComplianceScheduledActionForRule.CreateFromDiscriminatorValue).ToList(); } },
+                {"settingCount", n => { SettingCount = n.GetIntValue(); } },
+                {"settings", n => { Settings = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSetting>(DeviceManagementConfigurationSetting.CreateFromDiscriminatorValue).ToList(); } },
+                {"technologies", n => { Technologies = n.GetEnumValue<DeviceManagementConfigurationTechnologies>(); } },
             };
         }
         /// <summary>

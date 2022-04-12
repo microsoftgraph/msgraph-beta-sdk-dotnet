@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"errorCount", (o,n) => { (o as EducationSynchronizationProfileStatus).ErrorCount = n.GetLongValue(); } },
-                {"lastActivityDateTime", (o,n) => { (o as EducationSynchronizationProfileStatus).LastActivityDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastSynchronizationDateTime", (o,n) => { (o as EducationSynchronizationProfileStatus).LastSynchronizationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", (o,n) => { (o as EducationSynchronizationProfileStatus).Status = n.GetEnumValue<EducationSynchronizationStatus>(); } },
-                {"statusMessage", (o,n) => { (o as EducationSynchronizationProfileStatus).StatusMessage = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"errorCount", n => { ErrorCount = n.GetLongValue(); } },
+                {"lastActivityDateTime", n => { LastActivityDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastSynchronizationDateTime", n => { LastSynchronizationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"status", n => { Status = n.GetEnumValue<EducationSynchronizationStatus>(); } },
+                {"statusMessage", n => { StatusMessage = n.GetStringValue(); } },
             };
         }
         /// <summary>

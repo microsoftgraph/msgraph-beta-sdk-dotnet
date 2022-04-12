@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"messageId", (o,n) => { (o as ChatInfo).MessageId = n.GetStringValue(); } },
-                {"replyChainMessageId", (o,n) => { (o as ChatInfo).ReplyChainMessageId = n.GetStringValue(); } },
-                {"threadId", (o,n) => { (o as ChatInfo).ThreadId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"messageId", n => { MessageId = n.GetStringValue(); } },
+                {"replyChainMessageId", n => { ReplyChainMessageId = n.GetStringValue(); } },
+                {"threadId", n => { ThreadId = n.GetStringValue(); } },
             };
         }
         /// <summary>

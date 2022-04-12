@@ -7,6 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class LoginPageTextVisibilitySettings : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The hideAccountResetCredentials property</summary>
+        public bool? HideAccountResetCredentials { get; set; }
         /// <summary>Option to hide the self-service password reset (SSPR) &apos;Can&apos;t access your account?&apos; hyperlink on the sign-in form.</summary>
         public bool? HideCannotAccessYourAccount { get; set; }
         /// <summary>Option to hide the self-service password reset (SSPR) &apos;Forgot my password&apos; hyperlink on the sign-in form.</summary>
@@ -34,13 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"hideCannotAccessYourAccount", (o,n) => { (o as LoginPageTextVisibilitySettings).HideCannotAccessYourAccount = n.GetBoolValue(); } },
-                {"hideForgotMyPassword", (o,n) => { (o as LoginPageTextVisibilitySettings).HideForgotMyPassword = n.GetBoolValue(); } },
-                {"hidePrivacyAndCookies", (o,n) => { (o as LoginPageTextVisibilitySettings).HidePrivacyAndCookies = n.GetBoolValue(); } },
-                {"hideResetItNow", (o,n) => { (o as LoginPageTextVisibilitySettings).HideResetItNow = n.GetBoolValue(); } },
-                {"hideTermsOfUse", (o,n) => { (o as LoginPageTextVisibilitySettings).HideTermsOfUse = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"hideAccountResetCredentials", n => { HideAccountResetCredentials = n.GetBoolValue(); } },
+                {"hideCannotAccessYourAccount", n => { HideCannotAccessYourAccount = n.GetBoolValue(); } },
+                {"hideForgotMyPassword", n => { HideForgotMyPassword = n.GetBoolValue(); } },
+                {"hidePrivacyAndCookies", n => { HidePrivacyAndCookies = n.GetBoolValue(); } },
+                {"hideResetItNow", n => { HideResetItNow = n.GetBoolValue(); } },
+                {"hideTermsOfUse", n => { HideTermsOfUse = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -49,6 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("hideAccountResetCredentials", HideAccountResetCredentials);
             writer.WriteBoolValue("hideCannotAccessYourAccount", HideCannotAccessYourAccount);
             writer.WriteBoolValue("hideForgotMyPassword", HideForgotMyPassword);
             writer.WriteBoolValue("hidePrivacyAndCookies", HidePrivacyAndCookies);

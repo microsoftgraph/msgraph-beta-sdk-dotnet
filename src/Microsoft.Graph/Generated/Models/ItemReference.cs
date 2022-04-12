@@ -40,16 +40,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"driveId", (o,n) => { (o as ItemReference).DriveId = n.GetStringValue(); } },
-                {"driveType", (o,n) => { (o as ItemReference).DriveType = n.GetStringValue(); } },
-                {"id", (o,n) => { (o as ItemReference).Id = n.GetStringValue(); } },
-                {"name", (o,n) => { (o as ItemReference).Name = n.GetStringValue(); } },
-                {"path", (o,n) => { (o as ItemReference).Path = n.GetStringValue(); } },
-                {"shareId", (o,n) => { (o as ItemReference).ShareId = n.GetStringValue(); } },
-                {"sharepointIds", (o,n) => { (o as ItemReference).SharepointIds = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharepointIds>(Microsoft.Graph.Beta.Models.SharepointIds.CreateFromDiscriminatorValue); } },
-                {"siteId", (o,n) => { (o as ItemReference).SiteId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"driveId", n => { DriveId = n.GetStringValue(); } },
+                {"driveType", n => { DriveType = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"path", n => { Path = n.GetStringValue(); } },
+                {"shareId", n => { ShareId = n.GetStringValue(); } },
+                {"sharepointIds", n => { SharepointIds = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharepointIds>(Microsoft.Graph.Beta.Models.SharepointIds.CreateFromDiscriminatorValue); } },
+                {"siteId", n => { SiteId = n.GetStringValue(); } },
             };
         }
         /// <summary>

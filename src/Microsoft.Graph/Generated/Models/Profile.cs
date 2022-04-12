@@ -54,27 +54,27 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"account", (o,n) => { (o as Profile).Account = n.GetCollectionOfObjectValues<UserAccountInformation>(UserAccountInformation.CreateFromDiscriminatorValue).ToList(); } },
-                {"addresses", (o,n) => { (o as Profile).Addresses = n.GetCollectionOfObjectValues<ItemAddress>(ItemAddress.CreateFromDiscriminatorValue).ToList(); } },
-                {"anniversaries", (o,n) => { (o as Profile).Anniversaries = n.GetCollectionOfObjectValues<PersonAnnualEvent>(PersonAnnualEvent.CreateFromDiscriminatorValue).ToList(); } },
-                {"awards", (o,n) => { (o as Profile).Awards = n.GetCollectionOfObjectValues<PersonAward>(PersonAward.CreateFromDiscriminatorValue).ToList(); } },
-                {"certifications", (o,n) => { (o as Profile).Certifications = n.GetCollectionOfObjectValues<PersonCertification>(PersonCertification.CreateFromDiscriminatorValue).ToList(); } },
-                {"educationalActivities", (o,n) => { (o as Profile).EducationalActivities = n.GetCollectionOfObjectValues<EducationalActivity>(EducationalActivity.CreateFromDiscriminatorValue).ToList(); } },
-                {"emails", (o,n) => { (o as Profile).Emails = n.GetCollectionOfObjectValues<ItemEmail>(ItemEmail.CreateFromDiscriminatorValue).ToList(); } },
-                {"interests", (o,n) => { (o as Profile).Interests = n.GetCollectionOfObjectValues<PersonInterest>(PersonInterest.CreateFromDiscriminatorValue).ToList(); } },
-                {"languages", (o,n) => { (o as Profile).Languages = n.GetCollectionOfObjectValues<LanguageProficiency>(LanguageProficiency.CreateFromDiscriminatorValue).ToList(); } },
-                {"names", (o,n) => { (o as Profile).Names = n.GetCollectionOfObjectValues<PersonName>(PersonName.CreateFromDiscriminatorValue).ToList(); } },
-                {"notes", (o,n) => { (o as Profile).Notes = n.GetCollectionOfObjectValues<PersonAnnotation>(PersonAnnotation.CreateFromDiscriminatorValue).ToList(); } },
-                {"patents", (o,n) => { (o as Profile).Patents = n.GetCollectionOfObjectValues<ItemPatent>(ItemPatent.CreateFromDiscriminatorValue).ToList(); } },
-                {"phones", (o,n) => { (o as Profile).Phones = n.GetCollectionOfObjectValues<ItemPhone>(ItemPhone.CreateFromDiscriminatorValue).ToList(); } },
-                {"positions", (o,n) => { (o as Profile).Positions = n.GetCollectionOfObjectValues<WorkPosition>(WorkPosition.CreateFromDiscriminatorValue).ToList(); } },
-                {"projects", (o,n) => { (o as Profile).Projects = n.GetCollectionOfObjectValues<ProjectParticipation>(ProjectParticipation.CreateFromDiscriminatorValue).ToList(); } },
-                {"publications", (o,n) => { (o as Profile).Publications = n.GetCollectionOfObjectValues<ItemPublication>(ItemPublication.CreateFromDiscriminatorValue).ToList(); } },
-                {"skills", (o,n) => { (o as Profile).Skills = n.GetCollectionOfObjectValues<SkillProficiency>(SkillProficiency.CreateFromDiscriminatorValue).ToList(); } },
-                {"webAccounts", (o,n) => { (o as Profile).WebAccounts = n.GetCollectionOfObjectValues<WebAccount>(WebAccount.CreateFromDiscriminatorValue).ToList(); } },
-                {"websites", (o,n) => { (o as Profile).Websites = n.GetCollectionOfObjectValues<PersonWebsite>(PersonWebsite.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"account", n => { Account = n.GetCollectionOfObjectValues<UserAccountInformation>(UserAccountInformation.CreateFromDiscriminatorValue).ToList(); } },
+                {"addresses", n => { Addresses = n.GetCollectionOfObjectValues<ItemAddress>(ItemAddress.CreateFromDiscriminatorValue).ToList(); } },
+                {"anniversaries", n => { Anniversaries = n.GetCollectionOfObjectValues<PersonAnnualEvent>(PersonAnnualEvent.CreateFromDiscriminatorValue).ToList(); } },
+                {"awards", n => { Awards = n.GetCollectionOfObjectValues<PersonAward>(PersonAward.CreateFromDiscriminatorValue).ToList(); } },
+                {"certifications", n => { Certifications = n.GetCollectionOfObjectValues<PersonCertification>(PersonCertification.CreateFromDiscriminatorValue).ToList(); } },
+                {"educationalActivities", n => { EducationalActivities = n.GetCollectionOfObjectValues<EducationalActivity>(EducationalActivity.CreateFromDiscriminatorValue).ToList(); } },
+                {"emails", n => { Emails = n.GetCollectionOfObjectValues<ItemEmail>(ItemEmail.CreateFromDiscriminatorValue).ToList(); } },
+                {"interests", n => { Interests = n.GetCollectionOfObjectValues<PersonInterest>(PersonInterest.CreateFromDiscriminatorValue).ToList(); } },
+                {"languages", n => { Languages = n.GetCollectionOfObjectValues<LanguageProficiency>(LanguageProficiency.CreateFromDiscriminatorValue).ToList(); } },
+                {"names", n => { Names = n.GetCollectionOfObjectValues<PersonName>(PersonName.CreateFromDiscriminatorValue).ToList(); } },
+                {"notes", n => { Notes = n.GetCollectionOfObjectValues<PersonAnnotation>(PersonAnnotation.CreateFromDiscriminatorValue).ToList(); } },
+                {"patents", n => { Patents = n.GetCollectionOfObjectValues<ItemPatent>(ItemPatent.CreateFromDiscriminatorValue).ToList(); } },
+                {"phones", n => { Phones = n.GetCollectionOfObjectValues<ItemPhone>(ItemPhone.CreateFromDiscriminatorValue).ToList(); } },
+                {"positions", n => { Positions = n.GetCollectionOfObjectValues<WorkPosition>(WorkPosition.CreateFromDiscriminatorValue).ToList(); } },
+                {"projects", n => { Projects = n.GetCollectionOfObjectValues<ProjectParticipation>(ProjectParticipation.CreateFromDiscriminatorValue).ToList(); } },
+                {"publications", n => { Publications = n.GetCollectionOfObjectValues<ItemPublication>(ItemPublication.CreateFromDiscriminatorValue).ToList(); } },
+                {"skills", n => { Skills = n.GetCollectionOfObjectValues<SkillProficiency>(SkillProficiency.CreateFromDiscriminatorValue).ToList(); } },
+                {"webAccounts", n => { WebAccounts = n.GetCollectionOfObjectValues<WebAccount>(WebAccount.CreateFromDiscriminatorValue).ToList(); } },
+                {"websites", n => { Websites = n.GetCollectionOfObjectValues<PersonWebsite>(PersonWebsite.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

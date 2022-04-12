@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetTargeted
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"deviceConfigurationIds", (o,n) => { (o as GetTargetedUsersAndDevicesRequestBody).DeviceConfigurationIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"deviceConfigurationIds", n => { DeviceConfigurationIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

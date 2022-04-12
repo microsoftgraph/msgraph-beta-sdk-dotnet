@@ -22,11 +22,11 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"deployableUntilDateTime", (o,n) => { (o as CatalogEntry).DeployableUntilDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", (o,n) => { (o as CatalogEntry).DisplayName = n.GetStringValue(); } },
-                {"releaseDateTime", (o,n) => { (o as CatalogEntry).ReleaseDateTime = n.GetDateTimeOffsetValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"deployableUntilDateTime", n => { DeployableUntilDateTime = n.GetDateTimeOffsetValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"releaseDateTime", n => { ReleaseDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

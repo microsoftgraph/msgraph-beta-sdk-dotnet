@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"account", (o,n) => { (o as CustomerPaymentJournal).Account = n.GetObjectValue<Microsoft.Graph.Beta.Models.Account>(Microsoft.Graph.Beta.Models.Account.CreateFromDiscriminatorValue); } },
-                {"balancingAccountId", (o,n) => { (o as CustomerPaymentJournal).BalancingAccountId = n.GetStringValue(); } },
-                {"balancingAccountNumber", (o,n) => { (o as CustomerPaymentJournal).BalancingAccountNumber = n.GetStringValue(); } },
-                {"code", (o,n) => { (o as CustomerPaymentJournal).Code = n.GetStringValue(); } },
-                {"customerPayments", (o,n) => { (o as CustomerPaymentJournal).CustomerPayments = n.GetCollectionOfObjectValues<CustomerPayment>(CustomerPayment.CreateFromDiscriminatorValue).ToList(); } },
-                {"displayName", (o,n) => { (o as CustomerPaymentJournal).DisplayName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as CustomerPaymentJournal).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"account", n => { Account = n.GetObjectValue<Microsoft.Graph.Beta.Models.Account>(Microsoft.Graph.Beta.Models.Account.CreateFromDiscriminatorValue); } },
+                {"balancingAccountId", n => { BalancingAccountId = n.GetStringValue(); } },
+                {"balancingAccountNumber", n => { BalancingAccountNumber = n.GetStringValue(); } },
+                {"code", n => { Code = n.GetStringValue(); } },
+                {"customerPayments", n => { CustomerPayments = n.GetCollectionOfObjectValues<CustomerPayment>(CustomerPayment.CreateFromDiscriminatorValue).ToList(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

@@ -34,12 +34,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.GetSchedule {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"availabilityViewInterval", (o,n) => { (o as GetScheduleRequestBody).AvailabilityViewInterval = n.GetIntValue(); } },
-                {"endTime", (o,n) => { (o as GetScheduleRequestBody).EndTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"schedules", (o,n) => { (o as GetScheduleRequestBody).Schedules = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"startTime", (o,n) => { (o as GetScheduleRequestBody).StartTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"availabilityViewInterval", n => { AvailabilityViewInterval = n.GetIntValue(); } },
+                {"endTime", n => { EndTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                {"schedules", n => { Schedules = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"startTime", n => { StartTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

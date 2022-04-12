@@ -42,16 +42,16 @@ namespace Microsoft.Graph.Beta.Workbooks.Item.Invite {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"expirationDateTime", (o,n) => { (o as InviteRequestBody).ExpirationDateTime = n.GetStringValue(); } },
-                {"message", (o,n) => { (o as InviteRequestBody).Message = n.GetStringValue(); } },
-                {"password", (o,n) => { (o as InviteRequestBody).Password = n.GetStringValue(); } },
-                {"recipients", (o,n) => { (o as InviteRequestBody).Recipients = n.GetCollectionOfObjectValues<DriveRecipient>(DriveRecipient.CreateFromDiscriminatorValue).ToList(); } },
-                {"requireSignIn", (o,n) => { (o as InviteRequestBody).RequireSignIn = n.GetBoolValue(); } },
-                {"retainInheritedPermissions", (o,n) => { (o as InviteRequestBody).RetainInheritedPermissions = n.GetBoolValue(); } },
-                {"roles", (o,n) => { (o as InviteRequestBody).Roles = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"sendInvitation", (o,n) => { (o as InviteRequestBody).SendInvitation = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"expirationDateTime", n => { ExpirationDateTime = n.GetStringValue(); } },
+                {"message", n => { Message = n.GetStringValue(); } },
+                {"password", n => { Password = n.GetStringValue(); } },
+                {"recipients", n => { Recipients = n.GetCollectionOfObjectValues<DriveRecipient>(DriveRecipient.CreateFromDiscriminatorValue).ToList(); } },
+                {"requireSignIn", n => { RequireSignIn = n.GetBoolValue(); } },
+                {"retainInheritedPermissions", n => { RetainInheritedPermissions = n.GetBoolValue(); } },
+                {"roles", n => { Roles = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"sendInvitation", n => { SendInvitation = n.GetBoolValue(); } },
             };
         }
         /// <summary>

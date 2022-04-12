@@ -37,18 +37,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"certificationId", (o,n) => { (o as PersonCertification).CertificationId = n.GetStringValue(); } },
-                {"description", (o,n) => { (o as PersonCertification).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as PersonCertification).DisplayName = n.GetStringValue(); } },
-                {"endDate", (o,n) => { (o as PersonCertification).EndDate = n.GetDateValue(); } },
-                {"issuedDate", (o,n) => { (o as PersonCertification).IssuedDate = n.GetDateValue(); } },
-                {"issuingAuthority", (o,n) => { (o as PersonCertification).IssuingAuthority = n.GetStringValue(); } },
-                {"issuingCompany", (o,n) => { (o as PersonCertification).IssuingCompany = n.GetStringValue(); } },
-                {"startDate", (o,n) => { (o as PersonCertification).StartDate = n.GetDateValue(); } },
-                {"thumbnailUrl", (o,n) => { (o as PersonCertification).ThumbnailUrl = n.GetStringValue(); } },
-                {"webUrl", (o,n) => { (o as PersonCertification).WebUrl = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"certificationId", n => { CertificationId = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"endDate", n => { EndDate = n.GetDateValue(); } },
+                {"issuedDate", n => { IssuedDate = n.GetDateValue(); } },
+                {"issuingAuthority", n => { IssuingAuthority = n.GetStringValue(); } },
+                {"issuingCompany", n => { IssuingCompany = n.GetStringValue(); } },
+                {"startDate", n => { StartDate = n.GetDateValue(); } },
+                {"thumbnailUrl", n => { ThumbnailUrl = n.GetStringValue(); } },
+                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

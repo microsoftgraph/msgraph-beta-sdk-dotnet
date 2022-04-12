@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activeDeviceCount", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion).ActiveDeviceCount = n.GetIntValue(); } },
-                {"appCrashCount", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion).AppCrashCount = n.GetIntValue(); } },
-                {"appDisplayName", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion).AppDisplayName = n.GetStringValue(); } },
-                {"appName", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion).AppName = n.GetStringValue(); } },
-                {"appPublisher", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion).AppPublisher = n.GetStringValue(); } },
-                {"appUsageDuration", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion).AppUsageDuration = n.GetIntValue(); } },
-                {"meanTimeToFailureInMinutes", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion).MeanTimeToFailureInMinutes = n.GetIntValue(); } },
-                {"osBuildNumber", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion).OsBuildNumber = n.GetStringValue(); } },
-                {"osVersion", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion).OsVersion = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activeDeviceCount", n => { ActiveDeviceCount = n.GetIntValue(); } },
+                {"appCrashCount", n => { AppCrashCount = n.GetIntValue(); } },
+                {"appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
+                {"appName", n => { AppName = n.GetStringValue(); } },
+                {"appPublisher", n => { AppPublisher = n.GetStringValue(); } },
+                {"appUsageDuration", n => { AppUsageDuration = n.GetIntValue(); } },
+                {"meanTimeToFailureInMinutes", n => { MeanTimeToFailureInMinutes = n.GetIntValue(); } },
+                {"osBuildNumber", n => { OsBuildNumber = n.GetStringValue(); } },
+                {"osVersion", n => { OsVersion = n.GetStringValue(); } },
             };
         }
         /// <summary>

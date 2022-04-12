@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"isMfaCapable", (o,n) => { (o as UserRegistrationDetails).IsMfaCapable = n.GetBoolValue(); } },
-                {"isMfaRegistered", (o,n) => { (o as UserRegistrationDetails).IsMfaRegistered = n.GetBoolValue(); } },
-                {"isPasswordlessCapable", (o,n) => { (o as UserRegistrationDetails).IsPasswordlessCapable = n.GetBoolValue(); } },
-                {"isSsprCapable", (o,n) => { (o as UserRegistrationDetails).IsSsprCapable = n.GetBoolValue(); } },
-                {"isSsprEnabled", (o,n) => { (o as UserRegistrationDetails).IsSsprEnabled = n.GetBoolValue(); } },
-                {"isSsprRegistered", (o,n) => { (o as UserRegistrationDetails).IsSsprRegistered = n.GetBoolValue(); } },
-                {"methodsRegistered", (o,n) => { (o as UserRegistrationDetails).MethodsRegistered = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"userDisplayName", (o,n) => { (o as UserRegistrationDetails).UserDisplayName = n.GetStringValue(); } },
-                {"userPrincipalName", (o,n) => { (o as UserRegistrationDetails).UserPrincipalName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"isMfaCapable", n => { IsMfaCapable = n.GetBoolValue(); } },
+                {"isMfaRegistered", n => { IsMfaRegistered = n.GetBoolValue(); } },
+                {"isPasswordlessCapable", n => { IsPasswordlessCapable = n.GetBoolValue(); } },
+                {"isSsprCapable", n => { IsSsprCapable = n.GetBoolValue(); } },
+                {"isSsprEnabled", n => { IsSsprEnabled = n.GetBoolValue(); } },
+                {"isSsprRegistered", n => { IsSsprRegistered = n.GetBoolValue(); } },
+                {"methodsRegistered", n => { MethodsRegistered = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"isCompliantDeviceAccepted", (o,n) => { (o as CrossTenantAccessPolicyInboundTrust).IsCompliantDeviceAccepted = n.GetBoolValue(); } },
-                {"isHybridAzureADJoinedDeviceAccepted", (o,n) => { (o as CrossTenantAccessPolicyInboundTrust).IsHybridAzureADJoinedDeviceAccepted = n.GetBoolValue(); } },
-                {"isMfaAccepted", (o,n) => { (o as CrossTenantAccessPolicyInboundTrust).IsMfaAccepted = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"isCompliantDeviceAccepted", n => { IsCompliantDeviceAccepted = n.GetBoolValue(); } },
+                {"isHybridAzureADJoinedDeviceAccepted", n => { IsHybridAzureADJoinedDeviceAccepted = n.GetBoolValue(); } },
+                {"isMfaAccepted", n => { IsMfaAccepted = n.GetBoolValue(); } },
             };
         }
         /// <summary>

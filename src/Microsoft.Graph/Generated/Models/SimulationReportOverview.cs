@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"recommendedActions", (o,n) => { (o as SimulationReportOverview).RecommendedActions = n.GetCollectionOfObjectValues<RecommendedAction>(RecommendedAction.CreateFromDiscriminatorValue).ToList(); } },
-                {"resolvedTargetsCount", (o,n) => { (o as SimulationReportOverview).ResolvedTargetsCount = n.GetIntValue(); } },
-                {"simulationEventsContent", (o,n) => { (o as SimulationReportOverview).SimulationEventsContent = n.GetObjectValue<Microsoft.Graph.Beta.Models.SimulationEventsContent>(Microsoft.Graph.Beta.Models.SimulationEventsContent.CreateFromDiscriminatorValue); } },
-                {"trainingEventsContent", (o,n) => { (o as SimulationReportOverview).TrainingEventsContent = n.GetObjectValue<Microsoft.Graph.Beta.Models.TrainingEventsContent>(Microsoft.Graph.Beta.Models.TrainingEventsContent.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"recommendedActions", n => { RecommendedActions = n.GetCollectionOfObjectValues<RecommendedAction>(RecommendedAction.CreateFromDiscriminatorValue).ToList(); } },
+                {"resolvedTargetsCount", n => { ResolvedTargetsCount = n.GetIntValue(); } },
+                {"simulationEventsContent", n => { SimulationEventsContent = n.GetObjectValue<Microsoft.Graph.Beta.Models.SimulationEventsContent>(Microsoft.Graph.Beta.Models.SimulationEventsContent.CreateFromDiscriminatorValue); } },
+                {"trainingEventsContent", n => { TrainingEventsContent = n.GetObjectValue<Microsoft.Graph.Beta.Models.TrainingEventsContent>(Microsoft.Graph.Beta.Models.TrainingEventsContent.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

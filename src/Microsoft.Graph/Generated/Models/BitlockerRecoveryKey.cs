@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdDateTime", (o,n) => { (o as BitlockerRecoveryKey).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deviceId", (o,n) => { (o as BitlockerRecoveryKey).DeviceId = n.GetStringValue(); } },
-                {"key", (o,n) => { (o as BitlockerRecoveryKey).Key = n.GetStringValue(); } },
-                {"volumeType", (o,n) => { (o as BitlockerRecoveryKey).VolumeType = n.GetEnumValue<VolumeType>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
+                {"key", n => { Key = n.GetStringValue(); } },
+                {"volumeType", n => { VolumeType = n.GetEnumValue<VolumeType>(); } },
             };
         }
         /// <summary>

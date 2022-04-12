@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"description", (o,n) => { (o as UnifiedRoleManagementPolicy).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as UnifiedRoleManagementPolicy).DisplayName = n.GetStringValue(); } },
-                {"effectiveRules", (o,n) => { (o as UnifiedRoleManagementPolicy).EffectiveRules = n.GetCollectionOfObjectValues<UnifiedRoleManagementPolicyRule>(UnifiedRoleManagementPolicyRule.CreateFromDiscriminatorValue).ToList(); } },
-                {"isOrganizationDefault", (o,n) => { (o as UnifiedRoleManagementPolicy).IsOrganizationDefault = n.GetBoolValue(); } },
-                {"lastModifiedBy", (o,n) => { (o as UnifiedRoleManagementPolicy).LastModifiedBy = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", (o,n) => { (o as UnifiedRoleManagementPolicy).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"rules", (o,n) => { (o as UnifiedRoleManagementPolicy).Rules = n.GetCollectionOfObjectValues<UnifiedRoleManagementPolicyRule>(UnifiedRoleManagementPolicyRule.CreateFromDiscriminatorValue).ToList(); } },
-                {"scopeId", (o,n) => { (o as UnifiedRoleManagementPolicy).ScopeId = n.GetStringValue(); } },
-                {"scopeType", (o,n) => { (o as UnifiedRoleManagementPolicy).ScopeType = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"effectiveRules", n => { EffectiveRules = n.GetCollectionOfObjectValues<UnifiedRoleManagementPolicyRule>(UnifiedRoleManagementPolicyRule.CreateFromDiscriminatorValue).ToList(); } },
+                {"isOrganizationDefault", n => { IsOrganizationDefault = n.GetBoolValue(); } },
+                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"rules", n => { Rules = n.GetCollectionOfObjectValues<UnifiedRoleManagementPolicyRule>(UnifiedRoleManagementPolicyRule.CreateFromDiscriminatorValue).ToList(); } },
+                {"scopeId", n => { ScopeId = n.GetStringValue(); } },
+                {"scopeType", n => { ScopeType = n.GetStringValue(); } },
             };
         }
         /// <summary>

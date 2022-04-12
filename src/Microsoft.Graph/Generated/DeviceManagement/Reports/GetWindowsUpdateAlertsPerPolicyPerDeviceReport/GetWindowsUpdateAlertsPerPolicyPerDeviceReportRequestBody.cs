@@ -43,17 +43,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertsPe
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"filter", (o,n) => { (o as GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBody).Filter = n.GetStringValue(); } },
-                {"groupBy", (o,n) => { (o as GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBody).GroupBy = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"name", (o,n) => { (o as GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBody).Name = n.GetStringValue(); } },
-                {"orderBy", (o,n) => { (o as GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBody).OrderBy = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"search", (o,n) => { (o as GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBody).Search = n.GetStringValue(); } },
-                {"select", (o,n) => { (o as GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBody).Select = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"sessionId", (o,n) => { (o as GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBody).SessionId = n.GetStringValue(); } },
-                {"skip", (o,n) => { (o as GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBody).Skip = n.GetIntValue(); } },
-                {"top", (o,n) => { (o as GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBody).Top = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"filter", n => { Filter = n.GetStringValue(); } },
+                {"groupBy", n => { GroupBy = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"orderBy", n => { OrderBy = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"search", n => { Search = n.GetStringValue(); } },
+                {"select", n => { Select = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"sessionId", n => { SessionId = n.GetStringValue(); } },
+                {"skip", n => { Skip = n.GetIntValue(); } },
+                {"top", n => { Top = n.GetIntValue(); } },
             };
         }
         /// <summary>

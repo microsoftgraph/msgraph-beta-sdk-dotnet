@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appliesTo", (o,n) => { (o as SubscribedSku).AppliesTo = n.GetStringValue(); } },
-                {"capabilityStatus", (o,n) => { (o as SubscribedSku).CapabilityStatus = n.GetStringValue(); } },
-                {"consumedUnits", (o,n) => { (o as SubscribedSku).ConsumedUnits = n.GetIntValue(); } },
-                {"prepaidUnits", (o,n) => { (o as SubscribedSku).PrepaidUnits = n.GetObjectValue<LicenseUnitsDetail>(LicenseUnitsDetail.CreateFromDiscriminatorValue); } },
-                {"servicePlans", (o,n) => { (o as SubscribedSku).ServicePlans = n.GetCollectionOfObjectValues<ServicePlanInfo>(ServicePlanInfo.CreateFromDiscriminatorValue).ToList(); } },
-                {"skuId", (o,n) => { (o as SubscribedSku).SkuId = n.GetStringValue(); } },
-                {"skuPartNumber", (o,n) => { (o as SubscribedSku).SkuPartNumber = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"appliesTo", n => { AppliesTo = n.GetStringValue(); } },
+                {"capabilityStatus", n => { CapabilityStatus = n.GetStringValue(); } },
+                {"consumedUnits", n => { ConsumedUnits = n.GetIntValue(); } },
+                {"prepaidUnits", n => { PrepaidUnits = n.GetObjectValue<LicenseUnitsDetail>(LicenseUnitsDetail.CreateFromDiscriminatorValue); } },
+                {"servicePlans", n => { ServicePlans = n.GetCollectionOfObjectValues<ServicePlanInfo>(ServicePlanInfo.CreateFromDiscriminatorValue).ToList(); } },
+                {"skuId", n => { SkuId = n.GetStringValue(); } },
+                {"skuPartNumber", n => { SkuPartNumber = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Drive.List.Items.DeltaWithToken {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/drive/list/items/microsoft.graph.delta(token='{token}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("token", token);
+            urlTplParams.Add("", token);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

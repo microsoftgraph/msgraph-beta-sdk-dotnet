@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item.ReplyAll {
         public ReplyAllRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/messages/{message_id}/microsoft.graph.replyAll";
+            UrlTemplate = "{+baseurl}/me/messages/{message%2Did}/microsoft.graph.replyAll";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item.ReplyAll {
         public ReplyAllRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/messages/{message_id}/microsoft.graph.replyAll";
+            UrlTemplate = "{+baseurl}/me/messages/{message%2Did}/microsoft.graph.replyAll";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

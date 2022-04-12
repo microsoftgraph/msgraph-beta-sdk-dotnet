@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activeDevices", (o,n) => { (o as UserExperienceAnalyticsBatteryHealthModelPerformance).ActiveDevices = n.GetIntValue(); } },
-                {"averageBatteryAgeInDays", (o,n) => { (o as UserExperienceAnalyticsBatteryHealthModelPerformance).AverageBatteryAgeInDays = n.GetIntValue(); } },
-                {"averageEstimatedRuntimeInMinutes", (o,n) => { (o as UserExperienceAnalyticsBatteryHealthModelPerformance).AverageEstimatedRuntimeInMinutes = n.GetIntValue(); } },
-                {"averageMaxCapacityPercentage", (o,n) => { (o as UserExperienceAnalyticsBatteryHealthModelPerformance).AverageMaxCapacityPercentage = n.GetIntValue(); } },
-                {"manufacturer", (o,n) => { (o as UserExperienceAnalyticsBatteryHealthModelPerformance).Manufacturer = n.GetStringValue(); } },
-                {"model", (o,n) => { (o as UserExperienceAnalyticsBatteryHealthModelPerformance).Model = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activeDevices", n => { ActiveDevices = n.GetIntValue(); } },
+                {"averageBatteryAgeInDays", n => { AverageBatteryAgeInDays = n.GetIntValue(); } },
+                {"averageEstimatedRuntimeInMinutes", n => { AverageEstimatedRuntimeInMinutes = n.GetIntValue(); } },
+                {"averageMaxCapacityPercentage", n => { AverageMaxCapacityPercentage = n.GetIntValue(); } },
+                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                {"model", n => { Model = n.GetStringValue(); } },
             };
         }
         /// <summary>

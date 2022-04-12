@@ -22,11 +22,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"fields", (o,n) => { (o as WorkbookTableSort).Fields = n.GetCollectionOfObjectValues<WorkbookSortField>(WorkbookSortField.CreateFromDiscriminatorValue).ToList(); } },
-                {"matchCase", (o,n) => { (o as WorkbookTableSort).MatchCase = n.GetBoolValue(); } },
-                {"method", (o,n) => { (o as WorkbookTableSort).Method = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"fields", n => { Fields = n.GetCollectionOfObjectValues<WorkbookSortField>(WorkbookSortField.CreateFromDiscriminatorValue).ToList(); } },
+                {"matchCase", n => { MatchCase = n.GetBoolValue(); } },
+                {"method", n => { Method = n.GetStringValue(); } },
             };
         }
         /// <summary>

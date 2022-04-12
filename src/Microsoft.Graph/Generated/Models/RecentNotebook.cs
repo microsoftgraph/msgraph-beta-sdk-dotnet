@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"displayName", (o,n) => { (o as RecentNotebook).DisplayName = n.GetStringValue(); } },
-                {"lastAccessedTime", (o,n) => { (o as RecentNotebook).LastAccessedTime = n.GetDateTimeOffsetValue(); } },
-                {"links", (o,n) => { (o as RecentNotebook).Links = n.GetObjectValue<RecentNotebookLinks>(RecentNotebookLinks.CreateFromDiscriminatorValue); } },
-                {"sourceService", (o,n) => { (o as RecentNotebook).SourceService = n.GetEnumValue<OnenoteSourceService>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"lastAccessedTime", n => { LastAccessedTime = n.GetDateTimeOffsetValue(); } },
+                {"links", n => { Links = n.GetObjectValue<RecentNotebookLinks>(RecentNotebookLinks.CreateFromDiscriminatorValue); } },
+                {"sourceService", n => { SourceService = n.GetEnumValue<OnenoteSourceService>(); } },
             };
         }
         /// <summary>

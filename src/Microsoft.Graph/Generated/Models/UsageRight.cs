@@ -22,11 +22,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"catalogId", (o,n) => { (o as UsageRight).CatalogId = n.GetStringValue(); } },
-                {"serviceIdentifier", (o,n) => { (o as UsageRight).ServiceIdentifier = n.GetStringValue(); } },
-                {"state", (o,n) => { (o as UsageRight).State = n.GetEnumValue<UsageRightState>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"catalogId", n => { CatalogId = n.GetStringValue(); } },
+                {"serviceIdentifier", n => { ServiceIdentifier = n.GetStringValue(); } },
+                {"state", n => { State = n.GetEnumValue<UsageRightState>(); } },
             };
         }
         /// <summary>

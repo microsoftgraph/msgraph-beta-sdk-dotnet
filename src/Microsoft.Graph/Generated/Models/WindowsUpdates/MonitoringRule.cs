@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"action", (o,n) => { (o as MonitoringRule).Action = n.GetEnumValue<MonitoringAction>(); } },
-                {"signal", (o,n) => { (o as MonitoringRule).Signal = n.GetEnumValue<MonitoringSignal>(); } },
-                {"threshold", (o,n) => { (o as MonitoringRule).Threshold = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"action", n => { Action = n.GetEnumValue<MonitoringAction>(); } },
+                {"signal", n => { Signal = n.GetEnumValue<MonitoringSignal>(); } },
+                {"threshold", n => { Threshold = n.GetIntValue(); } },
             };
         }
         /// <summary>

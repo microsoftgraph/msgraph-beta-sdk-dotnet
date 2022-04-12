@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"address", (o,n) => { (o as CompanyDetail).Address = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
-                {"department", (o,n) => { (o as CompanyDetail).Department = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as CompanyDetail).DisplayName = n.GetStringValue(); } },
-                {"officeLocation", (o,n) => { (o as CompanyDetail).OfficeLocation = n.GetStringValue(); } },
-                {"pronunciation", (o,n) => { (o as CompanyDetail).Pronunciation = n.GetStringValue(); } },
-                {"webUrl", (o,n) => { (o as CompanyDetail).WebUrl = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"address", n => { Address = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
+                {"department", n => { Department = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"officeLocation", n => { OfficeLocation = n.GetStringValue(); } },
+                {"pronunciation", n => { Pronunciation = n.GetStringValue(); } },
+                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

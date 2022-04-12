@@ -17,6 +17,8 @@ namespace Microsoft.Graph.Beta.Models {
         public string Id { get; set; }
         /// <summary>Name of the attachment.</summary>
         public string Name { get; set; }
+        /// <summary>The teamsAppId property</summary>
+        public string TeamsAppId { get; set; }
         /// <summary>URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.</summary>
         public string ThumbnailUrl { get; set; }
         /// <summary>
@@ -36,14 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"content", (o,n) => { (o as ChatMessageAttachment).Content = n.GetStringValue(); } },
-                {"contentType", (o,n) => { (o as ChatMessageAttachment).ContentType = n.GetStringValue(); } },
-                {"contentUrl", (o,n) => { (o as ChatMessageAttachment).ContentUrl = n.GetStringValue(); } },
-                {"id", (o,n) => { (o as ChatMessageAttachment).Id = n.GetStringValue(); } },
-                {"name", (o,n) => { (o as ChatMessageAttachment).Name = n.GetStringValue(); } },
-                {"thumbnailUrl", (o,n) => { (o as ChatMessageAttachment).ThumbnailUrl = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"content", n => { Content = n.GetStringValue(); } },
+                {"contentType", n => { ContentType = n.GetStringValue(); } },
+                {"contentUrl", n => { ContentUrl = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"teamsAppId", n => { TeamsAppId = n.GetStringValue(); } },
+                {"thumbnailUrl", n => { ThumbnailUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("contentUrl", ContentUrl);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("teamsAppId", TeamsAppId);
             writer.WriteStringValue("thumbnailUrl", ThumbnailUrl);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -30,10 +30,10 @@ namespace Microsoft.Graph.Beta.Me.GetMailTips {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"emailAddresses", (o,n) => { (o as GetMailTipsRequestBody).EmailAddresses = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"mailTipsOptions", (o,n) => { (o as GetMailTipsRequestBody).MailTipsOptions = n.GetEnumValue<MailTipsType>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"emailAddresses", n => { EmailAddresses = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"mailTipsOptions", n => { MailTipsOptions = n.GetEnumValue<MailTipsType>(); } },
             };
         }
         /// <summary>

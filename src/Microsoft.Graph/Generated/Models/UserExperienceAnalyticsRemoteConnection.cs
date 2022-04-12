@@ -42,21 +42,21 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"cloudPcFailurePercentage", (o,n) => { (o as UserExperienceAnalyticsRemoteConnection).CloudPcFailurePercentage = n.GetDoubleValue(); } },
-                {"cloudPcRoundTripTime", (o,n) => { (o as UserExperienceAnalyticsRemoteConnection).CloudPcRoundTripTime = n.GetDoubleValue(); } },
-                {"cloudPcSignInTime", (o,n) => { (o as UserExperienceAnalyticsRemoteConnection).CloudPcSignInTime = n.GetDoubleValue(); } },
-                {"coreBootTime", (o,n) => { (o as UserExperienceAnalyticsRemoteConnection).CoreBootTime = n.GetDoubleValue(); } },
-                {"coreSignInTime", (o,n) => { (o as UserExperienceAnalyticsRemoteConnection).CoreSignInTime = n.GetDoubleValue(); } },
-                {"deviceCount", (o,n) => { (o as UserExperienceAnalyticsRemoteConnection).DeviceCount = n.GetIntValue(); } },
-                {"deviceId", (o,n) => { (o as UserExperienceAnalyticsRemoteConnection).DeviceId = n.GetStringValue(); } },
-                {"deviceName", (o,n) => { (o as UserExperienceAnalyticsRemoteConnection).DeviceName = n.GetStringValue(); } },
-                {"manufacturer", (o,n) => { (o as UserExperienceAnalyticsRemoteConnection).Manufacturer = n.GetStringValue(); } },
-                {"model", (o,n) => { (o as UserExperienceAnalyticsRemoteConnection).Model = n.GetStringValue(); } },
-                {"remoteSignInTime", (o,n) => { (o as UserExperienceAnalyticsRemoteConnection).RemoteSignInTime = n.GetDoubleValue(); } },
-                {"userPrincipalName", (o,n) => { (o as UserExperienceAnalyticsRemoteConnection).UserPrincipalName = n.GetStringValue(); } },
-                {"virtualNetwork", (o,n) => { (o as UserExperienceAnalyticsRemoteConnection).VirtualNetwork = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"cloudPcFailurePercentage", n => { CloudPcFailurePercentage = n.GetDoubleValue(); } },
+                {"cloudPcRoundTripTime", n => { CloudPcRoundTripTime = n.GetDoubleValue(); } },
+                {"cloudPcSignInTime", n => { CloudPcSignInTime = n.GetDoubleValue(); } },
+                {"coreBootTime", n => { CoreBootTime = n.GetDoubleValue(); } },
+                {"coreSignInTime", n => { CoreSignInTime = n.GetDoubleValue(); } },
+                {"deviceCount", n => { DeviceCount = n.GetIntValue(); } },
+                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
+                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
+                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                {"model", n => { Model = n.GetStringValue(); } },
+                {"remoteSignInTime", n => { RemoteSignInTime = n.GetDoubleValue(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                {"virtualNetwork", n => { VirtualNetwork = n.GetStringValue(); } },
             };
         }
         /// <summary>

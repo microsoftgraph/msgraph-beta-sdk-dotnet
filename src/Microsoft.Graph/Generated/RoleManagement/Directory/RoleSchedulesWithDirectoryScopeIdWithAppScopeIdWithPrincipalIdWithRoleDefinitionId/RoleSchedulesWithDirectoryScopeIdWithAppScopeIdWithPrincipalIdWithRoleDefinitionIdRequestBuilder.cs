@@ -17,22 +17,14 @@ namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleSchedulesWithDirecto
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder and sets the default values.
-        /// <param name="appScopeId">Usage: appScopeId=&apos;{appScopeId}&apos;</param>
-        /// <param name="directoryScopeId">Usage: directoryScopeId=&apos;{directoryScopeId}&apos;</param>
         /// <param name="pathParameters">Path parameters for the request</param>
-        /// <param name="principalId">Usage: principalId=&apos;{principalId}&apos;</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// <param name="roleDefinitionId">Usage: roleDefinitionId=&apos;{roleDefinitionId}&apos;</param>
         /// </summary>
-        public RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string appScopeId = default, string directoryScopeId = default, string principalId = default, string roleDefinitionId = default) {
+        public RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/roleManagement/directory/microsoft.graph.roleSchedules(directoryScopeId='{directoryScopeId}',appScopeId='{appScopeId}',principalId='{principalId}',roleDefinitionId='{roleDefinitionId}')";
+            UrlTemplate = "{+baseurl}/roleManagement/directory/microsoft.graph.roleSchedules(directoryScopeId='{directoryScopeId}',appScopeId='{appScopeId}',principalId='{principalId}',roleDefinitionId='{roleDefinitionId}'){?directoryScopeId,appScopeId,principalId,roleDefinitionId}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("appScopeId", appScopeId);
-            urlTplParams.Add("directoryScopeId", directoryScopeId);
-            urlTplParams.Add("principalId", principalId);
-            urlTplParams.Add("roleDefinitionId", roleDefinitionId);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -44,7 +36,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleSchedulesWithDirecto
         public RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/roleManagement/directory/microsoft.graph.roleSchedules(directoryScopeId='{directoryScopeId}',appScopeId='{appScopeId}',principalId='{principalId}',roleDefinitionId='{roleDefinitionId}')";
+            UrlTemplate = "{+baseurl}/roleManagement/directory/microsoft.graph.roleSchedules(directoryScopeId='{directoryScopeId}',appScopeId='{appScopeId}',principalId='{principalId}',roleDefinitionId='{roleDefinitionId}'){?directoryScopeId,appScopeId,principalId,roleDefinitionId}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -54,13 +46,19 @@ namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleSchedulesWithDirecto
         /// Invoke function roleSchedules
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
+        /// <param name="queryParameters">Request query parameters</param>
         /// </summary>
-        public RequestInformation CreateGetRequestInformation(Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
+        public RequestInformation CreateGetRequestInformation(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            if (queryParameters != null) {
+                var qParams = new GetQueryParameters();
+                queryParameters.Invoke(qParams);
+                qParams.AddQueryParameters(requestInfo.QueryParameters);
+            }
             headers?.Invoke(requestInfo.Headers);
             requestInfo.AddRequestOptions(options?.ToArray());
             return requestInfo;
@@ -70,11 +68,23 @@ namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleSchedulesWithDirecto
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
+        /// <param name="queryParameters">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdResponse> GetAsync(Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateGetRequestInformation(headers, options);
+        public async Task<RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdResponse> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+            var requestInfo = CreateGetRequestInformation(queryParameters, headers, options);
             return await RequestAdapter.SendAsync<RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdResponse>(requestInfo, RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
+        }
+        /// <summary>Invoke function roleSchedules</summary>
+        public class GetQueryParameters : QueryParametersBase {
+            /// <summary>Usage: appScopeId=&apos;{appScopeId}&apos;</summary>
+            public string AppScopeId { get; set; }
+            /// <summary>Usage: directoryScopeId=&apos;{directoryScopeId}&apos;</summary>
+            public string DirectoryScopeId { get; set; }
+            /// <summary>Usage: principalId=&apos;{principalId}&apos;</summary>
+            public string PrincipalId { get; set; }
+            /// <summary>Usage: roleDefinitionId=&apos;{roleDefinitionId}&apos;</summary>
+            public string RoleDefinitionId { get; set; }
         }
     }
 }

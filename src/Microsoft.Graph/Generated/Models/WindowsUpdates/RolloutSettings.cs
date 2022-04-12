@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"devicesPerOffer", (o,n) => { (o as RolloutSettings).DevicesPerOffer = n.GetIntValue(); } },
-                {"durationBetweenOffers", (o,n) => { (o as RolloutSettings).DurationBetweenOffers = n.GetStringValue(); } },
-                {"endDateTime", (o,n) => { (o as RolloutSettings).EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"startDateTime", (o,n) => { (o as RolloutSettings).StartDateTime = n.GetDateTimeOffsetValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"devicesPerOffer", n => { DevicesPerOffer = n.GetIntValue(); } },
+                {"durationBetweenOffers", n => { DurationBetweenOffers = n.GetStringValue(); } },
+                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models.Search {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"description", (o,n) => { (o as AnswerVariant).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as AnswerVariant).DisplayName = n.GetStringValue(); } },
-                {"languageTag", (o,n) => { (o as AnswerVariant).LanguageTag = n.GetStringValue(); } },
-                {"platform", (o,n) => { (o as AnswerVariant).Platform = n.GetEnumValue<DevicePlatformType>(); } },
-                {"webUrl", (o,n) => { (o as AnswerVariant).WebUrl = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"languageTag", n => { LanguageTag = n.GetStringValue(); } },
+                {"platform", n => { Platform = n.GetEnumValue<DevicePlatformType>(); } },
+                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

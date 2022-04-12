@@ -38,19 +38,19 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"compliantDeviceCount", (o,n) => { (o as DeviceCompliancePolicySettingStateSummary).CompliantDeviceCount = n.GetIntValue(); } },
-                {"conflictDeviceCount", (o,n) => { (o as DeviceCompliancePolicySettingStateSummary).ConflictDeviceCount = n.GetIntValue(); } },
-                {"deviceComplianceSettingStates", (o,n) => { (o as DeviceCompliancePolicySettingStateSummary).DeviceComplianceSettingStates = n.GetCollectionOfObjectValues<DeviceComplianceSettingState>(DeviceComplianceSettingState.CreateFromDiscriminatorValue).ToList(); } },
-                {"errorDeviceCount", (o,n) => { (o as DeviceCompliancePolicySettingStateSummary).ErrorDeviceCount = n.GetIntValue(); } },
-                {"nonCompliantDeviceCount", (o,n) => { (o as DeviceCompliancePolicySettingStateSummary).NonCompliantDeviceCount = n.GetIntValue(); } },
-                {"notApplicableDeviceCount", (o,n) => { (o as DeviceCompliancePolicySettingStateSummary).NotApplicableDeviceCount = n.GetIntValue(); } },
-                {"platformType", (o,n) => { (o as DeviceCompliancePolicySettingStateSummary).PlatformType = n.GetEnumValue<PolicyPlatformType>(); } },
-                {"remediatedDeviceCount", (o,n) => { (o as DeviceCompliancePolicySettingStateSummary).RemediatedDeviceCount = n.GetIntValue(); } },
-                {"setting", (o,n) => { (o as DeviceCompliancePolicySettingStateSummary).Setting = n.GetStringValue(); } },
-                {"settingName", (o,n) => { (o as DeviceCompliancePolicySettingStateSummary).SettingName = n.GetStringValue(); } },
-                {"unknownDeviceCount", (o,n) => { (o as DeviceCompliancePolicySettingStateSummary).UnknownDeviceCount = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"compliantDeviceCount", n => { CompliantDeviceCount = n.GetIntValue(); } },
+                {"conflictDeviceCount", n => { ConflictDeviceCount = n.GetIntValue(); } },
+                {"deviceComplianceSettingStates", n => { DeviceComplianceSettingStates = n.GetCollectionOfObjectValues<DeviceComplianceSettingState>(DeviceComplianceSettingState.CreateFromDiscriminatorValue).ToList(); } },
+                {"errorDeviceCount", n => { ErrorDeviceCount = n.GetIntValue(); } },
+                {"nonCompliantDeviceCount", n => { NonCompliantDeviceCount = n.GetIntValue(); } },
+                {"notApplicableDeviceCount", n => { NotApplicableDeviceCount = n.GetIntValue(); } },
+                {"platformType", n => { PlatformType = n.GetEnumValue<PolicyPlatformType>(); } },
+                {"remediatedDeviceCount", n => { RemediatedDeviceCount = n.GetIntValue(); } },
+                {"setting", n => { Setting = n.GetStringValue(); } },
+                {"settingName", n => { SettingName = n.GetStringValue(); } },
+                {"unknownDeviceCount", n => { UnknownDeviceCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

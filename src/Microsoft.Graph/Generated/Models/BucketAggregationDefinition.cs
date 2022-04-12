@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"isDescending", (o,n) => { (o as BucketAggregationDefinition).IsDescending = n.GetBoolValue(); } },
-                {"minimumCount", (o,n) => { (o as BucketAggregationDefinition).MinimumCount = n.GetIntValue(); } },
-                {"prefixFilter", (o,n) => { (o as BucketAggregationDefinition).PrefixFilter = n.GetStringValue(); } },
-                {"ranges", (o,n) => { (o as BucketAggregationDefinition).Ranges = n.GetCollectionOfObjectValues<BucketAggregationRange>(BucketAggregationRange.CreateFromDiscriminatorValue).ToList(); } },
-                {"sortBy", (o,n) => { (o as BucketAggregationDefinition).SortBy = n.GetEnumValue<BucketAggregationSortProperty>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"isDescending", n => { IsDescending = n.GetBoolValue(); } },
+                {"minimumCount", n => { MinimumCount = n.GetIntValue(); } },
+                {"prefixFilter", n => { PrefixFilter = n.GetStringValue(); } },
+                {"ranges", n => { Ranges = n.GetCollectionOfObjectValues<BucketAggregationRange>(BucketAggregationRange.CreateFromDiscriminatorValue).ToList(); } },
+                {"sortBy", n => { SortBy = n.GetEnumValue<BucketAggregationSortProperty>(); } },
             };
         }
         /// <summary>

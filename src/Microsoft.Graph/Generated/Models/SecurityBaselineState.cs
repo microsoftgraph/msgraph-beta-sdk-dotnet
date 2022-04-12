@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"displayName", (o,n) => { (o as SecurityBaselineState).DisplayName = n.GetStringValue(); } },
-                {"securityBaselineTemplateId", (o,n) => { (o as SecurityBaselineState).SecurityBaselineTemplateId = n.GetStringValue(); } },
-                {"settingStates", (o,n) => { (o as SecurityBaselineState).SettingStates = n.GetCollectionOfObjectValues<SecurityBaselineSettingState>(SecurityBaselineSettingState.CreateFromDiscriminatorValue).ToList(); } },
-                {"state", (o,n) => { (o as SecurityBaselineState).State = n.GetEnumValue<SecurityBaselineComplianceState>(); } },
-                {"userPrincipalName", (o,n) => { (o as SecurityBaselineState).UserPrincipalName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"securityBaselineTemplateId", n => { SecurityBaselineTemplateId = n.GetStringValue(); } },
+                {"settingStates", n => { SettingStates = n.GetCollectionOfObjectValues<SecurityBaselineSettingState>(SecurityBaselineSettingState.CreateFromDiscriminatorValue).ToList(); } },
+                {"state", n => { State = n.GetEnumValue<SecurityBaselineComplianceState>(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

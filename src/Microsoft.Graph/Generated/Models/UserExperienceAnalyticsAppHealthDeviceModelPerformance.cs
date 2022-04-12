@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activeDeviceCount", (o,n) => { (o as UserExperienceAnalyticsAppHealthDeviceModelPerformance).ActiveDeviceCount = n.GetIntValue(); } },
-                {"deviceManufacturer", (o,n) => { (o as UserExperienceAnalyticsAppHealthDeviceModelPerformance).DeviceManufacturer = n.GetStringValue(); } },
-                {"deviceModel", (o,n) => { (o as UserExperienceAnalyticsAppHealthDeviceModelPerformance).DeviceModel = n.GetStringValue(); } },
-                {"healthStatus", (o,n) => { (o as UserExperienceAnalyticsAppHealthDeviceModelPerformance).HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
-                {"meanTimeToFailureInMinutes", (o,n) => { (o as UserExperienceAnalyticsAppHealthDeviceModelPerformance).MeanTimeToFailureInMinutes = n.GetIntValue(); } },
-                {"modelAppHealthScore", (o,n) => { (o as UserExperienceAnalyticsAppHealthDeviceModelPerformance).ModelAppHealthScore = n.GetDoubleValue(); } },
-                {"modelAppHealthStatus", (o,n) => { (o as UserExperienceAnalyticsAppHealthDeviceModelPerformance).ModelAppHealthStatus = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activeDeviceCount", n => { ActiveDeviceCount = n.GetIntValue(); } },
+                {"deviceManufacturer", n => { DeviceManufacturer = n.GetStringValue(); } },
+                {"deviceModel", n => { DeviceModel = n.GetStringValue(); } },
+                {"healthStatus", n => { HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
+                {"meanTimeToFailureInMinutes", n => { MeanTimeToFailureInMinutes = n.GetIntValue(); } },
+                {"modelAppHealthScore", n => { ModelAppHealthScore = n.GetDoubleValue(); } },
+                {"modelAppHealthStatus", n => { ModelAppHealthStatus = n.GetStringValue(); } },
             };
         }
         /// <summary>

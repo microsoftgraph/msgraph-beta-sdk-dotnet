@@ -43,17 +43,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"dataType", (o,n) => { (o as AndroidForWorkAppConfigurationSchemaItem).DataType = n.GetEnumValue<AndroidForWorkAppConfigurationSchemaItemDataType>(); } },
-                {"defaultBoolValue", (o,n) => { (o as AndroidForWorkAppConfigurationSchemaItem).DefaultBoolValue = n.GetBoolValue(); } },
-                {"defaultIntValue", (o,n) => { (o as AndroidForWorkAppConfigurationSchemaItem).DefaultIntValue = n.GetIntValue(); } },
-                {"defaultStringArrayValue", (o,n) => { (o as AndroidForWorkAppConfigurationSchemaItem).DefaultStringArrayValue = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"defaultStringValue", (o,n) => { (o as AndroidForWorkAppConfigurationSchemaItem).DefaultStringValue = n.GetStringValue(); } },
-                {"description", (o,n) => { (o as AndroidForWorkAppConfigurationSchemaItem).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as AndroidForWorkAppConfigurationSchemaItem).DisplayName = n.GetStringValue(); } },
-                {"schemaItemKey", (o,n) => { (o as AndroidForWorkAppConfigurationSchemaItem).SchemaItemKey = n.GetStringValue(); } },
-                {"selections", (o,n) => { (o as AndroidForWorkAppConfigurationSchemaItem).Selections = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"dataType", n => { DataType = n.GetEnumValue<AndroidForWorkAppConfigurationSchemaItemDataType>(); } },
+                {"defaultBoolValue", n => { DefaultBoolValue = n.GetBoolValue(); } },
+                {"defaultIntValue", n => { DefaultIntValue = n.GetIntValue(); } },
+                {"defaultStringArrayValue", n => { DefaultStringArrayValue = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"defaultStringValue", n => { DefaultStringValue = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"schemaItemKey", n => { SchemaItemKey = n.GetStringValue(); } },
+                {"selections", n => { Selections = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

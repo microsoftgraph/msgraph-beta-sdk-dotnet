@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"description", (o,n) => { (o as ProvisioningStep).Description = n.GetStringValue(); } },
-                {"details", (o,n) => { (o as ProvisioningStep).Details = n.GetObjectValue<DetailsInfo>(DetailsInfo.CreateFromDiscriminatorValue); } },
-                {"name", (o,n) => { (o as ProvisioningStep).Name = n.GetStringValue(); } },
-                {"provisioningStepType", (o,n) => { (o as ProvisioningStep).ProvisioningStepType = n.GetEnumValue<ProvisioningStepType>(); } },
-                {"status", (o,n) => { (o as ProvisioningStep).Status = n.GetEnumValue<ProvisioningResult>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"details", n => { Details = n.GetObjectValue<DetailsInfo>(DetailsInfo.CreateFromDiscriminatorValue); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"provisioningStepType", n => { ProvisioningStepType = n.GetEnumValue<ProvisioningStepType>(); } },
+                {"status", n => { Status = n.GetEnumValue<ProvisioningResult>(); } },
             };
         }
         /// <summary>

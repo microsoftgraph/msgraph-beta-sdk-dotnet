@@ -38,19 +38,19 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"actionRequiredByDateTime", (o,n) => { (o as ServiceUpdateMessage).ActionRequiredByDateTime = n.GetDateTimeOffsetValue(); } },
-                {"attachments", (o,n) => { (o as ServiceUpdateMessage).Attachments = n.GetCollectionOfObjectValues<ServiceAnnouncementAttachment>(ServiceAnnouncementAttachment.CreateFromDiscriminatorValue).ToList(); } },
-                {"attachmentsArchive", (o,n) => { (o as ServiceUpdateMessage).AttachmentsArchive = n.GetByteArrayValue(); } },
-                {"body", (o,n) => { (o as ServiceUpdateMessage).Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
-                {"category", (o,n) => { (o as ServiceUpdateMessage).Category = n.GetEnumValue<ServiceUpdateCategory>(); } },
-                {"hasAttachments", (o,n) => { (o as ServiceUpdateMessage).HasAttachments = n.GetBoolValue(); } },
-                {"isMajorChange", (o,n) => { (o as ServiceUpdateMessage).IsMajorChange = n.GetBoolValue(); } },
-                {"services", (o,n) => { (o as ServiceUpdateMessage).Services = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"severity", (o,n) => { (o as ServiceUpdateMessage).Severity = n.GetEnumValue<ServiceUpdateSeverity>(); } },
-                {"tags", (o,n) => { (o as ServiceUpdateMessage).Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"viewPoint", (o,n) => { (o as ServiceUpdateMessage).ViewPoint = n.GetObjectValue<ServiceUpdateMessageViewpoint>(ServiceUpdateMessageViewpoint.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"actionRequiredByDateTime", n => { ActionRequiredByDateTime = n.GetDateTimeOffsetValue(); } },
+                {"attachments", n => { Attachments = n.GetCollectionOfObjectValues<ServiceAnnouncementAttachment>(ServiceAnnouncementAttachment.CreateFromDiscriminatorValue).ToList(); } },
+                {"attachmentsArchive", n => { AttachmentsArchive = n.GetByteArrayValue(); } },
+                {"body", n => { Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                {"category", n => { Category = n.GetEnumValue<ServiceUpdateCategory>(); } },
+                {"hasAttachments", n => { HasAttachments = n.GetBoolValue(); } },
+                {"isMajorChange", n => { IsMajorChange = n.GetBoolValue(); } },
+                {"services", n => { Services = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"severity", n => { Severity = n.GetEnumValue<ServiceUpdateSeverity>(); } },
+                {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"viewPoint", n => { ViewPoint = n.GetObjectValue<ServiceUpdateMessageViewpoint>(ServiceUpdateMessageViewpoint.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

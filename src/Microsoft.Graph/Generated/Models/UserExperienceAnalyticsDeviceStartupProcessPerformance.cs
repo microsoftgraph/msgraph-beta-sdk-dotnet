@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"deviceCount", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupProcessPerformance).DeviceCount = n.GetLongValue(); } },
-                {"medianImpactInMs", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupProcessPerformance).MedianImpactInMs = n.GetIntValue(); } },
-                {"medianImpactInMs2", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupProcessPerformance).MedianImpactInMs2 = n.GetLongValue(); } },
-                {"processName", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupProcessPerformance).ProcessName = n.GetStringValue(); } },
-                {"productName", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupProcessPerformance).ProductName = n.GetStringValue(); } },
-                {"publisher", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupProcessPerformance).Publisher = n.GetStringValue(); } },
-                {"totalImpactInMs", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupProcessPerformance).TotalImpactInMs = n.GetIntValue(); } },
-                {"totalImpactInMs2", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupProcessPerformance).TotalImpactInMs2 = n.GetLongValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"deviceCount", n => { DeviceCount = n.GetLongValue(); } },
+                {"medianImpactInMs", n => { MedianImpactInMs = n.GetIntValue(); } },
+                {"medianImpactInMs2", n => { MedianImpactInMs2 = n.GetLongValue(); } },
+                {"processName", n => { ProcessName = n.GetStringValue(); } },
+                {"productName", n => { ProductName = n.GetStringValue(); } },
+                {"publisher", n => { Publisher = n.GetStringValue(); } },
+                {"totalImpactInMs", n => { TotalImpactInMs = n.GetIntValue(); } },
+                {"totalImpactInMs2", n => { TotalImpactInMs2 = n.GetLongValue(); } },
             };
         }
         /// <summary>

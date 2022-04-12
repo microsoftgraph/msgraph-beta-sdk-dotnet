@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"customExtensionId", (o,n) => { (o as CustomExtensionHandlerInstance).CustomExtensionId = n.GetStringValue(); } },
-                {"externalCorrelationId", (o,n) => { (o as CustomExtensionHandlerInstance).ExternalCorrelationId = n.GetStringValue(); } },
-                {"stage", (o,n) => { (o as CustomExtensionHandlerInstance).Stage = n.GetEnumValue<AccessPackageCustomExtensionStage>(); } },
-                {"status", (o,n) => { (o as CustomExtensionHandlerInstance).Status = n.GetEnumValue<AccessPackageCustomExtensionHandlerStatus>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"customExtensionId", n => { CustomExtensionId = n.GetStringValue(); } },
+                {"externalCorrelationId", n => { ExternalCorrelationId = n.GetStringValue(); } },
+                {"stage", n => { Stage = n.GetEnumValue<AccessPackageCustomExtensionStage>(); } },
+                {"status", n => { Status = n.GetEnumValue<AccessPackageCustomExtensionHandlerStatus>(); } },
             };
         }
         /// <summary>

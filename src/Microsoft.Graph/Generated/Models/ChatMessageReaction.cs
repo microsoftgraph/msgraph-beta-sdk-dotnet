@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"createdDateTime", (o,n) => { (o as ChatMessageReaction).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"reactionType", (o,n) => { (o as ChatMessageReaction).ReactionType = n.GetStringValue(); } },
-                {"user", (o,n) => { (o as ChatMessageReaction).User = n.GetObjectValue<ChatMessageReactionIdentitySet>(ChatMessageReactionIdentitySet.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"reactionType", n => { ReactionType = n.GetStringValue(); } },
+                {"user", n => { User = n.GetObjectValue<ChatMessageReactionIdentitySet>(ChatMessageReactionIdentitySet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

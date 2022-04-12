@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"displayName", (o,n) => { (o as CloudPcAuditResource).DisplayName = n.GetStringValue(); } },
-                {"modifiedProperties", (o,n) => { (o as CloudPcAuditResource).ModifiedProperties = n.GetCollectionOfObjectValues<CloudPcAuditProperty>(CloudPcAuditProperty.CreateFromDiscriminatorValue).ToList(); } },
-                {"resourceId", (o,n) => { (o as CloudPcAuditResource).ResourceId = n.GetStringValue(); } },
-                {"type", (o,n) => { (o as CloudPcAuditResource).Type = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"modifiedProperties", n => { ModifiedProperties = n.GetCollectionOfObjectValues<CloudPcAuditProperty>(CloudPcAuditProperty.CreateFromDiscriminatorValue).ToList(); } },
+                {"resourceId", n => { ResourceId = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"forceChangePasswordNextSignIn", (o,n) => { (o as PasswordProfile).ForceChangePasswordNextSignIn = n.GetBoolValue(); } },
-                {"forceChangePasswordNextSignInWithMfa", (o,n) => { (o as PasswordProfile).ForceChangePasswordNextSignInWithMfa = n.GetBoolValue(); } },
-                {"password", (o,n) => { (o as PasswordProfile).Password = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"forceChangePasswordNextSignIn", n => { ForceChangePasswordNextSignIn = n.GetBoolValue(); } },
+                {"forceChangePasswordNextSignInWithMfa", n => { ForceChangePasswordNextSignInWithMfa = n.GetBoolValue(); } },
+                {"password", n => { Password = n.GetStringValue(); } },
             };
         }
         /// <summary>

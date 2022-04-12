@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"defaultLabelId", (o,n) => { (o as InformationProtectionPolicySetting).DefaultLabelId = n.GetStringValue(); } },
-                {"isDowngradeJustificationRequired", (o,n) => { (o as InformationProtectionPolicySetting).IsDowngradeJustificationRequired = n.GetBoolValue(); } },
-                {"isMandatory", (o,n) => { (o as InformationProtectionPolicySetting).IsMandatory = n.GetBoolValue(); } },
-                {"moreInfoUrl", (o,n) => { (o as InformationProtectionPolicySetting).MoreInfoUrl = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"defaultLabelId", n => { DefaultLabelId = n.GetStringValue(); } },
+                {"isDowngradeJustificationRequired", n => { IsDowngradeJustificationRequired = n.GetBoolValue(); } },
+                {"isMandatory", n => { IsMandatory = n.GetBoolValue(); } },
+                {"moreInfoUrl", n => { MoreInfoUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
