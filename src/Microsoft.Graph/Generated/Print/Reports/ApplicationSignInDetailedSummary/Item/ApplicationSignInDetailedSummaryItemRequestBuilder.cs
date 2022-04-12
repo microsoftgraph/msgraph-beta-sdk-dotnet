@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Print.Reports.ApplicationSignInDetailedSummary.It
         public ApplicationSignInDetailedSummaryItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/print/reports/applicationSignInDetailedSummary/{applicationSignInDetailedSummary_id}{?select,expand}";
+            UrlTemplate = "{+baseurl}/print/reports/applicationSignInDetailedSummary/{applicationSignInDetailedSummary%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Print.Reports.ApplicationSignInDetailedSummary.It
         public ApplicationSignInDetailedSummaryItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/print/reports/applicationSignInDetailedSummary/{applicationSignInDetailedSummary_id}{?select,expand}";
+            UrlTemplate = "{+baseurl}/print/reports/applicationSignInDetailedSummary/{applicationSignInDetailedSummary%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -149,8 +149,10 @@ namespace Microsoft.Graph.Beta.Print.Reports.ApplicationSignInDetailedSummary.It
         /// <summary>Represents a detailed summary of an application sign-in.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
     }

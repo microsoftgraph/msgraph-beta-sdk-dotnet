@@ -41,16 +41,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"assignmentFilterDisplayName", (o,n) => { (o as AssignmentFilterEvaluationSummary).AssignmentFilterDisplayName = n.GetStringValue(); } },
-                {"assignmentFilterId", (o,n) => { (o as AssignmentFilterEvaluationSummary).AssignmentFilterId = n.GetStringValue(); } },
-                {"assignmentFilterLastModifiedDateTime", (o,n) => { (o as AssignmentFilterEvaluationSummary).AssignmentFilterLastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"assignmentFilterPlatform", (o,n) => { (o as AssignmentFilterEvaluationSummary).AssignmentFilterPlatform = n.GetEnumValue<DevicePlatformType>(); } },
-                {"assignmentFilterType", (o,n) => { (o as AssignmentFilterEvaluationSummary).AssignmentFilterType = n.GetEnumValue<DeviceAndAppManagementAssignmentFilterType>(); } },
-                {"assignmentFilterTypeAndEvaluationResults", (o,n) => { (o as AssignmentFilterEvaluationSummary).AssignmentFilterTypeAndEvaluationResults = n.GetCollectionOfObjectValues<AssignmentFilterTypeAndEvaluationResult>(AssignmentFilterTypeAndEvaluationResult.CreateFromDiscriminatorValue).ToList(); } },
-                {"evaluationDateTime", (o,n) => { (o as AssignmentFilterEvaluationSummary).EvaluationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"evaluationResult", (o,n) => { (o as AssignmentFilterEvaluationSummary).EvaluationResult = n.GetEnumValue<AssignmentFilterEvaluationResult>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"assignmentFilterDisplayName", n => { AssignmentFilterDisplayName = n.GetStringValue(); } },
+                {"assignmentFilterId", n => { AssignmentFilterId = n.GetStringValue(); } },
+                {"assignmentFilterLastModifiedDateTime", n => { AssignmentFilterLastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"assignmentFilterPlatform", n => { AssignmentFilterPlatform = n.GetEnumValue<DevicePlatformType>(); } },
+                {"assignmentFilterType", n => { AssignmentFilterType = n.GetEnumValue<DeviceAndAppManagementAssignmentFilterType>(); } },
+                {"assignmentFilterTypeAndEvaluationResults", n => { AssignmentFilterTypeAndEvaluationResults = n.GetCollectionOfObjectValues<AssignmentFilterTypeAndEvaluationResult>(AssignmentFilterTypeAndEvaluationResult.CreateFromDiscriminatorValue).ToList(); } },
+                {"evaluationDateTime", n => { EvaluationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"evaluationResult", n => { EvaluationResult = n.GetEnumValue<AssignmentFilterEvaluationResult>(); } },
             };
         }
         /// <summary>

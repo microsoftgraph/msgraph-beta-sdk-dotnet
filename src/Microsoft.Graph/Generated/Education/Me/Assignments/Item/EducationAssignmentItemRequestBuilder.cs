@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item {
         public EducationAssignmentItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/education/me/assignments/{educationAssignment_id}{?select,expand}";
+            UrlTemplate = "{+baseurl}/education/me/assignments/{educationAssignment%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item {
         public EducationAssignmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/education/me/assignments/{educationAssignment_id}{?select,expand}";
+            UrlTemplate = "{+baseurl}/education/me/assignments/{educationAssignment%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Assignments that belongs to the user.
+        /// Assignments belonging to the user.
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// <param name="queryParameters">Request query parameters</param>
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Assignments that belongs to the user.
+        /// Assignments belonging to the user.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
@@ -176,11 +176,13 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item {
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Assignments that belongs to the user.</summary>
+        /// <summary>Assignments belonging to the user.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
     }

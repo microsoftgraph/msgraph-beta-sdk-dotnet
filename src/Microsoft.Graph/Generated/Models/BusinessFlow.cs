@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"customData", (o,n) => { (o as BusinessFlow).CustomData = n.GetStringValue(); } },
-                {"deDuplicationId", (o,n) => { (o as BusinessFlow).DeDuplicationId = n.GetStringValue(); } },
-                {"description", (o,n) => { (o as BusinessFlow).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as BusinessFlow).DisplayName = n.GetStringValue(); } },
-                {"policy", (o,n) => { (o as BusinessFlow).Policy = n.GetObjectValue<GovernancePolicy>(GovernancePolicy.CreateFromDiscriminatorValue); } },
-                {"policyTemplateId", (o,n) => { (o as BusinessFlow).PolicyTemplateId = n.GetStringValue(); } },
-                {"recordVersion", (o,n) => { (o as BusinessFlow).RecordVersion = n.GetStringValue(); } },
-                {"schemaId", (o,n) => { (o as BusinessFlow).SchemaId = n.GetStringValue(); } },
-                {"settings", (o,n) => { (o as BusinessFlow).Settings = n.GetObjectValue<BusinessFlowSettings>(BusinessFlowSettings.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"customData", n => { CustomData = n.GetStringValue(); } },
+                {"deDuplicationId", n => { DeDuplicationId = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"policy", n => { Policy = n.GetObjectValue<GovernancePolicy>(GovernancePolicy.CreateFromDiscriminatorValue); } },
+                {"policyTemplateId", n => { PolicyTemplateId = n.GetStringValue(); } },
+                {"recordVersion", n => { RecordVersion = n.GetStringValue(); } },
+                {"schemaId", n => { SchemaId = n.GetStringValue(); } },
+                {"settings", n => { Settings = n.GetObjectValue<BusinessFlowSettings>(BusinessFlowSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

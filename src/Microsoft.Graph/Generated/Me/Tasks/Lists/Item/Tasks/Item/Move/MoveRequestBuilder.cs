@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Me.Tasks.Lists.Item.Tasks.Item.Move {
         public MoveRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/tasks/lists/{baseTaskList_id}/tasks/{baseTask_id}/microsoft.graph.move";
+            UrlTemplate = "{+baseurl}/me/tasks/lists/{baseTaskList%2Did}/tasks/{baseTask%2Did}/microsoft.graph.move";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Me.Tasks.Lists.Item.Tasks.Item.Move {
         public MoveRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/tasks/lists/{baseTaskList_id}/tasks/{baseTask_id}/microsoft.graph.move";
+            UrlTemplate = "{+baseurl}/me/tasks/lists/{baseTaskList%2Did}/tasks/{baseTask%2Did}/microsoft.graph.move";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

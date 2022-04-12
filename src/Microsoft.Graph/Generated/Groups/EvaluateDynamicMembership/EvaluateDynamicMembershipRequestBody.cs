@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.Groups.EvaluateDynamicMembership {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"memberId", (o,n) => { (o as EvaluateDynamicMembershipRequestBody).MemberId = n.GetStringValue(); } },
-                {"membershipRule", (o,n) => { (o as EvaluateDynamicMembershipRequestBody).MembershipRule = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"memberId", n => { MemberId = n.GetStringValue(); } },
+                {"membershipRule", n => { MembershipRule = n.GetStringValue(); } },
             };
         }
         /// <summary>

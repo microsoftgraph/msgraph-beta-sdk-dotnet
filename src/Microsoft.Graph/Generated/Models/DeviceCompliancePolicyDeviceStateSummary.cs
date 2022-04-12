@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"compliantDeviceCount", (o,n) => { (o as DeviceCompliancePolicyDeviceStateSummary).CompliantDeviceCount = n.GetIntValue(); } },
-                {"configManagerCount", (o,n) => { (o as DeviceCompliancePolicyDeviceStateSummary).ConfigManagerCount = n.GetIntValue(); } },
-                {"conflictDeviceCount", (o,n) => { (o as DeviceCompliancePolicyDeviceStateSummary).ConflictDeviceCount = n.GetIntValue(); } },
-                {"errorDeviceCount", (o,n) => { (o as DeviceCompliancePolicyDeviceStateSummary).ErrorDeviceCount = n.GetIntValue(); } },
-                {"inGracePeriodCount", (o,n) => { (o as DeviceCompliancePolicyDeviceStateSummary).InGracePeriodCount = n.GetIntValue(); } },
-                {"nonCompliantDeviceCount", (o,n) => { (o as DeviceCompliancePolicyDeviceStateSummary).NonCompliantDeviceCount = n.GetIntValue(); } },
-                {"notApplicableDeviceCount", (o,n) => { (o as DeviceCompliancePolicyDeviceStateSummary).NotApplicableDeviceCount = n.GetIntValue(); } },
-                {"remediatedDeviceCount", (o,n) => { (o as DeviceCompliancePolicyDeviceStateSummary).RemediatedDeviceCount = n.GetIntValue(); } },
-                {"unknownDeviceCount", (o,n) => { (o as DeviceCompliancePolicyDeviceStateSummary).UnknownDeviceCount = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"compliantDeviceCount", n => { CompliantDeviceCount = n.GetIntValue(); } },
+                {"configManagerCount", n => { ConfigManagerCount = n.GetIntValue(); } },
+                {"conflictDeviceCount", n => { ConflictDeviceCount = n.GetIntValue(); } },
+                {"errorDeviceCount", n => { ErrorDeviceCount = n.GetIntValue(); } },
+                {"inGracePeriodCount", n => { InGracePeriodCount = n.GetIntValue(); } },
+                {"nonCompliantDeviceCount", n => { NonCompliantDeviceCount = n.GetIntValue(); } },
+                {"notApplicableDeviceCount", n => { NotApplicableDeviceCount = n.GetIntValue(); } },
+                {"remediatedDeviceCount", n => { RemediatedDeviceCount = n.GetIntValue(); } },
+                {"unknownDeviceCount", n => { UnknownDeviceCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

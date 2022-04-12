@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appDisplayName", (o,n) => { (o as ExtensionProperty).AppDisplayName = n.GetStringValue(); } },
-                {"dataType", (o,n) => { (o as ExtensionProperty).DataType = n.GetStringValue(); } },
-                {"isSyncedFromOnPremises", (o,n) => { (o as ExtensionProperty).IsSyncedFromOnPremises = n.GetBoolValue(); } },
-                {"name", (o,n) => { (o as ExtensionProperty).Name = n.GetStringValue(); } },
-                {"targetObjects", (o,n) => { (o as ExtensionProperty).TargetObjects = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
+                {"dataType", n => { DataType = n.GetStringValue(); } },
+                {"isSyncedFromOnPremises", n => { IsSyncedFromOnPremises = n.GetBoolValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"targetObjects", n => { TargetObjects = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

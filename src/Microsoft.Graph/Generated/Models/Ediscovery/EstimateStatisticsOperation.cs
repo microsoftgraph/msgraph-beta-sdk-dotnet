@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"indexedItemCount", (o,n) => { (o as EstimateStatisticsOperation).IndexedItemCount = n.GetLongValue(); } },
-                {"indexedItemsSize", (o,n) => { (o as EstimateStatisticsOperation).IndexedItemsSize = n.GetLongValue(); } },
-                {"mailboxCount", (o,n) => { (o as EstimateStatisticsOperation).MailboxCount = n.GetIntValue(); } },
-                {"siteCount", (o,n) => { (o as EstimateStatisticsOperation).SiteCount = n.GetIntValue(); } },
-                {"sourceCollection", (o,n) => { (o as EstimateStatisticsOperation).SourceCollection = n.GetObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>(Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection.CreateFromDiscriminatorValue); } },
-                {"unindexedItemCount", (o,n) => { (o as EstimateStatisticsOperation).UnindexedItemCount = n.GetLongValue(); } },
-                {"unindexedItemsSize", (o,n) => { (o as EstimateStatisticsOperation).UnindexedItemsSize = n.GetLongValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"indexedItemCount", n => { IndexedItemCount = n.GetLongValue(); } },
+                {"indexedItemsSize", n => { IndexedItemsSize = n.GetLongValue(); } },
+                {"mailboxCount", n => { MailboxCount = n.GetIntValue(); } },
+                {"siteCount", n => { SiteCount = n.GetIntValue(); } },
+                {"sourceCollection", n => { SourceCollection = n.GetObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>(Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection.CreateFromDiscriminatorValue); } },
+                {"unindexedItemCount", n => { UnindexedItemCount = n.GetLongValue(); } },
+                {"unindexedItemsSize", n => { UnindexedItemsSize = n.GetLongValue(); } },
             };
         }
         /// <summary>

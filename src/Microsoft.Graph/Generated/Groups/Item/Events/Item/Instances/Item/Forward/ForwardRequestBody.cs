@@ -30,10 +30,10 @@ namespace Microsoft.Graph.Beta.Groups.Item.Events.Item.Instances.Item.Forward {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"comment", (o,n) => { (o as ForwardRequestBody).Comment = n.GetStringValue(); } },
-                {"toRecipients", (o,n) => { (o as ForwardRequestBody).ToRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"comment", n => { Comment = n.GetStringValue(); } },
+                {"toRecipients", n => { ToRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

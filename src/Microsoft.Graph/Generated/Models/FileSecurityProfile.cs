@@ -48,24 +48,24 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activityGroupNames", (o,n) => { (o as FileSecurityProfile).ActivityGroupNames = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"azureSubscriptionId", (o,n) => { (o as FileSecurityProfile).AzureSubscriptionId = n.GetStringValue(); } },
-                {"azureTenantId", (o,n) => { (o as FileSecurityProfile).AzureTenantId = n.GetStringValue(); } },
-                {"certificateThumbprint", (o,n) => { (o as FileSecurityProfile).CertificateThumbprint = n.GetStringValue(); } },
-                {"extensions", (o,n) => { (o as FileSecurityProfile).Extensions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"fileType", (o,n) => { (o as FileSecurityProfile).FileType = n.GetStringValue(); } },
-                {"firstSeenDateTime", (o,n) => { (o as FileSecurityProfile).FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"hashes", (o,n) => { (o as FileSecurityProfile).Hashes = n.GetCollectionOfObjectValues<FileHash>(FileHash.CreateFromDiscriminatorValue).ToList(); } },
-                {"lastSeenDateTime", (o,n) => { (o as FileSecurityProfile).LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"malwareStates", (o,n) => { (o as FileSecurityProfile).MalwareStates = n.GetCollectionOfObjectValues<MalwareState>(MalwareState.CreateFromDiscriminatorValue).ToList(); } },
-                {"names", (o,n) => { (o as FileSecurityProfile).Names = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"riskScore", (o,n) => { (o as FileSecurityProfile).RiskScore = n.GetStringValue(); } },
-                {"size", (o,n) => { (o as FileSecurityProfile).Size = n.GetLongValue(); } },
-                {"tags", (o,n) => { (o as FileSecurityProfile).Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"vendorInformation", (o,n) => { (o as FileSecurityProfile).VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
-                {"vulnerabilityStates", (o,n) => { (o as FileSecurityProfile).VulnerabilityStates = n.GetCollectionOfObjectValues<VulnerabilityState>(VulnerabilityState.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activityGroupNames", n => { ActivityGroupNames = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"azureSubscriptionId", n => { AzureSubscriptionId = n.GetStringValue(); } },
+                {"azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
+                {"certificateThumbprint", n => { CertificateThumbprint = n.GetStringValue(); } },
+                {"extensions", n => { Extensions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"fileType", n => { FileType = n.GetStringValue(); } },
+                {"firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                {"hashes", n => { Hashes = n.GetCollectionOfObjectValues<FileHash>(FileHash.CreateFromDiscriminatorValue).ToList(); } },
+                {"lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                {"malwareStates", n => { MalwareStates = n.GetCollectionOfObjectValues<MalwareState>(MalwareState.CreateFromDiscriminatorValue).ToList(); } },
+                {"names", n => { Names = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"riskScore", n => { RiskScore = n.GetStringValue(); } },
+                {"size", n => { Size = n.GetLongValue(); } },
+                {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
+                {"vulnerabilityStates", n => { VulnerabilityStates = n.GetCollectionOfObjectValues<VulnerabilityState>(VulnerabilityState.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

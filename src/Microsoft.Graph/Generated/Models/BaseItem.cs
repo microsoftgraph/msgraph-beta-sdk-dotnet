@@ -38,19 +38,19 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdBy", (o,n) => { (o as BaseItem).CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"createdByUser", (o,n) => { (o as BaseItem).CreatedByUser = n.GetObjectValue<User>(User.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", (o,n) => { (o as BaseItem).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as BaseItem).Description = n.GetStringValue(); } },
-                {"eTag", (o,n) => { (o as BaseItem).ETag = n.GetStringValue(); } },
-                {"lastModifiedBy", (o,n) => { (o as BaseItem).LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"lastModifiedByUser", (o,n) => { (o as BaseItem).LastModifiedByUser = n.GetObjectValue<User>(User.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", (o,n) => { (o as BaseItem).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"name", (o,n) => { (o as BaseItem).Name = n.GetStringValue(); } },
-                {"parentReference", (o,n) => { (o as BaseItem).ParentReference = n.GetObjectValue<ItemReference>(ItemReference.CreateFromDiscriminatorValue); } },
-                {"webUrl", (o,n) => { (o as BaseItem).WebUrl = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"createdByUser", n => { CreatedByUser = n.GetObjectValue<User>(User.CreateFromDiscriminatorValue); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"eTag", n => { ETag = n.GetStringValue(); } },
+                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"lastModifiedByUser", n => { LastModifiedByUser = n.GetObjectValue<User>(User.CreateFromDiscriminatorValue); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"parentReference", n => { ParentReference = n.GetObjectValue<ItemReference>(ItemReference.CreateFromDiscriminatorValue); } },
+                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

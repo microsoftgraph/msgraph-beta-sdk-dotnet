@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.PlayLostModeSound 
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"durationInMinutes", (o,n) => { (o as PlayLostModeSoundRequestBody).DurationInMinutes = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"durationInMinutes", n => { DurationInMinutes = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"lastCheckInDateTime", (o,n) => { (o as WindowsInformationProtectionWipeAction).LastCheckInDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", (o,n) => { (o as WindowsInformationProtectionWipeAction).Status = n.GetEnumValue<ActionState>(); } },
-                {"targetedDeviceMacAddress", (o,n) => { (o as WindowsInformationProtectionWipeAction).TargetedDeviceMacAddress = n.GetStringValue(); } },
-                {"targetedDeviceName", (o,n) => { (o as WindowsInformationProtectionWipeAction).TargetedDeviceName = n.GetStringValue(); } },
-                {"targetedDeviceRegistrationId", (o,n) => { (o as WindowsInformationProtectionWipeAction).TargetedDeviceRegistrationId = n.GetStringValue(); } },
-                {"targetedUserId", (o,n) => { (o as WindowsInformationProtectionWipeAction).TargetedUserId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"lastCheckInDateTime", n => { LastCheckInDateTime = n.GetDateTimeOffsetValue(); } },
+                {"status", n => { Status = n.GetEnumValue<ActionState>(); } },
+                {"targetedDeviceMacAddress", n => { TargetedDeviceMacAddress = n.GetStringValue(); } },
+                {"targetedDeviceName", n => { TargetedDeviceName = n.GetStringValue(); } },
+                {"targetedDeviceRegistrationId", n => { TargetedDeviceRegistrationId = n.GetStringValue(); } },
+                {"targetedUserId", n => { TargetedUserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

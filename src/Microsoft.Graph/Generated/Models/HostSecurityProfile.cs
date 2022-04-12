@@ -52,26 +52,26 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"azureSubscriptionId", (o,n) => { (o as HostSecurityProfile).AzureSubscriptionId = n.GetStringValue(); } },
-                {"azureTenantId", (o,n) => { (o as HostSecurityProfile).AzureTenantId = n.GetStringValue(); } },
-                {"firstSeenDateTime", (o,n) => { (o as HostSecurityProfile).FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"fqdn", (o,n) => { (o as HostSecurityProfile).Fqdn = n.GetStringValue(); } },
-                {"isAzureAdJoined", (o,n) => { (o as HostSecurityProfile).IsAzureAdJoined = n.GetBoolValue(); } },
-                {"isAzureAdRegistered", (o,n) => { (o as HostSecurityProfile).IsAzureAdRegistered = n.GetBoolValue(); } },
-                {"isHybridAzureDomainJoined", (o,n) => { (o as HostSecurityProfile).IsHybridAzureDomainJoined = n.GetBoolValue(); } },
-                {"lastSeenDateTime", (o,n) => { (o as HostSecurityProfile).LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"logonUsers", (o,n) => { (o as HostSecurityProfile).LogonUsers = n.GetCollectionOfObjectValues<LogonUser>(LogonUser.CreateFromDiscriminatorValue).ToList(); } },
-                {"netBiosName", (o,n) => { (o as HostSecurityProfile).NetBiosName = n.GetStringValue(); } },
-                {"networkInterfaces", (o,n) => { (o as HostSecurityProfile).NetworkInterfaces = n.GetCollectionOfObjectValues<NetworkInterface>(NetworkInterface.CreateFromDiscriminatorValue).ToList(); } },
-                {"os", (o,n) => { (o as HostSecurityProfile).Os = n.GetStringValue(); } },
-                {"osVersion", (o,n) => { (o as HostSecurityProfile).OsVersion = n.GetStringValue(); } },
-                {"parentHost", (o,n) => { (o as HostSecurityProfile).ParentHost = n.GetStringValue(); } },
-                {"relatedHostIds", (o,n) => { (o as HostSecurityProfile).RelatedHostIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"riskScore", (o,n) => { (o as HostSecurityProfile).RiskScore = n.GetStringValue(); } },
-                {"tags", (o,n) => { (o as HostSecurityProfile).Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"vendorInformation", (o,n) => { (o as HostSecurityProfile).VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"azureSubscriptionId", n => { AzureSubscriptionId = n.GetStringValue(); } },
+                {"azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
+                {"firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                {"fqdn", n => { Fqdn = n.GetStringValue(); } },
+                {"isAzureAdJoined", n => { IsAzureAdJoined = n.GetBoolValue(); } },
+                {"isAzureAdRegistered", n => { IsAzureAdRegistered = n.GetBoolValue(); } },
+                {"isHybridAzureDomainJoined", n => { IsHybridAzureDomainJoined = n.GetBoolValue(); } },
+                {"lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                {"logonUsers", n => { LogonUsers = n.GetCollectionOfObjectValues<LogonUser>(LogonUser.CreateFromDiscriminatorValue).ToList(); } },
+                {"netBiosName", n => { NetBiosName = n.GetStringValue(); } },
+                {"networkInterfaces", n => { NetworkInterfaces = n.GetCollectionOfObjectValues<NetworkInterface>(NetworkInterface.CreateFromDiscriminatorValue).ToList(); } },
+                {"os", n => { Os = n.GetStringValue(); } },
+                {"osVersion", n => { OsVersion = n.GetStringValue(); } },
+                {"parentHost", n => { ParentHost = n.GetStringValue(); } },
+                {"relatedHostIds", n => { RelatedHostIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"riskScore", n => { RiskScore = n.GetStringValue(); } },
+                {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

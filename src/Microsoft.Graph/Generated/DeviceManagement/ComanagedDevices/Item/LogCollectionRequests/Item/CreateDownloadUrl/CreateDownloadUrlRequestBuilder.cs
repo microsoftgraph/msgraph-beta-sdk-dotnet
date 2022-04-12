@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.LogCollect
         public CreateDownloadUrlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice_id}/logCollectionRequests/{deviceLogCollectionResponse_id}/microsoft.graph.createDownloadUrl";
+            UrlTemplate = "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/logCollectionRequests/{deviceLogCollectionResponse%2Did}/microsoft.graph.createDownloadUrl";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.LogCollect
         public CreateDownloadUrlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice_id}/logCollectionRequests/{deviceLogCollectionResponse_id}/microsoft.graph.createDownloadUrl";
+            UrlTemplate = "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/logCollectionRequests/{deviceLogCollectionResponse%2Did}/microsoft.graph.createDownloadUrl";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

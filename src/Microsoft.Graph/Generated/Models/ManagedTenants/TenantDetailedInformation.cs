@@ -36,18 +36,18 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"city", (o,n) => { (o as TenantDetailedInformation).City = n.GetStringValue(); } },
-                {"countryCode", (o,n) => { (o as TenantDetailedInformation).CountryCode = n.GetStringValue(); } },
-                {"countryName", (o,n) => { (o as TenantDetailedInformation).CountryName = n.GetStringValue(); } },
-                {"defaultDomainName", (o,n) => { (o as TenantDetailedInformation).DefaultDomainName = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as TenantDetailedInformation).DisplayName = n.GetStringValue(); } },
-                {"industryName", (o,n) => { (o as TenantDetailedInformation).IndustryName = n.GetStringValue(); } },
-                {"region", (o,n) => { (o as TenantDetailedInformation).Region = n.GetStringValue(); } },
-                {"segmentName", (o,n) => { (o as TenantDetailedInformation).SegmentName = n.GetStringValue(); } },
-                {"tenantId", (o,n) => { (o as TenantDetailedInformation).TenantId = n.GetStringValue(); } },
-                {"verticalName", (o,n) => { (o as TenantDetailedInformation).VerticalName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"city", n => { City = n.GetStringValue(); } },
+                {"countryCode", n => { CountryCode = n.GetStringValue(); } },
+                {"countryName", n => { CountryName = n.GetStringValue(); } },
+                {"defaultDomainName", n => { DefaultDomainName = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"industryName", n => { IndustryName = n.GetStringValue(); } },
+                {"region", n => { Region = n.GetStringValue(); } },
+                {"segmentName", n => { SegmentName = n.GetStringValue(); } },
+                {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                {"verticalName", n => { VerticalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

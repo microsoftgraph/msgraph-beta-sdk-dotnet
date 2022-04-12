@@ -38,19 +38,19 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessPackageResources", (o,n) => { (o as AccessPackageResourceEnvironment).AccessPackageResources = n.GetCollectionOfObjectValues<AccessPackageResource>(AccessPackageResource.CreateFromDiscriminatorValue).ToList(); } },
-                {"connectionInfo", (o,n) => { (o as AccessPackageResourceEnvironment).ConnectionInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ConnectionInfo>(Microsoft.Graph.Beta.Models.ConnectionInfo.CreateFromDiscriminatorValue); } },
-                {"createdBy", (o,n) => { (o as AccessPackageResourceEnvironment).CreatedBy = n.GetStringValue(); } },
-                {"createdDateTime", (o,n) => { (o as AccessPackageResourceEnvironment).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as AccessPackageResourceEnvironment).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as AccessPackageResourceEnvironment).DisplayName = n.GetStringValue(); } },
-                {"isDefaultEnvironment", (o,n) => { (o as AccessPackageResourceEnvironment).IsDefaultEnvironment = n.GetBoolValue(); } },
-                {"modifiedBy", (o,n) => { (o as AccessPackageResourceEnvironment).ModifiedBy = n.GetStringValue(); } },
-                {"modifiedDateTime", (o,n) => { (o as AccessPackageResourceEnvironment).ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"originId", (o,n) => { (o as AccessPackageResourceEnvironment).OriginId = n.GetStringValue(); } },
-                {"originSystem", (o,n) => { (o as AccessPackageResourceEnvironment).OriginSystem = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"accessPackageResources", n => { AccessPackageResources = n.GetCollectionOfObjectValues<AccessPackageResource>(AccessPackageResource.CreateFromDiscriminatorValue).ToList(); } },
+                {"connectionInfo", n => { ConnectionInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ConnectionInfo>(Microsoft.Graph.Beta.Models.ConnectionInfo.CreateFromDiscriminatorValue); } },
+                {"createdBy", n => { CreatedBy = n.GetStringValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"isDefaultEnvironment", n => { IsDefaultEnvironment = n.GetBoolValue(); } },
+                {"modifiedBy", n => { ModifiedBy = n.GetStringValue(); } },
+                {"modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"originId", n => { OriginId = n.GetStringValue(); } },
+                {"originSystem", n => { OriginSystem = n.GetStringValue(); } },
             };
         }
         /// <summary>

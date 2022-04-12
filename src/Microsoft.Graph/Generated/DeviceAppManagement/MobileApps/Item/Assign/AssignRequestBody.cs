@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Assign {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"mobileAppAssignments", (o,n) => { (o as AssignRequestBody).MobileAppAssignments = n.GetCollectionOfObjectValues<MobileAppAssignment>(MobileAppAssignment.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"mobileAppAssignments", n => { MobileAppAssignments = n.GetCollectionOfObjectValues<MobileAppAssignment>(MobileAppAssignment.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

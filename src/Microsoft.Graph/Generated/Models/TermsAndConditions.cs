@@ -42,21 +42,21 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"acceptanceStatement", (o,n) => { (o as TermsAndConditions).AcceptanceStatement = n.GetStringValue(); } },
-                {"acceptanceStatuses", (o,n) => { (o as TermsAndConditions).AcceptanceStatuses = n.GetCollectionOfObjectValues<TermsAndConditionsAcceptanceStatus>(TermsAndConditionsAcceptanceStatus.CreateFromDiscriminatorValue).ToList(); } },
-                {"assignments", (o,n) => { (o as TermsAndConditions).Assignments = n.GetCollectionOfObjectValues<TermsAndConditionsAssignment>(TermsAndConditionsAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"bodyText", (o,n) => { (o as TermsAndConditions).BodyText = n.GetStringValue(); } },
-                {"createdDateTime", (o,n) => { (o as TermsAndConditions).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as TermsAndConditions).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as TermsAndConditions).DisplayName = n.GetStringValue(); } },
-                {"groupAssignments", (o,n) => { (o as TermsAndConditions).GroupAssignments = n.GetCollectionOfObjectValues<TermsAndConditionsGroupAssignment>(TermsAndConditionsGroupAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as TermsAndConditions).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"modifiedDateTime", (o,n) => { (o as TermsAndConditions).ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"roleScopeTagIds", (o,n) => { (o as TermsAndConditions).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"title", (o,n) => { (o as TermsAndConditions).Title = n.GetStringValue(); } },
-                {"version", (o,n) => { (o as TermsAndConditions).Version = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"acceptanceStatement", n => { AcceptanceStatement = n.GetStringValue(); } },
+                {"acceptanceStatuses", n => { AcceptanceStatuses = n.GetCollectionOfObjectValues<TermsAndConditionsAcceptanceStatus>(TermsAndConditionsAcceptanceStatus.CreateFromDiscriminatorValue).ToList(); } },
+                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<TermsAndConditionsAssignment>(TermsAndConditionsAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"bodyText", n => { BodyText = n.GetStringValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"groupAssignments", n => { GroupAssignments = n.GetCollectionOfObjectValues<TermsAndConditionsGroupAssignment>(TermsAndConditionsGroupAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"title", n => { Title = n.GetStringValue(); } },
+                {"version", n => { Version = n.GetIntValue(); } },
             };
         }
         /// <summary>

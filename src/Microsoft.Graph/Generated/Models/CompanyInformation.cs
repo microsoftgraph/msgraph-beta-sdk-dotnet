@@ -41,20 +41,20 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"address", (o,n) => { (o as CompanyInformation).Address = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
-                {"currencyCode", (o,n) => { (o as CompanyInformation).CurrencyCode = n.GetStringValue(); } },
-                {"currentFiscalYearStartDate", (o,n) => { (o as CompanyInformation).CurrentFiscalYearStartDate = n.GetDateValue(); } },
-                {"displayName", (o,n) => { (o as CompanyInformation).DisplayName = n.GetStringValue(); } },
-                {"email", (o,n) => { (o as CompanyInformation).Email = n.GetStringValue(); } },
-                {"faxNumber", (o,n) => { (o as CompanyInformation).FaxNumber = n.GetStringValue(); } },
-                {"industry", (o,n) => { (o as CompanyInformation).Industry = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as CompanyInformation).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"phoneNumber", (o,n) => { (o as CompanyInformation).PhoneNumber = n.GetStringValue(); } },
-                {"picture", (o,n) => { (o as CompanyInformation).Picture = n.GetByteArrayValue(); } },
-                {"taxRegistrationNumber", (o,n) => { (o as CompanyInformation).TaxRegistrationNumber = n.GetStringValue(); } },
-                {"website", (o,n) => { (o as CompanyInformation).Website = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"address", n => { Address = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
+                {"currencyCode", n => { CurrencyCode = n.GetStringValue(); } },
+                {"currentFiscalYearStartDate", n => { CurrentFiscalYearStartDate = n.GetDateValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"email", n => { Email = n.GetStringValue(); } },
+                {"faxNumber", n => { FaxNumber = n.GetStringValue(); } },
+                {"industry", n => { Industry = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
+                {"picture", n => { Picture = n.GetByteArrayValue(); } },
+                {"taxRegistrationNumber", n => { TaxRegistrationNumber = n.GetStringValue(); } },
+                {"website", n => { Website = n.GetStringValue(); } },
             };
         }
         /// <summary>

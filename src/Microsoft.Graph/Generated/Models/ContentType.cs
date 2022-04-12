@@ -54,27 +54,27 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"associatedHubsUrls", (o,n) => { (o as ContentType).AssociatedHubsUrls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"base", (o,n) => { (o as ContentType).Base = n.GetObjectValue<ContentType>(ContentType.CreateFromDiscriminatorValue); } },
-                {"baseTypes", (o,n) => { (o as ContentType).BaseTypes = n.GetCollectionOfObjectValues<ContentType>(ContentType.CreateFromDiscriminatorValue).ToList(); } },
-                {"columnLinks", (o,n) => { (o as ContentType).ColumnLinks = n.GetCollectionOfObjectValues<ColumnLink>(ColumnLink.CreateFromDiscriminatorValue).ToList(); } },
-                {"columnPositions", (o,n) => { (o as ContentType).ColumnPositions = n.GetCollectionOfObjectValues<ColumnDefinition>(ColumnDefinition.CreateFromDiscriminatorValue).ToList(); } },
-                {"columns", (o,n) => { (o as ContentType).Columns = n.GetCollectionOfObjectValues<ColumnDefinition>(ColumnDefinition.CreateFromDiscriminatorValue).ToList(); } },
-                {"description", (o,n) => { (o as ContentType).Description = n.GetStringValue(); } },
-                {"documentSet", (o,n) => { (o as ContentType).DocumentSet = n.GetObjectValue<Microsoft.Graph.Beta.Models.DocumentSet>(Microsoft.Graph.Beta.Models.DocumentSet.CreateFromDiscriminatorValue); } },
-                {"documentTemplate", (o,n) => { (o as ContentType).DocumentTemplate = n.GetObjectValue<DocumentSetContent>(DocumentSetContent.CreateFromDiscriminatorValue); } },
-                {"group", (o,n) => { (o as ContentType).Group = n.GetStringValue(); } },
-                {"hidden", (o,n) => { (o as ContentType).Hidden = n.GetBoolValue(); } },
-                {"inheritedFrom", (o,n) => { (o as ContentType).InheritedFrom = n.GetObjectValue<ItemReference>(ItemReference.CreateFromDiscriminatorValue); } },
-                {"isBuiltIn", (o,n) => { (o as ContentType).IsBuiltIn = n.GetBoolValue(); } },
-                {"name", (o,n) => { (o as ContentType).Name = n.GetStringValue(); } },
-                {"order", (o,n) => { (o as ContentType).Order = n.GetObjectValue<ContentTypeOrder>(ContentTypeOrder.CreateFromDiscriminatorValue); } },
-                {"parentId", (o,n) => { (o as ContentType).ParentId = n.GetStringValue(); } },
-                {"propagateChanges", (o,n) => { (o as ContentType).PropagateChanges = n.GetBoolValue(); } },
-                {"readOnly", (o,n) => { (o as ContentType).ReadOnly = n.GetBoolValue(); } },
-                {"sealed", (o,n) => { (o as ContentType).Sealed = n.GetBoolValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"associatedHubsUrls", n => { AssociatedHubsUrls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"base", n => { Base = n.GetObjectValue<ContentType>(ContentType.CreateFromDiscriminatorValue); } },
+                {"baseTypes", n => { BaseTypes = n.GetCollectionOfObjectValues<ContentType>(ContentType.CreateFromDiscriminatorValue).ToList(); } },
+                {"columnLinks", n => { ColumnLinks = n.GetCollectionOfObjectValues<ColumnLink>(ColumnLink.CreateFromDiscriminatorValue).ToList(); } },
+                {"columnPositions", n => { ColumnPositions = n.GetCollectionOfObjectValues<ColumnDefinition>(ColumnDefinition.CreateFromDiscriminatorValue).ToList(); } },
+                {"columns", n => { Columns = n.GetCollectionOfObjectValues<ColumnDefinition>(ColumnDefinition.CreateFromDiscriminatorValue).ToList(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"documentSet", n => { DocumentSet = n.GetObjectValue<Microsoft.Graph.Beta.Models.DocumentSet>(Microsoft.Graph.Beta.Models.DocumentSet.CreateFromDiscriminatorValue); } },
+                {"documentTemplate", n => { DocumentTemplate = n.GetObjectValue<DocumentSetContent>(DocumentSetContent.CreateFromDiscriminatorValue); } },
+                {"group", n => { Group = n.GetStringValue(); } },
+                {"hidden", n => { Hidden = n.GetBoolValue(); } },
+                {"inheritedFrom", n => { InheritedFrom = n.GetObjectValue<ItemReference>(ItemReference.CreateFromDiscriminatorValue); } },
+                {"isBuiltIn", n => { IsBuiltIn = n.GetBoolValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"order", n => { Order = n.GetObjectValue<ContentTypeOrder>(ContentTypeOrder.CreateFromDiscriminatorValue); } },
+                {"parentId", n => { ParentId = n.GetStringValue(); } },
+                {"propagateChanges", n => { PropagateChanges = n.GetBoolValue(); } },
+                {"readOnly", n => { ReadOnly = n.GetBoolValue(); } },
+                {"sealed", n => { Sealed = n.GetBoolValue(); } },
             };
         }
         /// <summary>

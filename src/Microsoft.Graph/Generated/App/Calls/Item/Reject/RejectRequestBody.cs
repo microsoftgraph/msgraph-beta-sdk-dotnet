@@ -30,10 +30,10 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Reject {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"callbackUri", (o,n) => { (o as RejectRequestBody).CallbackUri = n.GetStringValue(); } },
-                {"reason", (o,n) => { (o as RejectRequestBody).Reason = n.GetEnumValue<RejectReason>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"callbackUri", n => { CallbackUri = n.GetStringValue(); } },
+                {"reason", n => { Reason = n.GetEnumValue<RejectReason>(); } },
             };
         }
         /// <summary>

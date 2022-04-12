@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"emailToSendLogsAndFeedback", (o,n) => { (o as TeamworkFeaturesConfiguration).EmailToSendLogsAndFeedback = n.GetStringValue(); } },
-                {"isAutoScreenShareEnabled", (o,n) => { (o as TeamworkFeaturesConfiguration).IsAutoScreenShareEnabled = n.GetBoolValue(); } },
-                {"isBluetoothBeaconingEnabled", (o,n) => { (o as TeamworkFeaturesConfiguration).IsBluetoothBeaconingEnabled = n.GetBoolValue(); } },
-                {"isHideMeetingNamesEnabled", (o,n) => { (o as TeamworkFeaturesConfiguration).IsHideMeetingNamesEnabled = n.GetBoolValue(); } },
-                {"isSendLogsAndFeedbackEnabled", (o,n) => { (o as TeamworkFeaturesConfiguration).IsSendLogsAndFeedbackEnabled = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"emailToSendLogsAndFeedback", n => { EmailToSendLogsAndFeedback = n.GetStringValue(); } },
+                {"isAutoScreenShareEnabled", n => { IsAutoScreenShareEnabled = n.GetBoolValue(); } },
+                {"isBluetoothBeaconingEnabled", n => { IsBluetoothBeaconingEnabled = n.GetBoolValue(); } },
+                {"isHideMeetingNamesEnabled", n => { IsHideMeetingNamesEnabled = n.GetBoolValue(); } },
+                {"isSendLogsAndFeedbackEnabled", n => { IsSendLogsAndFeedbackEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"authoringLanguages", (o,n) => { (o as RegionalAndLanguageSettings).AuthoringLanguages = n.GetCollectionOfObjectValues<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue).ToList(); } },
-                {"defaultDisplayLanguage", (o,n) => { (o as RegionalAndLanguageSettings).DefaultDisplayLanguage = n.GetObjectValue<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue); } },
-                {"defaultRegionalFormat", (o,n) => { (o as RegionalAndLanguageSettings).DefaultRegionalFormat = n.GetObjectValue<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue); } },
-                {"defaultSpeechInputLanguage", (o,n) => { (o as RegionalAndLanguageSettings).DefaultSpeechInputLanguage = n.GetObjectValue<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue); } },
-                {"defaultTranslationLanguage", (o,n) => { (o as RegionalAndLanguageSettings).DefaultTranslationLanguage = n.GetObjectValue<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue); } },
-                {"regionalFormatOverrides", (o,n) => { (o as RegionalAndLanguageSettings).RegionalFormatOverrides = n.GetObjectValue<Microsoft.Graph.Beta.Models.RegionalFormatOverrides>(Microsoft.Graph.Beta.Models.RegionalFormatOverrides.CreateFromDiscriminatorValue); } },
-                {"translationPreferences", (o,n) => { (o as RegionalAndLanguageSettings).TranslationPreferences = n.GetObjectValue<Microsoft.Graph.Beta.Models.TranslationPreferences>(Microsoft.Graph.Beta.Models.TranslationPreferences.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"authoringLanguages", n => { AuthoringLanguages = n.GetCollectionOfObjectValues<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue).ToList(); } },
+                {"defaultDisplayLanguage", n => { DefaultDisplayLanguage = n.GetObjectValue<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue); } },
+                {"defaultRegionalFormat", n => { DefaultRegionalFormat = n.GetObjectValue<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue); } },
+                {"defaultSpeechInputLanguage", n => { DefaultSpeechInputLanguage = n.GetObjectValue<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue); } },
+                {"defaultTranslationLanguage", n => { DefaultTranslationLanguage = n.GetObjectValue<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue); } },
+                {"regionalFormatOverrides", n => { RegionalFormatOverrides = n.GetObjectValue<Microsoft.Graph.Beta.Models.RegionalFormatOverrides>(Microsoft.Graph.Beta.Models.RegionalFormatOverrides.CreateFromDiscriminatorValue); } },
+                {"translationPreferences", n => { TranslationPreferences = n.GetObjectValue<Microsoft.Graph.Beta.Models.TranslationPreferences>(Microsoft.Graph.Beta.Models.TranslationPreferences.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

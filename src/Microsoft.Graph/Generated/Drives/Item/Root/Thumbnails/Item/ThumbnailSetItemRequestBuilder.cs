@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Root.Thumbnails.Item {
         public ThumbnailSetItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/drives/{drive_id}/root/thumbnails/{thumbnailSet_id}{?select,expand}";
+            UrlTemplate = "{+baseurl}/drives/{drive%2Did}/root/thumbnails/{thumbnailSet%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Root.Thumbnails.Item {
         public ThumbnailSetItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/drives/{drive_id}/root/thumbnails/{thumbnailSet_id}{?select,expand}";
+            UrlTemplate = "{+baseurl}/drives/{drive%2Did}/root/thumbnails/{thumbnailSet%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -149,8 +149,10 @@ namespace Microsoft.Graph.Beta.Drives.Item.Root.Thumbnails.Item {
         /// <summary>Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
     }

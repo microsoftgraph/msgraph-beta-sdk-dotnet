@@ -26,9 +26,9 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"disabledSafeguardProfiles", (o,n) => { (o as SafeguardSettings).DisabledSafeguardProfiles = n.GetCollectionOfObjectValues<SafeguardProfile>(SafeguardProfile.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"disabledSafeguardProfiles", n => { DisabledSafeguardProfiles = n.GetCollectionOfObjectValues<SafeguardProfile>(SafeguardProfile.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

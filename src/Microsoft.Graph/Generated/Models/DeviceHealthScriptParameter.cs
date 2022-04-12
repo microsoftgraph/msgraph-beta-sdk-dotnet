@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"applyDefaultValueWhenNotAssigned", (o,n) => { (o as DeviceHealthScriptParameter).ApplyDefaultValueWhenNotAssigned = n.GetBoolValue(); } },
-                {"description", (o,n) => { (o as DeviceHealthScriptParameter).Description = n.GetStringValue(); } },
-                {"isRequired", (o,n) => { (o as DeviceHealthScriptParameter).IsRequired = n.GetBoolValue(); } },
-                {"name", (o,n) => { (o as DeviceHealthScriptParameter).Name = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"applyDefaultValueWhenNotAssigned", n => { ApplyDefaultValueWhenNotAssigned = n.GetBoolValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"isRequired", n => { IsRequired = n.GetBoolValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>

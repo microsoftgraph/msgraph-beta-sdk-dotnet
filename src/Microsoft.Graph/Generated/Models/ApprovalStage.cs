@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"approvalStageTimeOutInDays", (o,n) => { (o as ApprovalStage).ApprovalStageTimeOutInDays = n.GetIntValue(); } },
-                {"escalationApprovers", (o,n) => { (o as ApprovalStage).EscalationApprovers = n.GetCollectionOfObjectValues<UserSet>(UserSet.CreateFromDiscriminatorValue).ToList(); } },
-                {"escalationTimeInMinutes", (o,n) => { (o as ApprovalStage).EscalationTimeInMinutes = n.GetIntValue(); } },
-                {"isApproverJustificationRequired", (o,n) => { (o as ApprovalStage).IsApproverJustificationRequired = n.GetBoolValue(); } },
-                {"isEscalationEnabled", (o,n) => { (o as ApprovalStage).IsEscalationEnabled = n.GetBoolValue(); } },
-                {"primaryApprovers", (o,n) => { (o as ApprovalStage).PrimaryApprovers = n.GetCollectionOfObjectValues<UserSet>(UserSet.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"approvalStageTimeOutInDays", n => { ApprovalStageTimeOutInDays = n.GetIntValue(); } },
+                {"escalationApprovers", n => { EscalationApprovers = n.GetCollectionOfObjectValues<UserSet>(UserSet.CreateFromDiscriminatorValue).ToList(); } },
+                {"escalationTimeInMinutes", n => { EscalationTimeInMinutes = n.GetIntValue(); } },
+                {"isApproverJustificationRequired", n => { IsApproverJustificationRequired = n.GetBoolValue(); } },
+                {"isEscalationEnabled", n => { IsEscalationEnabled = n.GetBoolValue(); } },
+                {"primaryApprovers", n => { PrimaryApprovers = n.GetCollectionOfObjectValues<UserSet>(UserSet.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

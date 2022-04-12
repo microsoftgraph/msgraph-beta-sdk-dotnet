@@ -30,10 +30,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.SetSche
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"managedDeviceIds", (o,n) => { (o as SetScheduledRetireStateRequestBody).ManagedDeviceIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"state", (o,n) => { (o as SetScheduledRetireStateRequestBody).State = n.GetEnumValue<ScheduledRetireState>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"managedDeviceIds", n => { ManagedDeviceIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"state", n => { State = n.GetEnumValue<ScheduledRetireState>(); } },
             };
         }
         /// <summary>

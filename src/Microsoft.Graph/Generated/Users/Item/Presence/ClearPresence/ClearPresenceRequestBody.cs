@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence.ClearPresence {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"sessionId", (o,n) => { (o as ClearPresenceRequestBody).SessionId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"sessionId", n => { SessionId = n.GetStringValue(); } },
             };
         }
         /// <summary>

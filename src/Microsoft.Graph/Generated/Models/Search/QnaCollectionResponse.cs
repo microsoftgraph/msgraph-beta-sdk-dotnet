@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models.Search {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"@odata.nextLink", (o,n) => { (o as QnaCollectionResponse).NextLink = n.GetStringValue(); } },
-                {"value", (o,n) => { (o as QnaCollectionResponse).Value = n.GetCollectionOfObjectValues<Qna>(Qna.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"@odata.nextLink", n => { NextLink = n.GetStringValue(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<Qna>(Qna.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

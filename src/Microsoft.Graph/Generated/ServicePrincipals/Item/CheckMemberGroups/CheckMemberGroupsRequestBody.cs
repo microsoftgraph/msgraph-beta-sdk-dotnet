@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.CheckMemberGroups {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"groupIds", (o,n) => { (o as CheckMemberGroupsRequestBody).GroupIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"groupIds", n => { GroupIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

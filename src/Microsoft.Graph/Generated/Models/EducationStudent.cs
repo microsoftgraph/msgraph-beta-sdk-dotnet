@@ -37,14 +37,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"birthDate", (o,n) => { (o as EducationStudent).BirthDate = n.GetDateValue(); } },
-                {"externalId", (o,n) => { (o as EducationStudent).ExternalId = n.GetStringValue(); } },
-                {"gender", (o,n) => { (o as EducationStudent).Gender = n.GetEnumValue<EducationGender>(); } },
-                {"grade", (o,n) => { (o as EducationStudent).Grade = n.GetStringValue(); } },
-                {"graduationYear", (o,n) => { (o as EducationStudent).GraduationYear = n.GetStringValue(); } },
-                {"studentNumber", (o,n) => { (o as EducationStudent).StudentNumber = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"birthDate", n => { BirthDate = n.GetDateValue(); } },
+                {"externalId", n => { ExternalId = n.GetStringValue(); } },
+                {"gender", n => { Gender = n.GetEnumValue<EducationGender>(); } },
+                {"grade", n => { Grade = n.GetStringValue(); } },
+                {"graduationYear", n => { GraduationYear = n.GetStringValue(); } },
+                {"studentNumber", n => { StudentNumber = n.GetStringValue(); } },
             };
         }
         /// <summary>

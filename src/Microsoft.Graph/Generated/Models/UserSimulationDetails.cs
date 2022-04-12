@@ -42,17 +42,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"assignedTrainingsCount", (o,n) => { (o as UserSimulationDetails).AssignedTrainingsCount = n.GetIntValue(); } },
-                {"completedTrainingsCount", (o,n) => { (o as UserSimulationDetails).CompletedTrainingsCount = n.GetIntValue(); } },
-                {"compromisedDateTime", (o,n) => { (o as UserSimulationDetails).CompromisedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"inProgressTrainingsCount", (o,n) => { (o as UserSimulationDetails).InProgressTrainingsCount = n.GetIntValue(); } },
-                {"isCompromised", (o,n) => { (o as UserSimulationDetails).IsCompromised = n.GetBoolValue(); } },
-                {"reportedPhishDateTime", (o,n) => { (o as UserSimulationDetails).ReportedPhishDateTime = n.GetDateTimeOffsetValue(); } },
-                {"simulationEvents", (o,n) => { (o as UserSimulationDetails).SimulationEvents = n.GetCollectionOfObjectValues<UserSimulationEventInfo>(UserSimulationEventInfo.CreateFromDiscriminatorValue).ToList(); } },
-                {"simulationUser", (o,n) => { (o as UserSimulationDetails).SimulationUser = n.GetObjectValue<AttackSimulationUser>(AttackSimulationUser.CreateFromDiscriminatorValue); } },
-                {"trainingEvents", (o,n) => { (o as UserSimulationDetails).TrainingEvents = n.GetCollectionOfObjectValues<UserTrainingEventInfo>(UserTrainingEventInfo.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"assignedTrainingsCount", n => { AssignedTrainingsCount = n.GetIntValue(); } },
+                {"completedTrainingsCount", n => { CompletedTrainingsCount = n.GetIntValue(); } },
+                {"compromisedDateTime", n => { CompromisedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"inProgressTrainingsCount", n => { InProgressTrainingsCount = n.GetIntValue(); } },
+                {"isCompromised", n => { IsCompromised = n.GetBoolValue(); } },
+                {"reportedPhishDateTime", n => { ReportedPhishDateTime = n.GetDateTimeOffsetValue(); } },
+                {"simulationEvents", n => { SimulationEvents = n.GetCollectionOfObjectValues<UserSimulationEventInfo>(UserSimulationEventInfo.CreateFromDiscriminatorValue).ToList(); } },
+                {"simulationUser", n => { SimulationUser = n.GetObjectValue<AttackSimulationUser>(AttackSimulationUser.CreateFromDiscriminatorValue); } },
+                {"trainingEvents", n => { TrainingEvents = n.GetCollectionOfObjectValues<UserTrainingEventInfo>(UserTrainingEventInfo.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

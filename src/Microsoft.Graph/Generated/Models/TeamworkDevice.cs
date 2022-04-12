@@ -46,23 +46,23 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activity", (o,n) => { (o as TeamworkDevice).Activity = n.GetObjectValue<TeamworkDeviceActivity>(TeamworkDeviceActivity.CreateFromDiscriminatorValue); } },
-                {"activityState", (o,n) => { (o as TeamworkDevice).ActivityState = n.GetEnumValue<TeamworkDeviceActivityState>(); } },
-                {"companyAssetTag", (o,n) => { (o as TeamworkDevice).CompanyAssetTag = n.GetStringValue(); } },
-                {"configuration", (o,n) => { (o as TeamworkDevice).Configuration = n.GetObjectValue<TeamworkDeviceConfiguration>(TeamworkDeviceConfiguration.CreateFromDiscriminatorValue); } },
-                {"createdBy", (o,n) => { (o as TeamworkDevice).CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", (o,n) => { (o as TeamworkDevice).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"currentUser", (o,n) => { (o as TeamworkDevice).CurrentUser = n.GetObjectValue<TeamworkUserIdentity>(TeamworkUserIdentity.CreateFromDiscriminatorValue); } },
-                {"deviceType", (o,n) => { (o as TeamworkDevice).DeviceType = n.GetEnumValue<TeamworkDeviceType>(); } },
-                {"hardwareDetail", (o,n) => { (o as TeamworkDevice).HardwareDetail = n.GetObjectValue<TeamworkHardwareDetail>(TeamworkHardwareDetail.CreateFromDiscriminatorValue); } },
-                {"health", (o,n) => { (o as TeamworkDevice).Health = n.GetObjectValue<TeamworkDeviceHealth>(TeamworkDeviceHealth.CreateFromDiscriminatorValue); } },
-                {"healthStatus", (o,n) => { (o as TeamworkDevice).HealthStatus = n.GetEnumValue<TeamworkDeviceHealthStatus>(); } },
-                {"lastModifiedBy", (o,n) => { (o as TeamworkDevice).LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", (o,n) => { (o as TeamworkDevice).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"notes", (o,n) => { (o as TeamworkDevice).Notes = n.GetStringValue(); } },
-                {"operations", (o,n) => { (o as TeamworkDevice).Operations = n.GetCollectionOfObjectValues<TeamworkDeviceOperation>(TeamworkDeviceOperation.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activity", n => { Activity = n.GetObjectValue<TeamworkDeviceActivity>(TeamworkDeviceActivity.CreateFromDiscriminatorValue); } },
+                {"activityState", n => { ActivityState = n.GetEnumValue<TeamworkDeviceActivityState>(); } },
+                {"companyAssetTag", n => { CompanyAssetTag = n.GetStringValue(); } },
+                {"configuration", n => { Configuration = n.GetObjectValue<TeamworkDeviceConfiguration>(TeamworkDeviceConfiguration.CreateFromDiscriminatorValue); } },
+                {"createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"currentUser", n => { CurrentUser = n.GetObjectValue<TeamworkUserIdentity>(TeamworkUserIdentity.CreateFromDiscriminatorValue); } },
+                {"deviceType", n => { DeviceType = n.GetEnumValue<TeamworkDeviceType>(); } },
+                {"hardwareDetail", n => { HardwareDetail = n.GetObjectValue<TeamworkHardwareDetail>(TeamworkHardwareDetail.CreateFromDiscriminatorValue); } },
+                {"health", n => { Health = n.GetObjectValue<TeamworkDeviceHealth>(TeamworkDeviceHealth.CreateFromDiscriminatorValue); } },
+                {"healthStatus", n => { HealthStatus = n.GetEnumValue<TeamworkDeviceHealthStatus>(); } },
+                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"notes", n => { Notes = n.GetStringValue(); } },
+                {"operations", n => { Operations = n.GetCollectionOfObjectValues<TeamworkDeviceOperation>(TeamworkDeviceOperation.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

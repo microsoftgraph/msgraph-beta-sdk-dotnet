@@ -22,11 +22,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"lastManualSyncTriggerDateTime", (o,n) => { (o as WindowsAutopilotSettings).LastManualSyncTriggerDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastSyncDateTime", (o,n) => { (o as WindowsAutopilotSettings).LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"syncStatus", (o,n) => { (o as WindowsAutopilotSettings).SyncStatus = n.GetEnumValue<WindowsAutopilotSyncStatus>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"lastManualSyncTriggerDateTime", n => { LastManualSyncTriggerDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                {"syncStatus", n => { SyncStatus = n.GetEnumValue<WindowsAutopilotSyncStatus>(); } },
             };
         }
         /// <summary>

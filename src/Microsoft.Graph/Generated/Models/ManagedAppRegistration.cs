@@ -54,27 +54,27 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appIdentifier", (o,n) => { (o as ManagedAppRegistration).AppIdentifier = n.GetObjectValue<MobileAppIdentifier>(MobileAppIdentifier.CreateFromDiscriminatorValue); } },
-                {"applicationVersion", (o,n) => { (o as ManagedAppRegistration).ApplicationVersion = n.GetStringValue(); } },
-                {"appliedPolicies", (o,n) => { (o as ManagedAppRegistration).AppliedPolicies = n.GetCollectionOfObjectValues<ManagedAppPolicy>(ManagedAppPolicy.CreateFromDiscriminatorValue).ToList(); } },
-                {"azureADDeviceId", (o,n) => { (o as ManagedAppRegistration).AzureADDeviceId = n.GetStringValue(); } },
-                {"createdDateTime", (o,n) => { (o as ManagedAppRegistration).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deviceManufacturer", (o,n) => { (o as ManagedAppRegistration).DeviceManufacturer = n.GetStringValue(); } },
-                {"deviceModel", (o,n) => { (o as ManagedAppRegistration).DeviceModel = n.GetStringValue(); } },
-                {"deviceName", (o,n) => { (o as ManagedAppRegistration).DeviceName = n.GetStringValue(); } },
-                {"deviceTag", (o,n) => { (o as ManagedAppRegistration).DeviceTag = n.GetStringValue(); } },
-                {"deviceType", (o,n) => { (o as ManagedAppRegistration).DeviceType = n.GetStringValue(); } },
-                {"flaggedReasons", (o,n) => { (o as ManagedAppRegistration).FlaggedReasons = n.GetCollectionOfEnumValues<ManagedAppFlaggedReason>().ToList(); } },
-                {"intendedPolicies", (o,n) => { (o as ManagedAppRegistration).IntendedPolicies = n.GetCollectionOfObjectValues<ManagedAppPolicy>(ManagedAppPolicy.CreateFromDiscriminatorValue).ToList(); } },
-                {"lastSyncDateTime", (o,n) => { (o as ManagedAppRegistration).LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managedDeviceId", (o,n) => { (o as ManagedAppRegistration).ManagedDeviceId = n.GetStringValue(); } },
-                {"managementSdkVersion", (o,n) => { (o as ManagedAppRegistration).ManagementSdkVersion = n.GetStringValue(); } },
-                {"operations", (o,n) => { (o as ManagedAppRegistration).Operations = n.GetCollectionOfObjectValues<ManagedAppOperation>(ManagedAppOperation.CreateFromDiscriminatorValue).ToList(); } },
-                {"platformVersion", (o,n) => { (o as ManagedAppRegistration).PlatformVersion = n.GetStringValue(); } },
-                {"userId", (o,n) => { (o as ManagedAppRegistration).UserId = n.GetStringValue(); } },
-                {"version", (o,n) => { (o as ManagedAppRegistration).Version = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"appIdentifier", n => { AppIdentifier = n.GetObjectValue<MobileAppIdentifier>(MobileAppIdentifier.CreateFromDiscriminatorValue); } },
+                {"applicationVersion", n => { ApplicationVersion = n.GetStringValue(); } },
+                {"appliedPolicies", n => { AppliedPolicies = n.GetCollectionOfObjectValues<ManagedAppPolicy>(ManagedAppPolicy.CreateFromDiscriminatorValue).ToList(); } },
+                {"azureADDeviceId", n => { AzureADDeviceId = n.GetStringValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"deviceManufacturer", n => { DeviceManufacturer = n.GetStringValue(); } },
+                {"deviceModel", n => { DeviceModel = n.GetStringValue(); } },
+                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
+                {"deviceTag", n => { DeviceTag = n.GetStringValue(); } },
+                {"deviceType", n => { DeviceType = n.GetStringValue(); } },
+                {"flaggedReasons", n => { FlaggedReasons = n.GetCollectionOfEnumValues<ManagedAppFlaggedReason>().ToList(); } },
+                {"intendedPolicies", n => { IntendedPolicies = n.GetCollectionOfObjectValues<ManagedAppPolicy>(ManagedAppPolicy.CreateFromDiscriminatorValue).ToList(); } },
+                {"lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
+                {"managementSdkVersion", n => { ManagementSdkVersion = n.GetStringValue(); } },
+                {"operations", n => { Operations = n.GetCollectionOfObjectValues<ManagedAppOperation>(ManagedAppOperation.CreateFromDiscriminatorValue).ToList(); } },
+                {"platformVersion", n => { PlatformVersion = n.GetStringValue(); } },
+                {"userId", n => { UserId = n.GetStringValue(); } },
+                {"version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

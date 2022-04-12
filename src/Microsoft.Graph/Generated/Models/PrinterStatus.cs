@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"description", (o,n) => { (o as PrinterStatus).Description = n.GetStringValue(); } },
-                {"details", (o,n) => { (o as PrinterStatus).Details = n.GetCollectionOfEnumValues<PrinterProcessingStateDetail>().ToList(); } },
-                {"processingState", (o,n) => { (o as PrinterStatus).ProcessingState = n.GetEnumValue<PrinterProcessingState>(); } },
-                {"processingStateDescription", (o,n) => { (o as PrinterStatus).ProcessingStateDescription = n.GetStringValue(); } },
-                {"processingStateReasons", (o,n) => { (o as PrinterStatus).ProcessingStateReasons = n.GetCollectionOfEnumValues<PrinterProcessingStateReason>().ToList(); } },
-                {"state", (o,n) => { (o as PrinterStatus).State = n.GetEnumValue<PrinterProcessingState>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"details", n => { Details = n.GetCollectionOfEnumValues<PrinterProcessingStateDetail>().ToList(); } },
+                {"processingState", n => { ProcessingState = n.GetEnumValue<PrinterProcessingState>(); } },
+                {"processingStateDescription", n => { ProcessingStateDescription = n.GetStringValue(); } },
+                {"processingStateReasons", n => { ProcessingStateReasons = n.GetCollectionOfEnumValues<PrinterProcessingStateReason>().ToList(); } },
+                {"state", n => { State = n.GetEnumValue<PrinterProcessingState>(); } },
             };
         }
         /// <summary>

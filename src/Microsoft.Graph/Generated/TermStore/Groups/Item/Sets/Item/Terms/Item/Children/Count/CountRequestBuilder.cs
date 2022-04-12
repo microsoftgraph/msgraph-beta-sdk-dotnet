@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.TermStore.Groups.Item.Sets.Item.Terms.Item.Childr
         public CountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/termStore/groups/{group_id}/sets/{set_id}/terms/{term_id}/children/$count";
+            UrlTemplate = "{+baseurl}/termStore/groups/{group%2Did}/sets/{set%2Did}/terms/{term%2Did}/children/$count";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.TermStore.Groups.Item.Sets.Item.Terms.Item.Childr
         public CountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/termStore/groups/{group_id}/sets/{set_id}/terms/{term_id}/children/$count";
+            UrlTemplate = "{+baseurl}/termStore/groups/{group%2Did}/sets/{set%2Did}/terms/{term%2Did}/children/$count";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

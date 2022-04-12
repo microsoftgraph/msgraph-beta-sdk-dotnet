@@ -56,24 +56,24 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"d", (o,n) => { (o as TrustFrameworkKey).D = n.GetStringValue(); } },
-                {"dp", (o,n) => { (o as TrustFrameworkKey).Dp = n.GetStringValue(); } },
-                {"dq", (o,n) => { (o as TrustFrameworkKey).Dq = n.GetStringValue(); } },
-                {"e", (o,n) => { (o as TrustFrameworkKey).E = n.GetStringValue(); } },
-                {"exp", (o,n) => { (o as TrustFrameworkKey).Exp = n.GetLongValue(); } },
-                {"k", (o,n) => { (o as TrustFrameworkKey).K = n.GetStringValue(); } },
-                {"kid", (o,n) => { (o as TrustFrameworkKey).Kid = n.GetStringValue(); } },
-                {"kty", (o,n) => { (o as TrustFrameworkKey).Kty = n.GetStringValue(); } },
-                {"n", (o,n) => { (o as TrustFrameworkKey).N = n.GetStringValue(); } },
-                {"nbf", (o,n) => { (o as TrustFrameworkKey).Nbf = n.GetLongValue(); } },
-                {"p", (o,n) => { (o as TrustFrameworkKey).P = n.GetStringValue(); } },
-                {"q", (o,n) => { (o as TrustFrameworkKey).Q = n.GetStringValue(); } },
-                {"qi", (o,n) => { (o as TrustFrameworkKey).Qi = n.GetStringValue(); } },
-                {"use", (o,n) => { (o as TrustFrameworkKey).Use = n.GetStringValue(); } },
-                {"x5c", (o,n) => { (o as TrustFrameworkKey).X5c = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"x5t", (o,n) => { (o as TrustFrameworkKey).X5t = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"d", n => { D = n.GetStringValue(); } },
+                {"dp", n => { Dp = n.GetStringValue(); } },
+                {"dq", n => { Dq = n.GetStringValue(); } },
+                {"e", n => { E = n.GetStringValue(); } },
+                {"exp", n => { Exp = n.GetLongValue(); } },
+                {"k", n => { K = n.GetStringValue(); } },
+                {"kid", n => { Kid = n.GetStringValue(); } },
+                {"kty", n => { Kty = n.GetStringValue(); } },
+                {"n", n => { N = n.GetStringValue(); } },
+                {"nbf", n => { Nbf = n.GetLongValue(); } },
+                {"p", n => { P = n.GetStringValue(); } },
+                {"q", n => { Q = n.GetStringValue(); } },
+                {"qi", n => { Qi = n.GetStringValue(); } },
+                {"use", n => { Use = n.GetStringValue(); } },
+                {"x5c", n => { X5c = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"x5t", n => { X5t = n.GetStringValue(); } },
             };
         }
         /// <summary>

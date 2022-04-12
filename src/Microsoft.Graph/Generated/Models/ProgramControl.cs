@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"controlId", (o,n) => { (o as ProgramControl).ControlId = n.GetStringValue(); } },
-                {"controlTypeId", (o,n) => { (o as ProgramControl).ControlTypeId = n.GetStringValue(); } },
-                {"createdDateTime", (o,n) => { (o as ProgramControl).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", (o,n) => { (o as ProgramControl).DisplayName = n.GetStringValue(); } },
-                {"owner", (o,n) => { (o as ProgramControl).Owner = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
-                {"program", (o,n) => { (o as ProgramControl).Program = n.GetObjectValue<Microsoft.Graph.Beta.Models.Program>(Microsoft.Graph.Beta.Models.Program.CreateFromDiscriminatorValue); } },
-                {"programId", (o,n) => { (o as ProgramControl).ProgramId = n.GetStringValue(); } },
-                {"resource", (o,n) => { (o as ProgramControl).Resource = n.GetObjectValue<ProgramResource>(ProgramResource.CreateFromDiscriminatorValue); } },
-                {"status", (o,n) => { (o as ProgramControl).Status = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"controlId", n => { ControlId = n.GetStringValue(); } },
+                {"controlTypeId", n => { ControlTypeId = n.GetStringValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"owner", n => { Owner = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                {"program", n => { Program = n.GetObjectValue<Microsoft.Graph.Beta.Models.Program>(Microsoft.Graph.Beta.Models.Program.CreateFromDiscriminatorValue); } },
+                {"programId", n => { ProgramId = n.GetStringValue(); } },
+                {"resource", n => { Resource = n.GetObjectValue<ProgramResource>(ProgramResource.CreateFromDiscriminatorValue); } },
+                {"status", n => { Status = n.GetStringValue(); } },
             };
         }
         /// <summary>

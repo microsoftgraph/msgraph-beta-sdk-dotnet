@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"answerInputType", (o,n) => { (o as MeetingRegistrationQuestion).AnswerInputType = n.GetEnumValue<AnswerInputType>(); } },
-                {"answerOptions", (o,n) => { (o as MeetingRegistrationQuestion).AnswerOptions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"displayName", (o,n) => { (o as MeetingRegistrationQuestion).DisplayName = n.GetStringValue(); } },
-                {"isRequired", (o,n) => { (o as MeetingRegistrationQuestion).IsRequired = n.GetBoolValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"answerInputType", n => { AnswerInputType = n.GetEnumValue<AnswerInputType>(); } },
+                {"answerOptions", n => { AnswerOptions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"isRequired", n => { IsRequired = n.GetBoolValue(); } },
             };
         }
         /// <summary>

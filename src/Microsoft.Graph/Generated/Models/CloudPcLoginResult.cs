@@ -26,9 +26,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"time", (o,n) => { (o as CloudPcLoginResult).Time = n.GetDateTimeOffsetValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"time", n => { Time = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

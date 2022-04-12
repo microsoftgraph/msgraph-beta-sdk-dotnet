@@ -30,10 +30,10 @@ namespace Microsoft.Graph.Beta.Workbooks.Item.Copy {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"name", (o,n) => { (o as CopyRequestBody).Name = n.GetStringValue(); } },
-                {"parentReference", (o,n) => { (o as CopyRequestBody).ParentReference = n.GetObjectValue<ItemReference>(ItemReference.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"parentReference", n => { ParentReference = n.GetObjectValue<ItemReference>(ItemReference.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

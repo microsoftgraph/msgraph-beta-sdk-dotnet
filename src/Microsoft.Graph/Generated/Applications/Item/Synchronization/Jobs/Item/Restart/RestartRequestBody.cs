@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Resta
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"criteria", (o,n) => { (o as RestartRequestBody).Criteria = n.GetObjectValue<SynchronizationJobRestartCriteria>(SynchronizationJobRestartCriteria.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"criteria", n => { Criteria = n.GetObjectValue<SynchronizationJobRestartCriteria>(SynchronizationJobRestartCriteria.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

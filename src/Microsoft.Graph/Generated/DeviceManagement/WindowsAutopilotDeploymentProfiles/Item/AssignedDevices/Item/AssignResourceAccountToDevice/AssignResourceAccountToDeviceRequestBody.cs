@@ -31,11 +31,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfil
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"addressableUserName", (o,n) => { (o as AssignResourceAccountToDeviceRequestBody).AddressableUserName = n.GetStringValue(); } },
-                {"resourceAccountName", (o,n) => { (o as AssignResourceAccountToDeviceRequestBody).ResourceAccountName = n.GetStringValue(); } },
-                {"userPrincipalName", (o,n) => { (o as AssignResourceAccountToDeviceRequestBody).UserPrincipalName = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"addressableUserName", n => { AddressableUserName = n.GetStringValue(); } },
+                {"resourceAccountName", n => { ResourceAccountName = n.GetStringValue(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

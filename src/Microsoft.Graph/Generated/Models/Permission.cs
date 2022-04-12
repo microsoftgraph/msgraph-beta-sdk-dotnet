@@ -38,19 +38,19 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"expirationDateTime", (o,n) => { (o as Permission).ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"grantedTo", (o,n) => { (o as Permission).GrantedTo = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"grantedToIdentities", (o,n) => { (o as Permission).GrantedToIdentities = n.GetCollectionOfObjectValues<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue).ToList(); } },
-                {"grantedToIdentitiesV2", (o,n) => { (o as Permission).GrantedToIdentitiesV2 = n.GetCollectionOfObjectValues<SharePointIdentitySet>(SharePointIdentitySet.CreateFromDiscriminatorValue).ToList(); } },
-                {"grantedToV2", (o,n) => { (o as Permission).GrantedToV2 = n.GetObjectValue<SharePointIdentitySet>(SharePointIdentitySet.CreateFromDiscriminatorValue); } },
-                {"hasPassword", (o,n) => { (o as Permission).HasPassword = n.GetBoolValue(); } },
-                {"inheritedFrom", (o,n) => { (o as Permission).InheritedFrom = n.GetObjectValue<ItemReference>(ItemReference.CreateFromDiscriminatorValue); } },
-                {"invitation", (o,n) => { (o as Permission).Invitation = n.GetObjectValue<SharingInvitation>(SharingInvitation.CreateFromDiscriminatorValue); } },
-                {"link", (o,n) => { (o as Permission).Link = n.GetObjectValue<SharingLink>(SharingLink.CreateFromDiscriminatorValue); } },
-                {"roles", (o,n) => { (o as Permission).Roles = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"shareId", (o,n) => { (o as Permission).ShareId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"grantedTo", n => { GrantedTo = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"grantedToIdentities", n => { GrantedToIdentities = n.GetCollectionOfObjectValues<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue).ToList(); } },
+                {"grantedToIdentitiesV2", n => { GrantedToIdentitiesV2 = n.GetCollectionOfObjectValues<SharePointIdentitySet>(SharePointIdentitySet.CreateFromDiscriminatorValue).ToList(); } },
+                {"grantedToV2", n => { GrantedToV2 = n.GetObjectValue<SharePointIdentitySet>(SharePointIdentitySet.CreateFromDiscriminatorValue); } },
+                {"hasPassword", n => { HasPassword = n.GetBoolValue(); } },
+                {"inheritedFrom", n => { InheritedFrom = n.GetObjectValue<ItemReference>(ItemReference.CreateFromDiscriminatorValue); } },
+                {"invitation", n => { Invitation = n.GetObjectValue<SharingInvitation>(SharingInvitation.CreateFromDiscriminatorValue); } },
+                {"link", n => { Link = n.GetObjectValue<SharingLink>(SharingLink.CreateFromDiscriminatorValue); } },
+                {"roles", n => { Roles = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"shareId", n => { ShareId = n.GetStringValue(); } },
             };
         }
         /// <summary>

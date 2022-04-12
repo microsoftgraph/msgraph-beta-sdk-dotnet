@@ -54,27 +54,27 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"addresses", (o,n) => { (o as OrgContact).Addresses = n.GetCollectionOfObjectValues<PhysicalOfficeAddress>(PhysicalOfficeAddress.CreateFromDiscriminatorValue).ToList(); } },
-                {"companyName", (o,n) => { (o as OrgContact).CompanyName = n.GetStringValue(); } },
-                {"department", (o,n) => { (o as OrgContact).Department = n.GetStringValue(); } },
-                {"directReports", (o,n) => { (o as OrgContact).DirectReports = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
-                {"displayName", (o,n) => { (o as OrgContact).DisplayName = n.GetStringValue(); } },
-                {"givenName", (o,n) => { (o as OrgContact).GivenName = n.GetStringValue(); } },
-                {"jobTitle", (o,n) => { (o as OrgContact).JobTitle = n.GetStringValue(); } },
-                {"mail", (o,n) => { (o as OrgContact).Mail = n.GetStringValue(); } },
-                {"mailNickname", (o,n) => { (o as OrgContact).MailNickname = n.GetStringValue(); } },
-                {"manager", (o,n) => { (o as OrgContact).Manager = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
-                {"memberOf", (o,n) => { (o as OrgContact).MemberOf = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
-                {"onPremisesLastSyncDateTime", (o,n) => { (o as OrgContact).OnPremisesLastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"onPremisesProvisioningErrors", (o,n) => { (o as OrgContact).OnPremisesProvisioningErrors = n.GetCollectionOfObjectValues<OnPremisesProvisioningError>(OnPremisesProvisioningError.CreateFromDiscriminatorValue).ToList(); } },
-                {"onPremisesSyncEnabled", (o,n) => { (o as OrgContact).OnPremisesSyncEnabled = n.GetBoolValue(); } },
-                {"phones", (o,n) => { (o as OrgContact).Phones = n.GetCollectionOfObjectValues<Phone>(Phone.CreateFromDiscriminatorValue).ToList(); } },
-                {"proxyAddresses", (o,n) => { (o as OrgContact).ProxyAddresses = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"surname", (o,n) => { (o as OrgContact).Surname = n.GetStringValue(); } },
-                {"transitiveMemberOf", (o,n) => { (o as OrgContact).TransitiveMemberOf = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
-                {"transitiveReports", (o,n) => { (o as OrgContact).TransitiveReports = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"addresses", n => { Addresses = n.GetCollectionOfObjectValues<PhysicalOfficeAddress>(PhysicalOfficeAddress.CreateFromDiscriminatorValue).ToList(); } },
+                {"companyName", n => { CompanyName = n.GetStringValue(); } },
+                {"department", n => { Department = n.GetStringValue(); } },
+                {"directReports", n => { DirectReports = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"givenName", n => { GivenName = n.GetStringValue(); } },
+                {"jobTitle", n => { JobTitle = n.GetStringValue(); } },
+                {"mail", n => { Mail = n.GetStringValue(); } },
+                {"mailNickname", n => { MailNickname = n.GetStringValue(); } },
+                {"manager", n => { Manager = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
+                {"memberOf", n => { MemberOf = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
+                {"onPremisesLastSyncDateTime", n => { OnPremisesLastSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                {"onPremisesProvisioningErrors", n => { OnPremisesProvisioningErrors = n.GetCollectionOfObjectValues<OnPremisesProvisioningError>(OnPremisesProvisioningError.CreateFromDiscriminatorValue).ToList(); } },
+                {"onPremisesSyncEnabled", n => { OnPremisesSyncEnabled = n.GetBoolValue(); } },
+                {"phones", n => { Phones = n.GetCollectionOfObjectValues<Phone>(Phone.CreateFromDiscriminatorValue).ToList(); } },
+                {"proxyAddresses", n => { ProxyAddresses = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"surname", n => { Surname = n.GetStringValue(); } },
+                {"transitiveMemberOf", n => { TransitiveMemberOf = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
+                {"transitiveReports", n => { TransitiveReports = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

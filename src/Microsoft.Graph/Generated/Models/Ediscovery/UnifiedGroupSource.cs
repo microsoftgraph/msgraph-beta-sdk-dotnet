@@ -20,10 +20,10 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"group", (o,n) => { (o as UnifiedGroupSource).Group = n.GetObjectValue<Microsoft.Graph.Beta.Models.Group>(Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue); } },
-                {"includedSources", (o,n) => { (o as UnifiedGroupSource).IncludedSources = n.GetEnumValue<SourceType>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"group", n => { Group = n.GetObjectValue<Microsoft.Graph.Beta.Models.Group>(Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue); } },
+                {"includedSources", n => { IncludedSources = n.GetEnumValue<SourceType>(); } },
             };
         }
         /// <summary>

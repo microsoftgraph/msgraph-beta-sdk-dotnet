@@ -44,22 +44,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"columns", (o,n) => { (o as WorkbookTable).Columns = n.GetCollectionOfObjectValues<WorkbookTableColumn>(WorkbookTableColumn.CreateFromDiscriminatorValue).ToList(); } },
-                {"highlightFirstColumn", (o,n) => { (o as WorkbookTable).HighlightFirstColumn = n.GetBoolValue(); } },
-                {"highlightLastColumn", (o,n) => { (o as WorkbookTable).HighlightLastColumn = n.GetBoolValue(); } },
-                {"legacyId", (o,n) => { (o as WorkbookTable).LegacyId = n.GetStringValue(); } },
-                {"name", (o,n) => { (o as WorkbookTable).Name = n.GetStringValue(); } },
-                {"rows", (o,n) => { (o as WorkbookTable).Rows = n.GetCollectionOfObjectValues<WorkbookTableRow>(WorkbookTableRow.CreateFromDiscriminatorValue).ToList(); } },
-                {"showBandedColumns", (o,n) => { (o as WorkbookTable).ShowBandedColumns = n.GetBoolValue(); } },
-                {"showBandedRows", (o,n) => { (o as WorkbookTable).ShowBandedRows = n.GetBoolValue(); } },
-                {"showFilterButton", (o,n) => { (o as WorkbookTable).ShowFilterButton = n.GetBoolValue(); } },
-                {"showHeaders", (o,n) => { (o as WorkbookTable).ShowHeaders = n.GetBoolValue(); } },
-                {"showTotals", (o,n) => { (o as WorkbookTable).ShowTotals = n.GetBoolValue(); } },
-                {"sort", (o,n) => { (o as WorkbookTable).Sort = n.GetObjectValue<WorkbookTableSort>(WorkbookTableSort.CreateFromDiscriminatorValue); } },
-                {"style", (o,n) => { (o as WorkbookTable).Style = n.GetStringValue(); } },
-                {"worksheet", (o,n) => { (o as WorkbookTable).Worksheet = n.GetObjectValue<WorkbookWorksheet>(WorkbookWorksheet.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"columns", n => { Columns = n.GetCollectionOfObjectValues<WorkbookTableColumn>(WorkbookTableColumn.CreateFromDiscriminatorValue).ToList(); } },
+                {"highlightFirstColumn", n => { HighlightFirstColumn = n.GetBoolValue(); } },
+                {"highlightLastColumn", n => { HighlightLastColumn = n.GetBoolValue(); } },
+                {"legacyId", n => { LegacyId = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"rows", n => { Rows = n.GetCollectionOfObjectValues<WorkbookTableRow>(WorkbookTableRow.CreateFromDiscriminatorValue).ToList(); } },
+                {"showBandedColumns", n => { ShowBandedColumns = n.GetBoolValue(); } },
+                {"showBandedRows", n => { ShowBandedRows = n.GetBoolValue(); } },
+                {"showFilterButton", n => { ShowFilterButton = n.GetBoolValue(); } },
+                {"showHeaders", n => { ShowHeaders = n.GetBoolValue(); } },
+                {"showTotals", n => { ShowTotals = n.GetBoolValue(); } },
+                {"sort", n => { Sort = n.GetObjectValue<WorkbookTableSort>(WorkbookTableSort.CreateFromDiscriminatorValue); } },
+                {"style", n => { Style = n.GetStringValue(); } },
+                {"worksheet", n => { Worksheet = n.GetObjectValue<WorkbookWorksheet>(WorkbookWorksheet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

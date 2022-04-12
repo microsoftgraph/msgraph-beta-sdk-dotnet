@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"recurrence", (o,n) => { (o as ShiftAvailability).Recurrence = n.GetObjectValue<PatternedRecurrence>(PatternedRecurrence.CreateFromDiscriminatorValue); } },
-                {"timeSlots", (o,n) => { (o as ShiftAvailability).TimeSlots = n.GetCollectionOfObjectValues<TimeRange>(TimeRange.CreateFromDiscriminatorValue).ToList(); } },
-                {"timeZone", (o,n) => { (o as ShiftAvailability).TimeZone = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"recurrence", n => { Recurrence = n.GetObjectValue<PatternedRecurrence>(PatternedRecurrence.CreateFromDiscriminatorValue); } },
+                {"timeSlots", n => { TimeSlots = n.GetCollectionOfObjectValues<TimeRange>(TimeRange.CreateFromDiscriminatorValue).ToList(); } },
+                {"timeZone", n => { TimeZone = n.GetStringValue(); } },
             };
         }
         /// <summary>

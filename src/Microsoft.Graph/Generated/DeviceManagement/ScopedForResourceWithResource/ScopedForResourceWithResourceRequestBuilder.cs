@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ScopedForResourceWithResource {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/microsoft.graph.scopedForResource(resource='{resource}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("resource", resource);
+            urlTplParams.Add("", resource);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

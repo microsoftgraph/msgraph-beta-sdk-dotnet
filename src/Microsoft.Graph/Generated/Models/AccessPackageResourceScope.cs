@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessPackageResource", (o,n) => { (o as AccessPackageResourceScope).AccessPackageResource = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageResource>(Microsoft.Graph.Beta.Models.AccessPackageResource.CreateFromDiscriminatorValue); } },
-                {"description", (o,n) => { (o as AccessPackageResourceScope).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as AccessPackageResourceScope).DisplayName = n.GetStringValue(); } },
-                {"isRootScope", (o,n) => { (o as AccessPackageResourceScope).IsRootScope = n.GetBoolValue(); } },
-                {"originId", (o,n) => { (o as AccessPackageResourceScope).OriginId = n.GetStringValue(); } },
-                {"originSystem", (o,n) => { (o as AccessPackageResourceScope).OriginSystem = n.GetStringValue(); } },
-                {"roleOriginId", (o,n) => { (o as AccessPackageResourceScope).RoleOriginId = n.GetStringValue(); } },
-                {"url", (o,n) => { (o as AccessPackageResourceScope).Url = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"accessPackageResource", n => { AccessPackageResource = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageResource>(Microsoft.Graph.Beta.Models.AccessPackageResource.CreateFromDiscriminatorValue); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"isRootScope", n => { IsRootScope = n.GetBoolValue(); } },
+                {"originId", n => { OriginId = n.GetStringValue(); } },
+                {"originSystem", n => { OriginSystem = n.GetStringValue(); } },
+                {"roleOriginId", n => { RoleOriginId = n.GetStringValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

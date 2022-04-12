@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"description", (o,n) => { (o as NetworkInterface).Description = n.GetStringValue(); } },
-                {"ipV4Address", (o,n) => { (o as NetworkInterface).IpV4Address = n.GetStringValue(); } },
-                {"ipV6Address", (o,n) => { (o as NetworkInterface).IpV6Address = n.GetStringValue(); } },
-                {"localIpV6Address", (o,n) => { (o as NetworkInterface).LocalIpV6Address = n.GetStringValue(); } },
-                {"macAddress", (o,n) => { (o as NetworkInterface).MacAddress = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"ipV4Address", n => { IpV4Address = n.GetStringValue(); } },
+                {"ipV6Address", n => { IpV6Address = n.GetStringValue(); } },
+                {"localIpV6Address", n => { LocalIpV6Address = n.GetStringValue(); } },
+                {"macAddress", n => { MacAddress = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -48,24 +48,24 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"additionalNotificationRecipients", (o,n) => { (o as AccessReviewScheduleDefinition).AdditionalNotificationRecipients = n.GetCollectionOfObjectValues<AccessReviewNotificationRecipientItem>(AccessReviewNotificationRecipientItem.CreateFromDiscriminatorValue).ToList(); } },
-                {"backupReviewers", (o,n) => { (o as AccessReviewScheduleDefinition).BackupReviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue).ToList(); } },
-                {"createdBy", (o,n) => { (o as AccessReviewScheduleDefinition).CreatedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", (o,n) => { (o as AccessReviewScheduleDefinition).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"descriptionForAdmins", (o,n) => { (o as AccessReviewScheduleDefinition).DescriptionForAdmins = n.GetStringValue(); } },
-                {"descriptionForReviewers", (o,n) => { (o as AccessReviewScheduleDefinition).DescriptionForReviewers = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as AccessReviewScheduleDefinition).DisplayName = n.GetStringValue(); } },
-                {"fallbackReviewers", (o,n) => { (o as AccessReviewScheduleDefinition).FallbackReviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue).ToList(); } },
-                {"instanceEnumerationScope", (o,n) => { (o as AccessReviewScheduleDefinition).InstanceEnumerationScope = n.GetObjectValue<AccessReviewScope>(AccessReviewScope.CreateFromDiscriminatorValue); } },
-                {"instances", (o,n) => { (o as AccessReviewScheduleDefinition).Instances = n.GetCollectionOfObjectValues<AccessReviewInstance>(AccessReviewInstance.CreateFromDiscriminatorValue).ToList(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as AccessReviewScheduleDefinition).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"reviewers", (o,n) => { (o as AccessReviewScheduleDefinition).Reviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue).ToList(); } },
-                {"scope", (o,n) => { (o as AccessReviewScheduleDefinition).Scope = n.GetObjectValue<AccessReviewScope>(AccessReviewScope.CreateFromDiscriminatorValue); } },
-                {"settings", (o,n) => { (o as AccessReviewScheduleDefinition).Settings = n.GetObjectValue<AccessReviewScheduleSettings>(AccessReviewScheduleSettings.CreateFromDiscriminatorValue); } },
-                {"stageSettings", (o,n) => { (o as AccessReviewScheduleDefinition).StageSettings = n.GetCollectionOfObjectValues<AccessReviewStageSettings>(AccessReviewStageSettings.CreateFromDiscriminatorValue).ToList(); } },
-                {"status", (o,n) => { (o as AccessReviewScheduleDefinition).Status = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"additionalNotificationRecipients", n => { AdditionalNotificationRecipients = n.GetCollectionOfObjectValues<AccessReviewNotificationRecipientItem>(AccessReviewNotificationRecipientItem.CreateFromDiscriminatorValue).ToList(); } },
+                {"backupReviewers", n => { BackupReviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue).ToList(); } },
+                {"createdBy", n => { CreatedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"descriptionForAdmins", n => { DescriptionForAdmins = n.GetStringValue(); } },
+                {"descriptionForReviewers", n => { DescriptionForReviewers = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"fallbackReviewers", n => { FallbackReviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue).ToList(); } },
+                {"instanceEnumerationScope", n => { InstanceEnumerationScope = n.GetObjectValue<AccessReviewScope>(AccessReviewScope.CreateFromDiscriminatorValue); } },
+                {"instances", n => { Instances = n.GetCollectionOfObjectValues<AccessReviewInstance>(AccessReviewInstance.CreateFromDiscriminatorValue).ToList(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue).ToList(); } },
+                {"scope", n => { Scope = n.GetObjectValue<AccessReviewScope>(AccessReviewScope.CreateFromDiscriminatorValue); } },
+                {"settings", n => { Settings = n.GetObjectValue<AccessReviewScheduleSettings>(AccessReviewScheduleSettings.CreateFromDiscriminatorValue); } },
+                {"stageSettings", n => { StageSettings = n.GetCollectionOfObjectValues<AccessReviewStageSettings>(AccessReviewStageSettings.CreateFromDiscriminatorValue).ToList(); } },
+                {"status", n => { Status = n.GetStringValue(); } },
             };
         }
         /// <summary>

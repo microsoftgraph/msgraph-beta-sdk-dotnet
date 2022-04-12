@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
         public CloudPcOnPremisesConnectionStatusDetails HealthCheckStatusDetails { get; set; }
         /// <summary>When true, the Azure network connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.</summary>
         public bool? InUse { get; set; }
-        /// <summary>Specifies which services manage the on-premises connection. Possible values are: windows365, devBox and unknownFutureValue. Read-only.</summary>
+        /// <summary>Specifies which services manage the Azure network connection. Possible values are: windows365, devBox and unknownFutureValue. Read-only.</summary>
         public CloudPcManagementService? ManagedBy { get; set; }
         /// <summary>The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.</summary>
         public string OrganizationalUnit { get; set; }
@@ -46,23 +46,23 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"adDomainName", (o,n) => { (o as CloudPcOnPremisesConnection).AdDomainName = n.GetStringValue(); } },
-                {"adDomainPassword", (o,n) => { (o as CloudPcOnPremisesConnection).AdDomainPassword = n.GetStringValue(); } },
-                {"adDomainUsername", (o,n) => { (o as CloudPcOnPremisesConnection).AdDomainUsername = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as CloudPcOnPremisesConnection).DisplayName = n.GetStringValue(); } },
-                {"healthCheckStatus", (o,n) => { (o as CloudPcOnPremisesConnection).HealthCheckStatus = n.GetEnumValue<CloudPcOnPremisesConnectionStatus>(); } },
-                {"healthCheckStatusDetails", (o,n) => { (o as CloudPcOnPremisesConnection).HealthCheckStatusDetails = n.GetObjectValue<CloudPcOnPremisesConnectionStatusDetails>(CloudPcOnPremisesConnectionStatusDetails.CreateFromDiscriminatorValue); } },
-                {"inUse", (o,n) => { (o as CloudPcOnPremisesConnection).InUse = n.GetBoolValue(); } },
-                {"managedBy", (o,n) => { (o as CloudPcOnPremisesConnection).ManagedBy = n.GetEnumValue<CloudPcManagementService>(); } },
-                {"organizationalUnit", (o,n) => { (o as CloudPcOnPremisesConnection).OrganizationalUnit = n.GetStringValue(); } },
-                {"resourceGroupId", (o,n) => { (o as CloudPcOnPremisesConnection).ResourceGroupId = n.GetStringValue(); } },
-                {"subnetId", (o,n) => { (o as CloudPcOnPremisesConnection).SubnetId = n.GetStringValue(); } },
-                {"subscriptionId", (o,n) => { (o as CloudPcOnPremisesConnection).SubscriptionId = n.GetStringValue(); } },
-                {"subscriptionName", (o,n) => { (o as CloudPcOnPremisesConnection).SubscriptionName = n.GetStringValue(); } },
-                {"type", (o,n) => { (o as CloudPcOnPremisesConnection).Type = n.GetEnumValue<CloudPcOnPremisesConnectionType>(); } },
-                {"virtualNetworkId", (o,n) => { (o as CloudPcOnPremisesConnection).VirtualNetworkId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"adDomainName", n => { AdDomainName = n.GetStringValue(); } },
+                {"adDomainPassword", n => { AdDomainPassword = n.GetStringValue(); } },
+                {"adDomainUsername", n => { AdDomainUsername = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"healthCheckStatus", n => { HealthCheckStatus = n.GetEnumValue<CloudPcOnPremisesConnectionStatus>(); } },
+                {"healthCheckStatusDetails", n => { HealthCheckStatusDetails = n.GetObjectValue<CloudPcOnPremisesConnectionStatusDetails>(CloudPcOnPremisesConnectionStatusDetails.CreateFromDiscriminatorValue); } },
+                {"inUse", n => { InUse = n.GetBoolValue(); } },
+                {"managedBy", n => { ManagedBy = n.GetEnumValue<CloudPcManagementService>(); } },
+                {"organizationalUnit", n => { OrganizationalUnit = n.GetStringValue(); } },
+                {"resourceGroupId", n => { ResourceGroupId = n.GetStringValue(); } },
+                {"subnetId", n => { SubnetId = n.GetStringValue(); } },
+                {"subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
+                {"subscriptionName", n => { SubscriptionName = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetEnumValue<CloudPcOnPremisesConnectionType>(); } },
+                {"virtualNetworkId", n => { VirtualNetworkId = n.GetStringValue(); } },
             };
         }
         /// <summary>

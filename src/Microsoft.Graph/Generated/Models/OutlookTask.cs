@@ -52,26 +52,26 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignedTo", (o,n) => { (o as OutlookTask).AssignedTo = n.GetStringValue(); } },
-                {"attachments", (o,n) => { (o as OutlookTask).Attachments = n.GetCollectionOfObjectValues<Attachment>(Attachment.CreateFromDiscriminatorValue).ToList(); } },
-                {"body", (o,n) => { (o as OutlookTask).Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
-                {"completedDateTime", (o,n) => { (o as OutlookTask).CompletedDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"dueDateTime", (o,n) => { (o as OutlookTask).DueDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"hasAttachments", (o,n) => { (o as OutlookTask).HasAttachments = n.GetBoolValue(); } },
-                {"importance", (o,n) => { (o as OutlookTask).Importance = n.GetEnumValue<Importance>(); } },
-                {"isReminderOn", (o,n) => { (o as OutlookTask).IsReminderOn = n.GetBoolValue(); } },
-                {"multiValueExtendedProperties", (o,n) => { (o as OutlookTask).MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue).ToList(); } },
-                {"owner", (o,n) => { (o as OutlookTask).Owner = n.GetStringValue(); } },
-                {"parentFolderId", (o,n) => { (o as OutlookTask).ParentFolderId = n.GetStringValue(); } },
-                {"recurrence", (o,n) => { (o as OutlookTask).Recurrence = n.GetObjectValue<PatternedRecurrence>(PatternedRecurrence.CreateFromDiscriminatorValue); } },
-                {"reminderDateTime", (o,n) => { (o as OutlookTask).ReminderDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"sensitivity", (o,n) => { (o as OutlookTask).Sensitivity = n.GetEnumValue<Sensitivity>(); } },
-                {"singleValueExtendedProperties", (o,n) => { (o as OutlookTask).SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue).ToList(); } },
-                {"startDateTime", (o,n) => { (o as OutlookTask).StartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"status", (o,n) => { (o as OutlookTask).Status = n.GetEnumValue<TaskStatus>(); } },
-                {"subject", (o,n) => { (o as OutlookTask).Subject = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"assignedTo", n => { AssignedTo = n.GetStringValue(); } },
+                {"attachments", n => { Attachments = n.GetCollectionOfObjectValues<Attachment>(Attachment.CreateFromDiscriminatorValue).ToList(); } },
+                {"body", n => { Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                {"completedDateTime", n => { CompletedDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                {"dueDateTime", n => { DueDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                {"hasAttachments", n => { HasAttachments = n.GetBoolValue(); } },
+                {"importance", n => { Importance = n.GetEnumValue<Importance>(); } },
+                {"isReminderOn", n => { IsReminderOn = n.GetBoolValue(); } },
+                {"multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue).ToList(); } },
+                {"owner", n => { Owner = n.GetStringValue(); } },
+                {"parentFolderId", n => { ParentFolderId = n.GetStringValue(); } },
+                {"recurrence", n => { Recurrence = n.GetObjectValue<PatternedRecurrence>(PatternedRecurrence.CreateFromDiscriminatorValue); } },
+                {"reminderDateTime", n => { ReminderDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                {"sensitivity", n => { Sensitivity = n.GetEnumValue<Sensitivity>(); } },
+                {"singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue).ToList(); } },
+                {"startDateTime", n => { StartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                {"status", n => { Status = n.GetEnumValue<TaskStatus>(); } },
+                {"subject", n => { Subject = n.GetStringValue(); } },
             };
         }
         /// <summary>

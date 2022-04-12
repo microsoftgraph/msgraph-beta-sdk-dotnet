@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.Instances.Item.Decline {
         public DeclineRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/events/{event_id}/instances/{event_id1}/microsoft.graph.decline";
+            UrlTemplate = "{+baseurl}/me/events/{event%2Did}/instances/{event%2Did1}/microsoft.graph.decline";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.Instances.Item.Decline {
         public DeclineRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/events/{event_id}/instances/{event_id1}/microsoft.graph.decline";
+            UrlTemplate = "{+baseurl}/me/events/{event%2Did}/instances/{event%2Did1}/microsoft.graph.decline";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

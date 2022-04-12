@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"description", (o,n) => { (o as SchemaExtension).Description = n.GetStringValue(); } },
-                {"owner", (o,n) => { (o as SchemaExtension).Owner = n.GetStringValue(); } },
-                {"properties", (o,n) => { (o as SchemaExtension).Properties = n.GetCollectionOfObjectValues<ExtensionSchemaProperty>(ExtensionSchemaProperty.CreateFromDiscriminatorValue).ToList(); } },
-                {"status", (o,n) => { (o as SchemaExtension).Status = n.GetStringValue(); } },
-                {"targetTypes", (o,n) => { (o as SchemaExtension).TargetTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"owner", n => { Owner = n.GetStringValue(); } },
+                {"properties", n => { Properties = n.GetCollectionOfObjectValues<ExtensionSchemaProperty>(ExtensionSchemaProperty.CreateFromDiscriminatorValue).ToList(); } },
+                {"status", n => { Status = n.GetStringValue(); } },
+                {"targetTypes", n => { TargetTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

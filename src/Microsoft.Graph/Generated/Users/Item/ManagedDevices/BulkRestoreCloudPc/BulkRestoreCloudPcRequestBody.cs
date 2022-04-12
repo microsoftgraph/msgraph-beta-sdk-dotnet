@@ -32,11 +32,11 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkRestoreCloudPc {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"managedDeviceIds", (o,n) => { (o as BulkRestoreCloudPcRequestBody).ManagedDeviceIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"restorePointDateTime", (o,n) => { (o as BulkRestoreCloudPcRequestBody).RestorePointDateTime = n.GetDateTimeOffsetValue(); } },
-                {"timeRange", (o,n) => { (o as BulkRestoreCloudPcRequestBody).TimeRange = n.GetEnumValue<RestoreTimeRange>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"managedDeviceIds", n => { ManagedDeviceIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"restorePointDateTime", n => { RestorePointDateTime = n.GetDateTimeOffsetValue(); } },
+                {"timeRange", n => { TimeRange = n.GetEnumValue<RestoreTimeRange>(); } },
             };
         }
         /// <summary>

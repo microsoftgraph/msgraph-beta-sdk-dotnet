@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"displayName", (o,n) => { (o as GovernanceRoleDefinition).DisplayName = n.GetStringValue(); } },
-                {"externalId", (o,n) => { (o as GovernanceRoleDefinition).ExternalId = n.GetStringValue(); } },
-                {"resource", (o,n) => { (o as GovernanceRoleDefinition).Resource = n.GetObjectValue<GovernanceResource>(GovernanceResource.CreateFromDiscriminatorValue); } },
-                {"resourceId", (o,n) => { (o as GovernanceRoleDefinition).ResourceId = n.GetStringValue(); } },
-                {"roleSetting", (o,n) => { (o as GovernanceRoleDefinition).RoleSetting = n.GetObjectValue<GovernanceRoleSetting>(GovernanceRoleSetting.CreateFromDiscriminatorValue); } },
-                {"templateId", (o,n) => { (o as GovernanceRoleDefinition).TemplateId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"externalId", n => { ExternalId = n.GetStringValue(); } },
+                {"resource", n => { Resource = n.GetObjectValue<GovernanceResource>(GovernanceResource.CreateFromDiscriminatorValue); } },
+                {"resourceId", n => { ResourceId = n.GetStringValue(); } },
+                {"roleSetting", n => { RoleSetting = n.GetObjectValue<GovernanceRoleSetting>(GovernanceRoleSetting.CreateFromDiscriminatorValue); } },
+                {"templateId", n => { TemplateId = n.GetStringValue(); } },
             };
         }
         /// <summary>

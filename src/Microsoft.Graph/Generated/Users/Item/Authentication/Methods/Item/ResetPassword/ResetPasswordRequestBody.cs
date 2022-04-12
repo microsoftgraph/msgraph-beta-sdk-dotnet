@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.Methods.Item.ResetPassw
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"newPassword", (o,n) => { (o as ResetPasswordRequestBody).NewPassword = n.GetStringValue(); } },
-                {"requireChangeOnNextSignIn", (o,n) => { (o as ResetPasswordRequestBody).RequireChangeOnNextSignIn = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"newPassword", n => { NewPassword = n.GetStringValue(); } },
+                {"requireChangeOnNextSignIn", n => { RequireChangeOnNextSignIn = n.GetBoolValue(); } },
             };
         }
         /// <summary>

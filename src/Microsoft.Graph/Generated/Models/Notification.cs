@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"displayTimeToLive", (o,n) => { (o as Notification).DisplayTimeToLive = n.GetIntValue(); } },
-                {"expirationDateTime", (o,n) => { (o as Notification).ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"groupName", (o,n) => { (o as Notification).GroupName = n.GetStringValue(); } },
-                {"payload", (o,n) => { (o as Notification).Payload = n.GetObjectValue<PayloadTypes>(PayloadTypes.CreateFromDiscriminatorValue); } },
-                {"priority", (o,n) => { (o as Notification).Priority = n.GetEnumValue<Priority>(); } },
-                {"targetHostName", (o,n) => { (o as Notification).TargetHostName = n.GetStringValue(); } },
-                {"targetPolicy", (o,n) => { (o as Notification).TargetPolicy = n.GetObjectValue<TargetPolicyEndpoints>(TargetPolicyEndpoints.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"displayTimeToLive", n => { DisplayTimeToLive = n.GetIntValue(); } },
+                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"groupName", n => { GroupName = n.GetStringValue(); } },
+                {"payload", n => { Payload = n.GetObjectValue<PayloadTypes>(PayloadTypes.CreateFromDiscriminatorValue); } },
+                {"priority", n => { Priority = n.GetEnumValue<Priority>(); } },
+                {"targetHostName", n => { TargetHostName = n.GetStringValue(); } },
+                {"targetPolicy", n => { TargetPolicy = n.GetObjectValue<TargetPolicyEndpoints>(TargetPolicyEndpoints.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -20,10 +20,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"orderHintsByAssignee", (o,n) => { (o as PlannerAssignedToTaskBoardTaskFormat).OrderHintsByAssignee = n.GetObjectValue<PlannerOrderHintsByAssignee>(PlannerOrderHintsByAssignee.CreateFromDiscriminatorValue); } },
-                {"unassignedOrderHint", (o,n) => { (o as PlannerAssignedToTaskBoardTaskFormat).UnassignedOrderHint = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"orderHintsByAssignee", n => { OrderHintsByAssignee = n.GetObjectValue<PlannerOrderHintsByAssignee>(PlannerOrderHintsByAssignee.CreateFromDiscriminatorValue); } },
+                {"unassignedOrderHint", n => { UnassignedOrderHint = n.GetStringValue(); } },
             };
         }
         /// <summary>

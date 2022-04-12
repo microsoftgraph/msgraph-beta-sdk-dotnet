@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Mute {
         public MuteRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/app/calls/{call_id}/microsoft.graph.mute";
+            UrlTemplate = "{+baseurl}/app/calls/{call%2Did}/microsoft.graph.mute";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Mute {
         public MuteRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/app/calls/{call_id}/microsoft.graph.mute";
+            UrlTemplate = "{+baseurl}/app/calls/{call%2Did}/microsoft.graph.mute";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

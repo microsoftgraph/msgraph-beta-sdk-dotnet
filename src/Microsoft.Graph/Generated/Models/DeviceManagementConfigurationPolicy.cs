@@ -42,21 +42,21 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as DeviceManagementConfigurationPolicy).Assignments = n.GetCollectionOfObjectValues<DeviceManagementConfigurationPolicyAssignment>(DeviceManagementConfigurationPolicyAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"createdDateTime", (o,n) => { (o as DeviceManagementConfigurationPolicy).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"creationSource", (o,n) => { (o as DeviceManagementConfigurationPolicy).CreationSource = n.GetStringValue(); } },
-                {"description", (o,n) => { (o as DeviceManagementConfigurationPolicy).Description = n.GetStringValue(); } },
-                {"isAssigned", (o,n) => { (o as DeviceManagementConfigurationPolicy).IsAssigned = n.GetBoolValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as DeviceManagementConfigurationPolicy).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"name", (o,n) => { (o as DeviceManagementConfigurationPolicy).Name = n.GetStringValue(); } },
-                {"platforms", (o,n) => { (o as DeviceManagementConfigurationPolicy).Platforms = n.GetEnumValue<DeviceManagementConfigurationPlatforms>(); } },
-                {"roleScopeTagIds", (o,n) => { (o as DeviceManagementConfigurationPolicy).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"settingCount", (o,n) => { (o as DeviceManagementConfigurationPolicy).SettingCount = n.GetIntValue(); } },
-                {"settings", (o,n) => { (o as DeviceManagementConfigurationPolicy).Settings = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSetting>(DeviceManagementConfigurationSetting.CreateFromDiscriminatorValue).ToList(); } },
-                {"technologies", (o,n) => { (o as DeviceManagementConfigurationPolicy).Technologies = n.GetEnumValue<DeviceManagementConfigurationTechnologies>(); } },
-                {"templateReference", (o,n) => { (o as DeviceManagementConfigurationPolicy).TemplateReference = n.GetObjectValue<DeviceManagementConfigurationPolicyTemplateReference>(DeviceManagementConfigurationPolicyTemplateReference.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<DeviceManagementConfigurationPolicyAssignment>(DeviceManagementConfigurationPolicyAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"creationSource", n => { CreationSource = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"isAssigned", n => { IsAssigned = n.GetBoolValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"platforms", n => { Platforms = n.GetEnumValue<DeviceManagementConfigurationPlatforms>(); } },
+                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"settingCount", n => { SettingCount = n.GetIntValue(); } },
+                {"settings", n => { Settings = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSetting>(DeviceManagementConfigurationSetting.CreateFromDiscriminatorValue).ToList(); } },
+                {"technologies", n => { Technologies = n.GetEnumValue<DeviceManagementConfigurationTechnologies>(); } },
+                {"templateReference", n => { TemplateReference = n.GetObjectValue<DeviceManagementConfigurationPolicyTemplateReference>(DeviceManagementConfigurationPolicyTemplateReference.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdDateTime", (o,n) => { (o as AgreementFileProperties).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", (o,n) => { (o as AgreementFileProperties).DisplayName = n.GetStringValue(); } },
-                {"fileData", (o,n) => { (o as AgreementFileProperties).FileData = n.GetObjectValue<AgreementFileData>(AgreementFileData.CreateFromDiscriminatorValue); } },
-                {"fileName", (o,n) => { (o as AgreementFileProperties).FileName = n.GetStringValue(); } },
-                {"isDefault", (o,n) => { (o as AgreementFileProperties).IsDefault = n.GetBoolValue(); } },
-                {"isMajorVersion", (o,n) => { (o as AgreementFileProperties).IsMajorVersion = n.GetBoolValue(); } },
-                {"language", (o,n) => { (o as AgreementFileProperties).Language = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"fileData", n => { FileData = n.GetObjectValue<AgreementFileData>(AgreementFileData.CreateFromDiscriminatorValue); } },
+                {"fileName", n => { FileName = n.GetStringValue(); } },
+                {"isDefault", n => { IsDefault = n.GetBoolValue(); } },
+                {"isMajorVersion", n => { IsMajorVersion = n.GetBoolValue(); } },
+                {"language", n => { Language = n.GetStringValue(); } },
             };
         }
         /// <summary>

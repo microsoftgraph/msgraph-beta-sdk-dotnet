@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"assignmentMethod", (o,n) => { (o as SensitivityLabelAssignment).AssignmentMethod = n.GetEnumValue<SensitivityLabelAssignmentMethod>(); } },
-                {"sensitivityLabelId", (o,n) => { (o as SensitivityLabelAssignment).SensitivityLabelId = n.GetStringValue(); } },
-                {"tenantId", (o,n) => { (o as SensitivityLabelAssignment).TenantId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"assignmentMethod", n => { AssignmentMethod = n.GetEnumValue<SensitivityLabelAssignmentMethod>(); } },
+                {"sensitivityLabelId", n => { SensitivityLabelId = n.GetStringValue(); } },
+                {"tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"audiences", (o,n) => { (o as FederatedIdentityCredential).Audiences = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"description", (o,n) => { (o as FederatedIdentityCredential).Description = n.GetStringValue(); } },
-                {"issuer", (o,n) => { (o as FederatedIdentityCredential).Issuer = n.GetStringValue(); } },
-                {"name", (o,n) => { (o as FederatedIdentityCredential).Name = n.GetStringValue(); } },
-                {"subject", (o,n) => { (o as FederatedIdentityCredential).Subject = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"audiences", n => { Audiences = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"issuer", n => { Issuer = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"subject", n => { Subject = n.GetStringValue(); } },
             };
         }
         /// <summary>

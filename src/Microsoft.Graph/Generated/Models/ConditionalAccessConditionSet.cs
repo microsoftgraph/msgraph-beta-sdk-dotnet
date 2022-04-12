@@ -46,19 +46,19 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"applications", (o,n) => { (o as ConditionalAccessConditionSet).Applications = n.GetObjectValue<ConditionalAccessApplications>(ConditionalAccessApplications.CreateFromDiscriminatorValue); } },
-                {"clientApplications", (o,n) => { (o as ConditionalAccessConditionSet).ClientApplications = n.GetObjectValue<ConditionalAccessClientApplications>(ConditionalAccessClientApplications.CreateFromDiscriminatorValue); } },
-                {"clientAppTypes", (o,n) => { (o as ConditionalAccessConditionSet).ClientAppTypes = n.GetCollectionOfEnumValues<ConditionalAccessClientApp>().ToList(); } },
-                {"devices", (o,n) => { (o as ConditionalAccessConditionSet).Devices = n.GetObjectValue<ConditionalAccessDevices>(ConditionalAccessDevices.CreateFromDiscriminatorValue); } },
-                {"deviceStates", (o,n) => { (o as ConditionalAccessConditionSet).DeviceStates = n.GetObjectValue<ConditionalAccessDeviceStates>(ConditionalAccessDeviceStates.CreateFromDiscriminatorValue); } },
-                {"locations", (o,n) => { (o as ConditionalAccessConditionSet).Locations = n.GetObjectValue<ConditionalAccessLocations>(ConditionalAccessLocations.CreateFromDiscriminatorValue); } },
-                {"platforms", (o,n) => { (o as ConditionalAccessConditionSet).Platforms = n.GetObjectValue<ConditionalAccessPlatforms>(ConditionalAccessPlatforms.CreateFromDiscriminatorValue); } },
-                {"servicePrincipalRiskLevels", (o,n) => { (o as ConditionalAccessConditionSet).ServicePrincipalRiskLevels = n.GetCollectionOfEnumValues<RiskLevel>().ToList(); } },
-                {"signInRiskLevels", (o,n) => { (o as ConditionalAccessConditionSet).SignInRiskLevels = n.GetCollectionOfEnumValues<RiskLevel>().ToList(); } },
-                {"userRiskLevels", (o,n) => { (o as ConditionalAccessConditionSet).UserRiskLevels = n.GetCollectionOfEnumValues<RiskLevel>().ToList(); } },
-                {"users", (o,n) => { (o as ConditionalAccessConditionSet).Users = n.GetObjectValue<ConditionalAccessUsers>(ConditionalAccessUsers.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"applications", n => { Applications = n.GetObjectValue<ConditionalAccessApplications>(ConditionalAccessApplications.CreateFromDiscriminatorValue); } },
+                {"clientApplications", n => { ClientApplications = n.GetObjectValue<ConditionalAccessClientApplications>(ConditionalAccessClientApplications.CreateFromDiscriminatorValue); } },
+                {"clientAppTypes", n => { ClientAppTypes = n.GetCollectionOfEnumValues<ConditionalAccessClientApp>().ToList(); } },
+                {"devices", n => { Devices = n.GetObjectValue<ConditionalAccessDevices>(ConditionalAccessDevices.CreateFromDiscriminatorValue); } },
+                {"deviceStates", n => { DeviceStates = n.GetObjectValue<ConditionalAccessDeviceStates>(ConditionalAccessDeviceStates.CreateFromDiscriminatorValue); } },
+                {"locations", n => { Locations = n.GetObjectValue<ConditionalAccessLocations>(ConditionalAccessLocations.CreateFromDiscriminatorValue); } },
+                {"platforms", n => { Platforms = n.GetObjectValue<ConditionalAccessPlatforms>(ConditionalAccessPlatforms.CreateFromDiscriminatorValue); } },
+                {"servicePrincipalRiskLevels", n => { ServicePrincipalRiskLevels = n.GetCollectionOfEnumValues<RiskLevel>().ToList(); } },
+                {"signInRiskLevels", n => { SignInRiskLevels = n.GetCollectionOfEnumValues<RiskLevel>().ToList(); } },
+                {"userRiskLevels", n => { UserRiskLevels = n.GetCollectionOfEnumValues<RiskLevel>().ToList(); } },
+                {"users", n => { Users = n.GetObjectValue<ConditionalAccessUsers>(ConditionalAccessUsers.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

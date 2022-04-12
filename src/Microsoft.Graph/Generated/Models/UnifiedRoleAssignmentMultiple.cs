@@ -38,19 +38,19 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appScopeIds", (o,n) => { (o as UnifiedRoleAssignmentMultiple).AppScopeIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"appScopes", (o,n) => { (o as UnifiedRoleAssignmentMultiple).AppScopes = n.GetCollectionOfObjectValues<AppScope>(AppScope.CreateFromDiscriminatorValue).ToList(); } },
-                {"condition", (o,n) => { (o as UnifiedRoleAssignmentMultiple).Condition = n.GetStringValue(); } },
-                {"description", (o,n) => { (o as UnifiedRoleAssignmentMultiple).Description = n.GetStringValue(); } },
-                {"directoryScopeIds", (o,n) => { (o as UnifiedRoleAssignmentMultiple).DirectoryScopeIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"directoryScopes", (o,n) => { (o as UnifiedRoleAssignmentMultiple).DirectoryScopes = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
-                {"displayName", (o,n) => { (o as UnifiedRoleAssignmentMultiple).DisplayName = n.GetStringValue(); } },
-                {"principalIds", (o,n) => { (o as UnifiedRoleAssignmentMultiple).PrincipalIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"principals", (o,n) => { (o as UnifiedRoleAssignmentMultiple).Principals = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
-                {"roleDefinition", (o,n) => { (o as UnifiedRoleAssignmentMultiple).RoleDefinition = n.GetObjectValue<UnifiedRoleDefinition>(UnifiedRoleDefinition.CreateFromDiscriminatorValue); } },
-                {"roleDefinitionId", (o,n) => { (o as UnifiedRoleAssignmentMultiple).RoleDefinitionId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"appScopeIds", n => { AppScopeIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"appScopes", n => { AppScopes = n.GetCollectionOfObjectValues<AppScope>(AppScope.CreateFromDiscriminatorValue).ToList(); } },
+                {"condition", n => { Condition = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"directoryScopeIds", n => { DirectoryScopeIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"directoryScopes", n => { DirectoryScopes = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"principalIds", n => { PrincipalIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"principals", n => { Principals = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
+                {"roleDefinition", n => { RoleDefinition = n.GetObjectValue<UnifiedRoleDefinition>(UnifiedRoleDefinition.CreateFromDiscriminatorValue); } },
+                {"roleDefinitionId", n => { RoleDefinitionId = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ResizeClou
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"targetServicePlanId", (o,n) => { (o as ResizeCloudPcRequestBody).TargetServicePlanId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"targetServicePlanId", n => { TargetServicePlanId = n.GetStringValue(); } },
             };
         }
         /// <summary>

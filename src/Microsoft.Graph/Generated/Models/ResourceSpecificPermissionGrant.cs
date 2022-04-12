@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"clientAppId", (o,n) => { (o as ResourceSpecificPermissionGrant).ClientAppId = n.GetStringValue(); } },
-                {"clientId", (o,n) => { (o as ResourceSpecificPermissionGrant).ClientId = n.GetStringValue(); } },
-                {"permission", (o,n) => { (o as ResourceSpecificPermissionGrant).Permission = n.GetStringValue(); } },
-                {"permissionType", (o,n) => { (o as ResourceSpecificPermissionGrant).PermissionType = n.GetStringValue(); } },
-                {"resourceAppId", (o,n) => { (o as ResourceSpecificPermissionGrant).ResourceAppId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"clientAppId", n => { ClientAppId = n.GetStringValue(); } },
+                {"clientId", n => { ClientId = n.GetStringValue(); } },
+                {"permission", n => { Permission = n.GetStringValue(); } },
+                {"permissionType", n => { PermissionType = n.GetStringValue(); } },
+                {"resourceAppId", n => { ResourceAppId = n.GetStringValue(); } },
             };
         }
         /// <summary>

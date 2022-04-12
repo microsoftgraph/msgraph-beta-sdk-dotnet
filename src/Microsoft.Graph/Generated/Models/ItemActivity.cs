@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"access", (o,n) => { (o as ItemActivity).Access = n.GetObjectValue<AccessAction>(AccessAction.CreateFromDiscriminatorValue); } },
-                {"activityDateTime", (o,n) => { (o as ItemActivity).ActivityDateTime = n.GetDateTimeOffsetValue(); } },
-                {"actor", (o,n) => { (o as ItemActivity).Actor = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"driveItem", (o,n) => { (o as ItemActivity).DriveItem = n.GetObjectValue<Microsoft.Graph.Beta.Models.DriveItem>(Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"access", n => { Access = n.GetObjectValue<AccessAction>(AccessAction.CreateFromDiscriminatorValue); } },
+                {"activityDateTime", n => { ActivityDateTime = n.GetDateTimeOffsetValue(); } },
+                {"actor", n => { Actor = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"driveItem", n => { DriveItem = n.GetObjectValue<Microsoft.Graph.Beta.Models.DriveItem>(Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

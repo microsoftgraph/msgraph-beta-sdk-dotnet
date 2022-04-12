@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.DeleteUserFromSharedAppleD
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"userPrincipalName", (o,n) => { (o as DeleteUserFromSharedAppleDeviceRequestBody).UserPrincipalName = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

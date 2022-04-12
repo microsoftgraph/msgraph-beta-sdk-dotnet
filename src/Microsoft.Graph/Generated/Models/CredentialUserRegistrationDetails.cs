@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"authMethods", (o,n) => { (o as CredentialUserRegistrationDetails).AuthMethods = n.GetCollectionOfEnumValues<RegistrationAuthMethod>().ToList(); } },
-                {"isCapable", (o,n) => { (o as CredentialUserRegistrationDetails).IsCapable = n.GetBoolValue(); } },
-                {"isEnabled", (o,n) => { (o as CredentialUserRegistrationDetails).IsEnabled = n.GetBoolValue(); } },
-                {"isMfaRegistered", (o,n) => { (o as CredentialUserRegistrationDetails).IsMfaRegistered = n.GetBoolValue(); } },
-                {"isRegistered", (o,n) => { (o as CredentialUserRegistrationDetails).IsRegistered = n.GetBoolValue(); } },
-                {"userDisplayName", (o,n) => { (o as CredentialUserRegistrationDetails).UserDisplayName = n.GetStringValue(); } },
-                {"userPrincipalName", (o,n) => { (o as CredentialUserRegistrationDetails).UserPrincipalName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"authMethods", n => { AuthMethods = n.GetCollectionOfEnumValues<RegistrationAuthMethod>().ToList(); } },
+                {"isCapable", n => { IsCapable = n.GetBoolValue(); } },
+                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                {"isMfaRegistered", n => { IsMfaRegistered = n.GetBoolValue(); } },
+                {"isRegistered", n => { IsRegistered = n.GetBoolValue(); } },
+                {"userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

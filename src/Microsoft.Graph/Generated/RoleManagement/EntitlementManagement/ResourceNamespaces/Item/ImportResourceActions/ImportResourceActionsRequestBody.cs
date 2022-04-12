@@ -31,11 +31,11 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceName
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"format", (o,n) => { (o as ImportResourceActionsRequestBody).Format = n.GetStringValue(); } },
-                {"overwriteResourceNamespace", (o,n) => { (o as ImportResourceActionsRequestBody).OverwriteResourceNamespace = n.GetBoolValue(); } },
-                {"value", (o,n) => { (o as ImportResourceActionsRequestBody).Value = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"format", n => { Format = n.GetStringValue(); } },
+                {"overwriteResourceNamespace", n => { OverwriteResourceNamespace = n.GetBoolValue(); } },
+                {"value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>

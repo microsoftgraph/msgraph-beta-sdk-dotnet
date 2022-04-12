@@ -35,13 +35,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.Onenote.Notebooks.Item.CopyNotebook {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"groupId", (o,n) => { (o as CopyNotebookRequestBody).GroupId = n.GetStringValue(); } },
-                {"notebookFolder", (o,n) => { (o as CopyNotebookRequestBody).NotebookFolder = n.GetStringValue(); } },
-                {"renameAs", (o,n) => { (o as CopyNotebookRequestBody).RenameAs = n.GetStringValue(); } },
-                {"siteCollectionId", (o,n) => { (o as CopyNotebookRequestBody).SiteCollectionId = n.GetStringValue(); } },
-                {"siteId", (o,n) => { (o as CopyNotebookRequestBody).SiteId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"groupId", n => { GroupId = n.GetStringValue(); } },
+                {"notebookFolder", n => { NotebookFolder = n.GetStringValue(); } },
+                {"renameAs", n => { RenameAs = n.GetStringValue(); } },
+                {"siteCollectionId", n => { SiteCollectionId = n.GetStringValue(); } },
+                {"siteId", n => { SiteId = n.GetStringValue(); } },
             };
         }
         /// <summary>

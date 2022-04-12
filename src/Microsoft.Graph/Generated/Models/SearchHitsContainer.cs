@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"aggregations", (o,n) => { (o as SearchHitsContainer).Aggregations = n.GetCollectionOfObjectValues<SearchAggregation>(SearchAggregation.CreateFromDiscriminatorValue).ToList(); } },
-                {"hits", (o,n) => { (o as SearchHitsContainer).Hits = n.GetCollectionOfObjectValues<SearchHit>(SearchHit.CreateFromDiscriminatorValue).ToList(); } },
-                {"moreResultsAvailable", (o,n) => { (o as SearchHitsContainer).MoreResultsAvailable = n.GetBoolValue(); } },
-                {"total", (o,n) => { (o as SearchHitsContainer).Total = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"aggregations", n => { Aggregations = n.GetCollectionOfObjectValues<SearchAggregation>(SearchAggregation.CreateFromDiscriminatorValue).ToList(); } },
+                {"hits", n => { Hits = n.GetCollectionOfObjectValues<SearchHit>(SearchHit.CreateFromDiscriminatorValue).ToList(); } },
+                {"moreResultsAvailable", n => { MoreResultsAvailable = n.GetBoolValue(); } },
+                {"total", n => { Total = n.GetIntValue(); } },
             };
         }
         /// <summary>

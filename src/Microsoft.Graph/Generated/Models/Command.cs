@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appServiceName", (o,n) => { (o as Command).AppServiceName = n.GetStringValue(); } },
-                {"error", (o,n) => { (o as Command).Error = n.GetStringValue(); } },
-                {"packageFamilyName", (o,n) => { (o as Command).PackageFamilyName = n.GetStringValue(); } },
-                {"payload", (o,n) => { (o as Command).Payload = n.GetObjectValue<PayloadRequest>(PayloadRequest.CreateFromDiscriminatorValue); } },
-                {"permissionTicket", (o,n) => { (o as Command).PermissionTicket = n.GetStringValue(); } },
-                {"postBackUri", (o,n) => { (o as Command).PostBackUri = n.GetStringValue(); } },
-                {"responsepayload", (o,n) => { (o as Command).Responsepayload = n.GetObjectValue<PayloadResponse>(PayloadResponse.CreateFromDiscriminatorValue); } },
-                {"status", (o,n) => { (o as Command).Status = n.GetStringValue(); } },
-                {"type", (o,n) => { (o as Command).Type = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"appServiceName", n => { AppServiceName = n.GetStringValue(); } },
+                {"error", n => { Error = n.GetStringValue(); } },
+                {"packageFamilyName", n => { PackageFamilyName = n.GetStringValue(); } },
+                {"payload", n => { Payload = n.GetObjectValue<PayloadRequest>(PayloadRequest.CreateFromDiscriminatorValue); } },
+                {"permissionTicket", n => { PermissionTicket = n.GetStringValue(); } },
+                {"postBackUri", n => { PostBackUri = n.GetStringValue(); } },
+                {"responsepayload", n => { Responsepayload = n.GetObjectValue<PayloadResponse>(PayloadResponse.CreateFromDiscriminatorValue); } },
+                {"status", n => { Status = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>

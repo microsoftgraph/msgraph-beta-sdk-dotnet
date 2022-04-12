@@ -20,10 +20,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"ruleName", (o,n) => { (o as DeviceComplianceScheduledActionForRule).RuleName = n.GetStringValue(); } },
-                {"scheduledActionConfigurations", (o,n) => { (o as DeviceComplianceScheduledActionForRule).ScheduledActionConfigurations = n.GetCollectionOfObjectValues<DeviceComplianceActionItem>(DeviceComplianceActionItem.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"ruleName", n => { RuleName = n.GetStringValue(); } },
+                {"scheduledActionConfigurations", n => { ScheduledActionConfigurations = n.GetCollectionOfObjectValues<DeviceComplianceActionItem>(DeviceComplianceActionItem.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

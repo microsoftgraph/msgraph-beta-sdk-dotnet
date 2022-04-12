@@ -42,17 +42,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"accessReviewTimeoutBehavior", (o,n) => { (o as AssignmentReviewSettings).AccessReviewTimeoutBehavior = n.GetEnumValue<AccessReviewTimeoutBehavior>(); } },
-                {"durationInDays", (o,n) => { (o as AssignmentReviewSettings).DurationInDays = n.GetIntValue(); } },
-                {"isAccessRecommendationEnabled", (o,n) => { (o as AssignmentReviewSettings).IsAccessRecommendationEnabled = n.GetBoolValue(); } },
-                {"isApprovalJustificationRequired", (o,n) => { (o as AssignmentReviewSettings).IsApprovalJustificationRequired = n.GetBoolValue(); } },
-                {"isEnabled", (o,n) => { (o as AssignmentReviewSettings).IsEnabled = n.GetBoolValue(); } },
-                {"recurrenceType", (o,n) => { (o as AssignmentReviewSettings).RecurrenceType = n.GetStringValue(); } },
-                {"reviewers", (o,n) => { (o as AssignmentReviewSettings).Reviewers = n.GetCollectionOfObjectValues<UserSet>(UserSet.CreateFromDiscriminatorValue).ToList(); } },
-                {"reviewerType", (o,n) => { (o as AssignmentReviewSettings).ReviewerType = n.GetStringValue(); } },
-                {"startDateTime", (o,n) => { (o as AssignmentReviewSettings).StartDateTime = n.GetDateTimeOffsetValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"accessReviewTimeoutBehavior", n => { AccessReviewTimeoutBehavior = n.GetEnumValue<AccessReviewTimeoutBehavior>(); } },
+                {"durationInDays", n => { DurationInDays = n.GetIntValue(); } },
+                {"isAccessRecommendationEnabled", n => { IsAccessRecommendationEnabled = n.GetBoolValue(); } },
+                {"isApprovalJustificationRequired", n => { IsApprovalJustificationRequired = n.GetBoolValue(); } },
+                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                {"recurrenceType", n => { RecurrenceType = n.GetStringValue(); } },
+                {"reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<UserSet>(UserSet.CreateFromDiscriminatorValue).ToList(); } },
+                {"reviewerType", n => { ReviewerType = n.GetStringValue(); } },
+                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

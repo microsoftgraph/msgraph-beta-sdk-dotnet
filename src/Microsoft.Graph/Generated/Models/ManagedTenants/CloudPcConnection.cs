@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"displayName", (o,n) => { (o as CloudPcConnection).DisplayName = n.GetStringValue(); } },
-                {"healthCheckStatus", (o,n) => { (o as CloudPcConnection).HealthCheckStatus = n.GetStringValue(); } },
-                {"lastRefreshedDateTime", (o,n) => { (o as CloudPcConnection).LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"tenantDisplayName", (o,n) => { (o as CloudPcConnection).TenantDisplayName = n.GetStringValue(); } },
-                {"tenantId", (o,n) => { (o as CloudPcConnection).TenantId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"healthCheckStatus", n => { HealthCheckStatus = n.GetStringValue(); } },
+                {"lastRefreshedDateTime", n => { LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"tenantDisplayName", n => { TenantDisplayName = n.GetStringValue(); } },
+                {"tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
         /// <summary>

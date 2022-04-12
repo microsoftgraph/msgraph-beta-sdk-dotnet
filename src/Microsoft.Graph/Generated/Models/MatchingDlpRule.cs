@@ -40,16 +40,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"actions", (o,n) => { (o as MatchingDlpRule).Actions = n.GetCollectionOfObjectValues<DlpActionInfo>(DlpActionInfo.CreateFromDiscriminatorValue).ToList(); } },
-                {"isMostRestrictive", (o,n) => { (o as MatchingDlpRule).IsMostRestrictive = n.GetBoolValue(); } },
-                {"policyId", (o,n) => { (o as MatchingDlpRule).PolicyId = n.GetStringValue(); } },
-                {"policyName", (o,n) => { (o as MatchingDlpRule).PolicyName = n.GetStringValue(); } },
-                {"priority", (o,n) => { (o as MatchingDlpRule).Priority = n.GetIntValue(); } },
-                {"ruleId", (o,n) => { (o as MatchingDlpRule).RuleId = n.GetStringValue(); } },
-                {"ruleMode", (o,n) => { (o as MatchingDlpRule).RuleMode = n.GetEnumValue<RuleMode>(); } },
-                {"ruleName", (o,n) => { (o as MatchingDlpRule).RuleName = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"actions", n => { Actions = n.GetCollectionOfObjectValues<DlpActionInfo>(DlpActionInfo.CreateFromDiscriminatorValue).ToList(); } },
+                {"isMostRestrictive", n => { IsMostRestrictive = n.GetBoolValue(); } },
+                {"policyId", n => { PolicyId = n.GetStringValue(); } },
+                {"policyName", n => { PolicyName = n.GetStringValue(); } },
+                {"priority", n => { Priority = n.GetIntValue(); } },
+                {"ruleId", n => { RuleId = n.GetStringValue(); } },
+                {"ruleMode", n => { RuleMode = n.GetEnumValue<RuleMode>(); } },
+                {"ruleName", n => { RuleName = n.GetStringValue(); } },
             };
         }
         /// <summary>

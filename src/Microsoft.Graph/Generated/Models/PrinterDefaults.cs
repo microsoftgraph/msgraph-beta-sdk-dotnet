@@ -70,31 +70,31 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"colorMode", (o,n) => { (o as PrinterDefaults).ColorMode = n.GetEnumValue<PrintColorMode>(); } },
-                {"contentType", (o,n) => { (o as PrinterDefaults).ContentType = n.GetStringValue(); } },
-                {"copiesPerJob", (o,n) => { (o as PrinterDefaults).CopiesPerJob = n.GetIntValue(); } },
-                {"documentMimeType", (o,n) => { (o as PrinterDefaults).DocumentMimeType = n.GetStringValue(); } },
-                {"dpi", (o,n) => { (o as PrinterDefaults).Dpi = n.GetIntValue(); } },
-                {"duplexConfiguration", (o,n) => { (o as PrinterDefaults).DuplexConfiguration = n.GetEnumValue<PrintDuplexConfiguration>(); } },
-                {"duplexMode", (o,n) => { (o as PrinterDefaults).DuplexMode = n.GetEnumValue<PrintDuplexMode>(); } },
-                {"finishings", (o,n) => { (o as PrinterDefaults).Finishings = n.GetCollectionOfEnumValues<PrintFinishing>().ToList(); } },
-                {"fitPdfToPage", (o,n) => { (o as PrinterDefaults).FitPdfToPage = n.GetBoolValue(); } },
-                {"inputBin", (o,n) => { (o as PrinterDefaults).InputBin = n.GetStringValue(); } },
-                {"mediaColor", (o,n) => { (o as PrinterDefaults).MediaColor = n.GetStringValue(); } },
-                {"mediaSize", (o,n) => { (o as PrinterDefaults).MediaSize = n.GetStringValue(); } },
-                {"mediaType", (o,n) => { (o as PrinterDefaults).MediaType = n.GetStringValue(); } },
-                {"multipageLayout", (o,n) => { (o as PrinterDefaults).MultipageLayout = n.GetEnumValue<PrintMultipageLayout>(); } },
-                {"orientation", (o,n) => { (o as PrinterDefaults).Orientation = n.GetEnumValue<PrintOrientation>(); } },
-                {"outputBin", (o,n) => { (o as PrinterDefaults).OutputBin = n.GetStringValue(); } },
-                {"pagesPerSheet", (o,n) => { (o as PrinterDefaults).PagesPerSheet = n.GetIntValue(); } },
-                {"pdfFitToPage", (o,n) => { (o as PrinterDefaults).PdfFitToPage = n.GetBoolValue(); } },
-                {"presentationDirection", (o,n) => { (o as PrinterDefaults).PresentationDirection = n.GetEnumValue<PrintPresentationDirection>(); } },
-                {"printColorConfiguration", (o,n) => { (o as PrinterDefaults).PrintColorConfiguration = n.GetEnumValue<PrintColorConfiguration>(); } },
-                {"printQuality", (o,n) => { (o as PrinterDefaults).PrintQuality = n.GetEnumValue<PrintQuality>(); } },
-                {"quality", (o,n) => { (o as PrinterDefaults).Quality = n.GetEnumValue<PrintQuality>(); } },
-                {"scaling", (o,n) => { (o as PrinterDefaults).Scaling = n.GetEnumValue<PrintScaling>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"colorMode", n => { ColorMode = n.GetEnumValue<PrintColorMode>(); } },
+                {"contentType", n => { ContentType = n.GetStringValue(); } },
+                {"copiesPerJob", n => { CopiesPerJob = n.GetIntValue(); } },
+                {"documentMimeType", n => { DocumentMimeType = n.GetStringValue(); } },
+                {"dpi", n => { Dpi = n.GetIntValue(); } },
+                {"duplexConfiguration", n => { DuplexConfiguration = n.GetEnumValue<PrintDuplexConfiguration>(); } },
+                {"duplexMode", n => { DuplexMode = n.GetEnumValue<PrintDuplexMode>(); } },
+                {"finishings", n => { Finishings = n.GetCollectionOfEnumValues<PrintFinishing>().ToList(); } },
+                {"fitPdfToPage", n => { FitPdfToPage = n.GetBoolValue(); } },
+                {"inputBin", n => { InputBin = n.GetStringValue(); } },
+                {"mediaColor", n => { MediaColor = n.GetStringValue(); } },
+                {"mediaSize", n => { MediaSize = n.GetStringValue(); } },
+                {"mediaType", n => { MediaType = n.GetStringValue(); } },
+                {"multipageLayout", n => { MultipageLayout = n.GetEnumValue<PrintMultipageLayout>(); } },
+                {"orientation", n => { Orientation = n.GetEnumValue<PrintOrientation>(); } },
+                {"outputBin", n => { OutputBin = n.GetStringValue(); } },
+                {"pagesPerSheet", n => { PagesPerSheet = n.GetIntValue(); } },
+                {"pdfFitToPage", n => { PdfFitToPage = n.GetBoolValue(); } },
+                {"presentationDirection", n => { PresentationDirection = n.GetEnumValue<PrintPresentationDirection>(); } },
+                {"printColorConfiguration", n => { PrintColorConfiguration = n.GetEnumValue<PrintColorConfiguration>(); } },
+                {"printQuality", n => { PrintQuality = n.GetEnumValue<PrintQuality>(); } },
+                {"quality", n => { Quality = n.GetEnumValue<PrintQuality>(); } },
+                {"scaling", n => { Scaling = n.GetEnumValue<PrintScaling>(); } },
             };
         }
         /// <summary>

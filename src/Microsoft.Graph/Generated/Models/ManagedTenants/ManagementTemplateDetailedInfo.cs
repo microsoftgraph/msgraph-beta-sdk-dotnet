@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"category", (o,n) => { (o as ManagementTemplateDetailedInfo).Category = n.GetEnumValue<ManagementCategory>(); } },
-                {"displayName", (o,n) => { (o as ManagementTemplateDetailedInfo).DisplayName = n.GetStringValue(); } },
-                {"managementTemplateId", (o,n) => { (o as ManagementTemplateDetailedInfo).ManagementTemplateId = n.GetStringValue(); } },
-                {"version", (o,n) => { (o as ManagementTemplateDetailedInfo).Version = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"category", n => { Category = n.GetEnumValue<ManagementCategory>(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"managementTemplateId", n => { ManagementTemplateId = n.GetStringValue(); } },
+                {"version", n => { Version = n.GetIntValue(); } },
             };
         }
         /// <summary>

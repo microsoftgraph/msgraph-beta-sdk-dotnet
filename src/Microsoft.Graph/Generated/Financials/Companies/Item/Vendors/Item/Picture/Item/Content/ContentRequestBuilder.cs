@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Vendors.Item.Picture.It
         public ContentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/financials/companies/{company_id}/vendors/{vendor_id}/picture/{picture_id}/content";
+            UrlTemplate = "{+baseurl}/financials/companies/{company%2Did}/vendors/{vendor%2Did}/picture/{picture%2Did}/content";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Vendors.Item.Picture.It
         public ContentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/financials/companies/{company_id}/vendors/{vendor_id}/picture/{picture_id}/content";
+            UrlTemplate = "{+baseurl}/financials/companies/{company%2Did}/vendors/{vendor%2Did}/picture/{picture%2Did}/content";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

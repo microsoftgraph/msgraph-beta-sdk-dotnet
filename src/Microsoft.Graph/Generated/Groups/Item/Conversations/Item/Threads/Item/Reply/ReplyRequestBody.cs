@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Reply
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"post", (o,n) => { (o as ReplyRequestBody).Post = n.GetObjectValue<Microsoft.Graph.Beta.Models.Post>(Microsoft.Graph.Beta.Models.Post.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"post", n => { Post = n.GetObjectValue<Microsoft.Graph.Beta.Models.Post>(Microsoft.Graph.Beta.Models.Post.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

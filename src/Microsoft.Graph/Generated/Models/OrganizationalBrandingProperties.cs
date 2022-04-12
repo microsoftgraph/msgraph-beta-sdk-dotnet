@@ -63,31 +63,31 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"backgroundColor", (o,n) => { (o as OrganizationalBrandingProperties).BackgroundColor = n.GetStringValue(); } },
-                {"backgroundImage", (o,n) => { (o as OrganizationalBrandingProperties).BackgroundImage = n.GetByteArrayValue(); } },
-                {"backgroundImageRelativeUrl", (o,n) => { (o as OrganizationalBrandingProperties).BackgroundImageRelativeUrl = n.GetStringValue(); } },
-                {"bannerLogo", (o,n) => { (o as OrganizationalBrandingProperties).BannerLogo = n.GetByteArrayValue(); } },
-                {"bannerLogoRelativeUrl", (o,n) => { (o as OrganizationalBrandingProperties).BannerLogoRelativeUrl = n.GetStringValue(); } },
-                {"cdnList", (o,n) => { (o as OrganizationalBrandingProperties).CdnList = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"customAccountResetCredentialsUrl", (o,n) => { (o as OrganizationalBrandingProperties).CustomAccountResetCredentialsUrl = n.GetStringValue(); } },
-                {"customCannotAccessYourAccountText", (o,n) => { (o as OrganizationalBrandingProperties).CustomCannotAccessYourAccountText = n.GetStringValue(); } },
-                {"customCannotAccessYourAccountUrl", (o,n) => { (o as OrganizationalBrandingProperties).CustomCannotAccessYourAccountUrl = n.GetStringValue(); } },
-                {"customForgotMyPasswordText", (o,n) => { (o as OrganizationalBrandingProperties).CustomForgotMyPasswordText = n.GetStringValue(); } },
-                {"customPrivacyAndCookiesText", (o,n) => { (o as OrganizationalBrandingProperties).CustomPrivacyAndCookiesText = n.GetStringValue(); } },
-                {"customPrivacyAndCookiesUrl", (o,n) => { (o as OrganizationalBrandingProperties).CustomPrivacyAndCookiesUrl = n.GetStringValue(); } },
-                {"customResetItNowText", (o,n) => { (o as OrganizationalBrandingProperties).CustomResetItNowText = n.GetStringValue(); } },
-                {"customTermsOfUseText", (o,n) => { (o as OrganizationalBrandingProperties).CustomTermsOfUseText = n.GetStringValue(); } },
-                {"customTermsOfUseUrl", (o,n) => { (o as OrganizationalBrandingProperties).CustomTermsOfUseUrl = n.GetStringValue(); } },
-                {"favicon", (o,n) => { (o as OrganizationalBrandingProperties).Favicon = n.GetByteArrayValue(); } },
-                {"faviconRelativeUrl", (o,n) => { (o as OrganizationalBrandingProperties).FaviconRelativeUrl = n.GetStringValue(); } },
-                {"headerBackgroundColor", (o,n) => { (o as OrganizationalBrandingProperties).HeaderBackgroundColor = n.GetStringValue(); } },
-                {"loginPageTextVisibilitySettings", (o,n) => { (o as OrganizationalBrandingProperties).LoginPageTextVisibilitySettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.LoginPageTextVisibilitySettings>(Microsoft.Graph.Beta.Models.LoginPageTextVisibilitySettings.CreateFromDiscriminatorValue); } },
-                {"signInPageText", (o,n) => { (o as OrganizationalBrandingProperties).SignInPageText = n.GetStringValue(); } },
-                {"squareLogo", (o,n) => { (o as OrganizationalBrandingProperties).SquareLogo = n.GetByteArrayValue(); } },
-                {"squareLogoRelativeUrl", (o,n) => { (o as OrganizationalBrandingProperties).SquareLogoRelativeUrl = n.GetStringValue(); } },
-                {"usernameHintText", (o,n) => { (o as OrganizationalBrandingProperties).UsernameHintText = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"backgroundColor", n => { BackgroundColor = n.GetStringValue(); } },
+                {"backgroundImage", n => { BackgroundImage = n.GetByteArrayValue(); } },
+                {"backgroundImageRelativeUrl", n => { BackgroundImageRelativeUrl = n.GetStringValue(); } },
+                {"bannerLogo", n => { BannerLogo = n.GetByteArrayValue(); } },
+                {"bannerLogoRelativeUrl", n => { BannerLogoRelativeUrl = n.GetStringValue(); } },
+                {"cdnList", n => { CdnList = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"customAccountResetCredentialsUrl", n => { CustomAccountResetCredentialsUrl = n.GetStringValue(); } },
+                {"customCannotAccessYourAccountText", n => { CustomCannotAccessYourAccountText = n.GetStringValue(); } },
+                {"customCannotAccessYourAccountUrl", n => { CustomCannotAccessYourAccountUrl = n.GetStringValue(); } },
+                {"customForgotMyPasswordText", n => { CustomForgotMyPasswordText = n.GetStringValue(); } },
+                {"customPrivacyAndCookiesText", n => { CustomPrivacyAndCookiesText = n.GetStringValue(); } },
+                {"customPrivacyAndCookiesUrl", n => { CustomPrivacyAndCookiesUrl = n.GetStringValue(); } },
+                {"customResetItNowText", n => { CustomResetItNowText = n.GetStringValue(); } },
+                {"customTermsOfUseText", n => { CustomTermsOfUseText = n.GetStringValue(); } },
+                {"customTermsOfUseUrl", n => { CustomTermsOfUseUrl = n.GetStringValue(); } },
+                {"favicon", n => { Favicon = n.GetByteArrayValue(); } },
+                {"faviconRelativeUrl", n => { FaviconRelativeUrl = n.GetStringValue(); } },
+                {"headerBackgroundColor", n => { HeaderBackgroundColor = n.GetStringValue(); } },
+                {"loginPageTextVisibilitySettings", n => { LoginPageTextVisibilitySettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.LoginPageTextVisibilitySettings>(Microsoft.Graph.Beta.Models.LoginPageTextVisibilitySettings.CreateFromDiscriminatorValue); } },
+                {"signInPageText", n => { SignInPageText = n.GetStringValue(); } },
+                {"squareLogo", n => { SquareLogo = n.GetByteArrayValue(); } },
+                {"squareLogoRelativeUrl", n => { SquareLogoRelativeUrl = n.GetStringValue(); } },
+                {"usernameHintText", n => { UsernameHintText = n.GetStringValue(); } },
             };
         }
         /// <summary>

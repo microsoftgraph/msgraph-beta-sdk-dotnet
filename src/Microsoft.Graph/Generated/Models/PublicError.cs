@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"code", (o,n) => { (o as PublicError).Code = n.GetStringValue(); } },
-                {"details", (o,n) => { (o as PublicError).Details = n.GetCollectionOfObjectValues<PublicErrorDetail>(PublicErrorDetail.CreateFromDiscriminatorValue).ToList(); } },
-                {"innerError", (o,n) => { (o as PublicError).InnerError = n.GetObjectValue<PublicInnerError>(PublicInnerError.CreateFromDiscriminatorValue); } },
-                {"message", (o,n) => { (o as PublicError).Message = n.GetStringValue(); } },
-                {"target", (o,n) => { (o as PublicError).Target = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"code", n => { Code = n.GetStringValue(); } },
+                {"details", n => { Details = n.GetCollectionOfObjectValues<PublicErrorDetail>(PublicErrorDetail.CreateFromDiscriminatorValue).ToList(); } },
+                {"innerError", n => { InnerError = n.GetObjectValue<PublicInnerError>(PublicInnerError.CreateFromDiscriminatorValue); } },
+                {"message", n => { Message = n.GetStringValue(); } },
+                {"target", n => { Target = n.GetStringValue(); } },
             };
         }
         /// <summary>

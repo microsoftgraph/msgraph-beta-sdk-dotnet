@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdByUserId", (o,n) => { (o as ManagementTemplateStepDeployment).CreatedByUserId = n.GetStringValue(); } },
-                {"createdDateTime", (o,n) => { (o as ManagementTemplateStepDeployment).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"error", (o,n) => { (o as ManagementTemplateStepDeployment).Error = n.GetObjectValue<GraphAPIErrorDetails>(GraphAPIErrorDetails.CreateFromDiscriminatorValue); } },
-                {"lastActionByUserId", (o,n) => { (o as ManagementTemplateStepDeployment).LastActionByUserId = n.GetStringValue(); } },
-                {"lastActionDateTime", (o,n) => { (o as ManagementTemplateStepDeployment).LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", (o,n) => { (o as ManagementTemplateStepDeployment).Status = n.GetEnumValue<ManagementTemplateDeploymentStatus>(); } },
-                {"templateStepVersion", (o,n) => { (o as ManagementTemplateStepDeployment).TemplateStepVersion = n.GetObjectValue<ManagementTemplateStepVersion>(ManagementTemplateStepVersion.CreateFromDiscriminatorValue); } },
-                {"tenantId", (o,n) => { (o as ManagementTemplateStepDeployment).TenantId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"error", n => { Error = n.GetObjectValue<GraphAPIErrorDetails>(GraphAPIErrorDetails.CreateFromDiscriminatorValue); } },
+                {"lastActionByUserId", n => { LastActionByUserId = n.GetStringValue(); } },
+                {"lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
+                {"status", n => { Status = n.GetEnumValue<ManagementTemplateDeploymentStatus>(); } },
+                {"templateStepVersion", n => { TemplateStepVersion = n.GetObjectValue<ManagementTemplateStepVersion>(ManagementTemplateStepVersion.CreateFromDiscriminatorValue); } },
+                {"tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
         /// <summary>

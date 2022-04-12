@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdDateTime", (o,n) => { (o as TemporaryAccessPassAuthenticationMethod).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"isUsable", (o,n) => { (o as TemporaryAccessPassAuthenticationMethod).IsUsable = n.GetBoolValue(); } },
-                {"isUsableOnce", (o,n) => { (o as TemporaryAccessPassAuthenticationMethod).IsUsableOnce = n.GetBoolValue(); } },
-                {"lifetimeInMinutes", (o,n) => { (o as TemporaryAccessPassAuthenticationMethod).LifetimeInMinutes = n.GetIntValue(); } },
-                {"methodUsabilityReason", (o,n) => { (o as TemporaryAccessPassAuthenticationMethod).MethodUsabilityReason = n.GetStringValue(); } },
-                {"startDateTime", (o,n) => { (o as TemporaryAccessPassAuthenticationMethod).StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"temporaryAccessPass", (o,n) => { (o as TemporaryAccessPassAuthenticationMethod).TemporaryAccessPass = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"isUsable", n => { IsUsable = n.GetBoolValue(); } },
+                {"isUsableOnce", n => { IsUsableOnce = n.GetBoolValue(); } },
+                {"lifetimeInMinutes", n => { LifetimeInMinutes = n.GetIntValue(); } },
+                {"methodUsabilityReason", n => { MethodUsabilityReason = n.GetStringValue(); } },
+                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                {"temporaryAccessPass", n => { TemporaryAccessPass = n.GetStringValue(); } },
             };
         }
         /// <summary>

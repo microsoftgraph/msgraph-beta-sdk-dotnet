@@ -32,11 +32,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.U
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"added", (o,n) => { (o as UpdateDefinitionValuesRequestBody).Added = n.GetCollectionOfObjectValues<GroupPolicyDefinitionValue>(GroupPolicyDefinitionValue.CreateFromDiscriminatorValue).ToList(); } },
-                {"deletedIds", (o,n) => { (o as UpdateDefinitionValuesRequestBody).DeletedIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"updated", (o,n) => { (o as UpdateDefinitionValuesRequestBody).Updated = n.GetCollectionOfObjectValues<GroupPolicyDefinitionValue>(GroupPolicyDefinitionValue.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"added", n => { Added = n.GetCollectionOfObjectValues<GroupPolicyDefinitionValue>(GroupPolicyDefinitionValue.CreateFromDiscriminatorValue).ToList(); } },
+                {"deletedIds", n => { DeletedIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"updated", n => { Updated = n.GetCollectionOfObjectValues<GroupPolicyDefinitionValue>(GroupPolicyDefinitionValue.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

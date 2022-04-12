@@ -26,10 +26,10 @@ namespace Microsoft.Graph.Beta.Users.Item.ExportDeviceAndAppManagementDataWithSk
         public ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, int? skip = default, int? top = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/microsoft.graph.exportDeviceAndAppManagementData(skip={skip},top={top})";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/microsoft.graph.exportDeviceAndAppManagementData(skip={skip},top={top})";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("skip", skip);
-            urlTplParams.Add("top", top);
+            urlTplParams.Add("", skip);
+            urlTplParams.Add("", top);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ExportDeviceAndAppManagementDataWithSk
         public ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/microsoft.graph.exportDeviceAndAppManagementData(skip={skip},top={top})";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/microsoft.graph.exportDeviceAndAppManagementData(skip={skip},top={top})";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

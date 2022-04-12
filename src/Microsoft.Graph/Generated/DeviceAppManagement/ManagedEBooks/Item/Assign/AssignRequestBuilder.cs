@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item.Assign {
         public AssignRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook_id}/microsoft.graph.assign";
+            UrlTemplate = "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook%2Did}/microsoft.graph.assign";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item.Assign {
         public AssignRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook_id}/microsoft.graph.assign";
+            UrlTemplate = "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook%2Did}/microsoft.graph.assign";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

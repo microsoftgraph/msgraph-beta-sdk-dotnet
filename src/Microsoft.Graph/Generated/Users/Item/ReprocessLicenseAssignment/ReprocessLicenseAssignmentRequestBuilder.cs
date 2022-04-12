@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ReprocessLicenseAssignment {
         public ReprocessLicenseAssignmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/microsoft.graph.reprocessLicenseAssignment";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/microsoft.graph.reprocessLicenseAssignment";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ReprocessLicenseAssignment {
         public ReprocessLicenseAssignmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/microsoft.graph.reprocessLicenseAssignment";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/microsoft.graph.reprocessLicenseAssignment";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

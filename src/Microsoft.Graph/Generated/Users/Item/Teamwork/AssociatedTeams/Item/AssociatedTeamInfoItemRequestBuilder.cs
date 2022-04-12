@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams.Item {
         public AssociatedTeamInfoItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/teamwork/associatedTeams/{associatedTeamInfo_id}{?select,expand}";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/teamwork/associatedTeams/{associatedTeamInfo%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams.Item {
         public AssociatedTeamInfoItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/teamwork/associatedTeams/{associatedTeamInfo_id}{?select,expand}";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/teamwork/associatedTeams/{associatedTeamInfo%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get associatedTeams from users
+        /// The list of associatedTeamInfo objects that a user is associated with.
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// <param name="queryParameters">Request query parameters</param>
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get associatedTeams from users
+        /// The list of associatedTeamInfo objects that a user is associated with.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
@@ -146,11 +146,13 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams.Item {
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get associatedTeams from users</summary>
+        /// <summary>The list of associatedTeamInfo objects that a user is associated with.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
     }

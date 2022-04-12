@@ -18,9 +18,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"result", (o,n) => { (o as DlpEvaluatePoliciesJobResponse).Result = n.GetObjectValue<DlpPoliciesJobResult>(DlpPoliciesJobResult.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"result", n => { Result = n.GetObjectValue<DlpPoliciesJobResult>(DlpPoliciesJobResult.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

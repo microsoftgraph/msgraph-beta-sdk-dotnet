@@ -30,10 +30,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"appProvisioningConfigurationGroupAssignments", (o,n) => { (o as AssignRequestBody).AppProvisioningConfigurationGroupAssignments = n.GetCollectionOfObjectValues<MobileAppProvisioningConfigGroupAssignment>(MobileAppProvisioningConfigGroupAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"iOSLobAppProvisioningConfigAssignments", (o,n) => { (o as AssignRequestBody).IOSLobAppProvisioningConfigAssignments = n.GetCollectionOfObjectValues<IosLobAppProvisioningConfigurationAssignment>(IosLobAppProvisioningConfigurationAssignment.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"appProvisioningConfigurationGroupAssignments", n => { AppProvisioningConfigurationGroupAssignments = n.GetCollectionOfObjectValues<MobileAppProvisioningConfigGroupAssignment>(MobileAppProvisioningConfigGroupAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"iOSLobAppProvisioningConfigAssignments", n => { IOSLobAppProvisioningConfigAssignments = n.GetCollectionOfObjectValues<IosLobAppProvisioningConfigurationAssignment>(IosLobAppProvisioningConfigurationAssignment.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

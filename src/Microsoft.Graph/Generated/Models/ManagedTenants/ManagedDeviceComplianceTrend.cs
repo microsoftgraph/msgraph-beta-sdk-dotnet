@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"compliantDeviceCount", (o,n) => { (o as ManagedDeviceComplianceTrend).CompliantDeviceCount = n.GetIntValue(); } },
-                {"configManagerDeviceCount", (o,n) => { (o as ManagedDeviceComplianceTrend).ConfigManagerDeviceCount = n.GetIntValue(); } },
-                {"countDateTime", (o,n) => { (o as ManagedDeviceComplianceTrend).CountDateTime = n.GetStringValue(); } },
-                {"errorDeviceCount", (o,n) => { (o as ManagedDeviceComplianceTrend).ErrorDeviceCount = n.GetIntValue(); } },
-                {"inGracePeriodDeviceCount", (o,n) => { (o as ManagedDeviceComplianceTrend).InGracePeriodDeviceCount = n.GetIntValue(); } },
-                {"noncompliantDeviceCount", (o,n) => { (o as ManagedDeviceComplianceTrend).NoncompliantDeviceCount = n.GetIntValue(); } },
-                {"tenantDisplayName", (o,n) => { (o as ManagedDeviceComplianceTrend).TenantDisplayName = n.GetStringValue(); } },
-                {"tenantId", (o,n) => { (o as ManagedDeviceComplianceTrend).TenantId = n.GetStringValue(); } },
-                {"unknownDeviceCount", (o,n) => { (o as ManagedDeviceComplianceTrend).UnknownDeviceCount = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"compliantDeviceCount", n => { CompliantDeviceCount = n.GetIntValue(); } },
+                {"configManagerDeviceCount", n => { ConfigManagerDeviceCount = n.GetIntValue(); } },
+                {"countDateTime", n => { CountDateTime = n.GetStringValue(); } },
+                {"errorDeviceCount", n => { ErrorDeviceCount = n.GetIntValue(); } },
+                {"inGracePeriodDeviceCount", n => { InGracePeriodDeviceCount = n.GetIntValue(); } },
+                {"noncompliantDeviceCount", n => { NoncompliantDeviceCount = n.GetIntValue(); } },
+                {"tenantDisplayName", n => { TenantDisplayName = n.GetStringValue(); } },
+                {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                {"unknownDeviceCount", n => { UnknownDeviceCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

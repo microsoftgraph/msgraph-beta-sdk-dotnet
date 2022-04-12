@@ -38,15 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"dayOfMonth", (o,n) => { (o as RecurrencePattern).DayOfMonth = n.GetIntValue(); } },
-                {"daysOfWeek", (o,n) => { (o as RecurrencePattern).DaysOfWeek = n.GetCollectionOfEnumValues<DayOfWeek>().ToList(); } },
-                {"firstDayOfWeek", (o,n) => { (o as RecurrencePattern).FirstDayOfWeek = n.GetEnumValue<DayOfWeek>(); } },
-                {"index", (o,n) => { (o as RecurrencePattern).Index = n.GetEnumValue<WeekIndex>(); } },
-                {"interval", (o,n) => { (o as RecurrencePattern).Interval = n.GetIntValue(); } },
-                {"month", (o,n) => { (o as RecurrencePattern).Month = n.GetIntValue(); } },
-                {"type", (o,n) => { (o as RecurrencePattern).Type = n.GetEnumValue<RecurrencePatternType>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"dayOfMonth", n => { DayOfMonth = n.GetIntValue(); } },
+                {"daysOfWeek", n => { DaysOfWeek = n.GetCollectionOfEnumValues<DayOfWeek>().ToList(); } },
+                {"firstDayOfWeek", n => { FirstDayOfWeek = n.GetEnumValue<DayOfWeek>(); } },
+                {"index", n => { Index = n.GetEnumValue<WeekIndex>(); } },
+                {"interval", n => { Interval = n.GetIntValue(); } },
+                {"month", n => { Month = n.GetIntValue(); } },
+                {"type", n => { Type = n.GetEnumValue<RecurrencePatternType>(); } },
             };
         }
         /// <summary>

@@ -26,9 +26,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"isMentioned", (o,n) => { (o as MentionsPreview).IsMentioned = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"isMentioned", n => { IsMentioned = n.GetBoolValue(); } },
             };
         }
         /// <summary>

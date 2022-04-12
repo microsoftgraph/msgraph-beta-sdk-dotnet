@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CalendarView.Item.Cancel {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"cancellationMessage", (o,n) => { (o as CancelRequestBody).CancellationMessage = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"cancellationMessage", n => { CancellationMessage = n.GetStringValue(); } },
             };
         }
         /// <summary>

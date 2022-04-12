@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"contract", (o,n) => { (o as Tenant).Contract = n.GetObjectValue<TenantContract>(TenantContract.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", (o,n) => { (o as Tenant).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", (o,n) => { (o as Tenant).DisplayName = n.GetStringValue(); } },
-                {"lastUpdatedDateTime", (o,n) => { (o as Tenant).LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"tenantId", (o,n) => { (o as Tenant).TenantId = n.GetStringValue(); } },
-                {"tenantStatusInformation", (o,n) => { (o as Tenant).TenantStatusInformation = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedTenants.TenantStatusInformation>(Microsoft.Graph.Beta.Models.ManagedTenants.TenantStatusInformation.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"contract", n => { Contract = n.GetObjectValue<TenantContract>(TenantContract.CreateFromDiscriminatorValue); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                {"tenantStatusInformation", n => { TenantStatusInformation = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedTenants.TenantStatusInformation>(Microsoft.Graph.Beta.Models.ManagedTenants.TenantStatusInformation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

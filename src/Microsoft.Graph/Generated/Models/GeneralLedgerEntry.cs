@@ -37,18 +37,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"account", (o,n) => { (o as GeneralLedgerEntry).Account = n.GetObjectValue<Microsoft.Graph.Beta.Models.Account>(Microsoft.Graph.Beta.Models.Account.CreateFromDiscriminatorValue); } },
-                {"accountId", (o,n) => { (o as GeneralLedgerEntry).AccountId = n.GetStringValue(); } },
-                {"accountNumber", (o,n) => { (o as GeneralLedgerEntry).AccountNumber = n.GetStringValue(); } },
-                {"creditAmount", (o,n) => { (o as GeneralLedgerEntry).CreditAmount = n.GetDecimalValue(); } },
-                {"debitAmount", (o,n) => { (o as GeneralLedgerEntry).DebitAmount = n.GetDecimalValue(); } },
-                {"description", (o,n) => { (o as GeneralLedgerEntry).Description = n.GetStringValue(); } },
-                {"documentNumber", (o,n) => { (o as GeneralLedgerEntry).DocumentNumber = n.GetStringValue(); } },
-                {"documentType", (o,n) => { (o as GeneralLedgerEntry).DocumentType = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as GeneralLedgerEntry).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"postingDate", (o,n) => { (o as GeneralLedgerEntry).PostingDate = n.GetDateValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"account", n => { Account = n.GetObjectValue<Microsoft.Graph.Beta.Models.Account>(Microsoft.Graph.Beta.Models.Account.CreateFromDiscriminatorValue); } },
+                {"accountId", n => { AccountId = n.GetStringValue(); } },
+                {"accountNumber", n => { AccountNumber = n.GetStringValue(); } },
+                {"creditAmount", n => { CreditAmount = n.GetDecimalValue(); } },
+                {"debitAmount", n => { DebitAmount = n.GetDecimalValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"documentNumber", n => { DocumentNumber = n.GetStringValue(); } },
+                {"documentType", n => { DocumentType = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"postingDate", n => { PostingDate = n.GetDateValue(); } },
             };
         }
         /// <summary>

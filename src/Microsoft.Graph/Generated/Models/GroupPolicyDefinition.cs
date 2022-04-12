@@ -50,25 +50,25 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"category", (o,n) => { (o as GroupPolicyDefinition).Category = n.GetObjectValue<GroupPolicyCategory>(GroupPolicyCategory.CreateFromDiscriminatorValue); } },
-                {"categoryPath", (o,n) => { (o as GroupPolicyDefinition).CategoryPath = n.GetStringValue(); } },
-                {"classType", (o,n) => { (o as GroupPolicyDefinition).ClassType = n.GetEnumValue<GroupPolicyDefinitionClassType>(); } },
-                {"definitionFile", (o,n) => { (o as GroupPolicyDefinition).DefinitionFile = n.GetObjectValue<GroupPolicyDefinitionFile>(GroupPolicyDefinitionFile.CreateFromDiscriminatorValue); } },
-                {"displayName", (o,n) => { (o as GroupPolicyDefinition).DisplayName = n.GetStringValue(); } },
-                {"explainText", (o,n) => { (o as GroupPolicyDefinition).ExplainText = n.GetStringValue(); } },
-                {"groupPolicyCategoryId", (o,n) => { (o as GroupPolicyDefinition).GroupPolicyCategoryId = n.GetStringValue(); } },
-                {"hasRelatedDefinitions", (o,n) => { (o as GroupPolicyDefinition).HasRelatedDefinitions = n.GetBoolValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as GroupPolicyDefinition).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"minDeviceCspVersion", (o,n) => { (o as GroupPolicyDefinition).MinDeviceCspVersion = n.GetStringValue(); } },
-                {"minUserCspVersion", (o,n) => { (o as GroupPolicyDefinition).MinUserCspVersion = n.GetStringValue(); } },
-                {"nextVersionDefinition", (o,n) => { (o as GroupPolicyDefinition).NextVersionDefinition = n.GetObjectValue<GroupPolicyDefinition>(GroupPolicyDefinition.CreateFromDiscriminatorValue); } },
-                {"policyType", (o,n) => { (o as GroupPolicyDefinition).PolicyType = n.GetEnumValue<GroupPolicyType>(); } },
-                {"presentations", (o,n) => { (o as GroupPolicyDefinition).Presentations = n.GetCollectionOfObjectValues<GroupPolicyPresentation>(GroupPolicyPresentation.CreateFromDiscriminatorValue).ToList(); } },
-                {"previousVersionDefinition", (o,n) => { (o as GroupPolicyDefinition).PreviousVersionDefinition = n.GetObjectValue<GroupPolicyDefinition>(GroupPolicyDefinition.CreateFromDiscriminatorValue); } },
-                {"supportedOn", (o,n) => { (o as GroupPolicyDefinition).SupportedOn = n.GetStringValue(); } },
-                {"version", (o,n) => { (o as GroupPolicyDefinition).Version = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"category", n => { Category = n.GetObjectValue<GroupPolicyCategory>(GroupPolicyCategory.CreateFromDiscriminatorValue); } },
+                {"categoryPath", n => { CategoryPath = n.GetStringValue(); } },
+                {"classType", n => { ClassType = n.GetEnumValue<GroupPolicyDefinitionClassType>(); } },
+                {"definitionFile", n => { DefinitionFile = n.GetObjectValue<GroupPolicyDefinitionFile>(GroupPolicyDefinitionFile.CreateFromDiscriminatorValue); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"explainText", n => { ExplainText = n.GetStringValue(); } },
+                {"groupPolicyCategoryId", n => { GroupPolicyCategoryId = n.GetStringValue(); } },
+                {"hasRelatedDefinitions", n => { HasRelatedDefinitions = n.GetBoolValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"minDeviceCspVersion", n => { MinDeviceCspVersion = n.GetStringValue(); } },
+                {"minUserCspVersion", n => { MinUserCspVersion = n.GetStringValue(); } },
+                {"nextVersionDefinition", n => { NextVersionDefinition = n.GetObjectValue<GroupPolicyDefinition>(GroupPolicyDefinition.CreateFromDiscriminatorValue); } },
+                {"policyType", n => { PolicyType = n.GetEnumValue<GroupPolicyType>(); } },
+                {"presentations", n => { Presentations = n.GetCollectionOfObjectValues<GroupPolicyPresentation>(GroupPolicyPresentation.CreateFromDiscriminatorValue).ToList(); } },
+                {"previousVersionDefinition", n => { PreviousVersionDefinition = n.GetObjectValue<GroupPolicyDefinition>(GroupPolicyDefinition.CreateFromDiscriminatorValue); } },
+                {"supportedOn", n => { SupportedOn = n.GetStringValue(); } },
+                {"version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

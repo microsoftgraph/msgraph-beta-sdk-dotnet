@@ -40,16 +40,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"attributeMappings", (o,n) => { (o as ObjectMapping).AttributeMappings = n.GetCollectionOfObjectValues<AttributeMapping>(AttributeMapping.CreateFromDiscriminatorValue).ToList(); } },
-                {"enabled", (o,n) => { (o as ObjectMapping).Enabled = n.GetBoolValue(); } },
-                {"flowTypes", (o,n) => { (o as ObjectMapping).FlowTypes = n.GetEnumValue<ObjectFlowTypes>(); } },
-                {"metadata", (o,n) => { (o as ObjectMapping).Metadata = n.GetCollectionOfObjectValues<MetadataEntry>(MetadataEntry.CreateFromDiscriminatorValue).ToList(); } },
-                {"name", (o,n) => { (o as ObjectMapping).Name = n.GetStringValue(); } },
-                {"scope", (o,n) => { (o as ObjectMapping).Scope = n.GetObjectValue<Filter>(Filter.CreateFromDiscriminatorValue); } },
-                {"sourceObjectName", (o,n) => { (o as ObjectMapping).SourceObjectName = n.GetStringValue(); } },
-                {"targetObjectName", (o,n) => { (o as ObjectMapping).TargetObjectName = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"attributeMappings", n => { AttributeMappings = n.GetCollectionOfObjectValues<AttributeMapping>(AttributeMapping.CreateFromDiscriminatorValue).ToList(); } },
+                {"enabled", n => { Enabled = n.GetBoolValue(); } },
+                {"flowTypes", n => { FlowTypes = n.GetEnumValue<ObjectFlowTypes>(); } },
+                {"metadata", n => { Metadata = n.GetCollectionOfObjectValues<MetadataEntry>(MetadataEntry.CreateFromDiscriminatorValue).ToList(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"scope", n => { Scope = n.GetObjectValue<Filter>(Filter.CreateFromDiscriminatorValue); } },
+                {"sourceObjectName", n => { SourceObjectName = n.GetStringValue(); } },
+                {"targetObjectName", n => { TargetObjectName = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -26,9 +26,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"authenticationMethodsRegistrationCampaign", (o,n) => { (o as RegistrationEnforcement).AuthenticationMethodsRegistrationCampaign = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaign>(Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaign.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"authenticationMethodsRegistrationCampaign", n => { AuthenticationMethodsRegistrationCampaign = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaign>(Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaign.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"connectorName", (o,n) => { (o as CertificateConnectorDetails).ConnectorName = n.GetStringValue(); } },
-                {"enrollmentDateTime", (o,n) => { (o as CertificateConnectorDetails).EnrollmentDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastCheckinDateTime", (o,n) => { (o as CertificateConnectorDetails).LastCheckinDateTime = n.GetDateTimeOffsetValue(); } },
-                {"machineName", (o,n) => { (o as CertificateConnectorDetails).MachineName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"connectorName", n => { ConnectorName = n.GetStringValue(); } },
+                {"enrollmentDateTime", n => { EnrollmentDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastCheckinDateTime", n => { LastCheckinDateTime = n.GetDateTimeOffsetValue(); } },
+                {"machineName", n => { MachineName = n.GetStringValue(); } },
             };
         }
         /// <summary>

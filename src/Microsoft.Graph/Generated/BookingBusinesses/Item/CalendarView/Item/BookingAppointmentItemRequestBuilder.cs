@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CalendarView.Item {
         public BookingAppointmentItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/bookingBusinesses/{bookingBusiness_id}/calendarView/{bookingAppointment_id}{?start,end,select,expand}";
+            UrlTemplate = "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/calendarView/{bookingAppointment%2Did}{?start,end,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CalendarView.Item {
         public BookingAppointmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/bookingBusinesses/{bookingBusiness_id}/calendarView/{bookingAppointment_id}{?start,end,select,expand}";
+            UrlTemplate = "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/calendarView/{bookingAppointment%2Did}{?start,end,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -156,8 +156,10 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CalendarView.Item {
             /// <summary>The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00</summary>
             public string End { get; set; }
             /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
             /// <summary>The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00</summary>
             public string Start { get; set; }

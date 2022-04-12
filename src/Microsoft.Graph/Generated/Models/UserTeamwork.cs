@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class UserTeamwork : Entity, IParsable {
-        /// <summary>The associatedTeams property</summary>
+        /// <summary>The list of associatedTeamInfo objects that a user is associated with.</summary>
         public List<AssociatedTeamInfo> AssociatedTeams { get; set; }
         /// <summary>The apps installed in the personal scope of this user.</summary>
         public List<UserScopeTeamsAppInstallation> InstalledApps { get; set; }
@@ -20,10 +20,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"associatedTeams", (o,n) => { (o as UserTeamwork).AssociatedTeams = n.GetCollectionOfObjectValues<AssociatedTeamInfo>(AssociatedTeamInfo.CreateFromDiscriminatorValue).ToList(); } },
-                {"installedApps", (o,n) => { (o as UserTeamwork).InstalledApps = n.GetCollectionOfObjectValues<UserScopeTeamsAppInstallation>(UserScopeTeamsAppInstallation.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"associatedTeams", n => { AssociatedTeams = n.GetCollectionOfObjectValues<AssociatedTeamInfo>(AssociatedTeamInfo.CreateFromDiscriminatorValue).ToList(); } },
+                {"installedApps", n => { InstalledApps = n.GetCollectionOfObjectValues<UserScopeTeamsAppInstallation>(UserScopeTeamsAppInstallation.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

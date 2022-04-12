@@ -40,20 +40,20 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activityDateTime", (o,n) => { (o as DirectoryAudit).ActivityDateTime = n.GetDateTimeOffsetValue(); } },
-                {"activityDisplayName", (o,n) => { (o as DirectoryAudit).ActivityDisplayName = n.GetStringValue(); } },
-                {"additionalDetails", (o,n) => { (o as DirectoryAudit).AdditionalDetails = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue).ToList(); } },
-                {"category", (o,n) => { (o as DirectoryAudit).Category = n.GetStringValue(); } },
-                {"correlationId", (o,n) => { (o as DirectoryAudit).CorrelationId = n.GetStringValue(); } },
-                {"initiatedBy", (o,n) => { (o as DirectoryAudit).InitiatedBy = n.GetObjectValue<AuditActivityInitiator>(AuditActivityInitiator.CreateFromDiscriminatorValue); } },
-                {"loggedByService", (o,n) => { (o as DirectoryAudit).LoggedByService = n.GetStringValue(); } },
-                {"operationType", (o,n) => { (o as DirectoryAudit).OperationType = n.GetStringValue(); } },
-                {"result", (o,n) => { (o as DirectoryAudit).Result = n.GetEnumValue<OperationResult>(); } },
-                {"resultReason", (o,n) => { (o as DirectoryAudit).ResultReason = n.GetStringValue(); } },
-                {"targetResources", (o,n) => { (o as DirectoryAudit).TargetResources = n.GetCollectionOfObjectValues<TargetResource>(TargetResource.CreateFromDiscriminatorValue).ToList(); } },
-                {"userAgent", (o,n) => { (o as DirectoryAudit).UserAgent = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activityDateTime", n => { ActivityDateTime = n.GetDateTimeOffsetValue(); } },
+                {"activityDisplayName", n => { ActivityDisplayName = n.GetStringValue(); } },
+                {"additionalDetails", n => { AdditionalDetails = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue).ToList(); } },
+                {"category", n => { Category = n.GetStringValue(); } },
+                {"correlationId", n => { CorrelationId = n.GetStringValue(); } },
+                {"initiatedBy", n => { InitiatedBy = n.GetObjectValue<AuditActivityInitiator>(AuditActivityInitiator.CreateFromDiscriminatorValue); } },
+                {"loggedByService", n => { LoggedByService = n.GetStringValue(); } },
+                {"operationType", n => { OperationType = n.GetStringValue(); } },
+                {"result", n => { Result = n.GetEnumValue<OperationResult>(); } },
+                {"resultReason", n => { ResultReason = n.GetStringValue(); } },
+                {"targetResources", n => { TargetResources = n.GetCollectionOfObjectValues<TargetResource>(TargetResource.CreateFromDiscriminatorValue).ToList(); } },
+                {"userAgent", n => { UserAgent = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -44,22 +44,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"body", (o,n) => { (o as TodoTask).Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
-                {"bodyLastModifiedDateTime", (o,n) => { (o as TodoTask).BodyLastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"completedDateTime", (o,n) => { (o as TodoTask).CompletedDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", (o,n) => { (o as TodoTask).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"dueDateTime", (o,n) => { (o as TodoTask).DueDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"extensions", (o,n) => { (o as TodoTask).Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue).ToList(); } },
-                {"importance", (o,n) => { (o as TodoTask).Importance = n.GetEnumValue<Importance>(); } },
-                {"isReminderOn", (o,n) => { (o as TodoTask).IsReminderOn = n.GetBoolValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as TodoTask).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"linkedResources", (o,n) => { (o as TodoTask).LinkedResources = n.GetCollectionOfObjectValues<LinkedResource>(LinkedResource.CreateFromDiscriminatorValue).ToList(); } },
-                {"recurrence", (o,n) => { (o as TodoTask).Recurrence = n.GetObjectValue<PatternedRecurrence>(PatternedRecurrence.CreateFromDiscriminatorValue); } },
-                {"reminderDateTime", (o,n) => { (o as TodoTask).ReminderDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"status", (o,n) => { (o as TodoTask).Status = n.GetEnumValue<TaskStatus>(); } },
-                {"title", (o,n) => { (o as TodoTask).Title = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"body", n => { Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                {"bodyLastModifiedDateTime", n => { BodyLastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"completedDateTime", n => { CompletedDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"dueDateTime", n => { DueDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                {"extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue).ToList(); } },
+                {"importance", n => { Importance = n.GetEnumValue<Importance>(); } },
+                {"isReminderOn", n => { IsReminderOn = n.GetBoolValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"linkedResources", n => { LinkedResources = n.GetCollectionOfObjectValues<LinkedResource>(LinkedResource.CreateFromDiscriminatorValue).ToList(); } },
+                {"recurrence", n => { Recurrence = n.GetObjectValue<PatternedRecurrence>(PatternedRecurrence.CreateFromDiscriminatorValue); } },
+                {"reminderDateTime", n => { ReminderDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                {"status", n => { Status = n.GetEnumValue<TaskStatus>(); } },
+                {"title", n => { Title = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.GetRoleScopeTagsBy
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"roleScopeTagIds", (o,n) => { (o as GetRoleScopeTagsByIdRequestBody).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"agentImageDigest", (o,n) => { (o as MicrosoftTunnelServer).AgentImageDigest = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as MicrosoftTunnelServer).DisplayName = n.GetStringValue(); } },
-                {"lastCheckinDateTime", (o,n) => { (o as MicrosoftTunnelServer).LastCheckinDateTime = n.GetDateTimeOffsetValue(); } },
-                {"serverImageDigest", (o,n) => { (o as MicrosoftTunnelServer).ServerImageDigest = n.GetStringValue(); } },
-                {"tunnelServerHealthStatus", (o,n) => { (o as MicrosoftTunnelServer).TunnelServerHealthStatus = n.GetEnumValue<MicrosoftTunnelServerHealthStatus>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"agentImageDigest", n => { AgentImageDigest = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"lastCheckinDateTime", n => { LastCheckinDateTime = n.GetDateTimeOffsetValue(); } },
+                {"serverImageDigest", n => { ServerImageDigest = n.GetStringValue(); } },
+                {"tunnelServerHealthStatus", n => { TunnelServerHealthStatus = n.GetEnumValue<MicrosoftTunnelServerHealthStatus>(); } },
             };
         }
         /// <summary>

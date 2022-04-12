@@ -27,13 +27,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activity", (o,n) => { (o as ActivityStatistics).Activity = n.GetEnumValue<AnalyticsActivityType>(); } },
-                {"duration", (o,n) => { (o as ActivityStatistics).Duration = n.GetTimeSpanValue(); } },
-                {"endDate", (o,n) => { (o as ActivityStatistics).EndDate = n.GetDateValue(); } },
-                {"startDate", (o,n) => { (o as ActivityStatistics).StartDate = n.GetDateValue(); } },
-                {"timeZoneUsed", (o,n) => { (o as ActivityStatistics).TimeZoneUsed = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activity", n => { Activity = n.GetEnumValue<AnalyticsActivityType>(); } },
+                {"duration", n => { Duration = n.GetTimeSpanValue(); } },
+                {"endDate", n => { EndDate = n.GetDateValue(); } },
+                {"startDate", n => { StartDate = n.GetDateValue(); } },
+                {"timeZoneUsed", n => { TimeZoneUsed = n.GetStringValue(); } },
             };
         }
         /// <summary>

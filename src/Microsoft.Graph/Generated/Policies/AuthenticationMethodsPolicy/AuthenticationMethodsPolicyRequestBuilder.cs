@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationMethodsPolicy {
         public AuthenticationMethodsPolicyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/policies/authenticationMethodsPolicy{?select,expand}";
+            UrlTemplate = "{+baseurl}/policies/authenticationMethodsPolicy{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationMethodsPolicy {
         public AuthenticationMethodsPolicyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/policies/authenticationMethodsPolicy{?select,expand}";
+            UrlTemplate = "{+baseurl}/policies/authenticationMethodsPolicy{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -154,8 +154,10 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationMethodsPolicy {
         /// <summary>The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
     }

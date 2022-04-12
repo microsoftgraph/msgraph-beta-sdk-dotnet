@@ -37,14 +37,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"comparisonResult", (o,n) => { (o as DeviceManagementSettingComparison).ComparisonResult = n.GetEnumValue<DeviceManagementComparisonResult>(); } },
-                {"currentValueJson", (o,n) => { (o as DeviceManagementSettingComparison).CurrentValueJson = n.GetStringValue(); } },
-                {"definitionId", (o,n) => { (o as DeviceManagementSettingComparison).DefinitionId = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as DeviceManagementSettingComparison).DisplayName = n.GetStringValue(); } },
-                {"id", (o,n) => { (o as DeviceManagementSettingComparison).Id = n.GetStringValue(); } },
-                {"newValueJson", (o,n) => { (o as DeviceManagementSettingComparison).NewValueJson = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"comparisonResult", n => { ComparisonResult = n.GetEnumValue<DeviceManagementComparisonResult>(); } },
+                {"currentValueJson", n => { CurrentValueJson = n.GetStringValue(); } },
+                {"definitionId", n => { DefinitionId = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetStringValue(); } },
+                {"newValueJson", n => { NewValueJson = n.GetStringValue(); } },
             };
         }
         /// <summary>

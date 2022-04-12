@@ -35,13 +35,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"allowedDeviceCount", (o,n) => { (o as DeviceExchangeAccessStateSummary).AllowedDeviceCount = n.GetIntValue(); } },
-                {"blockedDeviceCount", (o,n) => { (o as DeviceExchangeAccessStateSummary).BlockedDeviceCount = n.GetIntValue(); } },
-                {"quarantinedDeviceCount", (o,n) => { (o as DeviceExchangeAccessStateSummary).QuarantinedDeviceCount = n.GetIntValue(); } },
-                {"unavailableDeviceCount", (o,n) => { (o as DeviceExchangeAccessStateSummary).UnavailableDeviceCount = n.GetIntValue(); } },
-                {"unknownDeviceCount", (o,n) => { (o as DeviceExchangeAccessStateSummary).UnknownDeviceCount = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"allowedDeviceCount", n => { AllowedDeviceCount = n.GetIntValue(); } },
+                {"blockedDeviceCount", n => { BlockedDeviceCount = n.GetIntValue(); } },
+                {"quarantinedDeviceCount", n => { QuarantinedDeviceCount = n.GetIntValue(); } },
+                {"unavailableDeviceCount", n => { UnavailableDeviceCount = n.GetIntValue(); } },
+                {"unknownDeviceCount", n => { UnknownDeviceCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

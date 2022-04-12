@@ -37,18 +37,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"displayName", (o,n) => { (o as CloudPcDeviceImage).DisplayName = n.GetStringValue(); } },
-                {"expirationDate", (o,n) => { (o as CloudPcDeviceImage).ExpirationDate = n.GetDateValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as CloudPcDeviceImage).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"operatingSystem", (o,n) => { (o as CloudPcDeviceImage).OperatingSystem = n.GetStringValue(); } },
-                {"osBuildNumber", (o,n) => { (o as CloudPcDeviceImage).OsBuildNumber = n.GetStringValue(); } },
-                {"osStatus", (o,n) => { (o as CloudPcDeviceImage).OsStatus = n.GetEnumValue<CloudPcDeviceImageOsStatus>(); } },
-                {"sourceImageResourceId", (o,n) => { (o as CloudPcDeviceImage).SourceImageResourceId = n.GetStringValue(); } },
-                {"status", (o,n) => { (o as CloudPcDeviceImage).Status = n.GetEnumValue<CloudPcDeviceImageStatus>(); } },
-                {"statusDetails", (o,n) => { (o as CloudPcDeviceImage).StatusDetails = n.GetEnumValue<CloudPcDeviceImageStatusDetails>(); } },
-                {"version", (o,n) => { (o as CloudPcDeviceImage).Version = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"expirationDate", n => { ExpirationDate = n.GetDateValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
+                {"osBuildNumber", n => { OsBuildNumber = n.GetStringValue(); } },
+                {"osStatus", n => { OsStatus = n.GetEnumValue<CloudPcDeviceImageOsStatus>(); } },
+                {"sourceImageResourceId", n => { SourceImageResourceId = n.GetStringValue(); } },
+                {"status", n => { Status = n.GetEnumValue<CloudPcDeviceImageStatus>(); } },
+                {"statusDetails", n => { StatusDetails = n.GetEnumValue<CloudPcDeviceImageStatusDetails>(); } },
+                {"version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

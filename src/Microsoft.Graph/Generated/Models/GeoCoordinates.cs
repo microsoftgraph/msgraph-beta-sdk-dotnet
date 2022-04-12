@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"altitude", (o,n) => { (o as GeoCoordinates).Altitude = n.GetDoubleValue(); } },
-                {"latitude", (o,n) => { (o as GeoCoordinates).Latitude = n.GetDoubleValue(); } },
-                {"longitude", (o,n) => { (o as GeoCoordinates).Longitude = n.GetDoubleValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"altitude", n => { Altitude = n.GetDoubleValue(); } },
+                {"latitude", n => { Latitude = n.GetDoubleValue(); } },
+                {"longitude", n => { Longitude = n.GetDoubleValue(); } },
             };
         }
         /// <summary>

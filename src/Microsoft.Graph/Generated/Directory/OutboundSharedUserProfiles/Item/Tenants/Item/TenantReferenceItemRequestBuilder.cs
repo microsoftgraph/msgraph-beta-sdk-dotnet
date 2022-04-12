@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Directory.OutboundSharedUserProfiles.Item.Tenants
         public TenantReferenceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/directory/outboundSharedUserProfiles/{outboundSharedUserProfile_userId}/tenants/{tenantReference_tenantId}{?select,expand}";
+            UrlTemplate = "{+baseurl}/directory/outboundSharedUserProfiles/{outboundSharedUserProfile%2DuserId}/tenants/{tenantReference%2DtenantId}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Directory.OutboundSharedUserProfiles.Item.Tenants
         public TenantReferenceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/directory/outboundSharedUserProfiles/{outboundSharedUserProfile_userId}/tenants/{tenantReference_tenantId}{?select,expand}";
+            UrlTemplate = "{+baseurl}/directory/outboundSharedUserProfiles/{outboundSharedUserProfile%2DuserId}/tenants/{tenantReference%2DtenantId}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -154,8 +154,10 @@ namespace Microsoft.Graph.Beta.Directory.OutboundSharedUserProfiles.Item.Tenants
         /// <summary>Get tenants from directory</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
     }

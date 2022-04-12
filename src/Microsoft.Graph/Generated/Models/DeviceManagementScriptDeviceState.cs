@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"errorCode", (o,n) => { (o as DeviceManagementScriptDeviceState).ErrorCode = n.GetIntValue(); } },
-                {"errorDescription", (o,n) => { (o as DeviceManagementScriptDeviceState).ErrorDescription = n.GetStringValue(); } },
-                {"lastStateUpdateDateTime", (o,n) => { (o as DeviceManagementScriptDeviceState).LastStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managedDevice", (o,n) => { (o as DeviceManagementScriptDeviceState).ManagedDevice = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedDevice>(Microsoft.Graph.Beta.Models.ManagedDevice.CreateFromDiscriminatorValue); } },
-                {"resultMessage", (o,n) => { (o as DeviceManagementScriptDeviceState).ResultMessage = n.GetStringValue(); } },
-                {"runState", (o,n) => { (o as DeviceManagementScriptDeviceState).RunState = n.GetEnumValue<RunState>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"errorCode", n => { ErrorCode = n.GetIntValue(); } },
+                {"errorDescription", n => { ErrorDescription = n.GetStringValue(); } },
+                {"lastStateUpdateDateTime", n => { LastStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
+                {"managedDevice", n => { ManagedDevice = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedDevice>(Microsoft.Graph.Beta.Models.ManagedDevice.CreateFromDiscriminatorValue); } },
+                {"resultMessage", n => { ResultMessage = n.GetStringValue(); } },
+                {"runState", n => { RunState = n.GetEnumValue<RunState>(); } },
             };
         }
         /// <summary>

@@ -20,10 +20,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"userFlowType", (o,n) => { (o as IdentityUserFlow).UserFlowType = n.GetEnumValue<UserFlowType>(); } },
-                {"userFlowTypeVersion", (o,n) => { (o as IdentityUserFlow).UserFlowTypeVersion = n.GetFloatValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"userFlowType", n => { UserFlowType = n.GetEnumValue<UserFlowType>(); } },
+                {"userFlowTypeVersion", n => { UserFlowTypeVersion = n.GetFloatValue(); } },
             };
         }
         /// <summary>

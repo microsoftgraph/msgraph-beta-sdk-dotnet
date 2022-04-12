@@ -31,11 +31,11 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Look
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"key", (o,n) => { (o as LookupRequestBody).Key = n.GetStringValue(); } },
-                {"resultColumnNames", (o,n) => { (o as LookupRequestBody).ResultColumnNames = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"values", (o,n) => { (o as LookupRequestBody).Values = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"key", n => { Key = n.GetStringValue(); } },
+                {"resultColumnNames", n => { ResultColumnNames = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"values", n => { Values = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

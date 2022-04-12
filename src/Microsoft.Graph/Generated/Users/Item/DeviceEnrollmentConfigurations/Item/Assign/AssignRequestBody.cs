@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.Item.As
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"enrollmentConfigurationAssignments", (o,n) => { (o as AssignRequestBody).EnrollmentConfigurationAssignments = n.GetCollectionOfObjectValues<EnrollmentConfigurationAssignment>(EnrollmentConfigurationAssignment.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"enrollmentConfigurationAssignments", n => { EnrollmentConfigurationAssignments = n.GetCollectionOfObjectValues<EnrollmentConfigurationAssignment>(EnrollmentConfigurationAssignment.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

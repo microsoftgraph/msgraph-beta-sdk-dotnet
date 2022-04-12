@@ -35,13 +35,13 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.U
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"addExclusions", (o,n) => { (o as UpdateAudienceByIdRequestBody).AddExclusions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"addMembers", (o,n) => { (o as UpdateAudienceByIdRequestBody).AddMembers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"memberEntityType", (o,n) => { (o as UpdateAudienceByIdRequestBody).MemberEntityType = n.GetStringValue(); } },
-                {"removeExclusions", (o,n) => { (o as UpdateAudienceByIdRequestBody).RemoveExclusions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"removeMembers", (o,n) => { (o as UpdateAudienceByIdRequestBody).RemoveMembers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"addExclusions", n => { AddExclusions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"addMembers", n => { AddMembers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"memberEntityType", n => { MemberEntityType = n.GetStringValue(); } },
+                {"removeExclusions", n => { RemoveExclusions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"removeMembers", n => { RemoveMembers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

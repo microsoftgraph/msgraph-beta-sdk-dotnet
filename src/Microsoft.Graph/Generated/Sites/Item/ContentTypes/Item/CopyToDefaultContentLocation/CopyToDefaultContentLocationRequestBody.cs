@@ -30,10 +30,10 @@ namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.CopyToDefaultContent
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"destinationFileName", (o,n) => { (o as CopyToDefaultContentLocationRequestBody).DestinationFileName = n.GetStringValue(); } },
-                {"sourceFile", (o,n) => { (o as CopyToDefaultContentLocationRequestBody).SourceFile = n.GetObjectValue<ItemReference>(ItemReference.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"destinationFileName", n => { DestinationFileName = n.GetStringValue(); } },
+                {"sourceFile", n => { SourceFile = n.GetObjectValue<ItemReference>(ItemReference.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

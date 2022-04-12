@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models.ODataErrors {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"client-request-id", (o,n) => { (o as InnerError).ClientRequestId = n.GetStringValue(); } },
-                {"date", (o,n) => { (o as InnerError).Date = n.GetDateTimeOffsetValue(); } },
-                {"request-id", (o,n) => { (o as InnerError).RequestId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"client-request-id", n => { ClientRequestId = n.GetStringValue(); } },
+                {"date", n => { Date = n.GetDateTimeOffsetValue(); } },
+                {"request-id", n => { RequestId = n.GetStringValue(); } },
             };
         }
         /// <summary>

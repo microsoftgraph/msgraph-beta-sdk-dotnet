@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"excludeLocations", (o,n) => { (o as ConditionalAccessLocations).ExcludeLocations = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"includeLocations", (o,n) => { (o as ConditionalAccessLocations).IncludeLocations = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"excludeLocations", n => { ExcludeLocations = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"includeLocations", n => { IncludeLocations = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

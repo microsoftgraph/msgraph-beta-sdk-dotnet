@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"endDateTime", (o,n) => { (o as UnifiedRoleEligibilityScheduleInstance).EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"memberType", (o,n) => { (o as UnifiedRoleEligibilityScheduleInstance).MemberType = n.GetStringValue(); } },
-                {"roleEligibilityScheduleId", (o,n) => { (o as UnifiedRoleEligibilityScheduleInstance).RoleEligibilityScheduleId = n.GetStringValue(); } },
-                {"startDateTime", (o,n) => { (o as UnifiedRoleEligibilityScheduleInstance).StartDateTime = n.GetDateTimeOffsetValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"memberType", n => { MemberType = n.GetStringValue(); } },
+                {"roleEligibilityScheduleId", n => { RoleEligibilityScheduleId = n.GetStringValue(); } },
+                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

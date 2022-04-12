@@ -22,11 +22,11 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"description", (o,n) => { (o as ExternalGroup).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as ExternalGroup).DisplayName = n.GetStringValue(); } },
-                {"members", (o,n) => { (o as ExternalGroup).Members = n.GetCollectionOfObjectValues<Identity>(Identity.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"members", n => { Members = n.GetCollectionOfObjectValues<Identity>(Identity.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

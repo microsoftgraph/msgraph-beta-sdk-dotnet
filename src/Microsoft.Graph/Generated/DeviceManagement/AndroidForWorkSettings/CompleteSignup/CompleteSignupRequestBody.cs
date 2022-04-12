@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkSettings.CompleteS
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"enterpriseToken", (o,n) => { (o as CompleteSignupRequestBody).EnterpriseToken = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"enterpriseToken", n => { EnterpriseToken = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"entryType", (o,n) => { (o as EducationSynchronizationError).EntryType = n.GetStringValue(); } },
-                {"errorCode", (o,n) => { (o as EducationSynchronizationError).ErrorCode = n.GetStringValue(); } },
-                {"errorMessage", (o,n) => { (o as EducationSynchronizationError).ErrorMessage = n.GetStringValue(); } },
-                {"joiningValue", (o,n) => { (o as EducationSynchronizationError).JoiningValue = n.GetStringValue(); } },
-                {"recordedDateTime", (o,n) => { (o as EducationSynchronizationError).RecordedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"reportableIdentifier", (o,n) => { (o as EducationSynchronizationError).ReportableIdentifier = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"entryType", n => { EntryType = n.GetStringValue(); } },
+                {"errorCode", n => { ErrorCode = n.GetStringValue(); } },
+                {"errorMessage", n => { ErrorMessage = n.GetStringValue(); } },
+                {"joiningValue", n => { JoiningValue = n.GetStringValue(); } },
+                {"recordedDateTime", n => { RecordedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"reportableIdentifier", n => { ReportableIdentifier = n.GetStringValue(); } },
             };
         }
         /// <summary>

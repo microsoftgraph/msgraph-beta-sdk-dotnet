@@ -20,10 +20,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"homeTenantId", (o,n) => { (o as AuditUserIdentity).HomeTenantId = n.GetStringValue(); } },
-                {"homeTenantName", (o,n) => { (o as AuditUserIdentity).HomeTenantName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"homeTenantId", n => { HomeTenantId = n.GetStringValue(); } },
+                {"homeTenantName", n => { HomeTenantName = n.GetStringValue(); } },
             };
         }
         /// <summary>

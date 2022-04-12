@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.Attachments.Creat
         public CreateUploadSessionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/calendar/events/{event_id}/attachments/microsoft.graph.createUploadSession";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/calendar/events/{event%2Did}/attachments/microsoft.graph.createUploadSession";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.Attachments.Creat
         public CreateUploadSessionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/calendar/events/{event_id}/attachments/microsoft.graph.createUploadSession";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/calendar/events/{event%2Did}/attachments/microsoft.graph.createUploadSession";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

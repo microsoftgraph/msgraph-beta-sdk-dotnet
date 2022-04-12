@@ -52,26 +52,26 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"allowedIosDeviceModels", (o,n) => { (o as IosManagedAppProtection).AllowedIosDeviceModels = n.GetStringValue(); } },
-                {"appActionIfIosDeviceModelNotAllowed", (o,n) => { (o as IosManagedAppProtection).AppActionIfIosDeviceModelNotAllowed = n.GetEnumValue<ManagedAppRemediationAction>(); } },
-                {"appDataEncryptionType", (o,n) => { (o as IosManagedAppProtection).AppDataEncryptionType = n.GetEnumValue<ManagedAppDataEncryptionType>(); } },
-                {"apps", (o,n) => { (o as IosManagedAppProtection).Apps = n.GetCollectionOfObjectValues<ManagedMobileApp>(ManagedMobileApp.CreateFromDiscriminatorValue).ToList(); } },
-                {"customBrowserProtocol", (o,n) => { (o as IosManagedAppProtection).CustomBrowserProtocol = n.GetStringValue(); } },
-                {"customDialerAppProtocol", (o,n) => { (o as IosManagedAppProtection).CustomDialerAppProtocol = n.GetStringValue(); } },
-                {"deployedAppCount", (o,n) => { (o as IosManagedAppProtection).DeployedAppCount = n.GetIntValue(); } },
-                {"deploymentSummary", (o,n) => { (o as IosManagedAppProtection).DeploymentSummary = n.GetObjectValue<ManagedAppPolicyDeploymentSummary>(ManagedAppPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
-                {"disableProtectionOfManagedOutboundOpenInData", (o,n) => { (o as IosManagedAppProtection).DisableProtectionOfManagedOutboundOpenInData = n.GetBoolValue(); } },
-                {"exemptedAppProtocols", (o,n) => { (o as IosManagedAppProtection).ExemptedAppProtocols = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
-                {"exemptedUniversalLinks", (o,n) => { (o as IosManagedAppProtection).ExemptedUniversalLinks = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"faceIdBlocked", (o,n) => { (o as IosManagedAppProtection).FaceIdBlocked = n.GetBoolValue(); } },
-                {"filterOpenInToOnlyManagedApps", (o,n) => { (o as IosManagedAppProtection).FilterOpenInToOnlyManagedApps = n.GetBoolValue(); } },
-                {"managedUniversalLinks", (o,n) => { (o as IosManagedAppProtection).ManagedUniversalLinks = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"minimumRequiredSdkVersion", (o,n) => { (o as IosManagedAppProtection).MinimumRequiredSdkVersion = n.GetStringValue(); } },
-                {"minimumWipeSdkVersion", (o,n) => { (o as IosManagedAppProtection).MinimumWipeSdkVersion = n.GetStringValue(); } },
-                {"protectInboundDataFromUnknownSources", (o,n) => { (o as IosManagedAppProtection).ProtectInboundDataFromUnknownSources = n.GetBoolValue(); } },
-                {"thirdPartyKeyboardsBlocked", (o,n) => { (o as IosManagedAppProtection).ThirdPartyKeyboardsBlocked = n.GetBoolValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"allowedIosDeviceModels", n => { AllowedIosDeviceModels = n.GetStringValue(); } },
+                {"appActionIfIosDeviceModelNotAllowed", n => { AppActionIfIosDeviceModelNotAllowed = n.GetEnumValue<ManagedAppRemediationAction>(); } },
+                {"appDataEncryptionType", n => { AppDataEncryptionType = n.GetEnumValue<ManagedAppDataEncryptionType>(); } },
+                {"apps", n => { Apps = n.GetCollectionOfObjectValues<ManagedMobileApp>(ManagedMobileApp.CreateFromDiscriminatorValue).ToList(); } },
+                {"customBrowserProtocol", n => { CustomBrowserProtocol = n.GetStringValue(); } },
+                {"customDialerAppProtocol", n => { CustomDialerAppProtocol = n.GetStringValue(); } },
+                {"deployedAppCount", n => { DeployedAppCount = n.GetIntValue(); } },
+                {"deploymentSummary", n => { DeploymentSummary = n.GetObjectValue<ManagedAppPolicyDeploymentSummary>(ManagedAppPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
+                {"disableProtectionOfManagedOutboundOpenInData", n => { DisableProtectionOfManagedOutboundOpenInData = n.GetBoolValue(); } },
+                {"exemptedAppProtocols", n => { ExemptedAppProtocols = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"exemptedUniversalLinks", n => { ExemptedUniversalLinks = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"faceIdBlocked", n => { FaceIdBlocked = n.GetBoolValue(); } },
+                {"filterOpenInToOnlyManagedApps", n => { FilterOpenInToOnlyManagedApps = n.GetBoolValue(); } },
+                {"managedUniversalLinks", n => { ManagedUniversalLinks = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"minimumRequiredSdkVersion", n => { MinimumRequiredSdkVersion = n.GetStringValue(); } },
+                {"minimumWipeSdkVersion", n => { MinimumWipeSdkVersion = n.GetStringValue(); } },
+                {"protectInboundDataFromUnknownSources", n => { ProtectInboundDataFromUnknownSources = n.GetBoolValue(); } },
+                {"thirdPartyKeyboardsBlocked", n => { ThirdPartyKeyboardsBlocked = n.GetBoolValue(); } },
             };
         }
         /// <summary>

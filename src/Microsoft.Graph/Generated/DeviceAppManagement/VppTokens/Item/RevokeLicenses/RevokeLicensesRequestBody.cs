@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Item.RevokeLicenses
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"notifyManagedDevices", (o,n) => { (o as RevokeLicensesRequestBody).NotifyManagedDevices = n.GetBoolValue(); } },
-                {"revokeUntrackedLicenses", (o,n) => { (o as RevokeLicensesRequestBody).RevokeUntrackedLicenses = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"notifyManagedDevices", n => { NotifyManagedDevices = n.GetBoolValue(); } },
+                {"revokeUntrackedLicenses", n => { RevokeUntrackedLicenses = n.GetBoolValue(); } },
             };
         }
         /// <summary>

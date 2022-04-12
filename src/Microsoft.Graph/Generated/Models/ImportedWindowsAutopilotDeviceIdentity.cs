@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignedUserPrincipalName", (o,n) => { (o as ImportedWindowsAutopilotDeviceIdentity).AssignedUserPrincipalName = n.GetStringValue(); } },
-                {"groupTag", (o,n) => { (o as ImportedWindowsAutopilotDeviceIdentity).GroupTag = n.GetStringValue(); } },
-                {"hardwareIdentifier", (o,n) => { (o as ImportedWindowsAutopilotDeviceIdentity).HardwareIdentifier = n.GetByteArrayValue(); } },
-                {"importId", (o,n) => { (o as ImportedWindowsAutopilotDeviceIdentity).ImportId = n.GetStringValue(); } },
-                {"productKey", (o,n) => { (o as ImportedWindowsAutopilotDeviceIdentity).ProductKey = n.GetStringValue(); } },
-                {"serialNumber", (o,n) => { (o as ImportedWindowsAutopilotDeviceIdentity).SerialNumber = n.GetStringValue(); } },
-                {"state", (o,n) => { (o as ImportedWindowsAutopilotDeviceIdentity).State = n.GetObjectValue<ImportedWindowsAutopilotDeviceIdentityState>(ImportedWindowsAutopilotDeviceIdentityState.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"assignedUserPrincipalName", n => { AssignedUserPrincipalName = n.GetStringValue(); } },
+                {"groupTag", n => { GroupTag = n.GetStringValue(); } },
+                {"hardwareIdentifier", n => { HardwareIdentifier = n.GetByteArrayValue(); } },
+                {"importId", n => { ImportId = n.GetStringValue(); } },
+                {"productKey", n => { ProductKey = n.GetStringValue(); } },
+                {"serialNumber", n => { SerialNumber = n.GetStringValue(); } },
+                {"state", n => { State = n.GetObjectValue<ImportedWindowsAutopilotDeviceIdentityState>(ImportedWindowsAutopilotDeviceIdentityState.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

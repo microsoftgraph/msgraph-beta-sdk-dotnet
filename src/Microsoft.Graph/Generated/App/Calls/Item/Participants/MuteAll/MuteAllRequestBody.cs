@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.MuteAll {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"clientContext", (o,n) => { (o as MuteAllRequestBody).ClientContext = n.GetStringValue(); } },
-                {"participants", (o,n) => { (o as MuteAllRequestBody).Participants = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"clientContext", n => { ClientContext = n.GetStringValue(); } },
+                {"participants", n => { Participants = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

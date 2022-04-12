@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"isEnabled", (o,n) => { (o as OcrSettings).IsEnabled = n.GetBoolValue(); } },
-                {"maxImageSize", (o,n) => { (o as OcrSettings).MaxImageSize = n.GetIntValue(); } },
-                {"timeout", (o,n) => { (o as OcrSettings).Timeout = n.GetTimeSpanValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                {"maxImageSize", n => { MaxImageSize = n.GetIntValue(); } },
+                {"timeout", n => { Timeout = n.GetTimeSpanValue(); } },
             };
         }
         /// <summary>

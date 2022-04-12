@@ -38,19 +38,19 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"constraints", (o,n) => { (o as DeviceManagementSettingDefinition).Constraints = n.GetCollectionOfObjectValues<DeviceManagementConstraint>(DeviceManagementConstraint.CreateFromDiscriminatorValue).ToList(); } },
-                {"dependencies", (o,n) => { (o as DeviceManagementSettingDefinition).Dependencies = n.GetCollectionOfObjectValues<DeviceManagementSettingDependency>(DeviceManagementSettingDependency.CreateFromDiscriminatorValue).ToList(); } },
-                {"description", (o,n) => { (o as DeviceManagementSettingDefinition).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as DeviceManagementSettingDefinition).DisplayName = n.GetStringValue(); } },
-                {"documentationUrl", (o,n) => { (o as DeviceManagementSettingDefinition).DocumentationUrl = n.GetStringValue(); } },
-                {"headerSubtitle", (o,n) => { (o as DeviceManagementSettingDefinition).HeaderSubtitle = n.GetStringValue(); } },
-                {"headerTitle", (o,n) => { (o as DeviceManagementSettingDefinition).HeaderTitle = n.GetStringValue(); } },
-                {"isTopLevel", (o,n) => { (o as DeviceManagementSettingDefinition).IsTopLevel = n.GetBoolValue(); } },
-                {"keywords", (o,n) => { (o as DeviceManagementSettingDefinition).Keywords = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"placeholderText", (o,n) => { (o as DeviceManagementSettingDefinition).PlaceholderText = n.GetStringValue(); } },
-                {"valueType", (o,n) => { (o as DeviceManagementSettingDefinition).ValueType = n.GetEnumValue<DeviceManangementIntentValueType>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"constraints", n => { Constraints = n.GetCollectionOfObjectValues<DeviceManagementConstraint>(DeviceManagementConstraint.CreateFromDiscriminatorValue).ToList(); } },
+                {"dependencies", n => { Dependencies = n.GetCollectionOfObjectValues<DeviceManagementSettingDependency>(DeviceManagementSettingDependency.CreateFromDiscriminatorValue).ToList(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"documentationUrl", n => { DocumentationUrl = n.GetStringValue(); } },
+                {"headerSubtitle", n => { HeaderSubtitle = n.GetStringValue(); } },
+                {"headerTitle", n => { HeaderTitle = n.GetStringValue(); } },
+                {"isTopLevel", n => { IsTopLevel = n.GetBoolValue(); } },
+                {"keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"placeholderText", n => { PlaceholderText = n.GetStringValue(); } },
+                {"valueType", n => { ValueType = n.GetEnumValue<DeviceManangementIntentValueType>(); } },
             };
         }
         /// <summary>

@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"complianceGracePeriodExpirationDateTime", (o,n) => { (o as DeviceConfigurationDeviceStatus).ComplianceGracePeriodExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deviceDisplayName", (o,n) => { (o as DeviceConfigurationDeviceStatus).DeviceDisplayName = n.GetStringValue(); } },
-                {"deviceModel", (o,n) => { (o as DeviceConfigurationDeviceStatus).DeviceModel = n.GetStringValue(); } },
-                {"lastReportedDateTime", (o,n) => { (o as DeviceConfigurationDeviceStatus).LastReportedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"platform", (o,n) => { (o as DeviceConfigurationDeviceStatus).Platform = n.GetIntValue(); } },
-                {"status", (o,n) => { (o as DeviceConfigurationDeviceStatus).Status = n.GetEnumValue<ComplianceStatus>(); } },
-                {"userName", (o,n) => { (o as DeviceConfigurationDeviceStatus).UserName = n.GetStringValue(); } },
-                {"userPrincipalName", (o,n) => { (o as DeviceConfigurationDeviceStatus).UserPrincipalName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"complianceGracePeriodExpirationDateTime", n => { ComplianceGracePeriodExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"deviceDisplayName", n => { DeviceDisplayName = n.GetStringValue(); } },
+                {"deviceModel", n => { DeviceModel = n.GetStringValue(); } },
+                {"lastReportedDateTime", n => { LastReportedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"platform", n => { Platform = n.GetIntValue(); } },
+                {"status", n => { Status = n.GetEnumValue<ComplianceStatus>(); } },
+                {"userName", n => { UserName = n.GetStringValue(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

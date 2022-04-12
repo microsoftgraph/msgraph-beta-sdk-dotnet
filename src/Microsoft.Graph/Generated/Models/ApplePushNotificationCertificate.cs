@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appleIdentifier", (o,n) => { (o as ApplePushNotificationCertificate).AppleIdentifier = n.GetStringValue(); } },
-                {"certificate", (o,n) => { (o as ApplePushNotificationCertificate).Certificate = n.GetStringValue(); } },
-                {"certificateSerialNumber", (o,n) => { (o as ApplePushNotificationCertificate).CertificateSerialNumber = n.GetStringValue(); } },
-                {"certificateUploadFailureReason", (o,n) => { (o as ApplePushNotificationCertificate).CertificateUploadFailureReason = n.GetStringValue(); } },
-                {"certificateUploadStatus", (o,n) => { (o as ApplePushNotificationCertificate).CertificateUploadStatus = n.GetStringValue(); } },
-                {"expirationDateTime", (o,n) => { (o as ApplePushNotificationCertificate).ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as ApplePushNotificationCertificate).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"topicIdentifier", (o,n) => { (o as ApplePushNotificationCertificate).TopicIdentifier = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"appleIdentifier", n => { AppleIdentifier = n.GetStringValue(); } },
+                {"certificate", n => { Certificate = n.GetStringValue(); } },
+                {"certificateSerialNumber", n => { CertificateSerialNumber = n.GetStringValue(); } },
+                {"certificateUploadFailureReason", n => { CertificateUploadFailureReason = n.GetStringValue(); } },
+                {"certificateUploadStatus", n => { CertificateUploadStatus = n.GetStringValue(); } },
+                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"topicIdentifier", n => { TopicIdentifier = n.GetStringValue(); } },
             };
         }
         /// <summary>

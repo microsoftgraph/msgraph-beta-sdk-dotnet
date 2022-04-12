@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"app", (o,n) => { (o as UserAppInstallStatus).App = n.GetObjectValue<MobileApp>(MobileApp.CreateFromDiscriminatorValue); } },
-                {"deviceStatuses", (o,n) => { (o as UserAppInstallStatus).DeviceStatuses = n.GetCollectionOfObjectValues<MobileAppInstallStatus>(MobileAppInstallStatus.CreateFromDiscriminatorValue).ToList(); } },
-                {"failedDeviceCount", (o,n) => { (o as UserAppInstallStatus).FailedDeviceCount = n.GetIntValue(); } },
-                {"installedDeviceCount", (o,n) => { (o as UserAppInstallStatus).InstalledDeviceCount = n.GetIntValue(); } },
-                {"notInstalledDeviceCount", (o,n) => { (o as UserAppInstallStatus).NotInstalledDeviceCount = n.GetIntValue(); } },
-                {"userName", (o,n) => { (o as UserAppInstallStatus).UserName = n.GetStringValue(); } },
-                {"userPrincipalName", (o,n) => { (o as UserAppInstallStatus).UserPrincipalName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"app", n => { App = n.GetObjectValue<MobileApp>(MobileApp.CreateFromDiscriminatorValue); } },
+                {"deviceStatuses", n => { DeviceStatuses = n.GetCollectionOfObjectValues<MobileAppInstallStatus>(MobileAppInstallStatus.CreateFromDiscriminatorValue).ToList(); } },
+                {"failedDeviceCount", n => { FailedDeviceCount = n.GetIntValue(); } },
+                {"installedDeviceCount", n => { InstalledDeviceCount = n.GetIntValue(); } },
+                {"notInstalledDeviceCount", n => { NotInstalledDeviceCount = n.GetIntValue(); } },
+                {"userName", n => { UserName = n.GetStringValue(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

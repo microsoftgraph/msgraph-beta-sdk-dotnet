@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models.Search {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"application", (o,n) => { (o as IdentitySet).Application = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
-                {"device", (o,n) => { (o as IdentitySet).Device = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
-                {"user", (o,n) => { (o as IdentitySet).User = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"application", n => { Application = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                {"device", n => { Device = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                {"user", n => { User = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

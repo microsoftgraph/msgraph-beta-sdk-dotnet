@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.Search.Query {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"value", (o,n) => { (o as QueryResponse).Value = n.GetCollectionOfObjectValues<SearchResponse>(SearchResponse.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"value", n => { Value = n.GetCollectionOfObjectValues<SearchResponse>(SearchResponse.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

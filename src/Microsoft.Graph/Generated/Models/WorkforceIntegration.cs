@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"apiVersion", (o,n) => { (o as WorkforceIntegration).ApiVersion = n.GetIntValue(); } },
-                {"displayName", (o,n) => { (o as WorkforceIntegration).DisplayName = n.GetStringValue(); } },
-                {"eligibilityFilteringEnabledEntities", (o,n) => { (o as WorkforceIntegration).EligibilityFilteringEnabledEntities = n.GetEnumValue<EligibilityFilteringEnabledEntities>(); } },
-                {"encryption", (o,n) => { (o as WorkforceIntegration).Encryption = n.GetObjectValue<WorkforceIntegrationEncryption>(WorkforceIntegrationEncryption.CreateFromDiscriminatorValue); } },
-                {"isActive", (o,n) => { (o as WorkforceIntegration).IsActive = n.GetBoolValue(); } },
-                {"supportedEntities", (o,n) => { (o as WorkforceIntegration).SupportedEntities = n.GetEnumValue<WorkforceIntegrationSupportedEntities>(); } },
-                {"supports", (o,n) => { (o as WorkforceIntegration).Supports = n.GetEnumValue<WorkforceIntegrationSupportedEntities>(); } },
-                {"url", (o,n) => { (o as WorkforceIntegration).Url = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"apiVersion", n => { ApiVersion = n.GetIntValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"eligibilityFilteringEnabledEntities", n => { EligibilityFilteringEnabledEntities = n.GetEnumValue<EligibilityFilteringEnabledEntities>(); } },
+                {"encryption", n => { Encryption = n.GetObjectValue<WorkforceIntegrationEncryption>(WorkforceIntegrationEncryption.CreateFromDiscriminatorValue); } },
+                {"isActive", n => { IsActive = n.GetBoolValue(); } },
+                {"supportedEntities", n => { SupportedEntities = n.GetEnumValue<WorkforceIntegrationSupportedEntities>(); } },
+                {"supports", n => { Supports = n.GetEnumValue<WorkforceIntegrationSupportedEntities>(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

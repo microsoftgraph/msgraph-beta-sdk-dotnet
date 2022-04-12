@@ -38,15 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"appId", (o,n) => { (o as AlertHistoryState).AppId = n.GetStringValue(); } },
-                {"assignedTo", (o,n) => { (o as AlertHistoryState).AssignedTo = n.GetStringValue(); } },
-                {"comments", (o,n) => { (o as AlertHistoryState).Comments = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"feedback", (o,n) => { (o as AlertHistoryState).Feedback = n.GetEnumValue<AlertFeedback>(); } },
-                {"status", (o,n) => { (o as AlertHistoryState).Status = n.GetEnumValue<AlertStatus>(); } },
-                {"updatedDateTime", (o,n) => { (o as AlertHistoryState).UpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"user", (o,n) => { (o as AlertHistoryState).User = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"appId", n => { AppId = n.GetStringValue(); } },
+                {"assignedTo", n => { AssignedTo = n.GetStringValue(); } },
+                {"comments", n => { Comments = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"feedback", n => { Feedback = n.GetEnumValue<AlertFeedback>(); } },
+                {"status", n => { Status = n.GetEnumValue<AlertStatus>(); } },
+                {"updatedDateTime", n => { UpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"user", n => { User = n.GetStringValue(); } },
             };
         }
         /// <summary>

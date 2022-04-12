@@ -48,24 +48,24 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"address", (o,n) => { (o as BookingBusiness).Address = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
-                {"appointments", (o,n) => { (o as BookingBusiness).Appointments = n.GetCollectionOfObjectValues<BookingAppointment>(BookingAppointment.CreateFromDiscriminatorValue).ToList(); } },
-                {"businessHours", (o,n) => { (o as BookingBusiness).BusinessHours = n.GetCollectionOfObjectValues<BookingWorkHours>(BookingWorkHours.CreateFromDiscriminatorValue).ToList(); } },
-                {"businessType", (o,n) => { (o as BookingBusiness).BusinessType = n.GetStringValue(); } },
-                {"calendarView", (o,n) => { (o as BookingBusiness).CalendarView = n.GetCollectionOfObjectValues<BookingAppointment>(BookingAppointment.CreateFromDiscriminatorValue).ToList(); } },
-                {"customers", (o,n) => { (o as BookingBusiness).Customers = n.GetCollectionOfObjectValues<BookingCustomer>(BookingCustomer.CreateFromDiscriminatorValue).ToList(); } },
-                {"customQuestions", (o,n) => { (o as BookingBusiness).CustomQuestions = n.GetCollectionOfObjectValues<BookingCustomQuestion>(BookingCustomQuestion.CreateFromDiscriminatorValue).ToList(); } },
-                {"defaultCurrencyIso", (o,n) => { (o as BookingBusiness).DefaultCurrencyIso = n.GetStringValue(); } },
-                {"email", (o,n) => { (o as BookingBusiness).Email = n.GetStringValue(); } },
-                {"isPublished", (o,n) => { (o as BookingBusiness).IsPublished = n.GetBoolValue(); } },
-                {"phone", (o,n) => { (o as BookingBusiness).Phone = n.GetStringValue(); } },
-                {"publicUrl", (o,n) => { (o as BookingBusiness).PublicUrl = n.GetStringValue(); } },
-                {"schedulingPolicy", (o,n) => { (o as BookingBusiness).SchedulingPolicy = n.GetObjectValue<BookingSchedulingPolicy>(BookingSchedulingPolicy.CreateFromDiscriminatorValue); } },
-                {"services", (o,n) => { (o as BookingBusiness).Services = n.GetCollectionOfObjectValues<BookingService>(BookingService.CreateFromDiscriminatorValue).ToList(); } },
-                {"staffMembers", (o,n) => { (o as BookingBusiness).StaffMembers = n.GetCollectionOfObjectValues<BookingStaffMember>(BookingStaffMember.CreateFromDiscriminatorValue).ToList(); } },
-                {"webSiteUrl", (o,n) => { (o as BookingBusiness).WebSiteUrl = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"address", n => { Address = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
+                {"appointments", n => { Appointments = n.GetCollectionOfObjectValues<BookingAppointment>(BookingAppointment.CreateFromDiscriminatorValue).ToList(); } },
+                {"businessHours", n => { BusinessHours = n.GetCollectionOfObjectValues<BookingWorkHours>(BookingWorkHours.CreateFromDiscriminatorValue).ToList(); } },
+                {"businessType", n => { BusinessType = n.GetStringValue(); } },
+                {"calendarView", n => { CalendarView = n.GetCollectionOfObjectValues<BookingAppointment>(BookingAppointment.CreateFromDiscriminatorValue).ToList(); } },
+                {"customers", n => { Customers = n.GetCollectionOfObjectValues<BookingCustomer>(BookingCustomer.CreateFromDiscriminatorValue).ToList(); } },
+                {"customQuestions", n => { CustomQuestions = n.GetCollectionOfObjectValues<BookingCustomQuestion>(BookingCustomQuestion.CreateFromDiscriminatorValue).ToList(); } },
+                {"defaultCurrencyIso", n => { DefaultCurrencyIso = n.GetStringValue(); } },
+                {"email", n => { Email = n.GetStringValue(); } },
+                {"isPublished", n => { IsPublished = n.GetBoolValue(); } },
+                {"phone", n => { Phone = n.GetStringValue(); } },
+                {"publicUrl", n => { PublicUrl = n.GetStringValue(); } },
+                {"schedulingPolicy", n => { SchedulingPolicy = n.GetObjectValue<BookingSchedulingPolicy>(BookingSchedulingPolicy.CreateFromDiscriminatorValue); } },
+                {"services", n => { Services = n.GetCollectionOfObjectValues<BookingService>(BookingService.CreateFromDiscriminatorValue).ToList(); } },
+                {"staffMembers", n => { StaffMembers = n.GetCollectionOfObjectValues<BookingStaffMember>(BookingStaffMember.CreateFromDiscriminatorValue).ToList(); } },
+                {"webSiteUrl", n => { WebSiteUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

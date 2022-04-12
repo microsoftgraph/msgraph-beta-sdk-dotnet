@@ -44,22 +44,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as DeviceComplianceScript).Assignments = n.GetCollectionOfObjectValues<DeviceHealthScriptAssignment>(DeviceHealthScriptAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"createdDateTime", (o,n) => { (o as DeviceComplianceScript).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as DeviceComplianceScript).Description = n.GetStringValue(); } },
-                {"detectionScriptContent", (o,n) => { (o as DeviceComplianceScript).DetectionScriptContent = n.GetByteArrayValue(); } },
-                {"deviceRunStates", (o,n) => { (o as DeviceComplianceScript).DeviceRunStates = n.GetCollectionOfObjectValues<DeviceComplianceScriptDeviceState>(DeviceComplianceScriptDeviceState.CreateFromDiscriminatorValue).ToList(); } },
-                {"displayName", (o,n) => { (o as DeviceComplianceScript).DisplayName = n.GetStringValue(); } },
-                {"enforceSignatureCheck", (o,n) => { (o as DeviceComplianceScript).EnforceSignatureCheck = n.GetBoolValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as DeviceComplianceScript).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"publisher", (o,n) => { (o as DeviceComplianceScript).Publisher = n.GetStringValue(); } },
-                {"roleScopeTagIds", (o,n) => { (o as DeviceComplianceScript).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"runAs32Bit", (o,n) => { (o as DeviceComplianceScript).RunAs32Bit = n.GetBoolValue(); } },
-                {"runAsAccount", (o,n) => { (o as DeviceComplianceScript).RunAsAccount = n.GetEnumValue<RunAsAccountType>(); } },
-                {"runSummary", (o,n) => { (o as DeviceComplianceScript).RunSummary = n.GetObjectValue<DeviceComplianceScriptRunSummary>(DeviceComplianceScriptRunSummary.CreateFromDiscriminatorValue); } },
-                {"version", (o,n) => { (o as DeviceComplianceScript).Version = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<DeviceHealthScriptAssignment>(DeviceHealthScriptAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"detectionScriptContent", n => { DetectionScriptContent = n.GetByteArrayValue(); } },
+                {"deviceRunStates", n => { DeviceRunStates = n.GetCollectionOfObjectValues<DeviceComplianceScriptDeviceState>(DeviceComplianceScriptDeviceState.CreateFromDiscriminatorValue).ToList(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"enforceSignatureCheck", n => { EnforceSignatureCheck = n.GetBoolValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"publisher", n => { Publisher = n.GetStringValue(); } },
+                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"runAs32Bit", n => { RunAs32Bit = n.GetBoolValue(); } },
+                {"runAsAccount", n => { RunAsAccount = n.GetEnumValue<RunAsAccountType>(); } },
+                {"runSummary", n => { RunSummary = n.GetObjectValue<DeviceComplianceScriptRunSummary>(DeviceComplianceScriptRunSummary.CreateFromDiscriminatorValue); } },
+                {"version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

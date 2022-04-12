@@ -31,11 +31,11 @@ namespace Microsoft.Graph.Beta.InformationProtection.VerifySignature {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"digest", (o,n) => { (o as VerifySignatureRequestBody).Digest = n.GetByteArrayValue(); } },
-                {"signature", (o,n) => { (o as VerifySignatureRequestBody).Signature = n.GetByteArrayValue(); } },
-                {"signingKeyId", (o,n) => { (o as VerifySignatureRequestBody).SigningKeyId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"digest", n => { Digest = n.GetByteArrayValue(); } },
+                {"signature", n => { Signature = n.GetByteArrayValue(); } },
+                {"signingKeyId", n => { SigningKeyId = n.GetStringValue(); } },
             };
         }
         /// <summary>

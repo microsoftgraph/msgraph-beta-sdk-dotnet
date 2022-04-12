@@ -40,16 +40,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"browser", (o,n) => { (o as DeviceDetail).Browser = n.GetStringValue(); } },
-                {"browserId", (o,n) => { (o as DeviceDetail).BrowserId = n.GetStringValue(); } },
-                {"deviceId", (o,n) => { (o as DeviceDetail).DeviceId = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as DeviceDetail).DisplayName = n.GetStringValue(); } },
-                {"isCompliant", (o,n) => { (o as DeviceDetail).IsCompliant = n.GetBoolValue(); } },
-                {"isManaged", (o,n) => { (o as DeviceDetail).IsManaged = n.GetBoolValue(); } },
-                {"operatingSystem", (o,n) => { (o as DeviceDetail).OperatingSystem = n.GetStringValue(); } },
-                {"trustType", (o,n) => { (o as DeviceDetail).TrustType = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"browser", n => { Browser = n.GetStringValue(); } },
+                {"browserId", n => { BrowserId = n.GetStringValue(); } },
+                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"isCompliant", n => { IsCompliant = n.GetBoolValue(); } },
+                {"isManaged", n => { IsManaged = n.GetBoolValue(); } },
+                {"operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
+                {"trustType", n => { TrustType = n.GetStringValue(); } },
             };
         }
         /// <summary>

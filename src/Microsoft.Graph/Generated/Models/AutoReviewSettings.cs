@@ -26,9 +26,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"notReviewedResult", (o,n) => { (o as AutoReviewSettings).NotReviewedResult = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"notReviewedResult", n => { NotReviewedResult = n.GetStringValue(); } },
             };
         }
         /// <summary>

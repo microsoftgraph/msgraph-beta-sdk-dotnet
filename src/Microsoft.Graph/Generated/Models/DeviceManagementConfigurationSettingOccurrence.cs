@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"maxDeviceOccurrence", (o,n) => { (o as DeviceManagementConfigurationSettingOccurrence).MaxDeviceOccurrence = n.GetIntValue(); } },
-                {"minDeviceOccurrence", (o,n) => { (o as DeviceManagementConfigurationSettingOccurrence).MinDeviceOccurrence = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"maxDeviceOccurrence", n => { MaxDeviceOccurrence = n.GetIntValue(); } },
+                {"minDeviceOccurrence", n => { MinDeviceOccurrence = n.GetIntValue(); } },
             };
         }
         /// <summary>

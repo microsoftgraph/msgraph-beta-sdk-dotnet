@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"isDefault", (o,n) => { (o as LocalizedNotificationMessage).IsDefault = n.GetBoolValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as LocalizedNotificationMessage).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"locale", (o,n) => { (o as LocalizedNotificationMessage).Locale = n.GetStringValue(); } },
-                {"messageTemplate", (o,n) => { (o as LocalizedNotificationMessage).MessageTemplate = n.GetStringValue(); } },
-                {"subject", (o,n) => { (o as LocalizedNotificationMessage).Subject = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"isDefault", n => { IsDefault = n.GetBoolValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"locale", n => { Locale = n.GetStringValue(); } },
+                {"messageTemplate", n => { MessageTemplate = n.GetStringValue(); } },
+                {"subject", n => { Subject = n.GetStringValue(); } },
             };
         }
         /// <summary>

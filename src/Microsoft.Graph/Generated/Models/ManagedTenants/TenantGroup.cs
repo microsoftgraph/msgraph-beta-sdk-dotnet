@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"allTenantsIncluded", (o,n) => { (o as TenantGroup).AllTenantsIncluded = n.GetBoolValue(); } },
-                {"displayName", (o,n) => { (o as TenantGroup).DisplayName = n.GetStringValue(); } },
-                {"managementActions", (o,n) => { (o as TenantGroup).ManagementActions = n.GetCollectionOfObjectValues<ManagementActionInfo>(ManagementActionInfo.CreateFromDiscriminatorValue).ToList(); } },
-                {"managementIntents", (o,n) => { (o as TenantGroup).ManagementIntents = n.GetCollectionOfObjectValues<ManagementIntentInfo>(ManagementIntentInfo.CreateFromDiscriminatorValue).ToList(); } },
-                {"tenantIds", (o,n) => { (o as TenantGroup).TenantIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"allTenantsIncluded", n => { AllTenantsIncluded = n.GetBoolValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"managementActions", n => { ManagementActions = n.GetCollectionOfObjectValues<ManagementActionInfo>(ManagementActionInfo.CreateFromDiscriminatorValue).ToList(); } },
+                {"managementIntents", n => { ManagementIntents = n.GetCollectionOfObjectValues<ManagementIntentInfo>(ManagementIntentInfo.CreateFromDiscriminatorValue).ToList(); } },
+                {"tenantIds", n => { TenantIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

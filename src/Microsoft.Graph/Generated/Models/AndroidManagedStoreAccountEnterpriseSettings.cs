@@ -40,20 +40,20 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"androidDeviceOwnerFullyManagedEnrollmentEnabled", (o,n) => { (o as AndroidManagedStoreAccountEnterpriseSettings).AndroidDeviceOwnerFullyManagedEnrollmentEnabled = n.GetBoolValue(); } },
-                {"bindStatus", (o,n) => { (o as AndroidManagedStoreAccountEnterpriseSettings).BindStatus = n.GetEnumValue<AndroidManagedStoreAccountBindStatus>(); } },
-                {"companyCodes", (o,n) => { (o as AndroidManagedStoreAccountEnterpriseSettings).CompanyCodes = n.GetCollectionOfObjectValues<AndroidEnrollmentCompanyCode>(AndroidEnrollmentCompanyCode.CreateFromDiscriminatorValue).ToList(); } },
-                {"deviceOwnerManagementEnabled", (o,n) => { (o as AndroidManagedStoreAccountEnterpriseSettings).DeviceOwnerManagementEnabled = n.GetBoolValue(); } },
-                {"enrollmentTarget", (o,n) => { (o as AndroidManagedStoreAccountEnterpriseSettings).EnrollmentTarget = n.GetEnumValue<AndroidManagedStoreAccountEnrollmentTarget>(); } },
-                {"lastAppSyncDateTime", (o,n) => { (o as AndroidManagedStoreAccountEnterpriseSettings).LastAppSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastAppSyncStatus", (o,n) => { (o as AndroidManagedStoreAccountEnterpriseSettings).LastAppSyncStatus = n.GetEnumValue<AndroidManagedStoreAccountAppSyncStatus>(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as AndroidManagedStoreAccountEnterpriseSettings).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managedGooglePlayInitialScopeTagIds", (o,n) => { (o as AndroidManagedStoreAccountEnterpriseSettings).ManagedGooglePlayInitialScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"ownerOrganizationName", (o,n) => { (o as AndroidManagedStoreAccountEnterpriseSettings).OwnerOrganizationName = n.GetStringValue(); } },
-                {"ownerUserPrincipalName", (o,n) => { (o as AndroidManagedStoreAccountEnterpriseSettings).OwnerUserPrincipalName = n.GetStringValue(); } },
-                {"targetGroupIds", (o,n) => { (o as AndroidManagedStoreAccountEnterpriseSettings).TargetGroupIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"androidDeviceOwnerFullyManagedEnrollmentEnabled", n => { AndroidDeviceOwnerFullyManagedEnrollmentEnabled = n.GetBoolValue(); } },
+                {"bindStatus", n => { BindStatus = n.GetEnumValue<AndroidManagedStoreAccountBindStatus>(); } },
+                {"companyCodes", n => { CompanyCodes = n.GetCollectionOfObjectValues<AndroidEnrollmentCompanyCode>(AndroidEnrollmentCompanyCode.CreateFromDiscriminatorValue).ToList(); } },
+                {"deviceOwnerManagementEnabled", n => { DeviceOwnerManagementEnabled = n.GetBoolValue(); } },
+                {"enrollmentTarget", n => { EnrollmentTarget = n.GetEnumValue<AndroidManagedStoreAccountEnrollmentTarget>(); } },
+                {"lastAppSyncDateTime", n => { LastAppSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastAppSyncStatus", n => { LastAppSyncStatus = n.GetEnumValue<AndroidManagedStoreAccountAppSyncStatus>(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"managedGooglePlayInitialScopeTagIds", n => { ManagedGooglePlayInitialScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"ownerOrganizationName", n => { OwnerOrganizationName = n.GetStringValue(); } },
+                {"ownerUserPrincipalName", n => { OwnerUserPrincipalName = n.GetStringValue(); } },
+                {"targetGroupIds", n => { TargetGroupIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

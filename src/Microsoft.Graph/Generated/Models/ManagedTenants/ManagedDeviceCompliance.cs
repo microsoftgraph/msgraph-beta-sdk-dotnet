@@ -44,22 +44,22 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"complianceStatus", (o,n) => { (o as ManagedDeviceCompliance).ComplianceStatus = n.GetStringValue(); } },
-                {"deviceType", (o,n) => { (o as ManagedDeviceCompliance).DeviceType = n.GetStringValue(); } },
-                {"inGracePeriodUntilDateTime", (o,n) => { (o as ManagedDeviceCompliance).InGracePeriodUntilDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastRefreshedDateTime", (o,n) => { (o as ManagedDeviceCompliance).LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastSyncDateTime", (o,n) => { (o as ManagedDeviceCompliance).LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managedDeviceId", (o,n) => { (o as ManagedDeviceCompliance).ManagedDeviceId = n.GetStringValue(); } },
-                {"managedDeviceName", (o,n) => { (o as ManagedDeviceCompliance).ManagedDeviceName = n.GetStringValue(); } },
-                {"manufacturer", (o,n) => { (o as ManagedDeviceCompliance).Manufacturer = n.GetStringValue(); } },
-                {"model", (o,n) => { (o as ManagedDeviceCompliance).Model = n.GetStringValue(); } },
-                {"osDescription", (o,n) => { (o as ManagedDeviceCompliance).OsDescription = n.GetStringValue(); } },
-                {"osVersion", (o,n) => { (o as ManagedDeviceCompliance).OsVersion = n.GetStringValue(); } },
-                {"ownerType", (o,n) => { (o as ManagedDeviceCompliance).OwnerType = n.GetStringValue(); } },
-                {"tenantDisplayName", (o,n) => { (o as ManagedDeviceCompliance).TenantDisplayName = n.GetStringValue(); } },
-                {"tenantId", (o,n) => { (o as ManagedDeviceCompliance).TenantId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"complianceStatus", n => { ComplianceStatus = n.GetStringValue(); } },
+                {"deviceType", n => { DeviceType = n.GetStringValue(); } },
+                {"inGracePeriodUntilDateTime", n => { InGracePeriodUntilDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastRefreshedDateTime", n => { LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
+                {"managedDeviceName", n => { ManagedDeviceName = n.GetStringValue(); } },
+                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                {"model", n => { Model = n.GetStringValue(); } },
+                {"osDescription", n => { OsDescription = n.GetStringValue(); } },
+                {"osVersion", n => { OsVersion = n.GetStringValue(); } },
+                {"ownerType", n => { OwnerType = n.GetStringValue(); } },
+                {"tenantDisplayName", n => { TenantDisplayName = n.GetStringValue(); } },
+                {"tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"errorDeviceCount", (o,n) => { (o as DeviceManagementScriptRunSummary).ErrorDeviceCount = n.GetIntValue(); } },
-                {"errorUserCount", (o,n) => { (o as DeviceManagementScriptRunSummary).ErrorUserCount = n.GetIntValue(); } },
-                {"successDeviceCount", (o,n) => { (o as DeviceManagementScriptRunSummary).SuccessDeviceCount = n.GetIntValue(); } },
-                {"successUserCount", (o,n) => { (o as DeviceManagementScriptRunSummary).SuccessUserCount = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"errorDeviceCount", n => { ErrorDeviceCount = n.GetIntValue(); } },
+                {"errorUserCount", n => { ErrorUserCount = n.GetIntValue(); } },
+                {"successDeviceCount", n => { SuccessDeviceCount = n.GetIntValue(); } },
+                {"successUserCount", n => { SuccessUserCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

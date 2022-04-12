@@ -22,11 +22,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"receivers", (o,n) => { (o as AudioRoutingGroup).Receivers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"routingMode", (o,n) => { (o as AudioRoutingGroup).RoutingMode = n.GetEnumValue<RoutingMode>(); } },
-                {"sources", (o,n) => { (o as AudioRoutingGroup).Sources = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"receivers", n => { Receivers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"routingMode", n => { RoutingMode = n.GetEnumValue<RoutingMode>(); } },
+                {"sources", n => { Sources = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

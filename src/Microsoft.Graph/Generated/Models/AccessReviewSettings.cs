@@ -42,17 +42,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"accessRecommendationsEnabled", (o,n) => { (o as AccessReviewSettings).AccessRecommendationsEnabled = n.GetBoolValue(); } },
-                {"activityDurationInDays", (o,n) => { (o as AccessReviewSettings).ActivityDurationInDays = n.GetIntValue(); } },
-                {"autoApplyReviewResultsEnabled", (o,n) => { (o as AccessReviewSettings).AutoApplyReviewResultsEnabled = n.GetBoolValue(); } },
-                {"autoReviewEnabled", (o,n) => { (o as AccessReviewSettings).AutoReviewEnabled = n.GetBoolValue(); } },
-                {"autoReviewSettings", (o,n) => { (o as AccessReviewSettings).AutoReviewSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.AutoReviewSettings>(Microsoft.Graph.Beta.Models.AutoReviewSettings.CreateFromDiscriminatorValue); } },
-                {"justificationRequiredOnApproval", (o,n) => { (o as AccessReviewSettings).JustificationRequiredOnApproval = n.GetBoolValue(); } },
-                {"mailNotificationsEnabled", (o,n) => { (o as AccessReviewSettings).MailNotificationsEnabled = n.GetBoolValue(); } },
-                {"recurrenceSettings", (o,n) => { (o as AccessReviewSettings).RecurrenceSettings = n.GetObjectValue<AccessReviewRecurrenceSettings>(AccessReviewRecurrenceSettings.CreateFromDiscriminatorValue); } },
-                {"remindersEnabled", (o,n) => { (o as AccessReviewSettings).RemindersEnabled = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"accessRecommendationsEnabled", n => { AccessRecommendationsEnabled = n.GetBoolValue(); } },
+                {"activityDurationInDays", n => { ActivityDurationInDays = n.GetIntValue(); } },
+                {"autoApplyReviewResultsEnabled", n => { AutoApplyReviewResultsEnabled = n.GetBoolValue(); } },
+                {"autoReviewEnabled", n => { AutoReviewEnabled = n.GetBoolValue(); } },
+                {"autoReviewSettings", n => { AutoReviewSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.AutoReviewSettings>(Microsoft.Graph.Beta.Models.AutoReviewSettings.CreateFromDiscriminatorValue); } },
+                {"justificationRequiredOnApproval", n => { JustificationRequiredOnApproval = n.GetBoolValue(); } },
+                {"mailNotificationsEnabled", n => { MailNotificationsEnabled = n.GetBoolValue(); } },
+                {"recurrenceSettings", n => { RecurrenceSettings = n.GetObjectValue<AccessReviewRecurrenceSettings>(AccessReviewRecurrenceSettings.CreateFromDiscriminatorValue); } },
+                {"remindersEnabled", n => { RemindersEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

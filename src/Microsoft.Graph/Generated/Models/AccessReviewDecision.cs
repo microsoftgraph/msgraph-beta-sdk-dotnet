@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessRecommendation", (o,n) => { (o as AccessReviewDecision).AccessRecommendation = n.GetStringValue(); } },
-                {"accessReviewId", (o,n) => { (o as AccessReviewDecision).AccessReviewId = n.GetStringValue(); } },
-                {"appliedBy", (o,n) => { (o as AccessReviewDecision).AppliedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
-                {"appliedDateTime", (o,n) => { (o as AccessReviewDecision).AppliedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"applyResult", (o,n) => { (o as AccessReviewDecision).ApplyResult = n.GetStringValue(); } },
-                {"justification", (o,n) => { (o as AccessReviewDecision).Justification = n.GetStringValue(); } },
-                {"reviewedBy", (o,n) => { (o as AccessReviewDecision).ReviewedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
-                {"reviewedDateTime", (o,n) => { (o as AccessReviewDecision).ReviewedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"reviewResult", (o,n) => { (o as AccessReviewDecision).ReviewResult = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"accessRecommendation", n => { AccessRecommendation = n.GetStringValue(); } },
+                {"accessReviewId", n => { AccessReviewId = n.GetStringValue(); } },
+                {"appliedBy", n => { AppliedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                {"appliedDateTime", n => { AppliedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"applyResult", n => { ApplyResult = n.GetStringValue(); } },
+                {"justification", n => { Justification = n.GetStringValue(); } },
+                {"reviewedBy", n => { ReviewedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                {"reviewedDateTime", n => { ReviewedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"reviewResult", n => { ReviewResult = n.GetStringValue(); } },
             };
         }
         /// <summary>

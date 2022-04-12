@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"capabilities", (o,n) => { (o as VerifiedDomain).Capabilities = n.GetStringValue(); } },
-                {"isDefault", (o,n) => { (o as VerifiedDomain).IsDefault = n.GetBoolValue(); } },
-                {"isInitial", (o,n) => { (o as VerifiedDomain).IsInitial = n.GetBoolValue(); } },
-                {"name", (o,n) => { (o as VerifiedDomain).Name = n.GetStringValue(); } },
-                {"type", (o,n) => { (o as VerifiedDomain).Type = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"capabilities", n => { Capabilities = n.GetStringValue(); } },
+                {"isDefault", n => { IsDefault = n.GetBoolValue(); } },
+                {"isInitial", n => { IsInitial = n.GetBoolValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>

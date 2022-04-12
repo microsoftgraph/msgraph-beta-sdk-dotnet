@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"managementActionId", (o,n) => { (o as ManagementActionInfo).ManagementActionId = n.GetStringValue(); } },
-                {"managementTemplateId", (o,n) => { (o as ManagementActionInfo).ManagementTemplateId = n.GetStringValue(); } },
-                {"managementTemplateVersion", (o,n) => { (o as ManagementActionInfo).ManagementTemplateVersion = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"managementActionId", n => { ManagementActionId = n.GetStringValue(); } },
+                {"managementTemplateId", n => { ManagementTemplateId = n.GetStringValue(); } },
+                {"managementTemplateVersion", n => { ManagementTemplateVersion = n.GetIntValue(); } },
             };
         }
         /// <summary>

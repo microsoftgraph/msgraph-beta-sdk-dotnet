@@ -26,9 +26,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"unifiedRoles", (o,n) => { (o as DelegatedAdminAccessDetails).UnifiedRoles = n.GetCollectionOfObjectValues<UnifiedRole>(UnifiedRole.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"unifiedRoles", n => { UnifiedRoles = n.GetCollectionOfObjectValues<UnifiedRole>(UnifiedRole.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

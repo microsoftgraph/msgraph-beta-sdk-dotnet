@@ -36,18 +36,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as CloudPcProvisioningPolicy).Assignments = n.GetCollectionOfObjectValues<CloudPcProvisioningPolicyAssignment>(CloudPcProvisioningPolicyAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"description", (o,n) => { (o as CloudPcProvisioningPolicy).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as CloudPcProvisioningPolicy).DisplayName = n.GetStringValue(); } },
-                {"domainJoinConfiguration", (o,n) => { (o as CloudPcProvisioningPolicy).DomainJoinConfiguration = n.GetObjectValue<CloudPcDomainJoinConfiguration>(CloudPcDomainJoinConfiguration.CreateFromDiscriminatorValue); } },
-                {"imageDisplayName", (o,n) => { (o as CloudPcProvisioningPolicy).ImageDisplayName = n.GetStringValue(); } },
-                {"imageId", (o,n) => { (o as CloudPcProvisioningPolicy).ImageId = n.GetStringValue(); } },
-                {"imageType", (o,n) => { (o as CloudPcProvisioningPolicy).ImageType = n.GetEnumValue<CloudPcProvisioningPolicyImageType>(); } },
-                {"microsoftManagedDesktop", (o,n) => { (o as CloudPcProvisioningPolicy).MicrosoftManagedDesktop = n.GetObjectValue<Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop>(Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop.CreateFromDiscriminatorValue); } },
-                {"onPremisesConnectionId", (o,n) => { (o as CloudPcProvisioningPolicy).OnPremisesConnectionId = n.GetStringValue(); } },
-                {"windowsSettings", (o,n) => { (o as CloudPcProvisioningPolicy).WindowsSettings = n.GetObjectValue<CloudPcWindowsSettings>(CloudPcWindowsSettings.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<CloudPcProvisioningPolicyAssignment>(CloudPcProvisioningPolicyAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"domainJoinConfiguration", n => { DomainJoinConfiguration = n.GetObjectValue<CloudPcDomainJoinConfiguration>(CloudPcDomainJoinConfiguration.CreateFromDiscriminatorValue); } },
+                {"imageDisplayName", n => { ImageDisplayName = n.GetStringValue(); } },
+                {"imageId", n => { ImageId = n.GetStringValue(); } },
+                {"imageType", n => { ImageType = n.GetEnumValue<CloudPcProvisioningPolicyImageType>(); } },
+                {"microsoftManagedDesktop", n => { MicrosoftManagedDesktop = n.GetObjectValue<Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop>(Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop.CreateFromDiscriminatorValue); } },
+                {"onPremisesConnectionId", n => { OnPremisesConnectionId = n.GetStringValue(); } },
+                {"windowsSettings", n => { WindowsSettings = n.GetObjectValue<CloudPcWindowsSettings>(CloudPcWindowsSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

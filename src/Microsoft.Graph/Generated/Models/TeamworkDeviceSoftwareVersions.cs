@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"adminAgentSoftwareVersion", (o,n) => { (o as TeamworkDeviceSoftwareVersions).AdminAgentSoftwareVersion = n.GetStringValue(); } },
-                {"firmwareSoftwareVersion", (o,n) => { (o as TeamworkDeviceSoftwareVersions).FirmwareSoftwareVersion = n.GetStringValue(); } },
-                {"operatingSystemSoftwareVersion", (o,n) => { (o as TeamworkDeviceSoftwareVersions).OperatingSystemSoftwareVersion = n.GetStringValue(); } },
-                {"partnerAgentSoftwareVersion", (o,n) => { (o as TeamworkDeviceSoftwareVersions).PartnerAgentSoftwareVersion = n.GetStringValue(); } },
-                {"teamsClientSoftwareVersion", (o,n) => { (o as TeamworkDeviceSoftwareVersions).TeamsClientSoftwareVersion = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"adminAgentSoftwareVersion", n => { AdminAgentSoftwareVersion = n.GetStringValue(); } },
+                {"firmwareSoftwareVersion", n => { FirmwareSoftwareVersion = n.GetStringValue(); } },
+                {"operatingSystemSoftwareVersion", n => { OperatingSystemSoftwareVersion = n.GetStringValue(); } },
+                {"partnerAgentSoftwareVersion", n => { PartnerAgentSoftwareVersion = n.GetStringValue(); } },
+                {"teamsClientSoftwareVersion", n => { TeamsClientSoftwareVersion = n.GetStringValue(); } },
             };
         }
         /// <summary>

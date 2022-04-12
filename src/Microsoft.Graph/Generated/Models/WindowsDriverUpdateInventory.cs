@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"applicableDeviceCount", (o,n) => { (o as WindowsDriverUpdateInventory).ApplicableDeviceCount = n.GetIntValue(); } },
-                {"approvalStatus", (o,n) => { (o as WindowsDriverUpdateInventory).ApprovalStatus = n.GetEnumValue<DriverApprovalStatus>(); } },
-                {"category", (o,n) => { (o as WindowsDriverUpdateInventory).Category = n.GetEnumValue<DriverCategory>(); } },
-                {"deployDateTime", (o,n) => { (o as WindowsDriverUpdateInventory).DeployDateTime = n.GetDateTimeOffsetValue(); } },
-                {"driverClass", (o,n) => { (o as WindowsDriverUpdateInventory).DriverClass = n.GetStringValue(); } },
-                {"manufacturer", (o,n) => { (o as WindowsDriverUpdateInventory).Manufacturer = n.GetStringValue(); } },
-                {"name", (o,n) => { (o as WindowsDriverUpdateInventory).Name = n.GetStringValue(); } },
-                {"releaseDateTime", (o,n) => { (o as WindowsDriverUpdateInventory).ReleaseDateTime = n.GetDateTimeOffsetValue(); } },
-                {"version", (o,n) => { (o as WindowsDriverUpdateInventory).Version = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"applicableDeviceCount", n => { ApplicableDeviceCount = n.GetIntValue(); } },
+                {"approvalStatus", n => { ApprovalStatus = n.GetEnumValue<DriverApprovalStatus>(); } },
+                {"category", n => { Category = n.GetEnumValue<DriverCategory>(); } },
+                {"deployDateTime", n => { DeployDateTime = n.GetDateTimeOffsetValue(); } },
+                {"driverClass", n => { DriverClass = n.GetStringValue(); } },
+                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"releaseDateTime", n => { ReleaseDateTime = n.GetDateTimeOffsetValue(); } },
+                {"version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

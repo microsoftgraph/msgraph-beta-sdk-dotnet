@@ -38,19 +38,19 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"failedSignInCount", (o,n) => { (o as RelyingPartyDetailedSummary).FailedSignInCount = n.GetLongValue(); } },
-                {"migrationStatus", (o,n) => { (o as RelyingPartyDetailedSummary).MigrationStatus = n.GetEnumValue<MigrationStatus>(); } },
-                {"migrationValidationDetails", (o,n) => { (o as RelyingPartyDetailedSummary).MigrationValidationDetails = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
-                {"relyingPartyId", (o,n) => { (o as RelyingPartyDetailedSummary).RelyingPartyId = n.GetStringValue(); } },
-                {"relyingPartyName", (o,n) => { (o as RelyingPartyDetailedSummary).RelyingPartyName = n.GetStringValue(); } },
-                {"replyUrls", (o,n) => { (o as RelyingPartyDetailedSummary).ReplyUrls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"serviceId", (o,n) => { (o as RelyingPartyDetailedSummary).ServiceId = n.GetStringValue(); } },
-                {"signInSuccessRate", (o,n) => { (o as RelyingPartyDetailedSummary).SignInSuccessRate = n.GetDoubleValue(); } },
-                {"successfulSignInCount", (o,n) => { (o as RelyingPartyDetailedSummary).SuccessfulSignInCount = n.GetLongValue(); } },
-                {"totalSignInCount", (o,n) => { (o as RelyingPartyDetailedSummary).TotalSignInCount = n.GetLongValue(); } },
-                {"uniqueUserCount", (o,n) => { (o as RelyingPartyDetailedSummary).UniqueUserCount = n.GetLongValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"failedSignInCount", n => { FailedSignInCount = n.GetLongValue(); } },
+                {"migrationStatus", n => { MigrationStatus = n.GetEnumValue<MigrationStatus>(); } },
+                {"migrationValidationDetails", n => { MigrationValidationDetails = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"relyingPartyId", n => { RelyingPartyId = n.GetStringValue(); } },
+                {"relyingPartyName", n => { RelyingPartyName = n.GetStringValue(); } },
+                {"replyUrls", n => { ReplyUrls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"serviceId", n => { ServiceId = n.GetStringValue(); } },
+                {"signInSuccessRate", n => { SignInSuccessRate = n.GetDoubleValue(); } },
+                {"successfulSignInCount", n => { SuccessfulSignInCount = n.GetLongValue(); } },
+                {"totalSignInCount", n => { TotalSignInCount = n.GetLongValue(); } },
+                {"uniqueUserCount", n => { UniqueUserCount = n.GetLongValue(); } },
             };
         }
         /// <summary>

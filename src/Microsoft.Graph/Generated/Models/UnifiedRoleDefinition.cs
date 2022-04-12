@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"description", (o,n) => { (o as UnifiedRoleDefinition).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as UnifiedRoleDefinition).DisplayName = n.GetStringValue(); } },
-                {"inheritsPermissionsFrom", (o,n) => { (o as UnifiedRoleDefinition).InheritsPermissionsFrom = n.GetCollectionOfObjectValues<UnifiedRoleDefinition>(UnifiedRoleDefinition.CreateFromDiscriminatorValue).ToList(); } },
-                {"isBuiltIn", (o,n) => { (o as UnifiedRoleDefinition).IsBuiltIn = n.GetBoolValue(); } },
-                {"isEnabled", (o,n) => { (o as UnifiedRoleDefinition).IsEnabled = n.GetBoolValue(); } },
-                {"resourceScopes", (o,n) => { (o as UnifiedRoleDefinition).ResourceScopes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"rolePermissions", (o,n) => { (o as UnifiedRoleDefinition).RolePermissions = n.GetCollectionOfObjectValues<UnifiedRolePermission>(UnifiedRolePermission.CreateFromDiscriminatorValue).ToList(); } },
-                {"templateId", (o,n) => { (o as UnifiedRoleDefinition).TemplateId = n.GetStringValue(); } },
-                {"version", (o,n) => { (o as UnifiedRoleDefinition).Version = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"inheritsPermissionsFrom", n => { InheritsPermissionsFrom = n.GetCollectionOfObjectValues<UnifiedRoleDefinition>(UnifiedRoleDefinition.CreateFromDiscriminatorValue).ToList(); } },
+                {"isBuiltIn", n => { IsBuiltIn = n.GetBoolValue(); } },
+                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                {"resourceScopes", n => { ResourceScopes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"rolePermissions", n => { RolePermissions = n.GetCollectionOfObjectValues<UnifiedRolePermission>(UnifiedRolePermission.CreateFromDiscriminatorValue).ToList(); } },
+                {"templateId", n => { TemplateId = n.GetStringValue(); } },
+                {"version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

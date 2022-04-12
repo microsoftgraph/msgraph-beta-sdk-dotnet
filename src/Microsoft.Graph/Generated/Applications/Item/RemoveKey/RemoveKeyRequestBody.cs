@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.Applications.Item.RemoveKey {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"keyId", (o,n) => { (o as RemoveKeyRequestBody).KeyId = n.GetStringValue(); } },
-                {"proof", (o,n) => { (o as RemoveKeyRequestBody).Proof = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"keyId", n => { KeyId = n.GetStringValue(); } },
+                {"proof", n => { Proof = n.GetStringValue(); } },
             };
         }
         /// <summary>

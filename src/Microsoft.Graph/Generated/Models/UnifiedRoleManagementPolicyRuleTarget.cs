@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"caller", (o,n) => { (o as UnifiedRoleManagementPolicyRuleTarget).Caller = n.GetStringValue(); } },
-                {"enforcedSettings", (o,n) => { (o as UnifiedRoleManagementPolicyRuleTarget).EnforcedSettings = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"inheritableSettings", (o,n) => { (o as UnifiedRoleManagementPolicyRuleTarget).InheritableSettings = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"level", (o,n) => { (o as UnifiedRoleManagementPolicyRuleTarget).Level = n.GetStringValue(); } },
-                {"operations", (o,n) => { (o as UnifiedRoleManagementPolicyRuleTarget).Operations = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"targetObjects", (o,n) => { (o as UnifiedRoleManagementPolicyRuleTarget).TargetObjects = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"caller", n => { Caller = n.GetStringValue(); } },
+                {"enforcedSettings", n => { EnforcedSettings = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"inheritableSettings", n => { InheritableSettings = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"level", n => { Level = n.GetStringValue(); } },
+                {"operations", n => { Operations = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"targetObjects", n => { TargetObjects = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

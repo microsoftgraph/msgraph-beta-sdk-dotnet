@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.Micros
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"endDateTime", (o,n) => { (o as CreateServerLogCollectionRequestRequestBody).EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"startDateTime", (o,n) => { (o as CreateServerLogCollectionRequestRequestBody).StartDateTime = n.GetDateTimeOffsetValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

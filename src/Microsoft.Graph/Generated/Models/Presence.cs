@@ -22,11 +22,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activity", (o,n) => { (o as Presence).Activity = n.GetStringValue(); } },
-                {"availability", (o,n) => { (o as Presence).Availability = n.GetStringValue(); } },
-                {"outOfOfficeSettings", (o,n) => { (o as Presence).OutOfOfficeSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.OutOfOfficeSettings>(Microsoft.Graph.Beta.Models.OutOfOfficeSettings.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activity", n => { Activity = n.GetStringValue(); } },
+                {"availability", n => { Availability = n.GetStringValue(); } },
+                {"outOfOfficeSettings", n => { OutOfOfficeSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.OutOfOfficeSettings>(Microsoft.Graph.Beta.Models.OutOfOfficeSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

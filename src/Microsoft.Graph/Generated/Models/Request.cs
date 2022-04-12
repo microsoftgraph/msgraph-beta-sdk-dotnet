@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"approvalId", (o,n) => { (o as Request).ApprovalId = n.GetStringValue(); } },
-                {"completedDateTime", (o,n) => { (o as Request).CompletedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"createdBy", (o,n) => { (o as Request).CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", (o,n) => { (o as Request).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"customData", (o,n) => { (o as Request).CustomData = n.GetStringValue(); } },
-                {"status", (o,n) => { (o as Request).Status = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"approvalId", n => { ApprovalId = n.GetStringValue(); } },
+                {"completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"customData", n => { CustomData = n.GetStringValue(); } },
+                {"status", n => { Status = n.GetStringValue(); } },
             };
         }
         /// <summary>

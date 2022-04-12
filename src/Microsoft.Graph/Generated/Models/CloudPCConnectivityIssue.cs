@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"deviceId", (o,n) => { (o as CloudPCConnectivityIssue).DeviceId = n.GetStringValue(); } },
-                {"errorCode", (o,n) => { (o as CloudPCConnectivityIssue).ErrorCode = n.GetStringValue(); } },
-                {"errorDateTime", (o,n) => { (o as CloudPCConnectivityIssue).ErrorDateTime = n.GetDateTimeOffsetValue(); } },
-                {"errorDescription", (o,n) => { (o as CloudPCConnectivityIssue).ErrorDescription = n.GetStringValue(); } },
-                {"recommendedAction", (o,n) => { (o as CloudPCConnectivityIssue).RecommendedAction = n.GetStringValue(); } },
-                {"userId", (o,n) => { (o as CloudPCConnectivityIssue).UserId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
+                {"errorCode", n => { ErrorCode = n.GetStringValue(); } },
+                {"errorDateTime", n => { ErrorDateTime = n.GetDateTimeOffsetValue(); } },
+                {"errorDescription", n => { ErrorDescription = n.GetStringValue(); } },
+                {"recommendedAction", n => { RecommendedAction = n.GetStringValue(); } },
+                {"userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

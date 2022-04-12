@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"allowedRoles", (o,n) => { (o as CalendarPermission).AllowedRoles = n.GetCollectionOfEnumValues<CalendarRoleType>().ToList(); } },
-                {"emailAddress", (o,n) => { (o as CalendarPermission).EmailAddress = n.GetObjectValue<Microsoft.Graph.Beta.Models.EmailAddress>(Microsoft.Graph.Beta.Models.EmailAddress.CreateFromDiscriminatorValue); } },
-                {"isInsideOrganization", (o,n) => { (o as CalendarPermission).IsInsideOrganization = n.GetBoolValue(); } },
-                {"isRemovable", (o,n) => { (o as CalendarPermission).IsRemovable = n.GetBoolValue(); } },
-                {"role", (o,n) => { (o as CalendarPermission).Role = n.GetEnumValue<CalendarRoleType>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"allowedRoles", n => { AllowedRoles = n.GetCollectionOfEnumValues<CalendarRoleType>().ToList(); } },
+                {"emailAddress", n => { EmailAddress = n.GetObjectValue<Microsoft.Graph.Beta.Models.EmailAddress>(Microsoft.Graph.Beta.Models.EmailAddress.CreateFromDiscriminatorValue); } },
+                {"isInsideOrganization", n => { IsInsideOrganization = n.GetBoolValue(); } },
+                {"isRemovable", n => { IsRemovable = n.GetBoolValue(); } },
+                {"role", n => { Role = n.GetEnumValue<CalendarRoleType>(); } },
             };
         }
         /// <summary>

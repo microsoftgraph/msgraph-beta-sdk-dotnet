@@ -22,11 +22,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"arity", (o,n) => { (o as FilterOperatorSchema).Arity = n.GetEnumValue<ScopeOperatorType>(); } },
-                {"multivaluedComparisonType", (o,n) => { (o as FilterOperatorSchema).MultivaluedComparisonType = n.GetEnumValue<ScopeOperatorMultiValuedComparisonType>(); } },
-                {"supportedAttributeTypes", (o,n) => { (o as FilterOperatorSchema).SupportedAttributeTypes = n.GetCollectionOfEnumValues<AttributeType>().ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"arity", n => { Arity = n.GetEnumValue<ScopeOperatorType>(); } },
+                {"multivaluedComparisonType", n => { MultivaluedComparisonType = n.GetEnumValue<ScopeOperatorMultiValuedComparisonType>(); } },
+                {"supportedAttributeTypes", n => { SupportedAttributeTypes = n.GetCollectionOfEnumValues<AttributeType>().ToList(); } },
             };
         }
         /// <summary>

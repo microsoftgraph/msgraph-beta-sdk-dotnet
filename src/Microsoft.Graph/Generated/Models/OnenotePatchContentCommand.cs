@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"action", (o,n) => { (o as OnenotePatchContentCommand).Action = n.GetEnumValue<OnenotePatchActionType>(); } },
-                {"content", (o,n) => { (o as OnenotePatchContentCommand).Content = n.GetStringValue(); } },
-                {"position", (o,n) => { (o as OnenotePatchContentCommand).Position = n.GetEnumValue<OnenotePatchInsertPosition>(); } },
-                {"target", (o,n) => { (o as OnenotePatchContentCommand).Target = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"action", n => { Action = n.GetEnumValue<OnenotePatchActionType>(); } },
+                {"content", n => { Content = n.GetStringValue(); } },
+                {"position", n => { Position = n.GetEnumValue<OnenotePatchInsertPosition>(); } },
+                {"target", n => { Target = n.GetStringValue(); } },
             };
         }
         /// <summary>

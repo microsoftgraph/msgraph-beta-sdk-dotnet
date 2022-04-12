@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"keySets", (o,n) => { (o as TrustFramework).KeySets = n.GetCollectionOfObjectValues<TrustFrameworkKeySet>(TrustFrameworkKeySet.CreateFromDiscriminatorValue).ToList(); } },
-                {"policies", (o,n) => { (o as TrustFramework).Policies = n.GetCollectionOfObjectValues<TrustFrameworkPolicy>(TrustFrameworkPolicy.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"keySets", n => { KeySets = n.GetCollectionOfObjectValues<TrustFrameworkKeySet>(TrustFrameworkKeySet.CreateFromDiscriminatorValue).ToList(); } },
+                {"policies", n => { Policies = n.GetCollectionOfObjectValues<TrustFrameworkPolicy>(TrustFrameworkPolicy.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

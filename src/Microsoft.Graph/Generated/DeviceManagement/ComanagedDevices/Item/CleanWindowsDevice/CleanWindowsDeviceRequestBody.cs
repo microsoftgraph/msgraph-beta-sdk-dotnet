@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.CleanWindo
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"keepUserData", (o,n) => { (o as CleanWindowsDeviceRequestBody).KeepUserData = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"keepUserData", n => { KeepUserData = n.GetBoolValue(); } },
             };
         }
         /// <summary>

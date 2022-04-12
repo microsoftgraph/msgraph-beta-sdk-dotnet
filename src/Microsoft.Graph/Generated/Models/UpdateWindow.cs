@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"updateWindowEndTime", (o,n) => { (o as UpdateWindow).UpdateWindowEndTime = n.GetTimeValue(); } },
-                {"updateWindowStartTime", (o,n) => { (o as UpdateWindow).UpdateWindowStartTime = n.GetTimeValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"updateWindowEndTime", n => { UpdateWindowEndTime = n.GetTimeValue(); } },
+                {"updateWindowStartTime", n => { UpdateWindowStartTime = n.GetTimeValue(); } },
             };
         }
         /// <summary>

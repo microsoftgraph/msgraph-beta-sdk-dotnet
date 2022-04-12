@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activatedUsing", (o,n) => { (o as UnifiedRoleAssignmentSchedule).ActivatedUsing = n.GetObjectValue<UnifiedRoleEligibilitySchedule>(UnifiedRoleEligibilitySchedule.CreateFromDiscriminatorValue); } },
-                {"assignmentType", (o,n) => { (o as UnifiedRoleAssignmentSchedule).AssignmentType = n.GetStringValue(); } },
-                {"memberType", (o,n) => { (o as UnifiedRoleAssignmentSchedule).MemberType = n.GetStringValue(); } },
-                {"scheduleInfo", (o,n) => { (o as UnifiedRoleAssignmentSchedule).ScheduleInfo = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activatedUsing", n => { ActivatedUsing = n.GetObjectValue<UnifiedRoleEligibilitySchedule>(UnifiedRoleEligibilitySchedule.CreateFromDiscriminatorValue); } },
+                {"assignmentType", n => { AssignmentType = n.GetStringValue(); } },
+                {"memberType", n => { MemberType = n.GetStringValue(); } },
+                {"scheduleInfo", n => { ScheduleInfo = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

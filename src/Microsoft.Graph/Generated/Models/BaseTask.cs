@@ -48,24 +48,24 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"bodyLastModifiedDateTime", (o,n) => { (o as BaseTask).BodyLastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"checklistItems", (o,n) => { (o as BaseTask).ChecklistItems = n.GetCollectionOfObjectValues<ChecklistItem>(ChecklistItem.CreateFromDiscriminatorValue).ToList(); } },
-                {"completedDateTime", (o,n) => { (o as BaseTask).CompletedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"createdDateTime", (o,n) => { (o as BaseTask).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", (o,n) => { (o as BaseTask).DisplayName = n.GetStringValue(); } },
-                {"dueDateTime", (o,n) => { (o as BaseTask).DueDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"extensions", (o,n) => { (o as BaseTask).Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue).ToList(); } },
-                {"importance", (o,n) => { (o as BaseTask).Importance = n.GetEnumValue<Importance>(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as BaseTask).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"linkedResources", (o,n) => { (o as BaseTask).LinkedResources = n.GetCollectionOfObjectValues<LinkedResource_v2>(LinkedResource_v2.CreateFromDiscriminatorValue).ToList(); } },
-                {"parentList", (o,n) => { (o as BaseTask).ParentList = n.GetObjectValue<BaseTaskList>(BaseTaskList.CreateFromDiscriminatorValue); } },
-                {"recurrence", (o,n) => { (o as BaseTask).Recurrence = n.GetObjectValue<PatternedRecurrence>(PatternedRecurrence.CreateFromDiscriminatorValue); } },
-                {"startDateTime", (o,n) => { (o as BaseTask).StartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"status", (o,n) => { (o as BaseTask).Status = n.GetEnumValue<TaskStatus_v2>(); } },
-                {"textBody", (o,n) => { (o as BaseTask).TextBody = n.GetStringValue(); } },
-                {"viewpoint", (o,n) => { (o as BaseTask).Viewpoint = n.GetObjectValue<TaskViewpoint>(TaskViewpoint.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"bodyLastModifiedDateTime", n => { BodyLastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"checklistItems", n => { ChecklistItems = n.GetCollectionOfObjectValues<ChecklistItem>(ChecklistItem.CreateFromDiscriminatorValue).ToList(); } },
+                {"completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"dueDateTime", n => { DueDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                {"extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue).ToList(); } },
+                {"importance", n => { Importance = n.GetEnumValue<Importance>(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"linkedResources", n => { LinkedResources = n.GetCollectionOfObjectValues<LinkedResource_v2>(LinkedResource_v2.CreateFromDiscriminatorValue).ToList(); } },
+                {"parentList", n => { ParentList = n.GetObjectValue<BaseTaskList>(BaseTaskList.CreateFromDiscriminatorValue); } },
+                {"recurrence", n => { Recurrence = n.GetObjectValue<PatternedRecurrence>(PatternedRecurrence.CreateFromDiscriminatorValue); } },
+                {"startDateTime", n => { StartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                {"status", n => { Status = n.GetEnumValue<TaskStatus_v2>(); } },
+                {"textBody", n => { TextBody = n.GetStringValue(); } },
+                {"viewpoint", n => { Viewpoint = n.GetObjectValue<TaskViewpoint>(TaskViewpoint.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

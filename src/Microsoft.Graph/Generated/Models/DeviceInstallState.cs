@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"deviceId", (o,n) => { (o as DeviceInstallState).DeviceId = n.GetStringValue(); } },
-                {"deviceName", (o,n) => { (o as DeviceInstallState).DeviceName = n.GetStringValue(); } },
-                {"errorCode", (o,n) => { (o as DeviceInstallState).ErrorCode = n.GetStringValue(); } },
-                {"installState", (o,n) => { (o as DeviceInstallState).InstallState = n.GetEnumValue<InstallState>(); } },
-                {"lastSyncDateTime", (o,n) => { (o as DeviceInstallState).LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"osDescription", (o,n) => { (o as DeviceInstallState).OsDescription = n.GetStringValue(); } },
-                {"osVersion", (o,n) => { (o as DeviceInstallState).OsVersion = n.GetStringValue(); } },
-                {"userName", (o,n) => { (o as DeviceInstallState).UserName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
+                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
+                {"errorCode", n => { ErrorCode = n.GetStringValue(); } },
+                {"installState", n => { InstallState = n.GetEnumValue<InstallState>(); } },
+                {"lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                {"osDescription", n => { OsDescription = n.GetStringValue(); } },
+                {"osVersion", n => { OsVersion = n.GetStringValue(); } },
+                {"userName", n => { UserName = n.GetStringValue(); } },
             };
         }
         /// <summary>

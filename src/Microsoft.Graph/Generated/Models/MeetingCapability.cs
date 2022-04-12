@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"allowAnonymousUsersToDialOut", (o,n) => { (o as MeetingCapability).AllowAnonymousUsersToDialOut = n.GetBoolValue(); } },
-                {"allowAnonymousUsersToStartMeeting", (o,n) => { (o as MeetingCapability).AllowAnonymousUsersToStartMeeting = n.GetBoolValue(); } },
-                {"autoAdmittedUsers", (o,n) => { (o as MeetingCapability).AutoAdmittedUsers = n.GetEnumValue<AutoAdmittedUsersType>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"allowAnonymousUsersToDialOut", n => { AllowAnonymousUsersToDialOut = n.GetBoolValue(); } },
+                {"allowAnonymousUsersToStartMeeting", n => { AllowAnonymousUsersToStartMeeting = n.GetBoolValue(); } },
+                {"autoAdmittedUsers", n => { AutoAdmittedUsers = n.GetEnumValue<AutoAdmittedUsersType>(); } },
             };
         }
         /// <summary>

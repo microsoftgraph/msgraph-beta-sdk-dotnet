@@ -54,23 +54,23 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"createdBy", (o,n) => { (o as CopyNotebookModel).CreatedBy = n.GetStringValue(); } },
-                {"createdByIdentity", (o,n) => { (o as CopyNotebookModel).CreatedByIdentity = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"createdTime", (o,n) => { (o as CopyNotebookModel).CreatedTime = n.GetDateTimeOffsetValue(); } },
-                {"id", (o,n) => { (o as CopyNotebookModel).Id = n.GetStringValue(); } },
-                {"isDefault", (o,n) => { (o as CopyNotebookModel).IsDefault = n.GetBoolValue(); } },
-                {"isShared", (o,n) => { (o as CopyNotebookModel).IsShared = n.GetBoolValue(); } },
-                {"lastModifiedBy", (o,n) => { (o as CopyNotebookModel).LastModifiedBy = n.GetStringValue(); } },
-                {"lastModifiedByIdentity", (o,n) => { (o as CopyNotebookModel).LastModifiedByIdentity = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"lastModifiedTime", (o,n) => { (o as CopyNotebookModel).LastModifiedTime = n.GetDateTimeOffsetValue(); } },
-                {"links", (o,n) => { (o as CopyNotebookModel).Links = n.GetObjectValue<NotebookLinks>(NotebookLinks.CreateFromDiscriminatorValue); } },
-                {"name", (o,n) => { (o as CopyNotebookModel).Name = n.GetStringValue(); } },
-                {"sectionGroupsUrl", (o,n) => { (o as CopyNotebookModel).SectionGroupsUrl = n.GetStringValue(); } },
-                {"sectionsUrl", (o,n) => { (o as CopyNotebookModel).SectionsUrl = n.GetStringValue(); } },
-                {"self", (o,n) => { (o as CopyNotebookModel).Self = n.GetStringValue(); } },
-                {"userRole", (o,n) => { (o as CopyNotebookModel).UserRole = n.GetEnumValue<OnenoteUserRole>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"createdBy", n => { CreatedBy = n.GetStringValue(); } },
+                {"createdByIdentity", n => { CreatedByIdentity = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"createdTime", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
+                {"id", n => { Id = n.GetStringValue(); } },
+                {"isDefault", n => { IsDefault = n.GetBoolValue(); } },
+                {"isShared", n => { IsShared = n.GetBoolValue(); } },
+                {"lastModifiedBy", n => { LastModifiedBy = n.GetStringValue(); } },
+                {"lastModifiedByIdentity", n => { LastModifiedByIdentity = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"lastModifiedTime", n => { LastModifiedTime = n.GetDateTimeOffsetValue(); } },
+                {"links", n => { Links = n.GetObjectValue<NotebookLinks>(NotebookLinks.CreateFromDiscriminatorValue); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"sectionGroupsUrl", n => { SectionGroupsUrl = n.GetStringValue(); } },
+                {"sectionsUrl", n => { SectionsUrl = n.GetStringValue(); } },
+                {"self", n => { Self = n.GetStringValue(); } },
+                {"userRole", n => { UserRole = n.GetEnumValue<OnenoteUserRole>(); } },
             };
         }
         /// <summary>

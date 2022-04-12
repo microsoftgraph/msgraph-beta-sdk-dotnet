@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"certifiedClientApplicationsOnly", (o,n) => { (o as PermissionGrantConditionSet).CertifiedClientApplicationsOnly = n.GetBoolValue(); } },
-                {"clientApplicationIds", (o,n) => { (o as PermissionGrantConditionSet).ClientApplicationIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"clientApplicationPublisherIds", (o,n) => { (o as PermissionGrantConditionSet).ClientApplicationPublisherIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"clientApplicationsFromVerifiedPublisherOnly", (o,n) => { (o as PermissionGrantConditionSet).ClientApplicationsFromVerifiedPublisherOnly = n.GetBoolValue(); } },
-                {"clientApplicationTenantIds", (o,n) => { (o as PermissionGrantConditionSet).ClientApplicationTenantIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"permissionClassification", (o,n) => { (o as PermissionGrantConditionSet).PermissionClassification = n.GetStringValue(); } },
-                {"permissions", (o,n) => { (o as PermissionGrantConditionSet).Permissions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"permissionType", (o,n) => { (o as PermissionGrantConditionSet).PermissionType = n.GetEnumValue<PermissionType>(); } },
-                {"resourceApplication", (o,n) => { (o as PermissionGrantConditionSet).ResourceApplication = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"certifiedClientApplicationsOnly", n => { CertifiedClientApplicationsOnly = n.GetBoolValue(); } },
+                {"clientApplicationIds", n => { ClientApplicationIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"clientApplicationPublisherIds", n => { ClientApplicationPublisherIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"clientApplicationsFromVerifiedPublisherOnly", n => { ClientApplicationsFromVerifiedPublisherOnly = n.GetBoolValue(); } },
+                {"clientApplicationTenantIds", n => { ClientApplicationTenantIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"permissionClassification", n => { PermissionClassification = n.GetStringValue(); } },
+                {"permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"permissionType", n => { PermissionType = n.GetEnumValue<PermissionType>(); } },
+                {"resourceApplication", n => { ResourceApplication = n.GetStringValue(); } },
             };
         }
         /// <summary>

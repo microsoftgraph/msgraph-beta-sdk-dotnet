@@ -46,23 +46,23 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"applicationId", (o,n) => { (o as Subscription).ApplicationId = n.GetStringValue(); } },
-                {"changeType", (o,n) => { (o as Subscription).ChangeType = n.GetStringValue(); } },
-                {"clientState", (o,n) => { (o as Subscription).ClientState = n.GetStringValue(); } },
-                {"creatorId", (o,n) => { (o as Subscription).CreatorId = n.GetStringValue(); } },
-                {"encryptionCertificate", (o,n) => { (o as Subscription).EncryptionCertificate = n.GetStringValue(); } },
-                {"encryptionCertificateId", (o,n) => { (o as Subscription).EncryptionCertificateId = n.GetStringValue(); } },
-                {"expirationDateTime", (o,n) => { (o as Subscription).ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"includeResourceData", (o,n) => { (o as Subscription).IncludeResourceData = n.GetBoolValue(); } },
-                {"latestSupportedTlsVersion", (o,n) => { (o as Subscription).LatestSupportedTlsVersion = n.GetStringValue(); } },
-                {"lifecycleNotificationUrl", (o,n) => { (o as Subscription).LifecycleNotificationUrl = n.GetStringValue(); } },
-                {"notificationContentType", (o,n) => { (o as Subscription).NotificationContentType = n.GetStringValue(); } },
-                {"notificationQueryOptions", (o,n) => { (o as Subscription).NotificationQueryOptions = n.GetStringValue(); } },
-                {"notificationUrl", (o,n) => { (o as Subscription).NotificationUrl = n.GetStringValue(); } },
-                {"notificationUrlAppId", (o,n) => { (o as Subscription).NotificationUrlAppId = n.GetStringValue(); } },
-                {"resource", (o,n) => { (o as Subscription).Resource = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"applicationId", n => { ApplicationId = n.GetStringValue(); } },
+                {"changeType", n => { ChangeType = n.GetStringValue(); } },
+                {"clientState", n => { ClientState = n.GetStringValue(); } },
+                {"creatorId", n => { CreatorId = n.GetStringValue(); } },
+                {"encryptionCertificate", n => { EncryptionCertificate = n.GetStringValue(); } },
+                {"encryptionCertificateId", n => { EncryptionCertificateId = n.GetStringValue(); } },
+                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"includeResourceData", n => { IncludeResourceData = n.GetBoolValue(); } },
+                {"latestSupportedTlsVersion", n => { LatestSupportedTlsVersion = n.GetStringValue(); } },
+                {"lifecycleNotificationUrl", n => { LifecycleNotificationUrl = n.GetStringValue(); } },
+                {"notificationContentType", n => { NotificationContentType = n.GetStringValue(); } },
+                {"notificationQueryOptions", n => { NotificationQueryOptions = n.GetStringValue(); } },
+                {"notificationUrl", n => { NotificationUrl = n.GetStringValue(); } },
+                {"notificationUrlAppId", n => { NotificationUrlAppId = n.GetStringValue(); } },
+                {"resource", n => { Resource = n.GetStringValue(); } },
             };
         }
         /// <summary>

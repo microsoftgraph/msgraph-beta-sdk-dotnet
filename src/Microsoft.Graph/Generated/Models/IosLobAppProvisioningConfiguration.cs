@@ -42,21 +42,21 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as IosLobAppProvisioningConfiguration).Assignments = n.GetCollectionOfObjectValues<IosLobAppProvisioningConfigurationAssignment>(IosLobAppProvisioningConfigurationAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"createdDateTime", (o,n) => { (o as IosLobAppProvisioningConfiguration).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as IosLobAppProvisioningConfiguration).Description = n.GetStringValue(); } },
-                {"deviceStatuses", (o,n) => { (o as IosLobAppProvisioningConfiguration).DeviceStatuses = n.GetCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationDeviceStatus>(ManagedDeviceMobileAppConfigurationDeviceStatus.CreateFromDiscriminatorValue).ToList(); } },
-                {"displayName", (o,n) => { (o as IosLobAppProvisioningConfiguration).DisplayName = n.GetStringValue(); } },
-                {"expirationDateTime", (o,n) => { (o as IosLobAppProvisioningConfiguration).ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"groupAssignments", (o,n) => { (o as IosLobAppProvisioningConfiguration).GroupAssignments = n.GetCollectionOfObjectValues<MobileAppProvisioningConfigGroupAssignment>(MobileAppProvisioningConfigGroupAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as IosLobAppProvisioningConfiguration).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"payload", (o,n) => { (o as IosLobAppProvisioningConfiguration).Payload = n.GetByteArrayValue(); } },
-                {"payloadFileName", (o,n) => { (o as IosLobAppProvisioningConfiguration).PayloadFileName = n.GetStringValue(); } },
-                {"roleScopeTagIds", (o,n) => { (o as IosLobAppProvisioningConfiguration).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"userStatuses", (o,n) => { (o as IosLobAppProvisioningConfiguration).UserStatuses = n.GetCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationUserStatus>(ManagedDeviceMobileAppConfigurationUserStatus.CreateFromDiscriminatorValue).ToList(); } },
-                {"version", (o,n) => { (o as IosLobAppProvisioningConfiguration).Version = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<IosLobAppProvisioningConfigurationAssignment>(IosLobAppProvisioningConfigurationAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"deviceStatuses", n => { DeviceStatuses = n.GetCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationDeviceStatus>(ManagedDeviceMobileAppConfigurationDeviceStatus.CreateFromDiscriminatorValue).ToList(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"groupAssignments", n => { GroupAssignments = n.GetCollectionOfObjectValues<MobileAppProvisioningConfigGroupAssignment>(MobileAppProvisioningConfigGroupAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"payload", n => { Payload = n.GetByteArrayValue(); } },
+                {"payloadFileName", n => { PayloadFileName = n.GetStringValue(); } },
+                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"userStatuses", n => { UserStatuses = n.GetCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationUserStatus>(ManagedDeviceMobileAppConfigurationUserStatus.CreateFromDiscriminatorValue).ToList(); } },
+                {"version", n => { Version = n.GetIntValue(); } },
             };
         }
         /// <summary>

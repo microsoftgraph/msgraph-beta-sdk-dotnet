@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"assignedByGroup", (o,n) => { (o as LicenseAssignmentState).AssignedByGroup = n.GetStringValue(); } },
-                {"disabledPlans", (o,n) => { (o as LicenseAssignmentState).DisabledPlans = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"error", (o,n) => { (o as LicenseAssignmentState).Error = n.GetStringValue(); } },
-                {"lastUpdatedDateTime", (o,n) => { (o as LicenseAssignmentState).LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"skuId", (o,n) => { (o as LicenseAssignmentState).SkuId = n.GetStringValue(); } },
-                {"state", (o,n) => { (o as LicenseAssignmentState).State = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"assignedByGroup", n => { AssignedByGroup = n.GetStringValue(); } },
+                {"disabledPlans", n => { DisabledPlans = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"error", n => { Error = n.GetStringValue(); } },
+                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"skuId", n => { SkuId = n.GetStringValue(); } },
+                {"state", n => { State = n.GetStringValue(); } },
             };
         }
         /// <summary>

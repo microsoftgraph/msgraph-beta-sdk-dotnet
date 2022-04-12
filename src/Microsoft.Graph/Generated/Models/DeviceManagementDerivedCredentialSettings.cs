@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"displayName", (o,n) => { (o as DeviceManagementDerivedCredentialSettings).DisplayName = n.GetStringValue(); } },
-                {"helpUrl", (o,n) => { (o as DeviceManagementDerivedCredentialSettings).HelpUrl = n.GetStringValue(); } },
-                {"issuer", (o,n) => { (o as DeviceManagementDerivedCredentialSettings).Issuer = n.GetEnumValue<DeviceManagementDerivedCredentialIssuer>(); } },
-                {"notificationType", (o,n) => { (o as DeviceManagementDerivedCredentialSettings).NotificationType = n.GetEnumValue<DeviceManagementDerivedCredentialNotificationType>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"helpUrl", n => { HelpUrl = n.GetStringValue(); } },
+                {"issuer", n => { Issuer = n.GetEnumValue<DeviceManagementDerivedCredentialIssuer>(); } },
+                {"notificationType", n => { NotificationType = n.GetEnumValue<DeviceManagementDerivedCredentialNotificationType>(); } },
             };
         }
         /// <summary>

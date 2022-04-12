@@ -25,12 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"completedBlackAndWhiteJobCount", (o,n) => { (o as PrintUsage).CompletedBlackAndWhiteJobCount = n.GetLongValue(); } },
-                {"completedColorJobCount", (o,n) => { (o as PrintUsage).CompletedColorJobCount = n.GetLongValue(); } },
-                {"incompleteJobCount", (o,n) => { (o as PrintUsage).IncompleteJobCount = n.GetLongValue(); } },
-                {"usageDate", (o,n) => { (o as PrintUsage).UsageDate = n.GetDateValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"completedBlackAndWhiteJobCount", n => { CompletedBlackAndWhiteJobCount = n.GetLongValue(); } },
+                {"completedColorJobCount", n => { CompletedColorJobCount = n.GetLongValue(); } },
+                {"incompleteJobCount", n => { IncompleteJobCount = n.GetLongValue(); } },
+                {"usageDate", n => { UsageDate = n.GetDateValue(); } },
             };
         }
         /// <summary>

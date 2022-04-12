@@ -37,14 +37,14 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"excludeGroups", (o,n) => { (o as ApplyRequestBody).ExcludeGroups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"includeAllUsers", (o,n) => { (o as ApplyRequestBody).IncludeAllUsers = n.GetBoolValue(); } },
-                {"includeGroups", (o,n) => { (o as ApplyRequestBody).IncludeGroups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"managementTemplateId", (o,n) => { (o as ApplyRequestBody).ManagementTemplateId = n.GetStringValue(); } },
-                {"tenantGroupId", (o,n) => { (o as ApplyRequestBody).TenantGroupId = n.GetStringValue(); } },
-                {"tenantId", (o,n) => { (o as ApplyRequestBody).TenantId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"excludeGroups", n => { ExcludeGroups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"includeAllUsers", n => { IncludeAllUsers = n.GetBoolValue(); } },
+                {"includeGroups", n => { IncludeGroups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"managementTemplateId", n => { ManagementTemplateId = n.GetStringValue(); } },
+                {"tenantGroupId", n => { TenantGroupId = n.GetStringValue(); } },
+                {"tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
         /// <summary>

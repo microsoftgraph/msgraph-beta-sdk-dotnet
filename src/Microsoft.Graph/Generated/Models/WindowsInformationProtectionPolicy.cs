@@ -40,20 +40,20 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"daysWithoutContactBeforeUnenroll", (o,n) => { (o as WindowsInformationProtectionPolicy).DaysWithoutContactBeforeUnenroll = n.GetIntValue(); } },
-                {"mdmEnrollmentUrl", (o,n) => { (o as WindowsInformationProtectionPolicy).MdmEnrollmentUrl = n.GetStringValue(); } },
-                {"minutesOfInactivityBeforeDeviceLock", (o,n) => { (o as WindowsInformationProtectionPolicy).MinutesOfInactivityBeforeDeviceLock = n.GetIntValue(); } },
-                {"numberOfPastPinsRemembered", (o,n) => { (o as WindowsInformationProtectionPolicy).NumberOfPastPinsRemembered = n.GetIntValue(); } },
-                {"passwordMaximumAttemptCount", (o,n) => { (o as WindowsInformationProtectionPolicy).PasswordMaximumAttemptCount = n.GetIntValue(); } },
-                {"pinExpirationDays", (o,n) => { (o as WindowsInformationProtectionPolicy).PinExpirationDays = n.GetIntValue(); } },
-                {"pinLowercaseLetters", (o,n) => { (o as WindowsInformationProtectionPolicy).PinLowercaseLetters = n.GetEnumValue<WindowsInformationProtectionPinCharacterRequirements>(); } },
-                {"pinMinimumLength", (o,n) => { (o as WindowsInformationProtectionPolicy).PinMinimumLength = n.GetIntValue(); } },
-                {"pinSpecialCharacters", (o,n) => { (o as WindowsInformationProtectionPolicy).PinSpecialCharacters = n.GetEnumValue<WindowsInformationProtectionPinCharacterRequirements>(); } },
-                {"pinUppercaseLetters", (o,n) => { (o as WindowsInformationProtectionPolicy).PinUppercaseLetters = n.GetEnumValue<WindowsInformationProtectionPinCharacterRequirements>(); } },
-                {"revokeOnMdmHandoffDisabled", (o,n) => { (o as WindowsInformationProtectionPolicy).RevokeOnMdmHandoffDisabled = n.GetBoolValue(); } },
-                {"windowsHelloForBusinessBlocked", (o,n) => { (o as WindowsInformationProtectionPolicy).WindowsHelloForBusinessBlocked = n.GetBoolValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"daysWithoutContactBeforeUnenroll", n => { DaysWithoutContactBeforeUnenroll = n.GetIntValue(); } },
+                {"mdmEnrollmentUrl", n => { MdmEnrollmentUrl = n.GetStringValue(); } },
+                {"minutesOfInactivityBeforeDeviceLock", n => { MinutesOfInactivityBeforeDeviceLock = n.GetIntValue(); } },
+                {"numberOfPastPinsRemembered", n => { NumberOfPastPinsRemembered = n.GetIntValue(); } },
+                {"passwordMaximumAttemptCount", n => { PasswordMaximumAttemptCount = n.GetIntValue(); } },
+                {"pinExpirationDays", n => { PinExpirationDays = n.GetIntValue(); } },
+                {"pinLowercaseLetters", n => { PinLowercaseLetters = n.GetEnumValue<WindowsInformationProtectionPinCharacterRequirements>(); } },
+                {"pinMinimumLength", n => { PinMinimumLength = n.GetIntValue(); } },
+                {"pinSpecialCharacters", n => { PinSpecialCharacters = n.GetEnumValue<WindowsInformationProtectionPinCharacterRequirements>(); } },
+                {"pinUppercaseLetters", n => { PinUppercaseLetters = n.GetEnumValue<WindowsInformationProtectionPinCharacterRequirements>(); } },
+                {"revokeOnMdmHandoffDisabled", n => { RevokeOnMdmHandoffDisabled = n.GetBoolValue(); } },
+                {"windowsHelloForBusinessBlocked", n => { WindowsHelloForBusinessBlocked = n.GetBoolValue(); } },
             };
         }
         /// <summary>

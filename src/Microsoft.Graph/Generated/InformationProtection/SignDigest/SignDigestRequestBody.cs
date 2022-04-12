@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.InformationProtection.SignDigest {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"digest", (o,n) => { (o as SignDigestRequestBody).Digest = n.GetByteArrayValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"digest", n => { Digest = n.GetByteArrayValue(); } },
             };
         }
         /// <summary>

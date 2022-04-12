@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"expirationDateTime", (o,n) => { (o as PrivilegedRoleAssignment).ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"isElevated", (o,n) => { (o as PrivilegedRoleAssignment).IsElevated = n.GetBoolValue(); } },
-                {"resultMessage", (o,n) => { (o as PrivilegedRoleAssignment).ResultMessage = n.GetStringValue(); } },
-                {"roleId", (o,n) => { (o as PrivilegedRoleAssignment).RoleId = n.GetStringValue(); } },
-                {"roleInfo", (o,n) => { (o as PrivilegedRoleAssignment).RoleInfo = n.GetObjectValue<PrivilegedRole>(PrivilegedRole.CreateFromDiscriminatorValue); } },
-                {"userId", (o,n) => { (o as PrivilegedRoleAssignment).UserId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"isElevated", n => { IsElevated = n.GetBoolValue(); } },
+                {"resultMessage", n => { ResultMessage = n.GetStringValue(); } },
+                {"roleId", n => { RoleId = n.GetStringValue(); } },
+                {"roleInfo", n => { RoleInfo = n.GetObjectValue<PrivilegedRole>(PrivilegedRole.CreateFromDiscriminatorValue); } },
+                {"userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

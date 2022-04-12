@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"configuredDisplays", (o,n) => { (o as TeamworkDisplayConfiguration).ConfiguredDisplays = n.GetCollectionOfObjectValues<TeamworkConfiguredPeripheral>(TeamworkConfiguredPeripheral.CreateFromDiscriminatorValue).ToList(); } },
-                {"displayCount", (o,n) => { (o as TeamworkDisplayConfiguration).DisplayCount = n.GetIntValue(); } },
-                {"inBuiltDisplayScreenConfiguration", (o,n) => { (o as TeamworkDisplayConfiguration).InBuiltDisplayScreenConfiguration = n.GetObjectValue<TeamworkDisplayScreenConfiguration>(TeamworkDisplayScreenConfiguration.CreateFromDiscriminatorValue); } },
-                {"isContentDuplicationAllowed", (o,n) => { (o as TeamworkDisplayConfiguration).IsContentDuplicationAllowed = n.GetBoolValue(); } },
-                {"isDualDisplayModeEnabled", (o,n) => { (o as TeamworkDisplayConfiguration).IsDualDisplayModeEnabled = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"configuredDisplays", n => { ConfiguredDisplays = n.GetCollectionOfObjectValues<TeamworkConfiguredPeripheral>(TeamworkConfiguredPeripheral.CreateFromDiscriminatorValue).ToList(); } },
+                {"displayCount", n => { DisplayCount = n.GetIntValue(); } },
+                {"inBuiltDisplayScreenConfiguration", n => { InBuiltDisplayScreenConfiguration = n.GetObjectValue<TeamworkDisplayScreenConfiguration>(TeamworkDisplayScreenConfiguration.CreateFromDiscriminatorValue); } },
+                {"isContentDuplicationAllowed", n => { IsContentDuplicationAllowed = n.GetBoolValue(); } },
+                {"isDualDisplayModeEnabled", n => { IsDualDisplayModeEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

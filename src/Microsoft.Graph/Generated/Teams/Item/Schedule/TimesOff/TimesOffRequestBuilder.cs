@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimesOff {
         /// <summary>Gets an item from the Microsoft.Graph.Beta.teams.item.schedule.timesOff.item collection</summary>
         public TimeOffItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("timeOff_id", position);
+            urlTplParams.Add("timeOff%2Did", position);
             return new TimeOffItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimesOff {
         public TimesOffRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/teams/{team_id}/schedule/timesOff{?top,skip,search,filter,count,orderby,select}";
+            UrlTemplate = "{+baseurl}/teams/{team%2Did}/schedule/timesOff{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimesOff {
         public TimesOffRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/teams/{team_id}/schedule/timesOff{?top,skip,search,filter,count,orderby,select}";
+            UrlTemplate = "{+baseurl}/teams/{team%2Did}/schedule/timesOff{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -131,18 +131,25 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimesOff {
         /// <summary>The instances of times off in the schedule.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
+            [QueryParameter("%24count")]
             public bool? Count { get; set; }
             /// <summary>Filter items by property values</summary>
+            [QueryParameter("%24filter")]
             public string Filter { get; set; }
             /// <summary>Order items by property values</summary>
+            [QueryParameter("%24orderby")]
             public string[] Orderby { get; set; }
             /// <summary>Search items by search phrases</summary>
+            [QueryParameter("%24search")]
             public string Search { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
             /// <summary>Skip the first n items</summary>
+            [QueryParameter("%24skip")]
             public int? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
+            [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
     }

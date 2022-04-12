@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"licenseType", (o,n) => { (o as LicenseInfoDetail).LicenseType = n.GetEnumValue<AzureADLicenseType>(); } },
-                {"totalAssignedCount", (o,n) => { (o as LicenseInfoDetail).TotalAssignedCount = n.GetIntValue(); } },
-                {"totalLicenseCount", (o,n) => { (o as LicenseInfoDetail).TotalLicenseCount = n.GetIntValue(); } },
-                {"totalUsageCount", (o,n) => { (o as LicenseInfoDetail).TotalUsageCount = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"licenseType", n => { LicenseType = n.GetEnumValue<AzureADLicenseType>(); } },
+                {"totalAssignedCount", n => { TotalAssignedCount = n.GetIntValue(); } },
+                {"totalLicenseCount", n => { TotalLicenseCount = n.GetIntValue(); } },
+                {"totalUsageCount", n => { TotalUsageCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

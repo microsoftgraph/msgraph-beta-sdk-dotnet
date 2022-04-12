@@ -38,15 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"additionalDetails", (o,n) => { (o as CloudPcOnPremisesConnectionHealthCheck).AdditionalDetails = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as CloudPcOnPremisesConnectionHealthCheck).DisplayName = n.GetStringValue(); } },
-                {"endDateTime", (o,n) => { (o as CloudPcOnPremisesConnectionHealthCheck).EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"errorType", (o,n) => { (o as CloudPcOnPremisesConnectionHealthCheck).ErrorType = n.GetEnumValue<CloudPcOnPremisesConnectionHealthCheckErrorType>(); } },
-                {"recommendedAction", (o,n) => { (o as CloudPcOnPremisesConnectionHealthCheck).RecommendedAction = n.GetStringValue(); } },
-                {"startDateTime", (o,n) => { (o as CloudPcOnPremisesConnectionHealthCheck).StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", (o,n) => { (o as CloudPcOnPremisesConnectionHealthCheck).Status = n.GetEnumValue<CloudPcOnPremisesConnectionStatus>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"additionalDetails", n => { AdditionalDetails = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"errorType", n => { ErrorType = n.GetEnumValue<CloudPcOnPremisesConnectionHealthCheckErrorType>(); } },
+                {"recommendedAction", n => { RecommendedAction = n.GetStringValue(); } },
+                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                {"status", n => { Status = n.GetEnumValue<CloudPcOnPremisesConnectionStatus>(); } },
             };
         }
         /// <summary>

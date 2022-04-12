@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"sharedBy", (o,n) => { (o as SharingDetail).SharedBy = n.GetObjectValue<InsightIdentity>(InsightIdentity.CreateFromDiscriminatorValue); } },
-                {"sharedDateTime", (o,n) => { (o as SharingDetail).SharedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"sharingReference", (o,n) => { (o as SharingDetail).SharingReference = n.GetObjectValue<ResourceReference>(ResourceReference.CreateFromDiscriminatorValue); } },
-                {"sharingSubject", (o,n) => { (o as SharingDetail).SharingSubject = n.GetStringValue(); } },
-                {"sharingType", (o,n) => { (o as SharingDetail).SharingType = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"sharedBy", n => { SharedBy = n.GetObjectValue<InsightIdentity>(InsightIdentity.CreateFromDiscriminatorValue); } },
+                {"sharedDateTime", n => { SharedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"sharingReference", n => { SharingReference = n.GetObjectValue<ResourceReference>(ResourceReference.CreateFromDiscriminatorValue); } },
+                {"sharingSubject", n => { SharingSubject = n.GetStringValue(); } },
+                {"sharingType", n => { SharingType = n.GetStringValue(); } },
             };
         }
         /// <summary>

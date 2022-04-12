@@ -62,31 +62,31 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"address", (o,n) => { (o as Customer).Address = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
-                {"blocked", (o,n) => { (o as Customer).Blocked = n.GetStringValue(); } },
-                {"currency", (o,n) => { (o as Customer).Currency = n.GetObjectValue<Microsoft.Graph.Beta.Models.Currency>(Microsoft.Graph.Beta.Models.Currency.CreateFromDiscriminatorValue); } },
-                {"currencyCode", (o,n) => { (o as Customer).CurrencyCode = n.GetStringValue(); } },
-                {"currencyId", (o,n) => { (o as Customer).CurrencyId = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as Customer).DisplayName = n.GetStringValue(); } },
-                {"email", (o,n) => { (o as Customer).Email = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as Customer).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"number", (o,n) => { (o as Customer).Number = n.GetStringValue(); } },
-                {"paymentMethod", (o,n) => { (o as Customer).PaymentMethod = n.GetObjectValue<Microsoft.Graph.Beta.Models.PaymentMethod>(Microsoft.Graph.Beta.Models.PaymentMethod.CreateFromDiscriminatorValue); } },
-                {"paymentMethodId", (o,n) => { (o as Customer).PaymentMethodId = n.GetStringValue(); } },
-                {"paymentTerm", (o,n) => { (o as Customer).PaymentTerm = n.GetObjectValue<Microsoft.Graph.Beta.Models.PaymentTerm>(Microsoft.Graph.Beta.Models.PaymentTerm.CreateFromDiscriminatorValue); } },
-                {"paymentTermsId", (o,n) => { (o as Customer).PaymentTermsId = n.GetStringValue(); } },
-                {"phoneNumber", (o,n) => { (o as Customer).PhoneNumber = n.GetStringValue(); } },
-                {"picture", (o,n) => { (o as Customer).Picture = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Picture>(Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue).ToList(); } },
-                {"shipmentMethod", (o,n) => { (o as Customer).ShipmentMethod = n.GetObjectValue<Microsoft.Graph.Beta.Models.ShipmentMethod>(Microsoft.Graph.Beta.Models.ShipmentMethod.CreateFromDiscriminatorValue); } },
-                {"shipmentMethodId", (o,n) => { (o as Customer).ShipmentMethodId = n.GetStringValue(); } },
-                {"taxAreaDisplayName", (o,n) => { (o as Customer).TaxAreaDisplayName = n.GetStringValue(); } },
-                {"taxAreaId", (o,n) => { (o as Customer).TaxAreaId = n.GetStringValue(); } },
-                {"taxLiable", (o,n) => { (o as Customer).TaxLiable = n.GetBoolValue(); } },
-                {"taxRegistrationNumber", (o,n) => { (o as Customer).TaxRegistrationNumber = n.GetStringValue(); } },
-                {"type", (o,n) => { (o as Customer).Type = n.GetStringValue(); } },
-                {"website", (o,n) => { (o as Customer).Website = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"address", n => { Address = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
+                {"blocked", n => { Blocked = n.GetStringValue(); } },
+                {"currency", n => { Currency = n.GetObjectValue<Microsoft.Graph.Beta.Models.Currency>(Microsoft.Graph.Beta.Models.Currency.CreateFromDiscriminatorValue); } },
+                {"currencyCode", n => { CurrencyCode = n.GetStringValue(); } },
+                {"currencyId", n => { CurrencyId = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"email", n => { Email = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"number", n => { Number = n.GetStringValue(); } },
+                {"paymentMethod", n => { PaymentMethod = n.GetObjectValue<Microsoft.Graph.Beta.Models.PaymentMethod>(Microsoft.Graph.Beta.Models.PaymentMethod.CreateFromDiscriminatorValue); } },
+                {"paymentMethodId", n => { PaymentMethodId = n.GetStringValue(); } },
+                {"paymentTerm", n => { PaymentTerm = n.GetObjectValue<Microsoft.Graph.Beta.Models.PaymentTerm>(Microsoft.Graph.Beta.Models.PaymentTerm.CreateFromDiscriminatorValue); } },
+                {"paymentTermsId", n => { PaymentTermsId = n.GetStringValue(); } },
+                {"phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
+                {"picture", n => { Picture = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Picture>(Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue).ToList(); } },
+                {"shipmentMethod", n => { ShipmentMethod = n.GetObjectValue<Microsoft.Graph.Beta.Models.ShipmentMethod>(Microsoft.Graph.Beta.Models.ShipmentMethod.CreateFromDiscriminatorValue); } },
+                {"shipmentMethodId", n => { ShipmentMethodId = n.GetStringValue(); } },
+                {"taxAreaDisplayName", n => { TaxAreaDisplayName = n.GetStringValue(); } },
+                {"taxAreaId", n => { TaxAreaId = n.GetStringValue(); } },
+                {"taxLiable", n => { TaxLiable = n.GetBoolValue(); } },
+                {"taxRegistrationNumber", n => { TaxRegistrationNumber = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
+                {"website", n => { Website = n.GetStringValue(); } },
             };
         }
         /// <summary>

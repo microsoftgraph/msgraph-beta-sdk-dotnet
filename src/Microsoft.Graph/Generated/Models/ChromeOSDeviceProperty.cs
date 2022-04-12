@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"name", (o,n) => { (o as ChromeOSDeviceProperty).Name = n.GetStringValue(); } },
-                {"updatable", (o,n) => { (o as ChromeOSDeviceProperty).Updatable = n.GetBoolValue(); } },
-                {"value", (o,n) => { (o as ChromeOSDeviceProperty).Value = n.GetStringValue(); } },
-                {"valueType", (o,n) => { (o as ChromeOSDeviceProperty).ValueType = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"updatable", n => { Updatable = n.GetBoolValue(); } },
+                {"value", n => { Value = n.GetStringValue(); } },
+                {"valueType", n => { ValueType = n.GetStringValue(); } },
             };
         }
         /// <summary>

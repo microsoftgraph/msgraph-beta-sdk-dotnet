@@ -46,23 +46,23 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as DeviceCustomAttributeShellScript).Assignments = n.GetCollectionOfObjectValues<DeviceManagementScriptAssignment>(DeviceManagementScriptAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"createdDateTime", (o,n) => { (o as DeviceCustomAttributeShellScript).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"customAttributeName", (o,n) => { (o as DeviceCustomAttributeShellScript).CustomAttributeName = n.GetStringValue(); } },
-                {"customAttributeType", (o,n) => { (o as DeviceCustomAttributeShellScript).CustomAttributeType = n.GetEnumValue<DeviceCustomAttributeValueType>(); } },
-                {"description", (o,n) => { (o as DeviceCustomAttributeShellScript).Description = n.GetStringValue(); } },
-                {"deviceRunStates", (o,n) => { (o as DeviceCustomAttributeShellScript).DeviceRunStates = n.GetCollectionOfObjectValues<DeviceManagementScriptDeviceState>(DeviceManagementScriptDeviceState.CreateFromDiscriminatorValue).ToList(); } },
-                {"displayName", (o,n) => { (o as DeviceCustomAttributeShellScript).DisplayName = n.GetStringValue(); } },
-                {"fileName", (o,n) => { (o as DeviceCustomAttributeShellScript).FileName = n.GetStringValue(); } },
-                {"groupAssignments", (o,n) => { (o as DeviceCustomAttributeShellScript).GroupAssignments = n.GetCollectionOfObjectValues<DeviceManagementScriptGroupAssignment>(DeviceManagementScriptGroupAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as DeviceCustomAttributeShellScript).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"roleScopeTagIds", (o,n) => { (o as DeviceCustomAttributeShellScript).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"runAsAccount", (o,n) => { (o as DeviceCustomAttributeShellScript).RunAsAccount = n.GetEnumValue<RunAsAccountType>(); } },
-                {"runSummary", (o,n) => { (o as DeviceCustomAttributeShellScript).RunSummary = n.GetObjectValue<DeviceManagementScriptRunSummary>(DeviceManagementScriptRunSummary.CreateFromDiscriminatorValue); } },
-                {"scriptContent", (o,n) => { (o as DeviceCustomAttributeShellScript).ScriptContent = n.GetByteArrayValue(); } },
-                {"userRunStates", (o,n) => { (o as DeviceCustomAttributeShellScript).UserRunStates = n.GetCollectionOfObjectValues<DeviceManagementScriptUserState>(DeviceManagementScriptUserState.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<DeviceManagementScriptAssignment>(DeviceManagementScriptAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"customAttributeName", n => { CustomAttributeName = n.GetStringValue(); } },
+                {"customAttributeType", n => { CustomAttributeType = n.GetEnumValue<DeviceCustomAttributeValueType>(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"deviceRunStates", n => { DeviceRunStates = n.GetCollectionOfObjectValues<DeviceManagementScriptDeviceState>(DeviceManagementScriptDeviceState.CreateFromDiscriminatorValue).ToList(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"fileName", n => { FileName = n.GetStringValue(); } },
+                {"groupAssignments", n => { GroupAssignments = n.GetCollectionOfObjectValues<DeviceManagementScriptGroupAssignment>(DeviceManagementScriptGroupAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"runAsAccount", n => { RunAsAccount = n.GetEnumValue<RunAsAccountType>(); } },
+                {"runSummary", n => { RunSummary = n.GetObjectValue<DeviceManagementScriptRunSummary>(DeviceManagementScriptRunSummary.CreateFromDiscriminatorValue); } },
+                {"scriptContent", n => { ScriptContent = n.GetByteArrayValue(); } },
+                {"userRunStates", n => { UserRunStates = n.GetCollectionOfObjectValues<DeviceManagementScriptUserState>(DeviceManagementScriptUserState.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"policy", (o,n) => { (o as UnifiedRoleManagementPolicyAssignment).Policy = n.GetObjectValue<UnifiedRoleManagementPolicy>(UnifiedRoleManagementPolicy.CreateFromDiscriminatorValue); } },
-                {"policyId", (o,n) => { (o as UnifiedRoleManagementPolicyAssignment).PolicyId = n.GetStringValue(); } },
-                {"roleDefinitionId", (o,n) => { (o as UnifiedRoleManagementPolicyAssignment).RoleDefinitionId = n.GetStringValue(); } },
-                {"scopeId", (o,n) => { (o as UnifiedRoleManagementPolicyAssignment).ScopeId = n.GetStringValue(); } },
-                {"scopeType", (o,n) => { (o as UnifiedRoleManagementPolicyAssignment).ScopeType = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"policy", n => { Policy = n.GetObjectValue<UnifiedRoleManagementPolicy>(UnifiedRoleManagementPolicy.CreateFromDiscriminatorValue); } },
+                {"policyId", n => { PolicyId = n.GetStringValue(); } },
+                {"roleDefinitionId", n => { RoleDefinitionId = n.GetStringValue(); } },
+                {"scopeId", n => { ScopeId = n.GetStringValue(); } },
+                {"scopeType", n => { ScopeType = n.GetStringValue(); } },
             };
         }
         /// <summary>

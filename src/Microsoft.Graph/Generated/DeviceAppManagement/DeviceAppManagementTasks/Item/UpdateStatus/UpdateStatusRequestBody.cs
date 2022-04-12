@@ -30,10 +30,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"note", (o,n) => { (o as UpdateStatusRequestBody).Note = n.GetStringValue(); } },
-                {"status", (o,n) => { (o as UpdateStatusRequestBody).Status = n.GetEnumValue<DeviceAppManagementTaskStatus>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"note", n => { Note = n.GetStringValue(); } },
+                {"status", n => { Status = n.GetEnumValue<DeviceAppManagementTaskStatus>(); } },
             };
         }
         /// <summary>

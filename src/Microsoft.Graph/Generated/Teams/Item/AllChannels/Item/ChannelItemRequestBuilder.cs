@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.AllChannels.Item {
         public ChannelItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/teams/{team_id}/allChannels/{channel_id}{?select,expand}";
+            UrlTemplate = "{+baseurl}/teams/{team%2Did}/allChannels/{channel%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -38,14 +38,14 @@ namespace Microsoft.Graph.Beta.Teams.Item.AllChannels.Item {
         public ChannelItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/teams/{team_id}/allChannels/{channel_id}{?select,expand}";
+            UrlTemplate = "{+baseurl}/teams/{team%2Did}/allChannels/{channel%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get allChannels from teams
+        /// List of channels either hosted in or shared with the team (incoming channels).
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// <param name="queryParameters">Request query parameters</param>
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.AllChannels.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get allChannels from teams
+        /// List of channels either hosted in or shared with the team (incoming channels).
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
@@ -81,11 +81,13 @@ namespace Microsoft.Graph.Beta.Teams.Item.AllChannels.Item {
             };
             return await RequestAdapter.SendAsync<Channel>(requestInfo, Channel.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get allChannels from teams</summary>
+        /// <summary>List of channels either hosted in or shared with the team (incoming channels).</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
     }

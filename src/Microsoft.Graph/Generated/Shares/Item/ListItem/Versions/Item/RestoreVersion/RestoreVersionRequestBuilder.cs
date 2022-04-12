@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.ListItem.Versions.Item.RestoreVersion
         public RestoreVersionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/shares/{sharedDriveItem_id}/listItem/versions/{listItemVersion_id}/microsoft.graph.restoreVersion";
+            UrlTemplate = "{+baseurl}/shares/{sharedDriveItem%2Did}/listItem/versions/{listItemVersion%2Did}/microsoft.graph.restoreVersion";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.ListItem.Versions.Item.RestoreVersion
         public RestoreVersionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/shares/{sharedDriveItem_id}/listItem/versions/{listItemVersion_id}/microsoft.graph.restoreVersion";
+            UrlTemplate = "{+baseurl}/shares/{sharedDriveItem%2Did}/listItem/versions/{listItemVersion%2Did}/microsoft.graph.restoreVersion";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

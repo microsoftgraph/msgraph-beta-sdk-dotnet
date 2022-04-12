@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"ccRecipients", (o,n) => { (o as ConversationThread).CcRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue).ToList(); } },
-                {"hasAttachments", (o,n) => { (o as ConversationThread).HasAttachments = n.GetBoolValue(); } },
-                {"isLocked", (o,n) => { (o as ConversationThread).IsLocked = n.GetBoolValue(); } },
-                {"lastDeliveredDateTime", (o,n) => { (o as ConversationThread).LastDeliveredDateTime = n.GetDateTimeOffsetValue(); } },
-                {"posts", (o,n) => { (o as ConversationThread).Posts = n.GetCollectionOfObjectValues<Post>(Post.CreateFromDiscriminatorValue).ToList(); } },
-                {"preview", (o,n) => { (o as ConversationThread).Preview = n.GetStringValue(); } },
-                {"topic", (o,n) => { (o as ConversationThread).Topic = n.GetStringValue(); } },
-                {"toRecipients", (o,n) => { (o as ConversationThread).ToRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue).ToList(); } },
-                {"uniqueSenders", (o,n) => { (o as ConversationThread).UniqueSenders = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"ccRecipients", n => { CcRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue).ToList(); } },
+                {"hasAttachments", n => { HasAttachments = n.GetBoolValue(); } },
+                {"isLocked", n => { IsLocked = n.GetBoolValue(); } },
+                {"lastDeliveredDateTime", n => { LastDeliveredDateTime = n.GetDateTimeOffsetValue(); } },
+                {"posts", n => { Posts = n.GetCollectionOfObjectValues<Post>(Post.CreateFromDiscriminatorValue).ToList(); } },
+                {"preview", n => { Preview = n.GetStringValue(); } },
+                {"topic", n => { Topic = n.GetStringValue(); } },
+                {"toRecipients", n => { ToRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue).ToList(); } },
+                {"uniqueSenders", n => { UniqueSenders = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

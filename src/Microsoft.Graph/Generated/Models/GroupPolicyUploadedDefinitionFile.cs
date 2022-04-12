@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"content", (o,n) => { (o as GroupPolicyUploadedDefinitionFile).Content = n.GetByteArrayValue(); } },
-                {"defaultLanguageCode", (o,n) => { (o as GroupPolicyUploadedDefinitionFile).DefaultLanguageCode = n.GetStringValue(); } },
-                {"groupPolicyOperations", (o,n) => { (o as GroupPolicyUploadedDefinitionFile).GroupPolicyOperations = n.GetCollectionOfObjectValues<GroupPolicyOperation>(GroupPolicyOperation.CreateFromDiscriminatorValue).ToList(); } },
-                {"groupPolicyUploadedLanguageFiles", (o,n) => { (o as GroupPolicyUploadedDefinitionFile).GroupPolicyUploadedLanguageFiles = n.GetCollectionOfObjectValues<GroupPolicyUploadedLanguageFile>(GroupPolicyUploadedLanguageFile.CreateFromDiscriminatorValue).ToList(); } },
-                {"status", (o,n) => { (o as GroupPolicyUploadedDefinitionFile).Status = n.GetEnumValue<GroupPolicyUploadedDefinitionFileStatus>(); } },
-                {"uploadDateTime", (o,n) => { (o as GroupPolicyUploadedDefinitionFile).UploadDateTime = n.GetDateTimeOffsetValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"content", n => { Content = n.GetByteArrayValue(); } },
+                {"defaultLanguageCode", n => { DefaultLanguageCode = n.GetStringValue(); } },
+                {"groupPolicyOperations", n => { GroupPolicyOperations = n.GetCollectionOfObjectValues<GroupPolicyOperation>(GroupPolicyOperation.CreateFromDiscriminatorValue).ToList(); } },
+                {"groupPolicyUploadedLanguageFiles", n => { GroupPolicyUploadedLanguageFiles = n.GetCollectionOfObjectValues<GroupPolicyUploadedLanguageFile>(GroupPolicyUploadedLanguageFile.CreateFromDiscriminatorValue).ToList(); } },
+                {"status", n => { Status = n.GetEnumValue<GroupPolicyUploadedDefinitionFileStatus>(); } },
+                {"uploadDateTime", n => { UploadDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

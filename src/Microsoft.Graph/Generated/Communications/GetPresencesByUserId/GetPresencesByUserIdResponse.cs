@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.Communications.GetPresencesByUserId {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"value", (o,n) => { (o as GetPresencesByUserIdResponse).Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Presence>(Microsoft.Graph.Beta.Models.Presence.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Presence>(Microsoft.Graph.Beta.Models.Presence.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

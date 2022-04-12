@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appCrashCount", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails).AppCrashCount = n.GetIntValue(); } },
-                {"appDisplayName", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails).AppDisplayName = n.GetStringValue(); } },
-                {"appName", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails).AppName = n.GetStringValue(); } },
-                {"appPublisher", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails).AppPublisher = n.GetStringValue(); } },
-                {"appVersion", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails).AppVersion = n.GetStringValue(); } },
-                {"deviceCountWithCrashes", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails).DeviceCountWithCrashes = n.GetIntValue(); } },
-                {"isLatestUsedVersion", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails).IsLatestUsedVersion = n.GetBoolValue(); } },
-                {"isMostUsedVersion", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails).IsMostUsedVersion = n.GetBoolValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"appCrashCount", n => { AppCrashCount = n.GetIntValue(); } },
+                {"appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
+                {"appName", n => { AppName = n.GetStringValue(); } },
+                {"appPublisher", n => { AppPublisher = n.GetStringValue(); } },
+                {"appVersion", n => { AppVersion = n.GetStringValue(); } },
+                {"deviceCountWithCrashes", n => { DeviceCountWithCrashes = n.GetIntValue(); } },
+                {"isLatestUsedVersion", n => { IsLatestUsedVersion = n.GetBoolValue(); } },
+                {"isMostUsedVersion", n => { IsMostUsedVersion = n.GetBoolValue(); } },
             };
         }
         /// <summary>

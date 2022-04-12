@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models.Search {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"availabilityEndDateTime", (o,n) => { (o as Qna).AvailabilityEndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"availabilityStartDateTime", (o,n) => { (o as Qna).AvailabilityStartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"groupIds", (o,n) => { (o as Qna).GroupIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"isSuggested", (o,n) => { (o as Qna).IsSuggested = n.GetBoolValue(); } },
-                {"keywords", (o,n) => { (o as Qna).Keywords = n.GetObjectValue<AnswerKeyword>(AnswerKeyword.CreateFromDiscriminatorValue); } },
-                {"languageTags", (o,n) => { (o as Qna).LanguageTags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"platforms", (o,n) => { (o as Qna).Platforms = n.GetCollectionOfEnumValues<DevicePlatformType>().ToList(); } },
-                {"state", (o,n) => { (o as Qna).State = n.GetEnumValue<AnswerState>(); } },
-                {"targetedVariations", (o,n) => { (o as Qna).TargetedVariations = n.GetCollectionOfObjectValues<AnswerVariant>(AnswerVariant.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"availabilityEndDateTime", n => { AvailabilityEndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"availabilityStartDateTime", n => { AvailabilityStartDateTime = n.GetDateTimeOffsetValue(); } },
+                {"groupIds", n => { GroupIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"isSuggested", n => { IsSuggested = n.GetBoolValue(); } },
+                {"keywords", n => { Keywords = n.GetObjectValue<AnswerKeyword>(AnswerKeyword.CreateFromDiscriminatorValue); } },
+                {"languageTags", n => { LanguageTags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"platforms", n => { Platforms = n.GetCollectionOfEnumValues<DevicePlatformType>().ToList(); } },
+                {"state", n => { State = n.GetEnumValue<AnswerState>(); } },
+                {"targetedVariations", n => { TargetedVariations = n.GetCollectionOfObjectValues<AnswerVariant>(AnswerVariant.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

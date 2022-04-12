@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activeDevices", (o,n) => { (o as UserExperienceAnalyticsBatteryHealthRuntimeDetails).ActiveDevices = n.GetIntValue(); } },
-                {"batteryRuntimeFair", (o,n) => { (o as UserExperienceAnalyticsBatteryHealthRuntimeDetails).BatteryRuntimeFair = n.GetIntValue(); } },
-                {"batteryRuntimeGood", (o,n) => { (o as UserExperienceAnalyticsBatteryHealthRuntimeDetails).BatteryRuntimeGood = n.GetIntValue(); } },
-                {"batteryRuntimePoor", (o,n) => { (o as UserExperienceAnalyticsBatteryHealthRuntimeDetails).BatteryRuntimePoor = n.GetIntValue(); } },
-                {"lastRefreshedDateTime", (o,n) => { (o as UserExperienceAnalyticsBatteryHealthRuntimeDetails).LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activeDevices", n => { ActiveDevices = n.GetIntValue(); } },
+                {"batteryRuntimeFair", n => { BatteryRuntimeFair = n.GetIntValue(); } },
+                {"batteryRuntimeGood", n => { BatteryRuntimeGood = n.GetIntValue(); } },
+                {"batteryRuntimePoor", n => { BatteryRuntimePoor = n.GetIntValue(); } },
+                {"lastRefreshedDateTime", n => { LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

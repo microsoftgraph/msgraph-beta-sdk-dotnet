@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"maxLifetime", (o,n) => { (o as KeyCredentialConfiguration).MaxLifetime = n.GetTimeSpanValue(); } },
-                {"restrictForAppsCreatedAfterDateTime", (o,n) => { (o as KeyCredentialConfiguration).RestrictForAppsCreatedAfterDateTime = n.GetDateTimeOffsetValue(); } },
-                {"restrictionType", (o,n) => { (o as KeyCredentialConfiguration).RestrictionType = n.GetEnumValue<AppKeyCredentialRestrictionType>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"maxLifetime", n => { MaxLifetime = n.GetTimeSpanValue(); } },
+                {"restrictForAppsCreatedAfterDateTime", n => { RestrictForAppsCreatedAfterDateTime = n.GetDateTimeOffsetValue(); } },
+                {"restrictionType", n => { RestrictionType = n.GetEnumValue<AppKeyCredentialRestrictionType>(); } },
             };
         }
         /// <summary>

@@ -44,22 +44,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessPackageResourceRoles", (o,n) => { (o as AccessPackageCatalog).AccessPackageResourceRoles = n.GetCollectionOfObjectValues<AccessPackageResourceRole>(AccessPackageResourceRole.CreateFromDiscriminatorValue).ToList(); } },
-                {"accessPackageResources", (o,n) => { (o as AccessPackageCatalog).AccessPackageResources = n.GetCollectionOfObjectValues<AccessPackageResource>(AccessPackageResource.CreateFromDiscriminatorValue).ToList(); } },
-                {"accessPackageResourceScopes", (o,n) => { (o as AccessPackageCatalog).AccessPackageResourceScopes = n.GetCollectionOfObjectValues<AccessPackageResourceScope>(AccessPackageResourceScope.CreateFromDiscriminatorValue).ToList(); } },
-                {"accessPackages", (o,n) => { (o as AccessPackageCatalog).AccessPackages = n.GetCollectionOfObjectValues<AccessPackage>(AccessPackage.CreateFromDiscriminatorValue).ToList(); } },
-                {"catalogStatus", (o,n) => { (o as AccessPackageCatalog).CatalogStatus = n.GetStringValue(); } },
-                {"catalogType", (o,n) => { (o as AccessPackageCatalog).CatalogType = n.GetStringValue(); } },
-                {"createdBy", (o,n) => { (o as AccessPackageCatalog).CreatedBy = n.GetStringValue(); } },
-                {"createdDateTime", (o,n) => { (o as AccessPackageCatalog).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"customAccessPackageWorkflowExtensions", (o,n) => { (o as AccessPackageCatalog).CustomAccessPackageWorkflowExtensions = n.GetCollectionOfObjectValues<CustomAccessPackageWorkflowExtension>(CustomAccessPackageWorkflowExtension.CreateFromDiscriminatorValue).ToList(); } },
-                {"description", (o,n) => { (o as AccessPackageCatalog).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as AccessPackageCatalog).DisplayName = n.GetStringValue(); } },
-                {"isExternallyVisible", (o,n) => { (o as AccessPackageCatalog).IsExternallyVisible = n.GetBoolValue(); } },
-                {"modifiedBy", (o,n) => { (o as AccessPackageCatalog).ModifiedBy = n.GetStringValue(); } },
-                {"modifiedDateTime", (o,n) => { (o as AccessPackageCatalog).ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"accessPackageResourceRoles", n => { AccessPackageResourceRoles = n.GetCollectionOfObjectValues<AccessPackageResourceRole>(AccessPackageResourceRole.CreateFromDiscriminatorValue).ToList(); } },
+                {"accessPackageResources", n => { AccessPackageResources = n.GetCollectionOfObjectValues<AccessPackageResource>(AccessPackageResource.CreateFromDiscriminatorValue).ToList(); } },
+                {"accessPackageResourceScopes", n => { AccessPackageResourceScopes = n.GetCollectionOfObjectValues<AccessPackageResourceScope>(AccessPackageResourceScope.CreateFromDiscriminatorValue).ToList(); } },
+                {"accessPackages", n => { AccessPackages = n.GetCollectionOfObjectValues<AccessPackage>(AccessPackage.CreateFromDiscriminatorValue).ToList(); } },
+                {"catalogStatus", n => { CatalogStatus = n.GetStringValue(); } },
+                {"catalogType", n => { CatalogType = n.GetStringValue(); } },
+                {"createdBy", n => { CreatedBy = n.GetStringValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"customAccessPackageWorkflowExtensions", n => { CustomAccessPackageWorkflowExtensions = n.GetCollectionOfObjectValues<CustomAccessPackageWorkflowExtension>(CustomAccessPackageWorkflowExtension.CreateFromDiscriminatorValue).ToList(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"isExternallyVisible", n => { IsExternallyVisible = n.GetBoolValue(); } },
+                {"modifiedBy", n => { ModifiedBy = n.GetStringValue(); } },
+                {"modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

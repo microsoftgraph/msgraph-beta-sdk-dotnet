@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"certificateUpdateResult", (o,n) => { (o as SigningCertificateUpdateStatus).CertificateUpdateResult = n.GetStringValue(); } },
-                {"lastRunDateTime", (o,n) => { (o as SigningCertificateUpdateStatus).LastRunDateTime = n.GetDateTimeOffsetValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"certificateUpdateResult", n => { CertificateUpdateResult = n.GetStringValue(); } },
+                {"lastRunDateTime", n => { LastRunDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

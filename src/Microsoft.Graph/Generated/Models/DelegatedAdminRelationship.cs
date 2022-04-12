@@ -42,21 +42,21 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessAssignments", (o,n) => { (o as DelegatedAdminRelationship).AccessAssignments = n.GetCollectionOfObjectValues<DelegatedAdminAccessAssignment>(DelegatedAdminAccessAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"accessDetails", (o,n) => { (o as DelegatedAdminRelationship).AccessDetails = n.GetObjectValue<DelegatedAdminAccessDetails>(DelegatedAdminAccessDetails.CreateFromDiscriminatorValue); } },
-                {"activatedDateTime", (o,n) => { (o as DelegatedAdminRelationship).ActivatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"createdDateTime", (o,n) => { (o as DelegatedAdminRelationship).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"customer", (o,n) => { (o as DelegatedAdminRelationship).Customer = n.GetObjectValue<DelegatedAdminRelationshipCustomerParticipant>(DelegatedAdminRelationshipCustomerParticipant.CreateFromDiscriminatorValue); } },
-                {"displayName", (o,n) => { (o as DelegatedAdminRelationship).DisplayName = n.GetStringValue(); } },
-                {"duration", (o,n) => { (o as DelegatedAdminRelationship).Duration = n.GetTimeSpanValue(); } },
-                {"endDateTime", (o,n) => { (o as DelegatedAdminRelationship).EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as DelegatedAdminRelationship).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"operations", (o,n) => { (o as DelegatedAdminRelationship).Operations = n.GetCollectionOfObjectValues<DelegatedAdminRelationshipOperation>(DelegatedAdminRelationshipOperation.CreateFromDiscriminatorValue).ToList(); } },
-                {"partner", (o,n) => { (o as DelegatedAdminRelationship).Partner = n.GetObjectValue<DelegatedAdminRelationshipParticipant>(DelegatedAdminRelationshipParticipant.CreateFromDiscriminatorValue); } },
-                {"requests", (o,n) => { (o as DelegatedAdminRelationship).Requests = n.GetCollectionOfObjectValues<DelegatedAdminRelationshipRequest>(DelegatedAdminRelationshipRequest.CreateFromDiscriminatorValue).ToList(); } },
-                {"status", (o,n) => { (o as DelegatedAdminRelationship).Status = n.GetEnumValue<DelegatedAdminRelationshipStatus>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"accessAssignments", n => { AccessAssignments = n.GetCollectionOfObjectValues<DelegatedAdminAccessAssignment>(DelegatedAdminAccessAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"accessDetails", n => { AccessDetails = n.GetObjectValue<DelegatedAdminAccessDetails>(DelegatedAdminAccessDetails.CreateFromDiscriminatorValue); } },
+                {"activatedDateTime", n => { ActivatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"customer", n => { Customer = n.GetObjectValue<DelegatedAdminRelationshipCustomerParticipant>(DelegatedAdminRelationshipCustomerParticipant.CreateFromDiscriminatorValue); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"duration", n => { Duration = n.GetTimeSpanValue(); } },
+                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"operations", n => { Operations = n.GetCollectionOfObjectValues<DelegatedAdminRelationshipOperation>(DelegatedAdminRelationshipOperation.CreateFromDiscriminatorValue).ToList(); } },
+                {"partner", n => { Partner = n.GetObjectValue<DelegatedAdminRelationshipParticipant>(DelegatedAdminRelationshipParticipant.CreateFromDiscriminatorValue); } },
+                {"requests", n => { Requests = n.GetCollectionOfObjectValues<DelegatedAdminRelationshipRequest>(DelegatedAdminRelationshipRequest.CreateFromDiscriminatorValue).ToList(); } },
+                {"status", n => { Status = n.GetEnumValue<DelegatedAdminRelationshipStatus>(); } },
             };
         }
         /// <summary>

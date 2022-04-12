@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.BusinessFlows.Item
         public RecordDecisionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/approvalWorkflowProviders/{approvalWorkflowProvider_id}/businessFlows/{businessFlow_id}/microsoft.graph.recordDecisions";
+            UrlTemplate = "{+baseurl}/approvalWorkflowProviders/{approvalWorkflowProvider%2Did}/businessFlows/{businessFlow%2Did}/microsoft.graph.recordDecisions";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.BusinessFlows.Item
         public RecordDecisionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/approvalWorkflowProviders/{approvalWorkflowProvider_id}/businessFlows/{businessFlow_id}/microsoft.graph.recordDecisions";
+            UrlTemplate = "{+baseurl}/approvalWorkflowProviders/{approvalWorkflowProvider%2Did}/businessFlows/{businessFlow%2Did}/microsoft.graph.recordDecisions";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

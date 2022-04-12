@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.Ass
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"deviceHealthScriptAssignments", (o,n) => { (o as AssignRequestBody).DeviceHealthScriptAssignments = n.GetCollectionOfObjectValues<DeviceHealthScriptAssignment>(DeviceHealthScriptAssignment.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"deviceHealthScriptAssignments", n => { DeviceHealthScriptAssignments = n.GetCollectionOfObjectValues<DeviceHealthScriptAssignment>(DeviceHealthScriptAssignment.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"category", (o,n) => { (o as UserExperienceAnalyticsImpactingProcess).Category = n.GetStringValue(); } },
-                {"description", (o,n) => { (o as UserExperienceAnalyticsImpactingProcess).Description = n.GetStringValue(); } },
-                {"deviceId", (o,n) => { (o as UserExperienceAnalyticsImpactingProcess).DeviceId = n.GetStringValue(); } },
-                {"impactValue", (o,n) => { (o as UserExperienceAnalyticsImpactingProcess).ImpactValue = n.GetDoubleValue(); } },
-                {"processName", (o,n) => { (o as UserExperienceAnalyticsImpactingProcess).ProcessName = n.GetStringValue(); } },
-                {"publisher", (o,n) => { (o as UserExperienceAnalyticsImpactingProcess).Publisher = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"category", n => { Category = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
+                {"impactValue", n => { ImpactValue = n.GetDoubleValue(); } },
+                {"processName", n => { ProcessName = n.GetStringValue(); } },
+                {"publisher", n => { Publisher = n.GetStringValue(); } },
             };
         }
         /// <summary>

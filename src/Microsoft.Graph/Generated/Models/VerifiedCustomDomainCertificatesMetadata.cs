@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"expiryDate", (o,n) => { (o as VerifiedCustomDomainCertificatesMetadata).ExpiryDate = n.GetDateTimeOffsetValue(); } },
-                {"issueDate", (o,n) => { (o as VerifiedCustomDomainCertificatesMetadata).IssueDate = n.GetDateTimeOffsetValue(); } },
-                {"issuerName", (o,n) => { (o as VerifiedCustomDomainCertificatesMetadata).IssuerName = n.GetStringValue(); } },
-                {"subjectName", (o,n) => { (o as VerifiedCustomDomainCertificatesMetadata).SubjectName = n.GetStringValue(); } },
-                {"thumbprint", (o,n) => { (o as VerifiedCustomDomainCertificatesMetadata).Thumbprint = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"expiryDate", n => { ExpiryDate = n.GetDateTimeOffsetValue(); } },
+                {"issueDate", n => { IssueDate = n.GetDateTimeOffsetValue(); } },
+                {"issuerName", n => { IssuerName = n.GetStringValue(); } },
+                {"subjectName", n => { SubjectName = n.GetStringValue(); } },
+                {"thumbprint", n => { Thumbprint = n.GetStringValue(); } },
             };
         }
         /// <summary>

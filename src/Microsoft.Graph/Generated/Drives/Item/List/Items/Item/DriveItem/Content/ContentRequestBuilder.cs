@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.Items.Item.DriveItem.Content {
         public ContentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/drives/{drive_id}/list/items/{listItem_id}/driveItem/content";
+            UrlTemplate = "{+baseurl}/drives/{drive%2Did}/list/items/{listItem%2Did}/driveItem/content";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.Items.Item.DriveItem.Content {
         public ContentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/drives/{drive_id}/list/items/{listItem_id}/driveItem/content";
+            UrlTemplate = "{+baseurl}/drives/{drive%2Did}/list/items/{listItem%2Did}/driveItem/content";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

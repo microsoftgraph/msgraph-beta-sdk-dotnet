@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"allowMultipleValues", (o,n) => { (o as LookupColumn).AllowMultipleValues = n.GetBoolValue(); } },
-                {"allowUnlimitedLength", (o,n) => { (o as LookupColumn).AllowUnlimitedLength = n.GetBoolValue(); } },
-                {"columnName", (o,n) => { (o as LookupColumn).ColumnName = n.GetStringValue(); } },
-                {"listId", (o,n) => { (o as LookupColumn).ListId = n.GetStringValue(); } },
-                {"primaryLookupColumnId", (o,n) => { (o as LookupColumn).PrimaryLookupColumnId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"allowMultipleValues", n => { AllowMultipleValues = n.GetBoolValue(); } },
+                {"allowUnlimitedLength", n => { AllowUnlimitedLength = n.GetBoolValue(); } },
+                {"columnName", n => { ColumnName = n.GetStringValue(); } },
+                {"listId", n => { ListId = n.GetStringValue(); } },
+                {"primaryLookupColumnId", n => { PrimaryLookupColumnId = n.GetStringValue(); } },
             };
         }
         /// <summary>

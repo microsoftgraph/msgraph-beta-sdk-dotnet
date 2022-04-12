@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignedTo", (o,n) => { (o as ScheduleChangeRequest).AssignedTo = n.GetEnumValue<ScheduleChangeRequestActor>(); } },
-                {"managerActionDateTime", (o,n) => { (o as ScheduleChangeRequest).ManagerActionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managerActionMessage", (o,n) => { (o as ScheduleChangeRequest).ManagerActionMessage = n.GetStringValue(); } },
-                {"managerUserId", (o,n) => { (o as ScheduleChangeRequest).ManagerUserId = n.GetStringValue(); } },
-                {"senderDateTime", (o,n) => { (o as ScheduleChangeRequest).SenderDateTime = n.GetDateTimeOffsetValue(); } },
-                {"senderMessage", (o,n) => { (o as ScheduleChangeRequest).SenderMessage = n.GetStringValue(); } },
-                {"senderUserId", (o,n) => { (o as ScheduleChangeRequest).SenderUserId = n.GetStringValue(); } },
-                {"state", (o,n) => { (o as ScheduleChangeRequest).State = n.GetEnumValue<ScheduleChangeState>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"assignedTo", n => { AssignedTo = n.GetEnumValue<ScheduleChangeRequestActor>(); } },
+                {"managerActionDateTime", n => { ManagerActionDateTime = n.GetDateTimeOffsetValue(); } },
+                {"managerActionMessage", n => { ManagerActionMessage = n.GetStringValue(); } },
+                {"managerUserId", n => { ManagerUserId = n.GetStringValue(); } },
+                {"senderDateTime", n => { SenderDateTime = n.GetDateTimeOffsetValue(); } },
+                {"senderMessage", n => { SenderMessage = n.GetStringValue(); } },
+                {"senderUserId", n => { SenderUserId = n.GetStringValue(); } },
+                {"state", n => { State = n.GetEnumValue<ScheduleChangeState>(); } },
             };
         }
         /// <summary>

@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"cloudIdentityScore", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereModelPerformance).CloudIdentityScore = n.GetDoubleValue(); } },
-                {"cloudManagementScore", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereModelPerformance).CloudManagementScore = n.GetDoubleValue(); } },
-                {"cloudProvisioningScore", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereModelPerformance).CloudProvisioningScore = n.GetDoubleValue(); } },
-                {"healthStatus", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereModelPerformance).HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
-                {"manufacturer", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereModelPerformance).Manufacturer = n.GetStringValue(); } },
-                {"model", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereModelPerformance).Model = n.GetStringValue(); } },
-                {"modelDeviceCount", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereModelPerformance).ModelDeviceCount = n.GetIntValue(); } },
-                {"windowsScore", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereModelPerformance).WindowsScore = n.GetDoubleValue(); } },
-                {"workFromAnywhereScore", (o,n) => { (o as UserExperienceAnalyticsWorkFromAnywhereModelPerformance).WorkFromAnywhereScore = n.GetDoubleValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"cloudIdentityScore", n => { CloudIdentityScore = n.GetDoubleValue(); } },
+                {"cloudManagementScore", n => { CloudManagementScore = n.GetDoubleValue(); } },
+                {"cloudProvisioningScore", n => { CloudProvisioningScore = n.GetDoubleValue(); } },
+                {"healthStatus", n => { HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
+                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                {"model", n => { Model = n.GetStringValue(); } },
+                {"modelDeviceCount", n => { ModelDeviceCount = n.GetIntValue(); } },
+                {"windowsScore", n => { WindowsScore = n.GetDoubleValue(); } },
+                {"workFromAnywhereScore", n => { WorkFromAnywhereScore = n.GetDoubleValue(); } },
             };
         }
         /// <summary>

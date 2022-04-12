@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"conditions", (o,n) => { (o as ConditionalAccessPolicy).Conditions = n.GetObjectValue<ConditionalAccessConditionSet>(ConditionalAccessConditionSet.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", (o,n) => { (o as ConditionalAccessPolicy).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as ConditionalAccessPolicy).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as ConditionalAccessPolicy).DisplayName = n.GetStringValue(); } },
-                {"grantControls", (o,n) => { (o as ConditionalAccessPolicy).GrantControls = n.GetObjectValue<ConditionalAccessGrantControls>(ConditionalAccessGrantControls.CreateFromDiscriminatorValue); } },
-                {"modifiedDateTime", (o,n) => { (o as ConditionalAccessPolicy).ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"sessionControls", (o,n) => { (o as ConditionalAccessPolicy).SessionControls = n.GetObjectValue<ConditionalAccessSessionControls>(ConditionalAccessSessionControls.CreateFromDiscriminatorValue); } },
-                {"state", (o,n) => { (o as ConditionalAccessPolicy).State = n.GetEnumValue<ConditionalAccessPolicyState>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"conditions", n => { Conditions = n.GetObjectValue<ConditionalAccessConditionSet>(ConditionalAccessConditionSet.CreateFromDiscriminatorValue); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"grantControls", n => { GrantControls = n.GetObjectValue<ConditionalAccessGrantControls>(ConditionalAccessGrantControls.CreateFromDiscriminatorValue); } },
+                {"modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"sessionControls", n => { SessionControls = n.GetObjectValue<ConditionalAccessSessionControls>(ConditionalAccessSessionControls.CreateFromDiscriminatorValue); } },
+                {"state", n => { State = n.GetEnumValue<ConditionalAccessPolicyState>(); } },
             };
         }
         /// <summary>

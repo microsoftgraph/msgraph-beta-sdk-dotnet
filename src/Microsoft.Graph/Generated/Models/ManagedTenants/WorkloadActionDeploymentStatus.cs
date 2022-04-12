@@ -40,16 +40,16 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"actionId", (o,n) => { (o as WorkloadActionDeploymentStatus).ActionId = n.GetStringValue(); } },
-                {"deployedPolicyId", (o,n) => { (o as WorkloadActionDeploymentStatus).DeployedPolicyId = n.GetStringValue(); } },
-                {"error", (o,n) => { (o as WorkloadActionDeploymentStatus).Error = n.GetObjectValue<Microsoft.Graph.Beta.Models.GenericError>(Microsoft.Graph.Beta.Models.GenericError.CreateFromDiscriminatorValue); } },
-                {"excludeGroups", (o,n) => { (o as WorkloadActionDeploymentStatus).ExcludeGroups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"includeAllUsers", (o,n) => { (o as WorkloadActionDeploymentStatus).IncludeAllUsers = n.GetBoolValue(); } },
-                {"includeGroups", (o,n) => { (o as WorkloadActionDeploymentStatus).IncludeGroups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"lastDeploymentDateTime", (o,n) => { (o as WorkloadActionDeploymentStatus).LastDeploymentDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", (o,n) => { (o as WorkloadActionDeploymentStatus).Status = n.GetEnumValue<WorkloadActionStatus>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"actionId", n => { ActionId = n.GetStringValue(); } },
+                {"deployedPolicyId", n => { DeployedPolicyId = n.GetStringValue(); } },
+                {"error", n => { Error = n.GetObjectValue<Microsoft.Graph.Beta.Models.GenericError>(Microsoft.Graph.Beta.Models.GenericError.CreateFromDiscriminatorValue); } },
+                {"excludeGroups", n => { ExcludeGroups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"includeAllUsers", n => { IncludeAllUsers = n.GetBoolValue(); } },
+                {"includeGroups", n => { IncludeGroups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"lastDeploymentDateTime", n => { LastDeploymentDateTime = n.GetDateTimeOffsetValue(); } },
+                {"status", n => { Status = n.GetEnumValue<WorkloadActionStatus>(); } },
             };
         }
         /// <summary>

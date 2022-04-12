@@ -40,16 +40,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"address", (o,n) => { (o as Location).Address = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
-                {"coordinates", (o,n) => { (o as Location).Coordinates = n.GetObjectValue<OutlookGeoCoordinates>(OutlookGeoCoordinates.CreateFromDiscriminatorValue); } },
-                {"displayName", (o,n) => { (o as Location).DisplayName = n.GetStringValue(); } },
-                {"locationEmailAddress", (o,n) => { (o as Location).LocationEmailAddress = n.GetStringValue(); } },
-                {"locationType", (o,n) => { (o as Location).LocationType = n.GetEnumValue<LocationType>(); } },
-                {"locationUri", (o,n) => { (o as Location).LocationUri = n.GetStringValue(); } },
-                {"uniqueId", (o,n) => { (o as Location).UniqueId = n.GetStringValue(); } },
-                {"uniqueIdType", (o,n) => { (o as Location).UniqueIdType = n.GetEnumValue<LocationUniqueIdType>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"address", n => { Address = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
+                {"coordinates", n => { Coordinates = n.GetObjectValue<OutlookGeoCoordinates>(OutlookGeoCoordinates.CreateFromDiscriminatorValue); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"locationEmailAddress", n => { LocationEmailAddress = n.GetStringValue(); } },
+                {"locationType", n => { LocationType = n.GetEnumValue<LocationType>(); } },
+                {"locationUri", n => { LocationUri = n.GetStringValue(); } },
+                {"uniqueId", n => { UniqueId = n.GetStringValue(); } },
+                {"uniqueIdType", n => { UniqueIdType = n.GetEnumValue<LocationUniqueIdType>(); } },
             };
         }
         /// <summary>

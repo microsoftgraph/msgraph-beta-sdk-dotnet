@@ -2,6 +2,7 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkReprovisionCloudPc;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkRestoreCloudPc;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkSetCloudPcReviewStatus;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Count;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.ExecuteAction;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item;
@@ -25,6 +26,10 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices {
         public BulkRestoreCloudPcRequestBuilder BulkRestoreCloudPc { get =>
             new BulkRestoreCloudPcRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The bulkSetCloudPcReviewStatus property</summary>
+        public BulkSetCloudPcReviewStatusRequestBuilder BulkSetCloudPcReviewStatus { get =>
+            new BulkSetCloudPcReviewStatusRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
@@ -46,7 +51,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices {
         /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.managedDevices.item collection</summary>
         public ManagedDeviceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("managedDevice_id", position);
+            urlTplParams.Add("managedDevice%2Did", position);
             return new ManagedDeviceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -57,7 +62,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices {
         public ManagedDevicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/managedDevices{?top,skip,search,filter,count,orderby,select,expand}";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/managedDevices{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -70,7 +75,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices {
         public ManagedDevicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/managedDevices{?top,skip,search,filter,count,orderby,select,expand}";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/managedDevices{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -151,20 +156,28 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices {
         /// <summary>The managed devices associated with the user.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
+            [QueryParameter("%24count")]
             public bool? Count { get; set; }
             /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
             /// <summary>Filter items by property values</summary>
+            [QueryParameter("%24filter")]
             public string Filter { get; set; }
             /// <summary>Order items by property values</summary>
+            [QueryParameter("%24orderby")]
             public string[] Orderby { get; set; }
             /// <summary>Search items by search phrases</summary>
+            [QueryParameter("%24search")]
             public string Search { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
             /// <summary>Skip the first n items</summary>
+            [QueryParameter("%24skip")]
             public int? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
+            [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
     }

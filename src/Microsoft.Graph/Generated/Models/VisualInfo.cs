@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"attribution", (o,n) => { (o as VisualInfo).Attribution = n.GetObjectValue<ImageInfo>(ImageInfo.CreateFromDiscriminatorValue); } },
-                {"backgroundColor", (o,n) => { (o as VisualInfo).BackgroundColor = n.GetStringValue(); } },
-                {"content", (o,n) => { (o as VisualInfo).Content = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"description", (o,n) => { (o as VisualInfo).Description = n.GetStringValue(); } },
-                {"displayText", (o,n) => { (o as VisualInfo).DisplayText = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"attribution", n => { Attribution = n.GetObjectValue<ImageInfo>(ImageInfo.CreateFromDiscriminatorValue); } },
+                {"backgroundColor", n => { BackgroundColor = n.GetStringValue(); } },
+                {"content", n => { Content = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayText", n => { DisplayText = n.GetStringValue(); } },
             };
         }
         /// <summary>

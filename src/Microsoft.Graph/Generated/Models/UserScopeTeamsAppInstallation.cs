@@ -18,9 +18,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"chat", (o,n) => { (o as UserScopeTeamsAppInstallation).Chat = n.GetObjectValue<Microsoft.Graph.Beta.Models.Chat>(Microsoft.Graph.Beta.Models.Chat.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"chat", n => { Chat = n.GetObjectValue<Microsoft.Graph.Beta.Models.Chat>(Microsoft.Graph.Beta.Models.Chat.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RestoreClo
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"cloudPcSnapshotId", (o,n) => { (o as RestoreCloudPcRequestBody).CloudPcSnapshotId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"cloudPcSnapshotId", n => { CloudPcSnapshotId = n.GetStringValue(); } },
             };
         }
         /// <summary>

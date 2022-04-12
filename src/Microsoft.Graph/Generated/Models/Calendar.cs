@@ -58,29 +58,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"allowedOnlineMeetingProviders", (o,n) => { (o as Calendar).AllowedOnlineMeetingProviders = n.GetCollectionOfEnumValues<OnlineMeetingProviderType>().ToList(); } },
-                {"calendarGroupId", (o,n) => { (o as Calendar).CalendarGroupId = n.GetStringValue(); } },
-                {"calendarPermissions", (o,n) => { (o as Calendar).CalendarPermissions = n.GetCollectionOfObjectValues<CalendarPermission>(CalendarPermission.CreateFromDiscriminatorValue).ToList(); } },
-                {"calendarView", (o,n) => { (o as Calendar).CalendarView = n.GetCollectionOfObjectValues<Event>(Event.CreateFromDiscriminatorValue).ToList(); } },
-                {"canEdit", (o,n) => { (o as Calendar).CanEdit = n.GetBoolValue(); } },
-                {"canShare", (o,n) => { (o as Calendar).CanShare = n.GetBoolValue(); } },
-                {"canViewPrivateItems", (o,n) => { (o as Calendar).CanViewPrivateItems = n.GetBoolValue(); } },
-                {"changeKey", (o,n) => { (o as Calendar).ChangeKey = n.GetStringValue(); } },
-                {"color", (o,n) => { (o as Calendar).Color = n.GetEnumValue<CalendarColor>(); } },
-                {"defaultOnlineMeetingProvider", (o,n) => { (o as Calendar).DefaultOnlineMeetingProvider = n.GetEnumValue<OnlineMeetingProviderType>(); } },
-                {"events", (o,n) => { (o as Calendar).Events = n.GetCollectionOfObjectValues<Event>(Event.CreateFromDiscriminatorValue).ToList(); } },
-                {"hexColor", (o,n) => { (o as Calendar).HexColor = n.GetStringValue(); } },
-                {"isDefaultCalendar", (o,n) => { (o as Calendar).IsDefaultCalendar = n.GetBoolValue(); } },
-                {"isRemovable", (o,n) => { (o as Calendar).IsRemovable = n.GetBoolValue(); } },
-                {"isShared", (o,n) => { (o as Calendar).IsShared = n.GetBoolValue(); } },
-                {"isSharedWithMe", (o,n) => { (o as Calendar).IsSharedWithMe = n.GetBoolValue(); } },
-                {"isTallyingResponses", (o,n) => { (o as Calendar).IsTallyingResponses = n.GetBoolValue(); } },
-                {"multiValueExtendedProperties", (o,n) => { (o as Calendar).MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue).ToList(); } },
-                {"name", (o,n) => { (o as Calendar).Name = n.GetStringValue(); } },
-                {"owner", (o,n) => { (o as Calendar).Owner = n.GetObjectValue<EmailAddress>(EmailAddress.CreateFromDiscriminatorValue); } },
-                {"singleValueExtendedProperties", (o,n) => { (o as Calendar).SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"allowedOnlineMeetingProviders", n => { AllowedOnlineMeetingProviders = n.GetCollectionOfEnumValues<OnlineMeetingProviderType>().ToList(); } },
+                {"calendarGroupId", n => { CalendarGroupId = n.GetStringValue(); } },
+                {"calendarPermissions", n => { CalendarPermissions = n.GetCollectionOfObjectValues<CalendarPermission>(CalendarPermission.CreateFromDiscriminatorValue).ToList(); } },
+                {"calendarView", n => { CalendarView = n.GetCollectionOfObjectValues<Event>(Event.CreateFromDiscriminatorValue).ToList(); } },
+                {"canEdit", n => { CanEdit = n.GetBoolValue(); } },
+                {"canShare", n => { CanShare = n.GetBoolValue(); } },
+                {"canViewPrivateItems", n => { CanViewPrivateItems = n.GetBoolValue(); } },
+                {"changeKey", n => { ChangeKey = n.GetStringValue(); } },
+                {"color", n => { Color = n.GetEnumValue<CalendarColor>(); } },
+                {"defaultOnlineMeetingProvider", n => { DefaultOnlineMeetingProvider = n.GetEnumValue<OnlineMeetingProviderType>(); } },
+                {"events", n => { Events = n.GetCollectionOfObjectValues<Event>(Event.CreateFromDiscriminatorValue).ToList(); } },
+                {"hexColor", n => { HexColor = n.GetStringValue(); } },
+                {"isDefaultCalendar", n => { IsDefaultCalendar = n.GetBoolValue(); } },
+                {"isRemovable", n => { IsRemovable = n.GetBoolValue(); } },
+                {"isShared", n => { IsShared = n.GetBoolValue(); } },
+                {"isSharedWithMe", n => { IsSharedWithMe = n.GetBoolValue(); } },
+                {"isTallyingResponses", n => { IsTallyingResponses = n.GetBoolValue(); } },
+                {"multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue).ToList(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"owner", n => { Owner = n.GetObjectValue<EmailAddress>(EmailAddress.CreateFromDiscriminatorValue); } },
+                {"singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

@@ -42,17 +42,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"appliedPolicies", (o,n) => { (o as OfficeClientCheckinStatus).AppliedPolicies = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"checkinDateTime", (o,n) => { (o as OfficeClientCheckinStatus).CheckinDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deviceName", (o,n) => { (o as OfficeClientCheckinStatus).DeviceName = n.GetStringValue(); } },
-                {"devicePlatform", (o,n) => { (o as OfficeClientCheckinStatus).DevicePlatform = n.GetStringValue(); } },
-                {"devicePlatformVersion", (o,n) => { (o as OfficeClientCheckinStatus).DevicePlatformVersion = n.GetStringValue(); } },
-                {"errorMessage", (o,n) => { (o as OfficeClientCheckinStatus).ErrorMessage = n.GetStringValue(); } },
-                {"userId", (o,n) => { (o as OfficeClientCheckinStatus).UserId = n.GetStringValue(); } },
-                {"userPrincipalName", (o,n) => { (o as OfficeClientCheckinStatus).UserPrincipalName = n.GetStringValue(); } },
-                {"wasSuccessful", (o,n) => { (o as OfficeClientCheckinStatus).WasSuccessful = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"appliedPolicies", n => { AppliedPolicies = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"checkinDateTime", n => { CheckinDateTime = n.GetDateTimeOffsetValue(); } },
+                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
+                {"devicePlatform", n => { DevicePlatform = n.GetStringValue(); } },
+                {"devicePlatformVersion", n => { DevicePlatformVersion = n.GetStringValue(); } },
+                {"errorMessage", n => { ErrorMessage = n.GetStringValue(); } },
+                {"userId", n => { UserId = n.GetStringValue(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                {"wasSuccessful", n => { WasSuccessful = n.GetBoolValue(); } },
             };
         }
         /// <summary>

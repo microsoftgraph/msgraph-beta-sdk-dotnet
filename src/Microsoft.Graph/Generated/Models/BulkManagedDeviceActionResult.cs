@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"failedDeviceIds", (o,n) => { (o as BulkManagedDeviceActionResult).FailedDeviceIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"notFoundDeviceIds", (o,n) => { (o as BulkManagedDeviceActionResult).NotFoundDeviceIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"notSupportedDeviceIds", (o,n) => { (o as BulkManagedDeviceActionResult).NotSupportedDeviceIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"successfulDeviceIds", (o,n) => { (o as BulkManagedDeviceActionResult).SuccessfulDeviceIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"failedDeviceIds", n => { FailedDeviceIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"notFoundDeviceIds", n => { NotFoundDeviceIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"notSupportedDeviceIds", n => { NotSupportedDeviceIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"successfulDeviceIds", n => { SuccessfulDeviceIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

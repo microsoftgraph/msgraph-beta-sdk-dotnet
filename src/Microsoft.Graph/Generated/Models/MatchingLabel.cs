@@ -44,18 +44,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"applicationMode", (o,n) => { (o as MatchingLabel).ApplicationMode = n.GetEnumValue<ApplicationMode>(); } },
-                {"description", (o,n) => { (o as MatchingLabel).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as MatchingLabel).DisplayName = n.GetStringValue(); } },
-                {"id", (o,n) => { (o as MatchingLabel).Id = n.GetStringValue(); } },
-                {"isEndpointProtectionEnabled", (o,n) => { (o as MatchingLabel).IsEndpointProtectionEnabled = n.GetBoolValue(); } },
-                {"labelActions", (o,n) => { (o as MatchingLabel).LabelActions = n.GetCollectionOfObjectValues<LabelActionBase>(LabelActionBase.CreateFromDiscriminatorValue).ToList(); } },
-                {"name", (o,n) => { (o as MatchingLabel).Name = n.GetStringValue(); } },
-                {"policyTip", (o,n) => { (o as MatchingLabel).PolicyTip = n.GetStringValue(); } },
-                {"priority", (o,n) => { (o as MatchingLabel).Priority = n.GetIntValue(); } },
-                {"toolTip", (o,n) => { (o as MatchingLabel).ToolTip = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"applicationMode", n => { ApplicationMode = n.GetEnumValue<ApplicationMode>(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetStringValue(); } },
+                {"isEndpointProtectionEnabled", n => { IsEndpointProtectionEnabled = n.GetBoolValue(); } },
+                {"labelActions", n => { LabelActions = n.GetCollectionOfObjectValues<LabelActionBase>(LabelActionBase.CreateFromDiscriminatorValue).ToList(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"policyTip", n => { PolicyTip = n.GetStringValue(); } },
+                {"priority", n => { Priority = n.GetIntValue(); } },
+                {"toolTip", n => { ToolTip = n.GetStringValue(); } },
             };
         }
         /// <summary>

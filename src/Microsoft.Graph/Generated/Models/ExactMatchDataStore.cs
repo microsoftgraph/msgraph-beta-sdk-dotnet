@@ -18,9 +18,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"sessions", (o,n) => { (o as ExactMatchDataStore).Sessions = n.GetCollectionOfObjectValues<ExactMatchSession>(ExactMatchSession.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"sessions", n => { Sessions = n.GetCollectionOfObjectValues<ExactMatchSession>(ExactMatchSession.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

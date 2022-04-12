@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"attributeDestination", (o,n) => { (o as AccessPackageResourceAttribute).AttributeDestination = n.GetObjectValue<AccessPackageResourceAttributeDestination>(AccessPackageResourceAttributeDestination.CreateFromDiscriminatorValue); } },
-                {"attributeName", (o,n) => { (o as AccessPackageResourceAttribute).AttributeName = n.GetStringValue(); } },
-                {"attributeSource", (o,n) => { (o as AccessPackageResourceAttribute).AttributeSource = n.GetObjectValue<AccessPackageResourceAttributeSource>(AccessPackageResourceAttributeSource.CreateFromDiscriminatorValue); } },
-                {"id", (o,n) => { (o as AccessPackageResourceAttribute).Id = n.GetStringValue(); } },
-                {"isEditable", (o,n) => { (o as AccessPackageResourceAttribute).IsEditable = n.GetBoolValue(); } },
-                {"isPersistedOnAssignmentRemoval", (o,n) => { (o as AccessPackageResourceAttribute).IsPersistedOnAssignmentRemoval = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"attributeDestination", n => { AttributeDestination = n.GetObjectValue<AccessPackageResourceAttributeDestination>(AccessPackageResourceAttributeDestination.CreateFromDiscriminatorValue); } },
+                {"attributeName", n => { AttributeName = n.GetStringValue(); } },
+                {"attributeSource", n => { AttributeSource = n.GetObjectValue<AccessPackageResourceAttributeSource>(AccessPackageResourceAttributeSource.CreateFromDiscriminatorValue); } },
+                {"id", n => { Id = n.GetStringValue(); } },
+                {"isEditable", n => { IsEditable = n.GetBoolValue(); } },
+                {"isPersistedOnAssignmentRemoval", n => { IsPersistedOnAssignmentRemoval = n.GetBoolValue(); } },
             };
         }
         /// <summary>

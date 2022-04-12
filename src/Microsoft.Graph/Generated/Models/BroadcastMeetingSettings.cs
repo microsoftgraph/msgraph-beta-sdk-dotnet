@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"allowedAudience", (o,n) => { (o as BroadcastMeetingSettings).AllowedAudience = n.GetEnumValue<BroadcastMeetingAudience>(); } },
-                {"captions", (o,n) => { (o as BroadcastMeetingSettings).Captions = n.GetObjectValue<BroadcastMeetingCaptionSettings>(BroadcastMeetingCaptionSettings.CreateFromDiscriminatorValue); } },
-                {"isAttendeeReportEnabled", (o,n) => { (o as BroadcastMeetingSettings).IsAttendeeReportEnabled = n.GetBoolValue(); } },
-                {"isQuestionAndAnswerEnabled", (o,n) => { (o as BroadcastMeetingSettings).IsQuestionAndAnswerEnabled = n.GetBoolValue(); } },
-                {"isRecordingEnabled", (o,n) => { (o as BroadcastMeetingSettings).IsRecordingEnabled = n.GetBoolValue(); } },
-                {"isVideoOnDemandEnabled", (o,n) => { (o as BroadcastMeetingSettings).IsVideoOnDemandEnabled = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"allowedAudience", n => { AllowedAudience = n.GetEnumValue<BroadcastMeetingAudience>(); } },
+                {"captions", n => { Captions = n.GetObjectValue<BroadcastMeetingCaptionSettings>(BroadcastMeetingCaptionSettings.CreateFromDiscriminatorValue); } },
+                {"isAttendeeReportEnabled", n => { IsAttendeeReportEnabled = n.GetBoolValue(); } },
+                {"isQuestionAndAnswerEnabled", n => { IsQuestionAndAnswerEnabled = n.GetBoolValue(); } },
+                {"isRecordingEnabled", n => { IsRecordingEnabled = n.GetBoolValue(); } },
+                {"isVideoOnDemandEnabled", n => { IsVideoOnDemandEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

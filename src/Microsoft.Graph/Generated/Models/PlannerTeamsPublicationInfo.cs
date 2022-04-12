@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"lastModifiedDateTime", (o,n) => { (o as PlannerTeamsPublicationInfo).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"publicationId", (o,n) => { (o as PlannerTeamsPublicationInfo).PublicationId = n.GetStringValue(); } },
-                {"publishedToPlanId", (o,n) => { (o as PlannerTeamsPublicationInfo).PublishedToPlanId = n.GetStringValue(); } },
-                {"publishingTeamId", (o,n) => { (o as PlannerTeamsPublicationInfo).PublishingTeamId = n.GetStringValue(); } },
-                {"publishingTeamName", (o,n) => { (o as PlannerTeamsPublicationInfo).PublishingTeamName = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"publicationId", n => { PublicationId = n.GetStringValue(); } },
+                {"publishedToPlanId", n => { PublishedToPlanId = n.GetStringValue(); } },
+                {"publishingTeamId", n => { PublishingTeamId = n.GetStringValue(); } },
+                {"publishingTeamName", n => { PublishingTeamName = n.GetStringValue(); } },
             };
         }
         /// <summary>

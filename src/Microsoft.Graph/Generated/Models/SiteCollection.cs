@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"dataLocationCode", (o,n) => { (o as SiteCollection).DataLocationCode = n.GetStringValue(); } },
-                {"hostname", (o,n) => { (o as SiteCollection).Hostname = n.GetStringValue(); } },
-                {"root", (o,n) => { (o as SiteCollection).Root = n.GetObjectValue<Microsoft.Graph.Beta.Models.Root>(Microsoft.Graph.Beta.Models.Root.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"dataLocationCode", n => { DataLocationCode = n.GetStringValue(); } },
+                {"hostname", n => { Hostname = n.GetStringValue(); } },
+                {"root", n => { Root = n.GetObjectValue<Microsoft.Graph.Beta.Models.Root>(Microsoft.Graph.Beta.Models.Root.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

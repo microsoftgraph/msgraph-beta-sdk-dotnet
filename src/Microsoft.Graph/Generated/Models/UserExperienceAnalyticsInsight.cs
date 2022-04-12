@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"insightId", (o,n) => { (o as UserExperienceAnalyticsInsight).InsightId = n.GetStringValue(); } },
-                {"severity", (o,n) => { (o as UserExperienceAnalyticsInsight).Severity = n.GetEnumValue<UserExperienceAnalyticsInsightSeverity>(); } },
-                {"userExperienceAnalyticsMetricId", (o,n) => { (o as UserExperienceAnalyticsInsight).UserExperienceAnalyticsMetricId = n.GetStringValue(); } },
-                {"values", (o,n) => { (o as UserExperienceAnalyticsInsight).Values = n.GetCollectionOfObjectValues<UserExperienceAnalyticsInsightValue>(UserExperienceAnalyticsInsightValue.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"insightId", n => { InsightId = n.GetStringValue(); } },
+                {"severity", n => { Severity = n.GetEnumValue<UserExperienceAnalyticsInsightSeverity>(); } },
+                {"userExperienceAnalyticsMetricId", n => { UserExperienceAnalyticsMetricId = n.GetStringValue(); } },
+                {"values", n => { Values = n.GetCollectionOfObjectValues<UserExperienceAnalyticsInsightValue>(UserExperienceAnalyticsInsightValue.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

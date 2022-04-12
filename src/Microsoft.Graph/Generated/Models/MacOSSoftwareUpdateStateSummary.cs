@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"displayName", (o,n) => { (o as MacOSSoftwareUpdateStateSummary).DisplayName = n.GetStringValue(); } },
-                {"lastUpdatedDateTime", (o,n) => { (o as MacOSSoftwareUpdateStateSummary).LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"productKey", (o,n) => { (o as MacOSSoftwareUpdateStateSummary).ProductKey = n.GetStringValue(); } },
-                {"state", (o,n) => { (o as MacOSSoftwareUpdateStateSummary).State = n.GetEnumValue<MacOSSoftwareUpdateState>(); } },
-                {"updateCategory", (o,n) => { (o as MacOSSoftwareUpdateStateSummary).UpdateCategory = n.GetEnumValue<MacOSSoftwareUpdateCategory>(); } },
-                {"updateVersion", (o,n) => { (o as MacOSSoftwareUpdateStateSummary).UpdateVersion = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"productKey", n => { ProductKey = n.GetStringValue(); } },
+                {"state", n => { State = n.GetEnumValue<MacOSSoftwareUpdateState>(); } },
+                {"updateCategory", n => { UpdateCategory = n.GetEnumValue<MacOSSoftwareUpdateCategory>(); } },
+                {"updateVersion", n => { UpdateVersion = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"clientId", (o,n) => { (o as OAuth2PermissionGrant).ClientId = n.GetStringValue(); } },
-                {"consentType", (o,n) => { (o as OAuth2PermissionGrant).ConsentType = n.GetStringValue(); } },
-                {"expiryTime", (o,n) => { (o as OAuth2PermissionGrant).ExpiryTime = n.GetDateTimeOffsetValue(); } },
-                {"principalId", (o,n) => { (o as OAuth2PermissionGrant).PrincipalId = n.GetStringValue(); } },
-                {"resourceId", (o,n) => { (o as OAuth2PermissionGrant).ResourceId = n.GetStringValue(); } },
-                {"scope", (o,n) => { (o as OAuth2PermissionGrant).Scope = n.GetStringValue(); } },
-                {"startTime", (o,n) => { (o as OAuth2PermissionGrant).StartTime = n.GetDateTimeOffsetValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"clientId", n => { ClientId = n.GetStringValue(); } },
+                {"consentType", n => { ConsentType = n.GetStringValue(); } },
+                {"expiryTime", n => { ExpiryTime = n.GetDateTimeOffsetValue(); } },
+                {"principalId", n => { PrincipalId = n.GetStringValue(); } },
+                {"resourceId", n => { ResourceId = n.GetStringValue(); } },
+                {"scope", n => { Scope = n.GetStringValue(); } },
+                {"startTime", n => { StartTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

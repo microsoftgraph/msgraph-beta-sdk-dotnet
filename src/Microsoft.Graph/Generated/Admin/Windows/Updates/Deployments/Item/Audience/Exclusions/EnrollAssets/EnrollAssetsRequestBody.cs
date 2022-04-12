@@ -30,10 +30,10 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.E
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"assets", (o,n) => { (o as EnrollAssetsRequestBody).Assets = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue).ToList(); } },
-                {"updateCategory", (o,n) => { (o as EnrollAssetsRequestBody).UpdateCategory = n.GetEnumValue<UpdateCategory>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"assets", n => { Assets = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue).ToList(); } },
+                {"updateCategory", n => { UpdateCategory = n.GetEnumValue<UpdateCategory>(); } },
             };
         }
         /// <summary>

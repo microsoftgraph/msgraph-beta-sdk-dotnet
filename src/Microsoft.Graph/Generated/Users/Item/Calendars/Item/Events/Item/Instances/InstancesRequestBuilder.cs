@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendars.Item.Events.Item.Instances {
         /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.calendars.item.events.item.instances.item collection</summary>
         public Microsoft.Graph.Beta.Users.Item.Calendars.Item.Events.Item.Instances.Item.EventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("event_id1", position);
+            urlTplParams.Add("event%2Did1", position);
             return new Microsoft.Graph.Beta.Users.Item.Calendars.Item.Events.Item.Instances.Item.EventItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendars.Item.Events.Item.Instances {
         public InstancesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/calendars/{calendar_id}/events/{event_id}/instances{?top,skip,filter,count,orderby,select}";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/events/{event%2Did}/instances{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendars.Item.Events.Item.Instances {
         public InstancesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/calendars/{calendar_id}/events/{event_id}/instances{?top,skip,filter,count,orderby,select}";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/events/{event%2Did}/instances{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -138,16 +138,22 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendars.Item.Events.Item.Instances {
         /// <summary>The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
+            [QueryParameter("%24count")]
             public bool? Count { get; set; }
             /// <summary>Filter items by property values</summary>
+            [QueryParameter("%24filter")]
             public string Filter { get; set; }
             /// <summary>Order items by property values</summary>
+            [QueryParameter("%24orderby")]
             public string[] Orderby { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
             /// <summary>Skip the first n items</summary>
+            [QueryParameter("%24skip")]
             public int? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
+            [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
     }

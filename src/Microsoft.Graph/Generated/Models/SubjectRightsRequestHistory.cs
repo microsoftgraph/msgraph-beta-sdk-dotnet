@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"changedBy", (o,n) => { (o as SubjectRightsRequestHistory).ChangedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"eventDateTime", (o,n) => { (o as SubjectRightsRequestHistory).EventDateTime = n.GetDateTimeOffsetValue(); } },
-                {"stage", (o,n) => { (o as SubjectRightsRequestHistory).Stage = n.GetEnumValue<SubjectRightsRequestStage>(); } },
-                {"stageStatus", (o,n) => { (o as SubjectRightsRequestHistory).StageStatus = n.GetEnumValue<SubjectRightsRequestStageStatus>(); } },
-                {"type", (o,n) => { (o as SubjectRightsRequestHistory).Type = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"changedBy", n => { ChangedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
+                {"stage", n => { Stage = n.GetEnumValue<SubjectRightsRequestStage>(); } },
+                {"stageStatus", n => { StageStatus = n.GetEnumValue<SubjectRightsRequestStageStatus>(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>

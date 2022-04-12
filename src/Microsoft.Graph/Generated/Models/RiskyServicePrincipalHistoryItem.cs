@@ -22,11 +22,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activity", (o,n) => { (o as RiskyServicePrincipalHistoryItem).Activity = n.GetObjectValue<RiskServicePrincipalActivity>(RiskServicePrincipalActivity.CreateFromDiscriminatorValue); } },
-                {"initiatedBy", (o,n) => { (o as RiskyServicePrincipalHistoryItem).InitiatedBy = n.GetStringValue(); } },
-                {"servicePrincipalId", (o,n) => { (o as RiskyServicePrincipalHistoryItem).ServicePrincipalId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activity", n => { Activity = n.GetObjectValue<RiskServicePrincipalActivity>(RiskServicePrincipalActivity.CreateFromDiscriminatorValue); } },
+                {"initiatedBy", n => { InitiatedBy = n.GetStringValue(); } },
+                {"servicePrincipalId", n => { ServicePrincipalId = n.GetStringValue(); } },
             };
         }
         /// <summary>

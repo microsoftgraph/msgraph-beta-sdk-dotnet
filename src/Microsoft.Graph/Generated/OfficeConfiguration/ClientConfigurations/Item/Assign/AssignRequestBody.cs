@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item.Ass
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"officeConfigurationAssignments", (o,n) => { (o as AssignRequestBody).OfficeConfigurationAssignments = n.GetCollectionOfObjectValues<OfficeClientConfigurationAssignment>(OfficeClientConfigurationAssignment.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"officeConfigurationAssignments", n => { OfficeConfigurationAssignments = n.GetCollectionOfObjectValues<OfficeClientConfigurationAssignment>(OfficeClientConfigurationAssignment.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

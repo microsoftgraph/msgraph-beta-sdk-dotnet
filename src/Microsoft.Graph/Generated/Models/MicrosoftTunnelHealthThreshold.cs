@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"defaultHealthyThreshold", (o,n) => { (o as MicrosoftTunnelHealthThreshold).DefaultHealthyThreshold = n.GetLongValue(); } },
-                {"defaultUnhealthyThreshold", (o,n) => { (o as MicrosoftTunnelHealthThreshold).DefaultUnhealthyThreshold = n.GetLongValue(); } },
-                {"healthyThreshold", (o,n) => { (o as MicrosoftTunnelHealthThreshold).HealthyThreshold = n.GetLongValue(); } },
-                {"unhealthyThreshold", (o,n) => { (o as MicrosoftTunnelHealthThreshold).UnhealthyThreshold = n.GetLongValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"defaultHealthyThreshold", n => { DefaultHealthyThreshold = n.GetLongValue(); } },
+                {"defaultUnhealthyThreshold", n => { DefaultUnhealthyThreshold = n.GetLongValue(); } },
+                {"healthyThreshold", n => { HealthyThreshold = n.GetLongValue(); } },
+                {"unhealthyThreshold", n => { UnhealthyThreshold = n.GetLongValue(); } },
             };
         }
         /// <summary>

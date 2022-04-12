@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.Reports.GetSharePointSiteUsageDetailWithDate {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"value", (o,n) => { (o as GetSharePointSiteUsageDetailWithDateResponse).Value = n.GetByteArrayValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"value", n => { Value = n.GetByteArrayValue(); } },
             };
         }
         /// <summary>

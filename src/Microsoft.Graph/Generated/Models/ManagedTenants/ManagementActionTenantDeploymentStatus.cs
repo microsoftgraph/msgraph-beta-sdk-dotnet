@@ -22,11 +22,11 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"statuses", (o,n) => { (o as ManagementActionTenantDeploymentStatus).Statuses = n.GetCollectionOfObjectValues<ManagementActionDeploymentStatus>(ManagementActionDeploymentStatus.CreateFromDiscriminatorValue).ToList(); } },
-                {"tenantGroupId", (o,n) => { (o as ManagementActionTenantDeploymentStatus).TenantGroupId = n.GetStringValue(); } },
-                {"tenantId", (o,n) => { (o as ManagementActionTenantDeploymentStatus).TenantId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"statuses", n => { Statuses = n.GetCollectionOfObjectValues<ManagementActionDeploymentStatus>(ManagementActionDeploymentStatus.CreateFromDiscriminatorValue).ToList(); } },
+                {"tenantGroupId", n => { TenantGroupId = n.GetStringValue(); } },
+                {"tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
         /// <summary>

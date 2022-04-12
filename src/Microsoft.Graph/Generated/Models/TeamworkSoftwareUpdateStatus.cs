@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"availableVersion", (o,n) => { (o as TeamworkSoftwareUpdateStatus).AvailableVersion = n.GetStringValue(); } },
-                {"currentVersion", (o,n) => { (o as TeamworkSoftwareUpdateStatus).CurrentVersion = n.GetStringValue(); } },
-                {"softwareFreshness", (o,n) => { (o as TeamworkSoftwareUpdateStatus).SoftwareFreshness = n.GetEnumValue<TeamworkSoftwareFreshness>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"availableVersion", n => { AvailableVersion = n.GetStringValue(); } },
+                {"currentVersion", n => { CurrentVersion = n.GetStringValue(); } },
+                {"softwareFreshness", n => { SoftwareFreshness = n.GetEnumValue<TeamworkSoftwareFreshness>(); } },
             };
         }
         /// <summary>

@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as AppleUserInitiatedEnrollmentProfile).Assignments = n.GetCollectionOfObjectValues<AppleEnrollmentProfileAssignment>(AppleEnrollmentProfileAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"availableEnrollmentTypeOptions", (o,n) => { (o as AppleUserInitiatedEnrollmentProfile).AvailableEnrollmentTypeOptions = n.GetCollectionOfObjectValues<AppleOwnerTypeEnrollmentType>(AppleOwnerTypeEnrollmentType.CreateFromDiscriminatorValue).ToList(); } },
-                {"createdDateTime", (o,n) => { (o as AppleUserInitiatedEnrollmentProfile).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"defaultEnrollmentType", (o,n) => { (o as AppleUserInitiatedEnrollmentProfile).DefaultEnrollmentType = n.GetEnumValue<AppleUserInitiatedEnrollmentType>(); } },
-                {"description", (o,n) => { (o as AppleUserInitiatedEnrollmentProfile).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as AppleUserInitiatedEnrollmentProfile).DisplayName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as AppleUserInitiatedEnrollmentProfile).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"platform", (o,n) => { (o as AppleUserInitiatedEnrollmentProfile).Platform = n.GetEnumValue<DevicePlatformType>(); } },
-                {"priority", (o,n) => { (o as AppleUserInitiatedEnrollmentProfile).Priority = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<AppleEnrollmentProfileAssignment>(AppleEnrollmentProfileAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"availableEnrollmentTypeOptions", n => { AvailableEnrollmentTypeOptions = n.GetCollectionOfObjectValues<AppleOwnerTypeEnrollmentType>(AppleOwnerTypeEnrollmentType.CreateFromDiscriminatorValue).ToList(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"defaultEnrollmentType", n => { DefaultEnrollmentType = n.GetEnumValue<AppleUserInitiatedEnrollmentType>(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"platform", n => { Platform = n.GetEnumValue<DevicePlatformType>(); } },
+                {"priority", n => { Priority = n.GetIntValue(); } },
             };
         }
         /// <summary>

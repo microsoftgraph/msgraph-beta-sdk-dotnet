@@ -18,9 +18,9 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"type", (o,n) => { (o as Identity).Type = n.GetEnumValue<IdentityType>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"type", n => { Type = n.GetEnumValue<IdentityType>(); } },
             };
         }
         /// <summary>

@@ -42,21 +42,21 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"agreementFileId", (o,n) => { (o as AgreementAcceptance).AgreementFileId = n.GetStringValue(); } },
-                {"agreementId", (o,n) => { (o as AgreementAcceptance).AgreementId = n.GetStringValue(); } },
-                {"deviceDisplayName", (o,n) => { (o as AgreementAcceptance).DeviceDisplayName = n.GetStringValue(); } },
-                {"deviceId", (o,n) => { (o as AgreementAcceptance).DeviceId = n.GetStringValue(); } },
-                {"deviceOSType", (o,n) => { (o as AgreementAcceptance).DeviceOSType = n.GetStringValue(); } },
-                {"deviceOSVersion", (o,n) => { (o as AgreementAcceptance).DeviceOSVersion = n.GetStringValue(); } },
-                {"expirationDateTime", (o,n) => { (o as AgreementAcceptance).ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"recordedDateTime", (o,n) => { (o as AgreementAcceptance).RecordedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"state", (o,n) => { (o as AgreementAcceptance).State = n.GetEnumValue<AgreementAcceptanceState>(); } },
-                {"userDisplayName", (o,n) => { (o as AgreementAcceptance).UserDisplayName = n.GetStringValue(); } },
-                {"userEmail", (o,n) => { (o as AgreementAcceptance).UserEmail = n.GetStringValue(); } },
-                {"userId", (o,n) => { (o as AgreementAcceptance).UserId = n.GetStringValue(); } },
-                {"userPrincipalName", (o,n) => { (o as AgreementAcceptance).UserPrincipalName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"agreementFileId", n => { AgreementFileId = n.GetStringValue(); } },
+                {"agreementId", n => { AgreementId = n.GetStringValue(); } },
+                {"deviceDisplayName", n => { DeviceDisplayName = n.GetStringValue(); } },
+                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
+                {"deviceOSType", n => { DeviceOSType = n.GetStringValue(); } },
+                {"deviceOSVersion", n => { DeviceOSVersion = n.GetStringValue(); } },
+                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"recordedDateTime", n => { RecordedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"state", n => { State = n.GetEnumValue<AgreementAcceptanceState>(); } },
+                {"userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
+                {"userEmail", n => { UserEmail = n.GetStringValue(); } },
+                {"userId", n => { UserId = n.GetStringValue(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

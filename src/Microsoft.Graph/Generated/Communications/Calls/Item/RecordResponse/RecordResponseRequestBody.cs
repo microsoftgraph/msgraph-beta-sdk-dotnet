@@ -44,17 +44,17 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.RecordResponse {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"bargeInAllowed", (o,n) => { (o as RecordResponseRequestBody).BargeInAllowed = n.GetBoolValue(); } },
-                {"clientContext", (o,n) => { (o as RecordResponseRequestBody).ClientContext = n.GetStringValue(); } },
-                {"initialSilenceTimeoutInSeconds", (o,n) => { (o as RecordResponseRequestBody).InitialSilenceTimeoutInSeconds = n.GetIntValue(); } },
-                {"maxRecordDurationInSeconds", (o,n) => { (o as RecordResponseRequestBody).MaxRecordDurationInSeconds = n.GetIntValue(); } },
-                {"maxSilenceTimeoutInSeconds", (o,n) => { (o as RecordResponseRequestBody).MaxSilenceTimeoutInSeconds = n.GetIntValue(); } },
-                {"playBeep", (o,n) => { (o as RecordResponseRequestBody).PlayBeep = n.GetBoolValue(); } },
-                {"prompts", (o,n) => { (o as RecordResponseRequestBody).Prompts = n.GetCollectionOfObjectValues<Prompt>(Prompt.CreateFromDiscriminatorValue).ToList(); } },
-                {"stopTones", (o,n) => { (o as RecordResponseRequestBody).StopTones = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"streamWhileRecording", (o,n) => { (o as RecordResponseRequestBody).StreamWhileRecording = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"bargeInAllowed", n => { BargeInAllowed = n.GetBoolValue(); } },
+                {"clientContext", n => { ClientContext = n.GetStringValue(); } },
+                {"initialSilenceTimeoutInSeconds", n => { InitialSilenceTimeoutInSeconds = n.GetIntValue(); } },
+                {"maxRecordDurationInSeconds", n => { MaxRecordDurationInSeconds = n.GetIntValue(); } },
+                {"maxSilenceTimeoutInSeconds", n => { MaxSilenceTimeoutInSeconds = n.GetIntValue(); } },
+                {"playBeep", n => { PlayBeep = n.GetBoolValue(); } },
+                {"prompts", n => { Prompts = n.GetCollectionOfObjectValues<Prompt>(Prompt.CreateFromDiscriminatorValue).ToList(); } },
+                {"stopTones", n => { StopTones = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"streamWhileRecording", n => { StreamWhileRecording = n.GetBoolValue(); } },
             };
         }
         /// <summary>

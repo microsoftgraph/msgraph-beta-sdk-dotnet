@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"description", (o,n) => { (o as TeamworkTag).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as TeamworkTag).DisplayName = n.GetStringValue(); } },
-                {"memberCount", (o,n) => { (o as TeamworkTag).MemberCount = n.GetIntValue(); } },
-                {"members", (o,n) => { (o as TeamworkTag).Members = n.GetCollectionOfObjectValues<TeamworkTagMember>(TeamworkTagMember.CreateFromDiscriminatorValue).ToList(); } },
-                {"tagType", (o,n) => { (o as TeamworkTag).TagType = n.GetEnumValue<TeamworkTagType>(); } },
-                {"teamId", (o,n) => { (o as TeamworkTag).TeamId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"memberCount", n => { MemberCount = n.GetIntValue(); } },
+                {"members", n => { Members = n.GetCollectionOfObjectValues<TeamworkTagMember>(TeamworkTagMember.CreateFromDiscriminatorValue).ToList(); } },
+                {"tagType", n => { TagType = n.GetEnumValue<TeamworkTagType>(); } },
+                {"teamId", n => { TeamId = n.GetStringValue(); } },
             };
         }
         /// <summary>

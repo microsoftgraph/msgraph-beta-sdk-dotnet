@@ -36,18 +36,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as WindowsFeatureUpdateProfile).Assignments = n.GetCollectionOfObjectValues<WindowsFeatureUpdateProfileAssignment>(WindowsFeatureUpdateProfileAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"createdDateTime", (o,n) => { (o as WindowsFeatureUpdateProfile).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deployableContentDisplayName", (o,n) => { (o as WindowsFeatureUpdateProfile).DeployableContentDisplayName = n.GetStringValue(); } },
-                {"description", (o,n) => { (o as WindowsFeatureUpdateProfile).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as WindowsFeatureUpdateProfile).DisplayName = n.GetStringValue(); } },
-                {"endOfSupportDate", (o,n) => { (o as WindowsFeatureUpdateProfile).EndOfSupportDate = n.GetDateTimeOffsetValue(); } },
-                {"featureUpdateVersion", (o,n) => { (o as WindowsFeatureUpdateProfile).FeatureUpdateVersion = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as WindowsFeatureUpdateProfile).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"roleScopeTagIds", (o,n) => { (o as WindowsFeatureUpdateProfile).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"rolloutSettings", (o,n) => { (o as WindowsFeatureUpdateProfile).RolloutSettings = n.GetObjectValue<WindowsUpdateRolloutSettings>(WindowsUpdateRolloutSettings.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<WindowsFeatureUpdateProfileAssignment>(WindowsFeatureUpdateProfileAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"deployableContentDisplayName", n => { DeployableContentDisplayName = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"endOfSupportDate", n => { EndOfSupportDate = n.GetDateTimeOffsetValue(); } },
+                {"featureUpdateVersion", n => { FeatureUpdateVersion = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"rolloutSettings", n => { RolloutSettings = n.GetObjectValue<WindowsUpdateRolloutSettings>(WindowsUpdateRolloutSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

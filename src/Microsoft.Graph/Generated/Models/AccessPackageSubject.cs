@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"altSecId", (o,n) => { (o as AccessPackageSubject).AltSecId = n.GetStringValue(); } },
-                {"connectedOrganization", (o,n) => { (o as AccessPackageSubject).ConnectedOrganization = n.GetObjectValue<Microsoft.Graph.Beta.Models.ConnectedOrganization>(Microsoft.Graph.Beta.Models.ConnectedOrganization.CreateFromDiscriminatorValue); } },
-                {"connectedOrganizationId", (o,n) => { (o as AccessPackageSubject).ConnectedOrganizationId = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as AccessPackageSubject).DisplayName = n.GetStringValue(); } },
-                {"email", (o,n) => { (o as AccessPackageSubject).Email = n.GetStringValue(); } },
-                {"objectId", (o,n) => { (o as AccessPackageSubject).ObjectId = n.GetStringValue(); } },
-                {"onPremisesSecurityIdentifier", (o,n) => { (o as AccessPackageSubject).OnPremisesSecurityIdentifier = n.GetStringValue(); } },
-                {"principalName", (o,n) => { (o as AccessPackageSubject).PrincipalName = n.GetStringValue(); } },
-                {"type", (o,n) => { (o as AccessPackageSubject).Type = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"altSecId", n => { AltSecId = n.GetStringValue(); } },
+                {"connectedOrganization", n => { ConnectedOrganization = n.GetObjectValue<Microsoft.Graph.Beta.Models.ConnectedOrganization>(Microsoft.Graph.Beta.Models.ConnectedOrganization.CreateFromDiscriminatorValue); } },
+                {"connectedOrganizationId", n => { ConnectedOrganizationId = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"email", n => { Email = n.GetStringValue(); } },
+                {"objectId", n => { ObjectId = n.GetStringValue(); } },
+                {"onPremisesSecurityIdentifier", n => { OnPremisesSecurityIdentifier = n.GetStringValue(); } },
+                {"principalName", n => { PrincipalName = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>

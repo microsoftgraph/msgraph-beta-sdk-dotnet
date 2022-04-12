@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"changeKey", (o,n) => { (o as OutlookTaskGroup).ChangeKey = n.GetStringValue(); } },
-                {"groupKey", (o,n) => { (o as OutlookTaskGroup).GroupKey = n.GetStringValue(); } },
-                {"isDefaultGroup", (o,n) => { (o as OutlookTaskGroup).IsDefaultGroup = n.GetBoolValue(); } },
-                {"name", (o,n) => { (o as OutlookTaskGroup).Name = n.GetStringValue(); } },
-                {"taskFolders", (o,n) => { (o as OutlookTaskGroup).TaskFolders = n.GetCollectionOfObjectValues<OutlookTaskFolder>(OutlookTaskFolder.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"changeKey", n => { ChangeKey = n.GetStringValue(); } },
+                {"groupKey", n => { GroupKey = n.GetStringValue(); } },
+                {"isDefaultGroup", n => { IsDefaultGroup = n.GetBoolValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"taskFolders", n => { TaskFolders = n.GetCollectionOfObjectValues<OutlookTaskFolder>(OutlookTaskFolder.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

@@ -22,11 +22,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"conflictingDeviceConfigurations", (o,n) => { (o as DeviceConfigurationConflictSummary).ConflictingDeviceConfigurations = n.GetCollectionOfObjectValues<SettingSource>(SettingSource.CreateFromDiscriminatorValue).ToList(); } },
-                {"contributingSettings", (o,n) => { (o as DeviceConfigurationConflictSummary).ContributingSettings = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"deviceCheckinsImpacted", (o,n) => { (o as DeviceConfigurationConflictSummary).DeviceCheckinsImpacted = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"conflictingDeviceConfigurations", n => { ConflictingDeviceConfigurations = n.GetCollectionOfObjectValues<SettingSource>(SettingSource.CreateFromDiscriminatorValue).ToList(); } },
+                {"contributingSettings", n => { ContributingSettings = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"deviceCheckinsImpacted", n => { DeviceCheckinsImpacted = n.GetIntValue(); } },
             };
         }
         /// <summary>

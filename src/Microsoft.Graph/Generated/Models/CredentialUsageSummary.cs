@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"authMethod", (o,n) => { (o as CredentialUsageSummary).AuthMethod = n.GetEnumValue<UsageAuthMethod>(); } },
-                {"failureActivityCount", (o,n) => { (o as CredentialUsageSummary).FailureActivityCount = n.GetLongValue(); } },
-                {"feature", (o,n) => { (o as CredentialUsageSummary).Feature = n.GetEnumValue<FeatureType>(); } },
-                {"successfulActivityCount", (o,n) => { (o as CredentialUsageSummary).SuccessfulActivityCount = n.GetLongValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"authMethod", n => { AuthMethod = n.GetEnumValue<UsageAuthMethod>(); } },
+                {"failureActivityCount", n => { FailureActivityCount = n.GetLongValue(); } },
+                {"feature", n => { Feature = n.GetEnumValue<FeatureType>(); } },
+                {"successfulActivityCount", n => { SuccessfulActivityCount = n.GetLongValue(); } },
             };
         }
         /// <summary>

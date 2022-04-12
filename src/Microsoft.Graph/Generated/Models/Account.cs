@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"blocked", (o,n) => { (o as Account).Blocked = n.GetBoolValue(); } },
-                {"category", (o,n) => { (o as Account).Category = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as Account).DisplayName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as Account).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"number", (o,n) => { (o as Account).Number = n.GetStringValue(); } },
-                {"subCategory", (o,n) => { (o as Account).SubCategory = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"blocked", n => { Blocked = n.GetBoolValue(); } },
+                {"category", n => { Category = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"number", n => { Number = n.GetStringValue(); } },
+                {"subCategory", n => { SubCategory = n.GetStringValue(); } },
             };
         }
         /// <summary>

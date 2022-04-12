@@ -52,22 +52,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"activityIdentifier", (o,n) => { (o as SynchronizationTaskExecution).ActivityIdentifier = n.GetStringValue(); } },
-                {"countEntitled", (o,n) => { (o as SynchronizationTaskExecution).CountEntitled = n.GetLongValue(); } },
-                {"countEntitledForProvisioning", (o,n) => { (o as SynchronizationTaskExecution).CountEntitledForProvisioning = n.GetLongValue(); } },
-                {"countEscrowed", (o,n) => { (o as SynchronizationTaskExecution).CountEscrowed = n.GetLongValue(); } },
-                {"countEscrowedRaw", (o,n) => { (o as SynchronizationTaskExecution).CountEscrowedRaw = n.GetLongValue(); } },
-                {"countExported", (o,n) => { (o as SynchronizationTaskExecution).CountExported = n.GetLongValue(); } },
-                {"countExports", (o,n) => { (o as SynchronizationTaskExecution).CountExports = n.GetLongValue(); } },
-                {"countImported", (o,n) => { (o as SynchronizationTaskExecution).CountImported = n.GetLongValue(); } },
-                {"countImportedDeltas", (o,n) => { (o as SynchronizationTaskExecution).CountImportedDeltas = n.GetLongValue(); } },
-                {"countImportedReferenceDeltas", (o,n) => { (o as SynchronizationTaskExecution).CountImportedReferenceDeltas = n.GetLongValue(); } },
-                {"error", (o,n) => { (o as SynchronizationTaskExecution).Error = n.GetObjectValue<SynchronizationError>(SynchronizationError.CreateFromDiscriminatorValue); } },
-                {"state", (o,n) => { (o as SynchronizationTaskExecution).State = n.GetEnumValue<SynchronizationTaskExecutionResult>(); } },
-                {"timeBegan", (o,n) => { (o as SynchronizationTaskExecution).TimeBegan = n.GetDateTimeOffsetValue(); } },
-                {"timeEnded", (o,n) => { (o as SynchronizationTaskExecution).TimeEnded = n.GetDateTimeOffsetValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"activityIdentifier", n => { ActivityIdentifier = n.GetStringValue(); } },
+                {"countEntitled", n => { CountEntitled = n.GetLongValue(); } },
+                {"countEntitledForProvisioning", n => { CountEntitledForProvisioning = n.GetLongValue(); } },
+                {"countEscrowed", n => { CountEscrowed = n.GetLongValue(); } },
+                {"countEscrowedRaw", n => { CountEscrowedRaw = n.GetLongValue(); } },
+                {"countExported", n => { CountExported = n.GetLongValue(); } },
+                {"countExports", n => { CountExports = n.GetLongValue(); } },
+                {"countImported", n => { CountImported = n.GetLongValue(); } },
+                {"countImportedDeltas", n => { CountImportedDeltas = n.GetLongValue(); } },
+                {"countImportedReferenceDeltas", n => { CountImportedReferenceDeltas = n.GetLongValue(); } },
+                {"error", n => { Error = n.GetObjectValue<SynchronizationError>(SynchronizationError.CreateFromDiscriminatorValue); } },
+                {"state", n => { State = n.GetEnumValue<SynchronizationTaskExecutionResult>(); } },
+                {"timeBegan", n => { TimeBegan = n.GetDateTimeOffsetValue(); } },
+                {"timeEnded", n => { TimeEnded = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

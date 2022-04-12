@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"observedParticipantId", (o,n) => { (o as IncomingContext).ObservedParticipantId = n.GetStringValue(); } },
-                {"onBehalfOf", (o,n) => { (o as IncomingContext).OnBehalfOf = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"sourceParticipantId", (o,n) => { (o as IncomingContext).SourceParticipantId = n.GetStringValue(); } },
-                {"transferor", (o,n) => { (o as IncomingContext).Transferor = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"observedParticipantId", n => { ObservedParticipantId = n.GetStringValue(); } },
+                {"onBehalfOf", n => { OnBehalfOf = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"sourceParticipantId", n => { SourceParticipantId = n.GetStringValue(); } },
+                {"transferor", n => { Transferor = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

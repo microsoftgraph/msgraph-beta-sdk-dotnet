@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"durationInDays", (o,n) => { (o as AccessReviewRecurrenceSettings).DurationInDays = n.GetIntValue(); } },
-                {"recurrenceCount", (o,n) => { (o as AccessReviewRecurrenceSettings).RecurrenceCount = n.GetIntValue(); } },
-                {"recurrenceEndType", (o,n) => { (o as AccessReviewRecurrenceSettings).RecurrenceEndType = n.GetStringValue(); } },
-                {"recurrenceType", (o,n) => { (o as AccessReviewRecurrenceSettings).RecurrenceType = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"durationInDays", n => { DurationInDays = n.GetIntValue(); } },
+                {"recurrenceCount", n => { RecurrenceCount = n.GetIntValue(); } },
+                {"recurrenceEndType", n => { RecurrenceEndType = n.GetStringValue(); } },
+                {"recurrenceType", n => { RecurrenceType = n.GetStringValue(); } },
             };
         }
         /// <summary>

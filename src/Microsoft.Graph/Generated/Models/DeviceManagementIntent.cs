@@ -44,22 +44,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as DeviceManagementIntent).Assignments = n.GetCollectionOfObjectValues<DeviceManagementIntentAssignment>(DeviceManagementIntentAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"categories", (o,n) => { (o as DeviceManagementIntent).Categories = n.GetCollectionOfObjectValues<DeviceManagementIntentSettingCategory>(DeviceManagementIntentSettingCategory.CreateFromDiscriminatorValue).ToList(); } },
-                {"description", (o,n) => { (o as DeviceManagementIntent).Description = n.GetStringValue(); } },
-                {"deviceSettingStateSummaries", (o,n) => { (o as DeviceManagementIntent).DeviceSettingStateSummaries = n.GetCollectionOfObjectValues<DeviceManagementIntentDeviceSettingStateSummary>(DeviceManagementIntentDeviceSettingStateSummary.CreateFromDiscriminatorValue).ToList(); } },
-                {"deviceStates", (o,n) => { (o as DeviceManagementIntent).DeviceStates = n.GetCollectionOfObjectValues<DeviceManagementIntentDeviceState>(DeviceManagementIntentDeviceState.CreateFromDiscriminatorValue).ToList(); } },
-                {"deviceStateSummary", (o,n) => { (o as DeviceManagementIntent).DeviceStateSummary = n.GetObjectValue<DeviceManagementIntentDeviceStateSummary>(DeviceManagementIntentDeviceStateSummary.CreateFromDiscriminatorValue); } },
-                {"displayName", (o,n) => { (o as DeviceManagementIntent).DisplayName = n.GetStringValue(); } },
-                {"isAssigned", (o,n) => { (o as DeviceManagementIntent).IsAssigned = n.GetBoolValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as DeviceManagementIntent).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"roleScopeTagIds", (o,n) => { (o as DeviceManagementIntent).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"settings", (o,n) => { (o as DeviceManagementIntent).Settings = n.GetCollectionOfObjectValues<DeviceManagementSettingInstance>(DeviceManagementSettingInstance.CreateFromDiscriminatorValue).ToList(); } },
-                {"templateId", (o,n) => { (o as DeviceManagementIntent).TemplateId = n.GetStringValue(); } },
-                {"userStates", (o,n) => { (o as DeviceManagementIntent).UserStates = n.GetCollectionOfObjectValues<DeviceManagementIntentUserState>(DeviceManagementIntentUserState.CreateFromDiscriminatorValue).ToList(); } },
-                {"userStateSummary", (o,n) => { (o as DeviceManagementIntent).UserStateSummary = n.GetObjectValue<DeviceManagementIntentUserStateSummary>(DeviceManagementIntentUserStateSummary.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<DeviceManagementIntentAssignment>(DeviceManagementIntentAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"categories", n => { Categories = n.GetCollectionOfObjectValues<DeviceManagementIntentSettingCategory>(DeviceManagementIntentSettingCategory.CreateFromDiscriminatorValue).ToList(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"deviceSettingStateSummaries", n => { DeviceSettingStateSummaries = n.GetCollectionOfObjectValues<DeviceManagementIntentDeviceSettingStateSummary>(DeviceManagementIntentDeviceSettingStateSummary.CreateFromDiscriminatorValue).ToList(); } },
+                {"deviceStates", n => { DeviceStates = n.GetCollectionOfObjectValues<DeviceManagementIntentDeviceState>(DeviceManagementIntentDeviceState.CreateFromDiscriminatorValue).ToList(); } },
+                {"deviceStateSummary", n => { DeviceStateSummary = n.GetObjectValue<DeviceManagementIntentDeviceStateSummary>(DeviceManagementIntentDeviceStateSummary.CreateFromDiscriminatorValue); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"isAssigned", n => { IsAssigned = n.GetBoolValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"settings", n => { Settings = n.GetCollectionOfObjectValues<DeviceManagementSettingInstance>(DeviceManagementSettingInstance.CreateFromDiscriminatorValue).ToList(); } },
+                {"templateId", n => { TemplateId = n.GetStringValue(); } },
+                {"userStates", n => { UserStates = n.GetCollectionOfObjectValues<DeviceManagementIntentUserState>(DeviceManagementIntentUserState.CreateFromDiscriminatorValue).ToList(); } },
+                {"userStateSummary", n => { UserStateSummary = n.GetObjectValue<DeviceManagementIntentUserStateSummary>(DeviceManagementIntentUserStateSummary.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

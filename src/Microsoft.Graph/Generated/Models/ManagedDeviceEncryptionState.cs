@@ -38,19 +38,19 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"advancedBitLockerStates", (o,n) => { (o as ManagedDeviceEncryptionState).AdvancedBitLockerStates = n.GetEnumValue<AdvancedBitLockerState>(); } },
-                {"deviceName", (o,n) => { (o as ManagedDeviceEncryptionState).DeviceName = n.GetStringValue(); } },
-                {"deviceType", (o,n) => { (o as ManagedDeviceEncryptionState).DeviceType = n.GetEnumValue<DeviceTypes>(); } },
-                {"encryptionPolicySettingState", (o,n) => { (o as ManagedDeviceEncryptionState).EncryptionPolicySettingState = n.GetEnumValue<ComplianceStatus>(); } },
-                {"encryptionReadinessState", (o,n) => { (o as ManagedDeviceEncryptionState).EncryptionReadinessState = n.GetEnumValue<EncryptionReadinessState>(); } },
-                {"encryptionState", (o,n) => { (o as ManagedDeviceEncryptionState).EncryptionState = n.GetEnumValue<EncryptionState>(); } },
-                {"fileVaultStates", (o,n) => { (o as ManagedDeviceEncryptionState).FileVaultStates = n.GetEnumValue<FileVaultState>(); } },
-                {"osVersion", (o,n) => { (o as ManagedDeviceEncryptionState).OsVersion = n.GetStringValue(); } },
-                {"policyDetails", (o,n) => { (o as ManagedDeviceEncryptionState).PolicyDetails = n.GetCollectionOfObjectValues<EncryptionReportPolicyDetails>(EncryptionReportPolicyDetails.CreateFromDiscriminatorValue).ToList(); } },
-                {"tpmSpecificationVersion", (o,n) => { (o as ManagedDeviceEncryptionState).TpmSpecificationVersion = n.GetStringValue(); } },
-                {"userPrincipalName", (o,n) => { (o as ManagedDeviceEncryptionState).UserPrincipalName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"advancedBitLockerStates", n => { AdvancedBitLockerStates = n.GetEnumValue<AdvancedBitLockerState>(); } },
+                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
+                {"deviceType", n => { DeviceType = n.GetEnumValue<DeviceTypes>(); } },
+                {"encryptionPolicySettingState", n => { EncryptionPolicySettingState = n.GetEnumValue<ComplianceStatus>(); } },
+                {"encryptionReadinessState", n => { EncryptionReadinessState = n.GetEnumValue<EncryptionReadinessState>(); } },
+                {"encryptionState", n => { EncryptionState = n.GetEnumValue<EncryptionState>(); } },
+                {"fileVaultStates", n => { FileVaultStates = n.GetEnumValue<FileVaultState>(); } },
+                {"osVersion", n => { OsVersion = n.GetStringValue(); } },
+                {"policyDetails", n => { PolicyDetails = n.GetCollectionOfObjectValues<EncryptionReportPolicyDetails>(EncryptionReportPolicyDetails.CreateFromDiscriminatorValue).ToList(); } },
+                {"tpmSpecificationVersion", n => { TpmSpecificationVersion = n.GetStringValue(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

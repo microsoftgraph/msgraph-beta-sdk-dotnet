@@ -38,15 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"listId", (o,n) => { (o as SharepointIds).ListId = n.GetStringValue(); } },
-                {"listItemId", (o,n) => { (o as SharepointIds).ListItemId = n.GetStringValue(); } },
-                {"listItemUniqueId", (o,n) => { (o as SharepointIds).ListItemUniqueId = n.GetStringValue(); } },
-                {"siteId", (o,n) => { (o as SharepointIds).SiteId = n.GetStringValue(); } },
-                {"siteUrl", (o,n) => { (o as SharepointIds).SiteUrl = n.GetStringValue(); } },
-                {"tenantId", (o,n) => { (o as SharepointIds).TenantId = n.GetStringValue(); } },
-                {"webId", (o,n) => { (o as SharepointIds).WebId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"listId", n => { ListId = n.GetStringValue(); } },
+                {"listItemId", n => { ListItemId = n.GetStringValue(); } },
+                {"listItemUniqueId", n => { ListItemUniqueId = n.GetStringValue(); } },
+                {"siteId", n => { SiteId = n.GetStringValue(); } },
+                {"siteUrl", n => { SiteUrl = n.GetStringValue(); } },
+                {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                {"webId", n => { WebId = n.GetStringValue(); } },
             };
         }
         /// <summary>

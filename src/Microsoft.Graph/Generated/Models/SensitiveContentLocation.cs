@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"confidence", (o,n) => { (o as SensitiveContentLocation).Confidence = n.GetIntValue(); } },
-                {"evidences", (o,n) => { (o as SensitiveContentLocation).Evidences = n.GetCollectionOfObjectValues<SensitiveContentEvidence>(SensitiveContentEvidence.CreateFromDiscriminatorValue).ToList(); } },
-                {"idMatch", (o,n) => { (o as SensitiveContentLocation).IdMatch = n.GetStringValue(); } },
-                {"length", (o,n) => { (o as SensitiveContentLocation).Length = n.GetIntValue(); } },
-                {"offset", (o,n) => { (o as SensitiveContentLocation).Offset = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"confidence", n => { Confidence = n.GetIntValue(); } },
+                {"evidences", n => { Evidences = n.GetCollectionOfObjectValues<SensitiveContentEvidence>(SensitiveContentEvidence.CreateFromDiscriminatorValue).ToList(); } },
+                {"idMatch", n => { IdMatch = n.GetStringValue(); } },
+                {"length", n => { Length = n.GetIntValue(); } },
+                {"offset", n => { Offset = n.GetIntValue(); } },
             };
         }
         /// <summary>

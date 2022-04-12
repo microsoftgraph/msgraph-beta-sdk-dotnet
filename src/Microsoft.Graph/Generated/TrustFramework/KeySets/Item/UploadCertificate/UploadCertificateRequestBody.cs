@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadCertificate {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"key", (o,n) => { (o as UploadCertificateRequestBody).Key = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"key", n => { Key = n.GetStringValue(); } },
             };
         }
         /// <summary>

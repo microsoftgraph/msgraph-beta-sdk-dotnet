@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"applicationId", (o,n) => { (o as MobileAppTroubleshootingEvent).ApplicationId = n.GetStringValue(); } },
-                {"appLogCollectionRequests", (o,n) => { (o as MobileAppTroubleshootingEvent).AppLogCollectionRequests = n.GetCollectionOfObjectValues<AppLogCollectionRequest>(AppLogCollectionRequest.CreateFromDiscriminatorValue).ToList(); } },
-                {"history", (o,n) => { (o as MobileAppTroubleshootingEvent).History = n.GetCollectionOfObjectValues<MobileAppTroubleshootingHistoryItem>(MobileAppTroubleshootingHistoryItem.CreateFromDiscriminatorValue).ToList(); } },
-                {"managedDeviceIdentifier", (o,n) => { (o as MobileAppTroubleshootingEvent).ManagedDeviceIdentifier = n.GetStringValue(); } },
-                {"userId", (o,n) => { (o as MobileAppTroubleshootingEvent).UserId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"applicationId", n => { ApplicationId = n.GetStringValue(); } },
+                {"appLogCollectionRequests", n => { AppLogCollectionRequests = n.GetCollectionOfObjectValues<AppLogCollectionRequest>(AppLogCollectionRequest.CreateFromDiscriminatorValue).ToList(); } },
+                {"history", n => { History = n.GetCollectionOfObjectValues<MobileAppTroubleshootingHistoryItem>(MobileAppTroubleshootingHistoryItem.CreateFromDiscriminatorValue).ToList(); } },
+                {"managedDeviceIdentifier", n => { ManagedDeviceIdentifier = n.GetStringValue(); } },
+                {"userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

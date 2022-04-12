@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"azureTenantId", (o,n) => { (o as ProviderTenantSetting).AzureTenantId = n.GetStringValue(); } },
-                {"enabled", (o,n) => { (o as ProviderTenantSetting).Enabled = n.GetBoolValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as ProviderTenantSetting).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"provider", (o,n) => { (o as ProviderTenantSetting).Provider = n.GetStringValue(); } },
-                {"vendor", (o,n) => { (o as ProviderTenantSetting).Vendor = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
+                {"enabled", n => { Enabled = n.GetBoolValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"provider", n => { Provider = n.GetStringValue(); } },
+                {"vendor", n => { Vendor = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"contentType", (o,n) => { (o as Attachment).ContentType = n.GetStringValue(); } },
-                {"isInline", (o,n) => { (o as Attachment).IsInline = n.GetBoolValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as Attachment).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"name", (o,n) => { (o as Attachment).Name = n.GetStringValue(); } },
-                {"size", (o,n) => { (o as Attachment).Size = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"contentType", n => { ContentType = n.GetStringValue(); } },
+                {"isInline", n => { IsInline = n.GetBoolValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"size", n => { Size = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"bold", (o,n) => { (o as WorkbookChartFont).Bold = n.GetBoolValue(); } },
-                {"color", (o,n) => { (o as WorkbookChartFont).Color = n.GetStringValue(); } },
-                {"italic", (o,n) => { (o as WorkbookChartFont).Italic = n.GetBoolValue(); } },
-                {"name", (o,n) => { (o as WorkbookChartFont).Name = n.GetStringValue(); } },
-                {"size", (o,n) => { (o as WorkbookChartFont).Size = n.GetDoubleValue(); } },
-                {"underline", (o,n) => { (o as WorkbookChartFont).Underline = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"bold", n => { Bold = n.GetBoolValue(); } },
+                {"color", n => { Color = n.GetStringValue(); } },
+                {"italic", n => { Italic = n.GetBoolValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"size", n => { Size = n.GetDoubleValue(); } },
+                {"underline", n => { Underline = n.GetStringValue(); } },
             };
         }
         /// <summary>

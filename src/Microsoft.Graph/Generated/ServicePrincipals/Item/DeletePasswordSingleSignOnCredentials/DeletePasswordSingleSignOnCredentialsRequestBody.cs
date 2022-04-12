@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.DeletePasswordSingleSignOn
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"id", (o,n) => { (o as DeletePasswordSingleSignOnCredentialsRequestBody).Id = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"id", n => { Id = n.GetStringValue(); } },
             };
         }
         /// <summary>

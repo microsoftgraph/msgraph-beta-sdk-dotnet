@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.SubscribeToTone {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"clientContext", (o,n) => { (o as SubscribeToToneRequestBody).ClientContext = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"clientContext", n => { ClientContext = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -44,22 +44,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"businessFlowTemplateId", (o,n) => { (o as AccessReview).BusinessFlowTemplateId = n.GetStringValue(); } },
-                {"createdBy", (o,n) => { (o as AccessReview).CreatedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
-                {"decisions", (o,n) => { (o as AccessReview).Decisions = n.GetCollectionOfObjectValues<AccessReviewDecision>(AccessReviewDecision.CreateFromDiscriminatorValue).ToList(); } },
-                {"description", (o,n) => { (o as AccessReview).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as AccessReview).DisplayName = n.GetStringValue(); } },
-                {"endDateTime", (o,n) => { (o as AccessReview).EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"instances", (o,n) => { (o as AccessReview).Instances = n.GetCollectionOfObjectValues<AccessReview>(AccessReview.CreateFromDiscriminatorValue).ToList(); } },
-                {"myDecisions", (o,n) => { (o as AccessReview).MyDecisions = n.GetCollectionOfObjectValues<AccessReviewDecision>(AccessReviewDecision.CreateFromDiscriminatorValue).ToList(); } },
-                {"reviewedEntity", (o,n) => { (o as AccessReview).ReviewedEntity = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
-                {"reviewers", (o,n) => { (o as AccessReview).Reviewers = n.GetCollectionOfObjectValues<AccessReviewReviewer>(AccessReviewReviewer.CreateFromDiscriminatorValue).ToList(); } },
-                {"reviewerType", (o,n) => { (o as AccessReview).ReviewerType = n.GetStringValue(); } },
-                {"settings", (o,n) => { (o as AccessReview).Settings = n.GetObjectValue<AccessReviewSettings>(AccessReviewSettings.CreateFromDiscriminatorValue); } },
-                {"startDateTime", (o,n) => { (o as AccessReview).StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", (o,n) => { (o as AccessReview).Status = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"businessFlowTemplateId", n => { BusinessFlowTemplateId = n.GetStringValue(); } },
+                {"createdBy", n => { CreatedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                {"decisions", n => { Decisions = n.GetCollectionOfObjectValues<AccessReviewDecision>(AccessReviewDecision.CreateFromDiscriminatorValue).ToList(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"instances", n => { Instances = n.GetCollectionOfObjectValues<AccessReview>(AccessReview.CreateFromDiscriminatorValue).ToList(); } },
+                {"myDecisions", n => { MyDecisions = n.GetCollectionOfObjectValues<AccessReviewDecision>(AccessReviewDecision.CreateFromDiscriminatorValue).ToList(); } },
+                {"reviewedEntity", n => { ReviewedEntity = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                {"reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<AccessReviewReviewer>(AccessReviewReviewer.CreateFromDiscriminatorValue).ToList(); } },
+                {"reviewerType", n => { ReviewerType = n.GetStringValue(); } },
+                {"settings", n => { Settings = n.GetObjectValue<AccessReviewSettings>(AccessReviewSettings.CreateFromDiscriminatorValue); } },
+                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                {"status", n => { Status = n.GetStringValue(); } },
             };
         }
         /// <summary>

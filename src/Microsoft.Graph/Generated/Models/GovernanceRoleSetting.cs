@@ -38,19 +38,19 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"adminEligibleSettings", (o,n) => { (o as GovernanceRoleSetting).AdminEligibleSettings = n.GetCollectionOfObjectValues<GovernanceRuleSetting>(GovernanceRuleSetting.CreateFromDiscriminatorValue).ToList(); } },
-                {"adminMemberSettings", (o,n) => { (o as GovernanceRoleSetting).AdminMemberSettings = n.GetCollectionOfObjectValues<GovernanceRuleSetting>(GovernanceRuleSetting.CreateFromDiscriminatorValue).ToList(); } },
-                {"isDefault", (o,n) => { (o as GovernanceRoleSetting).IsDefault = n.GetBoolValue(); } },
-                {"lastUpdatedBy", (o,n) => { (o as GovernanceRoleSetting).LastUpdatedBy = n.GetStringValue(); } },
-                {"lastUpdatedDateTime", (o,n) => { (o as GovernanceRoleSetting).LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"resource", (o,n) => { (o as GovernanceRoleSetting).Resource = n.GetObjectValue<GovernanceResource>(GovernanceResource.CreateFromDiscriminatorValue); } },
-                {"resourceId", (o,n) => { (o as GovernanceRoleSetting).ResourceId = n.GetStringValue(); } },
-                {"roleDefinition", (o,n) => { (o as GovernanceRoleSetting).RoleDefinition = n.GetObjectValue<GovernanceRoleDefinition>(GovernanceRoleDefinition.CreateFromDiscriminatorValue); } },
-                {"roleDefinitionId", (o,n) => { (o as GovernanceRoleSetting).RoleDefinitionId = n.GetStringValue(); } },
-                {"userEligibleSettings", (o,n) => { (o as GovernanceRoleSetting).UserEligibleSettings = n.GetCollectionOfObjectValues<GovernanceRuleSetting>(GovernanceRuleSetting.CreateFromDiscriminatorValue).ToList(); } },
-                {"userMemberSettings", (o,n) => { (o as GovernanceRoleSetting).UserMemberSettings = n.GetCollectionOfObjectValues<GovernanceRuleSetting>(GovernanceRuleSetting.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"adminEligibleSettings", n => { AdminEligibleSettings = n.GetCollectionOfObjectValues<GovernanceRuleSetting>(GovernanceRuleSetting.CreateFromDiscriminatorValue).ToList(); } },
+                {"adminMemberSettings", n => { AdminMemberSettings = n.GetCollectionOfObjectValues<GovernanceRuleSetting>(GovernanceRuleSetting.CreateFromDiscriminatorValue).ToList(); } },
+                {"isDefault", n => { IsDefault = n.GetBoolValue(); } },
+                {"lastUpdatedBy", n => { LastUpdatedBy = n.GetStringValue(); } },
+                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"resource", n => { Resource = n.GetObjectValue<GovernanceResource>(GovernanceResource.CreateFromDiscriminatorValue); } },
+                {"resourceId", n => { ResourceId = n.GetStringValue(); } },
+                {"roleDefinition", n => { RoleDefinition = n.GetObjectValue<GovernanceRoleDefinition>(GovernanceRoleDefinition.CreateFromDiscriminatorValue); } },
+                {"roleDefinitionId", n => { RoleDefinitionId = n.GetStringValue(); } },
+                {"userEligibleSettings", n => { UserEligibleSettings = n.GetCollectionOfObjectValues<GovernanceRuleSetting>(GovernanceRuleSetting.CreateFromDiscriminatorValue).ToList(); } },
+                {"userMemberSettings", n => { UserMemberSettings = n.GetCollectionOfObjectValues<GovernanceRuleSetting>(GovernanceRuleSetting.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

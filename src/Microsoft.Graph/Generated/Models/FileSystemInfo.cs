@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"createdDateTime", (o,n) => { (o as FileSystemInfo).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastAccessedDateTime", (o,n) => { (o as FileSystemInfo).LastAccessedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as FileSystemInfo).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastAccessedDateTime", n => { LastAccessedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

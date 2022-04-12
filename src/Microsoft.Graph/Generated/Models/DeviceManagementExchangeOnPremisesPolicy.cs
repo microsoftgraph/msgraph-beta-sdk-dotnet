@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessRules", (o,n) => { (o as DeviceManagementExchangeOnPremisesPolicy).AccessRules = n.GetCollectionOfObjectValues<DeviceManagementExchangeAccessRule>(DeviceManagementExchangeAccessRule.CreateFromDiscriminatorValue).ToList(); } },
-                {"conditionalAccessSettings", (o,n) => { (o as DeviceManagementExchangeOnPremisesPolicy).ConditionalAccessSettings = n.GetObjectValue<OnPremisesConditionalAccessSettings>(OnPremisesConditionalAccessSettings.CreateFromDiscriminatorValue); } },
-                {"defaultAccessLevel", (o,n) => { (o as DeviceManagementExchangeOnPremisesPolicy).DefaultAccessLevel = n.GetEnumValue<DeviceManagementExchangeAccessLevel>(); } },
-                {"knownDeviceClasses", (o,n) => { (o as DeviceManagementExchangeOnPremisesPolicy).KnownDeviceClasses = n.GetCollectionOfObjectValues<DeviceManagementExchangeDeviceClass>(DeviceManagementExchangeDeviceClass.CreateFromDiscriminatorValue).ToList(); } },
-                {"notificationContent", (o,n) => { (o as DeviceManagementExchangeOnPremisesPolicy).NotificationContent = n.GetByteArrayValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"accessRules", n => { AccessRules = n.GetCollectionOfObjectValues<DeviceManagementExchangeAccessRule>(DeviceManagementExchangeAccessRule.CreateFromDiscriminatorValue).ToList(); } },
+                {"conditionalAccessSettings", n => { ConditionalAccessSettings = n.GetObjectValue<OnPremisesConditionalAccessSettings>(OnPremisesConditionalAccessSettings.CreateFromDiscriminatorValue); } },
+                {"defaultAccessLevel", n => { DefaultAccessLevel = n.GetEnumValue<DeviceManagementExchangeAccessLevel>(); } },
+                {"knownDeviceClasses", n => { KnownDeviceClasses = n.GetCollectionOfObjectValues<DeviceManagementExchangeDeviceClass>(DeviceManagementExchangeDeviceClass.CreateFromDiscriminatorValue).ToList(); } },
+                {"notificationContent", n => { NotificationContent = n.GetByteArrayValue(); } },
             };
         }
         /// <summary>

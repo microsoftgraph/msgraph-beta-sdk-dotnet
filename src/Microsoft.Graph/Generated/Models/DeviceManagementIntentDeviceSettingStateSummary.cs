@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"compliantCount", (o,n) => { (o as DeviceManagementIntentDeviceSettingStateSummary).CompliantCount = n.GetIntValue(); } },
-                {"conflictCount", (o,n) => { (o as DeviceManagementIntentDeviceSettingStateSummary).ConflictCount = n.GetIntValue(); } },
-                {"errorCount", (o,n) => { (o as DeviceManagementIntentDeviceSettingStateSummary).ErrorCount = n.GetIntValue(); } },
-                {"nonCompliantCount", (o,n) => { (o as DeviceManagementIntentDeviceSettingStateSummary).NonCompliantCount = n.GetIntValue(); } },
-                {"notApplicableCount", (o,n) => { (o as DeviceManagementIntentDeviceSettingStateSummary).NotApplicableCount = n.GetIntValue(); } },
-                {"remediatedCount", (o,n) => { (o as DeviceManagementIntentDeviceSettingStateSummary).RemediatedCount = n.GetIntValue(); } },
-                {"settingName", (o,n) => { (o as DeviceManagementIntentDeviceSettingStateSummary).SettingName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"compliantCount", n => { CompliantCount = n.GetIntValue(); } },
+                {"conflictCount", n => { ConflictCount = n.GetIntValue(); } },
+                {"errorCount", n => { ErrorCount = n.GetIntValue(); } },
+                {"nonCompliantCount", n => { NonCompliantCount = n.GetIntValue(); } },
+                {"notApplicableCount", n => { NotApplicableCount = n.GetIntValue(); } },
+                {"remediatedCount", n => { RemediatedCount = n.GetIntValue(); } },
+                {"settingName", n => { SettingName = n.GetStringValue(); } },
             };
         }
         /// <summary>

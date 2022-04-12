@@ -26,9 +26,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"removeFromDefaultAudioGroup", (o,n) => { (o as MediaConfig).RemoveFromDefaultAudioGroup = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"removeFromDefaultAudioGroup", n => { RemoveFromDefaultAudioGroup = n.GetBoolValue(); } },
             };
         }
         /// <summary>

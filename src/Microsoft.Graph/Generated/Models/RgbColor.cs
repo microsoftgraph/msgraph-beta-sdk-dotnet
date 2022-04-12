@@ -31,11 +31,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"b", (o,n) => { (o as RgbColor).B = n.GetByteValue(); } },
-                {"g", (o,n) => { (o as RgbColor).G = n.GetByteValue(); } },
-                {"r", (o,n) => { (o as RgbColor).R = n.GetByteValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"b", n => { B = n.GetByteValue(); } },
+                {"g", n => { G = n.GetByteValue(); } },
+                {"r", n => { R = n.GetByteValue(); } },
             };
         }
         /// <summary>

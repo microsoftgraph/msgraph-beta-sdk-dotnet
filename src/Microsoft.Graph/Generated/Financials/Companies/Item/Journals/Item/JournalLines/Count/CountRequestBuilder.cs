@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Journals.Item.JournalLi
         public CountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/financials/companies/{company_id}/journals/{journal_id}/journalLines/$count";
+            UrlTemplate = "{+baseurl}/financials/companies/{company%2Did}/journals/{journal%2Did}/journalLines/$count";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Journals.Item.JournalLi
         public CountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/financials/companies/{company_id}/journals/{journal_id}/journalLines/$count";
+            UrlTemplate = "{+baseurl}/financials/companies/{company%2Did}/journals/{journal%2Did}/journalLines/$count";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

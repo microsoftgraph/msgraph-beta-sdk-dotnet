@@ -38,15 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"defaultValue", (o,n) => { (o as AttributeMapping).DefaultValue = n.GetStringValue(); } },
-                {"exportMissingReferences", (o,n) => { (o as AttributeMapping).ExportMissingReferences = n.GetBoolValue(); } },
-                {"flowBehavior", (o,n) => { (o as AttributeMapping).FlowBehavior = n.GetEnumValue<AttributeFlowBehavior>(); } },
-                {"flowType", (o,n) => { (o as AttributeMapping).FlowType = n.GetEnumValue<AttributeFlowType>(); } },
-                {"matchingPriority", (o,n) => { (o as AttributeMapping).MatchingPriority = n.GetIntValue(); } },
-                {"source", (o,n) => { (o as AttributeMapping).Source = n.GetObjectValue<AttributeMappingSource>(AttributeMappingSource.CreateFromDiscriminatorValue); } },
-                {"targetAttributeName", (o,n) => { (o as AttributeMapping).TargetAttributeName = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"defaultValue", n => { DefaultValue = n.GetStringValue(); } },
+                {"exportMissingReferences", n => { ExportMissingReferences = n.GetBoolValue(); } },
+                {"flowBehavior", n => { FlowBehavior = n.GetEnumValue<AttributeFlowBehavior>(); } },
+                {"flowType", n => { FlowType = n.GetEnumValue<AttributeFlowType>(); } },
+                {"matchingPriority", n => { MatchingPriority = n.GetIntValue(); } },
+                {"source", n => { Source = n.GetObjectValue<AttributeMappingSource>(AttributeMappingSource.CreateFromDiscriminatorValue); } },
+                {"targetAttributeName", n => { TargetAttributeName = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -37,14 +37,14 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"managementActionId", (o,n) => { (o as ChangeDeploymentStatusRequestBody).ManagementActionId = n.GetStringValue(); } },
-                {"managementTemplateId", (o,n) => { (o as ChangeDeploymentStatusRequestBody).ManagementTemplateId = n.GetStringValue(); } },
-                {"managementTemplateVersion", (o,n) => { (o as ChangeDeploymentStatusRequestBody).ManagementTemplateVersion = n.GetIntValue(); } },
-                {"status", (o,n) => { (o as ChangeDeploymentStatusRequestBody).Status = n.GetStringValue(); } },
-                {"tenantGroupId", (o,n) => { (o as ChangeDeploymentStatusRequestBody).TenantGroupId = n.GetStringValue(); } },
-                {"tenantId", (o,n) => { (o as ChangeDeploymentStatusRequestBody).TenantId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"managementActionId", n => { ManagementActionId = n.GetStringValue(); } },
+                {"managementTemplateId", n => { ManagementTemplateId = n.GetStringValue(); } },
+                {"managementTemplateVersion", n => { ManagementTemplateVersion = n.GetIntValue(); } },
+                {"status", n => { Status = n.GetStringValue(); } },
+                {"tenantGroupId", n => { TenantGroupId = n.GetStringValue(); } },
+                {"tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
         /// <summary>

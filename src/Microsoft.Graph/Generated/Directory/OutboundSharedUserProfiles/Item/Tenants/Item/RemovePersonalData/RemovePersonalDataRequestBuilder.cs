@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Directory.OutboundSharedUserProfiles.Item.Tenants
         public RemovePersonalDataRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/directory/outboundSharedUserProfiles/{outboundSharedUserProfile_userId}/tenants/{tenantReference_tenantId}/microsoft.graph.removePersonalData";
+            UrlTemplate = "{+baseurl}/directory/outboundSharedUserProfiles/{outboundSharedUserProfile%2DuserId}/tenants/{tenantReference%2DtenantId}/microsoft.graph.removePersonalData";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Directory.OutboundSharedUserProfiles.Item.Tenants
         public RemovePersonalDataRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/directory/outboundSharedUserProfiles/{outboundSharedUserProfile_userId}/tenants/{tenantReference_tenantId}/microsoft.graph.removePersonalData";
+            UrlTemplate = "{+baseurl}/directory/outboundSharedUserProfiles/{outboundSharedUserProfile%2DuserId}/tenants/{tenantReference%2DtenantId}/microsoft.graph.removePersonalData";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

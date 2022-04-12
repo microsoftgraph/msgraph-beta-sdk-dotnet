@@ -36,18 +36,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignedTo", (o,n) => { (o as DeviceAppManagementTask).AssignedTo = n.GetStringValue(); } },
-                {"category", (o,n) => { (o as DeviceAppManagementTask).Category = n.GetEnumValue<DeviceAppManagementTaskCategory>(); } },
-                {"createdDateTime", (o,n) => { (o as DeviceAppManagementTask).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"creator", (o,n) => { (o as DeviceAppManagementTask).Creator = n.GetStringValue(); } },
-                {"creatorNotes", (o,n) => { (o as DeviceAppManagementTask).CreatorNotes = n.GetStringValue(); } },
-                {"description", (o,n) => { (o as DeviceAppManagementTask).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as DeviceAppManagementTask).DisplayName = n.GetStringValue(); } },
-                {"dueDateTime", (o,n) => { (o as DeviceAppManagementTask).DueDateTime = n.GetDateTimeOffsetValue(); } },
-                {"priority", (o,n) => { (o as DeviceAppManagementTask).Priority = n.GetEnumValue<DeviceAppManagementTaskPriority>(); } },
-                {"status", (o,n) => { (o as DeviceAppManagementTask).Status = n.GetEnumValue<DeviceAppManagementTaskStatus>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"assignedTo", n => { AssignedTo = n.GetStringValue(); } },
+                {"category", n => { Category = n.GetEnumValue<DeviceAppManagementTaskCategory>(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"creator", n => { Creator = n.GetStringValue(); } },
+                {"creatorNotes", n => { CreatorNotes = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"dueDateTime", n => { DueDateTime = n.GetDateTimeOffsetValue(); } },
+                {"priority", n => { Priority = n.GetEnumValue<DeviceAppManagementTaskPriority>(); } },
+                {"status", n => { Status = n.GetEnumValue<DeviceAppManagementTaskStatus>(); } },
             };
         }
         /// <summary>

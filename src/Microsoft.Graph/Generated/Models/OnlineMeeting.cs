@@ -5,8 +5,6 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class OnlineMeeting : Entity, IParsable {
-        /// <summary>The accessLevel property</summary>
-        public Microsoft.Graph.Beta.Models.AccessLevel? AccessLevel { get; set; }
         /// <summary>Indicates whether attendees can turn on their camera.</summary>
         public bool? AllowAttendeeToEnableCamera { get; set; }
         /// <summary>Indicates whether attendees can turn on their microphone.</summary>
@@ -27,8 +25,6 @@ namespace Microsoft.Graph.Beta.Models {
         public Microsoft.Graph.Beta.Models.AudioConferencing AudioConferencing { get; set; }
         /// <summary>Settings related to a live event.</summary>
         public BroadcastMeetingSettings BroadcastSettings { get; set; }
-        /// <summary>The canceledDateTime property</summary>
-        public DateTimeOffset? CanceledDateTime { get; set; }
         /// <summary>The capabilities property</summary>
         public List<MeetingCapabilities?> Capabilities { get; set; }
         /// <summary>The chat information associated with this online meeting.</summary>
@@ -37,16 +33,10 @@ namespace Microsoft.Graph.Beta.Models {
         public DateTimeOffset? CreationDateTime { get; set; }
         /// <summary>The meeting end time in UTC.</summary>
         public DateTimeOffset? EndDateTime { get; set; }
-        /// <summary>The entryExitAnnouncement property</summary>
-        public bool? EntryExitAnnouncement { get; set; }
-        /// <summary>The expirationDateTime property</summary>
-        public DateTimeOffset? ExpirationDateTime { get; set; }
         /// <summary>The external ID. A custom ID. Optional.</summary>
         public string ExternalId { get; set; }
         /// <summary>Indicates if this is a Teams live event.</summary>
         public bool? IsBroadcast { get; set; }
-        /// <summary>The isCancelled property</summary>
-        public bool? IsCancelled { get; set; }
         /// <summary>Indicates whether to announce when callers join or leave.</summary>
         public bool? IsEntryExitAnnounced { get; set; }
         /// <summary>The join information in the language and locale variant specified in the Accept-Language request HTTP header. Read-only.</summary>
@@ -55,6 +45,8 @@ namespace Microsoft.Graph.Beta.Models {
         public Microsoft.Graph.Beta.Models.JoinMeetingIdSettings JoinMeetingIdSettings { get; set; }
         /// <summary>The joinUrl property</summary>
         public string JoinUrl { get; set; }
+        /// <summary>The join URL of the online meeting. Read-only.</summary>
+        public string JoinWebUrl { get; set; }
         /// <summary>Specifies which participants can bypass the meeting   lobby.</summary>
         public Microsoft.Graph.Beta.Models.LobbyBypassSettings LobbyBypassSettings { get; set; }
         /// <summary>The meetingAttendanceReport property</summary>
@@ -84,42 +76,38 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessLevel", (o,n) => { (o as OnlineMeeting).AccessLevel = n.GetEnumValue<AccessLevel>(); } },
-                {"allowAttendeeToEnableCamera", (o,n) => { (o as OnlineMeeting).AllowAttendeeToEnableCamera = n.GetBoolValue(); } },
-                {"allowAttendeeToEnableMic", (o,n) => { (o as OnlineMeeting).AllowAttendeeToEnableMic = n.GetBoolValue(); } },
-                {"allowedPresenters", (o,n) => { (o as OnlineMeeting).AllowedPresenters = n.GetEnumValue<OnlineMeetingPresenters>(); } },
-                {"allowMeetingChat", (o,n) => { (o as OnlineMeeting).AllowMeetingChat = n.GetEnumValue<MeetingChatMode>(); } },
-                {"allowTeamworkReactions", (o,n) => { (o as OnlineMeeting).AllowTeamworkReactions = n.GetBoolValue(); } },
-                {"alternativeRecording", (o,n) => { (o as OnlineMeeting).AlternativeRecording = n.GetByteArrayValue(); } },
-                {"attendanceReports", (o,n) => { (o as OnlineMeeting).AttendanceReports = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MeetingAttendanceReport>(Microsoft.Graph.Beta.Models.MeetingAttendanceReport.CreateFromDiscriminatorValue).ToList(); } },
-                {"attendeeReport", (o,n) => { (o as OnlineMeeting).AttendeeReport = n.GetByteArrayValue(); } },
-                {"audioConferencing", (o,n) => { (o as OnlineMeeting).AudioConferencing = n.GetObjectValue<Microsoft.Graph.Beta.Models.AudioConferencing>(Microsoft.Graph.Beta.Models.AudioConferencing.CreateFromDiscriminatorValue); } },
-                {"broadcastSettings", (o,n) => { (o as OnlineMeeting).BroadcastSettings = n.GetObjectValue<BroadcastMeetingSettings>(BroadcastMeetingSettings.CreateFromDiscriminatorValue); } },
-                {"canceledDateTime", (o,n) => { (o as OnlineMeeting).CanceledDateTime = n.GetDateTimeOffsetValue(); } },
-                {"capabilities", (o,n) => { (o as OnlineMeeting).Capabilities = n.GetCollectionOfEnumValues<MeetingCapabilities>().ToList(); } },
-                {"chatInfo", (o,n) => { (o as OnlineMeeting).ChatInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ChatInfo>(Microsoft.Graph.Beta.Models.ChatInfo.CreateFromDiscriminatorValue); } },
-                {"creationDateTime", (o,n) => { (o as OnlineMeeting).CreationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"endDateTime", (o,n) => { (o as OnlineMeeting).EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"entryExitAnnouncement", (o,n) => { (o as OnlineMeeting).EntryExitAnnouncement = n.GetBoolValue(); } },
-                {"expirationDateTime", (o,n) => { (o as OnlineMeeting).ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"externalId", (o,n) => { (o as OnlineMeeting).ExternalId = n.GetStringValue(); } },
-                {"isBroadcast", (o,n) => { (o as OnlineMeeting).IsBroadcast = n.GetBoolValue(); } },
-                {"isCancelled", (o,n) => { (o as OnlineMeeting).IsCancelled = n.GetBoolValue(); } },
-                {"isEntryExitAnnounced", (o,n) => { (o as OnlineMeeting).IsEntryExitAnnounced = n.GetBoolValue(); } },
-                {"joinInformation", (o,n) => { (o as OnlineMeeting).JoinInformation = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
-                {"joinMeetingIdSettings", (o,n) => { (o as OnlineMeeting).JoinMeetingIdSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.JoinMeetingIdSettings>(Microsoft.Graph.Beta.Models.JoinMeetingIdSettings.CreateFromDiscriminatorValue); } },
-                {"joinUrl", (o,n) => { (o as OnlineMeeting).JoinUrl = n.GetStringValue(); } },
-                {"lobbyBypassSettings", (o,n) => { (o as OnlineMeeting).LobbyBypassSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.LobbyBypassSettings>(Microsoft.Graph.Beta.Models.LobbyBypassSettings.CreateFromDiscriminatorValue); } },
-                {"meetingAttendanceReport", (o,n) => { (o as OnlineMeeting).MeetingAttendanceReport = n.GetObjectValue<Microsoft.Graph.Beta.Models.MeetingAttendanceReport>(Microsoft.Graph.Beta.Models.MeetingAttendanceReport.CreateFromDiscriminatorValue); } },
-                {"participants", (o,n) => { (o as OnlineMeeting).Participants = n.GetObjectValue<MeetingParticipants>(MeetingParticipants.CreateFromDiscriminatorValue); } },
-                {"recordAutomatically", (o,n) => { (o as OnlineMeeting).RecordAutomatically = n.GetBoolValue(); } },
-                {"recording", (o,n) => { (o as OnlineMeeting).Recording = n.GetByteArrayValue(); } },
-                {"registration", (o,n) => { (o as OnlineMeeting).Registration = n.GetObjectValue<MeetingRegistration>(MeetingRegistration.CreateFromDiscriminatorValue); } },
-                {"startDateTime", (o,n) => { (o as OnlineMeeting).StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"subject", (o,n) => { (o as OnlineMeeting).Subject = n.GetStringValue(); } },
-                {"videoTeleconferenceId", (o,n) => { (o as OnlineMeeting).VideoTeleconferenceId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"allowAttendeeToEnableCamera", n => { AllowAttendeeToEnableCamera = n.GetBoolValue(); } },
+                {"allowAttendeeToEnableMic", n => { AllowAttendeeToEnableMic = n.GetBoolValue(); } },
+                {"allowedPresenters", n => { AllowedPresenters = n.GetEnumValue<OnlineMeetingPresenters>(); } },
+                {"allowMeetingChat", n => { AllowMeetingChat = n.GetEnumValue<MeetingChatMode>(); } },
+                {"allowTeamworkReactions", n => { AllowTeamworkReactions = n.GetBoolValue(); } },
+                {"alternativeRecording", n => { AlternativeRecording = n.GetByteArrayValue(); } },
+                {"attendanceReports", n => { AttendanceReports = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MeetingAttendanceReport>(Microsoft.Graph.Beta.Models.MeetingAttendanceReport.CreateFromDiscriminatorValue).ToList(); } },
+                {"attendeeReport", n => { AttendeeReport = n.GetByteArrayValue(); } },
+                {"audioConferencing", n => { AudioConferencing = n.GetObjectValue<Microsoft.Graph.Beta.Models.AudioConferencing>(Microsoft.Graph.Beta.Models.AudioConferencing.CreateFromDiscriminatorValue); } },
+                {"broadcastSettings", n => { BroadcastSettings = n.GetObjectValue<BroadcastMeetingSettings>(BroadcastMeetingSettings.CreateFromDiscriminatorValue); } },
+                {"capabilities", n => { Capabilities = n.GetCollectionOfEnumValues<MeetingCapabilities>().ToList(); } },
+                {"chatInfo", n => { ChatInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ChatInfo>(Microsoft.Graph.Beta.Models.ChatInfo.CreateFromDiscriminatorValue); } },
+                {"creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"externalId", n => { ExternalId = n.GetStringValue(); } },
+                {"isBroadcast", n => { IsBroadcast = n.GetBoolValue(); } },
+                {"isEntryExitAnnounced", n => { IsEntryExitAnnounced = n.GetBoolValue(); } },
+                {"joinInformation", n => { JoinInformation = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                {"joinMeetingIdSettings", n => { JoinMeetingIdSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.JoinMeetingIdSettings>(Microsoft.Graph.Beta.Models.JoinMeetingIdSettings.CreateFromDiscriminatorValue); } },
+                {"joinUrl", n => { JoinUrl = n.GetStringValue(); } },
+                {"joinWebUrl", n => { JoinWebUrl = n.GetStringValue(); } },
+                {"lobbyBypassSettings", n => { LobbyBypassSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.LobbyBypassSettings>(Microsoft.Graph.Beta.Models.LobbyBypassSettings.CreateFromDiscriminatorValue); } },
+                {"meetingAttendanceReport", n => { MeetingAttendanceReport = n.GetObjectValue<Microsoft.Graph.Beta.Models.MeetingAttendanceReport>(Microsoft.Graph.Beta.Models.MeetingAttendanceReport.CreateFromDiscriminatorValue); } },
+                {"participants", n => { Participants = n.GetObjectValue<MeetingParticipants>(MeetingParticipants.CreateFromDiscriminatorValue); } },
+                {"recordAutomatically", n => { RecordAutomatically = n.GetBoolValue(); } },
+                {"recording", n => { Recording = n.GetByteArrayValue(); } },
+                {"registration", n => { Registration = n.GetObjectValue<MeetingRegistration>(MeetingRegistration.CreateFromDiscriminatorValue); } },
+                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                {"subject", n => { Subject = n.GetStringValue(); } },
+                {"videoTeleconferenceId", n => { VideoTeleconferenceId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -129,7 +117,6 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<AccessLevel>("accessLevel", AccessLevel);
             writer.WriteBoolValue("allowAttendeeToEnableCamera", AllowAttendeeToEnableCamera);
             writer.WriteBoolValue("allowAttendeeToEnableMic", AllowAttendeeToEnableMic);
             writer.WriteEnumValue<OnlineMeetingPresenters>("allowedPresenters", AllowedPresenters);
@@ -140,20 +127,17 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteByteArrayValue("attendeeReport", AttendeeReport);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AudioConferencing>("audioConferencing", AudioConferencing);
             writer.WriteObjectValue<BroadcastMeetingSettings>("broadcastSettings", BroadcastSettings);
-            writer.WriteDateTimeOffsetValue("canceledDateTime", CanceledDateTime);
             writer.WriteCollectionOfEnumValues<MeetingCapabilities>("capabilities", Capabilities);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ChatInfo>("chatInfo", ChatInfo);
             writer.WriteDateTimeOffsetValue("creationDateTime", CreationDateTime);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
-            writer.WriteBoolValue("entryExitAnnouncement", EntryExitAnnouncement);
-            writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
             writer.WriteStringValue("externalId", ExternalId);
             writer.WriteBoolValue("isBroadcast", IsBroadcast);
-            writer.WriteBoolValue("isCancelled", IsCancelled);
             writer.WriteBoolValue("isEntryExitAnnounced", IsEntryExitAnnounced);
             writer.WriteObjectValue<ItemBody>("joinInformation", JoinInformation);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.JoinMeetingIdSettings>("joinMeetingIdSettings", JoinMeetingIdSettings);
             writer.WriteStringValue("joinUrl", JoinUrl);
+            writer.WriteStringValue("joinWebUrl", JoinWebUrl);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.LobbyBypassSettings>("lobbyBypassSettings", LobbyBypassSettings);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MeetingAttendanceReport>("meetingAttendanceReport", MeetingAttendanceReport);
             writer.WriteObjectValue<MeetingParticipants>("participants", Participants);

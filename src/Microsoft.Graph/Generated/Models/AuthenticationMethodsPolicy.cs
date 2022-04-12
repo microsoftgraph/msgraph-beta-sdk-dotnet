@@ -31,15 +31,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"authenticationMethodConfigurations", (o,n) => { (o as AuthenticationMethodsPolicy).AuthenticationMethodConfigurations = n.GetCollectionOfObjectValues<AuthenticationMethodConfiguration>(AuthenticationMethodConfiguration.CreateFromDiscriminatorValue).ToList(); } },
-                {"description", (o,n) => { (o as AuthenticationMethodsPolicy).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as AuthenticationMethodsPolicy).DisplayName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as AuthenticationMethodsPolicy).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"policyVersion", (o,n) => { (o as AuthenticationMethodsPolicy).PolicyVersion = n.GetStringValue(); } },
-                {"reconfirmationInDays", (o,n) => { (o as AuthenticationMethodsPolicy).ReconfirmationInDays = n.GetIntValue(); } },
-                {"registrationEnforcement", (o,n) => { (o as AuthenticationMethodsPolicy).RegistrationEnforcement = n.GetObjectValue<Microsoft.Graph.Beta.Models.RegistrationEnforcement>(Microsoft.Graph.Beta.Models.RegistrationEnforcement.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"authenticationMethodConfigurations", n => { AuthenticationMethodConfigurations = n.GetCollectionOfObjectValues<AuthenticationMethodConfiguration>(AuthenticationMethodConfiguration.CreateFromDiscriminatorValue).ToList(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"policyVersion", n => { PolicyVersion = n.GetStringValue(); } },
+                {"reconfirmationInDays", n => { ReconfirmationInDays = n.GetIntValue(); } },
+                {"registrationEnforcement", n => { RegistrationEnforcement = n.GetObjectValue<Microsoft.Graph.Beta.Models.RegistrationEnforcement>(Microsoft.Graph.Beta.Models.RegistrationEnforcement.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

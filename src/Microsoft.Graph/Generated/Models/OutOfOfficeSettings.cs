@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"isOutOfOffice", (o,n) => { (o as OutOfOfficeSettings).IsOutOfOffice = n.GetBoolValue(); } },
-                {"message", (o,n) => { (o as OutOfOfficeSettings).Message = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"isOutOfOffice", n => { IsOutOfOffice = n.GetBoolValue(); } },
+                {"message", n => { Message = n.GetStringValue(); } },
             };
         }
         /// <summary>

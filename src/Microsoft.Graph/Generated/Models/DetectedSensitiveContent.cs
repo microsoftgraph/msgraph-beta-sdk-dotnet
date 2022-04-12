@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"classificationAttributes", (o,n) => { (o as DetectedSensitiveContent).ClassificationAttributes = n.GetCollectionOfObjectValues<ClassificationAttribute>(ClassificationAttribute.CreateFromDiscriminatorValue).ToList(); } },
-                {"classificationMethod", (o,n) => { (o as DetectedSensitiveContent).ClassificationMethod = n.GetEnumValue<ClassificationMethod>(); } },
-                {"matches", (o,n) => { (o as DetectedSensitiveContent).Matches = n.GetCollectionOfObjectValues<SensitiveContentLocation>(SensitiveContentLocation.CreateFromDiscriminatorValue).ToList(); } },
-                {"scope", (o,n) => { (o as DetectedSensitiveContent).Scope = n.GetEnumValue<SensitiveTypeScope>(); } },
-                {"sensitiveTypeSource", (o,n) => { (o as DetectedSensitiveContent).SensitiveTypeSource = n.GetEnumValue<SensitiveTypeSource>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"classificationAttributes", n => { ClassificationAttributes = n.GetCollectionOfObjectValues<ClassificationAttribute>(ClassificationAttribute.CreateFromDiscriminatorValue).ToList(); } },
+                {"classificationMethod", n => { ClassificationMethod = n.GetEnumValue<ClassificationMethod>(); } },
+                {"matches", n => { Matches = n.GetCollectionOfObjectValues<SensitiveContentLocation>(SensitiveContentLocation.CreateFromDiscriminatorValue).ToList(); } },
+                {"scope", n => { Scope = n.GetEnumValue<SensitiveTypeScope>(); } },
+                {"sensitiveTypeSource", n => { SensitiveTypeSource = n.GetEnumValue<SensitiveTypeSource>(); } },
             };
         }
         /// <summary>

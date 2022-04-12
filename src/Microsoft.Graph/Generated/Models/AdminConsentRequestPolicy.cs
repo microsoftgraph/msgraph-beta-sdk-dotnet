@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"isEnabled", (o,n) => { (o as AdminConsentRequestPolicy).IsEnabled = n.GetBoolValue(); } },
-                {"notifyReviewers", (o,n) => { (o as AdminConsentRequestPolicy).NotifyReviewers = n.GetBoolValue(); } },
-                {"remindersEnabled", (o,n) => { (o as AdminConsentRequestPolicy).RemindersEnabled = n.GetBoolValue(); } },
-                {"requestDurationInDays", (o,n) => { (o as AdminConsentRequestPolicy).RequestDurationInDays = n.GetIntValue(); } },
-                {"reviewers", (o,n) => { (o as AdminConsentRequestPolicy).Reviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue).ToList(); } },
-                {"version", (o,n) => { (o as AdminConsentRequestPolicy).Version = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                {"notifyReviewers", n => { NotifyReviewers = n.GetBoolValue(); } },
+                {"remindersEnabled", n => { RemindersEnabled = n.GetBoolValue(); } },
+                {"requestDurationInDays", n => { RequestDurationInDays = n.GetIntValue(); } },
+                {"reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue).ToList(); } },
+                {"version", n => { Version = n.GetIntValue(); } },
             };
         }
         /// <summary>

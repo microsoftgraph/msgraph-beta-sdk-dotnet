@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Crea
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"groupPolicyObjectFile", (o,n) => { (o as CreateMigrationReportRequestBody).GroupPolicyObjectFile = n.GetObjectValue<Microsoft.Graph.Beta.Models.GroupPolicyObjectFile>(Microsoft.Graph.Beta.Models.GroupPolicyObjectFile.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"groupPolicyObjectFile", n => { GroupPolicyObjectFile = n.GetObjectValue<Microsoft.Graph.Beta.Models.GroupPolicyObjectFile>(Microsoft.Graph.Beta.Models.GroupPolicyObjectFile.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

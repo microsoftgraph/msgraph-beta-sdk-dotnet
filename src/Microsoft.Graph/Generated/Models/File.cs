@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"hashes", (o,n) => { (o as File).Hashes = n.GetObjectValue<Microsoft.Graph.Beta.Models.Hashes>(Microsoft.Graph.Beta.Models.Hashes.CreateFromDiscriminatorValue); } },
-                {"mimeType", (o,n) => { (o as File).MimeType = n.GetStringValue(); } },
-                {"processingMetadata", (o,n) => { (o as File).ProcessingMetadata = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"hashes", n => { Hashes = n.GetObjectValue<Microsoft.Graph.Beta.Models.Hashes>(Microsoft.Graph.Beta.Models.Hashes.CreateFromDiscriminatorValue); } },
+                {"mimeType", n => { MimeType = n.GetStringValue(); } },
+                {"processingMetadata", n => { ProcessingMetadata = n.GetBoolValue(); } },
             };
         }
         /// <summary>

@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"value", (o,n) => { (o as StartResponse).Value = n.GetCollectionOfObjectValues<EducationFileSynchronizationVerificationMessage>(EducationFileSynchronizationVerificationMessage.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"value", n => { Value = n.GetCollectionOfObjectValues<EducationFileSynchronizationVerificationMessage>(EducationFileSynchronizationVerificationMessage.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

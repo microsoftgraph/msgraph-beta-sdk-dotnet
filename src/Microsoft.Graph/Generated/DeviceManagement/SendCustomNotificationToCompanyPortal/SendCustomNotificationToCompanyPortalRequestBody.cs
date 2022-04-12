@@ -31,11 +31,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.SendCustomNotificationToCompanyP
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"groupsToNotify", (o,n) => { (o as SendCustomNotificationToCompanyPortalRequestBody).GroupsToNotify = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"notificationBody", (o,n) => { (o as SendCustomNotificationToCompanyPortalRequestBody).NotificationBody = n.GetStringValue(); } },
-                {"notificationTitle", (o,n) => { (o as SendCustomNotificationToCompanyPortalRequestBody).NotificationTitle = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"groupsToNotify", n => { GroupsToNotify = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"notificationBody", n => { NotificationBody = n.GetStringValue(); } },
+                {"notificationTitle", n => { NotificationTitle = n.GetStringValue(); } },
             };
         }
         /// <summary>

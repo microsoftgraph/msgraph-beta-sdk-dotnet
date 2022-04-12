@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"conflictCount", (o,n) => { (o as DeviceManagementIntentDeviceStateSummary).ConflictCount = n.GetIntValue(); } },
-                {"errorCount", (o,n) => { (o as DeviceManagementIntentDeviceStateSummary).ErrorCount = n.GetIntValue(); } },
-                {"failedCount", (o,n) => { (o as DeviceManagementIntentDeviceStateSummary).FailedCount = n.GetIntValue(); } },
-                {"notApplicableCount", (o,n) => { (o as DeviceManagementIntentDeviceStateSummary).NotApplicableCount = n.GetIntValue(); } },
-                {"notApplicablePlatformCount", (o,n) => { (o as DeviceManagementIntentDeviceStateSummary).NotApplicablePlatformCount = n.GetIntValue(); } },
-                {"successCount", (o,n) => { (o as DeviceManagementIntentDeviceStateSummary).SuccessCount = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"conflictCount", n => { ConflictCount = n.GetIntValue(); } },
+                {"errorCount", n => { ErrorCount = n.GetIntValue(); } },
+                {"failedCount", n => { FailedCount = n.GetIntValue(); } },
+                {"notApplicableCount", n => { NotApplicableCount = n.GetIntValue(); } },
+                {"notApplicablePlatformCount", n => { NotApplicablePlatformCount = n.GetIntValue(); } },
+                {"successCount", n => { SuccessCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.Workbooks.Item.CreateUploadSession {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"item", (o,n) => { (o as CreateUploadSessionRequestBody).Item = n.GetObjectValue<DriveItemUploadableProperties>(DriveItemUploadableProperties.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"item", n => { Item = n.GetObjectValue<DriveItemUploadableProperties>(DriveItemUploadableProperties.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

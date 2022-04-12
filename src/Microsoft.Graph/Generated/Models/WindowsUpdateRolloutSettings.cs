@@ -31,11 +31,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"offerEndDateTimeInUTC", (o,n) => { (o as WindowsUpdateRolloutSettings).OfferEndDateTimeInUTC = n.GetDateTimeOffsetValue(); } },
-                {"offerIntervalInDays", (o,n) => { (o as WindowsUpdateRolloutSettings).OfferIntervalInDays = n.GetIntValue(); } },
-                {"offerStartDateTimeInUTC", (o,n) => { (o as WindowsUpdateRolloutSettings).OfferStartDateTimeInUTC = n.GetDateTimeOffsetValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"offerEndDateTimeInUTC", n => { OfferEndDateTimeInUTC = n.GetDateTimeOffsetValue(); } },
+                {"offerIntervalInDays", n => { OfferIntervalInDays = n.GetIntValue(); } },
+                {"offerStartDateTimeInUTC", n => { OfferStartDateTimeInUTC = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

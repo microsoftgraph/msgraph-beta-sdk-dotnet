@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.AddTokenSigningCertificate
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"displayName", (o,n) => { (o as SelfSignedCertificateRequestBody).DisplayName = n.GetStringValue(); } },
-                {"endDateTime", (o,n) => { (o as SelfSignedCertificateRequestBody).EndDateTime = n.GetDateTimeOffsetValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

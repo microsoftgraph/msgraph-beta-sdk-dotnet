@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"isOptional", (o,n) => { (o as DomainDnsRecord).IsOptional = n.GetBoolValue(); } },
-                {"label", (o,n) => { (o as DomainDnsRecord).Label = n.GetStringValue(); } },
-                {"recordType", (o,n) => { (o as DomainDnsRecord).RecordType = n.GetStringValue(); } },
-                {"supportedService", (o,n) => { (o as DomainDnsRecord).SupportedService = n.GetStringValue(); } },
-                {"ttl", (o,n) => { (o as DomainDnsRecord).Ttl = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"isOptional", n => { IsOptional = n.GetBoolValue(); } },
+                {"label", n => { Label = n.GetStringValue(); } },
+                {"recordType", n => { RecordType = n.GetStringValue(); } },
+                {"supportedService", n => { SupportedService = n.GetStringValue(); } },
+                {"ttl", n => { Ttl = n.GetIntValue(); } },
             };
         }
         /// <summary>

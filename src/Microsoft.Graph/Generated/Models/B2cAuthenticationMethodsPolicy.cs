@@ -22,11 +22,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"isEmailPasswordAuthenticationEnabled", (o,n) => { (o as B2cAuthenticationMethodsPolicy).IsEmailPasswordAuthenticationEnabled = n.GetBoolValue(); } },
-                {"isPhoneOneTimePasswordAuthenticationEnabled", (o,n) => { (o as B2cAuthenticationMethodsPolicy).IsPhoneOneTimePasswordAuthenticationEnabled = n.GetBoolValue(); } },
-                {"isUserNameAuthenticationEnabled", (o,n) => { (o as B2cAuthenticationMethodsPolicy).IsUserNameAuthenticationEnabled = n.GetBoolValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"isEmailPasswordAuthenticationEnabled", n => { IsEmailPasswordAuthenticationEnabled = n.GetBoolValue(); } },
+                {"isPhoneOneTimePasswordAuthenticationEnabled", n => { IsPhoneOneTimePasswordAuthenticationEnabled = n.GetBoolValue(); } },
+                {"isUserNameAuthenticationEnabled", n => { IsUserNameAuthenticationEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

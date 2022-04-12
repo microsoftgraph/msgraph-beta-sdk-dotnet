@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"defaultCommunicationSpeaker", (o,n) => { (o as TeamworkSpeakerConfiguration).DefaultCommunicationSpeaker = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
-                {"defaultSpeaker", (o,n) => { (o as TeamworkSpeakerConfiguration).DefaultSpeaker = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
-                {"isCommunicationSpeakerOptional", (o,n) => { (o as TeamworkSpeakerConfiguration).IsCommunicationSpeakerOptional = n.GetBoolValue(); } },
-                {"isSpeakerOptional", (o,n) => { (o as TeamworkSpeakerConfiguration).IsSpeakerOptional = n.GetBoolValue(); } },
-                {"speakers", (o,n) => { (o as TeamworkSpeakerConfiguration).Speakers = n.GetCollectionOfObjectValues<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"defaultCommunicationSpeaker", n => { DefaultCommunicationSpeaker = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
+                {"defaultSpeaker", n => { DefaultSpeaker = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
+                {"isCommunicationSpeakerOptional", n => { IsCommunicationSpeakerOptional = n.GetBoolValue(); } },
+                {"isSpeakerOptional", n => { IsSpeakerOptional = n.GetBoolValue(); } },
+                {"speakers", n => { Speakers = n.GetCollectionOfObjectValues<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

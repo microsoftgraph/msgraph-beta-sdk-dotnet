@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item {
         public ChannelItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/teams/{team_id}/channels/{channel_id}{?select,expand}";
+            UrlTemplate = "{+baseurl}/teams/{team%2Did}/channels/{channel%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item {
         public ChannelItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/teams/{team_id}/channels/{channel_id}{?select,expand}";
+            UrlTemplate = "{+baseurl}/teams/{team%2Did}/channels/{channel%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -156,15 +156,9 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item {
         }
         /// <summary>
         /// Provides operations to call the doesUserHaveAccess method.
-        /// <param name="tenantId">Usage: tenantId=&apos;{tenantId}&apos;</param>
-        /// <param name="userId">Usage: userId=&apos;{userId}&apos;</param>
-        /// <param name="userPrincipalName">Usage: userPrincipalName=&apos;{userPrincipalName}&apos;</param>
         /// </summary>
-        public DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameRequestBuilder DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalName(string tenantId, string userId, string userPrincipalName) {
-            if(string.IsNullOrEmpty(tenantId)) throw new ArgumentNullException(nameof(tenantId));
-            if(string.IsNullOrEmpty(userId)) throw new ArgumentNullException(nameof(userId));
-            if(string.IsNullOrEmpty(userPrincipalName)) throw new ArgumentNullException(nameof(userPrincipalName));
-            return new DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter, tenantId, userId, userPrincipalName);
+        public DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameRequestBuilder DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalName() {
+            return new DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// The collection of channels and messages associated with the team.
@@ -202,8 +196,10 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item {
         /// <summary>The collection of channels and messages associated with the team.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
     }

@@ -44,18 +44,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"comment", (o,n) => { (o as ItemActionSet).Comment = n.GetObjectValue<CommentAction>(CommentAction.CreateFromDiscriminatorValue); } },
-                {"create", (o,n) => { (o as ItemActionSet).Create = n.GetObjectValue<CreateAction>(CreateAction.CreateFromDiscriminatorValue); } },
-                {"delete", (o,n) => { (o as ItemActionSet).Delete = n.GetObjectValue<DeleteAction>(DeleteAction.CreateFromDiscriminatorValue); } },
-                {"edit", (o,n) => { (o as ItemActionSet).Edit = n.GetObjectValue<EditAction>(EditAction.CreateFromDiscriminatorValue); } },
-                {"mention", (o,n) => { (o as ItemActionSet).Mention = n.GetObjectValue<MentionAction>(MentionAction.CreateFromDiscriminatorValue); } },
-                {"move", (o,n) => { (o as ItemActionSet).Move = n.GetObjectValue<MoveAction>(MoveAction.CreateFromDiscriminatorValue); } },
-                {"rename", (o,n) => { (o as ItemActionSet).Rename = n.GetObjectValue<RenameAction>(RenameAction.CreateFromDiscriminatorValue); } },
-                {"restore", (o,n) => { (o as ItemActionSet).Restore = n.GetObjectValue<RestoreAction>(RestoreAction.CreateFromDiscriminatorValue); } },
-                {"share", (o,n) => { (o as ItemActionSet).Share = n.GetObjectValue<ShareAction>(ShareAction.CreateFromDiscriminatorValue); } },
-                {"version", (o,n) => { (o as ItemActionSet).Version = n.GetObjectValue<VersionAction>(VersionAction.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"comment", n => { Comment = n.GetObjectValue<CommentAction>(CommentAction.CreateFromDiscriminatorValue); } },
+                {"create", n => { Create = n.GetObjectValue<CreateAction>(CreateAction.CreateFromDiscriminatorValue); } },
+                {"delete", n => { Delete = n.GetObjectValue<DeleteAction>(DeleteAction.CreateFromDiscriminatorValue); } },
+                {"edit", n => { Edit = n.GetObjectValue<EditAction>(EditAction.CreateFromDiscriminatorValue); } },
+                {"mention", n => { Mention = n.GetObjectValue<MentionAction>(MentionAction.CreateFromDiscriminatorValue); } },
+                {"move", n => { Move = n.GetObjectValue<MoveAction>(MoveAction.CreateFromDiscriminatorValue); } },
+                {"rename", n => { Rename = n.GetObjectValue<RenameAction>(RenameAction.CreateFromDiscriminatorValue); } },
+                {"restore", n => { Restore = n.GetObjectValue<RestoreAction>(RestoreAction.CreateFromDiscriminatorValue); } },
+                {"share", n => { Share = n.GetObjectValue<ShareAction>(ShareAction.CreateFromDiscriminatorValue); } },
+                {"version", n => { Version = n.GetObjectValue<VersionAction>(VersionAction.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"advancedThreatProtectionOnboardingDeviceSettingStates", (o,n) => { (o as AdvancedThreatProtectionOnboardingStateSummary).AdvancedThreatProtectionOnboardingDeviceSettingStates = n.GetCollectionOfObjectValues<AdvancedThreatProtectionOnboardingDeviceSettingState>(AdvancedThreatProtectionOnboardingDeviceSettingState.CreateFromDiscriminatorValue).ToList(); } },
-                {"compliantDeviceCount", (o,n) => { (o as AdvancedThreatProtectionOnboardingStateSummary).CompliantDeviceCount = n.GetIntValue(); } },
-                {"conflictDeviceCount", (o,n) => { (o as AdvancedThreatProtectionOnboardingStateSummary).ConflictDeviceCount = n.GetIntValue(); } },
-                {"errorDeviceCount", (o,n) => { (o as AdvancedThreatProtectionOnboardingStateSummary).ErrorDeviceCount = n.GetIntValue(); } },
-                {"nonCompliantDeviceCount", (o,n) => { (o as AdvancedThreatProtectionOnboardingStateSummary).NonCompliantDeviceCount = n.GetIntValue(); } },
-                {"notApplicableDeviceCount", (o,n) => { (o as AdvancedThreatProtectionOnboardingStateSummary).NotApplicableDeviceCount = n.GetIntValue(); } },
-                {"notAssignedDeviceCount", (o,n) => { (o as AdvancedThreatProtectionOnboardingStateSummary).NotAssignedDeviceCount = n.GetIntValue(); } },
-                {"remediatedDeviceCount", (o,n) => { (o as AdvancedThreatProtectionOnboardingStateSummary).RemediatedDeviceCount = n.GetIntValue(); } },
-                {"unknownDeviceCount", (o,n) => { (o as AdvancedThreatProtectionOnboardingStateSummary).UnknownDeviceCount = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"advancedThreatProtectionOnboardingDeviceSettingStates", n => { AdvancedThreatProtectionOnboardingDeviceSettingStates = n.GetCollectionOfObjectValues<AdvancedThreatProtectionOnboardingDeviceSettingState>(AdvancedThreatProtectionOnboardingDeviceSettingState.CreateFromDiscriminatorValue).ToList(); } },
+                {"compliantDeviceCount", n => { CompliantDeviceCount = n.GetIntValue(); } },
+                {"conflictDeviceCount", n => { ConflictDeviceCount = n.GetIntValue(); } },
+                {"errorDeviceCount", n => { ErrorDeviceCount = n.GetIntValue(); } },
+                {"nonCompliantDeviceCount", n => { NonCompliantDeviceCount = n.GetIntValue(); } },
+                {"notApplicableDeviceCount", n => { NotApplicableDeviceCount = n.GetIntValue(); } },
+                {"notAssignedDeviceCount", n => { NotAssignedDeviceCount = n.GetIntValue(); } },
+                {"remediatedDeviceCount", n => { RemediatedDeviceCount = n.GetIntValue(); } },
+                {"unknownDeviceCount", n => { UnknownDeviceCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

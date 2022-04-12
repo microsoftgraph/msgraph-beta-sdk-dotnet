@@ -93,9 +93,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.Conne
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
-            public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-                return new Dictionary<string, Action<T, IParseNode>> {
-                    {"chromeOSOnboardingStatus", (o,n) => { (o as ConnectResponse).ChromeOSOnboardingStatus = n.GetEnumValue<ChromeOSOnboardingStatus>(); } },
+            public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+                return new Dictionary<string, Action<IParseNode>> {
+                    {"chromeOSOnboardingStatus", n => { ChromeOSOnboardingStatus = n.GetEnumValue<ChromeOSOnboardingStatus>(); } },
                 };
             }
             /// <summary>

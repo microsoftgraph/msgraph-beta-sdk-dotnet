@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.Me.ExportPersonalData {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"storageLocation", (o,n) => { (o as ExportPersonalDataRequestBody).StorageLocation = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"storageLocation", n => { StorageLocation = n.GetStringValue(); } },
             };
         }
         /// <summary>

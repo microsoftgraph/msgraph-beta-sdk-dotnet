@@ -25,11 +25,11 @@ namespace Microsoft.Graph.Beta.Models {
         public List<ChatMessage> Messages { get; set; }
         /// <summary>Settings to configure channel moderation to control who can start new posts and reply to posts in that channel.</summary>
         public ChannelModerationSettings ModerationSettings { get; set; }
-        /// <summary>The sharedWithTeams property</summary>
+        /// <summary>A collection of teams shared with the channel.</summary>
         public List<SharedWithChannelTeamInfo> SharedWithTeams { get; set; }
         /// <summary>A collection of all the tabs in the channel. A navigation property.</summary>
         public List<TeamsTab> Tabs { get; set; }
-        /// <summary>The tenantId property</summary>
+        /// <summary>The ID of the Azure Active Directory tenant.</summary>
         public string TenantId { get; set; }
         /// <summary>A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.</summary>
         public string WebUrl { get; set; }
@@ -44,22 +44,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdDateTime", (o,n) => { (o as Channel).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as Channel).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as Channel).DisplayName = n.GetStringValue(); } },
-                {"email", (o,n) => { (o as Channel).Email = n.GetStringValue(); } },
-                {"filesFolder", (o,n) => { (o as Channel).FilesFolder = n.GetObjectValue<DriveItem>(DriveItem.CreateFromDiscriminatorValue); } },
-                {"isFavoriteByDefault", (o,n) => { (o as Channel).IsFavoriteByDefault = n.GetBoolValue(); } },
-                {"members", (o,n) => { (o as Channel).Members = n.GetCollectionOfObjectValues<ConversationMember>(ConversationMember.CreateFromDiscriminatorValue).ToList(); } },
-                {"membershipType", (o,n) => { (o as Channel).MembershipType = n.GetEnumValue<ChannelMembershipType>(); } },
-                {"messages", (o,n) => { (o as Channel).Messages = n.GetCollectionOfObjectValues<ChatMessage>(ChatMessage.CreateFromDiscriminatorValue).ToList(); } },
-                {"moderationSettings", (o,n) => { (o as Channel).ModerationSettings = n.GetObjectValue<ChannelModerationSettings>(ChannelModerationSettings.CreateFromDiscriminatorValue); } },
-                {"sharedWithTeams", (o,n) => { (o as Channel).SharedWithTeams = n.GetCollectionOfObjectValues<SharedWithChannelTeamInfo>(SharedWithChannelTeamInfo.CreateFromDiscriminatorValue).ToList(); } },
-                {"tabs", (o,n) => { (o as Channel).Tabs = n.GetCollectionOfObjectValues<TeamsTab>(TeamsTab.CreateFromDiscriminatorValue).ToList(); } },
-                {"tenantId", (o,n) => { (o as Channel).TenantId = n.GetStringValue(); } },
-                {"webUrl", (o,n) => { (o as Channel).WebUrl = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"email", n => { Email = n.GetStringValue(); } },
+                {"filesFolder", n => { FilesFolder = n.GetObjectValue<DriveItem>(DriveItem.CreateFromDiscriminatorValue); } },
+                {"isFavoriteByDefault", n => { IsFavoriteByDefault = n.GetBoolValue(); } },
+                {"members", n => { Members = n.GetCollectionOfObjectValues<ConversationMember>(ConversationMember.CreateFromDiscriminatorValue).ToList(); } },
+                {"membershipType", n => { MembershipType = n.GetEnumValue<ChannelMembershipType>(); } },
+                {"messages", n => { Messages = n.GetCollectionOfObjectValues<ChatMessage>(ChatMessage.CreateFromDiscriminatorValue).ToList(); } },
+                {"moderationSettings", n => { ModerationSettings = n.GetObjectValue<ChannelModerationSettings>(ChannelModerationSettings.CreateFromDiscriminatorValue); } },
+                {"sharedWithTeams", n => { SharedWithTeams = n.GetCollectionOfObjectValues<SharedWithChannelTeamInfo>(SharedWithChannelTeamInfo.CreateFromDiscriminatorValue).ToList(); } },
+                {"tabs", n => { Tabs = n.GetCollectionOfObjectValues<TeamsTab>(TeamsTab.CreateFromDiscriminatorValue).ToList(); } },
+                {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

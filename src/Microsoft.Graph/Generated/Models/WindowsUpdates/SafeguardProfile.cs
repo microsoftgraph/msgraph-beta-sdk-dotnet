@@ -26,9 +26,9 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"category", (o,n) => { (o as SafeguardProfile).Category = n.GetEnumValue<SafeguardCategory>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"category", n => { Category = n.GetEnumValue<SafeguardCategory>(); } },
             };
         }
         /// <summary>

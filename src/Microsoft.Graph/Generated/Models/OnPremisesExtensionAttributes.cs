@@ -54,23 +54,23 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"extensionAttribute1", (o,n) => { (o as OnPremisesExtensionAttributes).ExtensionAttribute1 = n.GetStringValue(); } },
-                {"extensionAttribute10", (o,n) => { (o as OnPremisesExtensionAttributes).ExtensionAttribute10 = n.GetStringValue(); } },
-                {"extensionAttribute11", (o,n) => { (o as OnPremisesExtensionAttributes).ExtensionAttribute11 = n.GetStringValue(); } },
-                {"extensionAttribute12", (o,n) => { (o as OnPremisesExtensionAttributes).ExtensionAttribute12 = n.GetStringValue(); } },
-                {"extensionAttribute13", (o,n) => { (o as OnPremisesExtensionAttributes).ExtensionAttribute13 = n.GetStringValue(); } },
-                {"extensionAttribute14", (o,n) => { (o as OnPremisesExtensionAttributes).ExtensionAttribute14 = n.GetStringValue(); } },
-                {"extensionAttribute15", (o,n) => { (o as OnPremisesExtensionAttributes).ExtensionAttribute15 = n.GetStringValue(); } },
-                {"extensionAttribute2", (o,n) => { (o as OnPremisesExtensionAttributes).ExtensionAttribute2 = n.GetStringValue(); } },
-                {"extensionAttribute3", (o,n) => { (o as OnPremisesExtensionAttributes).ExtensionAttribute3 = n.GetStringValue(); } },
-                {"extensionAttribute4", (o,n) => { (o as OnPremisesExtensionAttributes).ExtensionAttribute4 = n.GetStringValue(); } },
-                {"extensionAttribute5", (o,n) => { (o as OnPremisesExtensionAttributes).ExtensionAttribute5 = n.GetStringValue(); } },
-                {"extensionAttribute6", (o,n) => { (o as OnPremisesExtensionAttributes).ExtensionAttribute6 = n.GetStringValue(); } },
-                {"extensionAttribute7", (o,n) => { (o as OnPremisesExtensionAttributes).ExtensionAttribute7 = n.GetStringValue(); } },
-                {"extensionAttribute8", (o,n) => { (o as OnPremisesExtensionAttributes).ExtensionAttribute8 = n.GetStringValue(); } },
-                {"extensionAttribute9", (o,n) => { (o as OnPremisesExtensionAttributes).ExtensionAttribute9 = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"extensionAttribute1", n => { ExtensionAttribute1 = n.GetStringValue(); } },
+                {"extensionAttribute10", n => { ExtensionAttribute10 = n.GetStringValue(); } },
+                {"extensionAttribute11", n => { ExtensionAttribute11 = n.GetStringValue(); } },
+                {"extensionAttribute12", n => { ExtensionAttribute12 = n.GetStringValue(); } },
+                {"extensionAttribute13", n => { ExtensionAttribute13 = n.GetStringValue(); } },
+                {"extensionAttribute14", n => { ExtensionAttribute14 = n.GetStringValue(); } },
+                {"extensionAttribute15", n => { ExtensionAttribute15 = n.GetStringValue(); } },
+                {"extensionAttribute2", n => { ExtensionAttribute2 = n.GetStringValue(); } },
+                {"extensionAttribute3", n => { ExtensionAttribute3 = n.GetStringValue(); } },
+                {"extensionAttribute4", n => { ExtensionAttribute4 = n.GetStringValue(); } },
+                {"extensionAttribute5", n => { ExtensionAttribute5 = n.GetStringValue(); } },
+                {"extensionAttribute6", n => { ExtensionAttribute6 = n.GetStringValue(); } },
+                {"extensionAttribute7", n => { ExtensionAttribute7 = n.GetStringValue(); } },
+                {"extensionAttribute8", n => { ExtensionAttribute8 = n.GetStringValue(); } },
+                {"extensionAttribute9", n => { ExtensionAttribute9 = n.GetStringValue(); } },
             };
         }
         /// <summary>

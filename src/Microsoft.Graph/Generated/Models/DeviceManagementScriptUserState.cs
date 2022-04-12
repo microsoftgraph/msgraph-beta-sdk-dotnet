@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"deviceRunStates", (o,n) => { (o as DeviceManagementScriptUserState).DeviceRunStates = n.GetCollectionOfObjectValues<DeviceManagementScriptDeviceState>(DeviceManagementScriptDeviceState.CreateFromDiscriminatorValue).ToList(); } },
-                {"errorDeviceCount", (o,n) => { (o as DeviceManagementScriptUserState).ErrorDeviceCount = n.GetIntValue(); } },
-                {"successDeviceCount", (o,n) => { (o as DeviceManagementScriptUserState).SuccessDeviceCount = n.GetIntValue(); } },
-                {"userPrincipalName", (o,n) => { (o as DeviceManagementScriptUserState).UserPrincipalName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"deviceRunStates", n => { DeviceRunStates = n.GetCollectionOfObjectValues<DeviceManagementScriptDeviceState>(DeviceManagementScriptDeviceState.CreateFromDiscriminatorValue).ToList(); } },
+                {"errorDeviceCount", n => { ErrorDeviceCount = n.GetIntValue(); } },
+                {"successDeviceCount", n => { SuccessDeviceCount = n.GetIntValue(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

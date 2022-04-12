@@ -47,19 +47,19 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"complianceState", (o,n) => { (o as RetireScheduledManagedDevice).ComplianceState = n.GetEnumValue<ComplianceStatus>(); } },
-                {"deviceCompliancePolicyId", (o,n) => { (o as RetireScheduledManagedDevice).DeviceCompliancePolicyId = n.GetStringValue(); } },
-                {"deviceCompliancePolicyName", (o,n) => { (o as RetireScheduledManagedDevice).DeviceCompliancePolicyName = n.GetStringValue(); } },
-                {"deviceType", (o,n) => { (o as RetireScheduledManagedDevice).DeviceType = n.GetEnumValue<DeviceType>(); } },
-                {"id", (o,n) => { (o as RetireScheduledManagedDevice).Id = n.GetStringValue(); } },
-                {"managedDeviceId", (o,n) => { (o as RetireScheduledManagedDevice).ManagedDeviceId = n.GetStringValue(); } },
-                {"managedDeviceName", (o,n) => { (o as RetireScheduledManagedDevice).ManagedDeviceName = n.GetStringValue(); } },
-                {"managementAgent", (o,n) => { (o as RetireScheduledManagedDevice).ManagementAgent = n.GetEnumValue<ManagementAgentType>(); } },
-                {"ownerType", (o,n) => { (o as RetireScheduledManagedDevice).OwnerType = n.GetEnumValue<ManagedDeviceOwnerType>(); } },
-                {"retireAfterDateTime", (o,n) => { (o as RetireScheduledManagedDevice).RetireAfterDateTime = n.GetDateTimeOffsetValue(); } },
-                {"roleScopeTagIds", (o,n) => { (o as RetireScheduledManagedDevice).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"complianceState", n => { ComplianceState = n.GetEnumValue<ComplianceStatus>(); } },
+                {"deviceCompliancePolicyId", n => { DeviceCompliancePolicyId = n.GetStringValue(); } },
+                {"deviceCompliancePolicyName", n => { DeviceCompliancePolicyName = n.GetStringValue(); } },
+                {"deviceType", n => { DeviceType = n.GetEnumValue<DeviceType>(); } },
+                {"id", n => { Id = n.GetStringValue(); } },
+                {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
+                {"managedDeviceName", n => { ManagedDeviceName = n.GetStringValue(); } },
+                {"managementAgent", n => { ManagementAgent = n.GetEnumValue<ManagementAgentType>(); } },
+                {"ownerType", n => { OwnerType = n.GetEnumValue<ManagedDeviceOwnerType>(); } },
+                {"retireAfterDateTime", n => { RetireAfterDateTime = n.GetDateTimeOffsetValue(); } },
+                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

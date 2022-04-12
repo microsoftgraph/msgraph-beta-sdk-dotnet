@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.Directory.Recommendations.Item.Dismiss {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"dismissReason", (o,n) => { (o as DismissRequestBody).DismissReason = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"dismissReason", n => { DismissReason = n.GetStringValue(); } },
             };
         }
         /// <summary>

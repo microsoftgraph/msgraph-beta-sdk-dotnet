@@ -35,17 +35,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"dataProvider", (o,n) => { (o as EducationSynchronizationProfile).DataProvider = n.GetObjectValue<EducationSynchronizationDataProvider>(EducationSynchronizationDataProvider.CreateFromDiscriminatorValue); } },
-                {"displayName", (o,n) => { (o as EducationSynchronizationProfile).DisplayName = n.GetStringValue(); } },
-                {"errors", (o,n) => { (o as EducationSynchronizationProfile).Errors = n.GetCollectionOfObjectValues<EducationSynchronizationError>(EducationSynchronizationError.CreateFromDiscriminatorValue).ToList(); } },
-                {"expirationDate", (o,n) => { (o as EducationSynchronizationProfile).ExpirationDate = n.GetDateValue(); } },
-                {"handleSpecialCharacterConstraint", (o,n) => { (o as EducationSynchronizationProfile).HandleSpecialCharacterConstraint = n.GetBoolValue(); } },
-                {"identitySynchronizationConfiguration", (o,n) => { (o as EducationSynchronizationProfile).IdentitySynchronizationConfiguration = n.GetObjectValue<EducationIdentitySynchronizationConfiguration>(EducationIdentitySynchronizationConfiguration.CreateFromDiscriminatorValue); } },
-                {"licensesToAssign", (o,n) => { (o as EducationSynchronizationProfile).LicensesToAssign = n.GetCollectionOfObjectValues<EducationSynchronizationLicenseAssignment>(EducationSynchronizationLicenseAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"profileStatus", (o,n) => { (o as EducationSynchronizationProfile).ProfileStatus = n.GetObjectValue<EducationSynchronizationProfileStatus>(EducationSynchronizationProfileStatus.CreateFromDiscriminatorValue); } },
-                {"state", (o,n) => { (o as EducationSynchronizationProfile).State = n.GetEnumValue<EducationSynchronizationProfileState>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"dataProvider", n => { DataProvider = n.GetObjectValue<EducationSynchronizationDataProvider>(EducationSynchronizationDataProvider.CreateFromDiscriminatorValue); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"errors", n => { Errors = n.GetCollectionOfObjectValues<EducationSynchronizationError>(EducationSynchronizationError.CreateFromDiscriminatorValue).ToList(); } },
+                {"expirationDate", n => { ExpirationDate = n.GetDateValue(); } },
+                {"handleSpecialCharacterConstraint", n => { HandleSpecialCharacterConstraint = n.GetBoolValue(); } },
+                {"identitySynchronizationConfiguration", n => { IdentitySynchronizationConfiguration = n.GetObjectValue<EducationIdentitySynchronizationConfiguration>(EducationIdentitySynchronizationConfiguration.CreateFromDiscriminatorValue); } },
+                {"licensesToAssign", n => { LicensesToAssign = n.GetCollectionOfObjectValues<EducationSynchronizationLicenseAssignment>(EducationSynchronizationLicenseAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"profileStatus", n => { ProfileStatus = n.GetObjectValue<EducationSynchronizationProfileStatus>(EducationSynchronizationProfileStatus.CreateFromDiscriminatorValue); } },
+                {"state", n => { State = n.GetEnumValue<EducationSynchronizationProfileState>(); } },
             };
         }
         /// <summary>

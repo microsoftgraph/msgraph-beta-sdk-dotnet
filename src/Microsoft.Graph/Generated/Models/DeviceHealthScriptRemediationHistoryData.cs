@@ -32,11 +32,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"date", (o,n) => { (o as DeviceHealthScriptRemediationHistoryData).Date = n.GetDateValue(); } },
-                {"noIssueDeviceCount", (o,n) => { (o as DeviceHealthScriptRemediationHistoryData).NoIssueDeviceCount = n.GetIntValue(); } },
-                {"remediatedDeviceCount", (o,n) => { (o as DeviceHealthScriptRemediationHistoryData).RemediatedDeviceCount = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"date", n => { Date = n.GetDateValue(); } },
+                {"noIssueDeviceCount", n => { NoIssueDeviceCount = n.GetIntValue(); } },
+                {"remediatedDeviceCount", n => { RemediatedDeviceCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"accessType", (o,n) => { (o as Acl).AccessType = n.GetEnumValue<AccessType>(); } },
-                {"identitySource", (o,n) => { (o as Acl).IdentitySource = n.GetEnumValue<IdentitySourceType>(); } },
-                {"type", (o,n) => { (o as Acl).Type = n.GetEnumValue<AclType>(); } },
-                {"value", (o,n) => { (o as Acl).Value = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"accessType", n => { AccessType = n.GetEnumValue<AccessType>(); } },
+                {"identitySource", n => { IdentitySource = n.GetEnumValue<IdentitySourceType>(); } },
+                {"type", n => { Type = n.GetEnumValue<AclType>(); } },
+                {"value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>

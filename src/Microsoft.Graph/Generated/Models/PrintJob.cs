@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"configuration", (o,n) => { (o as PrintJob).Configuration = n.GetObjectValue<PrintJobConfiguration>(PrintJobConfiguration.CreateFromDiscriminatorValue); } },
-                {"createdBy", (o,n) => { (o as PrintJob).CreatedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", (o,n) => { (o as PrintJob).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"documents", (o,n) => { (o as PrintJob).Documents = n.GetCollectionOfObjectValues<PrintDocument>(PrintDocument.CreateFromDiscriminatorValue).ToList(); } },
-                {"isFetchable", (o,n) => { (o as PrintJob).IsFetchable = n.GetBoolValue(); } },
-                {"redirectedFrom", (o,n) => { (o as PrintJob).RedirectedFrom = n.GetStringValue(); } },
-                {"redirectedTo", (o,n) => { (o as PrintJob).RedirectedTo = n.GetStringValue(); } },
-                {"status", (o,n) => { (o as PrintJob).Status = n.GetObjectValue<PrintJobStatus>(PrintJobStatus.CreateFromDiscriminatorValue); } },
-                {"tasks", (o,n) => { (o as PrintJob).Tasks = n.GetCollectionOfObjectValues<PrintTask>(PrintTask.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"configuration", n => { Configuration = n.GetObjectValue<PrintJobConfiguration>(PrintJobConfiguration.CreateFromDiscriminatorValue); } },
+                {"createdBy", n => { CreatedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"documents", n => { Documents = n.GetCollectionOfObjectValues<PrintDocument>(PrintDocument.CreateFromDiscriminatorValue).ToList(); } },
+                {"isFetchable", n => { IsFetchable = n.GetBoolValue(); } },
+                {"redirectedFrom", n => { RedirectedFrom = n.GetStringValue(); } },
+                {"redirectedTo", n => { RedirectedTo = n.GetStringValue(); } },
+                {"status", n => { Status = n.GetObjectValue<PrintJobStatus>(PrintJobStatus.CreateFromDiscriminatorValue); } },
+                {"tasks", n => { Tasks = n.GetCollectionOfObjectValues<PrintTask>(PrintTask.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

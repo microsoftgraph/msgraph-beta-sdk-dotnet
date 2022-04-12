@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"deviceId", (o,n) => { (o as MacOSSoftwareUpdateCategorySummary).DeviceId = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as MacOSSoftwareUpdateCategorySummary).DisplayName = n.GetStringValue(); } },
-                {"failedUpdateCount", (o,n) => { (o as MacOSSoftwareUpdateCategorySummary).FailedUpdateCount = n.GetIntValue(); } },
-                {"lastUpdatedDateTime", (o,n) => { (o as MacOSSoftwareUpdateCategorySummary).LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"successfulUpdateCount", (o,n) => { (o as MacOSSoftwareUpdateCategorySummary).SuccessfulUpdateCount = n.GetIntValue(); } },
-                {"totalUpdateCount", (o,n) => { (o as MacOSSoftwareUpdateCategorySummary).TotalUpdateCount = n.GetIntValue(); } },
-                {"updateCategory", (o,n) => { (o as MacOSSoftwareUpdateCategorySummary).UpdateCategory = n.GetEnumValue<MacOSSoftwareUpdateCategory>(); } },
-                {"updateStateSummaries", (o,n) => { (o as MacOSSoftwareUpdateCategorySummary).UpdateStateSummaries = n.GetCollectionOfObjectValues<MacOSSoftwareUpdateStateSummary>(MacOSSoftwareUpdateStateSummary.CreateFromDiscriminatorValue).ToList(); } },
-                {"userId", (o,n) => { (o as MacOSSoftwareUpdateCategorySummary).UserId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"failedUpdateCount", n => { FailedUpdateCount = n.GetIntValue(); } },
+                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"successfulUpdateCount", n => { SuccessfulUpdateCount = n.GetIntValue(); } },
+                {"totalUpdateCount", n => { TotalUpdateCount = n.GetIntValue(); } },
+                {"updateCategory", n => { UpdateCategory = n.GetEnumValue<MacOSSoftwareUpdateCategory>(); } },
+                {"updateStateSummaries", n => { UpdateStateSummaries = n.GetCollectionOfObjectValues<MacOSSoftwareUpdateStateSummary>(MacOSSoftwareUpdateStateSummary.CreateFromDiscriminatorValue).ToList(); } },
+                {"userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

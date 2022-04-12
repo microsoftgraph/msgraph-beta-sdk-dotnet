@@ -44,22 +44,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"additionalInformation", (o,n) => { (o as PrivilegedOperationEvent).AdditionalInformation = n.GetStringValue(); } },
-                {"creationDateTime", (o,n) => { (o as PrivilegedOperationEvent).CreationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"expirationDateTime", (o,n) => { (o as PrivilegedOperationEvent).ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"referenceKey", (o,n) => { (o as PrivilegedOperationEvent).ReferenceKey = n.GetStringValue(); } },
-                {"referenceSystem", (o,n) => { (o as PrivilegedOperationEvent).ReferenceSystem = n.GetStringValue(); } },
-                {"requestorId", (o,n) => { (o as PrivilegedOperationEvent).RequestorId = n.GetStringValue(); } },
-                {"requestorName", (o,n) => { (o as PrivilegedOperationEvent).RequestorName = n.GetStringValue(); } },
-                {"requestType", (o,n) => { (o as PrivilegedOperationEvent).RequestType = n.GetStringValue(); } },
-                {"roleId", (o,n) => { (o as PrivilegedOperationEvent).RoleId = n.GetStringValue(); } },
-                {"roleName", (o,n) => { (o as PrivilegedOperationEvent).RoleName = n.GetStringValue(); } },
-                {"tenantId", (o,n) => { (o as PrivilegedOperationEvent).TenantId = n.GetStringValue(); } },
-                {"userId", (o,n) => { (o as PrivilegedOperationEvent).UserId = n.GetStringValue(); } },
-                {"userMail", (o,n) => { (o as PrivilegedOperationEvent).UserMail = n.GetStringValue(); } },
-                {"userName", (o,n) => { (o as PrivilegedOperationEvent).UserName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"additionalInformation", n => { AdditionalInformation = n.GetStringValue(); } },
+                {"creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"referenceKey", n => { ReferenceKey = n.GetStringValue(); } },
+                {"referenceSystem", n => { ReferenceSystem = n.GetStringValue(); } },
+                {"requestorId", n => { RequestorId = n.GetStringValue(); } },
+                {"requestorName", n => { RequestorName = n.GetStringValue(); } },
+                {"requestType", n => { RequestType = n.GetStringValue(); } },
+                {"roleId", n => { RoleId = n.GetStringValue(); } },
+                {"roleName", n => { RoleName = n.GetStringValue(); } },
+                {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                {"userId", n => { UserId = n.GetStringValue(); } },
+                {"userMail", n => { UserMail = n.GetStringValue(); } },
+                {"userName", n => { UserName = n.GetStringValue(); } },
             };
         }
         /// <summary>

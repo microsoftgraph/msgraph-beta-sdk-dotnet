@@ -22,11 +22,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"exampleJson", (o,n) => { (o as AndroidManagedStoreAppConfigurationSchema).ExampleJson = n.GetByteArrayValue(); } },
-                {"nestedSchemaItems", (o,n) => { (o as AndroidManagedStoreAppConfigurationSchema).NestedSchemaItems = n.GetCollectionOfObjectValues<AndroidManagedStoreAppConfigurationSchemaItem>(AndroidManagedStoreAppConfigurationSchemaItem.CreateFromDiscriminatorValue).ToList(); } },
-                {"schemaItems", (o,n) => { (o as AndroidManagedStoreAppConfigurationSchema).SchemaItems = n.GetCollectionOfObjectValues<AndroidManagedStoreAppConfigurationSchemaItem>(AndroidManagedStoreAppConfigurationSchemaItem.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"exampleJson", n => { ExampleJson = n.GetByteArrayValue(); } },
+                {"nestedSchemaItems", n => { NestedSchemaItems = n.GetCollectionOfObjectValues<AndroidManagedStoreAppConfigurationSchemaItem>(AndroidManagedStoreAppConfigurationSchemaItem.CreateFromDiscriminatorValue).ToList(); } },
+                {"schemaItems", n => { SchemaItems = n.GetCollectionOfObjectValues<AndroidManagedStoreAppConfigurationSchemaItem>(AndroidManagedStoreAppConfigurationSchemaItem.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

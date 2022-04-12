@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"additionalInformation", (o,n) => { (o as CloudPcStatusDetails).AdditionalInformation = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
-                {"code", (o,n) => { (o as CloudPcStatusDetails).Code = n.GetStringValue(); } },
-                {"message", (o,n) => { (o as CloudPcStatusDetails).Message = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"additionalInformation", n => { AdditionalInformation = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"code", n => { Code = n.GetStringValue(); } },
+                {"message", n => { Message = n.GetStringValue(); } },
             };
         }
         /// <summary>

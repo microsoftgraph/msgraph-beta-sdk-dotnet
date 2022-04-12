@@ -42,17 +42,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"adminConsentDescription", (o,n) => { (o as PermissionScope).AdminConsentDescription = n.GetStringValue(); } },
-                {"adminConsentDisplayName", (o,n) => { (o as PermissionScope).AdminConsentDisplayName = n.GetStringValue(); } },
-                {"id", (o,n) => { (o as PermissionScope).Id = n.GetStringValue(); } },
-                {"isEnabled", (o,n) => { (o as PermissionScope).IsEnabled = n.GetBoolValue(); } },
-                {"origin", (o,n) => { (o as PermissionScope).Origin = n.GetStringValue(); } },
-                {"type", (o,n) => { (o as PermissionScope).Type = n.GetStringValue(); } },
-                {"userConsentDescription", (o,n) => { (o as PermissionScope).UserConsentDescription = n.GetStringValue(); } },
-                {"userConsentDisplayName", (o,n) => { (o as PermissionScope).UserConsentDisplayName = n.GetStringValue(); } },
-                {"value", (o,n) => { (o as PermissionScope).Value = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"adminConsentDescription", n => { AdminConsentDescription = n.GetStringValue(); } },
+                {"adminConsentDisplayName", n => { AdminConsentDisplayName = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetStringValue(); } },
+                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                {"origin", n => { Origin = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
+                {"userConsentDescription", n => { UserConsentDescription = n.GetStringValue(); } },
+                {"userConsentDisplayName", n => { UserConsentDisplayName = n.GetStringValue(); } },
+                {"value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>

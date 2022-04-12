@@ -42,16 +42,16 @@ namespace Microsoft.Graph.Beta.Users.Item.FindMeetingTimes {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"attendees", (o,n) => { (o as FindMeetingTimesRequestBody).Attendees = n.GetCollectionOfObjectValues<AttendeeBase>(AttendeeBase.CreateFromDiscriminatorValue).ToList(); } },
-                {"isOrganizerOptional", (o,n) => { (o as FindMeetingTimesRequestBody).IsOrganizerOptional = n.GetBoolValue(); } },
-                {"locationConstraint", (o,n) => { (o as FindMeetingTimesRequestBody).LocationConstraint = n.GetObjectValue<Microsoft.Graph.Beta.Models.LocationConstraint>(Microsoft.Graph.Beta.Models.LocationConstraint.CreateFromDiscriminatorValue); } },
-                {"maxCandidates", (o,n) => { (o as FindMeetingTimesRequestBody).MaxCandidates = n.GetIntValue(); } },
-                {"meetingDuration", (o,n) => { (o as FindMeetingTimesRequestBody).MeetingDuration = n.GetTimeSpanValue(); } },
-                {"minimumAttendeePercentage", (o,n) => { (o as FindMeetingTimesRequestBody).MinimumAttendeePercentage = n.GetDoubleValue(); } },
-                {"returnSuggestionReasons", (o,n) => { (o as FindMeetingTimesRequestBody).ReturnSuggestionReasons = n.GetBoolValue(); } },
-                {"timeConstraint", (o,n) => { (o as FindMeetingTimesRequestBody).TimeConstraint = n.GetObjectValue<Microsoft.Graph.Beta.Models.TimeConstraint>(Microsoft.Graph.Beta.Models.TimeConstraint.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"attendees", n => { Attendees = n.GetCollectionOfObjectValues<AttendeeBase>(AttendeeBase.CreateFromDiscriminatorValue).ToList(); } },
+                {"isOrganizerOptional", n => { IsOrganizerOptional = n.GetBoolValue(); } },
+                {"locationConstraint", n => { LocationConstraint = n.GetObjectValue<Microsoft.Graph.Beta.Models.LocationConstraint>(Microsoft.Graph.Beta.Models.LocationConstraint.CreateFromDiscriminatorValue); } },
+                {"maxCandidates", n => { MaxCandidates = n.GetIntValue(); } },
+                {"meetingDuration", n => { MeetingDuration = n.GetTimeSpanValue(); } },
+                {"minimumAttendeePercentage", n => { MinimumAttendeePercentage = n.GetDoubleValue(); } },
+                {"returnSuggestionReasons", n => { ReturnSuggestionReasons = n.GetBoolValue(); } },
+                {"timeConstraint", n => { TimeConstraint = n.GetObjectValue<Microsoft.Graph.Beta.Models.TimeConstraint>(Microsoft.Graph.Beta.Models.TimeConstraint.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

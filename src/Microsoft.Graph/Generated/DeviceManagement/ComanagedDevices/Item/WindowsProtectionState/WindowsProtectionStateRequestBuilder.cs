@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.WindowsPro
         public WindowsProtectionStateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice_id}/windowsProtectionState{?select,expand}";
+            UrlTemplate = "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/windowsProtectionState{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.WindowsPro
         public WindowsProtectionStateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice_id}/windowsProtectionState{?select,expand}";
+            UrlTemplate = "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/windowsProtectionState{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -154,8 +154,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.WindowsPro
         /// <summary>The device protection status. This property is read-only.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
     }

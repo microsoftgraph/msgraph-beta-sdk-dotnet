@@ -31,11 +31,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"enrollmentToken", (o,n) => { (o as AndroidEnrollmentCompanyCode).EnrollmentToken = n.GetStringValue(); } },
-                {"qrCodeContent", (o,n) => { (o as AndroidEnrollmentCompanyCode).QrCodeContent = n.GetStringValue(); } },
-                {"qrCodeImage", (o,n) => { (o as AndroidEnrollmentCompanyCode).QrCodeImage = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"enrollmentToken", n => { EnrollmentToken = n.GetStringValue(); } },
+                {"qrCodeContent", n => { QrCodeContent = n.GetStringValue(); } },
+                {"qrCodeImage", n => { QrCodeImage = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

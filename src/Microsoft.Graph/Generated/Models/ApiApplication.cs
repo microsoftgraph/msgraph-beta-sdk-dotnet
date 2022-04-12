@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"acceptMappedClaims", (o,n) => { (o as ApiApplication).AcceptMappedClaims = n.GetBoolValue(); } },
-                {"knownClientApplications", (o,n) => { (o as ApiApplication).KnownClientApplications = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"oauth2PermissionScopes", (o,n) => { (o as ApiApplication).Oauth2PermissionScopes = n.GetCollectionOfObjectValues<PermissionScope>(PermissionScope.CreateFromDiscriminatorValue).ToList(); } },
-                {"preAuthorizedApplications", (o,n) => { (o as ApiApplication).PreAuthorizedApplications = n.GetCollectionOfObjectValues<PreAuthorizedApplication>(PreAuthorizedApplication.CreateFromDiscriminatorValue).ToList(); } },
-                {"requestedAccessTokenVersion", (o,n) => { (o as ApiApplication).RequestedAccessTokenVersion = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"acceptMappedClaims", n => { AcceptMappedClaims = n.GetBoolValue(); } },
+                {"knownClientApplications", n => { KnownClientApplications = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"oauth2PermissionScopes", n => { Oauth2PermissionScopes = n.GetCollectionOfObjectValues<PermissionScope>(PermissionScope.CreateFromDiscriminatorValue).ToList(); } },
+                {"preAuthorizedApplications", n => { PreAuthorizedApplications = n.GetCollectionOfObjectValues<PreAuthorizedApplication>(PreAuthorizedApplication.CreateFromDiscriminatorValue).ToList(); } },
+                {"requestedAccessTokenVersion", n => { RequestedAccessTokenVersion = n.GetIntValue(); } },
             };
         }
         /// <summary>

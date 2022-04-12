@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Issues.Item.IncidentRep
         public IncidentReportRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/admin/serviceAnnouncement/issues/{serviceHealthIssue_id}/microsoft.graph.incidentReport()";
+            UrlTemplate = "{+baseurl}/admin/serviceAnnouncement/issues/{serviceHealthIssue%2Did}/microsoft.graph.incidentReport()";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Issues.Item.IncidentRep
         public IncidentReportRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/admin/serviceAnnouncement/issues/{serviceHealthIssue_id}/microsoft.graph.incidentReport()";
+            UrlTemplate = "{+baseurl}/admin/serviceAnnouncement/issues/{serviceHealthIssue%2Did}/microsoft.graph.incidentReport()";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

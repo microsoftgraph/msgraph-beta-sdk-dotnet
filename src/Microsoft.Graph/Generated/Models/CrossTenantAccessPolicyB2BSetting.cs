@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"applications", (o,n) => { (o as CrossTenantAccessPolicyB2BSetting).Applications = n.GetObjectValue<CrossTenantAccessPolicyTargetConfiguration>(CrossTenantAccessPolicyTargetConfiguration.CreateFromDiscriminatorValue); } },
-                {"usersAndGroups", (o,n) => { (o as CrossTenantAccessPolicyB2BSetting).UsersAndGroups = n.GetObjectValue<CrossTenantAccessPolicyTargetConfiguration>(CrossTenantAccessPolicyTargetConfiguration.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"applications", n => { Applications = n.GetObjectValue<CrossTenantAccessPolicyTargetConfiguration>(CrossTenantAccessPolicyTargetConfiguration.CreateFromDiscriminatorValue); } },
+                {"usersAndGroups", n => { UsersAndGroups = n.GetObjectValue<CrossTenantAccessPolicyTargetConfiguration>(CrossTenantAccessPolicyTargetConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

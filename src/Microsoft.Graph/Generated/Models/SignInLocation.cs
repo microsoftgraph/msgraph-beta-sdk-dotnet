@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"city", (o,n) => { (o as SignInLocation).City = n.GetStringValue(); } },
-                {"countryOrRegion", (o,n) => { (o as SignInLocation).CountryOrRegion = n.GetStringValue(); } },
-                {"geoCoordinates", (o,n) => { (o as SignInLocation).GeoCoordinates = n.GetObjectValue<Microsoft.Graph.Beta.Models.GeoCoordinates>(Microsoft.Graph.Beta.Models.GeoCoordinates.CreateFromDiscriminatorValue); } },
-                {"state", (o,n) => { (o as SignInLocation).State = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"city", n => { City = n.GetStringValue(); } },
+                {"countryOrRegion", n => { CountryOrRegion = n.GetStringValue(); } },
+                {"geoCoordinates", n => { GeoCoordinates = n.GetObjectValue<Microsoft.Graph.Beta.Models.GeoCoordinates>(Microsoft.Graph.Beta.Models.GeoCoordinates.CreateFromDiscriminatorValue); } },
+                {"state", n => { State = n.GetStringValue(); } },
             };
         }
         /// <summary>

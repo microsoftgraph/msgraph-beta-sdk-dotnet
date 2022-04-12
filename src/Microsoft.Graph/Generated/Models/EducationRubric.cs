@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdBy", (o,n) => { (o as EducationRubric).CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", (o,n) => { (o as EducationRubric).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as EducationRubric).Description = n.GetObjectValue<EducationItemBody>(EducationItemBody.CreateFromDiscriminatorValue); } },
-                {"displayName", (o,n) => { (o as EducationRubric).DisplayName = n.GetStringValue(); } },
-                {"grading", (o,n) => { (o as EducationRubric).Grading = n.GetObjectValue<EducationAssignmentGradeType>(EducationAssignmentGradeType.CreateFromDiscriminatorValue); } },
-                {"lastModifiedBy", (o,n) => { (o as EducationRubric).LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", (o,n) => { (o as EducationRubric).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"levels", (o,n) => { (o as EducationRubric).Levels = n.GetCollectionOfObjectValues<RubricLevel>(RubricLevel.CreateFromDiscriminatorValue).ToList(); } },
-                {"qualities", (o,n) => { (o as EducationRubric).Qualities = n.GetCollectionOfObjectValues<RubricQuality>(RubricQuality.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetObjectValue<EducationItemBody>(EducationItemBody.CreateFromDiscriminatorValue); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"grading", n => { Grading = n.GetObjectValue<EducationAssignmentGradeType>(EducationAssignmentGradeType.CreateFromDiscriminatorValue); } },
+                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"levels", n => { Levels = n.GetCollectionOfObjectValues<RubricLevel>(RubricLevel.CreateFromDiscriminatorValue).ToList(); } },
+                {"qualities", n => { Qualities = n.GetCollectionOfObjectValues<RubricQuality>(RubricQuality.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

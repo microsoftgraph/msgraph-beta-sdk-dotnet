@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"amountDecimalPlaces", (o,n) => { (o as Currency).AmountDecimalPlaces = n.GetStringValue(); } },
-                {"amountRoundingPrecision", (o,n) => { (o as Currency).AmountRoundingPrecision = n.GetDecimalValue(); } },
-                {"code", (o,n) => { (o as Currency).Code = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as Currency).DisplayName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as Currency).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"symbol", (o,n) => { (o as Currency).Symbol = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"amountDecimalPlaces", n => { AmountDecimalPlaces = n.GetStringValue(); } },
+                {"amountRoundingPrecision", n => { AmountRoundingPrecision = n.GetDecimalValue(); } },
+                {"code", n => { Code = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"symbol", n => { Symbol = n.GetStringValue(); } },
             };
         }
         /// <summary>

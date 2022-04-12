@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"lastDirectorySyncDateTime", (o,n) => { (o as ChromeOSOnboardingSettings).LastDirectorySyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as ChromeOSOnboardingSettings).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"onboardingStatus", (o,n) => { (o as ChromeOSOnboardingSettings).OnboardingStatus = n.GetEnumValue<OnboardingStatus>(); } },
-                {"ownerUserPrincipalName", (o,n) => { (o as ChromeOSOnboardingSettings).OwnerUserPrincipalName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"lastDirectorySyncDateTime", n => { LastDirectorySyncDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<OnboardingStatus>(); } },
+                {"ownerUserPrincipalName", n => { OwnerUserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

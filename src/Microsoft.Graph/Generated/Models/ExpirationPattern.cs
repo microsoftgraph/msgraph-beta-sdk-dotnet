@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"duration", (o,n) => { (o as ExpirationPattern).Duration = n.GetTimeSpanValue(); } },
-                {"endDateTime", (o,n) => { (o as ExpirationPattern).EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"type", (o,n) => { (o as ExpirationPattern).Type = n.GetEnumValue<ExpirationPatternType>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"duration", n => { Duration = n.GetTimeSpanValue(); } },
+                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"type", n => { Type = n.GetEnumValue<ExpirationPatternType>(); } },
             };
         }
         /// <summary>

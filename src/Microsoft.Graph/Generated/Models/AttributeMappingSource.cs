@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"expression", (o,n) => { (o as AttributeMappingSource).Expression = n.GetStringValue(); } },
-                {"name", (o,n) => { (o as AttributeMappingSource).Name = n.GetStringValue(); } },
-                {"parameters", (o,n) => { (o as AttributeMappingSource).Parameters = n.GetCollectionOfObjectValues<StringKeyAttributeMappingSourceValuePair>(StringKeyAttributeMappingSourceValuePair.CreateFromDiscriminatorValue).ToList(); } },
-                {"type", (o,n) => { (o as AttributeMappingSource).Type = n.GetEnumValue<AttributeMappingSourceType>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"expression", n => { Expression = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"parameters", n => { Parameters = n.GetCollectionOfObjectValues<StringKeyAttributeMappingSourceValuePair>(StringKeyAttributeMappingSourceValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"type", n => { Type = n.GetEnumValue<AttributeMappingSourceType>(); } },
             };
         }
         /// <summary>

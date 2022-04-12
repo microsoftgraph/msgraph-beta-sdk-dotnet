@@ -35,13 +35,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"dateFormat", (o,n) => { (o as TeamworkDateTimeConfiguration).DateFormat = n.GetStringValue(); } },
-                {"officeHoursEndTime", (o,n) => { (o as TeamworkDateTimeConfiguration).OfficeHoursEndTime = n.GetTimeValue(); } },
-                {"officeHoursStartTime", (o,n) => { (o as TeamworkDateTimeConfiguration).OfficeHoursStartTime = n.GetTimeValue(); } },
-                {"timeFormat", (o,n) => { (o as TeamworkDateTimeConfiguration).TimeFormat = n.GetStringValue(); } },
-                {"timeZone", (o,n) => { (o as TeamworkDateTimeConfiguration).TimeZone = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"dateFormat", n => { DateFormat = n.GetStringValue(); } },
+                {"officeHoursEndTime", n => { OfficeHoursEndTime = n.GetTimeValue(); } },
+                {"officeHoursStartTime", n => { OfficeHoursStartTime = n.GetTimeValue(); } },
+                {"timeFormat", n => { TimeFormat = n.GetStringValue(); } },
+                {"timeZone", n => { TimeZone = n.GetStringValue(); } },
             };
         }
         /// <summary>

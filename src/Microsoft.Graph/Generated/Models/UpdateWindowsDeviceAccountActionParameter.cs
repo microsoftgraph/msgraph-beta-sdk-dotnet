@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"calendarSyncEnabled", (o,n) => { (o as UpdateWindowsDeviceAccountActionParameter).CalendarSyncEnabled = n.GetBoolValue(); } },
-                {"deviceAccount", (o,n) => { (o as UpdateWindowsDeviceAccountActionParameter).DeviceAccount = n.GetObjectValue<WindowsDeviceAccount>(WindowsDeviceAccount.CreateFromDiscriminatorValue); } },
-                {"deviceAccountEmail", (o,n) => { (o as UpdateWindowsDeviceAccountActionParameter).DeviceAccountEmail = n.GetStringValue(); } },
-                {"exchangeServer", (o,n) => { (o as UpdateWindowsDeviceAccountActionParameter).ExchangeServer = n.GetStringValue(); } },
-                {"passwordRotationEnabled", (o,n) => { (o as UpdateWindowsDeviceAccountActionParameter).PasswordRotationEnabled = n.GetBoolValue(); } },
-                {"sessionInitiationProtocalAddress", (o,n) => { (o as UpdateWindowsDeviceAccountActionParameter).SessionInitiationProtocalAddress = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"calendarSyncEnabled", n => { CalendarSyncEnabled = n.GetBoolValue(); } },
+                {"deviceAccount", n => { DeviceAccount = n.GetObjectValue<WindowsDeviceAccount>(WindowsDeviceAccount.CreateFromDiscriminatorValue); } },
+                {"deviceAccountEmail", n => { DeviceAccountEmail = n.GetStringValue(); } },
+                {"exchangeServer", n => { ExchangeServer = n.GetStringValue(); } },
+                {"passwordRotationEnabled", n => { PasswordRotationEnabled = n.GetBoolValue(); } },
+                {"sessionInitiationProtocalAddress", n => { SessionInitiationProtocalAddress = n.GetStringValue(); } },
             };
         }
         /// <summary>

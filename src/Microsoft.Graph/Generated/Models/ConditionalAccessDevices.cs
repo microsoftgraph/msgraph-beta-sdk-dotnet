@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"deviceFilter", (o,n) => { (o as ConditionalAccessDevices).DeviceFilter = n.GetObjectValue<ConditionalAccessFilter>(ConditionalAccessFilter.CreateFromDiscriminatorValue); } },
-                {"excludeDevices", (o,n) => { (o as ConditionalAccessDevices).ExcludeDevices = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"excludeDeviceStates", (o,n) => { (o as ConditionalAccessDevices).ExcludeDeviceStates = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"includeDevices", (o,n) => { (o as ConditionalAccessDevices).IncludeDevices = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"includeDeviceStates", (o,n) => { (o as ConditionalAccessDevices).IncludeDeviceStates = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"deviceFilter", n => { DeviceFilter = n.GetObjectValue<ConditionalAccessFilter>(ConditionalAccessFilter.CreateFromDiscriminatorValue); } },
+                {"excludeDevices", n => { ExcludeDevices = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"excludeDeviceStates", n => { ExcludeDeviceStates = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"includeDevices", n => { IncludeDevices = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"includeDeviceStates", n => { IncludeDeviceStates = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

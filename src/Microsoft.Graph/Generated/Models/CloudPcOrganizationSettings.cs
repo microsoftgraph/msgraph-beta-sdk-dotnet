@@ -9,6 +9,8 @@ namespace Microsoft.Graph.Beta.Models {
         public CloudPcOperatingSystem? OsVersion { get; set; }
         /// <summary>The account type of the user on provisioned Cloud PCs. The possible values are: standardUser, administrator, unknownFutureValue.</summary>
         public CloudPcUserAccountType? UserAccountType { get; set; }
+        /// <summary>Represents the Cloud PC organization settings for a tenant. A tenant has only one cloudPcOrganizationSettings object. The default language value en-US.</summary>
+        public CloudPcWindowsSettings WindowsSettings { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -20,10 +22,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"osVersion", (o,n) => { (o as CloudPcOrganizationSettings).OsVersion = n.GetEnumValue<CloudPcOperatingSystem>(); } },
-                {"userAccountType", (o,n) => { (o as CloudPcOrganizationSettings).UserAccountType = n.GetEnumValue<CloudPcUserAccountType>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"osVersion", n => { OsVersion = n.GetEnumValue<CloudPcOperatingSystem>(); } },
+                {"userAccountType", n => { UserAccountType = n.GetEnumValue<CloudPcUserAccountType>(); } },
+                {"windowsSettings", n => { WindowsSettings = n.GetObjectValue<CloudPcWindowsSettings>(CloudPcWindowsSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -35,6 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteEnumValue<CloudPcOperatingSystem>("osVersion", OsVersion);
             writer.WriteEnumValue<CloudPcUserAccountType>("userAccountType", UserAccountType);
+            writer.WriteObjectValue<CloudPcWindowsSettings>("windowsSettings", WindowsSettings);
         }
     }
 }

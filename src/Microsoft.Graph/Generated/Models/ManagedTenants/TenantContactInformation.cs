@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"email", (o,n) => { (o as TenantContactInformation).Email = n.GetStringValue(); } },
-                {"name", (o,n) => { (o as TenantContactInformation).Name = n.GetStringValue(); } },
-                {"notes", (o,n) => { (o as TenantContactInformation).Notes = n.GetStringValue(); } },
-                {"phone", (o,n) => { (o as TenantContactInformation).Phone = n.GetStringValue(); } },
-                {"title", (o,n) => { (o as TenantContactInformation).Title = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"email", n => { Email = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"notes", n => { Notes = n.GetStringValue(); } },
+                {"phone", n => { Phone = n.GetStringValue(); } },
+                {"title", n => { Title = n.GetStringValue(); } },
             };
         }
         /// <summary>

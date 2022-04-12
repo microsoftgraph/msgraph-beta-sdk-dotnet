@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"displayName", (o,n) => { (o as DeviceCompliancePolicyState).DisplayName = n.GetStringValue(); } },
-                {"platformType", (o,n) => { (o as DeviceCompliancePolicyState).PlatformType = n.GetEnumValue<PolicyPlatformType>(); } },
-                {"settingCount", (o,n) => { (o as DeviceCompliancePolicyState).SettingCount = n.GetIntValue(); } },
-                {"settingStates", (o,n) => { (o as DeviceCompliancePolicyState).SettingStates = n.GetCollectionOfObjectValues<DeviceCompliancePolicySettingState>(DeviceCompliancePolicySettingState.CreateFromDiscriminatorValue).ToList(); } },
-                {"state", (o,n) => { (o as DeviceCompliancePolicyState).State = n.GetEnumValue<ComplianceStatus>(); } },
-                {"userId", (o,n) => { (o as DeviceCompliancePolicyState).UserId = n.GetStringValue(); } },
-                {"userPrincipalName", (o,n) => { (o as DeviceCompliancePolicyState).UserPrincipalName = n.GetStringValue(); } },
-                {"version", (o,n) => { (o as DeviceCompliancePolicyState).Version = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"platformType", n => { PlatformType = n.GetEnumValue<PolicyPlatformType>(); } },
+                {"settingCount", n => { SettingCount = n.GetIntValue(); } },
+                {"settingStates", n => { SettingStates = n.GetCollectionOfObjectValues<DeviceCompliancePolicySettingState>(DeviceCompliancePolicySettingState.CreateFromDiscriminatorValue).ToList(); } },
+                {"state", n => { State = n.GetEnumValue<ComplianceStatus>(); } },
+                {"userId", n => { UserId = n.GetStringValue(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                {"version", n => { Version = n.GetIntValue(); } },
             };
         }
         /// <summary>

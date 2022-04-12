@@ -36,18 +36,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accountId", (o,n) => { (o as AndroidForWorkEnrollmentProfile).AccountId = n.GetStringValue(); } },
-                {"createdDateTime", (o,n) => { (o as AndroidForWorkEnrollmentProfile).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as AndroidForWorkEnrollmentProfile).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as AndroidForWorkEnrollmentProfile).DisplayName = n.GetStringValue(); } },
-                {"enrolledDeviceCount", (o,n) => { (o as AndroidForWorkEnrollmentProfile).EnrolledDeviceCount = n.GetIntValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as AndroidForWorkEnrollmentProfile).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"qrCodeContent", (o,n) => { (o as AndroidForWorkEnrollmentProfile).QrCodeContent = n.GetStringValue(); } },
-                {"qrCodeImage", (o,n) => { (o as AndroidForWorkEnrollmentProfile).QrCodeImage = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
-                {"tokenExpirationDateTime", (o,n) => { (o as AndroidForWorkEnrollmentProfile).TokenExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"tokenValue", (o,n) => { (o as AndroidForWorkEnrollmentProfile).TokenValue = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"accountId", n => { AccountId = n.GetStringValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"enrolledDeviceCount", n => { EnrolledDeviceCount = n.GetIntValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"qrCodeContent", n => { QrCodeContent = n.GetStringValue(); } },
+                {"qrCodeImage", n => { QrCodeImage = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
+                {"tokenExpirationDateTime", n => { TokenExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"tokenValue", n => { TokenValue = n.GetStringValue(); } },
             };
         }
         /// <summary>

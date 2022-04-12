@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy.Labels.Ev
         public EvaluateRemovalRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/informationProtection/policy/labels/microsoft.graph.evaluateRemoval";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/informationProtection/policy/labels/microsoft.graph.evaluateRemoval";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy.Labels.Ev
         public EvaluateRemovalRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/informationProtection/policy/labels/microsoft.graph.evaluateRemoval";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/informationProtection/policy/labels/microsoft.graph.evaluateRemoval";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

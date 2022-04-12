@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Items.Item.ListItem.Activ
         public ContentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/groups/{group_id}/drives/{drive_id}/items/{driveItem_id}/listItem/activities/{itemActivityOLD_id}/driveItem/content";
+            UrlTemplate = "{+baseurl}/groups/{group%2Did}/drives/{drive%2Did}/items/{driveItem%2Did}/listItem/activities/{itemActivityOLD%2Did}/driveItem/content";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Items.Item.ListItem.Activ
         public ContentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/groups/{group_id}/drives/{drive_id}/items/{driveItem_id}/listItem/activities/{itemActivityOLD_id}/driveItem/content";
+            UrlTemplate = "{+baseurl}/groups/{group%2Did}/drives/{drive%2Did}/items/{driveItem%2Did}/listItem/activities/{itemActivityOLD%2Did}/driveItem/content";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

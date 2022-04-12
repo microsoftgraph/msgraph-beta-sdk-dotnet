@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"contractType", (o,n) => { (o as TenantContract).ContractType = n.GetIntValue(); } },
-                {"defaultDomainName", (o,n) => { (o as TenantContract).DefaultDomainName = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as TenantContract).DisplayName = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"contractType", n => { ContractType = n.GetIntValue(); } },
+                {"defaultDomainName", n => { DefaultDomainName = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
             };
         }
         /// <summary>

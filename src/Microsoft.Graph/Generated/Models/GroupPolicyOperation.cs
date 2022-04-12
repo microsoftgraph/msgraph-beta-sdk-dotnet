@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"lastModifiedDateTime", (o,n) => { (o as GroupPolicyOperation).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"operationStatus", (o,n) => { (o as GroupPolicyOperation).OperationStatus = n.GetEnumValue<GroupPolicyOperationStatus>(); } },
-                {"operationType", (o,n) => { (o as GroupPolicyOperation).OperationType = n.GetEnumValue<GroupPolicyOperationType>(); } },
-                {"statusDetails", (o,n) => { (o as GroupPolicyOperation).StatusDetails = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"operationStatus", n => { OperationStatus = n.GetEnumValue<GroupPolicyOperationStatus>(); } },
+                {"operationType", n => { OperationType = n.GetEnumValue<GroupPolicyOperationType>(); } },
+                {"statusDetails", n => { StatusDetails = n.GetStringValue(); } },
             };
         }
         /// <summary>

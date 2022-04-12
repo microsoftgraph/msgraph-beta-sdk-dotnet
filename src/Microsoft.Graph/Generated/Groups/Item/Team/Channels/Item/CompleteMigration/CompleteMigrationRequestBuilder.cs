@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.CompleteMigration 
         public CompleteMigrationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/groups/{group_id}/team/channels/{channel_id}/microsoft.graph.completeMigration";
+            UrlTemplate = "{+baseurl}/groups/{group%2Did}/team/channels/{channel%2Did}/microsoft.graph.completeMigration";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.CompleteMigration 
         public CompleteMigrationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/groups/{group_id}/team/channels/{channel_id}/microsoft.graph.completeMigration";
+            UrlTemplate = "{+baseurl}/groups/{group%2Did}/team/channels/{channel%2Did}/microsoft.graph.completeMigration";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

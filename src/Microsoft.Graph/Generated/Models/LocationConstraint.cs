@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"isRequired", (o,n) => { (o as LocationConstraint).IsRequired = n.GetBoolValue(); } },
-                {"locations", (o,n) => { (o as LocationConstraint).Locations = n.GetCollectionOfObjectValues<LocationConstraintItem>(LocationConstraintItem.CreateFromDiscriminatorValue).ToList(); } },
-                {"suggestLocation", (o,n) => { (o as LocationConstraint).SuggestLocation = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"isRequired", n => { IsRequired = n.GetBoolValue(); } },
+                {"locations", n => { Locations = n.GetCollectionOfObjectValues<LocationConstraintItem>(LocationConstraintItem.CreateFromDiscriminatorValue).ToList(); } },
+                {"suggestLocation", n => { SuggestLocation = n.GetBoolValue(); } },
             };
         }
         /// <summary>

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Team : Entity, IParsable {
-        /// <summary>The allChannels property</summary>
+        /// <summary>List of channels either hosted in or shared with the team (incoming channels).</summary>
         public List<Channel> AllChannels { get; set; }
         /// <summary>The collection of channels and messages associated with the team.</summary>
         public List<Channel> Channels { get; set; }
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         public List<TeamworkTag> Tags { get; set; }
         /// <summary>The template this team was created from. See available templates.</summary>
         public TeamsTemplate Template { get; set; }
-        /// <summary>The tenantId property</summary>
+        /// <summary>The ID of the Azure Active Directory tenant.</summary>
         public string TenantId { get; set; }
         /// <summary>The visibility of the group and team. Defaults to Public.</summary>
         public TeamVisibilityType? Visibility { get; set; }
@@ -78,39 +78,39 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"allChannels", (o,n) => { (o as Team).AllChannels = n.GetCollectionOfObjectValues<Channel>(Channel.CreateFromDiscriminatorValue).ToList(); } },
-                {"channels", (o,n) => { (o as Team).Channels = n.GetCollectionOfObjectValues<Channel>(Channel.CreateFromDiscriminatorValue).ToList(); } },
-                {"classification", (o,n) => { (o as Team).Classification = n.GetStringValue(); } },
-                {"createdDateTime", (o,n) => { (o as Team).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as Team).Description = n.GetStringValue(); } },
-                {"discoverySettings", (o,n) => { (o as Team).DiscoverySettings = n.GetObjectValue<TeamDiscoverySettings>(TeamDiscoverySettings.CreateFromDiscriminatorValue); } },
-                {"displayName", (o,n) => { (o as Team).DisplayName = n.GetStringValue(); } },
-                {"funSettings", (o,n) => { (o as Team).FunSettings = n.GetObjectValue<TeamFunSettings>(TeamFunSettings.CreateFromDiscriminatorValue); } },
-                {"group", (o,n) => { (o as Team).Group = n.GetObjectValue<Microsoft.Graph.Beta.Models.Group>(Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue); } },
-                {"guestSettings", (o,n) => { (o as Team).GuestSettings = n.GetObjectValue<TeamGuestSettings>(TeamGuestSettings.CreateFromDiscriminatorValue); } },
-                {"incomingChannels", (o,n) => { (o as Team).IncomingChannels = n.GetCollectionOfObjectValues<Channel>(Channel.CreateFromDiscriminatorValue).ToList(); } },
-                {"installedApps", (o,n) => { (o as Team).InstalledApps = n.GetCollectionOfObjectValues<TeamsAppInstallation>(TeamsAppInstallation.CreateFromDiscriminatorValue).ToList(); } },
-                {"internalId", (o,n) => { (o as Team).InternalId = n.GetStringValue(); } },
-                {"isArchived", (o,n) => { (o as Team).IsArchived = n.GetBoolValue(); } },
-                {"isMembershipLimitedToOwners", (o,n) => { (o as Team).IsMembershipLimitedToOwners = n.GetBoolValue(); } },
-                {"members", (o,n) => { (o as Team).Members = n.GetCollectionOfObjectValues<ConversationMember>(ConversationMember.CreateFromDiscriminatorValue).ToList(); } },
-                {"memberSettings", (o,n) => { (o as Team).MemberSettings = n.GetObjectValue<TeamMemberSettings>(TeamMemberSettings.CreateFromDiscriminatorValue); } },
-                {"messagingSettings", (o,n) => { (o as Team).MessagingSettings = n.GetObjectValue<TeamMessagingSettings>(TeamMessagingSettings.CreateFromDiscriminatorValue); } },
-                {"operations", (o,n) => { (o as Team).Operations = n.GetCollectionOfObjectValues<TeamsAsyncOperation>(TeamsAsyncOperation.CreateFromDiscriminatorValue).ToList(); } },
-                {"owners", (o,n) => { (o as Team).Owners = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue).ToList(); } },
-                {"permissionGrants", (o,n) => { (o as Team).PermissionGrants = n.GetCollectionOfObjectValues<ResourceSpecificPermissionGrant>(ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue).ToList(); } },
-                {"photo", (o,n) => { (o as Team).Photo = n.GetObjectValue<ProfilePhoto>(ProfilePhoto.CreateFromDiscriminatorValue); } },
-                {"primaryChannel", (o,n) => { (o as Team).PrimaryChannel = n.GetObjectValue<Channel>(Channel.CreateFromDiscriminatorValue); } },
-                {"schedule", (o,n) => { (o as Team).Schedule = n.GetObjectValue<Microsoft.Graph.Beta.Models.Schedule>(Microsoft.Graph.Beta.Models.Schedule.CreateFromDiscriminatorValue); } },
-                {"specialization", (o,n) => { (o as Team).Specialization = n.GetEnumValue<TeamSpecialization>(); } },
-                {"summary", (o,n) => { (o as Team).Summary = n.GetObjectValue<TeamSummary>(TeamSummary.CreateFromDiscriminatorValue); } },
-                {"tags", (o,n) => { (o as Team).Tags = n.GetCollectionOfObjectValues<TeamworkTag>(TeamworkTag.CreateFromDiscriminatorValue).ToList(); } },
-                {"template", (o,n) => { (o as Team).Template = n.GetObjectValue<TeamsTemplate>(TeamsTemplate.CreateFromDiscriminatorValue); } },
-                {"tenantId", (o,n) => { (o as Team).TenantId = n.GetStringValue(); } },
-                {"visibility", (o,n) => { (o as Team).Visibility = n.GetEnumValue<TeamVisibilityType>(); } },
-                {"webUrl", (o,n) => { (o as Team).WebUrl = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"allChannels", n => { AllChannels = n.GetCollectionOfObjectValues<Channel>(Channel.CreateFromDiscriminatorValue).ToList(); } },
+                {"channels", n => { Channels = n.GetCollectionOfObjectValues<Channel>(Channel.CreateFromDiscriminatorValue).ToList(); } },
+                {"classification", n => { Classification = n.GetStringValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"discoverySettings", n => { DiscoverySettings = n.GetObjectValue<TeamDiscoverySettings>(TeamDiscoverySettings.CreateFromDiscriminatorValue); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"funSettings", n => { FunSettings = n.GetObjectValue<TeamFunSettings>(TeamFunSettings.CreateFromDiscriminatorValue); } },
+                {"group", n => { Group = n.GetObjectValue<Microsoft.Graph.Beta.Models.Group>(Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue); } },
+                {"guestSettings", n => { GuestSettings = n.GetObjectValue<TeamGuestSettings>(TeamGuestSettings.CreateFromDiscriminatorValue); } },
+                {"incomingChannels", n => { IncomingChannels = n.GetCollectionOfObjectValues<Channel>(Channel.CreateFromDiscriminatorValue).ToList(); } },
+                {"installedApps", n => { InstalledApps = n.GetCollectionOfObjectValues<TeamsAppInstallation>(TeamsAppInstallation.CreateFromDiscriminatorValue).ToList(); } },
+                {"internalId", n => { InternalId = n.GetStringValue(); } },
+                {"isArchived", n => { IsArchived = n.GetBoolValue(); } },
+                {"isMembershipLimitedToOwners", n => { IsMembershipLimitedToOwners = n.GetBoolValue(); } },
+                {"members", n => { Members = n.GetCollectionOfObjectValues<ConversationMember>(ConversationMember.CreateFromDiscriminatorValue).ToList(); } },
+                {"memberSettings", n => { MemberSettings = n.GetObjectValue<TeamMemberSettings>(TeamMemberSettings.CreateFromDiscriminatorValue); } },
+                {"messagingSettings", n => { MessagingSettings = n.GetObjectValue<TeamMessagingSettings>(TeamMessagingSettings.CreateFromDiscriminatorValue); } },
+                {"operations", n => { Operations = n.GetCollectionOfObjectValues<TeamsAsyncOperation>(TeamsAsyncOperation.CreateFromDiscriminatorValue).ToList(); } },
+                {"owners", n => { Owners = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue).ToList(); } },
+                {"permissionGrants", n => { PermissionGrants = n.GetCollectionOfObjectValues<ResourceSpecificPermissionGrant>(ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue).ToList(); } },
+                {"photo", n => { Photo = n.GetObjectValue<ProfilePhoto>(ProfilePhoto.CreateFromDiscriminatorValue); } },
+                {"primaryChannel", n => { PrimaryChannel = n.GetObjectValue<Channel>(Channel.CreateFromDiscriminatorValue); } },
+                {"schedule", n => { Schedule = n.GetObjectValue<Microsoft.Graph.Beta.Models.Schedule>(Microsoft.Graph.Beta.Models.Schedule.CreateFromDiscriminatorValue); } },
+                {"specialization", n => { Specialization = n.GetEnumValue<TeamSpecialization>(); } },
+                {"summary", n => { Summary = n.GetObjectValue<TeamSummary>(TeamSummary.CreateFromDiscriminatorValue); } },
+                {"tags", n => { Tags = n.GetCollectionOfObjectValues<TeamworkTag>(TeamworkTag.CreateFromDiscriminatorValue).ToList(); } },
+                {"template", n => { Template = n.GetObjectValue<TeamsTemplate>(TeamsTemplate.CreateFromDiscriminatorValue); } },
+                {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                {"visibility", n => { Visibility = n.GetEnumValue<TeamVisibilityType>(); } },
+                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -48,24 +48,24 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"coreBootTimeInMs", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupHistory).CoreBootTimeInMs = n.GetIntValue(); } },
-                {"coreLoginTimeInMs", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupHistory).CoreLoginTimeInMs = n.GetIntValue(); } },
-                {"deviceId", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupHistory).DeviceId = n.GetStringValue(); } },
-                {"featureUpdateBootTimeInMs", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupHistory).FeatureUpdateBootTimeInMs = n.GetIntValue(); } },
-                {"groupPolicyBootTimeInMs", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupHistory).GroupPolicyBootTimeInMs = n.GetIntValue(); } },
-                {"groupPolicyLoginTimeInMs", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupHistory).GroupPolicyLoginTimeInMs = n.GetIntValue(); } },
-                {"isFeatureUpdate", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupHistory).IsFeatureUpdate = n.GetBoolValue(); } },
-                {"isFirstLogin", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupHistory).IsFirstLogin = n.GetBoolValue(); } },
-                {"operatingSystemVersion", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupHistory).OperatingSystemVersion = n.GetStringValue(); } },
-                {"responsiveDesktopTimeInMs", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupHistory).ResponsiveDesktopTimeInMs = n.GetIntValue(); } },
-                {"restartCategory", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupHistory).RestartCategory = n.GetEnumValue<UserExperienceAnalyticsOperatingSystemRestartCategory>(); } },
-                {"restartFaultBucket", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupHistory).RestartFaultBucket = n.GetStringValue(); } },
-                {"restartStopCode", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupHistory).RestartStopCode = n.GetStringValue(); } },
-                {"startTime", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupHistory).StartTime = n.GetDateTimeOffsetValue(); } },
-                {"totalBootTimeInMs", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupHistory).TotalBootTimeInMs = n.GetIntValue(); } },
-                {"totalLoginTimeInMs", (o,n) => { (o as UserExperienceAnalyticsDeviceStartupHistory).TotalLoginTimeInMs = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"coreBootTimeInMs", n => { CoreBootTimeInMs = n.GetIntValue(); } },
+                {"coreLoginTimeInMs", n => { CoreLoginTimeInMs = n.GetIntValue(); } },
+                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
+                {"featureUpdateBootTimeInMs", n => { FeatureUpdateBootTimeInMs = n.GetIntValue(); } },
+                {"groupPolicyBootTimeInMs", n => { GroupPolicyBootTimeInMs = n.GetIntValue(); } },
+                {"groupPolicyLoginTimeInMs", n => { GroupPolicyLoginTimeInMs = n.GetIntValue(); } },
+                {"isFeatureUpdate", n => { IsFeatureUpdate = n.GetBoolValue(); } },
+                {"isFirstLogin", n => { IsFirstLogin = n.GetBoolValue(); } },
+                {"operatingSystemVersion", n => { OperatingSystemVersion = n.GetStringValue(); } },
+                {"responsiveDesktopTimeInMs", n => { ResponsiveDesktopTimeInMs = n.GetIntValue(); } },
+                {"restartCategory", n => { RestartCategory = n.GetEnumValue<UserExperienceAnalyticsOperatingSystemRestartCategory>(); } },
+                {"restartFaultBucket", n => { RestartFaultBucket = n.GetStringValue(); } },
+                {"restartStopCode", n => { RestartStopCode = n.GetStringValue(); } },
+                {"startTime", n => { StartTime = n.GetDateTimeOffsetValue(); } },
+                {"totalBootTimeInMs", n => { TotalBootTimeInMs = n.GetIntValue(); } },
+                {"totalLoginTimeInMs", n => { TotalLoginTimeInMs = n.GetIntValue(); } },
             };
         }
         /// <summary>

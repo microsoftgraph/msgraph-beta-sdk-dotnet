@@ -48,20 +48,20 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"anchor", (o,n) => { (o as AttributeDefinition).Anchor = n.GetBoolValue(); } },
-                {"apiExpressions", (o,n) => { (o as AttributeDefinition).ApiExpressions = n.GetCollectionOfObjectValues<StringKeyStringValuePair>(StringKeyStringValuePair.CreateFromDiscriminatorValue).ToList(); } },
-                {"caseExact", (o,n) => { (o as AttributeDefinition).CaseExact = n.GetBoolValue(); } },
-                {"defaultValue", (o,n) => { (o as AttributeDefinition).DefaultValue = n.GetStringValue(); } },
-                {"flowNullValues", (o,n) => { (o as AttributeDefinition).FlowNullValues = n.GetBoolValue(); } },
-                {"metadata", (o,n) => { (o as AttributeDefinition).Metadata = n.GetCollectionOfObjectValues<MetadataEntry>(MetadataEntry.CreateFromDiscriminatorValue).ToList(); } },
-                {"multivalued", (o,n) => { (o as AttributeDefinition).Multivalued = n.GetBoolValue(); } },
-                {"mutability", (o,n) => { (o as AttributeDefinition).Mutability = n.GetEnumValue<Mutability>(); } },
-                {"name", (o,n) => { (o as AttributeDefinition).Name = n.GetStringValue(); } },
-                {"referencedObjects", (o,n) => { (o as AttributeDefinition).ReferencedObjects = n.GetCollectionOfObjectValues<ReferencedObject>(ReferencedObject.CreateFromDiscriminatorValue).ToList(); } },
-                {"required", (o,n) => { (o as AttributeDefinition).Required = n.GetBoolValue(); } },
-                {"type", (o,n) => { (o as AttributeDefinition).Type = n.GetEnumValue<AttributeType>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"anchor", n => { Anchor = n.GetBoolValue(); } },
+                {"apiExpressions", n => { ApiExpressions = n.GetCollectionOfObjectValues<StringKeyStringValuePair>(StringKeyStringValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"caseExact", n => { CaseExact = n.GetBoolValue(); } },
+                {"defaultValue", n => { DefaultValue = n.GetStringValue(); } },
+                {"flowNullValues", n => { FlowNullValues = n.GetBoolValue(); } },
+                {"metadata", n => { Metadata = n.GetCollectionOfObjectValues<MetadataEntry>(MetadataEntry.CreateFromDiscriminatorValue).ToList(); } },
+                {"multivalued", n => { Multivalued = n.GetBoolValue(); } },
+                {"mutability", n => { Mutability = n.GetEnumValue<Mutability>(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"referencedObjects", n => { ReferencedObjects = n.GetCollectionOfObjectValues<ReferencedObject>(ReferencedObject.CreateFromDiscriminatorValue).ToList(); } },
+                {"required", n => { Required = n.GetBoolValue(); } },
+                {"type", n => { Type = n.GetEnumValue<AttributeType>(); } },
             };
         }
         /// <summary>

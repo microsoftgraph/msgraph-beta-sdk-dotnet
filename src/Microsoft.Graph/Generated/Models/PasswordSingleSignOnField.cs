@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"customizedLabel", (o,n) => { (o as PasswordSingleSignOnField).CustomizedLabel = n.GetStringValue(); } },
-                {"defaultLabel", (o,n) => { (o as PasswordSingleSignOnField).DefaultLabel = n.GetStringValue(); } },
-                {"fieldId", (o,n) => { (o as PasswordSingleSignOnField).FieldId = n.GetStringValue(); } },
-                {"type", (o,n) => { (o as PasswordSingleSignOnField).Type = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"customizedLabel", n => { CustomizedLabel = n.GetStringValue(); } },
+                {"defaultLabel", n => { DefaultLabel = n.GetStringValue(); } },
+                {"fieldId", n => { FieldId = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>

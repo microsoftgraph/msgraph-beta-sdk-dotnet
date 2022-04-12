@@ -35,13 +35,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"allowStaffSelection", (o,n) => { (o as BookingSchedulingPolicy).AllowStaffSelection = n.GetBoolValue(); } },
-                {"maximumAdvance", (o,n) => { (o as BookingSchedulingPolicy).MaximumAdvance = n.GetTimeSpanValue(); } },
-                {"minimumLeadTime", (o,n) => { (o as BookingSchedulingPolicy).MinimumLeadTime = n.GetTimeSpanValue(); } },
-                {"sendConfirmationsToOwner", (o,n) => { (o as BookingSchedulingPolicy).SendConfirmationsToOwner = n.GetBoolValue(); } },
-                {"timeSlotInterval", (o,n) => { (o as BookingSchedulingPolicy).TimeSlotInterval = n.GetTimeSpanValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"allowStaffSelection", n => { AllowStaffSelection = n.GetBoolValue(); } },
+                {"maximumAdvance", n => { MaximumAdvance = n.GetTimeSpanValue(); } },
+                {"minimumLeadTime", n => { MinimumLeadTime = n.GetTimeSpanValue(); } },
+                {"sendConfirmationsToOwner", n => { SendConfirmationsToOwner = n.GetBoolValue(); } },
+                {"timeSlotInterval", n => { TimeSlotInterval = n.GetTimeSpanValue(); } },
             };
         }
         /// <summary>

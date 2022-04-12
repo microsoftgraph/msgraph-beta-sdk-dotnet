@@ -50,25 +50,25 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"azureSubscriptionId", (o,n) => { (o as CloudAppSecurityProfile).AzureSubscriptionId = n.GetStringValue(); } },
-                {"azureTenantId", (o,n) => { (o as CloudAppSecurityProfile).AzureTenantId = n.GetStringValue(); } },
-                {"createdDateTime", (o,n) => { (o as CloudAppSecurityProfile).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deploymentPackageUrl", (o,n) => { (o as CloudAppSecurityProfile).DeploymentPackageUrl = n.GetStringValue(); } },
-                {"destinationServiceName", (o,n) => { (o as CloudAppSecurityProfile).DestinationServiceName = n.GetStringValue(); } },
-                {"isSigned", (o,n) => { (o as CloudAppSecurityProfile).IsSigned = n.GetBoolValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as CloudAppSecurityProfile).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"manifest", (o,n) => { (o as CloudAppSecurityProfile).Manifest = n.GetStringValue(); } },
-                {"name", (o,n) => { (o as CloudAppSecurityProfile).Name = n.GetStringValue(); } },
-                {"permissionsRequired", (o,n) => { (o as CloudAppSecurityProfile).PermissionsRequired = n.GetEnumValue<ApplicationPermissionsRequired>(); } },
-                {"platform", (o,n) => { (o as CloudAppSecurityProfile).Platform = n.GetStringValue(); } },
-                {"policyName", (o,n) => { (o as CloudAppSecurityProfile).PolicyName = n.GetStringValue(); } },
-                {"publisher", (o,n) => { (o as CloudAppSecurityProfile).Publisher = n.GetStringValue(); } },
-                {"riskScore", (o,n) => { (o as CloudAppSecurityProfile).RiskScore = n.GetStringValue(); } },
-                {"tags", (o,n) => { (o as CloudAppSecurityProfile).Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"type", (o,n) => { (o as CloudAppSecurityProfile).Type = n.GetStringValue(); } },
-                {"vendorInformation", (o,n) => { (o as CloudAppSecurityProfile).VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"azureSubscriptionId", n => { AzureSubscriptionId = n.GetStringValue(); } },
+                {"azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"deploymentPackageUrl", n => { DeploymentPackageUrl = n.GetStringValue(); } },
+                {"destinationServiceName", n => { DestinationServiceName = n.GetStringValue(); } },
+                {"isSigned", n => { IsSigned = n.GetBoolValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"manifest", n => { Manifest = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"permissionsRequired", n => { PermissionsRequired = n.GetEnumValue<ApplicationPermissionsRequired>(); } },
+                {"platform", n => { Platform = n.GetStringValue(); } },
+                {"policyName", n => { PolicyName = n.GetStringValue(); } },
+                {"publisher", n => { Publisher = n.GetStringValue(); } },
+                {"riskScore", n => { RiskScore = n.GetStringValue(); } },
+                {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
+                {"vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

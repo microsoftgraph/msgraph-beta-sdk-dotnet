@@ -24,9 +24,9 @@ namespace Microsoft.Graph.Beta.Workbooks.Item.DeltaWithToken {
         public DeltaWithTokenRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string token = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/workbooks/{driveItem_id}/microsoft.graph.delta(token='{token}')";
+            UrlTemplate = "{+baseurl}/workbooks/{driveItem%2Did}/microsoft.graph.delta(token='{token}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("token", token);
+            urlTplParams.Add("", token);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Workbooks.Item.DeltaWithToken {
         public DeltaWithTokenRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/workbooks/{driveItem_id}/microsoft.graph.delta(token='{token}')";
+            UrlTemplate = "{+baseurl}/workbooks/{driveItem%2Did}/microsoft.graph.delta(token='{token}')";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

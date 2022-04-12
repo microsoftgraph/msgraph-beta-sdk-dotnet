@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"excludeApplications", (o,n) => { (o as ConditionalAccessApplications).ExcludeApplications = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"includeApplications", (o,n) => { (o as ConditionalAccessApplications).IncludeApplications = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"includeAuthenticationContextClassReferences", (o,n) => { (o as ConditionalAccessApplications).IncludeAuthenticationContextClassReferences = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"includeUserActions", (o,n) => { (o as ConditionalAccessApplications).IncludeUserActions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"excludeApplications", n => { ExcludeApplications = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"includeApplications", n => { IncludeApplications = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"includeAuthenticationContextClassReferences", n => { IncludeAuthenticationContextClassReferences = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"includeUserActions", n => { IncludeUserActions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

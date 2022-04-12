@@ -53,26 +53,26 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"address", (o,n) => { (o as Employee).Address = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
-                {"birthDate", (o,n) => { (o as Employee).BirthDate = n.GetDateValue(); } },
-                {"displayName", (o,n) => { (o as Employee).DisplayName = n.GetStringValue(); } },
-                {"email", (o,n) => { (o as Employee).Email = n.GetStringValue(); } },
-                {"employmentDate", (o,n) => { (o as Employee).EmploymentDate = n.GetDateValue(); } },
-                {"givenName", (o,n) => { (o as Employee).GivenName = n.GetStringValue(); } },
-                {"jobTitle", (o,n) => { (o as Employee).JobTitle = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as Employee).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"middleName", (o,n) => { (o as Employee).MiddleName = n.GetStringValue(); } },
-                {"mobilePhone", (o,n) => { (o as Employee).MobilePhone = n.GetStringValue(); } },
-                {"number", (o,n) => { (o as Employee).Number = n.GetStringValue(); } },
-                {"personalEmail", (o,n) => { (o as Employee).PersonalEmail = n.GetStringValue(); } },
-                {"phoneNumber", (o,n) => { (o as Employee).PhoneNumber = n.GetStringValue(); } },
-                {"picture", (o,n) => { (o as Employee).Picture = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Picture>(Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue).ToList(); } },
-                {"statisticsGroupCode", (o,n) => { (o as Employee).StatisticsGroupCode = n.GetStringValue(); } },
-                {"status", (o,n) => { (o as Employee).Status = n.GetStringValue(); } },
-                {"surname", (o,n) => { (o as Employee).Surname = n.GetStringValue(); } },
-                {"terminationDate", (o,n) => { (o as Employee).TerminationDate = n.GetDateValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"address", n => { Address = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
+                {"birthDate", n => { BirthDate = n.GetDateValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"email", n => { Email = n.GetStringValue(); } },
+                {"employmentDate", n => { EmploymentDate = n.GetDateValue(); } },
+                {"givenName", n => { GivenName = n.GetStringValue(); } },
+                {"jobTitle", n => { JobTitle = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"middleName", n => { MiddleName = n.GetStringValue(); } },
+                {"mobilePhone", n => { MobilePhone = n.GetStringValue(); } },
+                {"number", n => { Number = n.GetStringValue(); } },
+                {"personalEmail", n => { PersonalEmail = n.GetStringValue(); } },
+                {"phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
+                {"picture", n => { Picture = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Picture>(Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue).ToList(); } },
+                {"statisticsGroupCode", n => { StatisticsGroupCode = n.GetStringValue(); } },
+                {"status", n => { Status = n.GetStringValue(); } },
+                {"surname", n => { Surname = n.GetStringValue(); } },
+                {"terminationDate", n => { TerminationDate = n.GetDateValue(); } },
             };
         }
         /// <summary>

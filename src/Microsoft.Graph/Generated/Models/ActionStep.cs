@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"actionUrl", (o,n) => { (o as ActionStep).ActionUrl = n.GetObjectValue<Microsoft.Graph.Beta.Models.ActionUrl>(Microsoft.Graph.Beta.Models.ActionUrl.CreateFromDiscriminatorValue); } },
-                {"stepNumber", (o,n) => { (o as ActionStep).StepNumber = n.GetLongValue(); } },
-                {"text", (o,n) => { (o as ActionStep).Text = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"actionUrl", n => { ActionUrl = n.GetObjectValue<Microsoft.Graph.Beta.Models.ActionUrl>(Microsoft.Graph.Beta.Models.ActionUrl.CreateFromDiscriminatorValue); } },
+                {"stepNumber", n => { StepNumber = n.GetLongValue(); } },
+                {"text", n => { Text = n.GetStringValue(); } },
             };
         }
         /// <summary>

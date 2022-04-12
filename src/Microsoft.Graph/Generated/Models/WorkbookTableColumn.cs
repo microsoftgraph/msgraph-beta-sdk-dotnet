@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"filter", (o,n) => { (o as WorkbookTableColumn).Filter = n.GetObjectValue<WorkbookFilter>(WorkbookFilter.CreateFromDiscriminatorValue); } },
-                {"index", (o,n) => { (o as WorkbookTableColumn).Index = n.GetIntValue(); } },
-                {"name", (o,n) => { (o as WorkbookTableColumn).Name = n.GetStringValue(); } },
-                {"values", (o,n) => { (o as WorkbookTableColumn).Values = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"filter", n => { Filter = n.GetObjectValue<WorkbookFilter>(WorkbookFilter.CreateFromDiscriminatorValue); } },
+                {"index", n => { Index = n.GetIntValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"values", n => { Values = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

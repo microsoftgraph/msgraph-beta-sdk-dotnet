@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"displayName", (o,n) => { (o as LanguageProficiency).DisplayName = n.GetStringValue(); } },
-                {"proficiency", (o,n) => { (o as LanguageProficiency).Proficiency = n.GetEnumValue<LanguageProficiencyLevel>(); } },
-                {"reading", (o,n) => { (o as LanguageProficiency).Reading = n.GetEnumValue<LanguageProficiencyLevel>(); } },
-                {"spoken", (o,n) => { (o as LanguageProficiency).Spoken = n.GetEnumValue<LanguageProficiencyLevel>(); } },
-                {"tag", (o,n) => { (o as LanguageProficiency).Tag = n.GetStringValue(); } },
-                {"thumbnailUrl", (o,n) => { (o as LanguageProficiency).ThumbnailUrl = n.GetStringValue(); } },
-                {"written", (o,n) => { (o as LanguageProficiency).Written = n.GetEnumValue<LanguageProficiencyLevel>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"proficiency", n => { Proficiency = n.GetEnumValue<LanguageProficiencyLevel>(); } },
+                {"reading", n => { Reading = n.GetEnumValue<LanguageProficiencyLevel>(); } },
+                {"spoken", n => { Spoken = n.GetEnumValue<LanguageProficiencyLevel>(); } },
+                {"tag", n => { Tag = n.GetStringValue(); } },
+                {"thumbnailUrl", n => { ThumbnailUrl = n.GetStringValue(); } },
+                {"written", n => { Written = n.GetEnumValue<LanguageProficiencyLevel>(); } },
             };
         }
         /// <summary>

@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"allowMultipleValues", (o,n) => { (o as TermColumn).AllowMultipleValues = n.GetBoolValue(); } },
-                {"parentTerm", (o,n) => { (o as TermColumn).ParentTerm = n.GetObjectValue<Term>(Term.CreateFromDiscriminatorValue); } },
-                {"showFullyQualifiedName", (o,n) => { (o as TermColumn).ShowFullyQualifiedName = n.GetBoolValue(); } },
-                {"termSet", (o,n) => { (o as TermColumn).TermSet = n.GetObjectValue<Microsoft.Graph.Beta.Models.TermStore.Set>(Microsoft.Graph.Beta.Models.TermStore.Set.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"allowMultipleValues", n => { AllowMultipleValues = n.GetBoolValue(); } },
+                {"parentTerm", n => { ParentTerm = n.GetObjectValue<Term>(Term.CreateFromDiscriminatorValue); } },
+                {"showFullyQualifiedName", n => { ShowFullyQualifiedName = n.GetBoolValue(); } },
+                {"termSet", n => { TermSet = n.GetObjectValue<Microsoft.Graph.Beta.Models.TermStore.Set>(Microsoft.Graph.Beta.Models.TermStore.Set.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

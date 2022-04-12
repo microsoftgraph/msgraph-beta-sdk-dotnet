@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appDisplayName", (o,n) => { (o as AppConsentRequest).AppDisplayName = n.GetStringValue(); } },
-                {"appId", (o,n) => { (o as AppConsentRequest).AppId = n.GetStringValue(); } },
-                {"consentType", (o,n) => { (o as AppConsentRequest).ConsentType = n.GetStringValue(); } },
-                {"pendingScopes", (o,n) => { (o as AppConsentRequest).PendingScopes = n.GetCollectionOfObjectValues<AppConsentRequestScope>(AppConsentRequestScope.CreateFromDiscriminatorValue).ToList(); } },
-                {"userConsentRequests", (o,n) => { (o as AppConsentRequest).UserConsentRequests = n.GetCollectionOfObjectValues<UserConsentRequest>(UserConsentRequest.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
+                {"appId", n => { AppId = n.GetStringValue(); } },
+                {"consentType", n => { ConsentType = n.GetStringValue(); } },
+                {"pendingScopes", n => { PendingScopes = n.GetCollectionOfObjectValues<AppConsentRequestScope>(AppConsentRequestScope.CreateFromDiscriminatorValue).ToList(); } },
+                {"userConsentRequests", n => { UserConsentRequests = n.GetCollectionOfObjectValues<UserConsentRequest>(UserConsentRequest.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

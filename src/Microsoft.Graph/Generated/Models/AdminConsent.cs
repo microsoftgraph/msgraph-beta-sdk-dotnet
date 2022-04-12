@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"shareAPNSData", (o,n) => { (o as AdminConsent).ShareAPNSData = n.GetEnumValue<AdminConsentState>(); } },
-                {"shareUserExperienceAnalyticsData", (o,n) => { (o as AdminConsent).ShareUserExperienceAnalyticsData = n.GetEnumValue<AdminConsentState>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"shareAPNSData", n => { ShareAPNSData = n.GetEnumValue<AdminConsentState>(); } },
+                {"shareUserExperienceAnalyticsData", n => { ShareUserExperienceAnalyticsData = n.GetEnumValue<AdminConsentState>(); } },
             };
         }
         /// <summary>

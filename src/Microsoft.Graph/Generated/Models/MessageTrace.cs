@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"destinationIPAddress", (o,n) => { (o as MessageTrace).DestinationIPAddress = n.GetStringValue(); } },
-                {"messageId", (o,n) => { (o as MessageTrace).MessageId = n.GetStringValue(); } },
-                {"receivedDateTime", (o,n) => { (o as MessageTrace).ReceivedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"recipients", (o,n) => { (o as MessageTrace).Recipients = n.GetCollectionOfObjectValues<MessageRecipient>(MessageRecipient.CreateFromDiscriminatorValue).ToList(); } },
-                {"senderEmail", (o,n) => { (o as MessageTrace).SenderEmail = n.GetStringValue(); } },
-                {"size", (o,n) => { (o as MessageTrace).Size = n.GetIntValue(); } },
-                {"sourceIPAddress", (o,n) => { (o as MessageTrace).SourceIPAddress = n.GetStringValue(); } },
-                {"subject", (o,n) => { (o as MessageTrace).Subject = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"destinationIPAddress", n => { DestinationIPAddress = n.GetStringValue(); } },
+                {"messageId", n => { MessageId = n.GetStringValue(); } },
+                {"receivedDateTime", n => { ReceivedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"recipients", n => { Recipients = n.GetCollectionOfObjectValues<MessageRecipient>(MessageRecipient.CreateFromDiscriminatorValue).ToList(); } },
+                {"senderEmail", n => { SenderEmail = n.GetStringValue(); } },
+                {"size", n => { Size = n.GetIntValue(); } },
+                {"sourceIPAddress", n => { SourceIPAddress = n.GetStringValue(); } },
+                {"subject", n => { Subject = n.GetStringValue(); } },
             };
         }
         /// <summary>

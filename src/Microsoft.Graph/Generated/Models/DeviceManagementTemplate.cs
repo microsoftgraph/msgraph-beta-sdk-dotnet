@@ -40,20 +40,20 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"categories", (o,n) => { (o as DeviceManagementTemplate).Categories = n.GetCollectionOfObjectValues<DeviceManagementTemplateSettingCategory>(DeviceManagementTemplateSettingCategory.CreateFromDiscriminatorValue).ToList(); } },
-                {"description", (o,n) => { (o as DeviceManagementTemplate).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as DeviceManagementTemplate).DisplayName = n.GetStringValue(); } },
-                {"intentCount", (o,n) => { (o as DeviceManagementTemplate).IntentCount = n.GetIntValue(); } },
-                {"isDeprecated", (o,n) => { (o as DeviceManagementTemplate).IsDeprecated = n.GetBoolValue(); } },
-                {"migratableTo", (o,n) => { (o as DeviceManagementTemplate).MigratableTo = n.GetCollectionOfObjectValues<DeviceManagementTemplate>(DeviceManagementTemplate.CreateFromDiscriminatorValue).ToList(); } },
-                {"platformType", (o,n) => { (o as DeviceManagementTemplate).PlatformType = n.GetEnumValue<PolicyPlatformType>(); } },
-                {"publishedDateTime", (o,n) => { (o as DeviceManagementTemplate).PublishedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"settings", (o,n) => { (o as DeviceManagementTemplate).Settings = n.GetCollectionOfObjectValues<DeviceManagementSettingInstance>(DeviceManagementSettingInstance.CreateFromDiscriminatorValue).ToList(); } },
-                {"templateSubtype", (o,n) => { (o as DeviceManagementTemplate).TemplateSubtype = n.GetEnumValue<DeviceManagementTemplateSubtype>(); } },
-                {"templateType", (o,n) => { (o as DeviceManagementTemplate).TemplateType = n.GetEnumValue<DeviceManagementTemplateType>(); } },
-                {"versionInfo", (o,n) => { (o as DeviceManagementTemplate).VersionInfo = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"categories", n => { Categories = n.GetCollectionOfObjectValues<DeviceManagementTemplateSettingCategory>(DeviceManagementTemplateSettingCategory.CreateFromDiscriminatorValue).ToList(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"intentCount", n => { IntentCount = n.GetIntValue(); } },
+                {"isDeprecated", n => { IsDeprecated = n.GetBoolValue(); } },
+                {"migratableTo", n => { MigratableTo = n.GetCollectionOfObjectValues<DeviceManagementTemplate>(DeviceManagementTemplate.CreateFromDiscriminatorValue).ToList(); } },
+                {"platformType", n => { PlatformType = n.GetEnumValue<PolicyPlatformType>(); } },
+                {"publishedDateTime", n => { PublishedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"settings", n => { Settings = n.GetCollectionOfObjectValues<DeviceManagementSettingInstance>(DeviceManagementSettingInstance.CreateFromDiscriminatorValue).ToList(); } },
+                {"templateSubtype", n => { TemplateSubtype = n.GetEnumValue<DeviceManagementTemplateSubtype>(); } },
+                {"templateType", n => { TemplateType = n.GetEnumValue<DeviceManagementTemplateType>(); } },
+                {"versionInfo", n => { VersionInfo = n.GetStringValue(); } },
             };
         }
         /// <summary>

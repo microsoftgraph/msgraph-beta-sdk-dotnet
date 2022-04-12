@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"isContentCameraInverted", (o,n) => { (o as TeamworkContentCameraConfiguration).IsContentCameraInverted = n.GetBoolValue(); } },
-                {"isContentCameraOptional", (o,n) => { (o as TeamworkContentCameraConfiguration).IsContentCameraOptional = n.GetBoolValue(); } },
-                {"isContentEnhancementEnabled", (o,n) => { (o as TeamworkContentCameraConfiguration).IsContentEnhancementEnabled = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"isContentCameraInverted", n => { IsContentCameraInverted = n.GetBoolValue(); } },
+                {"isContentCameraOptional", n => { IsContentCameraOptional = n.GetBoolValue(); } },
+                {"isContentEnhancementEnabled", n => { IsContentEnhancementEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

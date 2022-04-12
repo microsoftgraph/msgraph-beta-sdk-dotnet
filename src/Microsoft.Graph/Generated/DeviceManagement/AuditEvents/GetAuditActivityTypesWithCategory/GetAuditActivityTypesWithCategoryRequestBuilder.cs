@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AuditEvents.GetAuditActivityType
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/auditEvents/microsoft.graph.getAuditActivityTypes(category='{category}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("category", category);
+            urlTplParams.Add("", category);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

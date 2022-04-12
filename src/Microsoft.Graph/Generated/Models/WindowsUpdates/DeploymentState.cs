@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"reasons", (o,n) => { (o as DeploymentState).Reasons = n.GetCollectionOfObjectValues<DeploymentStateReason>(DeploymentStateReason.CreateFromDiscriminatorValue).ToList(); } },
-                {"requestedValue", (o,n) => { (o as DeploymentState).RequestedValue = n.GetEnumValue<RequestedDeploymentStateValue>(); } },
-                {"value", (o,n) => { (o as DeploymentState).Value = n.GetEnumValue<DeploymentStateValue>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"reasons", n => { Reasons = n.GetCollectionOfObjectValues<DeploymentStateReason>(DeploymentStateReason.CreateFromDiscriminatorValue).ToList(); } },
+                {"requestedValue", n => { RequestedValue = n.GetEnumValue<RequestedDeploymentStateValue>(); } },
+                {"value", n => { Value = n.GetEnumValue<DeploymentStateValue>(); } },
             };
         }
         /// <summary>

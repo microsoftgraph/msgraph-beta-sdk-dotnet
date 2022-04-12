@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.ListItem.Activities.Item.D
         public DriveItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/drives/{drive_id}/items/{driveItem_id}/listItem/activities/{itemActivityOLD_id}/driveItem{?select,expand}";
+            UrlTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/listItem/activities/{itemActivityOLD%2Did}/driveItem{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.ListItem.Activities.Item.D
         public DriveItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/drives/{drive_id}/items/{driveItem_id}/listItem/activities/{itemActivityOLD_id}/driveItem{?select,expand}";
+            UrlTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/listItem/activities/{itemActivityOLD%2Did}/driveItem{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -89,8 +89,10 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.ListItem.Activities.Item.D
         /// <summary>Get driveItem from drives</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
     }

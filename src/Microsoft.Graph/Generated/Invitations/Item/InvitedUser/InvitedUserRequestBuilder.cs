@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Invitations.Item.InvitedUser {
         public InvitedUserRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/invitations/{invitation_id}/invitedUser{?select,expand}";
+            UrlTemplate = "{+baseurl}/invitations/{invitation%2Did}/invitedUser{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Invitations.Item.InvitedUser {
         public InvitedUserRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/invitations/{invitation_id}/invitedUser{?select,expand}";
+            UrlTemplate = "{+baseurl}/invitations/{invitation%2Did}/invitedUser{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -84,8 +84,10 @@ namespace Microsoft.Graph.Beta.Invitations.Item.InvitedUser {
         /// <summary>The user created as part of the invitation creation. Read-Only</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
     }

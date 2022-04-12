@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"deviceCount", (o,n) => { (o as DetectedApp).DeviceCount = n.GetIntValue(); } },
-                {"displayName", (o,n) => { (o as DetectedApp).DisplayName = n.GetStringValue(); } },
-                {"managedDevices", (o,n) => { (o as DetectedApp).ManagedDevices = n.GetCollectionOfObjectValues<ManagedDevice>(ManagedDevice.CreateFromDiscriminatorValue).ToList(); } },
-                {"sizeInByte", (o,n) => { (o as DetectedApp).SizeInByte = n.GetLongValue(); } },
-                {"version", (o,n) => { (o as DetectedApp).Version = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"deviceCount", n => { DeviceCount = n.GetIntValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"managedDevices", n => { ManagedDevices = n.GetCollectionOfObjectValues<ManagedDevice>(ManagedDevice.CreateFromDiscriminatorValue).ToList(); } },
+                {"sizeInByte", n => { SizeInByte = n.GetLongValue(); } },
+                {"version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

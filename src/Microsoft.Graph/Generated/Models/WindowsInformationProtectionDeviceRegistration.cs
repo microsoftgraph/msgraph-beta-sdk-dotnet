@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"deviceMacAddress", (o,n) => { (o as WindowsInformationProtectionDeviceRegistration).DeviceMacAddress = n.GetStringValue(); } },
-                {"deviceName", (o,n) => { (o as WindowsInformationProtectionDeviceRegistration).DeviceName = n.GetStringValue(); } },
-                {"deviceRegistrationId", (o,n) => { (o as WindowsInformationProtectionDeviceRegistration).DeviceRegistrationId = n.GetStringValue(); } },
-                {"deviceType", (o,n) => { (o as WindowsInformationProtectionDeviceRegistration).DeviceType = n.GetStringValue(); } },
-                {"lastCheckInDateTime", (o,n) => { (o as WindowsInformationProtectionDeviceRegistration).LastCheckInDateTime = n.GetDateTimeOffsetValue(); } },
-                {"userId", (o,n) => { (o as WindowsInformationProtectionDeviceRegistration).UserId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"deviceMacAddress", n => { DeviceMacAddress = n.GetStringValue(); } },
+                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
+                {"deviceRegistrationId", n => { DeviceRegistrationId = n.GetStringValue(); } },
+                {"deviceType", n => { DeviceType = n.GetStringValue(); } },
+                {"lastCheckInDateTime", n => { LastCheckInDateTime = n.GetDateTimeOffsetValue(); } },
+                {"userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

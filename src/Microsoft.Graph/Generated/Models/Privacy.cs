@@ -26,9 +26,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"subjectRightsRequests", (o,n) => { (o as Privacy).SubjectRightsRequests = n.GetCollectionOfObjectValues<SubjectRightsRequest>(SubjectRightsRequest.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"subjectRightsRequests", n => { SubjectRightsRequests = n.GetCollectionOfObjectValues<SubjectRightsRequest>(SubjectRightsRequest.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

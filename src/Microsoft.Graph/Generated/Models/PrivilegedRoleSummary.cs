@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"elevatedCount", (o,n) => { (o as PrivilegedRoleSummary).ElevatedCount = n.GetIntValue(); } },
-                {"managedCount", (o,n) => { (o as PrivilegedRoleSummary).ManagedCount = n.GetIntValue(); } },
-                {"mfaEnabled", (o,n) => { (o as PrivilegedRoleSummary).MfaEnabled = n.GetBoolValue(); } },
-                {"status", (o,n) => { (o as PrivilegedRoleSummary).Status = n.GetEnumValue<RoleSummaryStatus>(); } },
-                {"usersCount", (o,n) => { (o as PrivilegedRoleSummary).UsersCount = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"elevatedCount", n => { ElevatedCount = n.GetIntValue(); } },
+                {"managedCount", n => { ManagedCount = n.GetIntValue(); } },
+                {"mfaEnabled", n => { MfaEnabled = n.GetBoolValue(); } },
+                {"status", n => { Status = n.GetEnumValue<RoleSummaryStatus>(); } },
+                {"usersCount", n => { UsersCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

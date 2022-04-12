@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activeSignInUri", (o,n) => { (o as InternalDomainFederation).ActiveSignInUri = n.GetStringValue(); } },
-                {"federatedIdpMfaBehavior", (o,n) => { (o as InternalDomainFederation).FederatedIdpMfaBehavior = n.GetEnumValue<FederatedIdpMfaBehavior>(); } },
-                {"isSignedAuthenticationRequestRequired", (o,n) => { (o as InternalDomainFederation).IsSignedAuthenticationRequestRequired = n.GetBoolValue(); } },
-                {"nextSigningCertificate", (o,n) => { (o as InternalDomainFederation).NextSigningCertificate = n.GetStringValue(); } },
-                {"promptLoginBehavior", (o,n) => { (o as InternalDomainFederation).PromptLoginBehavior = n.GetEnumValue<PromptLoginBehavior>(); } },
-                {"signingCertificateUpdateStatus", (o,n) => { (o as InternalDomainFederation).SigningCertificateUpdateStatus = n.GetObjectValue<Microsoft.Graph.Beta.Models.SigningCertificateUpdateStatus>(Microsoft.Graph.Beta.Models.SigningCertificateUpdateStatus.CreateFromDiscriminatorValue); } },
-                {"signOutUri", (o,n) => { (o as InternalDomainFederation).SignOutUri = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activeSignInUri", n => { ActiveSignInUri = n.GetStringValue(); } },
+                {"federatedIdpMfaBehavior", n => { FederatedIdpMfaBehavior = n.GetEnumValue<FederatedIdpMfaBehavior>(); } },
+                {"isSignedAuthenticationRequestRequired", n => { IsSignedAuthenticationRequestRequired = n.GetBoolValue(); } },
+                {"nextSigningCertificate", n => { NextSigningCertificate = n.GetStringValue(); } },
+                {"promptLoginBehavior", n => { PromptLoginBehavior = n.GetEnumValue<PromptLoginBehavior>(); } },
+                {"signingCertificateUpdateStatus", n => { SigningCertificateUpdateStatus = n.GetObjectValue<Microsoft.Graph.Beta.Models.SigningCertificateUpdateStatus>(Microsoft.Graph.Beta.Models.SigningCertificateUpdateStatus.CreateFromDiscriminatorValue); } },
+                {"signOutUri", n => { SignOutUri = n.GetStringValue(); } },
             };
         }
         /// <summary>

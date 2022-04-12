@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"completedDateTime", (o,n) => { (o as DataPolicyOperation).CompletedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"progress", (o,n) => { (o as DataPolicyOperation).Progress = n.GetDoubleValue(); } },
-                {"status", (o,n) => { (o as DataPolicyOperation).Status = n.GetEnumValue<DataPolicyOperationStatus>(); } },
-                {"storageLocation", (o,n) => { (o as DataPolicyOperation).StorageLocation = n.GetStringValue(); } },
-                {"submittedDateTime", (o,n) => { (o as DataPolicyOperation).SubmittedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"userId", (o,n) => { (o as DataPolicyOperation).UserId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"progress", n => { Progress = n.GetDoubleValue(); } },
+                {"status", n => { Status = n.GetEnumValue<DataPolicyOperationStatus>(); } },
+                {"storageLocation", n => { StorageLocation = n.GetStringValue(); } },
+                {"submittedDateTime", n => { SubmittedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

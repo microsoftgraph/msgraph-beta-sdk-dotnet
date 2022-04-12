@@ -38,14 +38,14 @@ namespace Microsoft.Graph.Beta.Teams.Item.Clone {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"classification", (o,n) => { (o as CloneRequestBody).Classification = n.GetStringValue(); } },
-                {"description", (o,n) => { (o as CloneRequestBody).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as CloneRequestBody).DisplayName = n.GetStringValue(); } },
-                {"mailNickname", (o,n) => { (o as CloneRequestBody).MailNickname = n.GetStringValue(); } },
-                {"partsToClone", (o,n) => { (o as CloneRequestBody).PartsToClone = n.GetEnumValue<ClonableTeamParts>(); } },
-                {"visibility", (o,n) => { (o as CloneRequestBody).Visibility = n.GetEnumValue<TeamVisibilityType>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"classification", n => { Classification = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"mailNickname", n => { MailNickname = n.GetStringValue(); } },
+                {"partsToClone", n => { PartsToClone = n.GetEnumValue<ClonableTeamParts>(); } },
+                {"visibility", n => { Visibility = n.GetEnumValue<TeamVisibilityType>(); } },
             };
         }
         /// <summary>

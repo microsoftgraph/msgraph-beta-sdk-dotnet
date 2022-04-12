@@ -37,14 +37,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"deviceId", (o,n) => { (o as DeviceConfigurationTargetedUserAndDevice).DeviceId = n.GetStringValue(); } },
-                {"deviceName", (o,n) => { (o as DeviceConfigurationTargetedUserAndDevice).DeviceName = n.GetStringValue(); } },
-                {"lastCheckinDateTime", (o,n) => { (o as DeviceConfigurationTargetedUserAndDevice).LastCheckinDateTime = n.GetDateTimeOffsetValue(); } },
-                {"userDisplayName", (o,n) => { (o as DeviceConfigurationTargetedUserAndDevice).UserDisplayName = n.GetStringValue(); } },
-                {"userId", (o,n) => { (o as DeviceConfigurationTargetedUserAndDevice).UserId = n.GetStringValue(); } },
-                {"userPrincipalName", (o,n) => { (o as DeviceConfigurationTargetedUserAndDevice).UserPrincipalName = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
+                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
+                {"lastCheckinDateTime", n => { LastCheckinDateTime = n.GetDateTimeOffsetValue(); } },
+                {"userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
+                {"userId", n => { UserId = n.GetStringValue(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

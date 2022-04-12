@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdDateTime", (o,n) => { (o as GroupPolicyPresentationValue).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"definitionValue", (o,n) => { (o as GroupPolicyPresentationValue).DefinitionValue = n.GetObjectValue<GroupPolicyDefinitionValue>(GroupPolicyDefinitionValue.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", (o,n) => { (o as GroupPolicyPresentationValue).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"presentation", (o,n) => { (o as GroupPolicyPresentationValue).Presentation = n.GetObjectValue<GroupPolicyPresentation>(GroupPolicyPresentation.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"definitionValue", n => { DefinitionValue = n.GetObjectValue<GroupPolicyDefinitionValue>(GroupPolicyDefinitionValue.CreateFromDiscriminatorValue); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"presentation", n => { Presentation = n.GetObjectValue<GroupPolicyPresentation>(GroupPolicyPresentation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

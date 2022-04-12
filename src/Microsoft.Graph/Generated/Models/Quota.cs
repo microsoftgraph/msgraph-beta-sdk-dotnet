@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"deleted", (o,n) => { (o as Quota).Deleted = n.GetLongValue(); } },
-                {"remaining", (o,n) => { (o as Quota).Remaining = n.GetLongValue(); } },
-                {"state", (o,n) => { (o as Quota).State = n.GetStringValue(); } },
-                {"storagePlanInformation", (o,n) => { (o as Quota).StoragePlanInformation = n.GetObjectValue<Microsoft.Graph.Beta.Models.StoragePlanInformation>(Microsoft.Graph.Beta.Models.StoragePlanInformation.CreateFromDiscriminatorValue); } },
-                {"total", (o,n) => { (o as Quota).Total = n.GetLongValue(); } },
-                {"used", (o,n) => { (o as Quota).Used = n.GetLongValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"deleted", n => { Deleted = n.GetLongValue(); } },
+                {"remaining", n => { Remaining = n.GetLongValue(); } },
+                {"state", n => { State = n.GetStringValue(); } },
+                {"storagePlanInformation", n => { StoragePlanInformation = n.GetObjectValue<Microsoft.Graph.Beta.Models.StoragePlanInformation>(Microsoft.Graph.Beta.Models.StoragePlanInformation.CreateFromDiscriminatorValue); } },
+                {"total", n => { Total = n.GetLongValue(); } },
+                {"used", n => { Used = n.GetLongValue(); } },
             };
         }
         /// <summary>

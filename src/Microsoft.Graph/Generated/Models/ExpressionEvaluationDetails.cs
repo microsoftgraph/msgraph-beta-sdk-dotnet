@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"expression", (o,n) => { (o as ExpressionEvaluationDetails).Expression = n.GetStringValue(); } },
-                {"expressionEvaluationDetails", (o,n) => { (o as ExpressionEvaluationDetails).ExpressionEvaluationDetails_prop = n.GetCollectionOfObjectValues<ExpressionEvaluationDetails>(ExpressionEvaluationDetails.CreateFromDiscriminatorValue).ToList(); } },
-                {"expressionResult", (o,n) => { (o as ExpressionEvaluationDetails).ExpressionResult = n.GetBoolValue(); } },
-                {"propertyToEvaluate", (o,n) => { (o as ExpressionEvaluationDetails).PropertyToEvaluate = n.GetObjectValue<Microsoft.Graph.Beta.Models.PropertyToEvaluate>(Microsoft.Graph.Beta.Models.PropertyToEvaluate.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"expression", n => { Expression = n.GetStringValue(); } },
+                {"expressionEvaluationDetails", n => { ExpressionEvaluationDetails_prop = n.GetCollectionOfObjectValues<ExpressionEvaluationDetails>(ExpressionEvaluationDetails.CreateFromDiscriminatorValue).ToList(); } },
+                {"expressionResult", n => { ExpressionResult = n.GetBoolValue(); } },
+                {"propertyToEvaluate", n => { PropertyToEvaluate = n.GetObjectValue<Microsoft.Graph.Beta.Models.PropertyToEvaluate>(Microsoft.Graph.Beta.Models.PropertyToEvaluate.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"appLogDecryptionAlgorithm", (o,n) => { (o as AppLogCollectionDownloadDetails).AppLogDecryptionAlgorithm = n.GetEnumValue<AppLogDecryptionAlgorithm>(); } },
-                {"decryptionKey", (o,n) => { (o as AppLogCollectionDownloadDetails).DecryptionKey = n.GetStringValue(); } },
-                {"downloadUrl", (o,n) => { (o as AppLogCollectionDownloadDetails).DownloadUrl = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"appLogDecryptionAlgorithm", n => { AppLogDecryptionAlgorithm = n.GetEnumValue<AppLogDecryptionAlgorithm>(); } },
+                {"decryptionKey", n => { DecryptionKey = n.GetStringValue(); } },
+                {"downloadUrl", n => { DownloadUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"action", (o,n) => { (o as CaseOperation).Action = n.GetEnumValue<CaseAction>(); } },
-                {"completedDateTime", (o,n) => { (o as CaseOperation).CompletedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"createdBy", (o,n) => { (o as CaseOperation).CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", (o,n) => { (o as CaseOperation).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"percentProgress", (o,n) => { (o as CaseOperation).PercentProgress = n.GetIntValue(); } },
-                {"resultInfo", (o,n) => { (o as CaseOperation).ResultInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ResultInfo>(Microsoft.Graph.Beta.Models.ResultInfo.CreateFromDiscriminatorValue); } },
-                {"status", (o,n) => { (o as CaseOperation).Status = n.GetEnumValue<CaseOperationStatus>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"action", n => { Action = n.GetEnumValue<CaseAction>(); } },
+                {"completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"percentProgress", n => { PercentProgress = n.GetIntValue(); } },
+                {"resultInfo", n => { ResultInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ResultInfo>(Microsoft.Graph.Beta.Models.ResultInfo.CreateFromDiscriminatorValue); } },
+                {"status", n => { Status = n.GetEnumValue<CaseOperationStatus>(); } },
             };
         }
         /// <summary>

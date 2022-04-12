@@ -22,11 +22,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"error", (o,n) => { (o as WorkbookOperation).Error = n.GetObjectValue<WorkbookOperationError>(WorkbookOperationError.CreateFromDiscriminatorValue); } },
-                {"resourceLocation", (o,n) => { (o as WorkbookOperation).ResourceLocation = n.GetStringValue(); } },
-                {"status", (o,n) => { (o as WorkbookOperation).Status = n.GetEnumValue<WorkbookOperationStatus>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"error", n => { Error = n.GetObjectValue<WorkbookOperationError>(WorkbookOperationError.CreateFromDiscriminatorValue); } },
+                {"resourceLocation", n => { ResourceLocation = n.GetStringValue(); } },
+                {"status", n => { Status = n.GetEnumValue<WorkbookOperationStatus>(); } },
             };
         }
         /// <summary>

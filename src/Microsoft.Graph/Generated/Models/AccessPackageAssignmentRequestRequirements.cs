@@ -44,18 +44,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"existingAnswers", (o,n) => { (o as AccessPackageAssignmentRequestRequirements).ExistingAnswers = n.GetCollectionOfObjectValues<AccessPackageAnswer>(AccessPackageAnswer.CreateFromDiscriminatorValue).ToList(); } },
-                {"isApprovalRequired", (o,n) => { (o as AccessPackageAssignmentRequestRequirements).IsApprovalRequired = n.GetBoolValue(); } },
-                {"isApprovalRequiredForExtension", (o,n) => { (o as AccessPackageAssignmentRequestRequirements).IsApprovalRequiredForExtension = n.GetBoolValue(); } },
-                {"isCustomAssignmentScheduleAllowed", (o,n) => { (o as AccessPackageAssignmentRequestRequirements).IsCustomAssignmentScheduleAllowed = n.GetBoolValue(); } },
-                {"isRequestorJustificationRequired", (o,n) => { (o as AccessPackageAssignmentRequestRequirements).IsRequestorJustificationRequired = n.GetBoolValue(); } },
-                {"policyDescription", (o,n) => { (o as AccessPackageAssignmentRequestRequirements).PolicyDescription = n.GetStringValue(); } },
-                {"policyDisplayName", (o,n) => { (o as AccessPackageAssignmentRequestRequirements).PolicyDisplayName = n.GetStringValue(); } },
-                {"policyId", (o,n) => { (o as AccessPackageAssignmentRequestRequirements).PolicyId = n.GetStringValue(); } },
-                {"questions", (o,n) => { (o as AccessPackageAssignmentRequestRequirements).Questions = n.GetCollectionOfObjectValues<AccessPackageQuestion>(AccessPackageQuestion.CreateFromDiscriminatorValue).ToList(); } },
-                {"schedule", (o,n) => { (o as AccessPackageAssignmentRequestRequirements).Schedule = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"existingAnswers", n => { ExistingAnswers = n.GetCollectionOfObjectValues<AccessPackageAnswer>(AccessPackageAnswer.CreateFromDiscriminatorValue).ToList(); } },
+                {"isApprovalRequired", n => { IsApprovalRequired = n.GetBoolValue(); } },
+                {"isApprovalRequiredForExtension", n => { IsApprovalRequiredForExtension = n.GetBoolValue(); } },
+                {"isCustomAssignmentScheduleAllowed", n => { IsCustomAssignmentScheduleAllowed = n.GetBoolValue(); } },
+                {"isRequestorJustificationRequired", n => { IsRequestorJustificationRequired = n.GetBoolValue(); } },
+                {"policyDescription", n => { PolicyDescription = n.GetStringValue(); } },
+                {"policyDisplayName", n => { PolicyDisplayName = n.GetStringValue(); } },
+                {"policyId", n => { PolicyId = n.GetStringValue(); } },
+                {"questions", n => { Questions = n.GetCollectionOfObjectValues<AccessPackageQuestion>(AccessPackageQuestion.CreateFromDiscriminatorValue).ToList(); } },
+                {"schedule", n => { Schedule = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

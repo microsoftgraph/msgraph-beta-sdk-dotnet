@@ -36,18 +36,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as PolicySet).Assignments = n.GetCollectionOfObjectValues<PolicySetAssignment>(PolicySetAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"createdDateTime", (o,n) => { (o as PolicySet).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as PolicySet).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as PolicySet).DisplayName = n.GetStringValue(); } },
-                {"errorCode", (o,n) => { (o as PolicySet).ErrorCode = n.GetEnumValue<ErrorCode>(); } },
-                {"guidedDeploymentTags", (o,n) => { (o as PolicySet).GuidedDeploymentTags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"items", (o,n) => { (o as PolicySet).Items = n.GetCollectionOfObjectValues<PolicySetItem>(PolicySetItem.CreateFromDiscriminatorValue).ToList(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as PolicySet).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"roleScopeTags", (o,n) => { (o as PolicySet).RoleScopeTags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"status", (o,n) => { (o as PolicySet).Status = n.GetEnumValue<PolicySetStatus>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<PolicySetAssignment>(PolicySetAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"errorCode", n => { ErrorCode = n.GetEnumValue<ErrorCode>(); } },
+                {"guidedDeploymentTags", n => { GuidedDeploymentTags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"items", n => { Items = n.GetCollectionOfObjectValues<PolicySetItem>(PolicySetItem.CreateFromDiscriminatorValue).ToList(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"roleScopeTags", n => { RoleScopeTags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"status", n => { Status = n.GetEnumValue<PolicySetStatus>(); } },
             };
         }
         /// <summary>

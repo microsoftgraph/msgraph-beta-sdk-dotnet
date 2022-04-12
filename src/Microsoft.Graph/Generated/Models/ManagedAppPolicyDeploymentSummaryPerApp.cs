@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"configurationAppliedUserCount", (o,n) => { (o as ManagedAppPolicyDeploymentSummaryPerApp).ConfigurationAppliedUserCount = n.GetIntValue(); } },
-                {"mobileAppIdentifier", (o,n) => { (o as ManagedAppPolicyDeploymentSummaryPerApp).MobileAppIdentifier = n.GetObjectValue<Microsoft.Graph.Beta.Models.MobileAppIdentifier>(Microsoft.Graph.Beta.Models.MobileAppIdentifier.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"configurationAppliedUserCount", n => { ConfigurationAppliedUserCount = n.GetIntValue(); } },
+                {"mobileAppIdentifier", n => { MobileAppIdentifier = n.GetObjectValue<Microsoft.Graph.Beta.Models.MobileAppIdentifier>(Microsoft.Graph.Beta.Models.MobileAppIdentifier.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.Assignmen
         public PrivilegedRoleAssignmentItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/privilegedRoleAssignments/{privilegedRoleAssignment_id}/roleInfo/assignments/{privilegedRoleAssignment_id1}{?select,expand}";
+            UrlTemplate = "{+baseurl}/privilegedRoleAssignments/{privilegedRoleAssignment%2Did}/roleInfo/assignments/{privilegedRoleAssignment%2Did1}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.Assignmen
         public PrivilegedRoleAssignmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/privilegedRoleAssignments/{privilegedRoleAssignment_id}/roleInfo/assignments/{privilegedRoleAssignment_id1}{?select,expand}";
+            UrlTemplate = "{+baseurl}/privilegedRoleAssignments/{privilegedRoleAssignment%2Did}/roleInfo/assignments/{privilegedRoleAssignment%2Did1}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -84,8 +84,10 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.Assignmen
         /// <summary>The assignments for this role. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
     }

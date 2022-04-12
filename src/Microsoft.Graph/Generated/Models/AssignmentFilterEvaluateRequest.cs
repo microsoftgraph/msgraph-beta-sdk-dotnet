@@ -35,13 +35,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"orderBy", (o,n) => { (o as AssignmentFilterEvaluateRequest).OrderBy = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"platform", (o,n) => { (o as AssignmentFilterEvaluateRequest).Platform = n.GetEnumValue<DevicePlatformType>(); } },
-                {"rule", (o,n) => { (o as AssignmentFilterEvaluateRequest).Rule = n.GetStringValue(); } },
-                {"skip", (o,n) => { (o as AssignmentFilterEvaluateRequest).Skip = n.GetIntValue(); } },
-                {"top", (o,n) => { (o as AssignmentFilterEvaluateRequest).Top = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"orderBy", n => { OrderBy = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"platform", n => { Platform = n.GetEnumValue<DevicePlatformType>(); } },
+                {"rule", n => { Rule = n.GetStringValue(); } },
+                {"skip", n => { Skip = n.GetIntValue(); } },
+                {"top", n => { Top = n.GetIntValue(); } },
             };
         }
         /// <summary>

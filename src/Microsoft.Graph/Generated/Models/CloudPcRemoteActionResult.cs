@@ -38,15 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"actionName", (o,n) => { (o as CloudPcRemoteActionResult).ActionName = n.GetStringValue(); } },
-                {"actionState", (o,n) => { (o as CloudPcRemoteActionResult).ActionState = n.GetEnumValue<ActionState>(); } },
-                {"cloudPcId", (o,n) => { (o as CloudPcRemoteActionResult).CloudPcId = n.GetStringValue(); } },
-                {"lastUpdatedDateTime", (o,n) => { (o as CloudPcRemoteActionResult).LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managedDeviceId", (o,n) => { (o as CloudPcRemoteActionResult).ManagedDeviceId = n.GetStringValue(); } },
-                {"startDateTime", (o,n) => { (o as CloudPcRemoteActionResult).StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"statusDetails", (o,n) => { (o as CloudPcRemoteActionResult).StatusDetails = n.GetObjectValue<CloudPcStatusDetails>(CloudPcStatusDetails.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"actionName", n => { ActionName = n.GetStringValue(); } },
+                {"actionState", n => { ActionState = n.GetEnumValue<ActionState>(); } },
+                {"cloudPcId", n => { CloudPcId = n.GetStringValue(); } },
+                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
+                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                {"statusDetails", n => { StatusDetails = n.GetObjectValue<CloudPcStatusDetails>(CloudPcStatusDetails.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

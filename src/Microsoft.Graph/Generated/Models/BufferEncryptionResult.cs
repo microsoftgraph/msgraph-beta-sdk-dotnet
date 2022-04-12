@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"encryptedBuffer", (o,n) => { (o as BufferEncryptionResult).EncryptedBuffer = n.GetByteArrayValue(); } },
-                {"publishingLicense", (o,n) => { (o as BufferEncryptionResult).PublishingLicense = n.GetByteArrayValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"encryptedBuffer", n => { EncryptedBuffer = n.GetByteArrayValue(); } },
+                {"publishingLicense", n => { PublishingLicense = n.GetByteArrayValue(); } },
             };
         }
         /// <summary>

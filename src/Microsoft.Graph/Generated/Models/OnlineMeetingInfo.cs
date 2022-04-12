@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"conferenceId", (o,n) => { (o as OnlineMeetingInfo).ConferenceId = n.GetStringValue(); } },
-                {"joinUrl", (o,n) => { (o as OnlineMeetingInfo).JoinUrl = n.GetStringValue(); } },
-                {"phones", (o,n) => { (o as OnlineMeetingInfo).Phones = n.GetCollectionOfObjectValues<Phone>(Phone.CreateFromDiscriminatorValue).ToList(); } },
-                {"quickDial", (o,n) => { (o as OnlineMeetingInfo).QuickDial = n.GetStringValue(); } },
-                {"tollFreeNumbers", (o,n) => { (o as OnlineMeetingInfo).TollFreeNumbers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"tollNumber", (o,n) => { (o as OnlineMeetingInfo).TollNumber = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"conferenceId", n => { ConferenceId = n.GetStringValue(); } },
+                {"joinUrl", n => { JoinUrl = n.GetStringValue(); } },
+                {"phones", n => { Phones = n.GetCollectionOfObjectValues<Phone>(Phone.CreateFromDiscriminatorValue).ToList(); } },
+                {"quickDial", n => { QuickDial = n.GetStringValue(); } },
+                {"tollFreeNumbers", n => { TollFreeNumbers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"tollNumber", n => { TollNumber = n.GetStringValue(); } },
             };
         }
         /// <summary>

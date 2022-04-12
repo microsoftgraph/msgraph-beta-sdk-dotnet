@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"conditionalAccessCondition", (o,n) => { (o as ConditionalAccessRuleSatisfied).ConditionalAccessCondition = n.GetEnumValue<ConditionalAccessConditions>(); } },
-                {"ruleSatisfied", (o,n) => { (o as ConditionalAccessRuleSatisfied).RuleSatisfied = n.GetEnumValue<ConditionalAccessRule>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"conditionalAccessCondition", n => { ConditionalAccessCondition = n.GetEnumValue<ConditionalAccessConditions>(); } },
+                {"ruleSatisfied", n => { RuleSatisfied = n.GetEnumValue<ConditionalAccessRule>(); } },
             };
         }
         /// <summary>

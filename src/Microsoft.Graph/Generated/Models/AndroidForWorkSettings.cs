@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"bindStatus", (o,n) => { (o as AndroidForWorkSettings).BindStatus = n.GetEnumValue<AndroidForWorkBindStatus>(); } },
-                {"deviceOwnerManagementEnabled", (o,n) => { (o as AndroidForWorkSettings).DeviceOwnerManagementEnabled = n.GetBoolValue(); } },
-                {"enrollmentTarget", (o,n) => { (o as AndroidForWorkSettings).EnrollmentTarget = n.GetEnumValue<AndroidForWorkEnrollmentTarget>(); } },
-                {"lastAppSyncDateTime", (o,n) => { (o as AndroidForWorkSettings).LastAppSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastAppSyncStatus", (o,n) => { (o as AndroidForWorkSettings).LastAppSyncStatus = n.GetEnumValue<AndroidForWorkSyncStatus>(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as AndroidForWorkSettings).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"ownerOrganizationName", (o,n) => { (o as AndroidForWorkSettings).OwnerOrganizationName = n.GetStringValue(); } },
-                {"ownerUserPrincipalName", (o,n) => { (o as AndroidForWorkSettings).OwnerUserPrincipalName = n.GetStringValue(); } },
-                {"targetGroupIds", (o,n) => { (o as AndroidForWorkSettings).TargetGroupIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"bindStatus", n => { BindStatus = n.GetEnumValue<AndroidForWorkBindStatus>(); } },
+                {"deviceOwnerManagementEnabled", n => { DeviceOwnerManagementEnabled = n.GetBoolValue(); } },
+                {"enrollmentTarget", n => { EnrollmentTarget = n.GetEnumValue<AndroidForWorkEnrollmentTarget>(); } },
+                {"lastAppSyncDateTime", n => { LastAppSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastAppSyncStatus", n => { LastAppSyncStatus = n.GetEnumValue<AndroidForWorkSyncStatus>(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"ownerOrganizationName", n => { OwnerOrganizationName = n.GetStringValue(); } },
+                {"ownerUserPrincipalName", n => { OwnerUserPrincipalName = n.GetStringValue(); } },
+                {"targetGroupIds", n => { TargetGroupIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

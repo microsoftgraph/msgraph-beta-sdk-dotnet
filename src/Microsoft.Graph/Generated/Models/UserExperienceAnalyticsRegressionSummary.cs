@@ -22,11 +22,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"manufacturerRegression", (o,n) => { (o as UserExperienceAnalyticsRegressionSummary).ManufacturerRegression = n.GetCollectionOfObjectValues<UserExperienceAnalyticsMetric>(UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue).ToList(); } },
-                {"modelRegression", (o,n) => { (o as UserExperienceAnalyticsRegressionSummary).ModelRegression = n.GetCollectionOfObjectValues<UserExperienceAnalyticsMetric>(UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue).ToList(); } },
-                {"operatingSystemRegression", (o,n) => { (o as UserExperienceAnalyticsRegressionSummary).OperatingSystemRegression = n.GetCollectionOfObjectValues<UserExperienceAnalyticsMetric>(UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"manufacturerRegression", n => { ManufacturerRegression = n.GetCollectionOfObjectValues<UserExperienceAnalyticsMetric>(UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue).ToList(); } },
+                {"modelRegression", n => { ModelRegression = n.GetCollectionOfObjectValues<UserExperienceAnalyticsMetric>(UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue).ToList(); } },
+                {"operatingSystemRegression", n => { OperatingSystemRegression = n.GetCollectionOfObjectValues<UserExperienceAnalyticsMetric>(UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

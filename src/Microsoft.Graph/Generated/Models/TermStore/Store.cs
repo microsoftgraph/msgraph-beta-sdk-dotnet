@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"defaultLanguageTag", (o,n) => { (o as Store).DefaultLanguageTag = n.GetStringValue(); } },
-                {"groups", (o,n) => { (o as Store).Groups = n.GetCollectionOfObjectValues<Group>(Group.CreateFromDiscriminatorValue).ToList(); } },
-                {"languageTags", (o,n) => { (o as Store).LanguageTags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"sets", (o,n) => { (o as Store).Sets = n.GetCollectionOfObjectValues<Set>(Set.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"defaultLanguageTag", n => { DefaultLanguageTag = n.GetStringValue(); } },
+                {"groups", n => { Groups = n.GetCollectionOfObjectValues<Group>(Group.CreateFromDiscriminatorValue).ToList(); } },
+                {"languageTags", n => { LanguageTags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"sets", n => { Sets = n.GetCollectionOfObjectValues<Set>(Set.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

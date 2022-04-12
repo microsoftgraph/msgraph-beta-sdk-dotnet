@@ -44,18 +44,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"callChainId", (o,n) => { (o as TeleconferenceDeviceQuality).CallChainId = n.GetStringValue(); } },
-                {"cloudServiceDeploymentEnvironment", (o,n) => { (o as TeleconferenceDeviceQuality).CloudServiceDeploymentEnvironment = n.GetStringValue(); } },
-                {"cloudServiceDeploymentId", (o,n) => { (o as TeleconferenceDeviceQuality).CloudServiceDeploymentId = n.GetStringValue(); } },
-                {"cloudServiceInstanceName", (o,n) => { (o as TeleconferenceDeviceQuality).CloudServiceInstanceName = n.GetStringValue(); } },
-                {"cloudServiceName", (o,n) => { (o as TeleconferenceDeviceQuality).CloudServiceName = n.GetStringValue(); } },
-                {"deviceDescription", (o,n) => { (o as TeleconferenceDeviceQuality).DeviceDescription = n.GetStringValue(); } },
-                {"deviceName", (o,n) => { (o as TeleconferenceDeviceQuality).DeviceName = n.GetStringValue(); } },
-                {"mediaLegId", (o,n) => { (o as TeleconferenceDeviceQuality).MediaLegId = n.GetStringValue(); } },
-                {"mediaQualityList", (o,n) => { (o as TeleconferenceDeviceQuality).MediaQualityList = n.GetCollectionOfObjectValues<TeleconferenceDeviceMediaQuality>(TeleconferenceDeviceMediaQuality.CreateFromDiscriminatorValue).ToList(); } },
-                {"participantId", (o,n) => { (o as TeleconferenceDeviceQuality).ParticipantId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"callChainId", n => { CallChainId = n.GetStringValue(); } },
+                {"cloudServiceDeploymentEnvironment", n => { CloudServiceDeploymentEnvironment = n.GetStringValue(); } },
+                {"cloudServiceDeploymentId", n => { CloudServiceDeploymentId = n.GetStringValue(); } },
+                {"cloudServiceInstanceName", n => { CloudServiceInstanceName = n.GetStringValue(); } },
+                {"cloudServiceName", n => { CloudServiceName = n.GetStringValue(); } },
+                {"deviceDescription", n => { DeviceDescription = n.GetStringValue(); } },
+                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
+                {"mediaLegId", n => { MediaLegId = n.GetStringValue(); } },
+                {"mediaQualityList", n => { MediaQualityList = n.GetCollectionOfObjectValues<TeleconferenceDeviceMediaQuality>(TeleconferenceDeviceMediaQuality.CreateFromDiscriminatorValue).ToList(); } },
+                {"participantId", n => { ParticipantId = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -50,25 +50,25 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"closedBy", (o,n) => { (o as Case).ClosedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
-                {"closedDateTime", (o,n) => { (o as Case).ClosedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"createdDateTime", (o,n) => { (o as Case).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"custodians", (o,n) => { (o as Case).Custodians = n.GetCollectionOfObjectValues<Custodian>(Custodian.CreateFromDiscriminatorValue).ToList(); } },
-                {"description", (o,n) => { (o as Case).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as Case).DisplayName = n.GetStringValue(); } },
-                {"externalId", (o,n) => { (o as Case).ExternalId = n.GetStringValue(); } },
-                {"lastModifiedBy", (o,n) => { (o as Case).LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", (o,n) => { (o as Case).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"legalHolds", (o,n) => { (o as Case).LegalHolds = n.GetCollectionOfObjectValues<LegalHold>(LegalHold.CreateFromDiscriminatorValue).ToList(); } },
-                {"noncustodialDataSources", (o,n) => { (o as Case).NoncustodialDataSources = n.GetCollectionOfObjectValues<NoncustodialDataSource>(NoncustodialDataSource.CreateFromDiscriminatorValue).ToList(); } },
-                {"operations", (o,n) => { (o as Case).Operations = n.GetCollectionOfObjectValues<CaseOperation>(CaseOperation.CreateFromDiscriminatorValue).ToList(); } },
-                {"reviewSets", (o,n) => { (o as Case).ReviewSets = n.GetCollectionOfObjectValues<ReviewSet>(ReviewSet.CreateFromDiscriminatorValue).ToList(); } },
-                {"settings", (o,n) => { (o as Case).Settings = n.GetObjectValue<CaseSettings>(CaseSettings.CreateFromDiscriminatorValue); } },
-                {"sourceCollections", (o,n) => { (o as Case).SourceCollections = n.GetCollectionOfObjectValues<SourceCollection>(SourceCollection.CreateFromDiscriminatorValue).ToList(); } },
-                {"status", (o,n) => { (o as Case).Status = n.GetEnumValue<CaseStatus>(); } },
-                {"tags", (o,n) => { (o as Case).Tags = n.GetCollectionOfObjectValues<Tag>(Tag.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"closedBy", n => { ClosedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                {"closedDateTime", n => { ClosedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"custodians", n => { Custodians = n.GetCollectionOfObjectValues<Custodian>(Custodian.CreateFromDiscriminatorValue).ToList(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"externalId", n => { ExternalId = n.GetStringValue(); } },
+                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"legalHolds", n => { LegalHolds = n.GetCollectionOfObjectValues<LegalHold>(LegalHold.CreateFromDiscriminatorValue).ToList(); } },
+                {"noncustodialDataSources", n => { NoncustodialDataSources = n.GetCollectionOfObjectValues<NoncustodialDataSource>(NoncustodialDataSource.CreateFromDiscriminatorValue).ToList(); } },
+                {"operations", n => { Operations = n.GetCollectionOfObjectValues<CaseOperation>(CaseOperation.CreateFromDiscriminatorValue).ToList(); } },
+                {"reviewSets", n => { ReviewSets = n.GetCollectionOfObjectValues<ReviewSet>(ReviewSet.CreateFromDiscriminatorValue).ToList(); } },
+                {"settings", n => { Settings = n.GetObjectValue<CaseSettings>(CaseSettings.CreateFromDiscriminatorValue); } },
+                {"sourceCollections", n => { SourceCollections = n.GetCollectionOfObjectValues<SourceCollection>(SourceCollection.CreateFromDiscriminatorValue).ToList(); } },
+                {"status", n => { Status = n.GetEnumValue<CaseStatus>(); } },
+                {"tags", n => { Tags = n.GetCollectionOfObjectValues<Tag>(Tag.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

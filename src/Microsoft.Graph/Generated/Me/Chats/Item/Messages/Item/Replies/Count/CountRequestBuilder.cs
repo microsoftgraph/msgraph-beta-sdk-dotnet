@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.Messages.Item.Replies.Count {
         public CountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/chats/{chat_id}/messages/{chatMessage_id}/replies/$count";
+            UrlTemplate = "{+baseurl}/me/chats/{chat%2Did}/messages/{chatMessage%2Did}/replies/$count";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.Messages.Item.Replies.Count {
         public CountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/chats/{chat_id}/messages/{chatMessage_id}/replies/$count";
+            UrlTemplate = "{+baseurl}/me/chats/{chat%2Did}/messages/{chatMessage%2Did}/replies/$count";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

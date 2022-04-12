@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessibilityScreenDisabled", (o,n) => { (o as DepMacOSEnrollmentProfile).AccessibilityScreenDisabled = n.GetBoolValue(); } },
-                {"autoUnlockWithWatchDisabled", (o,n) => { (o as DepMacOSEnrollmentProfile).AutoUnlockWithWatchDisabled = n.GetBoolValue(); } },
-                {"chooseYourLockScreenDisabled", (o,n) => { (o as DepMacOSEnrollmentProfile).ChooseYourLockScreenDisabled = n.GetBoolValue(); } },
-                {"fileVaultDisabled", (o,n) => { (o as DepMacOSEnrollmentProfile).FileVaultDisabled = n.GetBoolValue(); } },
-                {"iCloudDiagnosticsDisabled", (o,n) => { (o as DepMacOSEnrollmentProfile).ICloudDiagnosticsDisabled = n.GetBoolValue(); } },
-                {"iCloudStorageDisabled", (o,n) => { (o as DepMacOSEnrollmentProfile).ICloudStorageDisabled = n.GetBoolValue(); } },
-                {"passCodeDisabled", (o,n) => { (o as DepMacOSEnrollmentProfile).PassCodeDisabled = n.GetBoolValue(); } },
-                {"registrationDisabled", (o,n) => { (o as DepMacOSEnrollmentProfile).RegistrationDisabled = n.GetBoolValue(); } },
-                {"zoomDisabled", (o,n) => { (o as DepMacOSEnrollmentProfile).ZoomDisabled = n.GetBoolValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"accessibilityScreenDisabled", n => { AccessibilityScreenDisabled = n.GetBoolValue(); } },
+                {"autoUnlockWithWatchDisabled", n => { AutoUnlockWithWatchDisabled = n.GetBoolValue(); } },
+                {"chooseYourLockScreenDisabled", n => { ChooseYourLockScreenDisabled = n.GetBoolValue(); } },
+                {"fileVaultDisabled", n => { FileVaultDisabled = n.GetBoolValue(); } },
+                {"iCloudDiagnosticsDisabled", n => { ICloudDiagnosticsDisabled = n.GetBoolValue(); } },
+                {"iCloudStorageDisabled", n => { ICloudStorageDisabled = n.GetBoolValue(); } },
+                {"passCodeDisabled", n => { PassCodeDisabled = n.GetBoolValue(); } },
+                {"registrationDisabled", n => { RegistrationDisabled = n.GetBoolValue(); } },
+                {"zoomDisabled", n => { ZoomDisabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

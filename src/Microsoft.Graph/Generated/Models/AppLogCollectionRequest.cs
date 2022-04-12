@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"completedDateTime", (o,n) => { (o as AppLogCollectionRequest).CompletedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"customLogFolders", (o,n) => { (o as AppLogCollectionRequest).CustomLogFolders = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"errorMessage", (o,n) => { (o as AppLogCollectionRequest).ErrorMessage = n.GetStringValue(); } },
-                {"status", (o,n) => { (o as AppLogCollectionRequest).Status = n.GetEnumValue<AppLogUploadState>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"customLogFolders", n => { CustomLogFolders = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"errorMessage", n => { ErrorMessage = n.GetStringValue(); } },
+                {"status", n => { Status = n.GetEnumValue<AppLogUploadState>(); } },
             };
         }
         /// <summary>

@@ -27,13 +27,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"completionMonthYear", (o,n) => { (o as EducationalActivity).CompletionMonthYear = n.GetDateValue(); } },
-                {"endMonthYear", (o,n) => { (o as EducationalActivity).EndMonthYear = n.GetDateValue(); } },
-                {"institution", (o,n) => { (o as EducationalActivity).Institution = n.GetObjectValue<InstitutionData>(InstitutionData.CreateFromDiscriminatorValue); } },
-                {"program", (o,n) => { (o as EducationalActivity).Program = n.GetObjectValue<EducationalActivityDetail>(EducationalActivityDetail.CreateFromDiscriminatorValue); } },
-                {"startMonthYear", (o,n) => { (o as EducationalActivity).StartMonthYear = n.GetDateValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"completionMonthYear", n => { CompletionMonthYear = n.GetDateValue(); } },
+                {"endMonthYear", n => { EndMonthYear = n.GetDateValue(); } },
+                {"institution", n => { Institution = n.GetObjectValue<InstitutionData>(InstitutionData.CreateFromDiscriminatorValue); } },
+                {"program", n => { Program = n.GetObjectValue<EducationalActivityDetail>(EducationalActivityDetail.CreateFromDiscriminatorValue); } },
+                {"startMonthYear", n => { StartMonthYear = n.GetDateValue(); } },
             };
         }
         /// <summary>

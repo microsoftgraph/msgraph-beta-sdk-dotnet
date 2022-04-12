@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"calendarEventId", (o,n) => { (o as TeamworkOnlineMeetingInfo).CalendarEventId = n.GetStringValue(); } },
-                {"joinWebUrl", (o,n) => { (o as TeamworkOnlineMeetingInfo).JoinWebUrl = n.GetStringValue(); } },
-                {"organizer", (o,n) => { (o as TeamworkOnlineMeetingInfo).Organizer = n.GetObjectValue<TeamworkUserIdentity>(TeamworkUserIdentity.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"calendarEventId", n => { CalendarEventId = n.GetStringValue(); } },
+                {"joinWebUrl", n => { JoinWebUrl = n.GetStringValue(); } },
+                {"organizer", n => { Organizer = n.GetObjectValue<TeamworkUserIdentity>(TeamworkUserIdentity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

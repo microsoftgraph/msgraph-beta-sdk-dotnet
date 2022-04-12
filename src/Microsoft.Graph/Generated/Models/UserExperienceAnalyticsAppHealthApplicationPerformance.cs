@@ -36,18 +36,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activeDeviceCount", (o,n) => { (o as UserExperienceAnalyticsAppHealthApplicationPerformance).ActiveDeviceCount = n.GetIntValue(); } },
-                {"appCrashCount", (o,n) => { (o as UserExperienceAnalyticsAppHealthApplicationPerformance).AppCrashCount = n.GetIntValue(); } },
-                {"appDisplayName", (o,n) => { (o as UserExperienceAnalyticsAppHealthApplicationPerformance).AppDisplayName = n.GetStringValue(); } },
-                {"appHangCount", (o,n) => { (o as UserExperienceAnalyticsAppHealthApplicationPerformance).AppHangCount = n.GetIntValue(); } },
-                {"appHealthScore", (o,n) => { (o as UserExperienceAnalyticsAppHealthApplicationPerformance).AppHealthScore = n.GetDoubleValue(); } },
-                {"appHealthStatus", (o,n) => { (o as UserExperienceAnalyticsAppHealthApplicationPerformance).AppHealthStatus = n.GetStringValue(); } },
-                {"appName", (o,n) => { (o as UserExperienceAnalyticsAppHealthApplicationPerformance).AppName = n.GetStringValue(); } },
-                {"appPublisher", (o,n) => { (o as UserExperienceAnalyticsAppHealthApplicationPerformance).AppPublisher = n.GetStringValue(); } },
-                {"appUsageDuration", (o,n) => { (o as UserExperienceAnalyticsAppHealthApplicationPerformance).AppUsageDuration = n.GetIntValue(); } },
-                {"meanTimeToFailureInMinutes", (o,n) => { (o as UserExperienceAnalyticsAppHealthApplicationPerformance).MeanTimeToFailureInMinutes = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activeDeviceCount", n => { ActiveDeviceCount = n.GetIntValue(); } },
+                {"appCrashCount", n => { AppCrashCount = n.GetIntValue(); } },
+                {"appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
+                {"appHangCount", n => { AppHangCount = n.GetIntValue(); } },
+                {"appHealthScore", n => { AppHealthScore = n.GetDoubleValue(); } },
+                {"appHealthStatus", n => { AppHealthStatus = n.GetStringValue(); } },
+                {"appName", n => { AppName = n.GetStringValue(); } },
+                {"appPublisher", n => { AppPublisher = n.GetStringValue(); } },
+                {"appUsageDuration", n => { AppUsageDuration = n.GetIntValue(); } },
+                {"meanTimeToFailureInMinutes", n => { MeanTimeToFailureInMinutes = n.GetIntValue(); } },
             };
         }
         /// <summary>

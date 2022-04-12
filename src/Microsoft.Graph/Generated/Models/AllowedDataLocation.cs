@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appId", (o,n) => { (o as AllowedDataLocation).AppId = n.GetStringValue(); } },
-                {"domain", (o,n) => { (o as AllowedDataLocation).Domain = n.GetStringValue(); } },
-                {"isDefault", (o,n) => { (o as AllowedDataLocation).IsDefault = n.GetBoolValue(); } },
-                {"location", (o,n) => { (o as AllowedDataLocation).Location = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"appId", n => { AppId = n.GetStringValue(); } },
+                {"domain", n => { Domain = n.GetStringValue(); } },
+                {"isDefault", n => { IsDefault = n.GetBoolValue(); } },
+                {"location", n => { Location = n.GetStringValue(); } },
             };
         }
         /// <summary>

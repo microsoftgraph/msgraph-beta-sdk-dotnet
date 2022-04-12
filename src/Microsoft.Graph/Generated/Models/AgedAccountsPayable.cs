@@ -37,18 +37,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"agedAsOfDate", (o,n) => { (o as AgedAccountsPayable).AgedAsOfDate = n.GetDateValue(); } },
-                {"balanceDue", (o,n) => { (o as AgedAccountsPayable).BalanceDue = n.GetDecimalValue(); } },
-                {"currencyCode", (o,n) => { (o as AgedAccountsPayable).CurrencyCode = n.GetStringValue(); } },
-                {"currentAmount", (o,n) => { (o as AgedAccountsPayable).CurrentAmount = n.GetDecimalValue(); } },
-                {"name", (o,n) => { (o as AgedAccountsPayable).Name = n.GetStringValue(); } },
-                {"period1Amount", (o,n) => { (o as AgedAccountsPayable).Period1Amount = n.GetDecimalValue(); } },
-                {"period2Amount", (o,n) => { (o as AgedAccountsPayable).Period2Amount = n.GetDecimalValue(); } },
-                {"period3Amount", (o,n) => { (o as AgedAccountsPayable).Period3Amount = n.GetDecimalValue(); } },
-                {"periodLengthFilter", (o,n) => { (o as AgedAccountsPayable).PeriodLengthFilter = n.GetStringValue(); } },
-                {"vendorNumber", (o,n) => { (o as AgedAccountsPayable).VendorNumber = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"agedAsOfDate", n => { AgedAsOfDate = n.GetDateValue(); } },
+                {"balanceDue", n => { BalanceDue = n.GetDecimalValue(); } },
+                {"currencyCode", n => { CurrencyCode = n.GetStringValue(); } },
+                {"currentAmount", n => { CurrentAmount = n.GetDecimalValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"period1Amount", n => { Period1Amount = n.GetDecimalValue(); } },
+                {"period2Amount", n => { Period2Amount = n.GetDecimalValue(); } },
+                {"period3Amount", n => { Period3Amount = n.GetDecimalValue(); } },
+                {"periodLengthFilter", n => { PeriodLengthFilter = n.GetStringValue(); } },
+                {"vendorNumber", n => { VendorNumber = n.GetStringValue(); } },
             };
         }
         /// <summary>

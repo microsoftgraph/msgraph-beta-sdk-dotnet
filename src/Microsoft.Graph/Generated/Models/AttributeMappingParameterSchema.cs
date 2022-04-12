@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"allowMultipleOccurrences", (o,n) => { (o as AttributeMappingParameterSchema).AllowMultipleOccurrences = n.GetBoolValue(); } },
-                {"name", (o,n) => { (o as AttributeMappingParameterSchema).Name = n.GetStringValue(); } },
-                {"required", (o,n) => { (o as AttributeMappingParameterSchema).Required = n.GetBoolValue(); } },
-                {"type", (o,n) => { (o as AttributeMappingParameterSchema).Type = n.GetEnumValue<AttributeType>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"allowMultipleOccurrences", n => { AllowMultipleOccurrences = n.GetBoolValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"required", n => { Required = n.GetBoolValue(); } },
+                {"type", n => { Type = n.GetEnumValue<AttributeType>(); } },
             };
         }
         /// <summary>

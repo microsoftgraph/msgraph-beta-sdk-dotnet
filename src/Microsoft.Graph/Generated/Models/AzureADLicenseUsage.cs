@@ -20,10 +20,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"licenseInfoDetails", (o,n) => { (o as AzureADLicenseUsage).LicenseInfoDetails = n.GetCollectionOfObjectValues<LicenseInfoDetail>(LicenseInfoDetail.CreateFromDiscriminatorValue).ToList(); } },
-                {"snapshotDateTime", (o,n) => { (o as AzureADLicenseUsage).SnapshotDateTime = n.GetDateTimeOffsetValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"licenseInfoDetails", n => { LicenseInfoDetails = n.GetCollectionOfObjectValues<LicenseInfoDetail>(LicenseInfoDetail.CreateFromDiscriminatorValue).ToList(); } },
+                {"snapshotDateTime", n => { SnapshotDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

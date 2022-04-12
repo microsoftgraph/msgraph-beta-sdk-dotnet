@@ -46,19 +46,19 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"allowAutoFilter", (o,n) => { (o as WorkbookWorksheetProtectionOptions).AllowAutoFilter = n.GetBoolValue(); } },
-                {"allowDeleteColumns", (o,n) => { (o as WorkbookWorksheetProtectionOptions).AllowDeleteColumns = n.GetBoolValue(); } },
-                {"allowDeleteRows", (o,n) => { (o as WorkbookWorksheetProtectionOptions).AllowDeleteRows = n.GetBoolValue(); } },
-                {"allowFormatCells", (o,n) => { (o as WorkbookWorksheetProtectionOptions).AllowFormatCells = n.GetBoolValue(); } },
-                {"allowFormatColumns", (o,n) => { (o as WorkbookWorksheetProtectionOptions).AllowFormatColumns = n.GetBoolValue(); } },
-                {"allowFormatRows", (o,n) => { (o as WorkbookWorksheetProtectionOptions).AllowFormatRows = n.GetBoolValue(); } },
-                {"allowInsertColumns", (o,n) => { (o as WorkbookWorksheetProtectionOptions).AllowInsertColumns = n.GetBoolValue(); } },
-                {"allowInsertHyperlinks", (o,n) => { (o as WorkbookWorksheetProtectionOptions).AllowInsertHyperlinks = n.GetBoolValue(); } },
-                {"allowInsertRows", (o,n) => { (o as WorkbookWorksheetProtectionOptions).AllowInsertRows = n.GetBoolValue(); } },
-                {"allowPivotTables", (o,n) => { (o as WorkbookWorksheetProtectionOptions).AllowPivotTables = n.GetBoolValue(); } },
-                {"allowSort", (o,n) => { (o as WorkbookWorksheetProtectionOptions).AllowSort = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"allowAutoFilter", n => { AllowAutoFilter = n.GetBoolValue(); } },
+                {"allowDeleteColumns", n => { AllowDeleteColumns = n.GetBoolValue(); } },
+                {"allowDeleteRows", n => { AllowDeleteRows = n.GetBoolValue(); } },
+                {"allowFormatCells", n => { AllowFormatCells = n.GetBoolValue(); } },
+                {"allowFormatColumns", n => { AllowFormatColumns = n.GetBoolValue(); } },
+                {"allowFormatRows", n => { AllowFormatRows = n.GetBoolValue(); } },
+                {"allowInsertColumns", n => { AllowInsertColumns = n.GetBoolValue(); } },
+                {"allowInsertHyperlinks", n => { AllowInsertHyperlinks = n.GetBoolValue(); } },
+                {"allowInsertRows", n => { AllowInsertRows = n.GetBoolValue(); } },
+                {"allowPivotTables", n => { AllowPivotTables = n.GetBoolValue(); } },
+                {"allowSort", n => { AllowSort = n.GetBoolValue(); } },
             };
         }
         /// <summary>

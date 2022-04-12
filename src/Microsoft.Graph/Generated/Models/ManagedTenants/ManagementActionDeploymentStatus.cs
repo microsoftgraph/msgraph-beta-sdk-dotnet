@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"managementActionId", (o,n) => { (o as ManagementActionDeploymentStatus).ManagementActionId = n.GetStringValue(); } },
-                {"managementTemplateId", (o,n) => { (o as ManagementActionDeploymentStatus).ManagementTemplateId = n.GetStringValue(); } },
-                {"managementTemplateVersion", (o,n) => { (o as ManagementActionDeploymentStatus).ManagementTemplateVersion = n.GetIntValue(); } },
-                {"status", (o,n) => { (o as ManagementActionDeploymentStatus).Status = n.GetEnumValue<ManagementActionStatus>(); } },
-                {"workloadActionDeploymentStatuses", (o,n) => { (o as ManagementActionDeploymentStatus).WorkloadActionDeploymentStatuses = n.GetCollectionOfObjectValues<WorkloadActionDeploymentStatus>(WorkloadActionDeploymentStatus.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"managementActionId", n => { ManagementActionId = n.GetStringValue(); } },
+                {"managementTemplateId", n => { ManagementTemplateId = n.GetStringValue(); } },
+                {"managementTemplateVersion", n => { ManagementTemplateVersion = n.GetIntValue(); } },
+                {"status", n => { Status = n.GetEnumValue<ManagementActionStatus>(); } },
+                {"workloadActionDeploymentStatuses", n => { WorkloadActionDeploymentStatuses = n.GetCollectionOfObjectValues<WorkloadActionDeploymentStatus>(WorkloadActionDeploymentStatus.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

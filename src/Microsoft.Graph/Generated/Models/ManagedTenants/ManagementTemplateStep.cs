@@ -40,20 +40,20 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"acceptedVersion", (o,n) => { (o as ManagementTemplateStep).AcceptedVersion = n.GetObjectValue<ManagementTemplateStepVersion>(ManagementTemplateStepVersion.CreateFromDiscriminatorValue); } },
-                {"category", (o,n) => { (o as ManagementTemplateStep).Category = n.GetEnumValue<ManagementCategory>(); } },
-                {"createdByUserId", (o,n) => { (o as ManagementTemplateStep).CreatedByUserId = n.GetStringValue(); } },
-                {"createdDateTime", (o,n) => { (o as ManagementTemplateStep).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as ManagementTemplateStep).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as ManagementTemplateStep).DisplayName = n.GetStringValue(); } },
-                {"lastActionByUserId", (o,n) => { (o as ManagementTemplateStep).LastActionByUserId = n.GetStringValue(); } },
-                {"lastActionDateTime", (o,n) => { (o as ManagementTemplateStep).LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managementTemplate", (o,n) => { (o as ManagementTemplateStep).ManagementTemplate = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate>(Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate.CreateFromDiscriminatorValue); } },
-                {"portalLink", (o,n) => { (o as ManagementTemplateStep).PortalLink = n.GetObjectValue<Microsoft.Graph.Beta.Models.ActionUrl>(Microsoft.Graph.Beta.Models.ActionUrl.CreateFromDiscriminatorValue); } },
-                {"priority", (o,n) => { (o as ManagementTemplateStep).Priority = n.GetIntValue(); } },
-                {"versions", (o,n) => { (o as ManagementTemplateStep).Versions = n.GetCollectionOfObjectValues<ManagementTemplateStepVersion>(ManagementTemplateStepVersion.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"acceptedVersion", n => { AcceptedVersion = n.GetObjectValue<ManagementTemplateStepVersion>(ManagementTemplateStepVersion.CreateFromDiscriminatorValue); } },
+                {"category", n => { Category = n.GetEnumValue<ManagementCategory>(); } },
+                {"createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"lastActionByUserId", n => { LastActionByUserId = n.GetStringValue(); } },
+                {"lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
+                {"managementTemplate", n => { ManagementTemplate = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate>(Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate.CreateFromDiscriminatorValue); } },
+                {"portalLink", n => { PortalLink = n.GetObjectValue<Microsoft.Graph.Beta.Models.ActionUrl>(Microsoft.Graph.Beta.Models.ActionUrl.CreateFromDiscriminatorValue); } },
+                {"priority", n => { Priority = n.GetIntValue(); } },
+                {"versions", n => { Versions = n.GetCollectionOfObjectValues<ManagementTemplateStepVersion>(ManagementTemplateStepVersion.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

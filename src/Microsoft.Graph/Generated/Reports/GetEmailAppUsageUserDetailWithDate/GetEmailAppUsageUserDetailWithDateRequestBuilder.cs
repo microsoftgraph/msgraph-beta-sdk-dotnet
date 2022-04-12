@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Reports.GetEmailAppUsageUserDetailWithDate {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/reports/microsoft.graph.getEmailAppUsageUserDetail(date={date})";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("date", date);
+            urlTplParams.Add("", date);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

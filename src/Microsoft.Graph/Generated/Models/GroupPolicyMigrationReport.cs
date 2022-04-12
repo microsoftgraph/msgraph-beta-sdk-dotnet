@@ -44,22 +44,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdDateTime", (o,n) => { (o as GroupPolicyMigrationReport).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", (o,n) => { (o as GroupPolicyMigrationReport).DisplayName = n.GetStringValue(); } },
-                {"groupPolicyCreatedDateTime", (o,n) => { (o as GroupPolicyMigrationReport).GroupPolicyCreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"groupPolicyLastModifiedDateTime", (o,n) => { (o as GroupPolicyMigrationReport).GroupPolicyLastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"groupPolicyObjectId", (o,n) => { (o as GroupPolicyMigrationReport).GroupPolicyObjectId = n.GetStringValue(); } },
-                {"groupPolicySettingMappings", (o,n) => { (o as GroupPolicyMigrationReport).GroupPolicySettingMappings = n.GetCollectionOfObjectValues<GroupPolicySettingMapping>(GroupPolicySettingMapping.CreateFromDiscriminatorValue).ToList(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as GroupPolicyMigrationReport).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"migrationReadiness", (o,n) => { (o as GroupPolicyMigrationReport).MigrationReadiness = n.GetEnumValue<GroupPolicyMigrationReadiness>(); } },
-                {"ouDistinguishedName", (o,n) => { (o as GroupPolicyMigrationReport).OuDistinguishedName = n.GetStringValue(); } },
-                {"supportedSettingsCount", (o,n) => { (o as GroupPolicyMigrationReport).SupportedSettingsCount = n.GetIntValue(); } },
-                {"supportedSettingsPercent", (o,n) => { (o as GroupPolicyMigrationReport).SupportedSettingsPercent = n.GetIntValue(); } },
-                {"targetedInActiveDirectory", (o,n) => { (o as GroupPolicyMigrationReport).TargetedInActiveDirectory = n.GetBoolValue(); } },
-                {"totalSettingsCount", (o,n) => { (o as GroupPolicyMigrationReport).TotalSettingsCount = n.GetIntValue(); } },
-                {"unsupportedGroupPolicyExtensions", (o,n) => { (o as GroupPolicyMigrationReport).UnsupportedGroupPolicyExtensions = n.GetCollectionOfObjectValues<UnsupportedGroupPolicyExtension>(UnsupportedGroupPolicyExtension.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"groupPolicyCreatedDateTime", n => { GroupPolicyCreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"groupPolicyLastModifiedDateTime", n => { GroupPolicyLastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"groupPolicyObjectId", n => { GroupPolicyObjectId = n.GetStringValue(); } },
+                {"groupPolicySettingMappings", n => { GroupPolicySettingMappings = n.GetCollectionOfObjectValues<GroupPolicySettingMapping>(GroupPolicySettingMapping.CreateFromDiscriminatorValue).ToList(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"migrationReadiness", n => { MigrationReadiness = n.GetEnumValue<GroupPolicyMigrationReadiness>(); } },
+                {"ouDistinguishedName", n => { OuDistinguishedName = n.GetStringValue(); } },
+                {"supportedSettingsCount", n => { SupportedSettingsCount = n.GetIntValue(); } },
+                {"supportedSettingsPercent", n => { SupportedSettingsPercent = n.GetIntValue(); } },
+                {"targetedInActiveDirectory", n => { TargetedInActiveDirectory = n.GetBoolValue(); } },
+                {"totalSettingsCount", n => { TotalSettingsCount = n.GetIntValue(); } },
+                {"unsupportedGroupPolicyExtensions", n => { UnsupportedGroupPolicyExtensions = n.GetCollectionOfObjectValues<UnsupportedGroupPolicyExtension>(UnsupportedGroupPolicyExtension.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

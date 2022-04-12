@@ -42,21 +42,21 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activityGroupNames", (o,n) => { (o as IpSecurityProfile).ActivityGroupNames = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"address", (o,n) => { (o as IpSecurityProfile).Address = n.GetStringValue(); } },
-                {"azureSubscriptionId", (o,n) => { (o as IpSecurityProfile).AzureSubscriptionId = n.GetStringValue(); } },
-                {"azureTenantId", (o,n) => { (o as IpSecurityProfile).AzureTenantId = n.GetStringValue(); } },
-                {"countHits", (o,n) => { (o as IpSecurityProfile).CountHits = n.GetIntValue(); } },
-                {"countHosts", (o,n) => { (o as IpSecurityProfile).CountHosts = n.GetIntValue(); } },
-                {"firstSeenDateTime", (o,n) => { (o as IpSecurityProfile).FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"ipCategories", (o,n) => { (o as IpSecurityProfile).IpCategories = n.GetCollectionOfObjectValues<IpCategory>(IpCategory.CreateFromDiscriminatorValue).ToList(); } },
-                {"ipReferenceData", (o,n) => { (o as IpSecurityProfile).IpReferenceData = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IpReferenceData>(Microsoft.Graph.Beta.Models.IpReferenceData.CreateFromDiscriminatorValue).ToList(); } },
-                {"lastSeenDateTime", (o,n) => { (o as IpSecurityProfile).LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"riskScore", (o,n) => { (o as IpSecurityProfile).RiskScore = n.GetStringValue(); } },
-                {"tags", (o,n) => { (o as IpSecurityProfile).Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"vendorInformation", (o,n) => { (o as IpSecurityProfile).VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activityGroupNames", n => { ActivityGroupNames = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"address", n => { Address = n.GetStringValue(); } },
+                {"azureSubscriptionId", n => { AzureSubscriptionId = n.GetStringValue(); } },
+                {"azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
+                {"countHits", n => { CountHits = n.GetIntValue(); } },
+                {"countHosts", n => { CountHosts = n.GetIntValue(); } },
+                {"firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                {"ipCategories", n => { IpCategories = n.GetCollectionOfObjectValues<IpCategory>(IpCategory.CreateFromDiscriminatorValue).ToList(); } },
+                {"ipReferenceData", n => { IpReferenceData = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IpReferenceData>(Microsoft.Graph.Beta.Models.IpReferenceData.CreateFromDiscriminatorValue).ToList(); } },
+                {"lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                {"riskScore", n => { RiskScore = n.GetStringValue(); } },
+                {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

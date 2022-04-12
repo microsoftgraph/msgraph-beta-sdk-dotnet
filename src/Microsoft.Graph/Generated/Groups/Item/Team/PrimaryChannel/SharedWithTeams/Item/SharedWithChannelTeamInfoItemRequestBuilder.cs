@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.SharedWithTeams.I
         public SharedWithChannelTeamInfoItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/groups/{group_id}/team/primaryChannel/sharedWithTeams/{sharedWithChannelTeamInfo_id}{?select,expand}";
+            UrlTemplate = "{+baseurl}/groups/{group%2Did}/team/primaryChannel/sharedWithTeams/{sharedWithChannelTeamInfo%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.SharedWithTeams.I
         public SharedWithChannelTeamInfoItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/groups/{group_id}/team/primaryChannel/sharedWithTeams/{sharedWithChannelTeamInfo_id}{?select,expand}";
+            UrlTemplate = "{+baseurl}/groups/{group%2Did}/team/primaryChannel/sharedWithTeams/{sharedWithChannelTeamInfo%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.SharedWithTeams.I
             return requestInfo;
         }
         /// <summary>
-        /// Get sharedWithTeams from groups
+        /// A collection of teams shared with the channel.
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// <param name="queryParameters">Request query parameters</param>
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.SharedWithTeams.I
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get sharedWithTeams from groups
+        /// A collection of teams shared with the channel.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
@@ -151,11 +151,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.SharedWithTeams.I
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get sharedWithTeams from groups</summary>
+        /// <summary>A collection of teams shared with the channel.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
     }

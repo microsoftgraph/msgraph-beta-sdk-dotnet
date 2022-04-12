@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"dlpAction", (o,n) => { (o as ChatMessagePolicyViolation).DlpAction = n.GetEnumValue<ChatMessagePolicyViolationDlpActionTypes>(); } },
-                {"justificationText", (o,n) => { (o as ChatMessagePolicyViolation).JustificationText = n.GetStringValue(); } },
-                {"policyTip", (o,n) => { (o as ChatMessagePolicyViolation).PolicyTip = n.GetObjectValue<ChatMessagePolicyViolationPolicyTip>(ChatMessagePolicyViolationPolicyTip.CreateFromDiscriminatorValue); } },
-                {"userAction", (o,n) => { (o as ChatMessagePolicyViolation).UserAction = n.GetEnumValue<ChatMessagePolicyViolationUserActionTypes>(); } },
-                {"verdictDetails", (o,n) => { (o as ChatMessagePolicyViolation).VerdictDetails = n.GetEnumValue<ChatMessagePolicyViolationVerdictDetailsTypes>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"dlpAction", n => { DlpAction = n.GetEnumValue<ChatMessagePolicyViolationDlpActionTypes>(); } },
+                {"justificationText", n => { JustificationText = n.GetStringValue(); } },
+                {"policyTip", n => { PolicyTip = n.GetObjectValue<ChatMessagePolicyViolationPolicyTip>(ChatMessagePolicyViolationPolicyTip.CreateFromDiscriminatorValue); } },
+                {"userAction", n => { UserAction = n.GetEnumValue<ChatMessagePolicyViolationUserActionTypes>(); } },
+                {"verdictDetails", n => { VerdictDetails = n.GetEnumValue<ChatMessagePolicyViolationVerdictDetailsTypes>(); } },
             };
         }
         /// <summary>

@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"frequencyInHours", (o,n) => { (o as CloudPcRestorePointSetting).FrequencyInHours = n.GetIntValue(); } },
-                {"userRestoreEnabled", (o,n) => { (o as CloudPcRestorePointSetting).UserRestoreEnabled = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"frequencyInHours", n => { FrequencyInHours = n.GetIntValue(); } },
+                {"userRestoreEnabled", n => { UserRestoreEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

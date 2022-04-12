@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Drive.SearchWithQ {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/drive/microsoft.graph.search(q='{q}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("q", q);
+            urlTplParams.Add("", q);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

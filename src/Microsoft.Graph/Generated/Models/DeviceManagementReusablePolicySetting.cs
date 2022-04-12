@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdDateTime", (o,n) => { (o as DeviceManagementReusablePolicySetting).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as DeviceManagementReusablePolicySetting).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as DeviceManagementReusablePolicySetting).DisplayName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as DeviceManagementReusablePolicySetting).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"referencingConfigurationPolicies", (o,n) => { (o as DeviceManagementReusablePolicySetting).ReferencingConfigurationPolicies = n.GetCollectionOfObjectValues<DeviceManagementConfigurationPolicy>(DeviceManagementConfigurationPolicy.CreateFromDiscriminatorValue).ToList(); } },
-                {"referencingConfigurationPolicyCount", (o,n) => { (o as DeviceManagementReusablePolicySetting).ReferencingConfigurationPolicyCount = n.GetIntValue(); } },
-                {"settingDefinitionId", (o,n) => { (o as DeviceManagementReusablePolicySetting).SettingDefinitionId = n.GetStringValue(); } },
-                {"settingInstance", (o,n) => { (o as DeviceManagementReusablePolicySetting).SettingInstance = n.GetObjectValue<DeviceManagementConfigurationSettingInstance>(DeviceManagementConfigurationSettingInstance.CreateFromDiscriminatorValue); } },
-                {"version", (o,n) => { (o as DeviceManagementReusablePolicySetting).Version = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"referencingConfigurationPolicies", n => { ReferencingConfigurationPolicies = n.GetCollectionOfObjectValues<DeviceManagementConfigurationPolicy>(DeviceManagementConfigurationPolicy.CreateFromDiscriminatorValue).ToList(); } },
+                {"referencingConfigurationPolicyCount", n => { ReferencingConfigurationPolicyCount = n.GetIntValue(); } },
+                {"settingDefinitionId", n => { SettingDefinitionId = n.GetStringValue(); } },
+                {"settingInstance", n => { SettingInstance = n.GetObjectValue<DeviceManagementConfigurationSettingInstance>(DeviceManagementConfigurationSettingInstance.CreateFromDiscriminatorValue); } },
+                {"version", n => { Version = n.GetIntValue(); } },
             };
         }
         /// <summary>

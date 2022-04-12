@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.WindowsHelloForBusiness
         /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.authentication.windowsHelloForBusinessMethods.item.device.registeredUsers.item collection</summary>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("directoryObject_id", position);
+            urlTplParams.Add("directoryObject%2Did", position);
             return new DirectoryObjectItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.WindowsHelloForBusiness
         public RegisteredUsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod_id}/device/registeredUsers{?top,skip,search,filter,count,orderby,select,expand}";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod%2Did}/device/registeredUsers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.WindowsHelloForBusiness
         public RegisteredUsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod_id}/device/registeredUsers{?top,skip,search,filter,count,orderby,select,expand}";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod%2Did}/device/registeredUsers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -96,20 +96,28 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.WindowsHelloForBusiness
         /// <summary>Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
+            [QueryParameter("%24count")]
             public bool? Count { get; set; }
             /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
             /// <summary>Filter items by property values</summary>
+            [QueryParameter("%24filter")]
             public string Filter { get; set; }
             /// <summary>Order items by property values</summary>
+            [QueryParameter("%24orderby")]
             public string[] Orderby { get; set; }
             /// <summary>Search items by search phrases</summary>
+            [QueryParameter("%24search")]
             public string Search { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
             /// <summary>Skip the first n items</summary>
+            [QueryParameter("%24skip")]
             public int? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
+            [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
     }

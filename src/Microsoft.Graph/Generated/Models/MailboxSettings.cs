@@ -44,18 +44,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"archiveFolder", (o,n) => { (o as MailboxSettings).ArchiveFolder = n.GetStringValue(); } },
-                {"automaticRepliesSetting", (o,n) => { (o as MailboxSettings).AutomaticRepliesSetting = n.GetObjectValue<Microsoft.Graph.Beta.Models.AutomaticRepliesSetting>(Microsoft.Graph.Beta.Models.AutomaticRepliesSetting.CreateFromDiscriminatorValue); } },
-                {"dateFormat", (o,n) => { (o as MailboxSettings).DateFormat = n.GetStringValue(); } },
-                {"delegateMeetingMessageDeliveryOptions", (o,n) => { (o as MailboxSettings).DelegateMeetingMessageDeliveryOptions = n.GetEnumValue<DelegateMeetingMessageDeliveryOptions>(); } },
-                {"language", (o,n) => { (o as MailboxSettings).Language = n.GetObjectValue<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue); } },
-                {"timeFormat", (o,n) => { (o as MailboxSettings).TimeFormat = n.GetStringValue(); } },
-                {"timeZone", (o,n) => { (o as MailboxSettings).TimeZone = n.GetStringValue(); } },
-                {"userPurpose", (o,n) => { (o as MailboxSettings).UserPurpose = n.GetEnumValue<UserPurpose>(); } },
-                {"userPurposeV2", (o,n) => { (o as MailboxSettings).UserPurposeV2 = n.GetEnumValue<MailboxRecipientType>(); } },
-                {"workingHours", (o,n) => { (o as MailboxSettings).WorkingHours = n.GetObjectValue<Microsoft.Graph.Beta.Models.WorkingHours>(Microsoft.Graph.Beta.Models.WorkingHours.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"archiveFolder", n => { ArchiveFolder = n.GetStringValue(); } },
+                {"automaticRepliesSetting", n => { AutomaticRepliesSetting = n.GetObjectValue<Microsoft.Graph.Beta.Models.AutomaticRepliesSetting>(Microsoft.Graph.Beta.Models.AutomaticRepliesSetting.CreateFromDiscriminatorValue); } },
+                {"dateFormat", n => { DateFormat = n.GetStringValue(); } },
+                {"delegateMeetingMessageDeliveryOptions", n => { DelegateMeetingMessageDeliveryOptions = n.GetEnumValue<DelegateMeetingMessageDeliveryOptions>(); } },
+                {"language", n => { Language = n.GetObjectValue<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue); } },
+                {"timeFormat", n => { TimeFormat = n.GetStringValue(); } },
+                {"timeZone", n => { TimeZone = n.GetStringValue(); } },
+                {"userPurpose", n => { UserPurpose = n.GetEnumValue<UserPurpose>(); } },
+                {"userPurposeV2", n => { UserPurposeV2 = n.GetEnumValue<MailboxRecipientType>(); } },
+                {"workingHours", n => { WorkingHours = n.GetObjectValue<Microsoft.Graph.Beta.Models.WorkingHours>(Microsoft.Graph.Beta.Models.WorkingHours.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -54,27 +54,27 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"actionType", (o,n) => { (o as SecureScoreControlProfile).ActionType = n.GetStringValue(); } },
-                {"actionUrl", (o,n) => { (o as SecureScoreControlProfile).ActionUrl = n.GetStringValue(); } },
-                {"azureTenantId", (o,n) => { (o as SecureScoreControlProfile).AzureTenantId = n.GetStringValue(); } },
-                {"complianceInformation", (o,n) => { (o as SecureScoreControlProfile).ComplianceInformation = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ComplianceInformation>(Microsoft.Graph.Beta.Models.ComplianceInformation.CreateFromDiscriminatorValue).ToList(); } },
-                {"controlCategory", (o,n) => { (o as SecureScoreControlProfile).ControlCategory = n.GetStringValue(); } },
-                {"controlStateUpdates", (o,n) => { (o as SecureScoreControlProfile).ControlStateUpdates = n.GetCollectionOfObjectValues<SecureScoreControlStateUpdate>(SecureScoreControlStateUpdate.CreateFromDiscriminatorValue).ToList(); } },
-                {"deprecated", (o,n) => { (o as SecureScoreControlProfile).Deprecated = n.GetBoolValue(); } },
-                {"implementationCost", (o,n) => { (o as SecureScoreControlProfile).ImplementationCost = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as SecureScoreControlProfile).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"maxScore", (o,n) => { (o as SecureScoreControlProfile).MaxScore = n.GetDoubleValue(); } },
-                {"rank", (o,n) => { (o as SecureScoreControlProfile).Rank = n.GetIntValue(); } },
-                {"remediation", (o,n) => { (o as SecureScoreControlProfile).Remediation = n.GetStringValue(); } },
-                {"remediationImpact", (o,n) => { (o as SecureScoreControlProfile).RemediationImpact = n.GetStringValue(); } },
-                {"service", (o,n) => { (o as SecureScoreControlProfile).Service = n.GetStringValue(); } },
-                {"threats", (o,n) => { (o as SecureScoreControlProfile).Threats = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"tier", (o,n) => { (o as SecureScoreControlProfile).Tier = n.GetStringValue(); } },
-                {"title", (o,n) => { (o as SecureScoreControlProfile).Title = n.GetStringValue(); } },
-                {"userImpact", (o,n) => { (o as SecureScoreControlProfile).UserImpact = n.GetStringValue(); } },
-                {"vendorInformation", (o,n) => { (o as SecureScoreControlProfile).VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"actionType", n => { ActionType = n.GetStringValue(); } },
+                {"actionUrl", n => { ActionUrl = n.GetStringValue(); } },
+                {"azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
+                {"complianceInformation", n => { ComplianceInformation = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ComplianceInformation>(Microsoft.Graph.Beta.Models.ComplianceInformation.CreateFromDiscriminatorValue).ToList(); } },
+                {"controlCategory", n => { ControlCategory = n.GetStringValue(); } },
+                {"controlStateUpdates", n => { ControlStateUpdates = n.GetCollectionOfObjectValues<SecureScoreControlStateUpdate>(SecureScoreControlStateUpdate.CreateFromDiscriminatorValue).ToList(); } },
+                {"deprecated", n => { Deprecated = n.GetBoolValue(); } },
+                {"implementationCost", n => { ImplementationCost = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"maxScore", n => { MaxScore = n.GetDoubleValue(); } },
+                {"rank", n => { Rank = n.GetIntValue(); } },
+                {"remediation", n => { Remediation = n.GetStringValue(); } },
+                {"remediationImpact", n => { RemediationImpact = n.GetStringValue(); } },
+                {"service", n => { Service = n.GetStringValue(); } },
+                {"threats", n => { Threats = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"tier", n => { Tier = n.GetStringValue(); } },
+                {"title", n => { Title = n.GetStringValue(); } },
+                {"userImpact", n => { UserImpact = n.GetStringValue(); } },
+                {"vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

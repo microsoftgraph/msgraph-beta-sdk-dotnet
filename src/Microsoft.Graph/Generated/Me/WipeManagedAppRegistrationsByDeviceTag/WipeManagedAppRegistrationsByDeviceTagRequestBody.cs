@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationsByDeviceTag {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"deviceTag", (o,n) => { (o as WipeManagedAppRegistrationsByDeviceTagRequestBody).DeviceTag = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"deviceTag", n => { DeviceTag = n.GetStringValue(); } },
             };
         }
         /// <summary>

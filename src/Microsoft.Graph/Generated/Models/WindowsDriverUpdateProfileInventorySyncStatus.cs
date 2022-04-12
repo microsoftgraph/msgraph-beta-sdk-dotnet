@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"driverInventorySyncState", (o,n) => { (o as WindowsDriverUpdateProfileInventorySyncStatus).DriverInventorySyncState = n.GetEnumValue<WindowsDriverUpdateProfileInventorySyncState>(); } },
-                {"lastSuccessfulSyncDateTime", (o,n) => { (o as WindowsDriverUpdateProfileInventorySyncStatus).LastSuccessfulSyncDateTime = n.GetDateTimeOffsetValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"driverInventorySyncState", n => { DriverInventorySyncState = n.GetEnumValue<WindowsDriverUpdateProfileInventorySyncState>(); } },
+                {"lastSuccessfulSyncDateTime", n => { LastSuccessfulSyncDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

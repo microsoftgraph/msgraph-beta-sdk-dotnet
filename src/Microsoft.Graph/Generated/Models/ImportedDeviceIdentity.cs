@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdDateTime", (o,n) => { (o as ImportedDeviceIdentity).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as ImportedDeviceIdentity).Description = n.GetStringValue(); } },
-                {"enrollmentState", (o,n) => { (o as ImportedDeviceIdentity).EnrollmentState = n.GetEnumValue<EnrollmentState>(); } },
-                {"importedDeviceIdentifier", (o,n) => { (o as ImportedDeviceIdentity).ImportedDeviceIdentifier = n.GetStringValue(); } },
-                {"importedDeviceIdentityType", (o,n) => { (o as ImportedDeviceIdentity).ImportedDeviceIdentityType = n.GetEnumValue<ImportedDeviceIdentityType>(); } },
-                {"lastContactedDateTime", (o,n) => { (o as ImportedDeviceIdentity).LastContactedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as ImportedDeviceIdentity).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"platform", (o,n) => { (o as ImportedDeviceIdentity).Platform = n.GetEnumValue<Platform>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"enrollmentState", n => { EnrollmentState = n.GetEnumValue<EnrollmentState>(); } },
+                {"importedDeviceIdentifier", n => { ImportedDeviceIdentifier = n.GetStringValue(); } },
+                {"importedDeviceIdentityType", n => { ImportedDeviceIdentityType = n.GetEnumValue<ImportedDeviceIdentityType>(); } },
+                {"lastContactedDateTime", n => { LastContactedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"platform", n => { Platform = n.GetEnumValue<Platform>(); } },
             };
         }
         /// <summary>

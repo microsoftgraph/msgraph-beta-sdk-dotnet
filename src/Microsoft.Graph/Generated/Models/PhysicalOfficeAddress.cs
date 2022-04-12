@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"city", (o,n) => { (o as PhysicalOfficeAddress).City = n.GetStringValue(); } },
-                {"countryOrRegion", (o,n) => { (o as PhysicalOfficeAddress).CountryOrRegion = n.GetStringValue(); } },
-                {"officeLocation", (o,n) => { (o as PhysicalOfficeAddress).OfficeLocation = n.GetStringValue(); } },
-                {"postalCode", (o,n) => { (o as PhysicalOfficeAddress).PostalCode = n.GetStringValue(); } },
-                {"state", (o,n) => { (o as PhysicalOfficeAddress).State = n.GetStringValue(); } },
-                {"street", (o,n) => { (o as PhysicalOfficeAddress).Street = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"city", n => { City = n.GetStringValue(); } },
+                {"countryOrRegion", n => { CountryOrRegion = n.GetStringValue(); } },
+                {"officeLocation", n => { OfficeLocation = n.GetStringValue(); } },
+                {"postalCode", n => { PostalCode = n.GetStringValue(); } },
+                {"state", n => { State = n.GetStringValue(); } },
+                {"street", n => { Street = n.GetStringValue(); } },
             };
         }
         /// <summary>

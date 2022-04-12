@@ -32,11 +32,11 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.GetStaffAvailability {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"endDateTime", (o,n) => { (o as GetStaffAvailabilityRequestBody).EndDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"staffIds", (o,n) => { (o as GetStaffAvailabilityRequestBody).StaffIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"startDateTime", (o,n) => { (o as GetStaffAvailabilityRequestBody).StartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"endDateTime", n => { EndDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                {"staffIds", n => { StaffIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"startDateTime", n => { StartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

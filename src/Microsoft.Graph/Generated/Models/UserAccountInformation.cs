@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"ageGroup", (o,n) => { (o as UserAccountInformation).AgeGroup = n.GetStringValue(); } },
-                {"countryCode", (o,n) => { (o as UserAccountInformation).CountryCode = n.GetStringValue(); } },
-                {"preferredLanguageTag", (o,n) => { (o as UserAccountInformation).PreferredLanguageTag = n.GetObjectValue<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue); } },
-                {"userPrincipalName", (o,n) => { (o as UserAccountInformation).UserPrincipalName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"ageGroup", n => { AgeGroup = n.GetStringValue(); } },
+                {"countryCode", n => { CountryCode = n.GetStringValue(); } },
+                {"preferredLanguageTag", n => { PreferredLanguageTag = n.GetObjectValue<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

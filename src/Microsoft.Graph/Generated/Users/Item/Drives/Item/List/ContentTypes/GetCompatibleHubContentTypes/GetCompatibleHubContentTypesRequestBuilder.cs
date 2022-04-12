@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List.ContentTypes.GetCompa
         public GetCompatibleHubContentTypesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/drives/{drive_id}/list/contentTypes/microsoft.graph.getCompatibleHubContentTypes()";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/drives/{drive%2Did}/list/contentTypes/microsoft.graph.getCompatibleHubContentTypes()";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List.ContentTypes.GetCompa
         public GetCompatibleHubContentTypesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/drives/{drive_id}/list/contentTypes/microsoft.graph.getCompatibleHubContentTypes()";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/drives/{drive%2Did}/list/contentTypes/microsoft.graph.getCompatibleHubContentTypes()";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

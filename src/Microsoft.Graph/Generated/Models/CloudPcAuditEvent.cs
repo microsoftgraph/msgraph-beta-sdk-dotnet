@@ -38,19 +38,19 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activity", (o,n) => { (o as CloudPcAuditEvent).Activity = n.GetStringValue(); } },
-                {"activityDateTime", (o,n) => { (o as CloudPcAuditEvent).ActivityDateTime = n.GetDateTimeOffsetValue(); } },
-                {"activityOperationType", (o,n) => { (o as CloudPcAuditEvent).ActivityOperationType = n.GetEnumValue<CloudPcAuditActivityOperationType>(); } },
-                {"activityResult", (o,n) => { (o as CloudPcAuditEvent).ActivityResult = n.GetEnumValue<CloudPcAuditActivityResult>(); } },
-                {"activityType", (o,n) => { (o as CloudPcAuditEvent).ActivityType = n.GetStringValue(); } },
-                {"actor", (o,n) => { (o as CloudPcAuditEvent).Actor = n.GetObjectValue<CloudPcAuditActor>(CloudPcAuditActor.CreateFromDiscriminatorValue); } },
-                {"category", (o,n) => { (o as CloudPcAuditEvent).Category = n.GetEnumValue<CloudPcAuditCategory>(); } },
-                {"componentName", (o,n) => { (o as CloudPcAuditEvent).ComponentName = n.GetStringValue(); } },
-                {"correlationId", (o,n) => { (o as CloudPcAuditEvent).CorrelationId = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as CloudPcAuditEvent).DisplayName = n.GetStringValue(); } },
-                {"resources", (o,n) => { (o as CloudPcAuditEvent).Resources = n.GetCollectionOfObjectValues<CloudPcAuditResource>(CloudPcAuditResource.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activity", n => { Activity = n.GetStringValue(); } },
+                {"activityDateTime", n => { ActivityDateTime = n.GetDateTimeOffsetValue(); } },
+                {"activityOperationType", n => { ActivityOperationType = n.GetEnumValue<CloudPcAuditActivityOperationType>(); } },
+                {"activityResult", n => { ActivityResult = n.GetEnumValue<CloudPcAuditActivityResult>(); } },
+                {"activityType", n => { ActivityType = n.GetStringValue(); } },
+                {"actor", n => { Actor = n.GetObjectValue<CloudPcAuditActor>(CloudPcAuditActor.CreateFromDiscriminatorValue); } },
+                {"category", n => { Category = n.GetEnumValue<CloudPcAuditCategory>(); } },
+                {"componentName", n => { ComponentName = n.GetStringValue(); } },
+                {"correlationId", n => { CorrelationId = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"resources", n => { Resources = n.GetCollectionOfObjectValues<CloudPcAuditResource>(CloudPcAuditResource.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

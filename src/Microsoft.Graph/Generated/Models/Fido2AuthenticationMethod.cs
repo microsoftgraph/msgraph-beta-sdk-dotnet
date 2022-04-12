@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"aaGuid", (o,n) => { (o as Fido2AuthenticationMethod).AaGuid = n.GetStringValue(); } },
-                {"attestationCertificates", (o,n) => { (o as Fido2AuthenticationMethod).AttestationCertificates = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"attestationLevel", (o,n) => { (o as Fido2AuthenticationMethod).AttestationLevel = n.GetEnumValue<AttestationLevel>(); } },
-                {"createdDateTime", (o,n) => { (o as Fido2AuthenticationMethod).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"creationDateTime", (o,n) => { (o as Fido2AuthenticationMethod).CreationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", (o,n) => { (o as Fido2AuthenticationMethod).DisplayName = n.GetStringValue(); } },
-                {"model", (o,n) => { (o as Fido2AuthenticationMethod).Model = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"aaGuid", n => { AaGuid = n.GetStringValue(); } },
+                {"attestationCertificates", n => { AttestationCertificates = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"attestationLevel", n => { AttestationLevel = n.GetEnumValue<AttestationLevel>(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"model", n => { Model = n.GetStringValue(); } },
             };
         }
         /// <summary>

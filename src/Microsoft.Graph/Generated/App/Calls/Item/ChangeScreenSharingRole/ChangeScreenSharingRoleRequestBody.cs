@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.ChangeScreenSharingRole {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"role", (o,n) => { (o as ChangeScreenSharingRoleRequestBody).Role = n.GetEnumValue<ScreenSharingRole>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"role", n => { Role = n.GetEnumValue<ScreenSharingRole>(); } },
             };
         }
         /// <summary>

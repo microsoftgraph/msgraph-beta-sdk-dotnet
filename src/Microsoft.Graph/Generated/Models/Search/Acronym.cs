@@ -20,10 +20,10 @@ namespace Microsoft.Graph.Beta.Models.Search {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"standsFor", (o,n) => { (o as Acronym).StandsFor = n.GetStringValue(); } },
-                {"state", (o,n) => { (o as Acronym).State = n.GetEnumValue<AnswerState>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"standsFor", n => { StandsFor = n.GetStringValue(); } },
+                {"state", n => { State = n.GetEnumValue<AnswerState>(); } },
             };
         }
         /// <summary>

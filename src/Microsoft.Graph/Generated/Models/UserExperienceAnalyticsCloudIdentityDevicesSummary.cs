@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"deviceWithoutCloudIdentityCount", (o,n) => { (o as UserExperienceAnalyticsCloudIdentityDevicesSummary).DeviceWithoutCloudIdentityCount = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"deviceWithoutCloudIdentityCount", n => { DeviceWithoutCloudIdentityCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

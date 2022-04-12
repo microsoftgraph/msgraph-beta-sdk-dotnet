@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.Permissions.Item.Rev
         public RevokeGrantsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/groups/{group_id}/drives/{drive_id}/root/permissions/{permission_id}/microsoft.graph.revokeGrants";
+            UrlTemplate = "{+baseurl}/groups/{group%2Did}/drives/{drive%2Did}/root/permissions/{permission%2Did}/microsoft.graph.revokeGrants";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.Permissions.Item.Rev
         public RevokeGrantsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/groups/{group_id}/drives/{drive_id}/root/permissions/{permission_id}/microsoft.graph.revokeGrants";
+            UrlTemplate = "{+baseurl}/groups/{group%2Did}/drives/{drive%2Did}/root/permissions/{permission%2Did}/microsoft.graph.revokeGrants";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

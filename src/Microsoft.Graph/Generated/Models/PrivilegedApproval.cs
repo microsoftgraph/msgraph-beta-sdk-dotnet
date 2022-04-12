@@ -38,19 +38,19 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"approvalDuration", (o,n) => { (o as PrivilegedApproval).ApprovalDuration = n.GetTimeSpanValue(); } },
-                {"approvalState", (o,n) => { (o as PrivilegedApproval).ApprovalState = n.GetEnumValue<ApprovalState>(); } },
-                {"approvalType", (o,n) => { (o as PrivilegedApproval).ApprovalType = n.GetStringValue(); } },
-                {"approverReason", (o,n) => { (o as PrivilegedApproval).ApproverReason = n.GetStringValue(); } },
-                {"endDateTime", (o,n) => { (o as PrivilegedApproval).EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"request", (o,n) => { (o as PrivilegedApproval).Request = n.GetObjectValue<PrivilegedRoleAssignmentRequest>(PrivilegedRoleAssignmentRequest.CreateFromDiscriminatorValue); } },
-                {"requestorReason", (o,n) => { (o as PrivilegedApproval).RequestorReason = n.GetStringValue(); } },
-                {"roleId", (o,n) => { (o as PrivilegedApproval).RoleId = n.GetStringValue(); } },
-                {"roleInfo", (o,n) => { (o as PrivilegedApproval).RoleInfo = n.GetObjectValue<PrivilegedRole>(PrivilegedRole.CreateFromDiscriminatorValue); } },
-                {"startDateTime", (o,n) => { (o as PrivilegedApproval).StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"userId", (o,n) => { (o as PrivilegedApproval).UserId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"approvalDuration", n => { ApprovalDuration = n.GetTimeSpanValue(); } },
+                {"approvalState", n => { ApprovalState = n.GetEnumValue<ApprovalState>(); } },
+                {"approvalType", n => { ApprovalType = n.GetStringValue(); } },
+                {"approverReason", n => { ApproverReason = n.GetStringValue(); } },
+                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"request", n => { Request = n.GetObjectValue<PrivilegedRoleAssignmentRequest>(PrivilegedRoleAssignmentRequest.CreateFromDiscriminatorValue); } },
+                {"requestorReason", n => { RequestorReason = n.GetStringValue(); } },
+                {"roleId", n => { RoleId = n.GetStringValue(); } },
+                {"roleInfo", n => { RoleInfo = n.GetObjectValue<PrivilegedRole>(PrivilegedRole.CreateFromDiscriminatorValue); } },
+                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                {"userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -46,23 +46,23 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"compliantDeviceCount", (o,n) => { (o as SoftwareUpdateStatusSummary).CompliantDeviceCount = n.GetIntValue(); } },
-                {"compliantUserCount", (o,n) => { (o as SoftwareUpdateStatusSummary).CompliantUserCount = n.GetIntValue(); } },
-                {"conflictDeviceCount", (o,n) => { (o as SoftwareUpdateStatusSummary).ConflictDeviceCount = n.GetIntValue(); } },
-                {"conflictUserCount", (o,n) => { (o as SoftwareUpdateStatusSummary).ConflictUserCount = n.GetIntValue(); } },
-                {"displayName", (o,n) => { (o as SoftwareUpdateStatusSummary).DisplayName = n.GetStringValue(); } },
-                {"errorDeviceCount", (o,n) => { (o as SoftwareUpdateStatusSummary).ErrorDeviceCount = n.GetIntValue(); } },
-                {"errorUserCount", (o,n) => { (o as SoftwareUpdateStatusSummary).ErrorUserCount = n.GetIntValue(); } },
-                {"nonCompliantDeviceCount", (o,n) => { (o as SoftwareUpdateStatusSummary).NonCompliantDeviceCount = n.GetIntValue(); } },
-                {"nonCompliantUserCount", (o,n) => { (o as SoftwareUpdateStatusSummary).NonCompliantUserCount = n.GetIntValue(); } },
-                {"notApplicableDeviceCount", (o,n) => { (o as SoftwareUpdateStatusSummary).NotApplicableDeviceCount = n.GetIntValue(); } },
-                {"notApplicableUserCount", (o,n) => { (o as SoftwareUpdateStatusSummary).NotApplicableUserCount = n.GetIntValue(); } },
-                {"remediatedDeviceCount", (o,n) => { (o as SoftwareUpdateStatusSummary).RemediatedDeviceCount = n.GetIntValue(); } },
-                {"remediatedUserCount", (o,n) => { (o as SoftwareUpdateStatusSummary).RemediatedUserCount = n.GetIntValue(); } },
-                {"unknownDeviceCount", (o,n) => { (o as SoftwareUpdateStatusSummary).UnknownDeviceCount = n.GetIntValue(); } },
-                {"unknownUserCount", (o,n) => { (o as SoftwareUpdateStatusSummary).UnknownUserCount = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"compliantDeviceCount", n => { CompliantDeviceCount = n.GetIntValue(); } },
+                {"compliantUserCount", n => { CompliantUserCount = n.GetIntValue(); } },
+                {"conflictDeviceCount", n => { ConflictDeviceCount = n.GetIntValue(); } },
+                {"conflictUserCount", n => { ConflictUserCount = n.GetIntValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"errorDeviceCount", n => { ErrorDeviceCount = n.GetIntValue(); } },
+                {"errorUserCount", n => { ErrorUserCount = n.GetIntValue(); } },
+                {"nonCompliantDeviceCount", n => { NonCompliantDeviceCount = n.GetIntValue(); } },
+                {"nonCompliantUserCount", n => { NonCompliantUserCount = n.GetIntValue(); } },
+                {"notApplicableDeviceCount", n => { NotApplicableDeviceCount = n.GetIntValue(); } },
+                {"notApplicableUserCount", n => { NotApplicableUserCount = n.GetIntValue(); } },
+                {"remediatedDeviceCount", n => { RemediatedDeviceCount = n.GetIntValue(); } },
+                {"remediatedUserCount", n => { RemediatedUserCount = n.GetIntValue(); } },
+                {"unknownDeviceCount", n => { UnknownDeviceCount = n.GetIntValue(); } },
+                {"unknownUserCount", n => { UnknownUserCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

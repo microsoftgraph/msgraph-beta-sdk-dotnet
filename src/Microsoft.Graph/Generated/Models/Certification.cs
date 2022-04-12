@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"certificationDetailsUrl", (o,n) => { (o as Certification).CertificationDetailsUrl = n.GetStringValue(); } },
-                {"certificationExpirationDateTime", (o,n) => { (o as Certification).CertificationExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"isCertifiedByMicrosoft", (o,n) => { (o as Certification).IsCertifiedByMicrosoft = n.GetBoolValue(); } },
-                {"isPublisherAttested", (o,n) => { (o as Certification).IsPublisherAttested = n.GetBoolValue(); } },
-                {"lastCertificationDateTime", (o,n) => { (o as Certification).LastCertificationDateTime = n.GetDateTimeOffsetValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"certificationDetailsUrl", n => { CertificationDetailsUrl = n.GetStringValue(); } },
+                {"certificationExpirationDateTime", n => { CertificationExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"isCertifiedByMicrosoft", n => { IsCertifiedByMicrosoft = n.GetBoolValue(); } },
+                {"isPublisherAttested", n => { IsPublisherAttested = n.GetBoolValue(); } },
+                {"lastCertificationDateTime", n => { LastCertificationDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"detectionScriptErrorDeviceCount", (o,n) => { (o as DeviceComplianceScriptRunSummary).DetectionScriptErrorDeviceCount = n.GetIntValue(); } },
-                {"detectionScriptPendingDeviceCount", (o,n) => { (o as DeviceComplianceScriptRunSummary).DetectionScriptPendingDeviceCount = n.GetIntValue(); } },
-                {"issueDetectedDeviceCount", (o,n) => { (o as DeviceComplianceScriptRunSummary).IssueDetectedDeviceCount = n.GetIntValue(); } },
-                {"lastScriptRunDateTime", (o,n) => { (o as DeviceComplianceScriptRunSummary).LastScriptRunDateTime = n.GetDateTimeOffsetValue(); } },
-                {"noIssueDetectedDeviceCount", (o,n) => { (o as DeviceComplianceScriptRunSummary).NoIssueDetectedDeviceCount = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"detectionScriptErrorDeviceCount", n => { DetectionScriptErrorDeviceCount = n.GetIntValue(); } },
+                {"detectionScriptPendingDeviceCount", n => { DetectionScriptPendingDeviceCount = n.GetIntValue(); } },
+                {"issueDetectedDeviceCount", n => { IssueDetectedDeviceCount = n.GetIntValue(); } },
+                {"lastScriptRunDateTime", n => { LastScriptRunDateTime = n.GetDateTimeOffsetValue(); } },
+                {"noIssueDetectedDeviceCount", n => { NoIssueDetectedDeviceCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

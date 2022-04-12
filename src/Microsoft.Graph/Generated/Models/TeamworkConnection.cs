@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"connectionStatus", (o,n) => { (o as TeamworkConnection).ConnectionStatus = n.GetEnumValue<TeamworkConnectionStatus>(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as TeamworkConnection).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"connectionStatus", n => { ConnectionStatus = n.GetEnumValue<TeamworkConnectionStatus>(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

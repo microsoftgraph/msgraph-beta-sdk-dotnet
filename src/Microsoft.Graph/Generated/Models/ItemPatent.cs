@@ -31,15 +31,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"description", (o,n) => { (o as ItemPatent).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as ItemPatent).DisplayName = n.GetStringValue(); } },
-                {"isPending", (o,n) => { (o as ItemPatent).IsPending = n.GetBoolValue(); } },
-                {"issuedDate", (o,n) => { (o as ItemPatent).IssuedDate = n.GetDateValue(); } },
-                {"issuingAuthority", (o,n) => { (o as ItemPatent).IssuingAuthority = n.GetStringValue(); } },
-                {"number", (o,n) => { (o as ItemPatent).Number = n.GetStringValue(); } },
-                {"webUrl", (o,n) => { (o as ItemPatent).WebUrl = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"isPending", n => { IsPending = n.GetBoolValue(); } },
+                {"issuedDate", n => { IssuedDate = n.GetDateValue(); } },
+                {"issuingAuthority", n => { IssuingAuthority = n.GetStringValue(); } },
+                {"number", n => { Number = n.GetStringValue(); } },
+                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

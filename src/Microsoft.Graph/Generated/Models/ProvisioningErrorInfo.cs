@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"additionalDetails", (o,n) => { (o as ProvisioningErrorInfo).AdditionalDetails = n.GetStringValue(); } },
-                {"errorCategory", (o,n) => { (o as ProvisioningErrorInfo).ErrorCategory = n.GetEnumValue<ProvisioningStatusErrorCategory>(); } },
-                {"errorCode", (o,n) => { (o as ProvisioningErrorInfo).ErrorCode = n.GetStringValue(); } },
-                {"reason", (o,n) => { (o as ProvisioningErrorInfo).Reason = n.GetStringValue(); } },
-                {"recommendedAction", (o,n) => { (o as ProvisioningErrorInfo).RecommendedAction = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"additionalDetails", n => { AdditionalDetails = n.GetStringValue(); } },
+                {"errorCategory", n => { ErrorCategory = n.GetEnumValue<ProvisioningStatusErrorCategory>(); } },
+                {"errorCode", n => { ErrorCode = n.GetStringValue(); } },
+                {"reason", n => { Reason = n.GetStringValue(); } },
+                {"recommendedAction", n => { RecommendedAction = n.GetStringValue(); } },
             };
         }
         /// <summary>

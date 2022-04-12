@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appGroupType", (o,n) => { (o as TargetedManagedAppProtection).AppGroupType = n.GetEnumValue<TargetedManagedAppGroupType>(); } },
-                {"assignments", (o,n) => { (o as TargetedManagedAppProtection).Assignments = n.GetCollectionOfObjectValues<TargetedManagedAppPolicyAssignment>(TargetedManagedAppPolicyAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"isAssigned", (o,n) => { (o as TargetedManagedAppProtection).IsAssigned = n.GetBoolValue(); } },
-                {"targetedAppManagementLevels", (o,n) => { (o as TargetedManagedAppProtection).TargetedAppManagementLevels = n.GetEnumValue<AppManagementLevel>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"appGroupType", n => { AppGroupType = n.GetEnumValue<TargetedManagedAppGroupType>(); } },
+                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<TargetedManagedAppPolicyAssignment>(TargetedManagedAppPolicyAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"isAssigned", n => { IsAssigned = n.GetBoolValue(); } },
+                {"targetedAppManagementLevels", n => { TargetedAppManagementLevels = n.GetEnumValue<AppManagementLevel>(); } },
             };
         }
         /// <summary>

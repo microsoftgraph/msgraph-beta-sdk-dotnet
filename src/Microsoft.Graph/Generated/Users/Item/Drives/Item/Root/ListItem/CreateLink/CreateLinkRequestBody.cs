@@ -38,14 +38,14 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.Root.ListItem.CreateLink {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"expirationDateTime", (o,n) => { (o as CreateLinkRequestBody).ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"password", (o,n) => { (o as CreateLinkRequestBody).Password = n.GetStringValue(); } },
-                {"recipients", (o,n) => { (o as CreateLinkRequestBody).Recipients = n.GetCollectionOfObjectValues<DriveRecipient>(DriveRecipient.CreateFromDiscriminatorValue).ToList(); } },
-                {"retainInheritedPermissions", (o,n) => { (o as CreateLinkRequestBody).RetainInheritedPermissions = n.GetBoolValue(); } },
-                {"scope", (o,n) => { (o as CreateLinkRequestBody).Scope = n.GetStringValue(); } },
-                {"type", (o,n) => { (o as CreateLinkRequestBody).Type = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"password", n => { Password = n.GetStringValue(); } },
+                {"recipients", n => { Recipients = n.GetCollectionOfObjectValues<DriveRecipient>(DriveRecipient.CreateFromDiscriminatorValue).ToList(); } },
+                {"retainInheritedPermissions", n => { RetainInheritedPermissions = n.GetBoolValue(); } },
+                {"scope", n => { Scope = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>

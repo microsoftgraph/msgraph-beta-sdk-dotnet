@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"content", (o,n) => { (o as SymantecCodeSigningCertificate).Content = n.GetByteArrayValue(); } },
-                {"expirationDateTime", (o,n) => { (o as SymantecCodeSigningCertificate).ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"issuer", (o,n) => { (o as SymantecCodeSigningCertificate).Issuer = n.GetStringValue(); } },
-                {"issuerName", (o,n) => { (o as SymantecCodeSigningCertificate).IssuerName = n.GetStringValue(); } },
-                {"password", (o,n) => { (o as SymantecCodeSigningCertificate).Password = n.GetStringValue(); } },
-                {"status", (o,n) => { (o as SymantecCodeSigningCertificate).Status = n.GetEnumValue<CertificateStatus>(); } },
-                {"subject", (o,n) => { (o as SymantecCodeSigningCertificate).Subject = n.GetStringValue(); } },
-                {"subjectName", (o,n) => { (o as SymantecCodeSigningCertificate).SubjectName = n.GetStringValue(); } },
-                {"uploadDateTime", (o,n) => { (o as SymantecCodeSigningCertificate).UploadDateTime = n.GetDateTimeOffsetValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"content", n => { Content = n.GetByteArrayValue(); } },
+                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"issuer", n => { Issuer = n.GetStringValue(); } },
+                {"issuerName", n => { IssuerName = n.GetStringValue(); } },
+                {"password", n => { Password = n.GetStringValue(); } },
+                {"status", n => { Status = n.GetEnumValue<CertificateStatus>(); } },
+                {"subject", n => { Subject = n.GetStringValue(); } },
+                {"subjectName", n => { SubjectName = n.GetStringValue(); } },
+                {"uploadDateTime", n => { UploadDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

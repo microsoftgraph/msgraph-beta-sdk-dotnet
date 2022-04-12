@@ -42,17 +42,17 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"delegatedPrivilegeStatus", (o,n) => { (o as TenantStatusInformation).DelegatedPrivilegeStatus = n.GetEnumValue<DelegatedPrivilegeStatus>(); } },
-                {"lastDelegatedPrivilegeRefreshDateTime", (o,n) => { (o as TenantStatusInformation).LastDelegatedPrivilegeRefreshDateTime = n.GetDateTimeOffsetValue(); } },
-                {"offboardedByUserId", (o,n) => { (o as TenantStatusInformation).OffboardedByUserId = n.GetStringValue(); } },
-                {"offboardedDateTime", (o,n) => { (o as TenantStatusInformation).OffboardedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"onboardedByUserId", (o,n) => { (o as TenantStatusInformation).OnboardedByUserId = n.GetStringValue(); } },
-                {"onboardedDateTime", (o,n) => { (o as TenantStatusInformation).OnboardedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"onboardingStatus", (o,n) => { (o as TenantStatusInformation).OnboardingStatus = n.GetEnumValue<TenantOnboardingStatus>(); } },
-                {"tenantOnboardingEligibilityReason", (o,n) => { (o as TenantStatusInformation).TenantOnboardingEligibilityReason = n.GetEnumValue<TenantOnboardingEligibilityReason>(); } },
-                {"workloadStatuses", (o,n) => { (o as TenantStatusInformation).WorkloadStatuses = n.GetCollectionOfObjectValues<WorkloadStatus>(WorkloadStatus.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"delegatedPrivilegeStatus", n => { DelegatedPrivilegeStatus = n.GetEnumValue<DelegatedPrivilegeStatus>(); } },
+                {"lastDelegatedPrivilegeRefreshDateTime", n => { LastDelegatedPrivilegeRefreshDateTime = n.GetDateTimeOffsetValue(); } },
+                {"offboardedByUserId", n => { OffboardedByUserId = n.GetStringValue(); } },
+                {"offboardedDateTime", n => { OffboardedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"onboardedByUserId", n => { OnboardedByUserId = n.GetStringValue(); } },
+                {"onboardedDateTime", n => { OnboardedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<TenantOnboardingStatus>(); } },
+                {"tenantOnboardingEligibilityReason", n => { TenantOnboardingEligibilityReason = n.GetEnumValue<TenantOnboardingEligibilityReason>(); } },
+                {"workloadStatuses", n => { WorkloadStatuses = n.GetCollectionOfObjectValues<WorkloadStatus>(WorkloadStatus.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

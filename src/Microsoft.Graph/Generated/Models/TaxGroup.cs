@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"code", (o,n) => { (o as TaxGroup).Code = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as TaxGroup).DisplayName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as TaxGroup).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"taxType", (o,n) => { (o as TaxGroup).TaxType = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"code", n => { Code = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"taxType", n => { TaxType = n.GetStringValue(); } },
             };
         }
         /// <summary>

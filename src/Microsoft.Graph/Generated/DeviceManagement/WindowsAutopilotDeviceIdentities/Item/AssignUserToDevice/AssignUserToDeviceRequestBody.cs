@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"addressableUserName", (o,n) => { (o as AssignUserToDeviceRequestBody).AddressableUserName = n.GetStringValue(); } },
-                {"userPrincipalName", (o,n) => { (o as AssignUserToDeviceRequestBody).UserPrincipalName = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"addressableUserName", n => { AddressableUserName = n.GetStringValue(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.Me.ActivateServicePlan {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"servicePlanId", (o,n) => { (o as ActivateServicePlanRequestBody).ServicePlanId = n.GetStringValue(); } },
-                {"skuId", (o,n) => { (o as ActivateServicePlanRequestBody).SkuId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"servicePlanId", n => { ServicePlanId = n.GetStringValue(); } },
+                {"skuId", n => { SkuId = n.GetStringValue(); } },
             };
         }
         /// <summary>

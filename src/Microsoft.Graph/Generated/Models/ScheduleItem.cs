@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"end", (o,n) => { (o as ScheduleItem).End = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"isPrivate", (o,n) => { (o as ScheduleItem).IsPrivate = n.GetBoolValue(); } },
-                {"location", (o,n) => { (o as ScheduleItem).Location = n.GetStringValue(); } },
-                {"start", (o,n) => { (o as ScheduleItem).Start = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"status", (o,n) => { (o as ScheduleItem).Status = n.GetEnumValue<FreeBusyStatus>(); } },
-                {"subject", (o,n) => { (o as ScheduleItem).Subject = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"end", n => { End = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                {"isPrivate", n => { IsPrivate = n.GetBoolValue(); } },
+                {"location", n => { Location = n.GetStringValue(); } },
+                {"start", n => { Start = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                {"status", n => { Status = n.GetEnumValue<FreeBusyStatus>(); } },
+                {"subject", n => { Subject = n.GetStringValue(); } },
             };
         }
         /// <summary>

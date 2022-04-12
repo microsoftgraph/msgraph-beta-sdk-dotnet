@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.Root.ListItem.CreateLink {
         public CreateLinkRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/drives/{drive_id}/root/listItem/microsoft.graph.createLink";
+            UrlTemplate = "{+baseurl}/me/drives/{drive%2Did}/root/listItem/microsoft.graph.createLink";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.Root.ListItem.CreateLink {
         public CreateLinkRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/drives/{drive_id}/root/listItem/microsoft.graph.createLink";
+            UrlTemplate = "{+baseurl}/me/drives/{drive%2Did}/root/listItem/microsoft.graph.createLink";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

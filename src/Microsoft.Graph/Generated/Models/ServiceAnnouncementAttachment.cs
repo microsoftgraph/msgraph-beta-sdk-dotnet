@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"content", (o,n) => { (o as ServiceAnnouncementAttachment).Content = n.GetByteArrayValue(); } },
-                {"contentType", (o,n) => { (o as ServiceAnnouncementAttachment).ContentType = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as ServiceAnnouncementAttachment).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"name", (o,n) => { (o as ServiceAnnouncementAttachment).Name = n.GetStringValue(); } },
-                {"size", (o,n) => { (o as ServiceAnnouncementAttachment).Size = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"content", n => { Content = n.GetByteArrayValue(); } },
+                {"contentType", n => { ContentType = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"size", n => { Size = n.GetIntValue(); } },
             };
         }
         /// <summary>

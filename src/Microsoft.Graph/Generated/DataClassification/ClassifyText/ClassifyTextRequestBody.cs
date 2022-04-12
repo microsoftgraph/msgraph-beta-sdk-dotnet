@@ -36,13 +36,13 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyText {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"fileExtension", (o,n) => { (o as ClassifyTextRequestBody).FileExtension = n.GetStringValue(); } },
-                {"matchTolerancesToInclude", (o,n) => { (o as ClassifyTextRequestBody).MatchTolerancesToInclude = n.GetEnumValue<MlClassificationMatchTolerance>(); } },
-                {"scopesToRun", (o,n) => { (o as ClassifyTextRequestBody).ScopesToRun = n.GetEnumValue<SensitiveTypeScope>(); } },
-                {"sensitiveTypeIds", (o,n) => { (o as ClassifyTextRequestBody).SensitiveTypeIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"text", (o,n) => { (o as ClassifyTextRequestBody).Text = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"fileExtension", n => { FileExtension = n.GetStringValue(); } },
+                {"matchTolerancesToInclude", n => { MatchTolerancesToInclude = n.GetEnumValue<MlClassificationMatchTolerance>(); } },
+                {"scopesToRun", n => { ScopesToRun = n.GetEnumValue<SensitiveTypeScope>(); } },
+                {"sensitiveTypeIds", n => { SensitiveTypeIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"text", n => { Text = n.GetStringValue(); } },
             };
         }
         /// <summary>

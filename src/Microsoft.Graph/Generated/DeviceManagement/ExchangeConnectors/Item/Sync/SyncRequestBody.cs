@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeConnectors.Item.Sync {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"syncType", (o,n) => { (o as SyncRequestBody).SyncType = n.GetEnumValue<DeviceManagementExchangeConnectorSyncType>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"syncType", n => { SyncType = n.GetEnumValue<DeviceManagementExchangeConnectorSyncType>(); } },
             };
         }
         /// <summary>

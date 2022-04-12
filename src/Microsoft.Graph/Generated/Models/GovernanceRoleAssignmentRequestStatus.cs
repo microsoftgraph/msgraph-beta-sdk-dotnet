@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"status", (o,n) => { (o as GovernanceRoleAssignmentRequestStatus).Status = n.GetStringValue(); } },
-                {"statusDetails", (o,n) => { (o as GovernanceRoleAssignmentRequestStatus).StatusDetails = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue).ToList(); } },
-                {"subStatus", (o,n) => { (o as GovernanceRoleAssignmentRequestStatus).SubStatus = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"status", n => { Status = n.GetStringValue(); } },
+                {"statusDetails", n => { StatusDetails = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue).ToList(); } },
+                {"subStatus", n => { SubStatus = n.GetStringValue(); } },
             };
         }
         /// <summary>

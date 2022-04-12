@@ -24,11 +24,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"acronyms", (o,n) => { (o as SearchEntity).Acronyms = n.GetCollectionOfObjectValues<Acronym>(Acronym.CreateFromDiscriminatorValue).ToList(); } },
-                {"bookmarks", (o,n) => { (o as SearchEntity).Bookmarks = n.GetCollectionOfObjectValues<Bookmark>(Bookmark.CreateFromDiscriminatorValue).ToList(); } },
-                {"qnas", (o,n) => { (o as SearchEntity).Qnas = n.GetCollectionOfObjectValues<Qna>(Qna.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"acronyms", n => { Acronyms = n.GetCollectionOfObjectValues<Acronym>(Acronym.CreateFromDiscriminatorValue).ToList(); } },
+                {"bookmarks", n => { Bookmarks = n.GetCollectionOfObjectValues<Bookmark>(Bookmark.CreateFromDiscriminatorValue).ToList(); } },
+                {"qnas", n => { Qnas = n.GetCollectionOfObjectValues<Qna>(Qna.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

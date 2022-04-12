@@ -44,22 +44,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessPackage", (o,n) => { (o as AccessPackageAssignmentRequest).AccessPackage = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackage>(Microsoft.Graph.Beta.Models.AccessPackage.CreateFromDiscriminatorValue); } },
-                {"accessPackageAssignment", (o,n) => { (o as AccessPackageAssignmentRequest).AccessPackageAssignment = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageAssignment>(Microsoft.Graph.Beta.Models.AccessPackageAssignment.CreateFromDiscriminatorValue); } },
-                {"answers", (o,n) => { (o as AccessPackageAssignmentRequest).Answers = n.GetCollectionOfObjectValues<AccessPackageAnswer>(AccessPackageAnswer.CreateFromDiscriminatorValue).ToList(); } },
-                {"completedDate", (o,n) => { (o as AccessPackageAssignmentRequest).CompletedDate = n.GetDateTimeOffsetValue(); } },
-                {"createdDateTime", (o,n) => { (o as AccessPackageAssignmentRequest).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"customExtensionHandlerInstances", (o,n) => { (o as AccessPackageAssignmentRequest).CustomExtensionHandlerInstances = n.GetCollectionOfObjectValues<CustomExtensionHandlerInstance>(CustomExtensionHandlerInstance.CreateFromDiscriminatorValue).ToList(); } },
-                {"expirationDateTime", (o,n) => { (o as AccessPackageAssignmentRequest).ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"isValidationOnly", (o,n) => { (o as AccessPackageAssignmentRequest).IsValidationOnly = n.GetBoolValue(); } },
-                {"justification", (o,n) => { (o as AccessPackageAssignmentRequest).Justification = n.GetStringValue(); } },
-                {"requestor", (o,n) => { (o as AccessPackageAssignmentRequest).Requestor = n.GetObjectValue<AccessPackageSubject>(AccessPackageSubject.CreateFromDiscriminatorValue); } },
-                {"requestState", (o,n) => { (o as AccessPackageAssignmentRequest).RequestState = n.GetStringValue(); } },
-                {"requestStatus", (o,n) => { (o as AccessPackageAssignmentRequest).RequestStatus = n.GetStringValue(); } },
-                {"requestType", (o,n) => { (o as AccessPackageAssignmentRequest).RequestType = n.GetStringValue(); } },
-                {"schedule", (o,n) => { (o as AccessPackageAssignmentRequest).Schedule = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"accessPackage", n => { AccessPackage = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackage>(Microsoft.Graph.Beta.Models.AccessPackage.CreateFromDiscriminatorValue); } },
+                {"accessPackageAssignment", n => { AccessPackageAssignment = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageAssignment>(Microsoft.Graph.Beta.Models.AccessPackageAssignment.CreateFromDiscriminatorValue); } },
+                {"answers", n => { Answers = n.GetCollectionOfObjectValues<AccessPackageAnswer>(AccessPackageAnswer.CreateFromDiscriminatorValue).ToList(); } },
+                {"completedDate", n => { CompletedDate = n.GetDateTimeOffsetValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"customExtensionHandlerInstances", n => { CustomExtensionHandlerInstances = n.GetCollectionOfObjectValues<CustomExtensionHandlerInstance>(CustomExtensionHandlerInstance.CreateFromDiscriminatorValue).ToList(); } },
+                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"isValidationOnly", n => { IsValidationOnly = n.GetBoolValue(); } },
+                {"justification", n => { Justification = n.GetStringValue(); } },
+                {"requestor", n => { Requestor = n.GetObjectValue<AccessPackageSubject>(AccessPackageSubject.CreateFromDiscriminatorValue); } },
+                {"requestState", n => { RequestState = n.GetStringValue(); } },
+                {"requestStatus", n => { RequestStatus = n.GetStringValue(); } },
+                {"requestType", n => { RequestType = n.GetStringValue(); } },
+                {"schedule", n => { Schedule = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

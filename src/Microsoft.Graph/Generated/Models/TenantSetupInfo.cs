@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"defaultRolesSettings", (o,n) => { (o as TenantSetupInfo).DefaultRolesSettings = n.GetObjectValue<PrivilegedRoleSettings>(PrivilegedRoleSettings.CreateFromDiscriminatorValue); } },
-                {"firstTimeSetup", (o,n) => { (o as TenantSetupInfo).FirstTimeSetup = n.GetBoolValue(); } },
-                {"relevantRolesSettings", (o,n) => { (o as TenantSetupInfo).RelevantRolesSettings = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"setupStatus", (o,n) => { (o as TenantSetupInfo).SetupStatus = n.GetEnumValue<SetupStatus>(); } },
-                {"skipSetup", (o,n) => { (o as TenantSetupInfo).SkipSetup = n.GetBoolValue(); } },
-                {"userRolesActions", (o,n) => { (o as TenantSetupInfo).UserRolesActions = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"defaultRolesSettings", n => { DefaultRolesSettings = n.GetObjectValue<PrivilegedRoleSettings>(PrivilegedRoleSettings.CreateFromDiscriminatorValue); } },
+                {"firstTimeSetup", n => { FirstTimeSetup = n.GetBoolValue(); } },
+                {"relevantRolesSettings", n => { RelevantRolesSettings = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"setupStatus", n => { SetupStatus = n.GetEnumValue<SetupStatus>(); } },
+                {"skipSetup", n => { SkipSetup = n.GetBoolValue(); } },
+                {"userRolesActions", n => { UserRolesActions = n.GetStringValue(); } },
             };
         }
         /// <summary>

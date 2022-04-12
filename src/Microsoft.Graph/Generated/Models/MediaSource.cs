@@ -26,9 +26,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"contentCategory", (o,n) => { (o as MediaSource).ContentCategory = n.GetEnumValue<MediaSourceContentCategory>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"contentCategory", n => { ContentCategory = n.GetEnumValue<MediaSourceContentCategory>(); } },
             };
         }
         /// <summary>

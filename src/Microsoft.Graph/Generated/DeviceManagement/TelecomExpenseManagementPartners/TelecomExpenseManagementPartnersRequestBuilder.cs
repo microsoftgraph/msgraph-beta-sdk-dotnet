@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TelecomExpenseManagementPartners
         /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.telecomExpenseManagementPartners.item collection</summary>
         public TelecomExpenseManagementPartnerItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("telecomExpenseManagementPartner_id", position);
+            urlTplParams.Add("telecomExpenseManagementPartner%2Did", position);
             return new TelecomExpenseManagementPartnerItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TelecomExpenseManagementPartners
         public TelecomExpenseManagementPartnersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/telecomExpenseManagementPartners{?top,skip,search,filter,count,orderby,select,expand}";
+            UrlTemplate = "{+baseurl}/deviceManagement/telecomExpenseManagementPartners{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TelecomExpenseManagementPartners
         public TelecomExpenseManagementPartnersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/telecomExpenseManagementPartners{?top,skip,search,filter,count,orderby,select,expand}";
+            UrlTemplate = "{+baseurl}/deviceManagement/telecomExpenseManagementPartners{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -131,20 +131,28 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TelecomExpenseManagementPartners
         /// <summary>The telecom expense management partners.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
+            [QueryParameter("%24count")]
             public bool? Count { get; set; }
             /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
             /// <summary>Filter items by property values</summary>
+            [QueryParameter("%24filter")]
             public string Filter { get; set; }
             /// <summary>Order items by property values</summary>
+            [QueryParameter("%24orderby")]
             public string[] Orderby { get; set; }
             /// <summary>Search items by search phrases</summary>
+            [QueryParameter("%24search")]
             public string Search { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
             /// <summary>Skip the first n items</summary>
+            [QueryParameter("%24skip")]
             public int? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
+            [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
     }

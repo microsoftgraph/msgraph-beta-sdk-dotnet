@@ -37,14 +37,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"deviceUsageType", (o,n) => { (o as OutOfBoxExperienceSettings).DeviceUsageType = n.GetEnumValue<WindowsDeviceUsageType>(); } },
-                {"hideEscapeLink", (o,n) => { (o as OutOfBoxExperienceSettings).HideEscapeLink = n.GetBoolValue(); } },
-                {"hideEULA", (o,n) => { (o as OutOfBoxExperienceSettings).HideEULA = n.GetBoolValue(); } },
-                {"hidePrivacySettings", (o,n) => { (o as OutOfBoxExperienceSettings).HidePrivacySettings = n.GetBoolValue(); } },
-                {"skipKeyboardSelectionPage", (o,n) => { (o as OutOfBoxExperienceSettings).SkipKeyboardSelectionPage = n.GetBoolValue(); } },
-                {"userType", (o,n) => { (o as OutOfBoxExperienceSettings).UserType = n.GetEnumValue<WindowsUserType>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"deviceUsageType", n => { DeviceUsageType = n.GetEnumValue<WindowsDeviceUsageType>(); } },
+                {"hideEscapeLink", n => { HideEscapeLink = n.GetBoolValue(); } },
+                {"hideEULA", n => { HideEULA = n.GetBoolValue(); } },
+                {"hidePrivacySettings", n => { HidePrivacySettings = n.GetBoolValue(); } },
+                {"skipKeyboardSelectionPage", n => { SkipKeyboardSelectionPage = n.GetBoolValue(); } },
+                {"userType", n => { UserType = n.GetEnumValue<WindowsUserType>(); } },
             };
         }
         /// <summary>

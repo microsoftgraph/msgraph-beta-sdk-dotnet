@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appCrashCount", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion).AppCrashCount = n.GetIntValue(); } },
-                {"appDisplayName", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion).AppDisplayName = n.GetStringValue(); } },
-                {"appName", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion).AppName = n.GetStringValue(); } },
-                {"appPublisher", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion).AppPublisher = n.GetStringValue(); } },
-                {"appUsageDuration", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion).AppUsageDuration = n.GetIntValue(); } },
-                {"appVersion", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion).AppVersion = n.GetStringValue(); } },
-                {"meanTimeToFailureInMinutes", (o,n) => { (o as UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion).MeanTimeToFailureInMinutes = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"appCrashCount", n => { AppCrashCount = n.GetIntValue(); } },
+                {"appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
+                {"appName", n => { AppName = n.GetStringValue(); } },
+                {"appPublisher", n => { AppPublisher = n.GetStringValue(); } },
+                {"appUsageDuration", n => { AppUsageDuration = n.GetIntValue(); } },
+                {"appVersion", n => { AppVersion = n.GetStringValue(); } },
+                {"meanTimeToFailureInMinutes", n => { MeanTimeToFailureInMinutes = n.GetIntValue(); } },
             };
         }
         /// <summary>

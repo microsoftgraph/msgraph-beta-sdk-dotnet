@@ -36,18 +36,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"allowedToSignUpEmailBasedSubscriptions", (o,n) => { (o as AuthorizationPolicy).AllowedToSignUpEmailBasedSubscriptions = n.GetBoolValue(); } },
-                {"allowedToUseSSPR", (o,n) => { (o as AuthorizationPolicy).AllowedToUseSSPR = n.GetBoolValue(); } },
-                {"allowEmailVerifiedUsersToJoinOrganization", (o,n) => { (o as AuthorizationPolicy).AllowEmailVerifiedUsersToJoinOrganization = n.GetBoolValue(); } },
-                {"allowInvitesFrom", (o,n) => { (o as AuthorizationPolicy).AllowInvitesFrom = n.GetEnumValue<AllowInvitesFrom>(); } },
-                {"blockMsolPowerShell", (o,n) => { (o as AuthorizationPolicy).BlockMsolPowerShell = n.GetBoolValue(); } },
-                {"defaultUserRoleOverrides", (o,n) => { (o as AuthorizationPolicy).DefaultUserRoleOverrides = n.GetCollectionOfObjectValues<DefaultUserRoleOverride>(DefaultUserRoleOverride.CreateFromDiscriminatorValue).ToList(); } },
-                {"defaultUserRolePermissions", (o,n) => { (o as AuthorizationPolicy).DefaultUserRolePermissions = n.GetObjectValue<Microsoft.Graph.Beta.Models.DefaultUserRolePermissions>(Microsoft.Graph.Beta.Models.DefaultUserRolePermissions.CreateFromDiscriminatorValue); } },
-                {"enabledPreviewFeatures", (o,n) => { (o as AuthorizationPolicy).EnabledPreviewFeatures = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"guestUserRoleId", (o,n) => { (o as AuthorizationPolicy).GuestUserRoleId = n.GetStringValue(); } },
-                {"permissionGrantPolicyIdsAssignedToDefaultUserRole", (o,n) => { (o as AuthorizationPolicy).PermissionGrantPolicyIdsAssignedToDefaultUserRole = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"allowedToSignUpEmailBasedSubscriptions", n => { AllowedToSignUpEmailBasedSubscriptions = n.GetBoolValue(); } },
+                {"allowedToUseSSPR", n => { AllowedToUseSSPR = n.GetBoolValue(); } },
+                {"allowEmailVerifiedUsersToJoinOrganization", n => { AllowEmailVerifiedUsersToJoinOrganization = n.GetBoolValue(); } },
+                {"allowInvitesFrom", n => { AllowInvitesFrom = n.GetEnumValue<AllowInvitesFrom>(); } },
+                {"blockMsolPowerShell", n => { BlockMsolPowerShell = n.GetBoolValue(); } },
+                {"defaultUserRoleOverrides", n => { DefaultUserRoleOverrides = n.GetCollectionOfObjectValues<DefaultUserRoleOverride>(DefaultUserRoleOverride.CreateFromDiscriminatorValue).ToList(); } },
+                {"defaultUserRolePermissions", n => { DefaultUserRolePermissions = n.GetObjectValue<Microsoft.Graph.Beta.Models.DefaultUserRolePermissions>(Microsoft.Graph.Beta.Models.DefaultUserRolePermissions.CreateFromDiscriminatorValue); } },
+                {"enabledPreviewFeatures", n => { EnabledPreviewFeatures = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"guestUserRoleId", n => { GuestUserRoleId = n.GetStringValue(); } },
+                {"permissionGrantPolicyIdsAssignedToDefaultUserRole", n => { PermissionGrantPolicyIdsAssignedToDefaultUserRole = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

@@ -32,11 +32,11 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.DataLossPreventi
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"evaluationInput", (o,n) => { (o as EvaluateRequestBody).EvaluationInput = n.GetObjectValue<DlpEvaluationInput>(DlpEvaluationInput.CreateFromDiscriminatorValue); } },
-                {"notificationInfo", (o,n) => { (o as EvaluateRequestBody).NotificationInfo = n.GetObjectValue<DlpNotification>(DlpNotification.CreateFromDiscriminatorValue); } },
-                {"target", (o,n) => { (o as EvaluateRequestBody).Target = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"evaluationInput", n => { EvaluationInput = n.GetObjectValue<DlpEvaluationInput>(DlpEvaluationInput.CreateFromDiscriminatorValue); } },
+                {"notificationInfo", n => { NotificationInfo = n.GetObjectValue<DlpNotification>(DlpNotification.CreateFromDiscriminatorValue); } },
+                {"target", n => { Target = n.GetStringValue(); } },
             };
         }
         /// <summary>

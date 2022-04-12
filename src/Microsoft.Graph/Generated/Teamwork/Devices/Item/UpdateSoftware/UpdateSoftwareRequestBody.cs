@@ -30,10 +30,10 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.UpdateSoftware {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"softwareType", (o,n) => { (o as UpdateSoftwareRequestBody).SoftwareType = n.GetEnumValue<TeamworkSoftwareType>(); } },
-                {"softwareVersion", (o,n) => { (o as UpdateSoftwareRequestBody).SoftwareVersion = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"softwareType", n => { SoftwareType = n.GetEnumValue<TeamworkSoftwareType>(); } },
+                {"softwareVersion", n => { SoftwareVersion = n.GetStringValue(); } },
             };
         }
         /// <summary>

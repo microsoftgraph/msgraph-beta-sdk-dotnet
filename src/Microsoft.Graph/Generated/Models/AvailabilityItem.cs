@@ -9,11 +9,11 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The endDateTime property</summary>
         public DateTimeTimeZone EndDateTime { get; set; }
-        /// <summary>The serviceId property</summary>
+        /// <summary>Indicates the service ID in case of 1:n appointments. If the appointment is of type 1:n, this field will be present, otherwise, null.</summary>
         public string ServiceId { get; set; }
         /// <summary>The startDateTime property</summary>
         public DateTimeTimeZone StartDateTime { get; set; }
-        /// <summary>The status property</summary>
+        /// <summary>The status of the staff member. Possible values are: available, busy, slotsAvailable, outOfOffice, unknownFutureValue.</summary>
         public BookingsAvailabilityStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new availabilityItem and sets the default values.
@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"endDateTime", (o,n) => { (o as AvailabilityItem).EndDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"serviceId", (o,n) => { (o as AvailabilityItem).ServiceId = n.GetStringValue(); } },
-                {"startDateTime", (o,n) => { (o as AvailabilityItem).StartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"status", (o,n) => { (o as AvailabilityItem).Status = n.GetEnumValue<BookingsAvailabilityStatus>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"endDateTime", n => { EndDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                {"serviceId", n => { ServiceId = n.GetStringValue(); } },
+                {"startDateTime", n => { StartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                {"status", n => { Status = n.GetEnumValue<BookingsAvailabilityStatus>(); } },
             };
         }
         /// <summary>

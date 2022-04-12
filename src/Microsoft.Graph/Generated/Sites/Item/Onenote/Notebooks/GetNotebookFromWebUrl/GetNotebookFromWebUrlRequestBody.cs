@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.GetNotebookFromWebUr
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"webUrl", (o,n) => { (o as GetNotebookFromWebUrlRequestBody).WebUrl = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

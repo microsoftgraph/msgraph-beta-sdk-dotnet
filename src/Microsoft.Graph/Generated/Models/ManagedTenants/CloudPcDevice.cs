@@ -40,20 +40,20 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"cloudPcStatus", (o,n) => { (o as CloudPcDevice).CloudPcStatus = n.GetStringValue(); } },
-                {"deviceSpecification", (o,n) => { (o as CloudPcDevice).DeviceSpecification = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as CloudPcDevice).DisplayName = n.GetStringValue(); } },
-                {"lastRefreshedDateTime", (o,n) => { (o as CloudPcDevice).LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managedDeviceId", (o,n) => { (o as CloudPcDevice).ManagedDeviceId = n.GetStringValue(); } },
-                {"managedDeviceName", (o,n) => { (o as CloudPcDevice).ManagedDeviceName = n.GetStringValue(); } },
-                {"provisioningPolicyId", (o,n) => { (o as CloudPcDevice).ProvisioningPolicyId = n.GetStringValue(); } },
-                {"servicePlanName", (o,n) => { (o as CloudPcDevice).ServicePlanName = n.GetStringValue(); } },
-                {"servicePlanType", (o,n) => { (o as CloudPcDevice).ServicePlanType = n.GetStringValue(); } },
-                {"tenantDisplayName", (o,n) => { (o as CloudPcDevice).TenantDisplayName = n.GetStringValue(); } },
-                {"tenantId", (o,n) => { (o as CloudPcDevice).TenantId = n.GetStringValue(); } },
-                {"userPrincipalName", (o,n) => { (o as CloudPcDevice).UserPrincipalName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"cloudPcStatus", n => { CloudPcStatus = n.GetStringValue(); } },
+                {"deviceSpecification", n => { DeviceSpecification = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"lastRefreshedDateTime", n => { LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
+                {"managedDeviceName", n => { ManagedDeviceName = n.GetStringValue(); } },
+                {"provisioningPolicyId", n => { ProvisioningPolicyId = n.GetStringValue(); } },
+                {"servicePlanName", n => { ServicePlanName = n.GetStringValue(); } },
+                {"servicePlanType", n => { ServicePlanType = n.GetStringValue(); } },
+                {"tenantDisplayName", n => { TenantDisplayName = n.GetStringValue(); } },
+                {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -48,20 +48,20 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"code", (o,n) => { (o as SynchronizationStatus).Code = n.GetEnumValue<SynchronizationStatusCode>(); } },
-                {"countSuccessiveCompleteFailures", (o,n) => { (o as SynchronizationStatus).CountSuccessiveCompleteFailures = n.GetLongValue(); } },
-                {"escrowsPruned", (o,n) => { (o as SynchronizationStatus).EscrowsPruned = n.GetBoolValue(); } },
-                {"lastExecution", (o,n) => { (o as SynchronizationStatus).LastExecution = n.GetObjectValue<SynchronizationTaskExecution>(SynchronizationTaskExecution.CreateFromDiscriminatorValue); } },
-                {"lastSuccessfulExecution", (o,n) => { (o as SynchronizationStatus).LastSuccessfulExecution = n.GetObjectValue<SynchronizationTaskExecution>(SynchronizationTaskExecution.CreateFromDiscriminatorValue); } },
-                {"lastSuccessfulExecutionWithExports", (o,n) => { (o as SynchronizationStatus).LastSuccessfulExecutionWithExports = n.GetObjectValue<SynchronizationTaskExecution>(SynchronizationTaskExecution.CreateFromDiscriminatorValue); } },
-                {"progress", (o,n) => { (o as SynchronizationStatus).Progress = n.GetCollectionOfObjectValues<SynchronizationProgress>(SynchronizationProgress.CreateFromDiscriminatorValue).ToList(); } },
-                {"quarantine", (o,n) => { (o as SynchronizationStatus).Quarantine = n.GetObjectValue<SynchronizationQuarantine>(SynchronizationQuarantine.CreateFromDiscriminatorValue); } },
-                {"steadyStateFirstAchievedTime", (o,n) => { (o as SynchronizationStatus).SteadyStateFirstAchievedTime = n.GetDateTimeOffsetValue(); } },
-                {"steadyStateLastAchievedTime", (o,n) => { (o as SynchronizationStatus).SteadyStateLastAchievedTime = n.GetDateTimeOffsetValue(); } },
-                {"synchronizedEntryCountByType", (o,n) => { (o as SynchronizationStatus).SynchronizedEntryCountByType = n.GetCollectionOfObjectValues<StringKeyLongValuePair>(StringKeyLongValuePair.CreateFromDiscriminatorValue).ToList(); } },
-                {"troubleshootingUrl", (o,n) => { (o as SynchronizationStatus).TroubleshootingUrl = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"code", n => { Code = n.GetEnumValue<SynchronizationStatusCode>(); } },
+                {"countSuccessiveCompleteFailures", n => { CountSuccessiveCompleteFailures = n.GetLongValue(); } },
+                {"escrowsPruned", n => { EscrowsPruned = n.GetBoolValue(); } },
+                {"lastExecution", n => { LastExecution = n.GetObjectValue<SynchronizationTaskExecution>(SynchronizationTaskExecution.CreateFromDiscriminatorValue); } },
+                {"lastSuccessfulExecution", n => { LastSuccessfulExecution = n.GetObjectValue<SynchronizationTaskExecution>(SynchronizationTaskExecution.CreateFromDiscriminatorValue); } },
+                {"lastSuccessfulExecutionWithExports", n => { LastSuccessfulExecutionWithExports = n.GetObjectValue<SynchronizationTaskExecution>(SynchronizationTaskExecution.CreateFromDiscriminatorValue); } },
+                {"progress", n => { Progress = n.GetCollectionOfObjectValues<SynchronizationProgress>(SynchronizationProgress.CreateFromDiscriminatorValue).ToList(); } },
+                {"quarantine", n => { Quarantine = n.GetObjectValue<SynchronizationQuarantine>(SynchronizationQuarantine.CreateFromDiscriminatorValue); } },
+                {"steadyStateFirstAchievedTime", n => { SteadyStateFirstAchievedTime = n.GetDateTimeOffsetValue(); } },
+                {"steadyStateLastAchievedTime", n => { SteadyStateLastAchievedTime = n.GetDateTimeOffsetValue(); } },
+                {"synchronizedEntryCountByType", n => { SynchronizedEntryCountByType = n.GetCollectionOfObjectValues<StringKeyLongValuePair>(StringKeyLongValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"troubleshootingUrl", n => { TroubleshootingUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

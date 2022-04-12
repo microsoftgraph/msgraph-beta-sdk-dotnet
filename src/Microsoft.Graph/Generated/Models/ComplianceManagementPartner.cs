@@ -38,19 +38,19 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"androidEnrollmentAssignments", (o,n) => { (o as ComplianceManagementPartner).AndroidEnrollmentAssignments = n.GetCollectionOfObjectValues<ComplianceManagementPartnerAssignment>(ComplianceManagementPartnerAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"androidOnboarded", (o,n) => { (o as ComplianceManagementPartner).AndroidOnboarded = n.GetBoolValue(); } },
-                {"displayName", (o,n) => { (o as ComplianceManagementPartner).DisplayName = n.GetStringValue(); } },
-                {"iosEnrollmentAssignments", (o,n) => { (o as ComplianceManagementPartner).IosEnrollmentAssignments = n.GetCollectionOfObjectValues<ComplianceManagementPartnerAssignment>(ComplianceManagementPartnerAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"iosOnboarded", (o,n) => { (o as ComplianceManagementPartner).IosOnboarded = n.GetBoolValue(); } },
-                {"lastHeartbeatDateTime", (o,n) => { (o as ComplianceManagementPartner).LastHeartbeatDateTime = n.GetDateTimeOffsetValue(); } },
-                {"macOsEnrollmentAssignments", (o,n) => { (o as ComplianceManagementPartner).MacOsEnrollmentAssignments = n.GetCollectionOfObjectValues<ComplianceManagementPartnerAssignment>(ComplianceManagementPartnerAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"macOsOnboarded", (o,n) => { (o as ComplianceManagementPartner).MacOsOnboarded = n.GetBoolValue(); } },
-                {"partnerState", (o,n) => { (o as ComplianceManagementPartner).PartnerState = n.GetEnumValue<DeviceManagementPartnerTenantState>(); } },
-                {"windowsEnrollmentAssignments", (o,n) => { (o as ComplianceManagementPartner).WindowsEnrollmentAssignments = n.GetCollectionOfObjectValues<ComplianceManagementPartnerAssignment>(ComplianceManagementPartnerAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"windowsOnboarded", (o,n) => { (o as ComplianceManagementPartner).WindowsOnboarded = n.GetBoolValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"androidEnrollmentAssignments", n => { AndroidEnrollmentAssignments = n.GetCollectionOfObjectValues<ComplianceManagementPartnerAssignment>(ComplianceManagementPartnerAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"androidOnboarded", n => { AndroidOnboarded = n.GetBoolValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"iosEnrollmentAssignments", n => { IosEnrollmentAssignments = n.GetCollectionOfObjectValues<ComplianceManagementPartnerAssignment>(ComplianceManagementPartnerAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"iosOnboarded", n => { IosOnboarded = n.GetBoolValue(); } },
+                {"lastHeartbeatDateTime", n => { LastHeartbeatDateTime = n.GetDateTimeOffsetValue(); } },
+                {"macOsEnrollmentAssignments", n => { MacOsEnrollmentAssignments = n.GetCollectionOfObjectValues<ComplianceManagementPartnerAssignment>(ComplianceManagementPartnerAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"macOsOnboarded", n => { MacOsOnboarded = n.GetBoolValue(); } },
+                {"partnerState", n => { PartnerState = n.GetEnumValue<DeviceManagementPartnerTenantState>(); } },
+                {"windowsEnrollmentAssignments", n => { WindowsEnrollmentAssignments = n.GetCollectionOfObjectValues<ComplianceManagementPartnerAssignment>(ComplianceManagementPartnerAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"windowsOnboarded", n => { WindowsOnboarded = n.GetBoolValue(); } },
             };
         }
         /// <summary>

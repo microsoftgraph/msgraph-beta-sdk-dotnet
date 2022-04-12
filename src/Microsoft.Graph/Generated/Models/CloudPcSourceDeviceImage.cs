@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"displayName", (o,n) => { (o as CloudPcSourceDeviceImage).DisplayName = n.GetStringValue(); } },
-                {"id", (o,n) => { (o as CloudPcSourceDeviceImage).Id = n.GetStringValue(); } },
-                {"subscriptionDisplayName", (o,n) => { (o as CloudPcSourceDeviceImage).SubscriptionDisplayName = n.GetStringValue(); } },
-                {"subscriptionId", (o,n) => { (o as CloudPcSourceDeviceImage).SubscriptionId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetStringValue(); } },
+                {"subscriptionDisplayName", n => { SubscriptionDisplayName = n.GetStringValue(); } },
+                {"subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
             };
         }
         /// <summary>

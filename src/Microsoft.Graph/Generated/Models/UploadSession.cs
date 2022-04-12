@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"expirationDateTime", (o,n) => { (o as UploadSession).ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"nextExpectedRanges", (o,n) => { (o as UploadSession).NextExpectedRanges = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"uploadUrl", (o,n) => { (o as UploadSession).UploadUrl = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"nextExpectedRanges", n => { NextExpectedRanges = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"uploadUrl", n => { UploadUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

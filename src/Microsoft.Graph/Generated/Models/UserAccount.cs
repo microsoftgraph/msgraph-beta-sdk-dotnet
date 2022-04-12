@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"displayName", (o,n) => { (o as UserAccount).DisplayName = n.GetStringValue(); } },
-                {"lastSeenDateTime", (o,n) => { (o as UserAccount).LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"riskScore", (o,n) => { (o as UserAccount).RiskScore = n.GetStringValue(); } },
-                {"service", (o,n) => { (o as UserAccount).Service = n.GetStringValue(); } },
-                {"signinName", (o,n) => { (o as UserAccount).SigninName = n.GetStringValue(); } },
-                {"status", (o,n) => { (o as UserAccount).Status = n.GetEnumValue<AccountStatus>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                {"riskScore", n => { RiskScore = n.GetStringValue(); } },
+                {"service", n => { Service = n.GetStringValue(); } },
+                {"signinName", n => { SigninName = n.GetStringValue(); } },
+                {"status", n => { Status = n.GetEnumValue<AccountStatus>(); } },
             };
         }
         /// <summary>

@@ -20,10 +20,10 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"baseType", (o,n) => { (o as Schema).BaseType = n.GetStringValue(); } },
-                {"properties", (o,n) => { (o as Schema).Properties = n.GetCollectionOfObjectValues<Property>(Property.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"baseType", n => { BaseType = n.GetStringValue(); } },
+                {"properties", n => { Properties = n.GetCollectionOfObjectValues<Property>(Property.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

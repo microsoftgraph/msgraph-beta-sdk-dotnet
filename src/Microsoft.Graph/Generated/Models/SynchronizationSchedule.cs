@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"expiration", (o,n) => { (o as SynchronizationSchedule).Expiration = n.GetDateTimeOffsetValue(); } },
-                {"interval", (o,n) => { (o as SynchronizationSchedule).Interval = n.GetTimeSpanValue(); } },
-                {"state", (o,n) => { (o as SynchronizationSchedule).State = n.GetEnumValue<SynchronizationScheduleState>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"expiration", n => { Expiration = n.GetDateTimeOffsetValue(); } },
+                {"interval", n => { Interval = n.GetTimeSpanValue(); } },
+                {"state", n => { State = n.GetEnumValue<SynchronizationScheduleState>(); } },
             };
         }
         /// <summary>

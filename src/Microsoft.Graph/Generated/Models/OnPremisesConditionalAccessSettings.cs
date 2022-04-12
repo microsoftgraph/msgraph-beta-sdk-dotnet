@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"enabled", (o,n) => { (o as OnPremisesConditionalAccessSettings).Enabled = n.GetBoolValue(); } },
-                {"excludedGroups", (o,n) => { (o as OnPremisesConditionalAccessSettings).ExcludedGroups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"includedGroups", (o,n) => { (o as OnPremisesConditionalAccessSettings).IncludedGroups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"overrideDefaultRule", (o,n) => { (o as OnPremisesConditionalAccessSettings).OverrideDefaultRule = n.GetBoolValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"enabled", n => { Enabled = n.GetBoolValue(); } },
+                {"excludedGroups", n => { ExcludedGroups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"includedGroups", n => { IncludedGroups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"overrideDefaultRule", n => { OverrideDefaultRule = n.GetBoolValue(); } },
             };
         }
         /// <summary>

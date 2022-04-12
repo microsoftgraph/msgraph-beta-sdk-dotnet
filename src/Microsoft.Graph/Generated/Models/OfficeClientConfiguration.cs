@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as OfficeClientConfiguration).Assignments = n.GetCollectionOfObjectValues<OfficeClientConfigurationAssignment>(OfficeClientConfigurationAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"checkinStatuses", (o,n) => { (o as OfficeClientConfiguration).CheckinStatuses = n.GetCollectionOfObjectValues<OfficeClientCheckinStatus>(OfficeClientCheckinStatus.CreateFromDiscriminatorValue).ToList(); } },
-                {"description", (o,n) => { (o as OfficeClientConfiguration).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as OfficeClientConfiguration).DisplayName = n.GetStringValue(); } },
-                {"policyPayload", (o,n) => { (o as OfficeClientConfiguration).PolicyPayload = n.GetByteArrayValue(); } },
-                {"priority", (o,n) => { (o as OfficeClientConfiguration).Priority = n.GetIntValue(); } },
-                {"userCheckinSummary", (o,n) => { (o as OfficeClientConfiguration).UserCheckinSummary = n.GetObjectValue<OfficeUserCheckinSummary>(OfficeUserCheckinSummary.CreateFromDiscriminatorValue); } },
-                {"userPreferencePayload", (o,n) => { (o as OfficeClientConfiguration).UserPreferencePayload = n.GetByteArrayValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<OfficeClientConfigurationAssignment>(OfficeClientConfigurationAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"checkinStatuses", n => { CheckinStatuses = n.GetCollectionOfObjectValues<OfficeClientCheckinStatus>(OfficeClientCheckinStatus.CreateFromDiscriminatorValue).ToList(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"policyPayload", n => { PolicyPayload = n.GetByteArrayValue(); } },
+                {"priority", n => { Priority = n.GetIntValue(); } },
+                {"userCheckinSummary", n => { UserCheckinSummary = n.GetObjectValue<OfficeUserCheckinSummary>(OfficeUserCheckinSummary.CreateFromDiscriminatorValue); } },
+                {"userPreferencePayload", n => { UserPreferencePayload = n.GetByteArrayValue(); } },
             };
         }
         /// <summary>

@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item.SquareLogo {
         public SquareLogoRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/branding/localizations/{organizationalBrandingLocalization_id}/squareLogo";
+            UrlTemplate = "{+baseurl}/branding/localizations/{organizationalBrandingLocalization%2Did}/squareLogo";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item.SquareLogo {
         public SquareLogoRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/branding/localizations/{organizationalBrandingLocalization_id}/squareLogo";
+            UrlTemplate = "{+baseurl}/branding/localizations/{organizationalBrandingLocalization%2Did}/squareLogo";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

@@ -36,18 +36,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdBy", (o,n) => { (o as ConnectedOrganization).CreatedBy = n.GetStringValue(); } },
-                {"createdDateTime", (o,n) => { (o as ConnectedOrganization).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as ConnectedOrganization).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as ConnectedOrganization).DisplayName = n.GetStringValue(); } },
-                {"externalSponsors", (o,n) => { (o as ConnectedOrganization).ExternalSponsors = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
-                {"identitySources", (o,n) => { (o as ConnectedOrganization).IdentitySources = n.GetCollectionOfObjectValues<IdentitySource>(IdentitySource.CreateFromDiscriminatorValue).ToList(); } },
-                {"internalSponsors", (o,n) => { (o as ConnectedOrganization).InternalSponsors = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
-                {"modifiedBy", (o,n) => { (o as ConnectedOrganization).ModifiedBy = n.GetStringValue(); } },
-                {"modifiedDateTime", (o,n) => { (o as ConnectedOrganization).ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"state", (o,n) => { (o as ConnectedOrganization).State = n.GetEnumValue<ConnectedOrganizationState>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"createdBy", n => { CreatedBy = n.GetStringValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"externalSponsors", n => { ExternalSponsors = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
+                {"identitySources", n => { IdentitySources = n.GetCollectionOfObjectValues<IdentitySource>(IdentitySource.CreateFromDiscriminatorValue).ToList(); } },
+                {"internalSponsors", n => { InternalSponsors = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
+                {"modifiedBy", n => { ModifiedBy = n.GetStringValue(); } },
+                {"modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"state", n => { State = n.GetEnumValue<ConnectedOrganizationState>(); } },
             };
         }
         /// <summary>

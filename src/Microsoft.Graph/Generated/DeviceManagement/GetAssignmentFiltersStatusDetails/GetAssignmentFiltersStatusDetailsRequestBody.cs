@@ -37,14 +37,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetAssignmentFiltersStatusDetail
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"assignmentFilterIds", (o,n) => { (o as GetAssignmentFiltersStatusDetailsRequestBody).AssignmentFilterIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"managedDeviceId", (o,n) => { (o as GetAssignmentFiltersStatusDetailsRequestBody).ManagedDeviceId = n.GetStringValue(); } },
-                {"payloadId", (o,n) => { (o as GetAssignmentFiltersStatusDetailsRequestBody).PayloadId = n.GetStringValue(); } },
-                {"skip", (o,n) => { (o as GetAssignmentFiltersStatusDetailsRequestBody).Skip = n.GetIntValue(); } },
-                {"top", (o,n) => { (o as GetAssignmentFiltersStatusDetailsRequestBody).Top = n.GetIntValue(); } },
-                {"userId", (o,n) => { (o as GetAssignmentFiltersStatusDetailsRequestBody).UserId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"assignmentFilterIds", n => { AssignmentFilterIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
+                {"payloadId", n => { PayloadId = n.GetStringValue(); } },
+                {"skip", n => { Skip = n.GetIntValue(); } },
+                {"top", n => { Top = n.GetIntValue(); } },
+                {"userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

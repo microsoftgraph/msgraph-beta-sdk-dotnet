@@ -17,14 +17,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByIdsWithIds {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new GetRoleScopeTagsByIdsWithIdsRequestBuilder and sets the default values.
+        /// <param name="ids">Usage: ids={ids}</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// </summary>
-        public GetRoleScopeTagsByIdsWithIdsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
+        public GetRoleScopeTagsByIdsWithIdsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string ids = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/microsoft.graph.getRoleScopeTagsByIds(ids=@ids){?ids}";
+            UrlTemplate = "{+baseurl}/deviceManagement/microsoft.graph.getRoleScopeTagsByIds(ids={ids})";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
+            urlTplParams.Add("", ids);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -36,7 +38,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByIdsWithIds {
         public GetRoleScopeTagsByIdsWithIdsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/microsoft.graph.getRoleScopeTagsByIds(ids=@ids){?ids}";
+            UrlTemplate = "{+baseurl}/deviceManagement/microsoft.graph.getRoleScopeTagsByIds(ids={ids})";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -46,19 +48,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByIdsWithIds {
         /// Invoke function getRoleScopeTagsByIds
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
-        /// <param name="queryParameters">Request query parameters</param>
         /// </summary>
-        public RequestInformation CreateGetRequestInformation(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
+        public RequestInformation CreateGetRequestInformation(Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            if (queryParameters != null) {
-                var qParams = new GetQueryParameters();
-                queryParameters.Invoke(qParams);
-                qParams.AddQueryParameters(requestInfo.QueryParameters);
-            }
             headers?.Invoke(requestInfo.Headers);
             requestInfo.AddRequestOptions(options?.ToArray());
             return requestInfo;
@@ -68,17 +64,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByIdsWithIds {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
-        /// <param name="queryParameters">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<GetRoleScopeTagsByIdsWithIdsResponse> GetAsync(Action<GetQueryParameters> queryParameters = default, Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateGetRequestInformation(queryParameters, headers, options);
+        public async Task<GetRoleScopeTagsByIdsWithIdsResponse> GetAsync(Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+            var requestInfo = CreateGetRequestInformation(headers, options);
             return await RequestAdapter.SendAsync<GetRoleScopeTagsByIdsWithIdsResponse>(requestInfo, GetRoleScopeTagsByIdsWithIdsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
-        }
-        /// <summary>Invoke function getRoleScopeTagsByIds</summary>
-        public class GetQueryParameters : QueryParametersBase {
-            /// <summary>Usage: ids={ids}</summary>
-            public string Ids { get; set; }
         }
     }
 }

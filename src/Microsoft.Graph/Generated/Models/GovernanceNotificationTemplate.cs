@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"culture", (o,n) => { (o as GovernanceNotificationTemplate).Culture = n.GetStringValue(); } },
-                {"id", (o,n) => { (o as GovernanceNotificationTemplate).Id = n.GetStringValue(); } },
-                {"source", (o,n) => { (o as GovernanceNotificationTemplate).Source = n.GetStringValue(); } },
-                {"type", (o,n) => { (o as GovernanceNotificationTemplate).Type = n.GetStringValue(); } },
-                {"version", (o,n) => { (o as GovernanceNotificationTemplate).Version = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"culture", n => { Culture = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetStringValue(); } },
+                {"source", n => { Source = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
+                {"version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

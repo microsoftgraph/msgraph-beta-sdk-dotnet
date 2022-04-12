@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"adDomainPassword", (o,n) => { (o as UpdateAdDomainPasswordRequestBody).AdDomainPassword = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"adDomainPassword", n => { AdDomainPassword = n.GetStringValue(); } },
             };
         }
         /// <summary>

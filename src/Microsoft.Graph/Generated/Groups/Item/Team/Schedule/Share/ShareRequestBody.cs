@@ -31,11 +31,11 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.Share {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"endDateTime", (o,n) => { (o as ShareRequestBody).EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"notifyTeam", (o,n) => { (o as ShareRequestBody).NotifyTeam = n.GetBoolValue(); } },
-                {"startDateTime", (o,n) => { (o as ShareRequestBody).StartDateTime = n.GetDateTimeOffsetValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"notifyTeam", n => { NotifyTeam = n.GetBoolValue(); } },
+                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

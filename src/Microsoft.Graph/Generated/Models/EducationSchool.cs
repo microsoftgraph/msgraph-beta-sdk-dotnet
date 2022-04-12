@@ -44,22 +44,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"address", (o,n) => { (o as EducationSchool).Address = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
-                {"administrativeUnit", (o,n) => { (o as EducationSchool).AdministrativeUnit = n.GetObjectValue<Microsoft.Graph.Beta.Models.AdministrativeUnit>(Microsoft.Graph.Beta.Models.AdministrativeUnit.CreateFromDiscriminatorValue); } },
-                {"classes", (o,n) => { (o as EducationSchool).Classes = n.GetCollectionOfObjectValues<EducationClass>(EducationClass.CreateFromDiscriminatorValue).ToList(); } },
-                {"createdBy", (o,n) => { (o as EducationSchool).CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"externalId", (o,n) => { (o as EducationSchool).ExternalId = n.GetStringValue(); } },
-                {"externalPrincipalId", (o,n) => { (o as EducationSchool).ExternalPrincipalId = n.GetStringValue(); } },
-                {"fax", (o,n) => { (o as EducationSchool).Fax = n.GetStringValue(); } },
-                {"highestGrade", (o,n) => { (o as EducationSchool).HighestGrade = n.GetStringValue(); } },
-                {"lowestGrade", (o,n) => { (o as EducationSchool).LowestGrade = n.GetStringValue(); } },
-                {"phone", (o,n) => { (o as EducationSchool).Phone = n.GetStringValue(); } },
-                {"principalEmail", (o,n) => { (o as EducationSchool).PrincipalEmail = n.GetStringValue(); } },
-                {"principalName", (o,n) => { (o as EducationSchool).PrincipalName = n.GetStringValue(); } },
-                {"schoolNumber", (o,n) => { (o as EducationSchool).SchoolNumber = n.GetStringValue(); } },
-                {"users", (o,n) => { (o as EducationSchool).Users = n.GetCollectionOfObjectValues<EducationUser>(EducationUser.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"address", n => { Address = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
+                {"administrativeUnit", n => { AdministrativeUnit = n.GetObjectValue<Microsoft.Graph.Beta.Models.AdministrativeUnit>(Microsoft.Graph.Beta.Models.AdministrativeUnit.CreateFromDiscriminatorValue); } },
+                {"classes", n => { Classes = n.GetCollectionOfObjectValues<EducationClass>(EducationClass.CreateFromDiscriminatorValue).ToList(); } },
+                {"createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"externalId", n => { ExternalId = n.GetStringValue(); } },
+                {"externalPrincipalId", n => { ExternalPrincipalId = n.GetStringValue(); } },
+                {"fax", n => { Fax = n.GetStringValue(); } },
+                {"highestGrade", n => { HighestGrade = n.GetStringValue(); } },
+                {"lowestGrade", n => { LowestGrade = n.GetStringValue(); } },
+                {"phone", n => { Phone = n.GetStringValue(); } },
+                {"principalEmail", n => { PrincipalEmail = n.GetStringValue(); } },
+                {"principalName", n => { PrincipalName = n.GetStringValue(); } },
+                {"schoolNumber", n => { SchoolNumber = n.GetStringValue(); } },
+                {"users", n => { Users = n.GetCollectionOfObjectValues<EducationUser>(EducationUser.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

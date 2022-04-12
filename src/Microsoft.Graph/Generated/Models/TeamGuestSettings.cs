@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"allowCreateUpdateChannels", (o,n) => { (o as TeamGuestSettings).AllowCreateUpdateChannels = n.GetBoolValue(); } },
-                {"allowDeleteChannels", (o,n) => { (o as TeamGuestSettings).AllowDeleteChannels = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"allowCreateUpdateChannels", n => { AllowCreateUpdateChannels = n.GetBoolValue(); } },
+                {"allowDeleteChannels", n => { AllowDeleteChannels = n.GetBoolValue(); } },
             };
         }
         /// <summary>

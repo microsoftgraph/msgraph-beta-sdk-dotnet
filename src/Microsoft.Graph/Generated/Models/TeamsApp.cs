@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appDefinitions", (o,n) => { (o as TeamsApp).AppDefinitions = n.GetCollectionOfObjectValues<TeamsAppDefinition>(TeamsAppDefinition.CreateFromDiscriminatorValue).ToList(); } },
-                {"displayName", (o,n) => { (o as TeamsApp).DisplayName = n.GetStringValue(); } },
-                {"distributionMethod", (o,n) => { (o as TeamsApp).DistributionMethod = n.GetEnumValue<TeamsAppDistributionMethod>(); } },
-                {"externalId", (o,n) => { (o as TeamsApp).ExternalId = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"appDefinitions", n => { AppDefinitions = n.GetCollectionOfObjectValues<TeamsAppDefinition>(TeamsAppDefinition.CreateFromDiscriminatorValue).ToList(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"distributionMethod", n => { DistributionMethod = n.GetEnumValue<TeamsAppDistributionMethod>(); } },
+                {"externalId", n => { ExternalId = n.GetStringValue(); } },
             };
         }
         /// <summary>

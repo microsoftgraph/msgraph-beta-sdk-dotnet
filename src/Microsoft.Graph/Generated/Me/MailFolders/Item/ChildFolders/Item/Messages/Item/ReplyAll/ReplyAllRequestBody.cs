@@ -30,10 +30,10 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.It
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"comment", (o,n) => { (o as ReplyAllRequestBody).Comment = n.GetStringValue(); } },
-                {"message", (o,n) => { (o as ReplyAllRequestBody).Message = n.GetObjectValue<Microsoft.Graph.Beta.Models.Message>(Microsoft.Graph.Beta.Models.Message.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"comment", n => { Comment = n.GetStringValue(); } },
+                {"message", n => { Message = n.GetObjectValue<Microsoft.Graph.Beta.Models.Message>(Microsoft.Graph.Beta.Models.Message.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

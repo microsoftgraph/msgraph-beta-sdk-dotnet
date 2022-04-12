@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.Reports.GetUserArchivedPrintJobsWithUserIdWithSta
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/reports/microsoft.graph.getUserArchivedPrintJobs(userId='{userId}',startDateTime='{startDateTime}',endDateTime='{endDateTime}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("endDateTime", endDateTime);
-            urlTplParams.Add("startDateTime", startDateTime);
-            urlTplParams.Add("userId", userId);
+            urlTplParams.Add("", endDateTime);
+            urlTplParams.Add("", startDateTime);
+            urlTplParams.Add("", userId);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

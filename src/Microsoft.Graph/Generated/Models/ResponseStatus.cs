@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"response", (o,n) => { (o as ResponseStatus).Response = n.GetEnumValue<ResponseType>(); } },
-                {"time", (o,n) => { (o as ResponseStatus).Time = n.GetDateTimeOffsetValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"response", n => { Response = n.GetEnumValue<ResponseType>(); } },
+                {"time", n => { Time = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

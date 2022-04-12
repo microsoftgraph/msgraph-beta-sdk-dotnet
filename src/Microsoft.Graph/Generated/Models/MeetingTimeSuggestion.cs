@@ -38,15 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"attendeeAvailability", (o,n) => { (o as MeetingTimeSuggestion).AttendeeAvailability = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AttendeeAvailability>(Microsoft.Graph.Beta.Models.AttendeeAvailability.CreateFromDiscriminatorValue).ToList(); } },
-                {"confidence", (o,n) => { (o as MeetingTimeSuggestion).Confidence = n.GetDoubleValue(); } },
-                {"locations", (o,n) => { (o as MeetingTimeSuggestion).Locations = n.GetCollectionOfObjectValues<Location>(Location.CreateFromDiscriminatorValue).ToList(); } },
-                {"meetingTimeSlot", (o,n) => { (o as MeetingTimeSuggestion).MeetingTimeSlot = n.GetObjectValue<TimeSlot>(TimeSlot.CreateFromDiscriminatorValue); } },
-                {"order", (o,n) => { (o as MeetingTimeSuggestion).Order = n.GetIntValue(); } },
-                {"organizerAvailability", (o,n) => { (o as MeetingTimeSuggestion).OrganizerAvailability = n.GetEnumValue<FreeBusyStatus>(); } },
-                {"suggestionReason", (o,n) => { (o as MeetingTimeSuggestion).SuggestionReason = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"attendeeAvailability", n => { AttendeeAvailability = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AttendeeAvailability>(Microsoft.Graph.Beta.Models.AttendeeAvailability.CreateFromDiscriminatorValue).ToList(); } },
+                {"confidence", n => { Confidence = n.GetDoubleValue(); } },
+                {"locations", n => { Locations = n.GetCollectionOfObjectValues<Location>(Location.CreateFromDiscriminatorValue).ToList(); } },
+                {"meetingTimeSlot", n => { MeetingTimeSlot = n.GetObjectValue<TimeSlot>(TimeSlot.CreateFromDiscriminatorValue); } },
+                {"order", n => { Order = n.GetIntValue(); } },
+                {"organizerAvailability", n => { OrganizerAvailability = n.GetEnumValue<FreeBusyStatus>(); } },
+                {"suggestionReason", n => { SuggestionReason = n.GetStringValue(); } },
             };
         }
         /// <summary>

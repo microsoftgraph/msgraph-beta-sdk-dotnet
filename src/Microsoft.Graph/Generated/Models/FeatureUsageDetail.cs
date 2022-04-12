@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"featureName", (o,n) => { (o as FeatureUsageDetail).FeatureName = n.GetStringValue(); } },
-                {"lastConfiguredDateTime", (o,n) => { (o as FeatureUsageDetail).LastConfiguredDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastUsedDateTime", (o,n) => { (o as FeatureUsageDetail).LastUsedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"licenseAssigned", (o,n) => { (o as FeatureUsageDetail).LicenseAssigned = n.GetEnumValue<AzureADLicenseType>(); } },
-                {"licenseRequired", (o,n) => { (o as FeatureUsageDetail).LicenseRequired = n.GetEnumValue<AzureADLicenseType>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"featureName", n => { FeatureName = n.GetStringValue(); } },
+                {"lastConfiguredDateTime", n => { LastConfiguredDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastUsedDateTime", n => { LastUsedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"licenseAssigned", n => { LicenseAssigned = n.GetEnumValue<AzureADLicenseType>(); } },
+                {"licenseRequired", n => { LicenseRequired = n.GetEnumValue<AzureADLicenseType>(); } },
             };
         }
         /// <summary>

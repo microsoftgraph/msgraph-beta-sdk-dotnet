@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadSecret {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"exp", (o,n) => { (o as UploadSecretRequestBody).Exp = n.GetLongValue(); } },
-                {"k", (o,n) => { (o as UploadSecretRequestBody).K = n.GetStringValue(); } },
-                {"nbf", (o,n) => { (o as UploadSecretRequestBody).Nbf = n.GetLongValue(); } },
-                {"use", (o,n) => { (o as UploadSecretRequestBody).Use = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"exp", n => { Exp = n.GetLongValue(); } },
+                {"k", n => { K = n.GetStringValue(); } },
+                {"nbf", n => { Nbf = n.GetLongValue(); } },
+                {"use", n => { Use = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -56,28 +56,28 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"aadDeviceId", (o,n) => { (o as CloudPC).AadDeviceId = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as CloudPC).DisplayName = n.GetStringValue(); } },
-                {"gracePeriodEndDateTime", (o,n) => { (o as CloudPC).GracePeriodEndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"imageDisplayName", (o,n) => { (o as CloudPC).ImageDisplayName = n.GetStringValue(); } },
-                {"lastLoginResult", (o,n) => { (o as CloudPC).LastLoginResult = n.GetObjectValue<CloudPcLoginResult>(CloudPcLoginResult.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", (o,n) => { (o as CloudPC).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastRemoteActionResult", (o,n) => { (o as CloudPC).LastRemoteActionResult = n.GetObjectValue<CloudPcRemoteActionResult>(CloudPcRemoteActionResult.CreateFromDiscriminatorValue); } },
-                {"managedDeviceId", (o,n) => { (o as CloudPC).ManagedDeviceId = n.GetStringValue(); } },
-                {"managedDeviceName", (o,n) => { (o as CloudPC).ManagedDeviceName = n.GetStringValue(); } },
-                {"onPremisesConnectionName", (o,n) => { (o as CloudPC).OnPremisesConnectionName = n.GetStringValue(); } },
-                {"osVersion", (o,n) => { (o as CloudPC).OsVersion = n.GetEnumValue<CloudPcOperatingSystem>(); } },
-                {"provisioningPolicyId", (o,n) => { (o as CloudPC).ProvisioningPolicyId = n.GetStringValue(); } },
-                {"provisioningPolicyName", (o,n) => { (o as CloudPC).ProvisioningPolicyName = n.GetStringValue(); } },
-                {"servicePlanId", (o,n) => { (o as CloudPC).ServicePlanId = n.GetStringValue(); } },
-                {"servicePlanName", (o,n) => { (o as CloudPC).ServicePlanName = n.GetStringValue(); } },
-                {"servicePlanType", (o,n) => { (o as CloudPC).ServicePlanType = n.GetEnumValue<CloudPcServicePlanType>(); } },
-                {"status", (o,n) => { (o as CloudPC).Status = n.GetEnumValue<CloudPcStatus>(); } },
-                {"statusDetails", (o,n) => { (o as CloudPC).StatusDetails = n.GetObjectValue<CloudPcStatusDetails>(CloudPcStatusDetails.CreateFromDiscriminatorValue); } },
-                {"userAccountType", (o,n) => { (o as CloudPC).UserAccountType = n.GetEnumValue<CloudPcUserAccountType>(); } },
-                {"userPrincipalName", (o,n) => { (o as CloudPC).UserPrincipalName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"aadDeviceId", n => { AadDeviceId = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"gracePeriodEndDateTime", n => { GracePeriodEndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"imageDisplayName", n => { ImageDisplayName = n.GetStringValue(); } },
+                {"lastLoginResult", n => { LastLoginResult = n.GetObjectValue<CloudPcLoginResult>(CloudPcLoginResult.CreateFromDiscriminatorValue); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastRemoteActionResult", n => { LastRemoteActionResult = n.GetObjectValue<CloudPcRemoteActionResult>(CloudPcRemoteActionResult.CreateFromDiscriminatorValue); } },
+                {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
+                {"managedDeviceName", n => { ManagedDeviceName = n.GetStringValue(); } },
+                {"onPremisesConnectionName", n => { OnPremisesConnectionName = n.GetStringValue(); } },
+                {"osVersion", n => { OsVersion = n.GetEnumValue<CloudPcOperatingSystem>(); } },
+                {"provisioningPolicyId", n => { ProvisioningPolicyId = n.GetStringValue(); } },
+                {"provisioningPolicyName", n => { ProvisioningPolicyName = n.GetStringValue(); } },
+                {"servicePlanId", n => { ServicePlanId = n.GetStringValue(); } },
+                {"servicePlanName", n => { ServicePlanName = n.GetStringValue(); } },
+                {"servicePlanType", n => { ServicePlanType = n.GetEnumValue<CloudPcServicePlanType>(); } },
+                {"status", n => { Status = n.GetEnumValue<CloudPcStatus>(); } },
+                {"statusDetails", n => { StatusDetails = n.GetObjectValue<CloudPcStatusDetails>(CloudPcStatusDetails.CreateFromDiscriminatorValue); } },
+                {"userAccountType", n => { UserAccountType = n.GetEnumValue<CloudPcUserAccountType>(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

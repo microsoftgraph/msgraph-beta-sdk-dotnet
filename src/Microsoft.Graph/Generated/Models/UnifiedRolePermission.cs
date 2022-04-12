@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"allowedResourceActions", (o,n) => { (o as UnifiedRolePermission).AllowedResourceActions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"condition", (o,n) => { (o as UnifiedRolePermission).Condition = n.GetStringValue(); } },
-                {"excludedResourceActions", (o,n) => { (o as UnifiedRolePermission).ExcludedResourceActions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"allowedResourceActions", n => { AllowedResourceActions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"condition", n => { Condition = n.GetStringValue(); } },
+                {"excludedResourceActions", n => { ExcludedResourceActions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

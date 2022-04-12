@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.AgreementAcceptances {
         /// <summary>Gets an item from the Microsoft.Graph.Beta.agreementAcceptances.item collection</summary>
         public AgreementAcceptanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("agreementAcceptance_id", position);
+            urlTplParams.Add("agreementAcceptance%2Did", position);
             return new AgreementAcceptanceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.AgreementAcceptances {
         public AgreementAcceptancesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/agreementAcceptances{?search,select}";
+            UrlTemplate = "{+baseurl}/agreementAcceptances{?%24search,%24select}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.AgreementAcceptances {
         public AgreementAcceptancesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/agreementAcceptances{?search,select}";
+            UrlTemplate = "{+baseurl}/agreementAcceptances{?%24search,%24select}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -126,8 +126,10 @@ namespace Microsoft.Graph.Beta.AgreementAcceptances {
         /// <summary>Get entities from agreementAcceptances</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Search items by search phrases</summary>
+            [QueryParameter("%24search")]
             public string Search { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
     }

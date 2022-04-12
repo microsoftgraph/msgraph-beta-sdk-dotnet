@@ -35,13 +35,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"endDate", (o,n) => { (o as RecurrenceRange).EndDate = n.GetDateValue(); } },
-                {"numberOfOccurrences", (o,n) => { (o as RecurrenceRange).NumberOfOccurrences = n.GetIntValue(); } },
-                {"recurrenceTimeZone", (o,n) => { (o as RecurrenceRange).RecurrenceTimeZone = n.GetStringValue(); } },
-                {"startDate", (o,n) => { (o as RecurrenceRange).StartDate = n.GetDateValue(); } },
-                {"type", (o,n) => { (o as RecurrenceRange).Type = n.GetEnumValue<RecurrenceRangeType>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"endDate", n => { EndDate = n.GetDateValue(); } },
+                {"numberOfOccurrences", n => { NumberOfOccurrences = n.GetIntValue(); } },
+                {"recurrenceTimeZone", n => { RecurrenceTimeZone = n.GetStringValue(); } },
+                {"startDate", n => { StartDate = n.GetDateValue(); } },
+                {"type", n => { Type = n.GetEnumValue<RecurrenceRangeType>(); } },
             };
         }
         /// <summary>

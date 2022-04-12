@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"classificationMethod", (o,n) => { (o as SensitiveType).ClassificationMethod = n.GetEnumValue<ClassificationMethod>(); } },
-                {"description", (o,n) => { (o as SensitiveType).Description = n.GetStringValue(); } },
-                {"name", (o,n) => { (o as SensitiveType).Name = n.GetStringValue(); } },
-                {"publisherName", (o,n) => { (o as SensitiveType).PublisherName = n.GetStringValue(); } },
-                {"rulePackageId", (o,n) => { (o as SensitiveType).RulePackageId = n.GetStringValue(); } },
-                {"rulePackageType", (o,n) => { (o as SensitiveType).RulePackageType = n.GetStringValue(); } },
-                {"scope", (o,n) => { (o as SensitiveType).Scope = n.GetEnumValue<SensitiveTypeScope>(); } },
-                {"sensitiveTypeSource", (o,n) => { (o as SensitiveType).SensitiveTypeSource = n.GetEnumValue<SensitiveTypeSource>(); } },
-                {"state", (o,n) => { (o as SensitiveType).State = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"classificationMethod", n => { ClassificationMethod = n.GetEnumValue<ClassificationMethod>(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"publisherName", n => { PublisherName = n.GetStringValue(); } },
+                {"rulePackageId", n => { RulePackageId = n.GetStringValue(); } },
+                {"rulePackageType", n => { RulePackageType = n.GetStringValue(); } },
+                {"scope", n => { Scope = n.GetEnumValue<SensitiveTypeScope>(); } },
+                {"sensitiveTypeSource", n => { SensitiveTypeSource = n.GetEnumValue<SensitiveTypeSource>(); } },
+                {"state", n => { State = n.GetStringValue(); } },
             };
         }
         /// <summary>

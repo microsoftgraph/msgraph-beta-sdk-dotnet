@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appliesTo", (o,n) => { (o as FeatureRolloutPolicy).AppliesTo = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
-                {"description", (o,n) => { (o as FeatureRolloutPolicy).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as FeatureRolloutPolicy).DisplayName = n.GetStringValue(); } },
-                {"feature", (o,n) => { (o as FeatureRolloutPolicy).Feature = n.GetEnumValue<StagedFeatureName>(); } },
-                {"isAppliedToOrganization", (o,n) => { (o as FeatureRolloutPolicy).IsAppliedToOrganization = n.GetBoolValue(); } },
-                {"isEnabled", (o,n) => { (o as FeatureRolloutPolicy).IsEnabled = n.GetBoolValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"appliesTo", n => { AppliesTo = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"feature", n => { Feature = n.GetEnumValue<StagedFeatureName>(); } },
+                {"isAppliedToOrganization", n => { IsAppliedToOrganization = n.GetBoolValue(); } },
+                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

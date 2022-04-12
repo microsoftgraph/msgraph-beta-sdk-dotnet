@@ -40,16 +40,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"editable", (o,n) => { (o as SynchronizationRule).Editable = n.GetBoolValue(); } },
-                {"id", (o,n) => { (o as SynchronizationRule).Id = n.GetStringValue(); } },
-                {"metadata", (o,n) => { (o as SynchronizationRule).Metadata = n.GetCollectionOfObjectValues<StringKeyStringValuePair>(StringKeyStringValuePair.CreateFromDiscriminatorValue).ToList(); } },
-                {"name", (o,n) => { (o as SynchronizationRule).Name = n.GetStringValue(); } },
-                {"objectMappings", (o,n) => { (o as SynchronizationRule).ObjectMappings = n.GetCollectionOfObjectValues<ObjectMapping>(ObjectMapping.CreateFromDiscriminatorValue).ToList(); } },
-                {"priority", (o,n) => { (o as SynchronizationRule).Priority = n.GetIntValue(); } },
-                {"sourceDirectoryName", (o,n) => { (o as SynchronizationRule).SourceDirectoryName = n.GetStringValue(); } },
-                {"targetDirectoryName", (o,n) => { (o as SynchronizationRule).TargetDirectoryName = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"editable", n => { Editable = n.GetBoolValue(); } },
+                {"id", n => { Id = n.GetStringValue(); } },
+                {"metadata", n => { Metadata = n.GetCollectionOfObjectValues<StringKeyStringValuePair>(StringKeyStringValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"objectMappings", n => { ObjectMappings = n.GetCollectionOfObjectValues<ObjectMapping>(ObjectMapping.CreateFromDiscriminatorValue).ToList(); } },
+                {"priority", n => { Priority = n.GetIntValue(); } },
+                {"sourceDirectoryName", n => { SourceDirectoryName = n.GetStringValue(); } },
+                {"targetDirectoryName", n => { TargetDirectoryName = n.GetStringValue(); } },
             };
         }
         /// <summary>

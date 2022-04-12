@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"checkedDateTime", (o,n) => { (o as ChecklistItem).CheckedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"createdDateTime", (o,n) => { (o as ChecklistItem).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", (o,n) => { (o as ChecklistItem).DisplayName = n.GetStringValue(); } },
-                {"isChecked", (o,n) => { (o as ChecklistItem).IsChecked = n.GetBoolValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"checkedDateTime", n => { CheckedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"isChecked", n => { IsChecked = n.GetBoolValue(); } },
             };
         }
         /// <summary>

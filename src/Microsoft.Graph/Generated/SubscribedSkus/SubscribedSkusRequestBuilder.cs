@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.SubscribedSkus {
         /// <summary>Gets an item from the Microsoft.Graph.Beta.subscribedSkus.item collection</summary>
         public SubscribedSkuItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("subscribedSku_id", position);
+            urlTplParams.Add("subscribedSku%2Did", position);
             return new SubscribedSkuItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.SubscribedSkus {
         public SubscribedSkusRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/subscribedSkus{?search,orderby,select}";
+            UrlTemplate = "{+baseurl}/subscribedSkus{?%24search,%24orderby,%24select}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.SubscribedSkus {
         public SubscribedSkusRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/subscribedSkus{?search,orderby,select}";
+            UrlTemplate = "{+baseurl}/subscribedSkus{?%24search,%24orderby,%24select}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -126,10 +126,13 @@ namespace Microsoft.Graph.Beta.SubscribedSkus {
         /// <summary>Get entities from subscribedSkus</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Order items by property values</summary>
+            [QueryParameter("%24orderby")]
             public string[] Orderby { get; set; }
             /// <summary>Search items by search phrases</summary>
+            [QueryParameter("%24search")]
             public string Search { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
     }

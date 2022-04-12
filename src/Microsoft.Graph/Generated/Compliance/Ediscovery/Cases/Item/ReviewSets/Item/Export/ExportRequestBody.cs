@@ -38,14 +38,14 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"azureBlobContainer", (o,n) => { (o as ExportRequestBody).AzureBlobContainer = n.GetStringValue(); } },
-                {"azureBlobToken", (o,n) => { (o as ExportRequestBody).AzureBlobToken = n.GetStringValue(); } },
-                {"description", (o,n) => { (o as ExportRequestBody).Description = n.GetStringValue(); } },
-                {"exportOptions", (o,n) => { (o as ExportRequestBody).ExportOptions = n.GetEnumValue<ExportOptions>(); } },
-                {"exportStructure", (o,n) => { (o as ExportRequestBody).ExportStructure = n.GetEnumValue<ExportFileStructure>(); } },
-                {"outputName", (o,n) => { (o as ExportRequestBody).OutputName = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"azureBlobContainer", n => { AzureBlobContainer = n.GetStringValue(); } },
+                {"azureBlobToken", n => { AzureBlobToken = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"exportOptions", n => { ExportOptions = n.GetEnumValue<ExportOptions>(); } },
+                {"exportStructure", n => { ExportStructure = n.GetEnumValue<ExportFileStructure>(); } },
+                {"outputName", n => { OutputName = n.GetStringValue(); } },
             };
         }
         /// <summary>

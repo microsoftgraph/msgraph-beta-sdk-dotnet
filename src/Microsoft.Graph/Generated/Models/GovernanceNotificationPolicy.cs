@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"enabledTemplateTypes", (o,n) => { (o as GovernanceNotificationPolicy).EnabledTemplateTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"notificationTemplates", (o,n) => { (o as GovernanceNotificationPolicy).NotificationTemplates = n.GetCollectionOfObjectValues<GovernanceNotificationTemplate>(GovernanceNotificationTemplate.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"enabledTemplateTypes", n => { EnabledTemplateTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"notificationTemplates", n => { NotificationTemplates = n.GetCollectionOfObjectValues<GovernanceNotificationTemplate>(GovernanceNotificationTemplate.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

@@ -40,20 +40,20 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"axes", (o,n) => { (o as WorkbookChart).Axes = n.GetObjectValue<WorkbookChartAxes>(WorkbookChartAxes.CreateFromDiscriminatorValue); } },
-                {"dataLabels", (o,n) => { (o as WorkbookChart).DataLabels = n.GetObjectValue<WorkbookChartDataLabels>(WorkbookChartDataLabels.CreateFromDiscriminatorValue); } },
-                {"format", (o,n) => { (o as WorkbookChart).Format = n.GetObjectValue<WorkbookChartAreaFormat>(WorkbookChartAreaFormat.CreateFromDiscriminatorValue); } },
-                {"height", (o,n) => { (o as WorkbookChart).Height = n.GetDoubleValue(); } },
-                {"left", (o,n) => { (o as WorkbookChart).Left = n.GetDoubleValue(); } },
-                {"legend", (o,n) => { (o as WorkbookChart).Legend = n.GetObjectValue<WorkbookChartLegend>(WorkbookChartLegend.CreateFromDiscriminatorValue); } },
-                {"name", (o,n) => { (o as WorkbookChart).Name = n.GetStringValue(); } },
-                {"series", (o,n) => { (o as WorkbookChart).Series = n.GetCollectionOfObjectValues<WorkbookChartSeries>(WorkbookChartSeries.CreateFromDiscriminatorValue).ToList(); } },
-                {"title", (o,n) => { (o as WorkbookChart).Title = n.GetObjectValue<WorkbookChartTitle>(WorkbookChartTitle.CreateFromDiscriminatorValue); } },
-                {"top", (o,n) => { (o as WorkbookChart).Top = n.GetDoubleValue(); } },
-                {"width", (o,n) => { (o as WorkbookChart).Width = n.GetDoubleValue(); } },
-                {"worksheet", (o,n) => { (o as WorkbookChart).Worksheet = n.GetObjectValue<WorkbookWorksheet>(WorkbookWorksheet.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"axes", n => { Axes = n.GetObjectValue<WorkbookChartAxes>(WorkbookChartAxes.CreateFromDiscriminatorValue); } },
+                {"dataLabels", n => { DataLabels = n.GetObjectValue<WorkbookChartDataLabels>(WorkbookChartDataLabels.CreateFromDiscriminatorValue); } },
+                {"format", n => { Format = n.GetObjectValue<WorkbookChartAreaFormat>(WorkbookChartAreaFormat.CreateFromDiscriminatorValue); } },
+                {"height", n => { Height = n.GetDoubleValue(); } },
+                {"left", n => { Left = n.GetDoubleValue(); } },
+                {"legend", n => { Legend = n.GetObjectValue<WorkbookChartLegend>(WorkbookChartLegend.CreateFromDiscriminatorValue); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"series", n => { Series = n.GetCollectionOfObjectValues<WorkbookChartSeries>(WorkbookChartSeries.CreateFromDiscriminatorValue).ToList(); } },
+                {"title", n => { Title = n.GetObjectValue<WorkbookChartTitle>(WorkbookChartTitle.CreateFromDiscriminatorValue); } },
+                {"top", n => { Top = n.GetDoubleValue(); } },
+                {"width", n => { Width = n.GetDoubleValue(); } },
+                {"worksheet", n => { Worksheet = n.GetObjectValue<WorkbookWorksheet>(WorkbookWorksheet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -26,9 +26,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"fields", (o,n) => { (o as PasswordSingleSignOnSettings).Fields = n.GetCollectionOfObjectValues<PasswordSingleSignOnField>(PasswordSingleSignOnField.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"fields", n => { Fields = n.GetCollectionOfObjectValues<PasswordSingleSignOnField>(PasswordSingleSignOnField.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

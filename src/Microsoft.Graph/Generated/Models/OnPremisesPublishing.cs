@@ -60,26 +60,26 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"alternateUrl", (o,n) => { (o as OnPremisesPublishing).AlternateUrl = n.GetStringValue(); } },
-                {"applicationServerTimeout", (o,n) => { (o as OnPremisesPublishing).ApplicationServerTimeout = n.GetStringValue(); } },
-                {"applicationType", (o,n) => { (o as OnPremisesPublishing).ApplicationType = n.GetStringValue(); } },
-                {"externalAuthenticationType", (o,n) => { (o as OnPremisesPublishing).ExternalAuthenticationType = n.GetEnumValue<ExternalAuthenticationType>(); } },
-                {"externalUrl", (o,n) => { (o as OnPremisesPublishing).ExternalUrl = n.GetStringValue(); } },
-                {"internalUrl", (o,n) => { (o as OnPremisesPublishing).InternalUrl = n.GetStringValue(); } },
-                {"isBackendCertificateValidationEnabled", (o,n) => { (o as OnPremisesPublishing).IsBackendCertificateValidationEnabled = n.GetBoolValue(); } },
-                {"isHttpOnlyCookieEnabled", (o,n) => { (o as OnPremisesPublishing).IsHttpOnlyCookieEnabled = n.GetBoolValue(); } },
-                {"isOnPremPublishingEnabled", (o,n) => { (o as OnPremisesPublishing).IsOnPremPublishingEnabled = n.GetBoolValue(); } },
-                {"isPersistentCookieEnabled", (o,n) => { (o as OnPremisesPublishing).IsPersistentCookieEnabled = n.GetBoolValue(); } },
-                {"isSecureCookieEnabled", (o,n) => { (o as OnPremisesPublishing).IsSecureCookieEnabled = n.GetBoolValue(); } },
-                {"isTranslateHostHeaderEnabled", (o,n) => { (o as OnPremisesPublishing).IsTranslateHostHeaderEnabled = n.GetBoolValue(); } },
-                {"isTranslateLinksInBodyEnabled", (o,n) => { (o as OnPremisesPublishing).IsTranslateLinksInBodyEnabled = n.GetBoolValue(); } },
-                {"singleSignOnSettings", (o,n) => { (o as OnPremisesPublishing).SingleSignOnSettings = n.GetObjectValue<OnPremisesPublishingSingleSignOn>(OnPremisesPublishingSingleSignOn.CreateFromDiscriminatorValue); } },
-                {"useAlternateUrlForTranslationAndRedirect", (o,n) => { (o as OnPremisesPublishing).UseAlternateUrlForTranslationAndRedirect = n.GetBoolValue(); } },
-                {"verifiedCustomDomainCertificatesMetadata", (o,n) => { (o as OnPremisesPublishing).VerifiedCustomDomainCertificatesMetadata = n.GetObjectValue<Microsoft.Graph.Beta.Models.VerifiedCustomDomainCertificatesMetadata>(Microsoft.Graph.Beta.Models.VerifiedCustomDomainCertificatesMetadata.CreateFromDiscriminatorValue); } },
-                {"verifiedCustomDomainKeyCredential", (o,n) => { (o as OnPremisesPublishing).VerifiedCustomDomainKeyCredential = n.GetObjectValue<KeyCredential>(KeyCredential.CreateFromDiscriminatorValue); } },
-                {"verifiedCustomDomainPasswordCredential", (o,n) => { (o as OnPremisesPublishing).VerifiedCustomDomainPasswordCredential = n.GetObjectValue<PasswordCredential>(PasswordCredential.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"alternateUrl", n => { AlternateUrl = n.GetStringValue(); } },
+                {"applicationServerTimeout", n => { ApplicationServerTimeout = n.GetStringValue(); } },
+                {"applicationType", n => { ApplicationType = n.GetStringValue(); } },
+                {"externalAuthenticationType", n => { ExternalAuthenticationType = n.GetEnumValue<ExternalAuthenticationType>(); } },
+                {"externalUrl", n => { ExternalUrl = n.GetStringValue(); } },
+                {"internalUrl", n => { InternalUrl = n.GetStringValue(); } },
+                {"isBackendCertificateValidationEnabled", n => { IsBackendCertificateValidationEnabled = n.GetBoolValue(); } },
+                {"isHttpOnlyCookieEnabled", n => { IsHttpOnlyCookieEnabled = n.GetBoolValue(); } },
+                {"isOnPremPublishingEnabled", n => { IsOnPremPublishingEnabled = n.GetBoolValue(); } },
+                {"isPersistentCookieEnabled", n => { IsPersistentCookieEnabled = n.GetBoolValue(); } },
+                {"isSecureCookieEnabled", n => { IsSecureCookieEnabled = n.GetBoolValue(); } },
+                {"isTranslateHostHeaderEnabled", n => { IsTranslateHostHeaderEnabled = n.GetBoolValue(); } },
+                {"isTranslateLinksInBodyEnabled", n => { IsTranslateLinksInBodyEnabled = n.GetBoolValue(); } },
+                {"singleSignOnSettings", n => { SingleSignOnSettings = n.GetObjectValue<OnPremisesPublishingSingleSignOn>(OnPremisesPublishingSingleSignOn.CreateFromDiscriminatorValue); } },
+                {"useAlternateUrlForTranslationAndRedirect", n => { UseAlternateUrlForTranslationAndRedirect = n.GetBoolValue(); } },
+                {"verifiedCustomDomainCertificatesMetadata", n => { VerifiedCustomDomainCertificatesMetadata = n.GetObjectValue<Microsoft.Graph.Beta.Models.VerifiedCustomDomainCertificatesMetadata>(Microsoft.Graph.Beta.Models.VerifiedCustomDomainCertificatesMetadata.CreateFromDiscriminatorValue); } },
+                {"verifiedCustomDomainKeyCredential", n => { VerifiedCustomDomainKeyCredential = n.GetObjectValue<KeyCredential>(KeyCredential.CreateFromDiscriminatorValue); } },
+                {"verifiedCustomDomainPasswordCredential", n => { VerifiedCustomDomainPasswordCredential = n.GetObjectValue<PasswordCredential>(PasswordCredential.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"agentGroups", (o,n) => { (o as OnPremisesAgent).AgentGroups = n.GetCollectionOfObjectValues<OnPremisesAgentGroup>(OnPremisesAgentGroup.CreateFromDiscriminatorValue).ToList(); } },
-                {"externalIp", (o,n) => { (o as OnPremisesAgent).ExternalIp = n.GetStringValue(); } },
-                {"machineName", (o,n) => { (o as OnPremisesAgent).MachineName = n.GetStringValue(); } },
-                {"status", (o,n) => { (o as OnPremisesAgent).Status = n.GetEnumValue<AgentStatus>(); } },
-                {"supportedPublishingTypes", (o,n) => { (o as OnPremisesAgent).SupportedPublishingTypes = n.GetCollectionOfEnumValues<OnPremisesPublishingType>().ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"agentGroups", n => { AgentGroups = n.GetCollectionOfObjectValues<OnPremisesAgentGroup>(OnPremisesAgentGroup.CreateFromDiscriminatorValue).ToList(); } },
+                {"externalIp", n => { ExternalIp = n.GetStringValue(); } },
+                {"machineName", n => { MachineName = n.GetStringValue(); } },
+                {"status", n => { Status = n.GetEnumValue<AgentStatus>(); } },
+                {"supportedPublishingTypes", n => { SupportedPublishingTypes = n.GetCollectionOfEnumValues<OnPremisesPublishingType>().ToList(); } },
             };
         }
         /// <summary>

@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"collectionIdentifier", (o,n) => { (o as ConfigManagerCollection).CollectionIdentifier = n.GetStringValue(); } },
-                {"createdDateTime", (o,n) => { (o as ConfigManagerCollection).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", (o,n) => { (o as ConfigManagerCollection).DisplayName = n.GetStringValue(); } },
-                {"hierarchyIdentifier", (o,n) => { (o as ConfigManagerCollection).HierarchyIdentifier = n.GetStringValue(); } },
-                {"hierarchyName", (o,n) => { (o as ConfigManagerCollection).HierarchyName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as ConfigManagerCollection).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"collectionIdentifier", n => { CollectionIdentifier = n.GetStringValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"hierarchyIdentifier", n => { HierarchyIdentifier = n.GetStringValue(); } },
+                {"hierarchyName", n => { HierarchyName = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

@@ -22,11 +22,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"authenticationConfiguration", (o,n) => { (o as IdentityApiConnector).AuthenticationConfiguration = n.GetObjectValue<ApiAuthenticationConfigurationBase>(ApiAuthenticationConfigurationBase.CreateFromDiscriminatorValue); } },
-                {"displayName", (o,n) => { (o as IdentityApiConnector).DisplayName = n.GetStringValue(); } },
-                {"targetUrl", (o,n) => { (o as IdentityApiConnector).TargetUrl = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"authenticationConfiguration", n => { AuthenticationConfiguration = n.GetObjectValue<ApiAuthenticationConfigurationBase>(ApiAuthenticationConfigurationBase.CreateFromDiscriminatorValue); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"targetUrl", n => { TargetUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

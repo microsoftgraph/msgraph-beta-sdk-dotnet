@@ -20,10 +20,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdDateTime", (o,n) => { (o as PrintOperation).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", (o,n) => { (o as PrintOperation).Status = n.GetObjectValue<PrintOperationStatus>(PrintOperationStatus.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"status", n => { Status = n.GetObjectValue<PrintOperationStatus>(PrintOperationStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"templateDisplayName", (o,n) => { (o as DeviceManagementConfigurationPolicyTemplateReference).TemplateDisplayName = n.GetStringValue(); } },
-                {"templateDisplayVersion", (o,n) => { (o as DeviceManagementConfigurationPolicyTemplateReference).TemplateDisplayVersion = n.GetStringValue(); } },
-                {"templateFamily", (o,n) => { (o as DeviceManagementConfigurationPolicyTemplateReference).TemplateFamily = n.GetEnumValue<DeviceManagementConfigurationTemplateFamily>(); } },
-                {"templateId", (o,n) => { (o as DeviceManagementConfigurationPolicyTemplateReference).TemplateId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"templateDisplayName", n => { TemplateDisplayName = n.GetStringValue(); } },
+                {"templateDisplayVersion", n => { TemplateDisplayVersion = n.GetStringValue(); } },
+                {"templateFamily", n => { TemplateFamily = n.GetEnumValue<DeviceManagementConfigurationTemplateFamily>(); } },
+                {"templateId", n => { TemplateId = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -30,10 +30,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.Assign {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"deviceManagementScriptAssignments", (o,n) => { (o as AssignRequestBody).DeviceManagementScriptAssignments = n.GetCollectionOfObjectValues<DeviceManagementScriptAssignment>(DeviceManagementScriptAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"deviceManagementScriptGroupAssignments", (o,n) => { (o as AssignRequestBody).DeviceManagementScriptGroupAssignments = n.GetCollectionOfObjectValues<DeviceManagementScriptGroupAssignment>(DeviceManagementScriptGroupAssignment.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"deviceManagementScriptAssignments", n => { DeviceManagementScriptAssignments = n.GetCollectionOfObjectValues<DeviceManagementScriptAssignment>(DeviceManagementScriptAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"deviceManagementScriptGroupAssignments", n => { DeviceManagementScriptGroupAssignments = n.GetCollectionOfObjectValues<DeviceManagementScriptGroupAssignment>(DeviceManagementScriptGroupAssignment.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

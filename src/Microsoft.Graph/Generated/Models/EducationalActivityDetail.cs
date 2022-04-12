@@ -42,17 +42,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"abbreviation", (o,n) => { (o as EducationalActivityDetail).Abbreviation = n.GetStringValue(); } },
-                {"activities", (o,n) => { (o as EducationalActivityDetail).Activities = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"awards", (o,n) => { (o as EducationalActivityDetail).Awards = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"description", (o,n) => { (o as EducationalActivityDetail).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as EducationalActivityDetail).DisplayName = n.GetStringValue(); } },
-                {"fieldsOfStudy", (o,n) => { (o as EducationalActivityDetail).FieldsOfStudy = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"grade", (o,n) => { (o as EducationalActivityDetail).Grade = n.GetStringValue(); } },
-                {"notes", (o,n) => { (o as EducationalActivityDetail).Notes = n.GetStringValue(); } },
-                {"webUrl", (o,n) => { (o as EducationalActivityDetail).WebUrl = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"abbreviation", n => { Abbreviation = n.GetStringValue(); } },
+                {"activities", n => { Activities = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"awards", n => { Awards = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"fieldsOfStudy", n => { FieldsOfStudy = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"grade", n => { Grade = n.GetStringValue(); } },
+                {"notes", n => { Notes = n.GetStringValue(); } },
+                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

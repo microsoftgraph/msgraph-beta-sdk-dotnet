@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdDateTime", (o,n) => { (o as PolicySetItem).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", (o,n) => { (o as PolicySetItem).DisplayName = n.GetStringValue(); } },
-                {"errorCode", (o,n) => { (o as PolicySetItem).ErrorCode = n.GetEnumValue<ErrorCode>(); } },
-                {"guidedDeploymentTags", (o,n) => { (o as PolicySetItem).GuidedDeploymentTags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"itemType", (o,n) => { (o as PolicySetItem).ItemType = n.GetStringValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as PolicySetItem).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"payloadId", (o,n) => { (o as PolicySetItem).PayloadId = n.GetStringValue(); } },
-                {"status", (o,n) => { (o as PolicySetItem).Status = n.GetEnumValue<PolicySetStatus>(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"errorCode", n => { ErrorCode = n.GetEnumValue<ErrorCode>(); } },
+                {"guidedDeploymentTags", n => { GuidedDeploymentTags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"itemType", n => { ItemType = n.GetStringValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"payloadId", n => { PayloadId = n.GetStringValue(); } },
+                {"status", n => { Status = n.GetEnumValue<PolicySetStatus>(); } },
             };
         }
         /// <summary>

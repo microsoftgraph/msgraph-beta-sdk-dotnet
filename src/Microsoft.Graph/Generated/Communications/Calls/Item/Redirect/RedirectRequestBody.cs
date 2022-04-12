@@ -38,14 +38,14 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.Redirect {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"callbackUri", (o,n) => { (o as RedirectRequestBody).CallbackUri = n.GetStringValue(); } },
-                {"maskCallee", (o,n) => { (o as RedirectRequestBody).MaskCallee = n.GetBoolValue(); } },
-                {"maskCaller", (o,n) => { (o as RedirectRequestBody).MaskCaller = n.GetBoolValue(); } },
-                {"targetDisposition", (o,n) => { (o as RedirectRequestBody).TargetDisposition = n.GetEnumValue<CallDisposition>(); } },
-                {"targets", (o,n) => { (o as RedirectRequestBody).Targets = n.GetCollectionOfObjectValues<InvitationParticipantInfo>(InvitationParticipantInfo.CreateFromDiscriminatorValue).ToList(); } },
-                {"timeout", (o,n) => { (o as RedirectRequestBody).Timeout = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"callbackUri", n => { CallbackUri = n.GetStringValue(); } },
+                {"maskCallee", n => { MaskCallee = n.GetBoolValue(); } },
+                {"maskCaller", n => { MaskCaller = n.GetBoolValue(); } },
+                {"targetDisposition", n => { TargetDisposition = n.GetEnumValue<CallDisposition>(); } },
+                {"targets", n => { Targets = n.GetCollectionOfObjectValues<InvitationParticipantInfo>(InvitationParticipantInfo.CreateFromDiscriminatorValue).ToList(); } },
+                {"timeout", n => { Timeout = n.GetIntValue(); } },
             };
         }
         /// <summary>

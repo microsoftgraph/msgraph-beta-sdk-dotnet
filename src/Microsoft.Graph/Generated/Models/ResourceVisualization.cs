@@ -40,16 +40,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"containerDisplayName", (o,n) => { (o as ResourceVisualization).ContainerDisplayName = n.GetStringValue(); } },
-                {"containerType", (o,n) => { (o as ResourceVisualization).ContainerType = n.GetStringValue(); } },
-                {"containerWebUrl", (o,n) => { (o as ResourceVisualization).ContainerWebUrl = n.GetStringValue(); } },
-                {"mediaType", (o,n) => { (o as ResourceVisualization).MediaType = n.GetStringValue(); } },
-                {"previewImageUrl", (o,n) => { (o as ResourceVisualization).PreviewImageUrl = n.GetStringValue(); } },
-                {"previewText", (o,n) => { (o as ResourceVisualization).PreviewText = n.GetStringValue(); } },
-                {"title", (o,n) => { (o as ResourceVisualization).Title = n.GetStringValue(); } },
-                {"type", (o,n) => { (o as ResourceVisualization).Type = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"containerDisplayName", n => { ContainerDisplayName = n.GetStringValue(); } },
+                {"containerType", n => { ContainerType = n.GetStringValue(); } },
+                {"containerWebUrl", n => { ContainerWebUrl = n.GetStringValue(); } },
+                {"mediaType", n => { MediaType = n.GetStringValue(); } },
+                {"previewImageUrl", n => { PreviewImageUrl = n.GetStringValue(); } },
+                {"previewText", n => { PreviewText = n.GetStringValue(); } },
+                {"title", n => { Title = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>

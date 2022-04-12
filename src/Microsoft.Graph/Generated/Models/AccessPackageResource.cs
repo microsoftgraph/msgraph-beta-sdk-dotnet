@@ -42,21 +42,21 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessPackageResourceEnvironment", (o,n) => { (o as AccessPackageResource).AccessPackageResourceEnvironment = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment>(Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment.CreateFromDiscriminatorValue); } },
-                {"accessPackageResourceRoles", (o,n) => { (o as AccessPackageResource).AccessPackageResourceRoles = n.GetCollectionOfObjectValues<AccessPackageResourceRole>(AccessPackageResourceRole.CreateFromDiscriminatorValue).ToList(); } },
-                {"accessPackageResourceScopes", (o,n) => { (o as AccessPackageResource).AccessPackageResourceScopes = n.GetCollectionOfObjectValues<AccessPackageResourceScope>(AccessPackageResourceScope.CreateFromDiscriminatorValue).ToList(); } },
-                {"addedBy", (o,n) => { (o as AccessPackageResource).AddedBy = n.GetStringValue(); } },
-                {"addedOn", (o,n) => { (o as AccessPackageResource).AddedOn = n.GetDateTimeOffsetValue(); } },
-                {"attributes", (o,n) => { (o as AccessPackageResource).Attributes = n.GetCollectionOfObjectValues<AccessPackageResourceAttribute>(AccessPackageResourceAttribute.CreateFromDiscriminatorValue).ToList(); } },
-                {"description", (o,n) => { (o as AccessPackageResource).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as AccessPackageResource).DisplayName = n.GetStringValue(); } },
-                {"isPendingOnboarding", (o,n) => { (o as AccessPackageResource).IsPendingOnboarding = n.GetBoolValue(); } },
-                {"originId", (o,n) => { (o as AccessPackageResource).OriginId = n.GetStringValue(); } },
-                {"originSystem", (o,n) => { (o as AccessPackageResource).OriginSystem = n.GetStringValue(); } },
-                {"resourceType", (o,n) => { (o as AccessPackageResource).ResourceType = n.GetStringValue(); } },
-                {"url", (o,n) => { (o as AccessPackageResource).Url = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"accessPackageResourceEnvironment", n => { AccessPackageResourceEnvironment = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment>(Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment.CreateFromDiscriminatorValue); } },
+                {"accessPackageResourceRoles", n => { AccessPackageResourceRoles = n.GetCollectionOfObjectValues<AccessPackageResourceRole>(AccessPackageResourceRole.CreateFromDiscriminatorValue).ToList(); } },
+                {"accessPackageResourceScopes", n => { AccessPackageResourceScopes = n.GetCollectionOfObjectValues<AccessPackageResourceScope>(AccessPackageResourceScope.CreateFromDiscriminatorValue).ToList(); } },
+                {"addedBy", n => { AddedBy = n.GetStringValue(); } },
+                {"addedOn", n => { AddedOn = n.GetDateTimeOffsetValue(); } },
+                {"attributes", n => { Attributes = n.GetCollectionOfObjectValues<AccessPackageResourceAttribute>(AccessPackageResourceAttribute.CreateFromDiscriminatorValue).ToList(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"isPendingOnboarding", n => { IsPendingOnboarding = n.GetBoolValue(); } },
+                {"originId", n => { OriginId = n.GetStringValue(); } },
+                {"originSystem", n => { OriginSystem = n.GetStringValue(); } },
+                {"resourceType", n => { ResourceType = n.GetStringValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

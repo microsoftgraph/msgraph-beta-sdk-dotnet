@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"isArchived", (o,n) => { (o as ServiceUpdateMessageViewpoint).IsArchived = n.GetBoolValue(); } },
-                {"isFavorited", (o,n) => { (o as ServiceUpdateMessageViewpoint).IsFavorited = n.GetBoolValue(); } },
-                {"isRead", (o,n) => { (o as ServiceUpdateMessageViewpoint).IsRead = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"isArchived", n => { IsArchived = n.GetBoolValue(); } },
+                {"isFavorited", n => { IsFavorited = n.GetBoolValue(); } },
+                {"isRead", n => { IsRead = n.GetBoolValue(); } },
             };
         }
         /// <summary>

@@ -38,15 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"acquiredByPrinter", (o,n) => { (o as PrintJobStatus).AcquiredByPrinter = n.GetBoolValue(); } },
-                {"description", (o,n) => { (o as PrintJobStatus).Description = n.GetStringValue(); } },
-                {"details", (o,n) => { (o as PrintJobStatus).Details = n.GetCollectionOfEnumValues<PrintJobStateDetail>().ToList(); } },
-                {"isAcquiredByPrinter", (o,n) => { (o as PrintJobStatus).IsAcquiredByPrinter = n.GetBoolValue(); } },
-                {"processingState", (o,n) => { (o as PrintJobStatus).ProcessingState = n.GetEnumValue<PrintJobProcessingState>(); } },
-                {"processingStateDescription", (o,n) => { (o as PrintJobStatus).ProcessingStateDescription = n.GetStringValue(); } },
-                {"state", (o,n) => { (o as PrintJobStatus).State = n.GetEnumValue<PrintJobProcessingState>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"acquiredByPrinter", n => { AcquiredByPrinter = n.GetBoolValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"details", n => { Details = n.GetCollectionOfEnumValues<PrintJobStateDetail>().ToList(); } },
+                {"isAcquiredByPrinter", n => { IsAcquiredByPrinter = n.GetBoolValue(); } },
+                {"processingState", n => { ProcessingState = n.GetEnumValue<PrintJobProcessingState>(); } },
+                {"processingStateDescription", n => { ProcessingStateDescription = n.GetStringValue(); } },
+                {"state", n => { State = n.GetEnumValue<PrintJobProcessingState>(); } },
             };
         }
         /// <summary>

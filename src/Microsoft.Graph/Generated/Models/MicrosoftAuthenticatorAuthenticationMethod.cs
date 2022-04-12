@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdDateTime", (o,n) => { (o as MicrosoftAuthenticatorAuthenticationMethod).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"device", (o,n) => { (o as MicrosoftAuthenticatorAuthenticationMethod).Device = n.GetObjectValue<Microsoft.Graph.Beta.Models.Device>(Microsoft.Graph.Beta.Models.Device.CreateFromDiscriminatorValue); } },
-                {"deviceTag", (o,n) => { (o as MicrosoftAuthenticatorAuthenticationMethod).DeviceTag = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as MicrosoftAuthenticatorAuthenticationMethod).DisplayName = n.GetStringValue(); } },
-                {"phoneAppVersion", (o,n) => { (o as MicrosoftAuthenticatorAuthenticationMethod).PhoneAppVersion = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"device", n => { Device = n.GetObjectValue<Microsoft.Graph.Beta.Models.Device>(Microsoft.Graph.Beta.Models.Device.CreateFromDiscriminatorValue); } },
+                {"deviceTag", n => { DeviceTag = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"phoneAppVersion", n => { PhoneAppVersion = n.GetStringValue(); } },
             };
         }
         /// <summary>

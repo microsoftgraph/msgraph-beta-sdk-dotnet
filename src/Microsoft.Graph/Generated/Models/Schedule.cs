@@ -58,29 +58,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"enabled", (o,n) => { (o as Schedule).Enabled = n.GetBoolValue(); } },
-                {"offerShiftRequests", (o,n) => { (o as Schedule).OfferShiftRequests = n.GetCollectionOfObjectValues<OfferShiftRequest>(OfferShiftRequest.CreateFromDiscriminatorValue).ToList(); } },
-                {"offerShiftRequestsEnabled", (o,n) => { (o as Schedule).OfferShiftRequestsEnabled = n.GetBoolValue(); } },
-                {"openShiftChangeRequests", (o,n) => { (o as Schedule).OpenShiftChangeRequests = n.GetCollectionOfObjectValues<OpenShiftChangeRequest>(OpenShiftChangeRequest.CreateFromDiscriminatorValue).ToList(); } },
-                {"openShifts", (o,n) => { (o as Schedule).OpenShifts = n.GetCollectionOfObjectValues<OpenShift>(OpenShift.CreateFromDiscriminatorValue).ToList(); } },
-                {"openShiftsEnabled", (o,n) => { (o as Schedule).OpenShiftsEnabled = n.GetBoolValue(); } },
-                {"provisionStatus", (o,n) => { (o as Schedule).ProvisionStatus = n.GetEnumValue<OperationStatus>(); } },
-                {"provisionStatusCode", (o,n) => { (o as Schedule).ProvisionStatusCode = n.GetStringValue(); } },
-                {"schedulingGroups", (o,n) => { (o as Schedule).SchedulingGroups = n.GetCollectionOfObjectValues<SchedulingGroup>(SchedulingGroup.CreateFromDiscriminatorValue).ToList(); } },
-                {"shifts", (o,n) => { (o as Schedule).Shifts = n.GetCollectionOfObjectValues<Shift>(Shift.CreateFromDiscriminatorValue).ToList(); } },
-                {"swapShiftsChangeRequests", (o,n) => { (o as Schedule).SwapShiftsChangeRequests = n.GetCollectionOfObjectValues<SwapShiftsChangeRequest>(SwapShiftsChangeRequest.CreateFromDiscriminatorValue).ToList(); } },
-                {"swapShiftsRequestsEnabled", (o,n) => { (o as Schedule).SwapShiftsRequestsEnabled = n.GetBoolValue(); } },
-                {"timeCards", (o,n) => { (o as Schedule).TimeCards = n.GetCollectionOfObjectValues<TimeCard>(TimeCard.CreateFromDiscriminatorValue).ToList(); } },
-                {"timeClockEnabled", (o,n) => { (o as Schedule).TimeClockEnabled = n.GetBoolValue(); } },
-                {"timeClockSettings", (o,n) => { (o as Schedule).TimeClockSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.TimeClockSettings>(Microsoft.Graph.Beta.Models.TimeClockSettings.CreateFromDiscriminatorValue); } },
-                {"timeOffReasons", (o,n) => { (o as Schedule).TimeOffReasons = n.GetCollectionOfObjectValues<TimeOffReason>(TimeOffReason.CreateFromDiscriminatorValue).ToList(); } },
-                {"timeOffRequests", (o,n) => { (o as Schedule).TimeOffRequests = n.GetCollectionOfObjectValues<TimeOffRequest>(TimeOffRequest.CreateFromDiscriminatorValue).ToList(); } },
-                {"timeOffRequestsEnabled", (o,n) => { (o as Schedule).TimeOffRequestsEnabled = n.GetBoolValue(); } },
-                {"timesOff", (o,n) => { (o as Schedule).TimesOff = n.GetCollectionOfObjectValues<TimeOff>(TimeOff.CreateFromDiscriminatorValue).ToList(); } },
-                {"timeZone", (o,n) => { (o as Schedule).TimeZone = n.GetStringValue(); } },
-                {"workforceIntegrationIds", (o,n) => { (o as Schedule).WorkforceIntegrationIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"enabled", n => { Enabled = n.GetBoolValue(); } },
+                {"offerShiftRequests", n => { OfferShiftRequests = n.GetCollectionOfObjectValues<OfferShiftRequest>(OfferShiftRequest.CreateFromDiscriminatorValue).ToList(); } },
+                {"offerShiftRequestsEnabled", n => { OfferShiftRequestsEnabled = n.GetBoolValue(); } },
+                {"openShiftChangeRequests", n => { OpenShiftChangeRequests = n.GetCollectionOfObjectValues<OpenShiftChangeRequest>(OpenShiftChangeRequest.CreateFromDiscriminatorValue).ToList(); } },
+                {"openShifts", n => { OpenShifts = n.GetCollectionOfObjectValues<OpenShift>(OpenShift.CreateFromDiscriminatorValue).ToList(); } },
+                {"openShiftsEnabled", n => { OpenShiftsEnabled = n.GetBoolValue(); } },
+                {"provisionStatus", n => { ProvisionStatus = n.GetEnumValue<OperationStatus>(); } },
+                {"provisionStatusCode", n => { ProvisionStatusCode = n.GetStringValue(); } },
+                {"schedulingGroups", n => { SchedulingGroups = n.GetCollectionOfObjectValues<SchedulingGroup>(SchedulingGroup.CreateFromDiscriminatorValue).ToList(); } },
+                {"shifts", n => { Shifts = n.GetCollectionOfObjectValues<Shift>(Shift.CreateFromDiscriminatorValue).ToList(); } },
+                {"swapShiftsChangeRequests", n => { SwapShiftsChangeRequests = n.GetCollectionOfObjectValues<SwapShiftsChangeRequest>(SwapShiftsChangeRequest.CreateFromDiscriminatorValue).ToList(); } },
+                {"swapShiftsRequestsEnabled", n => { SwapShiftsRequestsEnabled = n.GetBoolValue(); } },
+                {"timeCards", n => { TimeCards = n.GetCollectionOfObjectValues<TimeCard>(TimeCard.CreateFromDiscriminatorValue).ToList(); } },
+                {"timeClockEnabled", n => { TimeClockEnabled = n.GetBoolValue(); } },
+                {"timeClockSettings", n => { TimeClockSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.TimeClockSettings>(Microsoft.Graph.Beta.Models.TimeClockSettings.CreateFromDiscriminatorValue); } },
+                {"timeOffReasons", n => { TimeOffReasons = n.GetCollectionOfObjectValues<TimeOffReason>(TimeOffReason.CreateFromDiscriminatorValue).ToList(); } },
+                {"timeOffRequests", n => { TimeOffRequests = n.GetCollectionOfObjectValues<TimeOffRequest>(TimeOffRequest.CreateFromDiscriminatorValue).ToList(); } },
+                {"timeOffRequestsEnabled", n => { TimeOffRequestsEnabled = n.GetBoolValue(); } },
+                {"timesOff", n => { TimesOff = n.GetCollectionOfObjectValues<TimeOff>(TimeOff.CreateFromDiscriminatorValue).ToList(); } },
+                {"timeZone", n => { TimeZone = n.GetStringValue(); } },
+                {"workforceIntegrationIds", n => { WorkforceIntegrationIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

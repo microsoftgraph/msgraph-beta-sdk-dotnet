@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"columns", (o,n) => { (o as ExactMatchDataStoreBase).Columns = n.GetCollectionOfObjectValues<ExactDataMatchStoreColumn>(ExactDataMatchStoreColumn.CreateFromDiscriminatorValue).ToList(); } },
-                {"dataLastUpdatedDateTime", (o,n) => { (o as ExactMatchDataStoreBase).DataLastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as ExactMatchDataStoreBase).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as ExactMatchDataStoreBase).DisplayName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"columns", n => { Columns = n.GetCollectionOfObjectValues<ExactDataMatchStoreColumn>(ExactDataMatchStoreColumn.CreateFromDiscriminatorValue).ToList(); } },
+                {"dataLastUpdatedDateTime", n => { DataLastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
             };
         }
         /// <summary>

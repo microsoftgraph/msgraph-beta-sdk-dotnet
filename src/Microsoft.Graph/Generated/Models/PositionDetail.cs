@@ -39,15 +39,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"company", (o,n) => { (o as PositionDetail).Company = n.GetObjectValue<CompanyDetail>(CompanyDetail.CreateFromDiscriminatorValue); } },
-                {"description", (o,n) => { (o as PositionDetail).Description = n.GetStringValue(); } },
-                {"endMonthYear", (o,n) => { (o as PositionDetail).EndMonthYear = n.GetDateValue(); } },
-                {"jobTitle", (o,n) => { (o as PositionDetail).JobTitle = n.GetStringValue(); } },
-                {"role", (o,n) => { (o as PositionDetail).Role = n.GetStringValue(); } },
-                {"startMonthYear", (o,n) => { (o as PositionDetail).StartMonthYear = n.GetDateValue(); } },
-                {"summary", (o,n) => { (o as PositionDetail).Summary = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"company", n => { Company = n.GetObjectValue<CompanyDetail>(CompanyDetail.CreateFromDiscriminatorValue); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"endMonthYear", n => { EndMonthYear = n.GetDateValue(); } },
+                {"jobTitle", n => { JobTitle = n.GetStringValue(); } },
+                {"role", n => { Role = n.GetStringValue(); } },
+                {"startMonthYear", n => { StartMonthYear = n.GetDateValue(); } },
+                {"summary", n => { Summary = n.GetStringValue(); } },
             };
         }
         /// <summary>

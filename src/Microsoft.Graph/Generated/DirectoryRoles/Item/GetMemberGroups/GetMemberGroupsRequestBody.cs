@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.DirectoryRoles.Item.GetMemberGroups {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"securityEnabledOnly", (o,n) => { (o as GetMemberGroupsRequestBody).SecurityEnabledOnly = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"securityEnabledOnly", n => { SecurityEnabledOnly = n.GetBoolValue(); } },
             };
         }
         /// <summary>

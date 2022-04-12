@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"certificate", (o,n) => { (o as CertificateAuthority).Certificate = n.GetByteArrayValue(); } },
-                {"certificateRevocationListUrl", (o,n) => { (o as CertificateAuthority).CertificateRevocationListUrl = n.GetStringValue(); } },
-                {"deltaCertificateRevocationListUrl", (o,n) => { (o as CertificateAuthority).DeltaCertificateRevocationListUrl = n.GetStringValue(); } },
-                {"isRootAuthority", (o,n) => { (o as CertificateAuthority).IsRootAuthority = n.GetBoolValue(); } },
-                {"issuer", (o,n) => { (o as CertificateAuthority).Issuer = n.GetStringValue(); } },
-                {"issuerSki", (o,n) => { (o as CertificateAuthority).IssuerSki = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"certificate", n => { Certificate = n.GetByteArrayValue(); } },
+                {"certificateRevocationListUrl", n => { CertificateRevocationListUrl = n.GetStringValue(); } },
+                {"deltaCertificateRevocationListUrl", n => { DeltaCertificateRevocationListUrl = n.GetStringValue(); } },
+                {"isRootAuthority", n => { IsRootAuthority = n.GetBoolValue(); } },
+                {"issuer", n => { Issuer = n.GetStringValue(); } },
+                {"issuerSki", n => { IssuerSki = n.GetStringValue(); } },
             };
         }
         /// <summary>

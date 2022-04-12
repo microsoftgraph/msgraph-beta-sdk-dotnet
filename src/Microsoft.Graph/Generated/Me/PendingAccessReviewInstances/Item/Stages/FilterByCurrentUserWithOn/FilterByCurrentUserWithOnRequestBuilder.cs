@@ -24,9 +24,9 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Stages.Filte
         public FilterByCurrentUserWithOnRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string on = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/pendingAccessReviewInstances/{accessReviewInstance_id}/stages/microsoft.graph.filterByCurrentUser(on='{on}')";
+            UrlTemplate = "{+baseurl}/me/pendingAccessReviewInstances/{accessReviewInstance%2Did}/stages/microsoft.graph.filterByCurrentUser(on='{on}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("on", on);
+            urlTplParams.Add("", on);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Stages.Filte
         public FilterByCurrentUserWithOnRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/pendingAccessReviewInstances/{accessReviewInstance_id}/stages/microsoft.graph.filterByCurrentUser(on='{on}')";
+            UrlTemplate = "{+baseurl}/me/pendingAccessReviewInstances/{accessReviewInstance%2Did}/stages/microsoft.graph.filterByCurrentUser(on='{on}')";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

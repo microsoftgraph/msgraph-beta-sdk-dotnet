@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"allowAllUsers", (o,n) => { (o as PrinterShare).AllowAllUsers = n.GetBoolValue(); } },
-                {"allowedGroups", (o,n) => { (o as PrinterShare).AllowedGroups = n.GetCollectionOfObjectValues<Group>(Group.CreateFromDiscriminatorValue).ToList(); } },
-                {"allowedUsers", (o,n) => { (o as PrinterShare).AllowedUsers = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue).ToList(); } },
-                {"createdDateTime", (o,n) => { (o as PrinterShare).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"printer", (o,n) => { (o as PrinterShare).Printer = n.GetObjectValue<Microsoft.Graph.Beta.Models.Printer>(Microsoft.Graph.Beta.Models.Printer.CreateFromDiscriminatorValue); } },
-                {"viewPoint", (o,n) => { (o as PrinterShare).ViewPoint = n.GetObjectValue<PrinterShareViewpoint>(PrinterShareViewpoint.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"allowAllUsers", n => { AllowAllUsers = n.GetBoolValue(); } },
+                {"allowedGroups", n => { AllowedGroups = n.GetCollectionOfObjectValues<Group>(Group.CreateFromDiscriminatorValue).ToList(); } },
+                {"allowedUsers", n => { AllowedUsers = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue).ToList(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"printer", n => { Printer = n.GetObjectValue<Microsoft.Graph.Beta.Models.Printer>(Microsoft.Graph.Beta.Models.Printer.CreateFromDiscriminatorValue); } },
+                {"viewPoint", n => { ViewPoint = n.GetObjectValue<PrinterShareViewpoint>(PrinterShareViewpoint.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

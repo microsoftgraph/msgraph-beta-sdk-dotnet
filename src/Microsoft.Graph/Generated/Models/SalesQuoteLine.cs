@@ -61,30 +61,30 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"account", (o,n) => { (o as SalesQuoteLine).Account = n.GetObjectValue<Microsoft.Graph.Beta.Models.Account>(Microsoft.Graph.Beta.Models.Account.CreateFromDiscriminatorValue); } },
-                {"accountId", (o,n) => { (o as SalesQuoteLine).AccountId = n.GetStringValue(); } },
-                {"amountExcludingTax", (o,n) => { (o as SalesQuoteLine).AmountExcludingTax = n.GetDecimalValue(); } },
-                {"amountIncludingTax", (o,n) => { (o as SalesQuoteLine).AmountIncludingTax = n.GetDecimalValue(); } },
-                {"description", (o,n) => { (o as SalesQuoteLine).Description = n.GetStringValue(); } },
-                {"discountAmount", (o,n) => { (o as SalesQuoteLine).DiscountAmount = n.GetDecimalValue(); } },
-                {"discountAppliedBeforeTax", (o,n) => { (o as SalesQuoteLine).DiscountAppliedBeforeTax = n.GetBoolValue(); } },
-                {"discountPercent", (o,n) => { (o as SalesQuoteLine).DiscountPercent = n.GetDecimalValue(); } },
-                {"documentId", (o,n) => { (o as SalesQuoteLine).DocumentId = n.GetStringValue(); } },
-                {"item", (o,n) => { (o as SalesQuoteLine).Item = n.GetObjectValue<Microsoft.Graph.Beta.Models.Item.Item>(Microsoft.Graph.Beta.Models.Item.Item.CreateFromDiscriminatorValue); } },
-                {"itemId", (o,n) => { (o as SalesQuoteLine).ItemId = n.GetStringValue(); } },
-                {"lineType", (o,n) => { (o as SalesQuoteLine).LineType = n.GetStringValue(); } },
-                {"netAmount", (o,n) => { (o as SalesQuoteLine).NetAmount = n.GetDecimalValue(); } },
-                {"netAmountIncludingTax", (o,n) => { (o as SalesQuoteLine).NetAmountIncludingTax = n.GetDecimalValue(); } },
-                {"netTaxAmount", (o,n) => { (o as SalesQuoteLine).NetTaxAmount = n.GetDecimalValue(); } },
-                {"quantity", (o,n) => { (o as SalesQuoteLine).Quantity = n.GetDecimalValue(); } },
-                {"sequence", (o,n) => { (o as SalesQuoteLine).Sequence = n.GetIntValue(); } },
-                {"taxCode", (o,n) => { (o as SalesQuoteLine).TaxCode = n.GetStringValue(); } },
-                {"taxPercent", (o,n) => { (o as SalesQuoteLine).TaxPercent = n.GetDecimalValue(); } },
-                {"totalTaxAmount", (o,n) => { (o as SalesQuoteLine).TotalTaxAmount = n.GetDecimalValue(); } },
-                {"unitOfMeasureId", (o,n) => { (o as SalesQuoteLine).UnitOfMeasureId = n.GetStringValue(); } },
-                {"unitPrice", (o,n) => { (o as SalesQuoteLine).UnitPrice = n.GetDecimalValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"account", n => { Account = n.GetObjectValue<Microsoft.Graph.Beta.Models.Account>(Microsoft.Graph.Beta.Models.Account.CreateFromDiscriminatorValue); } },
+                {"accountId", n => { AccountId = n.GetStringValue(); } },
+                {"amountExcludingTax", n => { AmountExcludingTax = n.GetDecimalValue(); } },
+                {"amountIncludingTax", n => { AmountIncludingTax = n.GetDecimalValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"discountAmount", n => { DiscountAmount = n.GetDecimalValue(); } },
+                {"discountAppliedBeforeTax", n => { DiscountAppliedBeforeTax = n.GetBoolValue(); } },
+                {"discountPercent", n => { DiscountPercent = n.GetDecimalValue(); } },
+                {"documentId", n => { DocumentId = n.GetStringValue(); } },
+                {"item", n => { Item = n.GetObjectValue<Microsoft.Graph.Beta.Models.Item.Item>(Microsoft.Graph.Beta.Models.Item.Item.CreateFromDiscriminatorValue); } },
+                {"itemId", n => { ItemId = n.GetStringValue(); } },
+                {"lineType", n => { LineType = n.GetStringValue(); } },
+                {"netAmount", n => { NetAmount = n.GetDecimalValue(); } },
+                {"netAmountIncludingTax", n => { NetAmountIncludingTax = n.GetDecimalValue(); } },
+                {"netTaxAmount", n => { NetTaxAmount = n.GetDecimalValue(); } },
+                {"quantity", n => { Quantity = n.GetDecimalValue(); } },
+                {"sequence", n => { Sequence = n.GetIntValue(); } },
+                {"taxCode", n => { TaxCode = n.GetStringValue(); } },
+                {"taxPercent", n => { TaxPercent = n.GetDecimalValue(); } },
+                {"totalTaxAmount", n => { TotalTaxAmount = n.GetDecimalValue(); } },
+                {"unitOfMeasureId", n => { UnitOfMeasureId = n.GetStringValue(); } },
+                {"unitPrice", n => { UnitPrice = n.GetDecimalValue(); } },
             };
         }
         /// <summary>

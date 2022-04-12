@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Contacts.Item {
         public ContactItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/contacts/{contact_id}{?select}";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/contacts/{contact%2Did}{?%24select}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Contacts.Item {
         public ContactItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/contacts/{contact_id}{?select}";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/contacts/{contact%2Did}{?%24select}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -169,6 +169,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Contacts.Item {
         /// <summary>The user&apos;s contacts. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
     }

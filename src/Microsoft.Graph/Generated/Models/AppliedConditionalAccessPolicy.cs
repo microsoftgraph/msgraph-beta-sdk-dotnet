@@ -44,18 +44,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"authenticationStrength", (o,n) => { (o as AppliedConditionalAccessPolicy).AuthenticationStrength = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthenticationStrength>(Microsoft.Graph.Beta.Models.AuthenticationStrength.CreateFromDiscriminatorValue); } },
-                {"conditionsNotSatisfied", (o,n) => { (o as AppliedConditionalAccessPolicy).ConditionsNotSatisfied = n.GetEnumValue<ConditionalAccessConditions>(); } },
-                {"conditionsSatisfied", (o,n) => { (o as AppliedConditionalAccessPolicy).ConditionsSatisfied = n.GetEnumValue<ConditionalAccessConditions>(); } },
-                {"displayName", (o,n) => { (o as AppliedConditionalAccessPolicy).DisplayName = n.GetStringValue(); } },
-                {"enforcedGrantControls", (o,n) => { (o as AppliedConditionalAccessPolicy).EnforcedGrantControls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"enforcedSessionControls", (o,n) => { (o as AppliedConditionalAccessPolicy).EnforcedSessionControls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"excludeRulesSatisfied", (o,n) => { (o as AppliedConditionalAccessPolicy).ExcludeRulesSatisfied = n.GetCollectionOfObjectValues<ConditionalAccessRuleSatisfied>(ConditionalAccessRuleSatisfied.CreateFromDiscriminatorValue).ToList(); } },
-                {"id", (o,n) => { (o as AppliedConditionalAccessPolicy).Id = n.GetStringValue(); } },
-                {"includeRulesSatisfied", (o,n) => { (o as AppliedConditionalAccessPolicy).IncludeRulesSatisfied = n.GetCollectionOfObjectValues<ConditionalAccessRuleSatisfied>(ConditionalAccessRuleSatisfied.CreateFromDiscriminatorValue).ToList(); } },
-                {"result", (o,n) => { (o as AppliedConditionalAccessPolicy).Result = n.GetEnumValue<AppliedConditionalAccessPolicyResult>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"authenticationStrength", n => { AuthenticationStrength = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthenticationStrength>(Microsoft.Graph.Beta.Models.AuthenticationStrength.CreateFromDiscriminatorValue); } },
+                {"conditionsNotSatisfied", n => { ConditionsNotSatisfied = n.GetEnumValue<ConditionalAccessConditions>(); } },
+                {"conditionsSatisfied", n => { ConditionsSatisfied = n.GetEnumValue<ConditionalAccessConditions>(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"enforcedGrantControls", n => { EnforcedGrantControls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"enforcedSessionControls", n => { EnforcedSessionControls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"excludeRulesSatisfied", n => { ExcludeRulesSatisfied = n.GetCollectionOfObjectValues<ConditionalAccessRuleSatisfied>(ConditionalAccessRuleSatisfied.CreateFromDiscriminatorValue).ToList(); } },
+                {"id", n => { Id = n.GetStringValue(); } },
+                {"includeRulesSatisfied", n => { IncludeRulesSatisfied = n.GetCollectionOfObjectValues<ConditionalAccessRuleSatisfied>(ConditionalAccessRuleSatisfied.CreateFromDiscriminatorValue).ToList(); } },
+                {"result", n => { Result = n.GetEnumValue<AppliedConditionalAccessPolicyResult>(); } },
             };
         }
         /// <summary>

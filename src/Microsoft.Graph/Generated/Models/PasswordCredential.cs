@@ -38,15 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"customKeyIdentifier", (o,n) => { (o as PasswordCredential).CustomKeyIdentifier = n.GetByteArrayValue(); } },
-                {"displayName", (o,n) => { (o as PasswordCredential).DisplayName = n.GetStringValue(); } },
-                {"endDateTime", (o,n) => { (o as PasswordCredential).EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"hint", (o,n) => { (o as PasswordCredential).Hint = n.GetStringValue(); } },
-                {"keyId", (o,n) => { (o as PasswordCredential).KeyId = n.GetStringValue(); } },
-                {"secretText", (o,n) => { (o as PasswordCredential).SecretText = n.GetStringValue(); } },
-                {"startDateTime", (o,n) => { (o as PasswordCredential).StartDateTime = n.GetDateTimeOffsetValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"customKeyIdentifier", n => { CustomKeyIdentifier = n.GetByteArrayValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"hint", n => { Hint = n.GetStringValue(); } },
+                {"keyId", n => { KeyId = n.GetStringValue(); } },
+                {"secretText", n => { SecretText = n.GetStringValue(); } },
+                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

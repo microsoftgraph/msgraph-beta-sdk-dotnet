@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"isPasscodeRequired", (o,n) => { (o as JoinMeetingIdSettings).IsPasscodeRequired = n.GetBoolValue(); } },
-                {"joinMeetingId", (o,n) => { (o as JoinMeetingIdSettings).JoinMeetingId = n.GetStringValue(); } },
-                {"passcode", (o,n) => { (o as JoinMeetingIdSettings).Passcode = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"isPasscodeRequired", n => { IsPasscodeRequired = n.GetBoolValue(); } },
+                {"joinMeetingId", n => { JoinMeetingId = n.GetStringValue(); } },
+                {"passcode", n => { Passcode = n.GetStringValue(); } },
             };
         }
         /// <summary>

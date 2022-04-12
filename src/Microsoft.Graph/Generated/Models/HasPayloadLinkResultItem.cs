@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"error", (o,n) => { (o as HasPayloadLinkResultItem).Error = n.GetStringValue(); } },
-                {"hasLink", (o,n) => { (o as HasPayloadLinkResultItem).HasLink = n.GetBoolValue(); } },
-                {"payloadId", (o,n) => { (o as HasPayloadLinkResultItem).PayloadId = n.GetStringValue(); } },
-                {"sources", (o,n) => { (o as HasPayloadLinkResultItem).Sources = n.GetCollectionOfEnumValues<DeviceAndAppManagementAssignmentSource>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"error", n => { Error = n.GetStringValue(); } },
+                {"hasLink", n => { HasLink = n.GetBoolValue(); } },
+                {"payloadId", n => { PayloadId = n.GetStringValue(); } },
+                {"sources", n => { Sources = n.GetCollectionOfEnumValues<DeviceAndAppManagementAssignmentSource>().ToList(); } },
             };
         }
         /// <summary>

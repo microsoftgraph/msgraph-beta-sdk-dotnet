@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"acceptRequests", (o,n) => { (o as RequestorSettings).AcceptRequests = n.GetBoolValue(); } },
-                {"allowedRequestors", (o,n) => { (o as RequestorSettings).AllowedRequestors = n.GetCollectionOfObjectValues<UserSet>(UserSet.CreateFromDiscriminatorValue).ToList(); } },
-                {"scopeType", (o,n) => { (o as RequestorSettings).ScopeType = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"acceptRequests", n => { AcceptRequests = n.GetBoolValue(); } },
+                {"allowedRequestors", n => { AllowedRequestors = n.GetCollectionOfObjectValues<UserSet>(UserSet.CreateFromDiscriminatorValue).ToList(); } },
+                {"scopeType", n => { ScopeType = n.GetStringValue(); } },
             };
         }
         /// <summary>

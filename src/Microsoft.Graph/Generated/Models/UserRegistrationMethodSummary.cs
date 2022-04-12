@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"totalUserCount", (o,n) => { (o as UserRegistrationMethodSummary).TotalUserCount = n.GetLongValue(); } },
-                {"userRegistrationMethodCounts", (o,n) => { (o as UserRegistrationMethodSummary).UserRegistrationMethodCounts = n.GetCollectionOfObjectValues<UserRegistrationMethodCount>(UserRegistrationMethodCount.CreateFromDiscriminatorValue).ToList(); } },
-                {"userRoles", (o,n) => { (o as UserRegistrationMethodSummary).UserRoles = n.GetEnumValue<IncludedUserRoles>(); } },
-                {"userTypes", (o,n) => { (o as UserRegistrationMethodSummary).UserTypes = n.GetEnumValue<IncludedUserTypes>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"totalUserCount", n => { TotalUserCount = n.GetLongValue(); } },
+                {"userRegistrationMethodCounts", n => { UserRegistrationMethodCounts = n.GetCollectionOfObjectValues<UserRegistrationMethodCount>(UserRegistrationMethodCount.CreateFromDiscriminatorValue).ToList(); } },
+                {"userRoles", n => { UserRoles = n.GetEnumValue<IncludedUserRoles>(); } },
+                {"userTypes", n => { UserTypes = n.GetEnumValue<IncludedUserTypes>(); } },
             };
         }
         /// <summary>

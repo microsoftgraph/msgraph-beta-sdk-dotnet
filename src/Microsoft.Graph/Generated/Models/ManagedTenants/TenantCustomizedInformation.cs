@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"contacts", (o,n) => { (o as TenantCustomizedInformation).Contacts = n.GetCollectionOfObjectValues<TenantContactInformation>(TenantContactInformation.CreateFromDiscriminatorValue).ToList(); } },
-                {"displayName", (o,n) => { (o as TenantCustomizedInformation).DisplayName = n.GetStringValue(); } },
-                {"tenantId", (o,n) => { (o as TenantCustomizedInformation).TenantId = n.GetStringValue(); } },
-                {"website", (o,n) => { (o as TenantCustomizedInformation).Website = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"contacts", n => { Contacts = n.GetCollectionOfObjectValues<TenantContactInformation>(TenantContactInformation.CreateFromDiscriminatorValue).ToList(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                {"website", n => { Website = n.GetStringValue(); } },
             };
         }
         /// <summary>

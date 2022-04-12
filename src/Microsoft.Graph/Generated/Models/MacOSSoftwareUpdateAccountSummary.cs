@@ -38,19 +38,19 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"categorySummaries", (o,n) => { (o as MacOSSoftwareUpdateAccountSummary).CategorySummaries = n.GetCollectionOfObjectValues<MacOSSoftwareUpdateCategorySummary>(MacOSSoftwareUpdateCategorySummary.CreateFromDiscriminatorValue).ToList(); } },
-                {"deviceId", (o,n) => { (o as MacOSSoftwareUpdateAccountSummary).DeviceId = n.GetStringValue(); } },
-                {"deviceName", (o,n) => { (o as MacOSSoftwareUpdateAccountSummary).DeviceName = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as MacOSSoftwareUpdateAccountSummary).DisplayName = n.GetStringValue(); } },
-                {"failedUpdateCount", (o,n) => { (o as MacOSSoftwareUpdateAccountSummary).FailedUpdateCount = n.GetIntValue(); } },
-                {"lastUpdatedDateTime", (o,n) => { (o as MacOSSoftwareUpdateAccountSummary).LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"osVersion", (o,n) => { (o as MacOSSoftwareUpdateAccountSummary).OsVersion = n.GetStringValue(); } },
-                {"successfulUpdateCount", (o,n) => { (o as MacOSSoftwareUpdateAccountSummary).SuccessfulUpdateCount = n.GetIntValue(); } },
-                {"totalUpdateCount", (o,n) => { (o as MacOSSoftwareUpdateAccountSummary).TotalUpdateCount = n.GetIntValue(); } },
-                {"userId", (o,n) => { (o as MacOSSoftwareUpdateAccountSummary).UserId = n.GetStringValue(); } },
-                {"userPrincipalName", (o,n) => { (o as MacOSSoftwareUpdateAccountSummary).UserPrincipalName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"categorySummaries", n => { CategorySummaries = n.GetCollectionOfObjectValues<MacOSSoftwareUpdateCategorySummary>(MacOSSoftwareUpdateCategorySummary.CreateFromDiscriminatorValue).ToList(); } },
+                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
+                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"failedUpdateCount", n => { FailedUpdateCount = n.GetIntValue(); } },
+                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"osVersion", n => { OsVersion = n.GetStringValue(); } },
+                {"successfulUpdateCount", n => { SuccessfulUpdateCount = n.GetIntValue(); } },
+                {"totalUpdateCount", n => { TotalUpdateCount = n.GetIntValue(); } },
+                {"userId", n => { UserId = n.GetStringValue(); } },
+                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

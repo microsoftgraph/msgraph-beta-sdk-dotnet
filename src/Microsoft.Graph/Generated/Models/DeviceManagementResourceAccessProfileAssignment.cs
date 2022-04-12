@@ -22,11 +22,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"intent", (o,n) => { (o as DeviceManagementResourceAccessProfileAssignment).Intent = n.GetEnumValue<DeviceManagementResourceAccessProfileIntent>(); } },
-                {"sourceId", (o,n) => { (o as DeviceManagementResourceAccessProfileAssignment).SourceId = n.GetStringValue(); } },
-                {"target", (o,n) => { (o as DeviceManagementResourceAccessProfileAssignment).Target = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"intent", n => { Intent = n.GetEnumValue<DeviceManagementResourceAccessProfileIntent>(); } },
+                {"sourceId", n => { SourceId = n.GetStringValue(); } },
+                {"target", n => { Target = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

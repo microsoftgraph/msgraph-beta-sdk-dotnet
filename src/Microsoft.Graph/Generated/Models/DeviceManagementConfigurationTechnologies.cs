@@ -5,6 +5,7 @@ namespace Microsoft.Graph.Beta.Models {
         Mdm,
         Windows10XManagement,
         ConfigManager,
+        AppleRemoteManagement,
         MicrosoftSense,
         ExchangeOnline,
         LinuxMdm,

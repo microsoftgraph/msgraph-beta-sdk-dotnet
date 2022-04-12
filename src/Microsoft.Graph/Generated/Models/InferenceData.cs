@@ -28,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"confidenceScore", (o,n) => { (o as InferenceData).ConfidenceScore = n.GetDoubleValue(); } },
-                {"userHasVerifiedAccuracy", (o,n) => { (o as InferenceData).UserHasVerifiedAccuracy = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"confidenceScore", n => { ConfidenceScore = n.GetDoubleValue(); } },
+                {"userHasVerifiedAccuracy", n => { UserHasVerifiedAccuracy = n.GetBoolValue(); } },
             };
         }
         /// <summary>

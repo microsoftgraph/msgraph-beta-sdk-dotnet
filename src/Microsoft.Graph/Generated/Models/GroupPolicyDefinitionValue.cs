@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"configurationType", (o,n) => { (o as GroupPolicyDefinitionValue).ConfigurationType = n.GetEnumValue<GroupPolicyConfigurationType>(); } },
-                {"createdDateTime", (o,n) => { (o as GroupPolicyDefinitionValue).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"definition", (o,n) => { (o as GroupPolicyDefinitionValue).Definition = n.GetObjectValue<GroupPolicyDefinition>(GroupPolicyDefinition.CreateFromDiscriminatorValue); } },
-                {"enabled", (o,n) => { (o as GroupPolicyDefinitionValue).Enabled = n.GetBoolValue(); } },
-                {"lastModifiedDateTime", (o,n) => { (o as GroupPolicyDefinitionValue).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"presentationValues", (o,n) => { (o as GroupPolicyDefinitionValue).PresentationValues = n.GetCollectionOfObjectValues<GroupPolicyPresentationValue>(GroupPolicyPresentationValue.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"configurationType", n => { ConfigurationType = n.GetEnumValue<GroupPolicyConfigurationType>(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"definition", n => { Definition = n.GetObjectValue<GroupPolicyDefinition>(GroupPolicyDefinition.CreateFromDiscriminatorValue); } },
+                {"enabled", n => { Enabled = n.GetBoolValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"presentationValues", n => { PresentationValues = n.GetCollectionOfObjectValues<GroupPolicyPresentationValue>(GroupPolicyPresentationValue.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

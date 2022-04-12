@@ -36,18 +36,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"failedDeviceCount", (o,n) => { (o as MobileAppInstallSummary).FailedDeviceCount = n.GetIntValue(); } },
-                {"failedUserCount", (o,n) => { (o as MobileAppInstallSummary).FailedUserCount = n.GetIntValue(); } },
-                {"installedDeviceCount", (o,n) => { (o as MobileAppInstallSummary).InstalledDeviceCount = n.GetIntValue(); } },
-                {"installedUserCount", (o,n) => { (o as MobileAppInstallSummary).InstalledUserCount = n.GetIntValue(); } },
-                {"notApplicableDeviceCount", (o,n) => { (o as MobileAppInstallSummary).NotApplicableDeviceCount = n.GetIntValue(); } },
-                {"notApplicableUserCount", (o,n) => { (o as MobileAppInstallSummary).NotApplicableUserCount = n.GetIntValue(); } },
-                {"notInstalledDeviceCount", (o,n) => { (o as MobileAppInstallSummary).NotInstalledDeviceCount = n.GetIntValue(); } },
-                {"notInstalledUserCount", (o,n) => { (o as MobileAppInstallSummary).NotInstalledUserCount = n.GetIntValue(); } },
-                {"pendingInstallDeviceCount", (o,n) => { (o as MobileAppInstallSummary).PendingInstallDeviceCount = n.GetIntValue(); } },
-                {"pendingInstallUserCount", (o,n) => { (o as MobileAppInstallSummary).PendingInstallUserCount = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"failedDeviceCount", n => { FailedDeviceCount = n.GetIntValue(); } },
+                {"failedUserCount", n => { FailedUserCount = n.GetIntValue(); } },
+                {"installedDeviceCount", n => { InstalledDeviceCount = n.GetIntValue(); } },
+                {"installedUserCount", n => { InstalledUserCount = n.GetIntValue(); } },
+                {"notApplicableDeviceCount", n => { NotApplicableDeviceCount = n.GetIntValue(); } },
+                {"notApplicableUserCount", n => { NotApplicableUserCount = n.GetIntValue(); } },
+                {"notInstalledDeviceCount", n => { NotInstalledDeviceCount = n.GetIntValue(); } },
+                {"notInstalledUserCount", n => { NotInstalledUserCount = n.GetIntValue(); } },
+                {"pendingInstallDeviceCount", n => { PendingInstallDeviceCount = n.GetIntValue(); } },
+                {"pendingInstallUserCount", n => { PendingInstallUserCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

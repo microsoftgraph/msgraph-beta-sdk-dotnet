@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"roleAssignmentIds", (o,n) => { (o as DeviceAndAppManagementAssignedRoleDetails).RoleAssignmentIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"roleDefinitionIds", (o,n) => { (o as DeviceAndAppManagementAssignedRoleDetails).RoleDefinitionIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"roleAssignmentIds", n => { RoleAssignmentIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"roleDefinitionIds", n => { RoleDefinitionIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

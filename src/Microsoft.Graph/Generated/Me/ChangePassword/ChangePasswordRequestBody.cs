@@ -29,10 +29,10 @@ namespace Microsoft.Graph.Beta.Me.ChangePassword {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"currentPassword", (o,n) => { (o as ChangePasswordRequestBody).CurrentPassword = n.GetStringValue(); } },
-                {"newPassword", (o,n) => { (o as ChangePasswordRequestBody).NewPassword = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"currentPassword", n => { CurrentPassword = n.GetStringValue(); } },
+                {"newPassword", n => { NewPassword = n.GetStringValue(); } },
             };
         }
         /// <summary>

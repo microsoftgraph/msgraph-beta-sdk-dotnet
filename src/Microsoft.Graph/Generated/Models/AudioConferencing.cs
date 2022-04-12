@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"conferenceId", (o,n) => { (o as AudioConferencing).ConferenceId = n.GetStringValue(); } },
-                {"dialinUrl", (o,n) => { (o as AudioConferencing).DialinUrl = n.GetStringValue(); } },
-                {"tollFreeNumber", (o,n) => { (o as AudioConferencing).TollFreeNumber = n.GetStringValue(); } },
-                {"tollFreeNumbers", (o,n) => { (o as AudioConferencing).TollFreeNumbers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"tollNumber", (o,n) => { (o as AudioConferencing).TollNumber = n.GetStringValue(); } },
-                {"tollNumbers", (o,n) => { (o as AudioConferencing).TollNumbers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"conferenceId", n => { ConferenceId = n.GetStringValue(); } },
+                {"dialinUrl", n => { DialinUrl = n.GetStringValue(); } },
+                {"tollFreeNumber", n => { TollFreeNumber = n.GetStringValue(); } },
+                {"tollFreeNumbers", n => { TollFreeNumbers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"tollNumber", n => { TollNumber = n.GetStringValue(); } },
+                {"tollNumbers", n => { TollNumbers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

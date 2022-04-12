@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"description", (o,n) => { (o as WarrantyOffer).Description = n.GetStringValue(); } },
-                {"endDateTime", (o,n) => { (o as WarrantyOffer).EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"startDateTime", (o,n) => { (o as WarrantyOffer).StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"type", (o,n) => { (o as WarrantyOffer).Type = n.GetEnumValue<WarrantyType>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                {"type", n => { Type = n.GetEnumValue<WarrantyType>(); } },
             };
         }
         /// <summary>

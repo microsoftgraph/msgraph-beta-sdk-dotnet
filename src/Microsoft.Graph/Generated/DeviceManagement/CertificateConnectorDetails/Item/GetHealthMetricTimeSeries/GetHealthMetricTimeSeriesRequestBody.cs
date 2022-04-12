@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"timeSeries", (o,n) => { (o as GetHealthMetricTimeSeriesRequestBody).TimeSeries = n.GetObjectValue<TimeSeriesParameter>(TimeSeriesParameter.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"timeSeries", n => { TimeSeries = n.GetObjectValue<TimeSeriesParameter>(TimeSeriesParameter.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

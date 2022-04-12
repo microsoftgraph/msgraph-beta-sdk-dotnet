@@ -34,12 +34,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.CreateInstance {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"description", (o,n) => { (o as CreateInstanceRequestBody).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as CreateInstanceRequestBody).DisplayName = n.GetStringValue(); } },
-                {"roleScopeTagIds", (o,n) => { (o as CreateInstanceRequestBody).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"settingsDelta", (o,n) => { (o as CreateInstanceRequestBody).SettingsDelta = n.GetCollectionOfObjectValues<DeviceManagementSettingInstance>(DeviceManagementSettingInstance.CreateFromDiscriminatorValue).ToList(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"settingsDelta", n => { SettingsDelta = n.GetCollectionOfObjectValues<DeviceManagementSettingInstance>(DeviceManagementSettingInstance.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

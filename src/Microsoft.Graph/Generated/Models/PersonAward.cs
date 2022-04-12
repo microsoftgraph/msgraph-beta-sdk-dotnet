@@ -29,14 +29,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"description", (o,n) => { (o as PersonAward).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as PersonAward).DisplayName = n.GetStringValue(); } },
-                {"issuedDate", (o,n) => { (o as PersonAward).IssuedDate = n.GetDateValue(); } },
-                {"issuingAuthority", (o,n) => { (o as PersonAward).IssuingAuthority = n.GetStringValue(); } },
-                {"thumbnailUrl", (o,n) => { (o as PersonAward).ThumbnailUrl = n.GetStringValue(); } },
-                {"webUrl", (o,n) => { (o as PersonAward).WebUrl = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"issuedDate", n => { IssuedDate = n.GetDateValue(); } },
+                {"issuingAuthority", n => { IssuingAuthority = n.GetStringValue(); } },
+                {"thumbnailUrl", n => { ThumbnailUrl = n.GetStringValue(); } },
+                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

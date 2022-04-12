@@ -38,15 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"allowedMemberTypes", (o,n) => { (o as AppRole).AllowedMemberTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"description", (o,n) => { (o as AppRole).Description = n.GetStringValue(); } },
-                {"displayName", (o,n) => { (o as AppRole).DisplayName = n.GetStringValue(); } },
-                {"id", (o,n) => { (o as AppRole).Id = n.GetStringValue(); } },
-                {"isEnabled", (o,n) => { (o as AppRole).IsEnabled = n.GetBoolValue(); } },
-                {"origin", (o,n) => { (o as AppRole).Origin = n.GetStringValue(); } },
-                {"value", (o,n) => { (o as AppRole).Value = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"allowedMemberTypes", n => { AllowedMemberTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetStringValue(); } },
+                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                {"origin", n => { Origin = n.GetStringValue(); } },
+                {"value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>

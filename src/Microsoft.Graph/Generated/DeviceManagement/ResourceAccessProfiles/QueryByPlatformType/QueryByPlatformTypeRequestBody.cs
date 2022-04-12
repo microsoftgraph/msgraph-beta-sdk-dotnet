@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPl
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"platformType", (o,n) => { (o as QueryByPlatformTypeRequestBody).PlatformType = n.GetEnumValue<PolicyPlatformType>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"platformType", n => { PlatformType = n.GetEnumValue<PolicyPlatformType>(); } },
             };
         }
         /// <summary>

@@ -30,11 +30,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"assignmentMethod", (o,n) => { (o as InformationProtectionContentLabel).AssignmentMethod = n.GetEnumValue<AssignmentMethod>(); } },
-                {"creationDateTime", (o,n) => { (o as InformationProtectionContentLabel).CreationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"label", (o,n) => { (o as InformationProtectionContentLabel).Label = n.GetObjectValue<LabelDetails>(LabelDetails.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"assignmentMethod", n => { AssignmentMethod = n.GetEnumValue<AssignmentMethod>(); } },
+                {"creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"label", n => { Label = n.GetObjectValue<LabelDetails>(LabelDetails.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

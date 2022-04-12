@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus.CompleteSetup {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"tenantSetupInfo", (o,n) => { (o as CompleteSetupRequestBody).TenantSetupInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.TenantSetupInfo>(Microsoft.Graph.Beta.Models.TenantSetupInfo.CreateFromDiscriminatorValue); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"tenantSetupInfo", n => { TenantSetupInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.TenantSetupInfo>(Microsoft.Graph.Beta.Models.TenantSetupInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

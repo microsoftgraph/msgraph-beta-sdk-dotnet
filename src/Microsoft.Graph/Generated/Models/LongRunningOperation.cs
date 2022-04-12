@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdDateTime", (o,n) => { (o as LongRunningOperation).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastActionDateTime", (o,n) => { (o as LongRunningOperation).LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"resourceLocation", (o,n) => { (o as LongRunningOperation).ResourceLocation = n.GetStringValue(); } },
-                {"status", (o,n) => { (o as LongRunningOperation).Status = n.GetEnumValue<LongRunningOperationStatus>(); } },
-                {"statusDetail", (o,n) => { (o as LongRunningOperation).StatusDetail = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
+                {"resourceLocation", n => { ResourceLocation = n.GetStringValue(); } },
+                {"status", n => { Status = n.GetEnumValue<LongRunningOperationStatus>(); } },
+                {"statusDetail", n => { StatusDetail = n.GetStringValue(); } },
             };
         }
         /// <summary>

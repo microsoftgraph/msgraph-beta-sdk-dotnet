@@ -40,16 +40,16 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"aliases", (o,n) => { (o as Property).Aliases = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"isQueryable", (o,n) => { (o as Property).IsQueryable = n.GetBoolValue(); } },
-                {"isRefinable", (o,n) => { (o as Property).IsRefinable = n.GetBoolValue(); } },
-                {"isRetrievable", (o,n) => { (o as Property).IsRetrievable = n.GetBoolValue(); } },
-                {"isSearchable", (o,n) => { (o as Property).IsSearchable = n.GetBoolValue(); } },
-                {"labels", (o,n) => { (o as Property).Labels = n.GetCollectionOfEnumValues<Label>().ToList(); } },
-                {"name", (o,n) => { (o as Property).Name = n.GetStringValue(); } },
-                {"type", (o,n) => { (o as Property).Type = n.GetEnumValue<PropertyType>(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"aliases", n => { Aliases = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"isQueryable", n => { IsQueryable = n.GetBoolValue(); } },
+                {"isRefinable", n => { IsRefinable = n.GetBoolValue(); } },
+                {"isRetrievable", n => { IsRetrievable = n.GetBoolValue(); } },
+                {"isSearchable", n => { IsSearchable = n.GetBoolValue(); } },
+                {"labels", n => { Labels = n.GetCollectionOfEnumValues<Label>().ToList(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetEnumValue<PropertyType>(); } },
             };
         }
         /// <summary>

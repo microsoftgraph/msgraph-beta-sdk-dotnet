@@ -22,11 +22,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"displayName", (o,n) => { (o as BaseTaskList).DisplayName = n.GetStringValue(); } },
-                {"extensions", (o,n) => { (o as BaseTaskList).Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue).ToList(); } },
-                {"tasks", (o,n) => { (o as BaseTaskList).Tasks = n.GetCollectionOfObjectValues<BaseTask>(BaseTask.CreateFromDiscriminatorValue).ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue).ToList(); } },
+                {"tasks", n => { Tasks = n.GetCollectionOfObjectValues<BaseTask>(BaseTask.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activatedUsing", (o,n) => { (o as UnifiedRoleAssignmentScheduleInstance).ActivatedUsing = n.GetObjectValue<UnifiedRoleEligibilityScheduleInstance>(UnifiedRoleEligibilityScheduleInstance.CreateFromDiscriminatorValue); } },
-                {"assignmentType", (o,n) => { (o as UnifiedRoleAssignmentScheduleInstance).AssignmentType = n.GetStringValue(); } },
-                {"endDateTime", (o,n) => { (o as UnifiedRoleAssignmentScheduleInstance).EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"memberType", (o,n) => { (o as UnifiedRoleAssignmentScheduleInstance).MemberType = n.GetStringValue(); } },
-                {"roleAssignmentOriginId", (o,n) => { (o as UnifiedRoleAssignmentScheduleInstance).RoleAssignmentOriginId = n.GetStringValue(); } },
-                {"roleAssignmentScheduleId", (o,n) => { (o as UnifiedRoleAssignmentScheduleInstance).RoleAssignmentScheduleId = n.GetStringValue(); } },
-                {"startDateTime", (o,n) => { (o as UnifiedRoleAssignmentScheduleInstance).StartDateTime = n.GetDateTimeOffsetValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activatedUsing", n => { ActivatedUsing = n.GetObjectValue<UnifiedRoleEligibilityScheduleInstance>(UnifiedRoleEligibilityScheduleInstance.CreateFromDiscriminatorValue); } },
+                {"assignmentType", n => { AssignmentType = n.GetStringValue(); } },
+                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"memberType", n => { MemberType = n.GetStringValue(); } },
+                {"roleAssignmentOriginId", n => { RoleAssignmentOriginId = n.GetStringValue(); } },
+                {"roleAssignmentScheduleId", n => { RoleAssignmentScheduleId = n.GetStringValue(); } },
+                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

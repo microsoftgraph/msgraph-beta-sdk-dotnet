@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"displayName", (o,n) => { (o as RemoteAssistancePartner).DisplayName = n.GetStringValue(); } },
-                {"lastConnectionDateTime", (o,n) => { (o as RemoteAssistancePartner).LastConnectionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"onboardingRequestExpiryDateTime", (o,n) => { (o as RemoteAssistancePartner).OnboardingRequestExpiryDateTime = n.GetDateTimeOffsetValue(); } },
-                {"onboardingStatus", (o,n) => { (o as RemoteAssistancePartner).OnboardingStatus = n.GetEnumValue<RemoteAssistanceOnboardingStatus>(); } },
-                {"onboardingUrl", (o,n) => { (o as RemoteAssistancePartner).OnboardingUrl = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"lastConnectionDateTime", n => { LastConnectionDateTime = n.GetDateTimeOffsetValue(); } },
+                {"onboardingRequestExpiryDateTime", n => { OnboardingRequestExpiryDateTime = n.GetDateTimeOffsetValue(); } },
+                {"onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<RemoteAssistanceOnboardingStatus>(); } },
+                {"onboardingUrl", n => { OnboardingUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

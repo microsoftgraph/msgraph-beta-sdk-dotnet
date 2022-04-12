@@ -31,11 +31,11 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakePermanent {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"reason", (o,n) => { (o as MakePermanentRequestBody).Reason = n.GetStringValue(); } },
-                {"ticketNumber", (o,n) => { (o as MakePermanentRequestBody).TicketNumber = n.GetStringValue(); } },
-                {"ticketSystem", (o,n) => { (o as MakePermanentRequestBody).TicketSystem = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"reason", n => { Reason = n.GetStringValue(); } },
+                {"ticketNumber", n => { TicketNumber = n.GetStringValue(); } },
+                {"ticketSystem", n => { TicketSystem = n.GetStringValue(); } },
             };
         }
         /// <summary>

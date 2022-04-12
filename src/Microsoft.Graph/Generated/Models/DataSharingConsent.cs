@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"grantDateTime", (o,n) => { (o as DataSharingConsent).GrantDateTime = n.GetDateTimeOffsetValue(); } },
-                {"granted", (o,n) => { (o as DataSharingConsent).Granted = n.GetBoolValue(); } },
-                {"grantedByUpn", (o,n) => { (o as DataSharingConsent).GrantedByUpn = n.GetStringValue(); } },
-                {"grantedByUserId", (o,n) => { (o as DataSharingConsent).GrantedByUserId = n.GetStringValue(); } },
-                {"serviceDisplayName", (o,n) => { (o as DataSharingConsent).ServiceDisplayName = n.GetStringValue(); } },
-                {"termsUrl", (o,n) => { (o as DataSharingConsent).TermsUrl = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"grantDateTime", n => { GrantDateTime = n.GetDateTimeOffsetValue(); } },
+                {"granted", n => { Granted = n.GetBoolValue(); } },
+                {"grantedByUpn", n => { GrantedByUpn = n.GetStringValue(); } },
+                {"grantedByUserId", n => { GrantedByUserId = n.GetStringValue(); } },
+                {"serviceDisplayName", n => { ServiceDisplayName = n.GetStringValue(); } },
+                {"termsUrl", n => { TermsUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

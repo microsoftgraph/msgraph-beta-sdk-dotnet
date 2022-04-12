@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Sections.Item.Pages.Item.CopyT
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"groupId", (o,n) => { (o as CopyToSectionRequestBody).GroupId = n.GetStringValue(); } },
-                {"id", (o,n) => { (o as CopyToSectionRequestBody).Id = n.GetStringValue(); } },
-                {"siteCollectionId", (o,n) => { (o as CopyToSectionRequestBody).SiteCollectionId = n.GetStringValue(); } },
-                {"siteId", (o,n) => { (o as CopyToSectionRequestBody).SiteId = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"groupId", n => { GroupId = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetStringValue(); } },
+                {"siteCollectionId", n => { SiteCollectionId = n.GetStringValue(); } },
+                {"siteId", n => { SiteId = n.GetStringValue(); } },
             };
         }
         /// <summary>

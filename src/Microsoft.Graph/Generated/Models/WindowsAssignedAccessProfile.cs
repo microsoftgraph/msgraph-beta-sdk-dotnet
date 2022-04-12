@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appUserModelIds", (o,n) => { (o as WindowsAssignedAccessProfile).AppUserModelIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"desktopAppPaths", (o,n) => { (o as WindowsAssignedAccessProfile).DesktopAppPaths = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"profileName", (o,n) => { (o as WindowsAssignedAccessProfile).ProfileName = n.GetStringValue(); } },
-                {"showTaskBar", (o,n) => { (o as WindowsAssignedAccessProfile).ShowTaskBar = n.GetBoolValue(); } },
-                {"startMenuLayoutXml", (o,n) => { (o as WindowsAssignedAccessProfile).StartMenuLayoutXml = n.GetByteArrayValue(); } },
-                {"userAccounts", (o,n) => { (o as WindowsAssignedAccessProfile).UserAccounts = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"appUserModelIds", n => { AppUserModelIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"desktopAppPaths", n => { DesktopAppPaths = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"profileName", n => { ProfileName = n.GetStringValue(); } },
+                {"showTaskBar", n => { ShowTaskBar = n.GetBoolValue(); } },
+                {"startMenuLayoutXml", n => { StartMenuLayoutXml = n.GetByteArrayValue(); } },
+                {"userAccounts", n => { UserAccounts = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>

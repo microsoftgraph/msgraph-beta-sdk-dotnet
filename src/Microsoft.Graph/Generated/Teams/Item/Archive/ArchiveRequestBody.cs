@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.Teams.Item.Archive {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"shouldSetSpoSiteReadOnlyForMembers", (o,n) => { (o as ArchiveRequestBody).ShouldSetSpoSiteReadOnlyForMembers = n.GetBoolValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"shouldSetSpoSiteReadOnlyForMembers", n => { ShouldSetSpoSiteReadOnlyForMembers = n.GetBoolValue(); } },
             };
         }
         /// <summary>

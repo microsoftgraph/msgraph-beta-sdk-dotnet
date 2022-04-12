@@ -37,14 +37,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"compliantDeviceCount", (o,n) => { (o as ConfigManagerPolicySummary).CompliantDeviceCount = n.GetIntValue(); } },
-                {"enforcedDeviceCount", (o,n) => { (o as ConfigManagerPolicySummary).EnforcedDeviceCount = n.GetIntValue(); } },
-                {"failedDeviceCount", (o,n) => { (o as ConfigManagerPolicySummary).FailedDeviceCount = n.GetIntValue(); } },
-                {"nonCompliantDeviceCount", (o,n) => { (o as ConfigManagerPolicySummary).NonCompliantDeviceCount = n.GetIntValue(); } },
-                {"pendingDeviceCount", (o,n) => { (o as ConfigManagerPolicySummary).PendingDeviceCount = n.GetIntValue(); } },
-                {"targetedDeviceCount", (o,n) => { (o as ConfigManagerPolicySummary).TargetedDeviceCount = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"compliantDeviceCount", n => { CompliantDeviceCount = n.GetIntValue(); } },
+                {"enforcedDeviceCount", n => { EnforcedDeviceCount = n.GetIntValue(); } },
+                {"failedDeviceCount", n => { FailedDeviceCount = n.GetIntValue(); } },
+                {"nonCompliantDeviceCount", n => { NonCompliantDeviceCount = n.GetIntValue(); } },
+                {"pendingDeviceCount", n => { PendingDeviceCount = n.GetIntValue(); } },
+                {"targetedDeviceCount", n => { TargetedDeviceCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

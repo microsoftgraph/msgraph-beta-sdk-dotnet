@@ -20,10 +20,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"annotations", (o,n) => { (o as ProfileCardProperty).Annotations = n.GetCollectionOfObjectValues<ProfileCardAnnotation>(ProfileCardAnnotation.CreateFromDiscriminatorValue).ToList(); } },
-                {"directoryPropertyName", (o,n) => { (o as ProfileCardProperty).DirectoryPropertyName = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"annotations", n => { Annotations = n.GetCollectionOfObjectValues<ProfileCardAnnotation>(ProfileCardAnnotation.CreateFromDiscriminatorValue).ToList(); } },
+                {"directoryPropertyName", n => { DirectoryPropertyName = n.GetStringValue(); } },
             };
         }
         /// <summary>

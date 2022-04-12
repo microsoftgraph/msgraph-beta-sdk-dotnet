@@ -32,16 +32,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"actions", (o,n) => { (o as MessageRule).Actions = n.GetObjectValue<MessageRuleActions>(MessageRuleActions.CreateFromDiscriminatorValue); } },
-                {"conditions", (o,n) => { (o as MessageRule).Conditions = n.GetObjectValue<MessageRulePredicates>(MessageRulePredicates.CreateFromDiscriminatorValue); } },
-                {"displayName", (o,n) => { (o as MessageRule).DisplayName = n.GetStringValue(); } },
-                {"exceptions", (o,n) => { (o as MessageRule).Exceptions = n.GetObjectValue<MessageRulePredicates>(MessageRulePredicates.CreateFromDiscriminatorValue); } },
-                {"hasError", (o,n) => { (o as MessageRule).HasError = n.GetBoolValue(); } },
-                {"isEnabled", (o,n) => { (o as MessageRule).IsEnabled = n.GetBoolValue(); } },
-                {"isReadOnly", (o,n) => { (o as MessageRule).IsReadOnly = n.GetBoolValue(); } },
-                {"sequence", (o,n) => { (o as MessageRule).Sequence = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"actions", n => { Actions = n.GetObjectValue<MessageRuleActions>(MessageRuleActions.CreateFromDiscriminatorValue); } },
+                {"conditions", n => { Conditions = n.GetObjectValue<MessageRulePredicates>(MessageRulePredicates.CreateFromDiscriminatorValue); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"exceptions", n => { Exceptions = n.GetObjectValue<MessageRulePredicates>(MessageRulePredicates.CreateFromDiscriminatorValue); } },
+                {"hasError", n => { HasError = n.GetBoolValue(); } },
+                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                {"isReadOnly", n => { IsReadOnly = n.GetBoolValue(); } },
+                {"sequence", n => { Sequence = n.GetIntValue(); } },
             };
         }
         /// <summary>

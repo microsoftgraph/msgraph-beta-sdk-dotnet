@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders.Item.
         public ContactItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/contactFolders/{contactFolder_id}/childFolders/{contactFolder_id1}/contacts/{contact_id}{?select,expand}";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/contactFolders/{contactFolder%2Did}/childFolders/{contactFolder%2Did1}/contacts/{contact%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders.Item.
         public ContactItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user_id}/contactFolders/{contactFolder_id}/childFolders/{contactFolder_id1}/contacts/{contact_id}{?select,expand}";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/contactFolders/{contactFolder%2Did}/childFolders/{contactFolder%2Did1}/contacts/{contact%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -169,8 +169,10 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders.Item.
         /// <summary>The contacts in the folder. Navigation property. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
     }

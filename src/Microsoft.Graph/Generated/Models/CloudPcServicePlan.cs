@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"displayName", (o,n) => { (o as CloudPcServicePlan).DisplayName = n.GetStringValue(); } },
-                {"ramInGB", (o,n) => { (o as CloudPcServicePlan).RamInGB = n.GetIntValue(); } },
-                {"storageInGB", (o,n) => { (o as CloudPcServicePlan).StorageInGB = n.GetIntValue(); } },
-                {"type", (o,n) => { (o as CloudPcServicePlan).Type = n.GetEnumValue<CloudPcServicePlanType>(); } },
-                {"userProfileInGB", (o,n) => { (o as CloudPcServicePlan).UserProfileInGB = n.GetIntValue(); } },
-                {"vCpuCount", (o,n) => { (o as CloudPcServicePlan).VCpuCount = n.GetIntValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"ramInGB", n => { RamInGB = n.GetIntValue(); } },
+                {"storageInGB", n => { StorageInGB = n.GetIntValue(); } },
+                {"type", n => { Type = n.GetEnumValue<CloudPcServicePlanType>(); } },
+                {"userProfileInGB", n => { UserProfileInGB = n.GetIntValue(); } },
+                {"vCpuCount", n => { VCpuCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

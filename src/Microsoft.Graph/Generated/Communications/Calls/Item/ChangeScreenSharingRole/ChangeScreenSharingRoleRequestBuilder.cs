@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.ChangeScreenSharingRole
         public ChangeScreenSharingRoleRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/communications/calls/{call_id}/microsoft.graph.changeScreenSharingRole";
+            UrlTemplate = "{+baseurl}/communications/calls/{call%2Did}/microsoft.graph.changeScreenSharingRole";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.ChangeScreenSharingRole
         public ChangeScreenSharingRoleRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/communications/calls/{call_id}/microsoft.graph.changeScreenSharingRole";
+            UrlTemplate = "{+baseurl}/communications/calls/{call%2Did}/microsoft.graph.changeScreenSharingRole";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

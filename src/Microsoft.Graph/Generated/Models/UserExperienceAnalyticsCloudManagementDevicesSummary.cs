@@ -31,11 +31,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"coManagedDeviceCount", (o,n) => { (o as UserExperienceAnalyticsCloudManagementDevicesSummary).CoManagedDeviceCount = n.GetIntValue(); } },
-                {"intuneDeviceCount", (o,n) => { (o as UserExperienceAnalyticsCloudManagementDevicesSummary).IntuneDeviceCount = n.GetIntValue(); } },
-                {"tenantAttachDeviceCount", (o,n) => { (o as UserExperienceAnalyticsCloudManagementDevicesSummary).TenantAttachDeviceCount = n.GetIntValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"coManagedDeviceCount", n => { CoManagedDeviceCount = n.GetIntValue(); } },
+                {"intuneDeviceCount", n => { IntuneDeviceCount = n.GetIntValue(); } },
+                {"tenantAttachDeviceCount", n => { TenantAttachDeviceCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

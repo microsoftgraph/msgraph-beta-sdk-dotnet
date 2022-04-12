@@ -27,9 +27,9 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.ContentTypes.AddCopy {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>> {
-                {"contentType", (o,n) => { (o as AddCopyRequestBody).ContentType = n.GetStringValue(); } },
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
+                {"contentType", n => { ContentType = n.GetStringValue(); } },
             };
         }
         /// <summary>

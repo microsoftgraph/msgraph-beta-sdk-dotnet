@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.TermStore.Groups.Item.Sets.Item.Children.Item.Chi
         public RelationItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/termStore/groups/{group_id}/sets/{set_id}/children/{term_id}/children/{term_id1}/relations/{relation_id}{?select,expand}";
+            UrlTemplate = "{+baseurl}/termStore/groups/{group%2Did}/sets/{set%2Did}/children/{term%2Did}/children/{term%2Did1}/relations/{relation%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.TermStore.Groups.Item.Sets.Item.Children.Item.Chi
         public RelationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/termStore/groups/{group_id}/sets/{set_id}/children/{term_id}/children/{term_id1}/relations/{relation_id}{?select,expand}";
+            UrlTemplate = "{+baseurl}/termStore/groups/{group%2Did}/sets/{set%2Did}/children/{term%2Did}/children/{term%2Did1}/relations/{relation%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -164,8 +164,10 @@ namespace Microsoft.Graph.Beta.TermStore.Groups.Item.Sets.Item.Children.Item.Chi
         /// <summary>To indicate which terms are related to the current term as either pinned or reused.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
             /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
     }

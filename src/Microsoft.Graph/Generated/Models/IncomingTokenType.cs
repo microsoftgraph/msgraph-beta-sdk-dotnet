@@ -6,5 +6,6 @@ namespace Microsoft.Graph.Beta.Models {
         Saml11,
         Saml20,
         UnknownFutureValue,
+        RemoteDesktopToken,
     }
 }

@@ -24,9 +24,9 @@ namespace Microsoft.Graph.Beta.Me.AppConsentRequestsForApproval.Item.UserConsent
         public FilterByCurrentUserWithOnRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string on = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/appConsentRequestsForApproval/{appConsentRequest_id}/userConsentRequests/microsoft.graph.filterByCurrentUser(on='{on}')";
+            UrlTemplate = "{+baseurl}/me/appConsentRequestsForApproval/{appConsentRequest%2Did}/userConsentRequests/microsoft.graph.filterByCurrentUser(on='{on}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("on", on);
+            urlTplParams.Add("", on);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Me.AppConsentRequestsForApproval.Item.UserConsent
         public FilterByCurrentUserWithOnRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/appConsentRequestsForApproval/{appConsentRequest_id}/userConsentRequests/microsoft.graph.filterByCurrentUser(on='{on}')";
+            UrlTemplate = "{+baseurl}/me/appConsentRequestsForApproval/{appConsentRequest%2Did}/userConsentRequests/microsoft.graph.filterByCurrentUser(on='{on}')";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

@@ -27,8 +27,8 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.GetTopMobileAppsWi
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/microsoft.graph.getTopMobileApps(status='{status}',count={count})";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("count", count);
-            urlTplParams.Add("status", status);
+            urlTplParams.Add("", count);
+            urlTplParams.Add("", status);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

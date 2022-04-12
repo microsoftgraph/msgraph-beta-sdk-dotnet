@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
-            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"configuration", (o,n) => { (o as TeamsTab).Configuration = n.GetObjectValue<TeamsTabConfiguration>(TeamsTabConfiguration.CreateFromDiscriminatorValue); } },
-                {"displayName", (o,n) => { (o as TeamsTab).DisplayName = n.GetStringValue(); } },
-                {"messageId", (o,n) => { (o as TeamsTab).MessageId = n.GetStringValue(); } },
-                {"sortOrderIndex", (o,n) => { (o as TeamsTab).SortOrderIndex = n.GetStringValue(); } },
-                {"teamsApp", (o,n) => { (o as TeamsTab).TeamsApp = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamsApp>(Microsoft.Graph.Beta.Models.TeamsApp.CreateFromDiscriminatorValue); } },
-                {"teamsAppId", (o,n) => { (o as TeamsTab).TeamsAppId = n.GetStringValue(); } },
-                {"webUrl", (o,n) => { (o as TeamsTab).WebUrl = n.GetStringValue(); } },
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"configuration", n => { Configuration = n.GetObjectValue<TeamsTabConfiguration>(TeamsTabConfiguration.CreateFromDiscriminatorValue); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"messageId", n => { MessageId = n.GetStringValue(); } },
+                {"sortOrderIndex", n => { SortOrderIndex = n.GetStringValue(); } },
+                {"teamsApp", n => { TeamsApp = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamsApp>(Microsoft.Graph.Beta.Models.TeamsApp.CreateFromDiscriminatorValue); } },
+                {"teamsAppId", n => { TeamsAppId = n.GetStringValue(); } },
+                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
