@@ -113,6 +113,12 @@ namespace Microsoft.Graph
         public string ClientAppUsed { get; set; }
     
         /// <summary>
+        /// Gets or sets client credential type.
+        /// </summary>
+        [JsonPropertyName("clientCredentialType")]
+        public ClientCredentialType? ClientCredentialType { get; set; }
+    
+        /// <summary>
         /// Gets or sets conditional access status.
         /// Reports status of an activated conditional access policy. Possible values are: success, failure, notApplied, and unknownFutureValue. Supports $filter (eq operator only).
         /// </summary>

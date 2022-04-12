@@ -112,6 +112,13 @@ namespace Microsoft.Graph
             string cloudPcSnapshotId = null);
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceSetCloudPcReviewStatus.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceSetCloudPcReviewStatusRequestBuilder"/>.</returns>
+        IManagedDeviceSetCloudPcReviewStatusRequestBuilder SetCloudPcReviewStatus(
+            CloudPcReviewStatus reviewStatus = null);
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceOverrideComplianceState.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceOverrideComplianceStateRequestBuilder"/>.</returns>
@@ -330,6 +337,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceGetCloudPcRemoteActionResultsRequestBuilder"/>.</returns>
         IManagedDeviceGetCloudPcRemoteActionResultsRequestBuilder GetCloudPcRemoteActionResults();
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceGetCloudPcReviewStatus.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceGetCloudPcReviewStatusRequestBuilder"/>.</returns>
+        IManagedDeviceGetCloudPcReviewStatusRequestBuilder GetCloudPcReviewStatus();
 
         /// <summary>
         /// Gets the request builder for ManagedDeviceGetNonCompliantSettings.

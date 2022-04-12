@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets availabilityItems.
+        /// Each item in this collection indicates a slot and the status of the staff member.
         /// </summary>
         [JsonPropertyName("availabilityItems")]
         public IEnumerable<AvailabilityItem> AvailabilityItems { get; set; }
     
         /// <summary>
         /// Gets or sets staffId.
+        /// The ID of the staff member.
         /// </summary>
         [JsonPropertyName("staffId")]
         public string StaffId { get; set; }

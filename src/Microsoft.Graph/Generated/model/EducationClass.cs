@@ -107,6 +107,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets assignment categories.
+        /// All categories associated with this class. Nullable.
         /// </summary>
         [JsonPropertyName("assignmentCategories")]
         public IEducationClassAssignmentCategoriesCollectionPage AssignmentCategories { get; set; }
@@ -120,6 +121,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets assignment defaults.
+        /// Specifies class-level defaults respected by new assignments created in the class.
         /// </summary>
         [JsonPropertyName("assignmentDefaults")]
         public EducationAssignmentDefaults AssignmentDefaults { get; set; }
@@ -140,6 +142,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets assignment settings.
+        /// Specifies class-level assignments settings.
         /// </summary>
         [JsonPropertyName("assignmentSettings")]
         public EducationAssignmentSettings AssignmentSettings { get; set; }

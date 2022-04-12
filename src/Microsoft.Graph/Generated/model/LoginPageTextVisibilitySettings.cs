@@ -22,6 +22,12 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
+        /// Gets or sets hideAccountResetCredentials.
+        /// </summary>
+        [JsonPropertyName("hideAccountResetCredentials")]
+        public bool? HideAccountResetCredentials { get; set; }
+    
+        /// <summary>
         /// Gets or sets hideCannotAccessYourAccount.
         /// Option to hide the self-service password reset (SSPR) 'Can't access your account?' hyperlink on the sign-in form.
         /// </summary>

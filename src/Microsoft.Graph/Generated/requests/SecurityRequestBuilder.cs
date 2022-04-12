@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for SubjectRightsRequests.
+        /// </summary>
+        /// <returns>The <see cref="ISecuritySubjectRightsRequestsCollectionRequestBuilder"/>.</returns>
+        public ISecuritySubjectRightsRequestsCollectionRequestBuilder SubjectRightsRequests
+        {
+            get
+            {
+                return new SecuritySubjectRightsRequestsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("subjectRightsRequests"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for InformationProtection.
         /// </summary>
         /// <returns>The <see cref="Microsoft.Graph.SecurityNamespace.IInformationProtectionRequestBuilder"/>.</returns>

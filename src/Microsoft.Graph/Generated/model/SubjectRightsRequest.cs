@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         public DateTimeOffset? ClosedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets content query.
+        /// </summary>
+        [JsonPropertyName("contentQuery")]
+        public string ContentQuery { get; set; }
+    
+        /// <summary>
         /// Gets or sets created by.
         /// Identity information for the entity that created the request.
         /// </summary>
@@ -78,11 +84,29 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets external id.
+        /// </summary>
+        [JsonPropertyName("externalId")]
+        public string ExternalId { get; set; }
+    
+        /// <summary>
         /// Gets or sets history.
         /// Collection of history change events.
         /// </summary>
         [JsonPropertyName("history")]
         public IEnumerable<SubjectRightsRequestHistory> History { get; set; }
+    
+        /// <summary>
+        /// Gets or sets include all versions.
+        /// </summary>
+        [JsonPropertyName("includeAllVersions")]
+        public bool? IncludeAllVersions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets include authored content.
+        /// </summary>
+        [JsonPropertyName("includeAuthoredContent")]
+        public bool? IncludeAuthoredContent { get; set; }
     
         /// <summary>
         /// Gets or sets insight.
@@ -113,11 +137,29 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets mailboxlocations.
+        /// </summary>
+        [JsonPropertyName("mailboxlocations")]
+        public SubjectRightsRequestMailboxLocation Mailboxlocations { get; set; }
+    
+        /// <summary>
+        /// Gets or sets pause after estimate.
+        /// </summary>
+        [JsonPropertyName("pauseAfterEstimate")]
+        public bool? PauseAfterEstimate { get; set; }
+    
+        /// <summary>
         /// Gets or sets regulations.
         /// List of regulations that this request will fulfill.
         /// </summary>
         [JsonPropertyName("regulations")]
         public IEnumerable<string> Regulations { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sitelocations.
+        /// </summary>
+        [JsonPropertyName("sitelocations")]
+        public SubjectRightsRequestSiteLocation Sitelocations { get; set; }
     
         /// <summary>
         /// Gets or sets stages.

@@ -35,6 +35,13 @@ namespace Microsoft.Graph
         [JsonPropertyName("userAccountType")]
         public CloudPcUserAccountType? UserAccountType { get; set; }
     
+        /// <summary>
+        /// Gets or sets windows settings.
+        /// Represents the Cloud PC organization settings for a tenant. A tenant has only one cloudPcOrganizationSettings object. The default language value en-US.
+        /// </summary>
+        [JsonPropertyName("windowsSettings")]
+        public CloudPcWindowsSettings WindowsSettings { get; set; }
+    
     }
 }
 

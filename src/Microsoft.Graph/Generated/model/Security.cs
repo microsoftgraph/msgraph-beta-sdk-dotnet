@@ -27,6 +27,19 @@ namespace Microsoft.Graph
         public IEnumerable<SecurityProviderStatus> ProviderStatus { get; set; }
     
         /// <summary>
+        /// Gets or sets subject rights requests.
+        /// </summary>
+        [JsonPropertyName("subjectRightsRequests")]
+        public ISecuritySubjectRightsRequestsCollectionPage SubjectRightsRequests { get; set; }
+
+        /// <summary>
+        /// Gets or sets subjectRightsRequestsNextLink.
+        /// </summary>
+        [JsonPropertyName("subjectRightsRequests@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string SubjectRightsRequestsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets information protection.
         /// </summary>
         [JsonPropertyName("informationProtection")]

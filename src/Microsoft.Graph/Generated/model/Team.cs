@@ -121,6 +121,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets tenant id.
+        /// The ID of the Azure Active Directory tenant.
         /// </summary>
         [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }
@@ -141,6 +142,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets all channels.
+        /// List of channels either hosted in or shared with the team (incoming channels).
         /// </summary>
         [JsonPropertyName("allChannels")]
         public ITeamAllChannelsCollectionWithReferencesPage AllChannels { get; set; }

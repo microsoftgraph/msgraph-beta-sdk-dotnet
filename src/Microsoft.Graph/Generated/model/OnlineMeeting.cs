@@ -22,12 +22,6 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Gets or sets access level.
-        /// </summary>
-        [JsonPropertyName("accessLevel")]
-        public AccessLevel? AccessLevel { get; set; }
-    
-        /// <summary>
         /// Gets or sets allow attendee to enable camera.
         /// Indicates whether attendees can turn on their camera.
         /// </summary>
@@ -91,12 +85,6 @@ namespace Microsoft.Graph
         public BroadcastMeetingSettings BroadcastSettings { get; set; }
     
         /// <summary>
-        /// Gets or sets canceled date time.
-        /// </summary>
-        [JsonPropertyName("canceledDateTime")]
-        public DateTimeOffset? CanceledDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets capabilities.
         /// </summary>
         [JsonPropertyName("capabilities")]
@@ -124,18 +112,6 @@ namespace Microsoft.Graph
         public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets entry exit announcement.
-        /// </summary>
-        [JsonPropertyName("entryExitAnnouncement")]
-        public bool? EntryExitAnnouncement { get; set; }
-    
-        /// <summary>
-        /// Gets or sets expiration date time.
-        /// </summary>
-        [JsonPropertyName("expirationDateTime")]
-        public DateTimeOffset? ExpirationDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets external id.
         /// The external ID. A custom ID. Optional.
         /// </summary>
@@ -148,12 +124,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("isBroadcast")]
         public bool? IsBroadcast { get; set; }
-    
-        /// <summary>
-        /// Gets or sets is cancelled.
-        /// </summary>
-        [JsonPropertyName("isCancelled")]
-        public bool? IsCancelled { get; set; }
     
         /// <summary>
         /// Gets or sets is entry exit announced.
@@ -180,6 +150,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("joinUrl")]
         public string JoinUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets join web url.
+        /// The join URL of the online meeting. Read-only.
+        /// </summary>
+        [JsonPropertyName("joinWebUrl")]
+        public string JoinWebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets lobby bypass settings.

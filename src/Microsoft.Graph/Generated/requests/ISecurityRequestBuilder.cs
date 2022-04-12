@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new ISecurityRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for SubjectRightsRequests.
+        /// </summary>
+        /// <returns>The <see cref="ISecuritySubjectRightsRequestsCollectionRequestBuilder"/>.</returns>
+        ISecuritySubjectRightsRequestsCollectionRequestBuilder SubjectRightsRequests { get; }
+
+        /// <summary>
         /// Gets the request builder for InformationProtection.
         /// </summary>
         /// <returns>The <see cref="Microsoft.Graph.SecurityNamespace.IInformationProtectionRequestBuilder"/>.</returns>

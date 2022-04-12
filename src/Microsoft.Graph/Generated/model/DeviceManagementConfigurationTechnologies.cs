@@ -41,6 +41,11 @@ namespace Microsoft.Graph
         ConfigManager = 4,
 	
         /// <summary>
+        /// Apple Remote Management
+        /// </summary>
+        AppleRemoteManagement = 64,
+	
+        /// <summary>
         /// Microsoft Sense
         /// </summary>
         MicrosoftSense = 128,

@@ -22,6 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets associated teams.
+        /// The list of associatedTeamInfo objects that a user is associated with.
         /// </summary>
         [JsonPropertyName("associatedTeams")]
         public IUserTeamworkAssociatedTeamsCollectionPage AssociatedTeams { get; set; }

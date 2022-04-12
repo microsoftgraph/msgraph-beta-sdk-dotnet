@@ -22,12 +22,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is host team.
+        /// Indicates whether the team is the host of the channel.
         /// </summary>
         [JsonPropertyName("isHostTeam")]
         public bool? IsHostTeam { get; set; }
     
         /// <summary>
         /// Gets or sets allowed members.
+        /// A collection of team members who have access to the shared channel.
         /// </summary>
         [JsonPropertyName("allowedMembers")]
         public ISharedWithChannelTeamInfoAllowedMembersCollectionWithReferencesPage AllowedMembers { get; set; }

@@ -245,7 +245,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets assignments.
-        /// Assignments that belongs to the user.
+        /// Assignments belonging to the user.
         /// </summary>
         [JsonPropertyName("assignments")]
         public IEducationUserAssignmentsCollectionPage Assignments { get; set; }
@@ -259,6 +259,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets rubrics.
+        /// When set, the grading rubric attached to the assignment.
         /// </summary>
         [JsonPropertyName("rubrics")]
         public IEducationUserRubricsCollectionPage Rubrics { get; set; }

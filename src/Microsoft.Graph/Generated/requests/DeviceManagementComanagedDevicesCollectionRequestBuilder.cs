@@ -91,6 +91,21 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceBulkSetCloudPcReviewStatus.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceBulkSetCloudPcReviewStatusRequestBuilder"/>.</returns>
+        public IManagedDeviceBulkSetCloudPcReviewStatusRequestBuilder BulkSetCloudPcReviewStatus(
+            IEnumerable<string> managedDeviceIds = null,
+            CloudPcReviewStatus reviewStatus = null)
+        {
+            return new ManagedDeviceBulkSetCloudPcReviewStatusRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.bulkSetCloudPcReviewStatus"),
+                this.Client,
+                managedDeviceIds,
+                reviewStatus);
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceExecuteAction.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceExecuteActionRequestBuilder"/>.</returns>

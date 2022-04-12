@@ -23,12 +23,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
+        /// The name of the team.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.
+        /// The ID of the Azure Active Directory tenant.
         /// </summary>
         [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }
