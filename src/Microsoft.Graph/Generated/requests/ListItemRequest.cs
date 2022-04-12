@@ -252,6 +252,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     listItemToInitialize.Activities.AdditionalData = listItemToInitialize.AdditionalData;
                 }
+                if (listItemToInitialize.DocumentSetVersions != null && listItemToInitialize.DocumentSetVersions.CurrentPage != null)
+                {
+                    listItemToInitialize.DocumentSetVersions.InitializeNextPageRequest(this.Client, listItemToInitialize.DocumentSetVersionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    listItemToInitialize.DocumentSetVersions.AdditionalData = listItemToInitialize.AdditionalData;
+                }
                 if (listItemToInitialize.Versions != null && listItemToInitialize.Versions.CurrentPage != null)
                 {
                     listItemToInitialize.Versions.InitializeNextPageRequest(this.Client, listItemToInitialize.VersionsNextLink);

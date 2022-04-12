@@ -208,6 +208,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceSetCloudPcReviewStatus.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceSetCloudPcReviewStatusRequestBuilder"/>.</returns>
+        public IManagedDeviceSetCloudPcReviewStatusRequestBuilder SetCloudPcReviewStatus(
+            CloudPcReviewStatus reviewStatus = null)
+        {
+            return new ManagedDeviceSetCloudPcReviewStatusRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.setCloudPcReviewStatus"),
+                this.Client,
+                reviewStatus);
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceOverrideComplianceState.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceOverrideComplianceStateRequestBuilder"/>.</returns>
@@ -611,6 +624,17 @@ namespace Microsoft.Graph
         {
             return new ManagedDeviceGetCloudPcRemoteActionResultsRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getCloudPcRemoteActionResults"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceGetCloudPcReviewStatus.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceGetCloudPcReviewStatusRequestBuilder"/>.</returns>
+        public IManagedDeviceGetCloudPcReviewStatusRequestBuilder GetCloudPcReviewStatus()
+        {
+            return new ManagedDeviceGetCloudPcReviewStatusRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getCloudPcReviewStatus"),
                 this.Client);
         }
 

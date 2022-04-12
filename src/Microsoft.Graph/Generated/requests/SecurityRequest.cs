@@ -246,6 +246,12 @@ namespace Microsoft.Graph
 
             if (securityToInitialize != null)
             {
+                if (securityToInitialize.SubjectRightsRequests != null && securityToInitialize.SubjectRightsRequests.CurrentPage != null)
+                {
+                    securityToInitialize.SubjectRightsRequests.InitializeNextPageRequest(this.Client, securityToInitialize.SubjectRightsRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    securityToInitialize.SubjectRightsRequests.AdditionalData = securityToInitialize.AdditionalData;
+                }
                 if (securityToInitialize.Alerts != null && securityToInitialize.Alerts.CurrentPage != null)
                 {
                     securityToInitialize.Alerts.InitializeNextPageRequest(this.Client, securityToInitialize.AlertsNextLink);

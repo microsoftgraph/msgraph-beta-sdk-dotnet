@@ -50,5 +50,7 @@ namespace Microsoft.Graph
             return new SignInRequest(this.RequestUrl, this.Client, options);
         }
     
+        
+    
     }
 }

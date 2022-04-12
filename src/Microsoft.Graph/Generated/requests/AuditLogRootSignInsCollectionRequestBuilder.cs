@@ -60,6 +60,30 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for SignInConfirmCompromised.
+        /// </summary>
+        /// <returns>The <see cref="ISignInConfirmCompromisedRequestBuilder"/>.</returns>
+        public ISignInConfirmCompromisedRequestBuilder ConfirmCompromised(
+            IEnumerable<string> requestIds = null)
+        {
+            return new SignInConfirmCompromisedRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.confirmCompromised"),
+                this.Client,
+                requestIds);
+        }
+
+        /// <summary>
+        /// Gets the request builder for SignInConfirmSafe.
+        /// </summary>
+        /// <returns>The <see cref="ISignInConfirmSafeRequestBuilder"/>.</returns>
+        public ISignInConfirmSafeRequestBuilder ConfirmSafe(
+            IEnumerable<string> requestIds = null)
+        {
+            return new SignInConfirmSafeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.confirmSafe"),
+                this.Client,
+                requestIds);
+        }
     }
 }

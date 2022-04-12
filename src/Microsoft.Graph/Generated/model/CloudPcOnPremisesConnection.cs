@@ -72,7 +72,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets managed by.
-        /// Specifies which services manage the on-premises connection. Possible values are: windows365, devBox and unknownFutureValue. Read-only.
+        /// Specifies which services manage the Azure network connection. Possible values are: windows365, devBox and unknownFutureValue. Read-only.
         /// </summary>
         [JsonPropertyName("managedBy")]
         public CloudPcManagementService? ManagedBy { get; set; }

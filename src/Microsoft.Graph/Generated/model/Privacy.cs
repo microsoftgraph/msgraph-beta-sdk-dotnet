@@ -24,6 +24,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets subject rights requests.
         /// </summary>
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.")]
         [JsonPropertyName("subjectRightsRequests")]
         public IPrivacySubjectRightsRequestsCollectionPage SubjectRightsRequests { get; set; }
 

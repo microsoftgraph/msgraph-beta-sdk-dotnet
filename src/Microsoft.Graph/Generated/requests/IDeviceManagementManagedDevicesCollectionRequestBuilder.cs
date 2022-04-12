@@ -53,6 +53,14 @@ namespace Microsoft.Graph
             RestoreTimeRange? timeRange = null);
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceBulkSetCloudPcReviewStatus.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceBulkSetCloudPcReviewStatusRequestBuilder"/>.</returns>
+        IManagedDeviceBulkSetCloudPcReviewStatusRequestBuilder BulkSetCloudPcReviewStatus(
+            IEnumerable<string> managedDeviceIds = null,
+            CloudPcReviewStatus reviewStatus = null);
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceExecuteAction.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceExecuteActionRequestBuilder"/>.</returns>

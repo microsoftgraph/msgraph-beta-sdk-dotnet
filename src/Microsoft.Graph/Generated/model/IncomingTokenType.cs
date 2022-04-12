@@ -45,5 +45,10 @@ namespace Microsoft.Graph
         /// </summary>
         UnknownFutureValue = 8,
 	
+        /// <summary>
+        /// Remote Desktop Token
+        /// </summary>
+        RemoteDesktopToken = 16,
+	
     }
 }

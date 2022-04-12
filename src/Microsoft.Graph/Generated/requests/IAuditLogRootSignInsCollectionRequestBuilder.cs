@@ -36,6 +36,18 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="ISignInRequestBuilder"/>.</returns>
         ISignInRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for SignInConfirmCompromised.
+        /// </summary>
+        /// <returns>The <see cref="ISignInConfirmCompromisedRequestBuilder"/>.</returns>
+        ISignInConfirmCompromisedRequestBuilder ConfirmCompromised(
+            IEnumerable<string> requestIds = null);
+
+        /// <summary>
+        /// Gets the request builder for SignInConfirmSafe.
+        /// </summary>
+        /// <returns>The <see cref="ISignInConfirmSafeRequestBuilder"/>.</returns>
+        ISignInConfirmSafeRequestBuilder ConfirmSafe(
+            IEnumerable<string> requestIds = null);
     }
 }
