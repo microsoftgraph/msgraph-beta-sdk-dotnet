@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.ContentSharingSessions.
             return requestInfo;
         }
         /// <summary>
-        /// Get contentSharingSessions from communications
+        /// Read-only. Nullable.
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// <param name="queryParameters">Request query parameters</param>
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.ContentSharingSessions.
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get contentSharingSessions from communications
+        /// Read-only. Nullable.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.ContentSharingSessions.
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get contentSharingSessions from communications</summary>
+        /// <summary>Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

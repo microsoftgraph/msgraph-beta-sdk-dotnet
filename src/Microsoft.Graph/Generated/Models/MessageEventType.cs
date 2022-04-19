@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of messageEvent entities.</summary>
+    /// <summary>Provides operations to manage the collection of messageTrace entities.</summary>
     public enum MessageEventType {
         Received,
         Sent,

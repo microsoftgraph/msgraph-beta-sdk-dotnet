@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.Models {
         public List<DirectorySetting> Settings { get; set; }
         /// <summary>The list of SharePoint sites in this group. Access the default site with /sites/root.</summary>
         public List<Site> Sites { get; set; }
-        /// <summary>The team property</summary>
+        /// <summary>The team associated with this group.</summary>
         public Microsoft.Graph.Beta.Models.Team Team { get; set; }
         /// <summary>Specifies a Microsoft 365 group&apos;s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.</summary>
         public string Theme { get; set; }
