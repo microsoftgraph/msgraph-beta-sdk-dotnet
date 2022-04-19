@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets certificateUpdateResult.
+        /// Status of the last certificate update. Read-only. For a list of statuses, see certificateUpdateResult status.
         /// </summary>
         [JsonPropertyName("certificateUpdateResult")]
         public string CertificateUpdateResult { get; set; }
     
         /// <summary>
         /// Gets or sets lastRunDateTime.
+        /// Date and time in ISO 8601 format and in UTC time when the certificate was last updated. Read-only.
         /// </summary>
         [JsonPropertyName("lastRunDateTime")]
         public DateTimeOffset? LastRunDateTime { get; set; }

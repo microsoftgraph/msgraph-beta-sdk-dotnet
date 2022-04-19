@@ -705,6 +705,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets team.
+        /// The team associated with this group.
         /// </summary>
         [JsonPropertyName("team")]
         public Team Team { get; set; }

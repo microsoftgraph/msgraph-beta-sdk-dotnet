@@ -23,6 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets labels.
+        /// List of sensitivity labels assigned to a file.
         /// </summary>
         [JsonPropertyName("labels")]
         public IEnumerable<SensitivityLabelAssignment> Labels { get; set; }

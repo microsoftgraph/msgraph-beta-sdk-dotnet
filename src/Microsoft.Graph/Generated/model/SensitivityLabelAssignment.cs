@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets assignmentMethod.
+        /// Indicates whether the label assignment is done automatically, as a standard, or a privileged operation. The possible values are: standard, privileged, auto, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("assignmentMethod")]
         public SensitivityLabelAssignmentMethod? AssignmentMethod { get; set; }
     
         /// <summary>
         /// Gets or sets sensitivityLabelId.
+        /// The unique identifier for the sensitivity label assigned to the file.
         /// </summary>
         [JsonPropertyName("sensitivityLabelId")]
         public string SensitivityLabelId { get; set; }
     
         /// <summary>
         /// Gets or sets tenantId.
+        /// The unique identifier for the tenant that hosts the file when this label is applied.
         /// </summary>
         [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }

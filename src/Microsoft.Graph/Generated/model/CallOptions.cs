@@ -29,6 +29,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets isContentSharingNotificationEnabled.
+        /// Indicates whether content sharing notifications should be enabled for the call.
         /// </summary>
         [JsonPropertyName("isContentSharingNotificationEnabled")]
         public bool? IsContentSharingNotificationEnabled { get; set; }
