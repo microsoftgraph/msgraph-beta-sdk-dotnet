@@ -7,11 +7,11 @@ namespace Microsoft.Graph.Beta.Models {
     public class DocumentSetVersionItem : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The itemId property</summary>
+        /// <summary>The unique identifier for the item.</summary>
         public string ItemId { get; set; }
-        /// <summary>The title property</summary>
+        /// <summary>The title of the item.</summary>
         public string Title { get; set; }
-        /// <summary>The versionId property</summary>
+        /// <summary>The version ID of the item.</summary>
         public string VersionId { get; set; }
         /// <summary>
         /// Instantiates a new documentSetVersionItem and sets the default values.

@@ -43,6 +43,8 @@ namespace Microsoft.Graph.Beta.Models {
         public bool? IsCompliant { get; set; }
         /// <summary>true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).</summary>
         public bool? IsManaged { get; set; }
+        /// <summary>The isManagementRestricted property</summary>
+        public bool? IsManagementRestricted { get; set; }
         /// <summary>true if device is rooted; false if device is jail-broken. This can only be updated by Intune.</summary>
         public bool? IsRooted { get; set; }
         /// <summary>Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.</summary>
@@ -121,6 +123,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"hostnames", n => { Hostnames = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"isCompliant", n => { IsCompliant = n.GetBoolValue(); } },
                 {"isManaged", n => { IsManaged = n.GetBoolValue(); } },
+                {"isManagementRestricted", n => { IsManagementRestricted = n.GetBoolValue(); } },
                 {"isRooted", n => { IsRooted = n.GetBoolValue(); } },
                 {"kind", n => { Kind = n.GetStringValue(); } },
                 {"managementType", n => { ManagementType = n.GetStringValue(); } },
@@ -172,6 +175,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("hostnames", Hostnames);
             writer.WriteBoolValue("isCompliant", IsCompliant);
             writer.WriteBoolValue("isManaged", IsManaged);
+            writer.WriteBoolValue("isManagementRestricted", IsManagementRestricted);
             writer.WriteBoolValue("isRooted", IsRooted);
             writer.WriteStringValue("kind", Kind);
             writer.WriteStringValue("managementType", ManagementType);

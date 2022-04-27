@@ -11,6 +11,8 @@ namespace Microsoft.Graph.Beta.Models {
         public string DisplayName { get; set; }
         /// <summary>The collection of open extensions defined for this administrative unit. Nullable.</summary>
         public List<Extension> Extensions { get; set; }
+        /// <summary>The isMemberManagementRestricted property</summary>
+        public bool? IsMemberManagementRestricted { get; set; }
         /// <summary>Users and groups that are members of this administrative unit. Supports $expand.</summary>
         public List<DirectoryObject> Members { get; set; }
         /// <summary>Scoped-role members of this administrative unit.</summary>
@@ -33,6 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue).ToList(); } },
+                {"isMemberManagementRestricted", n => { IsMemberManagementRestricted = n.GetBoolValue(); } },
                 {"members", n => { Members = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
                 {"scopedRoleMembers", n => { ScopedRoleMembers = n.GetCollectionOfObjectValues<ScopedRoleMembership>(ScopedRoleMembership.CreateFromDiscriminatorValue).ToList(); } },
                 {"visibility", n => { Visibility = n.GetStringValue(); } },
@@ -48,6 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfObjectValues<Extension>("extensions", Extensions);
+            writer.WriteBoolValue("isMemberManagementRestricted", IsMemberManagementRestricted);
             writer.WriteCollectionOfObjectValues<DirectoryObject>("members", Members);
             writer.WriteCollectionOfObjectValues<ScopedRoleMembership>("scopedRoleMembers", ScopedRoleMembers);
             writer.WriteStringValue("visibility", Visibility);

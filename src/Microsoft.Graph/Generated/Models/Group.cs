@@ -67,6 +67,8 @@ namespace Microsoft.Graph.Beta.Models {
         public bool? IsAssignableToRole { get; set; }
         /// <summary>The isFavorite property</summary>
         public bool? IsFavorite { get; set; }
+        /// <summary>The isManagementRestricted property</summary>
+        public bool? IsManagementRestricted { get; set; }
         /// <summary>Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
         public bool? IsSubscribedByMail { get; set; }
         /// <summary>Indicates status of the group license assignment to all members of the group. Default value is false. Read-only. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete.Returned only on $select. Read-only.</summary>
@@ -141,7 +143,7 @@ namespace Microsoft.Graph.Beta.Models {
         public List<DirectorySetting> Settings { get; set; }
         /// <summary>The list of SharePoint sites in this group. Access the default site with /sites/root.</summary>
         public List<Site> Sites { get; set; }
-        /// <summary>The team property</summary>
+        /// <summary>The team associated with this group.</summary>
         public Microsoft.Graph.Beta.Models.Team Team { get; set; }
         /// <summary>Specifies a Microsoft 365 group&apos;s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.</summary>
         public string Theme { get; set; }
@@ -203,6 +205,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 {"isAssignableToRole", n => { IsAssignableToRole = n.GetBoolValue(); } },
                 {"isFavorite", n => { IsFavorite = n.GetBoolValue(); } },
+                {"isManagementRestricted", n => { IsManagementRestricted = n.GetBoolValue(); } },
                 {"isSubscribedByMail", n => { IsSubscribedByMail = n.GetBoolValue(); } },
                 {"licenseProcessingState", n => { LicenseProcessingState = n.GetObjectValue<Microsoft.Graph.Beta.Models.LicenseProcessingState>(Microsoft.Graph.Beta.Models.LicenseProcessingState.CreateFromDiscriminatorValue); } },
                 {"mail", n => { Mail = n.GetStringValue(); } },
@@ -289,6 +292,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteBoolValue("isAssignableToRole", IsAssignableToRole);
             writer.WriteBoolValue("isFavorite", IsFavorite);
+            writer.WriteBoolValue("isManagementRestricted", IsManagementRestricted);
             writer.WriteBoolValue("isSubscribedByMail", IsSubscribedByMail);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.LicenseProcessingState>("licenseProcessingState", LicenseProcessingState);
             writer.WriteStringValue("mail", Mail);

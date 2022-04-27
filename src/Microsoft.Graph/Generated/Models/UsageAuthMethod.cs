@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the reportRoot singleton.</summary>
+    /// <summary>Provides operations to manage the print singleton.</summary>
     public enum UsageAuthMethod {
         Email,
         MobileSMS,

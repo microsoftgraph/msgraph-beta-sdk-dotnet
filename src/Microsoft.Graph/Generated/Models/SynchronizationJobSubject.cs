@@ -9,9 +9,9 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The links property</summary>
         public SynchronizationLinkedObjects Links { get; set; }
-        /// <summary>The identifier of an object to which a synchronizationJob  is to be applied.</summary>
+        /// <summary>The identifier of an object to which a synchronizationJob is to be applied. Can be one of the following: An onPremisesDistinguishedName for synchronization from Active Directory to Azure AD.The user ID for synchronization from Azure AD to a third-party.The Worker ID of the Workday worker for synchronization from Workday to either Active Directory or Azure AD.</summary>
         public string ObjectId { get; set; }
-        /// <summary>The type of the object to which a synchronizationJob  is to be applied.</summary>
+        /// <summary>The type of the object to which a synchronizationJob is to be applied. Can be one of the following: user for synchronization from Active Directory to Azure AD.User for synchronization from Azure AD to a third-party application. Worker for synchronization from Workday to either Active Directory or Azure AD.</summary>
         public string ObjectTypeName { get; set; }
         /// <summary>
         /// Instantiates a new synchronizationJobSubject and sets the default values.

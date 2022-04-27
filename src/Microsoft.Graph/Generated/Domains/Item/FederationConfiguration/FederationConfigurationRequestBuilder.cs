@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.FederationConfiguration {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get federationConfiguration from domains
+        /// Domain settings configured by customer when federated with Azure AD.
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// <param name="queryParameters">Request query parameters</param>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.FederationConfiguration {
             return requestInfo;
         }
         /// <summary>
-        /// Get federationConfiguration from domains
+        /// Domain settings configured by customer when federated with Azure AD.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.FederationConfiguration {
             };
             return await RequestAdapter.SendAsync<InternalDomainFederation>(requestInfo, InternalDomainFederation.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get federationConfiguration from domains</summary>
+        /// <summary>Domain settings configured by customer when federated with Azure AD.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

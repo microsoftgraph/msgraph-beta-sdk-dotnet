@@ -15,13 +15,13 @@ namespace Microsoft.Graph.Beta.Models {
         public string CallbackUri { get; set; }
         /// <summary>A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This needs to be copied over from Microsoft.Graph.Call.CallChainId.</summary>
         public string CallChainId { get; set; }
-        /// <summary>The callOptions property</summary>
+        /// <summary>Contains the optional features for the call.</summary>
         public Microsoft.Graph.Beta.Models.CallOptions CallOptions { get; set; }
         /// <summary>The routing information on how the call was retargeted. Read-only.</summary>
         public List<CallRoute> CallRoutes { get; set; }
         /// <summary>The chat information. Required information for joining a meeting.</summary>
         public Microsoft.Graph.Beta.Models.ChatInfo ChatInfo { get; set; }
-        /// <summary>The contentSharingSessions property</summary>
+        /// <summary>Read-only. Nullable.</summary>
         public List<ContentSharingSession> ContentSharingSessions { get; set; }
         /// <summary>The direction of the call. The possible value are incoming or outgoing. Read-only.</summary>
         public CallDirection? Direction { get; set; }
