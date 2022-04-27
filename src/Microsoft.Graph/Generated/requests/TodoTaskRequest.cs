@@ -246,6 +246,12 @@ namespace Microsoft.Graph
 
             if (todoTaskToInitialize != null)
             {
+                if (todoTaskToInitialize.ChecklistItems != null && todoTaskToInitialize.ChecklistItems.CurrentPage != null)
+                {
+                    todoTaskToInitialize.ChecklistItems.InitializeNextPageRequest(this.Client, todoTaskToInitialize.ChecklistItemsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    todoTaskToInitialize.ChecklistItems.AdditionalData = todoTaskToInitialize.AdditionalData;
+                }
                 if (todoTaskToInitialize.Extensions != null && todoTaskToInitialize.Extensions.CurrentPage != null)
                 {
                     todoTaskToInitialize.Extensions.InitializeNextPageRequest(this.Client, todoTaskToInitialize.ExtensionsNextLink);

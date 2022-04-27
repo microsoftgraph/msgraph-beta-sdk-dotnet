@@ -114,6 +114,12 @@ namespace Microsoft.Graph
         public bool? IsAssignableToRole { get; set; }
     
         /// <summary>
+        /// Gets or sets is management restricted.
+        /// </summary>
+        [JsonPropertyName("isManagementRestricted")]
+        public bool? IsManagementRestricted { get; set; }
+    
+        /// <summary>
         /// Gets or sets license processing state.
         /// Indicates status of the group license assignment to all members of the group. Default value is false. Read-only. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete.Returned only on $select. Read-only.
         /// </summary>
@@ -705,6 +711,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets team.
+        /// The team associated with this group.
         /// </summary>
         [JsonPropertyName("team")]
         public Team Team { get; set; }

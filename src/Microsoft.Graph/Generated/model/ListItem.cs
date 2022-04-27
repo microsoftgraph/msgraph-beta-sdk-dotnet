@@ -71,6 +71,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets document set versions.
+        /// Version information for a document set version created by a user.
         /// </summary>
         [JsonPropertyName("documentSetVersions")]
         public IListItemDocumentSetVersionsCollectionPage DocumentSetVersions { get; set; }

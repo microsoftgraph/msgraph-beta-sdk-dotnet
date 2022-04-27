@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for ChecklistItems.
+        /// </summary>
+        /// <returns>The <see cref="ITodoTaskChecklistItemsCollectionRequestBuilder"/>.</returns>
+        public ITodoTaskChecklistItemsCollectionRequestBuilder ChecklistItems
+        {
+            get
+            {
+                return new TodoTaskChecklistItemsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("checklistItems"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Extensions.
         /// </summary>
         /// <returns>The <see cref="ITodoTaskExtensionsCollectionRequestBuilder"/>.</returns>

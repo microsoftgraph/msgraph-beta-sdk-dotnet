@@ -29,6 +29,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets authenticationType.
+        /// </summary>
+        [JsonPropertyName("authenticationType")]
+        public SignInFrequencyAuthenticationType? AuthenticationType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets frequencyInterval.
+        /// </summary>
+        [JsonPropertyName("frequencyInterval")]
+        public SignInFrequencyInterval? FrequencyInterval { get; set; }
+    
+        /// <summary>
         /// Gets or sets type.
         /// Possible values are: days, hours.
         /// </summary>

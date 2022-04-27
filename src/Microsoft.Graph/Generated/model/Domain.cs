@@ -113,6 +113,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets federation configuration.
+        /// Domain settings configured by customer when federated with Azure AD.
         /// </summary>
         [JsonPropertyName("federationConfiguration")]
         public IDomainFederationConfigurationCollectionPage FederationConfiguration { get; set; }

@@ -217,6 +217,12 @@ namespace Microsoft.Graph
         public IEnumerable<string> InfoCatalogs { get; set; }
     
         /// <summary>
+        /// Gets or sets is management restricted.
+        /// </summary>
+        [JsonPropertyName("isManagementRestricted")]
+        public bool? IsManagementRestricted { get; set; }
+    
+        /// <summary>
         /// Gets or sets is resource account.
         /// Do not use – reserved for future use.
         /// </summary>

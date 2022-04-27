@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ICrossTenantAccessPolicyConfigurationDefaultRequestBuilder.
     /// </summary>
-    public partial interface ICrossTenantAccessPolicyConfigurationDefaultRequestBuilder : ICrossTenantAccessPolicyConfigurationBaseRequestBuilder
+    public partial interface ICrossTenantAccessPolicyConfigurationDefaultRequestBuilder : IEntityRequestBuilder
     {
         /// <summary>
         /// Builds the request.

@@ -72,5 +72,44 @@ namespace Microsoft.Graph
                 this.Client,
                 on);
         }
+
+        /// <summary>
+        /// Gets the request builder for AccessPackageAssignmentAdditionalAccess.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageAssignmentAdditionalAccessRequestBuilder"/>.</returns>
+        public IAccessPackageAssignmentAdditionalAccessRequestBuilder AdditionalAccess()
+        {
+            return new AccessPackageAssignmentAdditionalAccessRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.additionalAccess"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for AccessPackageAssignmentAdditionalAccess.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageAssignmentAdditionalAccessRequestBuilder"/>.</returns>
+        public IAccessPackageAssignmentAdditionalAccessRequestBuilder AdditionalAccess(
+            string accessPackageId = null)
+        {
+            return new AccessPackageAssignmentAdditionalAccessRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.additionalAccess"),
+                this.Client,
+                accessPackageId);
+        }
+
+        /// <summary>
+        /// Gets the request builder for AccessPackageAssignmentAdditionalAccess.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageAssignmentAdditionalAccessRequestBuilder"/>.</returns>
+        public IAccessPackageAssignmentAdditionalAccessRequestBuilder AdditionalAccess(
+            string accessPackageId = null,
+            string incompatibleAccessPackageId = null)
+        {
+            return new AccessPackageAssignmentAdditionalAccessRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.additionalAccess"),
+                this.Client,
+                accessPackageId,
+                incompatibleAccessPackageId);
+        }
     }
 }
