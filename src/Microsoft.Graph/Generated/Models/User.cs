@@ -124,6 +124,8 @@ namespace Microsoft.Graph.Beta.Models {
         public ItemInsights Insights { get; set; }
         /// <summary>A list for the user to describe their interests. Returned only on $select.</summary>
         public List<string> Interests { get; set; }
+        /// <summary>The isManagementRestricted property</summary>
+        public bool? IsManagementRestricted { get; set; }
         /// <summary>Do not use – reserved for future use.</summary>
         public bool? IsResourceAccount { get; set; }
         /// <summary>The user&apos;s job title. Maximum length is 128 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).</summary>
@@ -358,6 +360,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"informationProtection", n => { InformationProtection = n.GetObjectValue<Microsoft.Graph.Beta.Models.InformationProtection>(Microsoft.Graph.Beta.Models.InformationProtection.CreateFromDiscriminatorValue); } },
                 {"insights", n => { Insights = n.GetObjectValue<ItemInsights>(ItemInsights.CreateFromDiscriminatorValue); } },
                 {"interests", n => { Interests = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"isManagementRestricted", n => { IsManagementRestricted = n.GetBoolValue(); } },
                 {"isResourceAccount", n => { IsResourceAccount = n.GetBoolValue(); } },
                 {"jobTitle", n => { JobTitle = n.GetStringValue(); } },
                 {"joinedGroups", n => { JoinedGroups = n.GetCollectionOfObjectValues<Group>(Group.CreateFromDiscriminatorValue).ToList(); } },
@@ -507,6 +510,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.InformationProtection>("informationProtection", InformationProtection);
             writer.WriteObjectValue<ItemInsights>("insights", Insights);
             writer.WriteCollectionOfPrimitiveValues<string>("interests", Interests);
+            writer.WriteBoolValue("isManagementRestricted", IsManagementRestricted);
             writer.WriteBoolValue("isResourceAccount", IsResourceAccount);
             writer.WriteStringValue("jobTitle", JobTitle);
             writer.WriteCollectionOfObjectValues<Group>("joinedGroups", JoinedGroups);

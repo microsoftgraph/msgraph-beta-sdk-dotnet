@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
         public string AvailabilityStatus { get; set; }
         /// <summary>Read-only, Nullable</summary>
         public List<DirectoryObject> DomainNameReferences { get; set; }
-        /// <summary>The federationConfiguration property</summary>
+        /// <summary>Domain settings configured by customer when federated with Azure AD.</summary>
         public List<InternalDomainFederation> FederationConfiguration { get; set; }
         /// <summary>The value of the property is false if the DNS record management of the domain has been delegated to Microsoft 365. Otherwise, the value is true. Not nullable</summary>
         public bool? IsAdminManaged { get; set; }

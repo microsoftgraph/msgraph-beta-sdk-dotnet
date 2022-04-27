@@ -5,15 +5,15 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DocumentSetVersion : ListItemVersion, IParsable {
-        /// <summary>The comment property</summary>
+        /// <summary>Comment about the captured version.</summary>
         public string Comment { get; set; }
-        /// <summary>The createdBy property</summary>
+        /// <summary>User who captured the version.</summary>
         public IdentitySet CreatedBy { get; set; }
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>Date and time when this version was created.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
-        /// <summary>The items property</summary>
+        /// <summary>Items within the document set that are captured as part of this version.</summary>
         public List<DocumentSetVersionItem> Items { get; set; }
-        /// <summary>The shouldCaptureMinorVersion property</summary>
+        /// <summary>If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.</summary>
         public bool? ShouldCaptureMinorVersion { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

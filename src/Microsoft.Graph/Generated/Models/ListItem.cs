@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ContentTypeInfo ContentType { get; set; }
         /// <summary>The deleted property</summary>
         public Microsoft.Graph.Beta.Models.Deleted Deleted { get; set; }
-        /// <summary>The documentSetVersions property</summary>
+        /// <summary>Version information for a document set version created by a user.</summary>
         public List<DocumentSetVersion> DocumentSetVersions { get; set; }
         /// <summary>For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]</summary>
         public Microsoft.Graph.Beta.Models.DriveItem DriveItem { get; set; }

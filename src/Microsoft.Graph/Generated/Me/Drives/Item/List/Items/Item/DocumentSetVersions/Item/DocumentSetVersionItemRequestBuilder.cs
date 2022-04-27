@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.List.Items.Item.DocumentSetVersion
             return requestInfo;
         }
         /// <summary>
-        /// Get documentSetVersions from me
+        /// Version information for a document set version created by a user.
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// <param name="queryParameters">Request query parameters</param>
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.List.Items.Item.DocumentSetVersion
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get documentSetVersions from me
+        /// Version information for a document set version created by a user.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.List.Items.Item.DocumentSetVersion
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get documentSetVersions from me</summary>
+        /// <summary>Version information for a document set version created by a user.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

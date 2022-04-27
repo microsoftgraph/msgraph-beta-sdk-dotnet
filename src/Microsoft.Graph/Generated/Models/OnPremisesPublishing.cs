@@ -29,10 +29,14 @@ namespace Microsoft.Graph.Beta.Models {
         public bool? IsPersistentCookieEnabled { get; set; }
         /// <summary>Indicates if the Secure cookie flag should be set in the HTTP response headers. Set this value to true to transmit cookies over a secure channel such as an encrypted HTTPS request. Default value is true.</summary>
         public bool? IsSecureCookieEnabled { get; set; }
+        /// <summary>The isStateSessionEnabled property</summary>
+        public bool? IsStateSessionEnabled { get; set; }
         /// <summary>Indicates if the application should translate urls in the reponse headers. Keep this value as true unless your application required the original host header in the authentication request. Default value is true.</summary>
         public bool? IsTranslateHostHeaderEnabled { get; set; }
         /// <summary>Indicates if the application should translate urls in the application body. Keep this value as false unless you have hardcoded HTML links to other on-premises applications and don&apos;t use custom domains. For more information, see Link translation with Application Proxy. Default value is false.</summary>
         public bool? IsTranslateLinksInBodyEnabled { get; set; }
+        /// <summary>The onPremisesApplicationSegments property</summary>
+        public List<OnPremisesApplicationSegment> OnPremisesApplicationSegments { get; set; }
         /// <summary>Represents the single sign-on configuration for the on-premises application.</summary>
         public OnPremisesPublishingSingleSignOn SingleSignOnSettings { get; set; }
         /// <summary>The useAlternateUrlForTranslationAndRedirect property</summary>
@@ -73,8 +77,10 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isOnPremPublishingEnabled", n => { IsOnPremPublishingEnabled = n.GetBoolValue(); } },
                 {"isPersistentCookieEnabled", n => { IsPersistentCookieEnabled = n.GetBoolValue(); } },
                 {"isSecureCookieEnabled", n => { IsSecureCookieEnabled = n.GetBoolValue(); } },
+                {"isStateSessionEnabled", n => { IsStateSessionEnabled = n.GetBoolValue(); } },
                 {"isTranslateHostHeaderEnabled", n => { IsTranslateHostHeaderEnabled = n.GetBoolValue(); } },
                 {"isTranslateLinksInBodyEnabled", n => { IsTranslateLinksInBodyEnabled = n.GetBoolValue(); } },
+                {"onPremisesApplicationSegments", n => { OnPremisesApplicationSegments = n.GetCollectionOfObjectValues<OnPremisesApplicationSegment>(OnPremisesApplicationSegment.CreateFromDiscriminatorValue).ToList(); } },
                 {"singleSignOnSettings", n => { SingleSignOnSettings = n.GetObjectValue<OnPremisesPublishingSingleSignOn>(OnPremisesPublishingSingleSignOn.CreateFromDiscriminatorValue); } },
                 {"useAlternateUrlForTranslationAndRedirect", n => { UseAlternateUrlForTranslationAndRedirect = n.GetBoolValue(); } },
                 {"verifiedCustomDomainCertificatesMetadata", n => { VerifiedCustomDomainCertificatesMetadata = n.GetObjectValue<Microsoft.Graph.Beta.Models.VerifiedCustomDomainCertificatesMetadata>(Microsoft.Graph.Beta.Models.VerifiedCustomDomainCertificatesMetadata.CreateFromDiscriminatorValue); } },
@@ -99,8 +105,10 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isOnPremPublishingEnabled", IsOnPremPublishingEnabled);
             writer.WriteBoolValue("isPersistentCookieEnabled", IsPersistentCookieEnabled);
             writer.WriteBoolValue("isSecureCookieEnabled", IsSecureCookieEnabled);
+            writer.WriteBoolValue("isStateSessionEnabled", IsStateSessionEnabled);
             writer.WriteBoolValue("isTranslateHostHeaderEnabled", IsTranslateHostHeaderEnabled);
             writer.WriteBoolValue("isTranslateLinksInBodyEnabled", IsTranslateLinksInBodyEnabled);
+            writer.WriteCollectionOfObjectValues<OnPremisesApplicationSegment>("onPremisesApplicationSegments", OnPremisesApplicationSegments);
             writer.WriteObjectValue<OnPremisesPublishingSingleSignOn>("singleSignOnSettings", SingleSignOnSettings);
             writer.WriteBoolValue("useAlternateUrlForTranslationAndRedirect", UseAlternateUrlForTranslationAndRedirect);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.VerifiedCustomDomainCertificatesMetadata>("verifiedCustomDomainCertificatesMetadata", VerifiedCustomDomainCertificatesMetadata);

@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.SharedWithTeams.It
             return requestInfo;
         }
         /// <summary>
-        /// A collection of teams shared with the channel.
+        /// A collection of teams with which a channel is shared.
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// <param name="queryParameters">Request query parameters</param>
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.SharedWithTeams.It
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A collection of teams shared with the channel.
+        /// A collection of teams with which a channel is shared.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.SharedWithTeams.It
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>A collection of teams shared with the channel.</summary>
+        /// <summary>A collection of teams with which a channel is shared.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

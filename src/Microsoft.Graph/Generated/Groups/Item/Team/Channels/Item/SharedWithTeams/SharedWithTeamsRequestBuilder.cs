@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.SharedWithTeams {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// A collection of teams shared with the channel.
+        /// A collection of teams with which a channel is shared.
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// <param name="queryParameters">Request query parameters</param>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.SharedWithTeams {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of teams shared with the channel.
+        /// A collection of teams with which a channel is shared.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.SharedWithTeams {
             };
             return await RequestAdapter.SendAsync<SharedWithChannelTeamInfo>(requestInfo, SharedWithChannelTeamInfo.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>A collection of teams shared with the channel.</summary>
+        /// <summary>A collection of teams with which a channel is shared.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

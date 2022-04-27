@@ -118,21 +118,6 @@ namespace Microsoft.Graph.Beta.Sites.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete entity from sites
-        /// <param name="headers">Request headers</param>
-        /// <param name="options">Request options</param>
-        /// </summary>
-        public RequestInformation CreateDeleteRequestInformation(Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default) {
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.DELETE,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            headers?.Invoke(requestInfo.Headers);
-            requestInfo.AddRequestOptions(options?.ToArray());
-            return requestInfo;
-        }
-        /// <summary>
         /// Get entity from sites by key
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
@@ -170,21 +155,6 @@ namespace Microsoft.Graph.Beta.Sites.Item {
             headers?.Invoke(requestInfo.Headers);
             requestInfo.AddRequestOptions(options?.ToArray());
             return requestInfo;
-        }
-        /// <summary>
-        /// Delete entity from sites
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="headers">Request headers</param>
-        /// <param name="options">Request options</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
-        /// </summary>
-        public async Task DeleteAsync(Action<IDictionary<string, string>> headers = default, IEnumerable<IRequestOption> options = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateDeleteRequestInformation(headers, options);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
-            };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Provides operations to call the getActivitiesByInterval method.

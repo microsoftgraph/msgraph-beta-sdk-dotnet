@@ -7,11 +7,11 @@ namespace Microsoft.Graph.Beta.Models {
     public class SensitivityLabelAssignment : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The assignmentMethod property</summary>
+        /// <summary>Indicates whether the label assignment is done automatically, as a standard, or a privileged operation. The possible values are: standard, privileged, auto, unknownFutureValue.</summary>
         public SensitivityLabelAssignmentMethod? AssignmentMethod { get; set; }
-        /// <summary>The sensitivityLabelId property</summary>
+        /// <summary>The unique identifier for the sensitivity label assigned to the file.</summary>
         public string SensitivityLabelId { get; set; }
-        /// <summary>The tenantId property</summary>
+        /// <summary>The unique identifier for the tenant that hosts the file when this label is applied.</summary>
         public string TenantId { get; set; }
         /// <summary>
         /// Instantiates a new sensitivityLabelAssignment and sets the default values.

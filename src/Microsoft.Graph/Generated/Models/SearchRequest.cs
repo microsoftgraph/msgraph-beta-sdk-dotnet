@@ -25,6 +25,8 @@ namespace Microsoft.Graph.Beta.Models {
         public SearchQuery Query { get; set; }
         /// <summary>Provides query alteration options formatted as a JSON blob that contains two optional flags related to spelling correction. Optional.</summary>
         public SearchAlterationOptions QueryAlterationOptions { get; set; }
+        /// <summary>The region property</summary>
+        public string Region { get; set; }
         /// <summary>Provides the search result templates options for rendering connectors search results.</summary>
         public ResultTemplateOption ResultTemplateOptions { get; set; }
         /// <summary>The size of the page to be retrieved. Optional.</summary>
@@ -63,6 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"from", n => { From = n.GetIntValue(); } },
                 {"query", n => { Query = n.GetObjectValue<SearchQuery>(SearchQuery.CreateFromDiscriminatorValue); } },
                 {"queryAlterationOptions", n => { QueryAlterationOptions = n.GetObjectValue<SearchAlterationOptions>(SearchAlterationOptions.CreateFromDiscriminatorValue); } },
+                {"region", n => { Region = n.GetStringValue(); } },
                 {"resultTemplateOptions", n => { ResultTemplateOptions = n.GetObjectValue<ResultTemplateOption>(ResultTemplateOption.CreateFromDiscriminatorValue); } },
                 {"size", n => { Size = n.GetIntValue(); } },
                 {"sortProperties", n => { SortProperties = n.GetCollectionOfObjectValues<SortProperty>(SortProperty.CreateFromDiscriminatorValue).ToList(); } },
@@ -85,6 +88,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteIntValue("from", From);
             writer.WriteObjectValue<SearchQuery>("query", Query);
             writer.WriteObjectValue<SearchAlterationOptions>("queryAlterationOptions", QueryAlterationOptions);
+            writer.WriteStringValue("region", Region);
             writer.WriteObjectValue<ResultTemplateOption>("resultTemplateOptions", ResultTemplateOptions);
             writer.WriteIntValue("size", Size);
             writer.WriteCollectionOfObjectValues<SortProperty>("sortProperties", SortProperties);

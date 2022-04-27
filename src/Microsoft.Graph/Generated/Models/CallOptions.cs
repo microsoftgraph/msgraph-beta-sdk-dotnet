@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The hideBotAfterEscalation property</summary>
         public bool? HideBotAfterEscalation { get; set; }
-        /// <summary>The isContentSharingNotificationEnabled property</summary>
+        /// <summary>Indicates whether content sharing notifications should be enabled for the call.</summary>
         public bool? IsContentSharingNotificationEnabled { get; set; }
         /// <summary>
         /// Instantiates a new callOptions and sets the default values.

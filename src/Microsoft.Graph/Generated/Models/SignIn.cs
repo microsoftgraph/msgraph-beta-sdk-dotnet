@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
         public string AzureResourceId { get; set; }
         /// <summary>Identifies the client used for the sign-in activity. Modern authentication clients include Browser and modern clients. Legacy authentication clients include Exchange ActiveSync, IMAP, MAPI, SMTP, POP, and other clients. Supports $filter (eq operator only).</summary>
         public string ClientAppUsed { get; set; }
-        /// <summary>The clientCredentialType property</summary>
+        /// <summary>Describes the credential type that a user client or service principal provided to Azure AD to authenticate itself. You may wish to review clientCredentialType to track and eliminate less secure credential types or to watch for clients and service principals using anomalous credential types. The possible values are: none, clientSecret, clientAssertion, federatedIdentityCredential, managedIdentity, certificate, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.ClientCredentialType? ClientCredentialType { get; set; }
         /// <summary>Reports status of an activated conditional access policy. Possible values are: success, failure, notApplied, and unknownFutureValue. Supports $filter (eq operator only).</summary>
         public Microsoft.Graph.Beta.Models.ConditionalAccessStatus? ConditionalAccessStatus { get; set; }
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         public string HomeTenantId { get; set; }
         /// <summary>For user sign ins, the identifier of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.</summary>
         public string HomeTenantName { get; set; }
-        /// <summary>Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Do not infer the lack of a token if it is not one of the types listed.</summary>
+        /// <summary>Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Do not infer the lack of a token if it is not one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.</summary>
         public Microsoft.Graph.Beta.Models.IncomingTokenType? IncomingTokenType { get; set; }
         /// <summary>IP address of the client used to sign in. Supports $filter (eq and startsWith operators only).</summary>
         public string IpAddress { get; set; }

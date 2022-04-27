@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Drive.Items.Item.ListItem.DocumentSetVersions {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get documentSetVersions from drive
+        /// Version information for a document set version created by a user.
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// <param name="queryParameters">Request query parameters</param>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Drive.Items.Item.ListItem.DocumentSetVersions {
             return requestInfo;
         }
         /// <summary>
-        /// Get documentSetVersions from drive
+        /// Version information for a document set version created by a user.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Drive.Items.Item.ListItem.DocumentSetVersions {
             };
             return await RequestAdapter.SendAsync<DocumentSetVersion>(requestInfo, DocumentSetVersion.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get documentSetVersions from drive</summary>
+        /// <summary>Version information for a document set version created by a user.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

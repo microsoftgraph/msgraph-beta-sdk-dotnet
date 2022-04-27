@@ -1,3 +1,6 @@
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.AdditionalAccess;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.AdditionalAccessWithAccessPackageId;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageId;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Count;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.FilterByCurrentUserWithOn;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item;
@@ -30,6 +33,30 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             urlTplParams.Add("accessPackageAssignment%2Did", position);
             return new AccessPackageAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
+        /// <summary>
+        /// Provides operations to call the additionalAccess method.
+        /// </summary>
+        public AdditionalAccessRequestBuilder AdditionalAccess() {
+            return new AdditionalAccessRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>
+        /// Provides operations to call the additionalAccess method.
+        /// <param name="accessPackageId">Usage: accessPackageId=&apos;{accessPackageId}&apos;</param>
+        /// </summary>
+        public AdditionalAccessWithAccessPackageIdRequestBuilder AdditionalAccessWithAccessPackageId(string accessPackageId) {
+            if(string.IsNullOrEmpty(accessPackageId)) throw new ArgumentNullException(nameof(accessPackageId));
+            return new AdditionalAccessWithAccessPackageIdRequestBuilder(PathParameters, RequestAdapter, accessPackageId);
+        }
+        /// <summary>
+        /// Provides operations to call the additionalAccess method.
+        /// <param name="accessPackageId">Usage: accessPackageId=&apos;{accessPackageId}&apos;</param>
+        /// <param name="incompatibleAccessPackageId">Usage: incompatibleAccessPackageId=&apos;{incompatibleAccessPackageId}&apos;</param>
+        /// </summary>
+        public AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageId(string accessPackageId, string incompatibleAccessPackageId) {
+            if(string.IsNullOrEmpty(accessPackageId)) throw new ArgumentNullException(nameof(accessPackageId));
+            if(string.IsNullOrEmpty(incompatibleAccessPackageId)) throw new ArgumentNullException(nameof(incompatibleAccessPackageId));
+            return new AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder(PathParameters, RequestAdapter, accessPackageId, incompatibleAccessPackageId);
+        }
         /// <summary>
         /// Instantiates a new AccessPackageAssignmentsRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>

@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.ContentSharingSessions {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get contentSharingSessions from app
+        /// Read-only. Nullable.
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
         /// <param name="queryParameters">Request query parameters</param>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.ContentSharingSessions {
             return requestInfo;
         }
         /// <summary>
-        /// Get contentSharingSessions from app
+        /// Read-only. Nullable.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="headers">Request headers</param>
         /// <param name="options">Request options</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.ContentSharingSessions {
             };
             return await RequestAdapter.SendAsync<ContentSharingSession>(requestInfo, ContentSharingSession.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get contentSharingSessions from app</summary>
+        /// <summary>Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

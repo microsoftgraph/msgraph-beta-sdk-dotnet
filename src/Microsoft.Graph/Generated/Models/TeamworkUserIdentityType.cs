@@ -9,5 +9,6 @@ namespace Microsoft.Graph.Beta.Models {
         SkypeUser,
         PhoneUser,
         UnknownFutureValue,
+        EmailUser,
     }
 }

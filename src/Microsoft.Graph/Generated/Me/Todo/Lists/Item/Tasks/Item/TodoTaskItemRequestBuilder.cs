@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item.ChecklistItems;
 using Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item.Extensions;
 using Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item.LinkedResources;
 using Microsoft.Graph.Beta.Models;
@@ -13,6 +14,10 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item {
     /// <summary>Provides operations to manage the tasks property of the microsoft.graph.todoTaskList entity.</summary>
     public class TodoTaskItemRequestBuilder {
+        /// <summary>The checklistItems property</summary>
+        public ChecklistItemsRequestBuilder ChecklistItems { get =>
+            new ChecklistItemsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The extensions property</summary>
         public ExtensionsRequestBuilder Extensions { get =>
             new ExtensionsRequestBuilder(PathParameters, RequestAdapter);

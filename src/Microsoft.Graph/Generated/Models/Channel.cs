@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
         public List<ChatMessage> Messages { get; set; }
         /// <summary>Settings to configure channel moderation to control who can start new posts and reply to posts in that channel.</summary>
         public ChannelModerationSettings ModerationSettings { get; set; }
-        /// <summary>A collection of teams shared with the channel.</summary>
+        /// <summary>A collection of teams with which a channel is shared.</summary>
         public List<SharedWithChannelTeamInfo> SharedWithTeams { get; set; }
         /// <summary>A collection of all the tabs in the channel. A navigation property.</summary>
         public List<TeamsTab> Tabs { get; set; }
