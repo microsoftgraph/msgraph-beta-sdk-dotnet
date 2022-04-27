@@ -148,6 +148,12 @@ namespace Microsoft.Graph
         public bool? IsManaged { get; set; }
     
         /// <summary>
+        /// Gets or sets is management restricted.
+        /// </summary>
+        [JsonPropertyName("isManagementRestricted")]
+        public bool? IsManagementRestricted { get; set; }
+    
+        /// <summary>
         /// Gets or sets is rooted.
         /// true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
         /// </summary>

@@ -15,32 +15,35 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type DocumentSetVersionItem.
+    /// The type OnPremisesApplicationSegment.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<DocumentSetVersionItem>))]
-    public partial class DocumentSetVersionItem
+    [JsonConverter(typeof(DerivedTypeConverter<OnPremisesApplicationSegment>))]
+    public partial class OnPremisesApplicationSegment
     {
 
         /// <summary>
-        /// Gets or sets itemId.
-        /// The unique identifier for the item.
+        /// Gets or sets alternateUrl.
         /// </summary>
-        [JsonPropertyName("itemId")]
-        public string ItemId { get; set; }
+        [JsonPropertyName("alternateUrl")]
+        public string AlternateUrl { get; set; }
     
         /// <summary>
-        /// Gets or sets title.
-        /// The title of the item.
+        /// Gets or sets corsConfigurations.
         /// </summary>
-        [JsonPropertyName("title")]
-        public string Title { get; set; }
+        [JsonPropertyName("corsConfigurations")]
+        public IEnumerable<CorsConfiguration> CorsConfigurations { get; set; }
     
         /// <summary>
-        /// Gets or sets versionId.
-        /// The version ID of the item.
+        /// Gets or sets externalUrl.
         /// </summary>
-        [JsonPropertyName("versionId")]
-        public string VersionId { get; set; }
+        [JsonPropertyName("externalUrl")]
+        public string ExternalUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets internalUrl.
+        /// </summary>
+        [JsonPropertyName("internalUrl")]
+        public string InternalUrl { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

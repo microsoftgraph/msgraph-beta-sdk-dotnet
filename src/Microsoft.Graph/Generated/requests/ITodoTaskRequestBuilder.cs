@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new ITodoTaskRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for ChecklistItems.
+        /// </summary>
+        /// <returns>The <see cref="ITodoTaskChecklistItemsCollectionRequestBuilder"/>.</returns>
+        ITodoTaskChecklistItemsCollectionRequestBuilder ChecklistItems { get; }
+
+        /// <summary>
         /// Gets the request builder for Extensions.
         /// </summary>
         /// <returns>The <see cref="ITodoTaskExtensionsCollectionRequestBuilder"/>.</returns>

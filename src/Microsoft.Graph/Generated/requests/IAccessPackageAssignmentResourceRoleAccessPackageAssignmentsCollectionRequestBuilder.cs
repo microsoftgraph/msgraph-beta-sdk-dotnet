@@ -42,5 +42,26 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IAccessPackageAssignmentFilterByCurrentUserRequestBuilder"/>.</returns>
         IAccessPackageAssignmentFilterByCurrentUserRequestBuilder FilterByCurrentUser(
             AccessPackageAssignmentFilterByCurrentUserOptions on);
+
+        /// <summary>
+        /// Gets the request builder for AccessPackageAssignmentAdditionalAccess.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageAssignmentAdditionalAccessRequestBuilder"/>.</returns>
+        IAccessPackageAssignmentAdditionalAccessRequestBuilder AdditionalAccess();
+
+        /// <summary>
+        /// Gets the request builder for AccessPackageAssignmentAdditionalAccess.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageAssignmentAdditionalAccessRequestBuilder"/>.</returns>
+        IAccessPackageAssignmentAdditionalAccessRequestBuilder AdditionalAccess(
+            string accessPackageId = null);
+
+        /// <summary>
+        /// Gets the request builder for AccessPackageAssignmentAdditionalAccess.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageAssignmentAdditionalAccessRequestBuilder"/>.</returns>
+        IAccessPackageAssignmentAdditionalAccessRequestBuilder AdditionalAccess(
+            string accessPackageId = null,
+            string incompatibleAccessPackageId = null);
     }
 }

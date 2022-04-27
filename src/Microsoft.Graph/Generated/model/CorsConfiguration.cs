@@ -15,32 +15,41 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type DocumentSetVersionItem.
+    /// The type CorsConfiguration.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<DocumentSetVersionItem>))]
-    public partial class DocumentSetVersionItem
+    [JsonConverter(typeof(DerivedTypeConverter<CorsConfiguration>))]
+    public partial class CorsConfiguration
     {
 
         /// <summary>
-        /// Gets or sets itemId.
-        /// The unique identifier for the item.
+        /// Gets or sets allowedHeaders.
         /// </summary>
-        [JsonPropertyName("itemId")]
-        public string ItemId { get; set; }
+        [JsonPropertyName("allowedHeaders")]
+        public IEnumerable<string> AllowedHeaders { get; set; }
     
         /// <summary>
-        /// Gets or sets title.
-        /// The title of the item.
+        /// Gets or sets allowedMethods.
         /// </summary>
-        [JsonPropertyName("title")]
-        public string Title { get; set; }
+        [JsonPropertyName("allowedMethods")]
+        public IEnumerable<string> AllowedMethods { get; set; }
     
         /// <summary>
-        /// Gets or sets versionId.
-        /// The version ID of the item.
+        /// Gets or sets allowedOrigins.
         /// </summary>
-        [JsonPropertyName("versionId")]
-        public string VersionId { get; set; }
+        [JsonPropertyName("allowedOrigins")]
+        public IEnumerable<string> AllowedOrigins { get; set; }
+    
+        /// <summary>
+        /// Gets or sets maxAgeInSeconds.
+        /// </summary>
+        [JsonPropertyName("maxAgeInSeconds")]
+        public Int32? MaxAgeInSeconds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets resource.
+        /// </summary>
+        [JsonPropertyName("resource")]
+        public string Resource { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

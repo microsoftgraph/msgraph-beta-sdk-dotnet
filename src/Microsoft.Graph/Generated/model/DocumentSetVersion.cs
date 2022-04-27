@@ -30,30 +30,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets comment.
+        /// Comment about the captured version.
         /// </summary>
         [JsonPropertyName("comment")]
         public string Comment { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
+        /// User who captured the version.
         /// </summary>
         [JsonPropertyName("createdBy")]
         public IdentitySet CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
+        /// Date and time when this version was created.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets items.
+        /// Items within the document set that are captured as part of this version.
         /// </summary>
         [JsonPropertyName("items")]
         public IEnumerable<DocumentSetVersionItem> Items { get; set; }
     
         /// <summary>
         /// Gets or sets should capture minor version.
+        /// If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.
         /// </summary>
         [JsonPropertyName("shouldCaptureMinorVersion")]
         public bool? ShouldCaptureMinorVersion { get; set; }

@@ -121,7 +121,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets shared with teams.
-        /// A collection of teams shared with the channel.
+        /// A collection of teams with which a channel is shared.
         /// </summary>
         [JsonPropertyName("sharedWithTeams")]
         public IChannelSharedWithTeamsCollectionPage SharedWithTeams { get; set; }

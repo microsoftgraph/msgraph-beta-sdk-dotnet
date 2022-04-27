@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CrossTenantAccessPolicyConfigurationPartnerRequestBuilder.
     /// </summary>
-    public partial class CrossTenantAccessPolicyConfigurationPartnerRequestBuilder : CrossTenantAccessPolicyConfigurationBaseRequestBuilder, ICrossTenantAccessPolicyConfigurationPartnerRequestBuilder
+    public partial class CrossTenantAccessPolicyConfigurationPartnerRequestBuilder : BaseRequestBuilder, ICrossTenantAccessPolicyConfigurationPartnerRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new ICrossTenantAccessPolicyConfigurationPartnerRequest Request()
+        public ICrossTenantAccessPolicyConfigurationPartnerRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new ICrossTenantAccessPolicyConfigurationPartnerRequest Request(IEnumerable<Option> options)
+        public ICrossTenantAccessPolicyConfigurationPartnerRequest Request(IEnumerable<Option> options)
         {
             return new CrossTenantAccessPolicyConfigurationPartnerRequest(this.RequestUrl, this.Client, options);
         }

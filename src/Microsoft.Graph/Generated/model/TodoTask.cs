@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         public DateTimeOffset? BodyLastModifiedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets categories.
+        /// </summary>
+        [JsonPropertyName("categories")]
+        public IEnumerable<string> Categories { get; set; }
+    
+        /// <summary>
         /// Gets or sets completed date time.
         /// The date in the specified time zone that the task was finished.
         /// </summary>
@@ -104,6 +110,19 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("title")]
         public string Title { get; set; }
+    
+        /// <summary>
+        /// Gets or sets checklist items.
+        /// </summary>
+        [JsonPropertyName("checklistItems")]
+        public ITodoTaskChecklistItemsCollectionPage ChecklistItems { get; set; }
+
+        /// <summary>
+        /// Gets or sets checklistItemsNextLink.
+        /// </summary>
+        [JsonPropertyName("checklistItems@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ChecklistItemsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets extensions.

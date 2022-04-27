@@ -17,17 +17,44 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Cross Tenant Access Policy Configuration Default.
     /// </summary>
-    public partial class CrossTenantAccessPolicyConfigurationDefault : CrossTenantAccessPolicyConfigurationBase
+    public partial class CrossTenantAccessPolicyConfigurationDefault : Entity
     {
     
-        ///<summary>
-        /// The CrossTenantAccessPolicyConfigurationDefault constructor
-        ///</summary>
-        public CrossTenantAccessPolicyConfigurationDefault()
-        {
-            this.ODataType = "microsoft.graph.crossTenantAccessPolicyConfigurationDefault";
-        }
-
+        /// <summary>
+        /// Gets or sets b2b collaboration inbound.
+        /// Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
+        /// </summary>
+        [JsonPropertyName("b2bCollaborationInbound")]
+        public CrossTenantAccessPolicyB2BSetting B2bCollaborationInbound { get; set; }
+    
+        /// <summary>
+        /// Gets or sets b2b collaboration outbound.
+        /// Defines your default configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.
+        /// </summary>
+        [JsonPropertyName("b2bCollaborationOutbound")]
+        public CrossTenantAccessPolicyB2BSetting B2bCollaborationOutbound { get; set; }
+    
+        /// <summary>
+        /// Gets or sets b2b direct connect inbound.
+        /// Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B direct connect.
+        /// </summary>
+        [JsonPropertyName("b2bDirectConnectInbound")]
+        public CrossTenantAccessPolicyB2BSetting B2bDirectConnectInbound { get; set; }
+    
+        /// <summary>
+        /// Gets or sets b2b direct connect outbound.
+        /// Defines your default configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.
+        /// </summary>
+        [JsonPropertyName("b2bDirectConnectOutbound")]
+        public CrossTenantAccessPolicyB2BSetting B2bDirectConnectOutbound { get; set; }
+    
+        /// <summary>
+        /// Gets or sets inbound trust.
+        /// Determines the default configuration for trusting other Conditional Access claims from external Azure AD organizations.
+        /// </summary>
+        [JsonPropertyName("inboundTrust")]
+        public CrossTenantAccessPolicyInboundTrust InboundTrust { get; set; }
+    
         /// <summary>
         /// Gets or sets is service default.
         /// If true, the default configuration is set to the system default configuration. If false, the default settings have been customized.

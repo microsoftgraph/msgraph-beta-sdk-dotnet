@@ -85,6 +85,12 @@ namespace Microsoft.Graph
         public SearchAlterationOptions QueryAlterationOptions { get; set; }
     
         /// <summary>
+        /// Gets or sets region.
+        /// </summary>
+        [JsonPropertyName("region")]
+        public string Region { get; set; }
+    
+        /// <summary>
         /// Gets or sets resultTemplateOptions.
         /// Provides the search result templates options for rendering connectors search results.
         /// </summary>

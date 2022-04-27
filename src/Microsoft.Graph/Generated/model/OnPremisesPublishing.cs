@@ -99,6 +99,12 @@ namespace Microsoft.Graph
         public bool? IsSecureCookieEnabled { get; set; }
     
         /// <summary>
+        /// Gets or sets isStateSessionEnabled.
+        /// </summary>
+        [JsonPropertyName("isStateSessionEnabled")]
+        public bool? IsStateSessionEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets isTranslateHostHeaderEnabled.
         /// Indicates if the application should translate urls in the reponse headers. Keep this value as true unless your application required the original host header in the authentication request. Default value is true.
         /// </summary>
@@ -111,6 +117,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("isTranslateLinksInBodyEnabled")]
         public bool? IsTranslateLinksInBodyEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets onPremisesApplicationSegments.
+        /// </summary>
+        [JsonPropertyName("onPremisesApplicationSegments")]
+        public IEnumerable<OnPremisesApplicationSegment> OnPremisesApplicationSegments { get; set; }
     
         /// <summary>
         /// Gets or sets singleSignOnSettings.
