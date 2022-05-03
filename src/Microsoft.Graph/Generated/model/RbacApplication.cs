@@ -89,6 +89,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets role assignment schedule instances.
+        /// Instances for active role assignments.
         /// </summary>
         [JsonPropertyName("roleAssignmentScheduleInstances")]
         public IRbacApplicationRoleAssignmentScheduleInstancesCollectionPage RoleAssignmentScheduleInstances { get; set; }
@@ -102,6 +103,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets role assignment schedule requests.
+        /// Requests for active role assignments to principals through PIM.
         /// </summary>
         [JsonPropertyName("roleAssignmentScheduleRequests")]
         public IRbacApplicationRoleAssignmentScheduleRequestsCollectionPage RoleAssignmentScheduleRequests { get; set; }
@@ -115,6 +117,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets role assignment schedules.
+        /// Schedules for active role assignment operations.
         /// </summary>
         [JsonPropertyName("roleAssignmentSchedules")]
         public IRbacApplicationRoleAssignmentSchedulesCollectionPage RoleAssignmentSchedules { get; set; }
@@ -128,6 +131,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets role eligibility schedule instances.
+        /// Instances for role eligibility requests.
         /// </summary>
         [JsonPropertyName("roleEligibilityScheduleInstances")]
         public IRbacApplicationRoleEligibilityScheduleInstancesCollectionPage RoleEligibilityScheduleInstances { get; set; }
@@ -141,6 +145,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets role eligibility schedule requests.
+        /// Requests for role eligibilities for principals through PIM.
         /// </summary>
         [JsonPropertyName("roleEligibilityScheduleRequests")]
         public IRbacApplicationRoleEligibilityScheduleRequestsCollectionPage RoleEligibilityScheduleRequests { get; set; }
@@ -154,6 +159,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets role eligibility schedules.
+        /// Schedules for role eligibility operations.
         /// </summary>
         [JsonPropertyName("roleEligibilitySchedules")]
         public IRbacApplicationRoleEligibilitySchedulesCollectionPage RoleEligibilitySchedules { get; set; }

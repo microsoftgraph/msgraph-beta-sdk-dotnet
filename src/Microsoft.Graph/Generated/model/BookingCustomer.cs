@@ -22,7 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets addresses.
-        /// Addresses associated with the customer. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
+        /// Addresses associated with the customer, including home, business and other addresses.
         /// </summary>
         [JsonPropertyName("addresses")]
         public IEnumerable<PhysicalAddress> Addresses { get; set; }
