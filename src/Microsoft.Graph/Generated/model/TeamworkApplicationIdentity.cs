@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets applicationIdentityType.
-        /// Type of application that is referenced. Possible values are: aadApplication, bot, tenantBot, office365Connector, outgoingWebhook, and unknownFutureValue.
+        /// Type of application that is referenced. Possible values are: aadApplication, bot, tenantBot, office365Connector, and outgoingWebhook.
         /// </summary>
         [JsonPropertyName("applicationIdentityType")]
         public TeamworkApplicationIdentityType? ApplicationIdentityType { get; set; }

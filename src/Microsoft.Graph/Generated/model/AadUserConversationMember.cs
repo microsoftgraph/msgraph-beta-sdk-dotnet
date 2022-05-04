@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user id.
-        /// The guid of the user.
+        /// The GUID of the user.
         /// </summary>
         [JsonPropertyName("userId")]
         public string UserId { get; set; }

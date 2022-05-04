@@ -66,7 +66,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets request source.
-        /// The source of the threat assessment request. Possible values are: administrator.
+        /// The source of the threat assessment request. Possible values are: user, administrator.
         /// </summary>
         [JsonPropertyName("requestSource")]
         public ThreatAssessmentRequestSource? RequestSource { get; set; }

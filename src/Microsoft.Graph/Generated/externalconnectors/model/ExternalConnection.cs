@@ -64,7 +64,7 @@ namespace Microsoft.Graph.ExternalConnectors
     
         /// <summary>
         /// Gets or sets state.
-        /// Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
+        /// Indicates the current state of the connection. Possible values are draft, ready, obsolete, and limitExceeded. Required.
         /// </summary>
         [JsonPropertyName("state")]
         public ConnectionState? State { get; set; }

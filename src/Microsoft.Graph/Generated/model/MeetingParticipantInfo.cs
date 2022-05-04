@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets role.
-        /// Specifies the participant's role in the meeting.  Possible values are attendee, presenter, producer, and unknownFutureValue.
+        /// Specifies the participant's role in the meeting.
         /// </summary>
         [JsonPropertyName("role")]
         public OnlineMeetingRole? Role { get; set; }

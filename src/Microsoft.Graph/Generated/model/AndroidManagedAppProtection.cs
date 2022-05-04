@@ -108,14 +108,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets custom browser display name.
-        /// Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+        /// Friendly name of the preferred custom browser to open weblink on Android.
         /// </summary>
         [JsonPropertyName("customBrowserDisplayName")]
         public string CustomBrowserDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets custom browser package id.
-        /// Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+        /// Unique identifier of a custom browser to open weblink on Android.
         /// </summary>
         [JsonPropertyName("customBrowserPackageId")]
         public string CustomBrowserPackageId { get; set; }

@@ -23,14 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets address.
-        /// The email address of the person or entity.
+        /// The email address of an entity instance.
         /// </summary>
         [JsonPropertyName("address")]
         public string Address { get; set; }
     
         /// <summary>
         /// Gets or sets name.
-        /// The display name of the person or entity.
+        /// The display name of an entity instance.
         /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }

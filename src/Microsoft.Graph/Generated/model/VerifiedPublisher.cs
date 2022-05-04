@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets displayName.
-        /// The verified publisher name from the app publisher's Partner Center account.
+        /// The verified publisher name from the app publisher's Microsoft Partner Network (MPN) account.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }

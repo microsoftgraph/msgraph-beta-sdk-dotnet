@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets allowed presenters.
-        /// Specifies who can be a presenter in a meeting. Possible values are listed in the following table.
+        /// Specifies who can be a presenter in a meeting.
         /// </summary>
         [JsonPropertyName("allowedPresenters")]
         public OnlineMeetingPresenters? AllowedPresenters { get; set; }
@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets allow teamwork reactions.
-        /// Indicates whether Teams reactions are enabled for the meeting.
+        /// Indicates if Teams reactions are enabled for the meeting.
         /// </summary>
         [JsonPropertyName("allowTeamworkReactions")]
         public bool? AllowTeamworkReactions { get; set; }
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets attendee report.
-        /// The content stream of the attendee report of a Microsoft Teams live event. Read-only.
+        /// The content stream of the attendee report of a Teams live event. Read-only.
         /// </summary>
         [JsonPropertyName("attendeeReport")]
         public Stream AttendeeReport { get; set; }
@@ -120,7 +120,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is broadcast.
-        /// Indicates if this is a Teams live event.
+        /// Indicates whether this is a Teams live event.
         /// </summary>
         [JsonPropertyName("isBroadcast")]
         public bool? IsBroadcast { get; set; }
@@ -134,7 +134,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets join information.
-        /// The join information in the language and locale variant specified in the Accept-Language request HTTP header. Read-only.
+        /// The join information in the language and locale variant specified in 'Accept-Language' request HTTP header. Read-only.
         /// </summary>
         [JsonPropertyName("joinInformation")]
         public ItemBody JoinInformation { get; set; }
@@ -160,14 +160,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets lobby bypass settings.
-        /// Specifies which participants can bypass the meeting   lobby.
+        /// Specifies which participants can bypass the meeting lobby.
         /// </summary>
         [JsonPropertyName("lobbyBypassSettings")]
         public LobbyBypassSettings LobbyBypassSettings { get; set; }
     
         /// <summary>
         /// Gets or sets participants.
-        /// The participants associated with the online meeting.  This includes the organizer and the attendees.
+        /// The participants associated with the online meeting. This includes the organizer and the attendees.
         /// </summary>
         [JsonPropertyName("participants")]
         public MeetingParticipants Participants { get; set; }

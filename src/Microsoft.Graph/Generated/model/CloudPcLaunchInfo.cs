@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets cloudPcId.
+        /// The unique identifier of the Cloud PC.
         /// </summary>
         [JsonPropertyName("cloudPcId")]
         public string CloudPcId { get; set; }
     
         /// <summary>
         /// Gets or sets cloudPcLaunchUrl.
+        /// The connect URL of the Cloud PC.
         /// </summary>
         [JsonPropertyName("cloudPcLaunchUrl")]
         public string CloudPcLaunchUrl { get; set; }

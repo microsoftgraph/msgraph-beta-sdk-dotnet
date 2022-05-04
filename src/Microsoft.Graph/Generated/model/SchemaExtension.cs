@@ -50,7 +50,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets target types.
-        /// Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from contact, device, event, group, message, organization, post, or user.
+        /// Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from administrativeUnit, contact, device, event, group, message, organization, post, or user.
         /// </summary>
         [JsonPropertyName("targetTypes")]
         public IEnumerable<string> TargetTypes { get; set; }
