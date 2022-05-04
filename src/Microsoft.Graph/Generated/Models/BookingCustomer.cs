@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class BookingCustomer : BookingPerson, IParsable {
-        /// <summary>Addresses associated with the customer. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.</summary>
+        /// <summary>Addresses associated with the customer, including home, business and other addresses.</summary>
         public List<PhysicalAddress> Addresses { get; set; }
         /// <summary>Phone numbers associated with the customer, including home, business and mobile numbers.</summary>
         public List<Phone> Phones { get; set; }

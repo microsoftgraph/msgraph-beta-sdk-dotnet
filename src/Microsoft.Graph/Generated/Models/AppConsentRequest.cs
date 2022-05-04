@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
         public string AppId { get; set; }
         /// <summary>The consent type of the request. Possible values are: Static and Dynamic. These represent static and dynamic permissions, respectively, requested in the consent workflow. Supports $filter (eq only) and $orderby. Required.</summary>
         public string ConsentType { get; set; }
-        /// <summary>A list of pending scopes waiting for approval. Required.</summary>
+        /// <summary>A list of pending scopes waiting for approval. This is empty if the consentType is Static. Required.</summary>
         public List<AppConsentRequestScope> PendingScopes { get; set; }
         /// <summary>A list of pending user consent requests.</summary>
         public List<UserConsentRequest> UserConsentRequests { get; set; }

@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models {
         public List<AuthenticationContextClassReference> AuthenticationContextClassReferences { get; set; }
         /// <summary>Read-only. Nullable. Returns a collection of the specified named locations.</summary>
         public List<NamedLocation> NamedLocations { get; set; }
-        /// <summary>Read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.</summary>
+        /// <summary>Read-only. Nullable. Returns a collection of the specified Conditional Access policies.</summary>
         public List<ConditionalAccessPolicy> Policies { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

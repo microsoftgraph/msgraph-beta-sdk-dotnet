@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Device : DirectoryObject, IParsable {
-        /// <summary>true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.</summary>
+        /// <summary>true if the account is enabled; otherwise, false. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.</summary>
         public bool? AccountEnabled { get; set; }
         /// <summary>For internal use only. Not nullable. Supports $filter (eq, not, ge, le).</summary>
         public List<AlternativeSecurityId> AlternativeSecurityIds { get; set; }
@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DateTimeOffset? ComplianceExpirationDateTime { get; set; }
         /// <summary>User-defined property set by Intune to automatically add devices to groups and simplify managing devices.</summary>
         public string DeviceCategory { get; set; }
-        /// <summary>Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).</summary>
+        /// <summary>Identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).</summary>
         public string DeviceId { get; set; }
         /// <summary>For internal use only. Set to null.</summary>
         public string DeviceMetadata { get; set; }
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
         public string Manufacturer { get; set; }
         /// <summary>Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).</summary>
         public string MdmAppId { get; set; }
-        /// <summary>Groups that this device is a member of. Read-only. Nullable. Supports $expand.</summary>
+        /// <summary>Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.</summary>
         public List<DirectoryObject> MemberOf { get; set; }
         /// <summary>Model of the device. Read-only.</summary>
         public string Model { get; set; }
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
         public bool? OnPremisesSyncEnabled { get; set; }
         /// <summary>The type of operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).</summary>
         public string OperatingSystem { get; set; }
-        /// <summary>The version of the operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).</summary>
+        /// <summary>Operating system version of the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).</summary>
         public string OperatingSystemVersion { get; set; }
         /// <summary>For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith).</summary>
         public List<string> PhysicalIds { get; set; }
@@ -85,9 +85,9 @@ namespace Microsoft.Graph.Beta.Models {
         public string Status { get; set; }
         /// <summary>List of labels applied to the device by the system.</summary>
         public List<string> SystemLabels { get; set; }
-        /// <summary>Groups that the device is a member of. This operation is transitive. Supports $expand.</summary>
+        /// <summary>Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.</summary>
         public List<DirectoryObject> TransitiveMemberOf { get; set; }
-        /// <summary>Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory</summary>
+        /// <summary>Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory</summary>
         public string TrustType { get; set; }
         /// <summary>Represents the usage rights a device has been granted.</summary>
         public List<UsageRight> UsageRights { get; set; }

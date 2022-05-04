@@ -5,9 +5,9 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class SignIn : Entity, IParsable {
-        /// <summary>App name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).</summary>
+        /// <summary>The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).</summary>
         public string AppDisplayName { get; set; }
-        /// <summary>Unique GUID representing the app ID in the Azure Active Directory. Supports $filter (eq operator only).</summary>
+        /// <summary>The application identifier in Azure Active Directory. Supports $filter (eq operator only).</summary>
         public string AppId { get; set; }
         /// <summary>A list of conditional access policies that are triggered by the corresponding sign-in activity.</summary>
         public List<AppliedConditionalAccessPolicy> AppliedConditionalAccessPolicies { get; set; }
@@ -29,19 +29,19 @@ namespace Microsoft.Graph.Beta.Models {
         public int? AutonomousSystemNumber { get; set; }
         /// <summary>Contains a fully qualified Azure Resource Manager ID of an Azure resource accessed during the sign-in.</summary>
         public string AzureResourceId { get; set; }
-        /// <summary>Identifies the client used for the sign-in activity. Modern authentication clients include Browser and modern clients. Legacy authentication clients include Exchange ActiveSync, IMAP, MAPI, SMTP, POP, and other clients. Supports $filter (eq operator only).</summary>
+        /// <summary>The legacy client used for sign-in activity. For example: Browser, Exchange ActiveSync, Modern clients, IMAP, MAPI, SMTP, or POP. Supports $filter (eq operator only).</summary>
         public string ClientAppUsed { get; set; }
         /// <summary>Describes the credential type that a user client or service principal provided to Azure AD to authenticate itself. You may wish to review clientCredentialType to track and eliminate less secure credential types or to watch for clients and service principals using anomalous credential types. The possible values are: none, clientSecret, clientAssertion, federatedIdentityCredential, managedIdentity, certificate, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.ClientCredentialType? ClientCredentialType { get; set; }
-        /// <summary>Reports status of an activated conditional access policy. Possible values are: success, failure, notApplied, and unknownFutureValue. Supports $filter (eq operator only).</summary>
+        /// <summary>The status of the conditional access policy triggered. Possible values: success, failure, notApplied, or unknownFutureValue. Supports $filter (eq operator only).</summary>
         public Microsoft.Graph.Beta.Models.ConditionalAccessStatus? ConditionalAccessStatus { get; set; }
-        /// <summary>The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity. Supports $filter (eq operator only).</summary>
+        /// <summary>The identifier that&apos;s sent from the client when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support. Supports $filter (eq operator only).</summary>
         public string CorrelationId { get; set; }
-        /// <summary>Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).</summary>
+        /// <summary>The date and time the sign-in was initiated. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue. If the sign in did not cross tenant boundaries, the value is none.</summary>
         public SignInAccessType? CrossTenantAccessType { get; set; }
-        /// <summary>Device information from where the sign-in occurred; includes device ID, operating system, and browser. Supports $filter (eq and startsWith operators only) on browser and operatingSytem properties.</summary>
+        /// <summary>The device information from where the sign-in occurred. Includes information such as deviceId, OS, and browser. Supports $filter (eq and startsWith operators only) on browser and operatingSystem properties.</summary>
         public Microsoft.Graph.Beta.Models.DeviceDetail DeviceDetail { get; set; }
         /// <summary>Contains the identifier of an application&apos;s federated identity credential, if a federated identity credential was used to sign in.</summary>
         public string FederatedCredentialId { get; set; }
@@ -53,15 +53,15 @@ namespace Microsoft.Graph.Beta.Models {
         public string HomeTenantName { get; set; }
         /// <summary>Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Do not infer the lack of a token if it is not one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.</summary>
         public Microsoft.Graph.Beta.Models.IncomingTokenType? IncomingTokenType { get; set; }
-        /// <summary>IP address of the client used to sign in. Supports $filter (eq and startsWith operators only).</summary>
+        /// <summary>The IP address of the client from where the sign-in occurred. Supports $filter (eq and startsWith operators only).</summary>
         public string IpAddress { get; set; }
         /// <summary>The IP address a user used to reach a resource provider, used to determine Conditional Access compliance for some policies. For example, when a user interacts with Exchange Online, the IP address Exchange receives from the user may be recorded here. This value is often null.</summary>
         public string IpAddressFromResourceProvider { get; set; }
-        /// <summary>Indicates if a sign-in is interactive or not.</summary>
+        /// <summary>Indicates whether a user sign in is interactive. In interactive sign in, the user provides an authentication factor to Azure AD. These factors include passwords, responses to MFA challenges, biometric factors, or QR codes that a user provides to Azure AD or an associated app. In non-interactive sign in, the user doesn&apos;t provide an authentication factor. Instead, the client app uses a token or code to authenticate or access a resource on behalf of a user. Non-interactive sign ins are commonly used for a client to sign in on a user&apos;s behalf in a process transparent to the user.</summary>
         public bool? IsInteractive { get; set; }
         /// <summary>Shows whether the sign in event was subject to an Azure AD tenant restriction policy.</summary>
         public bool? IsTenantRestricted { get; set; }
-        /// <summary>Provides the city, state, and country code where the sign-in originated. Supports $filter (eq and startsWith operators only) on city, state, and countryOrRegion properties.</summary>
+        /// <summary>The city, state, and 2 letter country code from where the sign-in occurred. Supports $filter (eq and startsWith operators only) on city, state, and countryOrRegion properties.</summary>
         public SignInLocation Location { get; set; }
         /// <summary>The mfaDetail property</summary>
         public Microsoft.Graph.Beta.Models.MfaDetail MfaDetail { get; set; }
@@ -73,23 +73,23 @@ namespace Microsoft.Graph.Beta.Models {
         public Microsoft.Graph.Beta.Models.PrivateLinkDetails PrivateLinkDetails { get; set; }
         /// <summary>The request processing time in milliseconds in AD STS.</summary>
         public int? ProcessingTimeInMilliseconds { get; set; }
-        /// <summary>Name of the resource the user signed into. Supports $filter (eq operator only).</summary>
+        /// <summary>The name of the resource that the user signed in to. Supports $filter (eq operator only).</summary>
         public string ResourceDisplayName { get; set; }
-        /// <summary>ID of the resource that the user signed into. Supports $filter (eq operator only).</summary>
+        /// <summary>The identifier of the resource that the user signed in to. Supports $filter (eq operator only).</summary>
         public string ResourceId { get; set; }
         /// <summary>The identifier of the service principal representing the target resource in the sign-in event.</summary>
         public string ResourceServicePrincipalId { get; set; }
         /// <summary>The tenant identifier of the resource referenced in the sign in.</summary>
         public string ResourceTenantId { get; set; }
-        /// <summary>Provides the &apos;reason&apos; behind a specific state of a risky user, sign-in or a risk event. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq operator only).Note: Details for this property require an Azure AD Premium P2 license. Other licenses return the value hidden.</summary>
+        /// <summary>The reason behind a specific state of a risky user, sign-in, or a risk event. Possible values: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, or unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.</summary>
         public Microsoft.Graph.Beta.Models.RiskDetail? RiskDetail { get; set; }
         /// <summary>The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).</summary>
         public List<string> RiskEventTypes_v2 { get; set; }
-        /// <summary>Aggregated risk level. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.</summary>
+        /// <summary>The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.</summary>
         public RiskLevel? RiskLevelAggregated { get; set; }
-        /// <summary>Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.</summary>
+        /// <summary>The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.</summary>
         public RiskLevel? RiskLevelDuringSignIn { get; set; }
-        /// <summary>Reports status of the risky user, sign-in, or a risk event. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue. Supports $filter (eq operator only).</summary>
+        /// <summary>The risk state of a risky user, sign-in, or a risk event. Possible values: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, or unknownFutureValue. Supports $filter (eq operator only).</summary>
         public Microsoft.Graph.Beta.Models.RiskState? RiskState { get; set; }
         /// <summary>The unique identifier of the key credential used by the service principal to authenticate.</summary>
         public string ServicePrincipalCredentialKeyId { get; set; }
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models {
         public string SignInIdentifier { get; set; }
         /// <summary>The type of sign in identifier. Possible values are: userPrincipalName, phoneNumber, proxyAddress, qrCode, onPremisesUserPrincipalName, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.SignInIdentifierType? SignInIdentifierType { get; set; }
-        /// <summary>Sign-in status. Includes the error code and description of the error (in case of a sign-in failure). Supports $filter (eq operator only) on errorCode property.</summary>
+        /// <summary>The sign-in status. Includes the error code and description of the error (in case of a sign-in failure). Supports $filter (eq operator only) on errorCode property.</summary>
         public SignInStatus Status { get; set; }
         /// <summary>The name of the identity provider. For example, sts.microsoft.com. Supports $filter (eq operator only).</summary>
         public string TokenIssuerName { get; set; }
@@ -117,11 +117,11 @@ namespace Microsoft.Graph.Beta.Models {
         public string UniqueTokenIdentifier { get; set; }
         /// <summary>The user agent information related to sign-in. Supports $filter (eq and startsWith operators only).</summary>
         public string UserAgent { get; set; }
-        /// <summary>Display name of the user that initiated the sign-in. Supports $filter (eq and startsWith operators only).</summary>
+        /// <summary>The display name of the user. Supports $filter (eq and startsWith operators only).</summary>
         public string UserDisplayName { get; set; }
-        /// <summary>ID of the user that initiated the sign-in. Supports $filter (eq operator only).</summary>
+        /// <summary>The identifier of the user. Supports $filter (eq operator only).</summary>
         public string UserId { get; set; }
-        /// <summary>User principal name of the user that initiated the sign-in. Supports $filter (eq and startsWith operators only).</summary>
+        /// <summary>The UPN of the user. Supports $filter (eq and startsWith operators only).</summary>
         public string UserPrincipalName { get; set; }
         /// <summary>Identifies whether the user is a member or guest in the tenant. Possible values are: member, guest, unknownFutureValue.</summary>
         public SignInUserType? UserType { get; set; }

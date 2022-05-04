@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         public string MessageId { get; set; }
         /// <summary>Index of the order used for sorting tabs.</summary>
         public string SortOrderIndex { get; set; }
-        /// <summary>The application that is linked to the tab. This cannot be changed after tab creation.</summary>
+        /// <summary>The application that is linked to the tab.</summary>
         public Microsoft.Graph.Beta.Models.TeamsApp TeamsApp { get; set; }
         /// <summary>The teamsAppId property</summary>
         public string TeamsAppId { get; set; }

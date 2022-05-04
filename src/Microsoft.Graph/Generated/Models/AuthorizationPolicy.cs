@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
         public Microsoft.Graph.Beta.Models.DefaultUserRolePermissions DefaultUserRolePermissions { get; set; }
         /// <summary>List of features enabled for private preview on the tenant.</summary>
         public List<string> EnabledPreviewFeatures { get; set; }
-        /// <summary>Represents role templateId for the role that should be granted to guest user. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).</summary>
+        /// <summary>Represents role templateId for the role that should be granted to guest user. Refer to List unifiedRoleDefinitions to find the list of available role templates. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).</summary>
         public string GuestUserRoleId { get; set; }
         /// <summary>Indicates if user consent to apps is allowed, and if it is, which app consent policy (permissionGrantPolicy) governs the permission for users to grant consent. Values should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.</summary>
         public List<string> PermissionGrantPolicyIdsAssignedToDefaultUserRole { get; set; }

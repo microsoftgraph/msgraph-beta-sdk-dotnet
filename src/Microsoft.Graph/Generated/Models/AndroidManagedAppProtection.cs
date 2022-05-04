@@ -19,6 +19,12 @@ namespace Microsoft.Graph.Beta.Models {
         public ManagedAppRemediationAction? AppActionIfAndroidSafetyNetDeviceAttestationFailed { get; set; }
         /// <summary>Defines a managed app behavior, either warn, block or wipe, if the screen lock is required on android device but is not set.</summary>
         public ManagedAppRemediationAction? AppActionIfDeviceLockNotSet { get; set; }
+        /// <summary>If the device does not have a passcode of high complexity or higher, trigger the stored action.</summary>
+        public ManagedAppRemediationAction? AppActionIfDevicePasscodeComplexityLessThanHigh { get; set; }
+        /// <summary>If the device does not have a passcode of low complexity or higher, trigger the stored action.</summary>
+        public ManagedAppRemediationAction? AppActionIfDevicePasscodeComplexityLessThanLow { get; set; }
+        /// <summary>If the device does not have a passcode of medium complexity or higher, trigger the stored action.</summary>
+        public ManagedAppRemediationAction? AppActionIfDevicePasscodeComplexityLessThanMedium { get; set; }
         /// <summary>If Keyboard Restriction is enabled, only keyboards in this approved list will be allowed. A key should be Android package id for a keyboard and value should be a friendly name</summary>
         public List<KeyValuePair> ApprovedKeyboards { get; set; }
         /// <summary>List of apps to which the policy is deployed.</summary>
@@ -29,9 +35,9 @@ namespace Microsoft.Graph.Beta.Models {
         public int? BlockAfterCompanyPortalUpdateDeferralInDays { get; set; }
         /// <summary>Whether the app should connect to the configured VPN on launch.</summary>
         public bool? ConnectToVpnOnLaunch { get; set; }
-        /// <summary>Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.</summary>
+        /// <summary>Friendly name of the preferred custom browser to open weblink on Android.</summary>
         public string CustomBrowserDisplayName { get; set; }
-        /// <summary>Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.</summary>
+        /// <summary>Unique identifier of a custom browser to open weblink on Android.</summary>
         public string CustomBrowserPackageId { get; set; }
         /// <summary>Friendly name of a custom dialer app to click-to-open a phone number on Android.</summary>
         public string CustomDialerAppDisplayName { get; set; }
@@ -95,6 +101,9 @@ namespace Microsoft.Graph.Beta.Models {
                 {"appActionIfAndroidSafetyNetAppsVerificationFailed", n => { AppActionIfAndroidSafetyNetAppsVerificationFailed = n.GetEnumValue<ManagedAppRemediationAction>(); } },
                 {"appActionIfAndroidSafetyNetDeviceAttestationFailed", n => { AppActionIfAndroidSafetyNetDeviceAttestationFailed = n.GetEnumValue<ManagedAppRemediationAction>(); } },
                 {"appActionIfDeviceLockNotSet", n => { AppActionIfDeviceLockNotSet = n.GetEnumValue<ManagedAppRemediationAction>(); } },
+                {"appActionIfDevicePasscodeComplexityLessThanHigh", n => { AppActionIfDevicePasscodeComplexityLessThanHigh = n.GetEnumValue<ManagedAppRemediationAction>(); } },
+                {"appActionIfDevicePasscodeComplexityLessThanLow", n => { AppActionIfDevicePasscodeComplexityLessThanLow = n.GetEnumValue<ManagedAppRemediationAction>(); } },
+                {"appActionIfDevicePasscodeComplexityLessThanMedium", n => { AppActionIfDevicePasscodeComplexityLessThanMedium = n.GetEnumValue<ManagedAppRemediationAction>(); } },
                 {"approvedKeyboards", n => { ApprovedKeyboards = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
                 {"apps", n => { Apps = n.GetCollectionOfObjectValues<ManagedMobileApp>(ManagedMobileApp.CreateFromDiscriminatorValue).ToList(); } },
                 {"biometricAuthenticationBlocked", n => { BiometricAuthenticationBlocked = n.GetBoolValue(); } },
@@ -139,6 +148,9 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfAndroidSafetyNetAppsVerificationFailed", AppActionIfAndroidSafetyNetAppsVerificationFailed);
             writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfAndroidSafetyNetDeviceAttestationFailed", AppActionIfAndroidSafetyNetDeviceAttestationFailed);
             writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfDeviceLockNotSet", AppActionIfDeviceLockNotSet);
+            writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfDevicePasscodeComplexityLessThanHigh", AppActionIfDevicePasscodeComplexityLessThanHigh);
+            writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfDevicePasscodeComplexityLessThanLow", AppActionIfDevicePasscodeComplexityLessThanLow);
+            writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfDevicePasscodeComplexityLessThanMedium", AppActionIfDevicePasscodeComplexityLessThanMedium);
             writer.WriteCollectionOfObjectValues<KeyValuePair>("approvedKeyboards", ApprovedKeyboards);
             writer.WriteCollectionOfObjectValues<ManagedMobileApp>("apps", Apps);
             writer.WriteBoolValue("biometricAuthenticationBlocked", BiometricAuthenticationBlocked);

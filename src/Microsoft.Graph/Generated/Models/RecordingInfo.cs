@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The participant who initiated the recording.</summary>
         public ParticipantInfo InitiatedBy { get; set; }
-        /// <summary>The identities of the recording initiator.</summary>
+        /// <summary>The identities of recording initiator.</summary>
         public IdentitySet Initiator { get; set; }
         /// <summary>Possible values are: unknown, notRecording, recording, or failed.</summary>
         public Microsoft.Graph.Beta.Models.RecordingStatus? RecordingStatus { get; set; }

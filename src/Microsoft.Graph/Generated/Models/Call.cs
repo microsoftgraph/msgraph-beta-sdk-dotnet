@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
         public Microsoft.Graph.Beta.Models.CallOptions CallOptions { get; set; }
         /// <summary>The routing information on how the call was retargeted. Read-only.</summary>
         public List<CallRoute> CallRoutes { get; set; }
-        /// <summary>The chat information. Required information for joining a meeting.</summary>
+        /// <summary>The chat information. Required information for meeting scenarios.</summary>
         public Microsoft.Graph.Beta.Models.ChatInfo ChatInfo { get; set; }
         /// <summary>Read-only. Nullable.</summary>
         public List<ContentSharingSession> ContentSharingSessions { get; set; }
@@ -27,13 +27,13 @@ namespace Microsoft.Graph.Beta.Models {
         public CallDirection? Direction { get; set; }
         /// <summary>The context associated with an incoming call. Read-only. Server generated.</summary>
         public Microsoft.Graph.Beta.Models.IncomingContext IncomingContext { get; set; }
-        /// <summary>The media configuration. Required.</summary>
+        /// <summary>The media configuration. Required information for creating peer to peer calls or joining meetings.</summary>
         public Microsoft.Graph.Beta.Models.MediaConfig MediaConfig { get; set; }
         /// <summary>Read-only. The call media state.</summary>
         public CallMediaState MediaState { get; set; }
         /// <summary>Contains the capabilities of a meeting. Read-only.</summary>
         public Microsoft.Graph.Beta.Models.MeetingCapability MeetingCapability { get; set; }
-        /// <summary>The meeting information that&apos;s required for joining a meeting.</summary>
+        /// <summary>The meeting information. Required information for meeting scenarios.</summary>
         public Microsoft.Graph.Beta.Models.MeetingInfo MeetingInfo { get; set; }
         /// <summary>The myParticipantId property</summary>
         public string MyParticipantId { get; set; }

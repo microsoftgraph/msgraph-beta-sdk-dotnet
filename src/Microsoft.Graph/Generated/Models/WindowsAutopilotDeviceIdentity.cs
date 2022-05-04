@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models {
         public string DeviceFriendlyName { get; set; }
         /// <summary>Display Name</summary>
         public string DisplayName { get; set; }
-        /// <summary>Intune enrollment state of the Windows autopilot device. Possible values are: unknown, enrolled, pendingReset, failed, notContacted.</summary>
+        /// <summary>Intune enrollment state of the Windows autopilot device. Possible values are: unknown, enrolled, pendingReset, failed, notContacted, blocked.</summary>
         public Microsoft.Graph.Beta.Models.EnrollmentState? EnrollmentState { get; set; }
         /// <summary>Group Tag of the Windows autopilot device.</summary>
         public string GroupTag { get; set; }
@@ -45,6 +45,10 @@ namespace Microsoft.Graph.Beta.Models {
         public string ProductKey { get; set; }
         /// <summary>Purchase Order Identifier of the Windows autopilot device.</summary>
         public string PurchaseOrderIdentifier { get; set; }
+        /// <summary>Device Remediation State</summary>
+        public WindowsAutopilotDeviceRemediationState? RemediationState { get; set; }
+        /// <summary>RemediationState set time of Autopilot device.</summary>
+        public DateTimeOffset? RemediationStateLastModifiedDateTime { get; set; }
         /// <summary>Resource Name.</summary>
         public string ResourceName { get; set; }
         /// <summary>Serial number of the Windows autopilot device.</summary>
@@ -88,6 +92,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"model", n => { Model = n.GetStringValue(); } },
                 {"productKey", n => { ProductKey = n.GetStringValue(); } },
                 {"purchaseOrderIdentifier", n => { PurchaseOrderIdentifier = n.GetStringValue(); } },
+                {"remediationState", n => { RemediationState = n.GetEnumValue<WindowsAutopilotDeviceRemediationState>(); } },
+                {"remediationStateLastModifiedDateTime", n => { RemediationStateLastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"resourceName", n => { ResourceName = n.GetStringValue(); } },
                 {"serialNumber", n => { SerialNumber = n.GetStringValue(); } },
                 {"skuNumber", n => { SkuNumber = n.GetStringValue(); } },
@@ -122,6 +128,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("model", Model);
             writer.WriteStringValue("productKey", ProductKey);
             writer.WriteStringValue("purchaseOrderIdentifier", PurchaseOrderIdentifier);
+            writer.WriteEnumValue<WindowsAutopilotDeviceRemediationState>("remediationState", RemediationState);
+            writer.WriteDateTimeOffsetValue("remediationStateLastModifiedDateTime", RemediationStateLastModifiedDateTime);
             writer.WriteStringValue("resourceName", ResourceName);
             writer.WriteStringValue("serialNumber", SerialNumber);
             writer.WriteStringValue("skuNumber", SkuNumber);

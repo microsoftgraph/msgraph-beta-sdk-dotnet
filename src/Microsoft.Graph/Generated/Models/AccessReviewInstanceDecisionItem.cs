@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         public string Justification { get; set; }
         /// <summary>Every decision item in an access review represents a principal&apos;s access to a resource. This property represents details of the principal. For example, if a decision item represents access of User &apos;Bob&apos; to Group &apos;Sales&apos; - The principal is &apos;Bob&apos; and the resource is &apos;Sales&apos;. Principals can be of two types - userIdentity and servicePrincipalIdentity. Supports $select. Read-only.</summary>
         public Identity Principal { get; set; }
-        /// <summary>A link to the principal object. For example, https://graph.microsoft.com/v1.0/users/a6c7aecb-cbfd-4763-87ef-e91b4bd509d9. Read-only.</summary>
+        /// <summary>Link to the principal object. For example: https://graph.microsoft.com/v1.0/users/a6c7aecb-cbfd-4763-87ef-e91b4bd509d9. Read-only.</summary>
         public string PrincipalLink { get; set; }
         /// <summary>The principalResourceMembership property</summary>
         public DecisionItemPrincipalResourceMembership PrincipalResourceMembership { get; set; }

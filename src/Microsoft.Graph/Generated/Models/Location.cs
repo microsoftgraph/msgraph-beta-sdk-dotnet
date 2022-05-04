@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Models {
         public string DisplayName { get; set; }
         /// <summary>Optional email address of the location.</summary>
         public string LocationEmailAddress { get; set; }
-        /// <summary>The type of location. The possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.</summary>
+        /// <summary>The type of location. Possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.</summary>
         public Microsoft.Graph.Beta.Models.LocationType? LocationType { get; set; }
         /// <summary>Optional URI representing the location.</summary>
         public string LocationUri { get; set; }

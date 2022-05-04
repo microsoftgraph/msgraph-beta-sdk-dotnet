@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.Models {
         public List<ImportedWindowsAutopilotDeviceIdentity> ImportedWindowsAutopilotDeviceIdentities { get; set; }
         /// <summary>The device management intents</summary>
         public List<DeviceManagementIntent> Intents { get; set; }
-        /// <summary>Intune Account Id for given tenant</summary>
+        /// <summary>Intune Account ID for given tenant</summary>
         public string IntuneAccountId { get; set; }
         /// <summary>intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.</summary>
         public Microsoft.Graph.Beta.Models.IntuneBrand IntuneBrand { get; set; }
@@ -166,10 +166,6 @@ namespace Microsoft.Graph.Beta.Models {
         public Microsoft.Graph.Beta.Models.ManagedDeviceOverview ManagedDeviceOverview { get; set; }
         /// <summary>The list of managed devices.</summary>
         public List<ManagedDevice> ManagedDevices { get; set; }
-        /// <summary>The management conditions associated with device management of the company.</summary>
-        public List<ManagementCondition> ManagementConditions { get; set; }
-        /// <summary>The management condition statements associated with device management of the company.</summary>
-        public List<ManagementConditionStatement> ManagementConditionStatements { get; set; }
         /// <summary>Maximum number of DEP tokens allowed per-tenant.</summary>
         public int? MaximumDepTokens { get; set; }
         /// <summary>Collection of MicrosoftTunnelConfiguration settings associated with account.</summary>
@@ -280,6 +276,10 @@ namespace Microsoft.Graph.Beta.Models {
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory> UserExperienceAnalyticsDeviceMetricHistory { get; set; }
         /// <summary>User experience analytics device performance</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance> UserExperienceAnalyticsDevicePerformance { get; set; }
+        /// <summary>The user experience analytics device scope entity endpoint to trigger on the service to either START or STOP computing metrics data based on a device scope configuration.</summary>
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope UserExperienceAnalyticsDeviceScope { get; set; }
+        /// <summary>The user experience analytics device scope entity contains device scope configuration use to apply filtering on the endpoint analytics reports.</summary>
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope> UserExperienceAnalyticsDeviceScopes { get; set; }
         /// <summary>User experience analytics device scores</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores> UserExperienceAnalyticsDeviceScores { get; set; }
         /// <summary>User experience analytics device Startup History</summary>
@@ -342,6 +342,12 @@ namespace Microsoft.Graph.Beta.Models {
         public List<WindowsQualityUpdateProfile> WindowsQualityUpdateProfiles { get; set; }
         /// <summary>A collection of windows update catalog items (fetaure updates item , quality updates item)</summary>
         public List<WindowsUpdateCatalogItem> WindowsUpdateCatalogItems { get; set; }
+        /// <summary>The Collection of ZebraFotaArtifacts.</summary>
+        public List<ZebraFotaArtifact> ZebraFotaArtifacts { get; set; }
+        /// <summary>The singleton ZebraFotaConnector associated with account.</summary>
+        public Microsoft.Graph.Beta.Models.ZebraFotaConnector ZebraFotaConnector { get; set; }
+        /// <summary>Collection of ZebraFotaDeployments associated with account.</summary>
+        public List<ZebraFotaDeployment> ZebraFotaDeployments { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -435,8 +441,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"managedDeviceEncryptionStates", n => { ManagedDeviceEncryptionStates = n.GetCollectionOfObjectValues<ManagedDeviceEncryptionState>(ManagedDeviceEncryptionState.CreateFromDiscriminatorValue).ToList(); } },
                 {"managedDeviceOverview", n => { ManagedDeviceOverview = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedDeviceOverview>(Microsoft.Graph.Beta.Models.ManagedDeviceOverview.CreateFromDiscriminatorValue); } },
                 {"managedDevices", n => { ManagedDevices = n.GetCollectionOfObjectValues<ManagedDevice>(ManagedDevice.CreateFromDiscriminatorValue).ToList(); } },
-                {"managementConditions", n => { ManagementConditions = n.GetCollectionOfObjectValues<ManagementCondition>(ManagementCondition.CreateFromDiscriminatorValue).ToList(); } },
-                {"managementConditionStatements", n => { ManagementConditionStatements = n.GetCollectionOfObjectValues<ManagementConditionStatement>(ManagementConditionStatement.CreateFromDiscriminatorValue).ToList(); } },
                 {"maximumDepTokens", n => { MaximumDepTokens = n.GetIntValue(); } },
                 {"microsoftTunnelConfigurations", n => { MicrosoftTunnelConfigurations = n.GetCollectionOfObjectValues<MicrosoftTunnelConfiguration>(MicrosoftTunnelConfiguration.CreateFromDiscriminatorValue).ToList(); } },
                 {"microsoftTunnelHealthThresholds", n => { MicrosoftTunnelHealthThresholds = n.GetCollectionOfObjectValues<MicrosoftTunnelHealthThreshold>(MicrosoftTunnelHealthThreshold.CreateFromDiscriminatorValue).ToList(); } },
@@ -492,6 +496,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"userExperienceAnalyticsCategories", n => { UserExperienceAnalyticsCategories = n.GetCollectionOfObjectValues<UserExperienceAnalyticsCategory>(UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue).ToList(); } },
                 {"userExperienceAnalyticsDeviceMetricHistory", n => { UserExperienceAnalyticsDeviceMetricHistory = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory.CreateFromDiscriminatorValue).ToList(); } },
                 {"userExperienceAnalyticsDevicePerformance", n => { UserExperienceAnalyticsDevicePerformance = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance.CreateFromDiscriminatorValue).ToList(); } },
+                {"userExperienceAnalyticsDeviceScope", n => { UserExperienceAnalyticsDeviceScope = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope.CreateFromDiscriminatorValue); } },
+                {"userExperienceAnalyticsDeviceScopes", n => { UserExperienceAnalyticsDeviceScopes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope.CreateFromDiscriminatorValue).ToList(); } },
                 {"userExperienceAnalyticsDeviceScores", n => { UserExperienceAnalyticsDeviceScores = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores.CreateFromDiscriminatorValue).ToList(); } },
                 {"userExperienceAnalyticsDeviceStartupHistory", n => { UserExperienceAnalyticsDeviceStartupHistory = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupHistory>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupHistory.CreateFromDiscriminatorValue).ToList(); } },
                 {"userExperienceAnalyticsDeviceStartupProcesses", n => { UserExperienceAnalyticsDeviceStartupProcesses = n.GetCollectionOfObjectValues<UserExperienceAnalyticsDeviceStartupProcess>(UserExperienceAnalyticsDeviceStartupProcess.CreateFromDiscriminatorValue).ToList(); } },
@@ -523,6 +529,9 @@ namespace Microsoft.Graph.Beta.Models {
                 {"windowsMalwareOverview", n => { WindowsMalwareOverview = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsMalwareOverview>(Microsoft.Graph.Beta.Models.WindowsMalwareOverview.CreateFromDiscriminatorValue); } },
                 {"windowsQualityUpdateProfiles", n => { WindowsQualityUpdateProfiles = n.GetCollectionOfObjectValues<WindowsQualityUpdateProfile>(WindowsQualityUpdateProfile.CreateFromDiscriminatorValue).ToList(); } },
                 {"windowsUpdateCatalogItems", n => { WindowsUpdateCatalogItems = n.GetCollectionOfObjectValues<WindowsUpdateCatalogItem>(WindowsUpdateCatalogItem.CreateFromDiscriminatorValue).ToList(); } },
+                {"zebraFotaArtifacts", n => { ZebraFotaArtifacts = n.GetCollectionOfObjectValues<ZebraFotaArtifact>(ZebraFotaArtifact.CreateFromDiscriminatorValue).ToList(); } },
+                {"zebraFotaConnector", n => { ZebraFotaConnector = n.GetObjectValue<Microsoft.Graph.Beta.Models.ZebraFotaConnector>(Microsoft.Graph.Beta.Models.ZebraFotaConnector.CreateFromDiscriminatorValue); } },
+                {"zebraFotaDeployments", n => { ZebraFotaDeployments = n.GetCollectionOfObjectValues<ZebraFotaDeployment>(ZebraFotaDeployment.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>
@@ -612,8 +621,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<ManagedDeviceEncryptionState>("managedDeviceEncryptionStates", ManagedDeviceEncryptionStates);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ManagedDeviceOverview>("managedDeviceOverview", ManagedDeviceOverview);
             writer.WriteCollectionOfObjectValues<ManagedDevice>("managedDevices", ManagedDevices);
-            writer.WriteCollectionOfObjectValues<ManagementCondition>("managementConditions", ManagementConditions);
-            writer.WriteCollectionOfObjectValues<ManagementConditionStatement>("managementConditionStatements", ManagementConditionStatements);
             writer.WriteIntValue("maximumDepTokens", MaximumDepTokens);
             writer.WriteCollectionOfObjectValues<MicrosoftTunnelConfiguration>("microsoftTunnelConfigurations", MicrosoftTunnelConfigurations);
             writer.WriteCollectionOfObjectValues<MicrosoftTunnelHealthThreshold>("microsoftTunnelHealthThresholds", MicrosoftTunnelHealthThresholds);
@@ -669,6 +676,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<UserExperienceAnalyticsCategory>("userExperienceAnalyticsCategories", UserExperienceAnalyticsCategories);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory>("userExperienceAnalyticsDeviceMetricHistory", UserExperienceAnalyticsDeviceMetricHistory);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance>("userExperienceAnalyticsDevicePerformance", UserExperienceAnalyticsDevicePerformance);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope>("userExperienceAnalyticsDeviceScope", UserExperienceAnalyticsDeviceScope);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope>("userExperienceAnalyticsDeviceScopes", UserExperienceAnalyticsDeviceScopes);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores>("userExperienceAnalyticsDeviceScores", UserExperienceAnalyticsDeviceScores);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupHistory>("userExperienceAnalyticsDeviceStartupHistory", UserExperienceAnalyticsDeviceStartupHistory);
             writer.WriteCollectionOfObjectValues<UserExperienceAnalyticsDeviceStartupProcess>("userExperienceAnalyticsDeviceStartupProcesses", UserExperienceAnalyticsDeviceStartupProcesses);
@@ -700,6 +709,9 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsMalwareOverview>("windowsMalwareOverview", WindowsMalwareOverview);
             writer.WriteCollectionOfObjectValues<WindowsQualityUpdateProfile>("windowsQualityUpdateProfiles", WindowsQualityUpdateProfiles);
             writer.WriteCollectionOfObjectValues<WindowsUpdateCatalogItem>("windowsUpdateCatalogItems", WindowsUpdateCatalogItems);
+            writer.WriteCollectionOfObjectValues<ZebraFotaArtifact>("zebraFotaArtifacts", ZebraFotaArtifacts);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ZebraFotaConnector>("zebraFotaConnector", ZebraFotaConnector);
+            writer.WriteCollectionOfObjectValues<ZebraFotaDeployment>("zebraFotaDeployments", ZebraFotaDeployments);
         }
     }
 }
