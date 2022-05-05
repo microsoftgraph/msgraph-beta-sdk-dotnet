@@ -18,15 +18,28 @@ jobs:
         uses: actions/setup-dotnet@v1.9.0
         with:
           dotnet-version: 6.0.x
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v1
-        with:
-          languages: csharp
       - name: Restore dependencies
         run: dotnet restore ${{ env.solutionName }}
       - name: Build
         run: dotnet build ${{ env.solutionName }} --no-restore -c Release /p:UseSharedCompilation=false
       - name: Test
         run: dotnet test ${{ env.solutionName }} --no-build --verbosity normal -c Release /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=opencover
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v1
+
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'csharp' ]
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2.4.0
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v1
+      with:
+        languages: ${{ matrix.language }}
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@v1
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v1
