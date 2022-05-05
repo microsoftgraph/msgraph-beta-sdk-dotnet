@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ConditionalAccessConditions? ConditionsNotSatisfied { get; set; }
         /// <summary>Refers to the conditional access policy conditions that are satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client,ipAddressSeenByAzureAD,ipAddressSeenByResourceProvider,unknownFutureValue,servicePrincipals,servicePrincipalRisk. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals,servicePrincipalRisk.</summary>
         public ConditionalAccessConditions? ConditionsSatisfied { get; set; }
-        /// <summary>Refers to the Name of the conditional access policy (example: &apos;Require MFA for Salesforce&apos;).</summary>
+        /// <summary>Name of the conditional access policy.</summary>
         public string DisplayName { get; set; }
         /// <summary>Refers to the grant controls enforced by the conditional access policy (example: &apos;Require multi-factor authentication&apos;).</summary>
         public List<string> EnforcedGrantControls { get; set; }
@@ -21,11 +21,11 @@ namespace Microsoft.Graph.Beta.Models {
         public List<string> EnforcedSessionControls { get; set; }
         /// <summary>List of key-value pairs containing each matched exclude condition in the conditional access policy. Example: [{&apos;devicePlatform&apos; : &apos;DevicePlatform&apos;}] means the policy didn’t apply, because the DevicePlatform condition was a match.</summary>
         public List<ConditionalAccessRuleSatisfied> ExcludeRulesSatisfied { get; set; }
-        /// <summary>An identifier of the conditional access policy.</summary>
+        /// <summary>Identifier of the conditional access policy.</summary>
         public string Id { get; set; }
         /// <summary>List of key-value pairs containing each matched include condition in the conditional access policy. Example: [{ &apos;application&apos; : &apos;AllApps&apos;}, {&apos;users&apos;: &apos;Group&apos;}], meaning Application condition was a match because AllApps are included and Users condition was a match because the user was part of the included Group rule.</summary>
         public List<ConditionalAccessRuleSatisfied> IncludeRulesSatisfied { get; set; }
-        /// <summary>Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn&apos;t applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue.</summary>
+        /// <summary>Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn&apos;t applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue, reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted.</summary>
         public AppliedConditionalAccessPolicyResult? Result { get; set; }
         /// <summary>
         /// Instantiates a new appliedConditionalAccessPolicy and sets the default values.

@@ -22,7 +22,7 @@ namespace Microsoft.Graph.Beta.Models {
         public List<Microsoft.Graph.Beta.Models.Drive> Drives { get; set; }
         /// <summary>The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.</summary>
         public List<ColumnDefinition> ExternalColumns { get; set; }
-        /// <summary>Used to address any item contained in this site. This collection can&apos;t be enumerated.</summary>
+        /// <summary>Used to address any item contained in this site. This collection cannot be enumerated.</summary>
         public List<BaseItem> Items { get; set; }
         /// <summary>The collection of lists under this site.</summary>
         public List<List> Lists { get; set; }
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public Microsoft.Graph.Beta.Models.SiteCollection SiteCollection { get; set; }
         /// <summary>The collection of the sub-sites under this site.</summary>
         public List<Site> Sites { get; set; }
-        /// <summary>The default termStore under this site.</summary>
+        /// <summary>The termStore under this site.</summary>
         public Store TermStore { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

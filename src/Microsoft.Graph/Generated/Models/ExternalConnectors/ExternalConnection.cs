@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         public Microsoft.Graph.Beta.Models.ExternalConnectors.Schema Schema { get; set; }
         /// <summary>The settings configuring the search experience for content in this connection, such as the display templates for search results.</summary>
         public Microsoft.Graph.Beta.Models.ExternalConnectors.SearchSettings SearchSettings { get; set; }
-        /// <summary>Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.</summary>
+        /// <summary>Indicates the current state of the connection. Possible values are draft, ready, obsolete, and limitExceeded. Required.</summary>
         public ConnectionState? State { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

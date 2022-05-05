@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ManagedAppDataEncryptionType? AppDataEncryptionType { get; set; }
         /// <summary>List of apps to which the policy is deployed.</summary>
         public List<ManagedMobileApp> Apps { get; set; }
-        /// <summary>A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.</summary>
+        /// <summary>A custom browser protocol to open weblink on iOS.</summary>
         public string CustomBrowserProtocol { get; set; }
         /// <summary>Protocol of a custom dialer app to click-to-open a phone number on iOS, for example, skype:.</summary>
         public string CustomDialerAppProtocol { get; set; }

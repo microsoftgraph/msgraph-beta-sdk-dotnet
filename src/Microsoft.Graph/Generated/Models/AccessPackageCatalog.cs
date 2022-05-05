@@ -11,11 +11,11 @@ namespace Microsoft.Graph.Beta.Models {
         public List<AccessPackageResource> AccessPackageResources { get; set; }
         /// <summary>Read-only.</summary>
         public List<AccessPackageResourceScope> AccessPackageResourceScopes { get; set; }
-        /// <summary>The access packages in this catalog. Read-only. Nullable.</summary>
+        /// <summary>The access packages in this catalog. Read-only. Nullable. Supports $expand.</summary>
         public List<AccessPackage> AccessPackages { get; set; }
         /// <summary>Has the value Published if the access packages are available for management.</summary>
         public string CatalogStatus { get; set; }
-        /// <summary>Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.</summary>
+        /// <summary>One of UserManaged or ServiceDefault.</summary>
         public string CatalogType { get; set; }
         /// <summary>UPN of the user who created this resource. Read-only.</summary>
         public string CreatedBy { get; set; }
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
         public List<CustomAccessPackageWorkflowExtension> CustomAccessPackageWorkflowExtensions { get; set; }
         /// <summary>The description of the access package catalog.</summary>
         public string Description { get; set; }
-        /// <summary>The display name of the access package catalog.</summary>
+        /// <summary>The display name of the access package catalog. Supports $filter (eq, contains).</summary>
         public string DisplayName { get; set; }
         /// <summary>Whether the access packages in this catalog can be requested by users outside of the tenant.</summary>
         public bool? IsExternallyVisible { get; set; }

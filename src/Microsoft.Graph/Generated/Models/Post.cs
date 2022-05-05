@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Post : OutlookItem, IParsable {
-        /// <summary>Read-only. Nullable. Supports $expand.</summary>
+        /// <summary>The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.</summary>
         public List<Attachment> Attachments { get; set; }
         /// <summary>The contents of the post. This is a default property. This property can be null.</summary>
         public ItemBody Body { get; set; }
@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
         public bool? HasAttachments { get; set; }
         /// <summary>The importance of a group post: low, normal, high.</summary>
         public Microsoft.Graph.Beta.Models.Importance? Importance { get; set; }
-        /// <summary>Read-only. Supports $expand.</summary>
+        /// <summary>The earlier post that this post is replying to in the conversationThread. Read-only. Supports $expand.</summary>
         public Post InReplyTo { get; set; }
         /// <summary>The mentions property</summary>
         public List<Mention> Mentions { get; set; }

@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Name of the contact. Required.</summary>
         public string DisplayName { get; set; }
-        /// <summary>Primary email address of the contact. Required.</summary>
+        /// <summary>Email address of the contact.</summary>
         public string EmailAddress { get; set; }
         /// <summary>The id property</summary>
         public string Id { get; set; }

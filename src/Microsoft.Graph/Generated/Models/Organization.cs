@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models {
         public Microsoft.Graph.Beta.Models.DirectorySizeQuota DirectorySizeQuota { get; set; }
         /// <summary>The display name for the tenant.</summary>
         public string DisplayName { get; set; }
-        /// <summary>The collection of open extensions defined for the organization. Read-only. Nullable.</summary>
+        /// <summary>The collection of open extensions defined for the organization resource. Nullable.</summary>
         public List<Extension> Extensions { get; set; }
         /// <summary>true if organization is Multi-Geo enabled; false if organization is not Multi-Geo enabled; null (default). Read-only. For more information, see OneDrive Online Multi-Geo.</summary>
         public bool? IsMultipleDataLocationsForServicesEnabled { get; set; }
@@ -35,13 +35,13 @@ namespace Microsoft.Graph.Beta.Models {
         public List<string> MarketingNotificationEmails { get; set; }
         /// <summary>Mobile device management authority. Possible values are: unknown, intune, sccm, office365.</summary>
         public MdmAuthority? MobileDeviceManagementAuthority { get; set; }
-        /// <summary>The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
+        /// <summary>The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? OnPremisesLastSyncDateTime { get; set; }
-        /// <summary>true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).</summary>
+        /// <summary>true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; Nullable. null if this object has never been synced from an on-premises directory (default).</summary>
         public bool? OnPremisesSyncEnabled { get; set; }
         /// <summary>Postal code of the address for the organization.</summary>
         public string PostalCode { get; set; }
-        /// <summary>The preferred language for the organization. Should follow ISO 639-1 Code; for example, en.</summary>
+        /// <summary>The preferred language for the organization. Should follow ISO 639-1 Code; for example en.</summary>
         public string PreferredLanguage { get; set; }
         /// <summary>The privacy profile of an organization.</summary>
         public Microsoft.Graph.Beta.Models.PrivacyProfile PrivacyProfile { get; set; }

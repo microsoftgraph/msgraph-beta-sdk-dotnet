@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
         public string OfficeLocation { get; set; }
         /// <summary>Free-form notes that the user has taken about this person.</summary>
         public string PersonNotes { get; set; }
-        /// <summary>The type of person.</summary>
+        /// <summary>The type of person, for example distribution list.</summary>
         public string PersonType { get; set; }
         /// <summary>The person&apos;s phone numbers.</summary>
         public List<Phone> Phones { get; set; }

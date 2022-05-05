@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
     public enum DeviceEnrollmentConfigurationType {
         Unknown,
         Limit,
@@ -13,5 +13,6 @@ namespace Microsoft.Graph.Beta.Models {
         DeviceComanagementAuthorityConfiguration,
         SinglePlatformRestriction,
         UnknownFutureValue,
+        EnrollmentNotificationsConfiguration,
     }
 }

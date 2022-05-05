@@ -7,9 +7,9 @@ namespace Microsoft.Graph.Beta.Models {
     public class CloudPcLaunchInfo : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The cloudPcId property</summary>
+        /// <summary>The unique identifier of the Cloud PC.</summary>
         public string CloudPcId { get; set; }
-        /// <summary>The cloudPcLaunchUrl property</summary>
+        /// <summary>The connect URL of the Cloud PC.</summary>
         public string CloudPcLaunchUrl { get; set; }
         /// <summary>
         /// Instantiates a new cloudPcLaunchInfo and sets the default values.

@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         public string DisplayName { get; set; }
         /// <summary>The contact&apos;s email addresses.</summary>
         public List<TypedEmailAddress> EmailAddresses { get; set; }
-        /// <summary>The collection of open extensions defined for the contact. Read-only. Nullable.</summary>
+        /// <summary>The collection of open extensions defined for the contact. Nullable.</summary>
         public List<Extension> Extensions { get; set; }
         /// <summary>The name the contact is filed under.</summary>
         public string FileAs { get; set; }

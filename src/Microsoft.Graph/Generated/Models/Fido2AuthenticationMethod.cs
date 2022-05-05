@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models {
         public string AaGuid { get; set; }
         /// <summary>The attestation certificate(s) attached to this security key.</summary>
         public List<string> AttestationCertificates { get; set; }
-        /// <summary>The attestation level of this FIDO2 security key. Possible values are: attested, or notAttested.</summary>
+        /// <summary>The attestation level of this FIDO2 security key. Possible values are: attested, notAttested, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.AttestationLevel? AttestationLevel { get; set; }
         /// <summary>The timestamp when this key was registered to the user.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }

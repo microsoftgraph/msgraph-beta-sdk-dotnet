@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
         public string OrganizationName { get; set; }
         /// <summary>Role Scope Tags IDs assigned to this entity.</summary>
         public List<string> RoleScopeTagIds { get; set; }
-        /// <summary>Current state of the Apple Volume Purchase Program Token. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM.</summary>
+        /// <summary>Current state of the Apple Volume Purchase Program Token. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM, duplicateLocationId.</summary>
         public VppTokenState? State { get; set; }
         /// <summary>The Apple Volume Purchase Program Token string downloaded from the Apple Volume Purchase Program.</summary>
         public string Token { get; set; }

@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Models {
         public List<MediaStream> MediaStreams { get; set; }
         /// <summary>A blob of data provided by the participant in the roster.</summary>
         public string Metadata { get; set; }
-        /// <summary>Information about whether the participant has recording capability.</summary>
+        /// <summary>Information on whether the participant has recording capability.</summary>
         public Microsoft.Graph.Beta.Models.RecordingInfo RecordingInfo { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

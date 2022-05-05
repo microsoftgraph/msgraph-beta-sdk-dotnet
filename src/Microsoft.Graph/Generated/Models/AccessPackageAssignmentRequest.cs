@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageAssignmentRequest : Entity, IParsable {
-        /// <summary>The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.</summary>
+        /// <summary>The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable. Supports $expand.</summary>
         public Microsoft.Graph.Beta.Models.AccessPackage AccessPackage { get; set; }
         /// <summary>For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.  Supports $expand.</summary>
         public Microsoft.Graph.Beta.Models.AccessPackageAssignment AccessPackageAssignment { get; set; }
@@ -29,9 +29,9 @@ namespace Microsoft.Graph.Beta.Models {
         public string RequestState { get; set; }
         /// <summary>More information on the request processing status. Read-only.</summary>
         public string RequestStatus { get; set; }
-        /// <summary>The type of the request. The possible values are: notSpecified, userAdd, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd, unknownFutureValue. A request from the user themselves would have requestType of UserAdd or UserRemove. This property cannot be changed once set.</summary>
+        /// <summary>One of UserAdd, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd or UserRemove. Read-only.</summary>
         public string RequestType { get; set; }
-        /// <summary>The range of dates that access is to be assigned to the requestor. This property cannot be changed once set.</summary>
+        /// <summary>The range of dates that access is to be assigned to the requestor. Read-only.</summary>
         public RequestSchedule Schedule { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
         public List<PlannerPlan> RecentPlans { get; set; }
         /// <summary>Read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.</summary>
         public List<PlannerPlan> RosterPlans { get; set; }
-        /// <summary>Read-only. Nullable. Returns the plannerPlans shared with the user.</summary>
+        /// <summary>Read-only. Nullable. Returns the plannerTasks assigned to the user.</summary>
         public List<PlannerTask> Tasks { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

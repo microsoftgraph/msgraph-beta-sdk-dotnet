@@ -11,6 +11,8 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public int? MfaAndSsprCapableUserCount { get; set; }
         /// <summary>The state of a conditional access policy that enforces multi-factor authentication. Optional. Read-only.</summary>
         public string MfaConditionalAccessPolicyState { get; set; }
+        /// <summary>The mfaExcludedUserCount property</summary>
+        public int? MfaExcludedUserCount { get; set; }
         /// <summary>The number of users registered for multi-factor authentication. Optional. Read-only.</summary>
         public int? MfaRegisteredUserCount { get; set; }
         /// <summary>A flag indicating whether Identity Security Defaults is enabled. Optional. Read-only.</summary>
@@ -41,6 +43,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
                 {"lastRefreshedDateTime", n => { LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"mfaAndSsprCapableUserCount", n => { MfaAndSsprCapableUserCount = n.GetIntValue(); } },
                 {"mfaConditionalAccessPolicyState", n => { MfaConditionalAccessPolicyState = n.GetStringValue(); } },
+                {"mfaExcludedUserCount", n => { MfaExcludedUserCount = n.GetIntValue(); } },
                 {"mfaRegisteredUserCount", n => { MfaRegisteredUserCount = n.GetIntValue(); } },
                 {"securityDefaultsEnabled", n => { SecurityDefaultsEnabled = n.GetBoolValue(); } },
                 {"ssprEnabledUserCount", n => { SsprEnabledUserCount = n.GetIntValue(); } },
@@ -60,6 +63,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             writer.WriteDateTimeOffsetValue("lastRefreshedDateTime", LastRefreshedDateTime);
             writer.WriteIntValue("mfaAndSsprCapableUserCount", MfaAndSsprCapableUserCount);
             writer.WriteStringValue("mfaConditionalAccessPolicyState", MfaConditionalAccessPolicyState);
+            writer.WriteIntValue("mfaExcludedUserCount", MfaExcludedUserCount);
             writer.WriteIntValue("mfaRegisteredUserCount", MfaRegisteredUserCount);
             writer.WriteBoolValue("securityDefaultsEnabled", SecurityDefaultsEnabled);
             writer.WriteIntValue("ssprEnabledUserCount", SsprEnabledUserCount);
