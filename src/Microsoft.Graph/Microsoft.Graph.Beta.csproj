@@ -22,10 +22,10 @@
     <AssemblyOriginatorKeyFile>35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PackageReleaseNotes>
-- [Breaking] Changes runtime version to netstandard2.0
+- [Breaking] Request configuration revamp to support [Kiota #1494](https://github.com/microsoft/kiota/issues/1494)
     </PackageReleaseNotes>
     <!-- edit this value to change the current major.minor.patch version -->
-    <VersionPrefix>5.2.0</VersionPrefix>
+    <VersionPrefix>5.3.0</VersionPrefix>
     <!-- adds a version suffix if the Prerelease environment variable is set. BUILD_BUILDID is an
     environment variable set by Azure pipelines from the build. We can use the buildid to correlate
     which commit was used to generate the preview build. -->
