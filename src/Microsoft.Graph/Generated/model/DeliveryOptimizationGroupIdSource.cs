@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type DeliveryOptimizationGroupIdSource.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<DeliveryOptimizationGroupIdSource>))]
-    public abstract partial class DeliveryOptimizationGroupIdSource
+    public partial class DeliveryOptimizationGroupIdSource
     {
+
+        ///<summary>
+        /// The internal DeliveryOptimizationGroupIdSource constructor
+        ///</summary>
+        protected internal DeliveryOptimizationGroupIdSource()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

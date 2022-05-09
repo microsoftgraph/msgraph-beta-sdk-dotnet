@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type EducationResource.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<EducationResource>))]
-    public abstract partial class EducationResource
+    public partial class EducationResource
     {
+
+        ///<summary>
+        /// The internal EducationResource constructor
+        ///</summary>
+        protected internal EducationResource()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets createdBy.

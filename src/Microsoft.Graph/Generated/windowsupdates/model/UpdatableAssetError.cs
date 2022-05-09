@@ -18,8 +18,16 @@ namespace Microsoft.Graph.WindowsUpdates
     /// The type UpdatableAssetError.
     /// </summary>
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<UpdatableAssetError>))]
-    public abstract partial class UpdatableAssetError
+    public partial class UpdatableAssetError
     {
+
+        ///<summary>
+        /// The internal UpdatableAssetError constructor
+        ///</summary>
+        protected internal UpdatableAssetError()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

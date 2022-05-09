@@ -18,8 +18,16 @@ namespace Microsoft.Graph.WindowsUpdates
     /// The type SoftwareUpdateReference.
     /// </summary>
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<SoftwareUpdateReference>))]
-    public abstract partial class SoftwareUpdateReference : DeployableContent
+    public partial class SoftwareUpdateReference : DeployableContent
     {
+
+        ///<summary>
+        /// The internal SoftwareUpdateReference constructor
+        ///</summary>
+        protected internal SoftwareUpdateReference()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
     }
 }

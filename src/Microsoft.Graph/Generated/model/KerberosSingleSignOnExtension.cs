@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type KerberosSingleSignOnExtension.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<KerberosSingleSignOnExtension>))]
-    public abstract partial class KerberosSingleSignOnExtension : SingleSignOnExtension
+    public partial class KerberosSingleSignOnExtension : SingleSignOnExtension
     {
+
+        ///<summary>
+        /// The internal KerberosSingleSignOnExtension constructor
+        ///</summary>
+        protected internal KerberosSingleSignOnExtension()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets activeDirectorySiteCode.

@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type Prompt.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<Prompt>))]
-    public abstract partial class Prompt
+    public partial class Prompt
     {
+
+        ///<summary>
+        /// The internal Prompt constructor
+        ///</summary>
+        protected internal Prompt()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type KeyTypedValuePair.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<KeyTypedValuePair>))]
-    public abstract partial class KeyTypedValuePair
+    public partial class KeyTypedValuePair
     {
+
+        ///<summary>
+        /// The internal KeyTypedValuePair constructor
+        ///</summary>
+        protected internal KeyTypedValuePair()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets key.

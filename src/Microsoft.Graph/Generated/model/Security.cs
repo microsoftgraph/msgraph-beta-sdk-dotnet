@@ -40,6 +40,12 @@ namespace Microsoft.Graph
         public string SubjectRightsRequestsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets cases.
+        /// </summary>
+        [JsonPropertyName("cases")]
+        public Microsoft.Graph.SecurityNamespace.CasesRoot Cases { get; set; }
+    
+        /// <summary>
         /// Gets or sets information protection.
         /// </summary>
         [JsonPropertyName("informationProtection")]

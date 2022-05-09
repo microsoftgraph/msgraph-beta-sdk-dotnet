@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type MacOSSingleSignOnExtension.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<MacOSSingleSignOnExtension>))]
-    public abstract partial class MacOSSingleSignOnExtension : SingleSignOnExtension
+    public partial class MacOSSingleSignOnExtension : SingleSignOnExtension
     {
+
+        ///<summary>
+        /// The internal MacOSSingleSignOnExtension constructor
+        ///</summary>
+        protected internal MacOSSingleSignOnExtension()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
     }
 }

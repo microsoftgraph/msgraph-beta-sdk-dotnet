@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type IpRange.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<IpRange>))]
-    public abstract partial class IpRange
+    public partial class IpRange
     {
+
+        ///<summary>
+        /// The internal IpRange constructor
+        ///</summary>
+        protected internal IpRange()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

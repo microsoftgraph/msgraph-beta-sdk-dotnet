@@ -89,19 +89,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IAccessPackageAssignmentAdditionalAccessRequestBuilder"/>.</returns>
         public IAccessPackageAssignmentAdditionalAccessRequestBuilder AdditionalAccess(
-            string accessPackageId = null)
-        {
-            return new AccessPackageAssignmentAdditionalAccessRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.additionalAccess"),
-                this.Client,
-                accessPackageId);
-        }
-
-        /// <summary>
-        /// Gets the request builder for AccessPackageAssignmentAdditionalAccess.
-        /// </summary>
-        /// <returns>The <see cref="IAccessPackageAssignmentAdditionalAccessRequestBuilder"/>.</returns>
-        public IAccessPackageAssignmentAdditionalAccessRequestBuilder AdditionalAccess(
             string accessPackageId = null,
             string incompatibleAccessPackageId = null)
         {

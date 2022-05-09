@@ -163,7 +163,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sendDeviceOwnershipChangePushNotification.
-        /// SendDeviceOwnershipChangePushNotification will be deprecated in 06/2022 and will stop returning a value in 07/2022. A boolean that indicates if a push notification is sent to users when their device ownership type changes from personal to corporate
+        /// Boolean that indicates if a push notification is sent to users when their device ownership type changes from personal to corporate
         /// </summary>
         [JsonPropertyName("sendDeviceOwnershipChangePushNotification")]
         public bool? SendDeviceOwnershipChangePushNotification { get; set; }

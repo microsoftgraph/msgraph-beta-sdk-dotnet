@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type CustomExtensionAuthenticationConfiguration.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<CustomExtensionAuthenticationConfiguration>))]
-    public abstract partial class CustomExtensionAuthenticationConfiguration
+    public partial class CustomExtensionAuthenticationConfiguration
     {
+
+        ///<summary>
+        /// The internal CustomExtensionAuthenticationConfiguration constructor
+        ///</summary>
+        protected internal CustomExtensionAuthenticationConfiguration()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets capabilities.
-        /// For example, 'Email', 'OfficeCommunicationsOnline'.
+        /// For example, Email, OfficeCommunicationsOnline.
         /// </summary>
         [JsonPropertyName("capabilities")]
         public string Capabilities { get; set; }
@@ -37,21 +37,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets isInitial.
-        /// true if this is the initial domain associated with the tenant; otherwise, false
+        /// true if this is the initial domain associated with the tenant; otherwise, false.
         /// </summary>
         [JsonPropertyName("isInitial")]
         public bool? IsInitial { get; set; }
     
         /// <summary>
         /// Gets or sets name.
-        /// The domain name; for example, 'contoso.onmicrosoft.com'
+        /// The domain name; for example, contoso.onmicrosoft.com.
         /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets type.
-        /// For example, 'Managed'.
+        /// For example, Managed.
         /// </summary>
         [JsonPropertyName("type")]
         public string Type { get; set; }

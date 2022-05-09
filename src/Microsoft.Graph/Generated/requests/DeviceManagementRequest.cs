@@ -684,6 +684,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsDevicePerformance.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
+                if (deviceManagementToInitialize.UserExperienceAnalyticsDeviceScopes != null && deviceManagementToInitialize.UserExperienceAnalyticsDeviceScopes.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsDeviceScopes.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsDeviceScopesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.UserExperienceAnalyticsDeviceScopes.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
                 if (deviceManagementToInitialize.UserExperienceAnalyticsDeviceScores != null && deviceManagementToInitialize.UserExperienceAnalyticsDeviceScores.CurrentPage != null)
                 {
                     deviceManagementToInitialize.UserExperienceAnalyticsDeviceScores.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsDeviceScoresNextLink);
@@ -822,17 +828,17 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.WindowsAutopilotDeviceIdentities.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
-                if (deviceManagementToInitialize.ManagementConditions != null && deviceManagementToInitialize.ManagementConditions.CurrentPage != null)
+                if (deviceManagementToInitialize.ZebraFotaArtifacts != null && deviceManagementToInitialize.ZebraFotaArtifacts.CurrentPage != null)
                 {
-                    deviceManagementToInitialize.ManagementConditions.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ManagementConditionsNextLink);
+                    deviceManagementToInitialize.ZebraFotaArtifacts.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ZebraFotaArtifactsNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
-                    deviceManagementToInitialize.ManagementConditions.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                    deviceManagementToInitialize.ZebraFotaArtifacts.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
-                if (deviceManagementToInitialize.ManagementConditionStatements != null && deviceManagementToInitialize.ManagementConditionStatements.CurrentPage != null)
+                if (deviceManagementToInitialize.ZebraFotaDeployments != null && deviceManagementToInitialize.ZebraFotaDeployments.CurrentPage != null)
                 {
-                    deviceManagementToInitialize.ManagementConditionStatements.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ManagementConditionStatementsNextLink);
+                    deviceManagementToInitialize.ZebraFotaDeployments.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ZebraFotaDeploymentsNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
-                    deviceManagementToInitialize.ManagementConditionStatements.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                    deviceManagementToInitialize.ZebraFotaDeployments.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
                 if (deviceManagementToInitialize.GroupPolicyMigrationReports != null && deviceManagementToInitialize.GroupPolicyMigrationReports.CurrentPage != null)
                 {

@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type EventMessageDetail.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<EventMessageDetail>))]
-    public abstract partial class EventMessageDetail
+    public partial class EventMessageDetail
     {
+
+        ///<summary>
+        /// The internal EventMessageDetail constructor
+        ///</summary>
+        protected internal EventMessageDetail()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

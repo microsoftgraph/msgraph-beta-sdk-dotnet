@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type CallOptions.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<CallOptions>))]
-    public abstract partial class CallOptions
+    public partial class CallOptions
     {
+
+        ///<summary>
+        /// The internal CallOptions constructor
+        ///</summary>
+        protected internal CallOptions()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets hideBotAfterEscalation.

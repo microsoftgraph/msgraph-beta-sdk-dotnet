@@ -92,6 +92,12 @@ namespace Microsoft.Graph
         public AppliedConditionalAccessPolicyResult? Result { get; set; }
     
         /// <summary>
+        /// Gets or sets sessionControlsNotSatisfied.
+        /// </summary>
+        [JsonPropertyName("sessionControlsNotSatisfied")]
+        public IEnumerable<string> SessionControlsNotSatisfied { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]

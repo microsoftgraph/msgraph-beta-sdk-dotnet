@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type MarkContent.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<MarkContent>))]
-    public abstract partial class MarkContent : LabelActionBase
+    public partial class MarkContent : LabelActionBase
     {
+
+        ///<summary>
+        /// The internal MarkContent constructor
+        ///</summary>
+        protected internal MarkContent()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets fontColor.

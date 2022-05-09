@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type DeviceManagementConfigurationSettingInstanceTemplate.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementConfigurationSettingInstanceTemplate>))]
-    public abstract partial class DeviceManagementConfigurationSettingInstanceTemplate
+    public partial class DeviceManagementConfigurationSettingInstanceTemplate
     {
+
+        ///<summary>
+        /// The internal DeviceManagementConfigurationSettingInstanceTemplate constructor
+        ///</summary>
+        protected internal DeviceManagementConfigurationSettingInstanceTemplate()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets isRequired.

@@ -45,6 +45,12 @@ namespace Microsoft.Graph
             IEnumerable<EnrollmentConfigurationAssignment> enrollmentConfigurationAssignments = null);
 
         /// <summary>
+        /// Gets the request builder for DeviceEnrollmentConfigurationCreateEnrollmentNotificationConfiguration.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceEnrollmentConfigurationCreateEnrollmentNotificationConfigurationRequestBuilder"/>.</returns>
+        IDeviceEnrollmentConfigurationCreateEnrollmentNotificationConfigurationRequestBuilder CreateEnrollmentNotificationConfiguration();
+
+        /// <summary>
         /// Gets the request builder for DeviceEnrollmentConfigurationSetPriority.
         /// </summary>
         /// <returns>The <see cref="IDeviceEnrollmentConfigurationSetPriorityRequestBuilder"/>.</returns>

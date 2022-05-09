@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type DeviceHealthScriptParameter.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<DeviceHealthScriptParameter>))]
-    public abstract partial class DeviceHealthScriptParameter
+    public partial class DeviceHealthScriptParameter
     {
+
+        ///<summary>
+        /// The internal DeviceHealthScriptParameter constructor
+        ///</summary>
+        protected internal DeviceHealthScriptParameter()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets applyDefaultValueWhenNotAssigned.

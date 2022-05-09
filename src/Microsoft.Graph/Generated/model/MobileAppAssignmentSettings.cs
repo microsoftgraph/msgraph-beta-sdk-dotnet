@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type MobileAppAssignmentSettings.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<MobileAppAssignmentSettings>))]
-    public abstract partial class MobileAppAssignmentSettings
+    public partial class MobileAppAssignmentSettings
     {
+
+        ///<summary>
+        /// The internal MobileAppAssignmentSettings constructor
+        ///</summary>
+        protected internal MobileAppAssignmentSettings()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

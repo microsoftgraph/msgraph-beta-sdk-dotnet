@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type WindowsInformationProtectionApp.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<WindowsInformationProtectionApp>))]
-    public abstract partial class WindowsInformationProtectionApp
+    public partial class WindowsInformationProtectionApp
     {
+
+        ///<summary>
+        /// The internal WindowsInformationProtectionApp constructor
+        ///</summary>
+        protected internal WindowsInformationProtectionApp()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets denied.

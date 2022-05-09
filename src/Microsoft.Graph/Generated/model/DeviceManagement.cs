@@ -1267,6 +1267,27 @@ namespace Microsoft.Graph
         public string UserExperienceAnalyticsDevicePerformanceNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets user experience analytics device scope.
+        /// The user experience analytics device scope entity endpoint to trigger on the service to either START or STOP computing metrics data based on a device scope configuration.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsDeviceScope")]
+        public UserExperienceAnalyticsDeviceScope UserExperienceAnalyticsDeviceScope { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics device scopes.
+        /// The user experience analytics device scope entity contains device scope configuration use to apply filtering on the endpoint analytics reports.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsDeviceScopes")]
+        public IDeviceManagementUserExperienceAnalyticsDeviceScopesCollectionPage UserExperienceAnalyticsDeviceScopes { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsDeviceScopesNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsDeviceScopes@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string UserExperienceAnalyticsDeviceScopesNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets user experience analytics device scores.
         /// User experience analytics device scores
         /// </summary>
@@ -1617,32 +1638,39 @@ namespace Microsoft.Graph
         public WindowsAutopilotSettings WindowsAutopilotSettings { get; set; }
     
         /// <summary>
-        /// Gets or sets management conditions.
-        /// The management conditions associated with device management of the company.
+        /// Gets or sets zebra fota artifacts.
+        /// The Collection of ZebraFotaArtifacts.
         /// </summary>
-        [JsonPropertyName("managementConditions")]
-        public IDeviceManagementManagementConditionsCollectionPage ManagementConditions { get; set; }
+        [JsonPropertyName("zebraFotaArtifacts")]
+        public IDeviceManagementZebraFotaArtifactsCollectionPage ZebraFotaArtifacts { get; set; }
 
         /// <summary>
-        /// Gets or sets managementConditionsNextLink.
+        /// Gets or sets zebraFotaArtifactsNextLink.
         /// </summary>
-        [JsonPropertyName("managementConditions@odata.nextLink")]
+        [JsonPropertyName("zebraFotaArtifacts@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
-        public string ManagementConditionsNextLink { get; set; }
+        public string ZebraFotaArtifactsNextLink { get; set; }
     
         /// <summary>
-        /// Gets or sets management condition statements.
-        /// The management condition statements associated with device management of the company.
+        /// Gets or sets zebra fota connector.
+        /// The singleton ZebraFotaConnector associated with account.
         /// </summary>
-        [JsonPropertyName("managementConditionStatements")]
-        public IDeviceManagementManagementConditionStatementsCollectionPage ManagementConditionStatements { get; set; }
+        [JsonPropertyName("zebraFotaConnector")]
+        public ZebraFotaConnector ZebraFotaConnector { get; set; }
+    
+        /// <summary>
+        /// Gets or sets zebra fota deployments.
+        /// Collection of ZebraFotaDeployments associated with account.
+        /// </summary>
+        [JsonPropertyName("zebraFotaDeployments")]
+        public IDeviceManagementZebraFotaDeploymentsCollectionPage ZebraFotaDeployments { get; set; }
 
         /// <summary>
-        /// Gets or sets managementConditionStatementsNextLink.
+        /// Gets or sets zebraFotaDeploymentsNextLink.
         /// </summary>
-        [JsonPropertyName("managementConditionStatements@odata.nextLink")]
+        [JsonPropertyName("zebraFotaDeployments@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
-        public string ManagementConditionStatementsNextLink { get; set; }
+        public string ZebraFotaDeploymentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets group policy migration reports.

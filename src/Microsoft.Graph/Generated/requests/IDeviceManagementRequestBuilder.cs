@@ -566,6 +566,18 @@ namespace Microsoft.Graph
         IDeviceManagementUserExperienceAnalyticsDevicePerformanceCollectionRequestBuilder UserExperienceAnalyticsDevicePerformance { get; }
 
         /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsDeviceScope.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsDeviceScopeRequestBuilder"/>.</returns>
+        IUserExperienceAnalyticsDeviceScopeRequestBuilder UserExperienceAnalyticsDeviceScope { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsDeviceScopes.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsDeviceScopesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsDeviceScopesCollectionRequestBuilder UserExperienceAnalyticsDeviceScopes { get; }
+
+        /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsDeviceScores.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsDeviceScoresCollectionRequestBuilder"/>.</returns>
@@ -728,16 +740,22 @@ namespace Microsoft.Graph
         IWindowsAutopilotSettingsRequestBuilder WindowsAutopilotSettings { get; }
 
         /// <summary>
-        /// Gets the request builder for ManagementConditions.
+        /// Gets the request builder for ZebraFotaArtifacts.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementManagementConditionsCollectionRequestBuilder"/>.</returns>
-        IDeviceManagementManagementConditionsCollectionRequestBuilder ManagementConditions { get; }
+        /// <returns>The <see cref="IDeviceManagementZebraFotaArtifactsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementZebraFotaArtifactsCollectionRequestBuilder ZebraFotaArtifacts { get; }
 
         /// <summary>
-        /// Gets the request builder for ManagementConditionStatements.
+        /// Gets the request builder for ZebraFotaConnector.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementManagementConditionStatementsCollectionRequestBuilder"/>.</returns>
-        IDeviceManagementManagementConditionStatementsCollectionRequestBuilder ManagementConditionStatements { get; }
+        /// <returns>The <see cref="IZebraFotaConnectorRequestBuilder"/>.</returns>
+        IZebraFotaConnectorRequestBuilder ZebraFotaConnector { get; }
+
+        /// <summary>
+        /// Gets the request builder for ZebraFotaDeployments.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementZebraFotaDeploymentsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementZebraFotaDeploymentsCollectionRequestBuilder ZebraFotaDeployments { get; }
 
         /// <summary>
         /// Gets the request builder for GroupPolicyMigrationReports.

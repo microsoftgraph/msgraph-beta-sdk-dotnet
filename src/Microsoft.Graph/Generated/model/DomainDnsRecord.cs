@@ -37,21 +37,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets record type.
-        /// Indicates what type of DNS record this entity represents.The value can be one of the following: CName, Mx, Srv, TxtKey
+        /// Indicates what type of DNS record this entity represents.The value can be one of the following: CName, Mx, Srv, Txt.
         /// </summary>
         [JsonPropertyName("recordType")]
         public string RecordType { get; set; }
     
         /// <summary>
         /// Gets or sets supported service.
-        /// Microsoft Online Service or feature that has a dependency on this DNS record.Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune
+        /// Microsoft Online Service or feature that has a dependency on this DNS record.Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune.
         /// </summary>
         [JsonPropertyName("supportedService")]
         public string SupportedService { get; set; }
     
         /// <summary>
         /// Gets or sets ttl.
-        /// Value to use when configuring the time-to-live (ttl) property of the DNS record at the DNS host. Not nullable
+        /// Value to use when configuring the time-to-live (ttl) property of the DNS record at the DNS host. Not nullable.
         /// </summary>
         [JsonPropertyName("ttl")]
         public Int32? Ttl { get; set; }

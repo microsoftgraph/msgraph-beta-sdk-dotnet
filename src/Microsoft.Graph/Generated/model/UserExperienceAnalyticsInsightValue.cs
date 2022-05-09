@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type UserExperienceAnalyticsInsightValue.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<UserExperienceAnalyticsInsightValue>))]
-    public abstract partial class UserExperienceAnalyticsInsightValue
+    public partial class UserExperienceAnalyticsInsightValue
     {
+
+        ///<summary>
+        /// The internal UserExperienceAnalyticsInsightValue constructor
+        ///</summary>
+        protected internal UserExperienceAnalyticsInsightValue()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

@@ -18,8 +18,16 @@ namespace Microsoft.Graph.WindowsUpdates
     /// The type DeployableContent.
     /// </summary>
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<DeployableContent>))]
-    public abstract partial class DeployableContent
+    public partial class DeployableContent
     {
+
+        ///<summary>
+        /// The internal DeployableContent constructor
+        ///</summary>
+        protected internal DeployableContent()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type TeamworkNotificationRecipient.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<TeamworkNotificationRecipient>))]
-    public abstract partial class TeamworkNotificationRecipient
+    public partial class TeamworkNotificationRecipient
     {
+
+        ///<summary>
+        /// The internal TeamworkNotificationRecipient constructor
+        ///</summary>
+        protected internal TeamworkNotificationRecipient()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

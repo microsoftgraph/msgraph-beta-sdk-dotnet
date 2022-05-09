@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceCompliancePolicyGetDevicesScheduledToRetireRequestBuilder.
     /// </summary>
-    public partial class DeviceCompliancePolicyGetDevicesScheduledToRetireRequestBuilder : BaseActionMethodRequestBuilder<IDeviceCompliancePolicyGetDevicesScheduledToRetireRequest>, IDeviceCompliancePolicyGetDevicesScheduledToRetireRequestBuilder
+    public partial class DeviceCompliancePolicyGetDevicesScheduledToRetireRequestBuilder : BaseFunctionMethodRequestBuilder<IDeviceCompliancePolicyGetDevicesScheduledToRetireRequest>, IDeviceCompliancePolicyGetDevicesScheduledToRetireRequestBuilder
     {
         /// <summary>
         /// Constructs a new <see cref="DeviceCompliancePolicyGetDevicesScheduledToRetireRequestBuilder"/>.
@@ -28,6 +28,7 @@ namespace Microsoft.Graph
             IBaseClient client)
             : base(requestUrl, client)
         {
+            this.SetFunctionParameters();
         }
 
         /// <summary>

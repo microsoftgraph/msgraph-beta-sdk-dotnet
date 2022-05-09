@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type Win32LobAppRequirement.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<Win32LobAppRequirement>))]
-    public abstract partial class Win32LobAppRequirement
+    public partial class Win32LobAppRequirement
     {
+
+        ///<summary>
+        /// The internal Win32LobAppRequirement constructor
+        ///</summary>
+        protected internal Win32LobAppRequirement()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets detectionValue.

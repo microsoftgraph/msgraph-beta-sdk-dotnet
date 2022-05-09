@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type BookingCustomerInformationBase.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<BookingCustomerInformationBase>))]
-    public abstract partial class BookingCustomerInformationBase
+    public partial class BookingCustomerInformationBase
     {
+
+        ///<summary>
+        /// The internal BookingCustomerInformationBase constructor
+        ///</summary>
+        protected internal BookingCustomerInformationBase()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type DeviceManagementConfigurationChoiceSettingValueDefaultTemplate.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementConfigurationChoiceSettingValueDefaultTemplate>))]
-    public abstract partial class DeviceManagementConfigurationChoiceSettingValueDefaultTemplate
+    public partial class DeviceManagementConfigurationChoiceSettingValueDefaultTemplate
     {
+
+        ///<summary>
+        /// The internal DeviceManagementConfigurationChoiceSettingValueDefaultTemplate constructor
+        ///</summary>
+        protected internal DeviceManagementConfigurationChoiceSettingValueDefaultTemplate()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

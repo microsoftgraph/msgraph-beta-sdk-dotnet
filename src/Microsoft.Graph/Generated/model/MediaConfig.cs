@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type MediaConfig.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<MediaConfig>))]
-    public abstract partial class MediaConfig
+    public partial class MediaConfig
     {
+
+        ///<summary>
+        /// The internal MediaConfig constructor
+        ///</summary>
+        protected internal MediaConfig()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets removeFromDefaultAudioGroup.

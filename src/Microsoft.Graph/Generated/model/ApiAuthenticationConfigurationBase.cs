@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type ApiAuthenticationConfigurationBase.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<ApiAuthenticationConfigurationBase>))]
-    public abstract partial class ApiAuthenticationConfigurationBase
+    public partial class ApiAuthenticationConfigurationBase
     {
+
+        ///<summary>
+        /// The internal ApiAuthenticationConfigurationBase constructor
+        ///</summary>
+        protected internal ApiAuthenticationConfigurationBase()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

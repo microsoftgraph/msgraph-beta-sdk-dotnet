@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type EdgeHomeButtonConfiguration.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<EdgeHomeButtonConfiguration>))]
-    public abstract partial class EdgeHomeButtonConfiguration
+    public partial class EdgeHomeButtonConfiguration
     {
+
+        ///<summary>
+        /// The internal EdgeHomeButtonConfiguration constructor
+        ///</summary>
+        protected internal EdgeHomeButtonConfiguration()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

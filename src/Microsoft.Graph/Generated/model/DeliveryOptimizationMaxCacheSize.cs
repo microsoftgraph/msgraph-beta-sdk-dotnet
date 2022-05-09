@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type DeliveryOptimizationMaxCacheSize.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<DeliveryOptimizationMaxCacheSize>))]
-    public abstract partial class DeliveryOptimizationMaxCacheSize
+    public partial class DeliveryOptimizationMaxCacheSize
     {
+
+        ///<summary>
+        /// The internal DeliveryOptimizationMaxCacheSize constructor
+        ///</summary>
+        protected internal DeliveryOptimizationMaxCacheSize()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

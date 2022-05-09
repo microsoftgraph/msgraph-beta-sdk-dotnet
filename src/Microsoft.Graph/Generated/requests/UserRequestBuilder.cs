@@ -1017,6 +1017,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for UserWipeManagedAppRegistrationsByAzureAdDeviceId.
+        /// </summary>
+        /// <returns>The <see cref="IUserWipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder"/>.</returns>
+        public IUserWipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder WipeManagedAppRegistrationsByAzureAdDeviceId(
+            string azureAdDeviceId = null)
+        {
+            return new UserWipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.wipeManagedAppRegistrationsByAzureAdDeviceId"),
+                this.Client,
+                azureAdDeviceId);
+        }
+
+        /// <summary>
         /// Gets the request builder for UserWipeManagedAppRegistrationsByDeviceTag.
         /// </summary>
         /// <returns>The <see cref="IUserWipeManagedAppRegistrationsByDeviceTagRequestBuilder"/>.</returns>

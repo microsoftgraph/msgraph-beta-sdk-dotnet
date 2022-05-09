@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type DeviceManagementConstraint.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementConstraint>))]
-    public abstract partial class DeviceManagementConstraint
+    public partial class DeviceManagementConstraint
     {
+
+        ///<summary>
+        /// The internal DeviceManagementConstraint constructor
+        ///</summary>
+        protected internal DeviceManagementConstraint()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

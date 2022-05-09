@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type OmaSetting.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<OmaSetting>))]
-    public abstract partial class OmaSetting
+    public partial class OmaSetting
     {
+
+        ///<summary>
+        /// The internal OmaSetting constructor
+        ///</summary>
+        protected internal OmaSetting()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets description.

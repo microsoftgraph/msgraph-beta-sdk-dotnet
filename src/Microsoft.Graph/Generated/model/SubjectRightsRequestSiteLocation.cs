@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type SubjectRightsRequestSiteLocation.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<SubjectRightsRequestSiteLocation>))]
-    public abstract partial class SubjectRightsRequestSiteLocation
+    public partial class SubjectRightsRequestSiteLocation
     {
+
+        ///<summary>
+        /// The internal SubjectRightsRequestSiteLocation constructor
+        ///</summary>
+        protected internal SubjectRightsRequestSiteLocation()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

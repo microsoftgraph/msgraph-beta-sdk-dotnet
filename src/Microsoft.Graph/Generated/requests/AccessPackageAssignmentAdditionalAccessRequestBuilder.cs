@@ -37,22 +37,6 @@ namespace Microsoft.Graph
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="accessPackageId">A accessPackageId parameter for the OData method call.</param>
-        public AccessPackageAssignmentAdditionalAccessRequestBuilder(
-            string requestUrl,
-            IBaseClient client,
-            string accessPackageId)
-            : base(requestUrl, client)
-        {
-            this.SetParameter("accessPackageId", accessPackageId, true);
-            this.SetFunctionParameters();
-        }
-
-        /// <summary>
-        /// Constructs a new <see cref="AccessPackageAssignmentAdditionalAccessRequestBuilder"/>.
-        /// </summary>
-        /// <param name="requestUrl">The URL for the request.</param>
-        /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        /// <param name="accessPackageId">A accessPackageId parameter for the OData method call.</param>
         /// <param name="incompatibleAccessPackageId">A incompatibleAccessPackageId parameter for the OData method call.</param>
         public AccessPackageAssignmentAdditionalAccessRequestBuilder(
             string requestUrl,

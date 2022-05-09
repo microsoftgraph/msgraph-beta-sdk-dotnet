@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type DeviceAndAppManagementAssignmentTarget.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<DeviceAndAppManagementAssignmentTarget>))]
-    public abstract partial class DeviceAndAppManagementAssignmentTarget
+    public partial class DeviceAndAppManagementAssignmentTarget
     {
+
+        ///<summary>
+        /// The internal DeviceAndAppManagementAssignmentTarget constructor
+        ///</summary>
+        protected internal DeviceAndAppManagementAssignmentTarget()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets deviceAndAppManagementAssignmentFilterId.

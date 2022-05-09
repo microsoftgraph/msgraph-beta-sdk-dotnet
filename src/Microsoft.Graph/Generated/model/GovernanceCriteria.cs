@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type GovernanceCriteria.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<GovernanceCriteria>))]
-    public abstract partial class GovernanceCriteria
+    public partial class GovernanceCriteria
     {
+
+        ///<summary>
+        /// The internal GovernanceCriteria constructor
+        ///</summary>
+        protected internal GovernanceCriteria()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

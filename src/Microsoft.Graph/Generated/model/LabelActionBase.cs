@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type LabelActionBase.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<LabelActionBase>))]
-    public abstract partial class LabelActionBase
+    public partial class LabelActionBase
     {
+
+        ///<summary>
+        /// The internal LabelActionBase constructor
+        ///</summary>
+        protected internal LabelActionBase()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets name.

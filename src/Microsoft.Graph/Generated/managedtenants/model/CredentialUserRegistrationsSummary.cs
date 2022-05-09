@@ -42,6 +42,12 @@ namespace Microsoft.Graph.ManagedTenants
         public string MfaConditionalAccessPolicyState { get; set; }
     
         /// <summary>
+        /// Gets or sets mfa excluded user count.
+        /// </summary>
+        [JsonPropertyName("mfaExcludedUserCount")]
+        public Int32? MfaExcludedUserCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets mfa registered user count.
         /// The number of users registered for multi-factor authentication. Optional. Read-only.
         /// </summary>

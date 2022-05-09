@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type MeetingInfo.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<MeetingInfo>))]
-    public abstract partial class MeetingInfo
+    public partial class MeetingInfo
     {
+
+        ///<summary>
+        /// The internal MeetingInfo constructor
+        ///</summary>
+        protected internal MeetingInfo()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets allowConversationWithoutHost.

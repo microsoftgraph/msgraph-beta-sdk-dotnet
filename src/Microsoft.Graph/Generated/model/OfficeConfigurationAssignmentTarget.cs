@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type OfficeConfigurationAssignmentTarget.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<OfficeConfigurationAssignmentTarget>))]
-    public abstract partial class OfficeConfigurationAssignmentTarget
+    public partial class OfficeConfigurationAssignmentTarget
     {
+
+        ///<summary>
+        /// The internal OfficeConfigurationAssignmentTarget constructor
+        ///</summary>
+        protected internal OfficeConfigurationAssignmentTarget()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

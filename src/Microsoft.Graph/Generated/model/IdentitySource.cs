@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type IdentitySource.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<IdentitySource>))]
-    public abstract partial class IdentitySource
+    public partial class IdentitySource
     {
+
+        ///<summary>
+        /// The internal IdentitySource constructor
+        ///</summary>
+        protected internal IdentitySource()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

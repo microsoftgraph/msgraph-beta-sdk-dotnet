@@ -256,6 +256,19 @@ namespace Microsoft.Graph.ManagedTenants
         public string ManagementTemplateStepVersionsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets my roles.
+        /// </summary>
+        [JsonPropertyName("myRoles")]
+        public IManagedTenantMyRolesCollectionPage MyRoles { get; set; }
+
+        /// <summary>
+        /// Gets or sets myRolesNextLink.
+        /// </summary>
+        [JsonPropertyName("myRoles@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string MyRolesNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets tenant groups.
         /// The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
         /// </summary>

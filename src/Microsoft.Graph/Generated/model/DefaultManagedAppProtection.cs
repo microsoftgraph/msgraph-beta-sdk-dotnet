@@ -86,6 +86,27 @@ namespace Microsoft.Graph
         public ManagedAppRemediationAction? AppActionIfDeviceLockNotSet { get; set; }
     
         /// <summary>
+        /// Gets or sets app action if device passcode complexity less than high.
+        /// If the device does not have a passcode of high complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
+        /// </summary>
+        [JsonPropertyName("appActionIfDevicePasscodeComplexityLessThanHigh")]
+        public ManagedAppRemediationAction? AppActionIfDevicePasscodeComplexityLessThanHigh { get; set; }
+    
+        /// <summary>
+        /// Gets or sets app action if device passcode complexity less than low.
+        /// If the device does not have a passcode of low complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
+        /// </summary>
+        [JsonPropertyName("appActionIfDevicePasscodeComplexityLessThanLow")]
+        public ManagedAppRemediationAction? AppActionIfDevicePasscodeComplexityLessThanLow { get; set; }
+    
+        /// <summary>
+        /// Gets or sets app action if device passcode complexity less than medium.
+        /// If the device does not have a passcode of medium complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
+        /// </summary>
+        [JsonPropertyName("appActionIfDevicePasscodeComplexityLessThanMedium")]
+        public ManagedAppRemediationAction? AppActionIfDevicePasscodeComplexityLessThanMedium { get; set; }
+    
+        /// <summary>
         /// Gets or sets app action if ios device model not allowed.
         /// Defines a managed app behavior, either block or wipe, if the specified device model is not allowed. (iOS Only). Possible values are: block, wipe, warn.
         /// </summary>
