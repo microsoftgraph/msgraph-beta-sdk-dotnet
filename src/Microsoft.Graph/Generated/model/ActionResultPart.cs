@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type ActionResultPart.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<ActionResultPart>))]
-    public abstract partial class ActionResultPart
+    public partial class ActionResultPart
     {
+
+        ///<summary>
+        /// The internal ActionResultPart constructor
+        ///</summary>
+        protected internal ActionResultPart()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets error.

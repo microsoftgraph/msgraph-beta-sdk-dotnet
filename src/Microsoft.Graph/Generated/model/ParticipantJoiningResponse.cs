@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type ParticipantJoiningResponse.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<ParticipantJoiningResponse>))]
-    public abstract partial class ParticipantJoiningResponse
+    public partial class ParticipantJoiningResponse
     {
+
+        ///<summary>
+        /// The internal ParticipantJoiningResponse constructor
+        ///</summary>
+        protected internal ParticipantJoiningResponse()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

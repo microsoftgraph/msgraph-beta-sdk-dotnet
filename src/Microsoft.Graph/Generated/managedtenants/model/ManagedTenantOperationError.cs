@@ -18,8 +18,16 @@ namespace Microsoft.Graph.ManagedTenants
     /// The type ManagedTenantOperationError.
     /// </summary>
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<ManagedTenantOperationError>))]
-    public abstract partial class ManagedTenantOperationError
+    public partial class ManagedTenantOperationError
     {
+
+        ///<summary>
+        /// The internal ManagedTenantOperationError constructor
+        ///</summary>
+        protected internal ManagedTenantOperationError()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets error.

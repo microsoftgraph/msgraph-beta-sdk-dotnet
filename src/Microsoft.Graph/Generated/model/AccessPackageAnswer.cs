@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type AccessPackageAnswer.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<AccessPackageAnswer>))]
-    public abstract partial class AccessPackageAnswer
+    public partial class AccessPackageAnswer
     {
+
+        ///<summary>
+        /// The internal AccessPackageAnswer constructor
+        ///</summary>
+        protected internal AccessPackageAnswer()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets answeredQuestion.

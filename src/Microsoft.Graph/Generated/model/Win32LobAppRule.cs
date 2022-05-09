@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type Win32LobAppRule.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<Win32LobAppRule>))]
-    public abstract partial class Win32LobAppRule
+    public partial class Win32LobAppRule
     {
+
+        ///<summary>
+        /// The internal Win32LobAppRule constructor
+        ///</summary>
+        protected internal Win32LobAppRule()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets ruleType.

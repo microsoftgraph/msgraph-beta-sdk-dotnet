@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type EducationAssignmentRecipient.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<EducationAssignmentRecipient>))]
-    public abstract partial class EducationAssignmentRecipient
+    public partial class EducationAssignmentRecipient
     {
+
+        ///<summary>
+        /// The internal EducationAssignmentRecipient constructor
+        ///</summary>
+        protected internal EducationAssignmentRecipient()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

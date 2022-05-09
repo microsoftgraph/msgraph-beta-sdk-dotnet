@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type AccessReviewNotificationRecipientScope.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<AccessReviewNotificationRecipientScope>))]
-    public abstract partial class AccessReviewNotificationRecipientScope
+    public partial class AccessReviewNotificationRecipientScope
     {
+
+        ///<summary>
+        /// The internal AccessReviewNotificationRecipientScope constructor
+        ///</summary>
+        protected internal AccessReviewNotificationRecipientScope()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

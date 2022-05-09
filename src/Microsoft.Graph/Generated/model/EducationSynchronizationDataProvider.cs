@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type EducationSynchronizationDataProvider.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<EducationSynchronizationDataProvider>))]
-    public abstract partial class EducationSynchronizationDataProvider
+    public partial class EducationSynchronizationDataProvider
     {
+
+        ///<summary>
+        /// The internal EducationSynchronizationDataProvider constructor
+        ///</summary>
+        protected internal EducationSynchronizationDataProvider()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

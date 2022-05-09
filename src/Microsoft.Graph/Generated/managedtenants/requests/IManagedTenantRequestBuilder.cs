@@ -134,6 +134,12 @@ namespace Microsoft.Graph.ManagedTenants
         IManagedTenantManagementTemplateStepVersionsCollectionRequestBuilder ManagementTemplateStepVersions { get; }
 
         /// <summary>
+        /// Gets the request builder for MyRoles.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantMyRolesCollectionRequestBuilder"/>.</returns>
+        IManagedTenantMyRolesCollectionRequestBuilder MyRoles { get; }
+
+        /// <summary>
         /// Gets the request builder for TenantGroups.
         /// </summary>
         /// <returns>The <see cref="IManagedTenantTenantGroupsCollectionRequestBuilder"/>.</returns>

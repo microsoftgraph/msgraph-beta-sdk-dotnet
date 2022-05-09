@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type InformationProtectionAction.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<InformationProtectionAction>))]
-    public abstract partial class InformationProtectionAction
+    public partial class InformationProtectionAction
     {
+
+        ///<summary>
+        /// The internal InformationProtectionAction constructor
+        ///</summary>
+        protected internal InformationProtectionAction()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

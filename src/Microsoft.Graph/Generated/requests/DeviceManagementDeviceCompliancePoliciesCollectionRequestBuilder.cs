@@ -74,17 +74,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DeviceCompliancePolicyGetDevicesScheduledToRetire.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceCompliancePolicyGetDevicesScheduledToRetireRequestBuilder"/>.</returns>
-        public IDeviceCompliancePolicyGetDevicesScheduledToRetireRequestBuilder GetDevicesScheduledToRetire()
-        {
-            return new DeviceCompliancePolicyGetDevicesScheduledToRetireRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getDevicesScheduledToRetire"),
-                this.Client);
-        }
-
-        /// <summary>
         /// Gets the request builder for DeviceCompliancePolicyRefreshDeviceComplianceReportSummarization.
         /// </summary>
         /// <returns>The <see cref="IDeviceCompliancePolicyRefreshDeviceComplianceReportSummarizationRequestBuilder"/>.</returns>
@@ -121,6 +110,17 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.validateComplianceScript"),
                 this.Client,
                 deviceCompliancePolicyScript);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceCompliancePolicyGetDevicesScheduledToRetire.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceCompliancePolicyGetDevicesScheduledToRetireRequestBuilder"/>.</returns>
+        public IDeviceCompliancePolicyGetDevicesScheduledToRetireRequestBuilder GetDevicesScheduledToRetire()
+        {
+            return new DeviceCompliancePolicyGetDevicesScheduledToRetireRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getDevicesScheduledToRetire"),
+                this.Client);
         }
     }
 }

@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type EducationAssignmentGradeType.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<EducationAssignmentGradeType>))]
-    public abstract partial class EducationAssignmentGradeType
+    public partial class EducationAssignmentGradeType
     {
+
+        ///<summary>
+        /// The internal EducationAssignmentGradeType constructor
+        ///</summary>
+        protected internal EducationAssignmentGradeType()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

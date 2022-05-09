@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type EdgeSearchEngineBase.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<EdgeSearchEngineBase>))]
-    public abstract partial class EdgeSearchEngineBase
+    public partial class EdgeSearchEngineBase
     {
+
+        ///<summary>
+        /// The internal EdgeSearchEngineBase constructor
+        ///</summary>
+        protected internal EdgeSearchEngineBase()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

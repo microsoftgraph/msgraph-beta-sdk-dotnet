@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type AccessReviewInstanceDecisionItemTarget.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<AccessReviewInstanceDecisionItemTarget>))]
-    public abstract partial class AccessReviewInstanceDecisionItemTarget
+    public partial class AccessReviewInstanceDecisionItemTarget
     {
+
+        ///<summary>
+        /// The internal AccessReviewInstanceDecisionItemTarget constructor
+        ///</summary>
+        protected internal AccessReviewInstanceDecisionItemTarget()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

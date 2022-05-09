@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type DeliveryOptimizationBandwidth.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<DeliveryOptimizationBandwidth>))]
-    public abstract partial class DeliveryOptimizationBandwidth
+    public partial class DeliveryOptimizationBandwidth
     {
+
+        ///<summary>
+        /// The internal DeliveryOptimizationBandwidth constructor
+        ///</summary>
+        protected internal DeliveryOptimizationBandwidth()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

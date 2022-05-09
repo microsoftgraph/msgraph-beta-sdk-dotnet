@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type DeviceManagementConfigurationIntegerSettingValueDefaultTemplate.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementConfigurationIntegerSettingValueDefaultTemplate>))]
-    public abstract partial class DeviceManagementConfigurationIntegerSettingValueDefaultTemplate
+    public partial class DeviceManagementConfigurationIntegerSettingValueDefaultTemplate
     {
+
+        ///<summary>
+        /// The internal DeviceManagementConfigurationIntegerSettingValueDefaultTemplate constructor
+        ///</summary>
+        protected internal DeviceManagementConfigurationIntegerSettingValueDefaultTemplate()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

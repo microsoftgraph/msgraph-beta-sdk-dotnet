@@ -148,6 +148,20 @@ namespace Microsoft.Graph
         public string PurchaseOrderIdentifier { get; set; }
     
         /// <summary>
+        /// Gets or sets remediation state.
+        /// Device Remediation State. Possible values are: unknown, noRemediationRequired, automaticRemediationRequired, manualRemediationRequired, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("remediationState")]
+        public WindowsAutopilotDeviceRemediationState? RemediationState { get; set; }
+    
+        /// <summary>
+        /// Gets or sets remediation state last modified date time.
+        /// RemediationState set time of Autopilot device.
+        /// </summary>
+        [JsonPropertyName("remediationStateLastModifiedDateTime")]
+        public DateTimeOffset? RemediationStateLastModifiedDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets resource name.
         /// Resource Name.
         /// </summary>

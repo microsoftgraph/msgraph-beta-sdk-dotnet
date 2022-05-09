@@ -491,7 +491,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sku number.
-        /// Device sku number, see also: GetProductInfo function (sysinfoapi.h). Valid values 0 to 2147483647. This property is read-only.
+        /// Device sku number, see also: https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.
         /// </summary>
         [JsonPropertyName("skuNumber")]
         public Int32? SkuNumber { get; set; }

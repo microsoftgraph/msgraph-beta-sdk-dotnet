@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type AccessReviewApplyAction.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<AccessReviewApplyAction>))]
-    public abstract partial class AccessReviewApplyAction
+    public partial class AccessReviewApplyAction
     {
+
+        ///<summary>
+        /// The internal AccessReviewApplyAction constructor
+        ///</summary>
+        protected internal AccessReviewApplyAction()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

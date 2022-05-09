@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type TeleconferenceDeviceMediaQuality.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<TeleconferenceDeviceMediaQuality>))]
-    public abstract partial class TeleconferenceDeviceMediaQuality
+    public partial class TeleconferenceDeviceMediaQuality
     {
+
+        ///<summary>
+        /// The internal TeleconferenceDeviceMediaQuality constructor
+        ///</summary>
+        protected internal TeleconferenceDeviceMediaQuality()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets averageInboundJitter.

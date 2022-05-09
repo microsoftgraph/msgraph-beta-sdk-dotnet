@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type MobileAppIdentifier.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<MobileAppIdentifier>))]
-    public abstract partial class MobileAppIdentifier
+    public partial class MobileAppIdentifier
     {
+
+        ///<summary>
+        /// The internal MobileAppIdentifier constructor
+        ///</summary>
+        protected internal MobileAppIdentifier()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

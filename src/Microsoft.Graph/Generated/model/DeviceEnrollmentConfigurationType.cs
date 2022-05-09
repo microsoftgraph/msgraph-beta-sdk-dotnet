@@ -79,5 +79,10 @@ namespace Microsoft.Graph
         /// </summary>
         UnknownFutureValue = 11,
 	
+        /// <summary>
+        /// Enrollment Notifications Configuration
+        /// </summary>
+        EnrollmentNotificationsConfiguration = 12,
+	
     }
 }

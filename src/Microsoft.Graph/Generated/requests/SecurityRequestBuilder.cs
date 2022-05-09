@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Cases.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.SecurityNamespace.ICasesRootRequestBuilder"/>.</returns>
+        public Microsoft.Graph.SecurityNamespace.ICasesRootRequestBuilder Cases
+        {
+            get
+            {
+                return new Microsoft.Graph.SecurityNamespace.CasesRootRequestBuilder(this.AppendSegmentToRequestUrl("cases"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for InformationProtection.
         /// </summary>
         /// <returns>The <see cref="Microsoft.Graph.SecurityNamespace.IInformationProtectionRequestBuilder"/>.</returns>

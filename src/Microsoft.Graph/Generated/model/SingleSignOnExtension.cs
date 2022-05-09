@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type SingleSignOnExtension.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<SingleSignOnExtension>))]
-    public abstract partial class SingleSignOnExtension
+    public partial class SingleSignOnExtension
     {
+
+        ///<summary>
+        /// The internal SingleSignOnExtension constructor
+        ///</summary>
+        protected internal SingleSignOnExtension()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

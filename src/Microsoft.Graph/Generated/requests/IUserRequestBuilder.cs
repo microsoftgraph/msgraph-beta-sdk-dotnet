@@ -522,6 +522,13 @@ namespace Microsoft.Graph
             string deviceTag = null);
 
         /// <summary>
+        /// Gets the request builder for UserWipeManagedAppRegistrationsByAzureAdDeviceId.
+        /// </summary>
+        /// <returns>The <see cref="IUserWipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder"/>.</returns>
+        IUserWipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder WipeManagedAppRegistrationsByAzureAdDeviceId(
+            string azureAdDeviceId = null);
+
+        /// <summary>
         /// Gets the request builder for UserWipeManagedAppRegistrationsByDeviceTag.
         /// </summary>
         /// <returns>The <see cref="IUserWipeManagedAppRegistrationsByDeviceTagRequestBuilder"/>.</returns>

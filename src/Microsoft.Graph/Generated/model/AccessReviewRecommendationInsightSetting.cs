@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type AccessReviewRecommendationInsightSetting.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<AccessReviewRecommendationInsightSetting>))]
-    public abstract partial class AccessReviewRecommendationInsightSetting
+    public partial class AccessReviewRecommendationInsightSetting
     {
+
+        ///<summary>
+        /// The internal AccessReviewRecommendationInsightSetting constructor
+        ///</summary>
+        protected internal AccessReviewRecommendationInsightSetting()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

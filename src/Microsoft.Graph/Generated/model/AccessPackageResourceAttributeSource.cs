@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type AccessPackageResourceAttributeSource.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<AccessPackageResourceAttributeSource>))]
-    public abstract partial class AccessPackageResourceAttributeSource
+    public partial class AccessPackageResourceAttributeSource
     {
+
+        ///<summary>
+        /// The internal AccessPackageResourceAttributeSource constructor
+        ///</summary>
+        protected internal AccessPackageResourceAttributeSource()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

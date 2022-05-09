@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type WindowsKioskUser.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<WindowsKioskUser>))]
-    public abstract partial class WindowsKioskUser
+    public partial class WindowsKioskUser
     {
+
+        ///<summary>
+        /// The internal WindowsKioskUser constructor
+        ///</summary>
+        protected internal WindowsKioskUser()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

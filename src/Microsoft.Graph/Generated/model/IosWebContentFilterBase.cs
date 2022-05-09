@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type IosWebContentFilterBase.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<IosWebContentFilterBase>))]
-    public abstract partial class IosWebContentFilterBase
+    public partial class IosWebContentFilterBase
     {
+
+        ///<summary>
+        /// The internal IosWebContentFilterBase constructor
+        ///</summary>
+        protected internal IosWebContentFilterBase()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

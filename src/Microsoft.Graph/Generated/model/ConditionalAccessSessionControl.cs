@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type ConditionalAccessSessionControl.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<ConditionalAccessSessionControl>))]
-    public abstract partial class ConditionalAccessSessionControl
+    public partial class ConditionalAccessSessionControl
     {
+
+        ///<summary>
+        /// The internal ConditionalAccessSessionControl constructor
+        ///</summary>
+        protected internal ConditionalAccessSessionControl()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets isEnabled.

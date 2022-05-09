@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type UserSet.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<UserSet>))]
-    public abstract partial class UserSet
+    public partial class UserSet
     {
+
+        ///<summary>
+        /// The internal UserSet constructor
+        ///</summary>
+        protected internal UserSet()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets isBackup.

@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type EncryptContent.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<EncryptContent>))]
-    public abstract partial class EncryptContent : LabelActionBase
+    public partial class EncryptContent : LabelActionBase
     {
+
+        ///<summary>
+        /// The internal EncryptContent constructor
+        ///</summary>
+        protected internal EncryptContent()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets encryptWith.

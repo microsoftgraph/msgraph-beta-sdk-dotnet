@@ -255,6 +255,18 @@ namespace Microsoft.Graph.ManagedTenants
         }
 
         /// <summary>
+        /// Gets the request builder for MyRoles.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantMyRolesCollectionRequestBuilder"/>.</returns>
+        public IManagedTenantMyRolesCollectionRequestBuilder MyRoles
+        {
+            get
+            {
+                return new ManagedTenantMyRolesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("myRoles"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for TenantGroups.
         /// </summary>
         /// <returns>The <see cref="IManagedTenantTenantGroupsCollectionRequestBuilder"/>.</returns>

@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type EducationSynchronizationCustomizationsBase.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<EducationSynchronizationCustomizationsBase>))]
-    public abstract partial class EducationSynchronizationCustomizationsBase
+    public partial class EducationSynchronizationCustomizationsBase
     {
+
+        ///<summary>
+        /// The internal EducationSynchronizationCustomizationsBase constructor
+        ///</summary>
+        protected internal EducationSynchronizationCustomizationsBase()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type CloudPcManagementAssignmentTarget.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<CloudPcManagementAssignmentTarget>))]
-    public abstract partial class CloudPcManagementAssignmentTarget
+    public partial class CloudPcManagementAssignmentTarget
     {
+
+        ///<summary>
+        /// The internal CloudPcManagementAssignmentTarget constructor
+        ///</summary>
+        protected internal CloudPcManagementAssignmentTarget()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

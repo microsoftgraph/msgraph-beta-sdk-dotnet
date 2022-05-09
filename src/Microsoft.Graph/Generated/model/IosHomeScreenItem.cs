@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type IosHomeScreenItem.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<IosHomeScreenItem>))]
-    public abstract partial class IosHomeScreenItem
+    public partial class IosHomeScreenItem
     {
+
+        ///<summary>
+        /// The internal IosHomeScreenItem constructor
+        ///</summary>
+        protected internal IosHomeScreenItem()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets displayName.

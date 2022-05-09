@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type WindowsKioskAppBase.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<WindowsKioskAppBase>))]
-    public abstract partial class WindowsKioskAppBase
+    public partial class WindowsKioskAppBase
     {
+
+        ///<summary>
+        /// The internal WindowsKioskAppBase constructor
+        ///</summary>
+        protected internal WindowsKioskAppBase()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets appType.

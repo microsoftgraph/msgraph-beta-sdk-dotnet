@@ -18,8 +18,16 @@ namespace Microsoft.Graph.CallRecords
     /// The type UserAgent.
     /// </summary>
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<UserAgent>))]
-    public abstract partial class UserAgent
+    public partial class UserAgent
     {
+
+        ///<summary>
+        /// The internal UserAgent constructor
+        ///</summary>
+        protected internal UserAgent()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets applicationVersion.

@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type DeviceManagementConfigurationStringSettingValueDefaultTemplate.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementConfigurationStringSettingValueDefaultTemplate>))]
-    public abstract partial class DeviceManagementConfigurationStringSettingValueDefaultTemplate
+    public partial class DeviceManagementConfigurationStringSettingValueDefaultTemplate
     {
+
+        ///<summary>
+        /// The internal DeviceManagementConfigurationStringSettingValueDefaultTemplate constructor
+        ///</summary>
+        protected internal DeviceManagementConfigurationStringSettingValueDefaultTemplate()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

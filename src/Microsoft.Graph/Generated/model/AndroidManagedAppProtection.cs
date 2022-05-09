@@ -79,6 +79,27 @@ namespace Microsoft.Graph
         public ManagedAppRemediationAction? AppActionIfDeviceLockNotSet { get; set; }
     
         /// <summary>
+        /// Gets or sets app action if device passcode complexity less than high.
+        /// If the device does not have a passcode of high complexity or higher, trigger the stored action.
+        /// </summary>
+        [JsonPropertyName("appActionIfDevicePasscodeComplexityLessThanHigh")]
+        public ManagedAppRemediationAction? AppActionIfDevicePasscodeComplexityLessThanHigh { get; set; }
+    
+        /// <summary>
+        /// Gets or sets app action if device passcode complexity less than low.
+        /// If the device does not have a passcode of low complexity or higher, trigger the stored action.
+        /// </summary>
+        [JsonPropertyName("appActionIfDevicePasscodeComplexityLessThanLow")]
+        public ManagedAppRemediationAction? AppActionIfDevicePasscodeComplexityLessThanLow { get; set; }
+    
+        /// <summary>
+        /// Gets or sets app action if device passcode complexity less than medium.
+        /// If the device does not have a passcode of medium complexity or higher, trigger the stored action.
+        /// </summary>
+        [JsonPropertyName("appActionIfDevicePasscodeComplexityLessThanMedium")]
+        public ManagedAppRemediationAction? AppActionIfDevicePasscodeComplexityLessThanMedium { get; set; }
+    
+        /// <summary>
         /// Gets or sets approved keyboards.
         /// If Keyboard Restriction is enabled, only keyboards in this approved list will be allowed. A key should be Android package id for a keyboard and value should be a friendly name
         /// </summary>

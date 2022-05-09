@@ -18,8 +18,16 @@ namespace Microsoft.Graph.WindowsUpdates
     /// The type UpdatableAssetEnrollment.
     /// </summary>
     [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<UpdatableAssetEnrollment>))]
-    public abstract partial class UpdatableAssetEnrollment
+    public partial class UpdatableAssetEnrollment
     {
+
+        ///<summary>
+        /// The internal UpdatableAssetEnrollment constructor
+        ///</summary>
+        protected internal UpdatableAssetEnrollment()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

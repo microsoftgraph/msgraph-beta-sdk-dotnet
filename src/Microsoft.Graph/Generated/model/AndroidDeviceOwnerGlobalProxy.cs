@@ -18,8 +18,16 @@ namespace Microsoft.Graph
     /// The type AndroidDeviceOwnerGlobalProxy.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<AndroidDeviceOwnerGlobalProxy>))]
-    public abstract partial class AndroidDeviceOwnerGlobalProxy
+    public partial class AndroidDeviceOwnerGlobalProxy
     {
+
+        ///<summary>
+        /// The internal AndroidDeviceOwnerGlobalProxy constructor
+        ///</summary>
+        protected internal AndroidDeviceOwnerGlobalProxy()
+        {
+            // Don't allow initialization of abstract complex types
+        }
 
         /// <summary>
         /// Gets or sets additional data.

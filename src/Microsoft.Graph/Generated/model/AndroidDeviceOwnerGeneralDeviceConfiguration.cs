@@ -142,6 +142,13 @@ namespace Microsoft.Graph
         public bool? DateTimeConfigurationBlocked { get; set; }
     
         /// <summary>
+        /// Gets or sets detailed help text.
+        /// Represents the customized detailed help text provided to users when they attempt to modify managed settings on their device.
+        /// </summary>
+        [JsonPropertyName("detailedHelpText")]
+        public AndroidDeviceOwnerUserFacingMessage DetailedHelpText { get; set; }
+    
+        /// <summary>
         /// Gets or sets enrollment profile.
         /// Indicates which enrollment profile you want to configure. Possible values are: notConfigured, dedicatedDevice, fullyManaged.
         /// </summary>
@@ -660,6 +667,13 @@ namespace Microsoft.Graph
         public AndroidDeviceOwnerRequiredPasswordType? PasswordRequiredType { get; set; }
     
         /// <summary>
+        /// Gets or sets password require unlock.
+        /// Indicates the timeout period after which a device must be unlocked using a form of strong authentication. Possible values are: deviceDefault, daily, unkownFutureValue.
+        /// </summary>
+        [JsonPropertyName("passwordRequireUnlock")]
+        public AndroidDeviceOwnerRequiredPasswordUnlock? PasswordRequireUnlock { get; set; }
+    
+        /// <summary>
         /// Gets or sets password sign in failure count before factory reset.
         /// Indicates the number of times a user can enter an incorrect password before the device is wiped. Valid values 4 to 11
         /// </summary>
@@ -728,6 +742,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("securityRequireVerifyApps")]
         public bool? SecurityRequireVerifyApps { get; set; }
+    
+        /// <summary>
+        /// Gets or sets short help text.
+        /// Represents the customized short help text provided to users when they attempt to modify managed settings on their device.
+        /// </summary>
+        [JsonPropertyName("shortHelpText")]
+        public AndroidDeviceOwnerUserFacingMessage ShortHelpText { get; set; }
     
         /// <summary>
         /// Gets or sets status bar blocked.

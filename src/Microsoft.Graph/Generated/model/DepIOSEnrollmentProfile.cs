@@ -199,7 +199,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets userless shared aad mode enabled.
-        /// Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See Shared iOS and iPadOS devices
+        /// Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See https://docs.microsoft.com/mem/intune/enrollment/device-enrollment-shared-ios
         /// </summary>
         [JsonPropertyName("userlessSharedAadModeEnabled")]
         public bool? UserlessSharedAadModeEnabled { get; set; }

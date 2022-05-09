@@ -1119,6 +1119,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsDeviceScope.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsDeviceScopeRequestBuilder"/>.</returns>
+        public IUserExperienceAnalyticsDeviceScopeRequestBuilder UserExperienceAnalyticsDeviceScope
+        {
+            get
+            {
+                return new UserExperienceAnalyticsDeviceScopeRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsDeviceScope"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsDeviceScopes.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsDeviceScopesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsDeviceScopesCollectionRequestBuilder UserExperienceAnalyticsDeviceScopes
+        {
+            get
+            {
+                return new DeviceManagementUserExperienceAnalyticsDeviceScopesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsDeviceScopes"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsDeviceScores.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsDeviceScoresCollectionRequestBuilder"/>.</returns>
@@ -1443,26 +1467,38 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ManagementConditions.
+        /// Gets the request builder for ZebraFotaArtifacts.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementManagementConditionsCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementManagementConditionsCollectionRequestBuilder ManagementConditions
+        /// <returns>The <see cref="IDeviceManagementZebraFotaArtifactsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementZebraFotaArtifactsCollectionRequestBuilder ZebraFotaArtifacts
         {
             get
             {
-                return new DeviceManagementManagementConditionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managementConditions"), this.Client);
+                return new DeviceManagementZebraFotaArtifactsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("zebraFotaArtifacts"), this.Client);
             }
         }
 
         /// <summary>
-        /// Gets the request builder for ManagementConditionStatements.
+        /// Gets the request builder for ZebraFotaConnector.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementManagementConditionStatementsCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementManagementConditionStatementsCollectionRequestBuilder ManagementConditionStatements
+        /// <returns>The <see cref="IZebraFotaConnectorRequestBuilder"/>.</returns>
+        public IZebraFotaConnectorRequestBuilder ZebraFotaConnector
         {
             get
             {
-                return new DeviceManagementManagementConditionStatementsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managementConditionStatements"), this.Client);
+                return new ZebraFotaConnectorRequestBuilder(this.AppendSegmentToRequestUrl("zebraFotaConnector"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ZebraFotaDeployments.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementZebraFotaDeploymentsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementZebraFotaDeploymentsCollectionRequestBuilder ZebraFotaDeployments
+        {
+            get
+            {
+                return new DeviceManagementZebraFotaDeploymentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("zebraFotaDeployments"), this.Client);
             }
         }
 

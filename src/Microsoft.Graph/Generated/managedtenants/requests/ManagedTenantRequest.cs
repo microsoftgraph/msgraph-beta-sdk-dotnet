@@ -348,6 +348,12 @@ namespace Microsoft.Graph.ManagedTenants
                     // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.ManagementTemplateStepVersions.AdditionalData = managedTenantToInitialize.AdditionalData;
                 }
+                if (managedTenantToInitialize.MyRoles != null && managedTenantToInitialize.MyRoles.CurrentPage != null)
+                {
+                    managedTenantToInitialize.MyRoles.InitializeNextPageRequest(this.Client, managedTenantToInitialize.MyRolesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedTenantToInitialize.MyRoles.AdditionalData = managedTenantToInitialize.AdditionalData;
+                }
                 if (managedTenantToInitialize.TenantGroups != null && managedTenantToInitialize.TenantGroups.CurrentPage != null)
                 {
                     managedTenantToInitialize.TenantGroups.InitializeNextPageRequest(this.Client, managedTenantToInitialize.TenantGroupsNextLink);

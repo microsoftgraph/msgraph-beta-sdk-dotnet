@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         ISecuritySubjectRightsRequestsCollectionRequestBuilder SubjectRightsRequests { get; }
 
         /// <summary>
+        /// Gets the request builder for Cases.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.SecurityNamespace.ICasesRootRequestBuilder"/>.</returns>
+        Microsoft.Graph.SecurityNamespace.ICasesRootRequestBuilder Cases { get; }
+
+        /// <summary>
         /// Gets the request builder for InformationProtection.
         /// </summary>
         /// <returns>The <see cref="Microsoft.Graph.SecurityNamespace.IInformationProtectionRequestBuilder"/>.</returns>
