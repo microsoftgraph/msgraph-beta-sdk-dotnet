@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.DataPolicyOperations {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get entities from dataPolicyOperations
+        /// Get dataPolicyOperation
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<DataPolicyOperationsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.DataPolicyOperations {
             return requestInfo;
         }
         /// <summary>
-        /// Get entities from dataPolicyOperations
+        /// Get dataPolicyOperation
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.DataPolicyOperations {
             };
             return await RequestAdapter.SendAsync<DataPolicyOperation>(requestInfo, DataPolicyOperation.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get entities from dataPolicyOperations</summary>
+        /// <summary>Get dataPolicyOperation</summary>
         public class DataPolicyOperationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

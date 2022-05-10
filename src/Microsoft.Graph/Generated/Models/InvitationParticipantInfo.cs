@@ -7,17 +7,17 @@ namespace Microsoft.Graph.Beta.Models {
     public class InvitationParticipantInfo : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The type of endpoint. Possible values are: default, voicemail.</summary>
+        /// <summary>The type of the endpoint. Possible values are: default, voicemail.</summary>
         public Microsoft.Graph.Beta.Models.EndpointType? EndpointType { get; set; }
         /// <summary>The hidden property</summary>
         public bool? Hidden { get; set; }
         /// <summary>The identity property</summary>
         public IdentitySet Identity { get; set; }
-        /// <summary>The participantId property</summary>
+        /// <summary>Optional. The ID of the target participant.</summary>
         public string ParticipantId { get; set; }
         /// <summary>The removeFromDefaultAudioRoutingGroup property</summary>
         public bool? RemoveFromDefaultAudioRoutingGroup { get; set; }
-        /// <summary>Optional. The call which the target idenity is currently a part of. This call will be dropped once the participant is added.</summary>
+        /// <summary>Optional. The call which the target identity is currently a part of. For peer-to-peer case, the call will be dropped once the participant is added successfully.</summary>
         public string ReplacesCallId { get; set; }
         /// <summary>
         /// Instantiates a new invitationParticipantInfo and sets the default values.

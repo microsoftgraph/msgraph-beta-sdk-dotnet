@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get entity from directorySettingTemplates by key
+        /// Get a directory setting template
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<DirectorySettingTemplateItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -142,7 +142,7 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get entity from directorySettingTemplates by key
+        /// Get a directory setting template
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -185,7 +185,7 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get entity from directorySettingTemplates by key</summary>
+        /// <summary>Get a directory setting template</summary>
         public class DirectorySettingTemplateItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

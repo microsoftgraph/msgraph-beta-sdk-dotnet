@@ -15,9 +15,9 @@ namespace Microsoft.Graph.Beta.Models {
         public bool? BatteryRuleRequireCharger { get; set; }
         /// <summary>Deploy update for devices with this model only.</summary>
         public string DeviceModel { get; set; }
-        /// <summary>Download network type as described in &apos;zebraFotaNetworkType&apos;. Default: any</summary>
+        /// <summary>Download network type as described in &apos;zebraFotaNetworkType&apos;. Default: any. Possible values are: any, wifi, cellular, wifiAndCellular, unknownFutureValue.</summary>
         public ZebraFotaNetworkType? DownloadRuleNetworkType { get; set; }
-        /// <summary>Date and time in the device time zone when the download will start (e.g., `2018-07-25T10:20:32`). The default value is UTC now and the maximum is 10 days from deployment creation.</summary>
+        /// <summary>Date and time in the device time zone when the download will start (e.g., 2018-07-25T10:20:32). The default value is UTC now and the maximum is 10 days from deployment creation.</summary>
         public DateTimeOffset? DownloadRuleStartDateTime { get; set; }
         /// <summary>Deployment&apos;s Board Support Package (BSP. E.g.: &apos;01.18.02.00&apos;). Required only for custom update type.</summary>
         public string FirmwareTargetBoardSupportPackageVersion { get; set; }
@@ -33,11 +33,11 @@ namespace Microsoft.Graph.Beta.Models {
         public Time? InstallRuleWindowStartTime { get; set; }
         /// <summary>Maximum 28 days. Default is 28 days. Sequence of dates are: 1) Download start date. 2) Install start date. 3) Schedule end date. If any of the values are not provided, the date provided in the preceding step of the sequence is used. If no values are provided, the string value of the current UTC is used.</summary>
         public int? ScheduleDurationInDays { get; set; }
-        /// <summary>Deployment installation schedule mode. Default is installNow. All scheduled deployments date and time are in the device’s timezone. For Install Now, the date and time are in UTC (same date and time anywhere in the world).</summary>
+        /// <summary>Deployment installation schedule mode. Default is installNow. All scheduled deployments date and time are in the device’s timezone. For Install Now, the date and time are in UTC (same date and time anywhere in the world). Possible values are: installNow, scheduled, unknownFutureValue.</summary>
         public ZebraFotaScheduleMode? ScheduleMode { get; set; }
-        /// <summary>This attribute indicates the deployment time offset (e.g.`180` represents an offset of `+03:00`, and `-270` represents an offset of `-04:30`). The time offset is the time timezone where the devices are located. The deployment start and end data uses this timezone</summary>
+        /// <summary>This attribute indicates the deployment time offset (e.g.180 represents an offset of +03:00, and -270 represents an offset of -04:30). The time offset is the time timezone where the devices are located. The deployment start and end data uses this timezone</summary>
         public int? TimeZoneOffsetInMinutes { get; set; }
-        /// <summary>The deployment&apos;s update type. Possible values are custom, latest, and auto. When custom mode is set, the request must provide artifact values. When latest type is set, the latest released update becomes the target OS. If latest is specified, the firmware target values are not required. Note: latest may update the device to a new Android version. When the value is set to auto, the device always looks for the latest package available and tries to update whenever a new package is available. This continues until the admin cancels the auto update. While other modes return an ID starting with FOTA-x, auto mode returns an ID starting with AUTO-x.</summary>
+        /// <summary>The deployment&apos;s update type. Possible values are custom, latest, and auto. When custom mode is set, the request must provide artifact values. When latest type is set, the latest released update becomes the target OS. If latest is specified, the firmware target values are not required. Note: latest may update the device to a new Android version. When the value is set to auto, the device always looks for the latest package available and tries to update whenever a new package is available. This continues until the admin cancels the auto update. While other modes return an ID starting with FOTA-x, auto mode returns an ID starting with AUTO-x. Possible values are: custom, latest, auto, unknownFutureValue.</summary>
         public ZebraFotaUpdateType? UpdateType { get; set; }
         /// <summary>
         /// Instantiates a new zebraFotaDeploymentSettings and sets the default values.

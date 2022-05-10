@@ -8,7 +8,7 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidFotaDeploymentAssignment : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary> Key for the Android FOTA Assignment entity</summary>
+        /// <summary>Key for the Android FOTA Assignment entity</summary>
         public string Id { get; set; }
         /// <summary>The AAD Group we are deploying firmware updates to</summary>
         public AndroidFotaDeploymentAssignmentTarget Target { get; set; }

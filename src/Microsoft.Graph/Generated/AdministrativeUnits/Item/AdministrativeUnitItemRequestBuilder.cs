@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete entity from administrativeUnits
+        /// Delete administrativeUnit
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateDeleteRequestInformation(Action<AdministrativeUnitItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get entity from administrativeUnits by key
+        /// Get administrativeUnit
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<AdministrativeUnitItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update entity in administrativeUnits
+        /// Update administrativeunit
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -143,7 +143,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Delete entity from administrativeUnits
+        /// Delete administrativeUnit
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -157,7 +157,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get entity from administrativeUnits by key
+        /// Get administrativeUnit
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -171,7 +171,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AdministrativeUnit>(requestInfo, Microsoft.Graph.Beta.Models.AdministrativeUnit.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update entity in administrativeUnits
+        /// Update administrativeunit
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -200,7 +200,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get entity from administrativeUnits by key</summary>
+        /// <summary>Get administrativeUnit</summary>
         public class AdministrativeUnitItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

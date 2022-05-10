@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
         public string RootCategoryId { get; set; }
         /// <summary>Indicates that the category contains settings that are used for Compliance or Configuration. Possible values are: none, configuration, compliance.</summary>
         public DeviceManagementConfigurationSettingUsage? SettingUsage { get; set; }
-        /// <summary>Technologies types, which settings in the category have. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.</summary>
+        /// <summary>Technologies types, which settings in the category have. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.</summary>
         public DeviceManagementConfigurationTechnologies? Technologies { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         public int? SettingTemplateCount { get; set; }
         /// <summary>Setting templates</summary>
         public List<DeviceManagementConfigurationSettingTemplate> SettingTemplates { get; set; }
-        /// <summary>Technologies for this template. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.</summary>
+        /// <summary>Technologies for this template. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.</summary>
         public DeviceManagementConfigurationTechnologies? Technologies { get; set; }
         /// <summary>TemplateFamily for this template. Possible values are: none, endpointSecurityAntivirus, endpointSecurityDiskEncryption, endpointSecurityFirewall, endpointSecurityEndpointDetectionAndResponse, endpointSecurityAttackSurfaceReduction, endpointSecurityAccountProtection, endpointSecurityApplicationControl, baseline.</summary>
         public DeviceManagementConfigurationTemplateFamily? TemplateFamily { get; set; }

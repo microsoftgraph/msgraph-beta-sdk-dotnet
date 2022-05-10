@@ -7,7 +7,7 @@ namespace Microsoft.Graph.Beta.Models {
     public class SynchronizationJobApplicationParameters : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The identifier of a the synchronizationRule to be applied.</summary>
+        /// <summary>The identifier of the synchronizationRule to be applied. This rule ID is defined in the schema for a given synchronization job or template.</summary>
         public string RuleId { get; set; }
         /// <summary>The identifiers of one or more objects to which a synchronizationJob is to be applied.</summary>
         public List<SynchronizationJobSubject> Subjects { get; set; }

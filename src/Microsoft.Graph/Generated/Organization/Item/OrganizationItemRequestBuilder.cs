@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Organization.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get entity from organization by key
+        /// Get organization
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<OrganizationItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.Organization.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update entity in organization
+        /// Update organization
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -172,7 +172,7 @@ namespace Microsoft.Graph.Beta.Organization.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get entity from organization by key
+        /// Get organization
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -186,7 +186,7 @@ namespace Microsoft.Graph.Beta.Organization.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Organization>(requestInfo, Microsoft.Graph.Beta.Models.Organization.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update entity in organization
+        /// Update organization
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -215,7 +215,7 @@ namespace Microsoft.Graph.Beta.Organization.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get entity from organization by key</summary>
+        /// <summary>Get organization</summary>
         public class OrganizationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

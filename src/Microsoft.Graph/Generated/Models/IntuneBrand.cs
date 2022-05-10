@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
         public string PrivacyUrl { get; set; }
         /// <summary>List of scope tags assigned to the default branding profile</summary>
         public List<string> RoleScopeTagIds { get; set; }
-        /// <summary>SendDeviceOwnershipChangePushNotification will be deprecated in 06/2022 and will stop returning a value in 07/2022. A boolean that indicates if a push notification is sent to users when their device ownership type changes from personal to corporate</summary>
+        /// <summary>Boolean that indicates if a push notification is sent to users when their device ownership type changes from personal to corporate</summary>
         public bool? SendDeviceOwnershipChangePushNotification { get; set; }
         /// <summary>Boolean that indicates if AzureAD Enterprise Apps will be shown in Company Portal</summary>
         public bool? ShowAzureADEnterpriseApps { get; set; }

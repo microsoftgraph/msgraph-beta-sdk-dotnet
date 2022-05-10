@@ -1,3 +1,5 @@
+using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Users.Count;
+using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Users.Item;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -11,12 +13,22 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Users {
     /// <summary>Provides operations to manage the users property of the microsoft.graph.managedDevice entity.</summary>
     public class UsersRequestBuilder {
+        /// <summary>The count property</summary>
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.comanagedDevices.item.users.item collection</summary>
+        public UserItemRequestBuilder this[string position] { get {
+            var urlTplParams = new Dictionary<string, object>(PathParameters);
+            urlTplParams.Add("user%2Did", position);
+            return new UserItemRequestBuilder(urlTplParams, RequestAdapter);
+        } }
         /// <summary>
         /// Instantiates a new UsersRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>

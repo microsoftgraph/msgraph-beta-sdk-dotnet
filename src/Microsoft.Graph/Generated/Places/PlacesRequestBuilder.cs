@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Places {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get entities from places
+        /// Get place
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<PlacesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Places {
             return requestInfo;
         }
         /// <summary>
-        /// Get entities from places
+        /// Get place
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Places {
             };
             return await RequestAdapter.SendAsync<Place>(requestInfo, Place.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get entities from places</summary>
+        /// <summary>Get place</summary>
         public class PlacesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

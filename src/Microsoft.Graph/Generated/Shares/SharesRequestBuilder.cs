@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Shares {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get entities from shares
+        /// Accessing shared DriveItems
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<SharesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Shares {
             return requestInfo;
         }
         /// <summary>
-        /// Get entities from shares
+        /// Accessing shared DriveItems
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Shares {
             };
             return await RequestAdapter.SendAsync<SharedDriveItem>(requestInfo, SharedDriveItem.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get entities from shares</summary>
+        /// <summary>Accessing shared DriveItems</summary>
         public class SharesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

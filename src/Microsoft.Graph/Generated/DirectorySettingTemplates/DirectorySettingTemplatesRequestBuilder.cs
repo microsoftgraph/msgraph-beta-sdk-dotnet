@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get entities from directorySettingTemplates
+        /// List directorySettingTemplates
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<DirectorySettingTemplatesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates {
             return requestInfo;
         }
         /// <summary>
-        /// Get entities from directorySettingTemplates
+        /// List directorySettingTemplates
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates {
             };
             return await RequestAdapter.SendAsync<DirectorySettingTemplate>(requestInfo, DirectorySettingTemplate.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get entities from directorySettingTemplates</summary>
+        /// <summary>List directorySettingTemplates</summary>
         public class DirectorySettingTemplatesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

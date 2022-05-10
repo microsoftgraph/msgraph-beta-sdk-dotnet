@@ -17,6 +17,7 @@ using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplate
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplates;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateSteps;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateStepVersions;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.MyRoles;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation;
@@ -102,6 +103,10 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants {
         /// <summary>The managementTemplateStepVersions property</summary>
         public ManagementTemplateStepVersionsRequestBuilder ManagementTemplateStepVersions { get =>
             new ManagementTemplateStepVersionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The myRoles property</summary>
+        public MyRolesRequestBuilder MyRoles { get =>
+            new MyRolesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

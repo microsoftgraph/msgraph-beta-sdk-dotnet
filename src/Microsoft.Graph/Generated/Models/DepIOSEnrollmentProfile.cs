@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
         public int? TemporarySessionTimeoutInSeconds { get; set; }
         /// <summary>Indicates if Weclome screen is disabled</summary>
         public bool? UpdateCompleteScreenDisabled { get; set; }
-        /// <summary>Indicates that this apple device is designated to support &apos;shared device mode&apos; scenarios. This is distinct from the &apos;shared iPad&apos; scenario. See Shared iOS and iPadOS devices</summary>
+        /// <summary>Indicates that this apple device is designated to support &apos;shared device mode&apos; scenarios. This is distinct from the &apos;shared iPad&apos; scenario. See https://docs.microsoft.com/mem/intune/enrollment/device-enrollment-shared-ios</summary>
         public bool? UserlessSharedAadModeEnabled { get; set; }
         /// <summary>Indicates timeout of temporary session</summary>
         public int? UserSessionTimeoutInSeconds { get; set; }

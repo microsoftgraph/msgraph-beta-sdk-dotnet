@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Settings.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete entity from settings
+        /// Delete directorySetting
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateDeleteRequestInformation(Action<DirectorySettingItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Settings.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get entity from settings by key
+        /// Get directorySetting
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<DirectorySettingItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Settings.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update entity in settings
+        /// Update directorySetting
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.Settings.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Delete entity from settings
+        /// Delete directorySetting
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Settings.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get entity from settings by key
+        /// Get directorySetting
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.Settings.Item {
             return await RequestAdapter.SendAsync<DirectorySetting>(requestInfo, DirectorySetting.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update entity in settings
+        /// Update directorySetting
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Beta.Settings.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get entity from settings by key</summary>
+        /// <summary>Get directorySetting</summary>
         public class DirectorySettingItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

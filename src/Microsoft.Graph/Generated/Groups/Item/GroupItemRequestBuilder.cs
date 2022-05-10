@@ -260,7 +260,7 @@ namespace Microsoft.Graph.Beta.Groups.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete entity from groups
+        /// Tutorial: Use the Privileged Identity Management (PIM) API to assign Azure AD roles
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateDeleteRequestInformation(Action<GroupItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
@@ -278,7 +278,7 @@ namespace Microsoft.Graph.Beta.Groups.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get entity from groups by key
+        /// Get group
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<GroupItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -297,7 +297,7 @@ namespace Microsoft.Graph.Beta.Groups.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update entity in groups
+        /// Update group
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -318,7 +318,7 @@ namespace Microsoft.Graph.Beta.Groups.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Delete entity from groups
+        /// Tutorial: Use the Privileged Identity Management (PIM) API to assign Azure AD roles
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -332,7 +332,7 @@ namespace Microsoft.Graph.Beta.Groups.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get entity from groups by key
+        /// Get group
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -346,7 +346,7 @@ namespace Microsoft.Graph.Beta.Groups.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Group>(requestInfo, Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update entity in groups
+        /// Update group
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -375,7 +375,7 @@ namespace Microsoft.Graph.Beta.Groups.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get entity from groups by key</summary>
+        /// <summary>Get group</summary>
         public class GroupItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

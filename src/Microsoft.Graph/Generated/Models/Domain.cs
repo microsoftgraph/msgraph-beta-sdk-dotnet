@@ -9,9 +9,9 @@ namespace Microsoft.Graph.Beta.Models {
         public string AuthenticationType { get; set; }
         /// <summary>This property is always null except when the verify action is used. When the verify action is used, a domain entity is returned in the response. The availabilityStatus property of the domain entity in the response is either AvailableImmediately or EmailVerifiedDomainTakeoverScheduled.</summary>
         public string AvailabilityStatus { get; set; }
-        /// <summary>Read-only, Nullable</summary>
+        /// <summary>The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.</summary>
         public List<DirectoryObject> DomainNameReferences { get; set; }
-        /// <summary>Domain settings configured by customer when federated with Azure AD.</summary>
+        /// <summary>Domain settings configured by customer when federated with Azure AD. Supports $expand.</summary>
         public List<InternalDomainFederation> FederationConfiguration { get; set; }
         /// <summary>The value of the property is false if the DNS record management of the domain has been delegated to Microsoft 365. Otherwise, the value is true. Not nullable</summary>
         public bool? IsAdminManaged { get; set; }
@@ -27,15 +27,15 @@ namespace Microsoft.Graph.Beta.Models {
         public int? PasswordNotificationWindowInDays { get; set; }
         /// <summary>Specifies the length of time that a password is valid before it must be changed. If the property is not set, a default value of 90 days will be used.</summary>
         public int? PasswordValidityPeriodInDays { get; set; }
-        /// <summary>DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable</summary>
+        /// <summary>DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.</summary>
         public List<DomainDnsRecord> ServiceConfigurationRecords { get; set; }
         /// <summary>The sharedEmailDomainInvitations property</summary>
         public List<SharedEmailDomainInvitation> SharedEmailDomainInvitations { get; set; }
         /// <summary>Status of asynchronous operations scheduled for the domain.</summary>
         public DomainState State { get; set; }
-        /// <summary>The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline,SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable</summary>
+        /// <summary>The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline,SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable.</summary>
         public List<string> SupportedServices { get; set; }
-        /// <summary>DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable</summary>
+        /// <summary>DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable. Supports $expand.</summary>
         public List<DomainDnsRecord> VerificationDnsRecords { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

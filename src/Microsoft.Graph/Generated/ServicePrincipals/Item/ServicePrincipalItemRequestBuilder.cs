@@ -185,7 +185,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete entity from servicePrincipals
+        /// Delete servicePrincipal
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateDeleteRequestInformation(Action<ServicePrincipalItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get entity from servicePrincipals by key
+        /// Get servicePrincipal
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ServicePrincipalItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -222,7 +222,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update entity in servicePrincipals
+        /// Assign, update, or remove custom security attributes using the Microsoft Graph API (Preview)
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -243,7 +243,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Delete entity from servicePrincipals
+        /// Delete servicePrincipal
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -257,7 +257,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get entity from servicePrincipals by key
+        /// Get servicePrincipal
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -271,7 +271,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
             return await RequestAdapter.SendAsync<ServicePrincipal>(requestInfo, ServicePrincipal.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update entity in servicePrincipals
+        /// Assign, update, or remove custom security attributes using the Microsoft Graph API (Preview)
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -300,7 +300,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get entity from servicePrincipals by key</summary>
+        /// <summary>Get servicePrincipal</summary>
         public class ServicePrincipalItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

@@ -21,11 +21,11 @@ namespace Microsoft.Graph.Beta.Models {
         public ManagedAppRemediationAction? AppActionIfAndroidSafetyNetDeviceAttestationFailed { get; set; }
         /// <summary>Defines a managed app behavior, either warn, block or wipe, if the screen lock is required on device but is not set. (android only). Possible values are: block, wipe, warn.</summary>
         public ManagedAppRemediationAction? AppActionIfDeviceLockNotSet { get; set; }
-        /// <summary>If the device does not have a passcode of high complexity or higher, trigger the stored action.</summary>
+        /// <summary>If the device does not have a passcode of high complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.</summary>
         public ManagedAppRemediationAction? AppActionIfDevicePasscodeComplexityLessThanHigh { get; set; }
-        /// <summary>If the device does not have a passcode of low complexity or higher, trigger the stored action.</summary>
+        /// <summary>If the device does not have a passcode of low complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.</summary>
         public ManagedAppRemediationAction? AppActionIfDevicePasscodeComplexityLessThanLow { get; set; }
-        /// <summary>If the device does not have a passcode of medium complexity or higher, trigger the stored action.</summary>
+        /// <summary>If the device does not have a passcode of medium complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.</summary>
         public ManagedAppRemediationAction? AppActionIfDevicePasscodeComplexityLessThanMedium { get; set; }
         /// <summary>Defines a managed app behavior, either block or wipe, if the specified device model is not allowed. (iOS Only). Possible values are: block, wipe, warn.</summary>
         public ManagedAppRemediationAction? AppActionIfIosDeviceModelNotAllowed { get; set; }

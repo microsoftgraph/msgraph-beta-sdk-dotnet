@@ -12,15 +12,15 @@ namespace Microsoft.Graph.Beta.Models {
         public bool? CancelRequested { get; set; }
         /// <summary>The date and time when this deployment was completed or canceled. The actual date time is determined by the value of state. If the state is canceled, this property holds the cancellation date/time. If the the state is completed, this property holds the completion date/time. If the deployment is not completed before the deployment end date, then completed date/time and end date/time are the same. This is always in the deployment timezone. Note: An installation that is in progress can continue past the deployment end date.</summary>
         public DateTimeOffset? CompleteOrCanceledDateTime { get; set; }
-        /// <summary> Date and time when the deployment status was updated from Zebra</summary>
+        /// <summary>Date and time when the deployment status was updated from Zebra</summary>
         public DateTimeOffset? LastUpdatedDateTime { get; set; }
-        /// <summary>See zebraFotaDeploymentState enum for possible values.</summary>
+        /// <summary>See zebraFotaDeploymentState enum for possible values. Possible values are: pendingCreation, createFailed, created, inProgress, completed, pendingCancel, canceled, unknownFutureValue.</summary>
         public ZebraFotaDeploymentState? State { get; set; }
         /// <summary>An integer that indicates the total number of devices where installation was successful.</summary>
         public int? TotalAwaitingInstall { get; set; }
         /// <summary>An integer that indicates the total number of devices where installation was canceled.</summary>
         public int? TotalCanceled { get; set; }
-        /// <summary>An integer that indicates the total number of devices that have a job in the CREATED state. Typically indicates jobs that did not reach the devices. </summary>
+        /// <summary>An integer that indicates the total number of devices that have a job in the CREATED state. Typically indicates jobs that did not reach the devices.</summary>
         public int? TotalCreated { get; set; }
         /// <summary>An integer that indicates the total number of devices in the deployment.</summary>
         public int? TotalDevices { get; set; }
@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models {
         public int? TotalFailedDownload { get; set; }
         /// <summary>An integer that indicates the total number of devices that have failed to install the new OS file.</summary>
         public int? TotalFailedInstall { get; set; }
-        /// <summary>An integer that indicates the total number of devices that received the json and are scheduled. </summary>
+        /// <summary>An integer that indicates the total number of devices that received the json and are scheduled.</summary>
         public int? TotalScheduled { get; set; }
         /// <summary>An integer that indicates the total number of devices where installation was successful.</summary>
         public int? TotalSucceededInstall { get; set; }

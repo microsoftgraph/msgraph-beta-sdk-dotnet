@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Users {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get entities from users
+        /// List users
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<UsersRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Users {
             return requestInfo;
         }
         /// <summary>
-        /// Add new entity to users
+        /// Tutorial: Use the Privileged Identity Management (PIM) API to assign Azure AD roles
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.Users {
             return new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Get entities from users
+        /// List users
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Users {
             return new GetManagedAppBlockedUsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Add new entity to users
+        /// Tutorial: Use the Privileged Identity Management (PIM) API to assign Azure AD roles
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Beta.Users {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.User>(requestInfo, Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get entities from users</summary>
+        /// <summary>List users</summary>
         public class UsersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete entity from privilegedRoleAssignments
+        /// Delete privilegedRoleAssignment
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateDeleteRequestInformation(Action<PrivilegedRoleAssignmentItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get entity from privilegedRoleAssignments by key
+        /// Get privilegedRoleAssignment
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<PrivilegedRoleAssignmentItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Delete entity from privilegedRoleAssignments
+        /// Delete privilegedRoleAssignment
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get entity from privilegedRoleAssignments by key
+        /// Get privilegedRoleAssignment
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -175,7 +175,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get entity from privilegedRoleAssignments by key</summary>
+        /// <summary>Get privilegedRoleAssignment</summary>
         public class PrivilegedRoleAssignmentItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

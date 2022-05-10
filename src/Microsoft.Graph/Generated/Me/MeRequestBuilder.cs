@@ -488,7 +488,7 @@ namespace Microsoft.Graph.Beta.Me {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get me
+        /// Helpers (examples that aren&apos;t included in the docs)
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<MeRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -507,7 +507,7 @@ namespace Microsoft.Graph.Beta.Me {
             return requestInfo;
         }
         /// <summary>
-        /// Update me
+        /// Update user
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -564,7 +564,7 @@ namespace Microsoft.Graph.Beta.Me {
             return new FindRoomsWithRoomListRequestBuilder(PathParameters, RequestAdapter, roomList);
         }
         /// <summary>
-        /// Get me
+        /// Helpers (examples that aren&apos;t included in the docs)
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -620,7 +620,7 @@ namespace Microsoft.Graph.Beta.Me {
             return new IsManagedAppUserBlockedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Update me
+        /// Update user
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -645,7 +645,7 @@ namespace Microsoft.Graph.Beta.Me {
             if(string.IsNullOrEmpty(startDateTime)) throw new ArgumentNullException(nameof(startDateTime));
             return new ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
-        /// <summary>Get me</summary>
+        /// <summary>Helpers (examples that aren&apos;t included in the docs)</summary>
         public class MeRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

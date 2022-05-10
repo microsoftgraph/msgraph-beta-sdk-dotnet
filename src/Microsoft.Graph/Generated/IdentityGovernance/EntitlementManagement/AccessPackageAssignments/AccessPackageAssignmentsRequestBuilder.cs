@@ -1,5 +1,4 @@
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.AdditionalAccess;
-using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.AdditionalAccessWithAccessPackageId;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageId;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Count;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.FilterByCurrentUserWithOn;
@@ -38,14 +37,6 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         /// </summary>
         public AdditionalAccessRequestBuilder AdditionalAccess() {
             return new AdditionalAccessRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>
-        /// Provides operations to call the additionalAccess method.
-        /// <param name="accessPackageId">Usage: accessPackageId=&apos;{accessPackageId}&apos;</param>
-        /// </summary>
-        public AdditionalAccessWithAccessPackageIdRequestBuilder AdditionalAccessWithAccessPackageId(string accessPackageId) {
-            if(string.IsNullOrEmpty(accessPackageId)) throw new ArgumentNullException(nameof(accessPackageId));
-            return new AdditionalAccessWithAccessPackageIdRequestBuilder(PathParameters, RequestAdapter, accessPackageId);
         }
         /// <summary>
         /// Provides operations to call the additionalAccess method.

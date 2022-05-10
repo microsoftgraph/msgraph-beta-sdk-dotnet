@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Planner {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get planner
+        /// planner resource type
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<PlannerRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Planner {
             return requestInfo;
         }
         /// <summary>
-        /// Get planner
+        /// planner resource type
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.Planner {
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get planner</summary>
+        /// <summary>planner resource type</summary>
         public class PlannerRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
