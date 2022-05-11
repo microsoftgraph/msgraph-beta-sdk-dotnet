@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Devices {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get entities from devices
+        /// List devices
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<DevicesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Devices {
             return requestInfo;
         }
         /// <summary>
-        /// Add new entity to devices
+        /// Create device
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Devices {
             return requestInfo;
         }
         /// <summary>
-        /// Get entities from devices
+        /// List devices
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Devices {
             return await RequestAdapter.SendAsync<DeviceCollectionResponse>(requestInfo, DeviceCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Add new entity to devices
+        /// Create device
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.Devices {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Device>(requestInfo, Microsoft.Graph.Beta.Models.Device.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get entities from devices</summary>
+        /// <summary>List devices</summary>
         public class DevicesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

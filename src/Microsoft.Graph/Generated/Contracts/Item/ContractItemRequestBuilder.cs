@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Contracts.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get entity from contracts by key
+        /// Get Contract
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ContractItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -142,7 +142,7 @@ namespace Microsoft.Graph.Beta.Contracts.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get entity from contracts by key
+        /// Get Contract
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -185,7 +185,7 @@ namespace Microsoft.Graph.Beta.Contracts.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get entity from contracts by key</summary>
+        /// <summary>Get Contract</summary>
         public class ContractItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

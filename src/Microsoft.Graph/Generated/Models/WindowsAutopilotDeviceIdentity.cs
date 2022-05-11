@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         public string ProductKey { get; set; }
         /// <summary>Purchase Order Identifier of the Windows autopilot device.</summary>
         public string PurchaseOrderIdentifier { get; set; }
-        /// <summary>Device Remediation State</summary>
+        /// <summary>Device Remediation State. Possible values are: unknown, noRemediationRequired, automaticRemediationRequired, manualRemediationRequired, unknownFutureValue.</summary>
         public WindowsAutopilotDeviceRemediationState? RemediationState { get; set; }
         /// <summary>RemediationState set time of Autopilot device.</summary>
         public DateTimeOffset? RemediationStateLastModifiedDateTime { get; set; }

@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.SchemaExtensions {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get entities from schemaExtensions
+        /// Add custom data to groups using schema extensions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<SchemaExtensionsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.SchemaExtensions {
             return requestInfo;
         }
         /// <summary>
-        /// Add new entity to schemaExtensions
+        /// Create schemaExtension
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.SchemaExtensions {
             return requestInfo;
         }
         /// <summary>
-        /// Get entities from schemaExtensions
+        /// Add custom data to groups using schema extensions
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.SchemaExtensions {
             return await RequestAdapter.SendAsync<SchemaExtensionCollectionResponse>(requestInfo, SchemaExtensionCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Add new entity to schemaExtensions
+        /// Create schemaExtension
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.SchemaExtensions {
             };
             return await RequestAdapter.SendAsync<SchemaExtension>(requestInfo, SchemaExtension.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get entities from schemaExtensions</summary>
+        /// <summary>Add custom data to groups using schema extensions</summary>
         public class SchemaExtensionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

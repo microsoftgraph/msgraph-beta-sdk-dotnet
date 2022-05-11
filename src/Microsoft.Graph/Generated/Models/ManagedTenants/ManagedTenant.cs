@@ -39,6 +39,8 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public List<ManagementTemplateStep> ManagementTemplateSteps { get; set; }
         /// <summary>The managementTemplateStepVersions property</summary>
         public List<ManagementTemplateStepVersion> ManagementTemplateStepVersions { get; set; }
+        /// <summary>The myRoles property</summary>
+        public List<MyRole> MyRoles { get; set; }
         /// <summary>The collection of a logical grouping of managed tenants used by the multi-tenant management platform.</summary>
         public List<TenantGroup> TenantGroups { get; set; }
         /// <summary>The collection of tenants associated with the managing entity.</summary>
@@ -83,6 +85,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
                 {"managementTemplates", n => { ManagementTemplates = n.GetCollectionOfObjectValues<ManagementTemplate>(ManagementTemplate.CreateFromDiscriminatorValue).ToList(); } },
                 {"managementTemplateSteps", n => { ManagementTemplateSteps = n.GetCollectionOfObjectValues<ManagementTemplateStep>(ManagementTemplateStep.CreateFromDiscriminatorValue).ToList(); } },
                 {"managementTemplateStepVersions", n => { ManagementTemplateStepVersions = n.GetCollectionOfObjectValues<ManagementTemplateStepVersion>(ManagementTemplateStepVersion.CreateFromDiscriminatorValue).ToList(); } },
+                {"myRoles", n => { MyRoles = n.GetCollectionOfObjectValues<MyRole>(MyRole.CreateFromDiscriminatorValue).ToList(); } },
                 {"tenantGroups", n => { TenantGroups = n.GetCollectionOfObjectValues<TenantGroup>(TenantGroup.CreateFromDiscriminatorValue).ToList(); } },
                 {"tenants", n => { Tenants = n.GetCollectionOfObjectValues<Tenant>(Tenant.CreateFromDiscriminatorValue).ToList(); } },
                 {"tenantsCustomizedInformation", n => { TenantsCustomizedInformation = n.GetCollectionOfObjectValues<TenantCustomizedInformation>(TenantCustomizedInformation.CreateFromDiscriminatorValue).ToList(); } },
@@ -116,6 +119,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             writer.WriteCollectionOfObjectValues<ManagementTemplate>("managementTemplates", ManagementTemplates);
             writer.WriteCollectionOfObjectValues<ManagementTemplateStep>("managementTemplateSteps", ManagementTemplateSteps);
             writer.WriteCollectionOfObjectValues<ManagementTemplateStepVersion>("managementTemplateStepVersions", ManagementTemplateStepVersions);
+            writer.WriteCollectionOfObjectValues<MyRole>("myRoles", MyRoles);
             writer.WriteCollectionOfObjectValues<TenantGroup>("tenantGroups", TenantGroups);
             writer.WriteCollectionOfObjectValues<Tenant>("tenants", Tenants);
             writer.WriteCollectionOfObjectValues<TenantCustomizedInformation>("tenantsCustomizedInformation", TenantsCustomizedInformation);

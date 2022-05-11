@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Drives {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get entities from drives
+        /// Helpers (examples that aren&apos;t included in the docs)
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<DrivesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Drives {
             return requestInfo;
         }
         /// <summary>
-        /// Get entities from drives
+        /// Helpers (examples that aren&apos;t included in the docs)
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Drives {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Drive>(requestInfo, Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get entities from drives</summary>
+        /// <summary>Helpers (examples that aren&apos;t included in the docs)</summary>
         public class DrivesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

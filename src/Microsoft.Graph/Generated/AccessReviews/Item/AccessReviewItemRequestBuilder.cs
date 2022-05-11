@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete entity from accessReviews
+        /// Delete accessReview
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateDeleteRequestInformation(Action<AccessReviewItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get entity from accessReviews by key
+        /// Get accessReview
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<AccessReviewItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update entity in accessReviews
+        /// Update accessReview
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -143,7 +143,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Delete entity from accessReviews
+        /// Delete accessReview
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -157,7 +157,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get entity from accessReviews by key
+        /// Get accessReview
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -171,7 +171,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item {
             return await RequestAdapter.SendAsync<AccessReview>(requestInfo, AccessReview.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update entity in accessReviews
+        /// Update accessReview
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -200,7 +200,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get entity from accessReviews by key</summary>
+        /// <summary>Get accessReview</summary>
         public class AccessReviewItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

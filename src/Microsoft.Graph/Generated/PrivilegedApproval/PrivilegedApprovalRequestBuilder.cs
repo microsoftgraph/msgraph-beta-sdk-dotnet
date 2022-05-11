@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get entities from privilegedApproval
+        /// List privilegedApproval
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<PrivilegedApprovalRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval {
             return requestInfo;
         }
         /// <summary>
-        /// Add new entity to privilegedApproval
+        /// Create privilegedApproval
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval {
             return requestInfo;
         }
         /// <summary>
-        /// Get entities from privilegedApproval
+        /// List privilegedApproval
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval {
             return new MyRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Add new entity to privilegedApproval
+        /// Create privilegedApproval
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PrivilegedApproval>(requestInfo, Microsoft.Graph.Beta.Models.PrivilegedApproval.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get entities from privilegedApproval</summary>
+        /// <summary>List privilegedApproval</summary>
         public class PrivilegedApprovalRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

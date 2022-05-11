@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoles {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get entities from directoryRoles
+        /// List directoryRoles
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<DirectoryRolesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoles {
             return requestInfo;
         }
         /// <summary>
-        /// Add new entity to directoryRoles
+        /// Activate directoryRole
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoles {
             return new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Get entities from directoryRoles
+        /// List directoryRoles
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoles {
             return await RequestAdapter.SendAsync<DirectoryRoleCollectionResponse>(requestInfo, DirectoryRoleCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Add new entity to directoryRoles
+        /// Activate directoryRole
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -148,7 +148,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoles {
             };
             return await RequestAdapter.SendAsync<DirectoryRole>(requestInfo, DirectoryRole.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get entities from directoryRoles</summary>
+        /// <summary>List directoryRoles</summary>
         public class DirectoryRolesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

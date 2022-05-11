@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoleTemplates {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get entities from directoryRoleTemplates
+        /// List directoryRoleTemplates
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<DirectoryRoleTemplatesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoleTemplates {
             return requestInfo;
         }
         /// <summary>
-        /// Get entities from directoryRoleTemplates
+        /// List directoryRoleTemplates
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoleTemplates {
             };
             return await RequestAdapter.SendAsync<DirectoryRoleTemplate>(requestInfo, DirectoryRoleTemplate.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get entities from directoryRoleTemplates</summary>
+        /// <summary>List directoryRoleTemplates</summary>
         public class DirectoryRoleTemplatesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

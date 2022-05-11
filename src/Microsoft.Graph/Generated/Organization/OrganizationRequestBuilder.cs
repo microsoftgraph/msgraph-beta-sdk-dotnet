@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Organization {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get entities from organization
+        /// List organization
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<OrganizationRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Organization {
             return requestInfo;
         }
         /// <summary>
-        /// Get entities from organization
+        /// List organization
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.Organization {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Organization>(requestInfo, Microsoft.Graph.Beta.Models.Organization.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get entities from organization</summary>
+        /// <summary>List organization</summary>
         public class OrganizationRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

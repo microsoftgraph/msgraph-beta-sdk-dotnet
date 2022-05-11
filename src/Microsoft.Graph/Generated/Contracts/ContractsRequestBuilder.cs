@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Contracts {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get entities from contracts
+        /// List contracts
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ContractsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Contracts {
             return requestInfo;
         }
         /// <summary>
-        /// Get entities from contracts
+        /// List contracts
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.Contracts {
             };
             return await RequestAdapter.SendAsync<Contract>(requestInfo, Contract.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get entities from contracts</summary>
+        /// <summary>List contracts</summary>
         public class ContractsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

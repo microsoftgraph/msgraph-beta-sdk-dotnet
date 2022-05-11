@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.FederationConfiguration {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Domain settings configured by customer when federated with Azure AD.
+        /// Domain settings configured by customer when federated with Azure AD. Supports $expand.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<FederationConfigurationRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.FederationConfiguration {
             return requestInfo;
         }
         /// <summary>
-        /// Domain settings configured by customer when federated with Azure AD.
+        /// Domain settings configured by customer when federated with Azure AD. Supports $expand.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.FederationConfiguration {
             };
             return await RequestAdapter.SendAsync<InternalDomainFederation>(requestInfo, InternalDomainFederation.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Domain settings configured by customer when federated with Azure AD.</summary>
+        /// <summary>Domain settings configured by customer when federated with Azure AD. Supports $expand.</summary>
         public class FederationConfigurationRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

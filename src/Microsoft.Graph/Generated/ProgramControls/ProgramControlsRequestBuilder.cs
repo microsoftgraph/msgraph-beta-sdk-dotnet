@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.ProgramControls {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get entities from programControls
+        /// List programControls
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ProgramControlsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.ProgramControls {
             return requestInfo;
         }
         /// <summary>
-        /// Add new entity to programControls
+        /// Create programControl
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.ProgramControls {
             return requestInfo;
         }
         /// <summary>
-        /// Get entities from programControls
+        /// List programControls
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.ProgramControls {
             return await RequestAdapter.SendAsync<ProgramControlCollectionResponse>(requestInfo, ProgramControlCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Add new entity to programControls
+        /// Create programControl
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.ProgramControls {
             };
             return await RequestAdapter.SendAsync<ProgramControl>(requestInfo, ProgramControl.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get entities from programControls</summary>
+        /// <summary>List programControls</summary>
         public class ProgramControlsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

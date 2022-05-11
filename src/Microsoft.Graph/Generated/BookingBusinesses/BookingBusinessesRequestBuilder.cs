@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get entities from bookingBusinesses
+        /// List bookingBusinesses
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<BookingBusinessesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses {
             return requestInfo;
         }
         /// <summary>
-        /// Add new entity to bookingBusinesses
+        /// Create bookingBusiness
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses {
             return requestInfo;
         }
         /// <summary>
-        /// Get entities from bookingBusinesses
+        /// List bookingBusinesses
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses {
             return await RequestAdapter.SendAsync<BookingBusinessCollectionResponse>(requestInfo, BookingBusinessCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Add new entity to bookingBusinesses
+        /// Create bookingBusiness
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses {
             };
             return await RequestAdapter.SendAsync<BookingBusiness>(requestInfo, BookingBusiness.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get entities from bookingBusinesses</summary>
+        /// <summary>List bookingBusinesses</summary>
         public class BookingBusinessesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

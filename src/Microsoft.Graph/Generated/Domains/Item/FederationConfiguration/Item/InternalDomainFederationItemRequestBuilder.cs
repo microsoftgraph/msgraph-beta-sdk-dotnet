@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.FederationConfiguration.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Domain settings configured by customer when federated with Azure AD.
+        /// Domain settings configured by customer when federated with Azure AD. Supports $expand.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<InternalDomainFederationItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.FederationConfiguration.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Domain settings configured by customer when federated with Azure AD.
+        /// Domain settings configured by customer when federated with Azure AD. Supports $expand.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.FederationConfiguration.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Domain settings configured by customer when federated with Azure AD.</summary>
+        /// <summary>Domain settings configured by customer when federated with Azure AD. Supports $expand.</summary>
         public class InternalDomainFederationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

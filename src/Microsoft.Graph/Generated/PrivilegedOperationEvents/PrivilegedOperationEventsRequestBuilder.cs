@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.PrivilegedOperationEvents {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get entities from privilegedOperationEvents
+        /// List privilegedOperationEvents
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<PrivilegedOperationEventsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.PrivilegedOperationEvents {
             return requestInfo;
         }
         /// <summary>
-        /// Get entities from privilegedOperationEvents
+        /// List privilegedOperationEvents
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.PrivilegedOperationEvents {
             };
             return await RequestAdapter.SendAsync<PrivilegedOperationEvent>(requestInfo, PrivilegedOperationEvent.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get entities from privilegedOperationEvents</summary>
+        /// <summary>List privilegedOperationEvents</summary>
         public class PrivilegedOperationEventsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

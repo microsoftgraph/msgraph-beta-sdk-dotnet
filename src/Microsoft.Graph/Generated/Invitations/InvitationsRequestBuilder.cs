@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Invitations {
             return requestInfo;
         }
         /// <summary>
-        /// Add new entity to invitations
+        /// Tutorial: Use the access reviews API to review guest access to your Microsoft 365 groups
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Invitations {
             return await RequestAdapter.SendAsync<InvitationCollectionResponse>(requestInfo, InvitationCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Add new entity to invitations
+        /// Tutorial: Use the access reviews API to review guest access to your Microsoft 365 groups
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

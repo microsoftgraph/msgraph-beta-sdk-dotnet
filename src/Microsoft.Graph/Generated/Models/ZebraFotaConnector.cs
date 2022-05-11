@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         public bool? FotaAppsApproved { get; set; }
         /// <summary>Date and time when the account was last synched with Zebra</summary>
         public DateTimeOffset? LastSyncDateTime { get; set; }
-        /// <summary>The Zebra connector state.</summary>
+        /// <summary>The Zebra connector state. Possible values are: none, connected, disconnected, unknownFutureValue.</summary>
         public ZebraFotaConnectorState? State { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

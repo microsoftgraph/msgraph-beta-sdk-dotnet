@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Groups {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get entities from groups
+        /// Add custom data to groups using schema extensions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<GroupsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Groups {
             return requestInfo;
         }
         /// <summary>
-        /// Add new entity to groups
+        /// Tutorial: Use the Privileged Identity Management (PIM) API to assign Azure AD roles
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Groups {
             return new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Get entities from groups
+        /// Add custom data to groups using schema extensions
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Groups {
             return await RequestAdapter.SendAsync<GroupCollectionResponse>(requestInfo, GroupCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Add new entity to groups
+        /// Tutorial: Use the Privileged Identity Management (PIM) API to assign Azure AD roles
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.Groups {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Group>(requestInfo, Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get entities from groups</summary>
+        /// <summary>Add custom data to groups using schema extensions</summary>
         public class GroupsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

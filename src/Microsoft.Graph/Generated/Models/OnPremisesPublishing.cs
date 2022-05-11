@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models {
         public bool? IsPersistentCookieEnabled { get; set; }
         /// <summary>Indicates if the Secure cookie flag should be set in the HTTP response headers. Set this value to true to transmit cookies over a secure channel such as an encrypted HTTPS request. Default value is true.</summary>
         public bool? IsSecureCookieEnabled { get; set; }
-        /// <summary>The isStateSessionEnabled property</summary>
+        /// <summary>Indicates whether validation of the state parameter when the client uses the OAuth 2.0 authorization code grant flow is enabled. This setting allows admins to specify whether they want to enable CSRF protection for their apps.</summary>
         public bool? IsStateSessionEnabled { get; set; }
         /// <summary>Indicates if the application should translate urls in the reponse headers. Keep this value as true unless your application required the original host header in the authentication request. Default value is true.</summary>
         public bool? IsTranslateHostHeaderEnabled { get; set; }

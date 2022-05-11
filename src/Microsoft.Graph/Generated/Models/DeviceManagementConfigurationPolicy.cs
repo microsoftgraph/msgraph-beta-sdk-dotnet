@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models {
         public int? SettingCount { get; set; }
         /// <summary>Policy settings</summary>
         public List<DeviceManagementConfigurationSetting> Settings { get; set; }
-        /// <summary>Technologies for this policy. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.</summary>
+        /// <summary>Technologies for this policy. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.</summary>
         public DeviceManagementConfigurationTechnologies? Technologies { get; set; }
         /// <summary>Template reference information</summary>
         public DeviceManagementConfigurationPolicyTemplateReference TemplateReference { get; set; }

@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoles {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get entities from privilegedRoles
+        /// List privilegedRoles
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<PrivilegedRolesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoles {
             return requestInfo;
         }
         /// <summary>
-        /// Get entities from privilegedRoles
+        /// List privilegedRoles
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoles {
             };
             return await RequestAdapter.SendAsync<PrivilegedRole>(requestInfo, PrivilegedRole.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get entities from privilegedRoles</summary>
+        /// <summary>List privilegedRoles</summary>
         public class PrivilegedRolesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

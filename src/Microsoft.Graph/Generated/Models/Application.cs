@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
         public string PublisherDomain { get; set; }
         /// <summary>Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).</summary>
         public List<Microsoft.Graph.Beta.Models.RequiredResourceAccess> RequiredResourceAccess { get; set; }
-        /// <summary>The serviceManagementReference property</summary>
+        /// <summary>References application or service contact information from a Service or Asset Management database. Nullable.</summary>
         public string ServiceManagementReference { get; set; }
         /// <summary>Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, not).</summary>
         public string SignInAudience { get; set; }

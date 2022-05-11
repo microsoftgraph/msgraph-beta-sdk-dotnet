@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceManagementConfigurationDeviceMode? DeviceMode { get; set; }
         /// <summary>Platform setting can be applied on. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.</summary>
         public DeviceManagementConfigurationPlatforms? Platform { get; set; }
-        /// <summary>Which technology channels this setting can be deployed through. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.</summary>
+        /// <summary>Which technology channels this setting can be deployed through. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.</summary>
         public DeviceManagementConfigurationTechnologies? Technologies { get; set; }
         /// <summary>
         /// Instantiates a new deviceManagementConfigurationSettingApplicability and sets the default values.

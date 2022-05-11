@@ -488,7 +488,7 @@ namespace Microsoft.Graph.Beta.Users.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete entity from users
+        /// Tutorial: Use the Privileged Identity Management (PIM) API to assign Azure AD roles
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateDeleteRequestInformation(Action<UserItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
@@ -506,7 +506,7 @@ namespace Microsoft.Graph.Beta.Users.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get entity from users by key
+        /// Helpers (examples that aren&apos;t included in the docs)
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<UserItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -525,7 +525,7 @@ namespace Microsoft.Graph.Beta.Users.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update entity in users
+        /// Assign, update, or remove custom security attributes using the Microsoft Graph API (Preview)
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -546,7 +546,7 @@ namespace Microsoft.Graph.Beta.Users.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Delete entity from users
+        /// Tutorial: Use the Privileged Identity Management (PIM) API to assign Azure AD roles
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -596,7 +596,7 @@ namespace Microsoft.Graph.Beta.Users.Item {
             return new FindRoomsWithRoomListRequestBuilder(PathParameters, RequestAdapter, roomList);
         }
         /// <summary>
-        /// Get entity from users by key
+        /// Helpers (examples that aren&apos;t included in the docs)
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -652,7 +652,7 @@ namespace Microsoft.Graph.Beta.Users.Item {
             return new IsManagedAppUserBlockedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Update entity in users
+        /// Assign, update, or remove custom security attributes using the Microsoft Graph API (Preview)
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -691,7 +691,7 @@ namespace Microsoft.Graph.Beta.Users.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get entity from users by key</summary>
+        /// <summary>Helpers (examples that aren&apos;t included in the docs)</summary>
         public class UserItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

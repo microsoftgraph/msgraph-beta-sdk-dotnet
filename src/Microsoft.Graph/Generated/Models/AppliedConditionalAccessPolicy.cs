@@ -27,6 +27,8 @@ namespace Microsoft.Graph.Beta.Models {
         public List<ConditionalAccessRuleSatisfied> IncludeRulesSatisfied { get; set; }
         /// <summary>Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn&apos;t applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue, reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted.</summary>
         public AppliedConditionalAccessPolicyResult? Result { get; set; }
+        /// <summary>The sessionControlsNotSatisfied property</summary>
+        public List<string> SessionControlsNotSatisfied { get; set; }
         /// <summary>
         /// Instantiates a new appliedConditionalAccessPolicy and sets the default values.
         /// </summary>
@@ -56,6 +58,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"id", n => { Id = n.GetStringValue(); } },
                 {"includeRulesSatisfied", n => { IncludeRulesSatisfied = n.GetCollectionOfObjectValues<ConditionalAccessRuleSatisfied>(ConditionalAccessRuleSatisfied.CreateFromDiscriminatorValue).ToList(); } },
                 {"result", n => { Result = n.GetEnumValue<AppliedConditionalAccessPolicyResult>(); } },
+                {"sessionControlsNotSatisfied", n => { SessionControlsNotSatisfied = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
         /// <summary>
@@ -74,6 +77,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<ConditionalAccessRuleSatisfied>("includeRulesSatisfied", IncludeRulesSatisfied);
             writer.WriteEnumValue<AppliedConditionalAccessPolicyResult>("result", Result);
+            writer.WriteCollectionOfPrimitiveValues<string>("sessionControlsNotSatisfied", SessionControlsNotSatisfied);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

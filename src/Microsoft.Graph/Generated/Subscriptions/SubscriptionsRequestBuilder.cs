@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Subscriptions {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get entities from subscriptions
+        /// List subscriptions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<SubscriptionsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Subscriptions {
             return requestInfo;
         }
         /// <summary>
-        /// Add new entity to subscriptions
+        /// Change notifications for Outlook resources in Microsoft Graph
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Subscriptions {
             return requestInfo;
         }
         /// <summary>
-        /// Get entities from subscriptions
+        /// List subscriptions
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Subscriptions {
             return await RequestAdapter.SendAsync<SubscriptionCollectionResponse>(requestInfo, SubscriptionCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Add new entity to subscriptions
+        /// Change notifications for Outlook resources in Microsoft Graph
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.Subscriptions {
             };
             return await RequestAdapter.SendAsync<Subscription>(requestInfo, Subscription.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get entities from subscriptions</summary>
+        /// <summary>List subscriptions</summary>
         public class SubscriptionsRequestBuilderGetQueryParameters {
             /// <summary>Search items by search phrases</summary>
             [QueryParameter("%24search")]

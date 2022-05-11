@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Programs {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get entities from programs
+        /// List programs
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ProgramsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Programs {
             return requestInfo;
         }
         /// <summary>
-        /// Add new entity to programs
+        /// Create program
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Programs {
             return requestInfo;
         }
         /// <summary>
-        /// Get entities from programs
+        /// List programs
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Programs {
             return await RequestAdapter.SendAsync<ProgramCollectionResponse>(requestInfo, ProgramCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Add new entity to programs
+        /// Create program
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Programs {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Program>(requestInfo, Microsoft.Graph.Beta.Models.Program.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get entities from programs</summary>
+        /// <summary>List programs</summary>
         public class ProgramsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

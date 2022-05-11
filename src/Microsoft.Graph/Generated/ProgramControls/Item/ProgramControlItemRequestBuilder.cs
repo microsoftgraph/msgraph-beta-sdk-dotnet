@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.ProgramControls.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete entity from programControls
+        /// Delete programControl
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateDeleteRequestInformation(Action<ProgramControlItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.ProgramControls.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Delete entity from programControls
+        /// Delete programControl
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
