@@ -191,7 +191,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets replies.
-        /// Replies for a specified message.
+        /// Replies for a specified message. Supports $expand for channel messages.
         /// </summary>
         [JsonPropertyName("replies")]
         public IChatMessageRepliesCollectionPage Replies { get; set; }

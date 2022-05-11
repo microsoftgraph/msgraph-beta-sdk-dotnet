@@ -191,6 +191,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets service management reference.
+        /// References application or service contact information from a Service or Asset Management database. Nullable.
         /// </summary>
         [JsonPropertyName("serviceManagementReference")]
         public string ServiceManagementReference { get; set; }

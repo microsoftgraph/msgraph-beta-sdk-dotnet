@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets ruleId.
-        /// The identifier of a the synchronizationRule to be applied.
+        /// The identifier of the synchronizationRule to be applied. This rule ID is defined in the schema for a given synchronization job or template.
         /// </summary>
         [JsonPropertyName("ruleId")]
         public string RuleId { get; set; }
