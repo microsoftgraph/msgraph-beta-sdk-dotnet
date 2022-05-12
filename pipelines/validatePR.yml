@@ -12,7 +12,6 @@ pr:
     exclude:
       - .github/*
       - .vs/*
-      - pipelines/*
       - scripts/*
       - .gitignore
       - CONTRIBUTING.md
