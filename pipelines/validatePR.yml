@@ -12,9 +12,7 @@ pr:
     exclude:
       - .github/*
       - .vs/*
-      - pipelines/*
       - scripts/*
-      - tests/*
       - .gitignore
       - CONTRIBUTING.md
       - LICENSE.txt
