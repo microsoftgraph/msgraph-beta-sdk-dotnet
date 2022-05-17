@@ -204,7 +204,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets physical ids.
-        /// For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
+        /// For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).
         /// </summary>
         [JsonPropertyName("physicalIds")]
         public IEnumerable<string> PhysicalIds { get; set; }
@@ -225,7 +225,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets system labels.
-        /// List of labels applied to the device by the system.
+        /// List of labels applied to the device by the system. Supports $filter (eq when counting empty collections).
         /// </summary>
         [JsonPropertyName("systemLabels")]
         public IEnumerable<string> SystemLabels { get; set; }

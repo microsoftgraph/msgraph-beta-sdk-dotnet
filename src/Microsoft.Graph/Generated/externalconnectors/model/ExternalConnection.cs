@@ -44,6 +44,7 @@ namespace Microsoft.Graph.ExternalConnectors
     
         /// <summary>
         /// Gets or sets ingested items count.
+        /// The number of items ingested into a connection. This value is refreshed every 15 minutes. If the connection state is draft, then ingestedItemsCount will be null.
         /// </summary>
         [JsonPropertyName("ingestedItemsCount")]
         public Int64? IngestedItemsCount { get; set; }
@@ -113,6 +114,7 @@ namespace Microsoft.Graph.ExternalConnectors
     
         /// <summary>
         /// Gets or sets quota.
+        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("quota")]
         public ConnectionQuota Quota { get; set; }

@@ -14,24 +14,22 @@ namespace Microsoft.Graph
     using System.IO;
 
     /// <summary>
-    /// The interface ICloudPcSnapshotRequestBuilder.
+    /// The interface IStorageRequestBuilder.
     /// </summary>
-    public partial interface ICloudPcSnapshotRequestBuilder : IEntityRequestBuilder
+    public partial interface IStorageRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new ICloudPcSnapshotRequest Request();
+        IStorageRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new ICloudPcSnapshotRequest Request(IEnumerable<Option> options);
-    
-        
+        IStorageRequest Request(IEnumerable<Option> options);
     
     }
 }

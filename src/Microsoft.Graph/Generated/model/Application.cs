@@ -282,7 +282,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets extension properties.
-        /// Read-only. Nullable.
+        /// Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
         /// </summary>
         [JsonPropertyName("extensionProperties")]
         public IApplicationExtensionPropertiesCollectionPage ExtensionProperties { get; set; }
@@ -296,7 +296,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets federated identity credentials.
-        /// Federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
+        /// Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
         /// </summary>
         [JsonPropertyName("federatedIdentityCredentials")]
         public IApplicationFederatedIdentityCredentialsCollectionPage FederatedIdentityCredentials { get; set; }
