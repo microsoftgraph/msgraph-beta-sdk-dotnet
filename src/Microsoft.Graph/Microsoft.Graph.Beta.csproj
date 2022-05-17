@@ -22,11 +22,10 @@
     <AssemblyOriginatorKeyFile>35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PackageReleaseNotes>
-- Latest metadata updates from 10th May 2022 snapshot
-- Allow initialization of abstract complex types [#1328](https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/1328)  
+- Latest metadata updates from 17th May 2022 snapshot
     </PackageReleaseNotes>
     <!-- edit this value to change the current major.minor.patch version -->
-    <VersionPrefix>4.41.0</VersionPrefix>
+    <VersionPrefix>4.42.0</VersionPrefix>
     <!-- adds a version suffix if the Prerelease environment variable is set. BUILD_BUILDID is an
     environment variable set by Azure pipelines from the build. We can use the buildid to correlate
     which commit was used to generate the preview build. -->
