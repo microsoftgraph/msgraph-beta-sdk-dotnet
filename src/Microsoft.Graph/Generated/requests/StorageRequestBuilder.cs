@@ -14,17 +14,17 @@ namespace Microsoft.Graph
     using System.IO;
 
     /// <summary>
-    /// The type CloudPcSnapshotRequestBuilder.
+    /// The type StorageRequestBuilder.
     /// </summary>
-    public partial class CloudPcSnapshotRequestBuilder : EntityRequestBuilder, ICloudPcSnapshotRequestBuilder
+    public partial class StorageRequestBuilder : BaseRequestBuilder, IStorageRequestBuilder
     {
 
         /// <summary>
-        /// Constructs a new CloudPcSnapshotRequestBuilder.
+        /// Constructs a new StorageRequestBuilder.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        public CloudPcSnapshotRequestBuilder(
+        public StorageRequestBuilder(
             string requestUrl,
             IBaseClient client)
             : base(requestUrl, client)
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new ICloudPcSnapshotRequest Request()
+        public IStorageRequest Request()
         {
             return this.Request(null);
         }
@@ -45,12 +45,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new ICloudPcSnapshotRequest Request(IEnumerable<Option> options)
+        public IStorageRequest Request(IEnumerable<Option> options)
         {
-            return new CloudPcSnapshotRequest(this.RequestUrl, this.Client, options);
+            return new StorageRequest(this.RequestUrl, this.Client, options);
         }
-    
-        
     
     }
 }

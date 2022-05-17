@@ -36,6 +36,17 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="ICloudPcSnapshotRequestBuilder"/>.</returns>
         ICloudPcSnapshotRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for CloudPcSnapshotGetStorageAccounts.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPcSnapshotGetStorageAccountsRequestBuilder"/>.</returns>
+        ICloudPcSnapshotGetStorageAccountsRequestBuilder GetStorageAccounts(
+            string subscriptionId = null);
+
+        /// <summary>
+        /// Gets the request builder for CloudPcSnapshotGetSubscriptions.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPcSnapshotGetSubscriptionsRequestBuilder"/>.</returns>
+        ICloudPcSnapshotGetSubscriptionsRequestBuilder GetSubscriptions();
     }
 }

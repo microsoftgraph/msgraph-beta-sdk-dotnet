@@ -60,6 +60,28 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for CloudPcSnapshotGetStorageAccounts.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPcSnapshotGetStorageAccountsRequestBuilder"/>.</returns>
+        public ICloudPcSnapshotGetStorageAccountsRequestBuilder GetStorageAccounts(
+            string subscriptionId = null)
+        {
+            return new CloudPcSnapshotGetStorageAccountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getStorageAccounts"),
+                this.Client,
+                subscriptionId);
+        }
+
+        /// <summary>
+        /// Gets the request builder for CloudPcSnapshotGetSubscriptions.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPcSnapshotGetSubscriptionsRequestBuilder"/>.</returns>
+        public ICloudPcSnapshotGetSubscriptionsRequestBuilder GetSubscriptions()
+        {
+            return new CloudPcSnapshotGetSubscriptionsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getSubscriptions"),
+                this.Client);
+        }
     }
 }

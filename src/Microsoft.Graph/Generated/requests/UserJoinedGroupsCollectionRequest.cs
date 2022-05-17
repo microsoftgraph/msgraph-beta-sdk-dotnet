@@ -92,41 +92,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Adds the specified expand value to the request.
-        /// </summary>
-        /// <param name="value">The expand value.</param>
-        /// <returns>The request object to send.</returns>
-        public IUserJoinedGroupsCollectionRequest Expand(string value)
-        {
-            this.QueryOptions.Add(new QueryOption("$expand", value));
-            return this;
-        }
-
-        /// <summary>
-        /// Adds the specified expand value to the request.
-        /// </summary>
-        /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
-        /// <returns>The request object to send.</returns>
-        public IUserJoinedGroupsCollectionRequest Expand(Expression<Func<Group, object>> expandExpression)
-        {
-            if (expandExpression == null)
-            {
-                throw new ArgumentNullException(nameof(expandExpression));
-            }
-            string error;
-            string value = ExpressionExtractHelper.ExtractMembers(expandExpression, out error);
-            if (value == null)
-            {
-                throw new ArgumentException(error, nameof(expandExpression));
-            }
-            else
-            {
-                this.QueryOptions.Add(new QueryOption("$expand", value));
-            }
-            return this;
-        }
-
-        /// <summary>
         /// Adds the specified select value to the request.
         /// </summary>
         /// <param name="value">The select value.</param>

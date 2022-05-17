@@ -58,7 +58,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets owner.
-        /// ID of the Group that owns the plan. A valid group must exist before this field can be set. After it is set, this property can’t be updated.
         /// </summary>
         [Obsolete("Owner property is deprecated and will be removed in January 2023. Please use the container property instead.")]
         [JsonPropertyName("owner")]

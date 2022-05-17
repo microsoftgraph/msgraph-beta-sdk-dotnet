@@ -1273,6 +1273,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceStorage request builder.
+        /// </summary>
+        public virtual IStorageRequestBuilder Storage
+        {
+            get
+            {
+                return new StorageRequestBuilder(this.BaseUrl + "/storage", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceAdmin request builder.
         /// </summary>
         public virtual IAdminRequestBuilder Admin

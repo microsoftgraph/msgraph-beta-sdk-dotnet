@@ -43,11 +43,11 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task PostAsync(
+        public System.Threading.Tasks.Task<CloudPcBulkRemoteActionResult> PostAsync(
             CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.POST;
-            return this.SendAsync(this.RequestBody, cancellationToken);
+            return this.SendAsync<CloudPcBulkRemoteActionResult>(this.RequestBody, cancellationToken);
         }
 
         /// <summary>
@@ -55,10 +55,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public System.Threading.Tasks.Task<GraphResponse> PostResponseAsync(CancellationToken cancellationToken = default)
+        public System.Threading.Tasks.Task<GraphResponse<CloudPcBulkRemoteActionResult>> PostResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.POST;
-            return this.SendAsyncWithGraphResponse(this.RequestBody, cancellationToken);
+            return this.SendAsyncWithGraphResponse<CloudPcBulkRemoteActionResult>(this.RequestBody, cancellationToken);
         }
 
 

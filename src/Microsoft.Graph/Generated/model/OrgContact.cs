@@ -114,7 +114,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets proxy addresses.
-        /// For example: 'SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com'. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith).
+        /// For example: 'SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com'. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).
         /// </summary>
         [JsonPropertyName("proxyAddresses")]
         public IEnumerable<string> ProxyAddresses { get; set; }

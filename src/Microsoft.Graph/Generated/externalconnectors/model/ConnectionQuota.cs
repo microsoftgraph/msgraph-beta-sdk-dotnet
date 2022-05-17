@@ -22,6 +22,7 @@ namespace Microsoft.Graph.ExternalConnectors
     
         /// <summary>
         /// Gets or sets items remaining.
+        /// Returns the minimum number in a range that contains the following data: items remaining in the connection and remaining items at tenant-level. The following equation represents the formula used to calculate the minimum number: min(max capacity in the connection – number of items in the connection, tenant quota – number of items indexed in all connections). If the connection is nonmonetized (preview connector or preview content experience), then it returns the number of remaining items in the connection.
         /// </summary>
         [JsonPropertyName("itemsRemaining")]
         public Int64? ItemsRemaining { get; set; }
